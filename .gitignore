@@ -1,0 +1,7 @@
+*/*.aux
+*/*.log
+.idea
+build
+target
+.stamps
+**/.DS_Store
