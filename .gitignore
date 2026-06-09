@@ -5,3 +5,4 @@ build
 target
 .stamps
 **/.DS_Store
+.claude/worktrees
