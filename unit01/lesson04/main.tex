@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,136 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify and interpret key characteristics of polynomial functions --- degree, leading term, local and global extrema, and points of inflection --- using rates of change and graphical behavior. (MP 2.A, 3.A)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{AP Skills}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item \textbf{2.A} --- Identify information from analytical and graphical representations
+    \item \textbf{3.A} --- Describe key characteristics of a function
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{Key Understandings (LO 1.4.A)}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Polynomial standard form: degree, leading term, leading coefficient
+    \item Local vs.\ global extrema; relationship to switching between increasing/decreasing
+    \item Between every two distinct real zeros, there is at least one local extremum
+    \item Even-degree polynomials have a global max or global min
+    \item Points of inflection occur where rate of change switches from increasing to decreasing (or vice versa)
+\end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item polynomial function
+    \item degree
+    \item leading coefficient
+    \item local maximum / local minimum
+    \item global maximum / global minimum
+    \item point of inflection
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[4pt]
+            \textbf{Skills reviewed:} identifying zeros of a function (Lesson 1.1); concavity and AROC sign patterns (Lesson 1.1); average rate of change patterns and second differences (Lesson 1.3).
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.20\linewidth}\vspace{0pt}\centering
         \end{minipage}
     \end{tabularx}
-\end{fixedskillbox}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Display (or describe aloud): ``Consider $p(x) = x^3 - 3x$. As $x$ increases from $-\infty$, the function decreases steeply, reaches a valley, climbs through zero, peaks, and then falls back through zero before rising to $+\infty$ again.''
+
+Discussion prompts:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Where are the ``peaks'' and ``valleys'' of this function?
+    \item How many real zeros does $p(x) = x^3 - 3x$ have? (Factor: $x(x-\sqrt{3})(x+\sqrt{3})$)
+    \item Between each pair of zeros, what must happen to the function's direction of change?
+    \item Where does the rate of change itself change direction?
+\end{itemize}
+Use student responses to introduce the vocabulary of local extrema and points of inflection.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{1. Polynomial Functions (EK 1.4.A.1)}\\
+Standard form: $p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$, $a_n \neq 0$.
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item \textit{Degree}: $n$ (highest power)
+    \item \textit{Leading term}: $a_n x^n$
+    \item \textit{Leading coefficient}: $a_n$
+    \item A constant function is a polynomial of degree 0.
+\end{itemize}
+
+\textbf{End behavior (verbal descriptions):}
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item Even degree, positive leading coeff.: both ends rise
+    \item Even degree, negative leading coeff.: both ends fall
+    \item Odd degree, positive leading coeff.: falls left, rises right
+    \item Odd degree, negative leading coeff.: rises left, falls right
+\end{itemize}
+
+\columnbreak
+
+\textbf{2. Local and Global Extrema (EK 1.4.A.2--4)}\\
+A \textit{local maximum} occurs where the function switches from increasing to decreasing. A \textit{local minimum} occurs where it switches from decreasing to increasing.
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item The greatest local max value is the \textit{global maximum}.
+    \item The least local min value is the \textit{global minimum}.
+    \item Between every two distinct real zeros, at least one local extremum must exist.
+    \item Polynomials of even degree have either a global max or a global min (not both in general).
+\end{itemize}
+
+\textbf{3. Points of Inflection (EK 1.4.A.5)}\\
+A \textit{point of inflection} occurs where the rate of change switches from increasing to decreasing, or vice versa --- i.e., where the graph changes from concave up to concave down (or the reverse).
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Circulate during the hook discussion. Listen for students confusing zeros with extrema.
+    \item During notes: cold-call --- ``If a polynomial has three distinct real zeros, what is the \textit{minimum} number of local extrema it must have?''
+    \item During activity Tier A: check that AROC computations use the correct interval endpoints.
+    \item Common misconception: students may think a local extremum must occur \textit{at} a zero. Clarify: extrema occur \textit{between} zeros.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\textbf{Context:} Roller coaster height over time (see Group Activity).
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item \textbf{Tier R (Remediate):} Identify local maxima and minima from a table of values; identify global maximum. No computation required.
+    \item \textbf{Tier A (On-level):} Compute AROCs over intervals; identify sign changes in AROC (local extrema); identify where AROC is increasing vs.\ decreasing (concavity/inflection).
+    \item \textbf{Tier E (Extend):} Determine minimum possible degree of the polynomial; reason about existence of global min using EK 1.4.A.4.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+    \item A polynomial has exactly three distinct real zeros. What is the minimum number of local extrema it must have? (EK 1.4.A.3)
+    \item A polynomial $q$ has a point of inflection at $x = 2$. AROC over $[1,2]$ is $6$; AROC over $[2,3]$ is $3$. Is the graph concave up or concave down on each interval?
+\end{enumerate}
+Look for: correct application of EK 1.4.A.3 (two zeros $\Rightarrow$ at least one extremum between them); correct use of ``concave up $\Rightarrow$ AROC increasing.''
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework overview:} 5--6 problems reviewing degree/leading coefficient, minimum degree from extrema count, AROC sign changes, even-degree global extremum, and an AP-style MC item.
+
+\textbf{Extension:} For $p(x) = x^4 - 4x^2$, compute AROCs over $[-2,-1]$, $[-1,0]$, $[0,1]$, $[1,2]$. Identify sign transitions to locate potential extrema and inflection points.
+
+\textbf{Preview:} Next lesson --- zeros of polynomial functions, their multiplicities, and an introduction to complex zeros.
 \end{skillbox}
 \end{document}

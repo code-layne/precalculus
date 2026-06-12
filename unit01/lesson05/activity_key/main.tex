@@ -9,11 +9,142 @@
 \pageheader{Unit 1, Lesson 1.5}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Three Polynomial Functions]{sky}
+You will analyze the following three polynomials throughout this activity.
+\[
+  p(x)=(x+2)(x-1)^2(x-3) \qquad
+  q(x)=x^4-5x^2+4 \qquad
+  r(x)=x^3+2x
+\]
+\end{scenariobox}
+
+\vspace{0.08in}
+
+% --- Tier R ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Work with $p(x)=(x+2)(x-1)^2(x-3)$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item List all zeros of $p(x)$ and state the multiplicity of each.
+
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Multiplicity} \\
+  \hline
+  \ans{$x=-2$} & \ans{1} \\
+  \hline
+  \ans{$x=1$}  & \ans{2} \\
+  \hline
+  \ans{$x=3$}  & \ans{1} \\
+  \hline
+  & \\
+  \hline
+  \end{tabularx}
+
+  \item What is the degree of $p(x)$? \ans{4}
+        How does the degree relate to the total number of zeros (counting multiplicities)?
+        \ansline{The degree equals the total count of zeros: $1+2+1=4$.}
+
+  \item For each real zero, predict whether the graph \emph{crosses} or is \emph{tangent to}
+        (touches and bounces off) the $x$-axis.
+
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Crosses or Tangent?} \\
+  \hline
+  $x=-2$ & \ans{Crosses (multiplicity 1)} \\
+  \hline
+  $x=1$  & \ans{Tangent/bounces (multiplicity 2)} \\
+  \hline
+  $x=3$  & \ans{Crosses (multiplicity 1)} \\
+  \hline
+  \end{tabularx}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% --- Tier A ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $q(x)$ completely over the reals.
+        \ansline{$q(x)=(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2)$}
+
+  \item List all real zeros of $q(x)$ and their multiplicities.
+        \ansline{$x=1,\;x=-1,\;x=2,\;x=-2$, each with multiplicity 1.}
+
+  \item Compare graph behavior at zeros of $p$ and $q$:
+        \ansline{$p$: crosses at $x=-2,3$; tangent at $x=1$. \; $q$: crosses at all four zeros.}
+
+  \item Algebraic even/odd test:
+
+        $p(-x) = $ \ansline{$(-x+2)(-x-1)^2(-x-3)$; neither $p(x)$ nor $-p(x)$. \textbf{Neither.}}
+
+        $q(-x) = $ \ansline{$(-x)^4-5(-x)^2+4=x^4-5x^2+4=q(x)$. \textbf{Even.}}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% --- Tier E ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $r(x)=x^3+2x$ and solve for all zeros.
+        \ansline{$r(x)=x(x^2+2)$. Zeros: $x=0$; $x^2=-2 \Rightarrow x=\pm i\sqrt{2}$.}
+
+  \item List all zeros, verify conjugate pairs.
+        \ansline{$x=0$; $x=i\sqrt{2}$ and $x=-i\sqrt{2}$ form a conjugate pair. \checkmark}
+
+  \item Even, odd, or neither for $r(x)$:
+        \ansline{$r(-x)=-x^3-2x=-(x^3+2x)=-r(x)$. \textbf{Odd.}}
+
+  \item Successive differences for $q(x)$ (degree 4 $\Rightarrow$ 4th differences constant):
+
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\linewidth}{|X|X|X|X|X|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $q(x)$ & 1st diff & 2nd diff & 3rd diff \\
+  \hline
+  $-2$ & \ans{0}  &            &            & \\
+  \hline
+  $-1$ & \ans{0}  & \ans{0}    &            & \\
+  \hline
+  $0$  & \ans{4}  & \ans{4}    & \ans{4}    & \\
+  \hline
+  $1$  & \ans{0}  & \ans{$-4$} & \ans{$-8$} & \ans{$-12$} \\
+  \hline
+  $2$  & \ans{0}  & \ans{0}    & \ans{4}    & \ans{12} \\
+  \hline
+  $3$  & \ans{40} & \ans{40}   & \ans{40}   & \ans{36} \\
+  \hline
+  \end{tabularx}
+
+  \begin{teachernote}
+  The 4th differences are constant (= 24), confirming degree 4. Students need
+  one additional row ($x=4$, $q(4)=180$) to see 4th differences become constant.
+  Accept ``4th differences constant'' as a complete answer for the degree confirmation.
+  \end{teachernote}
+
+  The \ans{4th} differences are constant, confirming the degree is \ans{4}.
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

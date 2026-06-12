@@ -9,11 +9,133 @@
 \pageheader{Unit 1, Lesson 1.4}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Roller Coaster Heights]{sky}
+A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
+by a polynomial function $h(t)$. A table of sample values is given below.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
+\rowcolor{sky}
+$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
+\midrule
+$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use the table above (no graphing needed).
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Identify the time(s) at which the roller coaster reaches a \textbf{local maximum}
+    (a high point between two lower values). List the time and height.
+
+    \vspace{4pt}
+    \blank{10cm}
+
+    \item Identify the time(s) at which the roller coaster reaches a \textbf{local minimum}
+    (a low point between two higher values). List the time and height.
+
+    \vspace{4pt}
+    \blank{10cm}
+
+    \item What is the \textbf{global maximum} height over the entire ride?
+    At what time does it occur?
+
+    \vspace{4pt}
+    \blank{10cm}
+
+    \item The coaster returns to height 0 at $t = 0$ and $t = 60$.
+    Based on the table, does the function appear to have any other zeros? If so, where?
+
+    \vspace{4pt}
+    \blank{10cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- On Level: Rates of Change and Concavity},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Compute the AROC of $h$ over each interval. Show your work.
+
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabularx}{\linewidth}{@{} l X X @{}}
+    \rowcolor{sky}
+    Interval & AROC formula & AROC value \\
+    \midrule
+    $[0, 10]$   & $\dfrac{h(10)-h(0)}{10-0}$   & \blank{2.5cm} \\
+    $[10, 15]$  & $\dfrac{h(15)-h(10)}{15-10}$  & \blank{2.5cm} \\
+    $[15, 20]$  & $\dfrac{h(20)-h(15)}{20-15}$  & \blank{2.5cm} \\
+    $[20, 30]$  & $\dfrac{h(30)-h(20)}{30-20}$  & \blank{2.5cm} \\
+    $[30, 35]$  & $\dfrac{h(35)-h(30)}{35-30}$  & \blank{2.5cm} \\
+    $[35, 40]$  & $\dfrac{h(40)-h(35)}{40-35}$  & \blank{2.5cm} \\
+    $[40, 50]$  & $\dfrac{h(50)-h(40)}{50-40}$  & \blank{2.5cm} \\
+    $[50, 60]$  & $\dfrac{h(60)-h(50)}{60-50}$  & \blank{2.5cm} \\
+    \end{tabularx}
+
+    \item At which interval(s) does the AROC transition from \textbf{positive to negative}?
+    What does this indicate about the function's behavior?
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \item At which interval(s) does the AROC transition from \textbf{negative to positive}?
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \item On which portion of the ride is the AROC \textbf{increasing}? What does that tell you
+    about the concavity of $h$?
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \item Based on the AROC values, identify a possible \textbf{point of inflection} and explain
+    your reasoning.
+
+    \vspace{4pt}
+    \blank{11cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Degree and Global Extrema},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item From the table, count the number of local extrema observed. Based on EK 1.4.A.3
+    (between every two distinct real zeros there is at least one local extremum), what is the
+    \textbf{minimum possible degree} of $h(t)$? Explain.
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \vspace{2pt}
+    \blank{11cm}
+
+    \item The ride begins and ends at $h = 0$, so $t = 0$ and $t = 60$ are zeros. The table
+    suggests at least one more zero exists. Assuming the polynomial has degree $n$, does
+    $h(t)$ have a global minimum on the domain $[0, 60]$? Use EK 1.4.A.4 in your explanation.
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \vspace{2pt}
+    \blank{11cm}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

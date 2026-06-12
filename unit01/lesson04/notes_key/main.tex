@@ -9,11 +9,137 @@
 \pageheader{Unit 1, Lesson 1.4}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+Students will identify and interpret key characteristics of polynomial functions ---
+degree, leading term, local and global extrema, and points of inflection --- using
+rates of change and graphical behavior.
+\begin{center}
+\writeline \writeline
+\end{center}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\begin{multicols}{2}
+\termblanklong{polynomial function}
+\termblanklong{degree}
+\termblanklong{leading coefficient}
+\termblanklong{local maximum}
+\termblanklong{local minimum}
+\termblanklong{global maximum}
+\termblanklong{global minimum}
+\termblanklong{point of inflection}
+\end{multicols}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+Consider $p(x) = x^3 - 3x$. As $x$ increases from very negative values, the function:
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item falls steeply, then reaches a \textbf{valley} (a low point), then rises
+    \item passes through zero, reaches a \textbf{peak} (a high point), then falls again
+    \item passes through zero a second time and continues falling toward $-\infty$
+\end{itemize}
+\vspace{4pt}
+\textbf{Discussion:} Where are the ``peaks'' and ``valleys''? How many zeros does $p$ have?\\
+Where does the \textit{rate of change} change direction?
+\vspace{4pt}
+\ans{$p(x) = x(x^2-3)$ has zeros at $x = 0, \pm\sqrt{3}$. Local max near $x = -1$; local min near $x = 1$. The rate of change changes direction at the inflection point near $x = 0$.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Polynomial Functions --- Key}
+A \textbf{polynomial function} has the standard form:
+\[
+  p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0
+\]
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item The \textbf{degree} is \ans{$n$} (the highest power of $x$).
+    \item The \textbf{leading term} is \ans{$a_n x^n$}.
+    \item The \textbf{leading coefficient} is \ans{$a_n$}.
+    \item A \textbf{constant function} (e.g.\ $p(x) = 7$) is a polynomial of degree \ans{zero}.
+\end{itemize}
+
+\vspace{4pt}
+\textbf{End behavior:}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+Even degree, positive $a_n$: & \ans{Both ends rise} \\
+Even degree, negative $a_n$: & \ans{Both ends fall} \\
+Odd degree, positive $a_n$:  & \ans{Falls left, rises right} \\
+Odd degree, negative $a_n$:  & \ans{Rises left, falls right} \\
+\end{tabularx}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Local and Global Extrema --- Key}
+\textbf{Local (relative) maximum:} a point where the function switches from
+\ans{increasing} to \ans{decreasing}.\\[4pt]
+\textbf{Local (relative) minimum:} a point where the function switches from
+\ans{decreasing} to \ans{increasing}.\\[4pt]
+\textbf{Global (absolute) maximum:} the \ans{greatest} output value over the entire domain.\\[4pt]
+\textbf{Global (absolute) minimum:} the \ans{least} output value over the entire domain.
+
+\vspace{6pt}
+\textbf{Key Principle (EK 1.4.A.3):} Between every two \ans{distinct real zeros} of a nonconstant polynomial, there must be at least one \ans{local maximum or minimum}.
+
+\vspace{6pt}
+\textbf{Even-degree result (EK 1.4.A.4):} A polynomial of even degree always has either a global \ans{maximum} or a global \ans{minimum} (or both).
+
+\vspace{6pt}
+\textit{Example:} A polynomial has zeros at $x = -2$, $x = 1$, and $x = 4$.\\
+On which intervals between consecutive zeros must a local extremum exist?
+\vspace{4pt}
+\ans{On $(-2, 1)$ and on $(1, 4)$. By EK 1.4.A.3, between each pair of consecutive zeros there is at least one local max or min.}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Points of Inflection --- Key}
+A \textbf{point of inflection} occurs at an input where the \textbf{rate of change} switches from
+\ans{increasing} to \ans{decreasing} (or vice versa).
+
+\vspace{4pt}
+This is the same as saying: the graph changes from \textbf{concave \ans{up}} to
+\textbf{concave \ans{down}} (or vice versa).
+
+\vspace{6pt}
+\textit{Connection to AROC:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Concave up $\Rightarrow$ AROC is \ans{increasing} as $x$ increases.
+    \item Concave down $\Rightarrow$ AROC is \ans{decreasing} as $x$ increases.
+    \item At a point of inflection, AROC transitions from increasing to decreasing (or vice versa).
+\end{itemize}
+
+\vspace{6pt}
+\textit{Example context:} The AROC of a function over $[0,1]$ is $5$, over $[1,2]$ is $8$, and over $[2,3]$ is $4$.\\
+Where is a likely point of inflection? \ans{near $x=2$} \quad Is the graph concave up or down on $[0,2]$? \ans{concave up}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item A polynomial function $f$ has exactly two distinct real zeros. What is the minimum number of local extrema $f$ must have? Explain your reasoning.
+
+    \vspace{4pt}
+    \ans{At least 1 local extremum. By EK 1.4.A.3, between every two distinct real zeros there must be at least one local max or min.}
+
+    \item A polynomial $g$ has degree $4$ and a positive leading coefficient.
+
+    \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+        \item[(a)] Describe the end behavior of $g$.\\[4pt]
+        \ans{Both ends rise (as $x \to \pm\infty$, $g(x) \to +\infty$).}
+        \item[(b)] Does $g$ have a global maximum, a global minimum, or neither? \ans{global minimum}
+    \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

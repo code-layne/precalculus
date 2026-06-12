@@ -11,9 +11,116 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\begin{notesbox}{Practice}
+
+\textbf{1.} The table shows selected values of a function $f$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{sky}
+$x$    & 0  & 2  & 5  & 8  & 12 \\
+\hline
+$f(x)$ & 6  & 14 & 26 & 38 & 50 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of $f$ over $[0,\,5]$. \writeline
+    \item Compute the AROC of $f$ over $[5,\,12]$. \writeline
+    \item Which interval has the greater average rate of change?
+          What does this tell you about the function? \writeline
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{2.} A water tank is draining. At 8:00 a.m.\ it holds 500 gallons; at
+10:00 a.m.\ it holds 320 gallons.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of the water volume over the 2-hour period.
+          Include units. \writeline
+    \item Interpret the sign of your answer in context: what does it mean that the
+          AROC is negative? \writeline
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{3.} A function $p$ has the values: $p(3) = 41$, $p(3.1) = 42.05$,
+$p(3.01) = 41.1005$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of $p$ over $[3,\,3.1]$. \writeline
+    \item Compute the AROC of $p$ over $[3,\,3.01]$. \writeline
+    \item Based on your answers, approximate the rate of change of $p$
+          \emph{at} $x = 3$. \writeline
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{4.} \textbf{True or False} — circle your answer, then explain.
+
+\medskip
+\textit{``A negative average rate of change means the function must be decreasing
+on the entire interval.''}
+
+\medskip
+\textbf{True} \quad / \quad \textbf{False}
+
+\writeline\writeline
+
+\vspace{6pt}
+
+\textbf{5.} (AP-Style) The table below gives values of a function $q$.
+
+\vspace{4pt}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{sky}
+$x$    & 1 & 3 & 5 & 9 \\
+\hline
+$q(x)$ & 8 & 2 & 6 & 10 \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Which of the following best describes the AROC of $q$ over $[1,\,9]$?
+
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+    \item The AROC is $\dfrac{10-8}{9-1} = 0.25$ and is positive.
+    \item The AROC is $\dfrac{8-10}{9-1} = -0.25$ and is negative.
+    \item The AROC is 2 because $q$ increases by 2 on average.
+    \item The AROC cannot be determined from this table.
+\end{enumerate}
+
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\textbf{Extension (optional):} Let $f(x) = x^2$. Compute the AROC of $f$ over the
+interval $[2,\,2+h]$ for $h \neq 0$.
+
+\[
+    \text{AROC} = \frac{f(2+h) - f(2)}{h}
+    = \frac{(2+h)^2 - 4}{h}
+    = \frac{4 + 4h + h^2 - 4}{h}
+    = \frac{4h + h^2}{h}
+    = \hphantom{000}
+\]
+
+What value does this AROC approach as $h$ gets closer and closer to 0?
+
+\writeline
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{remindbox}
+\textbf{Preview:} In Lesson 1.3, we will explore how the AROC behaves differently for
+\emph{linear} vs.\ \emph{quadratic} functions — and what it means for a function to have
+a \emph{constant} rate of change vs.\ a \emph{changing} rate of change.
+\end{remindbox}
 
 \end{document}

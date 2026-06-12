@@ -9,11 +9,147 @@
 \pageheader{Unit 1, Lesson 1.5}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Three Polynomial Functions]{sky}
+You will analyze the following three polynomials throughout this activity.
+\[
+  p(x)=(x+2)(x-1)^2(x-3) \qquad
+  q(x)=x^4-5x^2+4 \qquad
+  r(x)=x^3+2x
+\]
+\end{scenariobox}
+
+\vspace{0.08in}
+
+% --- Tier R ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Work with $p(x)=(x+2)(x-1)^2(x-3)$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item List all zeros of $p(x)$ and state the multiplicity of each.
+
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Multiplicity} \\
+  \hline
+  & \\
+  \hline
+  & \\
+  \hline
+  & \\
+  \hline
+  & \\
+  \hline
+  \end{tabularx}
+
+  \item What is the degree of $p(x)$? \blank{2.5cm}
+        How does the degree relate to the total number of zeros (counting multiplicities)?
+        \writeline
+
+  \item For each real zero, predict whether the graph \emph{crosses} or is \emph{tangent to}
+        (touches and bounces off) the $x$-axis. Fill in the table.
+
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Crosses or Tangent?} \\
+  \hline
+  $x=-2$ & \\[8pt]
+  \hline
+  $x=1$  & \\[8pt]
+  \hline
+  $x=3$  & \\[8pt]
+  \hline
+  \end{tabularx}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% --- Tier A ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete Tier R first, then work with $q(x)=x^4-5x^2+4$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $q(x)$ completely over the reals. (\textit{Hint: let $u=x^2$}.)
+        \writelines{2}
+
+  \item List all real zeros of $q(x)$ and their multiplicities.
+        \writeline
+
+  \item Compare the graph behavior of $p$ and $q$ at their zeros:
+        which zeros cause the graph to cross, and which cause it to touch?
+        \writelines{2}
+
+  \item Apply the algebraic even/odd test to both $p(x)$ and $q(x)$.
+        For each, find $f(-x)$, simplify, and state whether the function is
+        even, odd, or neither.
+
+        $p(-x) = $ \writelines{2}
+
+        $q(-x) = $ \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% --- Tier E ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete Tiers R and A first, then work with $r(x)=x^3+2x$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $r(x)$ by first factoring out the GCF, then solving for all zeros
+        (including complex ones).
+        \writelines{3}
+
+  \item List all zeros of $r(x)$, including complex zeros, and verify that non-real
+        zeros appear as conjugate pairs.
+        \writeline
+
+  \item Determine whether $r(x)$ is even, odd, or neither. Show the full algebraic test.
+        \writelines{2}
+
+  \item \textbf{Successive differences for }$q(x)$: Complete the table below for
+        $q(x)=x^4-5x^2+4$ at equally-spaced inputs, then take successive differences
+        until they are constant. What degree does this confirm?
+
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\linewidth}{|X|X|X|X|X|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $q(x)$ & 1st diff & 2nd diff & 3rd diff \\
+  \hline
+  $-2$ & & & & \\
+  \hline
+  $-1$ & & & & \\
+  \hline
+  $0$  & & & & \\
+  \hline
+  $1$  & & & & \\
+  \hline
+  $2$  & & & & \\
+  \hline
+  $3$  & & & & \\
+  \hline
+  \end{tabularx}
+
+  The \blank{2cm}-th differences are constant, confirming the degree is \blank{2cm}.
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

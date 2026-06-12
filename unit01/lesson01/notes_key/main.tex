@@ -9,11 +9,148 @@
 \pageheader{Unit 1, Lesson 1.1}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Describe how the input and output values of a function vary together, and identify
+        intervals where the function is \ans{increasing} or \ans{decreasing}. \hfill\textit{(LO 1.1.A)}
+  \item Construct a graph representing two quantities varying together in context, and identify
+        where the graph is concave \ans{up} or concave \ans{down}. \hfill\textit{(LO 1.1.B)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\noindent\textbf{\textcolor{navy}{function:}}\\[1pt]
+\ansline{A rule that assigns each input exactly one output.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{domain (independent variable):}}\\[1pt]
+\ansline{The set of all allowable inputs; the independent variable; plotted on the horizontal axis.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{range (dependent variable):}}\\[1pt]
+\ansline{The set of all possible outputs; the dependent variable; plotted on the vertical axis.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{increasing:}}\\[1pt]
+\ansline{$f$ is increasing on an interval if $a < b$ implies $f(a) < f(b)$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{decreasing:}}\\[1pt]
+\ansline{$f$ is decreasing on an interval if $a < b$ implies $f(a) > f(b)$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{concave up:}}\\[1pt]
+\ansline{The rate of change is increasing on that interval; the graph curves upward like a bowl.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{concave down:}}\\[1pt]
+\ansline{The rate of change is decreasing on that interval; the graph curves downward like a hill.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+A car pulls away from a stop sign. Consider two quantities: the car's \textit{speed} and
+the car's \textit{distance from the sign}, both as functions of time.
+
+Without drawing, describe in words what each relationship looks like:
+\ansline{Speed starts at 0 and increases (concave up at first as the car accelerates). Distance also starts at 0 and increases; the graph is concave up because the car covers more ground each second.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Functions \& Covariation}
+A \textbf{function} is a rule that assigns each \ans{input} exactly \ans{one} output.
+
+\medskip
+\textbf{Example 1 (Numerical).} A tank is being filled with water.
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Time $t$ (min)   & 0 & 2 & 4 & 6 \\
+\hline
+Volume $V$ (gal) & 0 & 8 & 16 & 24 \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{itemize}
+  \item The \textbf{independent variable} (input) is \ans{time $t$}.
+  \item The \textbf{dependent variable} (output) is \ans{volume $V$}.
+  \item Domain: \ans{$[0, 6]$} \quad Range: \ans{$[0, 24]$}
+  \item As $t$ increases, $V$ \ans{increases}. The function is \ans{increasing} on $[0, 6]$.
+\end{itemize}
+
+\medskip
+\textbf{Example 2 (Verbal).} A hiker's elevation above sea level starts at 500 ft, rises steeply to
+2{,}400 ft over the first 2 hours, continues rising more gradually to 2{,}800 ft by hour 4, then
+descends back to 500 ft by hour 7.
+
+\begin{itemize}
+  \item Elevation is \textbf{increasing} on the interval \ans{$[0, 4]$}.
+  \item Elevation is \textbf{decreasing} on the interval \ans{$[4, 7]$}.
+  \item The domain of the hiker's elevation function (based on this description) is \ans{$[0, 7]$}.
+\end{itemize}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Increasing, Decreasing, \& Concavity}
+\textbf{Formal Definitions:}
+
+A function $f$ is \textbf{increasing} on an interval if, for any $a < b$ in that interval,
+$f(a)$ \ans{$<$} $f(b)$.
+
+A function $f$ is \textbf{decreasing} on an interval if, for any $a < b$ in that interval,
+$f(a)$ \ans{$>$} $f(b)$.
+
+\medskip
+\textbf{Concavity} describes whether the rate of change is itself increasing or decreasing:
+
+\begin{itemize}
+  \item \textbf{Concave up:} the rate of change is \ans{increasing}
+        (graph curves like a bowl that opens \ans{upward}).
+  \item \textbf{Concave down:} the rate of change is \ans{decreasing}
+        (graph curves like a hill that opens \ans{downward}).
+\end{itemize}
+
+\medskip
+\textbf{Hiker example continued.} The table below shows elevation at each hour.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+Hour $t$          & 0   & 1     & 2     & 3     & 4     & 5     & 6     & 7 \\
+\hline
+Elevation $E$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
+\hline
+Change per hour   & --- & \ans{+1200} & \ans{+700} & \ans{+300} & \ans{+100} & \ans{$-$400} & \ans{$-$1000} & \ans{$-$900} \\
+\hline
+\end{tabular}
+\smallskip
+
+On $[0, 4]$, the changes per hour are \ans{decreasing (1200, 700, 300, 100)}, so the graph is concave \ans{down}.\\
+On $[4, 7]$, the changes per hour are \ans{more negative each hour}, so the graph is concave \ans{down} on $[4,6]$.
+
+\begin{teachernote}
+  On $[4, 7]$: changes are $-400, -1000, -900$. The magnitude increases then slightly decreases at the end ---
+  accept concave down on $[4, 6]$ (becoming steeper) and note the irregularity from $6$ to $7$.
+  The main takeaway: the descent accelerates, which is concave down.
+\end{teachernote}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item For the hiker's elevation function above, state all intervals where $E$ is increasing,
+        all intervals where $E$ is decreasing, and the domain and range.
+
+        Increasing: \ans{$[0, 4]$} \quad Decreasing: \ans{$[4, 7]$}
+
+        Domain: \ans{$[0, 7]$} \quad Range: \ans{$[500, 2800]$}
+
+  \item The graph of a function $g$ is concave up on $[1, 5]$. A classmate says "that means $g$ is
+        increasing on $[1, 5]$." Is the classmate correct? Explain.
+
+        \vspace{0.1in}
+        \ansline{No. Concave up means the rate of change is increasing, not that the function itself is increasing. For example, a function could be decreasing but slowing down (becoming less negative) --- that would be concave up but still decreasing.}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

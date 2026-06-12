@@ -9,11 +9,159 @@
 \pageheader{Unit 1, Lesson 1.5}{Guided Notes --- Answer Key}
 \namedateperiod
 
+\vspace{0.1in}
+
+\begin{objectivebox}
+Students will identify and interpret zeros of polynomial functions (real and complex),
+including multiplicity, and determine whether a polynomial function is even or odd.
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item[\textbullet] \ansline{Identify zeros and multiplicities from factored form.}
+  \item[\textbullet] \ansline{Determine graph behavior (cross vs.\ touch) at each real zero.}
+  \item[\textbullet] \ansline{Test a function for even, odd, or neither algebraically.}
+\end{enumerate}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{zero (root)} \ansline{A value $a$ such that $p(a)=0$.}
+\termblanklong{multiplicity} \ansline{The number of times a linear factor $(x-a)$ is repeated in a polynomial.}
+\termblanklong{complex zero} \ansline{A zero of the form $a+bi$ with $b\neq 0$.}
+\termblanklong{complex conjugate pair} \ansline{Two zeros of the form $a+bi$ and $a-bi$; they always appear together for polynomials with real coefficients.}
+\termblanklong{even function} \ansline{A function satisfying $f(-x)=f(x)$; graph is symmetric about the $y$-axis.}
+\termblanklong{odd function} \ansline{A function satisfying $f(-x)=-f(x)$; graph is symmetric about the origin.}
+\end{vocabbox}
+
+\begin{hookbox}
+Consider $p(x)=(x-2)^2(x+1)$.
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+  \item Where does the graph of $y=p(x)$ \emph{cross} the $x$-axis? \ans{$x=-1$}
+  \item Where does it \emph{touch and bounce} without crossing? \ans{$x=2$}
+  \item What is it about the \emph{exponent} on a factor that tells you which will happen?
+        \ansline{If the exponent (multiplicity) is odd, the graph crosses; if even, it is tangent (touches and bounces).}
+\end{itemize}
+\end{hookbox}
+
+\begin{notesbox}{Zeros and Linear Factors}
+\textbf{Key connection:} For a polynomial $p(x)$, if $p(a) = $ \ans{$0$}, then $a$
+is called a \ans{zero (root)} of $p$, and $(x - a)$ is a \ans{linear} factor of $p$.
+
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\textbf{Multiplicity:} If the factor $(x-a)$ appears \ans{$n$} times, then $a$ has
+multiplicity \ans{$n$}. A polynomial of degree $n$ has exactly \ans{$n$}
+complex zeros (counting multiplicities).
+
+\vspace{0.1in}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Polynomial} & \textbf{Factored Form} & \textbf{Zeros} & \textbf{Multiplicities} \\
+\hline
+$p(x)=(x-2)^2(x+1)$ & already factored & \ans{$x=2,\;x=-1$} & \ans{2 and 1} \\
+\hline
+$q(x)=x^3-x^2-6x$ & \ans{$x(x-3)(x+2)$} & \ans{$0,3,-2$} & \ans{all mult.\ 1} \\
+\hline
+$r(x)=(x+1)^3(x-4)^2$ & already factored & \ans{$x=-1,\;x=4$} & \ans{3 and 2} \\
+\hline
+\end{tabularx}
 \end{notesbox}
+
+\begin{notesbox}{Graph Behavior at Real Zeros}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|l|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Multiplicity} & \textbf{Graph behavior at the zero} & \textbf{Example} \\
+\hline
+Odd (1, 3, 5, \ldots) & \ans{Crosses} the $x$-axis & $(x+1)^1$ in $p(x)$ above \\
+\hline
+Even (2, 4, 6, \ldots) & \ans{Touches/bounces off} the $x$-axis (tangent) & $(x-2)^2$ in $p(x)$ above \\
+\hline
+\end{tabularx}
+
+\vspace{0.1in}
+For $p(x)=(x+2)(x-1)^2(x-3)$, predict the graph's behavior at each zero:
+
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Zero} & \textbf{Multiplicity} & \textbf{Crosses or tangent?} \\
+\hline
+$x = -2$ & \ans{1} & \ans{Crosses} \\
+\hline
+$x = 1$  & \ans{2} & \ans{Tangent (touches, bounces)} \\
+\hline
+$x = 3$  & \ans{1} & \ans{Crosses} \\
+\hline
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Complex Zeros \& Conjugate Pairs}
+\textbf{Complex Conjugate Pairs Theorem:} If $p(x)$ is a polynomial with
+\ans{real} coefficients and $a+bi$ (with $b\neq 0$) is a zero, then
+\ans{$a-bi$} is also a zero of $p$.
+
+\vspace{0.1in}
+\textbf{Example:} Suppose $p(x)$ has real coefficients and $2+3i$ is a zero.
+\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
+  \item The other complex zero must be: \ans{$2-3i$}
+  \item Write the quadratic factor formed by this conjugate pair:\\[4pt]
+        $(x-(2+3i))(x-(2-3i)) = x^2 - $ \ans{$4$}$x + $ \ans{$13$}
+  \item If $p$ also has real zero $x=1$, what is the minimum degree of $p$?
+        \ans{3}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Even and Odd Functions}
+\textbf{Definitions:}
+\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
+  \item $f$ is \textbf{even} if $f(-x) = $ \ans{$f(x)$} for all $x$ in its domain.
+        Graph is symmetric about the \ans{$y$-axis}.
+  \item $f$ is \textbf{odd} if $f(-x) = $ \ans{$-f(x)$} for all $x$ in its domain.
+        Graph is symmetric about the \ans{origin}.
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Algebraic test — steps:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+  \item Replace every $x$ with \ans{$-x$} and simplify.
+  \item Compare the result to \ans{$f(x)$} (even) or \ans{$-f(x)$} (odd).
+  \item If neither equality holds, the function is \ans{neither}.
+\end{enumerate}
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Function} & \textbf{$f(-x) = \ldots$} & \textbf{Even, Odd, or Neither?} \\
+\hline
+$f(x)=x^4-2x^2$ & \ans{$x^4-2x^2 = f(x)$} & \ans{Even} \\
+\hline
+$g(x)=x^3-x$ & \ans{$-x^3+x = -g(x)$} & \ans{Odd} \\
+\hline
+$h(x)=x^2+x$ & \ans{$x^2-x$; not $h(x)$ or $-h(x)$} & \ans{Neither} \\
+\hline
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item A polynomial with real coefficients has zeros $x=4$ (multiplicity 2) and $x=1-i$.
+        \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+          \item List all zeros of this polynomial.
+                \ansline{$x=4$ (mult.\ 2), $x=1-i$, and $x=1+i$ (conjugate pair).}
+          \item What is the minimum degree?  \ans{4}
+          \item At which real zero does the graph touch but not cross the $x$-axis?
+                \ans{$x=4$} (multiplicity 2)
+        \end{enumerate}
+
+  \item Determine whether $k(x)=2x^6-3x^4+x^2$ is even, odd, or neither.
+        Show the algebraic test.
+        \ansline{$k(-x)=2(-x)^6-3(-x)^4+(-x)^2=2x^6-3x^4+x^2=k(x)$.}
+        \ansline{Since $k(-x)=k(x)$, the function is \textbf{even}.}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -9,11 +9,125 @@
 \pageheader{Unit 1, Lesson 1.1}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Hiker's Elevation]{sky}
+\small
+A hiker records their elevation above sea level (in feet) at the end of each hour during a
+7-hour trail hike. The data is shown in the table below.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+\textbf{Elevation} $E(t)$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
+\hline
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item What are the \textbf{domain} and \textbf{range} of $E$ based on the table?
+
+        Domain: \ans{$\{0, 1, 2, 3, 4, 5, 6, 7\}$ or $[0,7]$} \qquad Range: \ans{$\{500, 1700, 2400, 2700, 2800\}$}
+
+  \item On the interval $[0, 4]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        \ans{Increasing}
+
+  \item On the interval $[4, 7]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        \ans{Decreasing}
+
+  \item At what hour does the hiker reach the highest elevation? \ans{Hour 4}
+        What is that elevation? \ans{2,800 ft}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{teachernote}
+Tier R focus: domain, range, and basic increasing/decreasing from a table. Watch for students
+listing the range incorrectly --- they should list the actual output values seen in the table,
+or the interval if treating the function as continuous. Accept either for now; distinguish
+discrete vs.\ continuous in a later lesson.
+\end{teachernote}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Compute the change in elevation per hour:
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Interval & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ & $[6,7]$ \\
+        \hline
+        Change (ft/hr) & \ans{+1200} & \ans{+700} & \ans{+300} & \ans{+100} & \ans{$-$400} & \ans{$-$1000} & \ans{$-$900} \\
+        \hline
+        \end{tabular}
+
+  \item On $[0, 4]$, the rate of change is: \ans{Decreasing}
+
+        Therefore the graph on $[0, 4]$ is concave: \ans{Down}
+
+  \item Which best describes the graph of $E$ on $[0, 4]$? \ans{A --- Rises steeply then more gradually}
+
+  \item Does $E$ ever equal 0 based on the table? \ans{No --- the lowest value shown is 500 ft.}
+        Explain: \ans{All table values are positive (at least 500). Without more data we cannot confirm a zero exists.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{teachernote}
+Tier A focus: computing successive differences to identify concavity. Emphasize that the rate
+of change is a sequence of numbers; if that sequence is decreasing, the graph is concave down.
+Students often want to say "concave up because the function is going up" --- redirect to the
+behavior of the changes, not the function values.
+\end{teachernote}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Speed data:
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+Hour $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+Speed $S(t)$ & 3.5 & 3.0 & 2.5 & 1.8 & 1.2 & 2.0 & 2.8 & 3.2 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[itemsep=8pt]
+  \item Increasing: \ans{$[4, 7]$} \qquad Decreasing: \ans{$[0, 4]$}
+
+  \item When going uphill steeply, speed is relatively \ans{high}. As the trail flattens near the summit,
+        speed \ans{decreases because the effort per foot of elevation gain increases; the hiker slows as the climb gets harder}.
+
+        \vspace{0.05in}
+        \ansline{Speed decreases steadily from 3.5 mph at the start to 1.2 mph at the summit (hour 4), consistent with increasing steepness.}
+
+  \item The elevation function is concave down on $[0, 4]$, meaning the rate of change of elevation
+        is decreasing. \ansline{The hiker gains less elevation per hour as time goes on during the ascent --- the rate of change of elevation is slowing, i.e., the function is increasing but at a decreasing rate.}\\[2pt]
+        \ansline{(Phrased another way: the gain per hour shrinks from 1200 ft/hr down to 100 ft/hr.)}
+
+  \item \ansline{The rate of change of elevation corresponds to the steepness of the trail. As elevation gain per hour decreases (concave down), the hiker's speed also decreases --- both functions decrease on $[0,4]$. They are inversely related to effort: as the trail gets harder (more elevation per mile), the hiker slows.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{teachernote}
+Tier E pushes students to connect two covarying functions (elevation and speed) and interpret
+concavity in terms of real-world meaning. Strong responses will use phrases like "rate of change
+of elevation is decreasing" rather than just "the graph curves down."
+\end{teachernote}
 
 \end{document}

@@ -9,11 +9,143 @@
 \pageheader{Unit 1, Lesson 1.3}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item \ansline{Determine the AROC of a linear function and explain why it is constant.}
+  \item \ansline{Compute first and second differences for a quadratic function and describe the pattern.}
+  \item \ansline{Use the AROC pattern to determine whether a graph is concave up or concave down.}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{secant line}
+\ansline{The line through two points on a graph, $(a,f(a))$ and $(b,f(b))$; its slope equals the AROC on $[a,b]$.}
+
+\termblanklong{first differences}
+\ansline{The successive AROCs computed over consecutive equal-length intervals.}
+
+\termblanklong{second differences}
+\ansline{The differences of consecutive first differences; constant for quadratic functions.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+We computed one AROC last lesson. What if we compute many AROCs in a row for $f(x) = x^2$?
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$f(x)$ & 0 & 1 & 4 & 9 & 16 \\
+\hline
+\end{tabular}
+
+\smallskip
+What pattern do you notice in the successive AROCs?
+
+\ansline{The AROCs are 1, 3, 5, 7 --- they increase by 2 each time (an arithmetic pattern).}
+\ansline{The second differences are all 2, which is constant.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{AROC of Linear Functions}
+Use $f(x) = 2x + 1$. Complete the table.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Interval} & $f(\text{left})$ & $f(\text{right})$ & \textbf{AROC} \\
+\hline
+$[0, 1]$ & $f(0) = 1$ & $f(1) = 3$ & \ans{2} \\
+$[1, 2]$ & $f(1) = 3$ & $f(2) = 5$ & \ans{2} \\
+$[2, 3]$ & $f(2) = 5$ & $f(3) = 7$ & \ans{2} \\
+$[3, 4]$ & $f(3) = 7$ & $f(4) = 9$ & \ans{2} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\smallskip
+\textbf{Conclusion:} For a linear function, the AROC is \ans{constant (always equal to the slope)}.
+
+This is because the slope of any secant line on a linear graph equals \ans{the slope of the line itself}.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{AROC of Quadratic Functions}
+Use $f(x) = x^2$. Complete the table and the second-differences column.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Interval} & \textbf{AROC (first difference)} & \textbf{Change in AROC (second difference)} \\
+\hline
+$[0, 1]$ & \ans{1} & \\
+$[1, 2]$ & \ans{3} & \ans{2} \\
+$[2, 3]$ & \ans{5} & \ans{2} \\
+$[3, 4]$ & \ans{7} & \ans{2} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\smallskip
+\textbf{Conclusion:} For a quadratic function, the second differences are \ans{constant (nonzero)}.
+
+The first differences form a \ans{linear (arithmetic)} pattern.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Secant Lines \& Concavity}
+\textbf{Secant line:} The line connecting two points $(a, f(a))$ and $(b, f(b))$ on a graph.
+
+Its slope $= \dfrac{f(b)-f(a)}{b-a} =$ \ans{the AROC on $[a,b]$}
+
+\medskip
+\textbf{Concavity from AROC pattern:}
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+  \item If the AROCs are \textit{increasing} as $x$ increases, the graph is \ans{concave up}.
+  \item If the AROCs are \textit{decreasing} as $x$ increases, the graph is \ans{concave down}.
+\end{itemize}
+
+\medskip
+\textit{Example:} For $f(x) = x^2$, the AROCs over unit intervals are $1, 3, 5, 7, \ldots$
+
+These are \ans{increasing}, so the graph is \ans{concave up}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+\item For $g(x) = -x^2 + 4x$, compute the AROC on $[0,1]$, $[1,2]$, $[2,3]$, $[3,4]$.
+Then compute the second differences. Is the graph concave up or concave down?
+
+\medskip
+AROCs: $g(0)=0, g(1)=3, g(2)=4, g(3)=3, g(4)=0$.
+
+AROC on $[0,1]$: \ans{3}; $[1,2]$: \ans{1}; $[2,3]$: \ans{$-1$}; $[3,4]$: \ans{$-3$}.
+
+Second differences: \ans{$-2$} (constant). Graph is \ans{concave down}.
+
+\item A function $p(x)$ has AROC values $12, 9, 6, 3$ on consecutive equal-length intervals.
+Are the second differences positive or negative? What does this tell you about the concavity?
+
+\medskip
+Second differences: \ans{$-3$} (negative). The AROCs are decreasing, so the graph is \ans{concave down}.
+
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

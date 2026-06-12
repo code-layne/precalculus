@@ -9,11 +9,108 @@
 \pageheader{Unit 1, Lesson 1.3}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[A Ball in Free Fall]{sky}
+A ball is dropped from a height of 144 feet. Its height above the ground (in feet) is given by
+$h(t) = 144 - 16t^2$, where $t$ is time in seconds. The table below shows heights at half-second intervals.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$t$ (sec)   & 0   & 0.5 & 1.0 & 1.5 & 2.0  & 2.5  & 3.0 \\
+\hline
+$h(t)$ (ft) & 144 & 140 & 128 & 108 & 80   & 44   & 0   \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Compute the AROC of height over each 0.5-second interval.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Interval} & \textbf{AROC (ft/sec)} \\
+\hline
+$[0,\; 0.5]$    & \ans{$-8$} \\
+$[0.5,\; 1.0]$  & \ans{$-24$} \\
+$[1.0,\; 1.5]$  & \ans{$-40$} \\
+$[1.5,\; 2.0]$  & \ans{$-56$} \\
+$[2.0,\; 2.5]$  & \ans{$-72$} \\
+$[2.5,\; 3.0]$  & \ans{$-88$} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.1in}
+Are the AROCs increasing or decreasing? \ans{Decreasing (becoming more negative)}
+
+\vspace{0.08in}
+What does this tell you about the ball's speed as it falls? \ansline{The ball is speeding up --- the magnitude of the AROC (speed) grows with each interval, meaning the ball falls faster and faster.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Using the AROCs from Tier R, compute the second differences.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Interval} & \textbf{AROC (first diff.)} & \textbf{Change in AROC (second diff.)} \\
+\hline
+$[0,\; 0.5]$    & \ans{$-8$}  & \\
+$[0.5,\; 1.0]$  & \ans{$-24$} & \ans{$-16$} \\
+$[1.0,\; 1.5]$  & \ans{$-40$} & \ans{$-16$} \\
+$[1.5,\; 2.0]$  & \ans{$-56$} & \ans{$-16$} \\
+$[2.0,\; 2.5]$  & \ans{$-72$} & \ans{$-16$} \\
+$[2.5,\; 3.0]$  & \ans{$-88$} & \ans{$-16$} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.1in}
+Are the second differences constant? \ans{Yes}
+
+\vspace{0.08in}
+What function type does this constant second difference confirm for $h(t)$? \ansline{Quadratic --- constant nonzero second differences are the hallmark of a quadratic function.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Use the constant second difference you found to \textit{predict} the AROC on $[3.0, 3.5]$ without computing from the formula. Then verify.
+
+\vspace{0.06in}
+\textbf{Prediction:} The AROC on $[2.5, 3.0]$ is \ans{$-88$}. The constant second difference is \ans{$-16$}.
+
+Therefore, I predict the AROC on $[3.0, 3.5]$ is \ans{$-88 + (-16) = -104$ ft/sec}.
+
+\vspace{0.1in}
+\textbf{Verification:} $h(3.5) = 144 - 16(3.5)^2 = 144 - 196 = -52$ ft. Since this is below ground, the ball has already landed, but the formula gives the AROC as $\dfrac{-52 - 0}{0.5} = -104$ ft/sec.
+
+Actual AROC: \ans{$-104$ ft/sec} \quad Does it match your prediction? \ans{Yes}
+
+\vspace{0.1in}
+\textbf{Physics connection:}
+
+\ansline{Gravity provides a constant downward acceleration (approximately $32$ ft/sec$^2$). A constant acceleration means the velocity changes by the same amount in each equal time interval, which produces constant second differences in position data.}
+\end{tcolorbox}
 
 \end{document}

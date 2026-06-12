@@ -9,11 +9,88 @@
 \pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=12pt]
+
+\item The table below shows values of a function $f$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 1  & 2  & 3  & 4  & 5  & 6  \\
+\hline
+$f(x)$ & 10 & 16 & 20 & 22 & 21 & 17 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Domain: \ans{$\{1, 2, 3, 4, 5, 6\}$ (or $[1, 6]$ if treated as continuous)}
+  \item Range: \ans{$\{10, 16, 20, 21, 22, 17\}$ (or $[10, 22]$ if continuous)}
+  \item Increasing: \ans{$[1, 4]$} \quad Decreasing: \ans{$[4, 6]$}
+\end{enumerate}
+
+\begin{teachernote}
+For (a) and (b), accept discrete set notation or interval notation. The key concept is that
+domain = inputs and range = outputs actually present/possible.
+\end{teachernote}
+
+\item Ball height: max 64 ft at $t = 2$, zeros at $t = 0$ and $t = 4$.
+
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Increasing on \ans{$[0, 2]$}
+  \item Decreasing on \ans{$[2, 4]$}
+  \item Zeros: \ans{$t = 0$ and $t = 4$} (where height $= 0$)
+\end{enumerate}
+
+\item \textbf{Rate of Change Preview.}
+
+\[
+  \frac{f(3) - f(1)}{3 - 1} = \frac{{\color{keyred}\mathbf{20}} - {\color{keyred}\mathbf{10}}}{{\color{keyred}\mathbf{2}}} = {\color{keyred}\mathbf{5}}
+\]
+
+The average rate of change from $x=1$ to $x=3$ is \ans{5 units per unit of input}.
+
+\begin{teachernote}
+Students compute $(20-10)/(3-1) = 10/2 = 5$. This is a preview of the AROC formula they will
+formalize in Lesson 1.2.
+\end{teachernote}
+
+\item False. \ansline{Concave up means the rate of change is increasing, not that the function is increasing. A function can be decreasing and concave up (e.g., falling more and more slowly toward a minimum). Example: $f(x) = x^2$ near $x = -2$ is decreasing on $(-\infty, 0)$ but concave up.}
+
+\item \textbf{AP-Style Multiple Choice.} \ans{(B) Increasing and concave down.}
+
+\begin{teachernote}
+The function is increasing (outputs grow as inputs grow) but the amount of increase gets smaller
+--- that means the rate of change is decreasing, which is concave down. This is the same pattern
+as the uphill hiker slowing near the summit.
+\end{teachernote}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\textbf{Extension --- Key.}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item \ans{Increasing on $[0,2]$ and $[3,5]$; constant on $[2,3]$; never decreasing.}
+  \item \ans{Concave down on $[0,2]$ (rate of change is decreasing --- the gain per hour shrinks).\\
+        Concave up on $[3,5]$ (rate of change is increasing --- the gain per hour grows).\\
+        On $[2,3]$ the function is constant (rate of change = 0), so concavity is neither.}
+  \item \ans{At $t=2$: rate of change drops from positive to zero (the function stops increasing).\\
+        At $t=3$: rate of change jumps from zero back to positive (the function resumes increasing).\\
+        These are points where the concavity analysis changes --- the function has a "corner" shape.}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{reflectionbox}
+\textbf{Lesson Preview.} In Lesson 1.2, we will formalize the idea of \textit{rate of change}
+and compute it precisely --- seeing exactly how fast a function's output changes per unit of input.
+Problem 3 above gave you a first look. Come ready to connect that computation to the ideas of
+increasing, decreasing, and concavity from today.
+\end{reflectionbox}
 
 \end{document}
