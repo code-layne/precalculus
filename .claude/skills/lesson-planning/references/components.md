@@ -8,7 +8,8 @@ summarize the pattern, but the live project is authoritative. For macros and box
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [Guided notes](#guided-notes) · [Activity](#activity) · [Exit ticket](#exit-ticket) ·
-[Homework](#homework) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline)
+[Homework](#homework) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline) ·
+[Unit cover](#unit-cover) · [Sample test & key](#sample-test--key)
 
 General rules:
 - Student components preamble with `-article` + `-boxes`; keys with `-article` + `-key`.
@@ -30,8 +31,7 @@ AP tags and list review topics):
    Selecting Statistical Methods"). Right: "Key Understandings" paraphrased from the EKs.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `fixedskillbox{sky}`; left lists the
-   reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
+5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); left lists the reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
 6. **Hook** — `skillbox{sky}`: the entry question or scenario.
 7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{sky}` with `\begin{multicols}{2}`;
    the worked instructional progression, bolding the questions you'll pose.
@@ -122,3 +122,25 @@ There is no key toggle — every key is a separate file under `<comp>_key/`:
 - Use the `teachernote` environment for teacher-only guidance (pacing, common errors).
 - Because the key matches the blank line-for-line, the two paginate identically — verify by
   building both and comparing.
+
+## Unit cover
+
+`unit_cover/main.tex` — **required for every unit**. A standalone full-page cover sheet that
+appears at the front of the student and teacher unit packets. It is compiled by `make _unit_cover`
+(run latexmk with `-outdir=target/…`; PDF lands in `target/compiled/UNIT/unit_cover.pdf`).
+No PDF is committed to the source tree — it compiles fresh like a lesson component.
+
+Structure (match `unit01/unit_cover/main.tex` and the other units exactly):
+- Full-bleed navy banner (TikZ): course name, teacher name/year, unit number + title.
+- Unit overview `tcolorbox` (sky/navy): 4–6 sentence summary of the unit arc.
+- Lessons table in a `skillbox{goldbox}`: columns `#`, `\textbf{Title}`, `Focus` — one row per
+  lesson, `\arraystretch=1.6`.
+- Standards/LOs table in a `skillbox{greenbox}`: `\textbf{LO code}` + one-line description
+  for every AP learning objective the unit covers.
+
+## Sample test & key
+
+`sample_test/` and `sample_test_key/` — **required for every unit**. Create each directory with
+only a `.gitkeep` file. The teacher drops the final PDF directly into the directory; no `.tex`
+source is authored here. The `unit.mk` `_sample_test` rule copies `sample_test/main.pdf` to
+`target/compiled/` when present.
