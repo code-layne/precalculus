@@ -19,55 +19,169 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will determine how average rates of change behave
+    for linear and quadratic functions, connecting the pattern of successive AROCs to the
+    concavity of the graph.
+    \hfill\textit{\small Skills: MP 3.B, 3.C}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 3.B} --- Apply numerical results in a mathematical or applied context.
+
+\medskip
+\textbf{MP 3.C} --- Support conclusions with a logical rationale or appropriate data. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item For a linear function, the AROC is constant over \textit{any} interval. (1.3.A.1)
+  \item For a quadratic function, successive equal-length AROCs form a linear pattern. (1.3.A.2)
+  \item The AROC over $[a,b]$ equals the slope of the secant line through $(a,f(a))$ and $(b,f(b))$. (1.3.A.3)
+  \item Linear functions: the AROCs change at a rate of zero (second differences $= 0$). (1.3.B.1)
+  \item Quadratic functions: the AROCs change at a constant nonzero rate (second differences constant). (1.3.B.2)
+  \item Increasing AROCs $\Rightarrow$ concave up; decreasing AROCs $\Rightarrow$ concave down. (1.3.B.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+secant line       & The line through two points on a graph, $(a, f(a))$ and $(b, f(b))$; its slope equals the AROC over $[a,b]$. \\
+first differences & The successive AROCs computed over consecutive equal-length intervals. \\
+second differences & The differences of consecutive first differences; constant for quadratic functions. \\
+constant rate of change & A rate that does not vary over any interval; characteristic of linear functions. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached spiral review.
+            Skills reviewed: computing AROC (Lesson 1.2), slope of a line,
+            distinguishing linear from quadratic functions.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
         \end{minipage}
     \end{tabularx}
-\end{fixedskillbox}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    We computed one AROC last lesson.
+    \textbf{What if we compute many in a row for $f(x) = x^2$?}
+
+    \smallskip
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $x$    & 0 & 1 & 2 & 3 & 4 \\
+    \hline
+    $f(x)$ & 0 & 1 & 4 & 9 & 16 \\
+    \hline
+    \end{tabular}
+
+    \smallskip
+    Compute the AROC on $[0,1]$, $[1,2]$, $[2,3]$, $[3,4]$.
+    \textit{Discussion:} ``What pattern do you notice in those four numbers?
+    What do you think the AROC on $[4,5]$ will be?''
+
+    \medskip
+    Use student responses to motivate the ideas of \emph{first differences} and \emph{second differences}.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Part 1: AROC of Linear Functions} (10 min)
+
+Use $f(x) = 2x + 1$. Build a table together on the board:
+
+\smallskip
+\begin{tabular}{|c|c|c|}
+\hline
+Interval & $\Delta f$ & AROC \\
+\hline
+$[0,1]$ & $3-1=2$ & 2 \\
+$[1,2]$ & $5-3=2$ & 2 \\
+$[2,3]$ & $7-5=2$ & 2 \\
+\hline
+\end{tabular}
+\smallskip
+
+Ask: \textbf{``Why is the AROC always the same for a linear function?''}
+(The slope of the secant line between any two points on a line is the slope of the line.)
+
+Second differences = $2 - 2 = 0$: linear $\Rightarrow$ zero second differences.
+
+\columnbreak
+
+\textbf{Part 2: AROC of Quadratic Functions} (12 min)
+
+Use $f(x) = x^2$. First differences (AROCs over unit intervals):
+$1, 3, 5, 7, \ldots$ --- ask: \textbf{``What kind of pattern is this?''}
+
+Second differences: $3-1=2$, $5-3=2$, $7-5=2$ --- constant.
+
+\textit{Key takeaway:} For a quadratic function the first differences form a linear (arithmetic) sequence; the second differences are constant and nonzero.
+
+\textbf{Part 3: Secant Lines \& Concavity} (8 min)
+
+Secant line through $(1,1)$ and $(3,9)$: slope $= \frac{9-1}{3-1} = 4$.
+This is exactly the AROC on $[1,3]$.
+
+\textbf{Concavity connection:} Since the first differences of $f(x)=x^2$ are increasing ($1 < 3 < 5 < 7$), the graph is \emph{concave up}. If first differences were decreasing, the graph would be concave down.
+
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and the activity, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Students compute $f(b) - f(a)$ but forget to divide by $b - a$.
+        Cold-call: ``The change in output from $x=2$ to $x=4$ is 12. What is the AROC?''
+  \item \textbf{Common error:} Students think a quadratic AROC is constant (confusing with linear).
+        Ask: ``Are your first differences for $x^2$ the same each time? What about the \emph{differences} of those differences?''
+  \item \textbf{Notation:} Watch for students writing ``AROC = 3, 5, 7'' without labeling intervals.
+  \item \textbf{Cold-call:} ``How do you know from a table alone whether a function is linear or quadratic?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Falling Ball} in leveled tiers.
+All tiers use height data from $h(t) = 144 - 16t^2$ at half-second intervals.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Compute the AROC of height over each 0.5-second interval.
+        Identify whether AROCs are increasing or decreasing. Interpret what this says about the ball's speed.
+  \item \textbf{Tier A (Apply):} Compute first differences and second differences. Show second differences are constant.
+        Identify the function type from this pattern.
+  \item \textbf{Tier E (Extend):} Use the constant second difference to predict the AROC on $[3.0, 3.5]$
+        without computing from the formula. Verify. Connect constant second differences to constant acceleration.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item A table of values for $h(x)$: compute consecutive AROCs, check second differences, identify function type.
+  \item For a linear function with AROC $= 4$ on $[2,5]$: state the AROC on $[5,10]$ and justify.
+\end{enumerate}
+\textbf{Assessment note:} Look for students explaining \textit{why} the AROC is constant for linear functions
+(not just observing that it is). Quadratic identification should cite constant second differences, not just guess.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems --- constant AROC verification for a linear function, first and second differences
+for a quadratic, table-based function-type identification, concavity reasoning from AROC patterns, and one
+AP-style MC using a table of values.
+
+\textbf{Extension (optional):} Students explore $f(x) = x^3$ and compute first, second, and third differences,
+predicting what function type governs the second differences.
+
+\textbf{Preview:} Next lesson, we study polynomial functions more broadly and connect a polynomial's degree
+to the number of differences needed to reach a constant.
 \end{skillbox}
 \end{document}

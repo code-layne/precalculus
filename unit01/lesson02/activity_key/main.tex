@@ -11,9 +11,116 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[City Population Data]{sky}
+The table below shows the population (in thousands) of a city over several decades.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|C{2.2cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Year}       & 1970 & 1980 & 1990 & 2000 & 2010 & 2020 \\
+\hline
+\textbf{Pop.\ (thousands)} & 120  & 145  & 178  & 221  & 198  & 215  \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+Let $P(t)$ denote the population (in thousands) in year $t$.
+\end{scenariobox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{R1.} AROC over $[1970,\,1990]$:
+\[
+    \text{AROC} = \frac{P(1990) - P(1970)}{1990 - 1970}
+    = \frac{178 - 120}{20}
+    = \frac{58}{20} = \ans{2.9} \text{ thousands per year}
+\]
+
+\textbf{R2.} AROC over $[1990,\,2010]$:
+\[
+    \text{AROC} = \frac{P(2010) - P(1990)}{2010 - 1990}
+    = \frac{198 - 178}{20}
+    = \frac{20}{20} = \ans{1} \text{ thousand per year}
+\]
+
+\textbf{R3.} \ans{1970--1990 had faster growth.} The AROC was 2.9 thousand/year during
+1970--1990 vs.\ only 1 thousand/year during 1990--2010. A larger positive AROC indicates
+faster growth.
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{A1.} AROC by decade:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.0cm}|C{5.5cm}|C{3.0cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Decade} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
+\hline
+1970 -- 1980 & $\dfrac{145-120}{10}$ & \ans{2.5} \\
+\hline
+1980 -- 1990 & $\dfrac{178-145}{10}$ & \ans{3.3} \\
+\hline
+1990 -- 2000 & $\dfrac{221-178}{10}$ & \ans{4.3} \\
+\hline
+2000 -- 2010 & $\dfrac{198-221}{10}$ & \ans{$-$2.3} \\
+\hline
+2010 -- 2020 & $\dfrac{215-198}{10}$ & \ans{1.7} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{A2.} Greatest growth: \ans{1990--2000} (AROC $= 4.3$ thousand/year).
+
+\textbf{A3.} Negative decade: \ans{2000--2010}. A negative AROC means \ans{the population
+decreased — as the year increased, the population went down (from 221 to 198 thousand).}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{E1.} AROC near $t = 2010$:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.2cm}|C{5.5cm}|C{3.2cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
+\hline
+$[2005,\;2010]$ & $\dfrac{198-210}{5}$ & \ans{$-$2.4} \\
+\hline
+$[2008,\;2010]$ & $\dfrac{198-206}{2}$ & \ans{$-$4} \\
+\hline
+$[2009,\;2010]$ & $\dfrac{198-200}{1}$ & \ans{$-$2} \\
+\hline
+$[2009.5,\;2010]$ & $\dfrac{198-199}{0.5}$ & \ans{$-$2} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{E2.} The AROC appears to approach approximately \ans{$-$2 thousand/year}.
+
+\textbf{E3.} \ans{Limitation: we only have discrete data points, so we can't actually
+shrink the interval to zero — there are no data values between the given years. An interval
+of length 0 would require dividing by zero, which is undefined. In calculus, the limit
+of these AROCs (as the interval length approaches 0) is the derivative, but with discrete
+data we can only approximate it.}
+\end{tcolorbox}
 
 \end{document}

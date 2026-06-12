@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% ── TITLE SLIDE ──────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -12,15 +12,171 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
     {\color{white}\bfseries\LARGE Rates of Change}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 1}
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 1: Polynomial and Rational Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: The Highway Problem}
+  \sectionlabel[goldacc]{Think About It}
+
+  \vspace{0.3cm}
+  {\large\bfseries You're driving on the highway.}
+
+  \vspace{0.5cm}
+  Your GPS says your \textbf{average speed} over the last hour was \textbf{62 mph}.
+
+  \vspace{0.6cm}
+  \begin{itemize}
+    \setlength{\itemsep}{10pt}
+    \item Were you going \emph{exactly} 62 mph the whole time?
+    \item What does ``average speed'' actually mean?
+    \item How is this related to the functions we study?
+  \end{itemize}
+
+  \vspace{0.6cm}
+  {\color{navy}\textit{Average speed = one constant speed that covers the same distance
+  in the same time.}}
+\end{frame}
+
+% ── AROC DEFINITION ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Average Rate of Change (AROC)}
+  \sectionlabel{Definition}
+
+  The \textbf{average rate of change} of $f$ over $[a,b]$:
+
+  \vspace{0.3cm}
+  \[
+      \text{AROC} = \frac{\Delta f}{\Delta x} = \frac{f(b)-f(a)}{b-a}
+  \]
+
+  \vspace{0.2cm}
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item \textbf{Numerator} $= f(b)-f(a)$: change in \emph{output}
+    \item \textbf{Denominator} $= b-a$: change in \emph{input}
+    \item Equals the slope of the \textbf{secant line} through $(a,f(a))$ and $(b,f(b))$
+    \item Positive AROC $\Rightarrow$ output and input change in the \emph{same} direction
+    \item Negative AROC $\Rightarrow$ output and input change in \emph{opposite} directions
+  \end{itemize}
+\end{frame}
+
+% ── WORKED EXAMPLE FROM TABLE ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Computing AROC from a Table}
+  \sectionlabel{Worked Example}
+
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $x$ & 1 & 2 & 4 & 7 \\
+  \hline
+  $h(x)$ & 3 & 7 & 11 & 20 \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.5cm}
+  \textbf{Find the AROC of $h$ over $[1,\,4]$:}
+
+  \[
+      \text{AROC} = \frac{h(4)-h(1)}{4-1} = \frac{11-3}{3} = \frac{8}{3} \approx 2.67
+  \]
+
+  \vspace{0.3cm}
+  \textbf{Interpretation:} On average, for every 1-unit increase in $x$, $h$ increases
+  by about $2.67$ units.
+
+  \vspace{0.4cm}
+  \textbf{Your turn:} Find the AROC of $h$ over $[2,\,7]$.
+\end{frame}
+
+% ── APPROXIMATING ROC AT A POINT ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Approximating Rate of Change at a Point}
+  \sectionlabel{Shrinking Intervals}
+
+  \textbf{Question:} What is the rate of change of $h$ \emph{exactly} at $x = 2$?
+
+  \vspace{0.3cm}
+  Use successively smaller intervals:
+
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|}
+  \hline
+  \textbf{Interval} & \textbf{AROC} \\
+  \hline
+  $[2,\;2.5]$ & $\dfrac{9-7}{0.5} = 4$ \\
+  \hline
+  $[2,\;2.1]$ & $\dfrac{7.4-7}{0.1} = 4$ \\
+  \hline
+  $[2,\;2.01]$ & $\dfrac{7.04-7}{0.01} = 4$ \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.4cm}
+  As the interval shrinks, AROC $\to$ \textbf{4}.
+  This approximates the \textbf{rate of change at} $x = 2$.
+
+  \vspace{0.2cm}
+  {\color{navy}\small (In calculus, this limiting value is called the \emph{derivative}.)}
+\end{frame}
+
+% ── SIGN OF ROC ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Sign of the Rate of Change}
+  \sectionlabel{Positive vs.\ Negative}
+
+  \vspace{0.3cm}
+  \begin{columns}[t]
+  \column{0.48\textwidth}
+    \textbf{\color{greenacc}Positive AROC}\\[6pt]
+    As $x$ increases, $f(x)$ \textbf{increases}.\\[4pt]
+    The two quantities change in the \emph{same direction}.\\[12pt]
+    \textit{Examples:}
+    \begin{itemize}
+      \item Temperature rising as time passes
+      \item Revenue growing with more units sold
+    \end{itemize}
+
+  \column{0.48\textwidth}
+    \textbf{\color{redacc}Negative AROC}\\[6pt]
+    As $x$ increases, $f(x)$ \textbf{decreases}.\\[4pt]
+    The two quantities change in \emph{opposite directions}.\\[12pt]
+    \textit{Examples:}
+    \begin{itemize}
+      \item Elevation decreasing as you walk downhill
+      \item Tank emptying as time passes
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ── CLASS PRACTICE ────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \sectionlabel[goldacc]{Try These}
+
+  \vspace{0.2cm}
+  \textbf{1.} A function $f$ has $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$.
+
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item[(a)] Compute the AROC of $f$ over $[2,\,5]$.
+    \item[(b)] Approximate the rate of change at $x=5$ using the interval $[5,\,5.1]$.
+  \end{itemize}
+
+  \vspace{0.5cm}
+  \textbf{2.} The AROC of a function $g$ from $x=0$ to $x=3$ is $-4$.
+
+  Describe in words how $g$'s output changes on this interval.
+
+  \vspace{0.5cm}
+  \textbf{3.} Using the population table from the activity, which decade had the
+  greatest rate of growth? How do you know?
 \end{frame}
 
 \end{document}

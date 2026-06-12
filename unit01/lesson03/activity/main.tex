@@ -9,11 +9,112 @@
 \pageheader{Unit 1, Lesson 1.3}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[A Ball in Free Fall]{sky}
+A ball is dropped from a height of 144 feet. Its height above the ground (in feet) is given by
+$h(t) = 144 - 16t^2$, where $t$ is time in seconds. The table below shows heights at half-second intervals.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$t$ (sec)   & 0   & 0.5 & 1.0 & 1.5 & 2.0  & 2.5  & 3.0 \\
+\hline
+$h(t)$ (ft) & 144 & 140 & 128 & 108 & 80   & 44   & 0   \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Compute the AROC of height over each 0.5-second interval.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Interval} & \textbf{AROC (ft/sec)} \\
+\hline
+$[0,\; 0.5]$    & \blank{3cm} \\
+$[0.5,\; 1.0]$  & \blank{3cm} \\
+$[1.0,\; 1.5]$  & \blank{3cm} \\
+$[1.5,\; 2.0]$  & \blank{3cm} \\
+$[2.0,\; 2.5]$  & \blank{3cm} \\
+$[2.5,\; 3.0]$  & \blank{3cm} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.1in}
+Are the AROCs increasing or decreasing? \blank{4cm}
+
+\vspace{0.08in}
+What does this tell you about the ball's speed as it falls? \writeline \writeline
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Using the AROCs from Tier R, compute the second differences.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Interval} & \textbf{AROC (first diff.)} & \textbf{Change in AROC (second diff.)} \\
+\hline
+$[0,\; 0.5]$    & \blank{2.5cm} & \\
+$[0.5,\; 1.0]$  & \blank{2.5cm} & \blank{2.5cm} \\
+$[1.0,\; 1.5]$  & \blank{2.5cm} & \blank{2.5cm} \\
+$[1.5,\; 2.0]$  & \blank{2.5cm} & \blank{2.5cm} \\
+$[2.0,\; 2.5]$  & \blank{2.5cm} & \blank{2.5cm} \\
+$[2.5,\; 3.0]$  & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.1in}
+Are the second differences constant? \blank{2cm}
+
+\vspace{0.08in}
+What function type does this constant second difference confirm for $h(t)$? \writeline
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Use the constant second difference you found to \textit{predict} the AROC on $[3.0, 3.5]$ without computing from the formula. Then verify.
+
+\vspace{0.06in}
+\textbf{Prediction:} The AROC on $[2.5, 3.0]$ is \blank{2cm}. The constant second difference is \blank{2cm}.
+
+Therefore, I predict the AROC on $[3.0, 3.5]$ is \blank{3cm}.
+
+\vspace{0.1in}
+\textbf{Verification:} Compute $h(3.5)$ using the formula and find the actual AROC on $[3.0, 3.5]$.
+
+\vspace{0.5in}
+Actual AROC: \blank{3cm} \quad Does it match your prediction? \blank{2cm}
+
+\vspace{0.1in}
+\textbf{Physics connection:} In words, explain why the second differences for a freely falling
+object are constant. (\textit{Hint: What quantity in physics is constant during free fall?})
+
+\writeline
+\writeline
+\writeline
+\end{tcolorbox}
 
 \end{document}

@@ -11,9 +11,131 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\textbf{LO 1.2.A:} Compare the rates of change at two points using average rates of change
+near the points.\quad \writeline
+
+\textbf{LO 1.2.B:} Describe how two quantities vary together at different points and over
+different intervals of a function.\quad \writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{average rate of change (AROC)}
+\termblanklong{rate of change at a point}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\textit{You're driving on the highway. Your GPS says your average speed over the last
+hour was 62 mph. Were you always going exactly 62 mph? What does ``average'' mean here?}
+
+\medskip
+The average speed is the \blank{4cm} speed that covers the \blank{3cm} distance in the
+\blank{2.5cm} time. This is the key idea behind average rate of change.
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Average Rate of Change}
+The \textbf{average rate of change (AROC)} of a function $f$ over the interval $[a,b]$ is:
+
+\[
+    \text{AROC} = \frac{\Delta f}{\Delta x}
+    = \frac{\hspace{2.2cm}}{\hspace{2.2cm}}
+    = \frac{f(b) - f(a)}{b - a}
+\]
+
+\vspace{4pt}
+Label: the numerator represents \blank{5cm}; the denominator represents \blank{5cm}.
+
+\medskip
+Geometrically, the AROC equals the slope of the \blank{3.5cm} line through
+$(a,\,f(a))$ and $(b,\,f(b))$.
+
+\medskip\textbf{Worked Example.} The table gives values of a function $h$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{sky}
+$x$    & 1  & 2  & 4  & 7 \\
+\hline
+$h(x)$ & 3  & 7  & 11 & 20 \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Compute the AROC of $h$ over $[1,\,4]$:
+\[
+    \text{AROC} = \frac{h(\phantom{x}) - h(\phantom{x})}{\phantom{x} - \phantom{x}}
+    = \frac{\hspace{1cm} - \hspace{1cm}}{\hspace{1cm} - \hspace{1cm}}
+    = \hspace{1.5cm}
+\]
+
+Interpretation: for every 1-unit increase in $x$, $h$ increases by approximately
+\blank{2cm}.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Approximating Rate of Change at a Point}
+The AROC over a \textbf{small} interval containing $x = c$ approximates the
+\textbf{rate of change at the point} $x = c$.
+
+\medskip
+\textbf{Example.} Use successively smaller intervals to approximate the rate of change of
+$h$ at $x = 2$, given additional values: $h(2) = 7$, $h(2.5) = 9$, $h(2.1) = 7.4$,
+$h(2.01) = 7.04$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.8cm}|C{4.5cm}|C{3.8cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC value} \\
+\hline
+$[2,\;2.5]$ & $\dfrac{h(2.5)-h(2)}{2.5-2}$ & \blank{2.5cm} \\
+\hline
+$[2,\;2.1]$ & $\dfrac{h(2.1)-h(2)}{2.1-2}$ & \blank{2.5cm} \\
+\hline
+$[2,\;2.01]$ & $\dfrac{h(2.01)-h(2)}{2.01-2}$ & \blank{2.5cm} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+As the interval shrinks, the AROC appears to approach \blank{2cm}.
+This value approximates the rate of change of $h$ \textbf{at} $x = 2$.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Sign of Rate of Change}
+\begin{tabular}{@{}p{0.46\linewidth}p{0.46\linewidth}@{}}
+\textbf{Positive AROC:} & \textbf{Negative AROC:} \\[2pt]
+As $x$ \blank{2cm}, $f(x)$ \blank{2cm}. & As $x$ \blank{2cm}, $f(x)$ \blank{2cm}. \\[4pt]
+The function is \blank{3cm} on the interval. & The function is \blank{3cm} on the interval. \\[4pt]
+\textit{Example in context:} \blank{3.5cm} & \textit{Example in context:} \blank{3.5cm} \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\textbf{1.} Using the table from the worked example ($h$ values at $x = 1,2,4,7$),
+compute the AROC over $[2,\,7]$. Is it greater or less than the AROC over $[1,\,4]$?
+What does that tell you?
+
+\writeline\writeline
+
+\textbf{2.} A function $f$ has AROC $= -3$ on the interval $[0,\,5]$. Circle the
+correct completion: \textit{As $x$ increases from 0 to 5, $f(x)$} \ \textbf{increases}
+/ \textbf{decreases} / \textbf{stays constant}. Explain using the definition of AROC.
+
+\writeline\writeline
+\end{practicebox}
 
 \end{document}

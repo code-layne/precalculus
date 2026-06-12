@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -12,15 +12,135 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.5}\\[0.5cm]
     {\color{white}\bfseries\LARGE Polynomial Functions and Complex Zeros}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 1}
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 1: Polynomial and Rational Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: Cross or Bounce?}
+  \vspace{0.3cm}
+  Consider the polynomial $p(x) = (x - 2)^2(x + 1)$.
+  \vspace{0.3cm}
+  \begin{block}{Think About It}
+    \begin{itemize}
+      \item Where does the graph \textbf{cross} the $x$-axis?
+      \item Where does it \textbf{touch and bounce} without crossing?
+      \item What is it about the \textbf{exponent} on each factor that tells you?
+    \end{itemize}
+  \end{block}
+  \vspace{0.3cm}
+  The exponent on a factor is called the \textbf{multiplicity} of that zero.
+\end{frame}
+
+% ZEROS, LINEAR FACTORS, MULTIPLICITY
+\begin{frame}[t, plain]
+  \navyheader{Zeros, Linear Factors, and Multiplicity}
+  \vspace{0.2cm}
+  \begin{block}{Factor–Zero Connection}
+    If $p(a) = 0$, then $a$ is a \textbf{zero} of $p$ and $(x - a)$ is a linear factor.
+  \end{block}
+  \vspace{0.2cm}
+  \begin{block}{Multiplicity}
+    If $(x - a)$ is repeated $n$ times in the factored form, the zero has \textbf{multiplicity $n$}.\\[6pt]
+    A degree-$n$ polynomial has exactly $\mathbf{n}$ complex zeros (counting multiplicities).
+  \end{block}
+  \vspace{0.2cm}
+  \textbf{Example:} $p(x) = (x-2)^2(x+1)$
+  \begin{itemize}
+    \item $x = 2$ is a zero of \textbf{multiplicity 2}
+    \item $x = -1$ is a zero of \textbf{multiplicity 1}
+    \item Degree = $2 + 1 = 3$ \quad $\Rightarrow$ \quad exactly 3 zeros total
+  \end{itemize}
+\end{frame}
+
+% GRAPH BEHAVIOR AT ZEROS
+\begin{frame}[t, plain]
+  \navyheader{Graph Behavior at Real Zeros}
+  \vspace{0.3cm}
+  \renewcommand{\arraystretch}{1.7}
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Multiplicity} & \textbf{Graph behavior} & \textbf{Key word} \\
+  \hline
+  Odd (1, 3, 5, \ldots) & Graph \textbf{crosses} the $x$-axis & ``crosses'' \\
+  \hline
+  Even (2, 4, 6, \ldots) & Graph is \textbf{tangent} (touches, bounces) & ``bounce'' \\
+  \hline
+  \end{tabular}
+  \vspace{0.4cm}
+  \begin{block}{Example: $p(x) = (x+2)(x-1)^2(x-3)$}
+    \begin{itemize}
+      \item $x = -2$: multiplicity 1 (odd) $\Rightarrow$ \textbf{crosses}
+      \item $x = 1$: multiplicity 2 (even) $\Rightarrow$ \textbf{tangent / bounces}
+      \item $x = 3$: multiplicity 1 (odd) $\Rightarrow$ \textbf{crosses}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% COMPLEX ZEROS AND CONJUGATE PAIRS
+\begin{frame}[t, plain]
+  \navyheader{Complex Zeros and Conjugate Pairs}
+  \vspace{0.2cm}
+  \begin{block}{Complex Conjugate Pairs Theorem}
+    If $p(x)$ has \textbf{real coefficients} and $a + bi$ (with $b \neq 0$) is a zero,
+    then $a - bi$ is also a zero.
+  \end{block}
+  \vspace{0.25cm}
+  \textbf{Example:} $p(x)$ has real coefficients; $2 + 3i$ is a zero.
+  \begin{itemize}
+    \item Conjugate partner: $2 - 3i$ must also be a zero.
+    \item Quadratic factor from the pair:
+      \[(x - (2+3i))(x - (2-3i)) = x^2 - 4x + 13\]
+    \item If $p$ also has real zero $x = 1$, the minimum degree is \textbf{3}.
+  \end{itemize}
+\end{frame}
+
+% EVEN AND ODD FUNCTIONS
+\begin{frame}[t, plain]
+  \navyheader{Even and Odd Functions}
+  \vspace{0.15cm}
+  \begin{block}{Definitions and Algebraic Test}
+    \begin{itemize}
+      \item \textbf{Even}: $f(-x) = f(x)$ \quad $\Rightarrow$ symmetric about the $y$-axis
+      \item \textbf{Odd}: $f(-x) = -f(x)$ \quad $\Rightarrow$ symmetric about the origin
+      \item \textbf{Test}: substitute $-x$, simplify, compare to $f(x)$ and $-f(x)$
+    \end{itemize}
+  \end{block}
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Function} & \textbf{$f(-x)$} & \textbf{Result} \\
+  \hline
+  $f(x) = x^4 - 2x^2$ & $x^4 - 2x^2 = f(x)$ & \textbf{Even} \\
+  \hline
+  $g(x) = x^3 - x$ & $-x^3 + x = -g(x)$ & \textbf{Odd} \\
+  \hline
+  $h(x) = x^2 + x$ & $x^2 - x$ (neither) & \textbf{Neither} \\
+  \hline
+  \end{tabular}
+  \vspace{0.15cm}
+
+  \textit{Caution: even/odd function $\neq$ even/odd degree!}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \vspace{0.3cm}
+  Answer each question. Be ready to share your reasoning.
+  \vspace{0.2cm}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item A polynomial with real coefficients has zeros $x = 4$ (multiplicity 2) and
+          $x = 1 - i$. List all zeros. What is the minimum degree?
+    \item Determine whether $k(x) = 2x^6 - 3x^4 + x^2$ is even, odd, or neither.
+          Show your algebraic test.
+    \item For $p(x) = (x - 5)^3(x + 2)^2$, which zeros cause the graph to cross the
+          $x$-axis, and which cause it to bounce?
+  \end{enumerate}
 \end{frame}
 
 \end{document}

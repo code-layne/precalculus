@@ -9,11 +9,104 @@
 \pageheader{Unit 1, Lesson 1.4}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Roller Coaster Heights]{sky}
+A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
+by a polynomial function $h(t)$. A table of sample values is given below.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
+\rowcolor{sky}
+$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
+\midrule
+$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Local maximum time(s) and height:
+
+    \ans{$t = 15$ s, $h = 120$ ft; and $t = 35$ s, $h = 50$ ft.}
+
+    \item Local minimum time(s) and height:
+
+    \ans{$t = 30$ s, $h = 30$ ft; and $t = 50$ s, $h = 10$ ft.}
+
+    \item Global maximum height and time:
+
+    \ans{120 ft at $t = 15$ s.}
+
+    \item Other apparent zeros:
+
+    \ans{No other zeros are evident from the table; the height does not return to 0 between $t=0$ and $t=60$ (the minimum observed is 10 ft at $t=50$).}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- On Level: Rates of Change and Concavity --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item AROC values:
+
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} l X X @{}}
+    \rowcolor{sky}
+    Interval & AROC formula & AROC value \\
+    \midrule
+    $[0, 10]$   & $(80-0)/10$      & \ans{8 ft/s}  \\
+    $[10, 15]$  & $(120-80)/5$     & \ans{8 ft/s}  \\
+    $[15, 20]$  & $(80-120)/5$     & \ans{$-8$ ft/s} \\
+    $[20, 30]$  & $(30-80)/10$     & \ans{$-5$ ft/s} \\
+    $[30, 35]$  & $(50-30)/5$      & \ans{4 ft/s}  \\
+    $[35, 40]$  & $(30-50)/5$      & \ans{$-4$ ft/s} \\
+    $[40, 50]$  & $(10-30)/10$     & \ans{$-2$ ft/s} \\
+    $[50, 60]$  & $(0-10)/10$      & \ans{$-1$ ft/s} \\
+    \end{tabularx}
+
+    \item AROC transitions from positive to negative:
+
+    \ans{Between the $[10,15]$ and $[15,20]$ intervals (near $t=15$) and between the $[30,35]$ and $[35,40]$ intervals (near $t=35$). These indicate local maxima at approximately $t=15$ and $t=35$.}
+
+    \item AROC transitions from negative to positive:
+
+    \ans{Between the $[20,30]$ and $[30,35]$ intervals (near $t=30$). This indicates a local minimum near $t=30$.}
+
+    \item Portion where AROC is increasing and concavity:
+
+    \ans{The AROC increases from $-5$ to $4$ between the $[20,30]$ and $[30,35]$ intervals, suggesting $h$ is concave up near $t=30$. Also, the AROC values over $[40,50]$ and $[50,60]$ are $-2$ and $-1$ --- increasing (becoming less negative) --- suggesting concave up near the end of the ride.}
+
+    \item Possible point of inflection:
+
+    \ans{Near $t=10$--$15$: the AROC is constant at 8, then drops sharply, suggesting the concavity changes around $t=12$--$13$. Also near $t=20$--$30$: AROC goes from $-8$ to $-5$ to $+4$, suggesting an inflection between $t=20$ and $t=35$.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Degree and Global Extrema --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Minimum possible degree:
+
+    \ans{The table shows 2 local maxima (near $t=15$ and $t=35$) and at least 1 local minimum (near $t=30$), for at least 3 local extrema. By EK 1.4.A.3, between each pair of consecutive distinct real zeros there is at least one local extremum. With zeros at $t=0$ and $t=60$, two extrema between them require at least one additional zero. To accommodate 3 local extrema (2 max, 1 min) and zeros, the minimum degree is \textbf{4} (a degree-4 polynomial can have up to 3 local extrema).}
+
+    \item Global minimum and EK 1.4.A.4:
+
+    \ans{On the closed interval $[0,60]$, the function does achieve a global minimum (the smallest output value). From the table, the minimum height is 0 ft (at both endpoints). EK 1.4.A.4 states that even-degree polynomials have either a global max or global min; if $h$ has even degree, both ends share the same end behavior, consistent with $h(0)=h(60)=0$. The global minimum on $[0,60]$ is 0 ft.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

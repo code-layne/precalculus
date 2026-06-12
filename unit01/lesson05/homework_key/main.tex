@@ -9,11 +9,83 @@
 \pageheader{Unit 1, Lesson 1.5}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
+
+\item Write a polynomial with real coefficients of \emph{minimum degree} that has zeros
+      at $x = 3$ (multiplicity 2) and $x = 1 - 2i$. Leave your answer in factored form.
+      State the degree.
+
+      \vspace{0.06in}
+      $p(x) = $ \ans{$(x-3)^2\bigl(x-(1-2i)\bigr)\bigl(x-(1+2i)\bigr)$}
+      \hfill Degree: \ans{4}
+
+      \begin{teachernote}
+      Expanded: $(x-3)^2\bigl((x-1)^2+4\bigr)=(x-3)^2(x^2-2x+5)$. Accept either form.
+      \end{teachernote}
+
+\item A degree-5 polynomial with real coefficients has zeros at $x = -2$,
+      $x = 0$ (multiplicity 2), and $x = 1 + i$.
+      List \emph{all five} zeros.
+
+      \ansline{$x=-2$ (mult.\ 1), $x=0$ (mult.\ 2), $x=1+i$, $x=1-i$. Total: $1+2+1+1=5$. \checkmark}
+
+\item Let $p(x) = x^4 - 6x^2 + 9$.
+      \begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+        \item Factor $p(x)$ completely.
+              \ansline{$p(x)=(x^2-3)^2=(x-\sqrt{3})^2(x+\sqrt{3})^2$}
+        \item List all zeros and their multiplicities.
+              \ansline{$x=\sqrt{3}$ (multiplicity 2) and $x=-\sqrt{3}$ (multiplicity 2).}
+        \item Crosses or tangent at each zero?
+              \ansline{Tangent (touches, bounces) at both zeros — both have even multiplicity (2).}
+      \end{enumerate}
+
+\item Is $g(x) = 2x^3 - 5x$ even, odd, or neither?
+
+      \vspace{0.06in}
+      $g(-x) = $ \ans{$2(-x)^3 - 5(-x)$}
+
+      \vspace{0.08in}
+      Simplified: \ans{$-2x^3 + 5x = -(2x^3 - 5x) = -g(x)$}
+
+      \vspace{0.08in}
+      $g$ is (circle): \textbf{Even} \quad {\color{keyred}\textbf{Odd}} \quad \textbf{Neither}
+
+\item \textbf{AP-Style Multiple Choice.}
+      $p(x) = (x+3)^2(x-1)(x-5)^3$.
+
+      \begin{enumerate}[leftmargin=1.5em, itemsep=3pt, label=(\Alph*)]
+        \item {\color{keyred}\textbf{(A) $x=-3$ (tangent), $x=1$ (crosses), $x=5$ (crosses)
+              $\leftarrow$ correct}} \\
+              Multiplicity 2 at $x=-3$ (even $\Rightarrow$ tangent); mult.\ 1 at $x=1$
+              (odd $\Rightarrow$ crosses); mult.\ 3 at $x=5$ (odd $\Rightarrow$ crosses).
+        \item (B) Incorrect — reverses behavior at $x=-3$ and $x=1$.
+        \item (C) Incorrect — mult.\ 3 is odd, so $x=5$ crosses, not tangent.
+        \item (D) Incorrect — wrong zeros (sign errors).
+      \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+A polynomial $p$ of unknown degree has output values recorded at equally-spaced inputs.
+The third differences of those outputs are all constant, each equal to $6$.
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item What is the degree of $p$?
+        \ansline{Degree 3. The $n$th differences of a degree-$n$ polynomial are constant (and nonzero). The 3rd differences are constant, so the degree is 3.}
+  \item Write a general form of a polynomial of that degree:
+        \ans{$p(x)=ax^3+bx^2+cx+d$} (with $a\neq 0$)
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{reflectionbox}
+\textbf{Preview:} In Lesson 1.6 we will study rational functions. As you finish this
+homework, think about: if a polynomial can be written as a ratio $\dfrac{p(x)}{q(x)}$,
+what happens when $q(x) = 0$? We'll explore vertical asymptotes and holes next class.
+\end{reflectionbox}
 
 \end{document}

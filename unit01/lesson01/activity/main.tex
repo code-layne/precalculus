@@ -9,11 +9,129 @@
 \pageheader{Unit 1, Lesson 1.1}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Hiker's Elevation]{sky}
+\small
+A hiker records their elevation above sea level (in feet) at the end of each hour during a
+7-hour trail hike. The data is shown in the table below.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+\textbf{Elevation} $E(t)$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
+\hline
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item What are the \textbf{domain} and \textbf{range} of $E$ based on the table?
+
+        Domain: \blank{4cm} \qquad Range: \blank{4cm}
+
+  \item On the interval $[0, 4]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        Circle one: \quad \textbf{Increasing} \quad / \quad \textbf{Decreasing}
+
+  \item On the interval $[4, 7]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        Circle one: \quad \textbf{Increasing} \quad / \quad \textbf{Decreasing}
+
+  \item At what hour does the hiker reach the highest elevation? \blank{2cm}
+        What is that elevation? \blank{2cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Compute the change in elevation per hour for each consecutive pair of hours.
+        Record in the table.
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Interval & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ & $[6,7]$ \\
+        \hline
+        Change (ft/hr) & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+
+  \item On $[0, 4]$, the rate of change is (circle): \quad
+        \textbf{Increasing} \quad / \quad \textbf{Decreasing} \quad / \quad \textbf{Constant}
+
+        Therefore the graph on $[0, 4]$ is concave: \quad \textbf{Up} \quad / \quad \textbf{Down}
+
+  \item Which of the following best describes the graph of $E$ on $[0, 4]$?
+        Circle the letter.
+        \begin{enumerate}[label=\Alph*.]
+          \item Rises steeply then more gradually (slowing rate of gain)
+          \item Rises gradually then more steeply (increasing rate of gain)
+          \item Rises at a constant rate
+        \end{enumerate}
+
+  \item At what input value does $E$ have a zero? (Where does the graph touch the $x$-axis?)
+        Based on the table, does $E$ ever equal 0? \blank{3cm}
+        Explain: \blank{5cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The hiker also records their \textbf{walking speed} (in miles per hour) each hour:
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+\textbf{Speed} $S(t)$ (mph) & 3.5 & 3.0 & 2.5 & 1.8 & 1.2 & 2.0 & 2.8 & 3.2 \\
+\hline
+\end{tabular}
+
+\medskip
+\begin{enumerate}[itemsep=8pt]
+  \item On what intervals is $S$ increasing? On what intervals is $S$ decreasing?
+
+        Increasing: \blank{3.5cm} \qquad Decreasing: \blank{3.5cm}
+
+  \item When the hiker is going uphill steeply (hours 0--1), the speed is relatively
+        \blank{1.5cm} (high/low). What happens to speed as the trail flattens near the summit?
+
+        \vspace{0.2in}
+        \writeline
+
+  \item The elevation function $E$ is concave down on $[0, 4]$.
+        What does this tell you about the hiker's \textit{pace} over the ascent?
+        Use the word ``rate of change'' in your response.
+
+        \vspace{0.2in}
+        \writeline\\[2pt]
+        \writeline
+
+  \item Compare the behavior of $E$ and $S$ on $[0, 4]$.
+        What is the relationship between the \textit{rate of change of elevation} and the \textit{speed} of the hiker?
+
+        \vspace{0.2in}
+        \writeline\\[2pt]
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

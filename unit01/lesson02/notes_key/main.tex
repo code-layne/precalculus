@@ -11,9 +11,135 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+\textbf{LO 1.2.A:} Compare the rates of change at two points using average rates of change
+near the points.\quad \ansline{AROC over small intervals approximates ROC at a point; compare by computing.}
+
+\textbf{LO 1.2.B:} Describe how two quantities vary together at different points and over
+different intervals of a function.\quad \ansline{Sign and magnitude of AROC describe co-variation direction and speed.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\noindent\textbf{\textcolor{navy}{average rate of change (AROC):}}\\[1pt]
+\ansline{The ratio $\dfrac{f(b)-f(a)}{b-a}$ — the constant rate that produces the same net change in output over the interval $[a,b]$; equals the slope of the secant line.}\\[2pt]
+
+\noindent\textbf{\textcolor{navy}{rate of change at a point:}}\\[1pt]
+\ansline{The instantaneous rate of change at $x=c$, approximated by computing AROC over successively smaller intervals containing $c$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\textit{You're driving on the highway. Your GPS says your average speed over the last
+hour was 62 mph. Were you always going exactly 62 mph? What does ``average'' mean here?}
+
+\medskip
+The average speed is the \ans{one constant} speed that covers the \ans{same total} distance in the
+\ans{same} time. This is the key idea behind average rate of change.
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Average Rate of Change}
+The \textbf{average rate of change (AROC)} of a function $f$ over the interval $[a,b]$ is:
+
+\[
+    \text{AROC} = \frac{\Delta f}{\Delta x}
+    = \frac{f(b) - f(a)}{b - a}
+\]
+
+\vspace{4pt}
+Label: the numerator represents \ans{change in output ($\Delta f$)}; the denominator represents \ans{change in input ($\Delta x$)}.
+
+\medskip
+Geometrically, the AROC equals the slope of the \ans{secant} line through
+$(a,\,f(a))$ and $(b,\,f(b))$.
+
+\medskip\textbf{Worked Example.} The table gives values of a function $h$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{sky}
+$x$    & 1  & 2  & 4  & 7 \\
+\hline
+$h(x)$ & 3  & 7  & 11 & 20 \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Compute the AROC of $h$ over $[1,\,4]$:
+\[
+    \text{AROC} = \frac{h(4) - h(1)}{4 - 1}
+    = \frac{11 - 3}{4 - 1}
+    = \frac{8}{3} \approx \ans{2.67}
+\]
+
+Interpretation: for every 1-unit increase in $x$, $h$ increases by approximately
+\ans{2.67}.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Approximating Rate of Change at a Point}
+The AROC over a \textbf{small} interval containing $x = c$ approximates the
+\textbf{rate of change at the point} $x = c$.
+
+\medskip
+\textbf{Example.} Approximate the rate of change of $h$ at $x = 2$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.8cm}|C{4.5cm}|C{3.8cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC value} \\
+\hline
+$[2,\;2.5]$ & $\dfrac{h(2.5)-h(2)}{2.5-2}$ & \ans{4} \\
+\hline
+$[2,\;2.1]$ & $\dfrac{h(2.1)-h(2)}{2.1-2}$ & \ans{4} \\
+\hline
+$[2,\;2.01]$ & $\dfrac{h(2.01)-h(2)}{2.01-2}$ & \ans{4} \\
+\hline
+\end{tabular}
+
+\begin{teachernote}
+$h(2.5)=9$: AROC $=(9-7)/0.5=4$. $h(2.1)=7.4$: AROC $=0.4/0.1=4$. $h(2.01)=7.04$: AROC $=0.04/0.01=4$. All equal 4, consistent with $h$ having slope 4 near $x=2$.
+\end{teachernote}
+
+\vspace{4pt}
+As the interval shrinks, the AROC appears to approach \ans{4}.
+This value approximates the rate of change of $h$ \textbf{at} $x = 2$.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Sign of Rate of Change}
+\begin{tabular}{@{}p{0.46\linewidth}p{0.46\linewidth}@{}}
+\textbf{Positive AROC:} & \textbf{Negative AROC:} \\[2pt]
+As $x$ \ans{increases}, $f(x)$ \ans{increases}. & As $x$ \ans{increases}, $f(x)$ \ans{decreases}. \\[4pt]
+The function is \ans{increasing} on the interval. & The function is \ans{decreasing} on the interval. \\[4pt]
+\textit{Example:} \ans{temperature rising} & \textit{Example:} \ans{elevation decreasing} \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\textbf{1.} Compute the AROC over $[2,\,7]$:
+$\dfrac{h(7)-h(2)}{7-2} = \dfrac{20-7}{5} = \dfrac{13}{5} =$ \ans{2.6}.
+This is \ans{less} than AROC over $[1,4] \approx 2.67$. The function grew slightly faster
+on $[1,4]$ than on $[2,7]$.
+
+\writeline
+
+\textbf{2.} \ans{Decreases.} A negative AROC means $f(b)-f(a) < 0$, so $f(b) < f(a)$ —
+the output went down as the input went from 0 to 5.
+
+\writeline
+\end{practicebox}
 
 \end{document}
