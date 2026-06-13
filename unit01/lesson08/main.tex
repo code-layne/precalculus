@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,175 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify the real zeros of a rational function
+    as the zeros of the numerator that lie in the domain, and use a sign chart to determine
+    intervals where a rational function is positive or negative in order to solve rational inequalities.
+    \hfill\textit{\small Skills: MP 1.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 1.A} --- Solve equations and inequalities represented analytically,
+with and without technology. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The real zeros of a rational function are the real zeros of the numerator
+        that also lie in the domain. (EK 1.8.A.1)
+  \item Zeros of the numerator and zeros of the denominator are both critical
+        values used as endpoints for sign analysis intervals. (EK 1.8.A.2)
+  \item A sign chart organizes critical values into intervals; a test point in
+        each interval determines the sign of the function on that interval.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+zero of $r(x)$      & A value $x = c$ in the domain where $r(c) = 0$; the real zeros of $r$ are the real zeros of its numerator that are also in the domain. \\
+domain restriction  & A value excluded from the domain because it makes the denominator zero; NOT a zero of the function. \\
+critical value       & Any $x$-value where $r(x) = 0$ (numerator zero in domain) or $r(x)$ is undefined (denominator zero); used as boundaries for sign analysis. \\
+sign chart          & A number-line diagram marking critical values and showing the sign ($+$ or $-$) of $r(x)$ on each resulting interval. \\
+rational inequality & An inequality of the form $r(x) \geq 0$, $r(x) \leq 0$, $r(x) > 0$, or $r(x) < 0$, solved by sign analysis using all critical values. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review).
+            Skills reviewed: finding horizontal asymptotes by comparing leading terms (LO 1.7.A),
+            interpreting a horizontal asymptote at $y = 0$, factoring a quadratic trinomial.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textbf{LO 1.7.A}\\Horizontal asymptotes\\[4pt]
+            \textbf{LO 1.8.A}\\Zeros of rational functions
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook (3--5 min)]{redbox}
+A company models its \textbf{profit per unit} as
+\[
+  P(x) = \frac{x^2 - 9}{x - 1}, \qquad x > 0,\; x \ne 1,
+\]
+where $x$ is the number of units produced (in thousands).
+
+\medskip
+\textbf{Discussion questions:}
+\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
+  \item At what production level(s) $x$ does the company break even (profit per unit $= 0$)?
+  \item For which values of $x$ is the profit per unit \textit{positive}?
+  \item Why can we not simply evaluate $P(1)$?
+\end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
-\end{skillbox}
+\vspace{0.1in}
+
+\begin{multicols}{2}
+
+\begin{notesbox}{Part 1: Zeros of Rational Functions (10 min)}
+\textbf{Key Principle (EK 1.8.A.1).} A rational function
+$r(x) = \dfrac{p(x)}{q(x)}$ equals zero when $p(x) = 0$
+\textit{and} $q(x) \ne 0$ (i.e., $x$ is in the domain).
+
+\medskip
+\textbf{Worked Example.} Find the zeros of
+$r(x) = \dfrac{x^2 - 4}{x - 3}$.
+
+\begin{enumerate}[itemsep=4pt]
+  \item \textbf{Domain:} $q(x) = x - 3 = 0 \Rightarrow x = 3$.
+        Domain is all real numbers except $x = 3$.
+  \item \textbf{Set numerator $= 0$:}
+        $x^2 - 4 = 0 \Rightarrow (x-2)(x+2) = 0$.
+        Solutions: $x = 2$ and $x = -2$.
+  \item \textbf{Check domain:} Neither $2$ nor $-2$ equals $3$,
+        so both are in the domain.
+  \item \textbf{Zeros:} $x = 2$ and $x = -2$.
+\end{enumerate}
+
+\medskip
+\textit{Note:} $x = 3$ is NOT a zero of $r$; it is a domain restriction.
+(Lesson 1.9 will classify it as a vertical asymptote or hole.)
+\end{notesbox}
+
+\columnbreak
+
+\begin{notesbox}{Part 2: Sign Chart Method (15 min)}
+\textbf{Key Principle (EK 1.8.A.2).} The sign of $r(x)$ can change
+only at a zero of the numerator or a zero of the denominator.
+Both types of zeros are \textbf{critical values}.
+
+\medskip
+\textbf{4-Step Method.} Solve $\dfrac{x - 1}{x + 2} \geq 0$.
+
+\begin{enumerate}[itemsep=4pt]
+  \item \textbf{Critical values:}
+        Numerator zero: $x = 1$. Denominator zero: $x = -2$.
+  \item \textbf{Number line:}
+        Mark $x = -2$ (open circle, excluded) and $x = 1$ (closed circle, included).
+  \item \textbf{Test each interval:}
+        \begin{itemize}[itemsep=2pt]
+          \item $x = -3$: $\frac{-4}{-1} = 4 > 0 \Rightarrow (+)$
+          \item $x = 0$: $\frac{-1}{2} < 0 \Rightarrow (-)$
+          \item $x = 2$: $\frac{1}{4} > 0 \Rightarrow (+)$
+        \end{itemize}
+  \item \textbf{Solution ($\geq 0$ means $+$ or zero):}\\
+        $(-\infty,\,-2)\cup[1,\,\infty)$
+\end{enumerate}
+\end{notesbox}
+
+\end{multicols}
+
+\begin{notesbox}{Part 3: Connecting EK 1.8.A.2 (5 min)}
+Both zeros of the \textit{numerator} and zeros of the \textit{denominator} are
+\textbf{critical values} that serve as interval endpoints in sign analysis.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l l @{}}
+\textbf{Critical value type} & \textbf{Include in solution?} & \textbf{Reason} \\
+\midrule
+Numerator zero in domain     & Yes, if $\geq$ or $\leq$       & $r(x) = 0$ satisfies $r \geq 0$ \\
+Denominator zero (excluded)  & \textbf{Never}                 & $r(x)$ is undefined there \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+Circulate and look for:
+\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
+  \item Students who set the \textit{denominator} equal to zero to find ``zeros'' --- redirect to the numerator.
+  \item Students who include denominator-zero values in solution sets --- remind those points are excluded.
+  \item Students who forget to check whether numerator zeros are actually in the domain.
+\end{itemize}
+Cold-call: ``Is $x = 3$ a zero of $r(x) = (x-3)/(x-3)$? Why or why not?''
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
-\end{skillbox}
-
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{skillbox}[Timing \& Pacing]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} p{0.14\linewidth} X @{}}
+Time & Duration & Activity \\
+\midrule
+0:00--0:05  & 5 min  & Warm-up (spiral: asymptotes, factoring) \\
+0:05--0:10  & 5 min  & Hook: profit-per-unit discussion \\
+0:10--0:20  & 10 min & Part 1: Zeros of rational functions \\
+0:20--0:35  & 15 min & Part 2: Sign chart method (notes + guided practice) \\
+0:35--0:40  & 5 min  & Part 3: EK 1.8.A.2 summary table \\
+0:40--0:50  & 10 min & Tiered group activity \\
+0:50--0:55  & 5 min  & Exit ticket \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+See attached homework for 5 targeted problems (zeros, sign charts, reasoning about critical values,
+AP-style MC). Lesson 1.9 extends this to vertical asymptotes and holes --- preview by asking:
+``What happens to the graph of $r$ near a denominator zero?''
 \end{skillbox}
+
 \end{document}

@@ -1,7 +1,7 @@
 %! Rational Functions and Vertical Asymptotes — Unit 1, Lesson 1.9 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,134 @@
 \pageheader{Unit 1, Lesson 1.9}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the vertical asymptotes of a rational function by finding where the denominator
+        equals zero and the numerator does \ans{not}. \hfill\textit{(LO 1.9.A)}
+  \item Describe the behavior of a rational function near a vertical asymptote using
+        \ans{one-sided} limit notation. \hfill\textit{(LO 1.9.A)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{vertical asymptote}
+\termblanklong{one-sided limit ($\lim_{x \to a^+}$)}
+\termblanklong{one-sided limit ($\lim_{x \to a^-}$)}
+\termblanklong{multiplicity condition for a VA}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+Bacterial concentration near a drain: $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance in cm.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
+\hline
+$C(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
+\hline
+\end{tabular}
+\smallskip
+
+As $x \to 3$, the output \ans{grows without bound (increases or decreases without limit)}.
+We say $x = 3$ is a \ans{vertical asymptote}.
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Vertical Asymptotes}
+A rational function $r(x) = \dfrac{p(x)}{q(x)}$ has a \textbf{vertical asymptote at $x = a$} when:
+
+\begin{itemize}
+  \item $q(a) =$ \ans{$0$} \quad (the denominator is \ans{zero} at $a$), \textbf{AND}
+  \item $p(a)$ \ans{$\ne$} $0$ \quad (the numerator is \textbf{not} zero at $a$).
+\end{itemize}
+
+\textit{Multiplicity rule (EK 1.9.A.1):} A VA also occurs at $x = a$ when the multiplicity of
+$a$ in the \ans{denominator} is \emph{greater} than its multiplicity in the \ans{numerator}.
+
+\medskip
+\textbf{Example 1.} Find any vertical asymptotes of $r(x) = \dfrac{x + 2}{x - 3}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Set the denominator equal to zero and solve: \ans{$x - 3 = 0 \Rightarrow x = 3$}
+
+  \item Check the numerator at each solution: at $x = 3$, numerator $=$ \ans{$5 \ne 0$}
+
+  \item Conclusion: \ans{Vertical asymptote at $x = 3$.}
+\end{enumerate}
+
+\medskip
+\textbf{Example 2.} Find any vertical asymptotes of $r(x) = \dfrac{x - 1}{(x-1)^2(x+2)}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Denominator zeros: \ans{$x = 1$ (mult.\ 2) and $x = -2$ (mult.\ 1)}
+
+  \item At $x = 1$: numerator multiplicity \ans{1}, denominator multiplicity \ans{2}.
+        Since \ans{2} $>$ \ans{1}: \ans{VA at $x = 1$}
+
+  \item At $x = -2$: numerator value $=$ \ans{$-3 \ne 0$}. Since it is nonzero: \ans{VA at $x = -2$}
+\end{enumerate}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{One-Sided Limits Near a Vertical Asymptote}
+For $r(x) = \dfrac{1}{x - 2}$, complete the table:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$r(x)$ & \ans{$-10$} & \ans{$-100$} & \ans{$-1000$} & \ans{$1000$} & \ans{$100$} & \ans{$10$} \\
+\hline
+\end{tabular}
+\smallskip
+
+From the table, write the one-sided limits:
+
+\[
+  \lim_{x \to 2^-} r(x) = \ans{$-\infty$}
+  \qquad\qquad
+  \lim_{x \to 2^+} r(x) = \ans{$+\infty$}
+\]
+
+\textbf{Sign analysis.} When $x$ is slightly greater than 2, $(x - 2)$ is \ans{positive},
+so $r(x) \to$ \ans{$+\infty$}.\\
+When $x$ is slightly less than 2, $(x - 2)$ is \ans{negative},
+so $r(x) \to$ \ans{$-\infty$}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\begin{enumerate}[itemsep=10pt]
+  \item For $r(x) = \dfrac{2x - 1}{x^2 - 5x + 6}$, find all vertical asymptotes.
+
+        Factor the denominator: \ans{$(x-2)(x-3)$}
+
+        Denominator zeros: \ans{$x = 2,\; x = 3$} \quad
+        Check numerator at each: \ans{$2(2)-1=3\ne0$;\; $2(3)-1=5\ne0$}
+
+        Vertical asymptote(s): \ans{$x = 2$ and $x = 3$}
+
+  \item For $r(x) = \dfrac{1}{(x+3)^2}$, determine whether
+        $\lim_{x\to -3^+} r(x) = +\infty$ or $-\infty$. Explain using sign analysis.
+
+        \vspace{0.1in}
+        \ans{$(x+3)^2 > 0$ for all $x \ne -3$, so $r(x) = 1/(x+3)^2 > 0$ near $x=-3$
+        from both sides. Therefore $\lim_{x\to-3^+} r(x) = +\infty$.}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

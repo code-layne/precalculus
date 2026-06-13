@@ -9,11 +9,44 @@
 \pageheader{Unit 1, Lesson 1.8}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.14in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=16pt]
+
+\item Let $\displaystyle r(x) = \frac{x^2 - x - 6}{x + 4}$.
+
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item What value(s) of $x$ are \textbf{not} in the domain of $r$?
+              Explain briefly.
+
+              \vspace{0.06in}
+              $x = $ \ans{$-4$} because \ansline{$x + 4 = 0$ at $x = -4$, making the denominator zero and $r(-4)$ undefined.}
+
+        \item Find all real zeros of $r(x)$.
+
+              \vspace{0.06in}
+              Factor the numerator: $x^2 - x - 6 = $ \ans{$(x - 3)(x + 2)$}
+
+              \vspace{0.06in}
+              Numerator zeros: $x = $ \ans{$3$ and $x = -2$}
+
+              \vspace{0.06in}
+              Check each against the domain restriction:
+              \ansline{Neither $x = 3$ nor $x = -2$ equals $-4$, so both are in the domain.}
+
+              \vspace{0.06in}
+              Zeros of $r$: $x = $ \ans{$3$ and $x = -2$}
+      \end{enumerate}
+
+\item A student says: ``$x = -4$ is a zero of
+      $\displaystyle r(x) = \frac{x + 4}{x^2 - 1}$ because the numerator equals zero
+      when $x = -4$.''
+
+      Is the student correct? Circle one: \quad \textbf{No}
+
+      \vspace{0.06in}
+      \ansline{The student is \textbf{incorrect}. The numerator $x + 4 = 0$ at $x = -4$, but we also need $x = -4$ to be in the domain of $r$. The denominator $x^2 - 1 = (-4)^2 - 1 = 15 \ne 0$, so $x = -4$ \textbf{is} in the domain. Therefore $r(-4) = 0$, and the student's conclusion is actually correct for the wrong reason --- but the reasoning is incomplete without checking the domain.}
+
+\end{enumerate}
 
 \end{document}

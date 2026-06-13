@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,190 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify vertical asymptotes of rational functions
+    using the zeros of the denominator, distinguish them from holes, and describe the behavior
+    near a vertical asymptote using one-sided limit notation.
+    \hfill\textit{\small Skill: MP 2.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 2.A} --- Identify information from graphical, numerical, analytical,
+and verbal representations of a function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A vertical asymptote occurs at $x = a$ when the denominator is zero at $a$ and
+        the numerator is \emph{not} zero at $a$ (or the denominator's multiplicity exceeds
+        the numerator's multiplicity at $a$). (EK 1.9.A.1)
+  \item Near a vertical asymptote, $|r(x)|$ grows without bound; values either increase
+        or decrease without bound depending on direction. (EK 1.9.A.2)
+  \item One-sided limit notation captures this behavior:
+        $\lim_{x \to a^+} r(x) = \pm\infty$ and $\lim_{x \to a^-} r(x) = \pm\infty$.
+        (EK 1.9.A.2)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth} X @{}}
+rational function      & A function of the form $r(x) = p(x)/q(x)$ where $p$ and $q$ are polynomials and $q \not\equiv 0$. \\
+vertical asymptote     & A vertical line $x = a$ near which $|r(x)|$ increases without bound. \\
+one-sided limit        & The value $r(x)$ approaches as $x$ tends to $a$ from only one side. \\
+$\lim_{x \to a^+} r(x)$ & Limit as $x$ approaches $a$ from values \emph{greater} than $a$. \\
+$\lim_{x \to a^-} r(x)$ & Limit as $x$ approaches $a$ from values \emph{less} than $a$. \\
+multiplicity condition & A VA at $x = a$ occurs when the multiplicity of $a$ in the denominator exceeds its multiplicity in the numerator. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review from Lesson 1.8).
+            Skills reviewed: finding zeros of the numerator and denominator of a rational function,
+            identifying where a rational function is undefined, interpreting a table of values
+            as $x$ approaches a given value.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+A bacterial culture is placed in a dish near a drain. The concentration of bacteria (in thousands
+per mL) near the drain is modeled by $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance in cm from
+the drain. What happens as $x \to 3$?
+
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
+\hline
+$C(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
+\hline
+\end{tabular}
+
+\medskip
+\textit{Discussion:} Why can't we evaluate $C(3)$? What does the output doing as $x \to 3$
+tell us about the graph? What does $C(x) \to +\infty$ from one side and $C(x) \to -\infty$
+from the other side mean physically?
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Part 1: What Causes a Vertical Asymptote?} (10 min)
+
+A rational function $r(x) = p(x)/q(x)$ has a \textbf{vertical asymptote at $x = a$} when:
+\begin{itemize}
+  \item $q(a) = 0$ (denominator is zero at $a$), \textbf{AND}
+  \item $p(a) \ne 0$ (numerator is \emph{not} zero at $a$).
+\end{itemize}
+Intuition: near $x = a$, the denominator $\approx 0$ while the numerator stays nonzero, so
+the fraction's magnitude grows without bound.
+
+\textbf{Worked Example 1.} $r(x) = \dfrac{x+2}{x-3}$.
+\begin{itemize}
+  \item Denominator zero: $x - 3 = 0 \Rightarrow x = 3$.
+  \item Numerator at $x = 3$: $3 + 2 = 5 \ne 0$.
+  \item \textbf{Vertical asymptote: $x = 3$.}
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 2: Multiplicity Rule (EK 1.9.A.1)} (10 min)
+
+A VA also occurs at $x = a$ when the multiplicity of $a$ in the denominator is
+\emph{greater} than its multiplicity in the numerator.
+
+\textbf{Worked Example 2.} $r(x) = \dfrac{x - 1}{(x-1)^2(x+2)}$.
+\begin{itemize}
+  \item $x = 1$: numerator mult.\ 1, denominator mult.\ 2. Since $2 > 1$: \textbf{VA at $x = 1$}.
+  \item $x = -2$: numerator value $= -3 \ne 0$: \textbf{VA at $x = -2$}.
+\end{itemize}
+\textit{Preview (Lesson 1.10):} If numerator multiplicity $\ge$ denominator multiplicity at $a$,
+there is a \textbf{hole}, not a VA.
+
+\end{multicols}
+
+\textbf{Part 3: One-Sided Limits Near a Vertical Asymptote (EK 1.9.A.2)} (10 min)
+
+For $r(x) = \dfrac{1}{x - 2}$, examine values approaching $x = 2$ from both sides:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$r(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
+\hline
+\end{tabular}
+\smallskip
+
+Write conclusions in limit notation:
+\[
+  \lim_{x \to 2^-} r(x) = -\infty
+  \qquad\qquad
+  \lim_{x \to 2^+} r(x) = +\infty
+\]
+
+\textit{Sign analysis:} when $x > 2$, $(x-2) > 0$, so $r(x) > 0 \to +\infty$; when $x < 2$,
+$(x-2) < 0$, so $r(x) < 0 \to -\infty$.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Declaring every denominator zero a VA without checking the numerator.
+        Cold-call: ``If the numerator is also zero at $x = a$, what happens instead of a VA?''
+  \item \textbf{Common error:} Writing $\lim_{x\to a} r(x) = \infty$ without specifying direction
+        ($+$ or $-$). Emphasize that the two one-sided limits may differ in sign.
+  \item \textbf{Notation check:} VA is a vertical line, so it must be $x = a$, not $y = a$.
+  \item \textbf{Cold-call:} ``For $r(x) = \frac{1}{(x-1)^2}$, does $r(x)$ go to $+\infty$ or
+        $-\infty$ on both sides of $x = 1$? Why?'' (Both $+\infty$ because $(x-1)^2 > 0$.)
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on \textbf{Group Activity: Analyzing Pressure Gauges} in leveled tiers.
+Same four rational functions; increasing demand at each tier.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Set denominators equal to zero; identify VAs (assuming no
+        common numerator zeros). Write VA equations $x = a$.
+  \item \textbf{Tier A (Apply):} Factor numerators and denominators; distinguish VAs from potential
+        holes; write correct VAs and flag holes for Lesson 1.10.
+  \item \textbf{Tier E (Extend):} Explain why $x = 1$ is a hole (not a VA) in $r_3$; determine
+        $\lim_{x\to -2^+}$ and $\lim_{x\to -2^-}$ for $r_4(x) = x/(x+2)^3$ using sign analysis.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item For $r(x) = (x-1)/((x+2)(x-4))$: find denominator zeros, confirm each gives a VA (numerator
+        is nonzero at both), and write the VA equations.
+  \item Given a table showing $r(x) \to +\infty$ as $x \to 3^+$ and $r(x) \to -\infty$ as
+        $x \to 3^-$, write the corresponding one-sided limits in proper notation.
+\end{enumerate}
+\textbf{Assessment note:} Look for correct VA identification (not just denominator zeros) and
+proper one-sided limit notation with direction superscripts ($+$ and $-$).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems --- VA identification for three rational functions, one-sided
+limit sign analysis for $2/(x+1)$, a conceptual question about the maximum number of VAs,
+interpreting limit notation, and an AP-style MC item on the multiplicity rule.
+
+\textbf{Preview:} Lesson 1.10 examines \textit{holes} (removable discontinuities) --- what
+happens when the numerator and denominator share a common zero of equal or higher multiplicity.
+The multiplicity preview in today's lesson sets this up directly.
 \end{skillbox}
 \end{document}

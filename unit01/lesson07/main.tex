@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,192 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will describe the end behavior of rational functions
+    by examining the quotient of leading terms, identify horizontal and slant asymptotes,
+    and express end behavior using limit notation.
+    \hfill\textit{\small Skills: MP 1.B, 3.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 1.B} --- Identify mathematical information from graphical, numerical,
+analytical, and verbal representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A rational function $r(x) = p(x)/q(x)$ measures the relative size of
+        two polynomials. (EK 1.7.A.1)
+  \item For large $|x|$, leading terms dominate; end behavior equals the quotient
+        of leading terms. (EK 1.7.A.2)
+  \item deg num $>$ deg denom $\Rightarrow$ polynomial end behavior; if the
+        difference in degrees is 1, a slant asymptote exists. (EK 1.7.A.3)
+\end{itemize} \\
+\textbf{MP 3.A} --- Describe characteristics of a function using appropriate
+mathematical language and notation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item deg num $=$ deg denom $\Rightarrow$ HA at $y = a_n / b_n$. (EK 1.7.A.4)
+  \item deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$. (EK 1.7.A.5)
+  \item HAs are described with limit notation:
+        $\lim_{x\to\infty} r(x) = b$. (EK 1.7.A.6)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth} X @{}}
+rational function         & A function of the form $r(x) = p(x)/q(x)$ where $p$ and $q$ are polynomials. \\
+quotient of leading terms & The ratio of the leading terms of numerator and denominator; governs end behavior. \\
+horizontal asymptote      & A line $y = b$ that the graph approaches (and stays near) as $x \to \pm\infty$. \\
+slant asymptote           & A non-horizontal line that the graph approaches when deg num $=$ deg denom $+ 1$. \\
+end behavior              & The output trend as $x \to +\infty$ or $x \to -\infty$. \\
+limit notation            & $\lim_{x\to\infty} r(x) = b$: outputs get arbitrarily close to $b$ as $x$ grows. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review from Lesson 1.6).
+            Skills reviewed: end behavior of polynomial functions using the leading term,
+            limit notation for polynomials, and degree/leading-coefficient analysis.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    A therapist charges \$200 per session plus a one-time \$50 intake fee.
+    The \textbf{average cost per session} after $n$ sessions is:
+    \[
+      r(n) = \frac{200n + 50}{n}
+    \]
+    \textit{Discussion prompts:}
+    \begin{enumerate}[itemsep=2pt]
+        \item Evaluate $r(1)$, $r(10)$, $r(100)$. What pattern do you notice?
+        \item As you attend more and more sessions, what does the average cost approach? Why?
+        \item Can the average cost ever equal exactly \$200? What does that tell us about the graph?
+    \end{enumerate}
+    \textit{Takeaway:} The \$50 intake fee is ``spread out'' over more sessions, so the average
+    approaches \$200 but never reaches it --- the graph has a \textbf{horizontal asymptote} at $y = 200$.
+    This is the quotient of leading terms: $200n/n = 200$.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Part 1: Quotient of Leading Terms} (10 min)
+
+Key insight: for large $|x|$, lower-degree terms become negligible compared to the
+leading term of each polynomial.  So end behavior is controlled by the
+\textit{quotient of the leading terms}.
+
+\medskip
+\textbf{Worked Example.}
+\[
+  r(x) = \frac{3x^2 + 1}{x^2 - 4}
+\]
+\begin{itemize}
+  \item Leading term of numerator: $3x^2$
+  \item Leading term of denominator: $x^2$
+  \item Quotient: $\dfrac{3x^2}{x^2} = 3$
+  \item As $x \to \pm\infty$, $r(x) \to 3$.
+  \item Horizontal asymptote: $y = 3$.
+\end{itemize}
+
+Numerical check: $r(100) = \dfrac{30{,}001}{9{,}996} \approx 3.001$.
+
+\columnbreak
+
+\textbf{Part 2: The Three Cases} (10 min)
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}p{2.4cm} p{3.6cm}@{}}
+\textbf{Degree comparison} & \textbf{End behavior} \\
+\hline
+deg num $<$ deg denom & HA at $y = 0$ \\
+deg num $=$ deg denom & HA at $y = a_n/b_n$ \\
+deg num $>$ deg denom & Polynomial (slant if diff.\,$= 1$) \\
+\end{tabular}
+
+\medskip
+Quick examples:
+\begin{itemize}
+  \item $\dfrac{x+1}{x^2-9}$: $1 < 2$; HA at $y = 0$.
+  \item $\dfrac{3x^2}{x^2+4}$: $2 = 2$; HA at $y = 3$.
+  \item $\dfrac{x^3-2x}{x-3}$: $3 > 1$; polynomial ($\approx x^2$) end behavior.
+\end{itemize}
+
+\medskip
+\textbf{Part 3: Limit Notation for HAs} (10 min)
+
+When $r$ has a HA at $y = b$:
+\[
+  \lim_{x\to\infty} r(x) = b \qquad \lim_{x\to -\infty} r(x) = b
+\]
+Example: for $r(x) = \dfrac{3x^2+1}{x^2-4}$,
+\[
+  \lim_{x\to\infty} r(x) = 3 \quad \text{and} \quad \lim_{x\to -\infty} r(x) = 3.
+\]
+For $\dfrac{x+1}{x^2-9}$: both limits equal $0$.
+
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and the activity, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Students look at constant terms (e.g., the ``$+1$'' or ``$-4$'')
+        instead of leading terms.  Ask: ``Which term dominates for very large $x$?''
+  \item \textbf{Common error:} Confusing a horizontal asymptote with a zero of the denominator.
+        Clarify: HAs come from degree comparison, not from roots of $q(x)$.
+  \item \textbf{Notation check:} Are students writing $\lim_{x\to\infty}$ correctly?
+  \item \textbf{Cold-call:} ``If the numerator has degree 4 and the denominator degree 6,
+        what is the horizontal asymptote?'' ($y = 0$.)
+  \item \textbf{Cold-call:} ``Give me a rational function with a HA at $y = -2$.''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Analyzing Concert Venue Costs} in leveled tiers.
+All tiers use the same four rational functions in context.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Leading terms are provided; students compute the quotient
+        and state whether a HA exists (and its value).
+  \item \textbf{Tier A (Apply):} Students identify degrees and leading coefficients from the
+        full expressions, compute the quotient, write both limit statements, and name the asymptote type.
+  \item \textbf{Tier E (Extend):} Students construct rational functions meeting specified HA or
+        slant asymptote conditions, then verify with graphing technology.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item For $r(x) = \dfrac{5x^2 - 3}{2x^2 + x - 1}$: state the quotient of leading terms,
+        write $\lim_{x\to\infty} r(x)$ and $\lim_{x\to -\infty} r(x)$, and identify the HA.
+  \item A rational function has numerator degree 3 and denominator degree 5.
+        State the HA and write the limit statement.
+\end{enumerate}
+\textbf{Assessment note:} Look for correct identification of \textit{leading} terms (not
+constants), proper limit notation, and correct application of the three degree-comparison cases.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems covering limit notation for four rational functions, conceptual
+explanation of why equal-degree quotients approach $a_n/b_n$, interpreting a HA at $y = 0$,
+describing end behavior with a slant asymptote, and one AP-style multiple-choice item.
+
+\textbf{Extension (optional):} Students construct and verify their own rational functions with
+prescribed asymptotic behavior, using graphing technology to confirm predictions.
+
+\textbf{Preview:} Lesson 1.8 examines \textit{zeros} of rational functions --- the input values
+where the numerator equals zero --- and how those points interact with the asymptotes from today.
 \end{skillbox}
 \end{document}

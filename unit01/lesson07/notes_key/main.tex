@@ -9,11 +9,105 @@
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Determine the end behavior of a rational function by comparing the degrees of the
+        numerator and denominator using the \ans{quotient of leading terms}. \hfill\textit{(LO 1.7.A)}
+  \item Write the end behavior of a rational function in \ans{limit} notation and identify
+        \ans{horizontal} or \ans{slant} asymptotes. \hfill\textit{(LO 1.7.A)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{rational function}
+\termblanklong{quotient of leading terms}
+\termblanklong{horizontal asymptote}
+\termblanklong{slant asymptote}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+A therapist charges \$200 per session plus a one-time \$50 intake fee.
+Average cost per session: $r(n) = \dfrac{200n + 50}{n}$
+
+\medskip
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Sessions $n$ & 1 & 10 & 100 & 1000 \\
+\hline
+Avg.\ cost $r(n)$ & \ans{\$250} & \ans{\$205} & \ans{\$200.50} & \ans{\$200.05} \\
+\hline
+\end{tabular}
+
+\smallskip
+As $n \to \infty$, the average cost approaches \ans{\$200} because \ansline{the \$50 fee is spread over more sessions and becomes negligible; the dominant terms are $200n/n = 200$.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Quotient of Leading Terms}
+\textbf{Key Idea:} For large $|x|$, a polynomial is dominated by its \ans{leading term}.
+So for a rational function, the end behavior is determined by the \textit{quotient of the leading terms}.
+
+\medskip
+\textbf{Worked Example.} Let $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
+Step 1: Leading term of numerator: & \ans{$3x^2$} \\
+Step 2: Leading term of denominator: & \ans{$x^2$} \\
+Step 3: Quotient of leading terms: & \ans{$3x^2 / x^2 = 3$} \\
+Step 4: Horizontal asymptote: $y = $ & \ans{$3$} \\
+\end{tabular}
+
+\medskip
+In limit notation:
+$\displaystyle\lim_{x\to\infty} r(x) = $ \ans{$3$}
+\quad and \quad
+$\displaystyle\lim_{x\to -\infty} r(x) = $ \ans{$3$}
+
+\medskip
+\textbf{Numerical check:} $r(100) = \dfrac{30{,}001}{9{,}996} \approx$ \ans{$3.001$} \quad (close to the HA!)
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{The Three End-Behavior Cases}
+Compare the degree of the numerator (deg num) to the degree of the denominator (deg denom):
+
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.4cm} X X @{}}
+Case & Degree Relationship & End Behavior \\
+\hline
+Case 1 & deg num \textbf{$<$} deg denom & \ans{Horizontal asymptote at $y = 0$} \\
+Case 2 & deg num \textbf{$=$} deg denom & \ans{Horizontal asymptote at $y = a_n/b_n$} \\
+Case 3 & deg num \textbf{$>$} deg denom & \ans{Polynomial end behavior (no HA)} \\
+\end{tabularx}
+
+\medskip
+\textit{Special case of Case 3:} If deg num $=$ deg denom $+ 1$, the graph has a
+\ans{slant} asymptote parallel to a \ans{line}.
+
+\medskip
+\textbf{Quick Practice.} Classify each rational function below:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}p{3.8cm} p{1.5cm} p{1.5cm} p{2.5cm} p{2.5cm}@{}}
+\textbf{Function} & \textbf{Deg num} & \textbf{Deg den} & \textbf{Case} & \textbf{Asymptote} \\
+\hline
+$\dfrac{x+1}{x^2-9}$         & \ans{1} & \ans{2} & \ans{1} & \ans{$y=0$} \\
+$\dfrac{3x^2}{x^2+4}$        & \ans{2} & \ans{2} & \ans{2} & \ans{$y=3$} \\
+$\dfrac{x^3-2x}{x-3}$        & \ans{3} & \ans{1} & \ans{3} & \ans{polynomial} \\
+$\dfrac{2x+5}{x-1}$          & \ans{1} & \ans{1} & \ans{2} & \ans{$y=2$} \\
+\end{tabular}
 \end{notesbox}
 
 \end{document}

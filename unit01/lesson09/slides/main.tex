@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -12,15 +12,142 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.9}\\[0.5cm]
     {\color{white}\bfseries\LARGE Rational Functions and Vertical Asymptotes}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 1}
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 1: Polynomial and Rational Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: Bacterial Concentration Near a Drain}
+  \sectionlabel[goldacc]{Think About It}
+
+  Concentration is modeled by $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance (cm) from the drain.
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{Table of Values Near $x = 3$}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|}
+        \hline
+        $x$    & $C(x)$ \\
+        \hline
+        2.9    & $-10$ \\
+        2.99   & $-100$ \\
+        2.999  & $-1{,}000$ \\
+        3.001  & $1{,}000$ \\
+        3.01   & $100$ \\
+        3.1    & $10$ \\
+        \hline
+        \end{tabular}
+      \end{block}
+
+    \column{0.44\textwidth}
+      \begin{block}{Discussion Questions}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item Can we evaluate $C(3)$? Why or why not?
+          \item What happens to $C(x)$ as $x$ gets closer to 3?
+          \item Why does the sign of $C(x)$ change as we cross $x = 3$?
+        \end{itemize}
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% VERTICAL ASYMPTOTES: RULE + EXAMPLE
+\begin{frame}[t, plain]
+  \navyheader{Vertical Asymptotes}
+
+  \begin{block}{Rule (EK 1.9.A.1)}
+    $r(x) = p(x)/q(x)$ has a \textbf{vertical asymptote at $x = a$} when:
+    \begin{itemize}\setlength{\itemsep}{4pt}
+      \item $q(a) = 0$ \quad (denominator is zero at $a$), \textbf{AND}
+      \item $p(a) \ne 0$ \quad (numerator is \emph{not} zero at $a$).
+    \end{itemize}
+    \textit{Multiplicity rule:} VA also occurs if the multiplicity of $a$ in the denominator
+    exceeds its multiplicity in the numerator.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Example 1:} $r(x) = \dfrac{x+2}{x-3}$
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Denominator zero: $x = 3$
+        \item Numerator at $x=3$: $5 \ne 0$
+        \item \textbf{VA at $x = 3$}
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \textbf{Example 2:} $r(x) = \dfrac{x-1}{(x-1)^2(x+2)}$
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item $x=1$: denom.\ mult.\ 2 $>$ numer.\ mult.\ 1 $\Rightarrow$ \textbf{VA}
+        \item $x=-2$: numer.\ $= -3 \ne 0$ $\Rightarrow$ \textbf{VA}
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ONE-SIDED LIMITS
+\begin{frame}[t, plain]
+  \navyheader{One-Sided Limits Near a Vertical Asymptote}
+
+  For $r(x) = \dfrac{1}{x - 2}$:
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.50\textwidth}
+      \begin{block}{Table of Values}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|}
+        \hline
+        $x$    & $r(x)$ \\
+        \hline
+        1.9    & $-10$ \\
+        1.99   & $-100$ \\
+        1.999  & $-1{,}000$ \\
+        2.001  & $1{,}000$ \\
+        2.01   & $100$ \\
+        2.1    & $10$ \\
+        \hline
+        \end{tabular}
+      \end{block}
+
+    \column{0.46\textwidth}
+      \begin{block}{Limit Notation (EK 1.9.A.2)}
+        \[
+          \lim_{x \to 2^-} r(x) = -\infty
+        \]
+        \[
+          \lim_{x \to 2^+} r(x) = +\infty
+        \]
+        \medskip
+        \textit{Sign analysis:} when $x > 2$, $(x-2) > 0$, so $r(x) > 0 \to +\infty$.\\
+        When $x < 2$, $(x-2) < 0$, so $r(x) < 0 \to -\infty$.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \sectionlabel[redacc]{Try It --- With a Partner}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item For $r(x) = \dfrac{x + 1}{x^2 - 4}$:
+          \begin{itemize}\setlength{\itemsep}{4pt}
+            \item Factor the denominator.
+            \item Find the denominator zeros.
+            \item Check the numerator at each zero.
+            \item State all vertical asymptotes.
+          \end{itemize}
+
+    \item For $r(x) = \dfrac{3}{(x - 5)^2}$:
+          \begin{itemize}\setlength{\itemsep}{4pt}
+            \item Identify the vertical asymptote.
+            \item Use sign analysis: what is the sign of $(x-5)^2$ near $x=5$?
+            \item Write $\displaystyle\lim_{x \to 5^+} r(x)$ and $\displaystyle\lim_{x \to 5^-} r(x)$.
+          \end{itemize}
+  \end{enumerate}
 \end{frame}
 
 \end{document}

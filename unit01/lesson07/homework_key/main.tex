@@ -9,11 +9,68 @@
 \pageheader{Unit 1, Lesson 1.7}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=14pt]
+
+\item For each rational function below, identify the end behavior type (HA at $y = 0$,
+HA at $y = k$, slant asymptote, or polynomial end behavior) and write both limit statements.
+
+\medskip
+\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{@{}p{3.8cm} p{3.2cm} p{3.0cm} p{3.0cm}@{}}
+\textbf{Function} & \textbf{End Behavior Type} &
+$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ \\
+\hline
+$\dfrac{4x - 1}{2x + 3}$           & \ans{HA at $y=2$}     & \ans{$2$}       & \ans{$2$} \\
+$\dfrac{x^2 + 1}{x^3 - 8}$         & \ans{HA at $y=0$}     & \ans{$0$}       & \ans{$0$} \\
+$\dfrac{-6x^3}{2x^3 + x}$          & \ans{HA at $y=-3$}    & \ans{$-3$}      & \ans{$-3$} \\
+$\dfrac{x^4 - x}{x^2 + 1}$         & \ans{Poly end behavior} & \ans{$+\infty$} & \ans{$+\infty$} \\
+\end{tabular}
+
+\item Explain why $\displaystyle\lim_{x \to \infty} \frac{7x^3 + 2}{x^3 - 1} = 7$.
+
+\ansline{For large $x$, the term $7x^3$ dominates the numerator (the $+2$ is negligible),
+and $x^3$ dominates the denominator (the $-1$ is negligible).
+The quotient of leading terms is $7x^3/x^3 = 7$, so the outputs approach 7 as $x \to \infty$.}
+
+\item A rational function $r$ satisfies $\displaystyle\lim_{x \to \infty} r(x) = 0$.
+What can you conclude about the degrees of the numerator and denominator?
+
+\ansline{The degree of the numerator must be strictly less than the degree of the denominator.
+When the denominator dominates, the quotient of leading terms approaches 0, giving a HA at $y = 0$.}
+
+\item A rational function has a slant asymptote.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item What must be true about the degrees of the numerator and denominator?
+
+        \ansline{The degree of the numerator must equal the degree of the denominator plus 1
+        (i.e., deg num $=$ deg denom $+ 1$).}
+
+  \item Can you write the end behavior as a single limit value $\lim_{x\to\infty} r(x) = k$?
+
+        \ansline{No. A slant asymptote means the quotient of leading terms is a non-constant
+        linear expression, so the outputs grow without bound (not toward a constant $k$).
+        The limit notation $\lim_{x\to\infty} r(x) = \pm\infty$ applies instead.}
+\end{enumerate}
+
+\item \textbf{AP-Style Multiple Choice.} Which function has a HA at $y = 3/2$?
+
+\ans{(B)} $\dfrac{3x^2 - 1}{2x^2 + 7}$ --- the quotient of leading terms is $3x^2/2x^2 = 3/2$.
+
+\textit{(A): deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$.
+(C): quotient is $2/3$.
+(D): deg num $>$ deg denom $\Rightarrow$ polynomial end behavior.)}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{reflectionbox}
+\textbf{Lesson Preview.} In Lesson 1.8, we examine the \textit{zeros} of rational functions ---
+the input values where the numerator equals zero.  Together with the asymptotes from today,
+these zeros determine the overall shape of the graph of a rational function.
+\end{reflectionbox}
 
 \end{document}

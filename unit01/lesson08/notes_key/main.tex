@@ -9,11 +9,105 @@
 \pageheader{Unit 1, Lesson 1.8}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Find the real zeros of a rational function by setting the \ans{numerator} equal to zero
+        and checking that the solutions are in the \ans{domain}. \hfill\textit{(LO 1.8.A)}
+  \item Solve a rational inequality using a \ans{sign chart} with critical values from
+        both the numerator and the denominator. \hfill\textit{(LO 1.8.A)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{zero of a rational function}
+\ansline{An input value $c$ in the domain where $r(c) = 0$; equivalently, where the numerator equals zero and the denominator does not.}
+\termblanklong{domain restriction}
+\ansline{A value excluded from the domain because it makes the denominator zero; NOT a zero of the function.}
+\termblanklong{critical value}
+\ansline{Any $x$-value where $r(x) = 0$ (numerator zero in domain) or $r(x)$ is undefined (denominator zero); used as interval boundaries in sign analysis.}
+\termblanklong{sign chart}
+\ansline{A number-line diagram that marks critical values and records the sign ($+$ or $-$) of $r(x)$ on each resulting interval.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+A company's profit per unit is modeled by $\displaystyle P(x) = \dfrac{x^2 - 9}{x - 1}$
+where $x > 0$, $x \ne 1$.
+
+At what production level(s) is the profit per unit equal to zero? When is it positive?
+Why does $x = 1$ need to be excluded?
+
+\vspace{0.05in}
+\ansline{Set numerator $= 0$: $x^2 - 9 = 0 \Rightarrow x = 3$ (in domain). Profit is zero at $x = 3$. Sign analysis gives positive profit on $(1, 3)$ would need checking --- $x = 1$ is excluded because $P(1)$ is undefined (denominator $= 0$).}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Zeros of Rational Functions (EK 1.8.A.1)}
+\textbf{Rule:} For $r(x) = \dfrac{p(x)}{q(x)}$, we have $r(x) = 0$ when:
+\begin{itemize}[itemsep=3pt]
+  \item $p(x) = 0$ (numerator equals \ans{zero}), AND
+  \item $q(x) \ne 0$ ($x$ is in the \ans{domain} of $r$).
+\end{itemize}
+
+\medskip
+\textbf{Worked Example.} Find all zeros of $r(x) = \dfrac{x^2 - 4}{x - 3}$.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} r l @{\qquad} l @{}}
+\textbf{Step 1} & Find domain restrictions. & $q(x) = 0 \Rightarrow$ \ans{$x - 3 = 0 \Rightarrow x = 3$} \\
+                &                           & Domain: all reals except $x =$ \ans{$3$} \\[4pt]
+\textbf{Step 2} & Set numerator $= 0$.      & $x^2 - 4 = 0 \Rightarrow (x - \ans{2})(x + \ans{2}) = 0$ \\
+                &                           & Solutions: $x =$ \ans{$2$} and $x =$ \ans{$-2$} \\[4pt]
+\textbf{Step 3} & Check domain.             & Is $x = 2$ in the domain? \ans{Yes} \\
+                &                           & Is $x = -2$ in the domain? \ans{Yes} \\[4pt]
+\textbf{Step 4} & State zeros.              & Zeros of $r$: $x =$ \ans{$2$ and $x = -2$} \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Rational Inequalities --- Sign Chart Method (EK 1.8.A.2)}
+\textbf{Key idea:} The sign of $r(x)$ can only change at a \ans{numerator zero (in domain)} or a
+\ans{denominator zero (domain restriction)}. These are called \textbf{critical values}.
+
+\medskip
+\textbf{Solve:} $\dfrac{x - 1}{x + 2} \geq 0$
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} r l @{\qquad} l @{}}
+\textbf{Step 1} & Find critical values. & Numerator zero: $x =$ \ans{$1$} \quad Denominator zero: $x =$ \ans{$-2$} \\[4pt]
+\textbf{Step 2} & Mark on number line.  & Open circle at $x =$ \ans{$-2$} (excluded); closed at $x =$ \ans{$1$} (zero). \\[4pt]
+\textbf{Step 3} & Test each interval.   & \\
+\end{tabular}
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Interval} & $(-\infty,\,-2)$ & $(-2,\,1)$ & $(1,\,\infty)$ \\
+\hline
+Test value $x$    & \ans{$-3$}  & \ans{$0$}  & \ans{$2$} \\
+\hline
+Sign of $r(x)$    & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{Step 4.} Write the solution (intervals where $r(x) \geq 0$):
+
+\vspace{0.06in}
+Solution: \ans{$(-\infty,\,-2)\cup[1,\,\infty)$}
 \end{notesbox}
 
 \end{document}

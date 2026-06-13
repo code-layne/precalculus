@@ -1,7 +1,7 @@
 %! Rational Functions and Holes — Unit 1, Lesson 1.10 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,82 @@
 \pageheader{Unit 1, Lesson 1.10}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=16pt]
+
+\item For each rational function below, find all holes and vertical asymptotes.
+
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+
+        \item $\displaystyle r(x) = \dfrac{x^2 - 5x + 6}{x - 3} = \dfrac{(x-3)(x-2)}{x-3}$
+
+              Shared zero $x=3$, $m=n=1$ so \ans{Hole}. Simplified: $x-2$. $L = 3-2 = 1$.
+
+              Holes: \ans{$(3,\ 1)$} \qquad VAs: \ans{none}
+
+        \item $\displaystyle r(x) = \dfrac{x^2 - x - 12}{(x-4)(x+1)} = \dfrac{(x-4)(x+3)}{(x-4)(x+1)}$
+
+              Shared zero $x=4$, $m=n=1$ so \ans{Hole}. Simplified: $\dfrac{x+3}{x+1}$. $L = \dfrac{7}{5}$.
+
+              Holes: \ans{$\!\left(4,\ \dfrac{7}{5}\right)$} \qquad VAs: \ans{$x = -1$}
+
+        \item $\displaystyle r(x) = \dfrac{x^2 + 3x}{x^2 + 3x + 2} = \dfrac{x(x+3)}{(x+1)(x+2)}$
+
+              No shared zeros (numerator zeros: $0, -3$; denominator zeros: $-1, -2$).
+
+              Holes: \ans{none} \qquad VAs: \ans{$x = -1$ and $x = -2$}
+
+      \end{enumerate}
+
+\item \textbf{Explanation (sample):} \ans{A hole occurs at a shared zero $x = a$ when the
+      numerator's multiplicity $m$ is greater than or equal to the denominator's multiplicity $n$
+      ($m \geq n$). After canceling the shared factor, the function still has a finite value at
+      that input. A vertical asymptote occurs when $m < n$ or when the zero appears only in the
+      denominator --- the denominator approaches 0 faster than the numerator, causing the outputs
+      to grow without bound.}
+
+\item
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item $\displaystyle \lim_{x \to 3} r(x) = $ \ans{$5$}
+        \item \ans{As the input $x$ gets arbitrarily close to 3 (from either side), the output $r(x)$
+              gets arbitrarily close to 5, even though the point $(3, 5)$ is missing from the graph.}
+        \item Is $r(3)$ defined? \ans{No} --- \ans{The hole means the function is undefined at $x=3$; it is a removable discontinuity.}
+      \end{enumerate}
+
+\item $\displaystyle r(x) = \dfrac{x^3 - x^2}{x^2 - x}$
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Numerator: \ans{$x^2(x-1)$} \qquad Denominator: \ans{$x(x-1)$}
+
+        \item
+              \renewcommand{\arraystretch}{1.6}
+              \begin{tabular}{|c|c|c|c|}
+              \hline
+              Zero & $m$ & $n$ & Hole or VA? \\
+              \hline
+              \ans{$x=0$} & \ans{2} & \ans{1} & \ans{Hole ($m > n$)} \\
+              \hline
+              \ans{$x=1$} & \ans{1} & \ans{1} & \ans{Hole ($m = n$)} \\
+              \hline
+              \end{tabular}
+
+        \item Simplified: \ans{$x$} \quad (cancel $x(x-1)$ from both)
+
+              Holes: \ans{$(0,\ 0)$} and \ans{$(1,\ 1)$}
+
+              \textit{(Substitute into simplified form $x$: at $x=0$, $L=0$; at $x=1$, $L=1$.)}
+      \end{enumerate}
+
+\item \textbf{(AP-Style)} $r(x) = \dfrac{x^2-4}{x^2-x-2} = \dfrac{(x-2)(x+2)}{(x-2)(x+1)}$
+
+      Shared zero $x=2$, $m=n=1 \Rightarrow$ \ans{Hole}. Simplified: $\dfrac{x+2}{x+1}$. $L = \dfrac{4}{3}$.
+
+      Denominator zero $x=-1$ (not shared) $\Rightarrow$ VA at $x=-1$.
+
+      Answer: \ans{A} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
+
+\end{enumerate}
 
 \end{document}

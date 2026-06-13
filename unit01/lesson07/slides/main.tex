@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -12,15 +12,171 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.7}\\[0.5cm]
     {\color{white}\bfseries\LARGE Rational Functions and End Behavior}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 1}
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 1: Polynomial and Rational Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: Therapy Costs}
+  \sectionlabel[goldacc]{Think About It}
+
+  A therapist charges \$200 per session plus a one-time \$50 intake fee.\\
+  \textbf{Average cost per session:}
+  \[
+    r(n) = \frac{200n + 50}{n}
+  \]
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{block}{Compute some values}
+        \begin{itemize}\setlength{\itemsep}{5pt}
+          \item $r(1) = \$250$
+          \item $r(10) = \$205$
+          \item $r(100) = \$200.50$
+          \item $r(1000) = \$200.05$
+        \end{itemize}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Discussion}
+        \begin{itemize}\setlength{\itemsep}{5pt}
+          \item What value does the average cost approach?
+          \item Can it ever equal exactly \$200?
+          \item What is the quotient of the leading terms?
+        \end{itemize}
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Takeaway:} The graph has a \textbf{horizontal asymptote at $y = 200$}
+  because $200n/n = 200$ as $n \to \infty$.
+\end{frame}
+
+% QUOTIENT OF LEADING TERMS
+\begin{frame}[t, plain]
+  \navyheader{Quotient of Leading Terms}
+  \sectionlabel[navy]{Worked Example}
+
+  For large $|x|$, a polynomial is dominated by its \textbf{leading term}.
+
+  \medskip
+  \textbf{Example:} $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \begin{block}{Step-by-Step}
+        \begin{enumerate}\setlength{\itemsep}{5pt}
+          \item Leading term of num: $3x^2$
+          \item Leading term of den: $x^2$
+          \item Quotient: $\dfrac{3x^2}{x^2} = 3$
+          \item Horizontal asymptote: $y = 3$
+        \end{enumerate}
+      \end{block}
+
+    \column{0.50\textwidth}
+      \begin{block}{In Limit Notation}
+        \[
+          \lim_{x\to\infty} r(x) = 3
+        \]
+        \[
+          \lim_{x\to -\infty} r(x) = 3
+        \]
+        \smallskip
+        Check: $r(100) = \dfrac{30{,}001}{9{,}996} \approx 3.001$
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% THE THREE CASES
+\begin{frame}[t, plain]
+  \navyheader{The Three End-Behavior Cases}
+
+  Compare the \textbf{degree of the numerator} to the \textbf{degree of the denominator}:
+
+  \bigskip
+  \begin{block}{Summary Table}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{@{}lll@{}}
+      \textbf{Degree Comparison} & \textbf{End Behavior} & \textbf{Example} \\
+      \hline
+      deg num $<$ deg denom & HA at $y = 0$ & $\dfrac{x+1}{x^2-9}$ \\[4pt]
+      deg num $=$ deg denom & HA at $y = a_n/b_n$ & $\dfrac{3x^2}{x^2+4}$ \\[4pt]
+      deg num $>$ deg denom & Polynomial end behavior & $\dfrac{x^3-2x}{x-3}$ \\[4pt]
+    \end{tabular}
+  \end{block}
+
+  \bigskip
+  \textbf{Special case:} If deg num $=$ deg denom $+ 1$, the graph has a
+  \textbf{slant asymptote} (a non-horizontal line).
+\end{frame}
+
+% LIMIT NOTATION FOR HAs
+\begin{frame}[t, plain]
+  \navyheader{Limit Notation for Horizontal Asymptotes}
+  \sectionlabel[navy]{EK 1.7.A.6}
+
+  When a rational function $r$ has a horizontal asymptote at $y = b$:
+  \[
+    \lim_{x\to\infty} r(x) = b \qquad \text{and} \qquad \lim_{x\to -\infty} r(x) = b
+  \]
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{block}{Equal Degrees}
+        $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$\\[6pt]
+        $\displaystyle\lim_{x\to\pm\infty} r(x) = 3$\\[4pt]
+        HA: $y = 3$
+      \end{block}
+
+    \column{0.46\textwidth}
+      \begin{block}{Num Degree $<$ Den Degree}
+        $r(x) = \dfrac{x+1}{x^2-9}$\\[6pt]
+        $\displaystyle\lim_{x\to\pm\infty} r(x) = 0$\\[4pt]
+        HA: $y = 0$
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% PAIR PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  With your partner, analyze each rational function.
+  For each: identify the quotient of leading terms, state the asymptote type,
+  and write both limit statements.
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{block}{Function 1}
+        \[
+          f(x) = \frac{4x^3 - 2}{x^3 + 5x}
+        \]
+        \begin{itemize}\setlength{\itemsep}{4pt}
+          \item Quotient of leading terms: ?
+          \item Asymptote type: ?
+          \item $\lim_{x\to\infty} f(x) = $?
+        \end{itemize}
+      \end{block}
+
+    \column{0.46\textwidth}
+      \begin{block}{Function 2}
+        \[
+          g(x) = \frac{x^2 - 3}{x^4 + 1}
+        \]
+        \begin{itemize}\setlength{\itemsep}{4pt}
+          \item Quotient of leading terms: ?
+          \item Asymptote type: ?
+          \item $\lim_{x\to -\infty} g(x) = $?
+        \end{itemize}
+      \end{block}
+  \end{columns}
 \end{frame}
 
 \end{document}
