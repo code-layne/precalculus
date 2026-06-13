@@ -1,7 +1,7 @@
 %! Transformations of Functions — Unit 1, Lesson 1.12 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,37 @@
 \pageheader{Unit 1, Lesson 1.12}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=16pt]
+
+\item The function $g$ is defined by $g(x) = f(x+3) - 2$. Describe the transformations
+      applied to the graph of $f$ to produce the graph of $g$.
+
+      \vspace{0.08in}
+      \ansline{Horizontal shift left 3 units (because $h=3>0$) and vertical shift down 2 units (because $k=-2$).}
+
+\item The table below shows values of $f$. Complete the table for $g(x) = -f(x)$.
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $f(x)$ & $3$  & $1$  & $0$ & $-1$ & $-3$ \\
+      \hline
+      $g(x) = -f(x)$ & \ans{$-3$} & \ans{$-1$} & \ans{$0$} & \ans{$1$} & \ans{$3$} \\
+      \hline
+      \end{tabular}
+
+\item The domain of $f$ is $[-2,\,6]$. State the domain of $g(x) = f(x-4)$.
+
+      \vspace{0.08in}
+      Domain of $g$: \ans{$[2,\,10]$}
+
+      \textit{(Shift right 4: add 4 to each endpoint. $-2+4=2$; $6+4=10$.)}
+
+\end{enumerate}
 
 \end{document}

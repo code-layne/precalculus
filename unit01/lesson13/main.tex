@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,141 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will select an appropriate function model (linear,
+    quadratic, cubic, polynomial, or piecewise) for a contextual scenario by analyzing rates
+    of change and shape/context clues, and will articulate the underlying assumptions and
+    domain/range restrictions embedded in the model.
+    \hfill\textit{\small Skills: MP 2.A, MP 3.C}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 2.A} --- Identify information from mathematical representations (tables, graphs,
+descriptions) to determine function type. \newline
+\textbf{MP 3.C} --- Support model-selection conclusions with a logical rationale. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Constant 1st differences $\Rightarrow$ linear; constant 2nd differences $\Rightarrow$
+        quadratic; constant $n$th differences $\Rightarrow$ degree-$n$ polynomial. (EK 1.13.A.1--A.5)
+  \item Area/2-D context $\Rightarrow$ quadratic; volume/3-D context $\Rightarrow$ cubic. (EK 1.13.A.3)
+  \item A degree-$n$ polynomial can pass through $n+1$ points with distinct inputs. (EK 1.13.A.6)
+  \item Piecewise models arise when behavior changes over different intervals. (EK 1.13.A.7)
+  \item Every model carries assumptions about consistency, co-variation, and restricted
+        domain/range. (EK 1.13.B.1--B.4)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.30\linewidth} X @{}}
+first differences    & The differences between consecutive output values of equally-spaced inputs: $\Delta y_i = y_{i+1} - y_i$. \\
+second differences   & Differences of the first differences; constant for quadratic models. \\
+$n$th differences    & Differences taken $n$ times; constant and nonzero for degree-$n$ polynomial models. \\
+domain restriction   & A limit on the input values that is mathematically, contextually, or practically required. \\
+range restriction    & A limit on the output values (e.g., integer-only outputs due to rounding). \\
+piecewise-defined function & A function defined by different formulas over different intervals of its domain. \\
+model assumption     & A simplifying claim about the real world that must hold for the model to be valid. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        Spiral review (warm-up) covers: computing first and second differences of a data set;
+        deciding whether a rate of change is constant (linear) or changing (nonlinear).
+        These skills connect directly to the difference-table decision tree introduced today.
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+``A scientist hands you a table of mystery data. How do you decide which function type to use?''
+
+\medskip
+Display a short table with six equally-spaced inputs and outputs. Ask cold-call: ``Is this
+linear, quadratic, or something else? How can you tell without graphing it?'' Let students
+debate for 90 seconds before revealing the difference-table approach.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (12 min): Difference-Table Decision Tree.}
+
+Given a table with equally-spaced inputs, compute differences:
+\begin{enumerate}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
+  \item Compute 1st differences ($\Delta y$).
+  \item If constant $\Rightarrow$ \textbf{linear} (degree 1).
+  \item If not constant, compute 2nd differences ($\Delta^2 y$).
+  \item If constant $\Rightarrow$ \textbf{quadratic} (degree 2).
+  \item Continue: constant $n$th differences $\Rightarrow$ degree-$n$ polynomial.
+\end{enumerate}
+
+Pose: ``If 1st differences grow linearly themselves, what does that tell you?'' (Answer: 2nd
+differences are constant, so the data is quadratic.)
+
+\columnbreak
+
+\textbf{Part 2 (10 min): Shape \& Context Clues.}
+
+When no table is given, use context:
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
+  \item Roughly constant rate of change $\Rightarrow$ linear.
+  \item Area or 2-D measurement $\Rightarrow$ quadratic.
+  \item Volume or 3-D measurement $\Rightarrow$ cubic.
+  \item Multiple local maxima/minima or multiple real zeros $\Rightarrow$ higher-degree polynomial.
+  \item Behavior changes abruptly at a threshold $\Rightarrow$ piecewise.
+\end{itemize}
+
+\textbf{Part 3 (10 min): Stating Assumptions (LO 1.13.B).}
+
+Every model rests on assumptions. Template: ``This model assumes that
+[quantity/behavior] remains [consistent/proportional/valid] over [domain interval].
+The domain is restricted to [values] because [mathematical / contextual reason].''
+
+Walk through a fencing example: ``We model the enclosed area as a quadratic in side length.
+We assume the fencing forms a perfect rectangle and that side length is between 0 and half
+the total fencing available.''
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If 3rd differences are constant, what degree polynomial models the data?''
+  \item After Part 2: cold-call ``Why can't you model negative time in the fencing problem?'' (domain restriction)
+  \item Watch for students who compute differences but stop at 1st differences even when they are not constant.
+  \item Watch for students who confuse \textit{contextual} domain restrictions (e.g., length $> 0$) with
+        \textit{mathematical} ones (e.g., denominator $\neq 0$).
+  \item After Part 3: cold-call ``What would constant second differences tell you?'' --- expect ``the data
+        is quadratic'' or ``the rate of change is linear.''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given four scenarios with model type choices; circle the best model
+        and complete a fill-in assumption sentence.
+  \item \textbf{Tier A (Apply):} Compute difference tables for provided data, determine degree, name the
+        model type, and state one assumption with domain restriction.
+  \item \textbf{Tier E (Extend):} Write a piecewise model description (two pieces, each with appropriate
+        function type) for a real-world scenario and articulate two assumptions with justification.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) complete a first/second differences table and name the
+model type; (2) read a scenario description and circle the best model with one reason; (3) state
+one domain restriction and one assumption for a fencing model. Collect and use to group students
+before Lesson 1.14.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework: 5--6 problems covering difference tables, context-to-model matching, assumption
+articulation, and piecewise model description. Extension: given 4 data points, write the
+unique cubic model in descriptive form and state what real-world meaning the degree implies.
+Preview of Lesson 1.14: students will \textit{construct} function models from scratch --- today's
+selection and assumption skills are the prerequisite.
 \end{skillbox}
+
 \end{document}

@@ -9,11 +9,149 @@
 \pageheader{Unit 1, Lesson 1.12}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Function Makeover Studio]{sky}
+\small
+A design studio applies transformation rules to ``restyle'' functions. The base function $f$
+is defined by the table below. Your team must construct transformed versions, match
+transformations to descriptions, and reverse-engineer transformations from data.
+
+\medskip
+\textbf{Base function $f$:}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
+\hline
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Three students each applied a different transformation to $f$. Their tables are shown below.
+Match each table to the correct description by writing the letter in the blank.
+
+\medskip
+\textbf{Descriptions:} \quad
+\textbf{A.}\ $g(x) = f(x) - 3$ \qquad
+\textbf{B.}\ $g(x) = f(x+2)$ \qquad
+\textbf{C.}\ $g(x) = 2f(x)$
+
+\medskip
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 1: $g(x)$ & $1$ & $-2$ & $-3$ & $-2$ & $1$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
+
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 2: $g(x)$ & $8$ & $2$ & $0$ & $2$ & $8$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
+
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 3: $g(x)$ & $0$ & $1$ & $4$ & $9$ & $16$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Using the base function $f$ from the scenario, construct the table of values for
+$g(x) = 2f(x - 1) + 3$. Show how you compute each output.
+
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $x-1$ & $f(x-1)$ & $2f(x-1)$ & $g(x) = 2f(x-1)+3$ \\
+\hline
+$-1$ & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$0$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$1$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$2$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$3$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+
+\medskip
+State the domain and range of $g$ based on your table.
+
+\medskip
+Domain of $g$: \blank{5cm} \quad Range of $g$: \blank{5cm}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A second function $h$ is defined by the table below. By comparing $h$ to the base function
+$f$, identify all transformations applied to $f$ to produce $h$, and write $h(x)$ in terms
+of $f$.
+
+\medskip
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
+\hline
+$h(x)$ & $-7$ & $-1$ & $1$ & $-1$ & $-7$ \\
+\hline
+\end{tabular}
+
+\medskip
+\begin{enumerate}[itemsep=8pt]
+  \item Compare outputs: how does $h(x)$ relate to $f(x)$ at each $x$-value?
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item Write $h(x)$ in terms of $f(x)$. Identify $a$ and $k$ in $g(x) = af(x)+k$.
+
+        \vspace{0.05in}
+        $h(x) = $ \blank{5cm}, so $a = $ \blank{1.5cm} and $k = $ \blank{1.5cm}
+
+  \item Describe in words all transformations that map $f$ onto $h$.
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+
+\end{tcolorbox}
 
 \end{document}
