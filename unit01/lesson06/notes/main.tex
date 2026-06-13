@@ -9,11 +9,100 @@
 \pageheader{Unit 1, Lesson 1.6}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Describe the end behavior of a polynomial function and write it using
+        \blank{3cm} notation. \hfill\textit{(LO 1.6.A)}
+  \item Determine the end behavior of a polynomial from its \blank{2cm} and the
+        \blank{3cm} of its leading coefficient. \hfill\textit{(EK 1.6.A.3)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{end behavior}
+\termblanklong{leading term}
+\termblanklong{leading coefficient}
+\termblanklong{limit notation ($\lim_{x \to \infty}$)}
+\termblanklong{dominates}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+A student wraps rubber bands around a ball. The radius (in mm) grows according to
+$r(t) = 2t^3 - 50t^2 + 100t$.
+
+At $t = 1{,}000$ minutes: \quad $2t^3 = $ \blank{3cm} \quad $-50t^2 = $ \blank{3cm}
+
+What percentage of the cubic term is the $-50t^2$ term? \blank{3cm}
+
+Which term ``wins'' as $t$ gets very large?  \blank{4cm}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Leading Term Dominance}
+\textbf{Key Idea:} For large $|x|$, the \blank{3cm} term of a polynomial dominates
+all lower-degree terms.
+
+\medskip
+\textbf{Example.} Let $p(x) = x^3 - 100x^2$.
+Complete the table by computing $p(x)$ and comparing it to $x^3$:
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $p(x) = x^3 - 100x^2$ & $x^3$ & $\dfrac{-100x^2}{x^3} = \dfrac{-100}{x}$ \\
+\hline
+$100$   & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+$1{,}000$ & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+\end{tabular}
+
+\medskip
+As $x \to \infty$, the ratio $-100/x \to$ \blank{1.5cm}, so $p(x)$ behaves like \blank{2cm}.
+
+\medskip
+\textbf{Conclusion:} To find end behavior, look only at the \blank{3.5cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Four End-Behavior Cases}
+The end behavior of any polynomial is determined by its \textbf{degree} (even or odd) and the
+\textbf{sign} of its leading coefficient.
+
+\medskip
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Degree} & \textbf{Leading Coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
+\hline
+Even & Positive ($a_n > 0$) & \blank{2cm} & \blank{2cm} \\
+Even & Negative ($a_n < 0$) & \blank{2cm} & \blank{2cm} \\
+Odd  & Positive ($a_n > 0$) & \blank{2cm} & \blank{2cm} \\
+Odd  & Negative ($a_n < 0$) & \blank{2cm} & \blank{2cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Memory aid:} Even-degree polynomials have both ends going the \blank{1.5cm} direction.
+Odd-degree polynomials have ends going \blank{2cm} directions.
+
+\medskip
+\textbf{Practice.} State the end behavior of $p(x) = -3x^4 + 2x^2 - 7$.
+
+\smallskip
+Leading term: \blank{3cm} \quad Degree: \blank{1.5cm} \quad Sign: \blank{2cm}
+
+\medskip
+$\lim_{x \to \infty} p(x) = $ \blank{2cm} \qquad $\lim_{x \to -\infty} p(x) = $ \blank{2cm}
 \end{notesbox}
 
 \end{document}

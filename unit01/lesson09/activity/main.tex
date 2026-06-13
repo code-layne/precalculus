@@ -9,11 +9,131 @@
 \pageheader{Unit 1, Lesson 1.9}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Analyzing Pressure Gauges]{sky}
+\small
+Engineers monitor pressure in a hydraulic system. The pressure at different points in the
+system is modeled by rational functions. A pressure ``spike'' --- where pressure grows without
+bound --- corresponds to a vertical asymptote of the model. For each function below, determine
+where pressure spikes occur.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l @{\qquad} l l @{}}
+$r_1(x) = \dfrac{3}{x - 5}$ &
+$r_2(x) = \dfrac{x + 2}{x^2 - 4}$ &
+$r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$ &
+$r_4(x) = \dfrac{x}{(x+2)^3}$
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+For each function, set the denominator equal to zero and solve. Assume the numerator is not
+zero at those points and write the vertical asymptote equation(s).
+
+\begin{enumerate}[itemsep=10pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$
+
+        Denominator $= 0$ when $x =$ \blank{2cm}. \quad Vertical asymptote: \blank{3cm}
+
+  \item $r_2(x) = \dfrac{x + 2}{x^2 - 4}$
+
+        Factor the denominator: $x^2 - 4 =$ \blank{4cm}
+
+        Denominator $= 0$ when $x =$ \blank{3.5cm}. \quad Vertical asymptote(s): \blank{3.5cm}
+
+  \item $r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$
+
+        Denominator $= 0$ when $x =$ \blank{3.5cm}. \quad Vertical asymptote(s): \blank{3.5cm}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$
+
+        Denominator $= 0$ when $x =$ \blank{2cm}. \quad Vertical asymptote: \blank{3cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Factor both the numerator and denominator of each function. Determine whether each denominator
+zero gives a \textbf{vertical asymptote} (VA) or a \textbf{potential hole} (if the numerator
+is also zero at that point). Write the correct VAs.
+
+\begin{enumerate}[itemsep=12pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$: \quad
+        Numerator at $x=5$: \blank{2cm}. \quad Result: \blank{4cm}
+
+  \item $r_2(x) = \dfrac{x + 2}{x^2 - 4} = \dfrac{x+2}{(x-2)(x+2)}$
+
+        At $x = 2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+        At $x = -2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+  \item $r_3(x) = \dfrac{x^2-1}{(x-1)(x+3)}$.
+        Factor the numerator: $x^2 - 1 =$ \blank{4cm}
+
+        At $x = 1$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+        At $x = -3$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$: \quad
+        At $x = -2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=12pt]
+  \item \textbf{Explaining a hole.} For $r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$,
+        factor the numerator as $(x-1)(x+1)$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Why is $x = 1$ \emph{not} a vertical asymptote? Use the words
+                ``multiplicity'' or ``cancels'' in your explanation.
+
+                \vspace{0.25in}
+                \writeline\\[4pt]
+                \writeline
+
+          \item Confirm that $x = -3$ \textbf{is} a vertical asymptote. Show your reasoning.
+
+                \vspace{0.25in}
+                \writeline
+        \end{enumerate}
+
+  \item \textbf{One-sided limits.} For $r_4(x) = \dfrac{x}{(x+2)^3}$, analyze the sign
+        of $r_4(x)$ as $x \to -2$ from each side.
+
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item When $x$ is slightly greater than $-2$ (e.g., $x = -1.9$):
+                Numerator sign: \blank{2cm}. \quad $(x+2)^3$ sign: \blank{2cm}.
+                \quad So $r_4(x)$ is: \blank{2cm}
+
+          \item When $x$ is slightly less than $-2$ (e.g., $x = -2.1$):
+                Numerator sign: \blank{2cm}. \quad $(x+2)^3$ sign: \blank{2cm}.
+                \quad So $r_4(x)$ is: \blank{2cm}
+
+          \item Write the one-sided limits:
+                \[
+                  \lim_{x \to -2^+} r_4(x) = \blank{2.5cm}
+                  \qquad\qquad
+                  \lim_{x \to -2^-} r_4(x) = \blank{2.5cm}
+                \]
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

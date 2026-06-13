@@ -4,7 +4,7 @@
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
@@ -12,15 +12,107 @@
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.8}\\[0.5cm]
     {\color{white}\bfseries\LARGE Rational Functions and Zeros}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 1}
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 1: Polynomial and Rational Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: Profit Per Unit}
+  \sectionlabel[goldacc]{Think About It}
+
+  A company models its \textbf{profit per unit} as
+  \[
+    P(x) = \frac{x^2 - 9}{x - 1}, \qquad x > 0,\; x \ne 1
+  \]
+  where $x$ is thousands of units produced.
+
+  \bigskip
+  \begin{block}{Discussion}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+      \item At what production level(s) is the profit per unit \textbf{exactly zero}?
+      \item For which values of $x$ is the profit \textbf{positive}?
+      \item Why can't we evaluate $P(1)$?
+    \end{itemize}
+  \end{block}
+
+  \bigskip
+  \textit{Today: we find where rational functions equal zero and where they are positive/negative.}
+\end{frame}
+
+% ZEROS OF RATIONAL FUNCTIONS
+\begin{frame}[t, plain]
+  \navyheader{Zeros of Rational Functions}
+
+  \begin{block}{Key Principle (EK 1.8.A.1)}
+    For $r(x) = \dfrac{p(x)}{q(x)}$, \; $r(x) = 0$ when:
+    \begin{enumerate}\setlength{\itemsep}{4pt}
+      \item $p(x) = 0$ \quad (numerator equals zero), AND
+      \item $q(x) \ne 0$ \quad ($x$ is in the domain)
+    \end{enumerate}
+  \end{block}
+
+  \bigskip
+  \textbf{Example:} Find the zeros of $\displaystyle r(x) = \dfrac{x^2 - 4}{x - 3}$.
+
+  \medskip
+  \begin{itemize}\setlength{\itemsep}{5pt}
+    \item Domain: $x \ne 3$ (denominator zero)
+    \item Set numerator $= 0$: $x^2 - 4 = 0 \Rightarrow (x-2)(x+2) = 0$
+    \item Solutions $x = 2$ and $x = -2$: both satisfy $x \ne 3$, so both are in the domain
+    \item \textbf{Zeros: $x = 2$ and $x = -2$}
+    \item Note: $x = 3$ is \textbf{NOT} a zero --- it is undefined there
+  \end{itemize}
+\end{frame}
+
+% SIGN CHART METHOD
+\begin{frame}[t, plain]
+  \navyheader{Sign Chart Method for Rational Inequalities}
+
+  \textbf{Solve:} $\displaystyle\frac{x - 1}{x + 2} \geq 0$
+
+  \medskip
+  \begin{block}{4 Steps}
+    \begin{enumerate}\setlength{\itemsep}{4pt}
+      \item \textbf{Find critical values:} \quad Numerator zero: $x = 1$. \; Denominator zero: $x = -2$.
+      \item \textbf{Mark on number line:} \quad open circle at $x = -2$; closed circle at $x = 1$
+      \item \textbf{Test one value per interval:}
+            \begin{itemize}
+              \item $x = -3$: $(-)/(-)= + \Rightarrow (+)$
+              \item $x = 0$: $(-)/( +) \Rightarrow (-)$
+              \item $x = 2$: $(+)/(+) \Rightarrow (+)$
+            \end{itemize}
+      \item \textbf{Include intervals where sign is $(+)$; include zero $x=1$; exclude $x=-2$}
+    \end{enumerate}
+  \end{block}
+
+  \medskip
+  \textbf{Solution:} $(-\infty,\,-2)\cup[1,\,\infty)$
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  Work with your partner on the following two problems.
+
+  \bigskip
+  \textbf{Problem 1.} Find all zeros of $\displaystyle f(x) = \dfrac{x^2 - 5x + 6}{x + 1}$.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item What is the domain restriction?
+    \item Factor the numerator and find numerator zeros.
+    \item Which numerator zeros are in the domain?
+  \end{itemize}
+
+  \bigskip
+  \textbf{Problem 2.} Solve $\displaystyle\frac{x + 3}{x - 2} \leq 0$ using a sign chart.
+  \begin{itemize}\setlength{\itemsep}{4pt}
+    \item List critical values and mark the number line.
+    \item Test one value per interval.
+    \item Write the solution in interval notation.
+  \end{itemize}
 \end{frame}
 
 \end{document}

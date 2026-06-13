@@ -9,11 +9,95 @@
 \pageheader{Unit 1, Lesson 1.7}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Analyzing Concert Venue Costs]{sky}
+\small
+A concert venue is modeling the average cost per person for different events.
+Each rational function below represents a different cost or demand model.
+Analyze the end behavior of each function as audience size $x$ grows without bound.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}llll@{}}
+$r_1(x) = \dfrac{2x + 5}{x - 1}$ &\quad&
+$r_2(x) = \dfrac{3x^2}{x^2 + 4}$ \\[8pt]
+$r_3(x) = \dfrac{x + 1}{x^2 - 9}$ &\quad&
+$r_4(x) = \dfrac{x^3 - 2x}{x - 3}$ \\
+\end{tabular}
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The leading terms are already extracted for you.
+Compute the quotient of leading terms and state the asymptote type.
+
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{@{}p{1.2cm} p{2.2cm} p{2.2cm} p{2.8cm} p{3.0cm}@{}}
+\textbf{Fcn} & \textbf{Lead.\ num} & \textbf{Lead.\ den} & \textbf{Quotient} & \textbf{Asymptote?} \\
+\hline
+$r_1$ & $2x$   & $x$   & \ans{$2x/x = 2$}    & \ans{HA: $y=2$} \\
+$r_2$ & $3x^2$ & $x^2$ & \ans{$3x^2/x^2 = 3$} & \ans{HA: $y=3$} \\
+$r_3$ & $x$    & $x^2$ & \ans{$x/x^2 = 1/x \to 0$} & \ans{HA: $y=0$} \\
+$r_4$ & $x^3$  & $x$   & \ans{$x^3/x = x^2$}  & \ans{Polynomial (no HA)} \\
+\end{tabular}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+For each function, identify the degrees and leading coefficients, compute the quotient of leading
+terms, write both limit statements, and state the asymptote type.
+
+\medskip
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{@{}p{1.2cm} p{1.2cm} p{1.2cm} p{2.5cm} p{2.8cm} p{2.8cm} p{1.8cm}@{}}
+\textbf{Fcn} & \textbf{Deg n} & \textbf{Deg d} & \textbf{Quotient} &
+$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ & \textbf{Type} \\
+\hline
+$r_1$ & \ans{1} & \ans{1} & \ans{$2$}     & \ans{$2$}      & \ans{$2$}      & \ans{HA} \\
+$r_2$ & \ans{2} & \ans{2} & \ans{$3$}     & \ans{$3$}      & \ans{$3$}      & \ans{HA} \\
+$r_3$ & \ans{1} & \ans{2} & \ans{$0$}     & \ans{$0$}      & \ans{$0$}      & \ans{HA} \\
+$r_4$ & \ans{3} & \ans{1} & \ans{$x^2$}   & \ans{$+\infty$} & \ans{$+\infty$} & \ans{Poly} \\
+\end{tabular}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+  \item \textbf{Construct a rational function} with a \textbf{horizontal asymptote at $y = -3$}
+        where the numerator has degree 2 and the denominator has degree 2.
+
+        Write your function: $r(x) = $ \ans{$\dfrac{-3x^2 + 1}{x^2 + 5}$} \textit{(many answers possible)}
+
+        Verify: What are the leading terms?  Quotient $=$ \ans{$-3x^2/x^2 = -3$}. Does it equal $-3$? \ans{Yes}
+
+  \item \textbf{Construct a rational function} with a \textbf{slant asymptote at $y = 2x + 1$}.
+
+        Write your function: $r(x) = $ \ans{$\dfrac{2x^2 + x + 3}{x}$} \textit{(many answers possible)}
+
+        \ansline{The numerator has degree 2 and the denominator has degree 1, so deg num $=$ deg denom $+ 1$.
+        This means the quotient of leading terms is a linear expression ($2x$), giving a slant asymptote
+        rather than a constant, so no horizontal asymptote exists.}
+
+  \item For your function in part (1), write both limit statements:
+
+        $\displaystyle\lim_{x\to\infty} r(x) = $ \ans{$-3$}
+        \qquad
+        $\displaystyle\lim_{x\to -\infty} r(x) = $ \ans{$-3$}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

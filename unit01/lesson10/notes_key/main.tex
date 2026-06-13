@@ -1,7 +1,7 @@
 %! Rational Functions and Holes — Unit 1, Lesson 1.10 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,120 @@
 \pageheader{Unit 1, Lesson 1.10}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Determine whether a rational function has a \ans{hole} or a \ans{vertical asymptote}
+        at a shared zero by comparing \ans{multiplicities}. \hfill\textit{(LO 1.10.A)}
+  \item Find the \ans{coordinates $(c, L)$} of a hole and express the result using
+        \ans{limit notation}. \hfill\textit{(LO 1.10.A)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{hole in a graph} \ans{A missing point $(c, L)$ where $r(c)$ is undefined but $\lim_{x \to c} r(x) = L$ exists.}\\[2pt]
+\termblanklong{removable discontinuity} \ans{Another name for a hole; can be ``removed'' by redefining the function at one point.}\\[2pt]
+\termblanklong{common factor} \ans{A polynomial factor shared by numerator and denominator; canceling it reveals a hole.}\\[2pt]
+\termblanklong{limit of a function at a point} \ans{$\lim_{x \to c} r(x) = L$: outputs of $r$ approach $L$ as inputs approach $c$.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+Imagine your GPS loses signal for exactly one moment --- at $t = 5$ seconds --- but your
+position function is defined everywhere else. The output \textit{at} $t = 5$ is missing,
+but by looking at outputs for inputs very close to 5, we can determine where the position
+function ``should'' be. This missing-but-predictable point is called a \ans{hole} in
+the graph of a rational function.
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Holes vs.\ Vertical Asymptotes}
+Let $r(x)$ be a rational function with a shared zero at $x = a$.
+Let $m$ = multiplicity of $a$ in the \textbf{numerator} and $n$ = multiplicity of $a$ in
+the \textbf{denominator}.
+
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{Feature at $x = a$} & \textbf{Example} \\
+\hline
+$m \geq n$ & \ans{Hole} & $\dfrac{(x-2)^2}{x-2}$: hole at $x=2$ \\[4pt]
+\hline
+$m < n$ & \ans{Vertical Asymptote} & $\dfrac{x-2}{(x-2)^2}$: VA at $x=2$ \\[4pt]
+\hline
+$a$ only in denominator & \ans{Vertical Asymptote} & $\dfrac{5}{x-2}$: VA at $x=2$ \\[4pt]
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Key idea:} A hole occurs when the numerator and denominator \textit{share} a zero
+\textit{and} the numerator's multiplicity is \ans{greater than} or \ans{equal to} the denominator's.
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Finding the Coordinates of a Hole}
+\textbf{4-Step Procedure:}
+\begin{enumerate}[itemsep=4pt]
+  \item \ans{Factor} the numerator and denominator.
+  \item Identify \ans{shared} zeros and compare multiplicities.
+  \item \ans{Cancel} the common factor from numerator and denominator.
+  \item Substitute $x = c$ into the \ans{simplified} form to find $L$.
+\end{enumerate}
+
+\medskip
+\textbf{Example 1.} \quad $\displaystyle r(x) = \frac{x^2 - 4}{x - 2}$
+
+\smallskip
+Step 1 --- Factor: $r(x) = \dfrac{\ans{$(x-2)(x+2)$}}{x - 2}$
+
+\smallskip
+Step 2 --- Shared zero: $x = $ \ans{$2$} \quad Num.\ mult: \ans{1} \quad Denom.\ mult: \ans{1} \quad Since $m$ \ans{$=$} $n$, this is a \ans{hole}.
+
+\smallskip
+Step 3 --- Cancel: simplified form $= $ \ans{$x + 2$}
+
+\smallskip
+Step 4 --- Substitute $x = 2$: $L = $ \ans{$2 + 2 = 4$}
+
+\smallskip
+\textbf{Hole at:} $\Big($\ans{2}$,$ \ans{4}$\Big)$
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Limit Notation for Holes}
+If a rational function $r$ has a hole at $(c, L)$, we write:
+\[
+  \lim_{x \to c} r(x) = L
+\]
+This means: as the input $x$ gets \ans{arbitrarily close} to $c$ (from either side), the output $r(x)$
+gets \ans{arbitrarily close} to $L$.
+
+\medskip
+Both one-sided limits agree: \quad
+$\displaystyle\lim_{x \to c^-} r(x) = $ \ans{$L$} \quad and \quad
+$\displaystyle\lim_{x \to c^+} r(x) = $ \ans{$L$}
+
+\medskip
+\textbf{Example 2.} \quad $\displaystyle r(x) = \frac{x^2 - 1}{(x-1)(x+2)}$
+
+Shared zero at $x = 1$. Simplified form: $\dfrac{\ans{$x+1$}}{\ans{$x+2$}}$
+
+$L = \dfrac{\ans{$2$}}{\ans{$3$}} = \ans{$\dfrac{2}{3}$}$
+
+Limit statement: $\displaystyle \lim_{x \to 1} r(x) = $ \ans{$\dfrac{2}{3}$} \quad
+Hole at: $\Big($\ans{1}$,$ \ans{$\dfrac{2}{3}$}$\Big)$
+
+\smallskip
+Is there a VA? \ans{Yes} \quad If so, where? \ans{$x = -2$}
 \end{notesbox}
 
 \end{document}

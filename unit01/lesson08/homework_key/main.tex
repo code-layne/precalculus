@@ -9,11 +9,86 @@
 \pageheader{Unit 1, Lesson 1.8}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=14pt]
+
+\item
+
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item $\displaystyle f(x) = \dfrac{x^2 - 9}{x + 5}$.
+              Numerator: $(x-3)(x+3)$.
+
+              \vspace{0.06in}
+              Domain restriction(s): \ans{$x = -5$} \qquad Zeros: \ans{$x = 3$ and $x = -3$}
+
+        \item $\displaystyle g(x) = \dfrac{x^2 - 2x - 8}{x^2 - 4} = \dfrac{(x-4)(x+2)}{(x-2)(x+2)}$.
+              Domain restrictions: $x = 2$ and $x = -2$.
+              Numerator zero $x = 4$ is in the domain; $x = -2$ is a domain restriction (not a zero).
+
+              \vspace{0.06in}
+              Domain restriction(s): \ans{$x = 2$ and $x = -2$} \qquad Zeros: \ans{$x = 4$ only}
+
+        \item $\displaystyle h(x) = \dfrac{3x + 6}{x^2 + 1} = \dfrac{3(x+2)}{x^2+1}$.
+              $x^2 + 1 > 0$ for all real $x$, so domain is all reals.
+
+              \vspace{0.06in}
+              Domain restriction(s): \ans{None} \qquad Zeros: \ans{$x = -2$}
+      \end{enumerate}
+
+\item Solve $\displaystyle\frac{x^2 - 1}{x - 3} \geq 0$.
+      Numerator: $(x-1)(x+1)$. Critical values: $x = -1, 1, 3$.
+
+      \medskip
+      Critical values: \ans{$x = -1$, $x = 1$, $x = 3$}
+
+      \medskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.6}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \textbf{Interval} & $(-\infty,\,-1)$ & $(-1,\,1)$ & $(1,\,3)$ & $(3,\,\infty)$ \\
+      \hline
+      Test value & \ans{$-2$} & \ans{$0$} & \ans{$2$} & \ans{$4$} \\
+      \hline
+      Sign of $r$ & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \vspace{0.06in}
+      Solution: \ans{$[-1,\,1]\cup(3,\,\infty)$}
+
+      \textit{(Include $x = -1$ and $x = 1$ since $r = 0$ there; exclude $x = 3$ since undefined.)}
+
+\item \ansline{Denominator zeros are NOT zeros of the function because $r$ is undefined there --- the function has no output value. However, the sign of $r(x)$ can change sign as $x$ passes through a denominator zero (the function jumps from one side to the other without ever equaling zero), so these values must still appear as boundaries in the sign chart when solving inequalities.}
+
+\item Sign chart:
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.6}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \textbf{Interval} & $(-\infty,\,-3)$ & $(-3,\,1)$ & $(1,\,2)$ & $(2,\,\infty)$ \\
+      \hline
+      Sign of $r$ & $(+)$ & \ans{$(-)$} & \ans{$(+)$} & $(+)$ \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \vspace{0.06in}
+      Solution of $r(x) < 0$: \ans{$(-3,\,1)$}
+
+\item $r(x) = \dfrac{2x^2 + x - 3}{x - 5} = \dfrac{(2x + 3)(x - 1)}{x - 5}$.
+      Numerator zeros: $x = 1$ and $x = -\tfrac{3}{2}$. Domain restriction: $x = 5$.
+      Both $x = 1$ and $x = -\tfrac{3}{2}$ are in the domain.
+
+      \ans{(A) and (B)} are both zeros, but since only one answer is expected, the intended answer is \ans{\textbf{(B) $x = 1$}}.
+
+      \textit{Note to teacher: $2(1)^2 + 1 - 3 = 0$ and $1 \ne 5$, so $x = 1$ is a zero.
+      Also $x = -3/2$ satisfies $2(9/4) - 3/2 - 3 = 9/2 - 3/2 - 6/2 = 0$, so (A) is also a zero.
+      If the MC has a unique answer, (B) $x = 1$ is the cleaner choice.}
+
+\end{enumerate}
 
 \end{document}

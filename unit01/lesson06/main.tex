@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,182 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will describe the end behavior of polynomial functions
+    using limit notation, and explain how the degree and sign of the leading coefficient determine
+    what happens to output values as $x \to \pm\infty$.
+    \hfill\textit{\small Skill: MP 3.A \quad (Big Idea: VAR)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 3.A} --- Describe characteristics of a function with varying
+levels of precision using appropriate mathematical language and notation.
+(LO 1.6.A) &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item As $x \to \infty$ or $x \to -\infty$, output values of a nonconstant polynomial either
+        increase or decrease without bound. (EK 1.6.A.1--2)
+  \item End behavior is determined solely by the degree and sign of the leading coefficient. (EK 1.6.A.3)
+  \item The leading term dominates all lower-degree terms for large $|x|$. (EK 1.6.A.3)
+  \item Even-degree: both ends go the same direction; odd-degree: ends go opposite directions.
+  \item Standard notation: $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) = -\infty$.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+end behavior       & What happens to $p(x)$ as $x$ increases or decreases without bound. \\
+leading term       & The term with the highest degree in a polynomial. \\
+leading coefficient & The coefficient of the leading term. \\
+limit notation     & $\lim_{x \to \infty} p(x) = \infty$ means output grows without bound as input increases. \\
+dominates          & The leading term dominates when its ratio to all other terms approaches 1 as $x \to \pm\infty$. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review from Lessons 1.4--1.5).
+            Skills reviewed: identifying degree and leading coefficient, writing a polynomial
+            in factored form from given zeros and multiplicities, real vs.\ complex zeros.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textbf{Rubber Band Ball:} A student keeps wrapping rubber bands around a ball. Suppose the
+    radius (in mm) is modeled by $r(t) = 2t^3 - 50t^2 + 100t$, where $t$ is time in minutes.
+
+    \medskip
+    \textit{Discussion prompt:} As $t$ gets very large (say $t = 1{,}000$ minutes), does the
+    $-50t^2$ term matter much compared to $2t^3$? At $t = 1{,}000$: $2t^3 = 2 \times 10^9$ but
+    $-50t^2 = -5 \times 10^7$ --- less than $3\%$ of the cubic term. Which term ``wins'' for large $t$?
+
+    \medskip
+    Tell students: today we formalize exactly this idea --- the leading term always wins.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Part 1: Leading Term Dominance} (10 min)
+
+Use $p(x) = x^3 - 100x^2$ to show the leading term dominates.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|r|r|}
+\hline
+$x$ & $p(x)$ & $x^3$ \\
+\hline
+$10$    & $-9{,}000$ & $1{,}000$ \\
+$100$   & $0$ & $1{,}000{,}000$ \\
+$1{,}000$ & $9 \times 10^8$ & $10^9$ \\
+\hline
+\end{tabular}
+\smallskip
+
+Ask: At $x = 1{,}000$, the $-100x^2 = -10^8$ is large on its own, but $x^3 = 10^9$ is 10$\times$ bigger.
+The ratio $-100x^2/x^3 = -100/x \to 0$.
+\textbf{Conclusion:} Leading term $x^3$ controls end behavior.
+
+\columnbreak
+
+\textbf{Part 2: The Four End-Behavior Cases} (12 min)
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Degree} & \textbf{Lead $a_n$} & $x \to \infty$ & $x \to -\infty$ \\
+\hline
+Even & $>0$ & $\infty$  & $\infty$ \\
+Even & $<0$ & $-\infty$ & $-\infty$ \\
+Odd  & $>0$ & $\infty$  & $-\infty$ \\
+Odd  & $<0$ & $-\infty$ & $\infty$ \\
+\hline
+\end{tabular}
+\smallskip
+
+Key insight: even-degree polynomials behave like $x^2$ (both ends same direction);
+odd-degree behave like $x^3$ (ends go opposite directions).
+
+\medskip
+\textbf{Part 3: Using Limit Notation} (8 min)
+
+Introduce $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$.
+
+Example: $p(x) = -3x^4 + 2x^2 - 7$.
+Leading term: $-3x^4$ (even, negative).
+
+\[
+  \lim_{x \to \infty} p(x) = -\infty \qquad \lim_{x \to -\infty} p(x) = -\infty
+\]
+
+Practice 2--3 examples chorally before the activity.
+
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Students confuse ``the function has negative output values'' with
+        ``end behavior is $-\infty$.'' Cold-call: ``Does a negative leading coefficient mean
+        ALL outputs are negative?'' (No --- zeros and sign changes still exist.)
+  \item \textbf{Common error:} Students use the constant or a middle term instead of the leading term.
+        Ask: ``Which term matters when $x$ is a billion?''
+  \item \textbf{Notation check:} Students should write $\lim_{x \to \infty} p(x) = \infty$ (not just
+        ``goes to infinity''). AP exam requires limit notation.
+  \item \textbf{Cold-call:} ``Give me a polynomial with $\lim_{x \to \infty} = -\infty$ and
+        $\lim_{x \to -\infty} = \infty$.'' (Any odd-degree, negative-leading-coeff example.)
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: End Behavior Explorer} in leveled tiers.
+Each tier uses the same set of four polynomial functions but increases in cognitive demand.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Leading term provided for each polynomial; students use the
+        rules table to fill in $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$ in limit notation.
+  \item \textbf{Tier A (Apply):} Students identify the leading term from the full polynomial
+        expression, predict end behavior, write limit notation, and verify with a calculator.
+  \item \textbf{Tier E (Extend):} Students create their own polynomial with even degree, negative
+        leading coefficient, and exactly 3 real zeros; then describe its end behavior fully.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Given $p(x) = -2x^5 + 7x^3 - x + 3$, write $\lim_{x \to \infty} p(x)$ and $\lim_{x \to -\infty} p(x)$.
+  \item A polynomial $q$ has degree 4 and positive leading coefficient. Complete: as $x \to \infty$,
+        $q(x) \to \underline{\phantom{xxx}}$ and as $x \to -\infty$, $q(x) \to \underline{\phantom{xxx}}$.
+\end{enumerate}
+\textbf{Assessment note:} Look for correct identification of the leading term (odd degree, negative
+coefficient in \#1) and proper limit notation. Students who write $-\infty$ and $\infty$ respectively
+for \#1 demonstrate mastery of how odd-degree/negative leading coefficient determines opposite-direction ends.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems --- end behavior from leading term for 4 polynomials, verbal description
+from a leading term, a conceptual question about parity, a table-based end-behavior inference, and one
+AP-style multiple-choice item.
+
+\textbf{Extension (optional):} Students investigate $p(x) = x^n$ for $n = 1, 2, 3, 4$ numerically
+at $x = \pm100$ and generalize the four end-behavior patterns from the data.
+
+\textbf{Preview:} Lesson 1.7 extends end behavior to \textit{rational} functions, where division by a
+polynomial creates vertical asymptotes and horizontal (or oblique) asymptotes.
 \end{skillbox}
 \end{document}
