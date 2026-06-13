@@ -1,7 +1,7 @@
 %! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.13 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,147 @@
 \pageheader{Unit 1, Lesson 1.13}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Data Dispatch Agency]{sky}
+\small
+Your team works at the Data Dispatch Agency. Four requests just arrived, each describing a
+real-world situation that needs a function model. For each dispatch, your team must (1) select
+the best model type, and (2) state the key assumptions and domain restriction. Work through
+the tier that matches your group's assignment.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\textbf{The four dispatches:}
+
+\begin{itemize}[itemsep=3pt]
+  \item \textbf{Dispatch 1.} A city tracks its population each year. The population increases by
+        approximately 850 people per year for the past decade.
+  \item \textbf{Dispatch 2.} A farmer wants to fence a rectangular pen using 200 m of fencing.
+        She records the area for different choices of one side length.
+  \item \textbf{Dispatch 3.} A warehouse stores boxes stacked in cubic arrangements.
+        The total number of boxes for a stack of side length $n$ units is recorded.
+  \item \textbf{Dispatch 4.} A ride-share app charges \$2.50 per mile for the first 5 miles,
+        then \$1.75 per mile for each mile after that.
+\end{itemize}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+For each dispatch, \textbf{circle the best model type} from the three choices given, then
+complete the assumption sentence.
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} c X p{5.5cm} @{}}
+\textbf{Dispatch} & \textbf{Best model (circle one)} & \textbf{Complete the assumption} \\
+\midrule
+1 & \ans{Linear} \quad Quadratic \quad Cubic & ``This model assumes the population grows by a \ans{constant} amount each year.'' \\
+2 & Linear \quad \ans{Quadratic} \quad Cubic & ``This model assumes the pen is a \ans{rectangle} and the perimeter is exactly \ans{200} m.'' \\
+3 & Linear \quad Quadratic \quad \ans{Cubic} & ``This model assumes the stacks form perfect \ans{cube} shapes.'' \\
+4 & Linear \quad Quadratic \quad \ans{Piecewise} & ``This model assumes the rate changes at exactly \ans{5} miles.'' \\
+\end{tabularx}
+
+\begin{teachernote}
+Dispatch 3 is cubic because $n^3$ boxes fit in a cube of side $n$. The volume/3-D clue justifies cubic.
+\end{teachernote}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Dispatch 1 table:}
+\quad
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+Year ($x$) & Population ($y$) & $\Delta y$ \\
+\hline
+0 & 12{,}000 & --- \\
+\hline
+1 & 12{,}850 & \ans{850} \\
+\hline
+2 & 13{,}700 & \ans{850} \\
+\hline
+3 & 14{,}550 & \ans{850} \\
+\hline
+\end{tabular}
+
+\medskip
+Model type: \ans{Linear} \quad Degree: \ans{1}
+
+\medskip
+Assumption: \ansline{The population increases by the same amount each year (constant rate of change).}
+
+Domain restriction: \ans{$x \geq 0$ (years since tracking began; no negative years)}
+
+\bigskip
+\textbf{Dispatch 2 table:}
+\quad
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\ell$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
+\hline
+10 & 900  & ---         & ---         \\
+\hline
+20 & 1600 & \ans{700} & ---      \\
+\hline
+30 & 2100 & \ans{500} & \ans{$-200$} \\
+\hline
+40 & 2400 & \ans{300} & \ans{$-200$} \\
+\hline
+50 & 2500 & \ans{100} & \ans{$-200$} \\
+\hline
+\end{tabular}
+
+\medskip
+Model type: \ans{Quadratic} \quad Degree: \ans{2}
+
+\medskip
+Domain restriction: \ans{$0 < \ell < 100$ (length positive; other side $= 100 - \ell > 0$)}
+
+\begin{teachernote}
+$A = \ell(100 - \ell) = 100\ell - \ell^2$ with perimeter 200 m means each pair of sides sums to 100 m.
+Second differences are all $-200$ (inputs spaced by 10, so $2a \cdot 10^2 = -200$ gives $a = -1$, consistent with $-\ell^2$).
+\end{teachernote}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item \textbf{Dispatch 4 --- Piecewise model.}
+
+        Piece 1 (applies when \ans{$0 \leq m \leq 5$}): $C(m) = $ \ans{$2.50m$}
+
+        Function type for Piece 1: \ans{linear}
+
+        Piece 2 (applies when \ans{$m > 5$}): $C(m) = $ \ans{$2.50(5) + 1.75(m - 5) = 1.75m + 3.75$}
+
+        Function type for Piece 2: \ans{linear}
+
+  \item Two assumptions:
+
+        Assumption 1: \ansline{The per-mile rate is exactly constant within each piece (no surge pricing).}
+        Why it matters: \ansline{If rates fluctuate, the piecewise linear model is no longer valid.}
+
+        Assumption 2: \ansline{The distance is measured in whole or fractional miles with no minimum charge beyond the stated rates.}
+        Why it matters: \ansline{Many services charge minimums; ignoring them changes the model's starting value.}
+
+  \item \ansline{Yes, the reasoning is mathematically sound. Because the number of boxes equals $n^3$ (a cubic formula), the third differences of the output data will be constant and nonzero, confirming a degree-3 (cubic) polynomial model.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

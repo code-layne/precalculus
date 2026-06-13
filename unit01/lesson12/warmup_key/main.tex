@@ -1,7 +1,7 @@
 %! Transformations of Functions — Unit 1, Lesson 1.12 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,54 @@
 \pageheader{Unit 1, Lesson 1.12}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=14pt]
+
+\item Let $f(x) = x^2 - 3$. Evaluate each expression.
+
+      \medskip
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item $f(0) = $ \ans{$-3$}
+        \item $f(-2) = $ \ans{$1$}
+        \item $f(x+1) = $ \ans{$(x+1)^2 - 3 = x^2+2x-2$}
+      \end{enumerate}
+
+\item The table below gives values of a function $f$.
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $f(x)$ & $5$  & $2$  & $1$ & $2$ & $5$ \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      State the domain and range of $f$ using the values in the table.
+
+      \vspace{0.08in}
+      Domain: \ans{$\{-2,-1,0,1,2\}$} \quad Range: \ans{$\{1,2,5\}$}
+
+\item The graph of $p(x)$ is a polynomial with the following features: it passes through
+      $(-2,\,0)$, $(1,\,0)$, and $(0,\,-2)$, and its end behavior is
+      $p(x) \to +\infty$ as $x \to +\infty$ and $p(x) \to -\infty$ as $x \to -\infty$.
+
+      Circle the best description of the degree and leading coefficient of $p(x)$.
+
+      \medskip
+      \textbf{A.}\ Even degree, positive leading coefficient \qquad
+      \textbf{B.}\ \ans{Odd degree, positive leading coefficient} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+
+      \medskip
+      \textbf{C.}\ Even degree, negative leading coefficient \qquad
+      \textbf{D.}\ Odd degree, negative leading coefficient
+
+      \smallskip
+      \textit{(End behavior $-\infty \to +\infty$ matches odd degree with positive leading coefficient.)}
+
+\end{enumerate}
 
 \end{document}

@@ -1,7 +1,7 @@
 %! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.13 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,67 @@
 \pageheader{Unit 1, Lesson 1.13}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=14pt]
+
+\item The table below shows equally-spaced inputs and their outputs.
+      Complete the \textbf{first differences} column.
+
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      $x$ & $y$ & $\Delta y$ (1st diff.) \\
+      \hline
+      0 & 3  & ---         \\
+      \hline
+      1 & 7  & \ans{4} \\
+      \hline
+      2 & 11 & \ans{4} \\
+      \hline
+      3 & 15 & \ans{4} \\
+      \hline
+      4 & 19 & \ans{4} \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      The first differences are \ans{constant (all 4)}. This means the rate of change is
+      \ans{constant}, so the data is best modeled by a \ans{linear} function.
+
+\item A second data set has first differences of $2, 4, 6, 8$.
+      Are these first differences constant? \ans{No}
+
+      \medskip
+      Compute the \textbf{second differences} below:
+
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      1st diff. & $\Delta^2 y$ (2nd diff.) \\
+      \hline
+      2  & ---         \\
+      \hline
+      4  & \ans{2} \\
+      \hline
+      6  & \ans{2} \\
+      \hline
+      8  & \ans{2} \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      The second differences are \ans{constant (all 2)}. This means the data is best modeled
+      by a \ans{quadratic} function.
+
+\item A function's outputs change by roughly the same amount for each unit increase in input.
+      What type of function is the best model? Circle one.
+
+      \medskip
+      \textbf{A.} Linear \textcolor{keyred}{\textbf{$\leftarrow$ correct}} \qquad \textbf{B.} Quadratic \qquad \textbf{C.} Cubic \qquad \textbf{D.} Piecewise
+
+\end{enumerate}
 
 \end{document}

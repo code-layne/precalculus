@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{AP Precalculus}
@@ -19,55 +19,145 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will rewrite polynomial and rational expressions in
+    equivalent forms (factored and standard), perform polynomial long division to express the
+    division algorithm $f = gq + r$ and identify slant asymptotes, and apply the binomial theorem
+    via Pascal's Triangle to expand $(a+b)^n$.
+    \hfill\textit{\small Skills: MP 1.B, MP 3.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 1.B} --- Identify an appropriate mathematical rule or procedure based on the classification of a given expression. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Factored form reveals zeros, asymptotes, holes, and domain; standard form reveals end
+        behavior and degree. (EK 1.11.A.1, 1.11.A.2)
+  \item Different analytic representations answer different questions in context. (EK 1.11.A.3)
+\end{itemize} \\
+\textbf{MP 3.B} --- Apply an appropriate mathematical definition, theorem, or test. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Division algorithm: $f(x) = g(x)q(x) + r(x)$, $\deg(r) < \deg(g)$. (EK 1.11.B.1)
+  \item The quotient $q$ from long division gives the equation of a slant asymptote. (EK 1.11.B.2)
+  \item Pascal's Triangle coefficients expand $(a+b)^n$. (EK 1.11.C.1)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+factored form          & Expression written as a product of linear and/or irreducible quadratic factors; directly reveals zeros, holes, and asymptotes. \\
+standard form          & Polynomial written with terms in descending order; reveals degree, leading coefficient, and end behavior. \\
+polynomial long division & Algorithm producing $f = g \cdot q + r$ with $\deg(r) < \deg(g)$. \\
+quotient / remainder   & $q(x)$ is the quotient; $r(x)$ is the remainder in the division algorithm. \\
+slant asymptote        & A non-horizontal, non-vertical linear asymptote $y = mx + b$; occurs when $\deg(f) = \deg(g) + 1$; given by the quotient $q$. \\
+binomial theorem       & $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^k$; coefficients from Pascal's Triangle. \\
+Pascal's Triangle      & Triangular array where each entry is the sum of the two entries above; row $n$ gives binomial coefficients for $(a+b)^n$. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers: factoring polynomials (Lesson 1.5), identifying rational zeros
+    and zeros of polynomials (Lesson 1.6/1.7), recognizing holes and VAs from shared factors
+    (Lesson 1.10), and using leading-term analysis for end behavior (Lesson 1.8/1.9). Students
+    factor $x^3-x^2-6x$, classify a hole vs.\ VA, and describe end behavior from standard form.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Write three rational functions on the board:
+\[
+  \frac{2x^2-8}{x^2+x-6}
+  \qquad
+  \frac{2(x-2)(x+2)}{(x-2)(x+3)}
+  \qquad
+  \frac{2(x+2)}{x+3},\ x\ne 2
+\]
+Ask: \textbf{``Are these the same function?''} After student responses, confirm they are.
+Then: \textbf{``Which form would you reach for first to find the zeros? The end behavior?
+The hole?''} This is the lesson's central question: \textit{three faces, three purposes}.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (10 min): Two Forms, Two Purposes.}
+
+Factored form $\Rightarrow$ structure at specific points (zeros, holes, VAs, domain).
+Standard form $\Rightarrow$ global behavior (degree, leading coeff, end behavior).
+
+Give students the hook functions. Ask: ``Which form reveals the hole at $x = 2$?''
+(Factored.) ``Which reveals that the function approaches $+2$ as $x\to\infty$?'' (Standard.)
+
+Pose: what if we need the slant asymptote of $\dfrac{x^2+x-6}{x-1}$? Neither form gives
+it directly --- we need long division.
+
+\columnbreak
+
+\textbf{Part 2 (15 min): Polynomial Long Division.}
+
+Model $\dfrac{3x^3-5x^2+2x-4}{x-2}$ step by step on the board.
+Emphasize: (1) descending order, (2) divide leading terms, (3) multiply and subtract,
+(4) repeat. Result: $q = 3x^2+x+4$, $r = 4$.
+
+Slant asymptote rule: if $\deg(\text{num}) = \deg(\text{den}) + 1$, the slant asymptote
+is $y = q(x)$ (the remainder term $\to 0$).
+
+\textbf{Part 3 (10 min): Binomial Theorem.}
+
+Build Pascal's Triangle through row 4 with the class. Expand $(x+2)^3$ using row 3:
+$x^3 + 6x^2 + 12x + 8$. Practice: $(x+3)^3$, then preview $(2x-1)^4$.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Cold-call after Part 1: ``Which form would you choose to find the domain restriction?
+        Why?'' Expect: factored form, because shared zeros are visible.
+  \item During long division: watch for students who forget to subtract (sign errors) or who
+        stop before $\deg(r) < \deg(g)$.
+  \item Cold-call after Part 2: ``If the quotient has degree 2, can it be a slant asymptote?
+        Why not?'' (Slant asymptote is linear.)
+  \item During Pascal's Triangle: confirm students know the row index matches the exponent,
+        and watch for off-by-one errors.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Pre-factored numerator/denominator given; read zeros, holes,
+        VAs directly; circle which form reveals end behavior.
+  \item \textbf{Tier A (Apply):} Factor independently; apply multiplicity rule; execute long
+        division on $g(x)$; determine horizontal asymptote from $h(x)$.
+  \item \textbf{Tier E (Extend):} Long division to find slant asymptote; justify asymptote type;
+        construct a rational function satisfying all given structural properties.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) identify which form reveals VAs/holes and state why;
+(2) complete the first step of long division for $\frac{x^2+3x+5}{x+2}$;
+(3) use Pascal's Triangle (row 4) to expand $(x+2)^4$.
+
+Collect tickets and sort: students who miss item 1 need re-teaching of form selection (LO 1.11.A);
+students who miss item 2 need scaffolded long division practice (LO 1.11.B);
+students who miss item 3 need Pascal's Triangle reinforcement (LO 1.11.C).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (5 problems): form selection with two rational functions (zeros/holes/VAs and end
+behavior); full long division of a cubic by a linear; slant asymptote via long division
+including the remainder's meaning at an excluded value; binomial expansions using Pascal's
+Triangle including $(2x-1)^4$; AP-style multiple choice on identifying holes via factoring
+($x^3-8 = (x-2)(x^2+2x+4)$).
+
+Extension: investigate why $\dfrac{x^3-8}{x-2}$ has a hole (not a VA) by connecting the
+factored form to the division algorithm.
+
+Preview of Lesson 1.12: transformations of polynomial and rational functions --- how adding a
+constant inside or outside the function shifts the graph, connecting to the forms studied today.
 \end{skillbox}
+
 \end{document}
