@@ -1,0 +1,127 @@
+%! Change in Arithmetic and Geometric Sequences — Unit 2, Lesson 2.1 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.1}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Sequences in the Wild]{sky}
+\small
+Sequences appear in finance, biology, and technology. In this activity you will identify
+sequence types, write explicit formulas, and use them to answer real questions. Work through
+the tier that matches your current level --- all tiers use the same big ideas.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+For each sequence below: (a) identify it as \textbf{arithmetic} or \textbf{geometric},
+(b) find $d$ or $r$, (c) write the explicit formula starting at $n = 0$, and
+(d) find the 10th term ($n = 10$).
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}p{3.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}X @{}}
+\textbf{Sequence} & \textbf{Type} & $d$ \textbf{or} $r$ & \textbf{Explicit formula} & \textbf{10th term} \\
+\midrule
+$5,\ 8,\ 11,\ 14,\ \ldots$      & \ans{arithmetic} & \ans{$d=3$} & \ans{$5+3n$}     & \ans{35} \\[6pt]
+$3,\ 6,\ 12,\ 24,\ \ldots$      & \ans{geometric}  & \ans{$r=2$} & \ans{$3\cdot2^n$} & \ans{3072} \\[6pt]
+$100,\ 90,\ 80,\ 70,\ \ldots$   & \ans{arithmetic} & \ans{$d=-10$} & \ans{$100-10n$}  & \ans{0} \\[6pt]
+$1,\ 5,\ 25,\ 125,\ \ldots$     & \ans{geometric}  & \ans{$r=5$} & \ans{$5^n$}       & \ans{$5^{10}=9{,}765{,}625$} \\[6pt]
+\end{tabularx}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=12pt]
+
+  \item An arithmetic sequence has $a_3 = 12$ and $a_7 = 28$.
+        Find the common difference $d$ and write the explicit formula $a_n$.
+
+        \vspace{0.04in}
+        $d = \dfrac{a_7 - a_3}{7 - 3} = $ \ans{$\dfrac{28-12}{4} = 4$}
+
+        \vspace{0.04in}
+        Explicit formula: $a_n = $ \ans{$a_3 + 4(n-3) = 12 + 4(n-3) = 4n$}
+
+        \vspace{0.04in}
+        Check: $a_3 = $ \ans{12} \quad $a_7 = $ \ans{28}
+
+  \item A geometric sequence has $g_2 = 12$ and $g_5 = 96$.
+        Find the common ratio $r$ and write the explicit formula $g_n$.
+
+        \vspace{0.04in}
+        $r^3 = \dfrac{g_5}{g_2} = \dfrac{96}{12} = $ \ans{8}, so $r = $ \ans{2}
+
+        \vspace{0.04in}
+        $g_0 = \dfrac{g_2}{r^2} = $ \ans{$12/4 = 3$}
+
+        \vspace{0.04in}
+        Explicit formula: $g_n = $ \ans{$3 \cdot 2^n$}
+
+  \item A phone plan charges \$25 in month 0 and adds \$8 per month.
+
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item Write the explicit formula for the monthly charge $a_n$ in month $n$:
+
+                $a_n = $ \ans{$25 + 8n$}
+
+          \item Find the charge in month 12: $a_{12} = $ \ans{\$121}
+
+          \item In which month does the charge first exceed \$100? \ans{Month 10 ($a_{10}=\$105$)}
+        \end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A bacteria colony triples every hour. After 3 hours there are 810 bacteria.
+
+\begin{enumerate}[itemsep=12pt]
+
+  \item Use the alternate formula $g_n = g_k \cdot r^{(n-k)}$ with $k = 3$, $g_3 = 810$,
+        and $r = 3$ to find $g_0$ (the initial population).
+
+        \vspace{0.04in}
+        $g_0 = g_3 \cdot r^{(0-3)} = 810 \cdot $ \ans{$3^{-3} = 810/27$} $=$ \ans{30}
+
+  \item Write the explicit formula $g_n$ using $g_0$.
+
+        \vspace{0.04in}
+        $g_n = $ \ans{$30 \cdot 3^n$}
+
+  \item Determine the smallest whole-number value of $n$ for which the population first
+        exceeds 100{,}000. Show your reasoning.
+
+        \vspace{0.04in}
+        We need $g_n > 100{,}000$: \ans{$30 \cdot 3^n > 100{,}000 \Rightarrow 3^n > 3333.3$; $3^7 = 2187 < 3334$, $3^8 = 6561 > 3334$}
+
+        \vspace{0.04in}
+        Smallest $n$: \ans{8}
+
+  \item Interpret your answer in context: what does $n$ represent in this problem?
+
+        \vspace{0.04in}
+        \ans{$n$ is the number of hours after the colony began. At $n = 8$ hours, the population first exceeds 100{,}000.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

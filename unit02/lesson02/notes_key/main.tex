@@ -1,0 +1,133 @@
+%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.06in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct a \ans{linear} function from a slope and a point using
+        $f(x) = y_i + m(x - x_i)$. \hfill\textit{(LO 2.2.A)}
+  \item Construct an \ans{exponential} function from a ratio and a point using
+        $f(x) = y_i \cdot r^{x - x_i}$. \hfill\textit{(LO 2.2.A)}
+  \item Determine whether outputs over equal-length intervals show a constant \ans{difference}
+        (linear) or a constant \ans{ratio} (exponential). \hfill\textit{(LO 2.2.B)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.04in}
+
+\begin{vocabbox}
+\termblanklong{linear function}
+\ansline{$f(x) = b + mx$; output changes by a constant amount (slope $m$) for every unit increase in input.}
+\termblanklong{exponential function}
+\ansline{$f(x) = ab^x$; output is multiplied by constant base $b$ for every unit increase in input.}
+\termblanklong{constant rate of change}
+\ansline{The slope $m$ of a linear function; equal to $\Delta y/\Delta x$ over any interval.}
+\termblanklong{constant ratio}
+\ansline{The base $b$ of an exponential function; equal to $y_{n+1}/y_n$ over equal-length intervals.}
+\termblanklong{initial value}
+\ansline{The output when $x=0$; equals $b$ for $f(x)=b+mx$ and $a$ for $f(x)=ab^x$.}
+\termblanklong{domain}
+\ansline{The set of allowable inputs; sequences use $\{0,1,2,\ldots\}$ while functions typically use all reals.}
+\end{vocabbox}
+
+\vspace{0.04in}
+
+\begin{hookbox}
+Two tables are presented without labels. For each table, analyze how the outputs change.
+
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{c|c}
+$x$ & $g(x)$ \\ \hline
+0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
+\end{tabular}
+
+\medskip
+Table 1: consecutive outputs differ by \ans{4}. \quad
+Table 2: consecutive outputs are multiplied by \ans{3}.
+\end{hookbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.2.A --- Linear Functions and Arithmetic Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Arithmetic Sequence} & \textbf{Linear Function} \\
+\midrule
+Formula & $a_n = a_0 + d\,n$ & $f(x) = b + mx$ \\[3pt]
+From one known value & $a_n = a_i + d(n - i)$ & $f(x) = y_i + m(x - x_i)$ \\[3pt]
+``Change'' quantity & common difference $d$ & slope $m$ \\[3pt]
+Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
+\end{tabularx}
+
+\medskip
+\textbf{Example:} Slope $m = 4$; passes through $(1,\ 7)$.
+
+\[
+  f(x) = {\color{keyred}\mathbf{7}} + {\color{keyred}\mathbf{4}}(x - {\color{keyred}\mathbf{1}})
+       = {\color{keyred}\mathbf{4x + 3}}
+\]
+
+Verify: $f(0) = $ \ans{3}, \quad $f(2) = $ \ans{11}.
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.2.A --- Exponential Functions and Geometric Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Geometric Sequence} & \textbf{Exponential Function} \\
+\midrule
+Formula & $g_n = g_0 \cdot r^n$ & $f(x) = a \cdot b^x$ \\[3pt]
+From one known value & $g_n = g_i \cdot r^{n - i}$ & $f(x) = y_i \cdot r^{x - x_i}$ \\[3pt]
+``Change'' quantity & common ratio $r$ & base $b$ \\[3pt]
+Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
+\end{tabularx}
+
+\medskip
+\textbf{Example:} Ratio $r = 3$; passes through $(0,\ 2)$.
+
+\[
+  f(x) = {\color{keyred}\mathbf{2}} \cdot {\color{keyred}\mathbf{3}}^{x - {\color{keyred}\mathbf{0}}}
+       = {\color{keyred}\mathbf{2 \cdot 3^x}}
+\]
+
+Verify: $f(1) = $ \ans{6}, \quad $f(3) = $ \ans{54}.
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.2.B --- The Equal-Length Interval Test}
+Over equal-length input intervals $\Delta x$:
+
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
+ & \textbf{Linear} & \textbf{Exponential} \\
+\midrule
+Output pattern & differences \ans{are constant} & ratios \ans{are constant} \\[3pt]
+How to check & subtract consecutive outputs & divide consecutive outputs \\[3pt]
+Formula built from 2 pts & $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ & $b = \left(\dfrac{y_2}{y_1}\right)^{1/(x_2 - x_1)}$ \\
+\end{tabularx}
+
+\medskip
+\textbf{Key fact (EK 2.2.B.3):} Two distinct input-output pairs \ans{uniquely} determine
+either type of function.
+\end{notesbox}
+
+\end{document}

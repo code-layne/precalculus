@@ -1,0 +1,141 @@
+%! Exponential Functions — Unit 2, Lesson 2.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.06in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the initial value $a$ and base $b$ of $f(x) = ab^x$ and classify as
+        \blank{3cm} growth or \blank{3cm} decay. \hfill\textit{(LO 2.3.A.1)}
+  \item Describe the \blank{2.5cm}, end \blank{2.5cm}, \blank{3cm}, and monotonic
+        nature of an exponential function. \hfill\textit{(LO 2.3.A.3 / A.5)}
+  \item Determine whether a function is exponential by checking whether outputs are
+        \blank{4cm} over equal-length input intervals. \hfill\textit{(LO 2.3.A.3 / A.4)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.04in}
+
+\begin{vocabbox}
+\termblanklong{exponential function}
+\termblanklong{initial value}
+\termblanklong{base}
+\termblanklong{exponential growth}
+\termblanklong{exponential decay}
+\termblanklong{concave up / concave down}
+\termblanklong{end behavior}
+\termblanklong{horizontal asymptote}
+\end{vocabbox}
+
+\vspace{0.04in}
+
+\begin{hookbox}
+\textbf{The Doubling Penny:} If you receive 1 penny on Day 1, 2 on Day 2, 4 on Day 3, \ldots,
+how much total after 30 days?
+
+\medskip
+My guess: \blank{4cm} \quad Actual: $2^{30} - 1 \approx \$\,10.7$ million.
+
+\medskip
+The function modeling Day $x$ is $f(x) = 1 \cdot \blank{1cm}^x$.
+The initial value is \blank{1.5cm} and the base is \blank{1.5cm}.
+\end{hookbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.1 --- General Form of an Exponential Function (EK 2.3.A.1)}
+\[
+  f(x) = a \cdot b^x, \quad a \ne 0,\ b > 0,\ b \ne 1
+\]
+
+\begin{itemize}[itemsep=3pt]
+  \item $a = f(0) = $ \blank{3cm} (the $y$-intercept / initial value)
+  \item $b = $ \blank{5cm} (the base; applied once per unit input increase)
+  \item \textbf{Exponential growth:} $a > 0$ and $b$ \blank{1.5cm} 1
+  \item \textbf{Exponential decay:} $a > 0$ and \blank{2cm} $< b <$ \blank{1cm}
+\end{itemize}
+
+\medskip
+\textbf{Example:} $f(x) = 3 \cdot 2^x$. \quad $a = $ \blank{1.5cm} \quad $b = $ \blank{1.5cm}
+\quad Growth or decay? \blank{3cm}
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2 & 3 \\
+\hline
+$f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\multicolumn{5}{|l|}{Ratio of successive outputs: \quad $\dfrac{f(1)}{f(0)} = $ \blank{1.5cm}
+\quad $\dfrac{f(2)}{f(1)} = $ \blank{1.5cm} \quad $\dfrac{f(3)}{f(2)} = $ \blank{1.5cm}} \\
+\hline
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.2/A.3 --- Key Characteristics (EK 2.3.A.2, A.3)}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.28\linewidth} X @{}}
+Domain & \blank{7cm} \\
+Range (when $a > 0$) & \blank{5cm}; horizontal asymptote: $y = $ \blank{1.5cm} \\
+Monotonicity & Always \blank{3cm} if $b > 1$; always \blank{3cm} if $0 < b < 1$ \\
+Extrema on open intervals & \blank{6cm} \\
+Concavity (when $a > 0$) & Always concave \blank{2.5cm}; no \blank{3cm} points \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.5 --- End Behavior (EK 2.3.A.5)}
+For $f(x) = ab^x$ with $a > 0$, $b > 1$ (growth):
+\[
+  \lim_{x \to \infty} f(x) = \blank{2cm}
+  \qquad
+  \lim_{x \to -\infty} f(x) = \blank{2cm}
+\]
+
+For $f(x) = ab^x$ with $a > 0$, $0 < b < 1$ (decay):
+\[
+  \lim_{x \to \infty} f(x) = \blank{2cm}
+  \qquad
+  \lim_{x \to -\infty} f(x) = \blank{2cm}
+\]
+
+\textbf{Example:} State the end behavior of $h(x) = 5 \cdot (0.4)^x$.
+
+\vspace{0.04in}
+$\displaystyle\lim_{x\to\infty} h(x) = $ \blank{2cm} \qquad
+$\displaystyle\lim_{x\to-\infty} h(x) = $ \blank{2cm}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.4 --- Detecting Exponential from a Transformed Table (EK 2.3.A.4)}
+\textbf{Key idea:} If $g(x) = f(x) + k$ and $f$ is exponential, the outputs of $g$ will
+\textit{not} be proportional. To detect $f$: subtract \blank{1.5cm} from each output of $g$,
+then check whether the resulting values have a constant \blank{2cm}.
+
+\medskip
+\textbf{Example:} Outputs of $g(x)$: 7, 10, 16, 28 (inputs 0, 1, 2, 3). Suppose $k = 4$.
+
+\vspace{0.04in}
+Subtract 4: \blank{1.2cm}, \blank{1.2cm}, \blank{1.2cm}, \blank{1.2cm}
+
+Ratios: \blank{1.5cm}, \blank{1.5cm}, \blank{1.5cm}
+
+Are the ratios constant? \blank{2cm} \quad Write $f(x) = $ \blank{3cm}
+\quad Write $g(x) = $ \blank{4cm}
+\end{notesbox}
+
+\end{document}

@@ -1,0 +1,158 @@
+%! Change in Arithmetic and Geometric Sequences — Unit 2, Lesson 2.1 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.1}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.06in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Express an \ans{arithmetic} sequence as a function $a_n = a_0 + dn$ and identify the
+        common \ans{difference}. \hfill\textit{(LO 2.1.A)}
+  \item Express a \ans{geometric} sequence as a function $g_n = g_0 r^n$ and identify the
+        common \ans{ratio}. \hfill\textit{(LO 2.1.B)}
+  \item Compare how arithmetic and geometric sequences \ans{change} across successive terms. \hfill\textit{(LO 2.1.B)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.04in}
+
+\begin{vocabbox}
+\termblanklong{sequence}
+\termblanklong{arithmetic sequence}
+\termblanklong{geometric sequence}
+\termblanklong{common difference}
+\termblanklong{common ratio}
+\termblanklong{general term (explicit formula)}
+\termblanklong{recursive formula}
+\end{vocabbox}
+
+\vspace{0.04in}
+
+\begin{hookbox}
+Two sequences are written on the board:
+\[
+  2,\ 5,\ 8,\ 11,\ \ldots \qquad\qquad 2,\ 6,\ 18,\ 54,\ \ldots
+\]
+The first sequence \ans{increases} by the same amount each step.
+The second sequence \ans{increases} by the same factor each step.
+
+\medskip
+Estimate: how many steps until each sequence first exceeds 1000?
+
+\medskip
+Sequence 1: about \ans{333} steps. \quad Sequence 2: about \ans{6} steps.
+\end{hookbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.1.A --- Arithmetic Sequences}
+\textbf{Definition:} A \textit{sequence} is a function from the \ans{whole} numbers to the real numbers.
+Its graph consists of \ans{discrete} points (not a curve).
+
+\medskip
+\textbf{Arithmetic sequence:} Successive terms differ by a \ans{constant} value $d$, the
+\textit{common difference}.
+
+\[
+  d = a_n - a_{n-1} \quad \text{(constant for all } n \geq 1\text{)}
+\]
+
+\textbf{General (explicit) formula:}
+\[
+  a_n = a_0 + d \cdot n
+\]
+where $a_0$ is the \ans{initial} value (the term when $n = 0$).
+
+\medskip
+\textbf{Alternate form:} If we know the $k$th term $a_k$:
+\[
+  a_n = a_k + d(n - k)
+\]
+
+\medskip
+\textbf{Example:} The sequence $2,\ 5,\ 8,\ 11,\ \ldots$
+
+\smallskip
+Common difference: $d = $ \ans{3}
+
+\smallskip
+Explicit formula: $a_n = $ \ans{$2 + 3n$}
+
+\smallskip
+Find the first term exceeding 1000: \ans{$2 + 3n > 1000 \Rightarrow n > 332.6$, so $n = 333$}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.1.B --- Geometric Sequences}
+\textbf{Geometric sequence:} Successive terms have a \ans{constant} ratio $r$, the
+\textit{common ratio}.
+
+\[
+  r = \frac{g_n}{g_{n-1}} \quad \text{(constant for all } n \geq 1\text{)}
+\]
+
+\textbf{General (explicit) formula:}
+\[
+  g_n = g_0 \cdot r^n
+\]
+where $g_0$ is the \ans{initial} value.
+
+\medskip
+\textbf{Alternate form:} If we know the $k$th term $g_k$:
+\[
+  g_n = g_k \cdot r^{(n-k)}
+\]
+
+\medskip
+\textbf{Example:} The sequence $2,\ 6,\ 18,\ 54,\ \ldots$
+
+\smallskip
+Common ratio: $r = $ \ans{3}
+
+\smallskip
+Explicit formula: $g_n = $ \ans{$2 \cdot 3^n$}
+
+\smallskip
+Find the first term exceeding 1000: \ans{$2 \cdot 3^n > 1000 \Rightarrow 3^n > 500$; $3^6 = 729 > 500$, so $n = 6$}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{Comparison: Arithmetic vs.\ Geometric Change (EK 2.1.B.3)}
+Complete the table for both sequences starting at $n = 0$:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$n$ & Arithmetic: $a_n = 2 + 3n$ & Geometric: $g_n = 2 \cdot 3^n$ & Difference $g_n - a_n$ \\
+\hline
+0 & 2 & 2 & 0 \\
+\hline
+1 & \ans{5}  & \ans{6}   & \ans{1}    \\
+\hline
+2 & \ans{8}  & \ans{18}  & \ans{10}   \\
+\hline
+3 & \ans{11} & \ans{54}  & \ans{43}   \\
+\hline
+4 & \ans{14} & \ans{162} & \ans{148}  \\
+\hline
+5 & \ans{17} & \ans{486} & \ans{469}  \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Key insight:} Arithmetic sequences add \ans{a constant} each step;
+geometric sequences multiply by \ans{a constant} each step.
+Increasing geometric sequences eventually grow \ans{faster} than arithmetic sequences.
+\end{notesbox}
+
+\end{document}

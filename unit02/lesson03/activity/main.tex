@@ -1,0 +1,165 @@
+%! Exponential Functions — Unit 2, Lesson 2.3 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Exponential Functions: Three Tiers]{sky}
+\small
+Exponential functions of the form $f(x) = ab^x$ appear in population growth, radioactive decay,
+compound interest, and many other real-world contexts. In this activity you will identify, analyze,
+and write exponential functions using equations, tables, and limit notation.
+
+Work at the tier assigned by your teacher. Show all reasoning.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Three exponential functions are given:
+\[
+  f(x) = 4 \cdot 3^x \qquad g(x) = 10 \cdot (0.5)^x \qquad h(x) = 2 \cdot (1.25)^x
+\]
+
+For each function, complete the table.
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}X >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\textbf{Fn} & \textbf{$a$} & \textbf{$b$} & \textbf{Growth or Decay?} &
+\textbf{$y$-intercept} & \textbf{Domain} \\
+\midrule
+$f$ & \blank{1cm} & \blank{1cm} & \blank{2.5cm} & \blank{1.5cm} & \blank{2.5cm} \\[2pt]
+$g$ & \blank{1cm} & \blank{1cm} & \blank{2.5cm} & \blank{1.5cm} & \blank{2.5cm} \\[2pt]
+$h$ & \blank{1cm} & \blank{1cm} & \blank{2.5cm} & \blank{1.5cm} & \blank{2.5cm} \\[2pt]
+\end{tabularx}
+
+\medskip
+State the end behavior of each function using limit notation.
+
+\medskip
+$\displaystyle\lim_{x\to\infty} f(x) = $ \blank{2cm} \qquad
+$\displaystyle\lim_{x\to-\infty} f(x) = $ \blank{2cm}
+
+\medskip
+$\displaystyle\lim_{x\to\infty} g(x) = $ \blank{2cm} \qquad
+$\displaystyle\lim_{x\to-\infty} g(x) = $ \blank{2cm}
+
+\medskip
+$\displaystyle\lim_{x\to\infty} h(x) = $ \blank{2cm} \qquad
+$\displaystyle\lim_{x\to-\infty} h(x) = $ \blank{2cm}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A table of values for a function $p$ is given.
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1  & 2  & 3   \\
+\hline
+$p(x)$ & 5 & 15 & 45 & 135 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[itemsep=10pt]
+  \item Compute the ratios of successive outputs. Are they constant? Explain why this tells you
+        $p$ is exponential.
+
+        \vspace{0.06in}
+        $\dfrac{p(1)}{p(0)} = $ \blank{1.5cm} \quad
+        $\dfrac{p(2)}{p(1)} = $ \blank{1.5cm} \quad
+        $\dfrac{p(3)}{p(2)} = $ \blank{1.5cm}
+
+        \vspace{0.06in}
+        Constant? \blank{1.5cm} \quad Therefore $p$ is: \blank{4cm}
+
+  \item Identify $a$ and $b$, then write the equation for $p(x)$.
+
+        \vspace{0.06in}
+        $a = $ \blank{2cm} \quad $b = $ \blank{2cm} \quad $p(x) = $ \blank{5cm}
+
+  \item State the range of $p$ and the equation of its horizontal asymptote.
+
+        \vspace{0.06in}
+        Range: \blank{4cm} \quad Horizontal asymptote: $y = $ \blank{2cm}
+
+  \item Interpret the base $b$ in context: complete the sentence.
+
+        \vspace{0.06in}
+        ``For each additional unit of input, the output of $p$ is \blank{3cm} by a factor
+        of \blank{2cm}.''
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A table of values for $g(x)$ is given.
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2  & 3  \\
+\hline
+$g(x)$ & 7 & 10 & 16 & 28 \\
+\hline
+\end{tabular}
+
+You are told that $g(x) = f(x) + 4$ where $f$ is an exponential function.
+
+\begin{enumerate}[itemsep=10pt]
+  \item Check whether the outputs of $g$ have a constant ratio. Do they? What does this tell you?
+
+        \vspace{0.06in}
+        $\dfrac{10}{7} \approx $ \blank{2cm} \quad $\dfrac{16}{10} = $ \blank{2cm} \quad
+        $\dfrac{28}{16} = $ \blank{2cm}
+
+        \vspace{0.06in}
+        Constant? \blank{2cm} \quad Conclusion: \writeline
+
+  \item Subtract 4 from each output of $g$ to recover the outputs of $f$.
+
+        \vspace{0.06in}
+        $f$ outputs: \blank{1.5cm}, \blank{1.5cm}, \blank{1.5cm}, \blank{1.5cm}
+
+  \item Verify that the outputs of $f$ have a constant ratio. Identify $a$ and $b$.
+
+        \vspace{0.06in}
+        Ratios: \blank{1.5cm}, \blank{1.5cm}, \blank{1.5cm}
+
+        \vspace{0.04in}
+        $a = $ \blank{2cm} \quad $b = $ \blank{2cm}
+
+  \item Write $f(x)$ in $ab^x$ form and then write $g(x)$.
+
+        \vspace{0.06in}
+        $f(x) = $ \blank{5cm} \quad $g(x) = $ \blank{6cm}
+
+  \item Explain in a complete sentence why adding a constant $k$ to an exponential function
+        disrupts the ratio test.
+
+        \vspace{0.06in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

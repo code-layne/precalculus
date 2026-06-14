@@ -1,0 +1,125 @@
+%! Exponential Functions — Unit 2, Lesson 2.3 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Exponential Functions: Three Tiers]{sky}
+\small
+Exponential functions of the form $f(x) = ab^x$ appear in population growth, radioactive decay,
+compound interest, and many other real-world contexts. In this activity you will identify, analyze,
+and write exponential functions using equations, tables, and limit notation.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Three exponential functions are given:
+\[
+  f(x) = 4 \cdot 3^x \qquad g(x) = 10 \cdot (0.5)^x \qquad h(x) = 2 \cdot (1.25)^x
+\]
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}X >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\textbf{Fn} & \textbf{$a$} & \textbf{$b$} & \textbf{Growth or Decay?} &
+\textbf{$y$-intercept} & \textbf{Domain} \\
+\midrule
+$f$ & \ans{4} & \ans{3} & \ans{Growth} & \ans{$(0,4)$} & \ans{All reals} \\[2pt]
+$g$ & \ans{10} & \ans{0.5} & \ans{Decay} & \ans{$(0,10)$} & \ans{All reals} \\[2pt]
+$h$ & \ans{2} & \ans{1.25} & \ans{Growth} & \ans{$(0,2)$} & \ans{All reals} \\[2pt]
+\end{tabularx}
+
+\medskip
+End behavior:
+
+\medskip
+$\displaystyle\lim_{x\to\infty} f(x) = $ \ans{$\infty$} \qquad
+$\displaystyle\lim_{x\to-\infty} f(x) = $ \ans{$0$}
+
+\medskip
+$\displaystyle\lim_{x\to\infty} g(x) = $ \ans{$0$} \qquad
+$\displaystyle\lim_{x\to-\infty} g(x) = $ \ans{$\infty$}
+
+\medskip
+$\displaystyle\lim_{x\to\infty} h(x) = $ \ans{$\infty$} \qquad
+$\displaystyle\lim_{x\to-\infty} h(x) = $ \ans{$0$}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1  & 2  & 3   \\
+\hline
+$p(x)$ & 5 & 15 & 45 & 135 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[itemsep=8pt]
+  \item $\dfrac{p(1)}{p(0)} = $ \ans{3} \quad
+        $\dfrac{p(2)}{p(1)} = $ \ans{3} \quad
+        $\dfrac{p(3)}{p(2)} = $ \ans{3}
+
+        Constant? \ans{Yes} \quad Therefore $p$ is: \ans{exponential}
+
+  \item $a = $ \ans{5} \quad $b = $ \ans{3} \quad $p(x) = $ \ans{$5 \cdot 3^x$}
+
+  \item Range: \ans{$(0,\infty)$} \quad Horizontal asymptote: $y = $ \ans{$0$}
+
+  \item ``For each additional unit of input, the output of $p$ is \ans{multiplied} by a factor
+        of \ans{3}.''
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2  & 3  \\
+\hline
+$g(x)$ & 7 & 10 & 16 & 28 \\
+\hline
+\end{tabular}
+
+\begin{enumerate}[itemsep=8pt]
+  \item $\dfrac{10}{7} \approx $ \ans{$1.43$} \quad $\dfrac{16}{10} = $ \ans{$1.6$} \quad
+        $\dfrac{28}{16} = $ \ans{$1.75$}
+
+        Constant? \ans{No} \quad Conclusion: \ans{The outputs of $g$ are not proportional; $g$ itself is not exponential, but $f = g - 4$ may be.}
+
+  \item $f$ outputs: \ans{3}, \ans{6}, \ans{12}, \ans{24}
+
+  \item Ratios: \ans{2}, \ans{2}, \ans{2}
+
+        $a = $ \ans{3} \quad $b = $ \ans{2}
+
+  \item $f(x) = $ \ans{$3 \cdot 2^x$} \quad $g(x) = $ \ans{$3 \cdot 2^x + 4$}
+
+  \item \ans{Adding a constant $k$ shifts every output by $k$, which changes the ratios
+        $g(x+1)/g(x)$ because the constant term does not scale the same way as the exponential
+        part; the ratio test only works when the horizontal asymptote is $y = 0$.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

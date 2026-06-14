@@ -1,0 +1,117 @@
+%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.4}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Equivalent Forms of Exponential Functions]{sky}
+\small
+Every exponential function can be written in many equivalent forms. Choosing the right form
+makes certain features of the function immediately visible. In this activity you will practice
+rewriting exponential expressions using the product property, the power property, and the
+rules for negative and fractional exponents.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+For each expression, (i) identify which property to apply and (ii) rewrite in the form $ab^x$.
+Show each step.
+
+\renewcommand{\arraystretch}{2.4}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{3.2cm} X X @{}}
+\textbf{Expression} & \textbf{Property} & \textbf{Step 1} & \textbf{Final: $ab^x$} \\
+\midrule
+$2^{x+4}$  & \ans{product} & $2^x \cdot 2^{{\color{keyred}\mathbf{4}}}$ & \ans{$16 \cdot 2^x$} \\
+$3^{2x}$   & \ans{power}   & $(3^{{\color{keyred}\mathbf{2}}})^x$       & \ans{$9^x$} \\
+$5^{-x}$   & \ans{negative exp.} & $\left(\dfrac{1}{{\color{keyred}\mathbf{5}}}\right)^x$ & \ans{$\left(\tfrac{1}{5}\right)^x$} \\
+$4^{x/2}$  & \ans{power}   & $(4^{{\color{keyred}\mathbf{1/2}}})^x$     & \ans{$2^x$} \\
+\end{tabularx}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=12pt]
+
+  \item Three functions are given below. Show that all three are equivalent by rewriting each
+        in the form $a \cdot b^x$.
+
+        \[
+          f(x) = 4^{x+1}
+          \qquad
+          g(x) = 4 \cdot 4^x
+          \qquad
+          h(x) = 16 \cdot \left(\tfrac{1}{4}\right)^{-x+1}
+        \]
+
+        $f(x) = $ \ans{$4 \cdot 4^x$} \quad $g(x) = $ \ans{$4 \cdot 4^x$} (already in form)
+
+        $h(x)$: $\left(\tfrac{1}{4}\right)^{-x} = 4^x$, so $h(x) = 16 \cdot \left(\tfrac{1}{4}\right)^{-x+1} = 16 \cdot \tfrac{1}{4} \cdot 4^x = $ \ans{$4 \cdot 4^x$}
+
+        All three simplify to: \ans{$4 \cdot 4^x$}
+
+  \item Rewrite $f(x) = 8^{x/3}$ as a single base raised to the $x$ power. Show your work.
+
+        \vspace{0.04in}
+        $8^{x/3} = (8^{{\color{keyred}\mathbf{1/3}}})^x = $ \ans{$2^x$}
+
+  \item Rewrite $g(x) = 27 \cdot 3^{-x}$ in the form $a \cdot b^x$. Classify as growth or decay
+        and state the $y$-intercept.
+
+        \vspace{0.04in}
+        $g(x) = 27 \cdot 3^{-x} = 27 \cdot \left(\dfrac{1}{3}\right)^x = $ \ans{$27\cdot\left(\dfrac{1}{3}\right)^x$}
+
+        \vspace{0.04in}
+        Growth / Decay (circle one): \ans{Decay} \quad $y$-intercept: \ans{$(0,27)$}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item Starting with $f(x) = 6^{2x+1}$, produce \textbf{three} different equivalent forms.
+
+        \textbf{Form 1} (vertical dilation): $6^{2x+1} = 6 \cdot 6^{2x}$ \ans{$= 6 \cdot 36^x$}
+
+        \textbf{Form 2} (single base to the $x$ power): $6^{2x} = (6^2)^x$, so $f(x) = 6 \cdot (6^2)^x$ \ans{$= 6 \cdot 36^x$}
+
+        \textbf{Form 3} (creative): \ans{$f(x) = 6^{2x+1} = (36)^x \cdot 6$, or write as $6 \cdot 36^x$ emphasizing $a = 6, b = 36$.
+        Another option: $(1296)^{x/2} \cdot 6$.}
+
+        \begin{teachernote}
+          Accept any valid equivalent form for Form 3. Check that students use $f(x) = 6 \cdot 36^x$
+          (most natural $ab^x$ form) and clearly justify their algebra.
+        \end{teachernote}
+
+  \item For each context, which form is most useful?
+
+        \textbf{Context A} ($y$-intercept): \ans{Form 1 ($6 \cdot 36^x$), because $a = 6$ is immediately visible as $f(0)$.}
+
+        \textbf{Context B} (compare to $36^x$): \ans{Form 2 or Form 1 --- writing the base as $36$ makes the comparison direct.}
+
+        \textbf{Context C} (horizontal stretch from $6^x$): \ans{The original form $6^{2x+1}$ shows the coefficient $c = 2$ inside the exponent most clearly.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}
