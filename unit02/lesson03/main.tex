@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.3 — Lesson Plan
+%! Exponential Functions — Unit 2, Lesson 2.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.3: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.3: Exponential Functions}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,143 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify key characteristics of exponential functions
+    $f(x) = ab^x$, classify functions as exponential growth or decay, describe domain, end behavior,
+    and concavity, and determine whether a function is exponential by checking proportional output
+    ratios over equal-length input intervals.
+    \hfill\textit{\small Skill: 3.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{3.A} --- Identify key characteristics of exponential functions and connect
+multiple representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item General form $f(x) = ab^x$: initial value $a$, base $b > 0$, $b \ne 1$.
+        Growth when $a > 0, b > 1$; decay when $a > 0, 0 < b < 1$. (EK 2.3.A.1)
+  \item Outputs are proportional over equal-length input intervals; function is strictly
+        monotone, always concave up or always concave down; no extrema or inflection
+        points on open intervals. (EK 2.3.A.3)
+  \item End behavior: $\displaystyle\lim_{x\to\pm\infty} ab^x = \pm\infty$ or $0$.
+        Horizontal asymptote at $y = 0$. (EK 2.3.A.5)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+exponential function   & A function of the form $f(x) = ab^x$ with $a \ne 0$, $b > 0$, $b \ne 1$. \\
+initial value          & The value $a = f(0)$; the $y$-intercept of the exponential function. \\
+base                   & The constant $b$; the multiplicative factor applied for each unit increase in input. \\
+exponential growth     & When $a > 0$ and $b > 1$; outputs increase without bound as $x \to \infty$. \\
+exponential decay      & When $a > 0$ and $0 < b < 1$; outputs approach $0$ as $x \to \infty$. \\
+concave up / down      & Graph curves upward (like a bowl) or downward; exponential functions are always one or the other. \\
+end behavior           & The behavior of $f(x)$ as $x \to \infty$ or $x \to -\infty$, described with limit notation. \\
+horizontal asymptote   & A horizontal line the graph approaches but never reaches; $y = 0$ for $f(x) = ab^x$. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers: identifying constant output ratios from a table (Lesson 2.2),
+    writing an exponential function given initial value and ratio, and reviewing linear function
+    writing from two points (Lesson 1.1). Students work three short problems; this activates
+    the proportionality idea central to EK 2.3.A.3 and distinguishes exponential from linear tables.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Pose the \textbf{doubling penny problem:}
+
+\medskip
+\textit{``Suppose you receive 1 penny on Day 1, 2 pennies on Day 2, 4 pennies on Day 3, and so on,
+doubling every day. How much total money would you have after 30 days? Write your guess before
+calculating.''}
+
+\medskip
+After students commit to a guess, reveal: $2^{30} - 1 \approx 1{,}073{,}741{,}823$ pennies
+$\approx \$10.7$ million. Ask: \textbf{``What kind of function models this?''} and
+\textbf{``What does Day 0 look like? What's the base?''} This motivates $f(x) = 1 \cdot 2^x$
+and the general form $ab^x$.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (15 min): General Form $f(x) = ab^x$.}
+
+Identify $a$ (initial value, $y$-intercept) and $b$ (base, common ratio) from an equation and
+from a table. Classify as growth ($b > 1$) or decay ($0 < b < 1$). Use three representations:
+(1) equation, (2) table showing constant ratios, (3) verbal description.
+
+Model: given $f(x) = 3 \cdot 2^x$, confirm $a = 3$, $b = 2$, growth; build a table for
+$x = 0,1,2,3$ and verify ratios $= 2$. Given table with ratios $= 0.5$, write $f(x) = 8(0.5)^x$.
+
+\columnbreak
+
+\textbf{Part 2 (15 min): Key Characteristics.}
+
+Domain: all real numbers (EK 2.3.A.2). Range (for $a > 0$): $(0, \infty)$ with horizontal
+asymptote $y = 0$. Monotonicity: strictly increasing if $b > 1$, decreasing if $0 < b < 1$ ---
+never has extrema. Concavity: always concave up when $a > 0$ --- no inflection points.
+
+\medskip
+\textbf{Part 3 (10 min): End Behavior \& Detecting Exponential (EK 2.3.A.4/A.5).}
+
+Use limit notation: $\displaystyle\lim_{x\to\infty} 3\cdot 2^x = \infty$ and
+$\displaystyle\lim_{x\to-\infty} 3\cdot 2^x = 0$.
+
+EK 2.3.A.4: if $g(x) = f(x) + k$ and outputs of $g$ look non-proportional, subtract $k$ to
+recover $f$, then check ratios of $f$. If ratios are constant, $f$ is exponential.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Cold-call after Part 1: ``If $b = 0.8$, is this growth or decay? How do you know?''
+        Expect: decay because $0 < 0.8 < 1$.
+  \item During Part 1 table work: watch for students who add outputs instead of finding ratios.
+  \item Cold-call after Part 2: ``Can an exponential function have a maximum value? Why not?''
+        Expect: no, because it is always increasing or always decreasing.
+  \item During Part 3: confirm students apply limit notation correctly; watch for confusing
+        $\lim_{x\to\infty}$ and $\lim_{x\to-\infty}$ when $0 < b < 1$.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given three explicit equations $f(x) = ab^x$; read off $a$
+        and $b$, classify growth/decay, state domain, $y$-intercept, and both limits.
+  \item \textbf{Tier A (Apply):} Given a table; verify exponential by computing output ratios,
+        identify $a$ and $b$, write the equation, state the range, interpret base in context.
+  \item \textbf{Tier E (Extend):} Given $g(x) = f(x) + 4$ with non-proportional outputs;
+        subtract 4, verify constant ratios, write $f(x) = ab^x$, then write $g(x)$; explain
+        why adding a constant disrupts the ratio test (EK 2.3.A.4).
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) identify $a$, $b$, and growth/decay for
+$f(x) = 3\cdot(0.5)^x$; (2) state $\displaystyle\lim_{x\to\infty} 5\cdot 2^x$ and
+$\displaystyle\lim_{x\to-\infty} 5\cdot 2^x$; (3) write $f(x)$ in $ab^x$ form from the
+table with outputs 6, 18, 54, 162.
+
+Collect and sort: students missing item 1 need re-teaching of form identification (LO 2.3.A.1);
+missing item 2 need end behavior practice (LO 2.3.A.5); missing item 3 need table-to-equation
+work (LO 2.3.A.2).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (6 problems): identify $a$, $b$, growth/decay, and range from equations; determine
+whether a table represents exponential, linear, or neither; write $f(x) = ab^x$ from a table;
+state limits for two different exponential functions; AP-style MC on horizontal asymptote and
+monotonicity; extension explaining why $b = 1$ is excluded.
+
+Preview of Lesson 2.4: transformations of exponential functions --- how $f(x) = ab^{x-h} + k$
+shifts the asymptote and changes domain/range, connecting today's base characteristics to
+transformed graphs.
 \end{skillbox}
+
 \end{document}

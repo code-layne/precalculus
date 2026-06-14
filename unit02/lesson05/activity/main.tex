@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.5 — Group Activity
+%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,126 @@
 \pageheader{Unit 2, Lesson 2.5}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Building Exponential Models]{sky}
+\small
+Exponential models appear in medicine, ecology, finance, and physics. In each tier below, you will
+build and apply an exponential model, interpret its base, and use it to answer a contextual question.
+Work with your group on the tier assigned by your teacher.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} A drug's concentration in the bloodstream halves every 4 hours. The initial
+concentration is 200 mg/L.
+
+\begin{enumerate}[itemsep=10pt]
+  \item The model is $C(t) = 200 \cdot (0.5)^{t/4}$, where $t$ is hours. Complete the table.
+
+        \vspace{0.06in}
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabular}{c|c}
+        \textbf{Time $t$ (hours)} & \textbf{Concentration $C(t)$ (mg/L)} \\ \hline
+        0  & \blank{3cm} \\
+        4  & \blank{3cm} \\
+        8  & \blank{3cm} \\
+        12 & \blank{3cm} \\
+        \end{tabular}
+
+  \item What is the base of this exponential model? What does it tell you about the drug?
+
+        \vspace{0.06in}
+        Base: \blank{2cm} \quad Meaning: \blank{9cm}
+
+  \item Use the model to find the concentration after 6 hours. Show your work.
+
+        \vspace{0.06in}
+        $C(6) = 200 \cdot (0.5)^{6/4} = $ \blank{5cm} $\approx$ \blank{2cm} mg/L
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} A town's population was 4{,}000 in Year 2 and 6{,}250 in Year 5.
+Assume exponential growth.
+
+\begin{enumerate}[itemsep=10pt]
+  \item Set up and solve a system of equations to find $a$ and $b$ in $P(t) = ab^t$.
+
+        \vspace{0.06in}
+        Equation 1: \blank{7cm}
+
+        Equation 2: \blank{7cm}
+
+        Divide to find $b$: \blank{8cm}
+
+        \vspace{0.04in}
+        $b = $ \blank{3cm} \quad then $a = $ \blank{4cm}
+
+        \vspace{0.04in}
+        Model: $P(t) = $ \blank{7cm}
+
+  \item What is the annual growth rate as a percent? \blank{5cm}
+
+  \item Predict the population at Year 10. Then note: is this prediction within a reasonable domain?
+
+        \vspace{0.06in}
+        $P(10) = $ \blank{6cm} $\approx$ \blank{4cm}
+
+        \vspace{0.04in}
+        Domain note: \blank{8cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} $f(d) = 3 \cdot 2^d$ models the daily growth of a bacterial colony, where
+$d$ is the number of days and $f(d)$ is the colony size in thousands.
+
+\begin{enumerate}[itemsep=10pt]
+  \item Rewrite $f(d)$ as a model $g(w) = a \cdot b^w$, where $w$ is the number of \textbf{weeks}.
+        Show the algebra clearly.
+
+        \vspace{0.06in}
+        $g(w) = $ \blank{9cm} \quad What does the base $b$ mean in this context?
+
+        \vspace{0.04in}
+        \writeline
+
+  \item Rewrite $f(d)$ as a model $h(n) = a \cdot c^n$, where $n$ is the number of \textbf{3-day
+        periods} (so $d = 3n$). What does the base $c$ mean?
+
+        \vspace{0.06in}
+        $h(n) = $ \blank{9cm} \quad Meaning of base $c$: \blank{5cm}
+
+  \item After how many days does the colony first exceed 10{,}000 thousand (i.e., $f(d) > 10000$)?
+        Find the answer by testing integer values in the table below.
+
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{c|c}
+        $d$ & $f(d) = 3 \cdot 2^d$ \\ \hline
+        10 & \blank{3cm} \\
+        11 & \blank{3cm} \\
+        12 & \blank{3cm} \\
+        \end{tabular}
+
+        \vspace{0.06in}
+        The colony first exceeds 10{,}000 thousand after $d = $ \blank{2cm} days.
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

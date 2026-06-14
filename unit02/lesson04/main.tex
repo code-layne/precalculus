@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.4 — Lesson Plan
+%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.4: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.4: Exponential Function Manipulation}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,151 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will rewrite exponential expressions in equivalent
+    forms by applying the product property ($b^m \cdot b^n = b^{m+n}$), the power property
+    ($(b^m)^n = b^{mn}$), and the negative and fractional exponent properties, connecting each
+    algebraic manipulation to a graphical transformation of the exponential function.
+    \hfill\textit{\small Skills: AP 1.B, AP 3.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.B} --- Identify an appropriate mathematical rule or procedure based on the
+classification of a given expression. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Product property: $b^m \cdot b^n = b^{m+n}$; a horizontal translation
+        $b^{x+k}$ is equivalent to a vertical dilation $b^k \cdot b^x$. (EK 2.4.A.1)
+  \item Power property: $(b^m)^n = b^{mn}$; a horizontal dilation $b^{cx}$ is
+        equivalent to a base change $(b^c)^x$. (EK 2.4.A.2)
+\end{itemize} \\
+\textbf{AP 3.A} --- Apply an appropriate mathematical definition, theorem, or test. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Negative exponent: $b^{-n} = \dfrac{1}{b^n}$; decay as a base-flip. (EK 2.4.A.3)
+  \item Fractional exponent: $b^{1/k} = \sqrt[k]{b}$; $b^{m/n} = (\sqrt[n]{b})^m$. (EK 2.4.A.4)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.30\linewidth} X @{}}
+product property of exponents & $b^m \cdot b^n = b^{m+n}$; adds exponents when bases match. \\
+power property of exponents   & $(b^m)^n = b^{mn}$; multiplies exponents. \\
+negative exponent             & $b^{-n} = \dfrac{1}{b^n}$; flips to the reciprocal base. \\
+fractional exponent           & $b^{1/k} = \sqrt[k]{b}$; $b^{m/n} = (\sqrt[n]{b})^m$. \\
+$k$th root                    & $\sqrt[k]{b} = b^{1/k}$; the value whose $k$th power equals $b$. \\
+equivalent form               & Two expressions that produce the same output for every input. \\
+vertical dilation             & Multiplying the output by a constant $a$ (stretches or compresses). \\
+horizontal translation        & Replacing $x$ with $x+k$ shifts the graph left ($k>0$) or right. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers Lesson 2.3: identifying $a$ and $b$ in $f(x) = ab^x$,
+    classifying growth vs.\ decay, evaluating an exponential function at a given input, and
+    writing $f(x)$ from a table of values. Students work three short problems; teacher
+    circulates to assess readiness for exponent manipulation.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Write two functions on the board:
+\[
+  f(x) = 2^{x+3} \qquad\qquad g(x) = 8 \cdot 2^x
+\]
+Ask: \textbf{``Are these the same function? Try $x = 0$, $x = 1$, and $x = -3$.''}
+Give students 90 seconds. After discussion, reveal: \textbf{yes} --- because
+$2^{x+3} = 2^x \cdot 2^3 = 8 \cdot 2^x$.
+Frame: \textit{``Today we master the algebra that connects these forms --- and see how each
+form tells a different story about the same graph.''}
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (15 min): Product Property.}
+
+State: $b^m \cdot b^n = b^{m+n}$.
+Graphical interpretation: a horizontal translation $f(x) = b^{x+k}$ equals a vertical
+dilation $f(x) = b^k \cdot b^x = ab^x$ where $a = b^k$.
+
+Model on the board:
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
+  \item $5^{x+2} = 5^x \cdot 5^2 = 25 \cdot 5^x$
+  \item $3^{x-1} = 3^x \cdot 3^{-1} = \tfrac{1}{3} \cdot 3^x$
+  \item Reverse: $4 \cdot 2^x = 2^2 \cdot 2^x = 2^{x+2}$
+\end{itemize}
+
+Pose: ``Which form reveals the $y$-intercept? Which shows the horizontal shift?''
+
+\columnbreak
+
+\textbf{Part 2 (15 min): Power Property.}
+
+State: $(b^m)^n = b^{mn}$.
+Graphical interpretation: a horizontal dilation $f(x) = b^{cx}$ equals a base change
+$f(x) = (b^c)^x$.
+
+Model:
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
+  \item $2^{3x} = (2^3)^x = 8^x$
+  \item $9^{x/2} = (9^{1/2})^x = 3^x$
+\end{itemize}
+
+\textbf{Part 3 (10 min): Negative \& Fractional Exponents.}
+
+$b^{-n} = \dfrac{1}{b^n}$ connects to decay:
+$2^{-x} = \left(\dfrac{1}{2}\right)^x$.
+
+$b^{1/k} = \sqrt[k]{b}$ and $b^{m/n} = (\sqrt[n]{b})^m$.
+Examples: $8^{1/3} = 2$; $4^{3/2} = (\sqrt{4})^3 = 8$.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call --- ``If $f(x) = 7^{x+2}$, what is $a$ in $ab^x$ form?''
+        (Expect $a = 49$.) Watch for students who add the $k$ as a coefficient.
+  \item During Part 2: listen for confusion between $b^{cx}$ and $(bc)^x$; the parentheses
+        determine whether we change the base or multiply a coefficient.
+  \item After Part 2: ``What single base replaces $4^{x/2}$?'' (Expect $2^x$.)
+  \item Throughout: students collapsing $b^{x+k}$ to $(bk)^x$ need re-teaching of product
+        vs.\ power property.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Identify the property needed, then rewrite each given
+        expression one step at a time into $ab^x$ form: $2^{x+4}$, $3^{2x}$, $5^{-x}$, $4^{x/2}$.
+  \item \textbf{Tier A (Apply):} Match three forms of the same function; rewrite $8^{x/3}$
+        and $27 \cdot 3^{-x}$; show each step explicitly.
+  \item \textbf{Tier E (Extend):} Rewrite $6^{2x+1}$ in three equivalent forms; explain which
+        form is most useful in each of three mathematical contexts.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) rewrite $3^{x+4}$ in $a \cdot b^x$ form (product
+property); (2) rewrite $5^{2x}$ as a single base to the $x$ power (power property);
+(3) evaluate $2^{-3}$ and $8^{1/3}$ (negative and fractional exponents).
+
+Sort tickets: students missing item 1 need product-property reinforcement (EK 2.4.A.1);
+missing item 2 need power-property work (EK 2.4.A.2); missing item 3 need exponent-property
+review (EK 2.4.A.3--A.4).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (6 problems): product-property rewrites (horizontal translation $\to$ vertical
+dilation); power-property rewrites (horizontal dilation $\to$ base change); negative and
+fractional exponent simplification; show two functions equivalent; AP-style MC on equivalent
+expressions for $16^{x/4}$; extension --- find $b$ such that $f(x) = b^{2x}$ equals
+$g(x) = 9 \cdot 3^x$.
+
+Preview of Lesson 2.5: logarithmic functions as inverses of exponentials --- connecting the
+$ab^x$ form mastered today to logarithmic structure.
 \end{skillbox}
+
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.5 — Homework (Answer Key)
+%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,139 @@
 \pageheader{Unit 2, Lesson 2.5}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[itemsep=18pt]
+
+\item A substance decays at a rate of 8\% per year. Its initial amount is 300 grams.
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Write a model $f(t) = ab^t$ for the amount remaining after $t$ years.
+
+              \vspace{0.06in}
+              $a = $ \ans{300} \quad $b = $ \ans{0.92} \quad $f(t) = $ \ans{$300 \cdot (0.92)^t$}
+
+        \item Is this growth or decay? How do you know from the value of $b$? \ans{Decay; $b = 0.92 < 1$.}
+      \end{enumerate}
+
+\item An exponential function passes through $(2,\,20)$ and $(5,\,540)$. Find $a$ and $b$.
+      Show all algebraic steps.
+
+      \vspace{0.08in}
+      Equation 1: \ans{$20 = ab^2$} \quad Equation 2: \ans{$540 = ab^5$}
+
+      \vspace{0.06in}
+      Divide to eliminate $a$: \ans{$540/20 = b^{5-2}$, so $b^3 = 27$}
+
+      \vspace{0.06in}
+      $b = $ \ans{3} \quad then $a = $ \ans{$20/3^2 = 20/9 \approx 2.22$}
+
+      \vspace{0.04in}
+      Model: $f(x) = $ \ans{$\dfrac{20}{9} \cdot 3^x$}
+
+\item A radioactive sample has a half-life of 10 years. Its initial mass is 80 grams.
+
+      \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item Write the exponential model $M(t)$ for the mass remaining after $t$ years.
+
+              \vspace{0.06in}
+              $M(t) = $ \ans{$80 \cdot (0.5)^{t/10}$}
+
+        \item Predict the mass after 25 years. Show your work.
+
+              \vspace{0.06in}
+              $M(25) = $ \ans{$80 \cdot (0.5)^{2.5} = 80 \cdot 0.1768$} $\approx$ \ans{14.1} grams
+
+        \item Is $t = -5$ a meaningful input in this context? Explain.
+
+              \vspace{0.06in}
+              \ans{No; $t$ represents time elapsed since the start of the experiment. A negative time has no physical meaning in this context.}
+      \end{enumerate}
+
+\item The function $f(d) = 5 \cdot 3^d$ models a quantity that grows daily, where $d$ is the
+      number of days.
+
+      \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item Rewrite $f$ as a function of weeks $w$ (where $d = 7w$).
+
+              \vspace{0.06in}
+              $g(w) = $ \ans{$5 \cdot (3^7)^w = 5 \cdot 2187^w$}
+
+        \item What does the base of $g(w)$ tell you about the weekly growth of the quantity?
+
+              \vspace{0.04in}
+              \ans{The quantity multiplies by 2187 every week.}
+
+        \item Rewrite $f$ as a function of 2-day periods $n$ (where $d = 2n$).
+
+              \vspace{0.06in}
+              $h(n) = $ \ans{$5 \cdot (3^2)^n = 5 \cdot 9^n$} \quad Base: \ans{9}
+      \end{enumerate}
+
+\item \textbf{(AP-Style Multiple Choice)} A population is modeled by $f(t) = 500 e^{0.04t}$,
+      where $t$ is in years. Which of the following best describes the approximate annual growth rate?
+
+      \medskip
+      \begin{enumerate}[label=(\Alph*), itemsep=4pt]
+        \item 0.04\%
+        \item 4\%
+        \item 4.08\%
+        \item 40\%
+      \end{enumerate}
+
+      \vspace{0.06in}
+      Answer: \ans{(C)} \quad Reasoning: \ans{$e^{0.04} \approx 1.0408$, so the annual growth factor is about 1.0408, giving a rate of $\approx 4.08\%$ per year.}
+
+\item \textbf{(Extension)} The table below shows temperature readings (in ${}^\circ$C) at time
+      $t$ minutes in a cooling experiment.
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.5}
+      \begin{tabular}{c|c}
+      $t$ (min) & Temperature (${}^\circ$C) \\ \hline
+      0  & 80 \\
+      5  & 55 \\
+      10 & 42.5 \\
+      15 & 36.25 \\
+      \end{tabular}
+      \end{center}
+
+      The temperature is approaching a room temperature of 25${}^\circ$C. Let $y = T - 25$
+      (subtract room temperature).
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Compute the adjusted values $y = T - 25$ and check whether they form an
+              exponential pattern (compute successive ratios).
+
+              \vspace{0.06in}
+              \renewcommand{\arraystretch}{1.6}
+              \begin{tabular}{c|c|c}
+              $t$ & $y = T - 25$ & Ratio (successive) \\ \hline
+              0  & \ans{55} & --- \\
+              5  & \ans{30} & \ans{$30/55 \approx 0.545$} \\
+              10 & \ans{17.5} & \ans{$17.5/30 \approx 0.583$} \\
+              15 & \ans{11.25} & \ans{$11.25/17.5 \approx 0.643$} \\
+              \end{tabular}
+
+              \vspace{0.04in}
+              \ans{The ratios are approximately equal ($\approx 0.5$ to $0.6$), suggesting an exponential decay pattern (slight variation may be due to rounding).}
+
+        \item Write an exponential model for $y(t)$, then write the model for $T(t)$.
+
+              \vspace{0.06in}
+              $y(t) = $ \ans{$55 \cdot (0.55)^{t/5}$} \quad $T(t) = $ \ans{$55 \cdot (0.55)^{t/5} + 25$}
+      \end{enumerate}
+
+\end{enumerate}
+
+\begin{teachernote}
+\#2: Exact answer is $a = 20/9$; accept decimal approximation $\approx 2.22$.
+
+\#3b: $(0.5)^{2.5} = 1/(2^{2.5}) = 1/(4\sqrt{2}) \approx 0.1768$. So $M(25) \approx 14.1$ g.
+
+\#5: $e^{0.04} = 1.04081\ldots \approx 4.08\%$; answer is (C). Students who pick (B) may be treating the exponent directly as the percent --- address the $e^r$ vs.\ $1 + r$ distinction.
+
+\#6 extension: ratios from the adjusted column are $30/55 \approx 0.545$, $17.5/30 \approx 0.583$, $11.25/17.5 \approx 0.643$. In a real Newton's law of cooling scenario these would be constant; slight rounding in the problem data causes variation. Accept any reasonable exponential model with base near 0.55--0.6 per 5-minute period.
+\end{teachernote}
 
 \end{document}
