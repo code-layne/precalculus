@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Group Activity
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,142 @@
 \pageheader{Unit 2, Lesson 2.6}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Choosing the Best Model for Online Store Sales]{sky}
+\small
+An online store tracked monthly sales (in \$thousands) for five months. Three regression
+models were fit to the data. In each tier, you will analyze the models and determine which
+one is most appropriate for the data and the context.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c}
+\textbf{Month ($x$)} & \textbf{Actual $y$} & \textbf{Linear $\hat{y}_L$} & \textbf{Quadratic $\hat{y}_Q$} & \textbf{Exponential $\hat{y}_E$} \\
+\hline
+1 &  4 & 3.4  & 3.8  & 3.6 \\
+2 &  8 & 7.8  & 7.2  & 7.9 \\
+3 & 17 & 12.2 & 14.6 & 17.4 \\
+4 & 36 & 16.6 & 26.0 & 38.2 \\
+5 & 75 & 21.0 & 41.4 & 83.9 \\
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+All three regression models are given in the table above.
+
+\begin{enumerate}[itemsep=10pt]
+  \item At $x = 3$ (Month 3), compute the error for each model.
+        Recall: error $= y_{\text{actual}} - \hat{y}$.
+
+        \vspace{0.04in}
+        Error (Linear): $17 - 12.2 = $ \blank{3cm}
+
+        Error (Quadratic): $17 - 14.6 = $ \blank{3cm}
+
+        Error (Exponential): $17 - 17.4 = $ \blank{3cm}
+
+  \item Which model has the smallest absolute error at Month 3? \blank{5cm}
+
+  \item The store owner says: ``Sales more than doubled every month.'' Circle the model
+        type that best matches this description:
+
+        \hspace{2cm} \textbf{Linear} \hspace{2cm} \textbf{Quadratic} \hspace{2cm} \textbf{Exponential}
+
+  \item At $x = 5$, the exponential model predicts \$83.9 thousand but actual sales are
+        \$75 thousand. Is the model an overestimate or underestimate at this point?
+
+        \vspace{0.04in}
+        \blank{4cm} \quad because the error is \blank{2cm} (positive / negative --- circle one).
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use the actual $y$ values from the scenario table (column 2) to analyze data structure.
+
+\begin{enumerate}[itemsep=10pt]
+  \item Compute the first differences ($\Delta_1$) and the successive ratios for the actual data.
+
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{c|c|c|c}
+        $x$ & Actual $y$ & $\Delta_1$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+        1 &  4 & \blank{2.5cm} & \blank{2.5cm} \\
+        2 &  8 & \blank{2.5cm} & \blank{2.5cm} \\
+        3 & 17 & \blank{2.5cm} & \blank{2.5cm} \\
+        4 & 36 & \blank{2.5cm} & \blank{2.5cm} \\
+        5 & 75 & --- & --- \\
+        \end{tabular}
+
+  \item Based on the table, which model type is most strongly suggested? \blank{5cm}
+
+        Explain using one sentence about what is nearly constant in your table:
+        \writeline
+
+  \item Using technology, record the $R^2$ value for each regression (if available):
+
+        $R^2$ (Linear): \blank{2.5cm} \quad $R^2$ (Quadratic): \blank{2.5cm} \quad
+        $R^2$ (Exponential): \blank{2.5cm}
+
+  \item Combining the $R^2$ values and the data structure, which model is most appropriate?
+        State your conclusion in a complete sentence and reference the contextual clue from
+        the scenario.
+
+        \vspace{0.04in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The residuals from the linear model for each data point are: $+0.6,\; +0.2,\; +4.8,\; +19.4,\; +54.0$.
+
+The residuals from the exponential model are: $+0.4,\; +0.1,\; -0.4,\; -2.2,\; -8.9$.
+
+\begin{enumerate}[itemsep=10pt]
+  \item Describe any pattern you observe in the linear model's residuals.
+
+        \vspace{0.04in}
+        \writeline
+
+  \item Describe the pattern (or lack of pattern) in the exponential model's residuals.
+
+        \vspace{0.04in}
+        \writeline
+
+  \item A patternless residual plot supports choosing that model (EK 2.6.B.1). Based on
+        this criterion alone, which model is more appropriate? \blank{5cm}
+
+  \item The exponential model overestimates actual sales at $x = 4$ and $x = 5$.
+        Give one real-world reason why the store owner might still \emph{prefer} a model
+        that slightly overestimates (i.e., an overestimate has value in this context).
+
+        \vspace{0.04in}
+        \writelines{2}
+
+  \item Write a complete justification (3--4 sentences) for choosing the exponential model,
+        citing: (a) the residual plot pattern, (b) the data structure (ratios), and (c) the
+        contextual clue that ``sales more than doubled every month.''
+
+        \vspace{0.04in}
+        \writelines{3}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

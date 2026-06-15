@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.7 — Homework
+%! Composition of Functions — Unit 2, Lesson 2.7 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,88 @@
 \pageheader{Unit 2, Lesson 2.7}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\begin{enumerate}[itemsep=14pt]
+
+\item \textbf{Numerical Composition.} Use the table to evaluate each composition.
+
+      \vspace{0.06in}
+      \renewcommand{\arraystretch}{1.6}
+      \begin{tabular}{c|c|c}
+      $x$ & $f(x)$ & $g(x)$ \\ \hline
+      $-1$ & 3 & 5 \\
+      0    & 1 & $-1$ \\
+      1    & 4 & 0 \\
+      5    & 2 & 1 \\
+      \end{tabular}
+
+      \vspace{0.08in}
+      (a) $f(g(1)) = $ \blank{4cm} \qquad (b) $g(f(1)) = $ \blank{4cm}
+
+      \vspace{0.06in}
+      (c) $f(g(0)) = $ \blank{4cm} \qquad (d) $g(f(-1)) = $ \blank{4cm}
+
+\item \textbf{Analytic Composition.} Let $f(x) = 5x - 2$ and $g(x) = x^2$.
+
+      \vspace{0.06in}
+      (a) Find a formula for $f(g(x))$. Simplify.
+
+      \vspace{0.06in}
+      $f(g(x)) = $ \blank{9cm}
+
+      \vspace{0.06in}
+      (b) Find a formula for $g(f(x))$. Simplify.
+
+      \vspace{0.06in}
+      $g(f(x)) = $ \blank{9cm}
+
+\item Using your formulas from \#2, evaluate $(f \circ g)(-1)$.
+
+      \vspace{0.06in}
+      $(f \circ g)(-1) = $ \blank{7cm}
+
+\item \textbf{Decomposition.} Write $h(x) = (x-5)^3$ as $f(g(x))$. Identify $f$ and $g$.
+
+      \vspace{0.06in}
+      $g(x) = $ \blank{4cm} \qquad $f(u) = $ \blank{4cm}
+
+      \vspace{0.04in}
+      Verify: $f(g(x)) = $ \blank{6cm}
+
+\item \textbf{Real-World Application.} A company's profit $P$ (dollars) depends on units sold
+      $u$, and units sold depend on price $p$ (dollars):
+      \[
+        P(u) = 4u - 200 \qquad \text{and} \qquad u(p) = 500 - 10p.
+      \]
+
+      (a) Write a formula for $P(u(p))$. Simplify.
+
+      \vspace{0.06in}
+      $P(u(p)) = $ \blank{8cm}
+
+      \vspace{0.06in}
+      (b) Evaluate $P(u(30))$ and interpret your answer in context.
+
+      \vspace{0.06in}
+      $P(u(30)) = $ \blank{4cm} \quad Meaning: \writeline
+
+\item \textbf{AP-Style Multiple Choice.} If $f(x) = 2x^2$ and $g(x) = x + 1$, which of
+      the following is $(f \circ g)(x)$?
+
+      \vspace{0.06in}
+      \begin{tabular}{@{}ll@{\qquad}ll@{}}
+      (A) $2(x+1)^2$ & (B) $2x^2 + 1$ & (C) $2x^2 + 2$ & (D) $2x + 2$
+      \end{tabular}
+
+      \vspace{0.06in}
+      Answer: \blank{3cm} \quad Show work: \blank{7cm}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+What is one thing about composition of functions that surprised you or that you want to remember?
+\writelines{2}
+\end{reflectionbox}
 
 \end{document}

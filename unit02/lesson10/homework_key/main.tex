@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.10 — Homework (Answer Key)
+%! Inverses of Exponential Functions — Unit 2, Lesson 2.10 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,107 @@
 \pageheader{Unit 2, Lesson 2.10}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item Let $g(x) = 6^x$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item Write the inverse function $f(x)$.
+
+  \vspace{4pt}
+  $f(x) = $ \ans{$\log_6 x$}
+
+  \item Complete the table and inverse pairs.
+
+  \vspace{4pt}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.8}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $g(x) = 6^x$ & Point on $f$: $(g(x),\; x)$ \\
+  \hline
+  $0$ & \ans{1}  & \ans{$(1,\;0)$} \\
+  \hline
+  $1$ & \ans{6}  & \ans{$(6,\;1)$} \\
+  \hline
+  $2$ & \ans{36} & \ans{$(36,\;2)$} \\
+  \hline
+  \end{tabular}
+  \end{center}
+\end{enumerate}
+
+\item Verify $f(x) = \log_5 x$ and $g(x) = 5^x$ are inverses.
+
+\vspace{4pt}
+$f(g(x)) = \log_5(5^x) = $ \ans{$x$}
+
+\vspace{6pt}
+$g(f(x)) = 5^{\log_5 x} = $ \ans{$x$}
+
+\vspace{4pt}
+Conclusion: \ansline{Since both compositions equal $x$, the functions $f$ and $g$ are inverses
+of each other.}
+
+\item Algae model $A(t) = 10^t$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $t(A) = $ \ans{$\log_{10} A$}
+
+  \item $t(1000) = \log_{10} 1000 = $ \ans{3}
+
+  \vspace{4pt}
+  In context: \ansline{After 3 days, the algae covers 1000 cm$^2$; equivalently, it takes 3
+  days to reach an area of 1000 cm$^2$.}
+\end{enumerate}
+
+\item \textbf{Conceptual.}
+
+\ansline{For $g(x) = b^x$: as $x$ increases additively (by equal amounts), the output
+multiplies by $b$ each time (multiplicative growth). For $f(x) = \log_b x$: as $x$
+multiplies by $b$ (multiplicative input change), the output increases by 1 (additive growth).
+The two patterns are exact ``reverses'' of each other because $f$ and $g$ are inverse
+functions --- the roles of input and output are swapped.}
+
+\item Let $h(x) = 2\log_3 x$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $b = $ \ans{3} \qquad $a = $ \ans{2}
+
+  \item $h(9) = 2\log_3 9 = 2 \cdot 2 = $ \ans{4} \qquad
+        $h(27) = 2\log_3 27 = 2 \cdot 3 = $ \ans{6}
+
+  \item \ansline{Every output of $h(x)$ is exactly twice the output of $\log_3 x$ for the
+        same input. The vertical dilation by 2 stretches the outputs; the additive growth
+        rate doubles (increases by 2 each time $x$ triples).}
+\end{enumerate}
+
+\item \textbf{AP-style MC.}
+
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $g(x) = x^4$
+  \item $g(x) = 4x$
+  \item $g(x) = 4^x$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $g(x) = \log x$
+\end{enumerate}
+
+\begin{teachernote}
+EK 2.10.A.4: $f(x) = \log_b x$ is the reflection of $g(x) = b^x$ over $y = x$, so the
+inverse of $\log_4 x$ is $4^x$. (A) is a power function, not an exponential; (B) is linear;
+(D) has a different base (base 10).
+\end{teachernote}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\begin{reflectionbox}
+What is one thing from today's lesson that you feel confident about, and one question you
+still have about inverse functions or logarithms?
+
+\writelines{2}
+\end{reflectionbox}
 
 \end{document}

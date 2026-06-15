@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.10 — Group Activity (Answer Key)
+%! Inverses of Exponential Functions — Unit 2, Lesson 2.10 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,170 @@
 \pageheader{Unit 2, Lesson 2.10}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[A Biologist's Inverse Problem]{sky}
+A scientist models bacterial growth using $P(t) = 5^t$, where $P$ is the population count
+and $t$ is time in hours. She needs the \emph{inverse} of this function to determine the time
+elapsed given a current population count. Your group will construct and verify this inverse.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Work with $g(x) = 4^x$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Complete the table for $g(x) = 4^x$:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $g(x) = 4^x$ \\
+\hline
+$0$ & \ans{1} \\
+\hline
+$1$ & \ans{4} \\
+\hline
+$2$ & \ans{16} \\
+\hline
+$3$ & \ans{64} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Swap the columns to make a table for the \emph{inverse} function $f(x) = \log_4 x$:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $f(x) = \log_4 x$ \\
+\hline
+\ans{1}  & $0$ \\
+\hline
+\ans{4}  & $1$ \\
+\hline
+\ans{16} & $2$ \\
+\hline
+\ans{64} & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Using your table, evaluate: \quad $f(16) = \log_4 16 = $ \ans{2} \qquad $f(1) = \log_4 1 = $ \ans{0}
+
+\vspace{6pt}
+
+\item Verify the inverse: compute $g(f(16)) = 4^{\,f(16)} = 4^2 = $ \ans{16}. Does this equal 16? \ans{Yes}
+
+\begin{teachernote}
+Common error: students may write $\log_4 16 = 4$ (confusing the base with the answer).
+Remind them: $\log_4 16$ asks ``to what power must we raise 4 to get 16?'' Answer: $4^2 = 16$,
+so $\log_4 16 = 2$.
+\end{teachernote}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Return to the scientist's model: $P(t) = 5^t$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Write the inverse function $t(P)$ that gives hours elapsed given a population $P$.
+
+\vspace{4pt}
+$t(P) = $ \ans{$\log_5 P$}
+
+\item Verify using composition. Show both directions:
+
+\vspace{4pt}
+$P(t(P)) = 5^{\log_5 P} = $ \ans{$P$} \quad $t(P(t)) = \log_5(5^t) = $ \ans{$t$}
+
+\item How many hours until the population reaches 125?
+
+\vspace{4pt}
+$t(125) = $ \ans{$\log_5 125$} $= $ \ans{3} hours \quad (since $5^3 = 125$)
+
+\item How many hours until the population reaches 625?
+
+\vspace{4pt}
+$t(625) = $ \ans{$\log_5 625$} $= $ \ans{4} hours \quad (since $5^4 = 625$)
+
+\item Explain in words: how does the inverse function help the scientist?
+
+\ansline{The model $P(t) = 5^t$ takes time as input and gives population as output. The
+inverse $t(P) = \log_5 P$ reverses this: it takes population as input and gives elapsed time
+as output, directly answering ``how long until we reach population $P$?''}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Comparing $f(x) = \log_2 x$ and $h(x) = 3\log_2 x$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Build a table for both functions:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $f(x) = \log_2 x$ & $h(x) = 3\log_2 x$ \\
+\hline
+$1$  & \ans{0} & \ans{0} \\
+\hline
+$2$  & \ans{1} & \ans{3} \\
+\hline
+$4$  & \ans{2} & \ans{6} \\
+\hline
+$8$  & \ans{3} & \ans{9} \\
+\hline
+$16$ & \ans{4} & \ans{12} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item As $x$ doubles, $h(x)$ increases by \ans{3}. Is this additive growth?
+
+\ansline{Yes. As $x$ increases multiplicatively (doubles), $h(x)$ increases additively (by 3
+each time). This is the defining additive property of logarithmic functions.}
+
+\item For what input(s) do $f(x) = h(x)$?
+
+\ansline{Set $\log_2 x = 3\log_2 x$, so $0 = 2\log_2 x$, giving $\log_2 x = 0$, so $x = 1$.
+They are equal only at $x = 1$ (both equal 0).}
+
+\item Describe how the vertical dilation changes the outputs.
+
+\ansline{Each output of $h(x)$ is 3 times the corresponding output of $f(x)$; the outputs
+grow additively (by 3 per doubling) instead of 1 per doubling. $h(x)$ is still a logarithmic
+function because it fits the general form $a\log_b x$ with $a = 3$, $b = 2$.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

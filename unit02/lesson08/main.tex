@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.8 — Lesson Plan
+%! Inverse Functions — Unit 2, Lesson 2.8 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.8: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.8: Inverse Functions}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,157 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students determine and represent inverse functions using tables
+    and algebra, verify inverses using composition, and restrict domains to create invertible
+    functions. \hfill\textit{\small Skills: AP 1.A, AP 2.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.A} --- Solve equations and inequalities analytically. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item If $f(a) = b$, then $f^{-1}(b) = a$; inverse pairs are reversed input-output pairs.
+        (EK 2.8.A.2)
+  \item A function is invertible on a domain when every output comes from a unique input.
+        (EK 2.8.A.1)
+\end{itemize} \\
+\textbf{AP 2.B} --- Construct equivalent representations of functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The inverse is found analytically by swapping $x$ and $y$ in $y = f(x)$ then solving
+        for $y$. (EK 2.8.B.4)
+  \item Verification: $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. (EK 2.8.B.1)
+  \item Domain restriction may be needed to make a function invertible. (EK 2.8.A.1)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+inverse function      & A function $f^{-1}$ that reverses the mapping of $f$: if $f(a)=b$, then $f^{-1}(b)=a$. \\
+invertible            & A function is invertible on a domain when each output is produced by exactly one input (one-to-one on that domain). \\
+one-to-one function   & A function where no two different inputs produce the same output. \\
+domain restriction    & Limiting the domain of a function so that it becomes one-to-one and thus invertible. \\
+$f^{-1}$              & Notation for the inverse function of $f$; read ``$f$-inverse.'' Note: $f^{-1}(x) \ne 1/f(x)$. \\
+identity function     & The function $h(x) = x$; the composition of $f$ and its inverse equals the identity. \\
+reflection over $y=x$ & The graph of $y = f^{-1}(x)$ is the reflection of $y = f(x)$ across the line $y = x$. (EK 2.8.B.3) \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers: solving a linear equation for $x$ given $f(x)$
+    (prerequisite for the analytic inverse method); recognizing that two functions whose
+    compositions both equal $x$ are inverses of each other (EK 2.8.B.1 preview); and
+    reversing a table of input-output pairs (EK 2.8.A.2 preview with concrete numbers).
+    These connect directly to determining inverses from tables and algebraically.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Present context: a nurse uses the formula $D(w) = 1.5w + 10$ to calculate a medication dose
+$D$ (mg) from a patient's weight $w$ (kg).
+
+Ask: \textbf{``If a patient received 55 mg, what was their weight?''}
+
+Have students work backward. After responses: \textbf{``What formula lets us go from dose back
+to weight? Can we always undo a formula?''} Introduce the idea that ``undoing'' is exactly what
+an inverse function does.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (10 min): Inverses from Tables.}
+
+A function maps inputs to outputs. The inverse reverses all pairs. For $f$:
+
+\begin{tabular}{c|cccc}
+$x$    & 1 & 2 & 3 & 4 \\\hline
+$f(x)$ & 3 & 7 & 11 & 15
+\end{tabular}
+
+The inverse $f^{-1}$ swaps each pair:
+
+\begin{tabular}{c|cccc}
+$x$         & 3 & 7 & 11 & 15 \\\hline
+$f^{-1}(x)$ & 1 & 2 & 3  & 4
+\end{tabular}
+
+Key: $f$ must be \textit{one-to-one} --- no repeated outputs.
+Ask: \textbf{``Is every function invertible?''} Show a counterexample: $\{(1,5),(2,5)\}$ cannot
+be reversed because two inputs share an output.
+
+\columnbreak
+
+\textbf{Part 2 (15 min): Analytic Inverse Method.}
+
+To find $f^{-1}(x)$ algebraically for $f(x) = 4x - 1$:
+
+\textbf{Step 1:} Write $y = 4x - 1$.
+
+\textbf{Step 2:} Swap $x$ and $y$: $x = 4y - 1$.
+
+\textbf{Step 3:} Solve for $y$: $y = \dfrac{x+1}{4}$.
+
+\textbf{Step 4:} Write $f^{-1}(x) = \dfrac{x+1}{4}$.
+
+\textbf{Part 3 (10 min): Composition Verification.}
+
+Verify: $f(f^{-1}(x)) = 4\!\cdot\!\dfrac{x+1}{4} - 1 = x+1-1 = x$. \checkmark
+
+Also: $f^{-1}(f(x)) = \dfrac{(4x-1)+1}{4} = \dfrac{4x}{4} = x$. \checkmark
+
+\textbf{Part 4 (5 min): Domain Restriction.}
+
+$f(x)=x^2$ is not invertible on all reals ($f(2)=f(-2)=4$). Restrict to $x\ge0$:
+then $f^{-1}(x)=\sqrt{x}$, which is well-defined.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If $f(3)=11$, what does $f^{-1}(11)$ equal?'' Expect: 3.
+        Watch for students who confuse $f^{-1}(x)$ with $1/f(x)$.
+  \item During Part 2: watch for students who forget to swap $x$ and $y$ --- they solve the
+        original equation instead. Emphasize Step 2 is the key inversion step.
+  \item After verification: cold-call ``Why must both compositions equal $x$, not just one?''
+        (Both directions must undo each other.)
+  \item During Part 4: ensure students articulate \textit{why} the restriction is needed ---
+        failing the one-to-one test, not just a convention.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given $f(x)=3x+6$, complete the output table, reverse pairs
+        to get the inverse table, verify one pair using composition, and state domain and range of
+        $f$ and $f^{-1}$.
+  \item \textbf{Tier A (Apply):} Find $f^{-1}(x)$ algebraically for $f(x)=(x-2)/5$; verify using
+        composition; state domain and range; interpret $f^{-1}$ in the nurse-dosage context.
+  \item \textbf{Tier E (Extend):} Restrict the domain of $f(x)=x^2$ to make it invertible, find
+        $f^{-1}(x)$, verify, and explain why the restriction is mathematically necessary.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) write $f^{-1}$ as ordered pairs given
+$f=\{(1,4),(2,9),(3,16)\}$; (2) find $f^{-1}(x)$ algebraically for $f(x)=2x-5$;
+(3) verify by computing $f(f^{-1}(x))=x$.
+
+Sort by performance: students missing \#1 need reinforcement of the reversal idea (LO 2.8.A);
+students missing \#2--3 need algebraic inverse practice (LO 2.8.B).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (6 problems): reverse a table and check invertibility; find $f^{-1}$ for two linear
+functions; verify using composition; address domain restriction for $x^2$; real-world temperature
+conversion $C(F)=(F-32)/1.8$ and its inverse; AP-style MC on the definition of $f^{-1}$.
+
+\textbf{Preview of Lesson 2.9 (Logarithms):} The exponential function $f(x)=b^x$ is one-to-one
+and therefore invertible. Its inverse is the logarithm: $f^{-1}(x)=\log_b(x)$. Logarithms are
+the algebraic tool that ``undoes'' an exponential --- exactly the inversion skill practiced today.
 \end{skillbox}
+
 \end{document}

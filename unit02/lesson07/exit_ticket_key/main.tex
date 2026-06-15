@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
+%! Composition of Functions — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,41 @@
 \pageheader{Unit 2, Lesson 2.7}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{Let $f(x) = x + 4$ and $g(x) = 3x$.}
+
+\vspace{0.1in}
+
+\begin{enumerate}[itemsep=16pt]
+
+\item Find $f(g(2))$. Show each step.
+
+      \vspace{0.06in}
+      $g(2) = $ \ans{6} \qquad $f\!\left(\ans{6}\right) = $ \ans{10}
+
+\item Write a simplified formula for $(f \circ g)(x)$.
+
+      \vspace{0.06in}
+      $(f \circ g)(x) = f(g(x)) = f\!\left(\ans{$3x$}\right) = $ \ans{$3x + 4$}
+
+\item Write a simplified formula for $(g \circ f)(x)$. Is it the same as $(f \circ g)(x)$?
+
+      \vspace{0.06in}
+      $(g \circ f)(x) = g(f(x)) = g\!\left(\ans{$x+4$}\right) = $ \ans{$3(x+4) = 3x+12$}
+
+      \vspace{0.06in}
+      Same as $(f \circ g)(x)$? \ans{No. $3x+4 \ne 3x+12$. Composition is not commutative.}
+
+\end{enumerate}
+
+\begin{teachernote}
+Item 1: $g(2) = 6$; $f(6) = 10$.
+
+Item 2: $(f \circ g)(x) = 3x+4$.
+
+Item 3: $(g \circ f)(x) = 3x+12$. These differ by 8 --- a good discussion point on why order matters.
+Students who get item 2 correct but item 3 wrong often forget to distribute the 3.
+\end{teachernote}
 
 \end{document}

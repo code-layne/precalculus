@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.10 — Group Activity
+%! Inverses of Exponential Functions — Unit 2, Lesson 2.10 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,162 @@
 \pageheader{Unit 2, Lesson 2.10}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[A Biologist's Inverse Problem]{sky}
+A scientist models bacterial growth using $P(t) = 5^t$, where $P$ is the population count
+and $t$ is time in hours. She needs the \emph{inverse} of this function to determine the time
+elapsed given a current population count. Your group will construct and verify this inverse.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Work with $g(x) = 4^x$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Complete the table for $g(x) = 4^x$:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $g(x) = 4^x$ \\
+\hline
+$0$ & \blank{1.8cm} \\
+\hline
+$1$ & \blank{1.8cm} \\
+\hline
+$2$ & \blank{1.8cm} \\
+\hline
+$3$ & \blank{1.8cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Swap the columns to make a table for the \emph{inverse} function $f(x) = \log_4 x$:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $f(x) = \log_4 x$ \\
+\hline
+\blank{1.8cm} & $0$ \\
+\hline
+\blank{1.8cm} & $1$ \\
+\hline
+\blank{1.8cm} & $2$ \\
+\hline
+\blank{1.8cm} & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Using your table, evaluate: \quad $f(16) = \log_4 16 = $ \blank{2cm} \qquad $f(1) = \log_4 1 = $ \blank{2cm}
+
+\vspace{6pt}
+
+\item Verify the inverse: compute $g(f(16)) = 4^{\,f(16)} = $ \blank{2cm}. Does this equal 16? \blank{1.5cm}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Return to the scientist's model: $P(t) = 5^t$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Write the inverse function $t(P)$ that gives hours elapsed given a population $P$.
+
+\vspace{4pt}
+$t(P) = $ \blank{4cm}
+
+\item Verify using composition. Show both directions:
+
+\vspace{4pt}
+$P(t(P)) = 5^{\,t(P)} = $ \blank{4cm} \quad $t(P(t)) = \log_5(5^t) = $ \blank{4cm}
+
+\item How many hours until the population reaches 125? Express your answer in logarithmic notation, then evaluate.
+
+\vspace{4pt}
+$t(125) = $ \blank{3cm} $= $ \blank{2cm} hours
+
+\item How many hours until the population reaches 625? Express in logarithmic notation.
+
+\vspace{4pt}
+$t(625) = $ \blank{3cm} $= $ \blank{2cm} hours
+
+\item Explain in words: how does the inverse function help the scientist solve a problem
+      that the original model $P(t) = 5^t$ cannot answer directly?
+
+\writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Comparing $f(x) = \log_2 x$ and $h(x) = 3\log_2 x$.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Build a table for both functions for $x = 1, 2, 4, 8, 16$:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $f(x) = \log_2 x$ & $h(x) = 3\log_2 x$ \\
+\hline
+$1$  & \blank{2cm} & \blank{2cm} \\
+\hline
+$2$  & \blank{2cm} & \blank{2cm} \\
+\hline
+$4$  & \blank{2cm} & \blank{2cm} \\
+\hline
+$8$  & \blank{2cm} & \blank{2cm} \\
+\hline
+$16$ & \blank{2cm} & \blank{2cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Verify the additive growth property for $h(x) = 3\log_2 x$: as $x$ doubles, $h(x)$
+      increases by \blank{2cm}. Is this additive growth? Explain.
+
+\writeline
+
+\item For what input(s) do $f(x)$ and $h(x)$ have the same output? Show your work algebraically.
+
+\vspace{4pt}
+\writelines{3}
+
+\item Describe how the vertical dilation by 3 changes the output values of $h(x)$ compared
+      to $f(x)$, and explain whether $h(x)$ is still considered a logarithmic function.
+
+\writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

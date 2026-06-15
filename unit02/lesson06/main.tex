@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Lesson Plan
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.6: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.6: Competing Function Model Validation}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,164 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will compare linear, quadratic, and exponential
+    regression models for the same data set, evaluate which model is most appropriate based
+    on contextual clues and residual plots, and interpret model error as the difference between
+    predicted and actual values.
+    \hfill\textit{\small Skills: 2.A and 3.C}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{Skill 2.A} --- Identify mathematical information from graphical, numerical, analytical,
+and verbal representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Compute first differences, second differences, and successive ratios to identify the
+        likely model type. (EK 2.6.A.1)
+  \item Compare three competing models based on contextual clues and fit. (EK 2.6.A.2)
+\end{itemize} \\
+\textbf{Skill 3.C} --- Support conclusions using logical rationale or data. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A residual plot without pattern indicates the model is appropriate. (EK 2.6.B.1)
+  \item Error $=$ actual $-$ predicted; sign indicates over- or underestimate. (EK 2.6.B.2)
+  \item Context determines whether an over- or underestimate is preferable. (EK 2.6.B.2)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+competing models  & Two or more regression models (linear, quadratic, exponential) fit to the same data set and compared for appropriateness. \\
+residual          & The difference: actual $y$ minus predicted $\hat{y}$; written $e = y - \hat{y}$. \\
+residual plot     & A graph of residuals vs.\ input values; a patternless scatter indicates a good model fit. \\
+error             & The residual at a specific data point; positive = underestimate, negative = overestimate. \\
+underestimate     & The model's prediction is \emph{less than} the actual value (positive error). \\
+overestimate      & The model's prediction is \emph{greater than} the actual value (negative error). \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) reinforces Lesson 2.5 skills: reading structure from a data table
+    by computing successive differences and ratios, evaluating and comparing two function
+    expressions at a given input, and identifying the type of model suggested by a constant ratio.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Display the following data on the board without context:
+
+\medskip
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Year ($x$)} & \textbf{Revenue (\$thousands)} \\ \hline
+1 & 5   \\
+2 & 11  \\
+3 & 23  \\
+4 & 47  \\
+5 & 95  \\
+\end{tabular}
+\end{center}
+
+\medskip
+Ask: \textbf{``Could a straight line fit this? What about a curve? How do we decide?''}
+After brief discussion, reveal the competition: a linear model gives $\hat{y} = 22.6x - 15.8$,
+a quadratic gives $\hat{y} = 9.8x^2 - 18.2x + 13.4$, an exponential gives $\hat{y} = 2.56 \cdot 2^x$.
+At $x = 5$: linear predicts 97.2, quadratic predicts 96.4, exponential predicts 81.9 --- actual
+is 95. Today's lesson provides tools to decide which model is \emph{most appropriate}.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (15 min): Reading Data Structure.}
+
+Walk through computing first differences ($\Delta_1$), second differences ($\Delta_2$),
+and successive ratios ($r$) on a 4-point data table in the guided notes:
+\begin{itemize}[itemsep=2pt,topsep=2pt]
+  \item Constant $\Delta_1$ $\Rightarrow$ \textbf{linear}
+  \item Constant $\Delta_2$ $\Rightarrow$ \textbf{quadratic}
+  \item Constant ratio $r$ $\Rightarrow$ \textbf{exponential}
+\end{itemize}
+Warn students: real data is messy; look for the \emph{nearly} constant quantity and use
+contextual reasoning alongside the numbers.
+
+\columnbreak
+
+\textbf{Part 2 (15 min): Competing Regressions and Error.}
+
+Given three regression equations for the same data (from technology output):
+\begin{enumerate}[leftmargin=1.4em,itemsep=3pt,topsep=3pt]
+  \item Evaluate each at a specific $x$.
+  \item Compute error $= y_{\text{actual}} - \hat{y}$.
+  \item Interpret the sign: $+$ means model underestimated; $-$ means it overestimated.
+  \item Use a contextual clue (``grew faster every year'') to eliminate linear.
+\end{enumerate}
+\end{multicols}
+
+\medskip
+\textbf{Part 3 (10 min): Residual Plots and Model Validation.}
+
+Define the residual plot: plot each $(x_i,\, y_i - \hat{y}_i)$.
+Rule (EK 2.6.B.1): \emph{No pattern} $\Rightarrow$ model is appropriate.
+Curved or systematic pattern $\Rightarrow$ wrong function type.
+Show two contrasting descriptions: (a) linear fit to exponential data --- curved band in
+residuals; (b) exponential fit --- scattered, no pattern.
+Discuss preference: in safety engineering, an underestimate of load is dangerous; in budgeting,
+an overestimate of cost is safer. Context, not just math, drives the final choice.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If second differences are constant but ratios are not,
+        which model fits?'' Expect: quadratic.
+  \item During Part 2: watch for students subtracting $y_{\text{actual}} - \hat{y}$ in the
+        wrong order. Reinforce: error is always actual minus predicted.
+  \item After Part 2: cold-call ``If error $= -4$, is the model an over- or underestimate?''
+        Expect: overestimate (model predicted too high).
+  \item During Part 3: probe ``What would a perfect-model residual plot look like?''
+        Expect: points near zero, scattered randomly around the horizontal axis.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} All three regressions pre-computed. Students evaluate each
+        at a given $x$, compute errors, identify the model with smallest error, and connect to a
+        contextual clue (``sales doubled each year'').
+  \item \textbf{Tier A (Apply):} Students compute first and second differences and ratios from
+        a data table; choose the likely model type; use technology to obtain regressions and $R^2$;
+        justify the best-fitting model in writing.
+  \item \textbf{Tier E (Extend):} Students analyze residuals from a linear model and an exponential
+        model for the same data. They identify the pattern in the linear residuals, verify it
+        disappears for the exponential model, and write a full justification combining residual
+        evidence with contextual reasoning.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) compute first differences and ratios from a table, circle
+the model type; (2) evaluate $\hat{y} = 3 \cdot 1.4^x$ at $x = 2$, compare to actual $y = 6.2$,
+label over-/underestimate; (3) interpret a described residual plot (alternating positive/negative,
+no pattern) in one sentence.
+
+Sort by: miss item 1 $\Rightarrow$ review differences/ratios (LO 2.6.A);
+miss item 2 $\Rightarrow$ reteach error formula (LO 2.6.B); miss item 3 $\Rightarrow$
+residual plot interpretation (LO 2.6.B.1).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (6 problems): classify a data set using differences and ratios; compare three models
+at $x = 6$ and identify smallest error; contextual model choice (bacteria doubling); residual
+plot comparison; AP-style MC from a regression table; extension computing sum of squared
+residuals to determine the statistically better model.
+
+Preview of Lesson 2.7: logarithmic functions as inverses of exponentials --- now that we can
+validate which exponential model fits, students will learn how to solve for the input variable
+(e.g., ``When does revenue exceed \$200{,}000?''), which requires inverting the exponential
+function using a logarithm.
 \end{skillbox}
+
 \end{document}

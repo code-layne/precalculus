@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.9 — Lesson Plan
+%! Logarithmic Expressions — Unit 2, Lesson 2.9 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.9: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.9: Logarithmic Expressions}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,139 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students define and evaluate logarithms using the inverse
+    relationship with exponentiation, convert between exponential and logarithmic form, evaluate
+    common and natural logarithms with and without technology, and interpret logarithmic scales.
+    \hfill\textit{\small Skill: AP 1.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.B} --- Express functions in analytically equivalent forms. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $\log_b c = a \Leftrightarrow b^a = c$ (where $b > 0$, $b \ne 1$). (EK 2.9.A.1)
+  \item Some logarithm values are exact; others require technology. (EK 2.9.A.2)
+  \item On a logarithmic scale, each unit is a multiplicative change by the base. (EK 2.9.A.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+logarithm            & The exponent to which a base must be raised to produce a given value:
+                       $\log_b c = a$ means $b^a = c$. \\
+common logarithm     & A logarithm with base 10; written $\log x$ when no base is shown. \\
+natural logarithm    & A logarithm with base $e \approx 2.718$; written $\ln x$. \\
+exponential form     & An equation written as $b^a = c$. \\
+logarithmic form     & An equation written as $\log_b c = a$. \\
+logarithmic scale    & A scale where each unit represents a multiplicative change by the base;
+                       equal spacing corresponds to equal ratios, not equal differences. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) connects to Lesson 2.8 (inverse functions): students recall that
+    an inverse ``undoes'' the original function. They identify the exponent $x$ in $2^x = 32$
+    and $10^x = 1000$ by inspection, then complete a sentence frame describing what a logarithm
+    asks. This primes the conceptual link: $\log_b c$ is the exponent the inverse of $b^x$ produces.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+Write on the board: \textbf{``An earthquake of magnitude 6 is how much stronger than magnitude 5?''}
+Take a vote (most students guess ``twice as strong'' or ``slightly stronger'').
+Reveal: it is \textbf{10 times} stronger. The Richter scale is a \textit{logarithmic scale} ---
+each whole-number step means a 10$\times$ increase in ground motion.
+
+Ask: ``If the scale were linear, what would magnitude 10 mean compared to magnitude 1?''
+(9 times stronger.) ``What does a logarithmic scale say?'' ($10^9 = $ one billion times stronger.)
+This motivates why logarithms matter: they compress enormously wide ranges into human-readable numbers.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (12 min): Definition and conversion.}
+
+Logarithm definition:
+\[
+  \log_b c = a \quad\Leftrightarrow\quad b^a = c
+\]
+where $b > 0$, $b \ne 1$, $c > 0$.
+
+Walk through conversion table (exponential $\leftrightarrow$ log form): at least five examples,
+including $b^0 = 1$ and $b^1 = b$, giving $\log_b 1 = 0$ and $\log_b b = 1$.
+
+Key question: ``What does $\log_2 8$ ask?'' --- ``What power of 2 gives 8?'' (Answer: 3.)
+
+\columnbreak
+
+\textbf{Part 2 (12 min): Common and natural log; technology.}
+
+Common log: $\log x = \log_{10} x$ (base 10 when omitted).
+Natural log: $\ln x = \log_e x$, where $e \approx 2.718$.
+
+Exact values: $\log_{10} 1000 = 3$; $\ln e = 1$; $\ln 1 = 0$.
+
+Technology estimate: $\log_2 7 \approx 2.807$ (between 2 and 3, since $2^2 = 4 < 7 < 8 = 2^3$).
+
+Bracket without calculator: $3^2 = 9 < 20 < 27 = 3^3$, so $\log_3 20$ is between 2 and 3.
+
+\textbf{Part 3 (10 min): Logarithmic scale.}
+
+Number line with positions $10^0, 10^1, 10^2, 10^3$. Each unit = multiply by 10.
+
+Halfway between $10^1$ and $10^2$ on a log scale? $10^{1.5} \approx 31.6$ --- not 55
+(the arithmetic midpoint). Stress: equal spacing on a log scale means equal ratios.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``What does $\log_5 25$ equal? How do you know?''
+        Expect: 2, because $5^2 = 25$. Watch for students who confuse base with result.
+  \item During Part 1: watch for students who write $b^a = c$ as $c^a = b$ (transposing base
+        and result). Reinforce: the base of the log is the base of the power.
+  \item After Part 2: confirm students know $\log$ (no base) means base 10, and $\ln$ means base $e$.
+  \item During Part 3: ask ``Is 50 closer to 10 or to 100 on a log scale?''
+        ($\log_{10} 50 \approx 1.70$, so it is closer to 100 than to 10.)
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Conversion drill --- exponential to log form and back.
+        Evaluate exact logs where the answer is a small whole number.
+  \item \textbf{Tier A (Apply):} Mix of exact evaluations, technology estimates, bounding
+        without a calculator, and interpreting the pH formula $\text{pH} = -\log_{10}[\text{H}^+]$.
+  \item \textbf{Tier E (Extend):} Prove $\log_b b^n = n$ and $b^{\log_b n} = n$ from the
+        definition; solve $\log_4 x = \tfrac{3}{2}$ by converting; connect fractional exponents
+        to fractional logarithms.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (3 questions, 1 page): (1) convert $3^5 = 243$ to log form and evaluate;
+(2) evaluate $\log_{10} 10{,}000$ and $\ln e^3$ without a calculator;
+(3) bound $\log_2 50$ between two consecutive integers and explain.
+
+Sort by performance: students who miss (1) need more conversion practice (EK 2.9.A.1);
+those who miss (2) may not have internalized $\log_b b^n = n$; those who miss (3) need
+number-sense work on bracketing logarithms (EK 2.9.A.2).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+Homework (6 problems): conversion practice (6 items); evaluate without a calculator (5 items);
+technology estimates to 3 decimal places; bounding between integers without a calculator;
+real-world decibel formula; AP-style MC on the definition.
+
+Preview of Lesson 2.10: logarithmic functions as inverses of exponential functions ---
+connecting the algebraic definition $\log_b c = a \Leftrightarrow b^a = c$ to the behavior
+of $f(x) = \log_b x$ as a function: its domain, range, intercepts, and how its graph relates
+to the graph of $g(x) = b^x$ by reflection across $y = x$.
 \end{skillbox}
+
 \end{document}

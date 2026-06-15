@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Homework
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,123 @@
 \pageheader{Unit 2, Lesson 2.6}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\begin{enumerate}[itemsep=16pt]
+
+\item The table below shows a data set. Compute the first differences ($\Delta_1$), the second
+      differences ($\Delta_2$), and the successive ratios. Then identify the best model type.
+
+      \vspace{0.06in}
+      \renewcommand{\arraystretch}{1.7}
+      \begin{tabular}{c|c|c|c|c}
+      $x$ & $y$ & $\Delta_1$ & $\Delta_2$ & Ratio \\ \hline
+      0 &  2 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+      1 &  5 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+      2 & 10 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+      3 & 17 & \blank{2.5cm} & --- & \blank{2.5cm} \\
+      4 & 26 & --- & --- & --- \\
+      \end{tabular}
+
+      \vspace{0.04in}
+      The data is best modeled by a(n) \blank{4cm} function. Explain: \blank{7cm}
+
+\item Three regression equations were fit to the same data set.
+      At $x = 6$, the actual value is $y = 82$.
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{l|c|c|c}
+      \textbf{Model} & \textbf{Equation} & \textbf{Predicted $\hat{y}$ at $x=6$} & \textbf{Error $= y - \hat{y}$} \\ \hline
+      Linear      & $\hat{y} = 13.5x - 1.2$     & \blank{3cm} & \blank{3cm} \\
+      Quadratic   & $\hat{y} = 2.1x^2 + 0.5x - 3$ & \blank{3cm} & \blank{3cm} \\
+      Exponential & $\hat{y} = 4 \cdot 1.7^x$   & \blank{3cm} & \blank{3cm} \\
+      \end{tabular}
+      \end{center}
+
+      Which model has the smallest absolute error at $x = 6$? \blank{5cm}
+
+\item A bacteria culture is described as follows: ``The population doubles every hour.''
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Which type of model is most appropriate? \blank{5cm}
+        \item Explain using the vocabulary from this lesson why doubling every hour signals
+              this model type. Use the word \emph{ratio} in your answer.
+
+              \vspace{0.04in}
+              \writelines{2}
+      \end{enumerate}
+
+\item Two residual plots are described below.
+
+      \textbf{Plot A:} Residuals form a smooth U-shape, dipping from positive to negative and
+      back to positive as $x$ increases.
+
+      \textbf{Plot B:} Residuals are scattered above and below zero with no visible pattern.
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Which plot suggests the model is appropriate? \blank{3cm}
+        \item What does Plot A's pattern tell you about the model that was used?
+
+              \vspace{0.04in}
+              \writeline
+      \end{enumerate}
+
+\item \textbf{(AP-Style Multiple Choice)} A student fits three models to a data set and records
+      the following:
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{l|c|c}
+      \textbf{Model} & \textbf{$R^2$} & \textbf{Residual plot} \\ \hline
+      Linear      & 0.94 & clear upward curve \\
+      Quadratic   & 0.97 & slight curve \\
+      Exponential & 0.99 & no pattern \\
+      \end{tabular}
+      \end{center}
+
+      Which model should the student choose?
+
+      \medskip
+      \begin{enumerate}[label=(\Alph*), itemsep=3pt]
+        \item Linear, because it has the simplest equation.
+        \item Quadratic, because its $R^2$ is higher than linear.
+        \item Exponential, because it has the highest $R^2$ and a patternless residual plot.
+        \item Quadratic, because its residual plot has a smaller curve than linear's.
+      \end{enumerate}
+
+      \vspace{0.04in}
+      Answer: \blank{1.5cm}
+
+\item \textbf{(Extension)} The residuals from two models for the same 5-point data set are shown.
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{c|c|c}
+      $x$ & Residual (Linear) & Residual (Exponential) \\ \hline
+      1 & $+3$  & $+0.5$ \\
+      2 & $+1$  & $-0.2$ \\
+      3 & $-2$  & $+0.1$ \\
+      4 & $-8$  & $-0.3$ \\
+      5 & $-15$ & $+0.4$ \\
+      \end{tabular}
+      \end{center}
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Compute the sum of squared residuals (SSR) for each model.
+              $\text{SSR} = \sum e_i^2$.
+
+              \vspace{0.04in}
+              SSR (Linear): \blank{7cm}
+
+              SSR (Exponential): \blank{7cm}
+
+        \item Which model has a smaller SSR? What does a smaller SSR tell you about model fit?
+
+              \vspace{0.04in}
+              \writelines{2}
+      \end{enumerate}
+
+\end{enumerate}
 
 \end{document}

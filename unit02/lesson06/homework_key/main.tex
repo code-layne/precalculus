@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Homework (Answer Key)
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,68 @@
 \pageheader{Unit 2, Lesson 2.6}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{teachernote}
+Problem 1: $\Delta_2$ values are constant at $2$, so quadratic. Note: the ratios are NOT
+constant ($5/2=2.5$, $10/5=2$, $17/10=1.7$, $26/17\approx1.53$), confirming not exponential.
+Problem 2: Linear $\hat{y}=79.8$, Quadratic $\hat{y}=78.6$, Exponential $\hat{y}=4\cdot1.7^6=4\cdot24.14\approx96.6$.
+Errors: Linear $+2.2$, Quadratic $+3.4$, Exponential $-14.6$. Smallest: Linear.
+Problem 5: Answer is (C). Problem 6: SSR(Linear) = 9+1+4+64+225 = 303; SSR(Exp) = 0.25+0.04+0.01+0.09+0.16 = 0.55.
+\end{teachernote}
+
+\begin{enumerate}[itemsep=16pt]
+
+\item
+      \renewcommand{\arraystretch}{1.7}
+      \begin{tabular}{c|c|c|c|c}
+      $x$ & $y$ & $\Delta_1$ & $\Delta_2$ & Ratio \\ \hline
+      0 &  2 & \ans{3} & \ans{2} & \ans{2.5} \\
+      1 &  5 & \ans{5} & \ans{2} & \ans{2.0} \\
+      2 & 10 & \ans{7} & \ans{2} & \ans{1.7} \\
+      3 & 17 & \ans{9} & --- & \ans{1.53} \\
+      4 & 26 & --- & --- & --- \\
+      \end{tabular}
+
+      \vspace{0.04in}
+      The data is best modeled by a(n) \ans{quadratic} function. Explain: \ans{The second differences are constant ($\Delta_2 = 2$), which is the signature of a quadratic model.}
+
+\item
+      \begin{center}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{l|c|c|c}
+      \textbf{Model} & \textbf{Equation} & \textbf{Predicted $\hat{y}$ at $x=6$} & \textbf{Error} \\ \hline
+      Linear      & $\hat{y} = 13.5x - 1.2$       & \ans{79.8}  & \ans{$+2.2$} \\
+      Quadratic   & $\hat{y} = 2.1x^2 + 0.5x - 3$ & \ans{78.6}  & \ans{$+3.4$} \\
+      Exponential & $\hat{y} = 4 \cdot 1.7^x$     & \ans{$\approx 96.6$} & \ans{$\approx -14.6$} \\
+      \end{tabular}
+      \end{center}
+
+      Model with smallest absolute error at $x = 6$: \ans{Linear ($|{+2.2}| = 2.2$)}
+
+\item
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Most appropriate model: \ans{Exponential}
+        \item \ansline{Doubling every hour means the output is multiplied by 2 for each unit increase in the input --- a constant successive ratio of 2 --- which is the defining characteristic of an exponential model.}
+      \end{enumerate}
+
+\item
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Which plot suggests the model is appropriate? \ans{Plot B}
+        \item \ansline{Plot A's U-shaped pattern indicates the chosen model is the wrong function type; the model is systematically under- and over-predicting in a structured way, suggesting a different function family should be used.}
+      \end{enumerate}
+
+\item Answer: \ans{(C)} --- Exponential has both the highest $R^2$ (0.99) and a patternless residual plot, satisfying both fit criteria simultaneously.
+
+\item
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item SSR (Linear): $3^2 + 1^2 + (-2)^2 + (-8)^2 + (-15)^2 = 9 + 1 + 4 + 64 + 225 = $ \ans{303}
+
+              SSR (Exponential): $0.5^2 + (-0.2)^2 + 0.1^2 + (-0.3)^2 + 0.4^2 = 0.25 + 0.04 + 0.01 + 0.09 + 0.16 = $ \ans{0.55}
+
+        \item \ansline{The exponential model has a much smaller SSR (0.55 vs.\ 303). A smaller SSR means the model's predictions are closer to the actual values overall, indicating a much better fit.}
+      \end{enumerate}
+
+\end{enumerate}
 
 \end{document}

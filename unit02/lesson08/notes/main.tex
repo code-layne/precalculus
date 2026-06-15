@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.8 — Guided Notes
+%! Inverse Functions — Unit 2, Lesson 2.8 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,144 @@
 \pageheader{Unit 2, Lesson 2.8}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.06in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Determine the \blank{4cm} of a function from a table or set of ordered pairs, and
+        state when a function is \blank{3cm} on a given domain. \hfill\textit{(LO 2.8.A)}
+  \item Find the inverse of a function \blank{3cm} by swapping $x$ and $y$ and solving,
+        and verify the result using \blank{3cm}. \hfill\textit{(LO 2.8.B)}
+  \item Restrict the \blank{3cm} of a non-invertible function to make it invertible.
+        \hfill\textit{(LO 2.8.B)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.04in}
+
+\begin{vocabbox}
+\termblanklong{inverse function}
+\termblanklong{invertible}
+\termblanklong{one-to-one function}
+\termblanklong{domain restriction}
+\termblanklong{$f^{-1}$ (f-inverse)}
+\termblanklong{identity function}
+\termblanklong{reflection over $y = x$}
+\end{vocabbox}
+
+\vspace{0.04in}
+
+\begin{hookbox}
+A nurse uses the formula $D(w) = 1.5w + 10$ to find a patient's medication dose $D$ (mg)
+from their weight $w$ (kg).
+
+\medskip
+If a patient received 55 mg, what was their weight? \blank{5cm}
+
+\medskip
+The formula that converts dose back to weight is called the \blank{5cm} of $D$.
+We write it as \blank{3cm}.
+\end{hookbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.8.A --- Inverse Functions from Tables (EK 2.8.A.1 \& 2.8.A.2)}
+\textbf{Key Idea:} If $f(a) = b$, then $f^{-1}(b) = $ \blank{2cm}.
+The inverse reverses every \blank{4cm} pair.
+
+\medskip
+\textbf{Step 1: Complete the output table for $f(x) = 4x - 1$.}
+
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 1 & 2 & 3 & 4 \\
+\hline
+$f(x)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Step 2: Fill in the inverse table by reversing every pair.}
+
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$          & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$f^{-1}(x)$  & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Invertible check:} Does $f$ map each input to a \blank{4cm} output?
+If any two inputs share the same output, the function is \textbf{not} invertible. \blank{3cm}
+
+\medskip
+Domain and range swap: the domain of $f^{-1}$ is the \blank{3cm} of $f$, and vice versa.
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.8.B --- Analytic Inverse Method (EK 2.8.B.4)}
+To find $f^{-1}(x)$ for $f(x) = 4x - 1$:
+
+\medskip
+\textbf{Step 1:} Write $y = 4x - 1$.
+
+\medskip
+\textbf{Step 2:} Swap $x$ and $y$: \quad $x = $ \blank{5cm}
+
+\medskip
+\textbf{Step 3:} Solve for $y$:
+\[
+  x + 1 = 4y \qquad \Rightarrow \qquad y = \dfrac{x + 1}{4}
+\]
+
+\medskip
+\textbf{Step 4:} Write $f^{-1}(x) = $ \blank{4cm}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{Composition Verification (EK 2.8.B.1)}
+\textbf{Key property:} $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$.
+
+\medskip
+\textbf{Verify $f(f^{-1}(x)) = x$ for $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$:}
+
+\[
+  f\!\left(f^{-1}(x)\right) = 4 \cdot \left(\rule{3cm}{0.4pt}\right) - 1
+  = \rule{4cm}{0.4pt} = x \quad \checkmark
+\]
+
+\medskip
+\textbf{Also verify $f^{-1}(f(x)) = x$:}
+
+\[
+  f^{-1}\!\left(f(x)\right) = \dfrac{(\rule{3cm}{0.4pt}) + 1}{4}
+  = \rule{4cm}{0.4pt} = x \quad \checkmark
+\]
+
+\medskip
+Both compositions must equal $x$; if either fails, the inverse is \blank{3cm}.
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{Domain Restriction (EK 2.8.A.1, EK 2.8.B.5)}
+$f(x) = x^2$ is \textbf{not} invertible on all real numbers because:
+$f(2) = $ \blank{2cm} and $f(-2) = $ \blank{2cm} --- two different inputs produce the same output.
+
+\medskip
+Restrict the domain to $x \ge 0$: then every output comes from exactly \blank{2cm} input.
+
+\medskip
+On the restricted domain $[0, \infty)$: $f^{-1}(x) = $ \blank{4cm}
+
+\medskip
+The domain of $f^{-1}$ is \blank{3cm}; the range is \blank{3cm}.
 \end{notesbox}
 
 \end{document}

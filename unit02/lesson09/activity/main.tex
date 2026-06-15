@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.9 — Group Activity
+%! Logarithmic Expressions — Unit 2, Lesson 2.9 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,119 @@
 \pageheader{Unit 2, Lesson 2.9}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Logarithms in the Real World]{sky}
+\small
+Scientists use logarithms to measure quantities that span huge ranges. The \textbf{decibel scale}
+measures sound intensity: a whisper is about 30 dB and a jet engine about 140 dB, yet the actual
+intensities differ by a factor of $10^{11}$. The \textbf{pH scale} measures acidity: each unit
+of pH corresponds to a 10$\times$ change in hydrogen-ion concentration. Work through the tier that
+best matches your current level.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part A: Conversion drill.} Convert each equation to the other form.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} X X @{}}
+\textbf{Exponential $\to$ Logarithmic} & \textbf{Logarithmic $\to$ Exponential} \\
+\midrule
+$3^4 = 81$ \quad $\Rightarrow$ \blank{3.5cm}  & $\log_2 32 = 5$ \quad $\Rightarrow$ \blank{3.5cm} \\[4pt]
+$5^3 = 125$ \quad $\Rightarrow$ \blank{3.5cm} & $\log_3 9 = 2$ \quad $\Rightarrow$ \blank{3.5cm} \\[4pt]
+$10^2 = 100$ \quad $\Rightarrow$ \blank{3.5cm} & $\log_6 1 = 0$ \quad $\Rightarrow$ \blank{3.5cm} \\[4pt]
+$4^{1/2} = 2$ \quad $\Rightarrow$ \blank{3.5cm} & $\log_{10} 0.1 = -1$ \quad $\Rightarrow$ \blank{3.5cm} \\
+\end{tabularx}
+
+\vspace{0.10in}
+\textbf{Part B: Evaluate each logarithm exactly.}
+
+\vspace{0.06in}
+$\log_2 16 = $ \blank{2cm} \qquad
+$\log_3 1 = $ \blank{2cm} \qquad
+$\log_{10} 10{,}000 = $ \blank{2cm} \qquad
+$\log_5 5 = $ \blank{2cm}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item Evaluate each logarithm exactly. Show the exponential form you used.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $\log_6 36 = $ \blank{2.5cm} \hspace{1em} because $6^{\blank{1cm}} = 36$
+          \item $\log_{10} 0.001 = $ \blank{2.5cm} \hspace{1em} because $10^{\blank{1cm}} = 0.001$
+          \item $\log_9 3 = $ \blank{2.5cm} \hspace{1em} because $9^{\blank{1cm}} = 3$
+        \end{enumerate}
+
+  \item Use a calculator to estimate to 3 decimal places.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $\log_2 7 \approx $ \blank{3cm}
+          \item $\ln 5 \approx $ \blank{3cm}
+        \end{enumerate}
+
+  \item Without a calculator, determine between which two consecutive integers $\log_3 20$ falls.
+        Explain your reasoning.
+
+        \vspace{0.04in}
+        $3^{\blank{1cm}} = $ \blank{1.5cm} $< 20 <$ \blank{1.5cm} $= 3^{\blank{1cm}}$,
+        so $\log_3 20$ is between \blank{1cm} and \blank{1cm}.
+
+  \item The pH of a solution is $\text{pH} = -\log_{10}[\text{H}^+]$, where $[\text{H}^+]$
+        is the hydrogen-ion concentration in mol/L.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item If $[\text{H}^+] = 10^{-4}$, find the pH. \blank{3cm}
+          \item If $[\text{H}^+] = 10^{-7}$, find the pH. \blank{3cm}
+          \item Which solution is more acidic (lower pH)? \blank{3cm}
+        \end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item \textbf{Prove two inverse properties} using only the definition
+        $\log_b c = a \Leftrightarrow b^a = c$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=8pt]
+          \item Show that $\log_b b^n = n$ for any real $n$.
+
+                \writelines{3}
+
+          \item Show that $b^{\log_b n} = n$ for any $n > 0$.
+
+                \writelines{3}
+        \end{enumerate}
+
+  \item Solve for $x$: $\log_4 x = \dfrac{3}{2}$.
+
+        Convert to exponential form, then simplify:
+
+        \vspace{0.06in}
+        $4^{3/2} = $ \blank{3cm}, so $x = $ \blank{2.5cm}
+
+  \item Explain in 2--3 sentences: what is the connection between a \textbf{fractional exponent}
+        (such as $4^{3/2}$) and a \textbf{fractional logarithm} (such as $\log_4 8 = 3/2$)?
+
+        \writelines{3}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
