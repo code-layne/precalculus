@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Group Activity (Answer Key)
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,109 @@
 \pageheader{Unit 2, Lesson 2.6}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{teachernote}
+Tier R: focus students on sign interpretation of error. Tier A: circulate while students
+compute differences/ratios --- accept ratios in the range 2.0--2.2 as ``approximately constant.''
+Tier E: scoring rubric: 1 pt each for (1) identifying increasing pattern in linear residuals,
+(2) noting no pattern in exponential, (3) correct model choice, (4) valid real-world reason,
+(5) complete 3--4 sentence justification.
+\end{teachernote}
+
+\begin{scenariobox}[Choosing the Best Model for Online Store Sales]{sky}
+\small
+An online store tracked monthly sales (in \$thousands) for five months. Three regression
+models were fit to the data. In each tier, you will analyze the models and determine which
+one is most appropriate for the data and the context.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c}
+\textbf{Month ($x$)} & \textbf{Actual $y$} & \textbf{Linear $\hat{y}_L$} & \textbf{Quadratic $\hat{y}_Q$} & \textbf{Exponential $\hat{y}_E$} \\
+\hline
+1 &  4 & 3.4  & 3.8  & 3.6 \\
+2 &  8 & 7.8  & 7.2  & 7.9 \\
+3 & 17 & 12.2 & 14.6 & 17.4 \\
+4 & 36 & 16.6 & 26.0 & 38.2 \\
+5 & 75 & 21.0 & 41.4 & 83.9 \\
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+  \item Error (Linear): $17 - 12.2 = $ \ans{$+4.8$}
+
+        Error (Quadratic): $17 - 14.6 = $ \ans{$+2.4$}
+
+        Error (Exponential): $17 - 17.4 = $ \ans{$-0.4$}
+
+  \item Which model has the smallest absolute error at Month 3? \ans{Exponential ($|{-0.4}| = 0.4$)}
+
+  \item Circle the model type that best matches ``sales more than doubled every month'':
+
+        \hspace{2cm} Linear \hspace{2cm} Quadratic \hspace{2cm} \ans{\textbf{Exponential}}
+
+  \item At $x = 5$: error $= 75 - 83.9 = -8.9$ (negative), so the exponential model is a(n)
+        \ans{overestimate} because the error is \ans{negative}.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+  \item
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{c|c|c|c}
+        $x$ & Actual $y$ & $\Delta_1$ & Ratio \\ \hline
+        1 &  4 & \ans{4}  & \ans{2.0} \\
+        2 &  8 & \ans{9}  & \ans{2.125} \\
+        3 & 17 & \ans{19} & \ans{$\approx 2.12$} \\
+        4 & 36 & \ans{39} & \ans{$\approx 2.08$} \\
+        5 & 75 & --- & --- \\
+        \end{tabular}
+
+  \item Most strongly suggested model: \ans{exponential}
+
+        Explanation: \ansline{The successive ratios are approximately constant (near 2.1), signaling exponential growth.}
+
+  \item $R^2$ values depend on student technology output. Expect exponential $R^2 > 0.99$.
+
+  \item Sample answer: \ansline{The exponential model is most appropriate because the ratios are nearly constant ($\approx 2.1$), the $R^2$ value is highest for exponential regression, and the context states that sales doubled each month --- a hallmark of exponential growth.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+  \item Pattern in linear residuals: \ansline{The residuals increase sharply (0.6, 0.2, 4.8, 19.4, 54.0) --- a clear upward curve, not random.}
+
+  \item Exponential residuals: \ansline{The residuals alternate sign and stay small ($+0.4, +0.1, -0.4, -2.2, -8.9$); no clear curve, though they grow slightly at the end.}
+
+  \item Based on the residual plot criterion, the more appropriate model is: \ans{exponential}
+
+  \item Sample real-world reason: \ansline{An overestimate of future sales helps the store plan for extra inventory, reducing the risk of stockouts.}
+
+  \item Sample full justification: \ansline{The exponential model is the most appropriate choice for three reasons.\\[3pt]
+  First, the residuals from the linear model show a strongly increasing pattern (from 0.6 to 54.0), indicating the linear model systematically underestimates --- the wrong function type.\\[3pt]
+  Second, the exponential residuals show no clear pattern and remain relatively small, satisfying the residual-plot criterion for a good fit.\\[3pt]
+  Third, the contextual clue that ``sales more than doubled every month'' is the defining property of exponential growth, confirming the model choice.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

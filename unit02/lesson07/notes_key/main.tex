@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.7 — Guided Notes (Answer Key)
+%! Composition of Functions — Unit 2, Lesson 2.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,133 @@
 \pageheader{Unit 2, Lesson 2.7}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.06in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Evaluate the \ans{composition} of two functions for given values using tables or formulas.
+        \hfill\textit{(LO 2.7.A)}
+  \item Construct a formula for $f(g(x))$ by substituting \ans{$g(x)$} for each $x$ in $f$,
+        and explain why $f \circ g$ and $g \circ f$ are generally \ans{different}.
+        \hfill\textit{(LO 2.7.B)}
+  \item Rewrite a function as a \ans{composition} of two simpler functions and connect this to
+        \ans{transformations} of functions. \hfill\textit{(LO 2.7.C)}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.06in}
+
+\begin{vocabbox}
+\termblanklong{composition / composite function}
+\termblanklong{$(f \circ g)(x)$}
+\termblanklong{domain of $f \circ g$}
+\termblanklong{identity function}
+\termblanklong{non-commutativity of composition}
+\termblanklong{decomposition}
+\end{vocabbox}
+
+\vspace{0.06in}
+
+\begin{hookbox}
+A cell carrier charges \$10 per GB of data used: $C(u) = 10u$.
+Daily data use depends on miles driven: $u(d) = 0.5d$ GB.
+
+What is the daily charge as a function of miles? Write it as one formula:
+
+\vspace{0.06in}
+$C\bigl(u(d)\bigr) = C\!\left(\ans{0.5d}\right) = $ \ans{$5d$}
+
+\vspace{0.04in}
+This is an example of \ans{composition of functions}. The output of one function becomes the input of another.
+\end{hookbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{LO 2.7.A --- Evaluating Compositions from a Table}
+\textbf{Definition:} $(f \circ g)(x) = f(g(x))$. To evaluate: find the \ans{inner function ($g$)} first, then use it as input for \ans{the outer function ($f$)}.
+
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{c|c|c}
+$x$ & $f(x)$ & $g(x)$ \\ \hline
+1 & 4 & 2 \\
+2 & 7 & 1 \\
+3 & 10 & 3 \\
+\end{tabular}
+\end{center}
+
+\medskip
+\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
+$f(g(1)):$ \quad $g(1) = $ \ans{2} \quad so $f\!\left(\ans{2}\right) = $ \ans{7} &
+$f(g(2)):$ \quad $g(2) = $ \ans{1} \quad so $f\!\left(\ans{1}\right) = $ \ans{4} \\[6pt]
+$g(f(1)):$ \quad $f(1) = $ \ans{4} \quad so $g\!\left(\ans{4}\right) = $ \ans{undef.} &
+\textit{Domain note:} $g(f(1))$ requires $f(1)$ to be an input for $g$. Is it in the table? \ans{No}
+\end{tabular}
+
+\medskip
+\textbf{Non-commutativity (EK 2.7.A.3):} In general, $f(g(x))$ \ans{$\ne$} $g(f(x))$.
 \end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{LO 2.7.B --- Constructing Compositions Analytically}
+\textbf{Rule (EK 2.7.B.2):} To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
+
+\medskip
+Let $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
+
+\medskip
+\textbf{Build $f(g(x))$:} Replace each $x$ in $f$ with $g(x) = x^2 - 3$:
+
+\[
+  f(g(x)) = 2\bigl(\ans{$x^2-3$}\bigr) + 1 = \ans{$2x^2-5$}
+\]
+
+\textbf{Build $g(f(x))$:} Replace each $x$ in $g$ with $f(x) = 2x+1$:
+
+\[
+  g(f(x)) = \bigl(\ans{$2x+1$}\bigr)^2 - 3 = \ans{$4x^2+4x-2$}
+\]
+
+Are $f(g(x))$ and $g(f(x))$ the same function? \ans{No --- composition is not commutative.}
+
+\medskip
+\textbf{Identity function (EK 2.7.A.4):} If $f(x) = x$, then $(f \circ g)(x) = $ \ans{$g(x)$} for any $g$.
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{LO 2.7.C --- Decomposing Functions; Connections to Transformations}
+\textbf{Decomposition (EK 2.7.C.1):} Find simpler $f$ and $g$ so that $h(x) = f(g(x))$.
+
+\medskip
+\textbf{Example:} Decompose $h(x) = (3x + 2)^4$.
+
+\quad Choose inner function $g(x) = $ \ans{$3x+2$} and outer function $f(u) = $ \ans{$u^4$}.
+
+\quad Verify: $f(g(x)) = $ \ans{$(3x+2)^4$} \checkmark
+
+\medskip
+\textbf{Connections to transformations (EK 2.7.C.2--C.3):}
+
+\quad Horizontal shift: $g(x) = f(x + k)$ is composition of $f$ with $h(x) = $ \ans{$x+k$}.
+
+\quad Horizontal stretch: $g(x) = f(kx)$ is composition of $f$ with $h(x) = $ \ans{$kx$}.
+
+\medskip
+\textit{Example:} $y = (x-5)^2$ is $f(x) = x^2$ composed with $h(x) = $ \ans{$x-5$}, which shifts $f$ right \ans{5} units.
+\end{notesbox}
+
+\begin{teachernote}
+Table evaluation: $f(g(1)) = f(2) = 7$; $f(g(2)) = f(1) = 4$; $g(f(1)) = g(4)$ --- the value 4 does not appear
+as an $x$-input in the $g(x)$ column, so it is undefined from this table.
+
+Non-commutativity: stress that $f(g(x)) = 2x^2 - 5$ and $g(f(x)) = 4x^2 + 4x - 2$ are entirely different polynomials.
+
+Decomposition: accept other valid splits, e.g.\ $g(x) = 3x$ and $f(u) = (u+2)^4$ is also valid.
+Connection to transformations is key for LO 2.7.C.2--C.3 review.
+\end{teachernote}
 
 \end{document}

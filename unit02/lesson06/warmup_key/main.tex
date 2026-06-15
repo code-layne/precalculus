@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.6 — Warm-Up (Answer Key)
+%! Competing Function Model Validation — Unit 2, Lesson 2.6 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,46 @@
 \pageheader{Unit 2, Lesson 2.6}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{teachernote}
+Item 1 checks that students can compute differences and ratios; expect some to stop after
+first differences without checking ratios. Item 2 reinforces that exponential functions
+eventually outgrow linear. Item 3 is a direct recall of the ratio-signal rule from Lesson 2.5.
+\end{teachernote}
+
+\begin{enumerate}[itemsep=14pt]
+
+\item The table below shows values of a function. Compute the first differences ($\Delta_1$),
+      the second differences ($\Delta_2$), and the successive ratios ($r$).
+
+      \vspace{0.06in}
+      \renewcommand{\arraystretch}{1.7}
+      \begin{tabular}{c|c|c|c}
+      $x$ & $y$ & $\Delta_1 = y_{\text{next}} - y$ & Ratio $= y_{\text{next}} / y$ \\ \hline
+      0 & 4   & \ans{8}  & \ans{3} \\
+      1 & 12  & \ans{24} & \ans{3} \\
+      2 & 36  & \ans{72} & \ans{3} \\
+      3 & 108 & --- & --- \\
+      \end{tabular}
+
+      \vspace{0.04in}
+      Based on your table, this data is best modeled by a(n) \ans{exponential} function.
+
+\item Consider $f(x) = 2x + 1$ and $g(x) = 2^x$.
+
+      \vspace{0.04in}
+      $f(5) = $ \ans{11} \hspace{1cm} $g(5) = $ \ans{32}
+
+      \vspace{0.04in}
+      Which function grows faster? \ans{$g(x) = 2^x$ (exponential)}
+
+\item A data set shows that when the input increases by 1, the output is multiplied by
+      approximately 1.5 each time. What type of model fits this data best?
+
+      \vspace{0.04in}
+      \ans{Exponential} \quad How do you know? \ans{Constant successive ratios signal exponential growth.}
+
+\end{enumerate}
 
 \end{document}
