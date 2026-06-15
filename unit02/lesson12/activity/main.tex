@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.12 — Group Activity
+%! Logarithmic Function Manipulation — Unit 2, Lesson 2.12 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,110 @@
 \pageheader{Unit 2, Lesson 2.12}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
+\begin{scenariobox}[Signal Power Analysis]{sky}
+A radio engineer uses the formula $\text{dB} = 10 \cdot \log_{10}(P/P_0)$ to measure signal
+power levels. Your group will simplify and rewrite logarithmic expressions to help her
+analyze signals with different power levels.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Apply the product and power properties to numerical expressions.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Rewrite each expression as a sum using the product property.
+
+\vspace{4pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item $\log_2(4 \cdot 8) = \log_2(\blank{1.5cm}) + \log_2(\blank{1.5cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+  \item $\log_3(9 \cdot 27) = \log_3(\blank{1.5cm}) + \log_3(\blank{1.5cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+  \item $\log_5(25 \cdot 125) = \log_5(\blank{1.5cm}) + \log_5(\blank{1.5cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+\end{enumerate}
+
+\vspace{4pt}
+\item Apply the power property to rewrite each expression.
+
+\vspace{4pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item $\log_2(4^2) = \blank{1cm} \cdot \log_2(\blank{1.5cm}) = \blank{1cm} \cdot \blank{1cm} = \blank{1.5cm}$
+  \item $\log_3(27^3) = \blank{1cm} \cdot \log_3(\blank{1.5cm}) = \blank{1cm} \cdot \blank{1cm} = \blank{1.5cm}$
+\end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Rewrite algebraic expressions and apply change of base.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Rewrite $\log_2(32x)$ in the form $a + \log_2(x)$. What is the value of $a$?
+
+\vspace{4pt}
+$\log_2(32x) = \log_2(\blank{2cm}) + \log_2(x) = \blank{1.5cm} + \log_2(x)$
+
+\vspace{2pt}
+$a = $ \blank{2cm}. This represents a vertical \blank{3cm} of the graph of $y = \log_2(x)$.
+
+\item Rewrite $\log_3(x^4)$ as a vertical dilation of $\log_3(x)$.
+
+\vspace{4pt}
+$\log_3(x^4) = $ \blank{4cm}. The dilation factor is \blank{2cm}.
+
+\item Use change of base to evaluate $\log_5(17)$ using common logarithms ($\log_{10}$).
+
+\vspace{4pt}
+$\log_5(17) = \dfrac{\log(\blank{2cm})}{\log(\blank{2cm})} \approx $ \blank{2.5cm}
+
+\item Show that $\log_2(x) = \dfrac{\ln(x)}{\ln(2)}$ using the change-of-base formula.
+
+\vspace{4pt}
+\writelines{3}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Prove and justify log property connections to graph transformations.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Prove that $f(x) = \log_3(9x) = g(x) + 2$ where $g(x) = \log_3(x)$.
+      What geometric transformation does this represent? Justify your reasoning.
+
+\vspace{4pt}
 \writelines{4}
-\end{notesbox}
+
+\item Use the change-of-base formula to show that $\log_b(x) = \dfrac{\log_{10}(x)}{\log_{10}(b)}$.
+      Explain why this means every logarithmic function is a vertical dilation of $\log_{10}(x)$.
+
+\vspace{4pt}
+\writelines{4}
+
+\item Simplify $\log_2(8x^3)$ completely using both the product and power properties. Show
+      all steps and name each property as you use it.
+
+\vspace{4pt}
+\writelines{4}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

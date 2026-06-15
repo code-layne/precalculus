@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.12 — Guided Notes
+%! Logarithmic Function Manipulation — Unit 2, Lesson 2.12 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,115 @@
 \pageheader{Unit 2, Lesson 2.12}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\textbf{LO 2.12.A:} Rewrite logarithmic expressions in equivalent forms.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item Apply the product property to rewrite $\log_b(xy)$ as a sum and connect it to a
+        vertical translation of the graph.
+  \item Apply the power property to rewrite $\log_b(x^n)$ as a product and connect it to a
+        vertical dilation of the graph.
+  \item Use the change-of-base formula to evaluate and rewrite logarithms in any base.
+  \item Evaluate natural logarithm expressions using $\ln(x) = \log_e(x)$.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{product property for logarithms}
+\termblanklong{power property for logarithms}
+\termblanklong{change of base property}
+\termblanklong{natural logarithm ($\ln$)}
+\termblanklong{vertical translation}
+\termblanklong{vertical dilation}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textbf{Consider:} We know $\log_2(8) = 3$ and $\log_2(4) = 2$.
+
+\vspace{4pt}
+Predict: $\log_2(8 \cdot 4) = \log_2(32) = $ \writeline
+
+\vspace{2pt}
+Can you write it as a sum of the two values above?  \writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Product Property (EK 2.12.A.1)}
+\textbf{Rule:} $\log_b(xy) = \log_b(x) + \log_b(y)$
+
+\vspace{6pt}
+\textbf{Graphical connection:} $f(x) = \log_b(kx) = \log_b(k) + \log_b(x)$, so a horizontal
+dilation of a logarithmic function is equivalent to a \blank{4cm} of the graph.
+
+\vspace{8pt}
+\textit{Practice.} Fill in the blanks.
+
+\vspace{4pt}
+$\log_2(8 \cdot 4) = \log_2(\blank{1.5cm}) + \log_2(\blank{1.5cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+
+\vspace{6pt}
+$\log_2(32x) = \log_2(\blank{1.5cm}) + \log_2(x) = \blank{1cm} + \log_2(x)$
+
+\vspace{4pt}
+(The constant $a = $ \blank{1cm} represents a vertical translation \blank{2cm} by $a$ units.)
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Power Property (EK 2.12.A.2)}
+\textbf{Rule:} $\log_b(x^n) = n \cdot \log_b(x)$
+
+\vspace{6pt}
+\textbf{Graphical connection:} $f(x) = \log_b(x^k) = k\log_b(x)$, so raising the input to a
+power is equivalent to a vertical \blank{3.5cm} of the graph by factor $k$.
+
+\vspace{8pt}
+\textit{Practice.} Fill in the blanks.
+
+\vspace{4pt}
+$\log_3(9^2) = \blank{1cm} \cdot \log_3(9) = \blank{1cm} \cdot \blank{1cm} = \blank{1.5cm}$
+
+\vspace{6pt}
+$\log_3(x^4) = \blank{1cm} \cdot \log_3(x)$ \qquad (vertical dilation by factor \blank{1cm})
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Change of Base (EK 2.12.A.3)}
+\textbf{Rule:} $\log_b(x) = \dfrac{\log_a(x)}{\log_a(b)}$ for any base $a > 0$, $a \ne 1$.
+
+\vspace{6pt}
+\textbf{Implication:} Every logarithmic function $\log_b(x)$ is a vertical dilation of $\log_{10}(x)$
+by factor $\dfrac{1}{\log_{10}(b)}$. All logarithmic functions are \blank{5cm} of each other.
+
+\vspace{8pt}
+\textit{Practice.}
+
+\vspace{4pt}
+$\log_5(25) = \dfrac{\log(\blank{1.5cm})}{\log(\blank{1.5cm})} = \dfrac{\blank{1.5cm}}{\blank{1.5cm}} = \blank{1.5cm}$
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Natural Logarithm (EK 2.12.A.4)}
+The \textbf{natural logarithm} is $\ln(x) = \log_e(x)$, where $e \approx 2.718$.
+
+\vspace{4pt}
+It is a logarithmic function with base $e$; all logarithm rules apply to $\ln$.
+
+\vspace{6pt}
+Evaluate (no calculator needed):
+
+\vspace{4pt}
+$\ln(e) = \log_e(e) = $ \blank{2cm} \qquad $\ln(e^3) = \blank{1.5cm} \cdot \ln(e) = \blank{1.5cm} \cdot \blank{1cm} = \blank{1.5cm}$
 \end{notesbox}
 
 \end{document}

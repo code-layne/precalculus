@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.15 — Guided Notes
+%! Semi-log Plots — Unit 2, Lesson 2.15 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,100 @@
 \pageheader{Unit 2, Lesson 2.15}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+\textbf{LO 2.15.A:} Determine if an exponential model is appropriate by examining a
+semi-log plot. \quad \textbf{LO 2.15.B:} Construct the linearization of exponential data.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item Explain what a semi-log plot is and identify when exponential data appears linear
+        on one (EK 2.15.A.1).
+  \item Write the linearized form $\log_n(y) = (\log_n b)\cdot x + \log_n a$ for a model
+        $y = ab^x$ (EK 2.15.B.2).
+  \item Recover $a$ and $b$ from the slope and intercept of the linearized data (EK 2.15.B.1).
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{semi-log plot}
+\termblanklong{logarithmic scale}
+\termblanklong{linearization}
+\termblanklong{slope of linearized data}
+\termblanklong{$y$-intercept of linearized data}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textbf{Consider:} A scientist plots bacterial population data on a regular graph and on a
+semi-log graph.  On the regular graph the curve bends sharply upward.  On the semi-log graph
+the same data forms a straight line.
+
+\vspace{4pt}
+What does this tell the scientist about the type of growth model? \writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{What Is a Semi-log Plot? (EK 2.15.A.1--2)}
+\textbf{Definition:} A semi-log plot has one axis that is \blank{4cm} scaled.  On a
+$y$-axis semi-log plot, the tick marks represent $10^0, 10^1, 10^2, \ldots$ (equal spacing
+= equal \emph{ratios}).
+
+\vspace{6pt}
+\textbf{Key fact:} Data or functions with exponential characteristics appear
+\blank{3cm} on a semi-log plot.
+
+\vspace{6pt}
+\textbf{Advantage (EK 2.15.A.2):} A constant \blank{3cm} needs to be added to
+the dependent variable values to reveal that an exponential model is appropriate.
+(Compare to the Lesson 2.6 approach.)
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{The Linearization of $y = ab^x$ (EK 2.15.B.2)}
+Start with $y = ab^x$.  Apply $\log_{10}$ to both sides:
+\[
+  \log_{10}(y) = \log_{10}(a \cdot b^x) = \log_{10}(a) + \log_{10}(b^x) = \log_{10}(a) + x\,\log_{10}(b).
+\]
+
+So the linearized model is:
+\[
+  \log_{10}(y) \;=\; \bigl(\log_{10} b\bigr)\cdot x \;+\; \log_{10} a.
+\]
+\begin{itemize}[leftmargin=1.5em,itemsep=4pt,topsep=4pt]
+  \item Slope $=$ \blank{3.5cm}
+  \item $y$-intercept $=$ \blank{3.5cm}
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Example.} For $y = 5 \cdot 3^x$, the linearized model is:
+
+\vspace{4pt}
+$\log_{10}(y) = (\log_{10} 3)\cdot x + \log_{10} 5 \approx $ \blank{1.5cm}$\cdot x + $ \blank{1.5cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Recovering the Exponential Model (EK 2.15.B.1)}
+Given the slope $m$ and $y$-intercept $c$ of the linearized semi-log data:
+\[
+  b = 10^m \qquad \text{and} \qquad a = 10^c.
+\]
+
+\textbf{Example.}  A semi-log plot of $(x,\,\log_{10}(y))$ data has slope $0.602$ and
+$y$-intercept $0.699$.
+
+\vspace{4pt}
+$b = 10^{0.602} \approx $ \blank{1.5cm} \qquad $a = 10^{0.699} \approx $ \blank{1.5cm}
+
+\vspace{4pt}
+Exponential model: $y = $ \blank{4cm}
 \end{notesbox}
 
 \end{document}

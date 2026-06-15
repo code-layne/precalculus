@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.15 — Homework (Answer Key)
+%! Semi-log Plots — Unit 2, Lesson 2.15 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,92 @@
 \pageheader{Unit 2, Lesson 2.15}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item \textbf{Conceptual.}  Explain in your own words why exponential data appears linear
+      on a semi-log plot.
+
+\ansline{When you apply $\log$ to both sides of $y = ab^x$, the exponent $x$ comes out of
+the logarithm (power rule), giving $\log(y) = x\log(b) + \log(a)$. This is a linear function
+of $x$, so plotting $\log(y)$ against $x$ on a semi-log graph produces a straight line. The
+multiplicative growth of $y$ is converted to additive growth of $\log(y)$.}
+
+\item Given the exponential model $y = 2 \cdot 5^x$, write the linearized form using
+      $\log_{10}$.  Identify the slope and $y$-intercept.
+
+\vspace{4pt}
+Linearized form: $\log_{10}(y) = $ \ans{$(\log_{10} 5)\cdot x + \log_{10} 2 \approx 0.699x + 0.301$}
+
+\vspace{4pt}
+Slope $= $ \ans{$\log_{10}(5) \approx 0.699$} \qquad $y$-intercept $= $ \ans{$\log_{10}(2) \approx 0.301$}
+
+\item A semi-log plot with slope $0.477$ and $y$-intercept $1.0$.  Write the exponential model.
+
+\vspace{4pt}
+$b = 10^{0.477} \approx $ \ans{$3$} \qquad $a = 10^{1.0} = $ \ans{$10$}
+
+\vspace{4pt}
+Exponential model: $y = $ \ans{$10 \cdot 3^x$}
+
+\item The table below gives data for a population $P$ over time $t$.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $2$ & $4$ & $6$ \\
+\hline
+$P$ & $500$ & $2000$ & $8000$ & $32000$ \\
+\hline
+$\log_{10}(P)$ & \ans{2.699} & \ans{3.301} & \ans{3.903} & \ans{4.505} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item (Completed in table above.)
+  \item Slope $= $ \ans{$(3.301 - 2.699)/(2 - 0) = 0.301$ per unit of $t$}
+  \item $b = 10^{0.301} \approx $ \ans{$2$} \quad and \quad $a = 10^{2.699} \approx $ \ans{$500$}
+  \item Exponential model: $P(t) = $ \ans{$500 \cdot 2^t$}
+  \item Verify: $P(2) = $ \ans{$500 \cdot 4 = 2000$}. Does this match? \ans{Yes}
+\end{enumerate}
+
+\item \textbf{Comparison.}  What advantage does Scientist B (semi-log plot) have?
+
+\ansline{Scientist B's approach is more direct and does not require guessing an appropriate
+constant to add to the $y$-values. According to EK 2.15.A.2, a constant never needs to be
+added to the dependent variable values on a semi-log plot to reveal that an exponential model
+is appropriate. If $\log(y)$ vs.\ $x$ is linear, an exponential model fits --- no constant
+required.}
+
+\item \textbf{AP-style multiple choice.}  For $y = 8 \cdot 6^x$, slope of the linearized
+      semi-log model:
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $\log_{10}(8)$
+  \item \ans{$\log_{10}(6)$} \quad \textbf{(B) --- slope $= \log_{10}(b) = \log_{10}(6)$}
+  \item $\log_{10}(48)$
+  \item $6$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, arc=2mm, left=3mm, right=3mm,
+    top=2mm, bottom=2mm, title=\textbf{Extension}, fonttitle=\bfseries]
+Natural-log linearization of $y = ab^x$:
+
+\ansline{$\ln(y) = \ln(a) + x\ln(b)$. Slope $= \ln(b)$ and intercept $= \ln(a)$.
+By change of base: $\ln(b) = \log_{10}(b)/\log_{10}(e) \approx \log_{10}(b)/0.4343$.
+So the slope using $\ln$ is larger than with $\log_{10}$ by a factor of $1/\log_{10}(e)
+\approx 2.303$. Similarly the intercept is scaled. The shape is the same; only the scale
+of the axes differs.}
+\end{tcolorbox}
 
 \end{document}

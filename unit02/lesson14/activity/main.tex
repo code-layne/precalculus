@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.14 — Group Activity
+%! Logarithmic Function Context and Data Modeling — Unit 2, Lesson 2.14 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,161 @@
 \pageheader{Unit 2, Lesson 2.14}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Species Diversity and Sound: Logarithmic Models in Action]{sky}
+An ecologist studying habitat biodiversity and a physicist studying sound both encounter
+data that are best modeled with logarithmic functions. Your group will construct, interpret,
+and apply logarithmic models in each setting.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Species Diversity --- reading a table and using a simple model.}
+
+\vspace{4pt}
+The table below shows how species count $S$ depends on habitat area $A$ (hectares).
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$A$ & $1$ & $10$ & $100$ & $1000$ \\
+\hline
+$S$ & $0$ & $1$  & $2$   & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item As $S$ increases by 1, how does $A$ change? (Describe the pattern.)
+
+\vspace{4pt}
+$A$ \blank{5cm}. The proportion factor is: \blank{1.5cm}
+
+\item Using the proportion and the fact that $S = 0$ when $A = 1$ (the real zero), write
+      the logarithmic model.
+
+\vspace{4pt}
+$S(A) = $ \blank{4cm}
+
+\item Use the model to predict $S(10000)$.
+
+\vspace{4pt}
+$S(10000) = $ \blank{5cm}
+
+\item Is $S(0.5)$ defined? Explain why or why not in terms of the domain of a
+      logarithmic function.
+
+\writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Species Diversity --- building a model from two data points.}
+
+\vspace{4pt}
+A different study gives two data points for species count $S$ as a function of area $A$:
+when $A = 1$, $S = 2$; and when $A = 9$, $S = 4$. Assume the model has the form
+$S(A) = a\log_3(A) + k$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Write the system of two equations using the two data points.
+
+\vspace{4pt}
+Equation 1 (use $A=1$, $S=2$): \blank{6cm}
+
+\vspace{4pt}
+Equation 2 (use $A=9$, $S=4$): \blank{6cm}
+
+\item Since $\log_3(1) = $ \blank{1cm}, use Equation 1 to find $k$.
+
+\vspace{4pt}
+$k = $ \blank{2cm}
+
+\item Substitute $k$ into Equation 2 to find $a$. Show your work.
+
+\vspace{4pt}
+\writelines{2}
+$a = $ \blank{2cm}
+
+\item Write the complete model.
+
+\vspace{4pt}
+$S(A) = $ \blank{5cm}
+
+\item Predict the species count when $A = 27$.
+
+\vspace{4pt}
+$S(27) = $ \blank{6cm}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Sound intensity --- transformations and real-world predictions.}
+
+\vspace{4pt}
+The decibel formula is $S(I) = 10\log_{10}\!\left(\dfrac{I}{I_0}\right)$,
+where $I$ is sound intensity in W/m$^2$ and $I_0 = 10^{-12}$ W/m$^2$ is the
+threshold of hearing.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Use the property $\log_{10}(A/B) = \log_{10}(A) - \log_{10}(B)$ to expand:
+
+\vspace{4pt}
+$S(I) = 10\log_{10}(I) - 10\log_{10}(I_0) = 10\log_{10}(I) + $ \blank{3cm}
+
+\vspace{2pt}
+(Hint: $\log_{10}(10^{-12}) = $ \blank{2cm}, so $-10\log_{10}(I_0) = $ \blank{2cm}.)
+
+\item Identify $S(I) = 10\log_{10}(I) + 120$ as a transformation of $f(I) = 10\log_{10}(I)$.
+      What is the vertical shift?
+
+\vspace{4pt}
+Vertical shift: \blank{3cm}
+
+\item Normal conversation is 60 dB. Find the intensity $I$ for $S = 60$.
+
+\vspace{4pt}
+$60 = 10\log_{10}(I) + 120$
+
+\vspace{4pt}
+$\log_{10}(I) = $ \blank{2cm}
+
+\vspace{4pt}
+$I = $ \blank{4cm} W/m$^2$
+
+\item A rock concert is 120 dB. Find the intensity for $S = 120$, then compute how many
+      times more intense a rock concert is than normal conversation.
+
+\vspace{4pt}
+Intensity at 120 dB: $I = $ \blank{4cm} W/m$^2$
+
+\vspace{4pt}
+Ratio: \blank{6cm} times more intense
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

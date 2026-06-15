@@ -1,26 +1,184 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.14 — Slides (Beamer)
+%! Logarithmic Function Context and Data Modeling — Unit 2, Lesson 2.14 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.14}\\[0.5cm]
-    {\color{white}\bfseries\LARGE TODO: Lesson Title}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 2}
+    {\color{white}\bfseries\LARGE Logarithmic Function Context and Data Modeling}\\[1.2cm]
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 2: Exponential and Logarithmic Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% SLIDE 1 — HOOK
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: When Does Growth Slow Down?}
+
+  \vspace{0.3cm}
+  \textbf{A scientist observes:}
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item Bacteria double in the \textbf{1st hour}.
+    \item They double again after \textbf{2 more hours}.
+    \item They double again after \textbf{4 more hours}.
+  \end{itemize}
+
+  \vspace{0.4cm}
+  \begin{block}{Think About It}
+    As the population grows, the time needed for each doubling \textbf{increases}.\\[6pt]
+    If we let the output = number of doublings and input = elapsed time, what kind
+    of function has \emph{equal output increments} for \emph{proportionally growing inputs}?
+  \end{block}
+\end{frame}
+
+% SLIDE 2 — WHEN TO USE A LOG MODEL
+\begin{frame}[t, plain]
+  \navyheader{When to Use a Logarithmic Model (EK 2.14.A.1)}
+
+  \vspace{0.3cm}
+  \begin{block}{Key Idea}
+    A \textbf{logarithmic model} is appropriate when input values change
+    \textbf{proportionally} over equal-length output intervals.
+  \end{block}
+
+  \vspace{0.3cm}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{@{} l @{\quad} l @{}}
+    \textbf{Exponential:} & outputs multiply by a constant over equal \emph{input} intervals \\
+    \textbf{Logarithmic:} & inputs multiply by a constant over equal \emph{output} intervals \\
+  \end{tabular}
+
+  \vspace{0.4cm}
+  \textbf{Example table:}
+
+  \vspace{0.2cm}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $x$ & $2$ & $4$ & $8$ & $16$ \\
+  \hline
+  $y$ & $1$ & $2$ & $3$ & $4$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \vspace{0.2cm}
+  As $y$ increases by 1, $x$ \textbf{doubles} $\;\Rightarrow\;$ proportion = 2
+  $\;\Rightarrow\;$ model: $y = \log_2(x)$
+\end{frame}
+
+% SLIDE 3 — BUILDING A MODEL FROM TWO PAIRS
+\begin{frame}[t, plain]
+  \navyheader{Building a Model from Two Input-Output Pairs (EK 2.14.A.2)}
+
+  \vspace{0.3cm}
+  \textbf{General form:} $f(x) = a\log_b x + k$
+
+  \vspace{0.3cm}
+  \textbf{Worked example:} Given $f(1) = 0$ and $f(e) = 3$.
+
+  \begin{enumerate}
+    \setlength{\itemsep}{6pt}
+    \item Substitute $(1,\,0)$: $\;0 = a\ln(1) + k = 0 + k \;\Rightarrow\; k = 0$
+    \item Substitute $(e,\,3)$: $\;3 = a\ln(e) = a \cdot 1 \;\Rightarrow\; a = 3$
+    \item \textbf{Model:} $f(x) = 3\ln(x)$
+  \end{enumerate}
+
+  \vspace{0.3cm}
+  \begin{block}{System of Equations Strategy}
+    \begin{enumerate}
+      \setlength{\itemsep}{4pt}
+      \item Plug both pairs into $f(x) = a\log_b x + k$
+      \item Use $\log_b(1) = 0$ to find $k$ from the first equation
+      \item Substitute $k$ into the second equation and solve for $a$
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+% SLIDE 4 — TRANSFORMATIONS
+\begin{frame}[t, plain]
+  \navyheader{Transformations of a Logarithmic Model (EK 2.14.A.3)}
+
+  \vspace{0.3cm}
+  \textbf{General form:} $f(x) = a\log_b(x - h) + k$
+
+  \vspace{0.2cm}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item $a$ --- vertical dilation (stretch/compression, and reflection if $a < 0$)
+    \item $h$ --- horizontal shift ($h > 0$: right; $h < 0$: left)
+    \item $k$ --- vertical shift
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \begin{block}{Decibel Example}
+    Sound level: output = 0 dB at $x = 1$; increases 10 dB per tenfold increase in $x$.\\[6pt]
+    $\Rightarrow\; k = 0$, base $b = 10$, dilation $a = 10$\\[4pt]
+    $S(x) = 10\log_{10}(x)$
+  \end{block}
+
+  \vspace{0.2cm}
+  The full decibel formula $S(I) = 10\log_{10}(I/I_0)$ is a \textbf{vertical shift}
+  of this model by $+120$ (since $I_0 = 10^{-12}$).
+\end{frame}
+
+% SLIDE 5 — NATURAL LOG MODELS AND PREDICTIONS
+\begin{frame}[t, plain]
+  \navyheader{Natural Logarithm Models and Predictions (EK 2.14.A.5, 2.14.A.6)}
+
+  \vspace{0.3cm}
+  \begin{block}{Natural Log}
+    $\ln x = \log_e x$ \qquad Key identities: $\ln(e^n) = n$ \quad and \quad $e^{\ln x} = x$
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Evaluating:} $f(x) = 3\ln x$
+
+  \vspace{0.1cm}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item $f(e^4) = 3\ln(e^4) = 3 \cdot 4 = \mathbf{12}$
+    \item $f(1) = 3\ln(1) = 3 \cdot 0 = \mathbf{0}$
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textbf{Solving (inverting):} Find $x$ when $f(x) = 9$
+  \[
+    3\ln x = 9 \;\Rightarrow\; \ln x = 3 \;\Rightarrow\; x = e^3
+  \]
+
+  \vspace{0.2cm}
+  \textbf{Technology path (EK 2.14.A.4):} Logarithmic regression on a calculator fits
+  $y = a + b\ln x$ to a data set automatically --- always interpret the result in context.
+\end{frame}
+
+% SLIDE 6 — CLASS PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+
+  \vspace{0.3cm}
+  Work with your partner. Be ready to share.
+
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item A data set: $x = 3, 9, 27, 81$ with $y = 1, 2, 3, 4$. Identify the proportion,
+          write the model, and predict $y$ when $x = 243$.
+
+    \item Given $g(1) = 5$ and $g(e^2) = 11$, find $a$ and $k$ for $g(x) = a\ln(x) + k$.
+          Write the model and evaluate $g(e^4)$.
+
+    \item A model is $h(x) = 2\log_{10}(x-1)+1$. State the domain. Find $h(101)$.
+          Solve $h(x) = 5$ for $x$.
+  \end{enumerate}
 \end{frame}
 
 \end{document}
