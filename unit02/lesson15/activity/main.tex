@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.15 — Group Activity
+%! Semi-log Plots — Unit 2, Lesson 2.15 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,162 @@
 \pageheader{Unit 2, Lesson 2.15}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Drug Concentration Over Time]{sky}
+A pharmacologist is studying how a drug concentration $C$ (mg/L) in the bloodstream decays
+over time $t$ (hours).  Your group will use semi-log linearization to determine whether an
+exponential model is appropriate and, if so, to construct that model.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Given data:}
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$C$ (mg/L) & $100$ & $50$ & $25$ & $12.5$ & $6.25$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Complete the table of $\log_{10}(C)$ values. Round to three decimal places.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$\log_{10}(C)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item What is the rate of change of $\log_{10}(C)$ per unit of $t$?
+
+\vspace{4pt}
+Rate of change $\approx $ \blank{4cm} per hour.
+
+\item Is the rate of change constant?  What does this tell you about the appropriate model
+      for this data?
+
+\writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Continue using the data from Tier R.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Write the linear model: $\log_{10}(C) = m\cdot t + c$.  Identify $m$ and $c$.
+
+\vspace{4pt}
+$m = $ \blank{3cm} \qquad $c = $ \blank{3cm}
+
+\item Find the base $b$ of the exponential model: $b = 10^m \approx $ \blank{2cm}.
+      What does the value of $b$ mean in context (i.e., what happens to the drug
+      concentration each hour)?
+
+\writeline
+
+\item Find the initial value: $a = 10^c = $ \blank{2cm}.
+
+\item Write the exponential model: $C(t) = $ \blank{5cm}.
+
+      Verify by computing $C(1)$: \blank{4cm}. Does this match the table? \blank{1.5cm}
+
+\item Predict $C(6)$ using the model.  Show your work.
+
+\vspace{4pt}
+$C(6) = $ \blank{5cm}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{New data set --- a different drug trial:}
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$C$ (mg/L) & $80$ & $45$ & $30$ & $22$ & $18$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Compute $\log_{10}(C)$ for each $t$ value. Round to three decimal places.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$\log_{10}(C)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Do the $\log_{10}(C)$ values change at a constant rate?  What does this suggest
+      about whether an exponential model is appropriate?
+
+\writelines{2}
+
+\item Despite the imperfect fit, compute an approximate slope using the endpoints:
+\[
+  m \approx \frac{\log_{10}(18) - \log_{10}(80)}{4 - 0} = \frac{\blank{2cm} - \blank{2cm}}{4} \approx \blank{2cm}.
+\]
+
+\item Using this slope and the $t = 0$ value as the intercept, write the approximate
+      linearized model and recover the corresponding exponential model.
+
+\vspace{4pt}
+$\log_{10}(C) \approx $ \blank{4cm}
+
+\vspace{4pt}
+$C(t) \approx $ \blank{5cm}
+
+\item Compare this data set to the Tier R data.  Which data set is better described by
+      an exponential model?  Justify your answer using evidence from the semi-log
+      linearization.
+
+\writelines{3}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

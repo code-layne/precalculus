@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.13 — Lesson Plan
+%! Exponential and Logarithmic Equations and Inequalities — Unit 2, Lesson 2.13 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 2.13: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.13: Exponential and Logarithmic Equations and Inequalities}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,171 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students solve exponential and logarithmic equations and
+    inequalities by applying properties of exponents and logarithms and the inverse
+    relationship between exponential and logarithmic functions; check results for extraneous
+    solutions; use the identity $b^x = e^{(\ln b)\cdot x}$ to rewrite exponential expressions;
+    and construct inverse functions for transformed exponential and logarithmic functions.
+    \hfill\textit{\small Skills: AP 1.A, AP 1.B, AP 1.C \quad LO 2.13.A, LO 2.13.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.A} --- Solve equations and inequalities. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Properties of exponents and logarithms and the inverse relationship can be used to
+        solve exponential and logarithmic equations and inequalities. (EK 2.13.A.1)
+  \item Results must be examined for extraneous solutions. (EK 2.13.A.2)
+\end{itemize} \\
+\textbf{AP 1.B} --- Construct equivalent representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $b^x = e^{(\ln b)\cdot x}$ rewrites any exponential in natural-base form.
+        (EK 2.13.A.3)
+\end{itemize} \\
+\textbf{AP 1.C} --- Construct new functions using inverses. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Inverse of $f(x)=ab^{x-h}+k$: reverse the operation sequence. (EK 2.13.B.1)
+  \item Inverse of $f(x)=a\log_b(x-h)+k$: reverse the operation sequence. (EK 2.13.B.2)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+extraneous solution & A value obtained algebraically that does not satisfy the original
+                     equation because the argument of a logarithm must be positive (or other
+                     domain restriction). Always substitute back to verify. \\
+one-to-one property & If $b^a = b^c$ (same base, $b>0$, $b\ne1$), then $a=c$.
+                     If $\log_b a = \log_b c$, then $a=c$. \\
+natural base identity & $b^x = e^{(\ln b)\cdot x}$ for any $b>0$, $b\ne1$. Unifies all
+                     exponential functions under the natural base. (EK 2.13.A.3) \\
+inverse operations & To find $f^{-1}$, swap $x$ and $y$, then undo each operation of $f$
+                    in reverse order. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers: solving $2^x = 32$ and $3^x = \tfrac{1}{27}$ using the
+    one-to-one property; evaluating $g(f(8))$ where $f(x)=\log_2 x$ and $g(x)=2^x$ to
+    reinforce inverse cancellation (answer: 8); and identifying the two transformations applied
+    to the basic exponential $2^x$ in $f(x)=5\cdot 2^x+1$ (vertical stretch by 5, then
+    vertical shift up 1). These connect to EK 2.13.A.1 (one-to-one property),
+    EK 2.13.A.2 (inverse cancellation confirms correct solutions), and EK 2.13.B.1
+    (recognizing transformation structure before inverting).
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    Write on the board: \textbf{A doctor prescribes a drug with a half-life of 4 hours.
+    The initial dose is 200 mg. After how many hours will less than 10 mg remain?}
+
+    Ask students to write the model: $D(t) = 200\cdot\bigl(\tfrac{1}{2}\bigr)^{t/4}$.
+    Then pose: ``How do we solve $200\cdot\bigl(\tfrac{1}{2}\bigr)^{t/4} < 10$ for $t$?''
+    Students quickly see that guess-and-check is tedious. Ask: ``What tool lets us isolate
+    an exponent?'' This motivates taking logarithms of both sides (EK 2.13.A.1).
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+\textbf{Part 1 (10 min): Solving Exponential Equations (EK 2.13.A.1).}
+
+\textit{Method 1 --- same-base / one-to-one property:} $2^x = 2^5 \Rightarrow x = 5$.
+
+\textit{Method 2 --- take log of both sides:} $3^x = 15 \Rightarrow \log(3^x) = \log 15
+\Rightarrow x\log 3 = \log 15 \Rightarrow x = \tfrac{\log 15}{\log 3} \approx 2.46$.
+
+Note: any log base works; the ratio $\tfrac{\log c}{\log b} = \log_b c$.
+
+Work through $5^x = 100$ with students filling guided notes.
+
+\columnbreak
+
+\textbf{Part 2 (10 min): Solving Logarithmic Equations and Checking for Extraneous
+Solutions (EK 2.13.A.1--A.2).}
+
+$\log_2 x = 4 \Rightarrow 2^4 = 16 \Rightarrow x = 16$. (Check: $\log_2 16 = 4$. \checkmark)
+
+$\log_5 x + \log_5(x-4) = 1$: combine logs $\Rightarrow \log_5(x(x-4))=1 \Rightarrow
+x(x-4)=5 \Rightarrow x^2-4x-5=0 \Rightarrow (x-5)(x+1)=0$.
+Check: $x=-1$ makes $\log_5(-1)$ undefined --- extraneous. Answer: $x=5$ only.
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.)]{sky}
+\begin{multicols}{2}
+\textbf{Part 3 (8 min): Natural Base Identity (EK 2.13.A.3).}
+
+$b^x = e^{(\ln b)\cdot x}$. Example: $2^x = e^{(\ln 2)\cdot x} \approx e^{0.693x}$.
+Discuss how this unifies exponential functions. Fill in: $3^x = e^{(\blank{1.2cm})\cdot x}$
+and $5^x = e^{(\blank{1.2cm})\cdot x}$.
+
+\columnbreak
+
+\textbf{Part 4 (12 min): Inverses of Transformed Functions (EK 2.13.B.1--B.2).}
+
+\textit{Exponential:} $f(x)=3\cdot2^{x-1}+4$. Swap, isolate step by step: subtract 4,
+divide by 3, apply $\log_2$, add 1. $f^{-1}(x)=\log_2\!\tfrac{x-4}{3}+1$.
+
+\textit{Logarithmic:} $f(x)=2\log_3(x+1)-5$. Swap, isolate: add 5, divide by 2,
+exponentiate base 3, subtract 1. $f^{-1}(x)=3^{(x+5)/2}-1$.
+
+For each, state domain and range of $f$ and $f^{-1}$.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``Why does any log base work when taking log of both sides?''
+        Expect: the ratio $\log c/\log b$ is independent of the base chosen.
+  \item Watch for students writing $x\log 3 = \log 15$ but then computing $x = \log 15 - \log 3$
+        (subtracting instead of dividing) --- address the power rule of logs immediately.
+  \item After Part 2: ask ``How do you know $x=-1$ is extraneous?'' Expect: the argument
+        $\log_5(-1)$ is undefined because log domain requires positive input.
+  \item During Part 4: confirm students start by swapping $x \leftrightarrow y$, not by
+        ``plugging in'' the inverse formula directly. Both methods should give the same result.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Solve four basic exponential and log equations with
+        integer solutions; verify each solution in the original equation; identify domain
+        restriction for log equations.
+  \item \textbf{Tier A (Apply):} Solve the half-life inequality from the hook; solve a
+        combined-log equation checking for extraneous solutions; apply the natural base
+        identity.
+  \item \textbf{Tier E (Extension):} Solve an exponential inequality with competing bases;
+        find inverses of a transformed exponential and a transformed logarithmic function,
+        each with full domain/range analysis.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket (2 questions, 1 page):
+\begin{enumerate}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+  \item Solve $5^x = 80$; give exact form and decimal approximation to 3 decimal places.
+        (Tests EK 2.13.A.1 --- taking log of both sides.)
+  \item Solve $\log_4(x+2)=3$; check for domain restrictions and state whether the
+        solution is valid. (Tests EK 2.13.A.1--A.2 --- convert and check extraneous.)
+\end{enumerate}
+
+Sort by result: students missing \#1 need more practice with the log-of-both-sides
+technique; students missing \#2 need the habit of substituting back to check domain.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (6 problems + extension):} Solve exponential equations using same-base
+and log methods; solve log equations with extraneous-solution checks; population growth
+model requiring logarithms; natural base identity rewrites; find inverse of a transformed
+exponential; AP-style MC using the product rule for logarithms; extension inequality.
+
+\textbf{Preview of Lesson 2.14:} Connecting all representations of exponential and
+logarithmic functions --- graphs, tables, equations, and contextual models --- in preparation
+for AP exam multi-part problems.
 \end{skillbox}
+
 \end{document}

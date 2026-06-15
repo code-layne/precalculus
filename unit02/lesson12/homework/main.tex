@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.12 — Homework
+%! Logarithmic Function Manipulation — Unit 2, Lesson 2.12 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,79 @@
 \pageheader{Unit 2, Lesson 2.12}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item Apply the product property to rewrite each expression as a sum.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\log_6(36 \cdot 216) = \log_6(\blank{2cm}) + \log_6(\blank{2cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+
+  \item $\log_2(x \cdot 8) = \log_2(x) + \log_2(\blank{2cm}) = \log_2(x) + \blank{1.5cm}$
+\end{enumerate}
+
+\item Apply the power property to rewrite each expression.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\log_5(125^3) = \blank{1cm} \cdot \log_5(\blank{2cm}) = \blank{1cm} \cdot \blank{1cm} = \blank{1.5cm}$
+
+  \item $\log_4(x^5) = \blank{1.5cm}$
+\end{enumerate}
+
+\item Let $f(x) = \log_2(4x)$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item Rewrite $f(x)$ in the form $f(x) = a + \log_2(x)$. What is $a$?
+
+  \vspace{4pt}
+  $f(x) = \log_2(4x) = \log_2(\blank{2cm}) + \log_2(x) = \blank{1.5cm} + \log_2(x)$
+
+  \vspace{2pt}
+  $a = $ \blank{2cm}
+
+  \item What geometric transformation does this represent on the graph of $y = \log_2(x)$?
+
+  \writeline
+\end{enumerate}
+
+\item Use the change-of-base formula to show that $\log_3(x) = \dfrac{\log_{10}(x)}{\log_{10}(3)}$.
+      Explain why this means $\log_3(x)$ is a vertical dilation of $\log_{10}(x)$.
+
+\writelines{3}
+
+\item Evaluate each natural logarithm. Show reasoning.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\ln(e^5) = $ \blank{3cm}
+
+  \item $\ln(1) = $ \blank{3cm}
+
+  \item $\ln(e^{-2}) = $ \blank{3cm}
+\end{enumerate}
+
+\item \textbf{AP-style multiple choice.} Which of the following is equivalent to $\log_2(8x^4)$?
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $3 + 4\log_2(x)$
+  \item $3 \cdot 4 \cdot \log_2(x)$
+  \item $3 + \log_2(x^4)$
+  \item $12\log_2(x)$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\begin{practicebox}
+\textbf{Extension (optional).} Prove the quotient rule:
+$\log_b\!\left(\dfrac{x}{y}\right) = \log_b(x) - \log_b(y)$.
+
+\textit{Hint:} Write $x/y = x \cdot y^{-1}$, then apply the product property and the fact
+that $b^{-n} = 1/b^n$ implies $\log_b(y^{-1}) = -\log_b(y)$.
+
 \writelines{4}
-\end{notesbox}
+\end{practicebox}
 
 \end{document}

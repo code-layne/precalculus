@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.13 — Warm-Up (Answer Key)
+%! Exponential and Logarithmic Equations and Inequalities — Unit 2, Lesson 2.13 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,48 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.8em, itemsep=16pt]
+
+\item Solve each equation for $x$. Show your reasoning.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt, label=\alph*.]
+  \item $2^x = 32$
+
+  \vspace{6pt}
+  $x = $ \ans{5} \quad \textit{(since $2^5 = 32$, one-to-one property)}
+
+  \item $3^x = \dfrac{1}{27}$
+
+  \vspace{6pt}
+  $x = $ \ans{$-3$} \quad \textit{(since $3^{-3} = \tfrac{1}{27}$)}
+\end{enumerate}
+
+\item Let $f(x) = \log_2 x$ and $g(x) = 2^x$.
+
+\vspace{6pt}
+Evaluate $g(f(8))$. Show each step.
+
+\vspace{6pt}
+Step 1: $f(8) = \log_2 8 = $ \ans{3}
+
+\vspace{6pt}
+Step 2: $g(f(8)) = 2^{\,3} = $ \ans{8}
+
+\vspace{8pt}
+What property of $f$ and $g$ does this result demonstrate?
+
+\ansline{$f$ and $g$ are inverse functions; applying $g$ after $f$ returns the original input ($g(f(x))=x$).}
+
+\item For the function $f(x) = 5 \cdot 2^x + 1$, list the two operations applied to the
+      basic exponential $2^x$, in order.
+
+\vspace{6pt}
+Operation 1: \ans{Vertical stretch by a factor of 5 (multiply output by 5)}
+
+\vspace{6pt}
+Operation 2: \ans{Vertical shift up 1 (add 1 to output)}
+
+\end{enumerate}
 
 \end{document}

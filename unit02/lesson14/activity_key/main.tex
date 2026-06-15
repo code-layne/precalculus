@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.14 — Group Activity (Answer Key)
+%! Logarithmic Function Context and Data Modeling — Unit 2, Lesson 2.14 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,153 @@
 \pageheader{Unit 2, Lesson 2.14}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Species Diversity and Sound: Logarithmic Models in Action]{sky}
+An ecologist studying habitat biodiversity and a physicist studying sound both encounter
+data that are best modeled with logarithmic functions. Your group will construct, interpret,
+and apply logarithmic models in each setting.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Species Diversity --- reading a table and using a simple model.}
+
+\vspace{4pt}
+The table below shows how species count $S$ depends on habitat area $A$ (hectares).
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$A$ & $1$ & $10$ & $100$ & $1000$ \\
+\hline
+$S$ & $0$ & $1$  & $2$   & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item As $S$ increases by 1, how does $A$ change?
+
+\vspace{4pt}
+$A$ \ans{multiplies by 10 (increases tenfold)}. The proportion factor is: \ans{10}
+
+\item Write the logarithmic model.
+
+\vspace{4pt}
+$S(A) = $ \ans{$\log_{10}(A)$}
+
+\item Use the model to predict $S(10000)$.
+
+\vspace{4pt}
+$S(10000) = $ \ans{$\log_{10}(10000) = 4$}
+
+\item Is $S(0.5)$ defined? Explain.
+
+\ansline{Yes, $S(0.5) = \log_{10}(0.5) \approx -0.301$. The domain of $\log_{10}(A)$ is
+$A > 0$, and $0.5 > 0$, so the function value is defined (though negative, meaning area
+less than 1 hectare gives a negative species count in this model, which may not be
+contextually meaningful).}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Species Diversity --- building a model from two data points.}
+
+\vspace{4pt}
+Model form: $S(A) = a\log_3(A) + k$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item System of equations:
+
+\vspace{4pt}
+Equation 1: \ans{$2 = a\log_3(1) + k$}
+
+\vspace{4pt}
+Equation 2: \ans{$4 = a\log_3(9) + k$}
+
+\item Since $\log_3(1) = $ \ans{0}, Equation 1 gives $k = $ \ans{2}
+
+\item Substituting into Equation 2:
+
+\ansline{$4 = a\log_3(9) + 2 = 2a + 2 \;\Rightarrow\; 2 = 2a \;\Rightarrow\; a = 1$}
+
+$a = $ \ans{1}
+
+\item Complete model:
+
+\vspace{4pt}
+$S(A) = $ \ans{$\log_3(A) + 2$}
+
+\item Predict $S(27)$:
+
+\vspace{4pt}
+$S(27) = $ \ans{$\log_3(27) + 2 = 3 + 2 = 5$}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Sound intensity --- transformations and real-world predictions.}
+
+\vspace{4pt}
+$S(I) = 10\log_{10}(I/I_0)$, $I_0 = 10^{-12}$ W/m$^2$.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Expand:
+
+\vspace{4pt}
+$\log_{10}(10^{-12}) = $ \ans{$-12$}, so $-10\log_{10}(I_0) = $ \ans{$120$}.
+
+\vspace{4pt}
+$S(I) = 10\log_{10}(I) + $ \ans{120}
+
+\item Vertical shift of $S(I) = 10\log_{10}(I) + 120$ versus $f(I) = 10\log_{10}(I)$:
+
+\vspace{4pt}
+Vertical shift: \ans{$+120$ (up 120)}
+
+\item Find $I$ for $S = 60$:
+
+\vspace{4pt}
+$60 = 10\log_{10}(I) + 120$
+
+\vspace{4pt}
+$\log_{10}(I) = $ \ans{$-6$}
+
+\vspace{4pt}
+$I = $ \ans{$10^{-6}$} W/m$^2$
+
+\item Find $I$ for $S = 120$, then the ratio:
+
+\vspace{4pt}
+$120 = 10\log_{10}(I) + 120 \;\Rightarrow\; \log_{10}(I) = 0 \;\Rightarrow\; I = $ \ans{$10^{0} = 1$} W/m$^2$
+
+\vspace{4pt}
+Ratio: \ans{$1 \div 10^{-6} = 10^6$} --- the rock concert is \ans{one million} times more intense.
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

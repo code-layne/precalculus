@@ -1,26 +1,155 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.12 — Slides (Beamer)
+%! Logarithmic Function Manipulation — Unit 2, Lesson 2.12 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.12}\\[0.5cm]
-    {\color{white}\bfseries\LARGE TODO: Lesson Title}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 2}
+    {\color{white}\bfseries\LARGE Logarithmic Function Manipulation}\\[1.2cm]
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 2: Exponential and Logarithmic Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% SLIDE 1 — Hook
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: Can You Predict the Pattern?}
+
+  \vspace{0.3cm}
+  We know: \quad $\log_2(8) = 3$ \quad and \quad $\log_2(4) = 2$
+
+  \vspace{0.5cm}
+  \begin{block}{Think--Pair--Share}
+    What do you predict $\log_2(8 \cdot 4) = \log_2(32)$ equals?\\[6pt]
+    Can you write it as a sum of the two values above?
+  \end{block}
+
+  \vspace{0.5cm}
+  \textbf{Verify:} $\log_2(32) = ?$ because $2^{\,?} = 32$
+
+  \vspace{0.4cm}
+  \textit{Today we generalize: when can we break a log of a product into a sum?}
+\end{frame}
+
+% SLIDE 2 — Product Property
+\begin{frame}[t, plain]
+  \navyheader{Product Property (EK 2.12.A.1)}
+
+  \vspace{0.2cm}
+  \begin{block}{Product Property}
+    \[ \log_b(xy) = \log_b(x) + \log_b(y) \]
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Examples:}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item $\log_2(8 \cdot 4) = \log_2(8) + \log_2(4) = 3 + 2 = 5$
+    \item $\log_3(9 \cdot 27) = \log_3(9) + \log_3(27) = 2 + 3 = 5$
+  \end{itemize}
+
+  \vspace{0.35cm}
+  \begin{block}{Graphical Connection}
+    $f(x) = \log_b(kx) = \underbrace{\log_b(k)}_{a} + \log_b(x)$\\[4pt]
+    A \textbf{horizontal dilation} by factor $k$ is equivalent to a
+    \textbf{vertical translation} up by $\log_b(k)$.
+  \end{block}
+\end{frame}
+
+% SLIDE 3 — Power Property
+\begin{frame}[t, plain]
+  \navyheader{Power Property (EK 2.12.A.2)}
+
+  \vspace{0.2cm}
+  \begin{block}{Power Property}
+    \[ \log_b(x^n) = n \cdot \log_b(x) \]
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Examples:}
+  \begin{itemize}
+    \setlength{\itemsep}{6pt}
+    \item $\log_3(9^2) = 2 \cdot \log_3(9) = 2 \cdot 2 = 4$
+    \item $\log_2(x^4) = 4\log_2(x)$
+  \end{itemize}
+
+  \vspace{0.35cm}
+  \begin{block}{Graphical Connection}
+    $f(x) = \log_b(x^k) = k\log_b(x)$\\[4pt]
+    Raising the input to a power $k$ is equivalent to a
+    \textbf{vertical dilation} by factor $k$.
+  \end{block}
+\end{frame}
+
+% SLIDE 4 — Change of Base
+\begin{frame}[t, plain]
+  \navyheader{Change of Base (EK 2.12.A.3)}
+
+  \vspace{0.2cm}
+  \begin{block}{Change-of-Base Formula}
+    \[ \log_b(x) = \frac{\log_a(x)}{\log_a(b)} \quad \text{for any valid base } a \]
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Calculator form} (using common log):
+  \[ \log_5(17) = \frac{\log(17)}{\log(5)} \approx 1.760 \]
+
+  \vspace{0.25cm}
+  \begin{block}{Big Implication}
+    $\log_b(x) = \dfrac{1}{\log_{10}(b)} \cdot \log_{10}(x)$ \quad --- a vertical dilation of $\log_{10}(x)$\\[4pt]
+    \textbf{All logarithmic functions are vertical dilations of each other.}
+  \end{block}
+\end{frame}
+
+% SLIDE 5 — Natural Logarithm
+\begin{frame}[t, plain]
+  \navyheader{Natural Logarithm (EK 2.12.A.4)}
+
+  \vspace{0.3cm}
+  \begin{block}{Definition}
+    $\ln(x) = \log_e(x)$, where $e \approx 2.718\ldots$ (Euler's number)
+  \end{block}
+
+  \vspace{0.4cm}
+  \textbf{Key evaluations} (no calculator):
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item $\ln(e) = \log_e(e) = 1$ \quad (since $e^1 = e$)
+    \item $\ln(e^3) = 3\ln(e) = 3$ \quad (power property)
+    \item $\ln(1) = 0$ \quad (since $e^0 = 1$)
+    \item $\ln(e^{-2}) = -2$ \quad (power property)
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textit{All product and power properties apply to $\ln$ exactly as to any $\log_b$.}
+\end{frame}
+
+% SLIDE 6 — Class Practice
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+
+  \vspace{0.2cm}
+  Try these with a partner. Show each step.
+
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \setlength{\itemsep}{10pt}
+    \item Rewrite $\log_2(8x^4)$ using the product and power properties.
+    \item Rewrite $\log_4(16x^2)$ in the form $a + b\log_4(x)$. Find $a$ and $b$.
+    \item Evaluate $\log_7(50)$ using change of base. Express as a ratio, then find the decimal.
+    \item Evaluate $\ln(e^5)$, $\ln(1)$, and $\ln(e^{-2})$ without a calculator.
+  \end{enumerate}
+
+  \vspace{0.4cm}
+  \begin{block}{Exit Ticket}
+    Questions 2 and 3 are your exit ticket today.
+  \end{block}
 \end{frame}
 
 \end{document}

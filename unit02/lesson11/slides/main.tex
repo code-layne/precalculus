@@ -1,26 +1,236 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.11 — Slides (Beamer)
+%! Logarithmic Functions — Unit 2, Lesson 2.11 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.11}\\[0.5cm]
-    {\color{white}\bfseries\LARGE TODO: Lesson Title}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 2}
+    {\color{white}\bfseries\LARGE Logarithmic Functions}\\[1.2cm]
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 2}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% SLIDE 1: Hook — Richter Scale
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{Hook: The Richter Scale}
+  \begin{block}{Richter Scale}
+    Earthquake magnitude: $M = \log_{10}(I)$, where $I$ = intensity
+  \end{block}
+
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Intensity $I$} & \textbf{Magnitude $M$} \\
+        \hline
+        10 & 1 \\
+        100 & 2 \\
+        1{,}000 & 3 \\
+        10{,}000 & 4 \\
+        \hline
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.46\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{8pt}
+        \item Each time $I$ multiplies by \textbf{10}\ldots
+        \item \ldots $M$ increases by \textbf{1}
+        \item What inputs $I$ make sense?
+        \item What type of function is this?
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% SLIDE 2: Domain, Range, Asymptote
+\begin{frame}[t, plain]
+  \navyheader{Domain, Range, and Vertical Asymptote (EK 2.11.A.1, A.4)}
+
+  \begin{block}{General Form: $f(x) = a\log_b x$, \; $b > 0$, $b \ne 1$, $a \ne 0$}
+  \end{block}
+
+  \vspace{0.25cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{10pt}
+        \item \textbf{Domain:} $x > 0$, i.e., $(0, \infty)$
+        \item \textbf{Range:} all real numbers $(-\infty, \infty)$
+        \item \textbf{Vertical asymptote:} $x = 0$
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{itemize}
+        \setlength{\itemsep}{10pt}
+        \item $\log_b(0)$ is \textbf{undefined}
+        \item $\log_b(\text{negative})$ is \textbf{undefined}
+        \item No $y$-intercept --- the graph never touches $x = 0$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.3cm}
+  \begin{block}{End Behavior (EK 2.11.A.4)}
+    For $b > 1$, $a > 0$:\quad
+    $\displaystyle\lim_{x \to 0^+} a\log_b x = -\infty$
+    \qquad
+    $\displaystyle\lim_{x \to \infty} a\log_b x = +\infty$
+  \end{block}
+\end{frame}
+
+% SLIDE 3: Monotonicity and Concavity
+\begin{frame}[t, plain]
+  \navyheader{Monotonicity and Concavity (EK 2.11.A.2)}
+
+  \begin{block}{From the Inverse Relationship}
+    $f(x) = \log_b x$ is the inverse of $g(x) = b^x$, so it inherits structural properties.
+  \end{block}
+
+  \vspace{0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{When $b > 1$:}
+      \begin{itemize}
+        \setlength{\itemsep}{7pt}
+        \item $g(x) = b^x$ is \textbf{always increasing}
+        \item So $f(x) = \log_b x$ is \textbf{always increasing}
+        \item Concave \textbf{down}
+      \end{itemize}
+
+      \vspace{0.2cm}
+      \textbf{When $0 < b < 1$:}
+      \begin{itemize}
+        \setlength{\itemsep}{7pt}
+        \item $g(x) = b^x$ is \textbf{always decreasing}
+        \item So $f(x) = \log_b x$ is \textbf{always decreasing}
+        \item Concave \textbf{up}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Key Consequence}
+        \begin{itemize}
+          \setlength{\itemsep}{8pt}
+          \item \textbf{No local maximum or minimum} on the natural domain
+          \item \textbf{No inflection point}
+          \item The graph is either always concave up or always concave down
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% SLIDE 4: End Behavior Cases
+\begin{frame}[t, plain]
+  \navyheader{End Behavior — All Cases (EK 2.11.A.4)}
+
+  \vspace{0.2cm}
+  \begin{center}
+  \renewcommand{\arraystretch}{1.7}
+  \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Conditions} &
+    $\displaystyle\lim_{x \to 0^+} a\log_b x$ &
+    $\displaystyle\lim_{x \to \infty} a\log_b x$ \\
+    \hline
+    $b > 1$, $a > 0$ & $-\infty$ & $+\infty$ \\
+    \hline
+    $b > 1$, $a < 0$ & $+\infty$ & $-\infty$ \\
+    \hline
+    $0 < b < 1$, $a > 0$ & $+\infty$ & $-\infty$ \\
+    \hline
+    $0 < b < 1$, $a < 0$ & $-\infty$ & $+\infty$ \\
+    \hline
+  \end{tabular}
+  \end{center}
+
+  \vspace{0.2cm}
+  \begin{block}{Memory Aid}
+    Base $b > 1$ + positive $a$ \;\textrightarrow\; increasing log \;\textrightarrow\;
+    $-\infty$ at left, $+\infty$ at right. \\
+    Flip $a$ or flip $b$ \;\textrightarrow\; flip the end behavior direction.
+  \end{block}
+\end{frame}
+
+% SLIDE 5: Additive Transformation Identification Test
+\begin{frame}[t, plain]
+  \navyheader{Additive Transformation Identification Test (EK 2.11.A.3)}
+
+  \begin{block}{The Test}
+    If the \textbf{inputs} of $f(x)$ are proportional over equal-length output intervals,
+    then $f$ is logarithmic.
+  \end{block}
+
+  \vspace{0.25cm}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+      \textbf{Example:} $f(x) = \log_3 x$
+
+      \vspace{0.15cm}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{$x$} & \textbf{$f(x)$} & \textbf{Ratio} \\
+        \hline
+        1  & 0 & --- \\
+        3  & 1 & $\times 3$ \\
+        9  & 2 & $\times 3$ \\
+        27 & 3 & $\times 3$ \\
+        81 & 4 & $\times 3$ \\
+        \hline
+      \end{tabular}
+
+      \vspace{0.1cm}
+      \small Inputs multiply by 3 each time output adds 1. \;\textbf{Logarithmic!}
+    \end{column}
+    \begin{column}{0.50\textwidth}
+      \begin{block}{Key Nuance (EK 2.11.A.3)}
+        \begin{itemize}
+          \setlength{\itemsep}{7pt}
+          \item $f$ logarithmic $\Rightarrow$ inputs proportional
+          \item $g(x) = f(x+k)$ (additive shift) does \textbf{NOT} have proportional inputs
+          \item If $g(x) = f(x+k)$ has proportional inputs, then $f$ is logarithmic
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% SLIDE 6: Class Practice
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{1.} State all characteristics of $f(x) = 2\log_3 x$:
+      \begin{itemize}
+        \setlength{\itemsep}{6pt}
+        \item Domain: \underline{\hspace{2.5cm}}
+        \item Range: \underline{\hspace{2.5cm}}
+        \item Asymptote: \underline{\hspace{2cm}}
+        \item $\displaystyle\lim_{x\to 0^+} = $ \underline{\hspace{1.5cm}}
+        \item $\displaystyle\lim_{x\to\infty} = $ \underline{\hspace{1.5cm}}
+        \item Increasing or decreasing?
+        \item Concave up or down?
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \textbf{2.} A table shows outputs $0, 1, 2, 3$ for a mystery function $h$ with
+      inputs $4, 16, 64, 256$.
+
+      \vspace{0.2cm}
+      Is $h$ logarithmic? If so, what base?
+
+      \vspace{0.8cm}
+      \textbf{3.} True or false: $f(x) = \log_5 x$ has a $y$-intercept. Explain.
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \end{document}

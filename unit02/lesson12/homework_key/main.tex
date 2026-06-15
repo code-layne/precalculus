@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 2, Lesson 2.12 — Homework (Answer Key)
+%! Logarithmic Function Manipulation — Unit 2, Lesson 2.12 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,86 @@
 \pageheader{Unit 2, Lesson 2.12}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item Apply the product property to rewrite each expression as a sum.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\log_6(36 \cdot 216) = \log_6($ \ans{36} $) + \log_6($ \ans{216} $) = $ \ans{2} $+$ \ans{3} $=$ \ans{5}
+
+  \item $\log_2(x \cdot 8) = \log_2(x) + \log_2($ \ans{8} $) = \log_2(x) +$ \ans{3}
+\end{enumerate}
+
+\item Apply the power property to rewrite each expression.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\log_5(125^3) = $ \ans{3} $\cdot \log_5($ \ans{125} $) = $ \ans{3} $\cdot$ \ans{3} $=$ \ans{9}
+
+  \item $\log_4(x^5) = $ \ans{$5\log_4(x)$}
+\end{enumerate}
+
+\item Let $f(x) = \log_2(4x)$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item Rewrite $f(x)$ in the form $f(x) = a + \log_2(x)$.
+
+  \vspace{4pt}
+  $f(x) = \log_2(4x) = \log_2($ \ans{4} $) + \log_2(x) = $ \ans{2} $+ \log_2(x)$
+
+  \vspace{2pt}
+  $a = $ \ans{2}
+
+  \item What geometric transformation?
+
+  \ansline{A vertical translation up 2 units of the graph of $y = \log_2(x)$. The horizontal
+  dilation by factor 4 is equivalent to shifting the output up by $\log_2(4) = 2$.}
+\end{enumerate}
+
+\item Change-of-base proof and dilation explanation.
+
+\ansline{By the change-of-base formula with $a = 10$: $\log_3(x) = \dfrac{\log_{10}(x)}{\log_{10}(3)}$.\\[3pt]
+This equals $\dfrac{1}{\log_{10}(3)} \cdot \log_{10}(x)$, which is $\log_{10}(x)$ multiplied
+by the constant $\dfrac{1}{\log_{10}(3)} \approx 2.096$. Multiplying all outputs by a constant
+is a vertical dilation, so $\log_3(x)$ is a vertical dilation of $\log_{10}(x)$.}
+
+\item Evaluate each natural logarithm.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $\ln(e^5) = $ \ans{5} \quad (power property: $5\ln(e) = 5 \cdot 1 = 5$)
+
+  \item $\ln(1) = $ \ans{0} \quad ($e^0 = 1$, so $\log_e(1) = 0$)
+
+  \item $\ln(e^{-2}) = $ \ans{$-2$} \quad (power property: $-2\ln(e) = -2 \cdot 1 = -2$)
+\end{enumerate}
+
+\item \textbf{AP-style multiple choice.}
+
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $3 + 4\log_2(x)$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $3 \cdot 4 \cdot \log_2(x)$
+  \item $3 + \log_2(x^4)$
+  \item $12\log_2(x)$
+\end{enumerate}
+
+\begin{teachernote}
+$\log_2(8x^4) = \log_2(8) + \log_2(x^4) = 3 + 4\log_2(x)$. (A) is correct.
+(B) incorrectly multiplies the two pieces. (C) is partially correct but leaves $\log_2(x^4)$
+unsimplified. (D) incorrectly combines $3 \cdot 4$ as if both were factors.
+\end{teachernote}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\begin{practicebox}
+\textbf{Extension.} Prove $\log_b\!\left(\dfrac{x}{y}\right) = \log_b(x) - \log_b(y)$.
+
+\ansline{Write $x/y = x \cdot y^{-1}$. By the product property:\\[3pt]
+$\log_b(x \cdot y^{-1}) = \log_b(x) + \log_b(y^{-1})$.\\[3pt]
+By the power property: $\log_b(y^{-1}) = -1 \cdot \log_b(y) = -\log_b(y)$.\\[3pt]
+Therefore $\log_b(x/y) = \log_b(x) - \log_b(y)$. $\square$}
+\end{practicebox}
 
 \end{document}
