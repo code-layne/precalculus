@@ -1,4 +1,4 @@
-%! The Tangent Function — Unit 3, Lesson 3.9 — Homework (Answer Key)
+%! Inverse Trigonometric Functions — Unit 3, Lesson 3.9 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,13 +7,91 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.9}{Homework --- Answer Key}
-\namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Part 1 --- Evaluate --- Key}
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  \textbf{1.} $\arcsin\!\left(\dfrac{\sqrt{2}}{2}\right) = $ \ans{$\dfrac{\pi}{4}$}
+  &
+  \textbf{2.} $\arccos\!\left(-\dfrac{1}{2}\right) = $ \ans{$\dfrac{2\pi}{3}$}
+  &
+  \textbf{3.} $\arctan\!\left(\dfrac{\sqrt{3}}{3}\right) = $ \ans{$\dfrac{\pi}{6}$} \\[4pt]
+  \textbf{4.} $\sin^{-1}(0) = $ \ans{$0$}
+  &
+  \textbf{5.} $\cos^{-1}(1) = $ \ans{$0$}
+  &
+  \textbf{6.} $\tan^{-1}\!\left(-\dfrac{\sqrt{3}}{3}\right) = $ \ans{$-\dfrac{\pi}{6}$}
+\end{tabularx}
+
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Domain and Range --- Key}
+
+\textbf{7.}
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Function} & \textbf{Domain} & \textbf{Range} \\
+\hline
+$y = \arcsin x$    &
+  \ans{$[-1,\,1]$} &
+  \ans{$\left[-\dfrac{\pi}{2},\,\dfrac{\pi}{2}\right]$} \\
+\hline
+$y = \arccos x$    &
+  \ans{$[-1,\,1]$} &
+  \ans{$[0,\,\pi]$} \\
+\hline
+$y = \arctan x$    &
+  \ans{$(-\infty,\infty)$} &
+  \ans{$\left(-\dfrac{\pi}{2},\,\dfrac{\pi}{2}\right)$} \\
+\hline
+\end{tabular}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- AP-Style Multiple Choice --- Key}
+
+\textbf{8.} \ans{(D) $\dfrac{3\pi}{4}$}
+
+$\cos\!\bigl(\tfrac{3\pi}{4}\bigr) = -\dfrac{\sqrt{2}}{2}$ and
+$\tfrac{3\pi}{4} \in [0,\pi]$ (restricted domain of cosine).
+
+\vspace{0.08in}
+
+\textbf{9.} \ans{(C) The range of $f$ is $\left(-\dfrac{\pi}{2},\,\dfrac{\pi}{2}\right)$.}
+
+The range of $\arctan$ is the open interval $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$.
+(A) is false --- range is not all reals.
+(B) is false --- domain of $\arctan$ is all reals.
+(D) is false --- $\arctan$ is an odd function, so $f(-x) = -f(x)$ is true.
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{extensionbox}{Extension --- Composition of Trig and Inverse Trig --- Key}
+
+\textbf{10.} Let $\theta = \arctan x$ with $x > 0$, so $\tan\theta = x$.
+Right triangle: opposite $= x$, adjacent $= 1$, hypotenuse $= \sqrt{x^2+1}$.
+
+\ans{$\sin(\arctan x) = \dfrac{x}{\sqrt{x^2+1}}$}
+
+\vspace{0.06in}
+
+\textbf{Preview Lesson 3.10:} $\cos\theta = \tfrac{1}{2}$ has
+\ans{two} solutions on $[0,2\pi)$: \ans{$\theta = \dfrac{\pi}{3}$} and
+\ans{$\theta = \dfrac{5\pi}{3}$}.
+Using $\arccos$: $\arccos\!\bigl(\tfrac{1}{2}\bigr) = \dfrac{\pi}{3}$ gives one solution;
+the other is found by symmetry.
+
+\end{extensionbox}
 
 \end{document}

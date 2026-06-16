@@ -1,4 +1,4 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.6 — Warm-Up
+%! Sinusoidal Function Transformations — Unit 3, Lesson 3.6 — Warm-Up
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,68 @@
 \pageheader{Unit 3, Lesson 3.6}{Warm-Up}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
+\begin{notesbox}{Spiral Review}
+
+\textbf{1.}\quad Evaluate each expression using your knowledge of the unit circle.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}p{0.22\linewidth}@{}}
+(a)\;$\sin\!\left(\dfrac{\pi}{2}\right) = $ \blank{1cm}
+& (b)\;$\cos(\pi) = $ \blank{1cm}
+& (c)\;$\sin\!\left(\dfrac{3\pi}{2}\right) = $ \blank{1cm}
+& (d)\;$\cos(0) = $ \blank{1cm}
+\end{tabular}
+
+\vspace{0.14in}
+\textbf{2.}\quad The graph of $y = \sin\theta$ is shown below with key features labeled.
+Fill in each blank.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[x=1.1cm, y=1.1cm]
+  \draw[linegray, very thin] (-0.2,-1.4) grid[xstep=0.5, ystep=0.5] (6.7,1.4);
+  \draw[->] (-0.2,0) -- (6.8,0) node[right]{\small $\theta$};
+  \draw[->] (0,-1.4) -- (0,1.5) node[above]{\small $y$};
+  % Tick marks and labels on x-axis
+  \foreach \x/\lbl in {1.571/$\frac{\pi}{2}$, 3.142/$\pi$, 4.712/$\frac{3\pi}{2}$, 6.283/$2\pi$} {
+    \draw (\x,0.06) -- (\x,-0.06);
+    \node[below, font=\scriptsize] at (\x,-0.06) {\lbl};
+  }
+  % Tick marks y-axis
+  \foreach \y in {-1,1} {
+    \draw (0.06,\y) -- (-0.06,\y);
+    \node[left, font=\scriptsize] at (-0.06,\y) {$\y$};
+  }
+  % Sine curve
+  \draw[navy, thick, domain=0:6.3, samples=100]
+    plot (\x, {sin(deg(\x))});
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+Amplitude $= $ \blank{1.5cm} \qquad Period $= $ \blank{1.5cm} \qquad Midline: $y = $ \blank{1.5cm}
+
+\vspace{0.14in}
+\textbf{3.}\quad A function $f$ is transformed by a vertical stretch of factor 4 and
+a vertical shift up 2. If the parent function has the rule $f(\theta) = \sin\theta$,
+write the rule of the transformed function.
+
+\vspace{4pt}
+Transformed function: $f(\theta) = $ \blank{4cm}
+
+\vspace{0.14in}
+\textbf{4.}\quad The function $g(\theta) = \sin(\theta - \pi)$ is a horizontal
+translation of $y = \sin\theta$.
+
+\vspace{4pt}
+(a)\quad In which direction is the graph shifted? \writeline
+
+\vspace{4pt}
+(b)\quad By how many units? \writeline
+
 \end{notesbox}
 
 \end{document}

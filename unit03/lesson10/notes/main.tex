@@ -1,4 +1,4 @@
-%! Inverse Trigonometric Functions — Unit 3, Lesson 3.10 — Guided Notes
+%! Trigonometric Equations and Inequalities — Unit 3, Lesson 3.10 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,215 @@
 \pageheader{Unit 3, Lesson 3.10}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.10.A} --- Solve a trigonometric equation by isolating
+    the trig function and using inverse trig to find all solutions.
+    \writeline
+  \item \textbf{LO 3.10.A} --- Write the general solution of a trig equation
+    using periodicity, and apply a domain restriction when context requires it.
+    \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=5pt]
+  \item[\termblanklong{trigonometric equation}]
+    An equation in which the unknown appears inside a
+    \underline{\hspace{4cm}} function.
+
+  \item[\termblanklong{principal solution}]
+    The solution obtained by applying an \underline{\hspace{3.5cm}} trig function
+    directly; limited to the \underline{\hspace{3cm}} of that inverse function.
+
+  \item[\termblanklong{general solution}]
+    \textbf{All} solutions, expressed by adding integer multiples of the
+    \underline{\hspace{3cm}} to the principal value(s).
+    Example: $\theta = \tfrac{\pi}{6} + $ \underline{\hspace{1.5cm}},
+    $k \in \mathbb{Z}$.
+
+  \item[\termblanklong{domain restriction}]
+    A limit on the variable imposed by the \underline{\hspace{4cm}} of the
+    problem (e.g.\ $0 \le t \le 24$ for a 24-hour model).
+\end{description}
+\end{vocabbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% LO 3.10.A — Section 1: Infinitely Many Solutions
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.2: Infinitely Many Solutions}
+
+\textbf{Key Idea:} Because trig functions are \underline{\hspace{3cm}},
+a trig equation typically has \underline{\hspace{3cm}} many solutions when
+the domain is all real numbers.
+
+\vspace{6pt}
+\textbf{Example:} Solve $\sin\theta = \dfrac{1}{2}$.
+
+\vspace{4pt}
+\textbf{Step 1 --- Principal value:}
+$\theta = \arcsin\!\bigl(\tfrac{1}{2}\bigr) = $ \underline{\hspace{2cm}}
+
+\vspace{4pt}
+\textbf{Step 2 --- Second solution in $[0, 2\pi)$:}
+Sine is positive in Quadrants \underline{\hspace{1cm}} and \underline{\hspace{1cm}}.
+Reflect: $\theta = \pi - \underline{\hspace{1.5cm}} = $ \underline{\hspace{2cm}}
+
+\vspace{4pt}
+\textbf{Step 3 --- General solution:}
+Add multiples of the period $2\pi$ to each solution.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}l@{\hspace{2cm}}l@{}}
+Family 1: $\theta = $ \underline{\hspace{3cm}} & Family 2: $\theta = $ \underline{\hspace{3cm}}
+\end{tabular}
+
+\vspace{4pt}
+where $k$ is any \underline{\hspace{3cm}}.
+
+\vspace{6pt}
+\textbf{Check:} List 3 specific solutions from each family:
+
+Family 1 ($k = 0, 1, 2$): \writeline
+
+Family 2 ($k = 0, 1, -1$): \writeline
+
 \end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Section 2: Inverse Trig Procedure
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.1: The Four-Step Procedure}
+
+\textbf{Algorithm for solving a trig equation:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{Isolate} the trig function on one side of the equation.
+  \item \textbf{Apply} the inverse trig function to find the principal value.
+  \item \textbf{Find} the second solution in $[0, 2\pi)$ using reference angles
+    and the appropriate quadrant(s).
+  \item \textbf{Write} the general solution by adding $+2\pi k$ (or $+\pi k$
+    for tangent) to each solution.
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{Example:} Solve $2\cos\theta - 1 = 0$.
+
+\vspace{4pt}
+Step 1 --- Isolate: $\cos\theta = $ \underline{\hspace{2.5cm}}
+
+\vspace{4pt}
+Step 2 --- Principal value: $\theta = \arccos\!\bigl(\underline{\hspace{1cm}}\bigr) = $ \underline{\hspace{2cm}}
+
+\vspace{4pt}
+Step 3 --- Cosine is positive in Q\underline{\hspace{0.5cm}} and Q\underline{\hspace{0.5cm}}.
+Second solution: $\theta = $ \underline{\hspace{3cm}}
+
+\vspace{4pt}
+Step 4 --- General solution:
+
+$\theta = $ \underline{\hspace{3.5cm}} or $\theta = $ \underline{\hspace{3.5cm}},
+$k \in \mathbb{Z}$
+
+\vspace{6pt}
+\textbf{Solutions in $[0, 2\pi)$:}
+\writeline
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Section 3: Contextual Domain
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.3: Contextual Domain Restrictions}
+
+\textbf{Context:} The height of water at a harbor (in feet) is modeled by
+$h(t) = 3\sin\!\bigl(\tfrac{\pi}{6}t\bigr) + 5$, where $t$ is hours after
+midnight, $0 \le t \le 24$.
+
+\vspace{6pt}
+\textbf{Question:} When is $h(t) \ge 7$? (When can a ship requiring 7 ft enter?)
+
+\vspace{4pt}
+Step 1 --- Rewrite: $3\sin\!\bigl(\tfrac{\pi}{6}t\bigr) + 5 \ge 7$
+\hspace{1em}$\Rightarrow$\hspace{1em}
+$\sin\!\bigl(\tfrac{\pi}{6}t\bigr) \ge $ \underline{\hspace{2cm}}
+
+\vspace{4pt}
+Step 2 --- Let $u = \tfrac{\pi}{6}t$. Solve $\sin u = \tfrac{2}{3}$ for the boundary:
+
+\vspace{3pt}
+$u_1 = \arcsin\!\bigl(\tfrac{2}{3}\bigr) \approx $ \underline{\hspace{2cm}} rad
+\hspace{1cm}
+$u_2 = \pi - \arcsin\!\bigl(\tfrac{2}{3}\bigr) \approx $ \underline{\hspace{2cm}} rad
+
+\vspace{4pt}
+Step 3 --- Solve for $t$: $t = \dfrac{6}{\pi} \cdot u$
+
+\vspace{3pt}
+$t_1 \approx $ \underline{\hspace{2cm}} hr
+\hspace{1.5cm}
+$t_2 \approx $ \underline{\hspace{2cm}} hr
+
+\vspace{4pt}
+Step 4 --- The inequality $h(t) \ge 7$ holds on the interval
+$\underline{\hspace{1.5cm}} \le t \le \underline{\hspace{1.5cm}}$.
+
+\vspace{4pt}
+\textbf{Interpret:} The ship can enter between approximately
+\underline{\hspace{1.5cm}} and \underline{\hspace{1.5cm}} hours after midnight.
+
+\vspace{4pt}
+\textbf{Why do we restrict to $[0, 24]$?} \writeline
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Practice
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad Solve $\sqrt{2}\,\sin\theta - 1 = 0$ for
+all $\theta \in [0, 2\pi)$. Show the four steps.
+\writelines{4}
+
+\vspace{0.08in}
+\textbf{Guided Practice 2.}\quad Write the general solution to $\cos\theta = -\dfrac{\sqrt{3}}{2}$.
+
+\vspace{4pt}
+$\theta = $ \blank{4.5cm} or $\theta = $ \blank{4.5cm}, $k \in \mathbb{Z}$
+
+\vspace{0.08in}
+\textbf{Guided Practice 3.}\quad A temperature model gives $T(t) = 10\sin\!\bigl(\tfrac{\pi}{12}t\bigr) + 65$
+for $t \in [0, 24]$ (hours). For what hours is $T(t) \ge 70$?
+
+\vspace{4pt}
+Set up the inequality and isolate the trig function:
+\writelines{2}
+
+Solve for the boundary values of $t$:
+\writelines{2}
+
+Answer: $T(t) \ge 70$ on \blank{5cm}.
+
+\end{practicebox}
 
 \end{document}

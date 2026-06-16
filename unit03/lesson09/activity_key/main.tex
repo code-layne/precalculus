@@ -1,4 +1,4 @@
-%! The Tangent Function — Unit 3, Lesson 3.9 — Group Activity (Answer Key)
+%! Inverse Trigonometric Functions — Unit 3, Lesson 3.9 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,13 +7,105 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.9}{Group Activity --- Answer Key}
-\namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Using a Table to Evaluate Inverse Trig --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  \textbf{1.} $\arcsin\!\left(\dfrac{\sqrt{3}}{2}\right) = $ \ans{$\dfrac{\pi}{3}$}
+  &
+  \textbf{2.} $\arccos\!\left(\dfrac{1}{2}\right) = $ \ans{$\dfrac{\pi}{3}$}
+  &
+  \textbf{3.} $\arctan(\sqrt{3}) = $ \ans{$\dfrac{\pi}{3}$} \\[10pt]
+  \textbf{4.} $\arcsin(-1) = $ \ans{$-\dfrac{\pi}{2}$}
+  &
+  \textbf{5.} $\arccos(-1) = $ \ans{$\pi$}
+  &
+  \textbf{6.} $\arctan(0) = $ \ans{$0$}
+\end{tabularx}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply: Domain, Range, and Compositions --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{7.}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Function} & \textbf{Domain} & \textbf{Range} \\
+\hline
+$f(x) = \arcsin x$    &
+  \ans{$[-1,\,1]$} &
+  \ans{$\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]$} \\
+\hline
+$g(x) = \arccos x$    &
+  \ans{$[-1,\,1]$} &
+  \ans{$[0,\,\pi]$} \\
+\hline
+$h(x) = \arctan x$    &
+  \ans{$(-\infty,\infty)$} &
+  \ans{$\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{8.} $\sin\!\bigl(\arccos\tfrac{3}{5}\bigr)$
+
+\ans{Let $\theta = \arccos\tfrac{3}{5}$, so $\cos\theta=\tfrac{3}{5}$.
+Right triangle with adjacent $= 3$, hypotenuse $= 5$,
+opposite $= \sqrt{25-9} = 4$.
+Therefore $\sin\theta = \tfrac{4}{5}$.}
+
+\textbf{9.} $\tan\!\bigl(\arcsin\tfrac{5}{13}\bigr)$
+
+\ans{Let $\theta = \arcsin\tfrac{5}{13}$, so $\sin\theta=\tfrac{5}{13}$.
+Opposite $= 5$, hypotenuse $= 13$, adjacent $= \sqrt{169-25}=12$.
+Therefore $\tan\theta = \tfrac{5}{12}$.}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Compositions and Domain Analysis --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{10.}
+
+\begin{tabularx}{\linewidth}{@{} X X @{}}
+  \textbf{(a)} $\sin\!\bigl(\arcsin\tfrac{1}{2}\bigr) = $ \ans{$\dfrac{1}{2}$}
+  &
+  \textbf{(b)} $\arcsin\!\bigl(\sin\tfrac{\pi}{3}\bigr) = $ \ans{$\dfrac{\pi}{3}$} \\[8pt]
+  \textbf{(c)} $\arcsin\!\bigl(\sin\tfrac{2\pi}{3}\bigr) = $
+  \ans{$\dfrac{\pi}{3}$}
+  (since $\tfrac{2\pi}{3}\notin[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$,
+  use $\sin\tfrac{2\pi}{3}=\tfrac{\sqrt{3}}{2}$, then $\arcsin(\tfrac{\sqrt{3}}{2})=\tfrac{\pi}{3}$)
+  &
+  \textbf{(d)} $\cos\!\bigl(\arccos(-0.7)\bigr) = $ \ans{$-0.7$}
+\end{tabularx}
+
+\textbf{11.} $\sin(\arcsin x) = x$ for all \ans{$x \in [-1,\,1]$}, because
+$[-1,1]$ is the domain of $\arcsin$.
+
+\textbf{12.} $\arcsin(\sin x) = x$ only for \ans{$x \in \left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]$}.
+For other values, $\sin x$ equals the same value at multiple angles, and
+$\arcsin$ always returns the principal value in $[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$,
+not necessarily $x$ itself.
+
+\textbf{13.} Let $\theta = \arctan x$ with $x>0$, so $\tan\theta = x$.
+Right triangle: opposite $= x$, adjacent $= 1$, hypotenuse $= \sqrt{x^2+1}$.
+
+\ans{$\cos(\arctan x) = \dfrac{1}{\sqrt{x^2+1}}$}
+\end{tcolorbox}
 
 \end{document}

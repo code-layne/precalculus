@@ -1,4 +1,4 @@
-%! The Tangent Function — Unit 3, Lesson 3.9 — Guided Notes (Answer Key)
+%! Inverse Trigonometric Functions — Unit 3, Lesson 3.9 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,13 +7,128 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.9}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.9.A \; Inverse Trigonometric Functions --- Key}
+
+%--- Vocabulary row
+\begin{skillbox}[Key Vocabulary]{greenbox}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+    \item \textbf{arcsine} --- the inverse of the restricted sine function;
+          outputs an angle in $[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$
+    \item \textbf{arccosine} --- the inverse of the restricted cosine function;
+          outputs an angle in $[0,\pi]$
+    \item \textbf{arctangent} --- the inverse of the restricted tangent function;
+          outputs an angle in $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$
+    \item \textbf{restricted domain} --- a subset of the natural domain chosen
+          so a function is one-to-one
+    \item \textbf{principal value} --- the unique output angle in the restricted
+          range of an inverse trig function
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\vspace{0.08in}
+
+\textbf{Section 1 --- Why Do We Need Restricted Domains?}
+
+The table below shows selected values of $f(x) = \sin x$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ &
+$-\dfrac{\pi}{2}$ & $-\dfrac{\pi}{6}$ & $0$ &
+$\dfrac{\pi}{6}$ & $\dfrac{\pi}{2}$ & $\dfrac{5\pi}{6}$ & $\pi$ \\
+\hline
+$\sin x$ & $-1$ & $-\tfrac{1}{2}$ & $0$ &
+$\tfrac{1}{2}$ & $1$ & $\tfrac{1}{2}$ & $0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+$\sin x$ is \ans{NOT one-to-one}.
+
+Because the sine function is periodic, it \ans{fails} the horizontal line test,
+so it \ans{does not} have an inverse over its full domain.
+
+\vspace{0.08in}
+
+\textbf{Section 2 --- Restricted Domains and the Inverse Trig Functions}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Function} & \textbf{Restricted Domain} & \textbf{Range} &
+\textbf{Inverse Name} & \textbf{Notation} \\
+\hline
+Sine    & \ans{$\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]$} & $[-1,\,1]$  & Arcsine   & $\arcsin x$ \\
+\hline
+Cosine  & \ans{$[0,\,\pi]$}   & $[-1,\,1]$         & Arccosine & $\arccos x$ \\
+\hline
+Tangent & \ans{$\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$} & $(-\infty,\infty)$ & Arctangent & $\arctan x$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The output of an inverse trig function is an \ans{angle} measure (the principal value).
+
+\vspace{0.08in}
+
+\textbf{Section 3 --- Evaluating Inverse Trig Functions}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Expression} & \textbf{Think:} & \textbf{Answer} \\
+\hline
+$\arcsin\!\left(\dfrac{1}{2}\right)$ &
+  Which $\theta\in[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$ has $\sin\theta=\tfrac{1}{2}$? &
+  \ans{$\dfrac{\pi}{6}$} \\
+\hline
+$\arccos(0)$ &
+  Which $\theta\in[0,\pi]$ has $\cos\theta=0$? &
+  \ans{$\dfrac{\pi}{2}$} \\
+\hline
+$\arctan(1)$ &
+  Which $\theta\in(-\tfrac{\pi}{2},\tfrac{\pi}{2})$ has $\tan\theta=1$? &
+  \ans{$\dfrac{\pi}{4}$} \\
+\hline
+$\arcsin\!\left(-\dfrac{\sqrt{2}}{2}\right)$ &
+  Which $\theta\in[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$ has $\sin\theta=-\dfrac{\sqrt{2}}{2}$? &
+  \ans{$-\dfrac{\pi}{4}$} \\
+\hline
+$\arccos(-1)$ &
+  Which $\theta\in[0,\pi]$ has $\cos\theta=-1$? &
+  \ans{$\pi$} \\
+\hline
+\end{tabular}
+\end{center}
+
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{practicebox}{Practice: Evaluate --- Key}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  1. $\arcsin(1) = $ \ans{$\dfrac{\pi}{2}$}
+  &
+  2. $\arccos\!\left(\dfrac{\sqrt{3}}{2}\right) = $ \ans{$\dfrac{\pi}{6}$}
+  &
+  3. $\arctan(-1) = $ \ans{$-\dfrac{\pi}{4}$} \\[4pt]
+  4. $\sin^{-1}\!\left(-\dfrac{1}{2}\right) = $ \ans{$-\dfrac{\pi}{6}$}
+  &
+  5. $\cos^{-1}\!\left(-\dfrac{\sqrt{2}}{2}\right) = $ \ans{$\dfrac{3\pi}{4}$}
+  &
+  6. $\tan^{-1}(0) = $ \ans{$0$}
+\end{tabularx}
+\end{practicebox}
 
 \end{document}

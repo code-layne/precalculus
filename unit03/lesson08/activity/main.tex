@@ -1,4 +1,4 @@
-%! Sinusoidal Function Context and Data Modeling — Unit 3, Lesson 3.8 — Group Activity
+%! The Tangent Function — Unit 3, Lesson 3.8 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,158 @@
 \pageheader{Unit 3, Lesson 3.8}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[The Tangent Function --- Tiered Practice]{sky}
+The tangent function connects the unit circle to slope and to periodic asymptotic
+behavior.  Choose \textbf{one tier} below based on your readiness level.
+Everyone should be prepared to explain their reasoning to the class.
+\end{scenariobox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Tier R
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} The unit circle values below are given.  Use them to compute
+$\tan\theta = \sin\theta / \cos\theta$ at each angle.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\theta$ & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ \\
+\hline
+$0$          & $0$          & $1$          & \blank{2cm} \\
+\hline
+$\pi/6$      & $1/2$        & $\sqrt{3}/2$ & \blank{2cm} \\
+\hline
+$\pi/4$      & $\sqrt{2}/2$ & $\sqrt{2}/2$ & \blank{2cm} \\
+\hline
+$\pi/3$      & $\sqrt{3}/2$ & $1/2$        & \blank{2cm} \\
+\hline
+$\pi/2$      & $1$          & $0$          & \blank{2cm} \\
+\hline
+$3\pi/4$     & $\sqrt{2}/2$ & $-\sqrt{2}/2$& \blank{2cm} \\
+\hline
+$\pi$        & $0$          & $-1$         & \blank{2cm} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{1.}\quad At which angles above is $\tan\theta$ \emph{undefined}?  Why?
+\writelines{2}
+
+\vspace{4pt}
+\textbf{2.}\quad The tangent function has vertical asymptotes at $\theta = \pi/2 + k\pi$
+for integer $k$.  List the three asymptotes closest to $\theta = 0$ (one negative,
+one positive, one further positive).
+\writelines{2}
+
+\vspace{4pt}
+\textbf{3.}\quad Between $\theta = 0$ and $\theta = \pi/2$, is $\tan\theta$
+increasing or decreasing?  How do you know from the table?
+\writelines{2}
+
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Tier A
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} The graph below shows one and a half periods of a tangent function
+$f(\theta) = a\tan(\theta) + d$.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[xscale=1.6, yscale=0.45]
+  \draw[->] (-1.8,0) -- (4.2,0) node[right]{\small $\theta$};
+  \draw[->] (0,-4.5) -- (0,6.5) node[above]{\small $y$};
+  % asymptotes
+  \draw[dashed,slate] (-1.571,-4.3)--(-1.571,6.3);
+  \draw[dashed,slate] ( 1.571,-4.3)--( 1.571,6.3);
+  \draw[dashed,slate] ( 3.14+1.571*0,-4.3)--( 3.14+1.571*0,6.3);
+  % branches: g = 2*tan(theta) + 1
+  \draw[navy,thick,domain=-1.45:-0.01,samples=80,smooth]
+        plot (\x,{2*tan(deg(\x))+1});
+  \draw[navy,thick,domain=0.01:1.45,samples=80,smooth]
+        plot (\x,{2*tan(deg(\x))+1});
+  \draw[navy,thick,domain=1.70:3.10,samples=80,smooth]
+        plot (\x,{2*tan(deg(\x))+1});
+  % key points annotated
+  \fill[navy] (0,1) circle (2pt) node[left,font=\scriptsize]{$(0,1)$};
+  \fill[navy] (0.785,3) circle (2pt) node[right,font=\scriptsize]{$(\pi/4,3)$};
+  % y-axis labels
+  \foreach \y in {-4,-2,2,4,6}
+    \draw (0.04,\y)--(-0.04,\y) node[left,font=\scriptsize]{$\y$};
+  \foreach \x/\l in {-1.571/$-\frac{\pi}{2}$,0.785/$\frac{\pi}{4}$,1.571/$\frac{\pi}{2}$,3.142/$\pi$}
+    \draw (\x,0.1)--(\x,-0.1) node[below,font=\scriptsize]{\l};
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+\textbf{1.}\quad What is the period of $f$? \writeline
+
+\vspace{4pt}
+\textbf{2.}\quad List all vertical asymptotes visible in the graph.
+\writeline
+
+\vspace{4pt}
+\textbf{3.}\quad On the interval $(-\pi/2, \pi/2)$, is $f$ concave up or concave down
+for $\theta < 0$?  For $\theta > 0$?
+\writelines{2}
+
+\vspace{4pt}
+\textbf{4.}\quad The function passes through $(0, 1)$ and $(\pi/4, 3)$.  Use these
+points to find the value of $a$ and $d$ in $f(\theta) = a\tan(\theta) + d$.
+Show your work.
+\writelines{3}
+
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Tier E
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Context:} Analyze $g(\theta) = 2\tan\!\left(\dfrac{\theta}{2} - \dfrac{\pi}{4}\right) + 1$.
+
+\vspace{6pt}
+\textbf{1.}\quad Rewrite $g$ in the form $a\tan(b(\theta + c)) + d$ by factoring
+out $b = 1/2$ from the argument.  Identify $a$, $b$, $c$, and $d$.
+\writelines{3}
+
+\vspace{4pt}
+\textbf{2.}\quad State the period of $g$.  Show the computation.
+\writelines{2}
+
+\vspace{4pt}
+\textbf{3.}\quad Find all vertical asymptotes of $g$.
+(Set $\tfrac{1}{2}(\theta - \tfrac{\pi}{2}) = \tfrac{\pi}{2} + k\pi$ and solve for $\theta$.)
+\writelines{3}
+
+\vspace{4pt}
+\textbf{4.}\quad Compute $g(0)$ and $g\!\left(\dfrac{\pi}{2}\right)$.  Show your work.
+\writelines{3}
+
+\vspace{4pt}
+\textbf{5.}\quad Describe in words how the graph of $g$ is related to the parent
+graph $y = \tan\theta$, addressing each transformation parameter.
+\writelines{3}
+
+\end{tcolorbox}
 
 \end{document}
