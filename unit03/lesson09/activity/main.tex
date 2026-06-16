@@ -1,4 +1,4 @@
-%! The Tangent Function — Unit 3, Lesson 3.9 — Group Activity
+%! Inverse Trigonometric Functions — Unit 3, Lesson 3.9 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,128 @@
 \pageheader{Unit 3, Lesson 3.9}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Using a Table to Evaluate Inverse Trig},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use the reference table below to answer questions 1--6.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\theta$ & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ \\
+\hline
+$-\dfrac{\pi}{2}$ & $-1$  & $0$                & undefined \\
+$-\dfrac{\pi}{3}$ & $-\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & $-\sqrt{3}$ \\
+$-\dfrac{\pi}{4}$ & $-\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $-1$ \\
+$-\dfrac{\pi}{6}$ & $-\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $-\dfrac{\sqrt{3}}{3}$ \\
+$0$ & $0$ & $1$ & $0$ \\
+$\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{3}}{3}$ \\
+$\dfrac{\pi}{4}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $1$ \\
+$\dfrac{\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & $\sqrt{3}$ \\
+$\dfrac{\pi}{2}$ & $1$  & $0$  & undefined \\
+$\dfrac{2\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ & $-\dfrac{1}{2}$ & $-\sqrt{3}$ \\
+$\dfrac{3\pi}{4}$ & $\dfrac{\sqrt{2}}{2}$ & $-\dfrac{\sqrt{2}}{2}$ & $-1$ \\
+$\pi$ & $0$ & $-1$ & $0$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textit{Remember:} $\arcsin$ outputs an angle in $[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$;
+$\arccos$ in $[0,\pi]$; $\arctan$ in $(-\tfrac{\pi}{2},\tfrac{\pi}{2})$.
+
+\vspace{0.06in}
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  \textbf{1.} $\arcsin\!\left(\dfrac{\sqrt{3}}{2}\right) = $ \blank{2cm}
+  &
+  \textbf{2.} $\arccos\!\left(\dfrac{1}{2}\right) = $ \blank{2cm}
+  &
+  \textbf{3.} $\arctan(\sqrt{3}) = $ \blank{2cm} \\[10pt]
+  \textbf{4.} $\arcsin\!\left(-1\right) = $ \blank{2cm}
+  &
+  \textbf{5.} $\arccos(-1) = $ \blank{2cm}
+  &
+  \textbf{6.} $\arctan(0) = $ \blank{2cm}
+\end{tabularx}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply: Domain, Range, and Compositions},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{7.} Complete the table.
+
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Function} & \textbf{Domain} & \textbf{Range} \\
+\hline
+$f(x) = \arcsin x$    & \blank{3.5cm} & \blank{3.5cm} \\
+\hline
+$g(x) = \arccos x$    & \blank{3.5cm} & \blank{3.5cm} \\
+\hline
+$h(x) = \arctan x$    & \blank{3.5cm} & \blank{3.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.06in}
+\textbf{8.} Evaluate $\sin\!\bigl(\arccos\tfrac{3}{5}\bigr)$.
+
+\textit{Hint:} Let $\theta = \arccos\tfrac{3}{5}$.  Then $\cos\theta = \tfrac{3}{5}$.
+Draw a right triangle and label the sides.
+
+\writelines{3}
+
+\vspace{0.04in}
+\textbf{9.} Evaluate $\tan\!\bigl(\arcsin\tfrac{5}{13}\bigr)$.
+
+\writelines{3}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+% -----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Compositions and Domain Analysis},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{10.} Evaluate each expression.  Show all work.
+
+\begin{tabularx}{\linewidth}{@{} X X @{}}
+  \textbf{(a)} $\sin\!\bigl(\arcsin\tfrac{1}{2}\bigr) = $ \blank{2.5cm}
+  &
+  \textbf{(b)} $\arcsin\!\bigl(\sin\tfrac{\pi}{3}\bigr) = $ \blank{2.5cm} \\[8pt]
+  \textbf{(c)} $\arcsin\!\bigl(\sin\tfrac{2\pi}{3}\bigr) = $ \blank{2.5cm}
+  &
+  \textbf{(d)} $\cos\!\bigl(\arccos(-0.7)\bigr) = $ \blank{2.5cm}
+\end{tabularx}
+
+\vspace{0.08in}
+\textbf{11.} For which values of $x$ does $\sin(\arcsin x) = x$?  Explain.
+
+\writelines{2}
+
+\vspace{0.04in}
+\textbf{12.} For which values of $x$ does $\arcsin(\sin x) = x$?  Explain
+why the answer is not ``all real $x$.''
+
+\writelines{3}
+
+\vspace{0.04in}
+\textbf{13.} Simplify $\cos(\arctan x)$ for $x > 0$.
+Express your answer without any trig or inverse trig functions.
+(\textit{Hint:} Let $\theta = \arctan x$; use a right-triangle diagram.)
+
+\writelines{3}
+\end{tcolorbox}
 
 \end{document}
