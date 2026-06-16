@@ -1,26 +1,178 @@
-%! Equivalent Representations of Trigonometric Functions — Unit 3, Lesson 3.13 — Slides (Beamer)
+%! Trigonometry and Polar Coordinates — Unit 3, Lesson 3.13 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.13}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Equivalent Representations of Trigonometric Functions}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Trigonometry and Polar Coordinates}\\[1.2cm]
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 3}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+%----------------------------------------------------------------------
+% Frame 1 — The Polar Coordinate System
+%----------------------------------------------------------------------
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{The Polar Coordinate System}
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \textbf{Key vocabulary}
+      \begin{itemize}
+        \item \textbf{Pole} --- the origin (fixed reference point)
+        \item \textbf{Polar axis} --- the positive $x$-direction
+        \item \textbf{Polar coordinates} $(r,\theta)$:
+          \begin{itemize}
+            \item $|r|$ = radius of the circle the point lies on
+            \item $\theta$ = angle in standard position
+          \end{itemize}
+      \end{itemize}
+
+      \vspace{0.3cm}
+      \begin{block}{Multiple Representations}
+        The \emph{same point} can be written as:\\[4pt]
+        $(r,\,\theta)$ \quad or \quad $(r,\,\theta + 2\pi k)$ \quad or \quad $(-r,\,\theta+\pi)$\\[4pt]
+        \small Example: $(2,\pi/6)$, $(2,\pi/6+2\pi)$, $(-2, 7\pi/6)$ all name the same point.
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \textbf{Plotting $(r,\theta)$: two steps}
+      \begin{enumerate}
+        \item Rotate to angle $\theta$ from the polar axis
+        \item Move distance $|r|$ from the pole along that ray\\
+          (if $r < 0$, go in the \emph{opposite} direction)
+      \end{enumerate}
+
+      \vspace{0.4cm}
+      \textbf{Examples to plot together:}
+      \begin{itemize}
+        \item $(3,\; \pi/4)$
+        \item $(2,\; 3\pi/2)$
+        \item $(-2,\; \pi/6)$ --- same as $(2,\; 7\pi/6)$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+% Frame 2 — Polar to Rectangular
+%----------------------------------------------------------------------
+\begin{frame}[t, plain]
+  \navyheader{Converting Polar $\to$ Rectangular}
+
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      \begin{block}{Conversion Formulas}
+        \[ x = r\cos\theta \qquad y = r\sin\theta \]
+      \end{block}
+
+      \vspace{0.3cm}
+      \textbf{Why does this work?}\\
+      A unit-circle point is $(\cos\theta,\sin\theta)$.\\
+      Scaling by $r$ gives $(r\cos\theta,\; r\sin\theta)$.
+    \end{column}
+
+    \begin{column}{0.52\textwidth}
+      \textbf{Worked Example:} Convert $(4,\; \pi/3)$
+
+      \vspace{0.2cm}
+      \begin{tabular}{ll}
+        $x = 4\cos(\pi/3)$ & $= 4 \cdot \dfrac{1}{2} = 2$ \\[8pt]
+        $y = 4\sin(\pi/3)$ & $= 4 \cdot \dfrac{\sqrt{3}}{2} = 2\sqrt{3}$ \\
+      \end{tabular}
+
+      \vspace{0.3cm}
+      Rectangular: $(2,\; 2\sqrt{3})$
+
+      \vspace{0.4cm}
+      \textbf{Your turn:} Convert $(3,\; 3\pi/4)$\\[4pt]
+      $x = \rule{2cm}{0.4pt}$ \qquad $y = \rule{2cm}{0.4pt}$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+% Frame 3 — Rectangular to Polar
+%----------------------------------------------------------------------
+\begin{frame}[t, plain]
+  \navyheader{Converting Rectangular $\to$ Polar}
+
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      \begin{block}{Conversion Formulas}
+        \[ r = \sqrt{x^2 + y^2} \]
+        \[ \theta = \arctan\!\left(\tfrac{y}{x}\right) \quad (x > 0) \]
+        \[ \theta = \arctan\!\left(\tfrac{y}{x}\right) + \pi \quad (x < 0) \]
+      \end{block}
+
+      \vspace{0.2cm}
+      \textbf{Always:} plot the point first and verify the quadrant!\\
+      $\arctan$ returns values in $(-\pi/2,\; \pi/2)$ only.
+    \end{column}
+
+    \begin{column}{0.52\textwidth}
+      \textbf{Example 1 (Q1):} Convert $(3,3)$
+
+      \vspace{0.15cm}
+      $r = \sqrt{9+9} = 3\sqrt{2}$\\[4pt]
+      $\theta = \arctan(3/3) = \arctan(1) = \pi/4$\\[4pt]
+      Polar: $(3\sqrt{2},\; \pi/4)$
+
+      \vspace{0.35cm}
+      \textbf{Example 2 (Q2):} Convert $(-\sqrt{3},\; 1)$
+
+      \vspace{0.15cm}
+      $r = \sqrt{3+1} = 2$\\[4pt]
+      $x < 0 \Rightarrow \theta = \arctan(-1/\sqrt{3}) + \pi = -\pi/6 + \pi = 5\pi/6$\\[4pt]
+      Polar: $(2,\; 5\pi/6)$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%----------------------------------------------------------------------
+% Frame 4 — Complex Numbers in Polar Form
+%----------------------------------------------------------------------
+\begin{frame}[t, plain]
+  \navyheader{Complex Numbers in Polar Form}
+
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      A complex number $a+bi$ is a \textbf{point $(a,b)$} in the complex plane.
+
+      \vspace{0.25cm}
+      \begin{block}{Rectangular $\leftrightarrow$ Polar}
+        \textbf{Modulus:} $r = \sqrt{a^2+b^2}$\\[4pt]
+        \textbf{Argument:} $\theta = \arctan(b/a)$\\
+        \hspace{1.8cm}(with quadrant check)\\[6pt]
+        \textbf{Polar form:}\\
+        $(r\cos\theta) + i(r\sin\theta)$
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.52\textwidth}
+      \textbf{Worked Example:} Write $1 + i\sqrt{3}$ in polar form.
+
+      \vspace{0.2cm}
+      \begin{tabular}{ll}
+        $r$ & $= \sqrt{1^2 + (\sqrt{3})^2} = \sqrt{4} = 2$ \\[6pt]
+        $\theta$ & $= \arctan(\sqrt{3}/1) = \pi/3$ \quad (Q1) \\[6pt]
+        Polar form: & $2\cos(\pi/3) + 2i\sin(\pi/3)$
+      \end{tabular}
+
+      \vspace{0.4cm}
+      \textbf{Your turn:} Write $2-2i$ in polar form.\\[4pt]
+      $r = \rule{2cm}{0.4pt}$ \quad $\theta = \rule{2cm}{0.4pt}$ \quad Quadrant: \rule{1cm}{0.4pt}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \end{document}

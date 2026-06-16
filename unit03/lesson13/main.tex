@@ -1,73 +1,305 @@
-%! Equivalent Representations of Trigonometric Functions — Unit 3, Lesson 3.13 — Lesson Plan
+%! Trigonometry and Polar Coordinates — Unit 3, Lesson 3.13 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.13: Equivalent Representations of Trigonometric Functions}
+\newcommand{\LessonNumberName}{Lesson 3.13: Trigonometry and Polar Coordinates}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2--3 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will locate points in the plane using
+  polar coordinates $(r,\theta)$, convert between polar and rectangular coordinate
+  systems using $x = r\cos\theta$, $y = r\sin\theta$, $r = \sqrt{x^2+y^2}$, and
+  $\theta = \arctan(y/x)$ (with quadrant adjustment), and represent complex numbers
+  in both rectangular and polar form.
+  \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{1.B} \textit{Express in equivalent forms} ---
+  Convert a point between rectangular coordinates $(x,y)$ and polar
+  coordinates $(r,\theta)$; express a complex number in both rectangular
+  and polar form. Recognize that the same point has infinitely many polar
+  representations.
+&
+\textbf{EK 3.13.A.1}: The polar coordinate system uses concentric circles
+(radius $r$) and rays through the origin (angle $\theta$). The ordered pair
+$(r,\theta)$ has $|r|$ as the circle radius and $\theta$ as the angle in
+standard position. The same point has infinitely many polar representations,
+e.g., $(r,\theta)$, $(r,\theta+2\pi)$, $(-r,\theta+\pi)$. \\[4pt]
+
+\textbf{2.A} \textit{Identify information from representations} ---
+  Given a polar coordinate pair, identify the circle and ray locating the
+  point; given a rectangular point, determine polar coordinates; given a
+  complex number, read its polar representation from the complex plane.
+&
+\textbf{EK 3.13.A.2}: Polar $\to$ rectangular: $x = r\cos\theta$,
+$y = r\sin\theta$. \\[4pt]
+
+&
+\textbf{EK 3.13.A.3}: Rectangular $\to$ polar: $r = \sqrt{x^2+y^2}$;
+$\theta = \arctan(y/x)$ for $x>0$; $\theta = \arctan(y/x)+\pi$ for $x<0$. \\[4pt]
+
+&
+\textbf{EK 3.13.A.4}: A complex number $a+bi$ corresponds to the point
+$(a,b)$ in the complex plane. In polar form: $(r\cos\theta)+i(r\sin\theta)$
+where $r = \sqrt{a^2+b^2}$ and $\theta = \arctan(b/a)$ (with quadrant
+adjustment). \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+polar coordinate system &
+  A coordinate system based on concentric circles centered at the origin
+  and rays from the origin. Points are located by $(r,\theta)$. \\[4pt]
+pole &
+  The fixed reference point (the origin) in the polar coordinate system. \\[4pt]
+polar axis &
+  The reference ray from the pole in the direction of positive $x$. \\[4pt]
+polar coordinates $(r,\theta)$ &
+  Ordered pair where $|r|$ is the distance from the pole and $\theta$ is
+  the angle (in standard position) whose terminal ray passes through the point. \\[4pt]
+multiple representations &
+  $(r,\theta)$ also equals $(r,\theta+2\pi k)$ for integer $k$, or $(-r,\theta+\pi)$. \\[4pt]
+complex plane &
+  Coordinate plane where the horizontal axis gives the real part and the
+  vertical axis gives the imaginary part of a complex number. \\[4pt]
+polar form of a complex number &
+  $(r\cos\theta)+i(r\sin\theta)$, where $r = \sqrt{a^2+b^2}$ and $\theta$ is the
+  argument of $a+bi$. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8--10 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Distance from the origin}: $r = \sqrt{x^2+y^2}$ generalizes
+    the distance formula from Unit 1 --- fluency needed to convert rectangular
+    to polar.
+  \item \textbf{Unit-circle cosine and sine}: Evaluating $\cos\theta$ and
+    $\sin\theta$ at standard angles directly drives the polar$\to$rectangular
+    formulas.
+  \item \textbf{Inverse tangent}: $\arctan(y/x)$ gives the reference angle;
+    students must recall from Lessons 3.9--3.11 that a quadrant check is
+    required to find $\theta$.
+  \item \textbf{Complex numbers (Algebra 2 prerequisite)}: The rectangular form
+    $a+bi$ and the complex plane provide context for EK 3.13.A.4.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Write the point $(1,1)$ in rectangular form on the board.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``You know $(1,1)$ means 1 unit right and 1 unit up from the
+    origin. What is the \emph{distance} of this point from the origin?''}
+    (Students: $\sqrt{1^2+1^2} = \sqrt{2}$.)
+  \item \textit{``What \emph{angle} does the segment from the origin to $(1,1)$
+    make with the positive $x$-axis?''} (Students: $\pi/4$, or $45°$.)
+  \item \textit{``Could you describe the location of $(1,1)$ using just a
+    distance and an angle instead of $x$ and $y$?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} The rectangular system measures along two
+perpendicular axes. The polar system describes position by distance from a
+central point and an angle of rotation. Both locate the same point --- neither
+is more ``correct.'' Radar, sonar, and navigation instruments naturally output
+a distance and a bearing, i.e., polar coordinates.
+
+\textbf{Transition:} ``Today we'll define the polar coordinate system formally,
+develop the conversion formulas between polar and rectangular, and see how
+complex numbers connect the two systems.''
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- The Polar Coordinate System (EK 3.13.A.1)} (10 min)
+
+Define the pole (origin) and polar axis (positive $x$-direction). Explain
+$(r,\theta)$: $|r|$ is the radius of the circle on which the point lies;
+$\theta$ is the angle in standard position whose terminal ray contains the point.
+Together plot $(2,\pi/6)$, $(3,-\pi/4)$, and $(-2,\pi/3)$. Emphasize: negative
+$r$ reflects through the pole. Introduce multiple representations:
+$(2,\pi/6) = (2,\pi/6+2\pi) = (-2,\pi/6+\pi)$.
+
+\columnbreak
+
+\textbf{Step 2 --- Polar $\to$ Rectangular (EK 3.13.A.2)} (10 min)
+
+Derive $x = r\cos\theta$, $y = r\sin\theta$ from scaling the unit-circle point
+$(\cos\theta, \sin\theta)$ by $r$.
+Worked example: $(4,\pi/3)$ gives
+$x = 4\cos(\pi/3) = 4 \cdot \tfrac{1}{2} = 2$ and
+$y = 4\sin(\pi/3) = 4 \cdot \tfrac{\sqrt{3}}{2} = 2\sqrt{3}$.
+Students practice converting $(3, 3\pi/4)$ in guided notes.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Rectangular $\to$ Polar (EK 3.13.A.3)} (12 min)
+
+Display $r = \sqrt{x^2+y^2}$ and the $\arctan$ formula. Stress the quadrant
+adjustment: $\arctan(y/x) \in (-\pi/2,\pi/2)$; add $\pi$ if $x < 0$.
+Q1 example: $(3,3)$ gives $r = 3\sqrt{2}$, $\theta = \pi/4$.
+Q2 example: $(-\sqrt{3},1)$ gives $r = 2$,
+$\theta = \arctan(1/(-\sqrt{3}))+\pi = -\pi/6+\pi = 5\pi/6$.
+Students practice $(-1,-1)$ in guided notes (Q3: add $\pi$).
+
+\columnbreak
+
+\textbf{Step 4 --- Complex Numbers in Polar Form (EK 3.13.A.4)} (10 min)
+
+Map $a+bi$ to $(a,b)$ in the complex plane. Identify $r = \sqrt{a^2+b^2}$
+(modulus) and $\theta = \arctan(b/a)$ with quadrant check (argument).
+Polar form: $(r\cos\theta)+i(r\sin\theta)$.
+Worked example: $1+i\sqrt{3}$: $r = 2$, $\theta = \pi/3$;
+polar form $= 2\cos(\pi/3)+2i\sin(\pi/3)$.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 in Period 1; Steps 3--4 and group activity
+in Period 2; review and exit ticket in Period 3 if needed.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Quadrant error in $\arctan$}: Students apply $\arctan(y/x)$
+    without checking the quadrant. Prompt: \textit{``Plot the point first.
+    Which quadrant is it in? Does your $\arctan$ result land there?''}
+  \item \textbf{Sign of $r$}: Students think $r$ must be positive. Address:
+    $(-r,\theta)$ represents the same point as $(r,\theta+\pi)$; both are valid.
+    For rectangular$\to$polar we typically take $r > 0$ and adjust $\theta$.
+  \item \textbf{Cosine/sine swap}: Students compute $x = r\sin\theta$ or
+    $y = r\cos\theta$. Prompt: ``Cosine gives the \emph{horizontal} component;
+    sine gives the \emph{vertical} component.''
+  \item \textbf{Uniqueness confusion}: Students expect one polar form. Clarify:
+    rectangular coordinates are unique; polar coordinates are not. Ask students
+    to list at least two valid polar representations of the same point.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the tiered activity (teacher-assigned or
+student self-selected with guidance).
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Reinforce)}: Given four polar coordinate pairs
+    (unit-circle angles), complete a step-by-step table converting to
+    rectangular coordinates using $x = r\cos\theta$ and $y = r\sin\theta$.
+  \item \textbf{Tier A (Apply)}: Convert three rectangular points to polar
+    form; find two additional polar representations of a given point;
+    convert one complex number to polar form.
+  \item \textbf{Tier E (Extend)}: Write a general formula for all polar
+    representations of a Q2 point; show algebraically that $(-r,\theta)$ and
+    $(r,\theta+\pi)$ name the same point; reason about why polar representations
+    are not unique while rectangular ones are.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 5--7 minutes of Period 2 or 3).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Convert the polar coordinates $(4,\pi/3)$ to rectangular coordinates.
+  \item Convert the rectangular coordinates $(-3,3)$ to polar form ($r > 0$,
+    $0 \le \theta < 2\pi$).
+  \item Write the complex number $2-2i$ in polar form.
+\end{enumerate}
+
+\textbf{Data use:} Sort exit tickets by error type --- quadrant errors in
+$\arctan$, sign-of-$r$ errors, cosine/sine swap errors. Use distribution
+to determine whether a brief re-teach opener is needed at Lesson 3.14.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 3.13):} 5--6 problems covering polar$\to$rectangular
+conversions, rectangular$\to$polar conversions, multiple representations of a
+point, one complex number problem, and 2 AP-style MC items.
+
+\textbf{Preview of Lesson 3.14 --- Polar Function Graphs:}
+Ask students: \textit{``Now that you can locate any point using $(r,\theta)$,
+what happens when $r$ is a \emph{function} of $\theta$? In Lesson 3.14 we'll
+graph polar equations like $r = 1+\cos\theta$ and discover curves that are
+difficult to describe in rectangular form.''}
 \end{skillbox}
+
 \end{document}

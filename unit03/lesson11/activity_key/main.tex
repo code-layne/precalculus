@@ -1,4 +1,4 @@
-%! Trigonometric Equations and Inequalities — Unit 3, Lesson 3.11 — Group Activity (Answer Key)
+%! The Secant, Cosecant, and Cotangent Functions — Unit 3, Lesson 3.11 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,165 @@
 \pageheader{Unit 3, Lesson 3.11}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+%----------------------------------------------------------------------
+% Context
+%----------------------------------------------------------------------
+\begin{scenariobox}[Context: Reciprocal Trigonometric Functions]{sky}
+The secant, cosecant, and cotangent functions are built from the reciprocals
+of cosine, sine, and tangent. In this activity your group will compute values
+of these functions, explore their domains and asymptotes, and investigate
+how the graph of a reciprocal function relates to its parent. Choose
+\textbf{one tier} based on your readiness level.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier R
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Reinforce},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Use the given values of $\sin\theta$ and $\cos\theta$ to
+compute $\sec\theta$, $\csc\theta$, and $\cot\theta$. Write ``und'' if the
+function is undefined at that angle.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$\theta$ & $\sin\theta$ & $\cos\theta$ & $\sec\theta$ & $\csc\theta$ & $\cot\theta$ \\
+\hline
+$0$ & $0$ & $1$ & \ans{1} & \ans{und} & \ans{und} \\
+\hline
+$\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{3}}{2}$ & \ans{$\dfrac{2\sqrt{3}}{3}$} & \ans{2} & \ans{$\sqrt{3}$} \\
+\hline
+$\dfrac{\pi}{4}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & \ans{$\sqrt{2}$} & \ans{$\sqrt{2}$} & \ans{1} \\
+\hline
+$\dfrac{\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & \ans{2} & \ans{$\dfrac{2\sqrt{3}}{3}$} & \ans{$\dfrac{\sqrt{3}}{3}$} \\
+\hline
+$\dfrac{\pi}{2}$ & $1$ & $0$ & \ans{und} & \ans{1} & \ans{0} \\
+\hline
+$\pi$ & $0$ & $-1$ & \ans{$-1$} & \ans{und} & \ans{und} \\
+\hline
+$\dfrac{3\pi}{2}$ & $-1$ & $0$ & \ans{und} & \ans{$-1$} & \ans{0} \\
+\hline
+$2\pi$ & $0$ & $1$ & \ans{1} & \ans{und} & \ans{und} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{1.}\quad List all angles in the table where $\sec\theta$ is undefined:
+
+\vspace{4pt}
+$\theta = $ \ans{$\pi/2$ and $3\pi/2$}
+
+\vspace{6pt}
+\textbf{2.}\quad List all angles in the table where $\csc\theta$ is undefined:
+
+\vspace{4pt}
+$\theta = $ \ans{$0$, $\pi$, and $2\pi$}
+
+\vspace{6pt}
+\textbf{3.}\quad For the angles where $\csc\theta$ is defined, is $|\csc\theta| \geq 1$
+always? Circle: \quad \ans{Yes}
+
+\vspace{6pt}
+\textbf{4.}\quad At $\theta = \pi/4$, is $\cot\theta$ positive or negative?
+\ans{positive}
+At $\theta = 3\pi/4$, is $\cot\theta$ positive or negative?
+\ans{negative}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier A
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Answer each question without relying on a table. Show
+your reasoning using definitions.
+
+\vspace{6pt}
+\textbf{1.}\quad State the domain of each function by listing the values excluded
+from the domain.
+
+\vspace{4pt}
+(a)\quad $\sec\theta$: \ans{$\theta = \pi/2 + n\pi$ for integer $n$}
+
+\vspace{4pt}
+(b)\quad $\csc\theta$: \ans{$\theta = n\pi$ for integer $n$}
+
+\vspace{4pt}
+(c)\quad $\cot\theta$: \ans{$\theta = n\pi$ for integer $n$}
+
+\vspace{8pt}
+\textbf{2.}\quad List all vertical asymptotes of each function in the interval $[0, 2\pi]$.
+
+\vspace{4pt}
+$\sec\theta$: \ans{$\theta = \pi/2,\; 3\pi/2$} \quad
+$\csc\theta$: \ans{$\theta = 0,\; \pi,\; 2\pi$} \quad
+$\cot\theta$: \ans{$\theta = 0,\; \pi,\; 2\pi$}
+
+\vspace{8pt}
+\textbf{3.}\quad Evaluate each expression.
+
+\vspace{4pt}
+(a)\quad $\sec(2\pi/3) = \dfrac{1}{\cos(2\pi/3)} = \dfrac{1}{-1/2} = $ \ans{$-2$}
+
+\vspace{6pt}
+(b)\quad $\csc(5\pi/6) = \dfrac{1}{\sin(5\pi/6)} = \dfrac{1}{1/2} = $ \ans{2}
+
+\vspace{6pt}
+(c)\quad $\cot(5\pi/4) = \dfrac{-\sqrt{2}/2}{-\sqrt{2}/2} = $ \ans{1}
+
+\vspace{8pt}
+\textbf{4.}\quad \ans{No. Since $|\cos\theta| \leq 1$ for all $\theta$, we have $|\sec\theta| = |1/\cos\theta| \geq 1$. The value $0.8$ is between $-1$ and $1$, so it is impossible for $\sec\theta = 0.8$.}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier E
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Directions:} Investigate the relationship between a function and its reciprocal.
+
+\vspace{6pt}
+\textbf{1. Arcs of Secant.}
+
+\vspace{4pt}
+(a)\quad $\theta = $ \ans{$0$, $\pi$, $2\pi$}
+
+\vspace{4pt}
+(b)\quad $\sec\theta = $ \ans{$1$, $-1$, $1$}
+
+\vspace{4pt}
+(c)\quad \ans{At a vertex, $|\cos\theta| = 1$ so $|\sec\theta| = 1$ as well. Since $|\sec\theta| \geq 1$ always, the arc cannot dip below $1$ (or above $-1$) --- it can only curve away from the $\theta$-axis at each vertex, never crossing it.}
+
+\vspace{6pt}
+\textbf{2. Algebraic Verification.}
+
+\vspace{4pt}
+\ans{$\cot\theta = \dfrac{1}{\tan\theta} = \dfrac{1}{\;\dfrac{\sin\theta}{\cos\theta}\;} = \dfrac{\cos\theta}{\sin\theta}$, which equals $\dfrac{\cos\theta}{\sin\theta}$ by definition of division of fractions. $\square$}
+
+\vspace{6pt}
+\textbf{3. Near an Asymptote.}
+
+\vspace{4pt}
+\ans{As $\theta \to 0^+$, $\sin\theta \to 0^+$ and $\cos\theta \to 1$, so $\cot\theta = \cos\theta/\sin\theta \to 1/0^+ = +\infty$. The table confirms: at $\theta = \pi/6$, $\cot = \sqrt{3} \approx 1.73$; at $\theta = \pi/12$ (not in table), $\cot \approx 3.73$. As $\theta$ decreases toward 0, cot increases without bound.}
+
+\end{tcolorbox}
 
 \end{document}

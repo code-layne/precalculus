@@ -1,19 +1,282 @@
-%! Polar Function Graphs — Unit 3, Lesson 3.15 — Guided Notes
+%! Rates of Change in Polar Functions — Unit 3, Lesson 3.15 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{AP Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.15: Rates of Change in Polar Functions}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.15}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.15.A} --- Compute the average rate of change of a polar
+    function $r = f(\theta)$ over an interval and interpret it as how quickly
+    the radius changes per radian. \writeline
+  \item \textbf{LO 3.15.A} --- Classify intervals of a polar function as positive
+    and increasing, positive and decreasing, negative and increasing, or negative
+    and decreasing, and describe the corresponding curve behavior. \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{rate of change of a polar function}]
+    For $r = f(\theta)$, the average rate of change over $[\theta_1, \theta_2]$ is
+    $\dfrac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$. Measures how quickly
+    $r$ changes per \underline{\hspace{2cm}} of angle change.
+
+  \item[\termblanklong{positive and increasing}]
+    $r > 0$ and $r$ is \underline{\hspace{2cm}}. The curve moves
+    \underline{\hspace{3cm}} from the origin as $\theta$ increases.
+
+  \item[\termblanklong{positive and decreasing}]
+    $r > 0$ and $r$ is \underline{\hspace{2cm}}. The curve moves
+    \underline{\hspace{3cm}} the origin as $\theta$ increases.
+
+  \item[\termblanklong{negative and increasing}]
+    $r < 0$ and $r$ is becoming \underline{\hspace{2.5cm}} negative (closer to zero).
+    The curve is traced on the \underline{\hspace{3.5cm}} ray, moving toward the origin.
+
+  \item[\termblanklong{negative and decreasing}]
+    $r < 0$ and $r$ is becoming \underline{\hspace{2.5cm}} negative (farther from zero).
+    The curve is traced on the opposite ray, moving \underline{\hspace{2.5cm}} the origin.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} The table below shows values of $r = 1 + \sin\theta$
+at eight key angles.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ \\
+\hline
+$r$ & 1 & $\approx 1.71$ & 2 & $\approx 1.71$ & 1 & $\approx 0.29$ & 0 & $\approx 0.29$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Q1.} On which interval(s) is $r$ \textbf{increasing} (values going up)?
+
+\vspace{4pt}
+\underline{\hspace{8cm}}
+
+\vspace{6pt}
+\textbf{Q2.} On which interval(s) is $r$ \textbf{decreasing} (values going down)?
+
+\vspace{4pt}
+\underline{\hspace{8cm}}
+
+\vspace{6pt}
+\textbf{Q3.} What is happening at $\theta = 3\pi/2$, where $r = 0$?
+
+\vspace{4pt}
+\underline{\hspace{8cm}}
+
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Average Rate of Change
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Average Rate of Change of $r$}
+
+\textbf{Formula:}
+$$\text{Average Rate of Change} = \frac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$$
+
+This tells us: for every additional \underline{\hspace{1.5cm}} that $\theta$ increases,
+$r$ changes by approximately \underline{\hspace{2cm}}.
+
+\vspace{8pt}
+\textbf{Worked Example:} $r = 2\sin\theta$
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/2$ \\
+\hline
+$r = 2\sin\theta$ & $0$ & $2$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+Average rate of change from $\theta = 0$ to $\theta = \pi/2$:
+$$\frac{2\sin(\pi/2) - 2\sin(0)}{\pi/2 - 0} = \frac{2 - 0}{\pi/2} = \frac{4}{\pi}$$
+
+Result $= $ \underline{\hspace{3cm}}
+
+\vspace{6pt}
+Interpret: As $\theta$ increases from $0$ to $\pi/2$, $r$ increases by approximately
+\underline{\hspace{1.8cm}} per radian on average.
+
+\vspace{8pt}
+\textbf{Your turn:} Compute the average rate of change from $\theta = \pi/2$ to $\theta = \pi$
+for the same function $r = 2\sin\theta$. ($r(\pi/2) = 2$, $r(\pi) = 0$.)
+
+\vspace{6pt}
+ARC $= \dfrac{\rule{1.5cm}{0.4pt} - \rule{1.5cm}{0.4pt}}{\rule{2cm}{0.4pt}} = $ \underline{\hspace{3cm}}
+
+\vspace{4pt}
+Is $r$ increasing or decreasing on $[\pi/2, \pi]$? \underline{\hspace{3cm}}
+
 \end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Sign and Direction
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Sign and Direction of $r$}
+
+\textbf{Four-case classification.} Fill in the ``What happens in the plane'' column.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|l|l|p{4.5cm}|}
+\hline
+\textbf{Sign of $r$} & \textbf{Behavior of $r$} & \textbf{What happens in the plane} \\
+\hline
+$r > 0$ & increasing & \underline{\hspace{4cm}} \\
+\hline
+$r > 0$ & decreasing & \underline{\hspace{4cm}} \\
+\hline
+$r < 0$ & increasing (less negative) & \underline{\hspace{4cm}} \\
+\hline
+$r < 0$ & decreasing (more negative) & \underline{\hspace{4cm}} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Key reminder:} When $r < 0$, the point is plotted on the
+\underline{\hspace{3.5cm}} direction from the terminal ray, at distance
+$|r|$ from the origin.
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Intervals from a Table
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Reading Intervals from a Table}
+
+\textbf{Example:} The table below shows values of $r = 1 + \cos\theta$ at eight key angles.
+For each pair of adjacent columns, identify whether $r$ is positive and increasing (P\&I),
+positive and decreasing (P\&D), zero, or negative (N).
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ \\
+\hline
+$r$ & $2$ & $\approx 1.71$ & $1$ & $\approx 0.29$ & $0$ & $\approx 0.29$ & $1$ & $\approx 1.71$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\begin{tabular}{|c|p{4cm}|}
+\hline
+\textbf{Interval} & \textbf{Classification} \\
+\hline
+$[0, \pi/4]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[\pi/4, \pi/2]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[\pi/2, 3\pi/4]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[3\pi/4, \pi]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[\pi, 5\pi/4]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[5\pi/4, 3\pi/2]$ & \underline{\hspace{3.5cm}} \\
+\hline
+$[3\pi/2, 7\pi/4]$ & \underline{\hspace{3.5cm}} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+\textbf{Note:} $r = 1 + \cos\theta \geq 0$ for all $\theta$. What value of $\theta$ in
+$[0, 2\pi]$ gives $r = 0$? \underline{\hspace{2.5cm}}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Practice
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad The table below shows values of $r = 3\cos\theta$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ \\
+\hline
+$r$ & $3$ & $\approx 2.12$ & $0$ & $\approx -2.12$ & $-3$ \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+(a)\quad Classify each interval as P\&I, P\&D, N\&I, or N\&D.
+
+\vspace{4pt}
+$[0, \pi/4]$: \underline{\hspace{2.5cm}} \quad
+$[\pi/4, \pi/2]$: \underline{\hspace{2.5cm}} \quad
+$[\pi/2, 3\pi/4]$: \underline{\hspace{2.5cm}} \quad
+$[3\pi/4, \pi]$: \underline{\hspace{2.5cm}}
+
+\vspace{0.10in}
+\textbf{Guided Practice 2.}\quad Using the table in Practice 1:
+
+\vspace{4pt}
+(a)\quad Compute the average rate of change of $r = 3\cos\theta$ from $\theta = 0$ to $\theta = \pi/2$.
+
+\vspace{4pt}
+ARC $= \dfrac{r(\pi/2) - r(0)}{\pi/2 - 0} = \dfrac{\rule{1.5cm}{0.4pt} - \rule{1.5cm}{0.4pt}}{\pi/2} = $ \blank{3cm}
+
+\vspace{6pt}
+(b)\quad Compute the average rate of change from $\theta = \pi/2$ to $\theta = \pi$.
+
+\vspace{4pt}
+ARC $= $ \blank{5cm}
+
+\vspace{6pt}
+(c)\quad On $[\pi/2, \pi]$, $r$ is negative. Does the curve move toward or away from the origin?
+Explain using the N\&D or N\&I classification.
+
+\writeline
+
+\end{practicebox}
 
 \end{document}
