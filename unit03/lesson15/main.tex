@@ -2,72 +2,328 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
 \newcommand{\LessonNumberName}{Lesson 3.15: Rates of Change in Polar Functions}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2--3 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will describe how the radius $r$ of a polar
+  function changes as the angle $\theta$ increases by computing average rates of change
+  of $r$ with respect to $\theta$ and by classifying intervals according to the sign
+  and direction of the function. \textit{(Big Idea: Change)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{2.B} \textit{Construct equivalent representations} ---
+  Move between a table of $(θ, r)$ values and a description of whether
+  the curve is moving toward or away from the origin.
+&
+\textbf{EK 3.15.A.1}: The average rate of change of a polar function
+$r = f(\theta)$ over $[\theta_1, \theta_2]$ is
+$\dfrac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$, representing
+how quickly $r$ changes per radian. \\[6pt]
+
+\textbf{3.A} \textit{Describe characteristics} ---
+  Identify intervals on which $r$ is positive/negative and
+  increasing/decreasing; connect these to curve behavior in the plane.
+&
+\textbf{EK 3.15.A.2}: On intervals where $r > 0$ and increasing, the
+curve moves away from the origin; where $r > 0$ and decreasing, it
+moves toward the origin. Where $r < 0$, the curve is traced in the
+direction opposite the terminal ray. \\[6pt]
+
+&
+\textbf{EK 3.15.A.3}: The combination of the sign of $r$ and whether $r$
+is increasing or decreasing determines the nature of the curve's motion
+in the plane. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+rate of change of $r$ &
+  How quickly the radius changes per unit change in angle $\theta$; the
+  average rate of change over $[\theta_1, \theta_2]$ is
+  $(f(\theta_2)-f(\theta_1))/(\theta_2-\theta_1)$. \\[4pt]
+positive and increasing &
+  $r > 0$ and $r$ is growing --- the curve moves \emph{away} from the origin
+  as $\theta$ increases. \\[4pt]
+positive and decreasing &
+  $r > 0$ and $r$ is shrinking --- the curve moves \emph{toward} the origin
+  as $\theta$ increases. \\[4pt]
+negative and increasing &
+  $r < 0$ and its absolute value is shrinking --- the curve (on the opposite
+  ray) moves toward the origin. \\[4pt]
+negative and decreasing &
+  $r < 0$ and its absolute value is growing --- the curve (on the opposite
+  ray) moves away from the origin. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8--10 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Average rate of change}: Students computed average rates of change for
+    polynomial and trigonometric functions in earlier units. The formula
+    $\frac{f(b)-f(a)}{b-a}$ carries directly to polar functions.
+  \item \textbf{Evaluating trigonometric functions}: Students evaluate $\sin\theta$ and
+    $\cos\theta$ at key angles to build tables for polar functions such as
+    $r = 2\sin\theta$ or $r = 1 + \cos\theta$.
+  \item \textbf{Increasing vs.\ decreasing from a table}: Students identify whether a
+    function is increasing or decreasing over an interval by comparing successive
+    output values in a table of values.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Display the following table of values for $r = 1 + \sin\theta$
+on the board or projector:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ \\
+\hline
+$r$ & 1 & $\approx 1.71$ & 2 & $\approx 1.71$ & 1 & $\approx 0.29$ & 0 & $\approx 0.29$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``On which intervals in the table is $r$ getting larger? On which
+    is $r$ getting smaller?''}
+  \item \textit{``When $r$ is growing, is the point tracing the curve moving toward
+    or away from the origin? What about when $r$ is shrinking?''}
+  \item \textit{``What happens at $\theta = 3\pi/2$, where $r = 0$? What does that
+    mean geometrically?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} A polar curve is not just a static shape --- it is
+traced dynamically as $\theta$ sweeps from $0$ to $2\pi$. The rate at which $r$
+changes tells us how quickly the curve spirals in or out. Rates of change, the central
+tool of Unit 1, appear here in a polar context.
+
+\textbf{Transition:} ``Today we formalize the concept of \emph{rate of change of $r$}
+and learn a four-case classification system that captures the full range of possible
+curve behavior as $\theta$ increases.''
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Average Rate of Change of $r$} (12 min)
+
+Formalize EK 3.15.A.1. Write the formula:
+$$\text{ARC} = \frac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$$
+Interpret: for every additional radian that $\theta$ increases, $r$ changes by
+approximately this amount. Work through $r = 2\sin\theta$:
+\begin{itemize}[leftmargin=1.3em, itemsep=2pt]
+  \item ARC on $[0, \pi/2]$: $\frac{2\sin(\pi/2) - 2\sin 0}{\pi/2 - 0} = \frac{2}{\pi/2} = \frac{4}{\pi} \approx 1.27$
+  \item ARC on $[\pi/2, \pi]$: $\frac{0 - 2}{\pi/2} = -\frac{4}{\pi} \approx -1.27$
+\end{itemize}
+Discuss sign: positive ARC means $r$ is increasing; negative ARC means $r$ is decreasing.
+
+\columnbreak
+
+\textbf{Step 2 --- The Four Cases} (12 min)
+
+Introduce EKs 3.15.A.2--3.15.A.3. Build the four-case table:
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Situation} & \textbf{Curve behavior} \\
+\hline
+$r > 0$, increasing & away from origin \\
+$r > 0$, decreasing & toward origin \\
+$r < 0$, increasing & toward origin (opposite ray) \\
+$r < 0$, decreasing & away from origin (opposite ray) \\
+\hline
+\end{tabular}
+
+\vspace{4pt}
+Emphasize: when $r < 0$ the point is plotted on the \emph{opposite} terminal ray.
+A ``less negative'' $r$ (increasing) means the point is actually getting closer to
+the origin on that opposite ray.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Reading Intervals from a Table} (10 min)
+
+Use the hook table for $r = 1 + \cos\theta$ at eight key angles. Students
+identify by reading the table (no graphing) all intervals where $r$ is
+positive and increasing, positive and decreasing, zero, or negative (the
+cardioid $r = 1 + \cos\theta$ has $r \geq 0$ for all $\theta$, so focus
+on increasing/decreasing and the zero at $\theta = \pi$).
+
+Guided question: \textit{``How can you confirm that $r$ is increasing on $[0, \pi/2]$
+without sketching the graph?''} (Compare successive table values.)
+
+\columnbreak
+
+\textbf{Step 4 --- Connecting to Curve Shape} (8 min)
+
+Explain informally how the four-case classification connects to familiar polar
+curve shapes. For a cardioid ($r = 1 + \cos\theta$): on $[0, \pi]$ the curve
+traces from the rightmost point $(2, 0)$ toward the origin (pole) as $r$ shrinks
+from 2 to 0. On $[\pi, 2\pi]$ it traces back outward. For a limaçon with inner
+loop ($r = 1 - 2\sin\theta$), $r$ goes negative, tracing the inner loop on the
+opposite ray.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 in Period 1; Steps 3--4 and group
+activity in Period 2; review and exit ticket in Period 3 if needed.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Confusing ARC sign with curve direction (most common)}: Students
+    sometimes flip the meaning. Prompt: \textit{``If ARC $> 0$, is $r$ growing or
+    shrinking? What does that mean about the distance from the origin?''}
+  \item \textbf{Negative $r$ interpretation}: Students may not believe a point can be
+    plotted ``backwards.'' Demonstrate with $r = -1$ at $\theta = 0$: plotted at angle
+    $\theta + \pi = \pi$, distance 1. The opposite-ray rule is key.
+  \item \textbf{ARC units}: Students may omit units or forget the denominator is a
+    change in angle (radians). Reinforce: ARC has units of
+    \textit{(units of $r$) per radian}.
+  \item \textbf{Increasing vs.\ positive}: Students confuse ``$r$ is positive'' with
+    ``$r$ is increasing.'' Prompt: \textit{``$r = 0.5$ to $r = 0.2$ is positive but
+    \emph{decreasing}. What does that tell you about the curve?''}
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the tiered activity (teacher-assigned
+or student self-selected with guidance). All tiers use provided tables ---
+no graphing required.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Reinforce)}: Given a complete table for $r = 2\cos\theta$
+    at nine angles, students classify each adjacent interval as one of the four
+    cases, then compute the average rate of change over $[0, \pi/2]$ and
+    $[\pi/2, \pi]$.
+  \item \textbf{Tier A (Apply)}: Given tables for both $r = 2\cos\theta$ and
+    $r = 1 - 2\sin\theta$, students identify all intervals where $r < 0$, compute
+    average rates of change over two specified intervals for each function, and
+    interpret one rate of change in the radar context.
+  \item \textbf{Tier E (Extend)}: Given $r = \sin(2\theta)$ (the four-petal rose),
+    students use a provided table to classify all intervals in $[0, 2\pi]$ by sign
+    and direction, determine which intervals produce each petal, and write an
+    explanation of how the sign of $r$ determines which direction each petal is traced.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 5--7 minutes of Period 2 or 3).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Given a partial table for $r = 1 + \sin\theta$, students classify two
+    intervals as positive-increasing or positive-decreasing.
+  \item Students compute the average rate of change of $r$ from $\theta = \pi/2$
+    to $\theta = \pi$.
+  \item Students write one sentence explaining what a negative rate of change of
+    $r$ means for a polar function.
+\end{enumerate}
+
+\textbf{Data use:} Sort exit tickets by error type --- ARC sign confusion,
+negative-$r$ interpretation errors. Use results to determine whether a
+brief re-teach opener is needed at the start of Unit 4.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 3.15):} 5--6 problems covering: reading a provided table
+for $r = 3\sin\theta$ to classify intervals; computing 2--3 average rates of change;
+interpreting a rate of change in context; connecting positive/negative $r$ to curve
+direction; 2 AP-style MC items.
+
+\textbf{Preview of Unit 4:} This is the final lesson of Unit 3.
+Ask students: \textit{``Rates of change appeared here with polar functions; in
+Unit 4 (Functions Involving Parameters, Vectors, and Matrices) we will encounter
+parametric functions where both $x$ and $y$ change with a parameter $t$. How might
+rates of change apply there?''} Preview the idea that average rate of change of
+$x$ or $y$ with respect to $t$ will give direction and speed information for a
+parametric curve --- a natural continuation of today's ideas.
 \end{skillbox}
+
 \end{document}

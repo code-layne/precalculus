@@ -1,4 +1,4 @@
-%! Trigonometric Equations and Inequalities — Unit 3, Lesson 3.11 — Homework (Answer Key)
+%! The Secant, Cosecant, and Cotangent Functions — Unit 3, Lesson 3.11 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,104 @@
 \pageheader{Unit 3, Lesson 3.11}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Problems 1--5}
+
+\textbf{1.}\quad Evaluate each reciprocal trigonometric function using unit-circle values.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Expression} & \textbf{Value} \\
+\hline
+$\sec\!\left(\dfrac{\pi}{6}\right)$ & \ans{$\dfrac{2\sqrt{3}}{3}$} \\
+\hline
+$\csc\!\left(\dfrac{\pi}{4}\right)$ & \ans{$\sqrt{2}$} \\
+\hline
+$\cot\!\left(\dfrac{\pi}{3}\right)$ & \ans{$\dfrac{\sqrt{3}}{3}$} \\
+\hline
+$\sec(\pi)$ & \ans{$-1$} \\
+\hline
+$\csc\!\left(\dfrac{3\pi}{2}\right)$ & \ans{$-1$} \\
+\hline
+\end{tabular}
+
+\vspace{0.12in}
+\textbf{2.}\quad For each function, give the general formula for the vertical asymptotes and the range.
+
+\vspace{4pt}
+(a)\quad $\sec\theta$: Asymptotes: $\theta = $ \ans{$\pi/2 + n\pi$}
+\quad Range: \ans{$(-\infty,-1]\cup[1,\infty)$}
+
+\vspace{6pt}
+(b)\quad $\csc\theta$: Asymptotes: $\theta = $ \ans{$n\pi$}
+\quad Range: \ans{$(-\infty,-1]\cup[1,\infty)$}
+
+\vspace{6pt}
+(c)\quad $\cot\theta$: Asymptotes: $\theta = $ \ans{$n\pi$}
+\quad Range: \ans{$(-\infty,\infty)$}
+
+\vspace{0.12in}
+\textbf{3.}\quad Decide whether each value is in the domain.
+
+\vspace{4pt}
+(a)\quad $\theta = \pi/2$ for $\sec\theta$: \ans{No}
+\ans{$\cos(\pi/2) = 0$, so $\sec(\pi/2)$ is undefined.}
+
+\vspace{4pt}
+(b)\quad $\theta = 2\pi/3$ for $\csc\theta$: \ans{Yes}
+\ans{$\sin(2\pi/3) = \sqrt{3}/2 \neq 0$, so $\csc(2\pi/3)$ is defined.}
+
+\vspace{4pt}
+(c)\quad $\theta = \pi$ for $\cot\theta$: \ans{No}
+\ans{$\sin(\pi) = 0$, so $\cot(\pi)$ is undefined.}
+
+\vspace{0.12in}
+\textbf{4.}\quad
+
+\vspace{4pt}
+(a)\quad \ans{As $\theta \to \pi/2$, $\cos\theta \to 0$, so $\sec\theta = 1/\cos\theta$ grows without bound (approaches $+\infty$ from the left, $-\infty$ from the right depending on the side).}
+
+\vspace{4pt}
+(b)\quad \ans{$\sec\theta$ increases (since $\cos\theta$ is decreasing from 1 toward 0, its reciprocal is increasing from 1 toward $+\infty$).}
+
+\vspace{4pt}
+(c)\quad At $\theta = 0$: $\sec\theta = $ \ans{1}. At $\theta = \pi/3$: $\sec\theta = $ \ans{2}.
+As cosine decreases toward 0, secant \ans{increases without bound}.
+
+\vspace{0.12in}
+\textbf{5.}\quad Answer: \ans{(C) 0}
+
+\begin{teachernote}
+The value 0 is not in the range because $|\sec\theta| \geq 1$ always. The value $-3$ is in the range ($\cos\theta = -1/3$), $-1$ and $1$ are achieved at $\theta = \pi$ and $0$ respectively, and 5 is achieved at $\cos\theta = 1/5$.
+\end{teachernote}
+
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Problem 6}
+
+\textbf{6.}\quad Answer: \ans{(B) $\theta \neq n\pi$ for any integer $n$}
+
+\begin{teachernote}
+$\csc\theta = 1/\sin\theta$ is undefined when $\sin\theta = 0$, which occurs at $\theta = n\pi$. Option (A) describes the domain restriction for secant.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=navylight, colframe=navy, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small\textbf{Preview --- Lesson 3.12: Sinusoidal Function Contexts}\\
+We now know all six trigonometric functions. In Lesson 3.12 we'll apply
+sinusoidal models to real-world contexts: tides, seasonal temperature variation,
+and periodic motion. Your fluency with the six functions --- including their
+domains and ranges --- will be essential for interpreting and creating
+these models.
+\end{tcolorbox}
 
 \end{document}

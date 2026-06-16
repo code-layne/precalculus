@@ -1,26 +1,132 @@
-%! Trigonometry and Polar Coordinates — Unit 3, Lesson 3.14 — Slides (Beamer)
+%! Polar Function Graphs — Unit 3, Lesson 3.14 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 3.14}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Trigonometry and Polar Coordinates}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 3}
+    {\color{white}\bfseries\LARGE Polar Function Graphs}\\[1.2cm]
+    {\color{skymid}\small AP Precalculus~$\cdot$~Unit 3: Trigonometric and Polar Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% FRAME 1 — What is a polar function?
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \navyheader{What Is a Polar Function?}
+
+  \begin{block}{Definition}
+    A \textbf{polar function} is $r = f(\theta)$ where:
+    \begin{itemize}
+      \item $\theta$ is the \textbf{input} --- the angle measure from the positive $x$-axis
+      \item $r$ is the \textbf{output} --- the radius (distance from the origin)
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.4cm}
+  \textbf{Each $(\theta, r)$ pair locates a point:}
+  \begin{itemize}
+    \item Start at the origin, face the direction $\theta$ from the positive $x$-axis
+    \item Move $r$ units in that direction (or $|r|$ units in the opposite direction if $r < 0$)
+  \end{itemize}
+
+  \vspace{0.4cm}
+  \begin{block}{Example}
+    For $r = 2\sin\theta$ at $\theta = \pi/2$: \quad $r = 2\sin(\pi/2) = 2(1) = 2$\\
+    The point is 2 units from the origin along the ray at $\theta = \pi/2$ (straight up).
+  \end{block}
+\end{frame}
+
+% FRAME 2 — Reading from a table
+\begin{frame}[t, plain]
+  \navyheader{Reading a Polar Function from a Table}
+
+  \textbf{Table of values for $r = 2\sin\theta$:}
+
+  \vspace{0.3cm}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|}
+  \hline
+  $\theta$ & $0$ & $\pi/6$ & $\pi/3$ & $\pi/2$ & $2\pi/3$ & $5\pi/6$ & $\pi$ \\
+  \hline
+  $r$ & $0$ & $1$ & $1.73$ & $2$ & $1.73$ & $1$ & $0$ \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.4cm}
+  \begin{itemize}
+    \item As $\theta$ goes $0 \to \pi/2$: $r$ \textbf{increases} from 0 to 2
+    \item As $\theta$ goes $\pi/2 \to \pi$: $r$ \textbf{decreases} from 2 to 0
+    \item At $\theta = 0$ and $\theta = \pi$: $r = 0$ --- the curve \textbf{passes through the pole}
+    \item Maximum radius: $r = 2$ at $\theta = \pi/2$
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \begin{block}{The result}
+    These input-output pairs trace a \textbf{circle} of radius 1 centered at $(0, 1)$ in
+    the polar plane!
+  \end{block}
+\end{frame}
+
+% FRAME 3 — Connecting rectangular and polar representations
+\begin{frame}[t, plain]
+  \navyheader{Connecting Rectangular and Polar Graphs}
+
+  \textbf{The rectangular graph of $r = f(\theta)$ is a road map for the polar curve:}
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item \textbf{Zeros} on the rectangular graph ($r = 0$) $\Rightarrow$ the polar curve
+      \textbf{passes through the pole}
+    \item \textbf{Maxima} ($r$ at its largest positive value) $\Rightarrow$
+      the \textbf{tip of a petal} (farthest from origin)
+    \item \textbf{Negative} $r$ $\Rightarrow$ the point plots in the
+      \textbf{opposite direction} from $\theta$
+  \end{itemize}
+
+  \vspace{0.4cm}
+  \begin{block}{Rose curve: $r = \sin(2\theta)$}
+    The rectangular graph completes \textbf{4 zero-to-max-to-zero arcs} in $[0, 2\pi]$
+    (2 positive, 2 negative). Since $n = 2$ is even, the polar curve has $2n = 4$ petals.
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{General rule:} $r = \sin(n\theta)$ has $n$ petals (odd $n$) or $2n$ petals (even $n$).
+\end{frame}
+
+% FRAME 4 — Domain restriction
+\begin{frame}[t, plain]
+  \navyheader{Domain Restriction}
+
+  \begin{block}{Key Idea (EK 3.14.A.2)}
+    The domain of $\theta$ can be restricted to trace only a \textbf{portion} of
+    the polar curve. Smaller interval $=$ fewer petals (or part of a curve).
+  \end{block}
+
+  \vspace{0.4cm}
+  \textbf{Example with $r = \sin(2\theta)$:}
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item $\theta \in \left[0,\, \dfrac{\pi}{2}\right]$:
+      one petal traced (in the first quadrant)
+    \item $\theta \in [0,\, \pi]$:
+      two petals traced
+    \item $\theta \in [0,\, 2\pi]$:
+      all four petals traced
+  \end{itemize}
+
+  \vspace{0.4cm}
+  \begin{block}{How to read domain restriction}
+    Find the sub-interval on the rectangular graph. Count how many complete
+    zero-to-max/min-to-zero arcs fit. Each arc $=$ one petal.
+  \end{block}
 \end{frame}
 
 \end{document}
