@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.4 — Homework (Answer Key)
+%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,93 @@
 \pageheader{Unit 3, Lesson 3.4}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
+
+  \item The function $f(\theta) = \sin\theta$ completes one full cycle on $[0, 2\pi]$.
+
+        \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+            \item How many complete cycles does $f(\theta) = \sin\theta$ complete on
+                  $[0, 6\pi]$? \ans{3 complete cycles}
+
+            \item How many zeros does $f(\theta) = \sin\theta$ have on $[0, 4\pi]$?
+                  (Count $\theta=0$ and $\theta=4\pi$.) \ans{5 zeros ($0, \pi, 2\pi, 3\pi, 4\pi$)}
+
+            \item On which interval(s) within $[0, 2\pi]$ is $\sin\theta > 0$?
+
+                  \ans{$(0,\,\pi)$}
+        \end{enumerate}
+
+  \item \textbf{True or False?} The range of $f(\theta) = \cos\theta$ is $[0, 1]$.
+        Circle your answer, then explain.
+
+        \vspace{4pt}
+        \textbf{TRUE} \quad / \quad \textbf{\textcolor{keyred}{FALSE}}
+
+        \vspace{6pt}
+        \ansline{False. The range is $[-1,\,1]$. The cosine function takes negative values,}
+        \ansline{for example $\cos\pi = -1$, which is not in $[0,1]$.}
+
+  \item Without computing, explain why $\sin(\theta + 2\pi) = \sin\theta$ for any angle
+        $\theta$. Your explanation should reference the unit circle.
+
+        \vspace{4pt}
+        \ansline{Adding $2\pi$ to an angle completes one full revolution on the unit circle,}
+        \ansline{returning the terminal ray to the same position. The $y$-coordinate of the}
+        \ansline{unit-circle point is therefore the same, so $\sin(\theta+2\pi)=\sin\theta$.}
+
+  \item \textbf{AP-Style Multiple Choice.} Which of the following intervals contains a
+        zero of $f(\theta) = \cos\theta$?
+
+        \vspace{4pt}
+        \begin{enumerate}[label=(\Alph*), leftmargin=1.5em, itemsep=4pt]
+            \item $\left(0,\;\dfrac{\pi}{4}\right)$
+            \item $\left(\dfrac{\pi}{4},\;\dfrac{\pi}{2}\right)$
+            \item $\left(\dfrac{\pi}{2},\;\pi\right)$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+            \item $\left(\pi,\;\dfrac{3\pi}{2}\right)$
+        \end{enumerate}
+
+        \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+            \item $\cos\dfrac{\pi}{2} = 0$, which lies in interval (C) since
+                  $\dfrac{\pi}{4} < \dfrac{\pi}{2} < \pi$. \quad
+                  (The zero at $\dfrac{\pi}{2}$ is the left endpoint of (C) and strictly
+                   inside the open interval.)
+        \end{itemize}
+
+  \item The maximum value of $f(\theta) = \sin\theta$ is \ans{$1$} and it first occurs
+        at $\theta = $ \ans{$\dfrac{\pi}{2}$}. The next time the function reaches that same
+        maximum is at $\theta = $ \ans{$\dfrac{5\pi}{2}$}.
+
+  \item On the interval $[0, 2\pi]$, the function $f(\theta) = \cos\theta$ is
+        \textbf{decreasing} on the interval \ans{$[0,\,\pi]$} and \textbf{increasing} on
+        the interval \ans{$[\pi,\,2\pi]$}.
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\textbf{Optional Extension:} On what interval(s) in $[0, 2\pi]$ is $f(\theta) = \cos\theta$
+concave down (bending downward)? Relate your answer to the arc of the unit circle: where is
+the unit-circle point moving in a way that causes the $x$-coordinate to decrease at an
+increasing rate?
+
+\vspace{6pt}
+\ansline{$\cos\theta$ is concave down on $(0,\,\pi)$.}
+\ansline{On this interval the unit-circle point moves from $(1,0)$ counterclockwise to $(-1,0)$.}
+\ansline{The $x$-coordinate decreases, and the rate of decrease speeds up near $\theta=\pi/2$}
+\ansline{(where the point moves most steeply leftward), so the curve bends downward.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{blurbbox}[Preview: Lesson 3.5]{sky}
+In Lesson 3.5 we will transform the basic graphs of $\sin\theta$ and $\cos\theta$ by
+changing three parameters: \textbf{amplitude} (how tall the wave is), \textbf{period}
+(how wide one cycle is), and \textbf{midline} (where the wave is centered vertically).
+These transformations let us model real-world phenomena such as tides, temperature cycles,
+and sound waves.
+\end{blurbbox}
 
 \end{document}

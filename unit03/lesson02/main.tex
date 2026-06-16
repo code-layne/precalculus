@@ -2,72 +2,290 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
 \newcommand{\LessonNumberName}{Lesson 3.2: Sine, Cosine, and Tangent}
 
 \begin{document}
-\begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
-\end{center}
 
+%---------------------------------------------------------------------
+% 1. TITLE BLOCK
+%---------------------------------------------------------------------
+\begin{center}
+  {\LARGE\bfseries\color{navy} Lesson 3.2: Sine, Cosine, and Tangent}\\[4pt]
+  {\large \CourseName{} \textbullet{} \SchoolYear{} \textbullet{} \MeetingLength}\\[2pt]
+  {\large \UnitNumberName}
+\end{center}
+\vspace{4pt}
+\hrule height 1.5pt
+\vspace{8pt}
+
+%---------------------------------------------------------------------
+% 2. PRIMARY OBJECTIVE
+%---------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will define the \textbf{sine}, \textbf{cosine}, and
+  \textbf{tangent} of an angle using the unit circle, connect radian measure to arc length,
+  and evaluate these functions at key angles by reading coordinates on the unit circle.
+  \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 3. PRIORITY IDEAS & SKILLS
+%---------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+  \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}
+    \textbf{AP Skills}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+      \item \textbf{2.A} --- Identify mathematical information from graphical, numerical,
+            analytical, and verbal representations (reading the unit circle to extract
+            trig values).
+      \item \textbf{3.A} --- Describe characteristics of a function using appropriate
+            representations (interpreting sine, cosine, tangent from a point on a circle).
+    \end{itemize}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}
+    \textbf{Essential Knowledge}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+      \item \textbf{3.2.A.1} An angle in \textit{standard position} has vertex at the origin and
+            initial ray on the positive $x$-axis; positive angles rotate counterclockwise.
+      \item \textbf{3.2.A.2} Radian measure equals arc length subtended on a unit circle;
+            one full revolution $= 2\pi$ radians.
+      \item \textbf{3.2.A.3} $\sin\theta =$ vertical displacement of $P$ divided by radius;
+            equals the $y$-coordinate of $P$ on the unit circle.
+      \item \textbf{3.2.A.4} $\cos\theta =$ horizontal displacement of $P$ divided by radius;
+            equals the $x$-coordinate of $P$ on the unit circle.
+      \item \textbf{3.2.A.5} $\tan\theta =$ slope of the terminal ray $= \sin\theta/\cos\theta
+            = y/x$ for $P$ on the unit circle.
+    \end{itemize}
+  \end{minipage}
 \end{skillbox}
 
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 4. VOCABULARY, CONCEPTS & THEOREMS
+%---------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+  \begin{multicols}{2}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+      \item \textbf{Standard position} --- angle with vertex at origin, initial ray on positive $x$-axis
+      \item \textbf{Terminal ray} --- the second ray defining the angle
+      \item \textbf{Coterminal angles} --- angles sharing a terminal ray (differ by $2\pi k$)
+      \item \textbf{Radian measure} --- arc length subtended on a unit circle by the angle
+      \item \textbf{Unit circle} --- circle of radius 1 centered at the origin
+      \item \textbf{Sine ($\sin\theta$)} --- $y$-coordinate of $P$ on the unit circle
+      \item \textbf{Cosine ($\cos\theta$)} --- $x$-coordinate of $P$ on the unit circle
+      \item \textbf{Tangent ($\tan\theta$)} --- $\sin\theta / \cos\theta$; slope of terminal ray
+    \end{itemize}
+  \end{multicols}
 \end{skillbox}
 
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 5. ACTIVATE PRIOR KNOWLEDGE
+%---------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+  \begin{tabularx}{\linewidth}{@{}X c@{}}
+    \begin{minipage}[t]{0.90\linewidth}\vspace{0pt}
+      Spiral review covers:
+      \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+        \item \textbf{Coordinate geometry:} Distance from the origin via the Pythagorean theorem;
+              a point $(x,y)$ lies at distance $r = \sqrt{x^2+y^2}$ from the origin.
+        \item \textbf{Degree angle measure:} Right angle $= 90°$; straight angle $= 180°$; full
+              revolution $= 360°$ (from prior geometry).
+        \item \textbf{Periodic phenomena (Lesson 3.1):} Quantities that repeat on a fixed interval;
+              the height of a point on a spinning wheel is periodic --- today we name the functions
+              that model it.
+      \end{itemize}
+      \textit{Warm-up revisits coordinate distance and angle rotation to activate these prerequisites.}
+    \end{minipage}
+    &
+    \begin{minipage}[t]{0.05\linewidth}\vspace{0pt}
+    \end{minipage}
+  \end{tabularx}
 \end{skillbox}
 
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 6. HOOK
+%---------------------------------------------------------------------
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+  \textbf{Scenario:} A point $P$ sits on the rim of a wheel of radius 1 meter, starting at the
+  rightmost position $(1, 0)$. The wheel spins counterclockwise. After rotating by angle $\theta$:
+  \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+    \item How far \textbf{right or left} of center is the point?
+    \item How far \textbf{up or down} from center is the point?
+    \item What is the \textbf{slope} of the line from the center to $P$?
+  \end{itemize}
+  Pose these questions verbally. Students describe answers as coordinates but won't yet have names
+  for the functions. \textit{Reveal: those three quantities are exactly cosine, sine, and tangent of $\theta$.}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 7. LESSON
+%---------------------------------------------------------------------
+\begin{skillbox}[Lesson --- The Unit Circle Definitions (15 min)]{sky}
+  \begin{multicols}{2}
+    \textbf{Standard Position \& Coterminal Angles}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+      \item Vertex at origin; initial ray along positive $x$-axis.
+      \item Positive $\theta \Rightarrow$ counterclockwise rotation.
+      \item Negative $\theta \Rightarrow$ clockwise rotation.
+      \item \textbf{Coterminal:} $\theta$ and $\theta + 2\pi k$ ($k\in\mathbb{Z}$) share a terminal ray.
+    \end{itemize}
+
+    \medskip
+    \textbf{Radian Measure}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+      \item Radian measure $= \dfrac{\text{arc length}}{\text{radius}}$.
+      \item On a unit circle ($r=1$), radian measure equals arc length.
+      \item Full revolution: $2\pi$ radians $= 360°$.
+      \item Key conversion: $\pi$ radians $= 180°$.
+    \end{itemize}
+
+    \columnbreak
+
+    \textbf{Unit Circle Definitions}
+
+    Let $\theta$ be in standard position and let $P = (x,y)$ be where the terminal ray meets the
+    unit circle. Then:
+    \[
+      \sin\theta = y, \quad \cos\theta = x, \quad \tan\theta = \frac{y}{x} \; (x\ne 0)
+    \]
+
+    For a circle of any radius $r$:
+    \[
+      \sin\theta = \frac{y}{r}, \quad \cos\theta = \frac{x}{r}, \quad \tan\theta = \frac{y}{x}
+    \]
+
+    \medskip
+    \textbf{Pythagorean Identity:} Since $x^2+y^2=1$ on the unit circle:
+    \[
+      \sin^2\theta + \cos^2\theta = 1
+    \]
+  \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 8. EXPLICIT INSTRUCTION: EVALUATING SIN/COS/TAN
+%---------------------------------------------------------------------
+\begin{skillbox}[Explicit Instruction: Evaluating sin/cos/tan (10 min)]{sky}
+  \textbf{Steps to evaluate $\sin\theta$, $\cos\theta$, $\tan\theta$:}
+  \begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+    \item Draw or visualize angle $\theta$ in standard position on the unit circle.
+    \item Identify the point $P = (x, y)$ where the terminal ray meets the unit circle.
+    \item Read off: $\cos\theta = x$, \quad $\sin\theta = y$, \quad $\tan\theta = y/x$.
+  \end{enumerate}
+
+  \medskip
+  \textbf{Worked Examples:}
+  \begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+    \item $\theta = 0$: $P = (1, 0)$ $\Rightarrow$ $\cos 0 = 1$, $\sin 0 = 0$, $\tan 0 = 0$.
+    \item $\theta = \pi/2$: $P = (0, 1)$ $\Rightarrow$ $\cos(\pi/2) = 0$, $\sin(\pi/2) = 1$,
+          $\tan(\pi/2)$ undefined.
+    \item $\theta = \pi$: $P = (-1, 0)$ $\Rightarrow$ $\cos\pi = -1$, $\sin\pi = 0$, $\tan\pi = 0$.
+    \item $\theta = 3\pi/2$: $P = (0, -1)$ $\Rightarrow$ $\cos(3\pi/2) = 0$,
+          $\sin(3\pi/2) = -1$, $\tan(3\pi/2)$ undefined.
+  \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 9. ACTIVE MONITORING
+%---------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring (5 min)]{redbox}
+  \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+    \item Cold-call: ``If $P = (-1,0)$, what are $\sin\theta$, $\cos\theta$, $\tan\theta$?''
+    \item Whiteboard check: students hold up $x$- and $y$-coordinates for $\theta = 3\pi/2$.
+    \item \textbf{Common misconception:} Students often swap sine and cosine. Reinforce:
+          \textit{sine = vertical = $y$; cosine = horizontal = $x$.}
+    \item Watch for confusion about when $\tan\theta$ is undefined (whenever $\cos\theta = x = 0$).
+  \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 10. GROUP WORK & DIFFERENTIATION
+%---------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation (12 min)]{redbox}
+  Students work on the tiered group activity (see \texttt{activity/main.tex}).
+
+  \begin{tcolorbox}[colback=white, colframe=black!40,
+      title=\textbf{Tier R --- Remediate},
+      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+    Table completion: fill in $(x,y)$ and $\tan\theta$ for $\theta = 0,\, \pi/6,\, \pi/4,\,
+    \pi/2,\, \pi,\, 3\pi/2$. Coordinates partially provided.
+  \end{tcolorbox}
+
+  \vspace{4pt}
+
+  \begin{tcolorbox}[colback=white, colframe=black!40,
+      title=\textbf{Tier A --- On Level},
+      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+    Given a specific point on the unit circle, compute all three trig values and identify the
+    quadrant. Then extend to a point on a circle of radius 2.
+  \end{tcolorbox}
+
+  \vspace{4pt}
+
+  \begin{tcolorbox}[colback=white, colframe=black!40,
+      title=\textbf{Tier E --- Extend},
+      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+    Given $\sin\theta = 3/5$ in Quadrant II, use $\sin^2\theta + \cos^2\theta = 1$ to find
+    $\cos\theta$ and $\tan\theta$. Explore symmetry with $\sin(-\theta)$ and $\cos(-\theta)$.
+  \end{tcolorbox}
 \end{skillbox}
 
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 11. INDIVIDUAL WORK & ASSESSMENT
+%---------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment (5 min)]{redbox}
+  \textbf{Exit Ticket} (last 5 minutes, see \texttt{exit\_ticket/main.tex}):
+  \begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
+    \item Given $P = \bigl(-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2}\bigr)$ on the unit circle,
+          state $\sin\theta$, $\cos\theta$, and $\tan\theta$.
+    \item Explain why $\sin(5\pi/2) = \sin(\pi/2)$ using coterminal angles.
+  \end{enumerate}
+  \textbf{Homework:} Assign \texttt{homework/main.tex} --- exact-value table, AP-style MC, and
+  Pythagorean identity derivation.
+\end{skillbox}
+
+\vspace{6pt}
+
+%---------------------------------------------------------------------
+% 12. REINFORCEMENT & EXTENSION
+%---------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+  \textbf{Preview --- Lesson 3.3: Exact Values of Sine and Cosine}
+
+  In Lesson 3.3, students will derive exact values of $\sin\theta$ and $\cos\theta$ for
+  $\theta = \pi/6,\, \pi/4,\, \pi/3$ using 45-45-90 and 30-60-90 triangle relationships.
+  Today's exit ticket at $\theta = 2\pi/3$ (where $P = (-1/2,\,\sqrt{3}/2)$) foreshadows
+  those values.
+
+  \medskip
+  \textbf{Extension prompt:} ``We know $\sin^2\theta + \cos^2\theta = 1$. What happens if you
+  divide both sides by $\cos^2\theta$?'' (Leads to $\tan^2\theta + 1 = \sec^2\theta$.)
 \end{skillbox}
+
 \end{document}

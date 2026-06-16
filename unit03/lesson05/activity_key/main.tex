@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.5 — Group Activity (Answer Key)
+%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,163 @@
 \pageheader{Unit 3, Lesson 3.5}{Group Activity --- Answer Key}
 \namepartnerperiod
 
+\vspace{0.1in}
+
+\begin{scenariobox}[Sinusoidal Functions in the Real World]{sky}
+Sinusoidal functions appear everywhere in nature and technology: sound waves,
+tides, seasonal temperature patterns, alternating electric current, and
+the motion of a pendulum.  In each case, the key characteristics ---
+amplitude, midline, period, and frequency --- tell us something meaningful
+about the phenomenon.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%=======================================================================
+% TIER R
+%=======================================================================
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use the formulas:
+\[
+  \text{Amplitude} = \frac{\text{max} - \text{min}}{2}
+  \qquad
+  \text{Midline: } y = \frac{\text{max} + \text{min}}{2}
+  \qquad
+  \text{Frequency} = \frac{1}{\text{period}}
+\]
+
+\textbf{Function 1.} Max $= 4$, min $= -4$, one cycle from $0$ to $2\pi$.
+
+\medskip
+\begin{tabular}{@{}llll@{}}
+  Amplitude $=$ \ans{4} &
+  Midline $=$ \ans{$y = 0$} &
+  Period $=$ \ans{$2\pi$} &
+  Frequency $=$ \ans{$1/(2\pi)$}
+\end{tabular}
+
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textbf{Function 2.} Max $= 3$, min $= -1$.
+
+\medskip
+\begin{tabular}{@{}ll@{}}
+  Amplitude $= \ans{2}$ &
+  Midline $= \ans{$y = 1$}$
+\end{tabular}
+
+\vspace{0.1in}
+
+Is the midline $y = 0$ here?  Why or why not?
+
+\medskip
+\ans{No. The midline is $y = 1$ because the average of $3$ and $-1$ is $1$, not
+$0$. The midline is only $y = 0$ when the max and min are opposite in sign and
+equal in magnitude.}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%=======================================================================
+% TIER A
+%=======================================================================
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- At Level --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Function P:}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/2$ & $\pi$ & $3\pi/2$ & $2\pi$ & $5\pi/2$ & $3\pi$ \\
+\hline
+$P(\theta)$ & $3$ & $5$ & $3$ & $1$ & $3$ & $5$ & $3$ \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Function Q:}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ \\
+\hline
+$Q(\theta)$ & $0$ & $2$ & $0$ & $-2$ & $0$ & $2$ & $0$ \\
+\hline
+\end{tabular}
+
+\medskip
+\begin{tabular}{@{}lllll@{}}
+  & \textbf{Amplitude} & \textbf{Midline} & \textbf{Period} & \textbf{Frequency} \\[4pt]
+  Function $P$: & \ans{2} & \ans{$y=3$} & \ans{$2\pi$} & \ans{$1/(2\pi)$} \\[8pt]
+  Function $Q$: & \ans{2} & \ans{$y=0$} & \ans{$\pi$}  & \ans{$1/\pi$}
+\end{tabular}
+
+\vspace{0.12in}
+
+Function $P$ is \ans{neither} because:
+
+\ans{For $P$ to be even we would need $P(-\theta) = P(\theta)$, and for odd
+$P(-\theta) = -P(\theta)$.  Checking $\theta = \pi/2$: $P(\pi/2) = 5$ but
+$P(-\pi/2)$ is not listed in the table; however, $P$ has midline $y = 3 \ne 0$,
+so it cannot be odd.  And the values are not symmetric about the $y$-axis in the
+standard sense because the function is shifted vertically.}
+
+Function $Q$ is \ans{odd} because:
+
+\ans{$Q(-\theta) = -Q(\theta)$.  For example, $Q(\pi/4)=2$ and $Q(-\pi/4)=-2$.
+The midline is $y=0$ and the values are negated when $\theta$ is negated, which
+matches the definition of an odd function.}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%=======================================================================
+% TIER E
+%=======================================================================
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part 1.} Amplitude $= 2$, midline $y = 1$, period $= \pi$.
+
+(a) Maximum and minimum values:
+
+\medskip
+\ans{max $= $ midline $+$ amplitude $= 1 + 2 = 3$}
+
+\ans{min $= $ midline $-$ amplitude $= 1 - 2 = -1$}
+
+\medskip
+(b) Frequency:
+
+\medskip
+\ans{Frequency $= \dfrac{1}{\pi}$}
+
+\vspace{0.1in}
+
+\textbf{Part 2.}
+
+\ans{On the unit circle, a point at angle $\theta$ has coordinates
+$(\cos\theta,\, \sin\theta)$.  The point at angle $\pi - \theta$ is the
+reflection of the point at $\theta$ across the $y$-axis.  Reflecting across the
+$y$-axis changes the sign of the $x$-coordinate but leaves the $y$-coordinate
+unchanged.  Therefore the $y$-coordinate at $\pi - \theta$ equals the
+$y$-coordinate at $\theta$, which means $\sin(\pi - \theta) = \sin\theta$.}
+
+\begin{teachernote}
+Full-credit responses should (1) invoke the unit circle interpretation of sine as
+the $y$-coordinate, and (2) explain why the $y$-coordinates of $\theta$ and
+$\pi-\theta$ are equal (reflection over the $y$-axis).  Algebraic approaches
+using the sum formula are acceptable for extra credit discussion.
+\end{teachernote}
+
+\end{tcolorbox}
 
 \end{document}
