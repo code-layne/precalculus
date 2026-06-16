@@ -1,4 +1,4 @@
-%!  — Unit 3, Lesson 3.1 — Guided Notes (Answer Key)
+%! Periodic Phenomena — Unit 3, Lesson 3.1 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,257 @@
 \pageheader{Unit 3, Lesson 3.1}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.1.A} --- Construct a graph of a periodic relationship
+    from a verbal or tabular description. \ans{Construct graph by repeating one cycle.}
+  \item \textbf{LO 3.1.B} --- Describe key characteristics of a periodic
+    function (period, intervals of increase/decrease, concavity) and explain
+    why each characteristic repeats. \ans{All characteristics repeat every period because $f(x+k)=f(x)$.}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{periodic relationship}]
+    A relationship between two quantities in which the output values
+    \ans{repeat}\ over
+    successive \ans{equal-length} input intervals.
+
+  \item[\termblanklong{period}]
+    The \ans{smallest} positive input length $k$ such that
+    $f(x + k) = f(x)$ for all $x$ in the domain. Equals the length of
+    one \ans{cycle}.
+
+  \item[\termblanklong{cycle}]
+    One \ans{complete repetition} of the repeating pattern.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} The table below shows average monthly electricity
+bills (in dollars) for a household over 3 years.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\small
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Month} & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec \\
+\hline
+\textbf{Year 1 (\$)} & 148 & 132 & 110 & 88 & 95 & 135 & 162 & 158 & 120 & 90 & 105 & 140 \\
+\hline
+\textbf{Year 2 (\$)} & 148 & 132 & 110 & 88 & 95 & 135 & 162 & 158 & 120 & 90 & 105 & 140 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+\textbf{Q1.} What pattern do you notice in the output values?
+\ans{The output values repeat the same sequence each year. Every 12 months the bills return to the same amounts in the same order.}
+
+\textbf{Q2.} How is this pattern different from linear or exponential functions?
+\ans{Linear functions change by a constant amount each step; exponential by a constant ratio. Here the values go up, come down, and repeat --- they don't grow or decay without bound. No single rate or multiplier captures the whole pattern.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.1.A
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.1.A --- Identifying and Graphing Periodic Relationships --- Key}
+
+\textbf{Definition:} A \emph{periodic relationship} exists when, as input
+increases, output values demonstrate a repeating pattern over successive
+\ans{equal-length} input intervals.
+
+\vspace{8pt}
+\textbf{Example Table:} Average monthly high temperature (${}^\circ$F) in a
+mid-latitude city.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Month ($x$) & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline
+Temp $f(x)$ & 34 & 38 & 50 & 62 & 72 & 81 & 86 & 84 & 75 & 62 & 48 & 36 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+\textbf{Estimating the Period:}\\
+Find where the output pattern \ans{begins} repeating.
+Look for the same sequence of output values starting again.
+
+\vspace{4pt}
+The pattern appears to restart every \ans{12} months,
+so the estimated period is $k = $ \ans{12}.
+
+\vspace{8pt}
+\textbf{Formal Definition of Period:}\\
+The period is the \ans{smallest} positive value $k$ such that
+$f(x + k) = f(x)$ for all $x$ in the domain.
+
+\vspace{8pt}
+\textbf{Constructing the Graph from One Cycle:}\\
+Plot one cycle (months 1--12) from the table above on the grid below.
+Then extend the graph to show two more complete cycles (months 13--36)
+by \ans{repeating (translating) the same cycle horizontally}.
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}
+  \draw[linegray, step=0.4cm] (0,0) grid (12.0, 4.4);
+  \draw[->] (0,0) -- (12.2,0) node[right]{\small month};
+  \draw[->] (0,0) -- (0,4.6) node[above]{\small temp (${}^\circ$F)};
+  \foreach \j in {1,...,5} {
+    \node[left, font=\tiny] at (0, \j*0.88) {$\pgfmathparse{int(\j*20)}\pgfmathresult$};
+  }
+  % Answer: plot the 12 data points for months 1–12 (scale: x * (12/36)*12 = x/3 * 4)
+  % x axis: 36 months in 12cm => 1 month = 0.333cm
+  % y axis: 0–100 in 4.4cm => 1°F = 0.044cm; values 34–86
+  % Plotting one cycle: months 1–12 repeated 3 times
+  \draw[keyred, thick]
+    (0.333, 1.496) -- (0.666, 1.672) -- (0.999, 2.200) -- (1.332, 2.728)
+    -- (1.665, 3.168) -- (1.998, 3.564) -- (2.331, 3.784) -- (2.664, 3.696)
+    -- (2.997, 3.300) -- (3.330, 2.728) -- (3.663, 2.112) -- (3.996, 1.584);
+  \draw[keyred, thick]
+    (3.996, 1.584) -- (4.329, 1.496) -- (4.662, 1.672) -- (4.995, 2.200)
+    -- (5.328, 2.728) -- (5.661, 3.168) -- (5.994, 3.564) -- (6.327, 3.784)
+    -- (6.660, 3.696) -- (6.993, 3.300) -- (7.326, 2.728) -- (7.659, 2.112)
+    -- (7.992, 1.584);
+  \draw[keyred, thick]
+    (7.992, 1.584) -- (8.325, 1.496) -- (8.658, 1.672) -- (8.991, 2.200)
+    -- (9.324, 2.728) -- (9.657, 3.168) -- (9.990, 3.564) -- (10.323, 3.784)
+    -- (10.656, 3.696) -- (10.989, 3.300) -- (11.322, 2.728) -- (11.655, 2.112)
+    -- (11.988, 1.584);
+  % Month labels every 6
+  \foreach \m in {6,12,18,24,30,36} {
+    \node[below, font=\tiny] at (\m*0.333, 0) {\m};
+  }
+\end{tikzpicture}
+\end{center}
+
+\vspace{4pt}
+\textit{(Answer graph: smooth arc from low Jan to peak Jul, repeated identically
+for months 13--24 and 25--36.)}
+
 \end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.1.B
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.1.B --- Key Characteristics of Periodic Functions --- Key}
+
+\textbf{Period (formal):} The period $k$ is the smallest positive value such
+that $f(x + k) = $ \ans{$f(x)$} for all $x$ in the domain.
+This means the behavior of the function is \ans{completely determined}
+by any one interval of width $k$.
+
+\vspace{8pt}
+\textbf{Why characteristics repeat:} Because $f(x+k)=f(x)$, \emph{every}
+property of the function --- increase/decrease, concavity, rate of change ---
+that occurs somewhere in one period will occur at the
+\ans{corresponding} position in every period.
+
+\vspace{8pt}
+\textbf{Identifying Characteristics from the Graph:}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X @{}}
+\hline
+\textbf{Characteristic} & \textbf{Description (in one period, months 1--12)} \\
+\hline
+Interval of increase & \ans{Months 1--7 (temperature rising Jan--Jul)} \\
+Interval of decrease & \ans{Months 7--12 (temperature falling Jul--Dec)} \\
+Concave up region & \ans{Approximately months 10--12 and 1--4 (near the winter minimum)} \\
+Concave down region & \ans{Approximately months 4--10 (near the summer peak)} \\
+Max value & \ans{$86^\circ$F} at month \ans{7} \\
+Min value & \ans{$34^\circ$F} at month \ans{1} \\
+\hline
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Key Insight:} Every characteristic above will repeat in months 13--24,
+25--36, and every subsequent period because \ans{$f(x+12)=f(x)$ --- the function outputs are identical at corresponding positions in every cycle}.
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Practice Key
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad The table shows the height (in feet) of a
+point on the edge of a spinning water wheel, measured every 2 seconds.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Time $t$ (sec) & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
+\hline
+Height $h(t)$ (ft) & 0 & 6 & 10 & 6 & 0 & $-6$ & $-10$ & $-6$ & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+(a)\quad Is this relationship periodic? Explain how you know.
+\ans{Yes. The outputs repeat the sequence 0, 6, 10, 6, 0, $-$6, $-$10, $-$6, 0 over successive equal-length intervals of 16 seconds.}
+
+(b)\quad Estimate the period of this relationship.
+\ans{$k = 16$ seconds (the pattern restarts at $t = 16$, and 16 is the smallest such positive value).}
+
+(c)\quad On what time interval (within one cycle) is $h$ increasing?
+\ans{$0 \leq t \leq 4$ seconds (height goes from 0 up to 10).}
+
+\vspace{0.10in}
+\textbf{Guided Practice 2.}\quad A table of values for function $p$ is given.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 3 & 6 & 9 & 12 & 15 & 18 \\
+\hline
+$p(x)$ & 4 & 9 & 4 & 9 & 4 & 9 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+(a)\quad Is $p$ periodic? If so, what is the period?
+\ans{Yes. The outputs alternate 4, 9, 4, 9, \ldots{} repeating every 6 units. Period $= 6$.}
+
+(b)\quad Describe the behavior of $p$ in one cycle.
+\ans{Starting at $p = 4$, the function increases to $p = 9$ at $x = 3$, then decreases back to $p = 4$ at $x = 6$. One cycle spans 6 units of input.}
+
+\end{practicebox}
 
 \end{document}

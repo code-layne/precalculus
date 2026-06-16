@@ -1,4 +1,4 @@
-%! Periodic Phenomena — Unit 3, Lesson 3.2 — Homework (Answer Key)
+%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,93 @@
 \pageheader{Unit 3, Lesson 3.2}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Homework: Sine, Cosine, and Tangent --- Key}
+
+\textbf{1.} Exact values table:
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\theta$ & Degrees & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ \\
+\hline
+$0$     & $0°$  & \ans{$0$} & \ans{$1$} & \ans{$0$} \\
+$\pi/6$ & $30°$ & \ans{$\dfrac{1}{2}$} & \ans{$\dfrac{\sqrt{3}}{2}$} & \ans{$\dfrac{\sqrt{3}}{3}$} \\
+$\pi/4$ & $45°$ & \ans{$\dfrac{\sqrt{2}}{2}$} & \ans{$\dfrac{\sqrt{2}}{2}$} & \ans{$1$} \\
+$\pi/3$ & $60°$ & \ans{$\dfrac{\sqrt{3}}{2}$} & \ans{$\dfrac{1}{2}$} & \ans{$\sqrt{3}$} \\
+$\pi/2$ & $90°$ & \ans{$1$} & \ans{$0$} & \ans{undefined} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.14in}
+
+\textbf{2.} $P = (-0.28,\; 0.96)$:
+
+\ans{$\sin\theta = 0.96$, \quad $\cos\theta = -0.28$, \quad
+$\tan\theta = 0.96/(-0.28) \approx -3.43$}
+
+\vspace{0.12in}
+
+\textbf{3.} Why is $\tan(\pi/2)$ undefined?
+
+\ans{At $\theta = \pi/2$, the terminal ray points straight up and $P = (0, 1)$, so $\cos(\pi/2) = 0$.
+Since $\tan\theta = \sin\theta / \cos\theta$, and division by zero is undefined, $\tan(\pi/2)$ is
+undefined.}
+
+\vspace{0.12in}
+
+\textbf{4.} AP-style MC answer: \ans{(B) $-3/5$}
+
+\ans{In Quadrant III, both $x$ and $y$ are negative, so $\cos\theta < 0$.
+Only option (B) is negative and has absolute value less than 1 (required since $|\cos\theta| \le 1$).}
+
+\vspace{0.12in}
+
+\textbf{5.} Given $\cos\theta = -4/5$ and $\sin\theta > 0$, find $\tan\theta$:
+
+\ans{Step 1: Use $\sin^2\theta + \cos^2\theta = 1$.\\[3pt]
+$\sin^2\theta + (-4/5)^2 = 1 \;\Rightarrow\; \sin^2\theta = 1 - 16/25 = 9/25$.\\[3pt]
+Step 2: Since $\sin\theta > 0$, take the positive root: $\sin\theta = 3/5$.\\[3pt]
+Step 3: $\tan\theta = \sin\theta / \cos\theta = (3/5)/(-4/5) = -3/4$.}
+
+\begin{teachernote}
+Problem 5 is a critical skill for AP Precalculus. The key error students make is forgetting to
+use the given sign condition ($\sin\theta > 0$) when taking the square root in Step 2.
+
+After computing $\sin^2\theta = 9/25$, prompt students: ``$\sin\theta = \pm 3/5$ --- which sign?''
+Then direct them to the given condition. This mirrors what students will encounter on AP-style
+free-response items.
+
+Note: $\cos\theta = -4/5$ with $\sin\theta > 0$ places $\theta$ in Quadrant II, where $x < 0$ and
+$y > 0$. You can ask students to confirm this makes sense with $\tan\theta = -3/4 < 0$ (tangent is
+negative in Quadrant II).
+\end{teachernote}
+
+\end{notesbox}
+
+\begin{extensionbox}
+\textbf{Extension: Deriving the Pythagorean Identity for Tangent --- Key}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt]
+  \item Dividing $\sin^2\theta + \cos^2\theta = 1$ by $\cos^2\theta$:
+        \[
+          \frac{\sin^2\theta}{\cos^2\theta} + 1 = \frac{1}{\cos^2\theta}
+        \]
+  \item \ans{$\dfrac{\sin^2\theta}{\cos^2\theta} = \left(\dfrac{\sin\theta}{\cos\theta}\right)^2 = \tan^2\theta$}
+  \item \ans{The identity is $\tan^2\theta + 1 = \sec^2\theta$, where $\sec\theta = 1/\cos\theta$.}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.10in}
+
+\begin{notesbox}{Preview: Lesson 3.3}
+In \textbf{Lesson 3.3} we derive the exact coordinates of $P$ for
+$\theta = \pi/6,\, \pi/4,\, \pi/3$ using 45-45-90 and 30-60-90 right-triangle ratios.
+Your completed table in Problem 1 will be fully confirmed with geometric proofs.
 \end{notesbox}
 
 \end{document}

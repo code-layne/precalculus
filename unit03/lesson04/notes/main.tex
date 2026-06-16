@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.4 — Guided Notes
+%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,142 @@
 \pageheader{Unit 3, Lesson 3.4}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item Explain how the unit circle produces the graph of $f(\theta)=\sin\theta$ and
+          the graph of $f(\theta)=\cos\theta$. \writeline
+    \item Identify the domain, range, period, midline, maximum, minimum, and zeros of
+          each function from its graph. \writeline
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Oscillation}
+\termblanklong{Amplitude (informal)}
+\termblanklong{Period}
+\termblanklong{Midline}
+\termblanklong{Maximum point}
+\termblanklong{Minimum point}
+\termblanklong{Zero of a function}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\textbf{Question:} We know the $y$-coordinate of a point on the unit circle at each angle.
+What does the graph of that $y$-coordinate \emph{versus the angle} look like?
+
+\vspace{0.06in}
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Building the Graph of $f(\theta)=\sin\theta$}
+The output of $f(\theta)=\sin\theta$ is the \blank{3cm} of the unit-circle point at
+angle $\theta$.
+
+\vspace{6pt}
+Complete the table, then describe the resulting curve in words.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{@{}|c|c|@{}}
+    \hline
+    $\theta$ & $\sin\theta$ \\\hline
+    $0$ & \blank{2cm} \\
+    $\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ \\
+    $\dfrac{\pi}{4}$ & \blank{2cm} \\
+    $\dfrac{\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ \\
+    $\dfrac{\pi}{2}$ & \blank{2cm} \\
+    $\pi$ & $0$ \\
+    $\dfrac{3\pi}{2}$ & \blank{2cm} \\
+    $2\pi$ & \blank{2cm} \\\hline
+\end{tabular}
+\quad
+\begin{minipage}[t]{0.52\linewidth}\vspace{0pt}
+\textbf{Plot these ordered pairs} on the $\theta$-$y$ axes below, then connect them
+smoothly.
+
+\vspace{0.5in}
+\textit{(coordinate axes drawn by teacher on board)}
+
+\vspace{0.3in}
+The curve is called a \blank{4cm}. As $\theta$ increases from $0$ to $2\pi$, the output
+\blank{3cm} between $-1$ and $1$.
+\end{minipage}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Building the Graph of $f(\theta)=\cos\theta$}
+The output of $f(\theta)=\cos\theta$ is the \blank{3cm} of the unit-circle point at
+angle $\theta$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{@{}|c|c|@{}}
+    \hline
+    $\theta$ & $\cos\theta$ \\\hline
+    $0$ & \blank{2cm} \\
+    $\dfrac{\pi}{2}$ & \blank{2cm} \\
+    $\pi$ & \blank{2cm} \\
+    $\dfrac{3\pi}{2}$ & \blank{2cm} \\
+    $2\pi$ & \blank{2cm} \\\hline
+\end{tabular}
+\quad
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+How does the cosine graph compare to the sine graph in overall shape?
+\writelines{2}
+
+How does the starting value at $\theta=0$ differ?
+\writeline
+\end{minipage}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Key Features of $\sin\theta$ and $\cos\theta$}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+    \textbf{Feature} & \textbf{$f(\theta)=\sin\theta$} & \textbf{$f(\theta)=\cos\theta$} \\\hline
+    Domain   & \blank{3.5cm} & \blank{3.5cm} \\
+    Range    & \blank{3.5cm} & \blank{3.5cm} \\
+    Period   & \blank{3.5cm} & \blank{3.5cm} \\
+    Midline  & \blank{3.5cm} & \blank{3.5cm} \\
+    Maximum value & \blank{3.5cm} & \blank{3.5cm} \\
+    Minimum value & \blank{3.5cm} & \blank{3.5cm} \\
+    Zeros on $[0,2\pi)$ & \blank{3.5cm} & \blank{3.5cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+Use the description of the sine graph over $[0,2\pi]$ to answer the following.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+    \item At what $\theta$-values in $[0,2\pi]$ does $\sin\theta=0$?
+
+          \blank{8cm}
+
+    \item At what $\theta$-value in $[0,2\pi]$ does $\sin\theta=1$?
+
+          \blank{6cm}
+
+    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ increasing?
+
+          \blank{8cm}
+
+    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ decreasing?
+
+          \blank{8cm}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

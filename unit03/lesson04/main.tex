@@ -1,15 +1,15 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.4 — Lesson Plan
+%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.4: Sine and Cosine Function Values}
+\newcommand{\LessonNumberName}{Lesson 3.4: Sine and Cosine Function Graphs}
 
 \begin{document}
 \begin{center}
@@ -17,57 +17,239 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
+% ----- 1. Primary Objective -----
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students construct the graphs of $f(\theta)=\sin\theta$ and
+    $f(\theta)=\cos\theta$ by tracking the $y$- and $x$-coordinates of a point on the unit
+    circle as $\theta$ increases, then identify and describe the domain, range, period, and
+    other key graphical features of each function. \quad \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
+% ----- 2. Priority Ideas & Skills -----
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{AP Skills}\\[4pt]
+    \textbf{Skill 2.A} --- Identify mathematical characteristics of a function from a
+    graphical representation (e.g.\ domain, range, period, zeros, max/min).\\[4pt]
+    \textbf{Skill 3.A} --- Describe the characteristics of a function using appropriate
+    mathematical language (oscillation, amplitude, period, midline).\\[4pt]
+    \textbf{LO 3.4.A} --- Construct representations of the sine and cosine functions
+    using the unit circle.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}\vspace{0pt}
+    \textbf{Key Understandings (EKs)}\\[4pt]
+    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+        \item The $y$-coordinate of the unit-circle point at angle $\theta$ gives
+              $f(\theta)=\sin\theta$; domain is all reals. (EK 3.4.A.1)
+        \item As $\theta$ increases, $\sin\theta$ oscillates between $-1$ and $1$,
+              tracing vertical displacement. (EK 3.4.A.2)
+        \item The $x$-coordinate gives $f(\theta)=\cos\theta$; domain is all reals.
+              (EK 3.4.A.3)
+        \item As $\theta$ increases, $\cos\theta$ oscillates between $-1$ and $1$,
+              tracing horizontal displacement. (EK 3.4.A.4)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
+% ----- 3. Vocabulary -----
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+    \textbf{Sine function}        & $f(\theta)=\sin\theta$; the $y$-coordinate of the
+                                    unit-circle point at angle $\theta$. \\
+    \textbf{Cosine function}      & $f(\theta)=\cos\theta$; the $x$-coordinate of the
+                                    unit-circle point at angle $\theta$. \\
+    \textbf{Oscillation}          & Repeated back-and-forth variation between two extreme
+                                    values. \\
+    \textbf{Amplitude (informal)} & Half the total vertical range; equals $1$ for both
+                                    $\sin\theta$ and $\cos\theta$. \\
+    \textbf{Period}               & Smallest positive input change for one complete cycle;
+                                    $2\pi$ for both functions. \\
+    \textbf{Midline}              & Horizontal line halfway between max and min; $y=0$ for
+                                    both functions. \\
+    \textbf{Maximum}              & Greatest output value; $1$ for both functions. \\
+    \textbf{Minimum}              & Least output value; $-1$ for both functions. \\
+    \textbf{Zero (of a function)} & An input $\theta$ where $f(\theta)=0$. \\
+\end{tabularx}
 \end{skillbox}
 
+% ----- 4. Activate Prior Knowledge -----
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+    \begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
+        \textbf{Students should already be able to:}
+        \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+            \item State exact values of $\sin\theta$ and $\cos\theta$ at the standard
+                  unit-circle angles ($0,\,\tfrac{\pi}{6},\,\tfrac{\pi}{4},\,\tfrac{\pi}{3},
+                  \,\tfrac{\pi}{2},\,\pi,\,\tfrac{3\pi}{2},\,2\pi$) --- from Lesson 3.3.
+            \item Recognize a periodic function from a description --- from Lesson 3.1.
+            \item Read and interpret function values from a Cartesian graph.
+        \end{itemize}
+        \vspace{4pt}
+        \textit{The warm-up recalls Lesson 3.3 exact values and asks whether $\sin\theta$ is
+        increasing on $[0,\tfrac{\pi}{2}]$, motivating today's graphical view.}
+    \end{minipage}
+    &
+    \begin{minipage}[t]{0.35\linewidth}\vspace{0pt}\centering
+        \small\textit{(Warm-up uses unit-circle\\exact values from L3.3.)}
+    \end{minipage}
+\end{tabularx}
 \end{skillbox}
 
+% ----- 5. Hook -----
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textbf{Entry Question (Think-Pair-Share, 90 sec):} ``We know the $y$-coordinate of a
+    point on the unit circle at every angle. What does the graph of that $y$-coordinate
+    \emph{versus the angle} look like?''
+
+    \vspace{4pt}
+    Expect answers like ``it goes up then down'' or ``maybe a wave.'' After sharing, ask the
+    same for the $x$-coordinate to preview $\cos\theta$. Connect to the periodic phenomena
+    from Lesson 3.1 (tides, temperature cycles): ``Today we find the exact mathematical
+    function behind those repeating patterns.''
 \end{skillbox}
 
+% ----- 6. Lesson -----
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+    \textbf{Building the Graph of $\boldsymbol{f(\theta)=\sin\theta}$}
+
+    \vspace{4pt}
+    Have students fill in a table of $(\theta,\sin\theta)$ pairs using their unit-circle
+    reference:
+
+    \vspace{4pt}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}c|c@{}}
+        $\theta$ & $\sin\theta$ \\\hline
+        $0$               & $0$ \\
+        $\tfrac{\pi}{6}$  & $\tfrac{1}{2}$ \\
+        $\tfrac{\pi}{4}$  & $\tfrac{\sqrt{2}}{2}$ \\
+        $\tfrac{\pi}{3}$  & $\tfrac{\sqrt{3}}{2}$ \\
+        $\tfrac{\pi}{2}$  & $1$ \\
+        $\pi$             & $0$ \\
+        $\tfrac{3\pi}{2}$ & $-1$ \\
+        $2\pi$            & $0$ \\
+    \end{tabular}
+
+    \vspace{6pt}
+    \textbf{Pose:} ``As $\theta$ increases from $0$ to $\tfrac{\pi}{2}$, what happens to
+    $\sin\theta$? From $\tfrac{\pi}{2}$ to $\pi$?''
+
+    Plot the ordered pairs on axes with $\theta$ horizontal ($0$ to $2\pi$) and $y$ vertical
+    ($-1$ to $1$). Connect smoothly --- the \textbf{sine wave} emerges.
+
+    \columnbreak
+
+    \textbf{Building the Graph of $\boldsymbol{f(\theta)=\cos\theta}$}
+
+    \vspace{4pt}
+    Repeat with $x$-coordinates (horizontal displacement):
+
+    \vspace{4pt}
+    \begin{tabular}{@{}c|c@{}}
+        $\theta$ & $\cos\theta$ \\\hline
+        $0$               & $1$ \\
+        $\tfrac{\pi}{2}$  & $0$ \\
+        $\pi$             & $-1$ \\
+        $\tfrac{3\pi}{2}$ & $0$ \\
+        $2\pi$            & $1$ \\
+    \end{tabular}
+
+    \vspace{6pt}
+    \textbf{Pose:} ``How does the cosine graph compare to the sine graph in shape? In
+    starting value?''
+
+    \vspace{6pt}
+    \textbf{Key Features --- whole-class debrief}
+
+    \vspace{4pt}
+    From the graphs, elicit:
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item Domain: all real numbers
+        \item Range: $[-1,\,1]$
+        \item Period: $2\pi$
+        \item Midline: $y=0$
+        \item Maximum: $1$; Minimum: $-1$
+        \item Zeros of $\sin\theta$ on $[0,2\pi)$: $0,\,\pi,\,2\pi$
+        \item Zeros of $\cos\theta$ on $[0,2\pi)$: $\tfrac{\pi}{2},\,\tfrac{3\pi}{2}$
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
+% ----- 7. Active Monitoring -----
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+    \textbf{Circulate and watch for:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+        \item Confusion about which coordinate maps to sine vs.\ cosine --- redirect to the
+              unit-circle diagram.
+        \item Students plotting $(\sin\theta,\,\theta)$ instead of $(\theta,\,\sin\theta)$ ---
+              ask: ``Which quantity is the input? Which is the output?''
+        \item Students who stop at $2\pi$ and don't see the periodic extension --- ask:
+              ``What happens after one full revolution?''
+    \end{itemize}
+    \textbf{Cold-call prompts:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+        \item ``At $\theta=\tfrac{3\pi}{2}$, is $\sin\theta$ positive, negative, or zero?
+              How does the unit circle show that?''
+        \item ``Why do both graphs have the same range $[-1,1]$?''
+        \item ``Where does $\cos\theta=1$? Name all solutions in $[0,4\pi]$.''
+    \end{itemize}
 \end{skillbox}
 
+% ----- 8. Group Work & Differentiation -----
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}\\
+    Given a complete table of $(\theta,\sin\theta)$ values for key angles, answer: where are
+    the zeros? Where is the maximum? On which interval from $0$ to $2\pi$ is $\sin\theta$
+    increasing? What is the period? Use the unit-circle diagram as a reference.
+
+    \columnbreak
+    \textbf{Tier A --- Approaching}\\
+    Given a partial table of $(\theta,\cos\theta)$ values with some blanks, complete the table
+    using the unit circle or symmetry. Then answer: on what intervals in $[0,2\pi]$ is
+    $\cos\theta$ positive? negative? What transformation would map the sine graph to the cosine
+    graph?
+
+    \columnbreak
+    \textbf{Tier E --- Extension}\\
+    Use table values to estimate the average rate of change of $\sin\theta$ on
+    $[0,\tfrac{\pi}{4}]$, $[\tfrac{\pi}{4},\tfrac{\pi}{2}]$, and
+    $[\tfrac{\pi}{2},\tfrac{3\pi}{4}]$. Describe the pattern and explain it using the
+    unit circle.
+\end{multicols}
 \end{skillbox}
 
+% ----- 9. Individual Work & Assessment -----
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+    \textbf{Exit Ticket (2 items, 5 min):}
+    \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+        \item State the domain, range, and period of $f(\theta)=\cos\theta$.
+        \item A student says ``$\sin\theta$ and $\cos\theta$ have the same graph.''
+              Correct the student's claim with one specific example showing a difference.
+    \end{enumerate}
+    \vspace{4pt}
+    \textbf{Assessment note:} Collect exit tickets as students leave. Sort into three piles
+    (both correct / one correct / neither) to plan Tier R support in Lesson 3.5.
 \end{skillbox}
 
+% ----- 10. Reinforcement & Extension -----
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+    \textbf{Homework:} 5--6 problems reinforcing domain, range, period, and zeros of
+    $\sin\theta$ and $\cos\theta$; includes True/False with justification, a conceptual
+    question on periodicity, and an AP-style MC. Optional extension on concavity.
+
+    \vspace{4pt}
+    \textbf{Extension:} On what intervals is $\cos\theta$ concave down? Connect the answer
+    to the curvature of the unit-circle arc.
+
+    \vspace{4pt}
+    \textbf{Preview --- Lesson 3.5:} In the next lesson we transform these graphs by changing
+    amplitude (vertical stretch), period (horizontal stretch), and midline (vertical shift) to
+    model real-world sinusoidal phenomena.
 \end{skillbox}
 \end{document}

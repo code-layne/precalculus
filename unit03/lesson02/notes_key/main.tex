@@ -1,4 +1,4 @@
-%! Periodic Phenomena — Unit 3, Lesson 3.2 — Guided Notes (Answer Key)
+%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,122 @@
 \pageheader{Unit 3, Lesson 3.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+%--- Objective ---
+\begin{objectivebox}
+\textbf{LO 3.2.A:} Determine the sine, cosine, and tangent of an angle using the unit circle.\\[4pt]
+\ans{Students find the point $P=(x,y)$ where the terminal ray meets the unit circle and read
+$\cos\theta = x$, $\sin\theta = y$, $\tan\theta = y/x$.}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+%--- Vocabulary ---
+\begin{vocabbox}
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Standard position:} \ans{angle with vertex at the origin and initial ray along the positive $x$-axis}
+  \item \textbf{Terminal ray:} \ans{the second ray of the angle; its position determines $\theta$}
+  \item \textbf{Coterminal angles:} \ans{angles that share the same terminal ray; they differ by $2\pi k$ for integer $k$}
+  \item \textbf{Radian measure:} \ans{the ratio arc length / radius; equals arc length on the unit circle}
+  \item \textbf{Unit circle:} \ans{the circle of radius 1 centered at the origin; equation $x^2+y^2=1$}
+  \item \textbf{Sine ($\sin\theta$):} \ans{the $y$-coordinate of the point $P$ on the unit circle}
+  \item \textbf{Cosine ($\cos\theta$):} \ans{the $x$-coordinate of the point $P$ on the unit circle}
+  \item \textbf{Tangent ($\tan\theta$):} \ans{$\sin\theta / \cos\theta = y/x$; the slope of the terminal ray}
+\end{itemize}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+%--- Hook ---
+\begin{hookbox}
+\textbf{Spinning Wheel:} A point $P$ sits on the rim of a wheel of radius 1, starting at $(1,\, 0)$.
+After the wheel rotates counterclockwise by angle $\theta$, the point is at position
+\ans{$(\cos\theta,\; \sin\theta)$}.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item How far right/left of center is $P$? \hfill The answer is called: \ans{cosine of $\theta$}
+  \item How far up/down from center is $P$? \hfill The answer is called: \ans{sine of $\theta$}
+  \item What is the slope of the line from center to $P$? \hfill The answer is called: \ans{tangent of $\theta$}
+\end{itemize}
+\end{hookbox}
+
+\vspace{0.10in}
+
+%--- Radians ---
+\begin{notesbox}{Radian Measure --- Key}
+\textbf{Definition:} Radian measure $=$ \ans{arc length} $\div$ \ans{radius}
+
+\medskip
+On a \textbf{unit circle} ($r = 1$): radian measure $=$ \ans{arc length subtended}
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Degrees} & \textbf{Radians} & \textbf{Arc length (unit circle)} \\
+\hline
+$360°$  & \ans{$2\pi$}      & \ans{$2\pi$} \\
+$180°$  & \ans{$\pi$}       & \ans{$\pi$} \\
+$90°$   & \ans{$\pi/2$}     & \ans{$\pi/2$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+Conversion: $\pi$ radians $=$ \ans{$180$} degrees \qquad $\dfrac{\pi}{2}$ radians $=$ \ans{$90$} degrees
 \end{notesbox}
+
+\vspace{0.10in}
+
+%--- Unit Circle Definitions ---
+\begin{notesbox}{LO 3.2.A --- The Unit Circle --- Key}
+Let $\theta$ be an angle in standard position. Let $P = (x,\, y)$ be the point where the
+\textbf{terminal ray} meets the \textbf{unit circle}.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Function} & \textbf{Unit-Circle Value} & \textbf{General Definition (radius $r$)} \\
+\hline
+$\sin\theta$ & \ans{$y$} & \ans{$y/r$} \\
+$\cos\theta$ & \ans{$x$} & \ans{$x/r$} \\
+$\tan\theta$ & \ans{$y/x$} & \ans{$y/x$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{Pythagorean Identity:} Since $x^2 + y^2 = 1$ on the unit circle:
+\[
+  {\color{keyred}\mathbf{\sin^2\theta}} + {\color{keyred}\mathbf{\cos^2\theta}} = 1
+\]
+\end{notesbox}
+
+\vspace{0.10in}
+
+%--- Practice ---
+\begin{practicebox}
+\textbf{Practice: Evaluate using the unit circle.} For each angle, identify the point $P = (x,y)$
+on the unit circle, then fill in the table.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\theta$ & Point $P = (x,y)$ & $\cos\theta$ & $\sin\theta$ & $\tan\theta$ \\
+\hline
+$0$      & \ans{$(1,\,0)$}   & \ans{$1$}  & \ans{$0$}  & \ans{$0$} \\
+$\pi/2$  & \ans{$(0,\,1)$}   & \ans{$0$}  & \ans{$1$}  & \ans{undef.} \\
+$\pi$    & \ans{$(-1,\,0)$}  & \ans{$-1$} & \ans{$0$}  & \ans{$0$} \\
+$3\pi/2$ & \ans{$(0,\,-1)$}  & \ans{$0$}  & \ans{$-1$} & \ans{undef.} \\
+$2\pi$   & \ans{$(1,\,0)$}   & \ans{$1$}  & \ans{$0$}  & \ans{$0$} \\
+\hline
+\end{tabular}
+\end{center}
+\end{practicebox}
 
 \end{document}

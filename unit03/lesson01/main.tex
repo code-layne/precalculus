@@ -2,72 +2,304 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
 \newcommand{\LessonNumberName}{Lesson 3.1: Periodic Phenomena}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will construct graphs of periodic
+  relationships from verbal and tabular representations, and describe key
+  characteristics — period, intervals of increase/decrease, concavity, and
+  rate of change — explaining why each characteristic repeats in every period.
+  \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{2.B} \textit{Construct equivalent representations} ---
+  Build a complete graph of a periodic relationship by repeating one cycle
+  from a verbal or tabular description.
+&
+\textbf{EK 3.1.A.1}: A periodic relationship exists when, as input increases,
+output values demonstrate a repeating pattern over successive equal-length
+intervals. \\[4pt]
+
+\textbf{3.A} \textit{Describe characteristics} ---
+  Identify and articulate the period, intervals of increase/decrease,
+  concavity, and rate of change of a periodic function and explain why
+  these repeat.
+&
+\textbf{EK 3.1.A.2}: The full graph of a periodic relationship can be
+constructed from one cycle by repeating that cycle. \\[4pt]
+
+&
+\textbf{EK 3.1.B.1}: The period $k$ is the smallest positive value such
+that $f(x+k)=f(x)$ for all $x$ in the domain; any interval of width $k$
+completely determines the function. \\[4pt]
+
+&
+\textbf{EK 3.1.B.2}: Period can be estimated by finding where the output
+pattern first begins to repeat. \\[4pt]
+
+&
+\textbf{EK 3.1.B.3}: Periodic functions share characteristics with other
+functions (increase/decrease, concavity, rate of change), but in periodic
+functions every characteristic found in one period appears in every period. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{tabularx}{\linewidth}{@{} p{0.24\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+periodic relationship &
+  A relationship between two quantities in which, as input increases,
+  output values repeat over successive equal-length input intervals. \\[4pt]
+period &
+  The smallest positive input length $k$ such that $f(x+k)=f(x)$ for all
+  $x$ in the domain; the length of one complete cycle. \\[4pt]
+cycle &
+  One complete repetition of the repeating pattern of a periodic relationship. \\[4pt]
+frequency (informal) &
+  How often the pattern repeats per unit of input; informally the reciprocal
+  of the period (not formally assessed in 3.1). \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Function notation}: Evaluate $f(3)$ and $f(-1)$ from a
+    provided table --- reinforces reading output values, which students
+    use to spot repeating patterns.
+  \item \textbf{Identifying patterns in tables}: Project a table of values
+    and prompt students to describe what they notice. Connects to
+    arithmetic/geometric sequences from Units 1--2; extends pattern
+    recognition to repeating output values.
+  \item \textbf{Average rate of change}: Review
+    $\dfrac{f(b)-f(a)}{b-a}$ over a given interval --- students will
+    apply this within and across periods in the activity.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Display a table or projected image of 3 years of monthly
+average electricity bills (or ocean tidal heights) — a dataset that goes up,
+peaks, comes back down, and then repeats the same arc.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``What pattern do you see in the data?''}
+  \item \textit{``How is this pattern different from the linear or exponential
+    functions we've studied? What doesn't fit those models?''}
+  \item \textit{``If someone told you the month, could you predict the bill 5
+    years from now? 10 years from now? What would you need to know?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} Unlike linear or exponential growth,
+the values \textit{rise, fall, and repeat} on a fixed schedule. No constant
+rate or fixed multiplier captures this. Students need a new idea --- a
+\textit{repeating} function.
+
+\textbf{Transition:} ``Today we name this a \textbf{periodic relationship}.
+By the end of class you will be able to identify one, estimate how long a
+single cycle lasts, and construct a complete graph from just one cycle.''
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Identify Periodic Relationships} (10 min)
+
+Present a table of average monthly high temperatures for a city over
+24 months. Ask students to observe and describe the output pattern.
+Formally define ``periodic relationship'' (EK 3.1.A.1): the pattern must
+\emph{repeat exactly} over \emph{equal-length} input intervals.
+Contrast with non-periodic up-and-down patterns (e.g., irregular stock prices)
+to sharpen the definition.
+
+\columnbreak
+
+\textbf{Step 2 --- Estimating the Period} (10 min)
+
+Model how to estimate the period from the temperature table: find the
+smallest input length $k$ such that the output pattern restarts.
+Formalize: $f(x+k)=f(x)$ (EK 3.1.B.1--B.2).
+Partner practice: present a second table (height of a point on a spinning
+wheel sampled every second) and have pairs estimate the period and
+justify their answer.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Construct Graph from One Cycle} (12 min)
+
+Model: plot one cycle of the temperature data on the coordinate grid in the
+guided notes. Then \emph{extend} the graph by repeating the cycle exactly ---
+same shape, same width (EK 3.1.A.2). Students practice on a pre-printed
+grid in their guided notes: one cycle is partially filled, students
+extend it for two additional periods.
+
+\columnbreak
+
+\textbf{Step 4 --- Key Characteristics} (10 min)
+
+Return to the constructed graph. Identify and label:
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+  \item intervals of increase and decrease
+  \item concavity (concave up / concave down regions)
+  \item approximate rate of change on a given interval
+\end{itemize}
+Emphasize EK 3.1.B.3: every characteristic from one period appears in
+every period. Close: \textit{``Why does knowing one period completely
+determine the whole function?''}
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 in Period 1 (days 1);
+Steps 3--4 + activity in Period 2 (day 2).
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Period vs.\ amplitude confusion}: Students often report the
+    range of outputs (how high/low) instead of the input length of one cycle.
+    Prompt: \textit{``The period measures \underline{input} --- how far along
+    the $x$-axis before it repeats. What input value marks the end of one cycle?''}
+  \item \textbf{Pattern vs.\ periodic}: Any up-and-down table may look periodic.
+    Ask: \textit{``Is the interval between repeats always the same length?
+    Is the shape identical in every cycle?''}
+  \item \textbf{Graph construction errors}: Students stretch or compress
+    subsequent cycles. Remind: each cycle is \emph{identical} in width and
+    shape to the first.
+  \item \textbf{Characteristics}: Verify students label increase/decrease with
+    input intervals (not output values) and articulate \emph{why} characteristics
+    repeat (not just that they do).
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the tiered activity (assign by teacher
+or allow student self-selection with guidance).
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Remediate)}: Given a completed table with the
+    repeating block highlighted, students identify whether a relationship
+    is periodic, name the period from the table, and describe behavior in
+    one cycle using sentence frames provided on the worksheet.
+  \item \textbf{Tier A (Accelerate)}: Given a verbal description of a periodic
+    phenomenon (e.g., a water wheel with given heights at each quarter-turn),
+    students build a table of values for two full periods, estimate the period,
+    and describe intervals of increase and decrease.
+  \item \textbf{Tier E (Extend)}: Students compare two periodic phenomena
+    provided as tables. They determine if each is periodic, identify both
+    periods, and compute average rates of change on specified intervals to
+    compare the two functions quantitatively.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 5 minutes of Period 2).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item A short 8-value table is provided. Students determine whether the
+    relationship is periodic and estimate the period with justification.
+  \item Open response: \textit{``Name one characteristic of a periodic function
+    that repeats in every period and explain in one sentence why this must
+    be so.''}
+\end{enumerate}
+
+\textbf{Data use:} Sort exit tickets into three piles --- correctly identified
+period, incorrect period, non-attempt. Use groupings to inform the opening
+of Lesson 3.2 (brief re-teach or accelerated start).
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 3.1):} 5--6 problems covering: identifying periodic
+relationships from tables and descriptions, estimating periods, describing
+characteristics within a period, and 2 AP-style multiple-choice items.
+An optional extension challenge asks students to compare average rates of
+change on two different intervals within a single period.
+
+\textbf{Preview of Lesson 3.2 --- Sine, Cosine, and Tangent:}
+Ask students to consider: \textit{``What if a periodic relationship could be
+described with a \emph{formula} rather than a table? How would that be more
+powerful?''} Lesson 3.2 introduces sine and cosine as the canonical models
+for periodic phenomena and directly connects today's period, increase/decrease,
+and concavity language to amplitude, period, and midline of sinusoidal functions.
 \end{skillbox}
+
 \end{document}

@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.4 — Warm-Up (Answer Key)
+%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,42 @@
 \pageheader{Unit 3, Lesson 3.4}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+
+  \item Complete the table of values. Use your unit-circle reference from Lesson 3.3.
+
+        \vspace{6pt}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+            \hline
+            $\theta$ & $0$ & $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\
+            \hline
+            $\sin\theta$ & \ans{$0$} & \ans{$1$} & \ans{$0$} & \ans{$-1$} & \ans{$0$} \\
+            \hline
+        \end{tabular}
+
+  \item Complete the table of values.
+
+        \vspace{6pt}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+            \hline
+            $\theta$ & $0$ & $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\
+            \hline
+            $\cos\theta$ & \ans{$1$} & \ans{$0$} & \ans{$-1$} & \ans{$0$} & \ans{$1$} \\
+            \hline
+        \end{tabular}
+
+  \item Between $\theta=0$ and $\theta=\dfrac{\pi}{2}$, is $\sin\theta$ increasing or
+        decreasing? Explain how you know using the unit circle.
+
+        \vspace{0.08in}
+        \ansline{Increasing.} As $\theta$ increases from $0$ to $\dfrac{\pi}{2}$, the
+        point on the unit circle moves from $(1,0)$ upward to $(0,1)$, so the
+        $y$-coordinate (which equals $\sin\theta$) rises from $0$ to $1$.
+
+\end{enumerate}
 
 \end{document}

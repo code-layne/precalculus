@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.4 — Group Activity
+%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,121 @@
 \pageheader{Unit 3, Lesson 3.4}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+% Tier R
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The table below gives the values of $\sin\theta$ at key angles. Use it to answer the
+questions.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|@{}}
+    \hline
+    $\theta$ & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ &
+               $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\\hline
+    $\sin\theta$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ &
+                   $1$ & $0$ & $-1$ & $0$ \\\hline
+\end{tabular}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+    \item At what values of $\theta$ in $[0, 2\pi]$ is $\sin\theta = 0$?
+          These are called the \textbf{zeros} of the function.
+
+          \blank{8cm}
+
+    \item At what value of $\theta$ in $[0, 2\pi]$ does $\sin\theta$ reach its
+          \textbf{maximum}? What is that maximum value?
+
+          \blank{8cm}
+
+    \item On what interval from the table does $\sin\theta$ go from $0$ to $1$? Is the
+          function \textbf{increasing} or \textbf{decreasing} on that interval?
+
+          \blank{8cm}
+
+    \item One complete cycle of $\sin\theta$ runs from $\theta=0$ to $\theta=\blank{2cm}$.
+          This length is the \textbf{period}.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% Tier A
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The table of $\cos\theta$ values below has some cells missing. Fill them in using the unit
+circle or symmetry, then answer the questions.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|@{}}
+    \hline
+    $\theta$ & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ &
+               $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\\hline
+    $\cos\theta$ & \blank{1.4cm} & $\dfrac{\sqrt{3}}{2}$ & \blank{1.4cm} &
+                   $\dfrac{1}{2}$ & $0$ & \blank{1.4cm} & $0$ & \blank{1.4cm} \\\hline
+\end{tabular}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+    \item On what interval(s) in $[0, 2\pi]$ is $\cos\theta > 0$?
+
+          \blank{8cm}
+
+    \item On what interval(s) in $[0, 2\pi]$ is $\cos\theta < 0$?
+
+          \blank{8cm}
+
+    \item A student notices that the cosine graph looks exactly like the sine graph, just
+          shifted horizontally. By how much, and in which direction, would you shift the
+          sine graph to get the cosine graph?
+
+          \blank{8cm}
+
+          Complete the equation: $\cos\theta = \sin\!\bigl(\theta + \blank{2cm}\bigr)$.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% Tier E
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use the table values from Tier R to estimate the \textbf{average rate of change} of
+$f(\theta) = \sin\theta$ on each interval.
+
+\vspace{6pt}
+Recall: average rate of change on $[a, b] = \dfrac{f(b) - f(a)}{b - a}$.
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{@{}|l|c|@{}}
+    \hline
+    \textbf{Interval} & \textbf{Avg.\ rate of change} \\\hline
+    $\left[0,\;\dfrac{\pi}{4}\right]$ & \blank{4cm} \\\hline
+    $\left[\dfrac{\pi}{4},\;\dfrac{\pi}{2}\right]$ & \blank{4cm} \\\hline
+    $\left[\dfrac{\pi}{2},\;\dfrac{3\pi}{4}\right]$ (use $\sin\tfrac{3\pi}{4}=\tfrac{\sqrt{2}}{2}$)
+        & \blank{4cm} \\\hline
+\end{tabular}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt, start=1]
+    \item How do the three rates of change compare in size?
+
+          \writelines{2}
+
+    \item Near $\theta = 0$ the graph is \blank{3cm} (steep/flat), and near $\theta =
+          \dfrac{\pi}{2}$ the graph is \blank{3cm} (steep/flat). Explain why, using the
+          unit-circle point's motion.
+
+          \writelines{3}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
