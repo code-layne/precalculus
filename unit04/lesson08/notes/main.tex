@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.8 — Guided Notes
+%! Vectors — Unit 4, Lesson 4.8 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,158 @@
 \pageheader{Unit 4, Lesson 4.8}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \writeline
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{vector}
+\termblanklong{tail / head}
+\termblanklong{magnitude}
+\termblanklong{scalar multiplication}
+\termblanklong{dot product}
+\termblanklong{unit vector}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+Two drones receive identical displacement instructions. Drone A leaves $(1,2)$ and
+arrives at $(5,6)$. Drone B leaves $(3,0)$ and arrives at $(7,4)$.
+How far east and how far north does each drone travel? Why do they receive the same instructions?
+
+\writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 1 --- Vector Components and Magnitude}
+\small
+\textbf{Definition.} A \textbf{vector} from tail $P_1=(x_1,y_1)$ to head $P_2=(x_2,y_2)$ has
+component form $\vec{v} = \langle a, b\rangle$ where:
+
+\vspace{0.06in}
+\hspace{1em} $a = x_2 - x_1 = $ \blank{3cm} \qquad $b = y_2 - y_1 = $ \blank{3cm}
+
+\vspace{0.08in}
+\textbf{Magnitude:} $\|\vec{v}\| = \sqrt{a^2 + b^2} = $ \blank{5cm}
+
+\vspace{0.12in}
+\textbf{Direction from trig.} If $\|\vec{v}\| = r$ and direction angle is $\theta$:
+
+\vspace{0.06in}
+\hspace{1em} $a = r\cos\theta = $ \blank{3.5cm} \qquad $b = r\sin\theta = $ \blank{3.5cm}
+
+\vspace{0.12in}
+\textbf{Example.} Tail $P_1=(1,3)$, head $P_2=(5,6)$.
+
+\vspace{0.06in}
+\hspace{1em} $a = $ \blank{2cm} \quad $b = $ \blank{2cm} \quad
+$\vec{v} = \langle$ \blank{1.5cm}$,$ \blank{1.5cm}$\rangle$ \quad
+$\|\vec{v}\| = $ \blank{2.5cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 2 --- Scalar Multiplication and Vector Addition}
+\small
+\textbf{Scalar multiplication.} $k\langle a,b\rangle = \langle$ \blank{3cm}$\rangle$
+
+\vspace{0.06in}
+New magnitude: $|k| \cdot \|\vec{v}\|$. \quad
+Direction: \blank{3cm} when $k>0$; \blank{3cm} when $k<0$.
+
+\vspace{0.12in}
+\textbf{Vector addition.} $\langle a_1,b_1\rangle + \langle a_2,b_2\rangle
+= \langle$ \blank{4cm}$\rangle$
+
+\vspace{0.06in}
+Geometric interpretation: place tail of second vector at \blank{3cm} of first;
+resultant runs from \blank{3cm} to \blank{3cm}.
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{u}=\langle 3,1\rangle$, $\vec{w}=\langle -1,4\rangle$.
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lll}
+$\vec{u}+\vec{w} = \langle$\blank{1.5cm}$,$\blank{1.5cm}$\rangle$ &\quad&
+$2\vec{u} = \langle$\blank{1.5cm}$,$\blank{1.5cm}$\rangle$ \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 3 --- Dot Product and Unit Vectors}
+\small
+\textbf{Dot product.}
+$\langle a_1,b_1\rangle \cdot \langle a_2,b_2\rangle
+= a_1 a_2 + b_1 b_2 = $ \blank{4cm}
+\quad (result is a \blank{2.5cm}, not a vector)
+
+\vspace{0.12in}
+\textbf{Unit vector.} A vector of magnitude \blank{0.8cm}.
+
+\vspace{0.06in}
+$\hat{u} = \dfrac{\vec{v}}{\|\vec{v}\|}
+= \left\langle \dfrac{a}{\|\vec{v}\|},\, \dfrac{b}{\|\vec{v}\|} \right\rangle$
+
+\vspace{0.1in}
+\textbf{Standard basis vectors:}
+$\hat{\imath} = \langle$ \blank{2cm}$\rangle$ \quad
+$\hat{\jmath} = \langle$ \blank{2cm}$\rangle$
+
+Any vector: $\langle a,b\rangle =$ \blank{1.5cm}$\hat{\imath}\, +\, $\blank{1.5cm}$\hat{\jmath}$
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{v}=\langle 3,4\rangle$, $\|\vec{v}\| = $ \blank{1.5cm}
+
+\vspace{0.06in}
+$\hat{u} = \left\langle \dfrac{3}{\blank{0.8cm}},\, \dfrac{4}{\blank{0.8cm}} \right\rangle
+= \langle$\blank{2cm}$,$\blank{2cm}$\rangle$ \quad
+Verify: $\|\hat{u}\| = $ \blank{2.5cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 4 --- Angle Between Vectors \& Perpendicularity}
+\small
+\textbf{Angle formula.}
+$\vec{v}_1 \cdot \vec{v}_2 = \|\vec{v}_1\|\,\|\vec{v}_2\| \cos\theta$
+
+\vspace{0.08in}
+Solving for $\theta$:
+\quad $\theta = \cos^{-1}\!\left( \dfrac{\vec{v}_1 \cdot \vec{v}_2}{\|\vec{v}_1\|\,\|\vec{v}_2\|} \right)
+= $ \blank{5cm}
+
+\vspace{0.12in}
+\textbf{Perpendicular vectors.} Two nonzero vectors are perpendicular if and only if their
+dot product $= $ \blank{1.5cm} \quad (because $\cos 90^\circ = $ \blank{1cm}).
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{u}=\langle 1,2\rangle$, $\vec{w}=\langle 4,-2\rangle$.
+
+\vspace{0.06in}
+\hspace{1em} $\vec{u}\cdot\vec{w} = (1)(4) + (2)(-2) = $ \blank{2cm}
+
+\hspace{1em} Are $\vec{u}$ and $\vec{w}$ perpendicular? \blank{3cm}
+
+\vspace{0.1in}
+\textbf{Law of Cosines application.} If $\vec{r} = \vec{u}+\vec{w}$, the triangle with sides
+$\|\vec{u}\|$, $\|\vec{w}\|$, $\|\vec{r}\|$ satisfies:
+$\|\vec{r}\|^2 = \|\vec{u}\|^2 + \|\vec{w}\|^2 - 2\|\vec{u}\|\,\|\vec{w}\|\cos\theta$
+
+where $\theta$ is the angle \blank{5cm}.
 \end{notesbox}
 
 \end{document}

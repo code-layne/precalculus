@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.12 — Group Activity (Answer Key)
+%! Linear Transformations and Matrices — Unit 4, Lesson 4.12 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,97 @@
 \pageheader{Unit 4, Lesson 4.12}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Exploring Geometric Transformations --- Key]{sky}
+\small
+Each tier below uses a different $2\times 2$ matrix.  Your goal is to compute output
+vectors and connect the matrix to a geometric action.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier R Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Reinforce --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}2 & 0 \\ 0 & 2\end{bmatrix}$.
+
+\textbf{(a)}
+$A\vec{v}_1 = \begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}3\\1\end{bmatrix}
+= $ \ans{$\begin{bmatrix}6\\2\end{bmatrix}$} \qquad
+$A\vec{v}_2 = \begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}-1\\4\end{bmatrix}
+= $ \ans{$\begin{bmatrix}-2\\8\end{bmatrix}$}
+
+\vspace{0.10in}
+\textbf{(b)} $A\begin{bmatrix}0\\0\end{bmatrix} = $ \ans{$\begin{bmatrix}0\\0\end{bmatrix}$}
+
+\vspace{0.08in}
+\textbf{(c)} \ans{This transformation scales every input vector by a factor of 2 (dilation from the origin with scale factor 2).}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier A Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- At Standard --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}0 & -1 \\ 1 & 0\end{bmatrix}$.
+
+\textbf{(a)} Input matrix $= $ \ans{$\begin{bmatrix}1&0&-1\\0&1&-1\end{bmatrix}$}
+
+\vspace{0.10in}
+\textbf{(b)} Output matrix:
+
+$\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}1&0&-1\\0&1&-1\end{bmatrix}
+= $ \ans{$\begin{bmatrix}0&-1&1\\1&0&-1\end{bmatrix}$}
+
+\vspace{0.10in}
+\textbf{(c)} Image vertices: \ans{$(0,1)$, $(-1,0)$, $(1,-1)$}
+
+\vspace{0.08in}
+\textbf{(d)} \ans{This transformation rotates every vector $90°$ counterclockwise about the origin.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier E Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend --- Key},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}1&2\\0&1\end{bmatrix}$,
+$\vec{v}=\begin{bmatrix}1\\2\end{bmatrix}$, $\vec{w}=\begin{bmatrix}3\\-1\end{bmatrix}$.
+
+\textbf{Step 1.}
+$\vec{v}+\vec{w} = \begin{bmatrix}4\\1\end{bmatrix}$. \quad
+$L(\vec{v}+\vec{w}) = A\begin{bmatrix}4\\1\end{bmatrix} = $ \ans{$\begin{bmatrix}6\\1\end{bmatrix}$}
+
+\vspace{0.08in}
+\textbf{Step 2.}
+$L(\vec{v}) = A\begin{bmatrix}1\\2\end{bmatrix} = $ \ans{$\begin{bmatrix}5\\2\end{bmatrix}$};
+\quad $L(\vec{w}) = A\begin{bmatrix}3\\-1\end{bmatrix} = $ \ans{$\begin{bmatrix}1\\-1\end{bmatrix}$}
+
+$L(\vec{v})+L(\vec{w}) = \begin{bmatrix}5\\2\end{bmatrix}+\begin{bmatrix}1\\-1\end{bmatrix}
+= $ \ans{$\begin{bmatrix}6\\1\end{bmatrix}$}
+
+\vspace{0.08in}
+\textbf{Step 3.} \ans{The results are equal. This confirms that $L(\vec{v})=A\vec{v}$ satisfies the additive property, which is required for a linear transformation.}
+\end{tcolorbox}
+
+\begin{teachernote}
+Tier A: the rotation matrix $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ is the standard
+$90°$ CCW rotation matrix --- worth naming explicitly in debrief.
+Tier E: students may struggle setting up the computation; prompt them to compute
+$A(\vec{v}+\vec{w})$ first, then compare.
+\end{teachernote}
 
 \end{document}

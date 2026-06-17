@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.14 — Homework
+%! Matrices Modeling Contexts — Unit 4, Lesson 4.14 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,79 @@
 \pageheader{Unit 4, Lesson 4.14}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\begin{notesbox}{Practice}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+
+    \item A company tracks employees in two roles: Developer~(D) and Manager~(M).
+    Each year, 90\% of Developers remain Developers and 10\% become Managers;
+    80\% of Managers remain Managers and 20\% become Developers.
+    Write the transition matrix $T$ (columns = ``from'' state).
+
+    \vspace{6pt}
+    $T = \begin{bmatrix}\blank{1.8cm} & \blank{1.8cm} \\ \blank{1.8cm} & \blank{1.8cm}\end{bmatrix}$
+
+    \vspace{8pt}
+    \item The initial state is $\vec{s}_0 = \begin{bmatrix}200\\50\end{bmatrix}$ (200 Developers, 50 Managers).
+    Compute $\vec{s}_1$ and $\vec{s}_2$.
+
+    \vspace{6pt}
+    $\vec{s}_1 = \begin{bmatrix}\blank{5cm}\\\blank{5cm}\end{bmatrix} = \begin{bmatrix}\blank{2cm}\\\blank{2cm}\end{bmatrix}$
+
+    \vspace{6pt}
+    $\vec{s}_2 = \begin{bmatrix}\blank{5cm}\\\blank{5cm}\end{bmatrix} = \begin{bmatrix}\blank{2cm}\\\blank{2cm}\end{bmatrix}$
+
+    \vspace{8pt}
+    \item There are always 250 total employees. Set up and solve the steady-state equation to find the
+    long-run number of Developers and Managers.
+
+    \writelines{4}
+
+    Steady state: Developers $\approx$ \blank{3cm} \quad Managers $\approx$ \blank{3cm}
+
+    \vspace{8pt}
+    \item The inverse of the matrix from problem 1 is approximately
+    $T^{-1} \approx \begin{bmatrix}1.143 & 0.114 \\ -0.143 & 1.286\end{bmatrix}$.
+    If $\vec{s}_1 = \begin{bmatrix}190\\60\end{bmatrix}$, use $T^{-1}$ to estimate $\vec{s}_0$.
+
+    \vspace{6pt}
+    $T^{-1}\vec{s}_1 \approx \begin{bmatrix}\blank{6cm}\\\blank{6cm}\end{bmatrix} = \begin{bmatrix}\blank{2cm}\\\blank{2cm}\end{bmatrix}$
+
+    \vspace{8pt}
+    \item \textbf{True or False} with justification: In a transition model,
+    the \emph{columns} of $T$ always sum to~1.
+
+    \vspace{4pt}
+    Circle one: \quad \textbf{True} \quad \textbf{False}
+
+    \vspace{4pt}
+    Justify: \writeline
+
+    \vspace{8pt}
+    \item \textbf{AP-Style Free Response (Short).}
+    A school cafeteria offers two options. Each day, 70\% of students who chose
+    Option~A choose it again, and 60\% of students who chose Option~B choose it again.
+    On Monday, 150 students chose A and 100 chose B.
+
+    \begin{enumerate}[label=(\alph*), leftmargin=1.5em, itemsep=6pt]
+        \item Write the transition matrix $T$.
+
+        \vspace{4pt}
+        $T = \begin{bmatrix}\blank{1.8cm} & \blank{1.8cm} \\ \blank{1.8cm} & \blank{1.8cm}\end{bmatrix}$
+
+        \item Find Tuesday's state vector $\vec{s}_1$.
+
+        \vspace{4pt}
+        $\vec{s}_1 = \begin{bmatrix}\blank{5cm}\\\blank{5cm}\end{bmatrix} = \begin{bmatrix}\blank{2cm}\\\blank{2cm}\end{bmatrix}$
+
+        \item What does the steady state represent in context? Answer in one or two sentences.
+
+        \writeline
+        \writeline
+    \end{enumerate}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

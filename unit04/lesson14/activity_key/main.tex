@@ -1,19 +1,114 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.14 — Group Activity (Answer Key)
+%! Matrices Modeling Contexts — Unit 4, Lesson 4.14 — Group Activity Key
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 4, Lesson 4.14}{Group Activity --- Answer Key}
+\pageheader{Unit 4, Lesson 4.14}{Group Activity Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Streaming Service Transition Model]{sky}
+Two streaming services, \textbf{StreamA} and \textbf{StreamB}, compete for subscribers.
+Each month, \textbf{80\%} of StreamA subscribers stay with StreamA and \textbf{20\%} switch to StreamB.
+Of StreamB subscribers, \textbf{75\%} stay with StreamB and \textbf{25\%} switch to StreamA.
+
+Currently, StreamA has \textbf{200 subscribers} and StreamB has \textbf{100 subscribers}.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{R1.}\quad Write the transition matrix $T$. Label which column corresponds to StreamA and which to StreamB.
+
+\vspace{6pt}
+$T = \ans{$\begin{bmatrix}0.80&0.25\\0.20&0.75\end{bmatrix}$}$
+\hfill {\small Col 1: From \ans{StreamA} \quad Col 2: From \ans{StreamB}}
+
+\vspace{10pt}
+\textbf{R2.}\quad The initial state vector is $\vec{s}_0 = \begin{bmatrix}200\\100\end{bmatrix}$.
+Compute $\vec{s}_1 = T\vec{s}_0$.
+
+\vspace{6pt}
+$\vec{s}_1 = \ans{$\begin{bmatrix}0.80(200)+0.25(100)\\0.20(200)+0.75(100)\end{bmatrix}$}
+= \ans{$\begin{bmatrix}185\\115\end{bmatrix}$}$
+
+\vspace{6pt}
+\textit{Work:}\quad Row 1: \ans{$0.80(200)+0.25(100)=160+25=185$}
+
+\vspace{4pt}
+\phantom{\textit{Work:}}\quad Row 2: \ans{$0.20(200)+0.75(100)=40+75=115$}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{A1.}\quad Compute $\vec{s}_2 = T\vec{s}_1$ and $\vec{s}_3 = T\vec{s}_2$.
+
+\vspace{6pt}
+$\vec{s}_2 = \ans{$\begin{bmatrix}176.75\\123.25\end{bmatrix}$}$
+\hfill \textit{Work:} \ans{$0.80(185)+0.25(115)=148+28.75=176.75$;\; $0.20(185)+0.75(115)=37+86.25=123.25$}
+
+\vspace{6pt}
+$\vec{s}_3 = \ans{$\begin{bmatrix}172.5\\127.5\end{bmatrix}$}$
+\hfill \textit{Work:} \ans{$0.80(176.75)+0.25(123.25)\approx172.5$;\; $0.20(176.75)+0.75(123.25)\approx127.5$}
+
+\vspace{10pt}
+\textbf{A2.}\quad What pattern do you notice in the state vectors?
+
+\ansline{StreamA's count is decreasing and StreamB's is increasing, but the changes get smaller each step --- the vectors are converging toward a fixed steady state.}
+
+\vspace{6pt}
+\textbf{A3.}\quad Based on the pattern, approximately how many subscribers will each service have after many months?
+
+\vspace{4pt}
+StreamA $\approx$ \ans{$166.\overline{6}\approx167$} \qquad StreamB $\approx$ \ans{$133.\overline{3}\approx133$}
+
+\begin{teachernote}
+Steady state: $p+q=300$, $0.80p+0.25q=p$ $\Rightarrow$ $0.25q=0.20p$ $\Rightarrow$ $p=\frac{5q}{4}$; $\frac{5q}{4}+q=300$ $\Rightarrow$ $q=\frac{1200}{9}=133.\overline{3}$, $p=\frac{500}{3}=166.\overline{6}$.
+\end{teachernote}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{E1.}\quad Compute $\det(T)$ and then find $T^{-1}$.
+
+\vspace{4pt}
+$\det(T) = \ans{$0.80(0.75)-0.25(0.20)=0.60-0.05=0.55$}$
+
+\vspace{6pt}
+$T^{-1} = \dfrac{1}{\ans{0.55}}\begin{bmatrix}\ans{0.75} & \ans{-0.25} \\ \ans{-0.20} & \ans{0.80}\end{bmatrix}$
+
+\vspace{10pt}
+\textbf{E2.}\quad Use $T^{-1}$ to find $\vec{s}_{-1}$, the state \emph{before} Month~0.
+
+\vspace{6pt}
+$\vec{s}_{-1} = T^{-1}\vec{s}_0 \approx \ans{$\begin{bmatrix}227.3\\72.7\end{bmatrix}$}$
+
+\vspace{6pt}
+\textit{Work:} \ansline{$\frac{1}{0.55}\bigl(0.75(200)-0.25(100)\bigr)=\frac{125}{0.55}\approx227.3$;\quad $\frac{1}{0.55}\bigl(-0.20(200)+0.80(100)\bigr)=\frac{40}{0.55}\approx72.7$.}
+
+\vspace{10pt}
+\textbf{E3.}\quad Verify by checking $T\vec{s}_{-1} = \vec{s}_0$.
+
+\vspace{4pt}
+$T\vec{s}_{-1} = \ans{$\begin{bmatrix}0.80(227.3)+0.25(72.7)\\0.20(227.3)+0.75(72.7)\end{bmatrix}\approx\begin{bmatrix}200\\100\end{bmatrix}$}$ \quad Does this equal $\vec{s}_0$? \ans{Yes} \checkmark
+
+\end{tcolorbox}
 
 \end{document}

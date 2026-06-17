@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.13 — Group Activity (Answer Key)
+%! Matrices as Functions — Unit 4, Lesson 4.13 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,150 @@
 \pageheader{Unit 4, Lesson 4.13}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Transformation Lab: Matrices as Functions]{sky}
+\small
+In this activity you will build, apply, and compose linear transformation matrices.
+Work with your partner. Show all computations --- answers without work earn no credit.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier R
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Reading the Transformation Matrix},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+
+A linear transformation $L$ maps $\hat{\imath}=\langle1,0\rangle$ to $\langle2,0\rangle$
+and maps $\hat{\jmath}=\langle0,1\rangle$ to $\langle0,2\rangle$.
+
+\vspace{0.08in}
+\textbf{(a)} Write the matrix $A$ associated with $L$.
+(Remember: the columns are the images of $\hat{\imath}$ and $\hat{\jmath}$.)
+
+\vspace{0.06in}
+\hspace{1em}
+$A = $ \ans{$\begin{bmatrix}2&0\\0&2\end{bmatrix}$}
+
+\vspace{0.12in}
+\textbf{(b)} Compute $L\bigl(\langle3,-1\rangle\bigr) = A\begin{bmatrix}3\\-1\end{bmatrix}$.
+Show the multiplication.
+
+\vspace{0.06in}
+\ans{$\begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}3\\-1\end{bmatrix}
+= \begin{bmatrix}2(3)+0(-1)\\0(3)+2(-1)\end{bmatrix}
+= \begin{bmatrix}6\\-2\end{bmatrix}$}
+
+\vspace{0.06in}
+$L\bigl(\langle3,-1\rangle\bigr) = $ \ans{$\begin{bmatrix}6\\-2\end{bmatrix}$}
+
+\vspace{0.10in}
+\textbf{(c)} Find $\det A$ and state what it tells you about the area scale factor of $L$.
+
+\vspace{0.06in}
+\hspace{1em} $\det A = $ \ans{4} \qquad Area scale factor: \ans{4}
+
+\vspace{0.06in}
+\hspace{1em} Interpretation: \ans{The transformation doubles all lengths, quadrupling areas.}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier A
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- The Rotation Matrix and Composition},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+
+\textbf{(a)} Write the rotation matrix $R(\theta)$ for $\theta = 30°$
+using exact values ($\cos30°=\dfrac{\sqrt{3}}{2}$, $\sin30°=\dfrac{1}{2}$).
+
+\vspace{0.06in}
+\hspace{1em}
+$R(30°) = $ \ans{$\begin{bmatrix}\dfrac{\sqrt{3}}{2}&-\dfrac{1}{2}\\[6pt]\dfrac{1}{2}&\dfrac{\sqrt{3}}{2}\end{bmatrix}$}
+
+\vspace{0.12in}
+\textbf{(b)} Write $R(60°)$ using exact values ($\cos60°=\dfrac{1}{2}$, $\sin60°=\dfrac{\sqrt{3}}{2}$).
+
+\vspace{0.06in}
+\hspace{1em}
+$R(60°) = $ \ans{$\begin{bmatrix}\dfrac{1}{2}&-\dfrac{\sqrt{3}}{2}\\[6pt]\dfrac{\sqrt{3}}{2}&\dfrac{1}{2}\end{bmatrix}$}
+
+\vspace{0.12in}
+\textbf{(c)} Compute the product $R(60°)\cdot R(30°)$ and show it equals $R(90°)$.
+Use exact values throughout.
+
+\vspace{0.06in}
+\ans{$R(60°)\cdot R(30°)
+= \begin{bmatrix}\tfrac{1}{2}&-\tfrac{\sqrt{3}}{2}\\\tfrac{\sqrt{3}}{2}&\tfrac{1}{2}\end{bmatrix}
+  \begin{bmatrix}\tfrac{\sqrt{3}}{2}&-\tfrac{1}{2}\\\tfrac{1}{2}&\tfrac{\sqrt{3}}{2}\end{bmatrix}
+= \begin{bmatrix}\tfrac{\sqrt{3}}{4}-\tfrac{\sqrt{3}}{4}&-\tfrac{1}{4}-\tfrac{3}{4}\\
+    \tfrac{3}{4}+\tfrac{1}{4}&-\tfrac{\sqrt{3}}{4}+\tfrac{\sqrt{3}}{4}\end{bmatrix}
+= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}
+
+\vspace{0.06in}
+$R(60°)\cdot R(30°) = $ \ans{$\begin{bmatrix}0&-1\\1&0\end{bmatrix}$}
+\qquad Compare with $R(90°) = \begin{bmatrix}0&-1\\1&0\end{bmatrix}$. Are they equal? \ans{Yes}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier E
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Composition Order and Inverse},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+
+Let $L_1$ have matrix $A = \begin{bmatrix}2&0\\0&2\end{bmatrix}$
+(scale by 2) and $L_2$ have matrix $B = \begin{bmatrix}0&-1\\1&0\end{bmatrix}$
+($90°$ rotation).
+
+\vspace{0.08in}
+\textbf{(a)} Compute $L_2 \circ L_1$ (apply $L_1$ first, then $L_2$). Matrix: $BA$.
+
+\vspace{0.06in}
+\ans{$BA = \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}2&0\\0&2\end{bmatrix}
+= \begin{bmatrix}0&-2\\2&0\end{bmatrix}$}
+
+\vspace{0.04in}
+$BA = $ \ans{$\begin{bmatrix}0&-2\\2&0\end{bmatrix}$}
+
+\vspace{0.1in}
+\textbf{(b)} Compute $L_1 \circ L_2$ (apply $L_2$ first, then $L_1$). Matrix: $AB$.
+
+\vspace{0.06in}
+\ans{$AB = \begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}0&-1\\1&0\end{bmatrix}
+= \begin{bmatrix}0&-2\\2&0\end{bmatrix}$}
+
+\vspace{0.04in}
+$AB = $ \ans{$\begin{bmatrix}0&-2\\2&0\end{bmatrix}$}
+
+\vspace{0.06in}
+Are $BA$ and $AB$ equal? \ans{Yes, in this case.} \quad
+What does this tell you? \ans{Scaling commutes with rotation when the scale is uniform; in general, matrix multiplication is not commutative.}
+
+\vspace{0.1in}
+\textbf{(c)} Find $B^{-1}$ (the inverse of $L_2$) using the $2\times2$ inverse formula.
+What rotation does $L_2^{-1}$ perform?
+
+\vspace{0.06in}
+\ans{$\det B = 0(0)-(-1)(1)=1$, so $B^{-1} = \dfrac{1}{1}\begin{bmatrix}0&1\\-1&0\end{bmatrix}
+= \begin{bmatrix}0&1\\-1&0\end{bmatrix}$}
+
+\vspace{0.04in}
+$B^{-1} = $ \ans{$\begin{bmatrix}0&1\\-1&0\end{bmatrix}$}
+\qquad $L_2^{-1}$ performs: \ans{a $90°$ clockwise (or $-90°$) rotation}
+
+\end{tcolorbox}
 
 \end{document}

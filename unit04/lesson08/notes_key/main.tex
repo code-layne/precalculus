@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.8 — Guided Notes (Answer Key)
+%! Vectors — Unit 4, Lesson 4.8 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,158 @@
 \pageheader{Unit 4, Lesson 4.8}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \ansline{Find the component form and magnitude of a vector from its tail and head.}
+  \item \ansline{Perform scalar multiplication and vector addition; compute the dot product.}
+  \item \ansline{Find the unit vector in the direction of a given vector.}
+  \item \ansline{Use the dot product formula to find the angle between two vectors and test for perpendicularity.}
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{vector} \ans{A directed line segment described by magnitude and direction; written $\langle a,b\rangle$.}
+\termblanklong{tail / head} \ans{Starting point (tail) and ending point (head) of the directed segment.}
+\termblanklong{magnitude} \ans{$\|\vec{v}\|=\sqrt{a^2+b^2}$; the length of the vector.}
+\termblanklong{scalar multiplication} \ans{$k\langle a,b\rangle=\langle ka,kb\rangle$; scales the magnitude by $|k|$.}
+\termblanklong{dot product} \ans{$\langle a_1,b_1\rangle\cdot\langle a_2,b_2\rangle=a_1 a_2+b_1 b_2$; a scalar.}
+\termblanklong{unit vector} \ans{A vector of magnitude 1; $\hat{u}=\vec{v}/\|\vec{v}\|$.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+Two drones receive identical displacement instructions. Drone A leaves $(1,2)$ and
+arrives at $(5,6)$. Drone B leaves $(3,0)$ and arrives at $(7,4)$.
+How far east and how far north does each drone travel? Why do they receive the same instructions?
+
+\ansline{Each drone moves 4 units east and 4 units north; the displacement vector $\langle 4,4\rangle$ is the same regardless of starting position.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 1 --- Vector Components and Magnitude}
+\small
+\textbf{Definition.} A \textbf{vector} from tail $P_1=(x_1,y_1)$ to head $P_2=(x_2,y_2)$ has
+component form $\vec{v} = \langle a, b\rangle$ where:
+
+\vspace{0.06in}
+\hspace{1em} $a = x_2 - x_1 = $ \ans{$x_2 - x_1$} \qquad $b = y_2 - y_1 = $ \ans{$y_2 - y_1$}
+
+\vspace{0.08in}
+\textbf{Magnitude:} $\|\vec{v}\| = \sqrt{a^2 + b^2} = $ \ans{$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
+
+\vspace{0.12in}
+\textbf{Direction from trig.} If $\|\vec{v}\| = r$ and direction angle is $\theta$:
+
+\vspace{0.06in}
+\hspace{1em} $a = r\cos\theta = $ \ans{$r\cos\theta$} \qquad $b = r\sin\theta = $ \ans{$r\sin\theta$}
+
+\vspace{0.12in}
+\textbf{Example.} Tail $P_1=(1,3)$, head $P_2=(5,6)$.
+
+\vspace{0.06in}
+\hspace{1em} $a = $ \ans{$4$} \quad $b = $ \ans{$3$} \quad
+$\vec{v} = \langle$ \ans{$4$}$,$ \ans{$3$}$\rangle$ \quad
+$\|\vec{v}\| = $ \ans{$\sqrt{16+9}=5$}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 2 --- Scalar Multiplication and Vector Addition}
+\small
+\textbf{Scalar multiplication.} $k\langle a,b\rangle = \langle$ \ans{$ka,\, kb$}$\rangle$
+
+\vspace{0.06in}
+New magnitude: $|k| \cdot \|\vec{v}\|$. \quad
+Direction: \ans{same} when $k>0$; \ans{reversed} when $k<0$.
+
+\vspace{0.12in}
+\textbf{Vector addition.} $\langle a_1,b_1\rangle + \langle a_2,b_2\rangle
+= \langle$ \ans{$a_1+a_2,\; b_1+b_2$}$\rangle$
+
+\vspace{0.06in}
+Geometric interpretation: place tail of second vector at \ans{head} of first;
+resultant runs from \ans{first tail} to \ans{second head}.
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{u}=\langle 3,1\rangle$, $\vec{w}=\langle -1,4\rangle$.
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lll}
+$\vec{u}+\vec{w} = \langle$\ans{$2$}$,$\ans{$5$}$\rangle$ &\quad&
+$2\vec{u} = \langle$\ans{$6$}$,$\ans{$2$}$\rangle$ \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 3 --- Dot Product and Unit Vectors}
+\small
+\textbf{Dot product.}
+$\langle a_1,b_1\rangle \cdot \langle a_2,b_2\rangle
+= a_1 a_2 + b_1 b_2 = $ \ans{$a_1 a_2 + b_1 b_2$}
+\quad (result is a \ans{scalar}, not a vector)
+
+\vspace{0.12in}
+\textbf{Unit vector.} A vector of magnitude \ans{$1$}.
+
+\vspace{0.06in}
+$\hat{u} = \dfrac{\vec{v}}{\|\vec{v}\|}
+= \left\langle \dfrac{a}{\|\vec{v}\|},\, \dfrac{b}{\|\vec{v}\|} \right\rangle$
+
+\vspace{0.1in}
+\textbf{Standard basis vectors:}
+$\hat{\imath} = \langle$ \ans{$1,0$}$\rangle$ \quad
+$\hat{\jmath} = \langle$ \ans{$0,1$}$\rangle$
+
+Any vector: $\langle a,b\rangle =$ \ans{$a$}$\hat{\imath}\, +\, $\ans{$b$}$\hat{\jmath}$
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{v}=\langle 3,4\rangle$, $\|\vec{v}\| = $ \ans{$5$}
+
+\vspace{0.06in}
+$\hat{u} = \left\langle \dfrac{3}{\ans{5}},\, \dfrac{4}{\ans{5}} \right\rangle
+= \langle$\ans{$3/5$}$,$\ans{$4/5$}$\rangle$ \quad
+Verify: $\|\hat{u}\| = $ \ans{$\sqrt{9/25+16/25}=1$}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 4 --- Angle Between Vectors \& Perpendicularity}
+\small
+\textbf{Angle formula.}
+$\vec{v}_1 \cdot \vec{v}_2 = \|\vec{v}_1\|\,\|\vec{v}_2\| \cos\theta$
+
+\vspace{0.08in}
+Solving for $\theta$:
+\quad $\theta = \cos^{-1}\!\left( \dfrac{\vec{v}_1 \cdot \vec{v}_2}{\|\vec{v}_1\|\,\|\vec{v}_2\|} \right)
+= $ \ans{the angle between the two vectors}
+
+\vspace{0.12in}
+\textbf{Perpendicular vectors.} Two nonzero vectors are perpendicular if and only if their
+dot product $= $ \ans{$0$} \quad (because $\cos 90^\circ = $ \ans{$0$}).
+
+\vspace{0.12in}
+\textbf{Example.} $\vec{u}=\langle 1,2\rangle$, $\vec{w}=\langle 4,-2\rangle$.
+
+\vspace{0.06in}
+\hspace{1em} $\vec{u}\cdot\vec{w} = (1)(4) + (2)(-2) = $ \ans{$0$}
+
+\hspace{1em} Are $\vec{u}$ and $\vec{w}$ perpendicular? \ans{Yes, because the dot product equals 0.}
+
+\vspace{0.1in}
+\textbf{Law of Cosines application.} If $\vec{r} = \vec{u}+\vec{w}$, the triangle with sides
+$\|\vec{u}\|$, $\|\vec{w}\|$, $\|\vec{r}\|$ satisfies:
+$\|\vec{r}\|^2 = \|\vec{u}\|^2 + \|\vec{w}\|^2 - 2\|\vec{u}\|\,\|\vec{w}\|\cos\theta$
+
+where $\theta$ is the angle \ans{between $\vec{u}$ and $\vec{w}$}.
 \end{notesbox}
 
 \end{document}

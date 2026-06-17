@@ -1,73 +1,197 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.14 — Lesson Plan
+%! Matrices Modeling Contexts — Unit 4, Lesson 4.14 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.14: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.14: Matrices Modeling Contexts}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\Large\bfseries \CourseName: \SchoolYear \\[4pt]
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective (3 periods):} Students will construct transition matrices from contextual percent-change data, apply repeated matrix multiplication to predict future state vectors, identify the steady state of a transition model, and use the inverse of a transition matrix to recover past states.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{AP Skills}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{1.C} --- Construct new functions from context
+  \item \textbf{3.B} --- Apply numerical results to the scenario
+  \item \textbf{3.C} --- Support conclusions with mathematical rationale
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{Key Understandings (EKs)}
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textbf{4.14.A.1} --- Build a transition matrix from percent-change rates; columns sum to 1
+  \item \textbf{4.14.B.1} --- $T\vec{s}_n = \vec{s}_{n+1}$ predicts the next state
+  \item \textbf{4.14.B.2} --- Repeated multiplication converges to a steady state
+  \item \textbf{4.14.B.3} --- $T^{-1}\vec{s}_n = \vec{s}_{n-1}$ recovers a past state
+\end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Transition matrix} --- a square matrix $T$ whose columns represent the proportions that transition from each state to every other state; each column sums to 1.
+  \item \textbf{State vector} --- a column vector $\vec{s}$ recording the count (or proportion) of items in each state at a given step.
+  \item \textbf{Steady state} --- a state vector $\vec{s}_\infty$ satisfying $T\vec{s}_\infty = \vec{s}_\infty$; the distribution does not change from one step to the next.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        Skills reviewed in the warm-up:
+        \begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+          \item Matrix--vector multiplication (Lesson 4.10)
+          \item Matrix inverse and $\det(A)$ (Lesson 4.11)
+          \item Interpreting a column vector as a list of values (Lessons 4.8--4.9)
+          \item Percentages as proportions; proportions summing to 1
+        \end{itemize}
         \end{minipage}
         &
         \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+            Please see attached warm-up.
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook --- Period 1, 5 min]{sky}
+Display the cafeteria scenario on the board or projector:
+
+\medskip
+\textit{``A school cafeteria offers two lunch choices every day: \textbf{Pizza (P)} and \textbf{Salad (S)}.
+On Day 0, \textbf{100 students} choose Pizza and \textbf{80 students} choose Salad.
+Each day, 70\% of Pizza choosers pick Pizza again (30\% switch to Salad),
+and 60\% of Salad choosers pick Salad again (40\% switch to Pizza).''}
+
+\medskip
+Ask: \textit{``Tomorrow's choices depend on today's. How do we predict Day 5? Day 100?''}
+Allow 1--2 min of partner discussion. Students will suggest tracking by hand --- use this to motivate a matrix model.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson --- Periods 1 \& 2]{sky}
+\begin{multicols}{2}
+
+\noindent\textbf{Step 1 --- Build the Transition Matrix (10 min)}
+
+Each \emph{column} describes what happens to members \emph{from} that state.
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+  \item Col 1 (from P): $0.7$ stay in P, $0.3$ go to S. Sum $= 1$.
+  \item Col 2 (from S): $0.4$ go to P, $0.6$ stay in S. Sum $= 1$.
+\end{itemize}
+\[T = \begin{bmatrix}0.7 & 0.4 \\ 0.3 & 0.6\end{bmatrix}, \quad \vec{s}_0 = \begin{bmatrix}100\\80\end{bmatrix}\]
+Key point: \emph{columns} sum to 1; rows need not.
+
+\columnbreak
+
+\noindent\textbf{Step 2 --- Predict the Next State (10 min)}
+\[
+\vec{s}_1 = T\vec{s}_0 = \begin{bmatrix}0.7(100)+0.4(80)\\0.3(100)+0.6(80)\end{bmatrix} = \begin{bmatrix}102\\78\end{bmatrix}
+\]
+Ask: \textit{``Why is the total still 180?''} Column sums of 1 preserve the total count.
+\end{multicols}
+
+\begin{multicols}{2}
+
+\noindent\textbf{Step 3 --- Repeated Multiplication (10 min)}
+
+Students compute $\vec{s}_2 = T\vec{s}_1$ and $\vec{s}_3 = T\vec{s}_2$:
+
+\begin{center}
+\small
+\begin{tabular}{c|cc}
+Day & P & S \\\hline
+0 & 100.00 & 80.00 \\
+1 & 102.00 & 78.00 \\
+2 & 103.20 & 76.80 \\
+3 & 103.92 & 76.08 \\
+\end{tabular}
+\end{center}
+Pizza count increases but changes shrink each step.
+
+\columnbreak
+
+\noindent\textbf{Step 4 --- Steady State (15 min)}
+
+Use technology for $\vec{s}_{20}, \vec{s}_{50}, \ldots$ Observe convergence.
+
+Solve $T\vec{s} = \vec{s}$ with $p + q = 180$:
+\[-0.3p + 0.4q = 0 \;\Rightarrow\; p = \tfrac{4}{3}q\]
+\[\tfrac{4}{3}q + q = 180 \;\Rightarrow\; q \approx 77.14,\; p \approx 102.86\]
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- Period 3]{sky}
+
+\noindent\textbf{Step 5 --- Predicting Past States with $T^{-1}$ (15 min)}
+
+Since $\vec{s}_1 = T\vec{s}_0$, recover Day 0 by $\vec{s}_0 = T^{-1}\vec{s}_1$.
+
+$\det(T) = 0.7(0.6) - 0.4(0.3) = 0.30$, so
+$T^{-1} = \dfrac{1}{0.3}\begin{bmatrix}0.6 & -0.4 \\ -0.3 & 0.7\end{bmatrix}$.
+
+Verify: $T^{-1}\begin{bmatrix}102\\78\end{bmatrix} = \begin{bmatrix}100\\80\end{bmatrix}$ \checkmark
+
+Students then apply $T^{-1}\vec{s}_0$ to find a hypothetical ``Day $-1$'' state.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item During Step 1: check that students read \emph{columns}, not rows, when building $T$. Transposing is the most common error.
+  \item During Steps 2--3: confirm total count stays at 180 each step.
+  \item During Step 4: cold-call \textit{``What happens to the \emph{difference} between successive state vectors?''}
+  \item During Step 5: watch for sign errors in $T^{-1}$. Remind students to verify $T\cdot T^{-1} = I$ before applying.
+\end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{skillbox}[Group Work \& Differentiation (Streaming Services Activity)]{redbox}
+Students work in groups of 3--4 on the tiered activity (StreamA / StreamB scenario).
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate}, fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+Write the transition matrix $T$. Compute $\vec{s}_1 = T\vec{s}_0$.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, title=\textbf{Tier A --- Apply}, fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+Compute $\vec{s}_2$ and $\vec{s}_3$. What pattern do you notice? About how many users will each service have after many months?
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, title=\textbf{Tier E --- Extend}, fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+Find $T^{-1}$. Use it to find $\vec{s}_{-1}$. Verify by checking $T\vec{s}_{-1} = \vec{s}_0$.
+\end{tcolorbox}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Students complete the exit ticket independently in the final 8 minutes of Period 3. The ticket assesses:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item One-step matrix multiplication ($\vec{s}_2$ from $\vec{s}_1$)
+  \item Setting up and solving the steady-state equation
+  \item Conceptual understanding of $T^{-1}$ for past states
+\end{itemize}
+Collect before dismissal. Use responses to identify students needing support before the unit assessment.
 \end{skillbox}
 
-\begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{skillbox}[Reinforcement \& Closing (Unit 4 Reflection)]{goldbox}
+This is the \textbf{final lesson of Unit 4}. Use the last 5 minutes of Period 3 for a brief unit reflection:
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt]
+  \item \textit{``We began Unit 4 with parametric functions, moved through vectors and matrix operations, and now we see matrices as \emph{dynamic models} --- tools for predicting change over time.''}
+  \item Ask students: \textit{``The most powerful idea from Unit 4 was \underline{\hspace{4cm}} because \underline{\hspace{4cm}}.''}
+  \item Assign the Lesson 4.14 homework for individual practice and AP-style preparation. No new lesson preview needed.
+\end{itemize}
 \end{skillbox}
+
 \end{document}

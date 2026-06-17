@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.11 — Lesson Plan
+%! The Inverse and Determinant of a Matrix — Unit 4, Lesson 4.11 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.11: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.11: The Inverse and Determinant of a Matrix}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,171 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will compute the determinant of a $2\times2$ matrix,
+    use it to determine invertibility, and find the inverse of an invertible $2\times2$ matrix
+    using the algebraic formula. (Big Idea: Functions)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{AP Skills:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item \textbf{1.B} --- Identify mathematical information from graphical, numerical,
+              analytical, and verbal representations.
+        \item \textbf{3.B} --- Apply appropriate mathematical procedures for a given situation.
+    \end{itemize}
+    \smallskip
+    \textbf{Learning Objectives:} 4.11.A, 4.11.B\\
+    \textbf{Essential Knowledge:} 4.11.A.1--4, 4.11.B.1--3
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{Key Understandings:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item The identity matrix $I$ satisfies $A \cdot I = I \cdot A = A$.
+        \item $A^{-1}$ exists if and only if $\det(A) \ne 0$.
+        \item $\det(A) = ad - bc$ for $A = \begin{bmatrix}a&b\\c&d\end{bmatrix}$.
+        \item $A^{-1} = \dfrac{1}{\det(A)}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$.
+        \item $|\det(A)|$ equals the area of the parallelogram spanned by the columns of $A$.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+    \textbf{identity matrix} & A square matrix $I$ with 1s on the main diagonal and 0s elsewhere;
+        $I_2 = \begin{bmatrix}1&0\\0&1\end{bmatrix}$. \\
+    \textbf{inverse matrix} & $A^{-1}$: the unique matrix satisfying $A \cdot A^{-1} = A^{-1} \cdot A = I$. \\
+    \textbf{determinant} & A scalar $\det(A) = ad - bc$ encoding the scaling and orientation of $A$. \\
+    \textbf{invertible} & A matrix is \textit{invertible} when $\det(A) \ne 0$; \textit{singular} when $\det(A) = 0$. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+        \begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
+            \textbf{Students should already know:}
+            \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+                \item Matrix multiplication (Lesson 4.10): row $\times$ column dot products.
+                \item Multiplicative inverses of real numbers: $a \cdot a^{-1} = 1$.
+                \item Basic $2\times2$ arithmetic and signed arithmetic.
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+        \begin{minipage}[t]{0.36\linewidth}\vspace{0pt}\centering
+            \textit{See attached warm-up.}
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textbf{Opening question:} ``What number times 6 gives 1?'' (Answer: $\tfrac{1}{6}$.)
+    That is the \emph{multiplicative inverse} of 6. Now ask: \textbf{``Can a matrix have an
+    inverse --- a matrix $M^{-1}$ such that $M \cdot M^{-1} = I$?''}
+    Allow 1--2 minutes of think-pair-share. Reveal: yes, but \emph{only when a certain
+    condition is met}. Today we find that condition and derive the formula.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Step 1 --- The Identity Matrix (EK 4.11.A.1--2).}\\
+Display $I_2 = \begin{bmatrix}1&0\\0&1\end{bmatrix}$.
+Have students multiply $\begin{bmatrix}3&1\\2&5\end{bmatrix}\begin{bmatrix}1&0\\0&1\end{bmatrix}$
+and observe the product equals the original matrix.
+Generalize: $A \cdot I = I \cdot A = A$ for any square $A$.
+
+\textbf{Step 2 --- Define the Inverse (EK 4.11.A.3).}\\
+We seek $A^{-1}$ so $A \cdot A^{-1} = I$. Ask: ``Why is this useful?''
+(Solving matrix equations, like $x = a^{-1} \cdot b$ for real numbers.)
+Verify together: $\begin{bmatrix}2&1\\5&3\end{bmatrix}\begin{bmatrix}3&-1\\-5&2\end{bmatrix}=I$.
+
+\columnbreak
+
+\textbf{Step 3 --- The Determinant (EK 4.11.B.1, 4.11.B.3).}\\
+Introduce $\det(A) = ad - bc$.
+Compute $\det\begin{bmatrix}2&1\\5&3\end{bmatrix} = 6-5 = 1$.
+Note: if $\det(A) = 0$, the inverse does not exist.
+
+\textbf{Step 4 --- The Inverse Formula (EK 4.11.A.4).}\\
+Present: $A^{-1} = \tfrac{1}{\det(A)}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$.
+Worked example: $A=\begin{bmatrix}3&2\\1&4\end{bmatrix}$, $\det=10$,
+$A^{-1}=\tfrac{1}{10}\begin{bmatrix}4&-2\\-1&3\end{bmatrix}$.
+Verify $A \cdot A^{-1} = I$ together.
+
+\textbf{Step 5 --- Geometric Interpretation (EK 4.11.B.2).}\\
+The columns of $A$ span a parallelogram; $|\det(A)|$ is its area.
+Example: $\begin{bmatrix}2&0\\1&3\end{bmatrix}$ has area $|6-0|=6$.
+If $\det=0$, the columns are parallel (degenerate, zero area).
+
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+    \textbf{Circulate and check for:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item Computing $bc - ad$ instead of $ad - bc$.
+        \item Sign errors on $-b$ and $-c$ in the inverse formula.
+        \item Forgetting to scale the entire matrix by $\tfrac{1}{\det(A)}$.
+        \item Swapping $a$ and $d$ (confusing the swap-and-negate formula).
+    \end{itemize}
+    \textbf{Cold-call prompts:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item ``How do you know whether a matrix is invertible \emph{before} computing $A^{-1}$?''
+        \item ``If $\det(A) = 0$, what does that mean geometrically?''
+    \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+    \item Given $A=\begin{bmatrix}3&2\\1&4\end{bmatrix}$, identify $a,b,c,d$.
+    \item Compute $\det(A) = ad - bc$.
+    \item Is $A$ invertible? Why or why not?
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching}
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+    \item Find $A^{-1}$ for $A=\begin{bmatrix}3&2\\1&4\end{bmatrix}$.
+    \item Verify $A \cdot A^{-1} = I$ by multiplication.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extension}
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+    \item Let $B=\begin{bmatrix}3&6\\1&2\end{bmatrix}$.
+    \item Compute $\det(B)$. What does $\det(B)=0$ mean geometrically for the column vectors of $B$?
+    \item Can $B$ be inverted? Explain why or why not.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+    \textbf{Exit Ticket (last 8 minutes):}
+    \begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+        \item Compute $\det\begin{bmatrix}5&2\\3&1\end{bmatrix}$.
+        \item Does this matrix have an inverse? If so, find it.
+        \item A $2\times2$ matrix has $\det = 0$. What does this mean geometrically about
+              its column vectors?
+    \end{enumerate}
+    \smallskip
+    \textbf{Collect and review:} check for sign errors in the determinant and students who
+    attempt to invert a singular matrix. Use results to inform Day 2 pacing.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+    \textbf{Homework:} Problems covering determinant computation, invertibility checks,
+    finding $A^{-1}$, verifying by multiplication, geometric area interpretation, and one
+    AP-style multiple-choice item. See \texttt{homework/main.tex}.
+
+    \textbf{Extension:} Explore $3\times3$ determinants via cofactor expansion.
+
+    \textbf{Preview of Lesson 4.12:} Linear transformations --- matrices as functions that
+    encode geometric actions (rotation, reflection, scaling). Ask students: ``If $A$ maps
+    every point in the plane, what does $A^{-1}$ do?''
 \end{skillbox}
+
 \end{document}
