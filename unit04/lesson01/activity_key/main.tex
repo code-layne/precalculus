@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.1 — Group Activity (Answer Key)
+%! Parametric Functions — Unit 4, Lesson 4.1 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,105 @@
 \pageheader{Unit 4, Lesson 4.1}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
+\begin{scenariobox}[Tracking a Particle's Path]{sky}
+A particle moves in the $xy$-plane. Its position at time $t$ seconds
+is given by the parametric function
+\[
+  f(t) = \bigl(t^2,\; t - 1\bigr), \quad -2 \le t \le 3.
+\]
+Here $x(t) = t^2$ gives the particle's horizontal position and
+$y(t) = t - 1$ gives its vertical position (both in meters).
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\begin{notesbox}{Part 1 --- Building the Table}
+
+\textbf{1.}\quad Complete the table of values.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ (sec) & $x(t) = t^2$ & $y(t) = t - 1$ & Position $(x,\; y)$ \\
+\hline
+$-2$ & \ans{$4$}  & \ans{$-3$} & \ans{$(4,\;-3)$} \\
+\hline
+$-1$ & \ans{$1$}  & \ans{$-2$} & \ans{$(1,\;-2)$} \\
+\hline
+$0$  & \ans{$0$}  & \ans{$-1$} & \ans{$(0,\;-1)$} \\
+\hline
+$1$  & \ans{$1$}  & \ans{$0$}  & \ans{$(1,\;0)$}  \\
+\hline
+$2$  & \ans{$4$}  & \ans{$1$}  & \ans{$(4,\;1)$}  \\
+\hline
+$3$  & \ans{$9$}  & \ans{$2$}  & \ans{$(9,\;2)$}  \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{2.}\quad Starting and ending positions:
+
+\ans{Start: $(4,\,-3)$ at $t = -2$. End: $(9,\,2)$ at $t = 3$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Analyzing the Path}
+
+\textbf{3.}\quad $t = -1$ and $t = 1$ both give $x(t) = 1$.
+
+\ans{Both give $x = 1$, but at $t = -1$ the particle is at $(1,\,-2)$
+and at $t = 1$ it is at $(1,\,0)$. The particle does not visit the
+same location twice, but the parametric curve passes through the
+vertical line $x = 1$ at two different heights.}
+
+\vspace{0.04in}
+\textbf{4.}\quad When does the particle cross the $y$-axis ($x = 0$)?
+
+\ans{$t^2 = 0 \;\Rightarrow\; t = 0$.
+At $t = 0$: $y(0) = -1$.
+The particle crosses the $y$-axis at $(0,\,-1)$.}
+
+\vspace{0.04in}
+\textbf{5.}\quad When is the particle on the $x$-axis ($y = 0$)?
+
+\ans{$t - 1 = 0 \;\Rightarrow\; t = 1$.
+At $t = 1$: $x(1) = 1$.
+The particle is on the $x$-axis at $(1,\,0)$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- Extension (Tier E)}
+
+\textbf{6.}
+
+(a) The two ordered pairs where $x = 1$:
+
+\ans{$(1,\,-2)$ (at $t = -1$) and $(1,\,0)$ (at $t = 1$).}
+
+(b) Can the curve be expressed as $y = g(x)$ on the full domain?
+
+\ans{No. The vertical line $x = 1$ intersects the curve at two
+distinct points, $(1,\,-2)$ and $(1,\,0)$. A function can assign
+only one output per input, so the curve fails the vertical line
+test and cannot be written as $y = g(x)$ on $-2 \le t \le 3$.}
+
+\begin{teachernote}
+  This is the payoff of Lesson 4.1: parametric curves can fail the
+  vertical line test, which is why parametric form is more expressive
+  than $y = g(x)$. Reference CED Sample Instructional Activity 1
+  (p.\ 108): students discuss why parametric graphs can fail the
+  vertical line test.
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}
