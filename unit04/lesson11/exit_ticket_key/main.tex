@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.11 — Exit Ticket (Answer Key)
+%! The Inverse and Determinant of a Matrix — Unit 4, Lesson 4.11 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,27 @@
 \pageheader{Unit 4, Lesson 4.11}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Exit Ticket}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+
+    \item Compute $\det\begin{bmatrix}5&2\\3&1\end{bmatrix}$.\\[4pt]
+          \ans{$\det = 5(1) - 2(3) = 5 - 6 = -1$}
+          \vspace{0.25in}
+
+    \item Does the matrix in question 1 have an inverse? If so, find it.\\[4pt]
+          \ans{Yes, since $\det = -1 \ne 0$.}\\[4pt]
+          \ans{$A^{-1} = \dfrac{1}{-1}\begin{bmatrix}1&-2\\-3&5\end{bmatrix}
+          = \begin{bmatrix}-1&2\\3&-5\end{bmatrix}$}
+          \vspace{0.25in}
+
+    \item A $2\times2$ matrix has $\det = 0$. What does this mean geometrically
+          about its two column vectors?\\[4pt]
+          \ansline{The two column vectors are parallel (one is a scalar multiple of the other).}
+          \ansline{They span only a line, not a plane; the parallelogram they form has area zero.}
+
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

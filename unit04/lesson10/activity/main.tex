@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.10 — Group Activity
+%! Matrices — Unit 4, Lesson 4.10 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -6,14 +6,85 @@
 
 \begin{document}
 
-\pageheader{Unit 4, Lesson 4.10}{Group Activity}
+\pageheader{Unit 4, Lesson 4.10}{Group Activity: Matrix Multiplication}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Matrix-Vector Product},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Let $A = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}$ and $\mathbf{v} = \begin{bmatrix}5 \\ 6\end{bmatrix}$.
+
+\medskip
+\textbf{Step 1.} What are the dimensions of $A$? \underline{\hspace{2cm}}
+What are the dimensions of $\mathbf{v}$? \underline{\hspace{2cm}}
+Is $A\mathbf{v}$ defined? \underline{\hspace{2cm}}
+
+\medskip
+\textbf{Step 2.} Fill in the dot products below, then write the product matrix.
+
+\medskip
+Entry $(1,1)$: \textit{row 1 of $A$} $\cdot$ \textit{col 1 of $\mathbf{v}$}
+$= 1(\phantom{0}) + 2(\phantom{0}) = $ \underline{\hspace{1.5cm}}
+
+\medskip
+Entry $(2,1)$: \textit{row 2 of $A$} $\cdot$ \textit{col 1 of $\mathbf{v}$}
+$= 3(\phantom{0}) + 4(\phantom{0}) = $ \underline{\hspace{1.5cm}}
+
+\medskip
+$A\mathbf{v} = \begin{bmatrix}\phantom{00} \\ \phantom{00}\end{bmatrix}$
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply: Does Order Matter?},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Let $A = \begin{bmatrix}2 & 1 \\ 0 & 3\end{bmatrix}$ and $B = \begin{bmatrix}1 & 4 \\ 2 & 0\end{bmatrix}$.
+
+\medskip
+\textbf{(a)} Compute $AB$.
+\vspace{1.8in}
+
+\textbf{(b)} Compute $BA$.
+\vspace{1.8in}
+
+\textbf{(c)} Is $AB = BA$? \underline{\hspace{2cm}} \quad
+What does this tell you about matrix multiplication?
+\vspace{0.6in}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Revenue Matrix},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A store sells 3 items priced at \$10, \$5, and \$8. The row-price vector is
+$p = \begin{bmatrix}10 & 5 & 8\end{bmatrix}$.
+
+Units sold on two days are recorded in the matrix
+$Q = \begin{bmatrix}3 & 1 \\ 2 & 4 \\ 0 & 3\end{bmatrix}$,
+where column 1 is Day~1 and column 2 is Day~2.
+
+\medskip
+\textbf{(a)} What are the dimensions of $p$? \underline{\hspace{2cm}}
+What are the dimensions of $Q$? \underline{\hspace{2cm}}
+Is $pQ$ defined? \underline{\hspace{1.5cm}}
+What will be the dimensions of $pQ$? \underline{\hspace{2cm}}
+
+\medskip
+\textbf{(b)} Compute $pQ$.
+\vspace{1.6in}
+
+\textbf{(c)} Interpret each entry of $pQ$ in the context of the problem.
+\vspace{0.8in}
+
+\end{tcolorbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.10 — Homework (Answer Key)
+%! Matrices — Unit 4, Lesson 4.10 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,67 @@
 \pageheader{Unit 4, Lesson 4.10}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}[leftmargin=1.6em, itemsep=14pt]
+
+% ---- Problem 1 ----
+\item Consider the matrix $M = \begin{bmatrix}4 & -1 & 0 \\ 2 & 7 & 3\end{bmatrix}$.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Dimensions of $M$: \ans{$2 \times 3$}
+  \item $m_{12} = $ \ans{$-1$} \quad (row 1, column 2)
+  \item $m_{23} = $ \ans{$3$} \quad (row 2, column 3)
+\end{enumerate}
+
+\vspace{0.2in}
+
+% ---- Problem 2 ----
+\item Compatibility:
+
+\medskip
+(a) $4\times 3$ and $3\times 2$: \ans{Defined; product is $4 \times 2$.}
+
+\smallskip
+(b) $2\times 5$ and $3\times 1$: \ans{Not defined; inner dimensions $5 \neq 3$.}
+
+\smallskip
+(c) $1\times 4$ and $4\times 3$: \ans{Defined; product is $1 \times 3$.}
+
+\smallskip
+(d) $3\times 3$ and $3\times 3$: \ans{Defined; product is $3 \times 3$.}
+
+\vspace{0.2in}
+
+% ---- Problem 3 ----
+\item $AB = \begin{bmatrix}3(1)+2(2) & 3(0)+2(3) \\ 1(1)+4(2) & 1(0)+4(3)\end{bmatrix}
+= $ \ans{$\begin{bmatrix}7 & 6 \\ 9 & 12\end{bmatrix}$}
+
+\vspace{0.2in}
+
+% ---- Problem 4 ----
+\item $\begin{bmatrix}5 & -1 \\ 0 & 2\end{bmatrix}\begin{bmatrix}3 \\ 6\end{bmatrix}
+= \begin{bmatrix}5(3)+(-1)(6) \\ 0(3)+2(6)\end{bmatrix}
+= $ \ans{$\begin{bmatrix}9 \\ 12\end{bmatrix}$}
+
+\vspace{0.2in}
+
+% ---- Problem 5 ----
+\item Nutrition context.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $N$ is $2\times 3$ and $\mathbf{s}$ is $2\times 1$. \ans{Not defined; inner dimensions $3 \neq 2$.}\\[4pt]
+        \textit{Instructor note: $N^{\top}\mathbf{s}$ (or $\mathbf{s}^{\top}N$) would be the meaningful product. Accept either interpretation as long as the student correctly checks compatibility.}
+  \item \ans{$N^{\top}\mathbf{s}$: $N^{\top}$ is $3\times 2$ and $\mathbf{s}$ is $2\times 1$, defined.\\[3pt]
+        $N^{\top}\mathbf{s} = \begin{bmatrix}0.25(200)+0.30(150)\\0.10(200)+0.05(150)\\0.60(200)+0.55(150)\end{bmatrix} = \begin{bmatrix}95\\27.5\\202.5\end{bmatrix}$\\[4pt]
+        Protein: 95 g, Fat: 27.5 g, Carbohydrates: 202.5 g}
+\end{enumerate}
+
+\vspace{0.2in}
+
+% ---- Problem 6 ----
+\item \textbf{AP-Style MC:} $P$ is $3\times k$, $Q$ is $2\times 4$, and $PQ$ is defined.
+For $PQ$ to be defined the columns of $P$ must equal the rows of $Q$, so $k = 2$.
+\ans{(A) $k = 2$}
+
+\end{enumerate}
 
 \end{document}

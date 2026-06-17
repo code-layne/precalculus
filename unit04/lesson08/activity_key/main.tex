@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.8 — Group Activity (Answer Key)
+%! Vectors — Unit 4, Lesson 4.8 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,132 @@
 \pageheader{Unit 4, Lesson 4.8}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{scenariobox}[Navigation Mission --- Working with Vectors]{sky}
+\small
+A team of engineers is analyzing displacement vectors for a fleet of drones.
+Each tier below gives you a different mission. Work with your group to complete
+all parts of your assigned tier.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier R
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $\vec{u} = \langle 3, 4\rangle$ and $\vec{w} = \langle -3, 4\rangle$.
+
+\textbf{(a)} Find the magnitude of each vector.
+
+\vspace{0.06in}
+\hspace{1em} $\|\vec{u}\| = \sqrt{3^2 + 4^2} = $ \ans{$\sqrt{25} = 5$}
+
+\vspace{0.08in}
+\hspace{1em} $\|\vec{w}\| = \sqrt{(-3)^2 + 4^2} = $ \ans{$\sqrt{25} = 5$}
+
+\vspace{0.14in}
+\textbf{(b)} Compute the vector sum $\vec{u} + \vec{w}$.
+
+\vspace{0.06in}
+\hspace{1em} $\vec{u} + \vec{w} = \langle 3+(-3),\; 4+4 \rangle = \langle$ \ans{$0$}$,$ \ans{$8$}$\rangle$
+
+\vspace{0.14in}
+\textbf{(c)} Compute the dot product $\vec{u} \cdot \vec{w}$.
+
+\vspace{0.06in}
+\hspace{1em} $\vec{u} \cdot \vec{w} = (3)(-3) + (4)(4) = $ \ans{$-9 + 16 = 7$}
+
+\vspace{0.14in}
+\textbf{(d)} Are $\vec{u}$ and $\vec{w}$ perpendicular? Explain using the dot product.
+
+\vspace{0.06in}
+\ansline{No. The dot product equals 7, which is not zero, so $\vec{u}$ and $\vec{w}$ are not perpendicular.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier A
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+A ship travels displacement $\vec{u} = \langle 6, 8\rangle$ km, then
+$\vec{w} = \langle -2, 4\rangle$ km.
+
+\textbf{(a)} Find the total displacement vector $\vec{r} = \vec{u} + \vec{w}$.
+
+\vspace{0.06in}
+\hspace{1em} $\vec{r} = \langle$ \ans{$4$}$,$ \ans{$12$}$\rangle$
+
+\vspace{0.14in}
+\textbf{(b)} Find the magnitude of the total displacement $\|\vec{r}\|$.
+
+\vspace{0.06in}
+\hspace{1em} $\|\vec{r}\| = $ \ans{$\sqrt{4^2+12^2} = \sqrt{16+144} = \sqrt{160} = 4\sqrt{10}$}
+
+\vspace{0.14in}
+\textbf{(c)} Find the unit vector $\hat{r}$ in the direction of $\vec{r}$.
+
+\vspace{0.06in}
+\hspace{1em} $\hat{r} = \dfrac{\vec{r}}{\|\vec{r}\|} = \left\langle \dfrac{{\color{keyred}\mathbf{4}}}{{\color{keyred}\mathbf{4\sqrt{10}}}},\; \dfrac{{\color{keyred}\mathbf{12}}}{{\color{keyred}\mathbf{4\sqrt{10}}}} \right\rangle
+= \left\langle \dfrac{1}{\sqrt{10}},\; \dfrac{3}{\sqrt{10}} \right\rangle$
+
+\vspace{0.14in}
+\textbf{(d)} Verify that $\|\hat{r}\| = 1$.
+
+\vspace{0.06in}
+\hspace{1em} $\|\hat{r}\| = $ \ans{$\sqrt{1/10 + 9/10} = \sqrt{10/10} = 1$ \checkmark}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier E
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Find all vectors $\langle a, b\rangle$ of magnitude 5 that are perpendicular to
+$\langle 3, 4\rangle$.
+
+\textbf{(a)} Write the perpendicularity condition (dot product equals zero):
+
+\vspace{0.06in}
+\hspace{1em} $\langle a,b\rangle \cdot \langle 3,4\rangle = $ \ans{$3a+4b$} $= 0$
+
+\vspace{0.14in}
+\textbf{(b)} Write the magnitude condition:
+
+\vspace{0.06in}
+\hspace{1em} $\sqrt{a^2 + b^2} = 5$ \quad so \quad $a^2 + b^2 = $ \ans{$25$}
+
+\vspace{0.14in}
+\textbf{(c)} From the perpendicularity condition, express $b$ in terms of $a$:
+
+\vspace{0.06in}
+\hspace{1em} $b = $ \ans{$-\dfrac{3a}{4}$}
+
+\vspace{0.14in}
+\textbf{(d)} Substitute into the magnitude condition and solve for $a$:
+
+\ansline{$a^2 + \left(-\dfrac{3a}{4}\right)^2 = 25$}
+\ansline{$a^2 + \dfrac{9a^2}{16} = 25 \;\Rightarrow\; \dfrac{25a^2}{16} = 25 \;\Rightarrow\; a^2 = 16 \;\Rightarrow\; a = \pm 4$}
+\ansline{When $a=4$: $b = -3$. When $a=-4$: $b = 3$.}
+
+\textbf{(e)} State all solutions $\langle a,b\rangle$. How many solutions are there?
+Generalize: for any nonzero vector $\langle p,q\rangle$, how many unit vectors are
+perpendicular to it?
+
+\ansline{Solutions: $\langle 4,-3\rangle$ and $\langle -4,3\rangle$. There are exactly 2 solutions.}
+\ansline{In general, for any nonzero vector, there are exactly 2 vectors of a given nonzero magnitude perpendicular to it (pointing in opposite directions).}
+\end{tcolorbox}
 
 \end{document}

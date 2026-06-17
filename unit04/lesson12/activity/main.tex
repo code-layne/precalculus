@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.12 — Group Activity
+%! Linear Transformations and Matrices — Unit 4, Lesson 4.12 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,107 @@
 \pageheader{Unit 4, Lesson 4.12}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
+\begin{scenariobox}[Exploring Geometric Transformations]{sky}
+\small
+Each tier below uses a different $2\times 2$ matrix.  Your goal is to compute output
+vectors and connect the matrix to a geometric action.  Work with your partner and be
+ready to share your geometric description with the class.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier R
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Reinforce},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}2 & 0 \\ 0 & 2\end{bmatrix}$.
+
+\textbf{(a)} Compute $L(\vec{v}) = A\vec{v}$ for each input vector.
+
+\vspace{0.06in}
+$\vec{v}_1 = \begin{bmatrix}3\\1\end{bmatrix}$: \quad
+$A\vec{v}_1 = \begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}3\\1\end{bmatrix}
+= \begin{bmatrix}\hspace{2cm}\\\hspace{2cm}\end{bmatrix}$
+
+\vspace{0.12in}
+$\vec{v}_2 = \begin{bmatrix}-1\\4\end{bmatrix}$: \quad
+$A\vec{v}_2 = \begin{bmatrix}2&0\\0&2\end{bmatrix}\begin{bmatrix}-1\\4\end{bmatrix}
+= \begin{bmatrix}\hspace{2cm}\\\hspace{2cm}\end{bmatrix}$
+
+\vspace{0.12in}
+\textbf{(b)} Verify the zero-vector property: $A\begin{bmatrix}0\\0\end{bmatrix} = $ \blank{2.5cm}
+
+\vspace{0.10in}
+\textbf{(c)} Describe in words what this transformation does to any input vector.
+
+\writelines{2}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier A
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- At Standard},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}0 & -1 \\ 1 & 0\end{bmatrix}$.
+Apply $L(\vec{v})=A\vec{v}$ to the three triangle vertices below using one matrix product.
+
+\vspace{0.06in}
+\textbf{(a)} Set up the $2\times 3$ input matrix from vertices $(1,0)$, $(0,1)$, $(-1,-1)$:
+
+\vspace{0.06in}
+\hspace{1em} Input matrix $= \begin{bmatrix}\hspace{0.8cm}&\hspace{0.8cm}&\hspace{0.8cm}\\\hspace{0.8cm}&\hspace{0.8cm}&\hspace{0.8cm}\end{bmatrix}$
+
+\vspace{0.12in}
+\textbf{(b)} Compute $A \cdot \text{(input matrix)}$:
+
+\vspace{0.06in}
+\hspace{1em} Output matrix $= \begin{bmatrix}\hspace{0.8cm}&\hspace{0.8cm}&\hspace{0.8cm}\\\hspace{0.8cm}&\hspace{0.8cm}&\hspace{0.8cm}\end{bmatrix}$
+
+\vspace{0.12in}
+\textbf{(c)} State the image vertices as ordered pairs: \blank{7cm}
+
+\vspace{0.10in}
+\textbf{(d)} Describe the geometric effect of this transformation.
+
+\writelines{2}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Tier E
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+Let $A = \begin{bmatrix}1 & 2 \\ 0 & 1\end{bmatrix}$,
+$\vec{v} = \begin{bmatrix}1\\2\end{bmatrix}$, and $\vec{w} = \begin{bmatrix}3\\-1\end{bmatrix}$.
+
+Verify the additive property of linearity: $L(\vec{v}+\vec{w}) = L(\vec{v}) + L(\vec{w})$.
+
+\vspace{0.08in}
+\textbf{Step 1.} Compute $\vec{v}+\vec{w}$, then find $L(\vec{v}+\vec{w}) = A(\vec{v}+\vec{w})$.
+
 \writelines{4}
-\end{notesbox}
+
+\textbf{Step 2.} Compute $L(\vec{v}) = A\vec{v}$ and $L(\vec{w}) = A\vec{w}$ separately,
+then add.
+
+\writelines{4}
+
+\textbf{Step 3.} State whether the two results are equal and what this confirms.
+
+\writelines{2}
+\end{tcolorbox}
 
 \end{document}

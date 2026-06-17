@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.13 — Warm-Up (Answer Key)
+%! Matrices as Functions — Unit 4, Lesson 4.13 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,55 @@
 \pageheader{Unit 4, Lesson 4.13}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Key}
+\small
+
+\textbf{1.}\quad Compute each matrix--vector product.
+
+\vspace{0.06in}
+\hspace{1em}
+(a)\quad
+$\begin{bmatrix}0 & -1 \\ 1 & 0\end{bmatrix}
+\begin{bmatrix}1 \\ 0\end{bmatrix}
+= $ \ans{$\begin{bmatrix}0 \\ 1\end{bmatrix}$}
+\qquad\qquad
+(b)\quad
+$\begin{bmatrix}0 & -1 \\ 1 & 0\end{bmatrix}
+\begin{bmatrix}0 \\ 1\end{bmatrix}
+= $ \ans{$\begin{bmatrix}-1 \\ 0\end{bmatrix}$}
+
+\vspace{0.2in}
+
+\textbf{2.}\quad Find the determinant of $A = \begin{bmatrix}2 & 0 \\ 0 & 3\end{bmatrix}$.
+Then explain what $|\det A|$ tells you about the area of any region transformed by $A$.
+
+\vspace{0.06in}
+\hspace{1em} $\det A = $ \ans{$6$}
+
+\vspace{0.06in}
+\hspace{1em} Area interpretation: \ans{The transformation scales all areas by a factor of $6$.}
+
+\vspace{0.2in}
+
+\textbf{3.}\quad Let $A = \begin{bmatrix}1 & 2 \\ 0 & 1\end{bmatrix}$.
+Compute $A^{-1}$ using the $2\times2$ inverse formula
+$\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1}=\dfrac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$.
+
+\vspace{0.1in}
+\hspace{1em} $A^{-1} = $ \ans{$\begin{bmatrix}1 & -2 \\ 0 & 1\end{bmatrix}$}
+
+\vspace{0.06in}
+\hspace{1em} Verify: \ans{$\begin{bmatrix}1&2\\0&1\end{bmatrix}\begin{bmatrix}1&-2\\0&1\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}=I$. \checkmark}
+
 \end{notesbox}
+
+\begin{teachernote}
+Q1 previews the main idea: the columns of $\bigl[\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr]$
+are exactly the images of $\hat{\imath}$ and $\hat{\jmath}$ under the $90°$ rotation --- a direct
+bridge to Step 1 of the lesson. If students struggle with Q3, remind them $\det A = 1\cdot1 - 2\cdot0 = 1$,
+so the inverse formula simplifies to just swapping the diagonal and negating the off-diagonal.
+\end{teachernote}
 
 \end{document}

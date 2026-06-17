@@ -1,15 +1,15 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.13 — Lesson Plan
+%! Matrices as Functions — Unit 4, Lesson 4.13 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.13: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.13: Matrices as Functions}
 
 \begin{document}
 \begin{center}
@@ -19,55 +19,166 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective (3 periods):} Students will find the matrix associated with a linear
+    transformation from its unit-vector images, apply the rotation matrix
+    $R(\theta) = \bigl[\begin{smallmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{smallmatrix}\bigr]$,
+    compose two transformations by multiplying their matrices (noting order matters), and find
+    inverse transformations using matrix inverses.
+    (Big Ideas: FUN, LIM)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{AP Skills}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{1.B} Identify the appropriate mathematical definition or theorem.
+  \item \textbf{2.A} Identify mathematical information from graphical, numerical, and/or analytical representations.
+  \item \textbf{3.A} Apply an appropriate mathematical definition, theorem, or algorithm to solve a problem.
+\end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{Key Understandings (EKs 4.13.A--C)}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item The matrix columns are the images of $\hat{\imath}$ and $\hat{\jmath}$.
+  \item The rotation matrix rotates every vector by $\theta$ counterclockwise.
+  \item $|\det A|$ gives the area scale factor of the transformation.
+  \item Composing transformations corresponds to multiplying their matrices; order matters.
+  \item Two transformations are inverses iff their composition is the identity; $L^{-1}(\vec v) = A^{-1}\vec v$.
+\end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Linear transformation:} a function $L:\mathbb{R}^2\to\mathbb{R}^2$ with
+        $L(\vec u + \vec v)=L(\vec u)+L(\vec v)$ and $L(c\vec v)=cL(\vec v)$.
+  \item \textbf{Transformation matrix:} the matrix $A$ such that $L(\vec v)=A\vec v$;
+        columns are $L(\hat{\imath})$ and $L(\hat{\jmath})$.
+  \item \textbf{Rotation matrix $R(\theta)$:} rotates every vector counterclockwise by $\theta$.
+  \item \textbf{Dilation:} $|\det A|$ equals the factor by which $L$ scales areas.
+  \item \textbf{Composition of transformations:} applying $L_1$ then $L_2$; matrix is $B\cdot A$.
+  \item \textbf{Inverse transformation:} undoes $L$; its matrix is $A^{-1}$.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            Please see attached warm-up (spiral review).
+            \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+              \item Matrix--vector multiplication (Lesson 4.10)
+              \item Determinant of a $2\times2$ matrix (Lesson 4.11)
+              \item Matrix inverse (Lesson 4.11)
+              \item Linear transformations: definition and properties (Lesson 4.12)
+              \item Function composition (Unit 1)
+            \end{itemize}
         \end{minipage}
         &
         \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+To rotate a logo $90°$ in a graphic-design app, the computer applies the same matrix to every
+point in the image. What matrix achieves a $90°$ counterclockwise rotation?
+And if you rotate $30°$ then $60°$, is that the same as rotating $90°$ directly?
+This lesson answers both questions --- and shows that a matrix \emph{is} the transformation.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson --- Period 1: Reading the Matrix; Rotation; Dilation]{sky}
+\begin{multicols}{2}
+\textbf{Step 1 --- Reading the matrix from unit-vector images.}\\
+Every linear transformation $L$ is completely determined by where it sends
+$\hat{\imath}=\langle1,0\rangle$ and $\hat{\jmath}=\langle0,1\rangle$.
+If $L(\hat{\imath})=\langle a_{11},a_{21}\rangle$ and $L(\hat{\jmath})=\langle a_{12},a_{22}\rangle$, then
+\[A = \begin{bmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix}.\]
+\textit{Key idea:} the columns of $A$ are the images of the standard basis vectors.
+
+\columnbreak
+
+\textbf{Step 2 --- The rotation matrix.}\\
+The transformation that rotates every vector counterclockwise by angle $\theta$:
+\[R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}.\]
+\textit{Worked example:} $90°$ rotation.
+$R(90°)=\bigl[\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr]$.
+Apply to $\langle3,1\rangle$: result $\langle-1,3\rangle$.
+
+\textbf{Step 3 --- $|\det A|$ as area-dilation scale.}\\
+$|\det A|$ gives how many times $L$ multiplies the area of any region.
+Example: $A=\bigl[\begin{smallmatrix}2&0\\0&3\end{smallmatrix}\bigr]$,
+$\det A=6$, so areas scale by factor 6.
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- Period 2: Composition and Inverse Transformations]{sky}
+\begin{multicols}{2}
+\textbf{Step 4 --- Composing transformations.}\\
+If $L_1(\vec v)=A\vec v$ and $L_2(\vec v)=B\vec v$, then the composition ``$L_1$ first, then $L_2$'' has matrix $BA$.
+\textit{Order matters:} $BA \ne AB$ in general.
+
+\textit{Worked example:}
+$A=R(30°)$, $B=R(60°)$.
+Claim: $BA = R(90°)$. Verify by multiplying using exact trig values.
+
+\columnbreak
+
+\textbf{Step 5 --- Inverse transformation.}\\
+$L$ and $M$ are inverse transformations iff $M \circ L = $ identity,
+i.e., $BA = I$.\\
+If $L(\vec v)=A\vec v$, then $L^{-1}(\vec v)=A^{-1}\vec v$.
+
+\textit{Worked example:}
+$A=\bigl[\begin{smallmatrix}2&1\\1&1\end{smallmatrix}\bigr]$,
+$A^{-1}=\bigl[\begin{smallmatrix}1&-1\\-1&2\end{smallmatrix}\bigr]$.
+Verify: $A\cdot A^{-1}=I$.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\textbf{Circulate and check:}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item Step 1: Are students reading columns (not rows) as images of $\hat{\imath}$ and $\hat{\jmath}$?
+  \item Step 2: Do students have the correct sign pattern in $R(\theta)$ ($-\sin\theta$ in position (1,2))?
+  \item Step 4: Are students multiplying in the correct order? ($B$ on the left for ``apply $A$ first'')
+  \item Step 5: Are students using the $2\times2$ inverse formula correctly?
+\end{itemize}
+\textbf{Cold-call prompts:}
+``Without computing, what does $R(0°)$ look like?'' /
+``If $\det A = -3$, what is the area scale factor?'' /
+``If I apply $A$ then $A^{-1}$, what happens to every vector?''
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+See attached activity.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Tier R (Remediate):} Read the matrix from given unit-vector images; apply to a vector.
+        Focus: columns = images of $\hat{\imath}$, $\hat{\jmath}$.
+  \item \textbf{Tier A (On-Level):} Write $R(30°)$ using exact values; verify $R(30°)\cdot R(60°) = R(90°)$.
+  \item \textbf{Tier E (Extend):} Compose two transformations in both orders; show $L_2\circ L_1 \ne L_1\circ L_2$;
+        find $L_2^{-1}$ using $B^{-1}$.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+See attached exit ticket (one page, three short questions).
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item Q1: Write the transformation matrix from unit-vector images.
+  \item Q2: Compute the composition matrix (BA for a given A and B).
+  \item Q3: Find $A^{-1}$ and verify $A\cdot A^{-1}=I$.
+\end{itemize}
+Collect before students leave; use Q1 accuracy to gauge readiness for 4.14.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework} (6 problems): unit-vector reading, rotation matrix for a given angle,
+$|\det|$ interpretation, composition, inverse transformation, and one AP-style MC item.
+
+\textbf{Extension:} Ask students to find the matrix for a reflection across the $x$-axis
+and verify it is its own inverse.
+
+\textbf{Preview Lesson 4.14:} Next lesson applies matrix transformations to geometric figures
+--- transforming polygons and analyzing the effect on area and orientation.
 \end{skillbox}
 \end{document}

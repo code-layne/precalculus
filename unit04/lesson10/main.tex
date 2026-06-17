@@ -1,73 +1,129 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.10 — Lesson Plan
+%! Matrices — Unit 4, Lesson 4.10 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.10: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.10: Matrices}
 
 \begin{document}
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\Large\bfseries \CourseName: \SchoolYear \\[4pt]
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will represent data as matrices,
+    perform matrix multiplication, and interpret the product in context.
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+    \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}
+        \textbf{AP Skills}\\
+        1.B --- Express in analytically equivalent forms\\
+        3.B --- Apply numerical results
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (EKs)}\\
+        \textbf{4.10.A.1} --- An $n \times m$ matrix is an array of $n$ rows and $m$ columns; entry $a_{ij}$ is in row $i$, column $j$.\\[2pt]
+        \textbf{4.10.A.2} --- $AB$ is defined when columns of $A$ equal rows of $B$; the $(i,j)$ entry of $AB$ is the dot product of row $i$ of $A$ with column $j$ of $B$.
+    \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+    matrix, entry (element), dimensions ($n \times m$), row vector, column vector, matrix product, dimension compatibility
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        Students recall the dot product from Lesson~4.8 ($\langle a_1, a_2, a_3\rangle \cdot \langle b_1, b_2, b_3\rangle = a_1 b_1 + a_2 b_2 + a_3 b_3$) and scalar multiplication of vectors. The warm-up activates both.
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textbf{The Bakery Problem (2 min):} ``A bakery sells 3 items. On Day 1 it
+    sold $[4,\,2,\,5]$ units. Each item costs \$3, \$5, \$2. How do you find total
+    revenue in a single step?'' Students recognize $4(3)+2(5)+5(2)=32$ as a dot
+    product. Then: ``What if the bakery tracked \textit{two days} of sales? Could
+    you compute both revenue totals at once?'' This motivates arranging sales data
+    as a matrix and multiplying.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+    \begin{multicols}{2}
+
+    \textbf{Step 1 --- Matrix Notation \& Dimensions (5 min)}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item Define: an $n \times m$ matrix has $n$ rows and $m$ columns.
+        \item Entry $a_{ij}$ sits in row $i$, column $j$.
+        \item Show $A = \begin{bmatrix}1&2\\3&4\end{bmatrix}$ ($2\times 2$) and
+              $\mathbf{v} = \begin{bmatrix}5\\6\end{bmatrix}$ ($2\times 1$).
+        \item Students label dimensions of three given matrices.
+    \end{itemize}
+
+    \textbf{Step 2 --- Compatibility Rule (3 min)}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item $AB$ defined $\Leftrightarrow$ (cols of $A$) $=$ (rows of $B$).
+        \item $A$ is $n\times k$, $B$ is $k\times m$ $\Rightarrow$ $AB$ is $n\times m$.
+        \item Quick checks: $(3\times 2)(2\times 4)$ --- defined? $(3\times 2)(3\times 1)$ --- defined?
+    \end{itemize}
+
+    \columnbreak
+
+    \textbf{Step 3 --- Computing a $2\times 2$ Product (7 min)}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item $(i,j)$ entry of $AB$ $=$ row $i$ of $A$ dotted with column $j$ of $B$.
+        \item Board work: $\begin{bmatrix}2&1\\0&3\end{bmatrix}\begin{bmatrix}1&4\\2&0\end{bmatrix}$ entry by entry.
+        \item Emphasize: rows of first $\times$ columns of second. Order matters.
+    \end{itemize}
+
+    \textbf{Step 4 --- Matrix-Vector Product (5 min)}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item Special case: $A$ is $2\times 2$, $\mathbf{v}$ is $2\times 1$; product is $2\times 1$.
+        \item Worked example: $\begin{bmatrix}2&1\\0&3\end{bmatrix}\begin{bmatrix}4\\2\end{bmatrix} = \begin{bmatrix}10\\6\end{bmatrix}$.
+        \item Each row of $A$ dotted with $\mathbf{v}$ gives one entry.
+    \end{itemize}
+
+    \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+    Circulate during Step~3 practice. Watch for:\\[2pt]
+    \textbf{Entry-by-entry error:} students multiply $a_{ij}\cdot b_{ij}$ instead of row$\times$column. Re-teach: ``Which row of $A$? Which column of $B$?''\\[2pt]
+    \textbf{Dimension confusion:} students produce a wrong-size result. Have them write $n\times k$ and $k\times m$ first.\\[2pt]
+    Cold-call prompts: ``What is the $(1,2)$ entry of $AB$?'' and ``What size is the product?''
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+    \textbf{Tiered Activity (15 min)} --- teacher assigns or students self-select:
+    \begin{itemize}
+        \item \textbf{Tier R (Remediate):} Compute $A\mathbf{v}$ for $A=\begin{bmatrix}1&2\\3&4\end{bmatrix}$, $\mathbf{v}=\begin{bmatrix}5\\6\end{bmatrix}$. Scaffolded with row/column labels.
+        \item \textbf{Tier A (Apply):} Compute $AB$ and $BA$ for two $2\times 2$ matrices; determine whether $AB=BA$. (Surface non-commutativity.)
+        \item \textbf{Tier E (Extend):} Row-price vector $p=[10,\,5,\,8]$ times quantity matrix $Q=\begin{bmatrix}3&1\\2&4\\0&3\end{bmatrix}$; compute $pQ$ and interpret each entry as daily revenue.
+    \end{itemize}
+    Debrief: cold-call one group per tier. Emphasize that $AB\neq BA$ in general.
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+    \textbf{Exit Ticket (5 min)} --- students work independently:
+    \begin{enumerate}
+        \item Can a $3\times 2$ matrix be multiplied by a $3\times 1$ matrix? Explain.
+        \item Compute $\begin{bmatrix}2&1\\0&3\end{bmatrix}\begin{bmatrix}4\\2\end{bmatrix}$.
+    \end{enumerate}
+    Collect and sort: correct both / correct Q2 only / needs reteach.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+    \textbf{Closure (3 min):} Return to the bakery hook with two days of data as a $3\times 2$ matrix. Show how $pQ$ gives both revenue totals at once.\\[4pt]
+    \textbf{Homework:} Lesson~4.10 sheet --- 5--6 problems: dimensions, compatibility, two matrix products, a real-world nutrition context, and one AP-style MC.\\[4pt]
+    \textbf{Preview Lesson 4.11:} Applications of matrix multiplication (transformations and linear systems).
 \end{skillbox}
 \end{document}

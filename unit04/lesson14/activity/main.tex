@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.14 — Group Activity
+%! Matrices Modeling Contexts — Unit 4, Lesson 4.14 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,102 @@
 \pageheader{Unit 4, Lesson 4.14}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Streaming Service Transition Model]{sky}
+Two streaming services, \textbf{StreamA} and \textbf{StreamB}, compete for subscribers.
+Each month, \textbf{80\%} of StreamA subscribers stay with StreamA and \textbf{20\%} switch to StreamB.
+Of StreamB subscribers, \textbf{75\%} stay with StreamB and \textbf{25\%} switch to StreamA.
+
+Currently, StreamA has \textbf{200 subscribers} and StreamB has \textbf{100 subscribers}.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{R1.}\quad Write the transition matrix $T$. Label which column corresponds to StreamA and which to StreamB.
+
+\vspace{6pt}
+$T = \begin{bmatrix}\blank{1.8cm} & \blank{1.8cm} \\ \blank{1.8cm} & \blank{1.8cm}\end{bmatrix}$
+\hfill {\small Col 1: From \blank{2cm} \quad Col 2: From \blank{2cm}}
+
+\vspace{10pt}
+\textbf{R2.}\quad The initial state vector is $\vec{s}_0 = \begin{bmatrix}200\\100\end{bmatrix}$.
+Compute $\vec{s}_1 = T\vec{s}_0$.
+
+\vspace{6pt}
+$\vec{s}_1 = \begin{bmatrix}\blank{5cm} \\ \blank{5cm}\end{bmatrix}
+= \begin{bmatrix}\blank{2cm} \\ \blank{2cm}\end{bmatrix}$
+
+\vspace{6pt}
+\textit{Work:}\quad Row 1: \blank{6cm}
+
+\vspace{4pt}
+\phantom{\textit{Work:}}\quad Row 2: \blank{6cm}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{A1.}\quad Compute $\vec{s}_2 = T\vec{s}_1$ and $\vec{s}_3 = T\vec{s}_2$.
+
+\vspace{6pt}
+$\vec{s}_2 = \begin{bmatrix}\blank{2cm} \\ \blank{2cm}\end{bmatrix}$
+\hfill \textit{Work:} \blank{7cm}
+
+\vspace{6pt}
+$\vec{s}_3 = \begin{bmatrix}\blank{2cm} \\ \blank{2cm}\end{bmatrix}$
+\hfill \textit{Work:} \blank{7cm}
+
+\vspace{10pt}
+\textbf{A2.}\quad What pattern do you notice in the state vectors?
+
+\writeline
+
+\vspace{6pt}
+\textbf{A3.}\quad Based on the pattern, approximately how many subscribers will each service have after many months?
+
+\vspace{4pt}
+StreamA $\approx$ \blank{3cm} \qquad StreamB $\approx$ \blank{3cm}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{E1.}\quad Compute $\det(T)$ and then find $T^{-1}$.
+
+\vspace{4pt}
+$\det(T) = \blank{6cm}$
+
+\vspace{6pt}
+$T^{-1} = \dfrac{1}{\blank{1.5cm}}\begin{bmatrix}\blank{1.8cm} & \blank{1.8cm} \\ \blank{1.8cm} & \blank{1.8cm}\end{bmatrix}$
+
+\vspace{10pt}
+\textbf{E2.}\quad Use $T^{-1}$ to find $\vec{s}_{-1}$, the state \emph{before} Month~0.
+
+\vspace{6pt}
+$\vec{s}_{-1} = T^{-1}\vec{s}_0 \approx \begin{bmatrix}\blank{2.5cm} \\ \blank{2.5cm}\end{bmatrix}$
+
+\vspace{6pt}
+\textit{Work:} \writeline
+
+\vspace{10pt}
+\textbf{E3.}\quad Verify by checking $T\vec{s}_{-1} = \vec{s}_0$.
+
+\vspace{4pt}
+$T\vec{s}_{-1} = \begin{bmatrix}\blank{4cm}\\\blank{4cm}\end{bmatrix}$ \quad Does this equal $\vec{s}_0$? \blank{2cm}
+
+\end{tcolorbox}
 
 \end{document}
