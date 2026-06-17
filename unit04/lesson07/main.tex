@@ -1,73 +1,318 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Lesson Plan
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.7: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.7: Parametrization of Implicitly Defined Functions}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will express implicitly defined
+  curves --- ellipses, circles, and parabolas --- as parametric functions
+  using trigonometric parametrizations and algebraic substitutions, and
+  apply parametric analysis (extrema from component functions, axis
+  intercepts from zeros) to these curves. \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{1.B} \textit{Express in equivalent forms} ---
+  Rewrite an implicitly defined equation (circle, ellipse, parabola)
+  as a pair of parametric component functions that trace the curve,
+  choosing a parameter substitution that makes the implicit equation
+  a Pythagorean identity or a direct algebraic substitution.
+&
+\textbf{EK 4.7.A.1}: An implicitly defined equation in two variables
+can often be expressed as a parametric function by introducing a
+parameter $t$ that traces the curve. \\[4pt]
+
+\textbf{2.A} \textit{Identify information from representations} ---
+  Given a parametric pair $(x(t), y(t))$ derived from an implicit
+  curve, extract the extrema of $x$ and $y$, the axis intercepts, and
+  the direction of motion as $t$ increases.
+&
+\textbf{EK 4.7.A.2}: For an ellipse
+$\tfrac{(x-h)^2}{a^2}+\tfrac{(y-k)^2}{b^2}=1$, the parametrization
+$x(t)=h+a\cos t$, $y(t)=k+b\sin t$, $0\le t\le 2\pi$, traces the
+ellipse counterclockwise. \\[4pt]
+
+&
+\textbf{EK 4.7.A.3}: For a parabola $y-k=a(x-h)^2$, one
+parametrization is $x(t)=h+t$, $y(t)=k+at^2$ for $t\in\mathbb{R}$
+(or a restricted domain). \\[4pt]
+
+&
+\textbf{EK 4.7.A.4}: Once parametrized, parametric analysis tools
+(direction of motion, extrema, intercepts) can be applied to curves
+that are not functions in the Cartesian sense. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+implicit curve &
+  A curve defined by an equation relating $x$ and $y$ that cannot
+  always be written as a single explicit function $y=f(x)$;
+  e.g.\ $\tfrac{x^2}{9}+\tfrac{y^2}{4}=1$ (ellipse). \\[4pt]
+parametrization &
+  A pair of component functions $(x(t), y(t))$ that traces an implicit
+  curve as $t$ varies; the parameter $t$ may represent time or another
+  quantity. \\[4pt]
+ellipse parametrization &
+  \TallMath{x(t)=h+a\cos t,\; y(t)=k+b\sin t,\; 0\le t\le 2\pi;}
+  derived from the Pythagorean identity $\cos^2 t+\sin^2 t=1$. \\[4pt]
+parabola parametrization &
+  For $y-k=a(x-h)^2$: set $x(t)=h+t$, $y(t)=k+at^2$, $t\in\mathbb{R}$;
+  the vertex occurs at $t=0$, giving $(h, k)$. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Unit circle parametrization} (Lesson 4.4):
+    $(x(t),y(t))=(\cos t,\sin t)$ for $0\le t\le 2\pi$ --- the foundation
+    for all trig-based parametrizations.
+  \item \textbf{Ellipse intercepts from standard form} (Lesson 4.6):
+    reading $a$ and $b$ from $\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}=1$ to
+    locate $x$- and $y$-intercepts.
+  \item \textbf{Evaluating parametric component functions at specific $t$}
+    (Lesson 4.2): computing $(x(t), y(t))$ at given values and checking
+    whether those points satisfy an implicit equation.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} The ellipse $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ is
+\emph{not} a function --- it fails the vertical line test. But what if
+a particle traces this ellipse over time? Then we can ask:
+\textit{Where is the particle at $t=\pi/3$? When does it cross the
+$y$-axis? What is its leftmost position?} These are parametric questions,
+and answering them requires converting the implicit equation into a
+parametric form.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``The identity $\cos^2 t + \sin^2 t = 1$ looks a lot like
+    $\tfrac{x^2}{9}+\tfrac{y^2}{4}=1$ if you write $x/3 = \cos t$ and
+    $y/2 = \sin t$. How could you use that observation?''}
+  \item \textit{``Once you have $(x(t),y(t))$, how do you find when the
+    particle reaches its rightmost point?''}
+\end{enumerate}
+
+\textbf{Key tension:} Implicit equations describe the \emph{shape};
+parametric forms add \emph{motion} --- direction, position at time $t$,
+and extrema using tools already developed in Lessons 4.2 and 4.3.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence (Period 1)]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Review: Unit Circle and Scaling} (6 min)
+
+Revisit $(x(t),y(t))=(\cos t, \sin t)$, $0\le t\le 2\pi$.
+Key identity: $\cos^2 t+\sin^2 t=1$.
+Scaling: if $x=a\cos t$ and $y=b\sin t$, substitute:
+$\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}=\cos^2 t+\sin^2 t=1$.
+Ask: \textit{``When $a\ne b$, what shape do we trace?''}
+An ellipse. This is the core idea of EK 4.7.A.1.
+
+\columnbreak
+
+\textbf{Step 2 --- Ellipse Parametrization} (15 min)
+
+Standard form: $\tfrac{(x-h)^2}{a^2}+\tfrac{(y-k)^2}{b^2}=1$.
+Let $\tfrac{x-h}{a}=\cos t$ and $\tfrac{y-k}{b}=\sin t$, so:
+\[
+  x(t)=h+a\cos t,\quad y(t)=k+b\sin t,\quad 0\le t\le 2\pi.
+\]
+Verify: $\tfrac{(h+a\cos t - h)^2}{a^2}+\tfrac{(k+b\sin t - k)^2}{b^2}
+= \cos^2 t+\sin^2 t=1.\;\checkmark$
+At $t=0$: $(h+a,\;k)$ --- rightmost. At $t=\pi/2$: $(h,\;k+b)$ --- top.
+
+Work through: $\tfrac{x^2}{16}+\tfrac{y^2}{4}=1$.
+$h=0,\,k=0,\,a=4,\,b=2$.
+Parametrization: $x(t)=4\cos t$, $y(t)=2\sin t$, $0\le t\le 2\pi$.
+(EK 4.7.A.2)
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Parabola Parametrization} (12 min)
+
+For $y-k=a(x-h)^2$: $x$ is unrestricted, so set $x(t)=h+t$, giving
+$y(t)=k+at^2$, $t\in\mathbb{R}$. Vertex at $t=0$: $(h,k)$.
+For a sideways parabola $x-h=a(y-k)^2$: set $y(t)=k+t$, $x(t)=h+at^2$.
+
+Example: $y=x^2-4x+3=(x-2)^2-1$. Vertex $(2,-1)$, $a=1$.
+Parametrization: $x(t)=2+t$, $y(t)=-1+t^2$.
+Evaluate at $t=-2,-1,0,1,2$: $x = 0,1,2,3,4$ and $y=3,0,-1,0,3$.
+(EK 4.7.A.3)
+
+\columnbreak
+
+\textbf{Step 4 --- Apply Parametric Analysis} (10 min)
+
+For the ellipse $x(t)=3\cos t$, $y(t)=5\sin t$:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Rightmost point: $x(t)=3$ when $t=0$ $\Rightarrow$ $(3,0)$.
+  \item Leftmost point: $x(t)=-3$ when $t=\pi$ $\Rightarrow$ $(-3,0)$.
+  \item $y$-axis crossing ($x(t)=0$): $\cos t=0$, so $t=\pi/2,\;3\pi/2$.
+    Points: $(0,5)$ and $(0,-5)$.
+  \item $x$-axis crossing ($y(t)=0$): $\sin t=0$, so $t=0,\;\pi$.
+    Points: $(3,0)$ and $(-3,0)$.
+\end{itemize}
+Reinforce: EK 4.7.A.4 --- parametric tools apply to non-function curves.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 fill Period 1; Steps 3--4 open Period 2 before activity.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Mixing up $a$ and $b$}: Students may put $b$ under $x$
+    and $a$ under $y$. Prompt: \textit{``Which denominator appears below
+    $(x-h)^2$ in standard form? That value is $a^2$, so $a$ goes with $x$.''}
+  \item \textbf{Forgetting the center shift}: Students write $x(t)=a\cos t$
+    even when $h\ne 0$. Ask: \textit{``At $t=0$, your formula gives $x=a$.
+    What should the rightmost point of this ellipse be?''}
+  \item \textbf{Domain for parabola}: Students may restrict $t$ to $[0,2\pi]$
+    by analogy with ellipses. Clarify: for parabolas, $t$ runs over all
+    reals (the curve extends without bound).
+  \item \textbf{Extrema by picture vs.\ component function}: Students read
+    extrema from the Cartesian graph rather than solving the component
+    equation. Reinforce: set $x(t)$ equal to its maximum value and solve
+    for $t$; same for $y(t)$.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the Mission Control activity (tiered).
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Remediate)}: Given the ellipse
+    $\tfrac{x^2}{16}+\tfrac{y^2}{9}=1$, verify that $x(t)=4\cos t$,
+    $y(t)=3\sin t$ satisfies the equation at $t=0$, $t=\pi/2$, and $t=\pi$.
+  \item \textbf{Tier A (Approaching Proficiency)}: Write a parametrization
+    for $\tfrac{(x-2)^2}{25}+\tfrac{(y+1)^2}{9}=1$ and find the
+    rightmost and leftmost extreme positions using the parametrization.
+  \item \textbf{Tier E (Extension)}: For the sideways parabola
+    $x-1=2(y+3)^2$, write a parametrization with $y(t)=-3+t$, identify
+    the vertex coordinates, and find the axis intercepts by solving
+    $x(t)=0$ and $y(t)=0$.
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 5 minutes of Period 2).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Write a parametrization for
+    $\dfrac{(x+1)^2}{9}+\dfrac{(y-2)^2}{16}=1$.
+  \item Using your parametrization, find the coordinates of the topmost
+    and bottommost points on the ellipse.
+\end{enumerate}
+
+\textbf{Data use:} Students who cannot perform the trig substitution
+without prompting need a reference card linking $\cos^2 t+\sin^2 t=1$
+to ellipse standard form; revisit at the start of the next lesson.
+Students who find extrema by returning to the Cartesian picture rather
+than solving the component equation need additional parametric analysis
+practice (Lesson 4.2 review).
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 4.7):} 5--6 problems covering: parametrizing
+ellipses and circles in standard form, parametrizing parabolas by
+substitution, finding extrema and intercepts from the parametric form,
+and one AP-style multiple-choice item comparing two valid parametrizations
+of the same ellipse.
+
+\textbf{Extension:} For the ellipse $x(t)=a\cos t$, $y(t)=b\sin t$,
+what substitution traces the ellipse \emph{clockwise}? How does
+replacing $t$ with $-t$ affect $\cos t$ and $\sin t$ separately?
+
+\textbf{Preview of Lesson 4.8:} Ask students:
+\textit{``From $x=h+t$, $y=k+at^2$, can you eliminate $t$ to recover
+a Cartesian equation? What equation in $x$ and $y$ do you get?''} This
+reversal --- parametric back to implicit --- will be the focus next.
 \end{skillbox}
+
 \end{document}

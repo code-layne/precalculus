@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.2 — Homework (Answer Key)
+%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,123 @@
 \pageheader{Unit 4, Lesson 4.2}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Parametric Planar Motion Practice --- Key}
+
+\textbf{1.}\quad Let $f(t) = (t^2 - 2t,\; 3t - t^2)$ for $0 \le t \le 4$.
+
+\vspace{4pt}
+(a)\quad Table:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = t^2 - 2t$ & $y(t) = 3t - t^2$ & $(x,\; y)$ \\
+\hline
+$0$ & \ans{$0$}  & \ans{$0$}  & \ans{$(0,\;0)$}  \\
+\hline
+$1$ & \ans{$-1$} & \ans{$2$}  & \ans{$(-1,\;2)$} \\
+\hline
+$2$ & \ans{$0$}  & \ans{$2$}  & \ans{$(0,\;2)$}  \\
+\hline
+$3$ & \ans{$3$}  & \ans{$0$}  & \ans{$(3,\;0)$}  \\
+\hline
+$4$ & \ans{$8$}  & \ans{$-4$} & \ans{$(8,\;-4)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+(b)\quad Horizontal extrema:
+
+\ans{$x(t) = t^2 - 2t$; vertex at $t = 1$. $x(1) = -1$ (minimum,
+leftmost position).\\
+Endpoints: $x(0) = 0$, $x(4) = 8$ (rightmost). Maximum is $x = 8$.}
+
+\vspace{0.08in}
+(c)\quad Vertical extrema:
+
+\ans{$y(t) = 3t - t^2 = -(t^2 - 3t)$; vertex at $t = 3/2$.\\
+$y(3/2) = 9/2 - 9/4 = 9/4 = 2.25$ (maximum, highest position).\\
+Endpoints: $y(0) = 0$, $y(4) = -4$ (minimum, lowest position).}
+
+\vspace{0.10in}
+\textbf{2.}
+
+\vspace{4pt}
+(a)\quad $x$-intercepts (zeros of $y(t)$):
+
+\ans{$3t - t^2 = t(3-t) = 0 \;\Rightarrow\; t = 0$ or $t = 3$.\\
+$x(0) = 0$, $x(3) = 3$. $x$-intercepts: $(0,\,0)$ and $(3,\,0)$.}
+
+\vspace{0.04in}
+(b)\quad $y$-intercepts (zeros of $x(t)$):
+
+\ans{$t^2 - 2t = t(t-2) = 0 \;\Rightarrow\; t = 0$ or $t = 2$.\\
+$y(0) = 0$, $y(2) = 2$. $y$-intercepts: $(0,\,0)$ and $(0,\,2)$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Contextual Problem --- Key}
+
+\textbf{3.}\quad $x(t) = 4t$, $y(t) = -5t^2 + 20t$, $0 \le t \le 4$.
+
+\vspace{4pt}
+(a)\quad Maximum height:
+
+\ans{$y(t) = -5t^2 + 20t$; vertex at $t = -20/(2 \cdot (-5)) = 2$ s.\\
+$y(2) = -20 + 40 = 20$ m. The ball reaches a maximum height of
+$20$ meters at $t = 2$ seconds.}
+
+\vspace{0.04in}
+(b)\quad When does the ball hit the ground?
+
+\ans{$-5t^2 + 20t = 0 \;\Rightarrow\; -5t(t - 4) = 0 \;\Rightarrow\;
+t = 4$ s (excluding $t = 0$).\\
+$x(4) = 4 \cdot 4 = 16$ m east. The ball lands at $x = 16$ m east.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{AP-Style Practice --- Key}
+
+\textbf{4.}\quad $h(t) = (t^2 - 2t - 3,\; t^2 - 4)$,
+$-1 \le t \le 4$. Which correctly identifies the $y$-intercepts?
+
+\vspace{6pt}
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=4pt]
+  \item $(-4,\; 0)$ and $(5,\; 0)$
+  \item \textcolor{keyred}{\textbf{$(0,\; -3)$ and $(0,\; 5)$ $\leftarrow$ correct}}
+  \item $(0,\; -3)$ only
+  \item $(0,\; -4)$ and $(0,\; 12)$
+\end{enumerate}
+
+\begin{teachernote}
+  \textbf{Solution:} $y$-intercepts occur where $x(t) = 0$.\\
+  $t^2 - 2t - 3 = (t-3)(t+1) = 0 \;\Rightarrow\; t = 3$ or $t = -1$.
+  Both are in $[-1, 4]$.\\
+  At $t = -1$: $y(-1) = 1 - 4 = -3$ → $(0,\,-3)$.\\
+  At $t = 3$: $y(3) = 9 - 4 = 5$ → $(0,\,5)$.\\
+  Answer: \textbf{(B)}.
+
+  \textbf{Distractor analysis:}\\
+  (A) $(-4, 0)$ and $(5, 0)$: student found $x$-intercepts (zeros of
+  $y(t)$) instead of $y$-intercepts --- the classic rule-reversal error.\\
+  (C) $(0, -3)$ only: student excluded $t = -1$ because they treated
+  the domain as open or forgot to check all zeros.\\
+  (D) Evaluated $y$ at wrong $t$-values or made arithmetic errors.
+
+  Post the rule on the board: \emph{zeros of $x(t)$ → $y$-intercepts
+  of the curve; zeros of $y(t)$ → $x$-intercepts.} If most students
+  choose (A), spend two minutes restating this rule before moving on.
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}

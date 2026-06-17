@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.4 — Group Activity (Answer Key)
+%! Parametrically Defined Circles and Lines — Unit 4, Lesson 4.4 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,126 @@
 \pageheader{Unit 4, Lesson 4.4}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+%----------------------------------------------------------------------
+% Part A — Circular Motion
+%----------------------------------------------------------------------
+\begin{scenariobox}[Part A --- Satellite Orbit]{sky}
+A satellite orbits Earth in a circular orbit of radius 8000 km, centered
+at Earth's center (the origin). It starts at $(8000,\,0)$ and travels
+counterclockwise, completing one full orbit in 2 hours. Using $t$ in
+hours, the angle after $t$ hours is $\pi t$ radians.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{A1.}\quad Write parametric equations $x(t)$ and $y(t)$ for
+the satellite's position at time $t$ hours.
+
+\vspace{4pt}
+$x(t) = $ \ans{$8000\cos(\pi t)$} \qquad $y(t) = $ \ans{$8000\sin(\pi t)$}
+
+\vspace{0.12in}
+\textbf{A2.}\quad Complete the table.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ (hours) & $x(t)$ (km) & $y(t)$ (km) & Position $(x,\;y)$ \\
+\hline
+$0$   & \ans{$8000$}  & \ans{$0$}     & \ans{$(8000,\;0)$}     \\
+\hline
+$0.5$ & \ans{$0$}     & \ans{$8000$}  & \ans{$(0,\;8000)$}     \\
+\hline
+$1$   & \ans{$-8000$} & \ans{$0$}     & \ans{$(-8000,\;0)$}    \\
+\hline
+$1.5$ & \ans{$0$}     & \ans{$-8000$} & \ans{$(0,\;-8000)$}    \\
+\hline
+$2$   & \ans{$8000$}  & \ans{$0$}     & \ans{$(8000,\;0)$}     \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{A3.}\quad At what time $t$ is the satellite directly above the
+origin on the north side ($x = 0$, $y > 0$)?
+
+\vspace{4pt}
+Set $x(t) = 8000\cos(\pi t) = 0$: \ans{$\cos(\pi t) = 0$, so $\pi t = \pi/2$, giving $t = 1/2$ hour.}
+At $t = 0.5$: $y(0.5) = 8000\sin(\pi/2) = $ \ans{$8000$ km $> 0$.} \ans{The satellite is directly north of the origin at $t = 0.5$ hours.}
+
+\vspace{0.04in}
+\textbf{A4.}\quad Clockwise orbit: replace $t$ with $-t$:
+
+\ans{$x(t) = 8000\cos(-\pi t) = 8000\cos(\pi t)$} \quad (same)
+
+\ans{$y(t) = 8000\sin(-\pi t) = -8000\sin(\pi t)$}
+
+\begin{teachernote}
+  A3 is a good cold-call opportunity. A4 reinforces the key even/odd
+  identity: $\cos(-\theta) = \cos\theta$ and $\sin(-\theta) = -\sin\theta$.
+\end{teachernote}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Part B — Linear Motion
+%----------------------------------------------------------------------
+\begin{scenariobox}[Part B --- Rover Path]{sky}
+A rover travels in a straight line from base camp at $(-3,\,2)$ to a
+sample site at $(5,\,-2)$.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{B1.}\quad Parametric equations for $0 \le t \le 1$:
+
+$x(t) = -3 + (5-(-3))t = $ \ans{$-3 + 8t$}
+
+$y(t) = 2 + (-2-2)t = $ \ans{$2 - 4t$}
+
+\vspace{0.04in}
+\textbf{B2.}\quad Positions:
+
+At $t = 0.25$: $x = -3 + 8(0.25) = $ \ans{$-1$}, $y = 2 - 4(0.25) = $ \ans{$1$}. Position: \ans{$(-1,\;1)$}.
+
+At $t = 0.75$: $x = -3 + 8(0.75) = $ \ans{$3$}, $y = 2 - 4(0.75) = $ \ans{$-1$}. Position: \ans{$(3,\;-1)$}.
+
+\vspace{0.04in}
+\textbf{B3.}\quad Rover crosses $x$-axis when $y(t) = 0$:
+
+$2 - 4t = 0 \;\Rightarrow\; t = $ \ans{$1/2$}.
+
+At $t = 1/2$: $x(1/2) = -3 + 8(1/2) = $ \ans{$1$}.
+
+\ans{The rover crosses the $x$-axis at the point $(1,\;0)$, when $t = 0.5$.}
+
+\begin{teachernote}
+  B2--B3 preview the idea that the parameter $t$ can be solved for
+  algebraically (EK 4.4.A.3). Connect to Lesson 4.1's skill of solving
+  for $t$ to find when a curve hits a target coordinate.
+\end{teachernote}
+
+\end{tcolorbox}
 
 \end{document}

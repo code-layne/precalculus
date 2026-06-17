@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Warm-Up (Answer Key)
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,59 @@
 \pageheader{Unit 4, Lesson 4.7}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Key}
+\small
+
+\textbf{1.} Recall the parametrization of the unit circle $x^2 + y^2 = 1$.
+Fill in the component functions and domain.
+
+\vspace{0.08in}
+\hspace{1em} $x(t) = $ \ans{$\cos t$} \qquad $y(t) = $ \ans{$\sin t$} \qquad
+domain: \ans{$0 \le t \le 2\pi$}
+
+\vspace{0.18in}
+
+\textbf{2.} For the ellipse $\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$,
+find the $x$-intercepts and $y$-intercepts.
+
+\vspace{0.08in}
+\hspace{1em} $x$-intercepts: \ans{$(\pm 5,\, 0)$} \qquad $y$-intercepts: \ans{$(0,\, \pm 3)$}
+
+\vspace{0.18in}
+
+\textbf{3.} Let $x(t) = 5\cos t$ and $y(t) = 3\sin t$.
+Complete the table, then verify that one of the points satisfies
+$\dfrac{x^2}{25} + \dfrac{y^2}{9} = 1$.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\hspace{1em}
+\begin{tabular}{|c|c|c|l|}
+\hline
+$t$ & $x(t)$ & $y(t)$ & Point $(x,y)$ \\
+\hline
+$0$ & \ans{$5$} & \ans{$0$} & \ans{$(5,\,0)$} \\
+\hline
+$\pi/2$ & \ans{$0$} & \ans{$3$} & \ans{$(0,\,3)$} \\
+\hline
+$\pi$ & \ans{$-5$} & \ans{$0$} & \ans{$(-5,\,0)$} \\
+\hline
+$3\pi/2$ & \ans{$0$} & \ans{$-3$} & \ans{$(0,\,-3)$} \\
+\hline
+\end{tabular}
+
+\vspace{0.1in}
+\hspace{1em} Verify (using $t=\pi/2$, point $(0,3)$): \ans{$\dfrac{0^2}{25}+\dfrac{3^2}{9}=0+1=1$. \checkmark}
+
 \end{notesbox}
+
+\begin{teachernote}
+All four table points should be recognized as the axis intercepts of the ellipse --- this bridges
+directly to the lesson's main idea. If students are confused by Q3, ask: ``Did you recognize these
+points from Q2?'' The verification step builds fluency with substituting parametric outputs into
+implicit equations, which is the core skill of EK 4.7.A.2.
+\end{teachernote}
 
 \end{document}

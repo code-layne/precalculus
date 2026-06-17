@@ -1,73 +1,391 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.6 — Lesson Plan
+%! Conic Sections — Unit 4, Lesson 4.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.6: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.6: Conic Sections}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (3 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will write, interpret, and convert
+  analytic representations of parabolas, ellipses, circles, and hyperbolas
+  with horizontal or vertical lines of symmetry, identifying center or vertex,
+  axes radii, and asymptotes from standard form equations.
+  \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{1.B} \textit{Express in equivalent forms} ---
+  Rewrite a general second-degree equation (e.g.\ $4x^2 - 9y^2 = 36$) in
+  standard conic form by dividing through or completing the square, then
+  identify the conic type and its key measurements.
+&
+\textbf{EK 4.6.A.1}: A parabola with vertex $(h,k)$ can, if $a \ne 0$, be
+represented analytically as $x - h = a(y - k)^2$ if it opens left or right,
+or as $y - k = a(x - h)^2$ if it opens up or down. \\[4pt]
+
+\textbf{2.A} \textit{Identify information from representations} ---
+  Extract the center, vertex, semi-axes, and asymptotes directly from a
+  standard-form equation without graphing.
+&
+\textbf{EK 4.6.A.2}: An ellipse centered at $(h,k)$ with horizontal radius $a$
+and vertical radius $b$ is represented as
+$\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1$.
+A circle is a special case where $a = b$. \\[4pt]
+
+\textbf{2.B} \textit{Construct equivalent representations} ---
+  Given a verbal or geometric description of a conic (center or vertex plus key
+  measurements), write the standard-form equation.
+&
+\textbf{EK 4.6.A.3}: A hyperbola centered at $(h,k)$ is
+$\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$ (opens left/right)
+or $\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$ (opens up/down),
+with asymptotes $y - k = \pm\dfrac{b}{a}(x - h)$. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+conic section &
+  A curve formed by the intersection of a plane and a double cone:
+  parabola, ellipse (including circles), or hyperbola. \\[4pt]
+parabola &
+  The set of points equidistant from a fixed focus and a fixed directrix;
+  vertex $(h,k)$ in standard form. \\[4pt]
+vertex &
+  The turning point of a parabola; the point $(h,k)$
+  in $y - k = a(x-h)^2$ or $x - h = a(y-k)^2$. \\[4pt]
+ellipse &
+  The set of points for which the sum of distances to two foci is constant;
+  has a center and two perpendicular axes. \\[4pt]
+center &
+  The point $(h,k)$ at the center of an ellipse or hyperbola. \\[4pt]
+semi-major / semi-minor axis &
+  The larger ($a$) and smaller ($b$) half-axes of an ellipse. \\[4pt]
+circle &
+  Special ellipse with $a = b = r$; equation
+  \TallMath{(x-h)^2 + (y-k)^2 = r^2}. \\[4pt]
+hyperbola &
+  The set of points for which the \emph{difference} of distances to two foci
+  is constant; has two branches and two asymptote lines. \\[4pt]
+asymptote &
+  Lines the hyperbola approaches but never reaches:
+  \TallMath{y - k = \pm\tfrac{b}{a}(x - h)}. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Completing the square}: Rewrite $x^2 - 6x$ as $(x-3)^2 - 9$
+    --- the essential algebraic tool for converting general equations to
+    standard conic form.
+  \item \textbf{Equation of a circle}: Recall $(x-h)^2 + (y-k)^2 = r^2$ as a
+    familiar instance of the ellipse standard form, grounding new content in
+    prior knowledge.
+  \item \textbf{Reading standard form}: Identify center and radii from a
+    given ellipse equation --- directly previews extracting features from
+    ellipse and hyperbola equations.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} ``Planetary orbits are ellipses. Telescope mirrors are
+parabolas. Navigation systems like LORAN use hyperbolas. What do all these
+shapes have in common, and how do we write equations that pin them down
+precisely?''
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``A satellite dish focuses signals at one point. What shape is
+    the dish, and why does that shape work?''}
+  \item \textit{``Earth's orbit is an ellipse with the Sun at one focus. How
+    is an ellipse different from a circle?''}
+  \item \textit{``Two radio stations broadcast simultaneously. A ship measures
+    the difference in arrival times. The set of positions with a fixed
+    difference in distances to the two stations is what shape?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} All three conics share elegant standard-form
+equations. Mastering those equations lets us describe physical curves precisely.
+
+\textbf{Transition:} ``Over three periods we master the standard form of each
+conic, identify key features, and write equations from descriptions.''
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson — Period 1: Parabolas
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Period 1: Parabolas]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Two Orientations} (10 min)
+
+Present both standard forms:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item \textbf{Vertical axis:} $y - k = a(x - h)^2$
+    ($a > 0$ opens up; $a < 0$ opens down)
+  \item \textbf{Horizontal axis:} $x - h = a(y - k)^2$
+    ($a > 0$ opens right; $a < 0$ opens left)
+\end{itemize}
+Emphasize: the \emph{squared variable} tells you the axis of symmetry.
+
+\columnbreak
+
+\textbf{Step 2 --- Reading the Equation} (20 min)
+
+Model: $y + 3 = 2(x - 1)^2$.
+Rewrite as $y - (-3) = 2(x-1)^2$.
+Vertex $(1, -3)$; $a = 2 > 0$ $\Rightarrow$ opens \emph{up}.
+
+Student practice:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item $y - 5 = -(x + 2)^2$ --- vertex and direction?
+  \item $x - 4 = -\tfrac{1}{2}(y - 1)^2$ --- vertex and direction?
+\end{itemize}
+
+Ask: \textit{``How does the sign of $a$ tell you direction without
+graphing?''}
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing:} Reserve final 15 min for students to start Tier R portion of activity.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson — Period 2: Ellipses and Circles
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson (cont.) --- Period 2: Ellipses and Circles]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Ellipse Standard Form} (15 min)
+
+Standard form: $\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1$
+
+Example: $\dfrac{(x+1)^2}{16} + \dfrac{(y-3)^2}{9} = 1$
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Center: $(-1, 3)$
+  \item $a^2 = 16 \Rightarrow a = 4$ (horizontal radius)
+  \item $b^2 = 9 \Rightarrow b = 3$ (vertical radius)
+\end{itemize}
+
+\columnbreak
+
+\textbf{Step 4 --- Circle as Special Ellipse} (15 min)
+
+When $a = b = r$: $(x-h)^2 + (y-k)^2 = r^2$.
+
+Confirm: $\dfrac{(x-2)^2}{25} + \dfrac{(y+1)^2}{25} = 1$ is a circle,
+center $(2,-1)$, $r = 5$.
+
+\textbf{Writing equations:} Center $(3,-2)$, $a = 5$, $b = 2$.
+Have students write the ellipse equation, then write a circle equation from
+center and radius.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing:} Reserve 20 min for Tier A activity problems.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson — Period 3: Hyperbolas
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson (cont.) --- Period 3: Hyperbolas]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 5 --- Two Orientations} (12 min)
+
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Opens left/right:
+    $\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$
+  \item Opens up/down:
+    $\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$
+\end{itemize}
+
+Key diagnostic: the \emph{positive} squared term tells you the direction
+of opening.
+
+\columnbreak
+
+\textbf{Step 6 --- Asymptotes} (15 min)
+
+From $\dfrac{(x-2)^2}{9} - \dfrac{(y+1)^2}{4} = 1$:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Center $(2,-1)$; $a = 3$, $b = 2$
+  \item Asymptotes: $y + 1 = \pm\dfrac{2}{3}(x - 2)$
+\end{itemize}
+
+Contrast with ellipse: same form but minus sign; opens rather than closes;
+asymptotes rather than bounded shape.
+
+Students: $\dfrac{(y+3)^2}{16} - \dfrac{(x-1)^2}{9} = 1$ --- identify center,
+$a$, $b$, orientation, and asymptotes.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing:} Exit ticket in final 8 minutes; collect for formative review.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Sign of $h$ and $k$}: Students read $(x+1)^2$ and write center
+    $(1, \cdot)$ instead of $(-1, \cdot)$. Prompt: \textit{``Rewrite as
+    $(x - ?)^2$ so the sign matches the formula.''}
+  \item \textbf{Horizontal vs.\ vertical parabola}: Students confuse which
+    variable is squared. Prompt: \textit{``Which variable is squared? That
+    axis is the axis of symmetry.''}
+  \item \textbf{Radii vs.\ $a^2$}: Students report $a = 16$ instead of $a = 4$.
+    Prompt: \textit{``The denominator is $a^2$. Take the square root to find $a$.''}
+  \item \textbf{Hyperbola direction}: Students pick the wrong orientation.
+    Prompt: \textit{``Which term is positive --- the $x$-term or the $y$-term?
+    That variable's axis is the direction of opening.''}
+  \item \textbf{Asymptote slope}: Students confuse $b/a$ and $a/b$. Prompt:
+    \textit{``Write $y - k = \pm(b/a)(x-h)$ and substitute your $a$ and $b$.''}
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the tiered activity (assign by teacher or
+allow self-selection with guidance).
+
+\begin{multicols}{3}
+
+\textbf{Tier R --- Remediate}
+
+Given equations in standard form, identify:
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+  \item conic type
+  \item center or vertex
+  \item key measurements ($a$, $b$, or $r$)
+\end{itemize}
+No conversion or equation-writing required.
+
+\columnbreak
+
+\textbf{Tier A --- Approaching}
+
+Given verbal descriptions (center or vertex and key measurements), write
+the standard-form equation. Includes one parabola, one ellipse, and one
+hyperbola (with asymptotes).
+
+\columnbreak
+
+\textbf{Tier E --- Extension}
+
+Given general-form equations (e.g.\ $4x^2 - 9y^2 = 36$;
+$x^2 + y^2 - 4x + 6y = 3$), rewrite in standard form and identify all
+features including asymptotes where applicable.
+
+\end{multicols}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 8 minutes of Period 3).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Write the standard form equation of an ellipse centered at $(3, -1)$
+    with horizontal radius 5 and vertical radius 2.
+  \item Identify the type of conic, its center, and its asymptotes (if any)
+    for $\dfrac{(y+2)^2}{16} - \dfrac{(x-1)^2}{9} = 1$.
+\end{enumerate}
+
+\textbf{Data use:} Students who cannot identify conic type need reinforcement
+reading sign patterns. Students who mix up center signs need targeted reteaching
+of the $(x - h)$ convention.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 4.6):} 6 problems covering identifying features from
+standard-form equations, writing equations from descriptions, both parabola
+orientations, and one AP-style multiple-choice item.
+
+\textbf{Extension:} Given $x^2 + 4y^2 - 6x + 8y - 3 = 0$, complete the square
+in both variables to rewrite in standard ellipse form and identify all features.
+This bridges to the Tier E activity and previews algebraic techniques used in
+calculus.
+
+\textbf{Preview of next lesson:} Ask students: \textit{``We've described conics
+with equations in $x$ and $y$. Could you write parametric equations $x(t)$ and
+$y(t)$ that trace the same shapes? How might that be useful in modeling
+motion?''}
 \end{skillbox}
+
 \end{document}

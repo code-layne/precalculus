@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.2 — Exit Ticket (Answer Key)
+%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,56 @@
 \pageheader{Unit 4, Lesson 4.2}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Planar Motion Check --- Key}
+
+A particle moves with $f(t) = (t^2 - 1,\; 2t - t^2)$ for $0 \le t \le 3$.
+
+\vspace{8pt}
+\textbf{1.}\quad Complete the table.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = t^2 - 1$ & $y(t) = 2t - t^2$ & $(x,\; y)$ \\
+\hline
+$0$ & \ans{$-1$} & \ans{$0$}  & \ans{$(-1,\;0)$}  \\
+\hline
+$1$ & \ans{$0$}  & \ans{$1$}  & \ans{$(0,\;1)$}   \\
+\hline
+$2$ & \ans{$3$}  & \ans{$0$}  & \ans{$(3,\;0)$}  \\
+\hline
+$3$ & \ans{$8$}  & \ans{$-3$} & \ans{$(8,\;-3)$}  \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+\textbf{2.}\quad Horizontal extrema:
+
+\ans{$x(t) = t^2 - 1$ is an upward parabola. Vertex at $t = 0$.\\
+Minimum: $x(0) = -1$ (leftmost position).\\
+Maximum on $[0,3]$: $x(3) = 8$ (rightmost position).}
+
+\vspace{0.06in}
+\textbf{3.}\quad When does the particle cross the $y$-axis ($x = 0$)?
+
+\ans{$t^2 - 1 = 0 \;\Rightarrow\; (t-1)(t+1) = 0 \;\Rightarrow\;
+t = 1$ (only $t = 1$ is in $[0,3]$).\\
+At $t = 1$: $(x(1), y(1)) = (0,\, 1)$. The particle crosses the
+$y$-axis at $(0,\,1)$.}
+
+\begin{teachernote}
+  Q2: Students who report $t = 0$ as the minimum should be told to
+  evaluate $x(0) = -1$ --- the minimum \emph{value} is $-1$, not the
+  time. Q3: $t = -1$ is not in the domain; accept only $t = 1$.
+  Students who report $(0, 0)$ confused $y(0) = 0$ with the intercept
+  coordinates --- redirect them to evaluate $y(1) = 1$.
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.2 — Guided Notes
+%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,164 @@
 \pageheader{Unit 4, Lesson 4.2}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 4.2.A} --- Identify key characteristics of a
+    parametric planar motion function related to position: find the
+    horizontal and vertical extrema from the max/min values of $x(t)$
+    and $y(t)$, and locate $x$- and $y$-intercepts of the curve from
+    the zeros of $y(t)$ and $x(t)$. \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.07in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=5pt]
+  \item[\termblanklong{horizontal extremum}]
+    The \underline{\hspace{2.6cm}} or \underline{\hspace{2.6cm}}
+    value of $x(t)$; gives the rightmost or leftmost position of the
+    particle.
+
+  \item[\termblanklong{vertical extremum}]
+    The maximum or minimum value of \underline{\hspace{2cm}}; gives
+    the highest or lowest position of the particle.
+
+  \item[\termblanklong{$y$-intercept (of parametric curve)}]
+    A point on the curve where $x(t) = $ \underline{\hspace{1cm}};
+    found by solving $x(t) = 0$ for $t$, then evaluating
+    $y(t)$ at those values.
+
+  \item[\termblanklong{$x$-intercept (of parametric curve)}]
+    A point on the curve where $y(t) = $ \underline{\hspace{1cm}};
+    found by solving $y(t) = 0$ for $t$, then evaluating $x(t)$.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.07in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Launch:} A ball's position (feet) at time $t$ seconds is
+$x(t) = -16t^2 + 48t$ and $y(t) = 12t - t^2$.
+
+\vspace{4pt}
+\textbf{Q1.} Which component do you examine to find how high the ball
+goes? What equation do you solve to find when the ball lands?
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.07in}
+
+%----------------------------------------------------------------------
+% LO 4.2.A — Extrema
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.2.A --- Planar Motion: Horizontal and Vertical Extrema}
+
+\textbf{Example:} Let $f(t) = (x(t),\, y(t)) = (t^2 - 4t + 3,\;
+{-t^2 + 2t})$ for $0 \le t \le 4$.
+
+\vspace{6pt}
+\textbf{Step 1 --- Build the table.}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = t^2 - 4t + 3$ & $y(t) = -t^2 + 2t$ & $(x,\; y)$ \\
+\hline
+$0$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
+\hline
+$1$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
+\hline
+$2$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
+\hline
+$3$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
+\hline
+$4$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Step 2 --- Find horizontal extrema of $x(t) = t^2 - 4t + 3$.}
+
+$x(t)$ is a \underline{\hspace{2.2cm}} parabola. Vertex at
+$t = -\dfrac{b}{2a} = -\dfrac{\hspace{1cm}}{\hspace{1cm}} = $
+\blank{1.2cm}
+
+Minimum value of $x$: $x\bigl($\blank{0.8cm}$\bigr) = $ \blank{2cm}
+\quad (particle's \underline{\hspace{2.2cm}}-most position)
+
+Maximum value of $x$ on $[0,4]$: check endpoints.
+$x(0) = $ \blank{1.2cm}, \quad $x(4) = $ \blank{1.2cm}.
+Maximum is \blank{1.2cm} (particle's \underline{\hspace{2.2cm}}-most position).
+
+\vspace{8pt}
+\textbf{Step 3 --- Find vertical extrema of $y(t) = -t^2 + 2t$.}
+
+Vertex at $t = -\dfrac{b}{2a} = $ \blank{1.2cm}.
+
+Maximum value of $y$: $y\bigl($\blank{0.8cm}$\bigr) = $ \blank{2cm}
+\quad (particle's \underline{\hspace{1.8cm}}-most position)
+
+Minimum of $y$ on $[0,4]$: check endpoints.
+$y(0) = $ \blank{1.2cm}, \quad $y(4) = $ \blank{1.2cm}.
+Minimum is \blank{1.2cm}.
+
+\end{notesbox}
+
+\vspace{0.07in}
+
+%----------------------------------------------------------------------
+% LO 4.2.A — Intercepts
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.2.A --- Axis Intercepts of a Parametric Curve}
+
+\textbf{Key rule:} Zeros of $x(t)$ give \underline{\hspace{1.5cm}}-intercepts
+of the curve. Zeros of $y(t)$ give \underline{\hspace{1.5cm}}-intercepts.
+
+\vspace{8pt}
+\textbf{Example (continued):} $f(t) = (t^2 - 4t + 3,\; {-t^2 + 2t})$,
+$0 \le t \le 4$.
+
+\vspace{4pt}
+\textbf{Find the $y$-intercepts} (where $x(t) = 0$):
+
+Set $t^2 - 4t + 3 = 0$. Factor: $(t - $ \blank{0.8cm}$)(t - $
+\blank{0.8cm}$) = 0$.
+
+$t = $ \blank{1cm} or $t = $ \blank{1cm}.
+
+Evaluate $y$ at each: $y($\blank{0.6cm}$) = $ \blank{1.2cm},
+\quad $y($\blank{0.6cm}$) = $ \blank{1.2cm}.
+
+$y$-intercepts of the curve: \blank{3cm} and \blank{3cm}.
+
+\vspace{8pt}
+\textbf{Find the $x$-intercepts} (where $y(t) = 0$):
+
+Set $-t^2 + 2t = 0$. Factor: $-t(t - $ \blank{0.8cm}$) = 0$.
+
+$t = $ \blank{1cm} or $t = $ \blank{1cm}.
+
+Evaluate $x$ at each: $x($\blank{0.6cm}$) = $ \blank{1.2cm},
+\quad $x($\blank{0.6cm}$) = $ \blank{1.2cm}.
+
+$x$-intercepts of the curve: \blank{3cm} and \blank{3cm}.
+
 \end{notesbox}
 
 \end{document}

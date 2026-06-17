@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.2 — Group Activity (Answer Key)
+%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,138 @@
 \pageheader{Unit 4, Lesson 4.2}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
+\begin{scenariobox}[Remote-Control Car]{sky}
+A remote-control car moves along a surface. Its position in meters at
+time $t$ seconds is given by the parametric function
+\[
+  f(t) = \bigl(x(t),\; y(t)\bigr) = \bigl(t^2 - 6t + 5,\;
+  {-t^2 + 4t}\bigr), \quad 0 \le t \le 6,
+\]
+where $x(t)$ measures meters east and $y(t)$ measures meters north.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 1 --- Building the Table}
+
+\textbf{1.}\quad Complete the table.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ (sec) & $x(t) = t^2 - 6t + 5$ & $y(t) = -t^2 + 4t$ & Position $(x,\; y)$ \\
+\hline
+$0$ & \ans{$5$}   & \ans{$0$}   & \ans{$(5,\;0)$}   \\
+\hline
+$1$ & \ans{$0$}   & \ans{$3$}   & \ans{$(0,\;3)$}   \\
+\hline
+$2$ & \ans{$-3$}  & \ans{$4$}   & \ans{$(-3,\;4)$}  \\
+\hline
+$3$ & \ans{$-4$}  & \ans{$3$}   & \ans{$(-4,\;3)$}  \\
+\hline
+$4$ & \ans{$-3$}  & \ans{$0$}   & \ans{$(-3,\;0)$}  \\
+\hline
+$5$ & \ans{$0$}   & \ans{$-5$}  & \ans{$(0,\;-5)$}  \\
+\hline
+$6$ & \ans{$5$}   & \ans{$-12$} & \ans{$(5,\;-12)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{teachernote}
+  Circulate during Part 1 to ensure students are substituting into
+  \emph{both} components before moving on. Common error: substituting
+  $t$ into $x(t)$ only and leaving $y(t)$ blank.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Analyzing the Car's Motion}
+
+\textbf{2.}\quad Leftmost east-position:
+
+\ans{$x(t) = t^2 - 6t + 5$; vertex at $t = -(-6)/(2 \cdot 1) = 3$.\\
+$x(3) = 9 - 18 + 5 = -4$ m. The leftmost position is $x = -4$ at $t = 3$ s.}
+
+\vspace{0.06in}
+\textbf{3.}\quad Rightmost east-position:
+
+\ans{Check endpoints: $x(0) = 5$ and $x(6) = 36 - 36 + 5 = 5$.
+The rightmost position is $x = 5$ m (occurring at $t = 0$ and $t = 6$).}
+
+\vspace{0.06in}
+\textbf{4.}\quad Highest north-position:
+
+\ans{$y(t) = -t^2 + 4t$; vertex at $t = -4/(2 \cdot(-1)) = 2$.\\
+$y(2) = -4 + 8 = 4$ m. The highest position is $y = 4$ at $t = 2$ s.}
+
+\vspace{0.06in}
+\textbf{5.}\quad When does the car cross the $x$-axis ($y = 0$)?
+
+\ans{$-t^2 + 4t = 0 \;\Rightarrow\; -t(t - 4) = 0 \;\Rightarrow\;
+t = 0$ or $t = 4$.\\
+At $t = 0$: $(5,\,0)$. At $t = 4$: $(-3,\,0)$.}
+
+\begin{teachernote}
+  Emphasize: zeros of $y(t)$ give $x$-intercepts of the curve. The
+  coordinates are found by evaluating $x(t)$ at the $t$-values, not
+  by setting $x(t) = 0$.
+\end{teachernote}
+
+\vspace{0.06in}
+\textbf{6.}\quad When does the car cross the $y$-axis ($x = 0$)?
+
+\ans{$t^2 - 6t + 5 = 0 \;\Rightarrow\; (t-1)(t-5) = 0 \;\Rightarrow\;
+t = 1$ or $t = 5$.\\
+At $t = 1$: $(0,\,3)$. At $t = 5$: $(0,\,-5)$.}
+
+\begin{teachernote}
+  Reinforce: zeros of $x(t)$ give $y$-intercepts of the parametric
+  curve. Post the rule on the board throughout this section.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- Extension}
+
+\textbf{7.}\quad $g(t) = (\cos t,\; \sin t)$ for $0 \le t \le 2\pi$.
+
+\vspace{4pt}
+(a)\quad Horizontal extrema:
+
+\ans{$\cos t$ has maximum $1$ (at $t = 0,\, 2\pi$) and minimum $-1$
+(at $t = \pi$). The curve extends from $x = -1$ to $x = 1$.}
+
+\vspace{0.04in}
+(b)\quad Vertical extrema:
+
+\ans{$\sin t$ has maximum $1$ (at $t = \pi/2$) and minimum $-1$
+(at $t = 3\pi/2$). The curve extends from $y = -1$ to $y = 1$.}
+
+\vspace{0.04in}
+(c)\quad $y$-intercepts (where $x(t) = \cos t = 0$):
+
+\ans{$\cos t = 0$ at $t = \pi/2$ and $t = 3\pi/2$.\\
+$y(\pi/2) = \sin(\pi/2) = 1$ and $y(3\pi/2) = \sin(3\pi/2) = -1$.\\
+$y$-intercepts: $(0,\,1)$ and $(0,\,-1)$.}
+
+\begin{teachernote}
+  This extension introduces the unit circle as a parametric curve.
+  Students who reach this point benefit from seeing that the same
+  analytical tools (find zeros of a component to get intercepts)
+  apply to non-polynomial parametric functions. No graphing is
+  required; the answers follow directly from knowledge of the sine
+  and cosine functions.
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}
