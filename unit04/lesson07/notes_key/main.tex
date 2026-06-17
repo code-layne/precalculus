@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Guided Notes (Answer Key)
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,147 @@
 \pageheader{Unit 4, Lesson 4.7}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \ansline{write a parametric representation of an ellipse or circle given its standard form.}
+  \item \ansline{write a parametric representation of a parabola using a direct substitution for $x-h$.}
+  \item \ansline{use parametric analysis (extrema, axis intercepts) on a parametrized implicit curve.}
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{implicit curve}
+\ansline{A curve defined by an equation relating $x$ and $y$ that cannot always be written as $y=f(x)$.}
+
+\termblanklong{parametrization}
+\ansline{A pair of component functions $(x(t), y(t))$ that traces an implicit curve as $t$ varies.}
+
+\termblanklong{ellipse parametrization}
+\ansline{$x(t)=h+a\cos t$, $y(t)=k+b\sin t$, $0\le t\le 2\pi$; from $\cos^2 t+\sin^2 t=1$.}
+
+\termblanklong{parabola parametrization}
+\ansline{Set $x(t)=h+t$, $y(t)=k+at^2$, $t\in\mathbb{R}$; vertex at $t=0$.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+The ellipse $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ is \emph{not} a function --- it fails the vertical
+line test. But if a particle traces this ellipse over time, we can use parametric tools to find
+its position, extremes, and intercepts. How do we convert this implicit equation to a parametric form?
+
+\ansline{Set $x/3 = \cos t$ and $y/2 = \sin t$, giving $x(t)=3\cos t$, $y(t)=2\sin t$.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 1 --- Ellipse Parametrization}
+\small
+\textbf{Setup.} Starting from $\dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1$, set
+$\dfrac{x-h}{a}=\cos t$ and $\dfrac{y-k}{b}=\sin t$.
+
+Then: \quad $x(t) = $ \ans{$h + a\cos t$} \quad and \quad $y(t) = $ \ans{$k + b\sin t$}
+
+Domain: $0 \le t \le $ \ans{$2\pi$}
+
+\vspace{0.08in}
+\textbf{Verify.} Substitute back into the ellipse equation and use the identity
+$\cos^2 t + \sin^2 t = 1$:
+
+\vspace{0.06in}
+\hspace{1em} $\dfrac{(x(t)-h)^2}{a^2}+\dfrac{(y(t)-k)^2}{b^2}
+= \dfrac{(\ans{$a\cos t$})^2}{a^2}+\dfrac{(\ans{$b\sin t$})^2}{b^2}
+= $ \ans{$\cos^2 t$} $+$ \ans{$\sin^2 t$} $=$ \ans{$1$} \quad \checkmark
+
+\vspace{0.12in}
+\textbf{Example.} Ellipse $\dfrac{x^2}{16}+\dfrac{y^2}{4}=1$.
+Here $h=$ \ans{$0$}, $k=$ \ans{$0$}, $a=$ \ans{$4$}, $b=$ \ans{$2$}.
+
+\vspace{0.06in}
+Parametrization: \quad $x(t) = $ \ans{$4\cos t$} \quad $y(t) = $ \ans{$2\sin t$} \quad
+$0 \le t \le $ \ans{$2\pi$}
+
+\vspace{0.1in}
+\textbf{Extrema from the parametrization.}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lll}
+Maximum $x(t)$: \ans{$4$} when $t = $ \ans{$0$} & $\Rightarrow$ & Point: \ans{$(4,\,0)$} \\
+Minimum $x(t)$: \ans{$-4$} when $t = $ \ans{$\pi$} & $\Rightarrow$ & Point: \ans{$(-4,\,0)$} \\
+Maximum $y(t)$: \ans{$2$} when $t = $ \ans{$\pi/2$} & $\Rightarrow$ & Point: \ans{$(0,\,2)$} \\
+\end{tabular}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 2 --- Parabola Parametrization}
+\small
+\textbf{Setup.} For $y - k = a(x-h)^2$ (vertical parabola): set $x(t) = $ \ans{$h+t$},
+then $y(t) = $ \ans{$k + at^2$}, $t \in \mathbb{R}$.
+
+Vertex at $t=0$: \ans{$(h,\,k)$}
+
+\vspace{0.1in}
+\textbf{Example.} $y = x^2 - 4x + 3$.
+
+Step 1 --- Complete the square: $y = (x -$ \ans{$2$}$)^2 -$ \ans{$1$}.
+\; Vertex: (\ans{$2$},\,\ans{$-1$}).
+
+Step 2 --- Parametrize: $x(t) = $ \ans{$2+t$}, \quad $y(t) = $ \ans{$t^2 - 1$}.
+
+Step 3 --- Fill the table:
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t)=2+t$ & $y(t)=t^2-1$ & Point \\
+\hline
+$-2$ & \ans{$0$} & \ans{$3$} & \ans{$(0,\,3)$} \\
+\hline
+$-1$ & \ans{$1$} & \ans{$0$} & \ans{$(1,\,0)$} \\
+\hline
+$\phantom{-}0$ & \ans{$2$} & \ans{$-1$} & \ans{$(2,\,-1)$} \\
+\hline
+$\phantom{-}1$ & \ans{$3$} & \ans{$0$} & \ans{$(3,\,0)$} \\
+\hline
+$\phantom{-}2$ & \ans{$4$} & \ans{$3$} & \ans{$(4,\,3)$} \\
+\hline
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 3 --- Applying Parametric Tools to Implicit Curves}
+\small
+\textbf{Ellipse:} $x(t) = 3\cos t$, \; $y(t) = 5\sin t$.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item When does the curve cross the \textbf{$y$-axis}?
+    Set $x(t)=0$: $\cos t = 0$ $\Rightarrow$ $t = $ \ans{$\pi/2$\; and\; $3\pi/2$}\\[2pt]
+    \hspace{1.4em} Coordinates at those $t$-values: \ans{$(0,\,5)$ and $(0,\,-5)$}
+
+  \item When does the curve cross the \textbf{$x$-axis}?
+    Set $y(t)=0$: $\sin t = 0$ $\Rightarrow$ $t = $ \ans{$0$\; and\; $\pi$}\\[2pt]
+    \hspace{1.4em} Coordinates at those $t$-values: \ans{$(3,\,0)$ and $(-3,\,0)$}
+
+  \item What is the \textbf{rightmost} point? Max of $x(t)=3\cos t$ is \ans{$3$},
+    at $t = $ \ans{$0$}. Point: \ans{$(3,\,0)$}
+
+  \item What is the \textbf{topmost} point? Max of $y(t)=5\sin t$ is \ans{$5$},
+    at $t = $ \ans{$\pi/2$}. Point: \ans{$(0,\,5)$}
+\end{itemize}
+\end{notesbox}
+
+\begin{teachernote}
+Section 3 is the heart of AP Skill 2.A: students must extract information from the parametric
+representation rather than the Cartesian picture. Emphasize that these intercepts and extrema
+can be found purely from $x(t)$ and $y(t)$ --- no graph required. Common error: students may
+state the rightmost point is where $t$ is largest, not where $x(t)$ is largest. Use cold-call:
+``How do you know $t=0$ gives the maximum of $\cos t$?''
+\end{teachernote}
 
 \end{document}

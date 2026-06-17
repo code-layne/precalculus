@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Guided Notes
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,132 @@
 \pageheader{Unit 4, Lesson 4.7}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{implicit curve}
+\termblanklong{parametrization}
+\termblanklong{ellipse parametrization}
+\termblanklong{parabola parametrization}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+The ellipse $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ is \emph{not} a function --- it fails the vertical
+line test. But if a particle traces this ellipse over time, we can use parametric tools to find
+its position, extremes, and intercepts. How do we convert this implicit equation to a parametric form?
+
+\writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 1 --- Ellipse Parametrization}
+\small
+\textbf{Setup.} Starting from $\dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1$, set
+$\dfrac{x-h}{a}=\cos t$ and $\dfrac{y-k}{b}=\sin t$.
+
+Then: \quad $x(t) = $ \blank{4cm} \quad and \quad $y(t) = $ \blank{4cm}
+
+Domain: $0 \le t \le $ \blank{1.5cm}
+
+\vspace{0.08in}
+\textbf{Verify.} Substitute back into the ellipse equation and use the identity
+$\cos^2 t + \sin^2 t = 1$:
+
+\vspace{0.06in}
+\hspace{1em} $\dfrac{(x(t)-h)^2}{a^2}+\dfrac{(y(t)-k)^2}{b^2}
+= \dfrac{(\blank{1.8cm})^2}{a^2}+\dfrac{(\blank{1.8cm})^2}{b^2}
+= \blank{1cm} + \blank{1cm} = \blank{0.8cm}$ \quad \checkmark
+
+\vspace{0.12in}
+\textbf{Example.} Ellipse $\dfrac{x^2}{16}+\dfrac{y^2}{4}=1$.
+Here $h=\blank{0.7cm}$, $k=\blank{0.7cm}$, $a=\blank{0.7cm}$, $b=\blank{0.7cm}$.
+
+\vspace{0.06in}
+Parametrization: \quad $x(t) = $ \blank{3.5cm} \quad $y(t) = $ \blank{3.5cm} \quad
+$0 \le t \le \blank{1.2cm}$
+
+\vspace{0.1in}
+\textbf{Extrema from the parametrization.}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lll}
+Maximum $x(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
+Minimum $x(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
+Maximum $y(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 2 --- Parabola Parametrization}
+\small
+\textbf{Setup.} For $y - k = a(x-h)^2$ (vertical parabola): set $x(t) = $ \blank{2.5cm},
+then $y(t) = $ \blank{4cm}, $t \in \mathbb{R}$.
+
+Vertex at $t=0$: \blank{2cm}
+
+\vspace{0.1in}
+\textbf{Example.} $y = x^2 - 4x + 3$.
+
+Step 1 --- Complete the square: $y = (x - \blank{0.7cm})^2 - \blank{0.7cm}$.
+\; Vertex: $(\blank{1cm},\,\blank{1cm})$.
+
+Step 2 --- Parametrize: $x(t) = \blank{2cm}$, \quad $y(t) = \blank{3.5cm}$.
+
+Step 3 --- Fill the table:
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t)=2+t$ & $y(t)=t^2-1$ & Point \\
+\hline
+$-2$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
+\hline
+$-1$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
+\hline
+$\phantom{-}0$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
+\hline
+$\phantom{-}1$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
+\hline
+$\phantom{-}2$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
+\hline
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 3 --- Applying Parametric Tools to Implicit Curves}
+\small
+\textbf{Ellipse:} $x(t) = 3\cos t$, \; $y(t) = 5\sin t$.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item When does the curve cross the \textbf{$y$-axis}?
+    Set $x(t)=0$: $\cos t = 0$ $\Rightarrow$ $t = $ \blank{2.8cm}\\[2pt]
+    \hspace{1.4em} Coordinates at those $t$-values: \blank{4cm}
+
+  \item When does the curve cross the \textbf{$x$-axis}?
+    Set $y(t)=0$: $\sin t = 0$ $\Rightarrow$ $t = $ \blank{2.8cm}\\[2pt]
+    \hspace{1.4em} Coordinates at those $t$-values: \blank{4cm}
+
+  \item What is the \textbf{rightmost} point? Max of $x(t)=3\cos t$ is \blank{0.8cm},
+    occurring at $t = $ \blank{1cm}. Point: \blank{2cm}
+
+  \item What is the \textbf{topmost} point? Max of $y(t)=5\sin t$ is \blank{0.8cm},
+    occurring at $t = $ \blank{1cm}. Point: \blank{2cm}
+\end{itemize}
 \end{notesbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.3 — Group Activity (Answer Key)
+%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,141 @@
 \pageheader{Unit 4, Lesson 4.3}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
+\begin{scenariobox}[Two Robots, One Path]{sky}
+Two robots traverse the same parabolic path in a warehouse.
+\[
+  \text{Robot A:}\quad g_A(t) = (t,\; t^2), \quad 0 \le t \le 3
+  \qquad\qquad
+  \text{Robot B:}\quad g_B(t) = (3-t,\; (3-t)^2), \quad 0 \le t \le 3
+\]
+Robot A starts at $(0, 0)$ and Robot B starts at $(3, 9)$.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\begin{notesbox}{Part 1 --- Tables and Shared Path}
+
+\textbf{1.}\quad Complete the table for each robot.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|}
+\hline
+$t$ & Robot A position $(x, y)$ for $g_A(t) = (t,\; t^2)$ &
+      Robot B position $(x, y)$ for $g_B(t) = (3-t,\; (3-t)^2)$ \\
+\hline
+$0$ & \ans{$(0,\,0)$} & \ans{$(3,\,9)$} \\
+\hline
+$1$ & \ans{$(1,\,1)$} & \ans{$(2,\,4)$} \\
+\hline
+$2$ & \ans{$(2,\,4)$} & \ans{$(1,\,1)$} \\
+\hline
+$3$ & \ans{$(3,\,9)$} & \ans{$(0,\,0)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{2.}\quad Do both robots visit the same set of ordered pairs?
+
+\vspace{4pt}
+\ans{Yes. Both robots visit $\{(0,0),\,(1,1),\,(2,4),\,(3,9)\}$ --- the same four points, just in opposite order. Robot A goes from $(0,0)$ to $(3,9)$; Robot B goes from $(3,9)$ to $(0,0)$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Direction of Motion}
+
+\textbf{3.}\quad At $t = 1$, is Robot A moving right or left? Up or down?
+
+\vspace{4pt}
+Compare $x_A(0) = 0$ and $x_A(2) = 2$: $x$ is \ans{increasing} $\Rightarrow$ Robot A moves \ans{right}.
+
+Compare $y_A(0) = 0$ and $y_A(2) = 4$: $y$ is \ans{increasing} $\Rightarrow$ Robot A moves \ans{up}.
+
+\vspace{0.10in}
+\textbf{4.}\quad At $t = 1$, is Robot B moving right or left? Up or down?
+
+\vspace{4pt}
+Compare $x_B(0) = 3$ and $x_B(2) = 1$: $x$ is \ans{decreasing} $\Rightarrow$ Robot B moves \ans{left}.
+
+Compare $y_B(0) = 9$ and $y_B(2) = 1$: $y$ is \ans{decreasing} $\Rightarrow$ Robot B moves \ans{down}.
+
+\vspace{0.10in}
+\textbf{5.}\quad Do the two robots move in the same direction at $t = 1$?
+
+\vspace{4pt}
+\ans{No. At $t = 1$, Robot A moves right and up, while Robot B moves left and down. This illustrates EK 4.3.A.3: the same curve can be traversed in opposite directions by different parametrizations.}
+
+\begin{teachernote}
+  Students sometimes assume both robots must move the same direction since they're on the
+  same path. Q5 is the key conceptual moment --- help groups articulate that direction is
+  a property of the parametrization, not the curve itself.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- Slope of the Curve}
+
+\textbf{6.}\quad Using Robot A's data, slope between $t = 0$ and $t = 2$.
+
+\vspace{4pt}
+$x_A(0) = $ \ans{$0$} \qquad $x_A(2) = $ \ans{$2$} \qquad $\Delta x = $ \ans{$2$}
+
+$y_A(0) = $ \ans{$0$} \qquad $y_A(2) = $ \ans{$4$} \qquad $\Delta y = $ \ans{$4$}
+
+\vspace{4pt}
+Slope $= \dfrac{\Delta y}{\Delta x} = \dfrac{4}{2} = $ \ans{$2$}
+
+\vspace{10pt}
+\textbf{7.}\quad Using Robot B's data for the same two $(x,y)$ locations.
+
+\vspace{4pt}
+Robot B passes through $(0, 0)$ at $t = $ \ans{$3$}
+and through $(2, 4)$ at $t = $ \ans{$1$}.
+
+$\Delta x = x_B(1) - x_B(3) = 2 - 0 = $ \ans{$2$} \qquad
+$\Delta y = y_B(1) - y_B(3) = 4 - 0 = $ \ans{$4$}
+
+\vspace{4pt}
+Slope $= \dfrac{\Delta y}{\Delta x} = $ \ans{$2$}
+
+\vspace{4pt}
+\ans{Both give slope $= 2$. This makes sense because slope is a property of the \emph{curve} between two geometric points, not of the parametrization. Different parametrizations of the same path must give the same secant slope.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 4 --- When Does Each Robot Arrive?}
+
+\textbf{8.}\quad When does each robot pass through $(1, 1)$?
+
+\vspace{4pt}
+Robot A: Set $x_A(t) = t = 1 \Rightarrow$ \ans{$t = 1$}. Check: $y_A(1) = 1$ \checkmark
+
+Robot B: Set $x_B(t) = 3 - t = 1 \Rightarrow t = 2$. \ans{$t = 2$}. Check: $y_B(2) = 1$ \checkmark
+
+\vspace{0.10in}
+\textbf{9.}\quad When does each robot pass through $(0, 0)$? Through $(3, 9)$?
+
+\vspace{4pt}
+$(0, 0)$: Robot A at \ans{$t = 0$}; Robot B at \ans{$t = 3$}.
+
+$(3, 9)$: Robot A at \ans{$t = 3$}; Robot B at \ans{$t = 0$}.
+
+\begin{teachernote}
+  Part 4 reinforces EK 4.3.A.2: at the same geometric point, different parametrizations
+  arrive at different values of $t$. Ask groups: ``Does the slope of the secant change
+  depending on which robot you use to compute it?'' (No.)
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}

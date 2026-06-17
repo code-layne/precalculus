@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.3 — Group Activity
+%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,122 @@
 \pageheader{Unit 4, Lesson 4.3}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
+\begin{scenariobox}[Two Robots, One Path]{sky}
+Two robots traverse the same parabolic path in a warehouse.
+\[
+  \text{Robot A:}\quad g_A(t) = (t,\; t^2), \quad 0 \le t \le 3
+  \qquad\qquad
+  \text{Robot B:}\quad g_B(t) = (3-t,\; (3-t)^2), \quad 0 \le t \le 3
+\]
+Robot A starts at $(0, 0)$ and Robot B starts at $(3, 9)$.
+Your goal is to analyze their directions, the path they share, and
+the slope of the curve between two points.
+\end{scenariobox}
+
+\vspace{0.10in}
+
+\begin{notesbox}{Part 1 --- Tables and Shared Path}
+
+\textbf{1.}\quad Complete the table for each robot. Leave no cell blank.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|}
+\hline
+$t$ & Robot A position $(x, y)$ for $g_A(t) = (t,\; t^2)$ &
+      Robot B position $(x, y)$ for $g_B(t) = (3-t,\; (3-t)^2)$ \\
+\hline
+$0$ & \blank{3cm} & \blank{3cm} \\
+\hline
+$1$ & \blank{3cm} & \blank{3cm} \\
+\hline
+$2$ & \blank{3cm} & \blank{3cm} \\
+\hline
+$3$ & \blank{3cm} & \blank{3cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{2.}\quad Do both robots visit the same set of ordered pairs?
+Explain using your table.
+
+\writelines{2}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Direction of Motion}
+
+\textbf{3.}\quad At $t = 1$, is Robot A moving right or left? Up or down?
+Show your reasoning by comparing values in the table.
+
+\writelines{3}
+
+\textbf{4.}\quad At $t = 1$, is Robot B moving right or left? Up or down?
+Show your reasoning by comparing values in the table.
+
+\writelines{3}
+
+\textbf{5.}\quad Do the two robots move in the same direction at $t = 1$?
+Explain what this tells you about the two parametrizations.
+
+\writelines{2}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- Slope of the Curve}
+
+\textbf{6.}\quad Using Robot A's data, compute the slope of the curve
+between $t = 0$ and $t = 2$.
+
+\vspace{4pt}
+$x_A(0) = $ \blank{1.5cm} \qquad $x_A(2) = $ \blank{1.5cm} \qquad $\Delta x = $ \blank{1.5cm}
+
+$y_A(0) = $ \blank{1.5cm} \qquad $y_A(2) = $ \blank{1.5cm} \qquad $\Delta y = $ \blank{1.5cm}
+
+\vspace{4pt}
+Slope $= \dfrac{\Delta y}{\Delta x} = $ \blank{2.5cm}
+
+\vspace{10pt}
+\textbf{7.}\quad Using Robot B's data, compute the slope of the curve
+between the corresponding two points (the same two $(x,y)$ locations).
+Do you get the same slope? Explain why this makes sense.
+
+\vspace{4pt}
+Robot B passes through $(0, 0)$ at $t = $ \blank{1.2cm}
+and through $(2, 4)$ at $t = $ \blank{1.2cm}.
+
+$\Delta x = $ \blank{1.5cm} \qquad $\Delta y = $ \blank{1.5cm}
+
+\vspace{4pt}
+Slope $= \dfrac{\Delta y}{\Delta x} = $ \blank{2.5cm}
+
+\writelines{2}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 4 --- When Does Each Robot Arrive?}
+
+\textbf{8.}\quad At what value of $t$ does Robot A pass through $(1, 1)$?
+At what value of $t$ does Robot B pass through $(1, 1)$?
+Show your work (set the component equations equal to $1$ and solve).
+
 \writelines{4}
+
+\textbf{9.}\quad At what value of $t$ does each robot pass through
+$(0, 0)$? Through $(3, 9)$?
+
+\writelines{3}
+
 \end{notesbox}
 
 \end{document}

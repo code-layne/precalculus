@@ -1,73 +1,332 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.3 — Lesson Plan
+%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.3: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.3: Parametric Functions and Rates of Change}
 
 \begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
 \end{center}
 
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+  \textbf{Primary Objective:} Students will analyze the direction of planar
+  motion from whether $x(t)$ and $y(t)$ are increasing or decreasing,
+  compute average rates of change of each component over a parameter interval,
+  and use their ratio to find the slope of the curve between two points.
+  \textit{(Big Idea: Functions)}
 \end{tcolorbox}
 
-\renewcommand{\arraystretch}{1.6}
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{3.B} \textit{Apply numerical results} ---
+  Compute the average rate of change (ARC) of $x(t)$ and $y(t)$ over
+  $[t_1, t_2]$ and apply the ratio $\Delta y / \Delta x$ to determine
+  the slope of the parametric curve between two points.
+&
+\textbf{EK 4.3.A.1}: As the parameter increases, direction of planar
+motion can be analyzed in terms of $x$ and $y$ independently.
+If $x(t)$ is increasing, the particle moves right; if decreasing, left.
+If $y(t)$ is increasing, the particle moves up; if decreasing, down. \\[4pt]
+
+\textbf{3.C} \textit{Support conclusions with rationale/data} ---
+  Justify claims about direction of motion and verify that two different
+  parametrizations of the same path yield the same secant slope.
+&
+\textbf{EK 4.3.A.2}: At any given point in the plane, the direction of
+planar motion may be different for different values of $t$. \\[4pt]
+
+&
+\textbf{EK 4.3.A.3}: The same curve can be parametrized in different ways
+and traversed in different directions with different parametric functions. \\[4pt]
+
+&
+\textbf{EK 4.3.A.4}: Over $[t_1, t_2]$, the ratio of the ARC of $y(t)$
+to the ARC of $x(t)$ gives the slope of the curve between the two
+corresponding points, provided ARC of $x(t) \ne 0$. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+direction of motion &
+  Determined by whether each component is increasing or decreasing:
+  $x(t)$ increasing $\Rightarrow$ right; $y(t)$ increasing $\Rightarrow$ up. \\[4pt]
+ARC of $x(t)$ &
+  \TallMath{\dfrac{x(t_2) - x(t_1)}{t_2 - t_1}}; measures how fast $x$ changes per unit $t$. \\[4pt]
+ARC of $y(t)$ &
+  \TallMath{\dfrac{y(t_2) - y(t_1)}{t_2 - t_1}}; measures how fast $y$ changes per unit $t$. \\[4pt]
+slope of parametric curve &
+  \TallMath{\dfrac{\Delta y}{\Delta x} = \dfrac{\text{ARC of }y(t)}{\text{ARC of }x(t)}}
+  when ARC of $x(t) \ne 0$; equals the slope of the secant line
+  connecting the two points on the curve. \\[4pt]
+reparametrization &
+  A different pair of component functions that traces the same set of
+  points in the plane, possibly in a different direction. \\
+\end{tabularx}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Increasing/decreasing functions}: Determine whether a function
+    is increasing or decreasing on an interval from its formula or a table ---
+    directly used to identify direction of motion in each component.
+  \item \textbf{Average rate of change}: Compute $\dfrac{f(b) - f(a)}{b - a}$
+    over an interval --- the core calculation for both ARC of $x(t)$ and
+    ARC of $y(t)$.
+  \item \textbf{Parametric functions as two components}: The idea that a
+    parametric function $f(t) = (x(t), y(t))$ outputs ordered pairs ---
+    prerequisite for analyzing each component independently.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Two drones follow the same figure-eight path over a
+field --- Drone~A clockwise, Drone~B counterclockwise. From below, both
+trace identical curves in the sky, yet at any given moment they head in
+opposite directions.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``Can the same path in the plane be described by two
+    completely different parametric functions? What would have to be
+    different about them?''}
+  \item \textit{``What determines which way a drone is heading at any
+    moment? Can you tell just from its position?''}
+  \item \textit{``If you knew the drone's $x$-position was increasing,
+    which horizontal direction is it moving?''}
+\end{enumerate}
+
+\textbf{Key tensions to surface:} (1) Position alone does not determine
+direction --- you need to know whether $x(t)$ and $y(t)$ are increasing
+or decreasing. (2) The same geometric curve can be traversed in
+opposite directions by different parametrizations.
+
+\textbf{Transition:} ``Today we develop two tools: reading direction of
+motion from the components, and computing the slope of the curve between
+two points using average rates of change.''
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Direction of Motion} (10 min)
+
+Write $f(t) = (x(t), y(t))$. Emphasize: analyze $x$ and $y$
+\emph{independently}. If $x(t)$ is increasing over an interval, the
+particle moves \textbf{right}; if decreasing, \textbf{left}. If $y(t)$
+is increasing, the particle moves \textbf{up}; if decreasing,
+\textbf{down}. Cover EK 4.3.A.1. Example: $f(t) = (t^2 - 2t, 3t - t^2)$.
+At $t = 0.5$: compare $x(0)$ and $x(1)$ --- $x(0) = 0$, $x(1) = -1$,
+so $x$ decreased $\Rightarrow$ moving \textbf{left}. Compare $y(0) = 0$
+and $y(1) = 2$ --- $y$ increased $\Rightarrow$ moving \textbf{up}. Ask:
+``Does knowing the drone's $(x, y)$ position tell you which way it is
+heading?'' (No --- EK 4.3.A.2.)
+
+\columnbreak
+
+\textbf{Step 2 --- Same Curve, Different Directions} (8 min)
+
+Cover EK 4.3.A.3. Example: compare $f(t) = (t, t^2)$ for $0 \le t \le 3$
+and $g(t) = (3 - t, (3-t)^2)$ for $0 \le t \le 3$. Build a small table
+for both: the ordered pairs are the same set of points, but traversed in
+opposite directions. Key question: ``How would you verify that two
+parametric functions trace the same path?'' (Show both produce the same
+$(x, y)$ values.) Stress: the curve is a geometric object; the
+parametrization adds direction and timing.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Average Rates of Change} (10 min)
+
+Define ARC of $x(t)$ over $[t_1, t_2]$:
+$\dfrac{x(t_2) - x(t_1)}{t_2 - t_1}$, and similarly for $y(t)$.
+Then: slope of curve between the two points equals
+$\dfrac{\Delta y}{\Delta x}$, which can be computed as
+$\dfrac{\text{ARC of }y(t)}{\text{ARC of }x(t)}$.
+Cover EK 4.3.A.4. Caution: if ARC of $x = 0$, slope is undefined
+(vertical secant). Cold-call: ``Does the ratio depend on $\Delta t$?
+Does it simplify to just $\Delta y / \Delta x$?''
+
+\columnbreak
+
+\textbf{Step 4 --- Full Example: $f(t) = (t^2 - 2t,\; 3t - t^2)$} (12 min)
+
+\textbf{Direction at $t = 0.5$}: $x(0) = 0$, $x(1) = -1$ (decreased)
+$\Rightarrow$ moving left. $y(0) = 0$, $y(1) = 2$ (increased)
+$\Rightarrow$ moving up.\\[3pt]
+\textbf{Direction at $t = 2.5$}: $x(2) = 0$, $x(3) = 3$ (increased)
+$\Rightarrow$ moving right. $y(2) = 2$, $y(3) = 0$ (decreased)
+$\Rightarrow$ moving down.\\[3pt]
+\textbf{Slope of secant from $t = 1$ to $t = 3$}:
+$x(1) = -1$, $x(3) = 3$, $\Delta x = 4$;
+$y(1) = 2$, $y(3) = 0$, $\Delta y = -2$;
+slope $= -2/4 = -1/2$.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 in Period 1; Steps 3--4 + activity in Period 2.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Confusing direction with sign of the component}: Students
+    may say ``$x(t) < 0$ so the particle is moving left.'' Prompt:
+    \textit{``Is $x(t)$ getting larger or smaller as $t$ increases?
+    That tells you direction, not the sign of $x$ itself.''}
+  \item \textbf{Using $\Delta y / \Delta t$ as slope}: Remind students
+    the slope of the \emph{curve} uses $\Delta y / \Delta x$, not
+    $\Delta y / \Delta t$. Cold-call: ``Show me which two changes go in
+    the numerator and denominator for the slope of the curve.''
+  \item \textbf{Assuming direction is constant on an interval}: Students
+    may check only endpoints. Prompt: ``Can the direction change inside
+    the interval? How would you check at an interior value of $t$?''
+  \item \textbf{Reparametrization confusion}: Students may think reversing
+    the path gives a different curve. Ask: \textit{``Do both
+    parametrizations produce the same set of $(x, y)$ ordered pairs?
+    Does the \emph{slope} of the secant change?''}
+\end{itemize}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work in groups of 3--4 on the tiered activity (assign by tier
+or allow self-selection with guidance). The activity uses two robots
+tracing the same parabolic path in opposite directions.
+
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+
+Given $f(t) = (3t, -2t + 6)$ on $0 \le t \le 4$:
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+  \item Determine direction (right/left, up/down) at $t = 1$.
+  \item Compute ARC of $x(t)$ and ARC of $y(t)$ over $[0, 2]$.
+  \item Find slope of the curve between $t = 0$ and $t = 2$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier A --- Approaching}
+
+Given $f(t) = (t^2 - 1, \sin(\pi t))$ on $0 \le t \le 2$:
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+  \item Identify intervals where particle moves right/left, up/down.
+  \item Find slope of secant from $t = 0$ to $t = 2$.
+\end{itemize}
+
+\columnbreak
+\textbf{Tier E --- Extend}
+
+Write a second parametrization of the straight-line path traced by
+$h(t) = (3t, -2t + 6)$ on $0 \le t \le 4$ but traversed in the
+\emph{opposite} direction. Verify the slope of the secant
+between the same two endpoints has the same value.
+\end{multicols}
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+Exit ticket administered independently (final 5 minutes of Period 2).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item A particle moves with $f(t) = (2t - t^2,\; t^2 - 4t + 3)$ for
+    $0 \le t \le 4$. At $t = 0.5$, is the particle moving right or
+    left? Up or down? Show your reasoning.
+  \item Compute the ARC of $x(t)$ on $[0, 3]$ and the ARC of $y(t)$
+    on $[0, 3]$. What is the slope of the curve between these two
+    points?
+\end{enumerate}
+
+\textbf{Data use:} Students who cannot determine direction from
+increasing/decreasing need to revisit Step 1. Students who report
+$\Delta y / \Delta t$ as the slope (instead of $\Delta y / \Delta x$)
+need the ratio clarified before Lesson 4.4.
 \end{skillbox}
 
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework (Lesson 4.3):} 5--6 problems covering direction of
+motion analysis, computing slope via the ARC ratio, a problem with two
+different parametrizations of the same straight line, and 1 AP-style
+multiple-choice item.
+
+\textbf{Preview of Lesson 4.4:} Ask students: \textit{``Today you found
+the slope of a secant between two points on a parametric curve using average
+rates of change. What happens to that slope as the two parameter values
+get closer and closer together? Could you find the slope of the
+\emph{tangent} line?''} Lesson 4.4 connects average rates of change
+to instantaneous rates of change in the parametric context.
 \end{skillbox}
+
 \end{document}

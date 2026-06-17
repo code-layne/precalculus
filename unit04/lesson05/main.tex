@@ -1,15 +1,14 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.5 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\CourseName}{TODO Course}
+\newcommand{\CourseName}{AP Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 4.5: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 4.5: Implicitly Defined Functions}
 
 \begin{document}
 \begin{center}
@@ -19,55 +18,234 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will graph equations in two variables by finding
+    solutions and identifying one or more implicit functions, determine how the variables
+    co-vary by examining the sign of their ratio of change, and locate where the rate of
+    change is zero or undefined and interpret this geometrically. (Big Idea: Functions)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{AP Skill 2.B} --- Construct equivalent representations\\[4pt]
+    \textbf{AP Skill 3.A} --- Describe characteristics of a function\\[6pt]
+    \textbf{Learning Objectives:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item \textbf{LO 4.5.A:} Construct a graph of an equation involving two variables.
+        \item \textbf{LO 4.5.B:} Determine how the two quantities related in an implicitly
+              defined function vary together.
+    \end{itemize}
+\end{minipage}
+&
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{Key Understandings (EKs):}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item An equation in two variables can implicitly describe one or more functions.
+              (EK 4.5.A.1)
+        \item A graph can be built by substituting values and solving for the other
+              variable. (EK 4.5.A.2)
+        \item Solving for one variable yields an explicit function whose graph is part or
+              all of the equation's graph. (EK 4.5.A.3)
+        \item If $\Delta y/\Delta x$ is positive, the variables change in the same
+              direction; if negative, they change in opposite directions. (EK 4.5.B.1)
+        \item $\Delta y/\Delta x = 0$ signals a horizontal interval; undefined signals a
+              vertical interval. (EK 4.5.B.2)
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+\textbf{Implicit equation} & An equation in two variables where neither variable is isolated;
+  it may describe one or more functions. \\
+\textbf{Explicitly defined function} & A function of the form $y = f(x)$, where $y$ is
+  solved for in terms of $x$. \\
+\textbf{Co-variation} & The way two quantities change together; characterized by the sign
+  and magnitude of $\Delta y/\Delta x$. \\
+\textbf{Rate of change} & $\Delta y/\Delta x$: the ratio of the change in $y$ to the change
+  in $x$ between two nearby points. Positive $\Rightarrow$ same direction;
+  negative $\Rightarrow$ opposite directions. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
         \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
+            \textbf{Students should already be able to:}
+            \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+                \item Solve a two-variable equation for one variable algebraically.
+                \item Evaluate $y = f(x)$ for specific $x$ values and plot $(x, y)$ pairs.
+                \item Compute $\Delta y/\Delta x$ from a table of values.
+                \item Use the square-root property ($y^2 = k \Rightarrow y = \pm\sqrt{k}$).
+            \end{itemize}
+            \vspace{4pt}\textit{Warm-Up covers:} Solving $x^2+y^2=100$ for $y$;
+            reading a ratio from a table; finding $y$-values for $y^2 = x+4$.
         \end{minipage}
         &
         \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
+            % Authored warm-up; thumbnail not embedded (compiles to target/).
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textit{``The equation $x^2 + y^2 = 25$ is not a function --- but it describes a circle.
+    Can we still talk about how $x$ and $y$ change together? Can we split it into functions?''}\\[4pt]
+    Ask students: Is $x^2 + y^2 = 25$ a function? Why or why not? (No --- fails the vertical-line
+    test.) What if we only look at the top half? Guide them to see that each semicircle \emph{is}
+    a function.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson --- Day 1: Graphing Implicit Equations]{sky}
+\begin{multicols}{2}
+\textbf{Step 1 --- What is an implicit equation?}\\
+An equation like $x^2 + y^2 = 25$ involves two variables but neither is isolated.
+We call it \textbf{implicit} because functions are hidden inside it.
+
+\textbf{Pose:} ``How could we graph this?'' \\
+\textbf{Guide:} Substitute specific $x$ values and solve for $y$.
+
+\textbf{Example:} $x = 3$ in $x^2+y^2=25$:
+\[ 9 + y^2 = 25 \implies y^2 = 16 \implies y = \pm 4 \]
+Two points, $(3, 4)$ and $(3, -4)$, for one $x$-value.
+
+\textbf{Step 2 --- Identifying the explicit pieces.}\\
+Solve $x^2 + y^2 = 25$ for $y$:
+\[ y = \pm\sqrt{25-x^2} \]
+Two explicit functions on $[-5, 5]$:
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+    \item $f_1(x) = \sqrt{25-x^2}$ \;(upper semicircle)
+    \item $f_2(x) = -\sqrt{25-x^2}$ \;(lower semicircle)
+\end{itemize}
+
+\columnbreak
+
+\textbf{Step 3 --- Table for $x^2+y^2=25$.}\\[2pt]
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|c|c}
+$x$ & $y$ (upper) & $y$ (lower) \\\hline
+$-5$ & $0$  & $0$  \\
+$-3$ & $4$  & $-4$ \\
+$0$  & $5$  & $-5$ \\
+$3$  & $4$  & $-4$ \\
+$5$  & $0$  & $0$  \\
+\end{tabular}\\[6pt]
+Have students verify each row by substitution.
+
+\textbf{Step 4 --- Second example: $xy = 4$.}\\
+Solve: $y = 4/x$.  One explicit function (two branches, no repeated $y$).\\[4pt]
+\begin{tabular}{c|c}
+$x$ & $y$ \\\hline
+$1$ & $4$  \\ $2$ & $2$ \\ $4$ & $1$ \\
+$-1$ & $-4$ \\ $-2$ & $-2$ \\
+\end{tabular}\\[4pt]
+\textbf{Pose:} ``As $x$ increases from 1 to 4, what happens to $y$?''
+(Decreases from 4 to 1.)
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.) --- Day 2: Co-variation]{sky}
+\begin{multicols}{2}
+\textbf{Step 5 --- Co-variation sign.}\\
+Pick two nearby points on the upper semicircle of $x^2+y^2=25$:
+$(3,\,4)$ and $(4,\,3)$.
+\[ \frac{\Delta y}{\Delta x} = \frac{3-4}{4-3} = -1 \]
+Negative $\Rightarrow$ as $x$ increases, $y$ decreases. \textbf{Opposite directions.}
+
+\textbf{Pose:} ``What would a \emph{positive} ratio mean?''\\
+(Both variables increasing, or both decreasing together.)
+
+\textbf{Step 6 --- Where is the ratio zero or undefined?}\\
+\begin{itemize}[leftmargin=1em, itemsep=2pt]
+    \item Near $(0,5)$: $\Delta y/\Delta x \to 0$.
+          $y$ barely changes --- \textbf{horizontal} behavior at the top.
+    \item Near $(5,0)$: $\Delta y/\Delta x$ becomes very large (undefined limit)
+          --- \textbf{vertical} behavior at the right end.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Summary:}\\[2pt]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\columnwidth}{@{}X l@{}}
+\textbf{Ratio} & \textbf{Interpretation} \\\hline
+Positive & Same direction (both $\uparrow$ or both $\downarrow$) \\
+Negative & Opposite directions \\
+Zero & $y$ momentarily constant (horizontal) \\
+Undefined & $x$ momentarily constant (vertical) \\
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{$xy = 4$ example:}\\
+Points $(2,2)$ and $(3,\,4/3)$:
+\[ \frac{\Delta y}{\Delta x} = \frac{4/3 - 2}{3-2} = -\tfrac{2}{3} \]
+Negative: as $x$ increases, $y$ decreases. Always true when $xy = k > 0$.
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\textbf{Circulate and check for:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item Students who find only one $y$-value when two exist (e.g., forgetting $y = -4$ when
+          $y^2 = 16$). Prompt: ``$y^2 = 16$ --- what are ALL values of $y$?''
+    \item Students who compute $\Delta x/\Delta y$ instead of $\Delta y/\Delta x$.
+    \item Students who confuse the sign of the ratio with the sign of the $y$-values themselves.
+    \item Students who cannot identify which piece of the circle is a function; prompt with the
+          vertical-line test.
+\end{itemize}
+\textbf{Cold-call prompts:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item ``If $\Delta y/\Delta x$ is negative, what does that tell us about co-variation?''
+    \item ``How many explicit functions does $x^2 + y^2 = 25$ define? Name them.''
+    \item ``At which points on the circle is the rate of change equal to zero?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}\\
+For $x^2 + y^2 = 16$, find four solutions by substituting $x = -4,\; 0,\; 4$ and one other
+value. Determine whether $y$ is increasing or decreasing as $x$ increases from $-4$ to $0$
+on the upper half.
+
+\columnbreak
+\textbf{Tier A --- Approaching Proficiency}\\
+For $x^2 + 4y^2 = 16$, find solutions for $x = -4,\,-2,\,0,\,2,\,4$, identify the two
+explicit functions, and determine where $\Delta y/\Delta x$ changes sign.
+
+\columnbreak
+\textbf{Tier E --- Extension}\\
+For $x^2 - y^2 = 9$, identify two explicit functions and state their domains. Describe
+co-variation in each quadrant. What happens at $x = 3$ and $x = -3$?
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket (2 items):}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+    \item The equation $4x^2 + 9y^2 = 36$ (an ellipse). For $x = 3$, find the $y$-values.
+          For $x = 0$, find the $y$-values.
+    \item Using $(3,0)$ and $(0,2)$ from $4x^2 + 9y^2 = 36$, determine whether co-variation
+          is positive or negative as we move from $(3,0)$ toward $(0,2)$ along the upper half
+          of the ellipse.
+\end{enumerate}
+\textbf{Assessment note:} Sort exit tickets by whether students (a) found both $y$-values
+and (b) correctly identified the sign of co-variation. Use results to form Tier R/A/E groups
+for Day 2 re-teach if needed.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5--6 problems including solving for $y$ from an implicit equation, finding
+ordered-pair solutions, identifying explicit function pieces, determining co-variation sign,
+a contextual budget-constraint problem, and one AP-style MC item.\\[4pt]
+\textbf{Extension:} Explore $x^2 - y^2 = 9$ (a hyperbola). Identify its two branches,
+describe co-variation in each branch, and find where the rate of change is zero or
+undefined.\\[4pt]
+\textbf{Preview of Lesson 4.6:} We will extend implicit equations to parametric
+representations, where both $x$ and $y$ are expressed as functions of a third variable $t$.
 \end{skillbox}
+
 \end{document}

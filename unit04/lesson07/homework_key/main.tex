@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Homework (Answer Key)
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,95 @@
 \pageheader{Unit 4, Lesson 4.7}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Parametrization Practice --- Key}
+
+\textbf{1.}\quad $\dfrac{x^2}{9} + \dfrac{y^2}{25} = 1$
+
+\vspace{4pt}
+(a)\quad $x(t) = $ \ans{$3\cos t$} \qquad $y(t) = $ \ans{$5\sin t$}
+
+\vspace{8pt}
+(b)\quad Extreme points:
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Extreme point} & $t$ & \textbf{Coordinates} \\
+\hline
+Rightmost  & \ans{$0$}       & \ans{$(3,\,0)$}  \\
+\hline
+Leftmost   & \ans{$\pi$}     & \ans{$(-3,\,0)$} \\
+\hline
+Topmost    & \ans{$\pi/2$}   & \ans{$(0,\,5)$}  \\
+\hline
+Bottommost & \ans{$3\pi/2$}  & \ans{$(0,\,-5)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{10pt}
+\textbf{2.}\quad $\dfrac{(x-3)^2}{16} + \dfrac{(y+1)^2}{4} = 1$
+
+\vspace{4pt}
+(a)\quad \ans{$h=3$, $k=-1$, $a=4$, $b=2$.
+$x(t) = 3 + 4\cos t$, $\quad y(t) = -1 + 2\sin t$, $\quad 0 \le t \le 2\pi$.}
+
+\vspace{8pt}
+(b)\quad \ans{Set $y(t) = 0$: $-1 + 2\sin t = 0 \Rightarrow \sin t = \tfrac{1}{2}
+\Rightarrow t = \pi/6$ or $t = 5\pi/6$.\\[3pt]
+At $t = \pi/6$: $x = 3 + 4\cos(\pi/6) = 3 + 4 \cdot \tfrac{\sqrt{3}}{2} = 3 + 2\sqrt{3} \approx 6.46$.\\[3pt]
+At $t = 5\pi/6$: $x = 3 + 4\cos(5\pi/6) = 3 - 2\sqrt{3} \approx -0.46$.\\[3pt]
+$x$-axis crossings: $\bigl(3+2\sqrt{3},\,0\bigr)$ and $\bigl(3-2\sqrt{3},\,0\bigr)$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Parabola Parametrization --- Key}
+
+\textbf{3.}\quad $y = 2(x-1)^2 - 3$; \quad $x(t) = 1+t$, $\quad y(t) = 2t^2 - 3$.
+
+\vspace{4pt}
+(a)\quad \ans{Set $y(t) = 0$: $2t^2 - 3 = 0 \Rightarrow t^2 = \tfrac{3}{2}
+\Rightarrow t = \pm\sqrt{\tfrac{3}{2}} = \pm\tfrac{\sqrt{6}}{2}$.\\[3pt]
+$x = 1 + t$: $x = 1 + \tfrac{\sqrt{6}}{2}$ and $x = 1 - \tfrac{\sqrt{6}}{2}$.\\[3pt]
+$x$-intercepts: $\bigl(1 \pm \tfrac{\sqrt{6}}{2},\,0\bigr)$.}
+
+\vspace{8pt}
+(b)\quad \ans{Vertex is the minimum of $y = 2(x-1)^2 - 3$, which is $(1,-3)$.
+At $t = 0$: $x(0) = 1+0 = 1$, $y(0) = 2(0)^2 - 3 = -3$. Confirmed: $(1,-3)$.}
+
+\vspace{10pt}
+\textbf{4.}\quad $x^2 + y^2 = 49$
+
+\vspace{4pt}
+(a)\quad $x(t) = $ \ans{$7\cos t$} \qquad $y(t) = $ \ans{$7\sin t$}
+
+\vspace{8pt}
+(b)\quad \ans{$x(\pi/3) = 7\cos(\pi/3) = 7 \cdot \tfrac{1}{2} = \tfrac{7}{2}$.
+$y(\pi/3) = 7\sin(\pi/3) = 7 \cdot \tfrac{\sqrt{3}}{2} = \tfrac{7\sqrt{3}}{2}$.
+Coordinates: $\bigl(\tfrac{7}{2},\, \tfrac{7\sqrt{3}}{2}\bigr)$.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{AP-Style Practice --- Key}
+
+\textbf{5.}\quad Correct answer: \ans{(B)}  $x(t) = 5\cos t$, $y(t) = 3\sin t$.
+
+\begin{teachernote}
+  In $\frac{x^2}{25}+\frac{y^2}{9}=1$, the denominators are $a^2=25$ and $b^2=9$, so $a=5$
+  and $b=3$. The parametrization is $x(t)=a\cos t=5\cos t$, $y(t)=b\sin t=3\sin t$.
+  (A) swaps $a$ and $b$. (C) uses $a^2$ and $b^2$ instead of $a$ and $b$ --- a very
+  common error; emphasize that students take the square root of the denominator. (D) also
+  swaps $a$ and $b$.
+\end{teachernote}
+
 \end{notesbox}
 
 \end{document}

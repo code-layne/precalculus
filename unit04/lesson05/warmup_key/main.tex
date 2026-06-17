@@ -1,7 +1,6 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +8,50 @@
 \pageheader{Unit 4, Lesson 4.5}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
 \begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+
+\item Solve $x^2 + y^2 = 100$ for $y$. How many solutions for $y$ are there when $x = 6$?
+
+\vspace{0.4in}
+$y = $ \ans{$\pm\sqrt{100 - x^2}$} \hfill Number of solutions: \ans{2}
+\vspace{0.1in}
+
+\item The table below shows $(x,\, y)$ pairs on a curve.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|c}
+$x$ & $y$ \\\hline
+$1$ & $3$ \\
+$2$ & $5$ \\
+$4$ & $9$ \\
+\end{tabular}
+
+\vspace{6pt}
+Compute $\Delta y / \Delta x$ from $x = 1$ to $x = 2$: \ans{$(5-3)/(2-1) = 2$}
+
+Is this ratio positive or negative? \ans{Positive}
+
+What does the sign tell you about how $y$ changes as $x$ increases? \ans{As $x$ increases, $y$ also increases (same direction).}
+
+\vspace{0.1in}
+
+\item The equation is $y^2 = x + 4$.
+\begin{enumerate}[leftmargin=1.2em, itemsep=4pt]
+    \item[(a)] For $x = 0$, what are the $y$-values? \ans{$y = \pm 2$}
+    \item[(b)] For $x = 5$, what are the $y$-values? \ans{$y = \pm 3$}
+\end{enumerate}
+
+\end{enumerate}
 \end{notesbox}
+
+\begin{teachernote}
+Q1: Students must write $\pm$; a common error is writing only the positive root. Emphasize that both are valid solutions.\\
+Q2: The ratio $\Delta y/\Delta x = 2$ is positive, meaning $x$ and $y$ increase together. Use this to preview co-variation vocabulary in the lesson.\\
+Q3: Remind students to use the square-root property. For $x = 5$: $y^2 = 9$, so $y = \pm 3$.
+\end{teachernote}
 
 \end{document}

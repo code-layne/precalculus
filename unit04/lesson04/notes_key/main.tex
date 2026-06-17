@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.4 — Guided Notes (Answer Key)
+%! Parametrically Defined Circles and Lines — Unit 4, Lesson 4.4 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,198 @@
 \pageheader{Unit 4, Lesson 4.4}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.08in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 4.4.A} --- Express the motion of a point around a
+    circle parametrically by applying transformations to
+    $(x(t),\,y(t)) = (\cos t,\,\sin t)$, and parametrize the segment
+    between two given points using an initial position and constant
+    rates of change. \ansline{see notes boxes below}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{unit circle parametrization}]
+    The equations $x(t) = \cos t$, $y(t) = \sin t$, $0 \le t \le 2\pi$
+    model one full \ans{counterclockwise} revolution starting at
+    \ans{$(1,0)$} and centered at the \ans{origin}.
+
+  \item[\termblanklong{radius / center}]
+    In $(h + r\cos t,\; k + r\sin t)$: $r$ is the
+    \ans{radius} and $(h,\,k)$ is the
+    \ans{center} of the circular path.
+
+  \item[\termblanklong{orientation}]
+    Using $(\cos t,\,\sin t)$ gives \ans{counterclockwise} motion.
+    Replacing $t$ with $-t$ gives \ans{clockwise} motion.
+
+  \item[\termblanklong{linear parametrization}]
+    The parametrization $x(t) = x_1 + (x_2-x_1)t$,
+    $y(t) = y_1 + (y_2-y_1)t$, $0\le t\le 1$, traces the segment from
+    \ans{$(x_1,y_1)$} to \ans{$(x_2,y_2)$}.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} A Ferris wheel has radius 30 ft with its center
+35 ft above the ground. A rider boards at the rightmost seat.
+
+\vspace{4pt}
+\textbf{Q1.} What are the rider's starting coordinates $(x,\,y)$ relative
+to a center at the origin?
+
+\vspace{4pt}
+\ans{$(30,\;0)$} relative to the center; in ground coordinates, $(30,\;35)$.
+
+\textbf{Q2.} As the wheel turns counterclockwise, what do you expect
+to happen to the rider's height $y$?
+
+\vspace{4pt}
+\ans{The height increases to a maximum of $35 + 30 = 65$ ft (at the top) then decreases back to $35 - 30 = 5$ ft (at the bottom), following a sine curve.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 1 — Unit Circle
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 1: Unit Circle Parametrization (EK 4.4.A.1)}
+
+\textbf{Definition:} The parametric function
+$(x(t),\,y(t)) = (\cos t,\,\sin t)$, $0 \le t \le 2\pi$, traces the
+\ans{unit} circle exactly \ans{once}, moving \ans{counterclockwise}.
+
+\vspace{6pt}
+\textbf{Complete the table:}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = \cos t$ & $y(t) = \sin t$ & $(x,\;y)$ \\
+\hline
+$0$      & \ans{$1$}  & \ans{$0$}  & \ans{$(1,\;0)$}  \\
+\hline
+$\pi/2$  & \ans{$0$}  & \ans{$1$}  & \ans{$(0,\;1)$}  \\
+\hline
+$\pi$    & \ans{$-1$} & \ans{$0$}  & \ans{$(-1,\;0)$} \\
+\hline
+$3\pi/2$ & \ans{$0$}  & \ans{$-1$} & \ans{$(0,\;-1)$} \\
+\hline
+$2\pi$   & \ans{$1$}  & \ans{$0$}  & \ans{$(1,\;0)$}  \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{teachernote}
+  Emphasize that the table values come directly from the unit-circle
+  cosine/sine values from the warm-up. Students can verify geometrically
+  by looking at the standard unit circle diagram.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 2 — Transformed Circles
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 2: Transformations of the Circle (EK 4.4.A.2)}
+
+\textbf{General form:}
+\[
+  x(t) = \ans{h} + \ans{r}\cos t, \qquad
+  y(t) = \ans{k} + \ans{r}\sin t, \qquad
+  0 \le t \le 2\pi
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Center: \ans{$(h,\,k)$} \quad Radius: \ans{$r$}
+  \item Counterclockwise when $t$ increases \quad / \quad Clockwise: replace $t$
+    with \ans{$-t$}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Ferris Wheel Example.} Radius 30 ft, center at $(0,\,35)$, counterclockwise:
+
+\vspace{4pt}
+$x(t) = $ \ans{$30\cos t$} \qquad $y(t) = $ \ans{$35 + 30\sin t$}
+
+\vspace{6pt}
+Evaluate at $t = \pi/2$: \quad $x(\pi/2) = $ \ans{$0$}, \quad $y(\pi/2) = $ \ans{$65$}
+
+The rider is at position \ans{$(0,\;65)$} after a quarter turn.
+
+\vspace{6pt}
+\textbf{Clockwise version} (replace $t$ with $-t$):
+
+$x(t) = $ \ans{$30\cos(-t) = 30\cos t$} \qquad $y(t) = $ \ans{$35 + 30\sin(-t) = 35 - 30\sin t$}
+
+\begin{teachernote}
+  Common error: students negate \emph{both} components for clockwise.
+  Stress that $\cos(-t) = \cos t$ (cosine is even), so only $\sin$ changes sign.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 3 — Linear Segment
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 3: Linear Parametrization (EK 4.4.A.3)}
+
+\textbf{Segment from $(x_1,\,y_1)$ to $(x_2,\,y_2)$:}
+\[
+  x(t) = x_1 + (x_2-x_1)\,t, \qquad y(t) = y_1 + (y_2-y_1)\,t, \qquad 0 \le t \le 1
+\]
+At $t=0$: position is \ans{$(x_1,\,y_1)$}.
+At $t=1$: position is \ans{$(x_2,\,y_2)$}.
+At $t=0.5$: position is the \ans{midpoint}.
+
+\vspace{6pt}
+\textbf{Example:} Segment from $(2,\,5)$ to $(6,\,1)$.
+
+\vspace{4pt}
+$x(t) = 2 + \bigl($ \ans{$4$} $\bigr)t = $ \ans{$2 + 4t$} \qquad
+$y(t) = 5 + \bigl($ \ans{$-4$} $\bigr)t = $ \ans{$5 - 4t$}
+
+\vspace{6pt}
+\textbf{Complete the table:}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t)$ & $y(t)$ & $(x,\;y)$ \\
+\hline
+$0$   & \ans{$2$} & \ans{$5$} & \ans{$(2,\;5)$} \\
+\hline
+$0.5$ & \ans{$4$} & \ans{$3$} & \ans{$(4,\;3)$} \\
+\hline
+$1$   & \ans{$6$} & \ans{$1$} & \ans{$(6,\;1)$} \\
+\hline
+\end{tabular}
+\end{center}
+
 \end{notesbox}
 
 \end{document}

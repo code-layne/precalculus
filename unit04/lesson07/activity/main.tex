@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Group Activity
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,11 +9,117 @@
 \pageheader{Unit 4, Lesson 4.7}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Mission Control --- Parametrizing Conic Paths]{sky}
+\small
+Mission Control is tracking three objects. Each follows a conic section path described by
+an implicit equation. Your job: write a parametrization for each object, then use parametric
+tools to extract key position data.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Object 1 — Space Station (ellipse)
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Object 1 --- Space Station (Ellipse)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+The station's orbital path satisfies $\dfrac{(x-1)^2}{64}+\dfrac{(y+2)^2}{36}=1$ (units: km).
+
+\textbf{(a)} Identify $h$, $k$, $a$, and $b$:
+
+\hspace{1em} $h = $ \blank{1.5cm} \quad $k = $ \blank{1.5cm} \quad $a = $ \blank{1.5cm} \quad $b = $ \blank{1.5cm}
+
+\vspace{0.08in}
+\textbf{(b)} Write the parametrization ($0 \le t \le 2\pi$):
+
+\hspace{1em} $x(t) = $ \blank{5cm} \qquad $y(t) = $ \blank{5cm}
+
+\vspace{0.08in}
+\textbf{(c)} Find the four extreme positions. Use the parametrization --- do not read from a graph.
+
+\renewcommand{\arraystretch}{1.6}
+\hspace{1em}
+\begin{tabular}{lll}
+Rightmost ($x$ max): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
+Leftmost ($x$ min): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
+Highest ($y$ max): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
+Lowest ($y$ min): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
+\end{tabular}
+
+\vspace{0.08in}
+\textbf{(d)} When does the station cross the $y$-axis? Set $x(t)=0$ and solve for $t$,
+then find the coordinates.
+
+\vspace{0.06in}
+\hspace{1em} $1 + 8\cos t = 0$ $\Rightarrow$ $\cos t = $ \blank{1.8cm} $\Rightarrow$ $t = $ \blank{2.5cm}
+
+\hspace{1em} $y$-axis crossing coordinates: \blank{5cm}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Object 2 — Comet (parabola)
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Object 2 --- Comet (Parabola)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+The comet follows the path $y + 3 = 2(x-1)^2$.
+
+\textbf{(a)} Identify the vertex: \blank{2.5cm}. \quad Is the parabola vertical or horizontal? \blank{2.5cm}
+
+\vspace{0.08in}
+\textbf{(b)} Write the parametrization with $x(t) = 1 + t$:
+
+\hspace{1em} $x(t) = 1 + t$ \qquad $y(t) = $ \blank{5cm} \qquad $t \in \mathbb{R}$
+
+\vspace{0.08in}
+\textbf{(c)} When is the comet on the $x$-axis (i.e., $y = 0$)?
+
+\hspace{1em} Set $y(t) = 0$: \blank{5cm}
+
+\hspace{1em} Solve for $t$: $t = $ \blank{3cm}
+
+\hspace{1em} Find the $x$-coordinates: $x = $ \blank{3cm}
+
+\hspace{1em} Coordinates where comet crosses $x$-axis: \blank{5cm}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%----------------------------------------------------------------------
+% Object 3 — Satellite (circle)
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Object 3 --- Satellite (Circle)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+The satellite follows a circular orbit satisfying $x^2 + y^2 = 100$.
+
+\textbf{(a)} Identify the center and radius:
+
+\hspace{1em} Center: \blank{2.5cm} \quad Radius: \blank{2.5cm}
+
+\vspace{0.08in}
+\textbf{(b)} Write the standard parametrization:
+
+\hspace{1em} $x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
+
+Domain for one full counterclockwise orbit: \blank{3cm}
+
+\vspace{0.08in}
+\textbf{(c)} Where is the satellite when $t = \pi/4$?
+
+\hspace{1em} $x(\pi/4) = $ \blank{3.5cm} \quad (use $\cos(\pi/4) = \sqrt{2}/2$)
+
+\hspace{1em} $y(\pi/4) = $ \blank{3.5cm} \quad (use $\sin(\pi/4) = \sqrt{2}/2$)
+
+\hspace{1em} Coordinates: \blank{4cm}
+\end{tcolorbox}
 
 \end{document}

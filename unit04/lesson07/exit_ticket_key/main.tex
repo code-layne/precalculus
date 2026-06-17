@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 4, Lesson 4.7 — Exit Ticket (Answer Key)
+%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,38 @@
 \pageheader{Unit 4, Lesson 4.7}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Parametrization Check --- Key}
+
+The ellipse $\dfrac{(x+1)^2}{9} + \dfrac{(y-2)^2}{16} = 1$ is implicitly defined.
+
+\vspace{10pt}
+\textbf{1.}\quad Identify $h$, $k$, $a$, and $b$. Write parametric equations.
+
+\vspace{6pt}
+$h = $ \ans{$-1$} \quad $k = $ \ans{$2$} \quad $a = $ \ans{$3$} \quad $b = $ \ans{$4$}
+
+\vspace{10pt}
+$x(t) = $ \ans{$-1 + 3\cos t$} \qquad $y(t) = $ \ans{$2 + 4\sin t$}
+
+\begin{teachernote}
+  A common error: students write $x(t)=h\cos t$ instead of $x(t)=h+a\cos t$ ---
+  forgetting to add the center coordinates. Prompt: ``The parametrization shifts the
+  unit ellipse to be centered at $(h,k)$. What is the center here?''
+\end{teachernote}
+
+\vspace{10pt}
+\textbf{2.}\quad Topmost and bottommost points.
+
+\vspace{6pt}
+\ans{$y(t) = 2 + 4\sin t$ is maximized when $\sin t = 1$, i.e., $t = \pi/2$.\\[3pt]
+At $t = \pi/2$: $x = -1 + 3\cos(\pi/2) = -1 + 0 = -1$, $y = 2 + 4(1) = 6$.
+\textbf{Topmost point: $(-1,\,6)$.}\\[3pt]
+$y(t)$ is minimized when $\sin t = -1$, i.e., $t = 3\pi/2$.\\[3pt]
+At $t = 3\pi/2$: $x = -1 + 3(0) = -1$, $y = 2 + 4(-1) = -2$.
+\textbf{Bottommost point: $(-1,\,-2)$.}}
+
 \end{notesbox}
 
 \end{document}
