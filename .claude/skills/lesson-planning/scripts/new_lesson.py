@@ -32,7 +32,12 @@ DOC_TITLE = {
     "exit_ticket": "Exit Ticket",
     "homework": "Homework",
 }
-NAME_ROW = {"activity": r"\namepartnerperiod"}  # default: \namedateperiod
+# NAMESTRIP (references/conventions.md): worksheet components carry NO name/date/
+# period row — the student writes their name once, on the cover the packet is
+# stapled behind, and every repeat costs vertical space at the top of the page.
+# Only cover.tex keeps \namedateperiod, so newly scaffolded lessons are born
+# namestripped.
+NAME_ROW: dict[str, str] = {}
 
 
 def fail(msg: str) -> "NoReturn":  # type: ignore[name-defined]
@@ -161,7 +166,7 @@ def main() -> None:
               args.force)
 
     for comp in components:
-        name_row = NAME_ROW.get(comp, r"\namedateperiod")
+        name_row = NAME_ROW.get(comp, "")   # namestripped: see NAME_ROW above
         if comp in prefab:
             prefab_dir(dest / comp)
         elif comp == "cover":
