@@ -31,7 +31,7 @@ AP tags and list review topics):
    Selecting Statistical Methods"). Right: "Key Understandings" paraphrased from the EKs.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); left lists the reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
+5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); lists the prerequisite skills the warm-up reviews, **in words**. Text-only — never embed a warm-up thumbnail.
 6. **Hook** — `skillbox{sky}`: the entry question or scenario.
 7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{sky}` with `\begin{multicols}{2}`;
    the worked instructional progression, bolding the questions you'll pose.
@@ -58,12 +58,11 @@ AP tags and list review topics):
 
 ## Warm-up
 
-`warmup/` (+ `warmup_key/`) — short spiral review of *prerequisite* skills, sized to the
-thumbnail shown on the lesson plan. Frequently a **prefab PDF**: if so, just drop it in as
-`warmup/main.pdf` (and `warmup_key/main.pdf`) — `lesson.mk` merges it directly, and the lesson
-plan can embed its thumbnail via `\includegraphics{warmup/main}`. If authored: 3–5 quick
-problems with work space (`\vspace`), `\namedateperiod`, and the spiral review stays text-only
-in the plan. Key mirrors with `\ans`.
+`warmup/` (+ `warmup_key/`) — short spiral review of *prerequisite* skills, on exactly one page.
+May be a **prefab PDF**: if so, just drop it in as `warmup/main.pdf` (and `warmup_key/main.pdf`)
+— `lesson.mk` merges it directly. If authored: 3–5 quick problems with work space (`\vspace`)
+and `\namedateperiod`. Key mirrors with `\ans`. Either way the lesson plan's spiral review is
+**text-only** — never embed a thumbnail of the warm-up.
 
 ## Guided notes
 

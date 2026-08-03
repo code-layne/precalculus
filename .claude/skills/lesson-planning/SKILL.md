@@ -33,11 +33,21 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
   (`cover` has no key.)
 
 `shared/lesson.mk` discovers a component if it has a `main.tex` **or** a `main.pdf`, compiles
-the `main.tex` ones with `latexmk -xelatex`, and merges all of them with `pdfunite` in
-pedagogical order into `lessonYY_student.pdf` (cover + blank components) and `lessonYY_full.pdf`
-(cover + keyed versions, plus the lesson plan and slides). A prefab `main.pdf` is fed straight
-to `pdfunite` from the source tree with no compile step — so dropping in a ready-made PDF is all
-that's needed (Step 4).
+the `main.tex` ones with `latexmk -xelatex`, and builds **five work products** into
+`target/compiled/unitXX/`:
+
+| Product | What it is |
+|---|---|
+| `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
+| `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
+| `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
+| `lessonYY_student.pdf` | `cover warmup notes activity exit_ticket homework` — the blank versions, in that pedagogical order. |
+| `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
+
+There is no combined "full" packet — the plan and the two slide products are separate teacher
+artifacts, and the key packet is the student packet answered, **page for page**. A prefab
+`main.pdf` is fed straight to `pdfunite` from the source tree with no compile step — so dropping
+in a ready-made PDF is all that's needed (Step 4).
 
 ## Multi-lesson dispatch — REQUIRED when generating more than one lesson
 
@@ -238,10 +248,11 @@ structure and a worked skeleton for every component and its key. Hold to these i
   `vocabbox`, `hookbox`, `notesbox`, `practicebox`, `scenariobox`, `tocbox`, etc.) and
   fill-in helpers (`\blank`, `\writeline`, `\termblanklong`, `\namedateperiod`) rather than
   reinventing layout. The full catalog is in `references/conventions.md`.
-- If the warm-up is a **prefab** PDF (`warmup/main.pdf` in the source tree), the lesson plan may
-  embed its thumbnail via `\includegraphics[page=1]{warmup/main}`. **Authored** warm-ups compile
-  to `target/` and have no source PDF to embed, so keep the spiral review text-only (as AP Stats
-  does); the scaffolder picks the right form automatically.
+- **Never embed a warm-up thumbnail.** The spiral review section of the lesson plan is always
+  text-only — list the prerequisite skills in words. Do not use
+  `\includegraphics{warmup/main}` (or any other component PDF) in a lesson plan, whether the
+  warm-up is authored or prefab. It couples the plan to build order and breaks the moment a
+  prefab warm-up becomes an authored one.
 
 ### Step 4 — Handle prefab components
 
@@ -261,15 +272,20 @@ project's Makefile still only globs `main.tex`, update it first; see `references
 Build from the lesson directory (or the unit/root for wider packets):
 
 ```bash
-make -C unit02/lesson03 student   # cover + blank student components → lessonYY_student.pdf
-make -C unit02/lesson03 full      # lesson plan + slides + keyed versions → lessonYY_full.pdf
-make -C unit02/lesson03 all       # both
+make -C unit02/lesson03 all       # all five products
+make -C unit02/lesson03 plan      # lessonYY_plan.pdf
+make -C unit02/lesson03 slides    # lessonYY_slides.pdf (3-up with notes column)
+make -C unit02/lesson03 pptx      # lessonYY_slides.pptx
+make -C unit02/lesson03 student   # lessonYY_student.pdf
+make -C unit02/lesson03 key       # lessonYY_key.pdf
 ```
 
-`make -C unit02 student|full` merges a unit; `make student|full` at the root merges the whole
-curriculum. Output lands in `target/`. The build needs XeLaTeX, `latexmk`, and `pdfunite`;
-if a compile fails, surface the `.log` and fix the offending `.tex` rather than editing the
-build system. Details and troubleshooting in `references/build.md`.
+Only the two packets aggregate upward: `make -C unit02 student|key` merges a unit, and
+`make student|key` at the root merges the whole curriculum. `plan`, `slides`, and `pptx` stay
+per-lesson in `target/compiled/unitXX/`. Output lands in `target/`. The build needs XeLaTeX,
+`latexmk`, `pdfunite`/`pdfinfo`/`pdftoppm` (poppler), and `python3`; if a compile fails,
+surface the `.log` and fix the offending `.tex` rather than editing the build system. Details
+and troubleshooting in `references/build.md`.
 
 ## Reference files
 

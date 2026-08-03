@@ -1,4 +1,10 @@
 # shared/unit.mk — included by every unit-level Makefile.
+# Auto-detects PROJECT_ROOT and UNIT from CURDIR.
+#
+# A unit aggregates only the two packets that concatenate meaningfully: the
+# student packet and the key packet. The other three lesson products (plan,
+# 3-up slides PDF, slides PPTX) stay per-lesson in target/compiled/$(UNIT)/ —
+# they are teacher artifacts, not something to hand out as one bound document.
 
 PROJECT_ROOT := $(abspath ..)
 UNIT         := $(notdir $(CURDIR))
@@ -8,7 +14,7 @@ COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
 LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
 
 # Optional unit-level bookend components.
-HAS_UNIT_COVER  := $(wildcard unit_cover/main.tex)
+HAS_UNIT_COVER      := $(wildcard unit_cover/main.tex)
 HAS_SAMPLE_TEST     := $(wildcard sample_test/main.pdf)
 HAS_SAMPLE_TEST_KEY := $(wildcard sample_test_key/main.pdf)
 
@@ -16,7 +22,7 @@ UNIT_COVER_PDF      := $(if $(HAS_UNIT_COVER),$(COMPILED_DIR)/$(UNIT)/unit_cover
 SAMPLE_TEST_PDF     := $(if $(HAS_SAMPLE_TEST),$(COMPILED_DIR)/$(UNIT)/sample_test.pdf)
 SAMPLE_TEST_KEY_PDF := $(if $(HAS_SAMPLE_TEST_KEY),$(COMPILED_DIR)/$(UNIT)/sample_test_key.pdf)
 
-.PHONY: all student full clean $(LESSONS) _unit_cover _sample_test _sample_test_key
+.PHONY: all student key clean $(LESSONS) _unit_cover _sample_test _sample_test_key
 
 all: $(LESSONS)
 
@@ -49,7 +55,14 @@ ifdef HAS_SAMPLE_TEST_KEY
 	@echo "✓  Sample test key   → target/compiled/$(UNIT)/sample_test_key.pdf"
 endif
 
-# ── student / full targets ────────────────────────────────────────────────────
+# ── student / key targets ─────────────────────────────────────────────────────
+#
+# The unit key packet mirrors the unit student packet piece for piece: the same
+# unit cover, each lesson's key packet in place of its student packet (those are
+# equal-length and equal-paginated by lesson.mk), and the sample test key in
+# place of the sample test. Only that last pair can differ in length, and it
+# sits at the end, so page N of the unit key is page N of the unit student
+# packet up to the sample test.
 
 student: _unit_cover $(LESSONS) _sample_test
 	@for l in $(LESSONS); do $(MAKE) -C $$l student || exit 1; done
@@ -64,21 +77,22 @@ student: _unit_cover $(LESSONS) _sample_test
 	  echo "  (no student PDFs found for $(UNIT))"; \
 	fi
 
-full: _unit_cover $(LESSONS) _sample_test _sample_test_key
-	@for l in $(LESSONS); do $(MAKE) -C $$l full || exit 1; done
+key: _unit_cover $(LESSONS) _sample_test _sample_test_key
+	@for l in $(LESSONS); do $(MAKE) -C $$l key || exit 1; done
 	@mkdir -p $(COMPILED_DIR)/$(UNIT) $(COMPILED_DIR)
-	@lesson_pdfs=$$(ls $(COMPILED_DIR)/$(UNIT)/lesson*_full.pdf 2>/dev/null | sort); \
-	all_pdfs="$(UNIT_COVER_PDF) $$lesson_pdfs $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)"; \
+	@lesson_pdfs=$$(ls $(COMPILED_DIR)/$(UNIT)/lesson*_key.pdf 2>/dev/null | sort); \
+	all_pdfs="$(UNIT_COVER_PDF) $$lesson_pdfs $(or $(SAMPLE_TEST_KEY_PDF),$(SAMPLE_TEST_PDF))"; \
 	all_pdfs=$$(echo $$all_pdfs | tr ' ' '\n' | grep -v '^$$'); \
 	if [ -n "$$all_pdfs" ]; then \
-	  pdfunite $$all_pdfs $(COMPILED_DIR)/$(UNIT)_full.pdf; \
-	  echo "✓  Unit full packet    → target/compiled/$(UNIT)_full.pdf"; \
+	  pdfunite $$all_pdfs $(COMPILED_DIR)/$(UNIT)_key.pdf; \
+	  echo "✓  Unit key packet     → target/compiled/$(UNIT)_key.pdf"; \
 	else \
-	  echo "  (no full PDFs found for $(UNIT))"; \
+	  echo "  (no key PDFs found for $(UNIT))"; \
 	fi
 
 clean:
 	@for l in $(LESSONS); do $(MAKE) -C $$l clean; done
 	rm -rf $(PROJECT_ROOT)/target/$(UNIT)/unit_cover
 	rm -f $(UNIT_COVER_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
-	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_full.pdf
+	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
+	      $(COMPILED_DIR)/$(UNIT)_full.pdf

@@ -115,7 +115,7 @@ Lesson-plan background aliases: `goldbox`, `greenbox`, `redbox`.
 ## Lesson-plan section order (canonical)
 
 Primary Objective → Priority Ideas & Skills → Vocabulary, Concepts & Theorems → Activate
-Prior Knowledge & Spiral Review (embeds the warm-up thumbnail) → Hook → Lesson (and
+Prior Knowledge & Spiral Review (text-only; no warm-up thumbnail) → Hook → Lesson (and
 "Lesson (cont.)") → Explicit Instruction (one box per technique) → Active Monitoring →
 Group Work & Differentiation (Tiers R / A / E) → Individual Work & Assessment (Exit Ticket +
 SOL/AP-style MC) → Reinforcement & Extension (Homework + Extension + Preview). For AP courses,

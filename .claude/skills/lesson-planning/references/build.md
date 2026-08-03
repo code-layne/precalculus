@@ -6,44 +6,96 @@ The project compiles with **XeLaTeX** (via `latexmk`) and merges PDFs with **`pd
 
 ## The three-level Make hierarchy
 
-- **Root `Makefile`** — discovers `unit*/Makefile`, delegates, and merges unit PDFs into
-  `target/compiled/curriculum_{student,full}.pdf`.
-- **`shared/unit.mk`** (included by each `unitXX/Makefile`) — discovers `lesson*/Makefile`,
-  delegates, and merges lesson PDFs into `target/compiled/unitXX_{student,full}.pdf`.
-- **`shared/lesson.mk`** (included by each `lessonYY/Makefile`, which is just
-  `include ../../shared/lesson.mk`) — the engine. It:
+Each level is a thin `Makefile` that includes a `shared/*.mk`:
+
+- **Root `Makefile`** (`include shared/root.mk`) — discovers `unit*/Makefile`, delegates, and
+  merges unit PDFs into `target/compiled/curriculum_{student,key}.pdf`.
+- **`unitXX/Makefile`** (`include ../shared/unit.mk`) — discovers `lesson*/Makefile`,
+  delegates, and merges lesson PDFs into `target/compiled/unitXX_{student,key}.pdf`.
+- **`lessonYY/Makefile`** (`include ../../shared/lesson.mk`) — the engine. It:
   - **Discovers a component if it has `main.tex` or `main.pdf`.** Authored components
     (`main.tex`) are compiled; prefab components (`main.pdf`) are used as-is from the source
     tree. A directory with neither is skipped.
   - Compiles each `<comp>/main.tex` with
     `latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error`,
     sending output to `target/UNIT/LESSON/<comp>/` and a stamp to `.stamps/`.
-  - Builds two merged packets:
-    - **student** = `cover warmup notes activity exit_ticket homework` (blank versions present),
-      in that pedagogical order → `lessonYY_student.pdf`.
-    - **full** = the lesson plan (`main.tex`) + `slides` + `cover` + the **`_key`** version of
-      each keyed component (falling back to the blank if no key) → `lessonYY_full.pdf`.
+
+## The five lesson work products
+
+Every lesson builds five files into `target/compiled/unitXX/`:
+
+| Product | What it is |
+|---|---|
+| `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
+| `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
+| `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
+| `lessonYY_student.pdf` | `cover warmup notes activity exit_ticket homework` — the blank versions, in that pedagogical order. |
+| `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
+
+There is **no `lessonYY_full.pdf`** — that combined plan + slides + keys packet is gone. The
+plan and the slides are separate teacher artifacts, and the key packet is the student packet
+answered.
+
+Three passes make those products more than a `pdfunite` concatenation:
+
+- **`shared/handout.tex`** re-frames the compiled deck into the 3-up printable. The deck is the
+  source of truth — never edit the handout or the PPTX, edit `slides/main.tex` and rebuild.
+- **`shared/pdf2pptx.py`** wraps the raw deck (not the 3-up handout) as OOXML. It is
+  dependency-free — poppler only, which the build already needs. `PPTX_DPI` (default 300)
+  trades file size against projected sharpness.
+- **`shared/paginate.tex`** rebuilds each merged packet so page numbers run across the whole
+  lesson, every component starts on an **odd (recto)** page, and the **student and key packets
+  are page-for-page identical**: each component gets the same slot — `max(blank, key)` pages
+  rounded up to even — with the shorter one padded by blank versos. Page 7 of the key is
+  page 7 of the student packet.
+
+Since the two packets are laid out against each other, `student` and `key` both compile every
+component of *both* before merging — they stay aligned whether built together or separately.
+
+A lesson with no `slides/` directory still builds the other products; `slides` and `pptx` just
+print `(no slides in unitXX/lessonYY)`.
 
 ## Commands
 
 ```bash
-make -C unitXX/lessonYY student   # student packet for one lesson
-make -C unitXX/lessonYY full      # teacher/full packet (plan + slides + keys)
-make -C unitXX/lessonYY all       # both (runs student then full)
+make -C unitXX/lessonYY all       # all five products
+make -C unitXX/lessonYY plan      # lessonYY_plan.pdf
+make -C unitXX/lessonYY slides    # lessonYY_slides.pdf (3-up with notes column)
+make -C unitXX/lessonYY pptx      # lessonYY_slides.pptx
+make -C unitXX/lessonYY student   # lessonYY_student.pdf
+make -C unitXX/lessonYY key       # lessonYY_key.pdf
 make -C unitXX/lessonYY clean     # remove this lesson's target/ and stamps
 
-make -C unitXX student|full       # merge a whole unit
-make student|full                 # merge the whole curriculum (from project root)
+make -C unitXX student|key        # merge a whole unit's packets
+make student|key                  # merge the whole curriculum (from project root)
 make clean | distclean            # clean everything (distclean also removes target/ and .stamps)
 ```
 
-Outputs land in `target/`: per-component PDFs under `target/UNIT/LESSON/<comp>/main.pdf`,
-merged packets under `target/compiled/`.
+Only the two packets aggregate to unit and curriculum level; `plan`, `slides`, and `pptx` are
+per-lesson teacher artifacts and stay in `target/compiled/unitXX/`.
 
-**Always build with `make all` (or `student` before `full`)** when the lesson plan embeds a
-warm-up thumbnail: the thumbnail uses the warm-up, and `full` alone (from a clean tree) builds
-only the `_key` versions. Authored warm-ups are text-only in the plan (no thumbnail); prefab
-warm-ups embed `warmup/main` (the PDF in the source tree), which resolves regardless of order.
+Outputs land in `target/`: per-component PDFs under `target/UNIT/LESSON/<comp>/main.pdf`,
+work products under `target/compiled/`.
+
+Build order does not matter. Lesson plans never embed a component PDF (no warm-up thumbnails —
+the spiral review is always text-only), so `plan` has no dependency on `student`, and the five
+targets can be built in any order or individually.
+
+## Verifying page counts
+
+The one-page rule for the warm-up and exit ticket is checked on the **component** PDFs, not on
+the paginated packet (which pads to even slots):
+
+```bash
+pdftoppm -r 72 target/unitXX/lessonYY/warmup/main.pdf /tmp/wm && ls /tmp/wm*.ppm | wc -l
+```
+
+For the packets, confirm the pairing instead — these two must be equal:
+
+```bash
+pdfinfo target/compiled/unitXX/lessonYY_student.pdf | grep Pages
+pdfinfo target/compiled/unitXX/lessonYY_key.pdf | grep Pages
+```
 
 ## Scaffolding a lesson
 
@@ -51,13 +103,14 @@ warm-ups embed `warmup/main` (the PDF in the source tree), which resolves regard
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
   --title "..." --unit-title "..." \
   --components cover,warmup,notes,activity,exit_ticket,homework[,slides] \
-  [--prefab warmup,warmup_key] [--course "Algebra 2: Shepherd"] [--lesson-id 2.3]
+  [--prefab warmup,warmup_key] [--course "Precalculus"] [--lesson-id 2.3]
 ```
 
-It detects the prefix from `shared/*-colors.sty`, detects whether `\CourseName` is defined in
-`shared/` (omitting it from the plan if so, inlining it if not), writes the one-line `Makefile`,
-the lesson plan, and each authored component + key skeleton. Pass `--prefab <dirs>` to create
-empty drop-in directories instead (where you place each `main.pdf`). Then author the skeletons
+It detects the prefix from `shared/*-colors.sty`, writes the one-line `Makefile`
+(`include ../../shared/lesson.mk`), the lesson plan, and each authored component + key
+skeleton. Pass `--prefab <dirs>` to create empty drop-in directories instead (where you place
+each `main.pdf`). Include `slides` in `--components` for any lesson that should ship a deck —
+without it, that lesson simply has no `_slides.pdf`/`_slides.pptx`. Then author the skeletons
 (`references/components.md`).
 
 ## Prefab PDFs
@@ -65,21 +118,19 @@ empty drop-in directories instead (where you place each `main.pdf`). Then author
 To include a ready-made PDF as a component, drop it in as `<comp>/main.pdf` (and
 `<comp>_key/main.pdf` for a prefab key). `lesson.mk` discovers it and feeds it straight to
 `pdfunite` — no `main.tex`, no compile step. `make clean` removes only `target/` and stamps, so
-your source PDFs are never deleted. (Requires the `lesson.mk` that discovers `main.pdf`; older
-Makefiles that glob only `main.tex` will silently omit prefab-only components — update first.)
+your source PDFs are never deleted. The lesson-root plan and `slides` may also be prefab PDFs.
 
 ## Troubleshooting
 
 `-file-line-error` makes errors report as `file:line: message`. Read the component's log at
 `target/UNIT/LESSON/<comp>/main.log`. Common issues:
 
-- **`File 'warmup/main' not found`** in the lesson plan → the plan embeds a thumbnail but the
-  warm-up isn't built/present. Build `student` first, or (authored warm-ups) keep the spiral
-  review text-only, or (prefab) ensure the PDF is present as `warmup/main.pdf` so the thumbnail
-  (`\includegraphics{warmup/main}`) resolves.
+- **`File 'warmup/main' not found`** in the lesson plan → the plan is embedding a warm-up
+  thumbnail, which this project does not use. Delete the `\includegraphics{warmup/main}` line
+  and write the spiral review as text.
 - **`Undefined control sequence \CourseName`** → the course macros aren't defined. Either the
-  style package defines them (apstats) or the lesson plan must (algebra2); the scaffolder picks
-  the right one, but a hand-edited plan may have dropped them.
+  style package defines them or the lesson plan must; the scaffolder picks the right one, but a
+  hand-edited plan may have dropped them.
 - **`\includegraphics` fails for a screenshot** → put images in `images/` (the plan sets
   `\graphicspath{{images/}}`) and load `graphicx` (the plan does; `-article` does not).
 - **Key won't compile / option clash** → a key loads `-key` only; do **not** also load
@@ -89,7 +140,14 @@ Makefiles that glob only `main.tex` will silently omit prefab-only components �
   `lesson.mk`.
 - **`pdfunite: command not found`** → install poppler-utils.
 - **A new component didn't appear in the packet** → its directory has neither `main.tex` nor
-  `main.pdf`, or its name isn't in `STUDENT_ORDER`/`KEY_ORDER`. Use the standard component names.
+  `main.pdf`, or its name isn't in `STUDENT_ORDER`. Use the standard component names; the key
+  packet is derived from that same list by swapping in each `_key` sibling.
+- **`handout pass failed` / `pagination pass failed`** → the message names the log
+  (`target/UNIT/LESSON/.handout/handout.log` or `.paginate/paginate.log`) and prints the first
+  errors. Almost always an upstream problem: a deck or component PDF that failed to compile.
+- **The key packet is longer than the student packet** → it shouldn't be; `paginate` pads both
+  to the same slot per component. If they differ, a component is missing its `_key` sibling
+  (it then appears blank in both) or a packet was merged from a stale `target/`.
 
 If a fix seems to require changing `shared/` or a Makefile, stop and raise it — that's a
 project-level refactor, not a per-lesson change.
