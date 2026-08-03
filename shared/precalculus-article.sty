@@ -32,6 +32,10 @@
 \newcommand{\termblank}[1]{%
   \noindent\textbf{\textcolor{navy}{#1:}}\quad\blank{6.5cm}\\[1pt]%
   \writeline\\[2pt]}
+% VOCABPAR: the \noindent below is a NO-OP mid-paragraph, so a vocabbox that opens
+% with an intro sentence runs that sentence into the first term. Fix it per-lesson
+% (\par\vspace{2pt} after the intro, in the blank AND the key), not here — patching
+% it would re-flow every already-verified lesson. See references/conventions.md.
 \newcommand{\termblanklong}[1]{%
   \noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
   \writeline\\[1pt]\writeline\\[3pt]}
@@ -51,6 +55,11 @@
     \vspace{1.5em}\par\noindent}
 
 % ── Student name rows ─────────────────────────────────────────────────────────
+% NAMESTRIP: these belong on the COVER (and on unit tests) only. The packet is
+% stapled behind its cover, so a name row on every component costs vertical space
+% at the top of each page for something the student already wrote on page 1 —
+% space that matters most on the warm-up and exit ticket, held to one page.
+% Strip them from components with scripts/namestrip.py, blank and key together.
 \newcommand{\namedateperiod}{%
     \begin{tabularx}{\linewidth}{X X X}
     Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
