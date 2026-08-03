@@ -1,9 +1,31 @@
-*/*.aux
-*/*.log
-.idea
+# ── LaTeX build artifacts ─────────────────────────────────────────────────────
+# The build compiles out of tree (latexmk -outdir=target/…), so these only ever
+# appear when something was compiled in place. Matched at any depth: the old
+# `*/*.log` form only reached one level down and missed unitXX/lessonYY/<comp>/.
+**/*.aux
+**/*.log
+**/*.out
+**/*.nav
+**/*.snm
+**/*.toc
+**/*.fls
+**/*.fdb_latexmk
+**/*.xdv
+**/*.synctex.gz
+
+# NOTE: *.pdf is deliberately NOT ignored. A prefab component is a real source
+# file — <comp>/main.pdf with no main.tex beside it — and shared/lesson.mk feeds
+# it straight to pdfunite. Ignoring PDFs would make prefabs uncommittable. A
+# stray PDF from an in-place compile shows up as untracked; delete it, don't
+# commit it.
+
+# ── Build output ──────────────────────────────────────────────────────────────
 build
 target
 .stamps
+
+# ── Editor / OS / tooling ─────────────────────────────────────────────────────
+.idea
 **/.DS_Store
 .claude/worktrees
 .claire
