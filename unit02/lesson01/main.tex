@@ -1,15 +1,15 @@
-%! Change in Arithmetic and Geometric Sequences — Unit 2, Lesson 2.1 — Lesson Plan
+%! Quadratic Functions Revisited — Unit 2, Lesson 2.1 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.1: Change in Arithmetic and Geometric Sequences}
+\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.1: Quadratic Functions Revisited}
 
 \begin{document}
 \begin{center}
@@ -19,151 +19,78 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will express arithmetic and geometric sequences as
-    functions of the whole numbers using explicit formulas, identify common differences and
-    common ratios, and compare how the two sequence types change across successive terms.
-    \hfill\textit{\small Skills: AP 1.B, AP 3.A}
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{AP 1.B} --- Identify an appropriate mathematical rule or procedure based on the
-classification of a given expression. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A sequence is a function from the whole numbers to the reals; its graph is discrete
-        points, not a curve. (EK 2.1.A.1)
-  \item Arithmetic sequences have a common difference $d$; general term $a_n = a_0 + dn$.
-        (EK 2.1.A.2, 2.1.A.3)
-\end{itemize} \\
-\textbf{AP 3.A} --- Describe the characteristics of a function. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Geometric sequences have a common ratio $r$; general term $g_n = g_0 r^n$.
-        (EK 2.1.B.1, 2.1.B.2)
-  \item Arithmetic sequences increase equally per step; geometric sequences increase by a
-        larger amount each successive step. (EK 2.1.B.3)
-\end{itemize} \\
-\end{tabularx}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-sequence            & A function whose domain is the whole numbers $\{0, 1, 2, \ldots\}$; its graph consists of discrete points. \\
-arithmetic sequence & A sequence in which consecutive terms differ by a constant value $d$ (the \textit{common difference}). \\
-geometric sequence  & A sequence in which consecutive terms have a constant ratio $r$ (the \textit{common ratio}). \\
-common difference   & The constant $d$ added to each term to produce the next term in an arithmetic sequence. \\
-common ratio        & The constant $r$ by which each term is multiplied to produce the next term in a geometric sequence. \\
-general term / explicit formula & A formula giving the $n$th term directly: $a_n = a_0 + dn$ (arithmetic) or $g_n = g_0 r^n$ (geometric). \\
-recursive formula   & A formula defining each term in terms of the previous term: $a_n = a_{n-1} + d$ or $g_n = g_{n-1} \cdot r$. \\
-\end{tabularx}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers: evaluating a linear function $f(x) = 3x - 1$ at integer
-    inputs and identifying the constant rate of change (Unit 1 linear rate of change), stating
-    the domain of $f(x) = \sqrt{x}$ (function notation and domain), and evaluating
-    $f(n) = 2 \cdot 3^n$ at $n = 0, 1, 2$ (exponential function notation as preview).
-    These connect to sequences as functions with restricted whole-number domains.
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-Write the two sequences on the board:
-\[
-  2,\ 5,\ 8,\ 11,\ \ldots \qquad\qquad 2,\ 6,\ 18,\ 54,\ \ldots
-\]
-Ask: \textbf{``What is the pattern in each? How are they different?''}
-After student responses: \textbf{``How many terms until each sequence exceeds 1000?''}
-Have students estimate by extending the table. (Arithmetic: about 333 terms;
-Geometric: about 6--7 terms.) This creates immediate motivation for explicit formulas.
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-\begin{multicols}{2}
-\textbf{Part 1 (15 min): Arithmetic Sequences.}
-
-Define: a sequence is a function from whole numbers to reals. The graph of
-$2, 5, 8, 11, \ldots$ is a set of \textit{discrete points} (not a line).
-
-Common difference: $d = a_n - a_{n-1}$ is constant. For $2, 5, 8, 11, \ldots$, $d = 3$.
-
-Explicit formula: $a_n = a_0 + dn$. Starting at $a_0 = 2$:
-$a_n = 2 + 3n$.
-Check: $a_0 = 2$, $a_1 = 5$, $a_3 = 11$. \checkmark
-
-General form when $a_k$ is known: $a_n = a_k + d(n - k)$.
-
-Pose: ``How many terms until the sequence first exceeds 1000?''
-Solve $2 + 3n > 1000 \Rightarrow n > 332.6$, so $n = 333$.
-
-\columnbreak
-
-\textbf{Part 2 (15 min): Geometric Sequences.}
-
-Common ratio: $r = g_n / g_{n-1}$ is constant. For $2, 6, 18, 54, \ldots$, $r = 3$.
-
-Explicit formula: $g_n = g_0 r^n$. Starting at $g_0 = 2$:
-$g_n = 2 \cdot 3^n$.
-Check: $g_0 = 2$, $g_1 = 6$, $g_3 = 54$. \checkmark
-
-General form: $g_n = g_k \cdot r^{(n-k)}$.
-
-Solve: ``When does $2 \cdot 3^n > 1000$?'' --- $3^n > 500$; since $3^5 = 243$
-and $3^6 = 729 > 500$, $n = 6$. Only 6 steps vs.\ 333!
-
-\textbf{Part 3 (10 min): Comparison.}
-
-Arithmetic adds a constant each step; geometric multiplies by a constant.
-On a table: show both sequences at $n = 0, 1, 2, \ldots, 6$.
-Key insight (EK 2.1.B.3): increasing geometric sequences eventually grow
-faster than any arithmetic sequence --- the gap widens each step.
-\end{multicols}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After defining arithmetic sequences: cold-call ``Is a sequence a function? What is the domain?''
-        Expect: domain is whole numbers $\{0, 1, 2, \ldots\}$, codomain is reals.
-  \item During Part 1: watch for students who write $a_n = a_1 + d(n-1)$ (1-indexed) rather than
-        $a_n = a_0 + dn$ (0-indexed). Clarify both conventions; this course uses index starting at 0.
-  \item After Part 2: cold-call ``If $g_0 = 5$ and $r = -2$, does the sequence always increase?''
-        (No; alternates sign.) Preview: geometric with $r < 0$ or $0 < r < 1$.
-  \item During Part 3: ensure students articulate \textit{why} geometric sequences outpace arithmetic
-        ones (multiplicative vs.\ additive change), not just that they do.
-\end{itemize}
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Given a sequence explicitly, identify type (arithmetic/geometric),
-        find $d$ or $r$, write the general formula, evaluate the 10th term.
-  \item \textbf{Tier A (Apply):} Given two terms (not the first), find $d$ or $r$ algebraically and
-        write the explicit formula. Solve a contextual question about when a sequence exceeds a value.
-  \item \textbf{Tier E (Extend):} Work from the formula $g_n = g_k r^{(n-k)}$ with a known interior
-        term to find $g_0$; determine when a population first exceeds a target using the formula.
-\end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) write the explicit formula $a_n$ for $7, 11, 15, 19, \ldots$;
-(2) write the explicit formula $g_n$ for $3, 6, 12, 24, \ldots$;
-(3) true or false: both sequences in \#1 and \#2 are functions from the whole numbers to the reals.
-
-Sort by performance: students missing \#1/\#2 need formula practice (LO 2.1.A or 2.1.B);
-students missing \#3 need reinforcement that sequences \textit{are} functions (EK 2.1.A.1).
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): identify arithmetic vs.\ geometric from a table and find $d$ or $r$;
-write the general formula from two given terms; contextual cell-phone plan (arithmetic);
-find which term first exceeds a value (arithmetic case); AP-style MC on $a_n = 4 + 3n$;
-extension: decide whether a given sequence is arithmetic, geometric, or neither and explain.
-
-Preview of Lesson 2.2: exponential functions --- connecting geometric sequences ($g_n = g_0 r^n$)
-to the continuous function $f(x) = a \cdot b^x$ and extending the domain from whole numbers to all reals.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

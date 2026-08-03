@@ -1,4 +1,4 @@
-%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Group Activity (Answer Key)
+%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,105 +11,138 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Equivalent Forms of Exponential Functions]{sky}
-\small
-Every exponential function can be written in many equivalent forms. Choosing the right form
-makes certain features of the function immediately visible. In this activity you will practice
-rewriting exponential expressions using the product property, the power property, and the
-rules for negative and fractional exponents.
+\begin{scenariobox}[Three Polynomial Functions]{sky}
+You will analyze the following three polynomials throughout this activity.
+\[
+  p(x)=(x+2)(x-1)^2(x-3) \qquad
+  q(x)=x^4-5x^2+4 \qquad
+  r(x)=x^3+2x
+\]
 \end{scenariobox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
+% --- Tier R ---
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each expression, (i) identify which property to apply and (ii) rewrite in the form $ab^x$.
-Show each step.
+Work with $p(x)=(x+2)(x-1)^2(x-3)$.
 
-\renewcommand{\arraystretch}{2.4}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.4cm} >{\centering\arraybackslash}p{3.2cm} X X @{}}
-\textbf{Expression} & \textbf{Property} & \textbf{Step 1} & \textbf{Final: $ab^x$} \\
-\midrule
-$2^{x+4}$  & \ans{product} & $2^x \cdot 2^{{\color{keyred}\mathbf{4}}}$ & \ans{$16 \cdot 2^x$} \\
-$3^{2x}$   & \ans{power}   & $(3^{{\color{keyred}\mathbf{2}}})^x$       & \ans{$9^x$} \\
-$5^{-x}$   & \ans{negative exp.} & $\left(\dfrac{1}{{\color{keyred}\mathbf{5}}}\right)^x$ & \ans{$\left(\tfrac{1}{5}\right)^x$} \\
-$4^{x/2}$  & \ans{power}   & $(4^{{\color{keyred}\mathbf{1/2}}})^x$     & \ans{$2^x$} \\
-\end{tabularx}
-\end{tcolorbox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item List all zeros of $p(x)$ and state the multiplicity of each.
 
-\vspace{0.1in}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Multiplicity} \\
+  \hline
+  \ans{$x=-2$} & \ans{1} \\
+  \hline
+  \ans{$x=1$}  & \ans{2} \\
+  \hline
+  \ans{$x=3$}  & \ans{1} \\
+  \hline
+  & \\
+  \hline
+  \end{tabularx}
 
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+  \item What is the degree of $p(x)$? \ans{4}
+        How does the degree relate to the total number of zeros (counting multiplicities)?
+        \ansline{The degree equals the total count of zeros: $1+2+1=4$.}
 
-\begin{enumerate}[itemsep=12pt]
+  \item For each real zero, predict whether the graph \emph{crosses} or is \emph{tangent to}
+        (touches and bounces off) the $x$-axis.
 
-  \item Three functions are given below. Show that all three are equivalent by rewriting each
-        in the form $a \cdot b^x$.
-
-        \[
-          f(x) = 4^{x+1}
-          \qquad
-          g(x) = 4 \cdot 4^x
-          \qquad
-          h(x) = 16 \cdot \left(\tfrac{1}{4}\right)^{-x+1}
-        \]
-
-        $f(x) = $ \ans{$4 \cdot 4^x$} \quad $g(x) = $ \ans{$4 \cdot 4^x$} (already in form)
-
-        $h(x)$: $\left(\tfrac{1}{4}\right)^{-x} = 4^x$, so $h(x) = 16 \cdot \left(\tfrac{1}{4}\right)^{-x+1} = 16 \cdot \tfrac{1}{4} \cdot 4^x = $ \ans{$4 \cdot 4^x$}
-
-        All three simplify to: \ans{$4 \cdot 4^x$}
-
-  \item Rewrite $f(x) = 8^{x/3}$ as a single base raised to the $x$ power. Show your work.
-
-        \vspace{0.04in}
-        $8^{x/3} = (8^{{\color{keyred}\mathbf{1/3}}})^x = $ \ans{$2^x$}
-
-  \item Rewrite $g(x) = 27 \cdot 3^{-x}$ in the form $a \cdot b^x$. Classify as growth or decay
-        and state the $y$-intercept.
-
-        \vspace{0.04in}
-        $g(x) = 27 \cdot 3^{-x} = 27 \cdot \left(\dfrac{1}{3}\right)^x = $ \ans{$27\cdot\left(\dfrac{1}{3}\right)^x$}
-
-        \vspace{0.04in}
-        Growth / Decay (circle one): \ans{Decay} \quad $y$-intercept: \ans{$(0,27)$}
+  \begin{tabularx}{\linewidth}{|X|X|}
+  \hline
+  \rowcolor{sky}
+  \textbf{Zero} & \textbf{Crosses or Tangent?} \\
+  \hline
+  $x=-2$ & \ans{Crosses (multiplicity 1)} \\
+  \hline
+  $x=1$  & \ans{Tangent/bounces (multiplicity 2)} \\
+  \hline
+  $x=3$  & \ans{Crosses (multiplicity 1)} \\
+  \hline
+  \end{tabularx}
 
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
+% --- Tier A ---
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $q(x)$ completely over the reals.
+        \ansline{$q(x)=(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2)$}
+
+  \item List all real zeros of $q(x)$ and their multiplicities.
+        \ansline{$x=1,\;x=-1,\;x=2,\;x=-2$, each with multiplicity 1.}
+
+  \item Compare graph behavior at zeros of $p$ and $q$:
+        \ansline{$p$: crosses at $x=-2,3$; tangent at $x=1$. \; $q$: crosses at all four zeros.}
+
+  \item Algebraic even/odd test:
+
+        $p(-x) = $ \ansline{$(-x+2)(-x-1)^2(-x-3)$; neither $p(x)$ nor $-p(x)$. \textbf{Neither.}}
+
+        $q(-x) = $ \ansline{$(-x)^4-5(-x)^2+4=x^4-5x^2+4=q(x)$. \textbf{Even.}}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% --- Tier E ---
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Factor $r(x)=x^3+2x$ and solve for all zeros.
+        \ansline{$r(x)=x(x^2+2)$. Zeros: $x=0$; $x^2=-2 \Rightarrow x=\pm i\sqrt{2}$.}
 
-  \item Starting with $f(x) = 6^{2x+1}$, produce \textbf{three} different equivalent forms.
+  \item List all zeros, verify conjugate pairs.
+        \ansline{$x=0$; $x=i\sqrt{2}$ and $x=-i\sqrt{2}$ form a conjugate pair. \checkmark}
 
-        \textbf{Form 1} (vertical dilation): $6^{2x+1} = 6 \cdot 6^{2x}$ \ans{$= 6 \cdot 36^x$}
+  \item Even, odd, or neither for $r(x)$:
+        \ansline{$r(-x)=-x^3-2x=-(x^3+2x)=-r(x)$. \textbf{Odd.}}
 
-        \textbf{Form 2} (single base to the $x$ power): $6^{2x} = (6^2)^x$, so $f(x) = 6 \cdot (6^2)^x$ \ans{$= 6 \cdot 36^x$}
+  \item Successive differences for $q(x)$ (degree 4 $\Rightarrow$ 4th differences constant):
 
-        \textbf{Form 3} (creative): \ans{$f(x) = 6^{2x+1} = (36)^x \cdot 6$, or write as $6 \cdot 36^x$ emphasizing $a = 6, b = 36$.
-        Another option: $(1296)^{x/2} \cdot 6$.}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\linewidth}{|X|X|X|X|X|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $q(x)$ & 1st diff & 2nd diff & 3rd diff \\
+  \hline
+  $-2$ & \ans{0}  &            &            & \\
+  \hline
+  $-1$ & \ans{0}  & \ans{0}    &            & \\
+  \hline
+  $0$  & \ans{4}  & \ans{4}    & \ans{4}    & \\
+  \hline
+  $1$  & \ans{0}  & \ans{$-4$} & \ans{$-8$} & \ans{$-12$} \\
+  \hline
+  $2$  & \ans{0}  & \ans{0}    & \ans{4}    & \ans{12} \\
+  \hline
+  $3$  & \ans{40} & \ans{40}   & \ans{40}   & \ans{36} \\
+  \hline
+  \end{tabularx}
 
-        \begin{teachernote}
-          Accept any valid equivalent form for Form 3. Check that students use $f(x) = 6 \cdot 36^x$
-          (most natural $ab^x$ form) and clearly justify their algebra.
-        \end{teachernote}
+  \begin{teachernote}
+  The 4th differences are constant (= 24), confirming degree 4. Students need
+  one additional row ($x=4$, $q(4)=180$) to see 4th differences become constant.
+  Accept ``4th differences constant'' as a complete answer for the degree confirmation.
+  \end{teachernote}
 
-  \item For each context, which form is most useful?
-
-        \textbf{Context A} ($y$-intercept): \ans{Form 1 ($6 \cdot 36^x$), because $a = 6$ is immediately visible as $f(0)$.}
-
-        \textbf{Context B} (compare to $36^x$): \ans{Form 2 or Form 1 --- writing the base as $36$ makes the comparison direct.}
-
-        \textbf{Context C} (horizontal stretch from $6^x$): \ans{The original form $6^{2x+1}$ shows the coefficient $c = 2$ inside the exponent most clearly.}
+  The \ans{4th} differences are constant, confirming the degree is \ans{4}.
 
 \end{enumerate}
 \end{tcolorbox}

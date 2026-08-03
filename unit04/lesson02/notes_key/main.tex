@@ -1,4 +1,4 @@
-%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Guided Notes (Answer Key)
+%! Change in Linear and Exponential Functions — Unit 4, Lesson 4.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,166 +9,125 @@
 \pageheader{Unit 4, Lesson 4.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.2.A} --- Identify key characteristics of a
-    parametric planar motion function related to position: find the
-    horizontal and vertical extrema from the max/min values of $x(t)$
-    and $y(t)$, and locate $x$- and $y$-intercepts of the curve from
-    the zeros of $y(t)$ and $x(t)$. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct a \ans{linear} function from a slope and a point using
+        $f(x) = y_i + m(x - x_i)$. \hfill\textit{(LO 2.2.A)}
+  \item Construct an \ans{exponential} function from a ratio and a point using
+        $f(x) = y_i \cdot r^{x - x_i}$. \hfill\textit{(LO 2.2.A)}
+  \item Determine whether outputs over equal-length intervals show a constant \ans{difference}
+        (linear) or a constant \ans{ratio} (exponential). \hfill\textit{(LO 2.2.B)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=5pt]
-  \item[\termblanklong{horizontal extremum}]
-    The \ans{maximum} or \ans{minimum}
-    value of $x(t)$; gives the rightmost or leftmost position of the
-    particle.
-
-  \item[\termblanklong{vertical extremum}]
-    The maximum or minimum value of \ans{$y(t)$}; gives the
-    highest or lowest position of the particle.
-
-  \item[\termblanklong{$y$-intercept (of parametric curve)}]
-    A point on the curve where $x(t) = $ \ans{$0$};
-    found by solving $x(t) = 0$ for $t$, then evaluating
-    $y(t)$ at those values.
-
-  \item[\termblanklong{$x$-intercept (of parametric curve)}]
-    A point on the curve where $y(t) = $ \ans{$0$};
-    found by solving $y(t) = 0$ for $t$, then evaluating $x(t)$.
-\end{description}
+\termblanklong{linear function}
+\ansline{$f(x) = b + mx$; output changes by a constant amount (slope $m$) for every unit increase in input.}
+\termblanklong{exponential function}
+\ansline{$f(x) = ab^x$; output is multiplied by constant base $b$ for every unit increase in input.}
+\termblanklong{constant rate of change}
+\ansline{The slope $m$ of a linear function; equal to $\Delta y/\Delta x$ over any interval.}
+\termblanklong{constant ratio}
+\ansline{The base $b$ of an exponential function; equal to $y_{n+1}/y_n$ over equal-length intervals.}
+\termblanklong{initial value}
+\ansline{The output when $x=0$; equals $b$ for $f(x)=b+mx$ and $a$ for $f(x)=ab^x$.}
+\termblanklong{domain}
+\ansline{The set of allowable inputs; sequences use $\{0,1,2,\ldots\}$ while functions typically use all reals.}
 \end{vocabbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Launch:} A ball's position (feet) at time $t$ seconds is
-$x(t) = -16t^2 + 48t$ and $y(t) = 12t - t^2$.
+Two tables are presented without labels. For each table, analyze how the outputs change.
 
-\vspace{4pt}
-\textbf{Q1.} Which component do you examine to find how high the ball
-goes? What equation do you solve to find when the ball lands?
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{c|c}
+$x$ & $g(x)$ \\ \hline
+0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
+\end{tabular}
 
-\vspace{4pt}
-\ans{Examine $y(t)$ for height. To find when the ball lands, solve
-$y(t) = 12t - t^2 = 0$.}
+\medskip
+Table 1: consecutive outputs differ by \ans{4}. \quad
+Table 2: consecutive outputs are multiplied by \ans{3}.
 \end{hookbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.2.A — Extrema
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.2.A --- Planar Motion: Horizontal and Vertical Extrema}
+\begin{notesbox}{LO 2.2.A --- Linear Functions and Arithmetic Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Arithmetic Sequence} & \textbf{Linear Function} \\
+\midrule
+Formula & $a_n = a_0 + d\,n$ & $f(x) = b + mx$ \\[3pt]
+From one known value & $a_n = a_i + d(n - i)$ & $f(x) = y_i + m(x - x_i)$ \\[3pt]
+``Change'' quantity & common difference $d$ & slope $m$ \\[3pt]
+Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
+\end{tabularx}
 
-\textbf{Example:} Let $f(t) = (x(t),\, y(t)) = (t^2 - 4t + 3,\;
-{-t^2 + 2t})$ for $0 \le t \le 4$.
+\medskip
+\textbf{Example:} Slope $m = 4$; passes through $(1,\ 7)$.
 
-\vspace{6pt}
-\textbf{Step 1 --- Build the table.}
+\[
+  f(x) = {\color{keyred}\mathbf{7}} + {\color{keyred}\mathbf{4}}(x - {\color{keyred}\mathbf{1}})
+       = {\color{keyred}\mathbf{4x + 3}}
+\]
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t^2 - 4t + 3$ & $y(t) = -t^2 + 2t$ & $(x,\; y)$ \\
-\hline
-$0$ & \ans{$3$}  & \ans{$0$}  & \ans{$(3,\;0)$}  \\
-\hline
-$1$ & \ans{$0$}  & \ans{$1$}  & \ans{$(0,\;1)$}  \\
-\hline
-$2$ & \ans{$-1$} & \ans{$0$}  & \ans{$(-1,\;0)$} \\
-\hline
-$3$ & \ans{$0$}  & \ans{$-3$} & \ans{$(0,\;-3)$} \\
-\hline
-$4$ & \ans{$3$}  & \ans{$-8$} & \ans{$(3,\;-8)$} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Step 2 --- Find horizontal extrema of $x(t) = t^2 - 4t + 3$.}
-
-$x(t)$ is a \ans{upward-opening} parabola. Vertex at
-$t = -\dfrac{b}{2a} = -\dfrac{-4}{2} = $ \ans{$2$}
-
-Minimum value of $x$: $x(2) = $ \ans{$-1$}
-\quad (particle's \ans{left}-most position)
-
-Maximum value of $x$ on $[0,4]$: check endpoints.
-$x(0) = $ \ans{$3$}, \quad $x(4) = $ \ans{$3$}.
-Maximum is \ans{$3$} (particle's \ans{right}-most position).
-
-\vspace{8pt}
-\textbf{Step 3 --- Find vertical extrema of $y(t) = -t^2 + 2t$.}
-
-Vertex at $t = -\dfrac{b}{2a} = $ \ans{$1$}.
-
-Maximum value of $y$: $y(1) = $ \ans{$1$}
-\quad (particle's \ans{high}-est position)
-
-Minimum of $y$ on $[0,4]$: check endpoints.
-$y(0) = $ \ans{$0$}, \quad $y(4) = $ \ans{$-8$}.
-Minimum is \ans{$-8$}.
-
+Verify: $f(0) = $ \ans{3}, \quad $f(2) = $ \ans{11}.
 \end{notesbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.2.A — Intercepts
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.2.A --- Axis Intercepts of a Parametric Curve}
+\begin{notesbox}{LO 2.2.A --- Exponential Functions and Geometric Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Geometric Sequence} & \textbf{Exponential Function} \\
+\midrule
+Formula & $g_n = g_0 \cdot r^n$ & $f(x) = a \cdot b^x$ \\[3pt]
+From one known value & $g_n = g_i \cdot r^{n - i}$ & $f(x) = y_i \cdot r^{x - x_i}$ \\[3pt]
+``Change'' quantity & common ratio $r$ & base $b$ \\[3pt]
+Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
+\end{tabularx}
 
-\textbf{Key rule:} Zeros of $x(t)$ give \ans{$y$}-intercepts
-of the curve. Zeros of $y(t)$ give \ans{$x$}-intercepts.
+\medskip
+\textbf{Example:} Ratio $r = 3$; passes through $(0,\ 2)$.
 
-\vspace{8pt}
-\textbf{Example (continued):} $f(t) = (t^2 - 4t + 3,\; {-t^2 + 2t})$,
-$0 \le t \le 4$.
+\[
+  f(x) = {\color{keyred}\mathbf{2}} \cdot {\color{keyred}\mathbf{3}}^{x - {\color{keyred}\mathbf{0}}}
+       = {\color{keyred}\mathbf{2 \cdot 3^x}}
+\]
 
-\vspace{4pt}
-\textbf{Find the $y$-intercepts} (where $x(t) = 0$):
+Verify: $f(1) = $ \ans{6}, \quad $f(3) = $ \ans{54}.
+\end{notesbox}
 
-Set $t^2 - 4t + 3 = 0$. Factor: $(t - $ \ans{$1$}$)(t - $
-\ans{$3$}$) = 0$.
+\vspace{0.04in}
 
-$t = $ \ans{$1$} or $t = $ \ans{$3$}.
+\begin{notesbox}{LO 2.2.B --- The Equal-Length Interval Test}
+Over equal-length input intervals $\Delta x$:
 
-Evaluate $y$ at each: $y(1) = $ \ans{$1$},
-\quad $y(3) = $ \ans{$-3$}.
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
+ & \textbf{Linear} & \textbf{Exponential} \\
+\midrule
+Output pattern & differences \ans{are constant} & ratios \ans{are constant} \\[3pt]
+How to check & subtract consecutive outputs & divide consecutive outputs \\[3pt]
+Formula built from 2 pts & $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ & $b = \left(\dfrac{y_2}{y_1}\right)^{1/(x_2 - x_1)}$ \\
+\end{tabularx}
 
-$y$-intercepts of the curve: \ans{$(0,\,1)$} and \ans{$(0,\,-3)$}.
-
-\vspace{8pt}
-\textbf{Find the $x$-intercepts} (where $y(t) = 0$):
-
-Set $-t^2 + 2t = 0$. Factor: $-t(t - $ \ans{$2$}$) = 0$.
-
-$t = $ \ans{$0$} or $t = $ \ans{$2$}.
-
-Evaluate $x$ at each: $x(0) = $ \ans{$3$},
-\quad $x(2) = $ \ans{$-1$}.
-
-$x$-intercepts of the curve: \ans{$(3,\,0)$} and \ans{$(-1,\,0)$}.
-
+\medskip
+\textbf{Key fact (EK 2.2.B.3):} Two distinct input-output pairs \ans{uniquely} determine
+either type of function.
 \end{notesbox}
 
 \end{document}

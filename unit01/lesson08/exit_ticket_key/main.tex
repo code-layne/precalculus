@@ -1,4 +1,4 @@
-%! Rational Functions and Zeros — Unit 1, Lesson 1.8 — Exit Ticket (Answer Key)
+%! Function Model Construction and Application — Unit 1, Lesson 1.8 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,44 +9,53 @@
 \pageheader{Unit 1, Lesson 1.8}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.14in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=16pt]
+\begin{enumerate}[itemsep=18pt]
 
-\item Let $\displaystyle r(x) = \frac{x^2 - x - 6}{x + 4}$.
+\item A quadratic model gives the height of a projectile in feet:
+      $f(x) = -2x^2 + 12x$, where $x$ is time in seconds.
 
       \begin{enumerate}[label=(\alph*), itemsep=10pt]
-        \item What value(s) of $x$ are \textbf{not} in the domain of $r$?
-              Explain briefly.
+        \item Evaluate $f(3)$ and $f(5)$.
 
               \vspace{0.06in}
-              $x = $ \ans{$-4$} because \ansline{$x + 4 = 0$ at $x = -4$, making the denominator zero and $r(-4)$ undefined.}
-
-        \item Find all real zeros of $r(x)$.
+              $f(3) = -2({\color{keyred}\mathbf{3}})^2 + 12({\color{keyred}\mathbf{3}}) = {}$ \ans{18} ft
 
               \vspace{0.06in}
-              Factor the numerator: $x^2 - x - 6 = $ \ans{$(x - 3)(x + 2)$}
+              $f(5) = -2({\color{keyred}\mathbf{5}})^2 + 12({\color{keyred}\mathbf{5}}) = {}$ \ans{10} ft
+
+        \item Compute the average rate of change of $f$ on $[3, 5]$. Include units.
 
               \vspace{0.06in}
-              Numerator zeros: $x = $ \ans{$3$ and $x = -2$}
+              $\text{ARC} = \dfrac{f(5) - f(3)}{5 - 3} = \dfrac{{\color{keyred}\mathbf{-8}}}{{\color{keyred}\mathbf{2}}} = {}$ \ans{$-4$}
 
-              \vspace{0.06in}
-              Check each against the domain restriction:
-              \ansline{Neither $x = 3$ nor $x = -2$ equals $-4$, so both are in the domain.}
-
-              \vspace{0.06in}
-              Zeros of $r$: $x = $ \ans{$3$ and $x = -2$}
+              \vspace{0.04in}
+              Units: \ans{feet per second (ft/s)}
       \end{enumerate}
 
-\item A student says: ``$x = -4$ is a zero of
-      $\displaystyle r(x) = \frac{x + 4}{x^2 - 1}$ because the numerator equals zero
-      when $x = -4$.''
+\item A rational model for the force between two magnets is $P(d) = \dfrac{50}{d^2}$,
+      where $d$ is the distance in meters between the magnets.
 
-      Is the student correct? Circle one: \quad \textbf{No}
+      State the domain restriction and explain in one sentence why it applies.
 
       \vspace{0.06in}
-      \ansline{The student is \textbf{incorrect}. The numerator $x + 4 = 0$ at $x = -4$, but we also need $x = -4$ to be in the domain of $r$. The denominator $x^2 - 1 = (-4)^2 - 1 = 15 \ne 0$, so $x = -4$ \textbf{is} in the domain. Therefore $r(-4) = 0$, and the student's conclusion is actually correct for the wrong reason --- but the reasoning is incomplete without checking the domain.}
+      Domain: \ans{$d > 0$} \quad Explanation: \ansline{Distance between physical objects must be a positive number; $d = 0$ would mean the magnets occupy the same point, which is physically impossible and causes division by zero.}
+
+\item The average rate of change of the pen area $A(w)$ on $[6, 8]$ is $-4$ ft$^2$/ft.
+
+      What does this tell you about the pen design on that interval? Answer in a complete sentence.
+
+      \vspace{0.08in}
+      \ansline{On average, each additional foot of width between 6 and 8 feet decreases the area by 4 square feet, meaning the pen is becoming less efficient (the design is past its optimal width).}
 
 \end{enumerate}
+
+\begin{teachernote}
+Exit ticket item (1b): the negative ARC ($-4$ ft/s) means the projectile is losing height on
+average between $t=3$ and $t=5$ seconds, consistent with the parabola opening downward.
+Item (3) checks conceptual understanding of the sign and units of ARC.
+Collect and sort: students missing units or sign need re-teaching of ARC interpretation.
+\end{teachernote}
 
 \end{document}

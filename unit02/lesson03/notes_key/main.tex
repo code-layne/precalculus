@@ -1,4 +1,4 @@
-%! Exponential Functions — Unit 2, Lesson 2.3 — Guided Notes (Answer Key)
+%! Polynomial Functions and Real Zeros — Unit 2, Lesson 2.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,139 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Guided Notes --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
 
-\vspace{0.06in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Identify the initial value $a$ and base $b$ of $f(x) = ab^x$ and classify as
-        \ans{exponential} growth or \ans{exponential} decay. \hfill\textit{(LO 2.3.A.1)}
-  \item Describe the \ans{domain}, end \ans{behavior}, \ans{concavity}, and monotonic
-        nature of an exponential function. \hfill\textit{(LO 2.3.A.3 / A.5)}
-  \item Determine whether a function is exponential by checking whether outputs are
-        \ans{proportional} over equal-length input intervals. \hfill\textit{(LO 2.3.A.3 / A.4)}
-\end{enumerate}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.04in}
-
-\begin{vocabbox}
-\termblanklong{exponential function}
-\ansline{A function $f(x) = ab^x$ with $a \ne 0$, $b > 0$, $b \ne 1$.}
-\termblanklong{initial value}
-\ansline{The value $a = f(0)$; the $y$-intercept of the function.}
-\termblanklong{base}
-\ansline{The constant $b$; the multiplicative factor per unit increase in input.}
-\termblanklong{exponential growth}
-\ansline{When $a > 0$ and $b > 1$; outputs increase without bound.}
-\termblanklong{exponential decay}
-\ansline{When $a > 0$ and $0 < b < 1$; outputs approach zero.}
-\termblanklong{concave up / concave down}
-\ansline{Graph curves upward or downward; exponential functions are always one or the other.}
-\termblanklong{end behavior}
-\ansline{Behavior of $f(x)$ as $x \to \pm\infty$, expressed with limit notation.}
-\termblanklong{horizontal asymptote}
-\ansline{Line $y = 0$ that the graph of $f(x) = ab^x$ approaches but never reaches.}
-\end{vocabbox}
-
-\vspace{0.04in}
-
-\begin{hookbox}
-\textbf{The Doubling Penny:} If you receive 1 penny on Day 1, 2 on Day 2, 4 on Day 3, \ldots,
-how much total after 30 days?
-
-\medskip
-My guess: \textit{(varies)} \quad Actual: $2^{30} - 1 \approx \$\,10.7$ million.
-
-\medskip
-The function modeling Day $x$ is $f(x) = 1 \cdot $ \ans{$2$}$^x$.
-The initial value is \ans{1} and the base is \ans{2}.
-\end{hookbox}
-
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.3.A.1 --- General Form of an Exponential Function (EK 2.3.A.1)}
-\[
-  f(x) = a \cdot b^x, \quad a \ne 0,\ b > 0,\ b \ne 1
-\]
-
-\begin{itemize}[itemsep=3pt]
-  \item $a = f(0) = $ \ans{initial value / $y$-intercept}
-  \item $b = $ \ans{common ratio; multiplicative factor per unit input}
-  \item \textbf{Exponential growth:} $a > 0$ and $b$ \ans{$>$} 1
-  \item \textbf{Exponential decay:} $a > 0$ and \ans{$0$} $< b <$ \ans{$1$}
-\end{itemize}
-
-\medskip
-\textbf{Example:} $f(x) = 3 \cdot 2^x$. \quad $a = $ \ans{3} \quad $b = $ \ans{2}
-\quad Growth or decay? \ans{Growth}
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$    & 0 & 1 & 2 & 3 \\
-\hline
-$f(x)$ & \ans{3} & \ans{6} & \ans{12} & \ans{24} \\
-\hline
-\multicolumn{5}{|l|}{Ratio of successive outputs: \quad $\dfrac{f(1)}{f(0)} = $ \ans{2}
-\quad $\dfrac{f(2)}{f(1)} = $ \ans{2} \quad $\dfrac{f(3)}{f(2)} = $ \ans{2}} \\
-\hline
-\end{tabular}
-\end{notesbox}
-
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.3.A.2/A.3 --- Key Characteristics (EK 2.3.A.2, A.3)}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.28\linewidth} X @{}}
-Domain & \ans{All real numbers, $(-\infty, \infty)$} \\
-Range (when $a > 0$) & \ans{$(0, \infty)$}; horizontal asymptote: $y = $ \ans{$0$} \\
-Monotonicity & Always \ans{increasing} if $b > 1$; always \ans{decreasing} if $0 < b < 1$ \\
-Extrema on open intervals & \ans{None} \\
-Concavity (when $a > 0$) & Always concave \ans{up}; no \ans{inflection} points \\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.3.A.5 --- End Behavior (EK 2.3.A.5)}
-For $f(x) = ab^x$ with $a > 0$, $b > 1$ (growth):
-
-$\displaystyle\lim_{x \to \infty} f(x) = $ \ans{$\infty$} \qquad
-$\displaystyle\lim_{x \to -\infty} f(x) = $ \ans{$0$}
-
-For $f(x) = ab^x$ with $a > 0$, $0 < b < 1$ (decay):
-
-$\displaystyle\lim_{x \to \infty} f(x) = $ \ans{$0$} \qquad
-$\displaystyle\lim_{x \to -\infty} f(x) = $ \ans{$\infty$}
-
-\textbf{Example:} State the end behavior of $h(x) = 5 \cdot (0.4)^x$.
-
-\vspace{0.04in}
-$\displaystyle\lim_{x\to\infty} h(x) = $ \ans{$0$} \qquad
-$\displaystyle\lim_{x\to-\infty} h(x) = $ \ans{$\infty$}
-\end{notesbox}
-
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.3.A.4 --- Detecting Exponential from a Transformed Table (EK 2.3.A.4)}
-\textbf{Key idea:} If $g(x) = f(x) + k$ and $f$ is exponential, the outputs of $g$ will
-\textit{not} be proportional. To detect $f$: subtract \ans{$k$} from each output of $g$,
-then check whether the resulting values have a constant \ans{ratio}.
-
-\medskip
-\textbf{Example:} Outputs of $g(x)$: 7, 10, 16, 28 (inputs 0, 1, 2, 3). Suppose $k = 4$.
-
-\vspace{0.04in}
-Subtract 4: \ans{3}, \ans{6}, \ans{12}, \ans{24}
-
-Ratios: \ans{2}, \ans{2}, \ans{2}
-
-Are the ratios constant? \ans{Yes} \quad Write $f(x) = $ \ans{$3 \cdot 2^x$}
-\quad Write $g(x) = $ \ans{$3 \cdot 2^x + 4$}
+% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Guided Notes --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
 
 \end{document}

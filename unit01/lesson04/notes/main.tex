@@ -1,4 +1,4 @@
-%! Polynomial Functions and Rates of Change — Unit 1, Lesson 1.4 — Guided Notes
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,137 +9,196 @@
 \pageheader{Unit 1, Lesson 1.4}{Guided Notes}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.08in}
 
 \begin{objectivebox}
-Students will identify and interpret key characteristics of polynomial functions ---
-degree, leading term, local and global extrema, and points of inflection --- using
-rates of change and graphical behavior.
-\begin{center}
-\writeline \writeline
-\end{center}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Describe how $g(x) = af(x+h)+k$ transforms the graph of $f$ using
+        \blank{3cm} and \blank{3cm}. \hfill\textit{(LO 1.12.A)}
+  \item Determine the \blank{2.4cm} and \blank{2cm} of a transformed function
+        from the parent's domain and range. \hfill\textit{(LO 1.12.A)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{vocabbox}
-\begin{multicols}{2}
-\termblanklong{polynomial function}
-\termblanklong{degree}
-\termblanklong{leading coefficient}
-\termblanklong{local maximum}
-\termblanklong{local minimum}
-\termblanklong{global maximum}
-\termblanklong{global minimum}
-\termblanklong{point of inflection}
-\end{multicols}
+\termblanklong{parent function}
+\termblanklong{transformation}
+\termblanklong{vertical translation}
+\termblanklong{horizontal translation}
+\termblanklong{vertical dilation}
+\termblanklong{horizontal dilation}
+\termblanklong{reflection}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{hookbox}
-Consider $p(x) = x^3 - 3x$. As $x$ increases from very negative values, the function:
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
-    \item falls steeply, then reaches a \textbf{valley} (a low point), then rises
-    \item passes through zero, reaches a \textbf{peak} (a high point), then falls again
-    \item passes through zero a second time and continues falling toward $-\infty$
-\end{itemize}
-\vspace{4pt}
-\textbf{Discussion:} Where are the ``peaks'' and ``valleys''? How many zeros does $p$ have?\\
-Where does the \textit{rate of change} change direction?
-\vspace{4pt}
-\writeline \writeline
+One function --- four disguises. Can you un-transform it back? \\[4pt]
+Each transformation below produces the \textit{same} parent shape in a different location
+or size. Your job today is to decode the rule so you can construct \textit{any} disguise
+or reverse-engineer it from a table.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{Polynomial Functions}
-A \textbf{polynomial function} has the standard form:
-\[
-  p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0
-\]
-\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
-    \item The \textbf{degree} is \blank{5cm} (the highest power of $x$).
-    \item The \textbf{leading term} is \blank{4cm}.
-    \item The \textbf{leading coefficient} is \blank{3cm}.
-    \item A \textbf{constant function} (e.g.\ $p(x) = 7$) is a polynomial of degree \blank{1.5cm}.
+\begin{notesbox}{Type 1 — Vertical Translation: $g(x) = f(x) + k$}
+\textbf{Rule (EK 1.12.A.1):} Adding $k$ to the output \blank{4.5cm} the graph by $k$ units.
+\begin{itemize}[itemsep=2pt]
+  \item $k > 0$: shift \blank{1.8cm} \hspace{1cm} $k < 0$: shift \blank{1.8cm}
 \end{itemize}
 
-\vspace{4pt}
-\textbf{End behavior} (circle the correct description for each case):
+\smallskip
+\textbf{Example:} Let $f(x) = x^2$. Let $g(x) = f(x) + 3 = x^2 + 3$.
 
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} l X @{}}
-Even degree, positive $a_n$: & Both ends \blank{3cm} / Both ends \blank{3cm} \\
-Even degree, negative $a_n$: & Both ends \blank{3cm} / Both ends \blank{3cm} \\
-Odd degree, positive $a_n$:  & Falls left, rises right \;/\; Rises left, falls right \\
-Odd degree, negative $a_n$:  & Falls left, rises right \;/\; Rises left, falls right \\
-\end{tabularx}
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & $f(x) = x^2$ & $g(x) = f(x)+3$ \\
+\hline
+$-2$ & $4$ & \blank{1.8cm} \\
+$-1$ & $1$ & \blank{1.8cm} \\
+$0$  & $0$ & \blank{1.8cm} \\
+$1$  & $1$ & \blank{1.8cm} \\
+$2$  & $4$ & \blank{1.8cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Effect on domain/range:} Domain \blank{3cm}. Range shifts \blank{3cm}.
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{Local and Global Extrema}
-\textbf{Local (relative) maximum:} a point where the function switches from
-\blank{3cm} to \blank{3cm}.\\[4pt]
-\textbf{Local (relative) minimum:} a point where the function switches from
-\blank{3cm} to \blank{3cm}.\\[4pt]
-\textbf{Global (absolute) maximum:} the \blank{4cm} output value over the entire domain.\\[4pt]
-\textbf{Global (absolute) minimum:} the \blank{4cm} output value over the entire domain.
-
-\vspace{6pt}
-\textbf{Key Principle (EK 1.4.A.3):} Between every two \blank{6cm} of a nonconstant polynomial, there must be at least one \blank{5cm}.
-
-\vspace{6pt}
-\textbf{Even-degree result (EK 1.4.A.4):} A polynomial of even degree always has either a global \blank{2.5cm} or a global \blank{2.5cm} (or both).
-
-\vspace{6pt}
-\textit{Example:} A polynomial has zeros at $x = -2$, $x = 1$, and $x = 4$.\\
-On which intervals between consecutive zeros must a local extremum exist?
-\vspace{4pt}
-\writeline \writeline
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Points of Inflection}
-A \textbf{point of inflection} occurs at an input where the \textbf{rate of change} switches from
-\blank{6cm} to \blank{6cm} (or vice versa).
-
-\vspace{4pt}
-This is the same as saying: the graph changes from \textbf{concave \blank{2cm}} to
-\textbf{concave \blank{2cm}} (or vice versa).
-
-\vspace{6pt}
-\textit{Connection to AROC:}
-\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
-    \item Concave up $\Rightarrow$ AROC is \blank{4cm} as $x$ increases.
-    \item Concave down $\Rightarrow$ AROC is \blank{4cm} as $x$ increases.
-    \item At a point of inflection, AROC transitions from increasing to decreasing (or vice versa).
+\begin{notesbox}{Type 2 — Horizontal Translation: $g(x) = f(x + h)$}
+\textbf{Rule (EK 1.12.A.2):} Replacing $x$ with $x+h$ shifts the graph
+\blank{4cm} by $|h|$ units.
+\begin{itemize}[itemsep=2pt]
+  \item $h > 0$: shift \blank{2cm} \hspace{1cm} $h < 0$: shift \blank{2cm}
 \end{itemize}
 
-\vspace{6pt}
-\textit{Example context:} The AROC of a function over $[0,1]$ is $5$, over $[1,2]$ is $8$, and over $[2,3]$ is $4$.\\
-Where is a likely point of inflection? \blank{4cm} \quad Is the graph concave up or down on $[0,2]$? \blank{3cm}
+\smallskip
+\textbf{Caution:} $g(x) = f(x+3)$ shifts the graph \blank{2cm} (not right), because we
+need $x + 3 = 0$, so $x = $ \blank{1.5cm}.
+
+\smallskip
+\textbf{Example:} $f(x) = x^2$, $g(x) = f(x-2) = (x-2)^2$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & $f(x) = x^2$ & $g(x) = f(x-2)$ \\
+\hline
+$0$ & $0$ & \blank{1.8cm} \\
+$1$ & $1$ & \blank{1.8cm} \\
+$2$ & $4$ & \blank{1.8cm} \\
+$3$ & $9$ & \blank{1.8cm} \\
+$4$ & $16$ & \blank{1.8cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Effect on domain/range:} Domain shifts \blank{3cm}. Range \blank{3cm}.
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{practicebox}
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item A polynomial function $f$ has exactly two distinct real zeros. What is the minimum number of local extrema $f$ must have? Explain your reasoning.
+\begin{notesbox}{Type 3 — Vertical Dilation: $g(x) = af(x)$, $a \ne 0$}
+\textbf{Rule (EK 1.12.A.3):} Multiplying the \textit{output} by $a$ scales the graph
+\blank{3cm} by $|a|$.
+\begin{itemize}[itemsep=2pt]
+  \item $|a| > 1$: \blank{3cm} (stretches) \hspace{0.5cm}
+        $0 < |a| < 1$: \blank{3cm} (compresses)
+  \item $a < 0$: also reflects over the \blank{3cm}
+\end{itemize}
 
-    \vspace{4pt}
-    \writeline \writeline
+\smallskip
+\textbf{Example:} $f(x) = x^2$; $g(x) = 2f(x) = 2x^2$; $h(x) = -f(x) = -x^2$.
 
-    \item A polynomial $g$ has degree $4$ and a positive leading coefficient.
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $f(x) = x^2$ & $g(x) = 2f(x)$ & $h(x) = -f(x)$ \\
+\hline
+$-2$ & $4$ & \blank{1.5cm} & \blank{1.5cm} \\
+$-1$ & $1$ & \blank{1.5cm} & \blank{1.5cm} \\
+$0$  & $0$ & \blank{1.5cm} & \blank{1.5cm} \\
+$1$  & $1$ & \blank{1.5cm} & \blank{1.5cm} \\
+$2$  & $4$ & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
 
-    \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-        \item[(a)] Describe the end behavior of $g$.\\[4pt]
-        \blank{10cm}
-        \item[(b)] Does $g$ have a global maximum, a global minimum, or neither? \blank{3cm}
-    \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+\medskip
+\textbf{Effect on domain/range:} Domain \blank{3cm}. Range is multiplied by \blank{2cm}.
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Type 4 — Horizontal Dilation: $g(x) = f(bx)$, $b \ne 0$}
+\textbf{Rule (EK 1.12.A.4):} Multiplying the \textit{input} by $b$ scales the graph
+\blank{3cm} by $\dfrac{1}{|b|}$.
+\begin{itemize}[itemsep=2pt]
+  \item $|b| > 1$: \blank{3cm} (compresses horizontally) \hspace{0.3cm}
+        $0 < |b| < 1$: \blank{3cm} (stretches horizontally)
+  \item $b < 0$: also reflects over the \blank{3cm}
+\end{itemize}
+
+\smallskip
+\textbf{Example:} $f(x) = x^2$; $g(x) = f(2x) = (2x)^2 = 4x^2$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & $f(x) = x^2$ & $g(x) = f(2x)$ \\
+\hline
+$-1$ & $1$ & \blank{1.8cm} \\
+$-\frac{1}{2}$ & $\frac{1}{4}$ & \blank{1.8cm} \\
+$0$  & $0$ & \blank{1.8cm} \\
+$\frac{1}{2}$ & $\frac{1}{4}$ & \blank{1.8cm} \\
+$1$  & $1$ & \blank{1.8cm} \\
+\hline
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Combined Transformations: $g(x) = af(x+h)+k$}
+\textbf{Rule (EK 1.12.A.5):} Apply transformations in this order: \\[4pt]
+\textbf{Step 1:} Horizontal dilation/reflection ($b$) \quad
+\textbf{Step 2:} Horizontal shift ($h$) \\
+\textbf{Step 3:} Vertical dilation/reflection ($a$) \quad
+\textbf{Step 4:} Vertical shift ($k$)
+
+\medskip
+\textbf{Example:} Describe all transformations applied to $f$ to produce
+$g(x) = -2f(x+1) - 3$.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Parameter} & \textbf{Transformation} \\
+\hline
+$a = -2$  & \blank{7cm} \\
+\hline
+$h = 1$   & \blank{7cm} \\
+\hline
+$k = -3$  & \blank{7cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\textbf{Effect on domain/range (EK 1.12.A.6):}
+If the domain of $f$ is $[-2,\,4]$ and the range of $f$ is $[0,\,9]$, then:
+
+\medskip
+Domain of $g$: \blank{5cm} \quad Range of $g$: \blank{5cm}
+\end{notesbox}
 
 \end{document}

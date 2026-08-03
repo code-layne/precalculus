@@ -1,0 +1,145 @@
+%! Exponential and Logarithmic Equations and Inequalities — Unit 5, Lesson 5.6 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.6}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item Solve each equation for $x$. Where necessary, give both exact and decimal forms
+      (rounded to 3 decimal places).
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item $3^x = 243$
+
+  \vspace{4pt}
+  $x = $ \ans{5} \quad (since $3^5 = 243$)
+
+  \item $2^x = 50$
+
+  \vspace{4pt}
+  Exact: $x = $ \ans{$\log 50 / \log 2$} \qquad Decimal: $x \approx $ \ans{5.644}
+
+  \item $7^x = \dfrac{1}{49}$
+
+  \vspace{4pt}
+  $x = $ \ans{$-2$} \quad (since $7^{-2} = 1/49$)
+\end{enumerate}
+
+\item Solve each logarithmic equation. Show all steps and check for extraneous solutions.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt, label=\alph*.]
+  \item $\log_2(x+3) = 5$
+
+  \vspace{4pt}
+  Work: \ansline{$x + 3 = 2^5 = 32 \Rightarrow x = 29$. Check: $\log_2(32) = 5$. Valid.}
+
+  \vspace{4pt}
+  Solution: $x = $ \ans{29} \qquad Valid? \ans{Yes}
+
+  \item $\log_3 x + \log_3(x-8) = 2$
+
+  \vspace{4pt}
+  Step 1 (combine): \ansline{$\log_3(x(x-8)) = 2$}
+
+  \vspace{4pt}
+  Step 2 (exponential form): \ansline{$x(x-8) = 3^2 = 9$}
+
+  \vspace{4pt}
+  Step 3 (solve quadratic): \ansline{$x^2 - 8x - 9 = 0 \Rightarrow (x-9)(x+1) = 0$}
+
+  \vspace{4pt}
+  Possible solutions: $x = $ \ans{9} or $x = $ \ans{$-1$}
+
+  \vspace{4pt}
+  Check for extraneous solutions: \ansline{$x=-1$: $\log_3(-1)$ undefined. Extraneous. $x=9$: $\log_3 9 + \log_3 1 = 2 + 0 = 2$. Valid.}
+
+  \vspace{4pt}
+  Final answer: $x = $ \ans{9}
+\end{enumerate}
+
+\item A population model is $P(t) = 1200 \cdot (1.04)^t$, where $t$ is in years.
+      For what value of $t$ does $P(t) = 2000$? Show work using logarithms.
+
+\vspace{4pt}
+Step 1: \ansline{$1200\cdot(1.04)^t = 2000 \Rightarrow (1.04)^t = 2000/1200 = 5/3$}
+
+\vspace{4pt}
+Step 2: \ansline{$\log(1.04^t) = \log(5/3) \Rightarrow t\log 1.04 = \log(5/3)$}
+
+\vspace{4pt}
+Step 3: \ansline{$t = \log(5/3)/\log(1.04)$}
+
+\vspace{4pt}
+$t = $ \ans{$\log(5/3)/\log(1.04)$} (exact) $\approx $ \ans{12.98} years
+
+\item Rewrite each expression using the natural base identity $b^x = e^{(\ln b)\cdot x}$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item $5^x = e^{({\color{keyred}\mathbf{\ln 5}})\cdot x} \approx e^{1.609x}$
+
+  \item $(0.7)^t = e^{({\color{keyred}\mathbf{\ln 0.7}})\cdot t} \approx e^{-0.357t}$
+\end{enumerate}
+
+\item Find the inverse of $f(x) = 2 \cdot 5^{x+3} - 1$. Show each step. Then state the
+      domain and range of both $f$ and $f^{-1}$.
+
+\vspace{6pt}
+\ansline{Swap: $x = 2\cdot5^{y+3}-1$. Add 1: $x+1=2\cdot5^{y+3}$. Divide by 2: $\tfrac{x+1}{2}=5^{y+3}$.\\[3pt]
+Apply $\log_5$: $\log_5\tfrac{x+1}{2}=y+3$. Subtract 3: $y=\log_5\tfrac{x+1}{2}-3$.}
+
+\vspace{4pt}
+$f^{-1}(x) = $ \ans{$\log_5\!\dfrac{x+1}{2} - 3$}
+
+\vspace{6pt}
+Domain of $f$: \ans{all reals} \qquad Range of $f$: \ans{$(-1, \infty)$}
+
+\vspace{4pt}
+Domain of $f^{-1}$: \ans{$(-1, \infty)$} \qquad Range of $f^{-1}$: \ans{all reals}
+
+\item \textbf{AP-style multiple choice.} Which value of $x$ satisfies
+      $\log_2(x+4) + \log_2 x = 5$?
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $x = -8$
+  \item $x = 4$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $x = 2$
+  \item $x = 8$
+\end{enumerate}
+
+\begin{teachernote}
+Combining: $\log_2(x(x+4))=5 \Rightarrow x(x+4)=32 \Rightarrow x^2+4x-32=0
+\Rightarrow (x+8)(x-4)=0$. So $x=4$ or $x=-8$.
+Check: $x=-8$ gives $\log_2(-8)$ undefined. Extraneous. Answer: $x=4$.
+\end{teachernote}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\textbf{Extension:} Solve the inequality $\log_3(x+1) \geq 2$. Express the solution as an
+inequality and justify why $x = -1$ is not in the solution set.
+
+\ansline{$\log_3(x+1) \geq 2 \Rightarrow x+1 \geq 3^2 = 9 \Rightarrow x \geq 8$.\\[3pt]
+$x=-1$ is excluded because $\log_3(-1+1)=\log_3 0$ is undefined (domain of log requires strictly positive argument).}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{reflectionbox}
+What is one technique from today's lesson you feel confident about, and one situation
+(equation type) where you still want more practice?
+
+\writelines{2}
+\end{reflectionbox}
+
+\end{document}

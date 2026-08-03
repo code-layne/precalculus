@@ -1,7 +1,7 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Warm-Up (Answer Key)
+%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,40 +9,42 @@
 \pageheader{Unit 3, Lesson 3.5}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{notesbox}{Warm-Up: Reviewing Sine and Cosine Graphs --- Key}
+\begin{enumerate}[itemsep=14pt]
 
-\textbf{1.} What is the maximum value of $f(\theta) = \sin\theta$?
-The minimum value? At what $\theta$-values in $[0, 2\pi]$ does each occur?
+\item Factor the polynomial $p(x) = x^3 - x^2 - 6x$ completely.
 
-\vspace{0.08in}
-\begin{tabular}{@{}ll@{}}
-  Maximum value: \ans{1} \quad occurs at $\theta = $ \ans{$\pi/2$} \\[10pt]
-  Minimum value: \ans{$-1$} \quad occurs at $\theta = $ \ans{$3\pi/2$}
-\end{tabular}
+      \vspace{0.08in}
+      $p(x) = $ \ans{$x(x-3)(x+2)$}
 
-\vspace{0.18in}
+      Zeros of $p$: \ans{$x = 0,\ x = 3,\ x = -2$}
 
-\textbf{2.} What is the period of $g(\theta) = \cos\theta$?
-How can you determine the period from looking at the graph?
+\item A rational function is given: $\displaystyle r(x) = \dfrac{x^2 - 9}{(x-3)(x+5)}$.
 
-\medskip
-\ans{The period is $2\pi$.} The period can be determined from the graph by measuring the
-horizontal distance from one point on the curve to the next point where the
-curve \ans{repeats the same shape} --- for example, from one peak to the next peak,
-or from one zero (with the same direction of travel) to the next such zero.
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Does $r$ have a hole, a vertical asymptote, or both at $x = 3$?
+              Circle: \quad \ans{Hole} \quad / \quad \textbf{Vertical Asymptote} \quad / \quad \textbf{Both}
 
-\vspace{0.18in}
+        \item Identify any vertical asymptote(s). \ans{$x = -5$}
+      \end{enumerate}
 
-\textbf{3.} True or false: $\sin(-\pi/4) = \sin(\pi/4)$. Explain your reasoning.
+\item The rational function $\displaystyle h(x) = \frac{3x^4 - x + 7}{2x^2 + 1}$ is written in
+      standard form. Describe the end behavior of $h(x)$ as $x \to +\infty$.
 
-\medskip
-\ans{False.} Because $\sin\theta$ is an odd function, $\sin(-\theta) = -\sin(\theta)$
-for all $\theta$. Therefore
-$\sin(-\pi/4) = -\sin(\pi/4) = $ \ans{$-\sqrt{2}/2$},
-which is not equal to $\sin(\pi/4) = \sqrt{2}/2$.
+      \vspace{0.06in}
+      End behavior: as $x \to +\infty$, $h(x) \to$ \ans{$+\infty$}
 
-\end{notesbox}
+\end{enumerate}
+
+\begin{teachernote}
+Item 1: GCF first, then factor the trinomial. Zeros are $0, 3, -2$.
+
+Item 2(a): The numerator factors as $(x-3)(x+3)$, sharing $(x-3)$ with the denominator. Since numerator multiplicity equals denominator multiplicity, this is a hole at $x=3$.
+
+Item 2(b): The only remaining denominator zero is $x = -5$ (not shared), so there is a VA there.
+
+Item 3: Leading term of numerator is $3x^4$, denominator is $2x^2$, ratio is $\frac{3}{2}x^2 \to +\infty$.
+\end{teachernote}
 
 \end{document}

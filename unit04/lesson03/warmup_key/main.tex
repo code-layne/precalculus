@@ -1,4 +1,4 @@
-%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Warm-Up (Answer Key)
+%! Exponential Functions — Unit 4, Lesson 4.3 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,54 +9,44 @@
 \pageheader{Unit 4, Lesson 4.3}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
-
-\begin{notesbox}{Spiral Review --- Key}
-
-\textbf{1.}\quad Let $f(t) = 3t^2 - 12t$.
-
-\vspace{4pt}
-(a)\quad Is $f$ increasing or decreasing on the interval $[0, 2]$?
-How do you know? (Hint: compare $f(0)$ and $f(2)$.)
-
-\vspace{4pt}
-$f(0) = 0$ and $f(2) = 3(4) - 24 = -12$. Since $f(2) < f(0)$, the function is
-\ans{decreasing} on $[0, 2]$.
-
-\vspace{0.10in}
-(b)\quad Is $f$ increasing or decreasing on the interval $[2, 5]$?
-
-\vspace{4pt}
-$f(2) = -12$ and $f(5) = 75 - 60 = 15$. Since $f(5) > f(2)$, the function is
-\ans{increasing} on $[2, 5]$.
-
 \vspace{0.14in}
-\textbf{2.}\quad Compute the average rate of change of $g(t) = t^2 - 4$
-on the interval $[1, 4]$. Show your work.
 
-\vspace{4pt}
-$g(1) = 1 - 4 = -3$ and $g(4) = 16 - 4 = 12$.
+\begin{enumerate}[itemsep=16pt]
 
-$\text{ARC} = \dfrac{g(4) - g(1)}{4 - 1} = \dfrac{12 - (-3)}{3} = \dfrac{15}{3} =$ \ans{$5$}
+\item A table of values is shown below.
 
-\vspace{0.14in}
-\textbf{3.}\quad Two particles both visit the point $(3, 5)$ in the plane.
-Particle A arrives when $t = 1$; Particle B arrives when $t = 2$.
-Explain why this is possible for parametric functions but is
-\emph{not} possible for a function $y = f(x)$.
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$    & 0 & 1  & 2  & 3  \\
+        \hline
+        $f(x)$ & 8 & 12 & 18 & 27 \\
+        \hline
+      \end{tabular}
 
-\vspace{4pt}
-\ans{In a parametric function, two different values of the parameter $t$ can produce the same ordered pair $(x, y)$ at different times. The parameter $t$ tracks \emph{when} the particle is at a location, not just where. In a function $y = f(x)$, each input $x = 3$ produces exactly one output $y$, so only one particle can be at $x = 3$ with a given $y$-value --- the timing is not encoded.}
+      \vspace{0.08in}
+      Compute the ratio of each successive output: $\dfrac{12}{8} = $ \ans{$\tfrac{3}{2}$},
+      $\dfrac{18}{12} = $ \ans{$\tfrac{3}{2}$},
+      $\dfrac{27}{18} = $ \ans{$\tfrac{3}{2}$}
 
-\begin{teachernote}
-  Q1 previews the direction-of-motion analysis: students will use a similar
-  comparison of values (rather than derivatives) to determine whether $x(t)$
-  or $y(t)$ is increasing or decreasing. Q2 directly activates the average
-  rate of change computation used in EK 4.3.A.4. Q3 surfaces the key
-  conceptual advantage of parametric functions over $y = f(x)$: two different
-  $t$-values can map to the same $(x, y)$ point, which EK 4.3.A.2 formalizes.
-\end{teachernote}
+      \vspace{0.06in}
+      Are the ratios constant? \ans{Yes} \quad
+      Is the function \textbf{linear} or \textbf{exponential}? \ans{Exponential}
 
-\end{notesbox}
+\item Write the exponential function $f(x) = ab^x$ that passes through $(0,\,5)$ with
+      common ratio $b = 3$.
+
+      \vspace{0.06in}
+      $f(x) = $ \ans{$5 \cdot 3^x$}
+
+\item Write the linear function $g(x) = mx + c$ that passes through $(2,\,11)$ and $(5,\,23)$.
+
+      \vspace{0.06in}
+      Slope: $m = \dfrac{23 - 11}{5 - 2} = $ \ans{$4$}
+
+      \vspace{0.06in}
+      $g(x) = $ \ans{$4x + 3$}
+
+\end{enumerate}
 
 \end{document}

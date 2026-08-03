@@ -1,4 +1,4 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Homework
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,77 +9,135 @@
 \pageheader{Unit 1, Lesson 1.7}{Homework}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{enumerate}[itemsep=14pt]
 
-\item For each rational function below, identify the end behavior type (HA at $y = 0$,
-HA at $y = k$, slant asymptote, or polynomial end behavior) and write both limit statements.
+\item \textbf{Difference table.} Complete the table and identify the polynomial degree.
 
-\medskip
-\renewcommand{\arraystretch}{2.4}
-\begin{tabular}{@{}p{3.8cm} p{3.2cm} p{3.0cm} p{3.0cm}@{}}
-\textbf{Function} & \textbf{End Behavior Type} &
-$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ \\
-\hline
-$\dfrac{4x - 1}{2x + 3}$           & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{x^2 + 1}{x^3 - 8}$         & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{-6x^3}{2x^3 + x}$          & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{x^4 - x}{x^2 + 1}$         & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-\end{tabular}
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
+      \hline
+      0 & 2   & ---         & ---         & ---         \\
+      \hline
+      1 & 6   & \blank{1.6cm} & ---      & ---         \\
+      \hline
+      2 & 16  & \blank{1.6cm} & \blank{1.6cm} & ---    \\
+      \hline
+      3 & 38  & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+      \hline
+      4 & 78  & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+      \hline
+      5 & 142 & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+      \hline
+      \end{tabular}
 
-\item Explain why $\displaystyle\lim_{x \to \infty} \frac{7x^3 + 2}{x^3 - 1} = 7$.
-Your explanation should reference the idea of the quotient of leading terms and
-why the other terms become negligible.
+      \medskip
+      The \blank{3cm} differences are constant, so this data is best modeled by a
+      degree-\blank{0.8cm} polynomial.
 
-\vspace{0.28in}
-\writeline\\[4pt]
-\writeline\\[4pt]
-\writeline
+\item \textbf{Context-to-model matching.} Match each scenario (A--D) to the best model type (1--4).
 
-\item A rational function $r$ satisfies $\displaystyle\lim_{x \to \infty} r(x) = 0$.
-What can you conclude about the degrees of the numerator and denominator?
-Explain your reasoning.
+      \medskip
+      \begin{tabular}{@{} p{0.55\linewidth} p{0.35\linewidth} @{}}
+      \textbf{Scenario} & \textbf{Model type} \\
+      \midrule
+      A. Water drains from a cylindrical tank; volume depends on the cube of the radius. & 1. Linear \\
+      B. A taxi charges a flat fee plus a fixed rate per mile. & 2. Quadratic \\
+      C. A ball is launched; height depends on horizontal distance. & 3. Cubic \\
+      D. Profit per unit is constant regardless of units sold. & 4. Piecewise \\
+      \end{tabular}
 
-\vspace{0.28in}
-\writeline\\[4pt]
-\writeline
+      \medskip
+      A $\to$ \blank{0.8cm} \qquad B $\to$ \blank{0.8cm} \qquad C $\to$ \blank{0.8cm} \qquad D $\to$ \blank{0.8cm}
 
-\item A rational function has a slant asymptote.
+\item \textbf{Assumption articulation.} A linear function models the distance $d$ (in miles)
+      a cyclist travels as a function of time $t$ (in hours).
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item What must be true about the degrees of the numerator and denominator?
+      \medskip
+      (a) State one assumption this model makes about the cyclist's speed.
 
-        \vspace{0.1in}
-        \writeline
+      \vspace{0.04in}
+      \writeline
 
-  \item Can you write the end behavior of a rational function with a slant asymptote
-        as a single limit value (e.g., $\lim_{x\to\infty} r(x) = k$ for some constant $k$)?
-        Explain.
+      \medskip
+      (b) Give a domain restriction and explain why it applies.
 
-        \vspace{0.1in}
-        \writeline\\[4pt]
-        \writeline
-\end{enumerate}
+      \vspace{0.04in}
+      Domain: \blank{4cm} \quad Reason: \writeline
 
-\item \textbf{AP-Style Multiple Choice.} Which of the following rational functions has a
-horizontal asymptote at $y = \dfrac{3}{2}$?
+\item \textbf{Piecewise model description.} A parking garage charges \$3.00 for the first hour
+      and \$1.50 per hour (or fraction thereof) for each additional hour, up to a daily maximum
+      of \$15.00. Describe a piecewise model for the cost $C$ as a function of hours $h$.
 
-\begin{enumerate}[label=(\Alph*), itemsep=4pt]
-  \item $\dfrac{3x + 1}{2x^2 - 5}$
-  \item $\dfrac{3x^2 - 1}{2x^2 + 7}$
-  \item $\dfrac{2x^2 + 1}{3x^2 - 4}$
-  \item $\dfrac{3x^3}{2x^2 + 1}$
-\end{enumerate}
+      \medskip
+      Piece 1 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+
+      \vspace{0.06in}
+      Piece 2 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+
+      \vspace{0.06in}
+      Piece 3 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+
+\item \textbf{Model selection with justification.} A scientist measures the spread of a
+      chemical across a flat surface. The affected area (in cm$^2$) at several distances
+      $r$ (in cm) from the source is recorded below.
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      $r$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
+      \hline
+      1 & 3   & ---         & ---         \\
+      \hline
+      2 & 12  & \blank{1.8cm} & ---      \\
+      \hline
+      3 & 27  & \blank{1.8cm} & \blank{1.8cm} \\
+      \hline
+      4 & 48  & \blank{1.8cm} & \blank{1.8cm} \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Based on differences, what model type fits? \blank{3.5cm}
+
+      \vspace{0.06in}
+      Is there a context clue that supports this choice? Explain in one sentence.
+
+      \vspace{0.04in}
+      \writeline
 
 \end{enumerate}
 
 \vspace{0.1in}
 
-\begin{reflectionbox}
-\textbf{Lesson Preview.} In Lesson 1.8, we examine the \textit{zeros} of rational functions ---
-the input values where the numerator equals zero.  Together with the asymptotes from today,
-these zeros determine the overall shape of the graph of a rational function.
-\end{reflectionbox}
+\begin{extensionbox}
+\textbf{Extension (optional).} The table below lists four data points. A student claims
+a cubic polynomial is the unique model because there are 4 points. Is this claim correct?
+Explain by computing differences and stating the degree of the unique polynomial.
+
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
+\hline
+0 & 0  & ---         & ---         & ---         \\
+\hline
+1 & 2  & \blank{1.6cm} & ---      & ---         \\
+\hline
+2 & 8  & \blank{1.6cm} & \blank{1.6cm} & ---    \\
+\hline
+3 & 18 & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+\end{tabular}
+
+\medskip
+\writelines{2}
+\end{extensionbox}
 
 \end{document}

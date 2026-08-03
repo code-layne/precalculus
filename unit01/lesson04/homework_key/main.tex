@@ -1,7 +1,7 @@
-%! Polynomial Functions and Rates of Change — Unit 1, Lesson 1.4 — Homework (Answer Key)
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,85 +11,113 @@
 
 \vspace{0.12in}
 
-\begin{notesbox}{Homework: Polynomial Functions and Rates of Change --- Key}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\begin{enumerate}[itemsep=18pt]
 
-\item For the polynomial $p(x) = x^4 - 8x^2 + 7$:
+\item For each transformation rule below, identify the type of transformation (vertical
+      translation, horizontal translation, vertical dilation, or horizontal dilation/reflection)
+      and describe its effect on the graph of $f$.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] Degree: \ans{4} \quad Leading coefficient: \ans{1}
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item $g(x) = f(x) - 5$
 
-    \item[(b)] At most $n - 1 = 4 - 1 = $ \ans{3 local extrema}.
+              Type: \ans{vertical translation} \quad Effect: \ans{shift down 5 units}
 
-    \item[(c)] End behavior: \ans{Both ends rise (as $x \to \pm\infty$, $p(x) \to +\infty$) because the degree is even and the leading coefficient is positive.}
+        \item $g(x) = f(x - 3)$
+
+              Type: \ans{horizontal translation} \quad Effect: \ans{shift right 3 units}
+
+        \item $g(x) = \dfrac{1}{3}f(x)$
+
+              Type: \ans{vertical dilation} \quad Effect: \ans{vertical compression by factor $\frac{1}{3}$}
+
+        \item $g(x) = f(-x)$
+
+              Type: \ans{horizontal reflection} \quad Effect: \ans{reflect over the $y$-axis}
+      \end{enumerate}
+
+\item The table below gives values of $f$.
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $f(x)$ & $8$  & $2$  & $0$ & $2$ & $8$ \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Complete a table of values for each transformed function.
+
+      \medskip
+      \textbf{(a)} $g(x) = f(x) + 4$
+
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $g(x)$ & \ans{$12$} & \ans{$6$} & \ans{$4$} & \ans{$6$} & \ans{$12$} \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      \textbf{(b)} $h(x) = -f(x)$
+
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $h(x)$ & \ans{$-8$} & \ans{$-2$} & \ans{$0$} & \ans{$-2$} & \ans{$-8$} \\
+      \hline
+      \end{tabular}
+
+\item Let $f$ have domain $[1,\,5]$ and range $[-3,\,6]$. For each transformed function,
+      state the domain and range.
+
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item $g(x) = f(x) + 2$ \quad Domain: \ans{$[1,5]$} Range: \ans{$[-1,8]$}
+        \item $g(x) = f(x + 4)$ \quad Domain: \ans{$[-3,1]$} Range: \ans{$[-3,6]$}
+        \item $g(x) = 3f(x)$    \quad Domain: \ans{$[1,5]$} Range: \ans{$[-9,18]$}
+        \item $g(x) = f(x-1)-2$ \quad Domain: \ans{$[2,6]$} Range: \ans{$[-5,4]$}
+      \end{enumerate}
+
+\item Describe all transformations applied to $f$ to obtain $g(x) = -3f(x+2) + 1$.
+      List them in order of application.
+
+      \vspace{0.08in}
+      \ansline{Step 1: Horizontal shift left 2 units ($h=2>0$). Step 2: Vertical stretch by factor 3 and reflect over the $x$-axis ($a=-3$). Step 3: Vertical shift up 1 unit ($k=1$).}
+
+\item \textbf{(AP-Style Multiple Choice)} Let $f$ be a function with domain $[-4,\,4]$ and
+      range $[0,\,8]$. Which of the following gives the range of $g(x) = -2f(x) + 1$?
+
+      \medskip
+      \begin{enumerate}[label=(\Alph*), itemsep=4pt]
+        \item \ans{$[-15,\,1]$} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item $[-16,\,0]$
+        \item $[1,\,17]$
+        \item $[-15,\,-1]$
+      \end{enumerate}
+
+      \vspace{0.06in}
+      Answer: \ans{A} \quad Show your reasoning:
+
+      \vspace{0.08in}
+      \ansline{Range of $f$ is $[0,8]$. Multiply by $-2$: $[0,8]\to[-16,0]$ (reversed). Add 1: $[-16+1,0+1]=[-15,1]$.}
+
 \end{enumerate}
 
-\item A polynomial function $f$ has exactly two local maxima and two local minima.
+\begin{reflectionbox}
+What is the trickiest part of horizontal transformations? Why does $f(x+h)$ shift
+\textit{opposite} to the sign of $h$?
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] Total local extrema: \ans{4}
-
-    \item[(b)] Minimum possible degree: \ans{5. A polynomial of degree $n$ can have at most $n-1$ local extrema. To have 4 local extrema we need $n - 1 \geq 4$, so $n \geq 5$.}
-\end{enumerate}
-
-\item AROC of $g$ over $[0,2]$ is 8; over $[2,4]$ is $-3$.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] Answer: \ans{A --- Local maximum.} Explanation: \ans{The AROC transitions from positive (8) to negative ($-3$), meaning $g$ switches from increasing to decreasing near $x=2$. This is the definition of a local maximum.}
-
-    \item[(b)] \ans{No. A point of inflection is where the AROC switches from increasing to decreasing (or vice versa) --- it is about the rate of change of the AROC, not a sign change of the AROC itself. A local maximum involves a sign change in AROC (positive to negative), not an inflection.}
-\end{enumerate}
-
-\item Even degree, positive leading coefficient.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] \ans{Global minimum}
-
-    \item[(b)] \ans{An even-degree polynomial with positive leading coefficient has both ends rising ($y \to +\infty$ as $x \to \pm\infty$). Since the function rises without bound on both sides but dips in the middle, it must achieve a lowest output value somewhere --- a global minimum. It has no global maximum because output grows unbounded.}
-\end{enumerate}
-
-\item AP-Style MC: Answer: \ans{A}
-
-\ans{From the table, $h(-2) = -5 < h(-1) = 3 > h(0) = 4$... Wait --- $h(-1) = 3 < h(0) = 4$, so the local max is near $x=0$. Actually: $h(-2)=-5 \to h(-1)=3 \to h(0)=4 \to h(1)=1 \to h(2)=-2$. The function increases from $-2$ to $0$ then decreases, so local max near $x=0$. However, going from $-2$ to $-1$ the values increase sharply; from $0$ to $2$ they decrease. Best answer: \textbf{C} --- local maximum near $x=0$ only.}
-
-\begin{teachernote}
-Teacher note: The correct answer is C. The function increases from $x=-2$ to $x=0$ (values $-5, 3, 4$) and decreases from $x=0$ to $x=2$ (values $4, 1, -2$). So there is a local maximum near $x=0$. There is no sign-change in AROC that indicates a local minimum within this window.
-\end{teachernote}
-
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.10in}
-
-\begin{extensionbox}
-\textbf{Extension (Optional) --- Key:} For $p(x) = x^4 - 4x^2$:
-$p(-2)=0$, $p(-1)=-3$, $p(0)=0$, $p(1)=-3$, $p(2)=0$.
-
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l X X @{}}
-\rowcolor{goldbg}
-Interval & AROC formula & Value \\
-\midrule
-$[-2, -1]$ & $(-3-0)/1$  & \ans{$-3$} \\
-$[-1,  0]$ & $(0-(-3))/1$  & \ans{$3$} \\
-$[ 0,  1]$ & $(-3-0)/1$   & \ans{$-3$} \\
-$[ 1,  2]$ & $(0-(-3))/1$  & \ans{$3$} \\
-\end{tabularx}
-
-\vspace{6pt}
-Sign changes in AROC: \ans{between $[-2,-1]$ and $[-1,0]$ (near $x=-1$); between $[0,1]$ and $[1,2]$ (near $x=1$)} \\
-Local extrema at: \ans{$x \approx -\sqrt{2} \approx -1.41$ (local min) and $x=0$ (local max) and $x \approx \sqrt{2} \approx 1.41$ (local min)}
-
-\vspace{4pt}
-AROC switching direction: \ans{The AROC goes $-3, 3, -3, 3$ --- alternating. There is a switch from $-3$ to $3$ near $x=-1$ and from $3$ to $-3$ near $x=0$, suggesting inflection points near $x \approx -1$ and $x \approx 1$.}
-\end{extensionbox}
-
-\vspace{0.10in}
-
-\begin{spiralbox}
-\textbf{Preview:} In Lesson 1.5, we will explore the \textbf{zeros of polynomial functions}
-in depth --- including their multiplicities, how multiplicity affects the graph's behavior at
-a zero, and an introduction to \textbf{complex zeros}.
-\end{spiralbox}
+\vspace{0.06in}
+\ansline{Because $f(x+h)$ evaluates $f$ at $x+h$, so the output at input $x$ equals what $f$ outputs at $x+h$.
+To get $f(0)$, we need $x+h=0$, so $x=-h$. The graph shifts to where the input gives zero of the inner expression.}
+\end{reflectionbox}
 
 \end{document}

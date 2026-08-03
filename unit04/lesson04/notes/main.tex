@@ -1,4 +1,4 @@
-%! Parametrically Defined Circles and Lines — Unit 4, Lesson 4.4 — Guided Notes
+%! Exponential Function Manipulation — Unit 4, Lesson 4.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,182 +11,101 @@
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.4.A} --- Express the motion of a point around a
-    circle parametrically by applying transformations to
-    $(x(t),\,y(t)) = (\cos t,\,\sin t)$, and parametrize the segment
-    between two given points using an initial position and constant
-    rates of change. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Apply the \blank{3.5cm} property to rewrite a horizontal translation $b^{x+k}$ as a
+        vertical dilation $a \cdot b^x$. \hfill\textit{(EK 2.4.A.1)}
+  \item Apply the \blank{3cm} property to rewrite a horizontal dilation $b^{cx}$ as a
+        \blank{3cm} change. \hfill\textit{(EK 2.4.A.2)}
+  \item Simplify expressions with \blank{3cm} exponents and \blank{3cm} exponents
+        (roots). \hfill\textit{(EK 2.4.A.3, A.4)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{unit circle parametrization}]
-    The equations $x(t) = \cos t$, $y(t) = \sin t$, $0 \le t \le 2\pi$
-    model one full \underline{\hspace{3cm}} revolution starting at
-    \underline{\hspace{2cm}} and centered at the \underline{\hspace{2cm}}.
-
-  \item[\termblanklong{radius / center}]
-    In $(h + r\cos t,\; k + r\sin t)$: $r$ is the
-    \underline{\hspace{2cm}} and $(h,\,k)$ is the
-    \underline{\hspace{2cm}} of the circular path.
-
-  \item[\termblanklong{orientation}]
-    Using $(\cos t,\,\sin t)$ gives \underline{\hspace{3cm}} motion.
-    Replacing $t$ with $-t$ gives \underline{\hspace{3cm}} motion.
-
-  \item[\termblanklong{linear parametrization}]
-    The parametrization $x(t) = x_1 + (x_2-x_1)t$,
-    $y(t) = y_1 + (y_2-y_1)t$, $0\le t\le 1$, traces the segment from
-    \underline{\hspace{2.5cm}} to \underline{\hspace{2.5cm}}.
-\end{description}
+\termblanklong{product property of exponents}
+\termblanklong{power property of exponents}
+\termblanklong{negative exponent}
+\termblanklong{fractional exponent}
+\termblanklong{$k$th root}
+\termblanklong{equivalent form}
+\termblanklong{vertical dilation}
+\termblanklong{horizontal translation}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} A Ferris wheel has radius 30 ft with its center
-35 ft above the ground. A rider boards at the rightmost seat.
-
-\vspace{4pt}
-\textbf{Q1.} What are the rider's starting coordinates $(x,\,y)$ relative
-to a center at the origin?
-\writeline
-
-\textbf{Q2.} As the wheel turns counterclockwise, what do you expect
-to happen to the rider's height $y$?
-\writelines{2}
+Two functions are on the board:
+\[
+  f(x) = 2^{x+3} \qquad\qquad g(x) = 8 \cdot 2^x
+\]
+Evaluate each at $x = 0$: $f(0) = $ \blank{2cm}, $g(0) = $ \blank{2cm}. \\[4pt]
+Evaluate each at $x = 1$: $f(1) = $ \blank{2cm}, $g(1) = $ \blank{2cm}. \\[4pt]
+These functions \blank{3cm} (are / are not) equivalent because $2^{x+3} = 2^x \cdot 2^{\blank{1cm}} = \blank{1.5cm} \cdot 2^x$.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Notes Box 1 — Unit Circle
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.4.A --- Part 1: Unit Circle Parametrization (EK 4.4.A.1)}
+\begin{notesbox}{LO 2.4.A --- Product Property (EK 2.4.A.1)}
+\textbf{Product Property:} \quad $b^m \cdot b^n = $ \blank{3cm}
 
-\textbf{Definition:} The parametric function
-$(x(t),\,y(t)) = (\cos t,\,\sin t)$, $0 \le t \le 2\pi$, traces the
-\underline{\hspace{3cm}} circle exactly \underline{\hspace{2cm}} time,
-moving \underline{\hspace{3cm}}.
+\medskip
+\textbf{Graphical connection:} A horizontal translation $f(x) = b^{x+k}$ is equivalent to a
+vertical dilation $f(x) = \blank{1.5cm} \cdot b^x$, where $a = $ \blank{2cm}.
 
-\vspace{6pt}
-\textbf{Complete the table:}
+\medskip
+\textbf{Examples --- rewrite in the form $ab^x$:}
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = \cos t$ & $y(t) = \sin t$ & $(x,\;y)$ \\
-\hline
-$0$          & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$\pi/2$      & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$\pi$        & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$3\pi/2$     & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$2\pi$       & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{@{} l @{\quad$=$\quad} l @{\quad$=$\quad} l @{}}
+$5^{x+2}$ & $5^x \cdot 5^{\blank{0.6cm}}$ & \blank{2cm} $\cdot\, 5^x$ \\
+$3^{x-1}$ & $3^x \cdot 3^{\blank{0.6cm}}$ & \blank{2cm} $\cdot\, 3^x$ \\
+$4 \cdot 2^x$ & $2^{\blank{0.6cm}} \cdot 2^x$ & $2^{x + \blank{0.6cm}}$ \\
 \end{tabular}
-\end{center}
-
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Notes Box 2 — Transformed Circles
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.4.A --- Part 2: Transformations of the Circle (EK 4.4.A.2)}
+\begin{notesbox}{LO 2.4.A --- Power Property (EK 2.4.A.2)}
+\textbf{Power Property:} \quad $(b^m)^n = $ \blank{3cm}
 
-\textbf{General form:}
-\[
-  x(t) = \underline{\hspace{1cm}} + \underline{\hspace{0.8cm}}\cos t, \qquad
-  y(t) = \underline{\hspace{1cm}} + \underline{\hspace{0.8cm}}\sin t, \qquad
-  0 \le t \le 2\pi
-\]
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item Center: \underline{\hspace{3cm}} \quad Radius: \underline{\hspace{2cm}}
-  \item Counterclockwise when $t$ increases \quad / \quad Clockwise: replace $t$
-    with \underline{\hspace{1.5cm}}
-\end{itemize}
+\medskip
+\textbf{Graphical connection:} A horizontal dilation $f(x) = b^{cx}$ is equivalent to a base
+change $f(x) = (\blank{2cm})^x$, where the new base is $b^c$.
 
-\vspace{8pt}
-\textbf{Ferris Wheel Example.} Radius 30 ft, center at $(0,\,35)$, counterclockwise:
+\medskip
+\textbf{Examples --- rewrite as a single base to the $x$ power:}
 
-\vspace{4pt}
-$x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
-
-\vspace{6pt}
-Evaluate at $t = \pi/2$: \quad $x(\pi/2) = $ \blank{2cm}, \quad $y(\pi/2) = $ \blank{2cm}
-
-The rider is at position \blank{3cm} after a quarter turn.
-
-\vspace{6pt}
-\textbf{Clockwise version} (replace $t$ with $-t$):
-
-$x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
-
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{@{} l @{\quad$=$\quad} l @{\quad$=$\quad} l @{}}
+$2^{3x}$   & $(2^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
+$9^{x/2}$  & $(9^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
+$4^{x/2}$  & $(4^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
+\end{tabular}
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Notes Box 3 — Linear Segment
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.4.A --- Part 3: Linear Parametrization (EK 4.4.A.3)}
-
-\textbf{Segment from $(x_1,\,y_1)$ to $(x_2,\,y_2)$:}
-\[
-  x(t) = x_1 + (x_2-x_1)\,t, \qquad y(t) = y_1 + (y_2-y_1)\,t, \qquad 0 \le t \le 1
-\]
-At $t=0$: position is \underline{\hspace{2.5cm}}.
-At $t=1$: position is \underline{\hspace{2.5cm}}.
-At $t=0.5$: position is the \underline{\hspace{2cm}}.
-
-\vspace{6pt}
-\textbf{Example:} Segment from $(2,\,5)$ to $(6,\,1)$.
-
-\vspace{4pt}
-$x(t) = 2 + \bigl($ \blank{1.2cm} $\bigr)t = $ \blank{3.2cm} \qquad
-$y(t) = 5 + \bigl($ \blank{1.2cm} $\bigr)t = $ \blank{3.2cm}
-
-\vspace{6pt}
-\textbf{Complete the table:}
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t)$ & $y(t)$ & $(x,\;y)$ \\
-\hline
-$0$   & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$0.5$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$1$   & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
+\begin{notesbox}{LO 2.4.A --- Negative \& Fractional Exponents (EK 2.4.A.3, A.4)}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} >{\bfseries}p{0.38\linewidth} l @{}}
+Negative exponent rule:     & $b^{-n} = \dfrac{1}{\blank{2cm}}$ \\
+Fractional exponent rule:   & $b^{1/k} = \blank{2.5cm}$ \\
+General fractional exponent: & $b^{m/n} = (\sqrt[n]{b})^{\blank{0.8cm}}$ \\
 \end{tabular}
-\end{center}
 
+\medskip
+\textbf{Decay connection:} $f(x) = 2^{-x} = \left(\dfrac{\blank{1cm}}{\blank{1cm}}\right)^x$
+
+\medskip
+\textbf{Evaluate:}
+\quad $2^{-3} = $ \blank{2cm}
+\quad $8^{1/3} = $ \blank{2cm}
+\quad $4^{3/2} = $ \blank{2cm}
 \end{notesbox}
 
 \end{document}

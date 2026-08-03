@@ -1,4 +1,4 @@
-%! Periodic Phenomena — Unit 3, Lesson 3.1 — Guided Notes
+%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,247 +11,103 @@
 
 \vspace{0.10in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 3.1.A} --- Construct a graph of a periodic relationship
-    from a verbal or tabular description. \writeline
-  \item \textbf{LO 3.1.B} --- Describe key characteristics of a periodic
-    function (period, intervals of increase/decrease, concavity) and explain
-    why each characteristic repeats. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Determine the end behavior of a rational function by comparing the degrees of the
+        numerator and denominator using the \blank{3.5cm}. \hfill\textit{(LO 1.7.A)}
+  \item Write the end behavior of a rational function in \blank{2.8cm} notation and identify
+        \blank{2.8cm} or \blank{2.4cm} asymptotes. \hfill\textit{(LO 1.7.A)}
 \end{enumerate}
 \end{objectivebox}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{periodic relationship}]
-    A relationship between two quantities in which the output values
-    \underline{\hspace{3.5cm}} over
-    successive \underline{\hspace{3.5cm}} input intervals.
-
-  \item[\termblanklong{period}]
-    The \underline{\hspace{2.5cm}} positive input length $k$ such that
-    $f(x + k) = f(x)$ for all $x$ in the domain. Equals the length of
-    one \underline{\hspace{2cm}}.
-
-  \item[\termblanklong{cycle}]
-    One \underline{\hspace{3cm}} of the repeating pattern.
-\end{description}
+\termblanklong{rational function}
+\termblanklong{quotient of leading terms}
+\termblanklong{horizontal asymptote}
+\termblanklong{slant asymptote}
 \end{vocabbox}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} The table below shows average monthly electricity
-bills (in dollars) for a household over 3 years.
+A therapist charges \$200 per session plus a one-time \$50 intake fee.
+Average cost per session: $r(n) = \dfrac{200n + 50}{n}$
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\small
-\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+\medskip
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{Month} & Jan & Feb & Mar & Apr & May & Jun & Jul & Aug & Sep & Oct & Nov & Dec \\
+Sessions $n$ & 1 & 10 & 100 & 1000 \\
 \hline
-\textbf{Year 1 (\$)} & 148 & 132 & 110 & 88 & 95 & 135 & 162 & 158 & 120 & 90 & 105 & 140 \\
-\hline
-\textbf{Year 2 (\$)} & 148 & 132 & 110 & 88 & 95 & 135 & 162 & 158 & 120 & 90 & 105 & 140 \\
+Avg.\ cost $r(n)$ & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
 \hline
 \end{tabular}
-\end{center}
 
-\vspace{6pt}
-\textbf{Q1.} What pattern do you notice in the output values?
-\writelines{2}
-
-\textbf{Q2.} How is this pattern different from linear or exponential functions?
-\writelines{2}
+\smallskip
+As $n \to \infty$, the average cost approaches \blank{2cm} because \writelines{1}
 \end{hookbox}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% LO 3.1.A — Identifying and Graphing Periodic Relationships
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 3.1.A --- Identifying and Graphing Periodic Relationships}
+\begin{notesbox}{Quotient of Leading Terms}
+\textbf{Key Idea:} For large $|x|$, a polynomial is dominated by its \blank{2.8cm}.
+So for a rational function, the end behavior is determined by the \textit{quotient of the leading terms}.
 
-\textbf{Definition:} A \emph{periodic relationship} exists when, as input
-increases, output values demonstrate a repeating pattern over successive
-\underline{\hspace{3cm}} input intervals.
+\medskip
+\textbf{Worked Example.} Let $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$.
 
-\vspace{8pt}
-\textbf{Example Table:} Average monthly high temperature (${}^\circ$F) in a
-mid-latitude city.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-Month ($x$) & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
-\hline
-Temp $f(x)$ & 34 & 38 & 50 & 62 & 72 & 81 & 86 & 84 & 75 & 62 & 48 & 36 \\
-\hline
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
+Step 1: Leading term of numerator: & \blank{3cm} \\
+Step 2: Leading term of denominator: & \blank{3cm} \\
+Step 3: Quotient of leading terms: & \blank{3cm} \\
+Step 4: Horizontal asymptote: $y = $ & \blank{2cm} \\
 \end{tabular}
-\end{center}
 
-\vspace{6pt}
-\textbf{Estimating the Period:}\\
-Find where the output pattern \underline{\hspace{2.5cm}} repeating.
-Look for the same sequence of output values starting again.
+\medskip
+In limit notation:
+$\displaystyle\lim_{x\to\infty} r(x) = $ \blank{2.5cm}
+\quad and \quad
+$\displaystyle\lim_{x\to -\infty} r(x) = $ \blank{2.5cm}
 
-\vspace{4pt}
-The pattern appears to restart every \underline{\hspace{1.5cm}} months,
-so the estimated period is $k = $ \underline{\hspace{1.5cm}}.
-
-\vspace{8pt}
-\textbf{Formal Definition of Period:}\\
-The period is the \underline{\hspace{2cm}} positive value $k$ such that
-$f(x + k) = f(x)$ for all $x$ in the domain.
-
-\vspace{8pt}
-\textbf{Constructing the Graph from One Cycle:}\\
-Plot one cycle (months 1--12) from the table above on the grid below.
-Then extend the graph to show two more complete cycles (months 13--36)
-by \underline{\hspace{4cm}} the same cycle.
-
-\vspace{6pt}
-% Pre-printed grid (two periods width, auto-scales)
-\begin{center}
-\begin{tikzpicture}
-  \draw[linegray, step=0.4cm] (0,0) grid (12.0, 4.4);
-  \draw[->] (0,0) -- (12.2,0) node[right]{\small month};
-  \draw[->] (0,0) -- (0,4.6) node[above]{\small temp (${}^\circ$F)};
-  % x-axis labels
-  \foreach \x/\lbl in {0.8/4, 1.6/8, 2.4/12, 3.2/16, 4.0/20, 4.8/24, 5.6/28, 6.4/32, 7.2/36} {
-    \node[below, font=\tiny] at (\x*1.333,0) {\lbl};
-  }
-  % Manual x labels for months 1–36 every 4 months
-  \foreach \i in {1,...,9} {
-    \node[below, font=\tiny] at (\i*1.333, 0) {$\pgfmathparse{int(\i*4)}\pgfmathresult$};
-  }
-  % y-axis labels
-  \foreach \y/\lbl in {0.44/20, 0.88/40, 1.32/60, 1.76/80} {
-    \node[left, font=\tiny] at (0,\y*2.5) {\lbl};
-  }
-  \foreach \j in {1,...,5} {
-    \node[left, font=\tiny] at (0, \j*0.88) {$\pgfmathparse{int(\j*20)}\pgfmathresult$};
-  }
-\end{tikzpicture}
-\end{center}
-
-\vspace{4pt}
-\textit{Hint: Plot the 12 points from the table, connect them smoothly,
-then repeat the same arc for months 13--24 and 25--36.}
-
+\medskip
+\textbf{Numerical check:} $r(100) = \dfrac{30{,}001}{9{,}996} \approx$ \blank{2cm} \quad (close to the HA!)
 \end{notesbox}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% LO 3.1.B — Key Characteristics
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 3.1.B --- Key Characteristics of Periodic Functions}
+\begin{notesbox}{The Three End-Behavior Cases}
+Compare the degree of the numerator (deg num) to the degree of the denominator (deg denom):
 
-\textbf{Period (formal):} The period $k$ is the smallest positive value such
-that $f(x + k) = $ \underline{\hspace{2cm}} for all $x$ in the domain.
-This means the behavior of the function is \underline{\hspace{5cm}}
-by any one interval of width $k$.
-
-\vspace{8pt}
-\textbf{Why characteristics repeat:} Because $f(x+k)=f(x)$, \emph{every}
-property of the function --- increase/decrease, concavity, rate of change ---
-that occurs somewhere in one period will occur at the
-\underline{\hspace{4cm}} position in every period.
-
-\vspace{8pt}
-\textbf{Identifying Characteristics from the Graph:}
-
-Using the temperature graph you constructed:
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X @{}}
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.4cm} X X @{}}
+Case & Degree Relationship & End Behavior \\
 \hline
-\textbf{Characteristic} & \textbf{Description (in one period, months 1--12)} \\
-\hline
-Interval of increase & The temperature increases on months \underline{\hspace{3cm}} \\
-Interval of decrease & The temperature decreases on months \underline{\hspace{3cm}} \\
-Concave up region & The graph curves upward (bowl shape) on months \underline{\hspace{2.5cm}} \\
-Concave down region & The graph curves downward (hill shape) on months \underline{\hspace{2.5cm}} \\
-Max value & Approximately \underline{\hspace{1.5cm}}${}^\circ$F, occurring at month \underline{\hspace{1cm}} \\
-Min value & Approximately \underline{\hspace{1.5cm}}${}^\circ$F, occurring at month \underline{\hspace{1cm}} \\
-\hline
+Case 1 & deg num \textbf{$<$} deg denom & \blank{5cm} \\
+Case 2 & deg num \textbf{$=$} deg denom & \blank{5cm} \\
+Case 3 & deg num \textbf{$>$} deg denom & \blank{5cm} \\
 \end{tabularx}
 
-\vspace{8pt}
-\textbf{Key Insight:} Every characteristic above will repeat in months 13--24,
-25--36, and every subsequent period because \underline{\hspace{6cm}}.
+\medskip
+\textit{Special case of Case 3:} If deg num $=$ deg denom $+ 1$, the graph has a
+\blank{2.5cm} asymptote parallel to a \blank{2cm}.
 
+\medskip
+\textbf{Quick Practice.} Classify each rational function below:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}p{3.8cm} p{1.5cm} p{1.5cm} p{2.5cm} p{2.5cm}@{}}
+\textbf{Function} & \textbf{Deg num} & \textbf{Deg den} & \textbf{Case} & \textbf{Asymptote} \\
+\hline
+$\dfrac{x+1}{x^2-9}$         & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+$\dfrac{3x^2}{x^2+4}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+$\dfrac{x^3-2x}{x-3}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+$\dfrac{2x+5}{x-1}$          & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+\end{tabular}
 \end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Practice
-%----------------------------------------------------------------------
-\begin{practicebox}
-
-\textbf{Guided Practice 1.}\quad The table shows the height (in feet) of a
-point on the edge of a spinning water wheel, measured every 2 seconds.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-Time $t$ (sec) & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
-\hline
-Height $h(t)$ (ft) & 0 & 6 & 10 & 6 & 0 & $-6$ & $-10$ & $-6$ & 0 \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{4pt}
-(a)\quad Is this relationship periodic? Explain how you know.
-\writelines{2}
-
-(b)\quad Estimate the period of this relationship. \writeline
-
-(c)\quad On what time interval (within one cycle) is $h$ increasing?
-\writeline
-
-\vspace{0.10in}
-\textbf{Guided Practice 2.}\quad A table of values for function $p$ is given.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 3 & 6 & 9 & 12 & 15 & 18 \\
-\hline
-$p(x)$ & 4 & 9 & 4 & 9 & 4 & 9 & 4 \\
-\hline
-\end{tabular}
-\end{center}
-
-(a)\quad Is $p$ periodic? If so, what is the period?
-\writeline
-
-(b)\quad Describe the behavior of $p$ in one cycle.
-\writelines{2}
-
-\end{practicebox}
 
 \end{document}

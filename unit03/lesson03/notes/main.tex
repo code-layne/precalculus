@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.3 — Guided Notes
+%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -13,141 +13,127 @@
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=3pt]
-  \item \textbf{LO 3.3.A:} Determine the coordinates of a point on a circle centered at the origin using $P = (r\cos\theta,\, r\sin\theta)$.
-  \item Use 45-45-90 and 30-60-90 triangle geometry to find exact sine and cosine values at multiples of $\pi/6$ and $\pi/4$.
-  \item Apply quadrant sign conventions to find correct exact values for any standard-position angle.
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the vertical asymptotes of a rational function by finding where the denominator
+        equals zero and the numerator does \blank{1.5cm}. \hfill\textit{(LO 1.9.A)}
+  \item Describe the behavior of a rational function near a vertical asymptote using
+        \blank{3cm} limit notation. \hfill\textit{(LO 1.9.A)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{reference angle}
-\termblanklong{exact value}
-\termblanklong{45-45-90 triangle}
-\termblanklong{30-60-90 triangle}
+\termblanklong{vertical asymptote}
+\termblanklong{one-sided limit ($\lim_{x \to a^+}$)}
+\termblanklong{one-sided limit ($\lim_{x \to a^-}$)}
+\termblanklong{multiplicity condition for a VA}
 \end{vocabbox}
-
-\vspace{0.08in}
-
-\begin{hookbox}
-\textbf{GPS Satellite Problem:} A GPS satellite orbits at a radius of 26{,}560~km from Earth's center.
-We model the orbit as a circle centered at the origin.
-After the satellite rotates $\theta = \pi/3$ radians from its starting position, what are its exact $(x, y)$ coordinates?
-
-\smallskip
-What do you think we need to know to answer this?
-
-\vspace{0.4in}
-\end{hookbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part A --- Exact Values from Special Triangles (EK 3.3.A.2)}
-
-\textbf{45-45-90 triangle} (hypotenuse $= 1$):
-\[
-  \text{Each leg} = \underline{\hspace{1.5cm}} \qquad
-  \cos\!\left(\frac{\pi}{4}\right) = \underline{\hspace{1.5cm}} \qquad
-  \sin\!\left(\frac{\pi}{4}\right) = \underline{\hspace{1.5cm}}
-\]
 
 \vspace{0.1in}
 
-\textbf{30-60-90 triangle} (hypotenuse $= 1$):
-\[
-  \text{Short leg} = \underline{\hspace{1.2cm}} \quad
-  \text{Long leg} = \underline{\hspace{1.2cm}} \quad
-  \cos\!\left(\frac{\pi}{6}\right) = \underline{\hspace{1.2cm}} \quad
-  \sin\!\left(\frac{\pi}{6}\right) = \underline{\hspace{1.2cm}}
-\]
-\[
-  \cos\!\left(\frac{\pi}{3}\right) = \underline{\hspace{1.5cm}} \qquad
-  \sin\!\left(\frac{\pi}{3}\right) = \underline{\hspace{1.5cm}}
-\]
-
-\vspace{0.12in}
-
-\textbf{Summary table} --- fill in the exact values:
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} @{}}
-\toprule
-$\theta$ (rad) & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ \\
-\midrule
-$\sin\theta$ & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} \\
-$\cos\theta$ & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} & \underline{\hspace{0.9cm}} \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part B --- Points on a Circle of Radius $r$ (EK 3.3.A.1)}
-
-If a point $P$ lies on a circle of radius $r$ centered at the origin, at angle $\theta$ in standard position, then:
-\[
-  P = \bigl(\underline{\hspace{2cm}},\; \underline{\hspace{2cm}}\bigr)
-\]
-
-\vspace{0.08in}
-\textbf{GPS Example:} $r = 26{,}560$~km, $\theta = \pi/3$
-
-\[
-  x = 26{,}560 \cdot \cos\!\left(\frac{\pi}{3}\right) = 26{,}560 \cdot \underline{\hspace{1.2cm}} = \underline{\hspace{2.4cm}} \text{ km}
-\]
-\[
-  y = 26{,}560 \cdot \sin\!\left(\frac{\pi}{3}\right) = 26{,}560 \cdot \underline{\hspace{1.2cm}} = \underline{\hspace{2.4cm}} \text{ km}
-\]
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part C --- Signs in Each Quadrant}
-
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}X | >{\centering\arraybackslash}X @{}}
-\textbf{Quadrant II} ($x < 0,\; y > 0$) & \textbf{Quadrant I} ($x > 0,\; y > 0$) \\
-$\cos\theta$ \underline{\hspace{0.9cm}}, $\sin\theta$ \underline{\hspace{0.9cm}} &
-$\cos\theta$ \underline{\hspace{0.9cm}}, $\sin\theta$ \underline{\hspace{0.9cm}} \\
-\hline
-\textbf{Quadrant III} ($x < 0,\; y < 0$) & \textbf{Quadrant IV} ($x > 0,\; y < 0$) \\
-$\cos\theta$ \underline{\hspace{0.9cm}}, $\sin\theta$ \underline{\hspace{0.9cm}} &
-$\cos\theta$ \underline{\hspace{0.9cm}}, $\sin\theta$ \underline{\hspace{0.9cm}} \\
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
+\begin{hookbox}
+Bacterial concentration near a drain: $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance in cm.
 
 \smallskip
-Mnemonic: \textbf{A}ll \textbf{S}tudents \textbf{T}ake \textbf{C}alculus
-(QI: All positive; QII: Sine positive; QIII: Tangent positive; QIV: Cosine positive).
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
+\hline
+$C(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
+\hline
+\end{tabular}
+\smallskip
 
+As $x \to 3$, the output \blank{3.5cm}. We say $x = 3$ is a \blank{3.5cm}.
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Vertical Asymptotes}
+A rational function $r(x) = \dfrac{p(x)}{q(x)}$ has a \textbf{vertical asymptote at $x = a$} when:
+
+\begin{itemize}
+  \item $q(a) =$ \blank{1.5cm} \quad (the denominator is \blank{2.5cm} at $a$), \textbf{AND}
+  \item $p(a)$ \blank{0.8cm} $0$ \quad (the numerator is \textbf{not} zero at $a$).
+\end{itemize}
+
+\textit{Multiplicity rule (EK 1.9.A.1):} A VA also occurs at $x = a$ when the multiplicity of
+$a$ in the \blank{3cm} is \emph{greater} than its multiplicity in the \blank{3cm}.
+
+\medskip
+\textbf{Example 1.} Find any vertical asymptotes of $r(x) = \dfrac{x + 2}{x - 3}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Set the denominator equal to zero and solve: \blank{5cm}
+
+  \item Check the numerator at each solution: at $x = 3$, numerator $=$ \blank{2cm}
+
+  \item Conclusion: \blank{7cm}
+\end{enumerate}
+
+\medskip
+\textbf{Example 2.} Find any vertical asymptotes of $r(x) = \dfrac{x - 1}{(x-1)^2(x+2)}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Denominator zeros: \blank{5cm}
+
+  \item At $x = 1$: numerator multiplicity \blank{0.8cm}, denominator multiplicity \blank{0.8cm}.
+        Since \blank{0.8cm} $>$ \blank{0.8cm}: \blank{4cm}
+
+  \item At $x = -2$: numerator value $=$ \blank{2cm}. Since it is nonzero: \blank{4cm}
+\end{enumerate}
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-%-----------------------------------------------------------------------
+\begin{notesbox}{One-Sided Limits Near a Vertical Asymptote}
+For $r(x) = \dfrac{1}{x - 2}$, complete the table:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$r(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+From the table, write the one-sided limits:
+
+\[
+  \lim_{x \to 2^-} r(x) = \blank{2cm}
+  \qquad\qquad
+  \lim_{x \to 2^+} r(x) = \blank{2cm}
+\]
+
+\textbf{Sign analysis.} When $x$ is slightly greater than 2, $(x - 2)$ is \blank{2cm},
+so $r(x) \to$ \blank{2cm}.\\
+When $x$ is slightly less than 2, $(x - 2)$ is \blank{2cm},
+so $r(x) \to$ \blank{2cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
 \begin{practicebox}
-\textbf{Guided Practice 1.} Find the exact coordinates of the point $P$ on a circle of radius 3 at angle $\theta = \pi/3$.
+\begin{enumerate}[itemsep=10pt]
+  \item For $r(x) = \dfrac{2x - 1}{x^2 - 5x + 6}$, find all vertical asymptotes.
 
-\vspace{0.6in}
+        Factor the denominator: \blank{5cm}
 
-$P = \bigl($\underline{\hspace{1.5cm}}$,$\underline{\hspace{1.5cm}}$\bigr)$
+        Denominator zeros: \blank{3cm} \quad Check numerator at each: \blank{4cm}
 
-\vspace{0.16in}
+        Vertical asymptote(s): \blank{4cm}
 
-\textbf{Guided Practice 2.} A point $P = \bigl(-\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$ lies on the unit circle.
-Identify the angle $\theta \in [0, 2\pi)$ in standard position. Justify using the sign of each coordinate.
+  \item For $r(x) = \dfrac{1}{(x+3)^2}$, determine whether
+        $\lim_{x\to -3^+} r(x) = +\infty$ or $-\infty$. Explain using sign analysis.
 
-\vspace{0.7in}
-
-$\theta = $ \underline{\hspace{2cm}}
+        \vspace{0.25in}
+        \writeline
+\end{enumerate}
 \end{practicebox}
 
 \end{document}

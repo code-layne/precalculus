@@ -1,4 +1,4 @@
-%! Polynomial Functions and Complex Zeros — Unit 1, Lesson 1.5 — Warm-Up (Answer Key)
+%! Composition of Functions — Unit 1, Lesson 1.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,38 +9,42 @@
 \pageheader{Unit 1, Lesson 1.5}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\begin{enumerate}[itemsep=14pt]
 
-\item Factor $p(x)=x^3-4x$ completely and identify all zeros.
-      For each zero, state whether it has multiplicity 1 (simple) or is a repeated zero.
-
-      \vspace{0.06in}
-      Factored form: \ans{$x(x-2)(x+2)$} \hfill Zeros: \ans{$x=0,\;x=2,\;x=-2$}
+\item Given $f(x) = 3x - 1$, evaluate the following.
 
       \vspace{0.06in}
-      Multiplicity of each zero: \ans{Each zero has multiplicity 1 (all simple).}
+      $f(4) = $ \ans{11} \qquad $f(-2) = $ \ans{$-7$}
 
-\item Write a polynomial (in factored form) that has zeros at $x=-3$ (multiplicity 1),
-      $x=0$ (multiplicity 2), and $x=4$ (multiplicity 1).
-      What is the degree of your polynomial?
+\item Given $f(x) = x^2$ and $g(x) = x + 3$, find $f(g(1))$ step by step.
 
       \vspace{0.06in}
-      $p(x) = {}$ \ans{$(x+3)\,x^2\,(x-4)$} \hfill Degree: \ans{4}
-
-\item Let $f(x)=3x^4-x^2$.
-
-      \vspace{0.04in}
-      (a) Find $f(-x)$: \ans{$3(-x)^4-(-x)^2 = 3x^4 - x^2$}
+      \textbf{Step 1:} Find $g(1)$. \quad $g(1) = $ \ans{4}
 
       \vspace{0.06in}
-      (b) Is $f$ even, odd, or neither?
-      Circle one: \quad {\color{keyred}\textbf{Even}} \quad \textbf{Odd} \quad \textbf{Neither}
+      \textbf{Step 2:} Use your answer from Step 1 as the input for $f$.
 
-      \vspace{0.04in}
-      Explain how you know: \ansline{$f(-x) = f(x)$ for all $x$, so $f$ is \textbf{even}.}
+      \quad $f\bigl(g(1)\bigr) = f\!\left(\ans{4}\right) = $ \ans{16}
+
+\item Is $f(g(1)) = g(f(1))$? Compute $g(f(1))$ below, then compare.
+
+      \vspace{0.06in}
+      $f(1) = $ \ans{1} \quad so \quad $g(f(1)) = g\!\left(\ans{1}\right) = $ \ans{4}
+
+      \vspace{0.06in}
+      Are they equal? \ans{No. $f(g(1)) = 16$ but $g(f(1)) = 4$. Order matters.}
 
 \end{enumerate}
+
+\begin{teachernote}
+Item 1: $f(4) = 3(4)-1 = 11$; $f(-2) = 3(-2)-1 = -7$.
+
+Item 2: $g(1) = 1+3 = 4$; $f(4) = 4^2 = 16$. Guide students through the two-step process.
+
+Item 3: $f(1) = 1^2 = 1$; $g(1) = 1+3 = 4$. The two results are different, motivating the
+non-commutativity discussion in today's lesson.
+\end{teachernote}
 
 \end{document}

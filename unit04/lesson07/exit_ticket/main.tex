@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Exit Ticket
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Exit Ticket
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,26 +11,43 @@
 
 \vspace{0.12in}
 
-\begin{notesbox}{Parametrization Check}
+\begin{enumerate}[itemsep=14pt]
 
-The ellipse $\dfrac{(x+1)^2}{9} + \dfrac{(y-2)^2}{16} = 1$ is implicitly defined.
+\item The table below shows four data points. Compute the first differences and the successive
+      ratios, then circle the model type that best fits.
 
-\vspace{10pt}
-\textbf{1.}\quad Identify $h$, $k$, $a$, and $b$ from the equation. Then write the
-parametric equations that trace the ellipse counterclockwise for $0 \le t \le 2\pi$.
+      \vspace{0.06in}
+      \renewcommand{\arraystretch}{1.7}
+      \begin{tabular}{c|c|c|c}
+      $x$ & $y$ & $\Delta_1 = y_{\text{next}} - y$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+      0 &  5 & \blank{3cm} & \blank{3cm} \\
+      1 & 10 & \blank{3cm} & \blank{3cm} \\
+      2 & 20 & \blank{3cm} & \blank{3cm} \\
+      3 & 40 & --- & --- \\
+      \end{tabular}
 
-\vspace{6pt}
-$h = $ \blank{1.5cm} \quad $k = $ \blank{1.5cm} \quad $a = $ \blank{1.5cm} \quad $b = $ \blank{1.5cm}
+      \vspace{0.04in}
+      Best model: \quad \textbf{Linear} \hspace{1.5cm} \textbf{Quadratic} \hspace{1.5cm} \textbf{Exponential}
 
-\vspace{10pt}
-$x(t) = $ \blank{5cm} \qquad $y(t) = $ \blank{5cm}
+\item For the exponential model $\hat{y} = 3 \cdot 1.4^x$, evaluate the model at $x = 2$
+      and compute the error when the actual value is $y = 6.2$.
 
-\vspace{12pt}
-\textbf{2.}\quad Using your parametrization from Question 1, find the coordinates of the
-topmost and bottommost points on the ellipse. Show how you use $y(t)$ to find them.
+      \vspace{0.06in}
+      $\hat{y}(2) = 3 \cdot 1.4^2 = $ \blank{4cm}
 
-\writelines{4}
+      \vspace{0.04in}
+      Error $= 6.2 - \hat{y}(2) = $ \blank{4cm}
 
-\end{notesbox}
+      \vspace{0.04in}
+      Is this an overestimate or underestimate? \blank{5cm}
+
+\item A researcher says: ``I plotted the residuals for my model and the points alternate
+      positive and negative with no obvious pattern.'' Does this suggest the model is
+      appropriate? Explain in one sentence.
+
+      \vspace{0.06in}
+      \writelines{2}
+
+\end{enumerate}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Guided Notes
+%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,116 +11,99 @@
 
 \vspace{0.10in}
 
-%--- Objective ---
 \begin{objectivebox}
-\textbf{LO 3.2.A:} Determine the sine, cosine, and tangent of an angle using the unit circle.\\[4pt]
-\writelines{2}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Find the real zeros of a rational function by setting the \blank{3cm} equal to zero
+        and checking that the solutions are in the \blank{2cm}. \hfill\textit{(LO 1.8.A)}
+  \item Solve a rational inequality using a \blank{2.5cm} with critical values from
+        both the numerator and the denominator. \hfill\textit{(LO 1.8.A)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-%--- Vocabulary ---
 \begin{vocabbox}
-\termblanklong{standard position}
-\termblanklong{terminal ray}
-\termblanklong{coterminal angles}
-\termblanklong{radian measure}
-\termblanklong{unit circle}
-\termblanklong{sine ($\sin\theta$)}
-\termblanklong{cosine ($\cos\theta$)}
-\termblanklong{tangent ($\tan\theta$)}
+\termblanklong{zero of a rational function}
+\termblanklong{domain restriction}
+\termblanklong{critical value}
+\termblanklong{sign chart}
 \end{vocabbox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-%--- Hook ---
 \begin{hookbox}
-\textbf{Spinning Wheel:} A point $P$ sits on the rim of a wheel of radius 1, starting at $(1,\, 0)$.
-After the wheel rotates counterclockwise by angle $\theta$, the point is at position $(\underline{\hspace{1.2cm}},\, \underline{\hspace{1.2cm}})$.
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item How far right/left of center is $P$? \hfill The answer is called: \blank{2.4cm}
-  \item How far up/down from center is $P$? \hfill The answer is called: \blank{2.4cm}
-  \item What is the slope of the line from center to $P$? \hfill The answer is called: \blank{2.4cm}
-\end{itemize}
+A company's profit per unit is modeled by $\displaystyle P(x) = \dfrac{x^2 - 9}{x - 1}$
+where $x > 0$, $x \ne 1$.
+
+At what production level(s) is the profit per unit equal to zero? When is it positive?
+Why does $x = 1$ need to be excluded?
+
+\vspace{0.05in}
+\writelines{2}
 \end{hookbox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-%--- Radians ---
-\begin{notesbox}{Radian Measure}
-\textbf{Definition:} Radian measure $=$ \blank{3cm} $\div$ \blank{3cm}
+\begin{notesbox}{Zeros of Rational Functions (EK 1.8.A.1)}
+\textbf{Rule:} For $r(x) = \dfrac{p(x)}{q(x)}$, we have $r(x) = 0$ when:
+\begin{itemize}[itemsep=3pt]
+  \item $p(x) = 0$ (numerator equals \blank{2cm}), AND
+  \item $q(x) \ne 0$ ($x$ is in the \blank{2cm} of $r$).
+\end{itemize}
 
 \medskip
-On a \textbf{unit circle} ($r = 1$): radian measure $=$ \blank{3.5cm}
+\textbf{Worked Example.} Find all zeros of $r(x) = \dfrac{x^2 - 4}{x - 3}$.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} r l @{\qquad} l @{}}
+\textbf{Step 1} & Find domain restrictions. & $q(x) = 0 \Rightarrow$ \blank{3.5cm} \\
+                &                           & Domain: all reals except $x =$ \blank{1.5cm} \\[4pt]
+\textbf{Step 2} & Set numerator $= 0$.      & $x^2 - 4 = 0 \Rightarrow (x - \blank{1cm})(x + \blank{1cm}) = 0$ \\
+                &                           & Solutions: $x =$ \blank{1.5cm} and $x =$ \blank{1.5cm} \\[4pt]
+\textbf{Step 3} & Check domain.             & Is $x = 2$ in the domain? \blank{1.5cm} \\
+                &                           & Is $x = -2$ in the domain? \blank{1.5cm} \\[4pt]
+\textbf{Step 4} & State zeros.              & Zeros of $r$: $x =$ \blank{3cm} \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Rational Inequalities --- Sign Chart Method (EK 1.8.A.2)}
+\textbf{Key idea:} The sign of $r(x)$ can only change at a \blank{2.5cm} or a
+\blank{3cm}. These are called \textbf{critical values}.
+
+\medskip
+\textbf{Solve:} $\dfrac{x - 1}{x + 2} \geq 0$
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} r l @{\qquad} l @{}}
+\textbf{Step 1} & Find critical values. & Numerator zero: $x =$ \blank{1.5cm} \quad Denominator zero: $x =$ \blank{1.5cm} \\[4pt]
+\textbf{Step 2} & Mark on number line.  & Open circle at $x =$ \blank{1cm} (excluded); closed at $x =$ \blank{1cm} (zero). \\[4pt]
+\textbf{Step 3} & Test each interval.   & \\
+\end{tabular}
 
 \medskip
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{Degrees} & \textbf{Radians} & \textbf{Arc length (unit circle)} \\
+\textbf{Interval} & $(-\infty,\,-2)$ & $(-2,\,1)$ & $(1,\,\infty)$ \\
 \hline
-$360°$  & \blank{1.8cm} & \blank{1.8cm} \\
-$180°$  & \blank{1.8cm} & \blank{1.8cm} \\
-$90°$   & \blank{1.8cm} & \blank{1.8cm} \\
+Test value $x$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+Sign of $r(x)$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
 \hline
 \end{tabular}
 \end{center}
 
 \medskip
-Conversion: $\pi$ radians $=$ \blank{1.8cm} degrees \qquad $\dfrac{\pi}{2}$ radians $=$ \blank{1.8cm} degrees
+\textbf{Step 4.} Write the solution (intervals where $r(x) \geq 0$):
+
+\vspace{0.08in}
+Solution: \blank{7cm}
 \end{notesbox}
-
-\vspace{0.10in}
-
-%--- Unit Circle Definitions ---
-\begin{notesbox}{LO 3.2.A --- The Unit Circle}
-Let $\theta$ be an angle in standard position. Let $P = (x,\, y)$ be the point where the
-\textbf{terminal ray} meets the \textbf{unit circle}.
-
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Function} & \textbf{Unit-Circle Value} & \textbf{General Definition (radius $r$)} \\
-\hline
-$\sin\theta$ & \blank{2.8cm} & \blank{2.8cm} \\
-$\cos\theta$ & \blank{2.8cm} & \blank{2.8cm} \\
-$\tan\theta$ & \blank{2.8cm} & \blank{2.8cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\medskip
-\textbf{Pythagorean Identity:} Since $x^2 + y^2 = 1$ on the unit circle:
-\[
-  \underline{\hspace{1.8cm}}^2 + \underline{\hspace{1.8cm}}^2 = 1
-\]
-\end{notesbox}
-
-\vspace{0.10in}
-
-%--- Practice ---
-\begin{practicebox}
-\textbf{Practice: Evaluate using the unit circle.} For each angle, identify the point $P = (x,y)$
-on the unit circle, then fill in the table.
-
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$\theta$ & Point $P = (x,y)$ & $\cos\theta$ & $\sin\theta$ & $\tan\theta$ \\
-\hline
-$0$           & \blank{2.8cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-$\pi/2$       & \blank{2.8cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-$\pi$         & \blank{2.8cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-$3\pi/2$      & \blank{2.8cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-$2\pi$        & \blank{2.8cm} & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-\hline
-\end{tabular}
-\end{center}
-\end{practicebox}
 
 \end{document}

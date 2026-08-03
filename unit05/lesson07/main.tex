@@ -1,0 +1,181 @@
+%! Logarithmic Function Context and Data Modeling — Unit 5, Lesson 5.7 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 5: Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 5.7: Logarithmic Function Context and Data Modeling}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students construct logarithmic function models from contextual
+    data and two input-output pairs, apply transformations of $f(x) = a\log_b x$ to fit
+    real-world situations, use natural logarithm models for real phenomena, and use models to
+    predict values for the dependent variable.
+    \hfill\textit{\small Skills: AP 1.C, AP 3.B \quad LO 2.14.A}
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.C} --- Construct new functions using transformations and modeling. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Logarithmic models arise when inputs change proportionally over equal-length output
+        intervals. (EK 2.14.A.1)
+  \item A model can be built from a proportion + real zero, or from two input-output pairs
+        via a system of equations. (EK 2.14.A.2)
+  \item Transformations of $f(x)=a\log_b(x-h)+k$ encode context characteristics.
+        (EK 2.14.A.3)
+  \item The natural logarithm is especially useful for modeling real phenomena.
+        (EK 2.14.A.5)
+\end{itemize} \\
+\textbf{AP 3.B} --- Apply numerical results in context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Use the model to predict values of the dependent variable and interpret results
+        in context. (EK 2.14.A.6)
+  \item Technology (logarithmic regression) can construct models for data sets; results
+        must be interpreted contextually. (EK 2.14.A.4)
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+logarithmic model & A function of the form $f(x) = a\log_b x + k$ (or with a horizontal
+                    shift) used to describe a situation where inputs change proportionally over
+                    equal-length output intervals. \\
+proportion        & The constant factor by which the input value is multiplied as the output
+                    increases by one unit in a logarithmic model. \\
+real zero         & The input value at which the logarithmic model output equals zero;
+                    for $f(x) = \log_b x$, the real zero is $x = 1$. \\
+natural logarithm model & A logarithmic model using base $e$: $f(x) = a\ln(x) + k$, often
+                    chosen for naturally-occurring phenomena. \\
+logarithmic regression & A technology-assisted technique that fits a logarithmic curve to a
+                    data set by minimizing residuals. \\
+prediction        & Using a function model to estimate an output value for a given input
+                    (or an input for a given output target). \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    Spiral review (warm-up) covers: reading an input-output table and deciding whether
+    the pattern is linear, exponential, or logarithmic; identifying a real zero of a
+    logarithmic function; and recognizing the ``proportional input'' pattern that signals
+    a logarithmic model. These connect directly to EK 2.14.A.1 (recognizing the model type)
+    and EK 2.14.A.2 (building a model from a zero and a proportion).
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    Write on the board: \textbf{``A scientist notices that a population of bacteria changes at
+    a decreasing rate: the population doubles in the first hour, doubles again after 2 more
+    hours, then again after 4 more hours.''}
+
+    Ask: ``What is happening to the \emph{time needed} for each doubling as the population
+    grows?'' (It keeps increasing.) Then ask: ``If the output is the number of doublings and
+    the input is the elapsed time, what kind of function might model this?'' Guide students
+    to see that equal output increments (one doubling) correspond to multiplicatively growing
+    input intervals (1 h, 2 h, 4 h --- each doubling). This motivates the logarithm as the
+    right model when the \emph{input} changes proportionally for each unit of output.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{multicols}{2}
+\textbf{Part 1 (10 min): When to Use a Logarithmic Model (EK 2.14.A.1).}
+
+Present a table where the output increases by 1 each row, but the input multiplies by the
+same factor each time. Ask: ``What does the output count?'' (How many times the input has
+been multiplied by the proportion.) Contrast with an exponential model (equal input intervals,
+proportional output). Have students label their notes table and identify the proportion $b$.
+
+\columnbreak
+
+\textbf{Part 2 (12 min): Building from Two Pairs (EK 2.14.A.2).}
+
+Show the general form $f(x) = a\log_b x + k$. Use the worked example $f(1)=0$, $f(e)=3$:
+since $\log_b 1 = 0$ for any $b$, we get $k = 0$; then $a\ln(e) = 3 \Rightarrow a = 3$.
+Model the system-of-equations approach with a second example: $f(1)=2$, $f(9)=4$ with base 3.
+Students fill in the guided-notes worked example.
+\end{multicols}
+
+\begin{multicols}{2}
+\textbf{Part 3 (8 min): Transformations Approach (EK 2.14.A.3).}
+
+Introduce $f(x) = a\log_b(x-h)+k$. Identify $a$ as vertical dilation, $h$ as horizontal
+shift, $k$ as vertical shift. Present the decibel example as a real transformation. Students
+match parameters to context descriptions.
+
+\columnbreak
+
+\textbf{Part 4 (10 min): Natural Log Models \& Predictions (EK 2.14.A.5, 2.14.A.6).}
+
+Emphasize $\ln x = \log_e x$ and when it arises naturally. Show how to evaluate $f(e^n)$
+and how to solve $a\ln x = c \Rightarrow x = e^{c/a}$. Students practice prediction in
+context. Mention regression as a technology path (EK 2.14.A.4).
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``How does the pattern in this table differ from an exponential
+        table?'' Expect: inputs multiply by a constant (not outputs).
+  \item Watch for students who confuse the proportion (the base $b$) with the constant $a$.
+        Emphasize: $b$ is identified from the proportional input pattern; $a$ is solved after.
+  \item After Part 2: confirm students can set up two equations and solve the system correctly.
+        Common error: forgetting that $\log_b 1 = 0$ always, giving $k$ for free.
+  \item During Part 4: check that students can evaluate $f(e^2) = a\ln(e^2) = 2a$ without a
+        calculator and can correctly invert $a\ln x = c$ to $x = e^{c/a}$.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Use a given table ($A = 1,10,100,1000$; $S = 0,1,2,3$)
+        to identify the proportion, write $S(A) = \log_{10}(A)$, predict $S(10000)$, and
+        discuss whether $S(0.5)$ is defined.
+  \item \textbf{Tier A (Apply):} Given two input-output pairs for a species-diversity model,
+        set up and solve a system for $a$ and $k$ in $f(x) = a\log_3 x + k$; write the
+        complete model and make a prediction.
+  \item \textbf{Tier E (Extension):} Analyze the decibel formula $S(I) = 10\log_{10}(I/I_0)$
+        as a transformation; find the intensity of normal conversation (60 dB); compute the
+        ratio of intensities between a rock concert (120 dB) and normal conversation.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+Exit ticket (2 questions, 1 page):
+\begin{enumerate}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+  \item Given $x = 2, 4, 8, 16$ with $f(x) = 1, 2, 3, 4$: identify $b$, write
+        $f(x) = \log_b x$, predict $f(32)$. (Tests EK 2.14.A.1 and 2.14.A.2.)
+  \item Given $f(x) = 3\ln(x)$: evaluate $f(e^2)$ and $f(1)$; solve $f(x) = 6$ for $x$.
+        (Tests EK 2.14.A.5 and 2.14.A.6.)
+\end{enumerate}
+Sort by result: students missing \#1 need work on recognizing proportional input patterns;
+missing \#2 need practice evaluating and inverting natural log expressions.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework (5--6 problems):} classify data sets as logarithmic vs.\ exponential;
+construct $f(x) = a\ln x$ from two points; build $S(A) = a\log_{10} A + k$ from a four-row
+table; analyze $f(x) = 2\log_2(x-1)+3$ (domain, evaluation, solving); AP-style MC on
+context identification; extension on change-of-base connecting $a\ln x$ and $a\log_{10} x$.
+
+\textbf{Preview of Lesson 2.15:} Connecting exponential and logarithmic models --- choosing
+between them based on context, converting between forms, and using both in the same analysis.
+\end{skillbox}
+
+\end{document}

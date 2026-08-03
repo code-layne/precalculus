@@ -1,4 +1,4 @@
-%! Polynomial Functions and Complex Zeros — Unit 1, Lesson 1.5 — Guided Notes
+%! Composition of Functions — Unit 1, Lesson 1.5 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,158 +9,123 @@
 \pageheader{Unit 1, Lesson 1.5}{Guided Notes}
 \namedateperiod
 
-\vspace{0.1in}
+\vspace{0.06in}
 
 \begin{objectivebox}
-Students will identify and interpret zeros of polynomial functions (real and complex),
-including multiplicity, and determine whether a polynomial function is even or odd.
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item[\textbullet] \writeline
-  \item[\textbullet] \writeline
-  \item[\textbullet] \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Evaluate the \blank{3cm} of two functions for given values using tables or formulas.
+        \hfill\textit{(LO 2.7.A)}
+  \item Construct a formula for $f(g(x))$ by substituting \blank{3cm} for each $x$ in $f$,
+        and explain why $f \circ g$ and $g \circ f$ are generally \blank{3cm}.
+        \hfill\textit{(LO 2.7.B)}
+  \item Rewrite a function as a \blank{3cm} of two simpler functions and connect this to
+        \blank{3cm} of functions. \hfill\textit{(LO 2.7.C)}
 \end{enumerate}
 \end{objectivebox}
 
+\vspace{0.06in}
+
 \begin{vocabbox}
-\termblanklong{zero (root)}
-\termblanklong{multiplicity}
-\termblanklong{complex zero}
-\termblanklong{complex conjugate pair}
-\termblanklong{even function}
-\termblanklong{odd function}
+\termblanklong{composition / composite function}
+\termblanklong{$(f \circ g)(x)$}
+\termblanklong{domain of $f \circ g$}
+\termblanklong{identity function}
+\termblanklong{non-commutativity of composition}
+\termblanklong{decomposition}
 \end{vocabbox}
 
+\vspace{0.06in}
+
 \begin{hookbox}
-Consider $p(x)=(x-2)^2(x+1)$.
-\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-  \item Where does the graph of $y=p(x)$ \emph{cross} the $x$-axis? \blank{4cm}
-  \item Where does it \emph{touch and bounce} without crossing? \blank{4cm}
-  \item What is it about the \emph{exponent} on a factor that tells you which will happen?
-        \writeline
-\end{itemize}
+A cell carrier charges \$10 per GB of data used: $C(u) = 10u$.
+Daily data use depends on miles driven: $u(d) = 0.5d$ GB.
+
+What is the daily charge as a function of miles? Write it as one formula:
+
+\vspace{0.06in}
+$C\bigl(u(d)\bigr) = C\!\left(\rule{2cm}{0.4pt}\right) = $ \blank{5cm}
+
+\vspace{0.04in}
+This is an example of \blank{6cm}. The output of one function becomes the input of another.
 \end{hookbox}
 
-\begin{notesbox}{Zeros and Linear Factors}
-\textbf{Key connection:} For a polynomial $p(x)$, if $p(a) = \blank{1.5cm}$, then $a$
-is called a \blank{3cm} of $p$, and $(x - a)$ is a \blank{3cm} factor of $p$.
+\vspace{0.06in}
 
-\vspace{0.15in}
+\begin{notesbox}{LO 2.7.A --- Evaluating Compositions from a Table}
+\textbf{Definition:} $(f \circ g)(x) = f(g(x))$. To evaluate: find the \blank{3cm} first, then use it as input for \blank{3cm}.
 
-\textbf{Multiplicity:} If the factor $(x-a)$ appears \blank{2cm} times, then $a$ has
-multiplicity \blank{1.5cm}. A polynomial of degree $n$ has exactly \blank{1.5cm}
-complex zeros (counting multiplicities).
-
-\vspace{0.1in}
-
+\medskip
 \renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|X|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Polynomial} & \textbf{Factored Form} & \textbf{Zeros} & \textbf{Multiplicities} \\
-\hline
-$p(x)=(x-2)^2(x+1)$ & & & \\[14pt]
-\hline
-$q(x)=x^3-x^2-6x$ & & & \\[14pt]
-\hline
-$r(x)=(x+1)^3(x-4)^2$ & already factored & & \\[14pt]
-\hline
-\end{tabularx}
+\begin{center}
+\begin{tabular}{c|c|c}
+$x$ & $f(x)$ & $g(x)$ \\ \hline
+1 & 4 & 2 \\
+2 & 7 & 1 \\
+3 & 10 & 3 \\
+\end{tabular}
+\end{center}
+
+\medskip
+\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
+$f(g(1)):$ \quad $g(1) = $ \blank{1.5cm} \quad so $f\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} &
+$f(g(2)):$ \quad $g(2) = $ \blank{1.5cm} \quad so $f\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} \\[6pt]
+$g(f(1)):$ \quad $f(1) = $ \blank{1.5cm} \quad so $g\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} &
+\textit{Domain note:} $g(f(1))$ requires $f(1)$ to be an input for $g$. Is it in the table? \blank{2cm}
+\end{tabular}
+
+\medskip
+\textbf{Non-commutativity (EK 2.7.A.3):} In general, $f(g(x))$ \blank{2.5cm} $g(f(x))$.
 \end{notesbox}
 
-\begin{notesbox}{Graph Behavior at Real Zeros}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|l|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Multiplicity} & \textbf{Graph behavior at the zero} & \textbf{Example} \\
-\hline
-Odd (1, 3, 5, \ldots) & \blank{4cm} the $x$-axis & $(x+1)^1$ in $p(x)$ above \\
-\hline
-Even (2, 4, 6, \ldots) & \blank{4cm} the $x$-axis (tangent) & $(x-2)^2$ in $p(x)$ above \\
-\hline
-\end{tabularx}
+\vspace{0.06in}
 
-\vspace{0.1in}
-For $p(x)=(x+2)(x-1)^2(x-3)$, predict the graph's behavior at each zero:
+\begin{notesbox}{LO 2.7.B --- Constructing Compositions Analytically}
+\textbf{Rule (EK 2.7.B.2):} To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
 
-\begin{tabularx}{\linewidth}{|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Zero} & \textbf{Multiplicity} & \textbf{Crosses or tangent?} \\
-\hline
-$x = -2$ & \blank{2cm} & \blank{3cm} \\
-\hline
-$x = 1$  & \blank{2cm} & \blank{3cm} \\
-\hline
-$x = 3$  & \blank{2cm} & \blank{3cm} \\
-\hline
-\end{tabularx}
+\medskip
+Let $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
+
+\medskip
+\textbf{Build $f(g(x))$:} Replace each $x$ in $f$ with $g(x) = x^2 - 3$:
+
+\[
+  f(g(x)) = 2\bigl(\rule{2.5cm}{0.4pt}\bigr) + 1 = \rule{5cm}{0.4pt}
+\]
+
+\textbf{Build $g(f(x))$:} Replace each $x$ in $g$ with $f(x) = 2x+1$:
+
+\[
+  g(f(x)) = \bigl(\rule{2.5cm}{0.4pt}\bigr)^2 - 3 = \rule{5cm}{0.4pt}
+\]
+
+Are $f(g(x))$ and $g(f(x))$ the same function? \blank{8cm}
+
+\medskip
+\textbf{Identity function (EK 2.7.A.4):} If $f(x) = x$, then $(f \circ g)(x) = $ \blank{4cm} for any $g$.
 \end{notesbox}
 
-\begin{notesbox}{Complex Zeros \& Conjugate Pairs}
-\textbf{Complex Conjugate Pairs Theorem:} If $p(x)$ is a polynomial with
-\blank{3cm} coefficients and $a+bi$ (with $b\neq 0$) is a zero, then
-\blank{3cm} is also a zero of $p$.
+\vspace{0.06in}
 
-\vspace{0.1in}
-\textbf{Example:} Suppose $p(x)$ has real coefficients and $2+3i$ is a zero.
-\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
-  \item The other complex zero must be: \blank{4cm}
-  \item Write the quadratic factor formed by this conjugate pair:\\[4pt]
-        $(x-(2+3i))(x-(2-3i)) = x^2 - \blank{2cm}x + \blank{2cm}$
-  \item If $p$ also has real zero $x=1$, what is the minimum degree of $p$?
-        \blank{2cm}
-\end{itemize}
+\begin{notesbox}{LO 2.7.C --- Decomposing Functions; Connections to Transformations}
+\textbf{Decomposition (EK 2.7.C.1):} Find simpler $f$ and $g$ so that $h(x) = f(g(x))$.
+
+\medskip
+\textbf{Example:} Decompose $h(x) = (3x + 2)^4$.
+
+\quad Choose inner function $g(x) = $ \blank{4cm} and outer function $f(u) = $ \blank{4cm}.
+
+\quad Verify: $f(g(x)) = $ \blank{6cm} \checkmark
+
+\medskip
+\textbf{Connections to transformations (EK 2.7.C.2--C.3):}
+
+\quad Horizontal shift: $g(x) = f(x + k)$ is composition of $f$ with $h(x) = $ \blank{3cm}.
+
+\quad Horizontal stretch: $g(x) = f(kx)$ is composition of $f$ with $h(x) = $ \blank{3cm}.
+
+\medskip
+\textit{Example:} $y = (x-5)^2$ is $f(x) = x^2$ composed with $h(x) = $ \blank{3cm}, which shifts $f$ right \blank{2cm} units.
 \end{notesbox}
-
-\begin{notesbox}{Even and Odd Functions}
-\textbf{Definitions:}
-\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
-  \item $f$ is \textbf{even} if $f(-x) = \blank{2.5cm}$ for all $x$ in its domain.
-        Graph is symmetric about the \blank{3cm}.
-  \item $f$ is \textbf{odd} if $f(-x) = \blank{2.5cm}$ for all $x$ in its domain.
-        Graph is symmetric about the \blank{3cm}.
-\end{itemize}
-
-\vspace{0.1in}
-\textbf{Algebraic test — steps:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
-  \item Replace every $x$ with \blank{1.5cm} and simplify.
-  \item Compare the result to \blank{3cm} (even) or \blank{3cm} (odd).
-  \item If neither equality holds, the function is \blank{2.5cm}.
-\end{enumerate}
-
-\vspace{0.1in}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Function} & \textbf{$f(-x) = \ldots$} & \textbf{Even, Odd, or Neither?} \\
-\hline
-$f(x)=x^4-2x^2$ & & \\[12pt]
-\hline
-$g(x)=x^3-x$ & & \\[12pt]
-\hline
-$h(x)=x^2+x$ & & \\[12pt]
-\hline
-\end{tabularx}
-\end{notesbox}
-
-\begin{practicebox}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A polynomial with real coefficients has zeros $x=4$ (multiplicity 2) and $x=1-i$.
-        \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-          \item List all zeros of this polynomial.
-                \writeline
-          \item What is the minimum degree?  \blank{2cm}
-          \item At which real zero does the graph touch but not cross the $x$-axis?
-                \blank{3cm}
-        \end{enumerate}
-
-  \item Determine whether $k(x)=2x^6-3x^4+x^2$ is even, odd, or neither.
-        Show the algebraic test.
-        \writelines{3}
-\end{enumerate}
-\end{practicebox}
 
 \end{document}

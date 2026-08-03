@@ -1,328 +1,96 @@
-%! Vectors — Unit 4, Lesson 4.8 — Lesson Plan
+%! Growth, Decay, and Interest Applications — Unit 4, Lesson 4.8 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
-\newcommand{\LessonNumberName}{Lesson 4.8: Vectors}
+\newcommand{\UnitNumberName}{Unit 4: Exponential Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.8: Growth, Decay, and Interest Applications}
 
 \begin{document}
-
-%----------------------------------------------------------------------
-% Title Block
-%----------------------------------------------------------------------
 \begin{center}
-  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
-  {\small\bfseries \UnitNumberName \LessonNumberName \quad (3 instructional periods, \MeetingLength\ each)}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-%----------------------------------------------------------------------
-% Primary Objective
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective:} Students will identify characteristics of vectors
-  (magnitude, direction, component form), perform scalar multiplication, vector
-  addition, and dot products, find unit vectors, and use the dot product formula
-  to determine the angle between two vectors and test for perpendicularity.
-  \textit{(Big Idea: Functions)}
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Priority Ideas & Skills
-%----------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
-\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
-\midrule
-\textbf{2.A} \textit{Identify information from representations} ---
-  Read the tail, head, component form $\langle a,b\rangle$, magnitude, and
-  direction of a geometrically represented vector; use trigonometry to
-  extract components when magnitude and direction angle are given.
-&
-\textbf{EK 4.8.A.1--A.4}: A vector is a directed segment with tail $P_1$
-and head $P_2$. Components $\langle a,b\rangle = \langle x_2-x_1,y_2-y_1\rangle$.
-Magnitude $= \sqrt{a^2+b^2}$. Direction parallel to segment from origin to
-$(a,b)$; components follow from $a = r\cos\theta$, $b = r\sin\theta$. \\[4pt]
-
-\textbf{3.A} \textit{Describe characteristics} ---
-  Explain the geometric effect of scalar multiplication (parallel, scaled
-  magnitude) and vector addition (head-to-tail); describe the dot product as
-  a scalar encoding the angle between two vectors.
-&
-\textbf{EK 4.8.B.1--B.3}: Scalar multiplication: $k\langle a,b\rangle
-= \langle ka,kb\rangle$. Addition: add corresponding components; graphically,
-head-to-tail. Dot product: $\langle a_1,b_1\rangle\cdot\langle a_2,b_2\rangle
-= a_1 a_2+b_1 b_2$ (a scalar). \\[4pt]
-
-\textbf{3.B} \textit{Apply numerical results} ---
-  Compute unit vectors; express any vector in terms of $\hat{\imath}$ and
-  $\hat{\jmath}$; apply the dot product formula to find the angle between two
-  vectors; identify perpendicular vectors by testing whether the dot product
-  equals zero.
-&
-\textbf{EK 4.8.C.1--C.2, 4.8.D.1--D.2}: Unit vector:
-$\hat{u} = \vec{v}/\|\vec{v}\|$. Standard basis:
-$\langle a,b\rangle = a\hat{\imath}+b\hat{\jmath}$.
-Dot product $= \|\vec{v}_1\|\,\|\vec{v}_2\|\cos\theta$; perpendicular iff
-dot product $= 0$. Law of Cosines/Sines applies to vector-addition triangles. \\
-\end{tabularx}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} p{0.24\linewidth} X @{}}
-\textbf{Term} & \textbf{Definition / Note} \\
-\midrule
-vector &
-  A directed line segment described by magnitude and direction; written
-  $\vec{v} = \langle a, b\rangle$ in component form. \\[4pt]
-tail / head &
-  Starting point (tail) and ending point (head) of the directed segment. \\[4pt]
-magnitude &
-  \TallMath{\|\vec{v}\| = \sqrt{a^2+b^2};} the length of the vector. \\[4pt]
-scalar multiplication &
-  $k\langle a,b\rangle = \langle ka,kb\rangle$; scales the magnitude by $|k|$,
-  reverses direction when $k<0$. \\[4pt]
-dot product &
-  \TallMath{\langle a_1,b_1\rangle \cdot \langle a_2,b_2\rangle
-  = a_1 a_2+b_1 b_2;} a scalar, not a vector. \\[4pt]
-unit vector &
-  Magnitude 1; $\hat{u} = \vec{v}/\|\vec{v}\|$.
-  Standard basis: $\hat{\imath}=\langle 1,0\rangle$,
-  $\hat{\jmath}=\langle 0,1\rangle$. \\
-\end{tabularx}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Activate Prior Knowledge
-%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{tabularx}{\linewidth}{@{}X c@{}}
-\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
-\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item \textbf{Distance formula} (Algebra 2): $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ ---
-    this is exactly the magnitude formula once components are named.
-  \item \textbf{Trigonometry on the unit circle} (Lesson 4.4):
-    $\cos\theta$ and $\sin\theta$ as coordinates; needed to extract vector
-    components from a magnitude-direction description.
-  \item \textbf{Parametric component functions} (Lesson 4.2):
-    evaluating pairs of expressions at specific values --- warmup for
-    computing vector expressions under scalar multiplication.
-\end{itemize}
-\end{minipage}
-&
-\end{tabularx}
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
-\begin{skillbox}[Hook --- Entry Event]{sky}
-\textbf{Scenario:} A drone leaves point $A=(1,2)$ and arrives at point $B=(5,6)$.
-A second drone leaves $C=(3,0)$ and arrives at $D=(7,4)$. Both drones are programmed
-with \emph{identical} displacement instructions.
-
-\textbf{Discussion prompts:}
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item \textit{``How far did each drone move east? How far north? What does
-    it mean that both drones received the same instructions even though they
-    started at different points?''}
-  \item \textit{``If the engineer doubles the flight instructions for drone A,
-    where does it end up? What happens to the distance traveled?''}
-\end{enumerate}
-
-\textbf{Key tension:} Position is described by coordinates; \emph{displacement}
-is described by direction and magnitude --- a vector. Vectors encode relative
-change, not absolute location. That distinction drives the entire lesson.
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson --- Instruction Sequence (Periods 1--3)]{sky}
-\begin{multicols}{2}
-
-\textbf{Step 1 --- Vector Notation and Components} (12 min, Period 1)
-
-Define: vector = directed segment from tail $P_1=(x_1,y_1)$ to head
-$P_2=(x_2,y_2)$. Components $a=x_2-x_1$, $b=y_2-y_1$; write
-$\vec{v}=\langle a,b\rangle$. Zero vector $\langle 0,0\rangle$ when
-$P_1=P_2$. Magnitude: $\|\vec{v}\|=\sqrt{a^2+b^2}$.
-
-Direction from trig: magnitude $r$, angle $\theta$ $\Rightarrow$
-$a=r\cos\theta$, $b=r\sin\theta$.
-
-Worked example: $P_1=(1,3)$, $P_2=(5,6)$:
-$\vec{v}=\langle 4,3\rangle$, $\|\vec{v}\|=5$. (EK 4.8.A.1--A.4)
-
-\columnbreak
-
-\textbf{Step 2 --- Scalar Multiplication \& Vector Addition} (13 min, Period 1)
-
-Scalar: $k\langle a,b\rangle=\langle ka,kb\rangle$. New magnitude: $|k|\|\vec{v}\|$.
-Parallel to original; reversed when $k<0$.
-
-Addition: $\langle a_1,b_1\rangle+\langle a_2,b_2\rangle
-=\langle a_1+a_2,b_1+b_2\rangle$.
-Geometry: head-to-tail; resultant from first tail to final head.
-
-Example: $\vec{u}=\langle 3,1\rangle$, $\vec{w}=\langle -1,4\rangle$.
-$\vec{u}+\vec{w}=\langle 2,5\rangle$; $2\vec{u}=\langle 6,2\rangle$.
-(EK 4.8.B.1--B.2)
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\textbf{Step 3 --- Dot Product and Unit Vectors} (15 min, Period 2)
-
-Dot product: $\langle a_1,b_1\rangle\cdot\langle a_2,b_2\rangle
-=a_1 a_2+b_1 b_2$ --- a scalar.
-
-Unit vector: $\hat{u}=\dfrac{\vec{v}}{\|\vec{v}\|}
-=\left\langle\dfrac{a}{\|\vec{v}\|},\dfrac{b}{\|\vec{v}\|}\right\rangle$.
-
-Standard basis: $\hat{\imath}=\langle 1,0\rangle$, $\hat{\jmath}=\langle 0,1\rangle$;
-every vector $\langle a,b\rangle=a\hat{\imath}+b\hat{\jmath}$.
-
-Example: $\vec{v}=\langle 3,4\rangle$, $\|\vec{v}\|=5$,
-$\hat{u}=\langle 3/5,4/5\rangle$. (EK 4.8.B.3, 4.8.C.1--C.2)
-
-\columnbreak
-
-\textbf{Step 4 --- Angle Between Vectors \& Perpendicularity} (15 min, Period 2)
-
-Formula: $\vec{v}_1\cdot\vec{v}_2=\|\vec{v}_1\|\,\|\vec{v}_2\|\cos\theta$.
-
-Solve: $\theta=\cos^{-1}\!\left(\dfrac{\vec{v}_1\cdot\vec{v}_2}
-{\|\vec{v}_1\|\,\|\vec{v}_2\|}\right)$.
-
-Perpendicular $\Leftrightarrow$ dot product $=0$ (since $\cos 90^\circ=0$).
-
-Example: $\vec{u}=\langle 1,2\rangle$, $\vec{w}=\langle 4,-2\rangle$.
-$\vec{u}\cdot\vec{w}=4-4=0$ $\Rightarrow$ perpendicular.
-
-Law of Cosines connects $\|\vec{u}+\vec{w}\|$ to the triangle with sides
-$\|\vec{u}\|$, $\|\vec{w}\|$, and included angle. (EK 4.8.D.1--D.2)
-
-\end{multicols}
-
-\smallskip
-\textbf{Pacing note:} Steps 1--2 fill Period 1; Steps 3--4 fill Period 2;
-Period 3 is activity, exit ticket, and homework launch.
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Active Monitoring
-%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item \textbf{Confusing position with displacement}: Students write the
-    head coordinates as the vector. Prompt: \textit{``A vector is the
-    \emph{change} in position --- subtract tail coordinates from head coordinates.''}
-  \item \textbf{Dot product treated as a vector}: Students try to write
-    $\vec{u}\cdot\vec{w}=\langle\ldots\rangle$. Reinforce: the dot product
-    is a \emph{number}.
-  \item \textbf{Unit vector partial division}: Students divide only one
-    component by the magnitude. Prompt: \textit{``Every component is divided
-    by $\|\vec{v}\|$ --- what is the magnitude of your answer? It must equal 1.''}
-  \item \textbf{Perpendicularity and zero dot product}: Students believe only
-    zero vectors can have a zero dot product. Ask: \textit{``Can two nonzero
-    vectors be perpendicular? Give me a concrete example using
-    $\hat{\imath}$ and $\hat{\jmath}$.''}
-\end{itemize}
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Group Work & Differentiation
-%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work in groups of 3--4 on the Navigation Mission activity (tiered).
-
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item \textbf{Tier R (Remediate)}: Given $\vec{u}=\langle 3,4\rangle$ and
-    $\vec{w}=\langle -3,4\rangle$, compute $\|\vec{u}\|$, $\|\vec{w}\|$,
-    $\vec{u}+\vec{w}$, and $\vec{u}\cdot\vec{w}$. State whether $\vec{u}$ and
-    $\vec{w}$ are perpendicular.
-  \item \textbf{Tier A (Approaching Proficiency)}: A ship travels displacement
-    $\vec{u}=\langle 6,8\rangle$ km, then $\vec{w}=\langle -2,4\rangle$ km.
-    Find the total displacement vector, its magnitude, and the unit vector
-    in the direction of the total displacement.
-  \item \textbf{Tier E (Extension)}: Find all vectors $\langle a,b\rangle$ of
-    magnitude 5 that are perpendicular to $\langle 3,4\rangle$. Use the dot
-    product condition and magnitude condition simultaneously. How many solutions
-    exist? Generalize to any nonzero vector.
-\end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Individual Work & Assessment
-%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket administered independently (final 8 minutes of Period 3).
-
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item Find the component form and magnitude of the vector from $P_1=(2,5)$
-    to $P_2=(6,2)$.
-  \item Given $\vec{u}=\langle 4,3\rangle$ and $\vec{w}=\langle 1,-2\rangle$,
-    compute $\vec{u}\cdot\vec{w}$. Are the vectors perpendicular? Explain.
-  \item Find the unit vector in the direction of $\vec{v}=\langle 5,12\rangle$.
-\end{enumerate}
-
-\textbf{Data use:} Students who cannot find components without prompting need
-additional practice distinguishing position from displacement; revisit
-EK 4.8.A.2 at the start of the next lesson. Students who compute the dot
-product but cannot connect it to perpendicularity need a worked example
-linking $\cos 90^\circ=0$ to the angle formula.
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Reinforcement & Extension
-%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework (Lesson 4.8):} 5--6 problems covering: finding components
-and magnitude from given endpoints; scalar multiplication and vector addition;
-unit vectors; dot product; perpendicularity; one problem applying the Law of
-Cosines to find the magnitude of a vector sum from two given vectors and the
-angle between them.
-
-\textbf{Extension:} For two vectors $\vec{u}$ and $\vec{w}$, what does
-$\vec{u}\cdot\vec{w}=\|\vec{u}\|\,\|\vec{w}\|$ imply geometrically? What does
-$\vec{u}\cdot\vec{w}=-\|\vec{u}\|\,\|\vec{w}\|$ imply? At what angle do they
-point relative to each other in each case?
-
-\textbf{Preview of Lesson 4.9:} Ask students:
-\textit{``You now know how to add vectors. What if we organized multiple
-vectors as rows in a rectangular array? Could we define an operation
-analogous to multiplication for such arrays?''} This leads to matrices.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

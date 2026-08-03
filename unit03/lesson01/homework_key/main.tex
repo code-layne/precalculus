@@ -1,4 +1,4 @@
-%! Periodic Phenomena — Unit 3, Lesson 3.1 — Homework (Answer Key)
+%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,107 +9,68 @@
 \pageheader{Unit 3, Lesson 3.1}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{notesbox}{Problems 1--6 --- Key}
+\begin{enumerate}[itemsep=14pt]
 
-\textbf{1.}\quad
+\item For each rational function below, identify the end behavior type (HA at $y = 0$,
+HA at $y = k$, slant asymptote, or polynomial end behavior) and write both limit statements.
 
-\vspace{4pt}
-\textbf{(a)}
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\medskip
+\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{@{}p{3.8cm} p{3.2cm} p{3.0cm} p{3.0cm}@{}}
+\textbf{Function} & \textbf{End Behavior Type} &
+$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ \\
 \hline
-$x$ & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 \\
-\hline
-$f(x)$ & 1 & 4 & 7 & 4 & 1 & 4 & 7 & 4 \\
-\hline
+$\dfrac{4x - 1}{2x + 3}$           & \ans{HA at $y=2$}     & \ans{$2$}       & \ans{$2$} \\
+$\dfrac{x^2 + 1}{x^3 - 8}$         & \ans{HA at $y=0$}     & \ans{$0$}       & \ans{$0$} \\
+$\dfrac{-6x^3}{2x^3 + x}$          & \ans{HA at $y=-3$}    & \ans{$-3$}      & \ans{$-3$} \\
+$\dfrac{x^4 - x}{x^2 + 1}$         & \ans{Poly end behavior} & \ans{$+\infty$} & \ans{$+\infty$} \\
 \end{tabular}
-\end{center}
-Periodic? \ans{Yes} \quad Period $k =$ \ans{8} \quad
-Reason: \ans{The sequence 1, 4, 7, 4 repeats every 8 units of input (e.g., $f(0)=f(8)=1$, $f(2)=f(10)=4$, etc.). The smallest such input length is 8.}
 
-\vspace{8pt}
-\textbf{(b)}
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
-\hline
-$g(x)$ & 2 & 5 & 9 & 14 & 20 & 27 & 35 & 44 \\
-\hline
-\end{tabular}
-\end{center}
-Periodic? \ans{No.} \quad Reason: \ans{The outputs increase without bound and never repeat. The differences between consecutive outputs are 3, 4, 5, 6, 7, \ldots, growing each time. A periodic function must return to the same output values repeatedly.}
+\item Explain why $\displaystyle\lim_{x \to \infty} \frac{7x^3 + 2}{x^3 - 1} = 7$.
 
-\vspace{0.12in}
-\textbf{2.}\quad $h$ has period $k = 5$; $h(2) = 13$, $h(3) = -1$.
+\ansline{For large $x$, the term $7x^3$ dominates the numerator (the $+2$ is negligible),
+and $x^3$ dominates the denominator (the $-1$ is negligible).
+The quotient of leading terms is $7x^3/x^3 = 7$, so the outputs approach 7 as $x \to \infty$.}
 
-(a)\quad $h(7) = $ \ans{$h(2+5) = h(2) = 13$. Because $h$ has period 5, $h(7) = h(2) = 13$.}
+\item A rational function $r$ satisfies $\displaystyle\lim_{x \to \infty} r(x) = 0$.
+What can you conclude about the degrees of the numerator and denominator?
 
-(b)\quad $h(12) = $ \ans{$h(2 + 2\cdot 5) = h(2) = 13$. Every 5 units the output repeats, so $h(12) = 13$.}
+\ansline{The degree of the numerator must be strictly less than the degree of the denominator.
+When the denominator dominates, the quotient of leading terms approaches 0, giving a HA at $y = 0$.}
 
-(c)\quad \ans{$h(x) = -1$ whenever $x = 3 + 5n$ for any integer $n$: that is, $x = \ldots, -7, -2, 3, 8, 13, 18, \ldots$}
+\item A rational function has a slant asymptote.
 
-\vspace{0.12in}
-\textbf{3.}\quad Tidal depth.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item What must be true about the degrees of the numerator and denominator?
 
-(a)\quad Period: \ans{12 hours (the pattern restarts at $t = 12$, identical to $t = 0$).}
+        \ansline{The degree of the numerator must equal the degree of the denominator plus 1
+        (i.e., deg num $=$ deg denom $+ 1$).}
 
-(b)\quad Maximum depth: \ans{8 m, occurring at $t = 4$ hours.}
+  \item Can you write the end behavior as a single limit value $\lim_{x\to\infty} r(x) = k$?
 
-(c)\quad \ans{The depth equals 6 m at approximately $t \approx 3$ hr and $t \approx 5$ hr (between the 5.5 and 8 readings). The depth exceeds 6 m on approximately $3 \leq t \leq 5$ hours. (Accept any reasonable interpolation.)}
+        \ansline{No. A slant asymptote means the quotient of leading terms is a non-constant
+        linear expression, so the outputs grow without bound (not toward a constant $k$).
+        The limit notation $\lim_{x\to\infty} r(x) = \pm\infty$ applies instead.}
+\end{enumerate}
 
-(d)\quad \ans{Within the first 12-hour period, depth $= 8$ m at $t = 4$ hr. The pattern repeats every 12 hours, so depth $= 8$ m also at $t = 16$ hr. (Two times in 24 hours.)}
+\item \textbf{AP-Style Multiple Choice.} Which function has a HA at $y = 3/2$?
 
-\vspace{0.12in}
-\textbf{4. (AP-Style MC)}\quad
+\ans{(B)} $\dfrac{3x^2 - 1}{2x^2 + 7}$ --- the quotient of leading terms is $3x^2/2x^2 = 3/2$.
 
-Answer: \ans{(C)} \quad \ans{By definition, a periodic function with period 6 satisfies $p(x+6)=p(x)$ for all $x$ in the domain. Choice (A) would require $p(0)=0$ as well, which is not given. (B) is incorrect --- the output repeats, it does not increase by 6. (D) and (E) are not required by the definition of periodic.}
+\textit{(A): deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$.
+(C): quotient is $2/3$.
+(D): deg num $>$ deg denom $\Rightarrow$ polynomial end behavior.)}
 
-\vspace{0.12in}
-\textbf{5. (AP-Style MC)}\quad
+\end{enumerate}
 
-Answer: \ans{(C)} \quad \ans{The sequence of outputs is 6, 9, 6, 3, 6, 9, 6, 3, 6, 9, \ldots The pattern 6, 9, 6, 3 repeats every 4 units of input, so the period is 4.}
+\vspace{0.1in}
 
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{extensionbox}
-\textbf{Extension (Key):}
-
-(a)\quad \ans{The average rate of change of $s$ on $[12, 16]$ is also 3. Since the period is 10, the interval $[12, 16]$ corresponds to $[2, 6]$ shifted by one period ($12 = 2 + 10$, $16 = 6 + 10$). Because $s(x+10)=s(x)$, the output values are identical, so all average rates of change over corresponding intervals are equal.}
-
-(b)\quad \ans{Not necessarily. The average rate of change on $[0,10]$ is $\dfrac{s(10)-s(0)}{10}$. Since $s$ has period 10, $s(10) = s(0)$, so the average rate of change over a full period is $\dfrac{0}{10} = 0$. Even though $s$ is increasing on part of the period, it must decrease just as much to return to the starting value.}
-\end{extensionbox}
-
-\begin{teachernote}
-\textbf{Problem 2 guidance:} Students often want to compute $h(7)$ by adding
-something rather than recognizing that the period means the output \emph{repeats
-identically}. Prompt: ``What does $h(2+5)$ equal by definition of period?''
-
-\textbf{Problem 5 MC:} Students may incorrectly choose period 2 (noticing
-6 appears at $x=0,2,4,6,\ldots$). Point out that 6 appearing every 2 units
-does not mean the pattern repeats every 2 units --- check all outputs. The
-full repeating block is 6, 9, 6, 3 which has length 4.
-
-\textbf{Extension (b):} This is a key conceptual point --- the average rate
-over a full period is always 0 for any periodic function, because the output
-returns to its starting value. Connects to the Fundamental Theorem of Calculus
-in future courses.
-\end{teachernote}
-
-\begin{tcolorbox}[colback=navylight, colframe=navy, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{Preview --- Lesson 3.2: Sine, Cosine, and Tangent}\\
-We've been identifying and describing periodic relationships from tables.
-In Lesson 3.2, we'll meet two functions --- sine and cosine --- that are
-the \emph{mathematical model} for the smoothly repeating patterns we saw
-today. Come ready to connect period, increase/decrease, and concavity
-to the vocabulary of sinusoidal functions.
-\end{tcolorbox}
+\begin{reflectionbox}
+\textbf{Lesson Preview.} In Lesson 1.8, we examine the \textit{zeros} of rational functions ---
+the input values where the numerator equals zero.  Together with the asymptotes from today,
+these zeros determine the overall shape of the graph of a rational function.
+\end{reflectionbox}
 
 \end{document}

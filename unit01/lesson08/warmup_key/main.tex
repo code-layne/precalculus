@@ -1,4 +1,4 @@
-%! Rational Functions and Zeros — Unit 1, Lesson 1.8 — Warm-Up (Answer Key)
+%! Function Model Construction and Application — Unit 1, Lesson 1.8 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,39 +11,44 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=18pt]
 
-\item For the rational function $\displaystyle r(x) = \frac{4x^2 + 1}{2x^2 - 8}$,
-      find $\displaystyle\lim_{x \to \infty} r(x)$.
-      Show your reasoning by identifying the leading terms.
+\item A table of values for $f(x)$ is given below (where $x$ is in seconds and $f(x)$ is in feet).
 
-      \vspace{0.06in}
-      Leading term of numerator: \ans{$4x^2$} \quad
-      Leading term of denominator: \ans{$2x^2$}
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      $x$ & 2 & 10 \\
+      \hline
+      $f(x)$ & 8 & 32 \\
+      \hline
+      \end{tabular}
+      \smallskip
 
-      \vspace{0.08in}
-      $\displaystyle\lim_{x \to \infty} r(x) = $ \ans{$\dfrac{4}{2} = 2$}
-
-\item A rational function has a horizontal asymptote at $y = 0$.
-
-      \begin{enumerate}[label=(\alph*), itemsep=6pt]
-        \item What does this tell you about the \textit{end behavior} of the function?
-
-              \vspace{0.06in}
-              \ansline{As $x \to \pm\infty$, the output approaches $0$; the graph gets closer and closer to the $x$-axis but never reaches it (in general).}
-
-        \item Under what degree condition on the numerator and denominator does this occur?
-
-              \vspace{0.06in}
-              \ansline{The degree of the numerator is \textbf{less than} the degree of the denominator.}
-      \end{enumerate}
-
-\item Factor completely: $x^2 - 5x + 6$.
+      Compute the average rate of change of $f$ on the interval $[2, 10]$.
+      Include appropriate units.
 
       \vspace{0.08in}
-      $x^2 - 5x + 6 = $ \ans{$(x - 2)(x - 3)$}
+      $\text{ARC} = \dfrac{f(10) - f(2)}{10 - 2} = \dfrac{{\color{keyred}\mathbf{24}}}{{\color{keyred}\mathbf{8}}} = {}$ \ans{3}
 
-      What are the solutions to $x^2 - 5x + 6 = 0$? \quad $x = $ \ans{$2$ and $x = 3$}
+      \vspace{0.04in}
+      Units: \ans{feet per second (ft/s)}
+
+\item Evaluate $p(x) = -3x^3 + 2x^2 - x + 5$ at $x = -2$. Show each step.
+
+      \vspace{0.08in}
+      $p(-2) = -3({\color{keyred}\mathbf{-2}})^3 + 2({\color{keyred}\mathbf{-2}})^2 - ({\color{keyred}\mathbf{-2}}) + 5 = {}$ \ans{$-3(-8)+2(4)+2+5 = 24+8+2+5 = 39$}
+
+\item A scientist says: ``As the distance between two magnets doubles, the force between them
+      drops to one-fourth of its original value.'' Circle the model type that best fits
+      this description and explain in one sentence.
+
+      \medskip
+      \textbf{A.}~Linear \qquad \textbf{B.}~Quadratic \qquad \textbf{C.}~\ans{Rational (inverse proportion)} \qquad \textbf{D.}~Cubic
+
+      \vspace{0.08in}
+      Explanation: \ansline{Force $\propto 1/d^2$; doubling $d$ multiplies $d^2$ by 4, so force becomes $1/4$ --- this is an inverse-square (rational) model.}
 
 \end{enumerate}
 

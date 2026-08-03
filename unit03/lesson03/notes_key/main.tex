@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.3 — Guided Notes (Answer Key)
+%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -13,148 +13,130 @@
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=3pt]
-  \item \textbf{LO 3.3.A:} Determine the coordinates of a point on a circle centered at the origin using $P = (r\cos\theta,\, r\sin\theta)$.
-  \item Use 45-45-90 and 30-60-90 triangle geometry to find exact sine and cosine values at multiples of $\pi/6$ and $\pi/4$.
-  \item Apply quadrant sign conventions to find correct exact values for any standard-position angle.
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the vertical asymptotes of a rational function by finding where the denominator
+        equals zero and the numerator does \ans{not}. \hfill\textit{(LO 1.9.A)}
+  \item Describe the behavior of a rational function near a vertical asymptote using
+        \ans{one-sided} limit notation. \hfill\textit{(LO 1.9.A)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{reference angle}
-\termblanklong{exact value}
-\termblanklong{45-45-90 triangle}
-\termblanklong{30-60-90 triangle}
+\termblanklong{vertical asymptote}
+\termblanklong{one-sided limit ($\lim_{x \to a^+}$)}
+\termblanklong{one-sided limit ($\lim_{x \to a^-}$)}
+\termblanklong{multiplicity condition for a VA}
 \end{vocabbox}
-
-\vspace{0.08in}
-
-\begin{hookbox}
-\textbf{GPS Satellite Problem:} A GPS satellite orbits at a radius of 26{,}560~km from Earth's center.
-After the satellite rotates $\theta = \pi/3$ radians, what are its exact $(x, y)$ coordinates?
-
-\smallskip
-What do you think we need to know to answer this?
-
-\smallskip
-\ans{We need a formula connecting radius, angle, and coordinates: $P = (r\cos\theta, r\sin\theta)$, plus the exact value of $\cos(\pi/3)$ and $\sin(\pi/3)$.}
-\end{hookbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part A --- Exact Values from Special Triangles (EK 3.3.A.2)}
-
-\textbf{45-45-90 triangle} (hypotenuse $= 1$):
-\[
-  \text{Each leg} = {\color{keyred}\mathbf{\dfrac{\sqrt{2}}{2}}} \qquad
-  \cos\!\left(\frac{\pi}{4}\right) = {\color{keyred}\mathbf{\dfrac{\sqrt{2}}{2}}} \qquad
-  \sin\!\left(\frac{\pi}{4}\right) = {\color{keyred}\mathbf{\dfrac{\sqrt{2}}{2}}}
-\]
-
-\vspace{0.06in}
-
-\textbf{30-60-90 triangle} (hypotenuse $= 1$):
-\[
-  \text{Short leg} = {\color{keyred}\mathbf{\dfrac{1}{2}}} \quad
-  \text{Long leg} = {\color{keyred}\mathbf{\dfrac{\sqrt{3}}{2}}} \quad
-  \cos\!\left(\frac{\pi}{6}\right) = {\color{keyred}\mathbf{\dfrac{\sqrt{3}}{2}}} \quad
-  \sin\!\left(\frac{\pi}{6}\right) = {\color{keyred}\mathbf{\dfrac{1}{2}}}
-\]
-\[
-  \cos\!\left(\frac{\pi}{3}\right) = {\color{keyred}\mathbf{\dfrac{1}{2}}} \qquad
-  \sin\!\left(\frac{\pi}{3}\right) = {\color{keyred}\mathbf{\dfrac{\sqrt{3}}{2}}}
-\]
-
-\vspace{0.08in}
-
-\textbf{Summary table}:
-
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{5}{>{\centering\arraybackslash}X} @{}}
-\toprule
-$\theta$ (rad) & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ \\
-\midrule
-$\sin\theta$ & \ans{$0$} & \ans{$\dfrac{1}{2}$} & \ans{$\dfrac{\sqrt{2}}{2}$} & \ans{$\dfrac{\sqrt{3}}{2}$} & \ans{$1$} \\
-$\cos\theta$ & \ans{$1$} & \ans{$\dfrac{\sqrt{3}}{2}$} & \ans{$\dfrac{\sqrt{2}}{2}$} & \ans{$\dfrac{1}{2}$} & \ans{$0$} \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part B --- Points on a Circle of Radius $r$ (EK 3.3.A.1)}
-
-If a point $P$ lies on a circle of radius $r$ centered at the origin, at angle $\theta$ in standard position, then:
-\[
-  P = \bigl(\ans{$r\cos\theta$},\; \ans{$r\sin\theta$}\bigr)
-\]
-
-\vspace{0.06in}
-\textbf{GPS Example:} $r = 26{,}560$~km, $\theta = \pi/3$
-
-\[
-  x = 26{,}560 \cdot \cos\!\left(\frac{\pi}{3}\right) = 26{,}560 \cdot \ans{$\dfrac{1}{2}$} = \ans{$13{,}280$} \text{ km}
-\]
-\[
-  y = 26{,}560 \cdot \sin\!\left(\frac{\pi}{3}\right) = 26{,}560 \cdot \ans{$\dfrac{\sqrt{3}}{2}$} = \ans{$13{,}280\sqrt{3}$} \text{ km}
-\]
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{notesbox}{Part C --- Signs in Each Quadrant}
-
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}X | >{\centering\arraybackslash}X @{}}
-\textbf{Quadrant II} ($x < 0,\; y > 0$) & \textbf{Quadrant I} ($x > 0,\; y > 0$) \\
-$\cos\theta$ \ans{negative}, $\sin\theta$ \ans{positive} &
-$\cos\theta$ \ans{positive}, $\sin\theta$ \ans{positive} \\
-\hline
-\textbf{Quadrant III} ($x < 0,\; y < 0$) & \textbf{Quadrant IV} ($x > 0,\; y < 0$) \\
-$\cos\theta$ \ans{negative}, $\sin\theta$ \ans{negative} &
-$\cos\theta$ \ans{positive}, $\sin\theta$ \ans{negative} \\
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
-
-\smallskip
-Mnemonic: \textbf{A}ll \textbf{S}tudents \textbf{T}ake \textbf{C}alculus
-(QI: All positive; QII: Sine positive; QIII: Tangent positive; QIV: Cosine positive).
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-\begin{practicebox}
-\textbf{Guided Practice 1.} Find the exact coordinates of the point $P$ on a circle of radius 3 at angle $\theta = \pi/3$.
-
-\medskip
-$x = 3\cos(\pi/3) = 3 \cdot \tfrac{1}{2} = \tfrac{3}{2}$; \quad
-$y = 3\sin(\pi/3) = 3 \cdot \tfrac{\sqrt{3}}{2} = \tfrac{3\sqrt{3}}{2}$
-
-\smallskip
-$P = \bigl($ \ans{$\dfrac{3}{2}$} $,$ \ans{$\dfrac{3\sqrt{3}}{2}$} $\bigr)$
 
 \vspace{0.1in}
 
-\textbf{Guided Practice 2.} A point $P = \bigl(-\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$ lies on the unit circle.
-Identify $\theta$.
-
-\medskip
-$\cos\theta = -\tfrac{\sqrt{3}}{2}$ (negative $\Rightarrow$ QII or QIII) and
-$\sin\theta = \tfrac{1}{2}$ (positive $\Rightarrow$ QI or QII). Therefore QII.
-Reference angle: $\cos^{-1}\!\left(\tfrac{\sqrt{3}}{2}\right) = \pi/6$, so $\theta = \pi - \pi/6 = 5\pi/6$.
+\begin{hookbox}
+Bacterial concentration near a drain: $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance in cm.
 
 \smallskip
-$\theta = $ \ans{$\dfrac{5\pi}{6}$}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
+\hline
+$C(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
+\hline
+\end{tabular}
+\smallskip
+
+As $x \to 3$, the output \ans{grows without bound (increases or decreases without limit)}.
+We say $x = 3$ is a \ans{vertical asymptote}.
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Vertical Asymptotes}
+A rational function $r(x) = \dfrac{p(x)}{q(x)}$ has a \textbf{vertical asymptote at $x = a$} when:
+
+\begin{itemize}
+  \item $q(a) =$ \ans{$0$} \quad (the denominator is \ans{zero} at $a$), \textbf{AND}
+  \item $p(a)$ \ans{$\ne$} $0$ \quad (the numerator is \textbf{not} zero at $a$).
+\end{itemize}
+
+\textit{Multiplicity rule (EK 1.9.A.1):} A VA also occurs at $x = a$ when the multiplicity of
+$a$ in the \ans{denominator} is \emph{greater} than its multiplicity in the \ans{numerator}.
+
+\medskip
+\textbf{Example 1.} Find any vertical asymptotes of $r(x) = \dfrac{x + 2}{x - 3}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Set the denominator equal to zero and solve: \ans{$x - 3 = 0 \Rightarrow x = 3$}
+
+  \item Check the numerator at each solution: at $x = 3$, numerator $=$ \ans{$5 \ne 0$}
+
+  \item Conclusion: \ans{Vertical asymptote at $x = 3$.}
+\end{enumerate}
+
+\medskip
+\textbf{Example 2.} Find any vertical asymptotes of $r(x) = \dfrac{x - 1}{(x-1)^2(x+2)}$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
+  \item Denominator zeros: \ans{$x = 1$ (mult.\ 2) and $x = -2$ (mult.\ 1)}
+
+  \item At $x = 1$: numerator multiplicity \ans{1}, denominator multiplicity \ans{2}.
+        Since \ans{2} $>$ \ans{1}: \ans{VA at $x = 1$}
+
+  \item At $x = -2$: numerator value $=$ \ans{$-3 \ne 0$}. Since it is nonzero: \ans{VA at $x = -2$}
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{One-Sided Limits Near a Vertical Asymptote}
+For $r(x) = \dfrac{1}{x - 2}$, complete the table:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$    & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$r(x)$ & \ans{$-10$} & \ans{$-100$} & \ans{$-1000$} & \ans{$1000$} & \ans{$100$} & \ans{$10$} \\
+\hline
+\end{tabular}
+\smallskip
+
+From the table, write the one-sided limits:
+
+\[
+  \lim_{x \to 2^-} r(x) = \ans{$-\infty$}
+  \qquad\qquad
+  \lim_{x \to 2^+} r(x) = \ans{$+\infty$}
+\]
+
+\textbf{Sign analysis.} When $x$ is slightly greater than 2, $(x - 2)$ is \ans{positive},
+so $r(x) \to$ \ans{$+\infty$}.\\
+When $x$ is slightly less than 2, $(x - 2)$ is \ans{negative},
+so $r(x) \to$ \ans{$-\infty$}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\begin{enumerate}[itemsep=10pt]
+  \item For $r(x) = \dfrac{2x - 1}{x^2 - 5x + 6}$, find all vertical asymptotes.
+
+        Factor the denominator: \ans{$(x-2)(x-3)$}
+
+        Denominator zeros: \ans{$x = 2,\; x = 3$} \quad
+        Check numerator at each: \ans{$2(2)-1=3\ne0$;\; $2(3)-1=5\ne0$}
+
+        Vertical asymptote(s): \ans{$x = 2$ and $x = 3$}
+
+  \item For $r(x) = \dfrac{1}{(x+3)^2}$, determine whether
+        $\lim_{x\to -3^+} r(x) = +\infty$ or $-\infty$. Explain using sign analysis.
+
+        \vspace{0.1in}
+        \ans{$(x+3)^2 > 0$ for all $x \ne -3$, so $r(x) = 1/(x+3)^2 > 0$ near $x=-3$
+        from both sides. Therefore $\lim_{x\to-3^+} r(x) = +\infty$.}
+\end{enumerate}
 \end{practicebox}
 
 \end{document}

@@ -1,0 +1,115 @@
+%! Sine and Cosine Function Values — Unit 6, Lesson 6.4 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Exact Values in Engineering and Navigation]{sky}
+\small
+Engineers and navigators routinely need exact trigonometric values rather than decimal approximations.
+In this activity your group will build fluency with exact values and apply them to a real-world context.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+%-----------------------------------------------------------------------
+% TIER R
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Build the Unit Circle Table},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.2cm}
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\toprule
+\textbf{Angle $\theta$} & \textbf{$\cos\theta$} & \textbf{$\sin\theta$} \\
+\midrule
+$0$      & $1$              & $0$              \\
+$\pi/6$  & $\sqrt{3}/2$     & $1/2$            \\
+$\pi/4$  & $\sqrt{2}/2$     & $\sqrt{2}/2$     \\
+$\pi/3$  & $1/2$            & $\sqrt{3}/2$     \\
+$\pi/2$  & $0$              & $1$              \\
+$2\pi/3$ & \ans{$-1/2$}             & \ans{$\sqrt{3}/2$}       \\
+$3\pi/4$ & \ans{$-\sqrt{2}/2$}      & \ans{$\sqrt{2}/2$}       \\
+$5\pi/6$ & \ans{$-\sqrt{3}/2$}      & \ans{$1/2$}              \\
+$\pi$    & \ans{$-1$}               & \ans{$0$}                \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.08in}
+\textbf{Reflection:} \ans{$\sin\theta$ increases from 0 to 1 on $[0, \pi/2]$, then decreases back to 0 on $[\pi/2, \pi]$ --- it is symmetric about $\theta = \pi/2$.}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% TIER A
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Ferris Wheel Coordinates},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+$r = 40$~ft. Apply $x = 40\cos\theta$, $y = 40\sin\theta$.
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.0cm}
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\toprule
+\textbf{Angle $\theta$} & \textbf{$x$ (ft)} & \textbf{$y$ (ft)} \\
+\midrule
+$\pi/6$  & \ans{$20\sqrt{3}$} & \ans{$20$}           \\
+$\pi/4$  & \ans{$20\sqrt{2}$} & \ans{$20\sqrt{2}$}   \\
+$\pi/3$  & \ans{$20$}         & \ans{$20\sqrt{3}$}   \\
+$\pi/2$  & \ans{$0$}          & \ans{$40$}           \\
+$2\pi/3$ & \ans{$-20$}        & \ans{$20\sqrt{3}$}   \\
+$5\pi/6$ & \ans{$-20\sqrt{3}$}& \ans{$20$}           \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.08in}
+\textbf{Question:} \ans{The car is highest at $\theta = \pi/2$, where $y = 40$~ft. The maximum possible height equals the radius, 40~ft (top of the wheel).}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% TIER E
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Symmetry and Inverse Reasoning},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+$P = \left(-\dfrac{r\sqrt{3}}{2},\, \dfrac{r}{2}\right)$
+
+\textbf{(a)} $\cos\theta = -\tfrac{\sqrt{3}}{2}$ and $\sin\theta = \tfrac{1}{2}$.
+$\sin\theta > 0$ places us in QI or QII; $\cos\theta < 0$ places us in QII or QIII. Therefore $\theta$ is in \textbf{QII}.
+Reference angle: $\cos^{-1}\!\left(\tfrac{\sqrt{3}}{2}\right) = \pi/6$, so $\theta = \pi - \pi/6$.
+
+$\theta = $ \ans{$\dfrac{5\pi}{6}$}
+
+\vspace{0.08in}
+\textbf{(b)} On the unit circle, $\sin\alpha = \tfrac{1}{2}$. This occurs at $\alpha = \pi/6$ (QI) and $\alpha = 5\pi/6$ (QII), since the unit circle is symmetric about the $y$-axis.
+
+$\alpha = $ \ans{$\dfrac{\pi}{6}$} and $\alpha = $ \ans{$\dfrac{5\pi}{6}$}
+
+\vspace{0.06in}
+\textbf{Symmetry explanation:}
+
+\begin{teachernote}
+Students should articulate that the horizontal line $y = \tfrac{1}{2}$ intersects the unit circle at exactly two points, one in QI and one in QII, related by reflection across the $y$-axis. This gives the identity $\sin(\pi - \alpha) = \sin\alpha$. Credit answers that mention ``reflection,'' ``symmetry about the $y$-axis,'' or the identity explicitly.
+\end{teachernote}
+
+\ans{The line $y = \tfrac{1}{2}$ intersects the unit circle in two points. They are reflections of each other across the $y$-axis, so if one is at angle $\alpha$ then the other is at $\pi - \alpha$. This is why $\sin(\pi/6) = \sin(5\pi/6) = \tfrac{1}{2}$.}
+\end{tcolorbox}
+
+\end{document}

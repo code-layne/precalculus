@@ -1,4 +1,4 @@
-%! Polynomial Functions and End Behavior — Unit 1, Lesson 1.6 — Lesson Plan
+%! Inverse Functions — Unit 1, Lesson 1.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Polynomial and Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 1.6: Polynomial Functions and End Behavior}
+\newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
+\newcommand{\LessonNumberName}{Lesson 1.6: Inverse Functions}
 
 \begin{document}
 \begin{center}
@@ -19,10 +19,9 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the end behavior of polynomial functions
-    using limit notation, and explain how the degree and sign of the leading coefficient determine
-    what happens to output values as $x \to \pm\infty$.
-    \hfill\textit{\small Skill: MP 3.A \quad (Big Idea: VAR)}
+    \textbf{Primary Objective:} Students determine and represent inverse functions using tables
+    and algebra, verify inverses using composition, and restrict domains to create invertible
+    functions. \hfill\textit{\small Skills: AP 1.A, AP 2.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -31,170 +30,146 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 3.A} --- Describe characteristics of a function with varying
-levels of precision using appropriate mathematical language and notation.
-(LO 1.6.A) &
+\textbf{AP 1.A} --- Solve equations and inequalities analytically. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item As $x \to \infty$ or $x \to -\infty$, output values of a nonconstant polynomial either
-        increase or decrease without bound. (EK 1.6.A.1--2)
-  \item End behavior is determined solely by the degree and sign of the leading coefficient. (EK 1.6.A.3)
-  \item The leading term dominates all lower-degree terms for large $|x|$. (EK 1.6.A.3)
-  \item Even-degree: both ends go the same direction; odd-degree: ends go opposite directions.
-  \item Standard notation: $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) = -\infty$.
+  \item If $f(a) = b$, then $f^{-1}(b) = a$; inverse pairs are reversed input-output pairs.
+        (EK 2.8.A.2)
+  \item A function is invertible on a domain when every output comes from a unique input.
+        (EK 2.8.A.1)
+\end{itemize} \\
+\textbf{AP 2.B} --- Construct equivalent representations of functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The inverse is found analytically by swapping $x$ and $y$ in $y = f(x)$ then solving
+        for $y$. (EK 2.8.B.4)
+  \item Verification: $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. (EK 2.8.B.1)
+  \item Domain restriction may be needed to make a function invertible. (EK 2.8.A.1)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
-end behavior       & What happens to $p(x)$ as $x$ increases or decreases without bound. \\
-leading term       & The term with the highest degree in a polynomial. \\
-leading coefficient & The coefficient of the leading term. \\
-limit notation     & $\lim_{x \to \infty} p(x) = \infty$ means output grows without bound as input increases. \\
-dominates          & The leading term dominates when its ratio to all other terms approaches 1 as $x \to \pm\infty$. \\
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+inverse function      & A function $f^{-1}$ that reverses the mapping of $f$: if $f(a)=b$, then $f^{-1}(b)=a$. \\
+invertible            & A function is invertible on a domain when each output is produced by exactly one input (one-to-one on that domain). \\
+one-to-one function   & A function where no two different inputs produce the same output. \\
+domain restriction    & Limiting the domain of a function so that it becomes one-to-one and thus invertible. \\
+$f^{-1}$              & Notation for the inverse function of $f$; read ``$f$-inverse.'' Note: $f^{-1}(x) \ne 1/f(x)$. \\
+identity function     & The function $h(x) = x$; the composition of $f$ and its inverse equals the identity. \\
+reflection over $y=x$ & The graph of $y = f^{-1}(x)$ is the reflection of $y = f(x)$ across the line $y = x$. (EK 2.8.B.3) \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review from Lessons 1.4--1.5).
-            Skills reviewed: identifying degree and leading coefficient, writing a polynomial
-            in factored form from given zeros and multiplicities, real vs.\ complex zeros.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
-        \end{minipage}
-    \end{tabularx}
+    Spiral review (warm-up) covers: solving a linear equation for $x$ given $f(x)$
+    (prerequisite for the analytic inverse method); recognizing that two functions whose
+    compositions both equal $x$ are inverses of each other (EK 2.8.B.1 preview); and
+    reversing a table of input-output pairs (EK 2.8.A.2 preview with concrete numbers).
+    These connect directly to determining inverses from tables and algebraically.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    \textbf{Rubber Band Ball:} A student keeps wrapping rubber bands around a ball. Suppose the
-    radius (in mm) is modeled by $r(t) = 2t^3 - 50t^2 + 100t$, where $t$ is time in minutes.
+Present context: a nurse uses the formula $D(w) = 1.5w + 10$ to calculate a medication dose
+$D$ (mg) from a patient's weight $w$ (kg).
 
-    \medskip
-    \textit{Discussion prompt:} As $t$ gets very large (say $t = 1{,}000$ minutes), does the
-    $-50t^2$ term matter much compared to $2t^3$? At $t = 1{,}000$: $2t^3 = 2 \times 10^9$ but
-    $-50t^2 = -5 \times 10^7$ --- less than $3\%$ of the cubic term. Which term ``wins'' for large $t$?
+Ask: \textbf{``If a patient received 55 mg, what was their weight?''}
 
-    \medskip
-    Tell students: today we formalize exactly this idea --- the leading term always wins.
+Have students work backward. After responses: \textbf{``What formula lets us go from dose back
+to weight? Can we always undo a formula?''} Introduce the idea that ``undoing'' is exactly what
+an inverse function does.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
+\textbf{Part 1 (10 min): Inverses from Tables.}
 
-\textbf{Part 1: Leading Term Dominance} (10 min)
+A function maps inputs to outputs. The inverse reverses all pairs. For $f$:
 
-Use $p(x) = x^3 - 100x^2$ to show the leading term dominates.
-
-\smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|r|r|}
-\hline
-$x$ & $p(x)$ & $x^3$ \\
-\hline
-$10$    & $-9{,}000$ & $1{,}000$ \\
-$100$   & $0$ & $1{,}000{,}000$ \\
-$1{,}000$ & $9 \times 10^8$ & $10^9$ \\
-\hline
+\begin{tabular}{c|cccc}
+$x$    & 1 & 2 & 3 & 4 \\\hline
+$f(x)$ & 3 & 7 & 11 & 15
 \end{tabular}
-\smallskip
 
-Ask: At $x = 1{,}000$, the $-100x^2 = -10^8$ is large on its own, but $x^3 = 10^9$ is 10$\times$ bigger.
-The ratio $-100x^2/x^3 = -100/x \to 0$.
-\textbf{Conclusion:} Leading term $x^3$ controls end behavior.
+The inverse $f^{-1}$ swaps each pair:
+
+\begin{tabular}{c|cccc}
+$x$         & 3 & 7 & 11 & 15 \\\hline
+$f^{-1}(x)$ & 1 & 2 & 3  & 4
+\end{tabular}
+
+Key: $f$ must be \textit{one-to-one} --- no repeated outputs.
+Ask: \textbf{``Is every function invertible?''} Show a counterexample: $\{(1,5),(2,5)\}$ cannot
+be reversed because two inputs share an output.
 
 \columnbreak
 
-\textbf{Part 2: The Four End-Behavior Cases} (12 min)
+\textbf{Part 2 (15 min): Analytic Inverse Method.}
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Degree} & \textbf{Lead $a_n$} & $x \to \infty$ & $x \to -\infty$ \\
-\hline
-Even & $>0$ & $\infty$  & $\infty$ \\
-Even & $<0$ & $-\infty$ & $-\infty$ \\
-Odd  & $>0$ & $\infty$  & $-\infty$ \\
-Odd  & $<0$ & $-\infty$ & $\infty$ \\
-\hline
-\end{tabular}
-\smallskip
+To find $f^{-1}(x)$ algebraically for $f(x) = 4x - 1$:
 
-Key insight: even-degree polynomials behave like $x^2$ (both ends same direction);
-odd-degree behave like $x^3$ (ends go opposite directions).
+\textbf{Step 1:} Write $y = 4x - 1$.
 
-\medskip
-\textbf{Part 3: Using Limit Notation} (8 min)
+\textbf{Step 2:} Swap $x$ and $y$: $x = 4y - 1$.
 
-Introduce $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$.
+\textbf{Step 3:} Solve for $y$: $y = \dfrac{x+1}{4}$.
 
-Example: $p(x) = -3x^4 + 2x^2 - 7$.
-Leading term: $-3x^4$ (even, negative).
+\textbf{Step 4:} Write $f^{-1}(x) = \dfrac{x+1}{4}$.
 
-\[
-  \lim_{x \to \infty} p(x) = -\infty \qquad \lim_{x \to -\infty} p(x) = -\infty
-\]
+\textbf{Part 3 (10 min): Composition Verification.}
 
-Practice 2--3 examples chorally before the activity.
+Verify: $f(f^{-1}(x)) = 4\!\cdot\!\dfrac{x+1}{4} - 1 = x+1-1 = x$. \checkmark
 
+Also: $f^{-1}(f(x)) = \dfrac{(4x-1)+1}{4} = \dfrac{4x}{4} = x$. \checkmark
+
+\textbf{Part 4 (5 min): Domain Restriction.}
+
+$f(x)=x^2$ is not invertible on all reals ($f(2)=f(-2)=4$). Restrict to $x\ge0$:
+then $f^{-1}(x)=\sqrt{x}$, which is well-defined.
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} Students confuse ``the function has negative output values'' with
-        ``end behavior is $-\infty$.'' Cold-call: ``Does a negative leading coefficient mean
-        ALL outputs are negative?'' (No --- zeros and sign changes still exist.)
-  \item \textbf{Common error:} Students use the constant or a middle term instead of the leading term.
-        Ask: ``Which term matters when $x$ is a billion?''
-  \item \textbf{Notation check:} Students should write $\lim_{x \to \infty} p(x) = \infty$ (not just
-        ``goes to infinity''). AP exam requires limit notation.
-  \item \textbf{Cold-call:} ``Give me a polynomial with $\lim_{x \to \infty} = -\infty$ and
-        $\lim_{x \to -\infty} = \infty$.'' (Any odd-degree, negative-leading-coeff example.)
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If $f(3)=11$, what does $f^{-1}(11)$ equal?'' Expect: 3.
+        Watch for students who confuse $f^{-1}(x)$ with $1/f(x)$.
+  \item During Part 2: watch for students who forget to swap $x$ and $y$ --- they solve the
+        original equation instead. Emphasize Step 2 is the key inversion step.
+  \item After verification: cold-call ``Why must both compositions equal $x$, not just one?''
+        (Both directions must undo each other.)
+  \item During Part 4: ensure students articulate \textit{why} the restriction is needed ---
+        failing the one-to-one test, not just a convention.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: End Behavior Explorer} in leveled tiers.
-Each tier uses the same set of four polynomial functions but increases in cognitive demand.
-
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Leading term provided for each polynomial; students use the
-        rules table to fill in $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$ in limit notation.
-  \item \textbf{Tier A (Apply):} Students identify the leading term from the full polynomial
-        expression, predict end behavior, write limit notation, and verify with a calculator.
-  \item \textbf{Tier E (Extend):} Students create their own polynomial with even degree, negative
-        leading coefficient, and exactly 3 real zeros; then describe its end behavior fully.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given $f(x)=3x+6$, complete the output table, reverse pairs
+        to get the inverse table, verify one pair using composition, and state domain and range of
+        $f$ and $f^{-1}$.
+  \item \textbf{Tier A (Apply):} Find $f^{-1}(x)$ algebraically for $f(x)=(x-2)/5$; verify using
+        composition; state domain and range; interpret $f^{-1}$ in the nurse-dosage context.
+  \item \textbf{Tier E (Extend):} Restrict the domain of $f(x)=x^2$ to make it invertible, find
+        $f^{-1}(x)$, verify, and explain why the restriction is mathematically necessary.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item Given $p(x) = -2x^5 + 7x^3 - x + 3$, write $\lim_{x \to \infty} p(x)$ and $\lim_{x \to -\infty} p(x)$.
-  \item A polynomial $q$ has degree 4 and positive leading coefficient. Complete: as $x \to \infty$,
-        $q(x) \to \underline{\phantom{xxx}}$ and as $x \to -\infty$, $q(x) \to \underline{\phantom{xxx}}$.
-\end{enumerate}
-\textbf{Assessment note:} Look for correct identification of the leading term (odd degree, negative
-coefficient in \#1) and proper limit notation. Students who write $-\infty$ and $\infty$ respectively
-for \#1 demonstrate mastery of how odd-degree/negative leading coefficient determines opposite-direction ends.
+Exit ticket (3 questions, 1 page): (1) write $f^{-1}$ as ordered pairs given
+$f=\{(1,4),(2,9),(3,16)\}$; (2) find $f^{-1}(x)$ algebraically for $f(x)=2x-5$;
+(3) verify by computing $f(f^{-1}(x))=x$.
+
+Sort by performance: students missing \#1 need reinforcement of the reversal idea (LO 2.8.A);
+students missing \#2--3 need algebraic inverse practice (LO 2.8.B).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems --- end behavior from leading term for 4 polynomials, verbal description
-from a leading term, a conceptual question about parity, a table-based end-behavior inference, and one
-AP-style multiple-choice item.
+Homework (6 problems): reverse a table and check invertibility; find $f^{-1}$ for two linear
+functions; verify using composition; address domain restriction for $x^2$; real-world temperature
+conversion $C(F)=(F-32)/1.8$ and its inverse; AP-style MC on the definition of $f^{-1}$.
 
-\textbf{Extension (optional):} Students investigate $p(x) = x^n$ for $n = 1, 2, 3, 4$ numerically
-at $x = \pm100$ and generalize the four end-behavior patterns from the data.
-
-\textbf{Preview:} Lesson 1.7 extends end behavior to \textit{rational} functions, where division by a
-polynomial creates vertical asymptotes and horizontal (or oblique) asymptotes.
+\textbf{Preview of Lesson 2.9 (Logarithms):} The exponential function $f(x)=b^x$ is one-to-one
+and therefore invertible. Its inverse is the logarithm: $f^{-1}(x)=\log_b(x)$. Logarithms are
+the algebraic tool that ``undoes'' an exponential --- exactly the inversion skill practiced today.
 \end{skillbox}
+
 \end{document}

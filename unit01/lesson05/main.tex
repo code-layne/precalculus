@@ -1,4 +1,4 @@
-%! Polynomial Functions and Complex Zeros — Unit 1, Lesson 1.5 — Lesson Plan
+%! Composition of Functions — Unit 1, Lesson 1.5 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Polynomial and Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 1.5: Polynomial Functions and Complex Zeros}
+\newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
+\newcommand{\LessonNumberName}{Lesson 1.5: Composition of Functions}
 
 \begin{document}
 \begin{center}
@@ -19,178 +19,151 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and interpret zeros of polynomial
-    functions (real and complex), including multiplicity, and determine whether a polynomial
-    function is even or odd using algebraic and graphical reasoning. \textbf{(MP 1.B, 2.B)}
+    \textbf{Primary Objective:} Students evaluate and construct compositions of functions
+    analytically and numerically, distinguish $f \circ g$ from $g \circ f$, and decompose
+    a given function into a composition of simpler functions, connecting composition to
+    transformations. \hfill\textit{\small Skills: 1.C and 2.B}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{AP Skills}\\
-    \textbf{1.B} Express functions/equations in analytically equivalent forms — factored
-    form reveals zeros and multiplicities.\\[4pt]
-    \textbf{2.B} Construct equivalent representations — connect factored form to graph
-    behavior (cross vs.\ touch) and even/odd classification.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}\\
-    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-        \item Factor $(x-a)$ $\Leftrightarrow$ zero at $a$; multiplicity $=$ how many times repeated.
-        \item A degree-$n$ polynomial has exactly $n$ complex zeros (counting multiplicities).
-        \item Odd multiplicity $\Rightarrow$ graph \emph{crosses}; even multiplicity $\Rightarrow$
-              graph \emph{touches and bounces}.
-        \item Complex zeros come in conjugate pairs for polynomials with real coefficients.
-        \item Even function: $f(-x)=f(x)$, symmetric about $y$-axis.
-              Odd function: $f(-x)=-f(x)$, symmetric about origin.
-    \end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{Skill 1.C} --- Construct new functions using compositions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $(f \circ g)(x) = f(g(x))$: outputs of $g$ become inputs of $f$. (EK 2.7.A.1)
+  \item Values can be found from tables, graphs, or formulas. (EK 2.7.A.2)
+  \item Composition is not commutative: $f(g(x)) \ne g(f(x))$ in general. (EK 2.7.A.3)
+  \item $f(x) = x$ is the identity function; composing with it returns the other function. (EK 2.7.A.4)
+\end{itemize} \\
+\textbf{Skill 2.B} --- Construct equivalent representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Substitute $g(x)$ for every $x$ in $f(x)$ to build $f(g(x))$ analytically. (EK 2.7.B.2)
+  \item Composition relates quantities not directly linked by one formula. (EK 2.7.B.1)
+  \item Decompose complex functions into simpler components; link to transformations. (EK 2.7.C.1–C.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{multicols}{2}
-\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-    \item \textbf{Zero (root)} — value $a$ such that $p(a)=0$
-    \item \textbf{Multiplicity} — how many times a linear factor is repeated
-    \item \textbf{Complex zero} — a zero of the form $a+bi$, $b\neq 0$
-    \item \textbf{Complex Conjugate Pairs Theorem} — if $p$ has real coefficients and
-          $a+bi$ is a zero, then $a-bi$ is also a zero
-    \item \textbf{Even function} — $f(-x)=f(x)$; symmetric over $y$-axis
-    \item \textbf{Odd function} — $f(-x)=-f(x)$; symmetric about origin
-    \item \textbf{Successive differences} — method for identifying polynomial degree from
-          a table of equally-spaced values
-\end{itemize}
-\end{multicols}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+composition          & The operation $(f \circ g)(x) = f(g(x))$: feed output of $g$ into $f$. \\
+composite function   & The resulting function $f \circ g$ formed by composing $f$ with $g$. \\
+domain of $f \circ g$ & Inputs $x$ in the domain of $g$ whose outputs $g(x)$ are in the domain of $f$. \\
+identity function    & $f(x) = x$; composing it with any $g$ returns $g$: $(f \circ g)(x) = g(x)$. \\
+non-commutativity    & In general, $f(g(x)) \ne g(f(x))$; order matters in composition. \\
+decomposition        & Writing a complex function $h$ as $f(g(x))$ using simpler $f$ and $g$. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X@{}}
-        Please see attached spiral review.\\[3pt]
-        \textit{Skills reviewed:} factoring polynomials (GCF, difference of squares,
-        grouping), identifying $x$-intercepts from equations, complex number basics
-        ($a+bi$ form, powers of $i$).
-    \end{tabularx}
+    Spiral review (warm-up) covers evaluating a function at a given input
+    ($f(4)$ and $f(-2)$ for $f(x) = 3x-1$), and walking through a step-by-step
+    composition numerically: compute $f(g(1))$ and $g(f(1))$ and compare them.
+    Students also begin to notice that order produces different results.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    \textbf{Display on board:} $p(x)=(x-2)^2(x+1)$
+Write on the board: \textbf{``Your cell-carrier charges \$0.10 per mile of data used, and
+your daily driving distance $d$ miles converts to data use as $u(d) = 0.5d$ GB. The charge
+is $C(u) = 10u$ dollars. What is your daily charge as a function of miles driven?''}
 
-    \medskip
-    Ask students:
-    \begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
-        \item Where does the graph of $y=p(x)$ cross the $x$-axis?
-        \item Does the graph cross the $x$-axis at $x=2$, or does it simply touch it?
-              How do you know just by looking at the factor $(x-2)^2$?
-        \item If we multiply out $p(x)$, what is the degree? How many zeros should
-              there be in total?
-    \end{enumerate}
-    \textit{Goal:} Students notice that the exponent on the factor predicts crossing vs.\
-    bouncing — launching the multiplicity concept.
+After brief class discussion, reveal: $C(u(d)) = C(0.5d) = 10(0.5d) = 5d$.
+We used \textit{composition} to link two quantities not directly related by a single formula.
+\textbf{Today: how to evaluate, build, and decompose compositions.}
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    \textbf{1. Zeros and Linear Factors (LO 1.5.A.1--A.2)}
+\begin{multicols}{2}
+\textbf{Part 1 (12 min): Evaluate from a Table and Analytically.}
 
-    If $p(a)=0$, then $a$ is a zero of $p$, and $(x-a)$ is a linear factor.
-    Revisit hook polynomial and list all zeros and their multiplicities.
-    Stress: a degree-$n$ polynomial has \emph{exactly} $n$ complex zeros counting multiplicities.
+Show the table:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c}
+$x$ & $f(x)$ & $g(x)$ \\ \hline
+1 & 4 & 2 \\
+2 & 7 & 1 \\
+3 & 10 & 3 \\
+\end{tabular}
+\end{center}
+Walk through: $f(g(1)) = f(2) = 7$; $f(g(2)) = f(1) = 4$; $g(f(1)) = g(4) = $ (undefined here,
+so note domain restriction). Stress: use the inner function's output as the outer function's input.
 
-    \medskip
-    \textbf{2. Graph Behavior at Real Zeros (LO 1.5.A.3, A.5)}
+\columnbreak
 
-    Build a table: \quad
-    \begin{tabular}{|l|l|l|}
-    \hline
-    \textbf{Multiplicity} & \textbf{Graph behavior} & \textbf{Example} \\\hline
-    Odd (1, 3, \ldots) & Crosses $x$-axis & $(x+1)$ in hook poly \\\hline
-    Even (2, 4, \ldots) & Tangent (touches, bounces) & $(x-2)^2$ in hook poly \\\hline
-    \end{tabular}
+\textbf{Part 2 (12 min): Construct Analytically.}
 
-    Work additional example: $q(x)=x^2(x-3)(x+1)^3$. Ask students to predict
-    crossing/touching at each zero before graphing with technology.
+Given $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
 
-    \medskip
-    \textbf{3. Exactly $n$ Complex Zeros (LO 1.5.A.2)}
+Build $f(g(x))$: substitute $g(x)$ for every $x$ in $f$:
+$f(g(x)) = 2(x^2-3)+1 = 2x^2-5$.
 
-    Introduce the Fundamental Theorem of Algebra (not proved, just stated).
-    Example: a degree-4 polynomial must have 4 zeros; some may be complex.
+Build $g(f(x))$: substitute $f(x)$ for every $x$ in $g$:
+$g(f(x)) = (2x+1)^2-3 = 4x^2+4x-2$.
 
-    \medskip
-    \textbf{4. Complex Conjugate Pairs (LO 1.5.A.4)}
+Compare: $f(g(x)) \ne g(f(x))$ --- composition is \textbf{not} commutative.
+\end{multicols}
 
-    State theorem: for polynomials with real coefficients, complex zeros come in
-    conjugate pairs $a\pm bi$.
-    Example: if $p$ has real coefficients and $2+3i$ is a zero, then $2-3i$ must
-    also be a zero. Build minimal polynomial: $(x-(2+3i))(x-(2-3i))=x^2-4x+13$.
+\medskip
+\textbf{Part 3 (12 min): Decompose and Connect to Transformations.}
 
-    \medskip
-    \textbf{5. Even and Odd Functions (LO 1.5.B.1--B.2)}
+Decompose $h(x) = (3x+2)^4$: natural split is $f(u) = u^4$ and $g(x) = 3x+2$, so $h(x) = f(g(x))$.
+Verify: $f(g(x)) = (3x+2)^4$ --- correct.
 
-    Algebraic test: substitute $-x$ and simplify.
-    \begin{itemize}[leftmargin=1.2em]
-        \item If $f(-x)=f(x)$ $\Rightarrow$ \textbf{even}; graph symmetric over $y$-axis.
-        \item If $f(-x)=-f(x)$ $\Rightarrow$ \textbf{odd}; graph symmetric about origin.
-        \item Otherwise $\Rightarrow$ \textbf{neither}.
-    \end{itemize}
-    Examples: $f(x)=x^4-2x^2$ (even); $g(x)=x^3-x$ (odd); $h(x)=x^2+x$ (neither).
+Connect to transformations (EK 2.7.C.2–C.3): $g(x) = f(x+k)$ is composition of $f$ with
+$h(x) = x+k$; $g(x) = f(kx)$ is composition of $f$ with $h(x) = kx$. Every horizontal
+shift/stretch is secretly a composition.
 
-    \medskip
-    \textbf{6. Successive Differences (LO 1.5.A.6)} (\textit{brief introduction})
-
-    Show a table of values for a cubic over equally-spaced $x$-values. Take first,
-    second, third differences. Third differences are constant $\Rightarrow$ degree 3.
-    Degree $=$ least $n$ for which $n$th differences are constant.
+Identity: $(f \circ \text{id})(x) = f(x+0) = f(x)$. The identity function ``does nothing.''
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-        \item Circulate during the multiplicity table: watch for students who think
-              even multiplicity means the graph doesn't touch the axis at all.
-        \item Cold-call: ``If $p(x)=(x-5)^3(x+2)^2$, how many zeros does $p$ have?
-              What is the degree? Does the graph cross or bounce at $x=5$?''
-        \item During even/odd: watch for students who only check a single value of $x$
-              instead of proving algebraically for all $x$.
-        \item Ensure students don't confuse \emph{even/odd function} with
-              \emph{even/odd degree}.
-    \end{itemize}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``Why can't we find $g(f(1))$ from that table?'' Expect:
+        $f(1) = 4$, and 4 is not in the table as an input for $g$.
+  \item During Part 2: watch for students who substitute $g(x)$ into only part of $f$; confirm
+        they replace \textit{every} $x$.
+  \item After Part 2: cold-call ``If $f(g(2)) = 5$, does that mean $g(f(2)) = 5$?'' Expect: not
+        necessarily; show with the example.
+  \item During Part 3: look for students who reverse $f$ and $g$ in the decomposition; test by
+        substituting back.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    See activity for full tiered problem set (polynomials $p$, $q$, $r$).
-
-    \medskip
-    \textbf{Tier R (Remediate):} Zeros, multiplicities, and crossing/bouncing for $p(x)=(x+2)(x-1)^2(x-3)$.
-
-    \medskip
-    \textbf{Tier A (Apply):} Add factoring and algebraic even/odd test for $q(x)=x^4-5x^2+4$; compare graph behaviors.
-
-    \medskip
-    \textbf{Tier E (Extend):} Complex zeros of $r(x)=x^3+2x$; verify conjugate pairs; determine if $r$ is even, odd, or neither; use successive differences to verify degree of $q$.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Evaluate $f(g(0))$, $f(g(2))$, $g(f(0))$ for given
+        linear functions; decide if $f \circ g = g \circ f$ for these values.
+  \item \textbf{Tier A (Apply):} Fill a table for $f(g(x))$ and $g(f(x))$ from a value table;
+        write analytic formulas for $f \circ g$ when $f(x) = x^2$, $g(x) = 2x-1$; state domain.
+  \item \textbf{Tier E (Extend):} Decompose $h(x) = (3x+2)^4$ two different ways; verify each;
+        explain which decomposition is $f(g(x))$ and which is $g(f(x))$ --- or explain why a
+        swap is impossible.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    \textbf{Exit Ticket} (last 5--7 minutes): two problems on a half-sheet.
-    \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-        \item A degree-4 polynomial with real coefficients has zeros $x=-1$ (mult.\ 2)
-              and $x=2+i$. List all four zeros; identify which real zero causes tangency.
-        \item Determine whether $f(x)=x^5-3x^3+x$ is even, odd, or neither (show work).
-    \end{enumerate}
-    \textit{Collect and use for tomorrow's warm-up review.}
+Exit ticket (3 questions, 1 page): (1) find $f(g(2))$ for $f(x) = x+4$, $g(x) = 3x$;
+(2) write the formula for $(f \circ g)(x)$ and simplify; (3) write $(g \circ f)(x)$ and
+compare.
+
+Sort by: students who miss (1) need review of evaluating the inner function first (LO 2.7.A);
+students who miss (2) need re-teaching of analytic substitution (EK 2.7.B.2);
+students who miss (3) need work on non-commutativity (EK 2.7.A.3).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    \textbf{Homework:} 5 problems covering minimal-degree polynomials from zeros, listing
-    all zeros given one complex zero, factoring to find zeros with multiplicities,
-    algebraic even/odd test, and an AP-style MC on zeros of a factored polynomial.
+Homework (6 problems): numerical composition from a table; analytic $f(g(x))$ and $g(f(x))$
+for linear and quadratic; evaluate $f \circ g$ at a negative input; decompose a cubic; real-world
+profit composition; AP-style MC on $f \circ g$.
 
-    \medskip
-    \textbf{Extension:} Successive-differences puzzle — given that the third differences
-    of a mystery polynomial's output are all equal to 6, determine the degree and write
-    a general form.
-
-    \medskip
-    \textbf{Preview:} Next lesson (1.6) — Rational Functions: vertical asymptotes, holes,
-    and end behavior.
+Preview of Lesson 2.8 (Inverse Functions): if we compose a function with its inverse, we get the
+identity function, $f(f^{-1}(x)) = x$. Decomposing a function is the first step toward finding what
+``undoes'' it --- today's decomposition skill leads directly to inverses.
 \end{skillbox}
+
 \end{document}

@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Group Activity (Answer Key)
+%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -11,131 +11,108 @@
 
 \vspace{0.1in}
 
-% Tier R
+\begin{scenariobox}[Missing Data Points]{sky}
+\small
+A scientist's measurement device records four data streams, each modeled by a rational function.
+At certain input values, the device has a gap in the data. Your job is to analyze each function,
+determine whether each gap is a \textbf{hole} or a \textbf{vertical asymptote}, and --- if it
+is a hole --- find the exact coordinates.
+
+\medskip
+The four functions are:
+\[
+  f_1(x) = \frac{x^2-9}{x-3}
+  \qquad
+  f_2(x) = \frac{x^2-1}{(x-1)(x+4)}
+  \qquad
+  f_3(x) = \frac{(x-2)^2}{x^2-4}
+  \qquad
+  f_4(x) = \frac{x^2+2x}{x}
+\]
+\end{scenariobox}
+
+\vspace{0.1in}
+
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate},
+    title=\textbf{Tier R --- Remediate (Key)},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The table below gives the values of $\sin\theta$ at key angles. Use it to answer the
-questions.
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering}p{3.8cm} >{\centering}p{3.8cm} c X @{}}
+\textbf{Fn} & \textbf{Numerator (factored)} & \textbf{Denominator (factored)} & \textbf{Gap at} & \textbf{Hole or VA?} \\
+\midrule
+$f_1$ & $(x-3)(x+3)$ & $(x-3)$ & $x=3$ & \ans{Hole} \\
+$f_2$ & $(x-1)(x+1)$ & $(x-1)(x+4)$ & $x=1$ & \ans{Hole} \\
+      &              &              & $x=-4$ & \ans{VA} \\
+$f_3$ & $(x-2)^2$ & $(x-2)(x+2)$ & $x=2$ & \ans{Hole} \\
+      &           &              & $x=-2$ & \ans{VA} \\
+$f_4$ & $x(x+2)$ & $x$ & $x=0$ & \ans{Hole} \\
+\end{tabularx}
+\end{tcolorbox}
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|@{}}
-    \hline
-    $\theta$ & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ &
-               $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\\hline
-    $\sin\theta$ & $0$ & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ &
-                   $1$ & $0$ & $-1$ & $0$ \\\hline
-\end{tabular}
+\vspace{0.1in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-    \item At what values of $\theta$ in $[0, 2\pi]$ is $\sin\theta = 0$?
-          These are called the \textbf{zeros} of the function.
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-          \ans{$\theta = 0,\;\pi,\;2\pi$}
+\begin{enumerate}[itemsep=8pt]
+  \item Factored forms and multiplicity analysis:
+  \begin{itemize}[itemsep=3pt]
+    \item $f_1$: $\dfrac{(x-3)(x+3)}{(x-3)}$ --- shared zero $x=3$, $m=n=1$, so \ans{hole}.
+    \item $f_2$: $\dfrac{(x-1)(x+1)}{(x-1)(x+4)}$ --- shared zero $x=1$, $m=n=1$, so \ans{hole}; $x=-4$ in denom only, so \ans{VA}.
+    \item $f_3$: $\dfrac{(x-2)^2}{(x-2)(x+2)}$ --- shared zero $x=2$, $m=2 > n=1$, so \ans{hole}; $x=-2$ in denom only, so \ans{VA}.
+    \item $f_4$: $\dfrac{x(x+2)}{x}$ --- shared zero $x=0$, $m=n=1$, so \ans{hole}.
+  \end{itemize}
 
-    \item At what value of $\theta$ in $[0, 2\pi]$ does $\sin\theta$ reach its
-          \textbf{maximum}? What is that maximum value?
+  \item Hole coordinates:
 
-          \ans{$\theta = \dfrac{\pi}{2}$; maximum value is $1$.}
-
-    \item On what interval from the table does $\sin\theta$ go from $0$ to $1$? Is the
-          function \textbf{increasing} or \textbf{decreasing} on that interval?
-
-          \ans{From $\theta=0$ to $\theta=\dfrac{\pi}{2}$; the function is increasing.}
-
-    \item One complete cycle of $\sin\theta$ runs from $\theta=0$ to $\theta=\ans{$2\pi$}$.
-          This length is the \textbf{period}.
+        \medskip
+        \renewcommand{\arraystretch}{1.8}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Function} & \textbf{Shared zero} $c$ & \textbf{Simplified form} & \textbf{Hole at $(c, L)$} \\
+        \hline
+        $f_1$ & \ans{$3$} & \ans{$x+3$} & \ans{$(3,\ 6)$} \\
+        \hline
+        $f_2$ & \ans{$1$} & \ans{$\dfrac{x+1}{x+4}$} & \ans{$\!\left(1,\ \dfrac{2}{5}\right)$} \\
+        \hline
+        $f_3$ & \ans{$2$} & \ans{$\dfrac{x-2}{x+2}$} & \ans{$(2,\ 0)$} \\
+        \hline
+        $f_4$ & \ans{$0$} & \ans{$x+2$} & \ans{$(0,\ 2)$} \\
+        \hline
+        \end{tabular}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-% Tier A
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Approaching Proficiency},
+    title=\textbf{Tier E --- Extend (Key)},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The table of $\cos\theta$ values below has some cells missing. Fill them in using the unit
-circle or symmetry, then answer the questions.
+\begin{enumerate}[itemsep=8pt]
+  \item Limit notation:
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|@{}}
-    \hline
-    $\theta$ & $0$ & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ &
-               $\dfrac{\pi}{2}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$ \\\hline
-    $\cos\theta$ & \ans{$1$} & $\dfrac{\sqrt{3}}{2}$ & \ans{$\dfrac{\sqrt{2}}{2}$} &
-                   $\dfrac{1}{2}$ & $0$ & \ans{$-1$} & $0$ & \ans{$1$} \\\hline
-\end{tabular}
+        $\displaystyle\lim_{x \to 3} f_1(x) = $ \ans{$6$} \qquad
+        $\displaystyle\lim_{x \to 1} f_2(x) = $ \ans{$\dfrac{2}{5}$} \qquad
+        $\displaystyle\lim_{x \to 2} f_3(x) = $ \ans{$0$} \qquad
+        $\displaystyle\lim_{x \to 0} f_4(x) = $ \ans{$2$}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-    \item On what interval(s) in $[0, 2\pi]$ is $\cos\theta > 0$?
+  \item Sample explanation for $f_1$: \ans{The hole is at $(3, 6)$ because after canceling the shared
+        factor $(x-3)$ from numerator and denominator, the simplified form is $x+3$.
+        Substituting $x = 3$ gives $3+3 = 6$, which is the output the function approaches.}
 
-          \ans{$\left[0,\;\dfrac{\pi}{2}\right)$ and $\left(\dfrac{3\pi}{2},\;2\pi\right]$}
+  \item Sample construction: \ans{$g(x) = \dfrac{(x-1)(x+2)}{(x-1)(x+2)^2} \cdot k$} for some
+        nonzero $k$, or more simply:
 
-    \item On what interval(s) in $[0, 2\pi]$ is $\cos\theta < 0$?
+        Factored: \ans{$g(x) = \dfrac{(x-1)}{(x-1)(x+2)}$}
 
-          \ans{$\left(\dfrac{\pi}{2},\;\dfrac{3\pi}{2}\right)$}
+        Simplified: \ans{$g(x) = \dfrac{1}{x+2}$} with hole at $\Big($\ans{$1$}$,$ \ans{$\dfrac{1}{3}$}$\Big)$
 
-    \item A student notices that the cosine graph looks exactly like the sine graph, just
-          shifted horizontally. By how much, and in which direction, would you shift the
-          sine graph to get the cosine graph?
-
-          \ans{Shift the sine graph left by $\dfrac{\pi}{2}$.}
-
-          Complete the equation: $\cos\theta = \sin\!\bigl(\theta + \ans{$\dfrac{\pi}{2}$}\bigr)$.
+        \textit{(Any rational function with $(x-1)$ in both numerator and denominator, and
+        $(x+2)$ only in the denominator after cancellation, is correct.)}
 \end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.1in}
-
-% Tier E
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extension},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-Use the table values from Tier R to estimate the \textbf{average rate of change} of
-$f(\theta) = \sin\theta$ on each interval.
-
-\vspace{6pt}
-Recall: average rate of change on $[a, b] = \dfrac{f(b) - f(a)}{b - a}$.
-
-\vspace{8pt}
-\renewcommand{\arraystretch}{2}
-\begin{tabular}{@{}|l|c|@{}}
-    \hline
-    \textbf{Interval} & \textbf{Avg.\ rate of change} \\\hline
-    $\left[0,\;\dfrac{\pi}{4}\right]$ &
-        \ans{$\dfrac{\frac{\sqrt{2}}{2}-0}{\frac{\pi}{4}} = \dfrac{2\sqrt{2}}{\pi} \approx 0.90$} \\\hline
-    $\left[\dfrac{\pi}{4},\;\dfrac{\pi}{2}\right]$ &
-        \ans{$\dfrac{1-\frac{\sqrt{2}}{2}}{\frac{\pi}{4}} \approx \dfrac{0.293}{0.785} \approx 0.37$} \\\hline
-    $\left[\dfrac{\pi}{2},\;\dfrac{3\pi}{4}\right]$ &
-        \ans{$\dfrac{\frac{\sqrt{2}}{2}-1}{\frac{\pi}{4}} \approx \dfrac{-0.293}{0.785} \approx -0.37$} \\\hline
-\end{tabular}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt, start=1]
-    \item How do the three rates of change compare in size?
-
-          \ansline{The rate is largest near $\theta=0$ (steeply rising) and smallest near
-          $\theta=\frac{\pi}{2}$ (nearly flat at the maximum).}
-          \ansline{}
-
-    \item Near $\theta = 0$ the graph is \ans{steep} (steep/flat), and near $\theta =
-          \dfrac{\pi}{2}$ the graph is \ans{flat} (steep/flat). Explain why, using the
-          unit-circle point's motion.
-
-          \ansline{Near $\theta=0$ the unit-circle point moves mostly vertically (large change}
-          \ansline{in $y$-coordinate per unit of $\theta$). Near $\theta=\frac{\pi}{2}$ the}
-          \ansline{point moves mostly horizontally, so the $y$-coordinate changes very little.}
-\end{enumerate}
-
-\begin{teachernote}
-For Tier E, students may need a reminder that arc length on the unit circle equals the
-central angle in radians, so equal increments of $\theta$ move the point equal distances
-along the circle --- but the \emph{vertical} component of that movement varies.
-\end{teachernote}
 \end{tcolorbox}
 
 \end{document}

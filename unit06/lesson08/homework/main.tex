@@ -1,0 +1,150 @@
+%! Sinusoidal Function Context and Data Modeling — Unit 6, Lesson 6.8 — Homework
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Homework}
+\namedateperiod
+
+\vspace{0.10in}
+
+\begin{notesbox}{Problems 1--6}
+
+\textbf{1.}\quad The table below shows the number of daylight hours in a city
+on the first day of each month over one year.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\small
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Month $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline
+Daylight $L(x)$ (hr) & 9.0 & 10.2 & 11.8 & 13.3 & 14.5 & 15.0 & 14.5 & 13.3 & 11.8 & 10.2 & 9.0 & 8.5 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+(a)\quad Identify the maximum and minimum daylight values and the months at which they occur.
+
+Max $= $ \underline{\hspace{1.5cm}} at month \underline{\hspace{1cm}};
+\quad Min $= $ \underline{\hspace{1.5cm}} at month \underline{\hspace{1cm}}
+
+\vspace{4pt}
+(b)\quad Compute $A = \dfrac{\max - \min}{2} = $ \underline{\hspace{3cm}}
+and $D = \dfrac{\max + \min}{2} = $ \underline{\hspace{3cm}}
+
+\vspace{4pt}
+(c)\quad Estimate the period $k$ and compute $B$.
+
+$k = $ \underline{\hspace{1.5cm}} months \qquad $B = \dfrac{2\pi}{k} = $ \underline{\hspace{3cm}}
+
+\vspace{4pt}
+(d)\quad Using a cosine model with phase shift $C = x_{\max}$, write the model $L(x)$.
+
+$L(x) = $ \underline{\hspace{8cm}}
+
+\vspace{4pt}
+(e)\quad Use your model to predict the number of daylight hours at $x = 3.5$ (mid-April).
+\writeline
+
+\vspace{0.12in}
+\textbf{2.}\quad A periodic function $w$ has the following properties based on a data table:
+maximum value $= 20$, minimum value $= 4$, period $= 10$.
+
+\vspace{4pt}
+(a)\quad Compute $A$ and $D$. \writeline
+
+\vspace{4pt}
+(b)\quad Compute $B$. \writeline
+
+\vspace{4pt}
+(c)\quad If a maximum occurs at $x = 2$, write a cosine model $w(x)$.
+\writeline
+
+\vspace{4pt}
+(d)\quad Use your model to predict $w(7)$. \writeline
+
+\vspace{0.12in}
+\textbf{3.}\quad A model for the height (in meters) of a point on a spinning
+amusement-park ride is $h(t) = 6\sin\!\left(\dfrac{\pi}{5}(t - 2.5)\right) + 8$,
+where $t$ is time in seconds.
+
+\vspace{4pt}
+(a)\quad Identify the amplitude, midline, period, and phase shift of $h$.
+\writelines{2}
+
+\vspace{4pt}
+(b)\quad What is the maximum height? The minimum height?
+\writeline
+
+\vspace{4pt}
+(c)\quad At $t = 0$, the model gives $h(0) = 8 + 6\sin(-\pi/2) = 2$ m.
+Interpret this value in context.
+\writelines{2}
+
+\vspace{0.12in}
+\textbf{4. (AP-Style MC)}\quad A data set of periodic values has a maximum of 50
+and a minimum of 10. Which of the following correctly gives the amplitude and
+midline of a sinusoidal model for this data?
+
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=3pt]
+  \item Amplitude $= 50$, midline $= 10$
+  \item Amplitude $= 40$, midline $= 30$
+  \item Amplitude $= 20$, midline $= 30$
+  \item Amplitude $= 30$, midline $= 20$
+  \item Amplitude $= 20$, midline $= 40$
+\end{enumerate}
+
+Answer: \underline{\hspace{1.5cm}}
+
+\vspace{0.12in}
+\textbf{5. (AP-Style MC)}\quad The function $f(x) = 4\sin\!\left(\dfrac{\pi}{3}(x - 1)\right) + 7$
+models a periodic data set. Which of the following statements about $f$ is correct?
+
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=3pt]
+  \item The period is $\dfrac{\pi}{3}$ and the maximum value is 11.
+  \item The period is 6 and the maximum value is 11.
+  \item The period is 6 and the maximum value is 7.
+  \item The period is 3 and the maximum value is 11.
+  \item The period is $2\pi$ and the maximum value is 11.
+\end{enumerate}
+
+Answer: \underline{\hspace{1.5cm}}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{extensionbox}
+\textbf{Extension (Optional):} Enter the daylight-hours data from Problem 1 into
+Desmos (desmos.com) and perform a sinusoidal regression by fitting
+$y = a\sin(bx + c) + d$ to the data.
+
+\vspace{4pt}
+(a)\quad Record the regression equation: \writeline
+
+\vspace{4pt}
+(b)\quad Compare the regression values of $a$ (amplitude) and $d$ (vertical shift) to
+your hand-computed values from Problem 1. How close are they? What might explain
+any differences? \writelines{3}
+\end{extensionbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=navylight, colframe=navy, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small\textbf{Preview --- Lesson 3.8: The Tangent Function}\\
+Sine and cosine model bounded, wave-like phenomena that oscillate between a
+maximum and minimum. In Lesson 3.8 we'll explore the \emph{tangent} function ---
+a periodic function that has no maximum or minimum and shoots off to $\pm\infty$
+in every period. Come ready to connect tangent to the unit circle ratio
+$\tan\theta = \sin\theta / \cos\theta$.
+\end{tcolorbox}
+
+\end{document}

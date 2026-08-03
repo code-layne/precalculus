@@ -1,4 +1,4 @@
-%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Lesson Plan
+%! Change in Linear and Exponential Functions — Unit 4, Lesson 4.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,281 +8,183 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
-\newcommand{\LessonNumberName}{Lesson 4.2: Parametric Functions Modeling Planar Motion}
+\newcommand{\UnitNumberName}{Unit 4: Exponential Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.2: Change in Linear and Exponential Functions}
 
 \begin{document}
-
-%----------------------------------------------------------------------
-% Title Block
-%----------------------------------------------------------------------
 \begin{center}
-  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
-  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-%----------------------------------------------------------------------
-% Primary Objective
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective:} Students will identify key characteristics
-  of parametric planar motion --- horizontal and vertical extrema from
-  the maximum and minimum values of $x(t)$ and $y(t)$, and axis
-  intercepts of the curve from zeros of $x(t)$ and $y(t)$ ---
-  and apply these to describe a particle's position and range of motion.
-  \textit{(Big Idea: Functions)}
+    \textbf{Primary Objective:} Students will construct linear and exponential functions from a
+    point and a rate of change (or ratio), connect these to arithmetic and geometric sequences,
+    and determine whether a function is linear or exponential by analyzing output values over
+    equal-length input intervals.
+    \hfill\textit{\small Skills: 1.C and 3.B}
 \end{tcolorbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Priority Ideas & Skills
-%----------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
-\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
 \midrule
-\textbf{3.A} \textit{Describe characteristics} ---
-  Identify horizontal and vertical extrema of a parametric curve from
-  the maximum and minimum values of the component functions $x(t)$ and
-  $y(t)$; describe what those extrema tell us about the range of motion
-  in each direction.
-&
-\textbf{EK 4.2.A.1}: A parametric function $f(t) = (x(t),\, y(t))$
-models particle motion in the plane. The graph indicates the position
-of the particle at time $t$. \\[4pt]
-
-\textbf{3.B} \textit{Apply numerical results} ---
-  Use the max/min values of $x(t)$ and $y(t)$ (found analytically or
-  from a table) to bound the particle's motion, and use zeros of $x(t)$
-  and $y(t)$ to locate where the curve crosses the axes.
-&
-\textbf{EK 4.2.A.2}: The horizontal and vertical extrema of the
-particle's motion are the maximum and minimum values of $x(t)$ and
-$y(t)$, respectively. \\[4pt]
-
-&
-\textbf{EK 4.2.A.3}: Real zeros of $x(t)$ correspond to $y$-intercepts
-of the curve; real zeros of $y(t)$ correspond to $x$-intercepts. \\
+\textbf{Skill 1.C} --- Identify a re-expression of mathematical information presented in a given representation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Linear functions $f(x) = b + mx$ extend arithmetic sequences; exponential functions
+        $f(x) = ab^x$ extend geometric sequences. (EK 2.2.A.1, 2.2.A.3)
+  \item Both types can be built from one point and a constant rate or ratio.
+        (EK 2.2.A.2, 2.2.A.4)
+  \item Sequences and functions may differ in domain. (EK 2.2.A.5)
+\end{itemize} \\
+\textbf{Skill 3.B} --- Apply an appropriate mathematical definition, theorem, or test. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Equal-length interval test: constant difference $\Rightarrow$ linear; constant ratio
+        $\Rightarrow$ exponential. (EK 2.2.B.1)
+  \item Both function families are fully determined by two distinct input-output pairs.
+        (EK 2.2.B.3)
+\end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
-\textbf{Term} & \textbf{Definition / Note} \\
-\midrule
-horizontal extremum &
-  The maximum or minimum value of $x(t)$ over the domain; determines
-  the rightmost and leftmost positions of the particle. \\[4pt]
-vertical extremum &
-  The maximum or minimum value of $y(t)$ over the domain; determines
-  the highest and lowest positions of the particle. \\[4pt]
-$y$-intercept (of parametric curve) &
-  A point on the curve where $x(t) = 0$; found by solving $x(t) = 0$
-  for $t$, then evaluating $y(t)$ at those values. \\[4pt]
-$x$-intercept (of parametric curve) &
-  A point on the curve where $y(t) = 0$; found by solving $y(t) = 0$
-  for $t$, then evaluating $x(t)$ at those values. \\
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+linear function        & $f(x) = b + mx$; output changes by a constant amount (slope $m$) over every unit increase in input. \\
+exponential function   & $f(x) = ab^x$; output is multiplied by a constant base $b$ over every unit increase in input. \\
+constant rate of change & The slope $m$ of a linear function; equal to $\Delta y / \Delta x$ over any interval. \\
+constant ratio         & The base $b$ of an exponential function; equal to $y_{n+1}/y_n$ over equal-length intervals. \\
+initial value          & The output when $x = 0$; equals $b$ for $f(x)=b+mx$ and $a$ for $f(x)=ab^x$. \\
+domain                 & The set of allowable inputs; sequences use $\{0,1,2,\ldots\}$ while the corresponding functions use all reals (or a subset). \\
 \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Activate Prior Knowledge
-%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{tabularx}{\linewidth}{@{}X@{}}
-\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item \textbf{Evaluating component functions}: Substitute $t$-values
-    into $x(t)$ and $y(t)$ --- the core computation from Lesson 4.1,
-    now used to build intuition about extrema from a table.
-  \item \textbf{Maximum and minimum of a quadratic}: Use the vertex
-    formula $t = -b/(2a)$ to locate the max/min of $at^2 + bt + c$;
-    this is the primary analytical tool for finding extrema.
-  \item \textbf{Solving quadratic equations}: Set $x(t) = 0$ or
-    $y(t) = 0$ and solve by factoring or the quadratic formula to find
-    axis intercepts of the parametric curve.
-\end{itemize}
-\end{tabularx}
+    Spiral review (warm-up) covers skills from Lesson 2.1: identifying the common difference $d$
+    and writing $a_n$ for an arithmetic sequence; identifying the common ratio $r$ and writing
+    $g_n$ for a geometric sequence; and determining sequence type and initial term from two given
+    terms. Students connect these sequence ideas directly to the function constructions in today's
+    lesson.
 \end{skillbox}
 
-\vspace{0.08in}
+\begin{skillbox}[Hook]{sky}
+Present two unlabeled tables on the board (no function type announced):
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
-\begin{skillbox}[Hook --- Entry Event]{sky}
-\textbf{Scenario:} A ball is launched and its position (in feet) at
-time $t$ seconds is modeled by:
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{c|c}
+$x$ & $g(x)$ \\ \hline
+0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
+\end{tabular}
+\end{center}
+
+\medskip
+Ask: \textbf{``What is the pattern in Table 1? In Table 2?''} After student discussion, ask:
+\textbf{``Can you write a rule that predicts the output for any input?''} Today's goal is to
+answer that question — and to know \textit{which} type of function to reach for.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{multicols}{2}
+\textbf{Part 1 (15 min): Linear Functions from Arithmetic Sequences.}
+
+Arithmetic sequence $a_n = a_0 + dn$ uses an initial value plus repeated addition.
+Linear functions do the same: $f(x) = b + mx$.
+
+Point-slope form: if we know slope $m$ and one point $(x_i, y_i)$,
 \[
-  x(t) = -16t^2 + 48t, \qquad y(t) = 12t - t^2.
+  f(x) = y_i + m(x - x_i).
 \]
+This is the function analogue of $a_n = a_i + d(n - i)$.
 
-\textbf{Discussion prompts:}
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item \textit{``How high does the ball get? Which component function
-    do you look at to answer that?''}
-  \item \textit{``How far left or right does the ball travel? Which
-    component tells you that?''}
-  \item \textit{``When does the ball hit the ground (return to $y = 0$)?
-    What equation do you solve?''}
-\end{enumerate}
+Model: given $m = 4$ and the point $(1, 7)$:
+$f(x) = 7 + 4(x - 1) = 4x + 3$. Check: $f(0)=3$, $f(2)=11$.
 
-\textbf{Key tension to surface:} Each question maps to one of three
-tasks --- finding max/min of $x(t)$, finding max/min of $y(t)$, or
-solving $y(t) = 0$. These are exactly the skills of LO 4.2.A.
-
-\textbf{Transition:} ``Today we develop a systematic way to find
-horizontal extrema from $x(t)$, vertical extrema from $y(t)$, and axis
-intercepts from the zeros of each component.''
-\end{skillbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
-\begin{multicols}{2}
-
-\textbf{Step 1 --- Review \& Planar Motion (5 min)}
-
-Briefly recall that $f(t) = (x(t),\, y(t))$ gives a particle's
-position at time $t$. Now ask: \emph{how far} does it travel in each
-direction? Write EK 4.2.A.1 on the board. Use the hook scenario to
-frame the three questions the lesson answers.
+Key difference: sequences have domain $\{0,1,2,\ldots\}$; the function $f$ is defined for all
+real $x$.
 
 \columnbreak
 
-\textbf{Step 2 --- Horizontal Extrema from $x(t)$ (12 min)}
+\textbf{Part 2 (15 min): Exponential Functions from Geometric Sequences.}
 
-The leftmost and rightmost positions are the min and max of $x(t)$.
-Model with the hook: $x(t) = -16t^2 + 48t$ is a downward parabola.
-Vertex at $t = -48/(2 \cdot (-16)) = 1.5$ s;
-$x(1.5) = 36$ ft (rightmost). EK 4.2.A.2. At $t = 0$, $x = 0$
-(leftmost on $[0,3]$).
+Geometric sequence $g_n = g_0 r^n$ uses an initial value times repeated multiplication.
+Exponential functions do the same: $f(x) = ab^x$.
 
+Point-ratio form: if we know ratio $r$ and one point $(x_i, y_i)$,
+\[
+  f(x) = y_i \cdot r^{x - x_i}.
+\]
+Model: given $r = 3$ and the point $(0, 2)$:
+$f(x) = 2 \cdot 3^{x-0} = 2 \cdot 3^x$. Check: $f(1)=6$, $f(2)=18$.
+
+\textbf{Part 3 (10 min): Comparing Linear and Exponential.}
+
+Equal-length interval test (EK 2.2.B.1):
+\begin{itemize}[leftmargin=1em,itemsep=1pt,topsep=0pt]
+  \item Constant first difference $\Rightarrow$ linear
+  \item Constant ratio of consecutive outputs $\Rightarrow$ exponential
+\end{itemize}
+
+Two points uniquely determine each type (EK 2.2.B.3). With $(x_1,y_1)$ and $(x_2,y_2)$:
+linear gives $m = \frac{y_2-y_1}{x_2-x_1}$; exponential gives
+$b = \left(\frac{y_2}{y_1}\right)^{1/(x_2-x_1)}$.
 \end{multicols}
-
-\begin{multicols}{2}
-
-\textbf{Step 3 --- Vertical Extrema from $y(t)$ (10 min)}
-
-Same technique for $y(t)$. Model: $y(t) = 12t - t^2$; vertex at
-$t = 6$, $y(6) = 36$ ft (highest). Identify $y(0) = 0$ as the
-starting height. Students practice on the second example in guided
-notes. EK 4.2.A.2.
-
-\columnbreak
-
-\textbf{Step 4 --- Axis Intercepts from Zeros (15 min)}
-
-EK 4.2.A.3: zeros of $x(t)$ give $y$-intercepts; zeros of $y(t)$
-give $x$-intercepts. Model: Solve $y(t) = t(12-t) = 0 \Rightarrow
-t = 0$ or $t = 12$; find coordinates of each point. Solve
-$x(t) = -16t(t-3) = 0 \Rightarrow t = 0$ or $t = 3$; students find
-coordinates. Period 1: Steps 1--2. Period 2: Steps 3--4 + activity.
-
-\end{multicols}
-
-\smallskip
-\textbf{Pacing note:} Steps 1--2 in Period 1; Steps 3--4 + group
-activity in Period 2.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Active Monitoring
-%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item \textbf{Mixing up components}: Students may find the max of
-    $y(t)$ when asked for horizontal extrema. Prompt: \textit{``Horizontal
-    means left-right. Which axis is that? Which component controls it?''}
-  \item \textbf{Reporting $t$ instead of position}: Students stop at
-    the $t$-value. Prompt: \textit{``$t = 2$ is a time, not a position.
-    What are the coordinates at that moment?''}
-  \item \textbf{Sign errors in vertex formula}: Require students to
-    write $a$, $b$, $c$ explicitly before applying $t = -b/(2a)$.
-  \item \textbf{Zeros vs.\ intercepts}: Students confuse zeros of $x(t)$
-    with $x$-intercepts. Post the rule: \textit{zero of $x(t)$ →
-    $y$-intercept; zero of $y(t)$ → $x$-intercept.}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: ``If I give you the point $(3, 11)$ and tell you the slope is $2$, what is
+        $f(0)$?'' (Students must use point-slope form, not assume $f(0) = 11$.)
+  \item During Part 1: watch for students who confuse slope with the $y$-intercept; confirm
+        $b = f(0)$ only when you simplify, not at the start.
+  \item After Part 2: ``What is the base of the exponential function through $(0,2)$ and $(3,54)$?
+        How did you find it?'' (Expect $b = 3$ from $54/2 = 27 = 3^3$.)
+  \item During Part 3: cold-call with a table — ``Is this linear, exponential, or neither? Show
+        your check.'' Confirm students subtract (not divide) for the first-difference test.
 \end{itemize}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Group Work & Differentiation
-%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work in groups of 3--4 on the tiered activity (remote-control
-car scenario).
-
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item \textbf{Tier R (Remediate)}: Given $f(t) = (2t,\; -t^2 + 4)$
-    for $0 \le t \le 3$, evaluate both components at $t = 0, 1, 2, 3$
-    and identify the leftmost/rightmost $x$-values and the
-    highest/lowest $y$-values from the table. No algebra required.
-  \item \textbf{Tier A (Accelerate)}: Given $f(t) = (t^2 - 4t,\;
-    3\sin(\pi t/2))$ for $0 \le t \le 4$, find horizontal extrema of
-    $x(t)$ analytically (vertex) and vertical extrema of $y(t)$ by
-    reasoning about the sine function's range.
-  \item \textbf{Tier E (Extend)}: Compare two parametrizations of the
-    same circular path --- $f(t) = (\cos t, \sin t)$ and
-    $g(t) = (\cos(2t), \sin(2t))$ --- and determine whether they
-    produce the same extrema, the same intercepts, and the same range
-    of motion. Explain what changes and what stays the same.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given a completed table, compute first differences and
+        ratios; identify the function type; read off $m$ or $r$ and the initial value; write the
+        formula using the provided template.
+  \item \textbf{Tier A (Apply):} Given two points, determine whether the relationship is linear or
+        exponential and construct the function; apply to a contextual scenario with interpretation.
+  \item \textbf{Tier E (Extend):} Investigate a population table with an apparent vertical shift;
+        determine whether subtracting a constant reveals an exponential pattern; connect to the
+        idea of exponential-plus-constant (preview of EK 2.5.A.2).
 \end{itemize}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Individual Work & Assessment
-%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket administered independently (final 5 minutes of Period 2).
+Exit ticket (3 questions, 1 page): (1) given a table with inputs 0--3 and outputs doubling,
+identify the function type and write the formula; (2) construct an exponential function through
+$(0,3)$ and $(2,75)$; (3) true/false --- two input-output pairs uniquely determine both a
+linear and an exponential function.
 
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item Given $f(t) = (t^2 - 1,\; 2t - t^2)$ for $0 \le t \le 3$,
-    complete a table at $t = 0, 1, 2, 3$.
-  \item Find the horizontal extrema. Show work using the vertex formula
-    for $x(t) = t^2 - 1$.
-  \item For what values of $t$ does the particle cross the $y$-axis?
-    State the coordinates.
-\end{enumerate}
-
-\textbf{Data use:} Students who cannot apply the vertex formula to
-$x(t)$ or $y(t)$ need re-teaching on quadratic max/min. Students who
-identify zeros of $y(t)$ as $y$-intercepts have the rule reversed ---
-correct individually.
+Collect and sort: students missing item 1 need interval-test re-teaching (LO 2.2.B);
+students missing item 2 need scaffolded ratio-formula practice (LO 2.2.A); students missing
+item 3 need explicit connection to EK 2.2.B.3.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Reinforcement & Extension
-%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework (Lesson 4.2):} 5--6 problems covering finding
-horizontal and vertical extrema from component functions, locating
-axis intercepts of parametric curves, one contextual motion problem,
-and one AP-style multiple-choice item.
+Homework (6 problems): equal-length interval test on two tables; construct a linear function
+from two points; construct an exponential function from two points; contextual comparison of
+linear vs.\ exponential growth over 12 months; AP-style MC identifying an exponential table;
+extension proof that $b = (y_2/y_1)^{1/(x_2-x_1)}$ for any two points on $f(x)=ab^x$.
 
-\textbf{Preview of Lesson 4.3:} Ask students: \textit{``We described
-position with $(x(t), y(t))$. What if we also wanted to describe
-the \emph{direction} of motion at any moment?''} Lesson 4.3 introduces
-vectors and connects parametric motion to vector notation.
+Preview of Lesson 2.3: the number $e$ and continuous exponential growth --- why the base
+$e \approx 2.718$ arises naturally when compounding happens infinitely often.
 \end{skillbox}
 
 \end{document}

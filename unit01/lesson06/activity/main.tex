@@ -1,4 +1,4 @@
-%! Polynomial Functions and End Behavior — Unit 1, Lesson 1.6 — Group Activity
+%! Inverse Functions — Unit 1, Lesson 1.6 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,111 +9,138 @@
 \pageheader{Unit 1, Lesson 1.6}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.12in}
+\vspace{0.08in}
 
-\begin{scenariobox}[End Behavior Explorer]{sky}
+\begin{scenariobox}[Dosage in Reverse]{sky}
 \small
-Examine the four polynomial functions below. Use the leading term of each to determine
-end behavior and write your answers using limit notation.
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} c l c l @{}}
-  \textbf{A.} & $f(x) = 2x^5 - 8x^3 + x - 4$ &
-  \textbf{B.} & $g(x) = -x^4 + 3x^2 + 10$ \\[2pt]
-  \textbf{C.} & $h(x) = -4x^3 + 12x^2 - 9x + 1$ &
-  \textbf{D.} & $k(x) = 5x^6 - 100x^4 + 3$ \\
-\end{tabular}
+A nurse uses the formula $D(w) = 1.5w + 10$ to calculate a patient's medication dose $D$ (mg)
+from their weight $w$ (kg). Sometimes the dose is recorded but the weight is missing from the
+chart. Your team will develop and use the inverse formula to recover the weight from the dose.
+Work through the tier your teacher assigns. Be ready to explain your reasoning.
 \end{scenariobox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Use the \textbf{rules table} from your notes to complete the limit notation for each function.
-The leading term has been identified for you.
+\textbf{Given:} $f(x) = 3x + 6$.
 
-\smallskip
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Function} & \textbf{Leading Term} & \textbf{Degree} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
-\hline
-$f(x)$ & $2x^5$   & 5 (odd)  & \blank{2cm} & \blank{2cm} \\
-$g(x)$ & $-x^4$   & 4 (even) & \blank{2cm} & \blank{2cm} \\
-$h(x)$ & $-4x^3$  & 3 (odd)  & \blank{2cm} & \blank{2cm} \\
-$k(x)$ & $5x^6$   & 6 (even) & \blank{2cm} & \blank{2cm} \\
-\hline
-\end{tabular}
+\begin{enumerate}[itemsep=10pt]
+
+  \item Complete the output table.
+
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$    & 0 & 2 & 4 & 6 \\
+        \hline
+        $f(x)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        \end{tabular}
+
+  \item Reverse the pairs to write the inverse table.
+
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$          & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        $f^{-1}(x)$  & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        \end{tabular}
+
+  \item Use your inverse table to verify: $f(f^{-1}(18)) = $ \blank{4cm}. Show the steps.
+
+        \vspace{0.06in}
+        $f^{-1}(18) = $ \blank{2cm}, then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
+
+  \item State the domain and range of $f$ (using the table values):
+
+        Domain of $f$: $\{$\blank{5cm}$\}$ \quad Range of $f$: $\{$\blank{5cm}$\}$
+
+        Domain of $f^{-1}$: $\{$\blank{5cm}$\}$ \quad Range of $f^{-1}$: $\{$\blank{5cm}$\}$
+
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=8pt]
-  \item For each function, identify the leading term yourself, then write the limit notation.
+\textbf{Given:} $f(x) = \dfrac{x - 2}{5}$.
 
-  \renewcommand{\arraystretch}{2.0}
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  \textbf{Function} & \textbf{Leading Term} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
-  \hline
-  $f(x) = 2x^5 - 8x^3 + x - 4$ & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-  $g(x) = -x^4 + 3x^2 + 10$    & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-  $h(x) = -4x^3 + 12x^2 - 9x + 1$ & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-  $k(x) = 5x^6 - 100x^4 + 3$   & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-  \hline
-  \end{tabular}
+\begin{enumerate}[itemsep=10pt]
 
-  \item For function $k(x) = 5x^6 - 100x^4 + 3$, a student notices that $-100x^4$ is a large
-        negative number for medium values of $x$ (say $x = 5$). She claims the end behavior
-        should be $-\infty$. Explain why she is wrong.
+  \item Find $f^{-1}(x)$ algebraically. Show all four steps (write $y$; swap; solve; write $f^{-1}$).
 
-        \vspace{0.2in}
-        \writeline\\[4pt]
-        \writeline
+        \vspace{0.04in}
+        Step 1: $y = $ \blank{5cm}
 
-  \item Without a calculator, predict: for which function(s) does $\lim_{x \to \infty} p(x) = \infty$
-        AND $\lim_{x \to -\infty} p(x) = -\infty$? Circle the letter(s).
-        \quad \textbf{A} \quad \textbf{B} \quad \textbf{C} \quad \textbf{D}
+        Step 2 (swap): $x = $ \blank{5cm}
+
+        Step 3 (solve): \blank{8cm}
+
+        Step 4: $f^{-1}(x) = $ \blank{5cm}
+
+  \item Verify using composition: show $f(f^{-1}(x)) = x$.
+
+        \vspace{0.04in}
+        $f(f^{-1}(x)) = \dfrac{\left(\rule{3cm}{0.4pt}\right) - 2}{5} = $ \blank{5cm}
+
+  \item State the domain and range of $f$ and $f^{-1}$ (both are all real numbers here):
+
+        Domain of $f$: \blank{4cm} \quad Range of $f$: \blank{4cm}
+
+        Domain of $f^{-1}$: \blank{4cm} \quad Range of $f^{-1}$: \blank{4cm}
+
+  \item In the nurse context, $x$ in $f^{-1}(x)$ represents \blank{5cm} (mg) and
+        the output represents \blank{5cm} (kg). If a patient received 7 mg, their weight was
+        \blank{3cm} kg.
+
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=8pt]
-  \item Complete all of Tier A first.
+\textbf{Given:} $f(x) = x^2$ on all real numbers.
 
-  \item Create your own polynomial function that satisfies ALL of the following:
-        \begin{itemize}
-          \item Even degree
-          \item Negative leading coefficient
-          \item Exactly 3 distinct real zeros
-        \end{itemize}
+\begin{enumerate}[itemsep=10pt]
 
-        Write your polynomial in factored form: \quad $p(x) = $ \blank{8cm}
+  \item Explain why $f(x) = x^2$ is \textbf{not} invertible on all real numbers.
+        Give a specific numerical counterexample.
 
-        What is the degree of your polynomial? \blank{2cm}
+        \vspace{0.04in}
+        \writelines{2}
 
-  \item Describe the end behavior of your polynomial using limit notation.
+  \item Restrict the domain of $f$ to $x \ge 0$. On this domain, find $f^{-1}(x)$ algebraically.
 
-        $\lim_{x \to \infty} p(x) = $ \blank{2.5cm} \qquad $\lim_{x \to -\infty} p(x) = $ \blank{2.5cm}
+        \vspace{0.04in}
+        Step 1: $y = $ \blank{4cm} (with domain $x \ge 0$)
 
-  \item Explain in one sentence why a polynomial with even degree and negative leading coefficient
-        must have the same end behavior on both sides.
+        Step 2 (swap): $x = $ \blank{4cm}
 
-        \vspace{0.2in}
-        \writeline\\[4pt]
-        \writeline
+        Step 3 (solve, taking the non-negative root): $y = $ \blank{4cm}
+
+        $f^{-1}(x) = $ \blank{4cm}
+
+  \item Verify: $f(f^{-1}(x)) = \left(\rule{3cm}{0.4pt}\right)^2 = $ \blank{4cm} \checkmark
+
+  \item Why was the domain restriction to $x \ge 0$ necessary?
+        What input values must be excluded when the domain is all reals?
+
+        \vspace{0.04in}
+        \writelines{3}
+
 \end{enumerate}
 \end{tcolorbox}
 

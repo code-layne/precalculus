@@ -1,4 +1,4 @@
-%! Conic Sections — Unit 4, Lesson 4.6 — Guided Notes (Answer Key)
+%! Exponential Function Context and Data Modeling — Unit 4, Lesson 4.6 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,189 +9,141 @@
 \pageheader{Unit 4, Lesson 4.6}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.6.A} --- Write the standard form equation of a parabola,
-    ellipse (including circles), or hyperbola given key features; and identify
-    those features from a given equation.
-    \ansline{write and interpret standard-form equations for all four conic types}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct an exponential model from a \ans{growth} factor and \ans{initial} value,
+        or from \ans{two} input-output pairs. \hfill\textit{(LO 2.5.A)}
+  \item Interpret the base $b$ as a \ans{growth} factor and connect it to \ans{percent} change. \hfill\textit{(LO 2.5.B)}
+  \item Use the model to \ans{predict} values within a reasonable \ans{domain}. \hfill\textit{(LO 2.5.B)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{conic section}]
-    A curve formed by the intersection of a plane and a double cone:
-    a \ans{parabola}, an \ans{ellipse}, or a \ans{hyperbola}.
-
-  \item[\termblanklong{vertex (parabola)}]
-    The point $(h, k)$ in the standard form $y - k = a(x-h)^2$ or
-    $x - h = a(y-k)^2$. It is the \ans{turning} point of the parabola.
-
-  \item[\termblanklong{center (ellipse / hyperbola)}]
-    The point $(h, k)$ at the \ans{center} of an ellipse or hyperbola;
-    read from $h$ and $k$ in the standard form.
-
-  \item[\termblanklong{semi-major / semi-minor axis}]
-    For an ellipse: the larger radius is $a$ (\ans{semi-major}) and the
-    smaller is $b$ (\ans{semi-minor}).
-
-  \item[\termblanklong{asymptote (hyperbola)}]
-    Lines the hyperbola approaches but never reaches:
-    $y - k = \pm\dfrac{\;\;}{\;\;}(x - h)$. \quad Fill in $b$ over $a$: \ans{$b/a$}
-\end{description}
+\termblanklong{exponential model}
+\termblanklong{growth factor}
+\termblanklong{percent change}
+\termblanklong{initial value}
+\termblanklong{natural base $e$}
+\termblanklong{prediction}
+\termblanklong{domain restriction}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} Planetary orbits, telescope mirrors, and navigation
-systems all use conic sections.
-
-\vspace{4pt}
-\textbf{Q1.} Name one real-world application of a parabola and one of an ellipse.
-\ansline{Parabola: satellite dish / telescope mirror / bridge arch. Ellipse: planetary orbit / whispering gallery.}
-
-\textbf{Q2.} What do you predict all three conic shapes have in common
-algebraically?
-\ansline{All can be described by second-degree (quadratic) equations in $x$ and $y$; all arise from distance relationships.}
+A town's population over four years:
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c}
+\textbf{Year} & \textbf{Population} & \textbf{Ratio (successive)} \\ \hline
+0 & 10{,}000 & --- \\
+1 & 10{,}300 & $10300 \div 10000 = $ \ans{1.03} \\
+2 & 10{,}609 & $10609 \div 10300 \approx $ \ans{1.03} \\
+3 & 10{,}927 & $10927 \div 10609 \approx $ \ans{1.03} \\
+\end{tabular}
+\end{center}
+\medskip
+The ratios are \ans{constant (equal)}, so the growth is \ans{exponential}. The growth rate per year is \ans{3\%}.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Section 1 — Parabolas
-%----------------------------------------------------------------------
-\begin{notesbox}{Section 1 --- Parabolas (LO 4.6.A, EK 4.6.A.1)}
+\begin{notesbox}{LO 2.5.A --- Building a Model from Initial Value and Ratio}
+\textbf{General Form:} $f(x) = a \cdot b^x$, where $a = $ \ans{initial value} and $b = $ \ans{growth factor}.
 
-\textbf{Standard forms:}
+\medskip
+\textbf{Connecting $b$ to percent change (EK 2.5.B.1):}
+\begin{itemize}[itemsep=3pt]
+  \item Growth at rate $r$: $b = $ \ans{$1 + r$}
+  \item Decay at rate $r$: $b = $ \ans{$1 - r$}
+\end{itemize}
 
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} p{0.38\linewidth} p{0.30\linewidth} X @{}}
-\textbf{Form} & \textbf{Axis} & \textbf{Direction} \\
-\midrule
-$y - k = a(x - h)^2$ & vertical & $a > 0$: opens \ans{up};
-  $a < 0$: opens \ans{down} \\[4pt]
-$x - h = a(y - k)^2$ & horizontal & $a > 0$: opens \ans{right};
-  $a < 0$: opens \ans{left} \\
-\end{tabularx}
+\medskip
+\textbf{Example 1:} A population starts at 10{,}000 and grows 3\% per year. Write the model.
 
-\vspace{8pt}
-\textbf{Worked Example:}\quad $y + 3 = 2(x - 1)^2$
+\smallskip
+$a = $ \ans{10{,}000} \quad $b = $ \ans{1.03} \quad Model: $P(t) = $ \ans{$10000 \cdot (1.03)^t$}
 
-Rewrite: $y - ($ \ans{$-3$} $) = 2(x - $ \ans{$1$} $)^2$
+\medskip
+\textbf{Example 2:} A car's value starts at \$28{,}000 and depreciates 12\% per year. Write the model.
 
-Vertex: \ans{$(1,\,-3)$} \quad $a =$ \ans{$2$}, so opens: \ans{up}
+\smallskip
+$a = $ \ans{28{,}000} \quad $b = $ \ans{0.88} \quad Model: $V(t) = $ \ans{$28000 \cdot (0.88)^t$}
 
-\vspace{10pt}
-\textbf{Student Practice:}\quad $y - 5 = -(x + 2)^2$
+\medskip
+\textbf{Example 3:} A bank account earns 4.5\% interest annually on an initial \$1{,}000.
 
-Vertex: \ans{$(-2,\,5)$} \quad $a =$ \ans{$-1$}, so opens: \ans{down}
+\smallskip
+Model: $A(t) = $ \ans{$1000 \cdot (1.045)^t$} \quad After 6 years: $A(6) = $ \ans{$\approx \$1308.65$}
+\end{notesbox}
 
+\vspace{0.06in}
+
+\begin{notesbox}{LO 2.5.A --- Building a Model from Two Points (EK 2.5.A.3)}
+\textbf{Strategy:} Given $(x_1, y_1)$ and $(x_2, y_2)$, write two equations:
+\[
+  y_1 = a \cdot b^{x_1} \qquad \text{and} \qquad y_2 = a \cdot b^{x_2}
+\]
+Divide the second by the first to eliminate $a$:
+\[
+  \frac{y_2}{y_1} = b^{\,x_2 - x_1} \qquad \Rightarrow \qquad b = \left(\frac{y_2}{y_1}\right)^{1/(x_2-x_1)}
+\]
+Then solve for $a$: $a = y_1 / b^{x_1}$.
+
+\medskip
+\textbf{Example:} An exponential function passes through $(0, 5)$ and $(3, 40)$.
+
+\smallskip
+Step 1 --- Find $b$: \ans{$b = (40/5)^{1/3} = 8^{1/3} = 2$}
+
+\smallskip
+Step 2 --- Find $a$: \ans{$a = 5 / 2^0 = 5$}
+
+\smallskip
+Model: $f(x) = $ \ans{$5 \cdot 2^x$}
+
+\medskip
+\textbf{Natural base $e$ (EK 2.5.A.6):} $e \approx $ \ans{2.718}. Used in continuous models: $f(t) = a \cdot e^{rt}$.
+
+Example: $f(t) = 500 e^{0.04t}$ grows \ans{4}\% continuously per year.
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{LO 2.5.B --- Equivalent Forms and Predictions (EK 2.5.B.2)}
+\textbf{Equivalent forms reveal different time-scale properties.}
+
+$f(d) = 3 \cdot 2^d$ models growth where $d$ = days.
+
+Rewrite for weeks (let $w = d/7$, so $d = 7w$):
+\[
+  f(d) = 3 \cdot 2^d = 3 \cdot 2^{7w} = 3 \cdot (2^7)^w = 3 \cdot \ans{128}^w
+\]
+The base \ans{128} means the quantity multiplies by \ans{128 (i.e., increases by a factor of 128)} each week.
+
+\medskip
+\textbf{Prediction and domain caution:} Use the model for inputs \ans{within the realistic context}.
+
+Predict the town population at $t = 20$: $P(20) = 10000 \cdot (1.03)^{20} \approx $ \ans{18{,}061}
+
+\textit{Domain note:} Is $t = 200$ realistic? \ans{Probably not; exponential growth models break down far from the data.}
 \end{notesbox}
 
 \begin{teachernote}
-For the practice problem, students must rewrite $(x+2)^2$ as $(x-(-2))^2$ to read
-the vertex correctly. Cold-call: ``What is the value of $h$ here?''
-\end{teachernote}
+Hook table: each ratio is 1.03, confirming 3\% per-year exponential growth.
 
-\vspace{0.08in}
+Example 3: $1000(1.045)^6 = 1000 \times 1.30865 \approx \$1308.65$.
 
-%----------------------------------------------------------------------
-% Section 2 — Ellipses and Circles
-%----------------------------------------------------------------------
-\begin{notesbox}{Section 2 --- Ellipses and Circles (LO 4.6.A, EK 4.6.A.2)}
+Two-point example: emphasize the division step. Students often try to subtract equations instead.
 
-\textbf{Standard form of an ellipse:}
-\[
-  \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
-\]
+Equivalent forms: $2^7 = 128$. The new base tells you the weekly multiplier, not a new rate.
 
-\textbf{Worked Example:}\quad
-$\dfrac{(x+1)^2}{16} + \dfrac{(y-3)^2}{9} = 1$
-
-\vspace{6pt}
-Center: \ans{$(-1,\,3)$} \quad
-$a^2 =$ \ans{$16$} $\Rightarrow a =$ \ans{$4$} (horizontal) \quad
-$b^2 =$ \ans{$9$} $\Rightarrow b =$ \ans{$3$} (vertical)
-
-\vspace{10pt}
-\textbf{Circle (special case):}\quad When $a = b = r$, the equation becomes
-
-\[
-  (x - h)^2 + (y - k)^2 = r^2
-\]
-
-\textbf{Student Practice:}\quad
-$\dfrac{(x-3)^2}{25} + \dfrac{(y+1)^2}{4} = 1$
-
-Center: \ans{$(3,\,-1)$} \quad $a =$ \ans{$5$} \quad $b =$ \ans{$2$}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Section 3 — Hyperbolas
-%----------------------------------------------------------------------
-\begin{notesbox}{Section 3 --- Hyperbolas (LO 4.6.A, EK 4.6.A.3)}
-
-\textbf{Standard forms:}
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
-\textbf{Form} & \textbf{Opens} \\
-\midrule
-$\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$ &
-  left and right ($x$-term positive) \\[4pt]
-$\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$ &
-  up and down ($y$-term positive) \\
-\end{tabularx}
-
-\vspace{8pt}
-\textbf{Asymptotes:}\quad $y - k = \pm\dfrac{b}{a}(x - h)$
-
-\vspace{10pt}
-\textbf{Worked Example:}\quad
-$\dfrac{(x-2)^2}{9} - \dfrac{(y+1)^2}{4} = 1$
-
-Center: \ans{$(2,\,-1)$} \quad $a =$ \ans{$3$} \quad $b =$ \ans{$2$} \quad
-Opens: \ans{left and right}
-
-Asymptotes: $y + 1 = \pm$ \ans{$\dfrac{2}{3}$} $(x - 2)$
-
-\vspace{10pt}
-\textbf{Student Practice:}\quad
-$\dfrac{(y+3)^2}{16} - \dfrac{(x-1)^2}{9} = 1$
-
-Center: \ans{$(1,\,-3)$} \quad $a =$ \ans{$4$} \quad $b =$ \ans{$3$} \quad
-Opens: \ans{up and down}
-
-Asymptotes: $y + 3 = \pm$ \ans{$\dfrac{4}{3}$} $(x - 1)$
-
-\end{notesbox}
-
-\begin{teachernote}
-For the practice hyperbola, $b^2 = 16$ gives $b = 4$ and $a^2 = 9$ gives $a = 3$.
-The $y$-term is positive, so the hyperbola opens up and down. The asymptote slope
-is $b/a = 4/3$ (not $a/b$). This is the most common error --- clarify by writing
-the formula $y - k = \pm(b/a)(x-h)$ with the denominator labeled.
+Domain caution: model validity depends on the context. Exponential growth cannot continue indefinitely.
 \end{teachernote}
 
 \end{document}

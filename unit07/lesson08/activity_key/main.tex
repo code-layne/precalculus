@@ -1,0 +1,169 @@
+%! Rates of Change in Polar Functions — Unit 7, Lesson 7.8 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 7: Analytic Trigonometry and Polar Coordinates \quad}
+\newcommand{\LessonNumberName}{Lesson 7.8: Rates of Change in Polar Functions}
+
+\begin{document}
+
+\pageheader{Unit 7, Lesson 7.8}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.10in}
+
+%----------------------------------------------------------------------
+% Context
+%----------------------------------------------------------------------
+\begin{scenariobox}[Context: Radar Signal Strength]{sky}
+A radar system sweeps an antenna in a circle. The \textbf{angle} $\theta$ is the
+current direction of the sweep (in radians), and $r = f(\theta)$ represents the
+\textbf{signal strength} (in arbitrary units) detected at that angle. As the antenna
+sweeps, $r$ can increase (stronger signal), decrease (weaker signal), or even
+go negative (a phase-inverted return).
+\end{scenariobox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier R Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Reinforce (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Table:} $r = 2\cos\theta$
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ & $2\pi$ \\
+\hline
+$r$ & $2$ & $\approx 1.41$ & $0$ & $\approx -1.41$ & $-2$ & $\approx -1.41$ & $0$ & $\approx 1.41$ & $2$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Part A --- Classifications:}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|p{5cm}|}
+\hline
+$[0, \pi/4]$ & \ans{P\&D (positive, decreasing from 2 to 1.41)} \\
+\hline
+$[\pi/4, \pi/2]$ & \ans{P\&D (positive, decreasing from 1.41 to 0)} \\
+\hline
+$[\pi/2, 3\pi/4]$ & \ans{N\&D (negative, decreasing from 0 to $-1.41$)} \\
+\hline
+$[3\pi/4, \pi]$ & \ans{N\&D (negative, decreasing from $-1.41$ to $-2$)} \\
+\hline
+$[\pi, 5\pi/4]$ & \ans{N\&I (negative, increasing from $-2$ to $-1.41$)} \\
+\hline
+$[5\pi/4, 3\pi/2]$ & \ans{N\&I (negative, increasing from $-1.41$ to 0)} \\
+\hline
+$[3\pi/2, 7\pi/4]$ & \ans{P\&I (positive, increasing from 0 to 1.41)} \\
+\hline
+$[7\pi/4, 2\pi]$ & \ans{P\&I (positive, increasing from 1.41 to 2)} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Part B.1.}\quad ARC $= \dfrac{0 - 2}{\pi/2} = $ \ans{$-4/\pi \approx -1.27$ per radian}
+
+\vspace{6pt}
+\textbf{Part B.2.}\quad ARC $= \dfrac{-2 - 0}{\pi/2} = $ \ans{$-4/\pi \approx -1.27$ per radian}
+
+\vspace{6pt}
+\textbf{Part B.3.}\quad \ans{The ARC is negative on $[0, \pi/2]$, meaning the signal strength decreases by about 1.27 units per radian as the antenna sweeps from 0 to $\pi/2$. The signal is getting weaker.}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier A Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{1.}\quad Intervals where $r < 0$:
+
+$r = 2\cos\theta$: \ans{$(\pi/2, 3\pi/2)$, approximately} (where $\cos\theta < 0$)
+
+$r = 1 - 2\sin\theta$: \ans{$(\pi/4, 3\pi/4)$ approximately, where $\sin\theta > 1/2$}
+
+\vspace{8pt}
+\textbf{2.}\quad Average rates of change:
+
+(a)\quad $r = 2\cos\theta$, $[3\pi/4, \pi]$: ARC $= \dfrac{-2 - (-1.41)}{\pi/4} \approx$ \ans{$-0.75$ per radian}
+
+(b)\quad $r = 2\cos\theta$, $[\pi, 5\pi/4]$: ARC $= \dfrac{-1.41 - (-2)}{\pi/4} \approx$ \ans{$0.75$ per radian}
+
+(c)\quad $r = 1 - 2\sin\theta$, $[\pi/4, \pi/2]$: ARC $= \dfrac{-1 - (-0.41)}{\pi/4} \approx$ \ans{$-0.75$ per radian}
+
+(d)\quad $r = 1 - 2\sin\theta$, $[\pi/2, 3\pi/4]$: ARC $= \dfrac{-0.41 - (-1)}{\pi/4} \approx$ \ans{$0.75$ per radian}
+
+\vspace{8pt}
+\textbf{3.}\quad Sample interpretation (Part 2b, $r = 2\cos\theta$ on $[\pi, 5\pi/4]$):
+\ans{As the radar sweeps from $\theta = \pi$ to $\theta = 5\pi/4$, the signal strength increases by about 0.75 units per radian; however, since $r < 0$ in this interval, the signal is phase-inverted and the source is on the opposite side of the antenna, moving toward the antenna (N\&I behavior).}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Tier E Key
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part A.}\quad $r = \sin(2\theta)$ classifications:
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|}
+\hline
+$[0, \pi/4]$ & \ans{P\&I: $r$ goes 0 to 1} \\
+\hline
+$[\pi/4, \pi/2]$ & \ans{P\&D: $r$ goes 1 to 0} \\
+\hline
+$[\pi/2, 3\pi/4]$ & \ans{N\&D: $r$ goes 0 to $-1$} \\
+\hline
+$[3\pi/4, \pi]$ & \ans{N\&I: $r$ goes $-1$ to 0} \\
+\hline
+$[\pi, 5\pi/4]$ & \ans{P\&I: $r$ goes 0 to 1} \\
+\hline
+$[5\pi/4, 3\pi/2]$ & \ans{P\&D: $r$ goes 1 to 0} \\
+\hline
+$[3\pi/2, 7\pi/4]$ & \ans{N\&D: $r$ goes 0 to $-1$} \\
+\hline
+$[7\pi/4, 2\pi]$ & \ans{N\&I: $r$ goes $-1$ to 0} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Part B.}\quad Petals:
+
+Petal 1 (QI): \ans{$[0, \pi/2]$} (P\&I then P\&D, $r > 0$, traced in QI)
+
+Petal 2 (QIV): \ans{$[\pi/2, \pi]$} ($r < 0$, $\theta$ in QII, traced in opposite direction = QIV)
+
+Petal 3 (QIII): \ans{$[\pi, 3\pi/2]$} (P\&I then P\&D, $r > 0$, traced in QIII)
+
+Petal 4 (QII): \ans{$[3\pi/2, 2\pi]$} ($r < 0$, $\theta$ in QIV, traced in opposite direction = QII)
+
+\vspace{8pt}
+\textbf{Part C.}\quad Sample paragraph:
+\ans{When $r > 0$, a point is plotted at distance $r$ along the terminal ray for angle $\theta$, so positive-$r$ intervals trace petals in the same quadrant as $\theta$. When $r < 0$, the point is plotted at distance $|r|$ in the \emph{opposite} direction, placing the petal in the quadrant diametrically opposite to $\theta$. This is why Petal 2 appears in QIV even though $\theta$ sweeps through QII. Within each half-petal, the P\&I or N\&D behavior indicates the curve is moving outward (away from the origin), and the P\&D or N\&I behavior indicates it is returning inward, completing the petal shape.}
+
+\end{tcolorbox}
+
+\end{document}

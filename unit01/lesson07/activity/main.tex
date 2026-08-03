@@ -1,4 +1,4 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Group Activity
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,23 +9,30 @@
 \pageheader{Unit 1, Lesson 1.7}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Analyzing Concert Venue Costs]{sky}
+\begin{scenariobox}[Data Dispatch Agency]{sky}
 \small
-A concert venue is modeling the average cost per person for different events.
-Each rational function below represents a different cost or demand model.
-Analyze the end behavior of each function as audience size $x$ grows without bound.
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}llll@{}}
-$r_1(x) = \dfrac{2x + 5}{x - 1}$ &\quad&
-$r_2(x) = \dfrac{3x^2}{x^2 + 4}$ \\[8pt]
-$r_3(x) = \dfrac{x + 1}{x^2 - 9}$ &\quad&
-$r_4(x) = \dfrac{x^3 - 2x}{x - 3}$ \\
-\end{tabular}
+Your team works at the Data Dispatch Agency. Four requests just arrived, each describing a
+real-world situation that needs a function model. For each dispatch, your team must (1) select
+the best model type, and (2) state the key assumptions and domain restriction. Work through
+the tier that matches your group's assignment.
 \end{scenariobox}
+
+\vspace{0.08in}
+
+\textbf{The four dispatches:}
+
+\begin{itemize}[itemsep=3pt]
+  \item \textbf{Dispatch 1.} A city tracks its population each year. The population increases by
+        approximately 850 people per year for the past decade.
+  \item \textbf{Dispatch 2.} A farmer wants to fence a rectangular pen using 200 m of fencing.
+        She records the area for different choices of one side length.
+  \item \textbf{Dispatch 3.} A warehouse stores boxes stacked in cubic arrangements.
+        The total number of boxes for a stack of side length $n$ units is recorded.
+  \item \textbf{Dispatch 4.} A ride-share app charges \$2.50 per mile for the first 5 miles,
+        then \$1.75 per mile for each mile after that.
+\end{itemize}
 
 \vspace{0.08in}
 
@@ -33,19 +40,18 @@ $r_4(x) = \dfrac{x^3 - 2x}{x - 3}$ \\
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The leading terms are already extracted for you.
-Compute the quotient of leading terms and state the asymptote type.
+For each dispatch, \textbf{circle the best model type} from the three choices given, then
+complete the assumption sentence.
 
-\medskip
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{@{}p{1.2cm} p{2.2cm} p{2.2cm} p{2.8cm} p{3.0cm}@{}}
-\textbf{Fcn} & \textbf{Lead.\ num} & \textbf{Lead.\ den} & \textbf{Quotient} & \textbf{Asymptote?} \\
-\hline
-$r_1$ & $2x$   & $x$   & \blank{2cm} & \blank{2.5cm} \\
-$r_2$ & $3x^2$ & $x^2$ & \blank{2cm} & \blank{2.5cm} \\
-$r_3$ & $x$    & $x^2$ & \blank{2cm} & \blank{2.5cm} \\
-$r_4$ & $x^3$  & $x$   & \blank{2cm} & \blank{2.5cm} \\
-\end{tabular}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} c X p{5.5cm} @{}}
+\textbf{Dispatch} & \textbf{Best model (circle one)} & \textbf{Complete the assumption} \\
+\midrule
+1 & Linear \quad Quadratic \quad Cubic & ``This model assumes the population grows by a \blank{2.5cm} amount each year.'' \\
+2 & Linear \quad Quadratic \quad Cubic & ``This model assumes the pen is a \blank{2cm} and the perimeter is exactly \blank{1.5cm} m.'' \\
+3 & Linear \quad Quadratic \quad Cubic & ``This model assumes the stacks form perfect \blank{2cm} shapes.'' \\
+4 & Linear \quad Quadratic \quad Piecewise & ``This model assumes the rate changes at exactly \blank{1.5cm} miles.'' \\
+\end{tabularx}
 \end{tcolorbox}
 
 \vspace{0.08in}
@@ -54,20 +60,60 @@ $r_4$ & $x^3$  & $x$   & \blank{2cm} & \blank{2.5cm} \\
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each function, identify the degrees and leading coefficients, compute the quotient of leading
-terms, write both limit statements, and state the asymptote type.
+For each dispatch, compute differences from the table provided, determine the degree, name
+the model type, and state one assumption with domain restriction.
 
 \medskip
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{@{}p{1.2cm} p{1.2cm} p{1.2cm} p{2.5cm} p{2.8cm} p{2.8cm} p{1.8cm}@{}}
-\textbf{Fcn} & \textbf{Deg n} & \textbf{Deg d} & \textbf{Quotient} &
-$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ & \textbf{Type} \\
+\textbf{Dispatch 1 table:}
+\quad
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|}
 \hline
-$r_1$ & \blank{0.8cm} & \blank{0.8cm} & \blank{2cm} & \blank{2.3cm} & \blank{2.3cm} & \blank{1.5cm} \\
-$r_2$ & \blank{0.8cm} & \blank{0.8cm} & \blank{2cm} & \blank{2.3cm} & \blank{2.3cm} & \blank{1.5cm} \\
-$r_3$ & \blank{0.8cm} & \blank{0.8cm} & \blank{2cm} & \blank{2.3cm} & \blank{2.3cm} & \blank{1.5cm} \\
-$r_4$ & \blank{0.8cm} & \blank{0.8cm} & \blank{2cm} & \blank{2.3cm} & \blank{2.3cm} & \blank{1.5cm} \\
+Year ($x$) & Population ($y$) & $\Delta y$ \\
+\hline
+0 & 12{,}000 & --- \\
+\hline
+1 & 12{,}850 & \blank{1.8cm} \\
+\hline
+2 & 13{,}700 & \blank{1.8cm} \\
+\hline
+3 & 14{,}550 & \blank{1.8cm} \\
+\hline
 \end{tabular}
+
+\medskip
+Model type: \blank{3cm} \quad Degree: \blank{1cm}
+
+\medskip
+Assumption: \writeline
+
+Domain restriction (give an inequality): \blank{5cm}
+
+\bigskip
+\textbf{Dispatch 2 table:} (side length $\ell$ in meters, area $A$ in m$^2$)
+\quad
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\ell$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
+\hline
+10 & 900  & ---         & ---         \\
+\hline
+20 & 1600 & \blank{1.5cm} & ---      \\
+\hline
+30 & 2100 & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+40 & 2400 & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+50 & 2500 & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+
+\medskip
+Model type: \blank{3cm} \quad Degree: \blank{1cm}
+
+\medskip
+Domain restriction: \blank{6cm}
 \end{tcolorbox}
 
 \vspace{0.08in}
@@ -77,27 +123,40 @@ $r_4$ & \blank{0.8cm} & \blank{0.8cm} & \blank{2cm} & \blank{2.3cm} & \blank{2.3
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=10pt]
-  \item \textbf{Construct a rational function} with a \textbf{horizontal asymptote at $y = -3$}
-        where the numerator has degree 2 and the denominator has degree 2.
 
-        Write your function: $r(x) = $ \blank{6cm}
+  \item \textbf{Dispatch 4 --- Piecewise model.} Write a two-piece description of the ride-share
+        cost function $C(m)$ where $m$ is the number of miles driven.
 
-        Verify: What are the leading terms?  Quotient $=$ \blank{2cm}. Does it equal $-3$? \blank{1.5cm}
+        \medskip
+        Piece 1 (applies when \blank{3cm}): $C(m) = $ \blank{5cm}
 
-  \item \textbf{Construct a rational function} with a \textbf{slant asymptote at $y = 2x + 1$}.
+        \vspace{0.05in}
+        Function type for Piece 1: \blank{3.5cm}
 
-        \textit{Hint: slant asymptotes arise when deg num $=$ deg denom $+ 1$.}
+        \medskip
+        Piece 2 (applies when \blank{3cm}): $C(m) = $ \blank{5cm}
 
-        Write your function: $r(x) = $ \blank{6cm}
+        \vspace{0.05in}
+        Function type for Piece 2: \blank{3.5cm}
 
-        Explain why a slant asymptote, rather than a horizontal asymptote, exists for your function:
+  \item State \textbf{two assumptions} embedded in the Dispatch 4 model and explain
+        why each assumption is needed for the model to be valid.
+
+        \medskip
+        Assumption 1: \writeline
+        Why it matters: \writeline
+
+        \medskip
+        Assumption 2: \writeline
+        Why it matters: \writeline
+
+  \item For Dispatch 3, a student claims a cubic model is appropriate because ``volume is
+        three-dimensional.'' Explain in one or two sentences whether this reasoning is
+        mathematically sound, referencing differences.
+
+        \medskip
         \writelines{2}
 
-  \item For your function in part (1), write both limit statements:
-
-        $\displaystyle\lim_{x\to\infty} r(x) = $ \blank{2cm}
-        \qquad
-        $\displaystyle\lim_{x\to -\infty} r(x) = $ \blank{2cm}
 \end{enumerate}
 \end{tcolorbox}
 

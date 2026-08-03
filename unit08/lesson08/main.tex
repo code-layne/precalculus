@@ -1,0 +1,173 @@
+%! Linear Transformations and Matrices — Unit 8, Lesson 8.8 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 8: Parametric Functions, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 8.8: Linear Transformations and Matrices}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize linear transformations as
+    matrix-vector multiplications, compute output vectors using $L(\vec{v}) = A\vec{v}$,
+    and apply a $2\times 2$ transformation matrix to multiple input vectors simultaneously.
+    (Big Idea: Functions)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.46\linewidth}\vspace{0pt}
+    \textbf{AP Skill:} 1.B --- Express equivalent analytic forms\\[4pt]
+    \textbf{Essential Knowledge:}\\
+    EK 4.12.A.1 -- 4.12.A.5
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\linewidth}\vspace{0pt}
+    \textbf{Key Understandings:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+        \item A linear transformation maps each output component as a sum of constant
+              multiples of the input components.
+        \item Any linear transformation $L:\mathbb{R}^2\to\mathbb{R}^2$ is represented
+              by a unique $2\times 2$ matrix $A$ via $L(\vec{v})=A\vec{v}$.
+        \item Applying $A$ to a $2\times n$ matrix transforms $n$ vectors simultaneously.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item \textbf{Linear transformation} --- a function $L:\mathbb{R}^2\to\mathbb{R}^2$
+          where each output component is a sum of constant multiples of input components.
+    \item \textbf{Transformation matrix} --- the unique $2\times 2$ matrix $A$ such that
+          $L(\vec{v})=A\vec{v}$ for all $\vec{v}\in\mathbb{R}^2$.
+    \item \textbf{Input vector / output vector} --- $\vec{v}$ (domain) and $L(\vec{v})=A\vec{v}$
+          (range).
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached warm-up. Prior skills reviewed:
+            \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+                \item Matrix multiplication (Lesson 4.10)
+                \item Vectors as $2\times 1$ column matrices (Lesson 4.9)
+                \item The zero vector
+            \end{itemize}
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    Computer graphics moves points on screen by transforming their position vectors.
+    If a triangle has vertices at $(1,0)$, $(0,1)$, and $(-1,0)$, can we scale all
+    three vertices at once using a single matrix multiplication?  Today we discover the
+    connection between matrix multiplication and geometric transformations.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Definition of a Linear Transformation.}\\
+A function $L:\mathbb{R}^2\to\mathbb{R}^2$ is a \emph{linear transformation} if each
+output component is a sum of constant multiples of the input components:
+\[
+  L\!\left(\begin{bmatrix}x\\y\end{bmatrix}\right)
+  = \begin{bmatrix}ax+by\\cx+dy\end{bmatrix}.
+\]
+Key consequence: $L(\vec{0}) = \vec{0}$ (the zero vector maps to the zero vector).
+
+\vspace{6pt}
+\textbf{Step 2 --- Matrix Representation.}\\
+The constants $a,b,c,d$ can be organized into a $2\times 2$ matrix
+$A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$, so that
+\[
+  L(\vec{v}) = A\vec{v}.
+\]
+For \emph{any} $2\times 2$ matrix $A$, the function $L(\vec{v})=A\vec{v}$ is a linear
+transformation.  Conversely, every $L$ has exactly one such matrix.
+
+\vspace{6pt}
+\textbf{Step 3 --- Zero Vector Check.}\\
+Since matrix multiplication is distributive, $A\vec{0} = \vec{0}$.  A mapping that does
+\emph{not} send $\vec{0}\to\vec{0}$ cannot be linear.
+
+\columnbreak
+
+\textbf{Step 4 --- Batch Transformation.}\\
+Expressing $n$ vectors as columns of a $2\times n$ matrix and multiplying by $A$ gives
+all $n$ output vectors at once:
+\[
+  A\begin{bmatrix}\vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_n\end{bmatrix}
+  = \begin{bmatrix}A\vec{v}_1 & A\vec{v}_2 & \cdots & A\vec{v}_n\end{bmatrix}.
+\]
+
+\vspace{6pt}
+\textbf{Worked Example --- Scaling Transformation.}\\
+Let $A = \begin{bmatrix}2&0\\0&2\end{bmatrix}$.  Transform the triangle vertices
+$(1,0)$, $(0,1)$, $(-1,0)$ simultaneously:
+\[
+  \begin{bmatrix}2&0\\0&2\end{bmatrix}
+  \begin{bmatrix}1&0&-1\\0&1&0\end{bmatrix}
+  = \begin{bmatrix}2&0&-2\\0&2&0\end{bmatrix}.
+\]
+Each vertex is scaled by a factor of 2.  The transformation is a dilation from the origin.
+
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Circulate and check:}
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item Are students multiplying row $\times$ column correctly (not column $\times$ column)?
+        \item Do students recognize that $L(\vec{0})=\vec{0}$ is a \emph{necessary} condition,
+              not sufficient?
+        \item Cold-call: ``What is the transformation matrix for the identity transformation?''
+        \item Cold-call: ``If I told you $L$ maps $(1,0)\to(3,5)$ and $(0,1)\to(-1,2)$,
+              what is $A$?''
+    \end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    \textbf{Tier R (Remediate):} Given $A=\begin{bmatrix}2&0\\0&2\end{bmatrix}$, compute
+    $L(\vec{v})=A\vec{v}$ for $\vec{v}=\langle 3,1\rangle$ and $\vec{v}=\langle -1,4\rangle$.
+    Describe the transformation in words.\\[4pt]
+    \textbf{Tier A (At Standard):} Given $A=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$, apply $L$
+    to the triangle vertices $(1,0)$, $(0,1)$, $(-1,-1)$. Describe the geometric effect.\\[4pt]
+    \textbf{Tier E (Extend):} Show that $L(\vec{v})=A\vec{v}$ with $A=\begin{bmatrix}1&2\\0&1\end{bmatrix}$
+    is linear by verifying $L(\vec{v}+\vec{w})=L(\vec{v})+L(\vec{w})$ for two specific vectors.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket (last 5 minutes):}
+    \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+        \item Let $A=\begin{bmatrix}3&1\\0&2\end{bmatrix}$.  Find $L\!\left(\begin{bmatrix}2\\1\end{bmatrix}\right)$.
+        \item A linear transformation maps $\begin{bmatrix}1\\0\end{bmatrix}\to\begin{bmatrix}3\\5\end{bmatrix}$
+              and $\begin{bmatrix}0\\1\end{bmatrix}\to\begin{bmatrix}-1\\2\end{bmatrix}$.  Write matrix $A$.
+    \end{enumerate}
+    \textbf{Assessment note:} Q2 assesses whether students understand that the columns of $A$ are the
+    images of the standard basis vectors --- a key insight from EK 4.12.A.4.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} 5 problems covering single-vector transformation, batch transformation,
+    identifying a transformation geometrically, linearity check (zero-vector test), and an
+    AP-style MC item.\\[4pt]
+    \textbf{Preview of Lesson 4.13:} Matrices as functions --- composition of transformations
+    and the connection to matrix multiplication of two transformation matrices.
+\end{skillbox}
+\end{document}

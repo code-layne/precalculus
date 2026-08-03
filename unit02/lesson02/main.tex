@@ -1,4 +1,4 @@
-%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Lesson Plan
+%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.2: Change in Linear and Exponential Functions}
+\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.2: Polynomial Functions and Rates of Change}
 
 \begin{document}
 \begin{center}
@@ -19,172 +19,136 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct linear and exponential functions from a
-    point and a rate of change (or ratio), connect these to arithmetic and geometric sequences,
-    and determine whether a function is linear or exponential by analyzing output values over
-    equal-length input intervals.
-    \hfill\textit{\small Skills: 1.C and 3.B}
+    \textbf{Primary Objective:} Students will identify and interpret key characteristics of polynomial functions --- degree, leading term, local and global extrema, and points of inflection --- using rates of change and graphical behavior. (MP 2.A, 3.A)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{Skill 1.C} --- Identify a re-expression of mathematical information presented in a given representation. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Linear functions $f(x) = b + mx$ extend arithmetic sequences; exponential functions
-        $f(x) = ab^x$ extend geometric sequences. (EK 2.2.A.1, 2.2.A.3)
-  \item Both types can be built from one point and a constant rate or ratio.
-        (EK 2.2.A.2, 2.2.A.4)
-  \item Sequences and functions may differ in domain. (EK 2.2.A.5)
-\end{itemize} \\
-\textbf{Skill 3.B} --- Apply an appropriate mathematical definition, theorem, or test. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Equal-length interval test: constant difference $\Rightarrow$ linear; constant ratio
-        $\Rightarrow$ exponential. (EK 2.2.B.1)
-  \item Both function families are fully determined by two distinct input-output pairs.
-        (EK 2.2.B.3)
-\end{itemize} \\
-\end{tabularx}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{AP Skills}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item \textbf{2.A} --- Identify information from analytical and graphical representations
+    \item \textbf{3.A} --- Describe key characteristics of a function
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+\textbf{Key Understandings (LO 1.4.A)}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Polynomial standard form: degree, leading term, leading coefficient
+    \item Local vs.\ global extrema; relationship to switching between increasing/decreasing
+    \item Between every two distinct real zeros, there is at least one local extremum
+    \item Even-degree polynomials have a global max or global min
+    \item Points of inflection occur where rate of change switches from increasing to decreasing (or vice versa)
+\end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-linear function        & $f(x) = b + mx$; output changes by a constant amount (slope $m$) over every unit increase in input. \\
-exponential function   & $f(x) = ab^x$; output is multiplied by a constant base $b$ over every unit increase in input. \\
-constant rate of change & The slope $m$ of a linear function; equal to $\Delta y / \Delta x$ over any interval. \\
-constant ratio         & The base $b$ of an exponential function; equal to $y_{n+1}/y_n$ over equal-length intervals. \\
-initial value          & The output when $x = 0$; equals $b$ for $f(x)=b+mx$ and $a$ for $f(x)=ab^x$. \\
-domain                 & The set of allowable inputs; sequences use $\{0,1,2,\ldots\}$ while the corresponding functions use all reals (or a subset). \\
-\end{tabularx}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item polynomial function
+    \item degree
+    \item leading coefficient
+    \item local maximum / local minimum
+    \item global maximum / global minimum
+    \item point of inflection
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers skills from Lesson 2.1: identifying the common difference $d$
-    and writing $a_n$ for an arithmetic sequence; identifying the common ratio $r$ and writing
-    $g_n$ for a geometric sequence; and determining sequence type and initial term from two given
-    terms. Students connect these sequence ideas directly to the function constructions in today's
-    lesson.
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[4pt]
+            \textbf{Skills reviewed:} identifying zeros of a function (Lesson 1.1); concavity and AROC sign patterns (Lesson 1.1); average rate of change patterns and second differences (Lesson 1.3).
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.20\linewidth}\vspace{0pt}\centering
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-Present two unlabeled tables on the board (no function type announced):
+Display (or describe aloud): ``Consider $p(x) = x^3 - 3x$. As $x$ increases from $-\infty$, the function decreases steeply, reaches a valley, climbs through zero, peaks, and then falls back through zero before rising to $+\infty$ again.''
 
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{c|c}
-$x$ & $f(x)$ \\ \hline
-0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
-\end{tabular}
-\qquad\qquad
-\begin{tabular}{c|c}
-$x$ & $g(x)$ \\ \hline
-0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
-\end{tabular}
-\end{center}
-
-\medskip
-Ask: \textbf{``What is the pattern in Table 1? In Table 2?''} After student discussion, ask:
-\textbf{``Can you write a rule that predicts the output for any input?''} Today's goal is to
-answer that question — and to know \textit{which} type of function to reach for.
+Discussion prompts:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Where are the ``peaks'' and ``valleys'' of this function?
+    \item How many real zeros does $p(x) = x^3 - 3x$ have? (Factor: $x(x-\sqrt{3})(x+\sqrt{3})$)
+    \item Between each pair of zeros, what must happen to the function's direction of change?
+    \item Where does the rate of change itself change direction?
+\end{itemize}
+Use student responses to introduce the vocabulary of local extrema and points of inflection.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
-\textbf{Part 1 (15 min): Linear Functions from Arithmetic Sequences.}
+\textbf{1. Polynomial Functions (EK 1.4.A.1)}\\
+Standard form: $p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$, $a_n \neq 0$.
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item \textit{Degree}: $n$ (highest power)
+    \item \textit{Leading term}: $a_n x^n$
+    \item \textit{Leading coefficient}: $a_n$
+    \item A constant function is a polynomial of degree 0.
+\end{itemize}
 
-Arithmetic sequence $a_n = a_0 + dn$ uses an initial value plus repeated addition.
-Linear functions do the same: $f(x) = b + mx$.
-
-Point-slope form: if we know slope $m$ and one point $(x_i, y_i)$,
-\[
-  f(x) = y_i + m(x - x_i).
-\]
-This is the function analogue of $a_n = a_i + d(n - i)$.
-
-Model: given $m = 4$ and the point $(1, 7)$:
-$f(x) = 7 + 4(x - 1) = 4x + 3$. Check: $f(0)=3$, $f(2)=11$.
-
-Key difference: sequences have domain $\{0,1,2,\ldots\}$; the function $f$ is defined for all
-real $x$.
+\textbf{End behavior (verbal descriptions):}
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item Even degree, positive leading coeff.: both ends rise
+    \item Even degree, negative leading coeff.: both ends fall
+    \item Odd degree, positive leading coeff.: falls left, rises right
+    \item Odd degree, negative leading coeff.: rises left, falls right
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2 (15 min): Exponential Functions from Geometric Sequences.}
-
-Geometric sequence $g_n = g_0 r^n$ uses an initial value times repeated multiplication.
-Exponential functions do the same: $f(x) = ab^x$.
-
-Point-ratio form: if we know ratio $r$ and one point $(x_i, y_i)$,
-\[
-  f(x) = y_i \cdot r^{x - x_i}.
-\]
-Model: given $r = 3$ and the point $(0, 2)$:
-$f(x) = 2 \cdot 3^{x-0} = 2 \cdot 3^x$. Check: $f(1)=6$, $f(2)=18$.
-
-\textbf{Part 3 (10 min): Comparing Linear and Exponential.}
-
-Equal-length interval test (EK 2.2.B.1):
-\begin{itemize}[leftmargin=1em,itemsep=1pt,topsep=0pt]
-  \item Constant first difference $\Rightarrow$ linear
-  \item Constant ratio of consecutive outputs $\Rightarrow$ exponential
+\textbf{2. Local and Global Extrema (EK 1.4.A.2--4)}\\
+A \textit{local maximum} occurs where the function switches from increasing to decreasing. A \textit{local minimum} occurs where it switches from decreasing to increasing.
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+    \item The greatest local max value is the \textit{global maximum}.
+    \item The least local min value is the \textit{global minimum}.
+    \item Between every two distinct real zeros, at least one local extremum must exist.
+    \item Polynomials of even degree have either a global max or a global min (not both in general).
 \end{itemize}
 
-Two points uniquely determine each type (EK 2.2.B.3). With $(x_1,y_1)$ and $(x_2,y_2)$:
-linear gives $m = \frac{y_2-y_1}{x_2-x_1}$; exponential gives
-$b = \left(\frac{y_2}{y_1}\right)^{1/(x_2-x_1)}$.
+\textbf{3. Points of Inflection (EK 1.4.A.5)}\\
+A \textit{point of inflection} occurs where the rate of change switches from increasing to decreasing, or vice versa --- i.e., where the graph changes from concave up to concave down (or the reverse).
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: ``If I give you the point $(3, 11)$ and tell you the slope is $2$, what is
-        $f(0)$?'' (Students must use point-slope form, not assume $f(0) = 11$.)
-  \item During Part 1: watch for students who confuse slope with the $y$-intercept; confirm
-        $b = f(0)$ only when you simplify, not at the start.
-  \item After Part 2: ``What is the base of the exponential function through $(0,2)$ and $(3,54)$?
-        How did you find it?'' (Expect $b = 3$ from $54/2 = 27 = 3^3$.)
-  \item During Part 3: cold-call with a table — ``Is this linear, exponential, or neither? Show
-        your check.'' Confirm students subtract (not divide) for the first-difference test.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Circulate during the hook discussion. Listen for students confusing zeros with extrema.
+    \item During notes: cold-call --- ``If a polynomial has three distinct real zeros, what is the \textit{minimum} number of local extrema it must have?''
+    \item During activity Tier A: check that AROC computations use the correct interval endpoints.
+    \item Common misconception: students may think a local extremum must occur \textit{at} a zero. Clarify: extrema occur \textit{between} zeros.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Given a completed table, compute first differences and
-        ratios; identify the function type; read off $m$ or $r$ and the initial value; write the
-        formula using the provided template.
-  \item \textbf{Tier A (Apply):} Given two points, determine whether the relationship is linear or
-        exponential and construct the function; apply to a contextual scenario with interpretation.
-  \item \textbf{Tier E (Extend):} Investigate a population table with an apparent vertical shift;
-        determine whether subtracting a constant reveals an exponential pattern; connect to the
-        idea of exponential-plus-constant (preview of EK 2.5.A.2).
+\textbf{Context:} Roller coaster height over time (see Group Activity).
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item \textbf{Tier R (Remediate):} Identify local maxima and minima from a table of values; identify global maximum. No computation required.
+    \item \textbf{Tier A (On-level):} Compute AROCs over intervals; identify sign changes in AROC (local extrema); identify where AROC is increasing vs.\ decreasing (concavity/inflection).
+    \item \textbf{Tier E (Extend):} Determine minimum possible degree of the polynomial; reason about existence of global min using EK 1.4.A.4.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) given a table with inputs 0--3 and outputs doubling,
-identify the function type and write the formula; (2) construct an exponential function through
-$(0,3)$ and $(2,75)$; (3) true/false --- two input-output pairs uniquely determine both a
-linear and an exponential function.
-
-Collect and sort: students missing item 1 need interval-test re-teaching (LO 2.2.B);
-students missing item 2 need scaffolded ratio-formula practice (LO 2.2.A); students missing
-item 3 need explicit connection to EK 2.2.B.3.
+\textbf{Exit Ticket:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+    \item A polynomial has exactly three distinct real zeros. What is the minimum number of local extrema it must have? (EK 1.4.A.3)
+    \item A polynomial $q$ has a point of inflection at $x = 2$. AROC over $[1,2]$ is $6$; AROC over $[2,3]$ is $3$. Is the graph concave up or concave down on each interval?
+\end{enumerate}
+Look for: correct application of EK 1.4.A.3 (two zeros $\Rightarrow$ at least one extremum between them); correct use of ``concave up $\Rightarrow$ AROC increasing.''
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): equal-length interval test on two tables; construct a linear function
-from two points; construct an exponential function from two points; contextual comparison of
-linear vs.\ exponential growth over 12 months; AP-style MC identifying an exponential table;
-extension proof that $b = (y_2/y_1)^{1/(x_2-x_1)}$ for any two points on $f(x)=ab^x$.
+\textbf{Homework overview:} 5--6 problems reviewing degree/leading coefficient, minimum degree from extrema count, AROC sign changes, even-degree global extremum, and an AP-style MC item.
 
-Preview of Lesson 2.3: the number $e$ and continuous exponential growth --- why the base
-$e \approx 2.718$ arises naturally when compounding happens infinitely often.
+\textbf{Extension:} For $p(x) = x^4 - 4x^2$, compute AROCs over $[-2,-1]$, $[-1,0]$, $[0,1]$, $[1,2]$. Identify sign transitions to locate potential extrema and inflection points.
+
+\textbf{Preview:} Next lesson --- zeros of polynomial functions, their multiplicities, and an introduction to complex zeros.
 \end{skillbox}
-
 \end{document}

@@ -1,4 +1,4 @@
-%! Polynomial Functions and End Behavior — Unit 1, Lesson 1.6 — Exit Ticket (Answer Key)
+%! Inverse Functions — Unit 1, Lesson 1.6 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,31 +9,33 @@
 \pageheader{Unit 1, Lesson 1.6}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.14in}
 
-\begin{enumerate}[itemsep=16pt]
+\begin{enumerate}[itemsep=18pt]
 
-\item Let $p(x) = -2x^5 + 7x^3 - x + 3$.
+\item Given $f = \{(1,4),\ (2,9),\ (3,16)\}$, write $f^{-1}$ as a set of ordered pairs.
 
-\begin{enumerate}[label=(\alph*), itemsep=8pt]
-  \item What is the leading term of $p(x)$? \ans{$-2x^5$}
+      \vspace{0.06in}
+      $f^{-1} = \big\{$\ans{$(4,1),\ (9,2),\ (16,3)$}$\big\}$
 
-  \item Write the limit notation for the end behavior as $x \to \infty$:
+\item Find $f^{-1}(x)$ algebraically for $f(x) = 2x - 5$. Show all steps.
 
-  \vspace{0.1in}
-  $\displaystyle\lim_{x \to \infty} p(x) = $ \ans{$-\infty$}
+      \vspace{0.06in}
+      Step 1 (write $y$): \ans{$y = 2x - 5$}
 
-  \item Write the limit notation for the end behavior as $x \to -\infty$:
+      \vspace{0.04in}
+      Step 2 (swap $x$ and $y$): \ans{$x = 2y - 5$}
 
-  \vspace{0.1in}
-  $\displaystyle\lim_{x \to -\infty} p(x) = $ \ans{$\infty$}
-\end{enumerate}
+      \vspace{0.04in}
+      Step 3 (solve for $y$): \ans{$x + 5 = 2y$, so $y = \dfrac{x+5}{2}$}
 
-\item A polynomial function $q$ has degree 4 and a positive leading coefficient.
-Complete the sentence using $\infty$ or $-\infty$:
+      \vspace{0.04in}
+      $f^{-1}(x) = $ \ans{$\dfrac{x+5}{2}$}
 
-\vspace{0.15in}
-As $x \to \infty$, \; $q(x) \to$ \ans{$\infty$} \quad and \quad as $x \to -\infty$, \; $q(x) \to$ \ans{$\infty$}
+\item Verify your answer to \#2: compute $f(f^{-1}(x))$ and confirm it equals $x$.
+
+      \vspace{0.06in}
+      $f(f^{-1}(x)) = 2\left({\color{keyred}\mathbf{\dfrac{x+5}{2}}}\right) - 5 = (x+5) - 5 = $ \ans{$x$} \quad \checkmark
 
 \end{enumerate}
 

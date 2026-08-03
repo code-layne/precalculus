@@ -1,4 +1,4 @@
-%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Lesson Plan
+%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,284 +8,186 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.2: Sine, Cosine, and Tangent}
+\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.2: Rational Functions and Zeros}
 
 \begin{document}
-
-%---------------------------------------------------------------------
-% 1. TITLE BLOCK
-%---------------------------------------------------------------------
 \begin{center}
-  {\LARGE\bfseries\color{navy} Lesson 3.2: Sine, Cosine, and Tangent}\\[4pt]
-  {\large \CourseName{} \textbullet{} \SchoolYear{} \textbullet{} \MeetingLength}\\[2pt]
-  {\large \UnitNumberName}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
-\vspace{4pt}
-\hrule height 1.5pt
-\vspace{8pt}
 
-%---------------------------------------------------------------------
-% 2. PRIMARY OBJECTIVE
-%---------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective:} Students will define the \textbf{sine}, \textbf{cosine}, and
-  \textbf{tangent} of an angle using the unit circle, connect radian measure to arc length,
-  and evaluate these functions at key angles by reading coordinates on the unit circle.
-  \textit{(Big Idea: Functions)}
+    \textbf{Primary Objective:} Students will identify the real zeros of a rational function
+    as the zeros of the numerator that lie in the domain, and use a sign chart to determine
+    intervals where a rational function is positive or negative in order to solve rational inequalities.
+    \hfill\textit{\small Skills: MP 1.A}
 \end{tcolorbox}
 
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 3. PRIORITY IDEAS & SKILLS
-%---------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-  \begin{minipage}[t]{0.46\linewidth}\vspace{0pt}
-    \textbf{AP Skills}
-    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-      \item \textbf{2.A} --- Identify mathematical information from graphical, numerical,
-            analytical, and verbal representations (reading the unit circle to extract
-            trig values).
-      \item \textbf{3.A} --- Describe characteristics of a function using appropriate
-            representations (interpreting sine, cosine, tangent from a point on a circle).
-    \end{itemize}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.50\linewidth}\vspace{0pt}
-    \textbf{Essential Knowledge}
-    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-      \item \textbf{3.2.A.1} An angle in \textit{standard position} has vertex at the origin and
-            initial ray on the positive $x$-axis; positive angles rotate counterclockwise.
-      \item \textbf{3.2.A.2} Radian measure equals arc length subtended on a unit circle;
-            one full revolution $= 2\pi$ radians.
-      \item \textbf{3.2.A.3} $\sin\theta =$ vertical displacement of $P$ divided by radius;
-            equals the $y$-coordinate of $P$ on the unit circle.
-      \item \textbf{3.2.A.4} $\cos\theta =$ horizontal displacement of $P$ divided by radius;
-            equals the $x$-coordinate of $P$ on the unit circle.
-      \item \textbf{3.2.A.5} $\tan\theta =$ slope of the terminal ray $= \sin\theta/\cos\theta
-            = y/x$ for $P$ on the unit circle.
-    \end{itemize}
-  \end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 1.A} --- Solve equations and inequalities represented analytically,
+with and without technology. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The real zeros of a rational function are the real zeros of the numerator
+        that also lie in the domain. (EK 1.8.A.1)
+  \item Zeros of the numerator and zeros of the denominator are both critical
+        values used as endpoints for sign analysis intervals. (EK 1.8.A.2)
+  \item A sign chart organizes critical values into intervals; a test point in
+        each interval determines the sign of the function on that interval.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 4. VOCABULARY, CONCEPTS & THEOREMS
-%---------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-  \begin{multicols}{2}
-    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-      \item \textbf{Standard position} --- angle with vertex at origin, initial ray on positive $x$-axis
-      \item \textbf{Terminal ray} --- the second ray defining the angle
-      \item \textbf{Coterminal angles} --- angles sharing a terminal ray (differ by $2\pi k$)
-      \item \textbf{Radian measure} --- arc length subtended on a unit circle by the angle
-      \item \textbf{Unit circle} --- circle of radius 1 centered at the origin
-      \item \textbf{Sine ($\sin\theta$)} --- $y$-coordinate of $P$ on the unit circle
-      \item \textbf{Cosine ($\cos\theta$)} --- $x$-coordinate of $P$ on the unit circle
-      \item \textbf{Tangent ($\tan\theta$)} --- $\sin\theta / \cos\theta$; slope of terminal ray
-    \end{itemize}
-  \end{multicols}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+zero of $r(x)$      & A value $x = c$ in the domain where $r(c) = 0$; the real zeros of $r$ are the real zeros of its numerator that are also in the domain. \\
+domain restriction  & A value excluded from the domain because it makes the denominator zero; NOT a zero of the function. \\
+critical value       & Any $x$-value where $r(x) = 0$ (numerator zero in domain) or $r(x)$ is undefined (denominator zero); used as boundaries for sign analysis. \\
+sign chart          & A number-line diagram marking critical values and showing the sign ($+$ or $-$) of $r(x)$ on each resulting interval. \\
+rational inequality & An inequality of the form $r(x) \geq 0$, $r(x) \leq 0$, $r(x) > 0$, or $r(x) < 0$, solved by sign analysis using all critical values. \\
+\end{tabularx}
 \end{skillbox}
 
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 5. ACTIVATE PRIOR KNOWLEDGE
-%---------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-  \begin{tabularx}{\linewidth}{@{}X c@{}}
-    \begin{minipage}[t]{0.90\linewidth}\vspace{0pt}
-      Spiral review covers:
-      \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-        \item \textbf{Coordinate geometry:} Distance from the origin via the Pythagorean theorem;
-              a point $(x,y)$ lies at distance $r = \sqrt{x^2+y^2}$ from the origin.
-        \item \textbf{Degree angle measure:} Right angle $= 90°$; straight angle $= 180°$; full
-              revolution $= 360°$ (from prior geometry).
-        \item \textbf{Periodic phenomena (Lesson 3.1):} Quantities that repeat on a fixed interval;
-              the height of a point on a spinning wheel is periodic --- today we name the functions
-              that model it.
-      \end{itemize}
-      \textit{Warm-up revisits coordinate distance and angle rotation to activate these prerequisites.}
-    \end{minipage}
-    &
-    \begin{minipage}[t]{0.05\linewidth}\vspace{0pt}
-    \end{minipage}
-  \end{tabularx}
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review).
+            Skills reviewed: finding horizontal asymptotes by comparing leading terms (LO 1.7.A),
+            interpreting a horizontal asymptote at $y = 0$, factoring a quadratic trinomial.
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textbf{LO 1.7.A}\\Horizontal asymptotes\\[4pt]
+            \textbf{LO 1.8.A}\\Zeros of rational functions
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
-\vspace{6pt}
+\begin{skillbox}[Hook (3--5 min)]{redbox}
+A company models its \textbf{profit per unit} as
+\[
+  P(x) = \frac{x^2 - 9}{x - 1}, \qquad x > 0,\; x \ne 1,
+\]
+where $x$ is the number of units produced (in thousands).
 
-%---------------------------------------------------------------------
-% 6. HOOK
-%---------------------------------------------------------------------
-\begin{skillbox}[Hook]{sky}
-  \textbf{Scenario:} A point $P$ sits on the rim of a wheel of radius 1 meter, starting at the
-  rightmost position $(1, 0)$. The wheel spins counterclockwise. After rotating by angle $\theta$:
-  \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-    \item How far \textbf{right or left} of center is the point?
-    \item How far \textbf{up or down} from center is the point?
-    \item What is the \textbf{slope} of the line from the center to $P$?
-  \end{itemize}
-  Pose these questions verbally. Students describe answers as coordinates but won't yet have names
-  for the functions. \textit{Reveal: those three quantities are exactly cosine, sine, and tangent of $\theta$.}
+\medskip
+\textbf{Discussion questions:}
+\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
+  \item At what production level(s) $x$ does the company break even (profit per unit $= 0$)?
+  \item For which values of $x$ is the profit per unit \textit{positive}?
+  \item Why can we not simply evaluate $P(1)$?
+\end{itemize}
 \end{skillbox}
 
-\vspace{6pt}
+\vspace{0.1in}
 
-%---------------------------------------------------------------------
-% 7. LESSON
-%---------------------------------------------------------------------
-\begin{skillbox}[Lesson --- The Unit Circle Definitions (15 min)]{sky}
-  \begin{multicols}{2}
-    \textbf{Standard Position \& Coterminal Angles}
-    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-      \item Vertex at origin; initial ray along positive $x$-axis.
-      \item Positive $\theta \Rightarrow$ counterclockwise rotation.
-      \item Negative $\theta \Rightarrow$ clockwise rotation.
-      \item \textbf{Coterminal:} $\theta$ and $\theta + 2\pi k$ ($k\in\mathbb{Z}$) share a terminal ray.
-    \end{itemize}
+\begin{multicols}{2}
 
-    \medskip
-    \textbf{Radian Measure}
-    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-      \item Radian measure $= \dfrac{\text{arc length}}{\text{radius}}$.
-      \item On a unit circle ($r=1$), radian measure equals arc length.
-      \item Full revolution: $2\pi$ radians $= 360°$.
-      \item Key conversion: $\pi$ radians $= 180°$.
-    \end{itemize}
+\begin{notesbox}{Part 1: Zeros of Rational Functions (10 min)}
+\textbf{Key Principle (EK 1.8.A.1).} A rational function
+$r(x) = \dfrac{p(x)}{q(x)}$ equals zero when $p(x) = 0$
+\textit{and} $q(x) \ne 0$ (i.e., $x$ is in the domain).
 
-    \columnbreak
+\medskip
+\textbf{Worked Example.} Find the zeros of
+$r(x) = \dfrac{x^2 - 4}{x - 3}$.
 
-    \textbf{Unit Circle Definitions}
+\begin{enumerate}[itemsep=4pt]
+  \item \textbf{Domain:} $q(x) = x - 3 = 0 \Rightarrow x = 3$.
+        Domain is all real numbers except $x = 3$.
+  \item \textbf{Set numerator $= 0$:}
+        $x^2 - 4 = 0 \Rightarrow (x-2)(x+2) = 0$.
+        Solutions: $x = 2$ and $x = -2$.
+  \item \textbf{Check domain:} Neither $2$ nor $-2$ equals $3$,
+        so both are in the domain.
+  \item \textbf{Zeros:} $x = 2$ and $x = -2$.
+\end{enumerate}
 
-    Let $\theta$ be in standard position and let $P = (x,y)$ be where the terminal ray meets the
-    unit circle. Then:
-    \[
-      \sin\theta = y, \quad \cos\theta = x, \quad \tan\theta = \frac{y}{x} \; (x\ne 0)
-    \]
+\medskip
+\textit{Note:} $x = 3$ is NOT a zero of $r$; it is a domain restriction.
+(Lesson 1.9 will classify it as a vertical asymptote or hole.)
+\end{notesbox}
 
-    For a circle of any radius $r$:
-    \[
-      \sin\theta = \frac{y}{r}, \quad \cos\theta = \frac{x}{r}, \quad \tan\theta = \frac{y}{x}
-    \]
+\columnbreak
 
-    \medskip
-    \textbf{Pythagorean Identity:} Since $x^2+y^2=1$ on the unit circle:
-    \[
-      \sin^2\theta + \cos^2\theta = 1
-    \]
-  \end{multicols}
+\begin{notesbox}{Part 2: Sign Chart Method (15 min)}
+\textbf{Key Principle (EK 1.8.A.2).} The sign of $r(x)$ can change
+only at a zero of the numerator or a zero of the denominator.
+Both types of zeros are \textbf{critical values}.
+
+\medskip
+\textbf{4-Step Method.} Solve $\dfrac{x - 1}{x + 2} \geq 0$.
+
+\begin{enumerate}[itemsep=4pt]
+  \item \textbf{Critical values:}
+        Numerator zero: $x = 1$. Denominator zero: $x = -2$.
+  \item \textbf{Number line:}
+        Mark $x = -2$ (open circle, excluded) and $x = 1$ (closed circle, included).
+  \item \textbf{Test each interval:}
+        \begin{itemize}[itemsep=2pt]
+          \item $x = -3$: $\frac{-4}{-1} = 4 > 0 \Rightarrow (+)$
+          \item $x = 0$: $\frac{-1}{2} < 0 \Rightarrow (-)$
+          \item $x = 2$: $\frac{1}{4} > 0 \Rightarrow (+)$
+        \end{itemize}
+  \item \textbf{Solution ($\geq 0$ means $+$ or zero):}\\
+        $(-\infty,\,-2)\cup[1,\,\infty)$
+\end{enumerate}
+\end{notesbox}
+
+\end{multicols}
+
+\begin{notesbox}{Part 3: Connecting EK 1.8.A.2 (5 min)}
+Both zeros of the \textit{numerator} and zeros of the \textit{denominator} are
+\textbf{critical values} that serve as interval endpoints in sign analysis.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l l @{}}
+\textbf{Critical value type} & \textbf{Include in solution?} & \textbf{Reason} \\
+\midrule
+Numerator zero in domain     & Yes, if $\geq$ or $\leq$       & $r(x) = 0$ satisfies $r \geq 0$ \\
+Denominator zero (excluded)  & \textbf{Never}                 & $r(x)$ is undefined there \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate and look for:
+\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
+  \item Students who set the \textit{denominator} equal to zero to find ``zeros'' --- redirect to the numerator.
+  \item Students who include denominator-zero values in solution sets --- remind those points are excluded.
+  \item Students who forget to check whether numerator zeros are actually in the domain.
+\end{itemize}
+Cold-call: ``Is $x = 3$ a zero of $r(x) = (x-3)/(x-3)$? Why or why not?''
 \end{skillbox}
 
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 8. EXPLICIT INSTRUCTION: EVALUATING SIN/COS/TAN
-%---------------------------------------------------------------------
-\begin{skillbox}[Explicit Instruction: Evaluating sin/cos/tan (10 min)]{sky}
-  \textbf{Steps to evaluate $\sin\theta$, $\cos\theta$, $\tan\theta$:}
-  \begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
-    \item Draw or visualize angle $\theta$ in standard position on the unit circle.
-    \item Identify the point $P = (x, y)$ where the terminal ray meets the unit circle.
-    \item Read off: $\cos\theta = x$, \quad $\sin\theta = y$, \quad $\tan\theta = y/x$.
-  \end{enumerate}
-
-  \medskip
-  \textbf{Worked Examples:}
-  \begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-    \item $\theta = 0$: $P = (1, 0)$ $\Rightarrow$ $\cos 0 = 1$, $\sin 0 = 0$, $\tan 0 = 0$.
-    \item $\theta = \pi/2$: $P = (0, 1)$ $\Rightarrow$ $\cos(\pi/2) = 0$, $\sin(\pi/2) = 1$,
-          $\tan(\pi/2)$ undefined.
-    \item $\theta = \pi$: $P = (-1, 0)$ $\Rightarrow$ $\cos\pi = -1$, $\sin\pi = 0$, $\tan\pi = 0$.
-    \item $\theta = 3\pi/2$: $P = (0, -1)$ $\Rightarrow$ $\cos(3\pi/2) = 0$,
-          $\sin(3\pi/2) = -1$, $\tan(3\pi/2)$ undefined.
-  \end{itemize}
+\begin{skillbox}[Timing \& Pacing]{goldbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} p{0.14\linewidth} X @{}}
+Time & Duration & Activity \\
+\midrule
+0:00--0:05  & 5 min  & Warm-up (spiral: asymptotes, factoring) \\
+0:05--0:10  & 5 min  & Hook: profit-per-unit discussion \\
+0:10--0:20  & 10 min & Part 1: Zeros of rational functions \\
+0:20--0:35  & 15 min & Part 2: Sign chart method (notes + guided practice) \\
+0:35--0:40  & 5 min  & Part 3: EK 1.8.A.2 summary table \\
+0:40--0:50  & 10 min & Tiered group activity \\
+0:50--0:55  & 5 min  & Exit ticket \\
+\end{tabularx}
 \end{skillbox}
 
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 9. ACTIVE MONITORING
-%---------------------------------------------------------------------
-\begin{skillbox}[Active Monitoring (5 min)]{redbox}
-  \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-    \item Cold-call: ``If $P = (-1,0)$, what are $\sin\theta$, $\cos\theta$, $\tan\theta$?''
-    \item Whiteboard check: students hold up $x$- and $y$-coordinates for $\theta = 3\pi/2$.
-    \item \textbf{Common misconception:} Students often swap sine and cosine. Reinforce:
-          \textit{sine = vertical = $y$; cosine = horizontal = $x$.}
-    \item Watch for confusion about when $\tan\theta$ is undefined (whenever $\cos\theta = x = 0$).
-  \end{itemize}
-\end{skillbox}
-
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 10. GROUP WORK & DIFFERENTIATION
-%---------------------------------------------------------------------
-\begin{skillbox}[Group Work \& Differentiation (12 min)]{redbox}
-  Students work on the tiered group activity (see \texttt{activity/main.tex}).
-
-  \begin{tcolorbox}[colback=white, colframe=black!40,
-      title=\textbf{Tier R --- Remediate},
-      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-    Table completion: fill in $(x,y)$ and $\tan\theta$ for $\theta = 0,\, \pi/6,\, \pi/4,\,
-    \pi/2,\, \pi,\, 3\pi/2$. Coordinates partially provided.
-  \end{tcolorbox}
-
-  \vspace{4pt}
-
-  \begin{tcolorbox}[colback=white, colframe=black!40,
-      title=\textbf{Tier A --- On Level},
-      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-    Given a specific point on the unit circle, compute all three trig values and identify the
-    quadrant. Then extend to a point on a circle of radius 2.
-  \end{tcolorbox}
-
-  \vspace{4pt}
-
-  \begin{tcolorbox}[colback=white, colframe=black!40,
-      title=\textbf{Tier E --- Extend},
-      fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-    Given $\sin\theta = 3/5$ in Quadrant II, use $\sin^2\theta + \cos^2\theta = 1$ to find
-    $\cos\theta$ and $\tan\theta$. Explore symmetry with $\sin(-\theta)$ and $\cos(-\theta)$.
-  \end{tcolorbox}
-\end{skillbox}
-
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 11. INDIVIDUAL WORK & ASSESSMENT
-%---------------------------------------------------------------------
-\begin{skillbox}[Individual Work \& Assessment (5 min)]{redbox}
-  \textbf{Exit Ticket} (last 5 minutes, see \texttt{exit\_ticket/main.tex}):
-  \begin{enumerate}[leftmargin=1.6em, itemsep=2pt]
-    \item Given $P = \bigl(-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2}\bigr)$ on the unit circle,
-          state $\sin\theta$, $\cos\theta$, and $\tan\theta$.
-    \item Explain why $\sin(5\pi/2) = \sin(\pi/2)$ using coterminal angles.
-  \end{enumerate}
-  \textbf{Homework:} Assign \texttt{homework/main.tex} --- exact-value table, AP-style MC, and
-  Pythagorean identity derivation.
-\end{skillbox}
-
-\vspace{6pt}
-
-%---------------------------------------------------------------------
-% 12. REINFORCEMENT & EXTENSION
-%---------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-  \textbf{Preview --- Lesson 3.3: Exact Values of Sine and Cosine}
-
-  In Lesson 3.3, students will derive exact values of $\sin\theta$ and $\cos\theta$ for
-  $\theta = \pi/6,\, \pi/4,\, \pi/3$ using 45-45-90 and 30-60-90 triangle relationships.
-  Today's exit ticket at $\theta = 2\pi/3$ (where $P = (-1/2,\,\sqrt{3}/2)$) foreshadows
-  those values.
-
-  \medskip
-  \textbf{Extension prompt:} ``We know $\sin^2\theta + \cos^2\theta = 1$. What happens if you
-  divide both sides by $\cos^2\theta$?'' (Leads to $\tan^2\theta + 1 = \sec^2\theta$.)
+See attached homework for 5 targeted problems (zeros, sign charts, reasoning about critical values,
+AP-style MC). Lesson 1.9 extends this to vertical asymptotes and holes --- preview by asking:
+``What happens to the graph of $r$ near a denominator zero?''
 \end{skillbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Exit Ticket (Answer Key)
+%! Exponential Functions — Unit 4, Lesson 4.3 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,46 +9,41 @@
 \pageheader{Unit 4, Lesson 4.3}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.16in}
 
-\begin{notesbox}{Direction of Motion and Slope Check --- Key}
+\begin{enumerate}[itemsep=18pt]
 
-A particle moves with $f(t) = (2t - t^2,\; t^2 - 4t + 3)$ for $0 \le t \le 4$.
+\item For $f(x) = 3 \cdot (0.5)^x$, identify each of the following.
 
-\vspace{10pt}
-\textbf{1.}\quad At $t = 0.5$, is the particle moving right or left?
-Up or down?
+      \medskip
+      Initial value $a$: \ans{$3$} \quad
+      Base $b$: \ans{$0.5$} \quad
+      Growth or decay? \ans{Decay}
 
-\vspace{6pt}
-$x(0) = $ \ans{$0$} \qquad $x(1) = 2 - 1 = $ \ans{$1$} \qquad
-$x(t)$ is \ans{increasing} near $t = 0.5$ $\Rightarrow$ moving \ans{right}
+\item State the end behavior of $g(x) = 5 \cdot 2^x$ using limit notation.
 
-\vspace{8pt}
-$y(0) = $ \ans{$3$} \qquad $y(1) = 1 - 4 + 3 = $ \ans{$0$} \qquad
-$y(t)$ is \ans{decreasing} near $t = 0.5$ $\Rightarrow$ moving \ans{down}
+      \medskip
+      $\displaystyle\lim_{x \to \infty}\, 5 \cdot 2^x = $ \ans{$\infty$}
+      \qquad
+      $\displaystyle\lim_{x \to -\infty}\, 5 \cdot 2^x = $ \ans{$0$}
 
-\vspace{12pt}
-\textbf{2.}\quad ARC of $x(t)$ and $y(t)$ on $[0, 3]$; slope of curve.
+\item A function has the following values.
 
-\vspace{6pt}
-$x(0) = $ \ans{$0$} \qquad $x(3) = 6 - 9 = $ \ans{$-3$} \qquad
-$\Delta x = $ \ans{$-3$}
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$    & 0 & 1  & 2  & 3   \\
+        \hline
+        $f(x)$ & 6 & 18 & 54 & 162 \\
+        \hline
+      \end{tabular}
 
-\vspace{6pt}
-$y(0) = $ \ans{$3$} \qquad $y(3) = 9 - 12 + 3 = $ \ans{$0$} \qquad
-$\Delta y = $ \ans{$-3$}
+      \vspace{0.08in}
+      Write $f(x)$ in the form $ab^x$. \quad $f(x) = $ \ans{$6 \cdot 3^x$}
 
-\vspace{8pt}
-Slope of curve $= \dfrac{\Delta y}{\Delta x} = \dfrac{\ans{-3}}{\ans{-3}} = $ \ans{$1$}
+      \smallskip
+      {\small\color{charcoal}\textit{(Ratios: $18/6 = 3$, $54/18 = 3$, $162/54 = 3$; so $b = 3$ and $a = f(0) = 6$.)}}
 
-\begin{teachernote}
-  Common error: students compute $\Delta y / \Delta t$ or $\Delta x / \Delta t$ and report
-  one of those as ``slope.'' Redirect: ``Slope of the curve uses the ratio of the change
-  in the $y$-coordinate to the change in the $x$-coordinate, not the change in $t$.''
-  Note that the slope here is $1$ even though both $\Delta x$ and $\Delta y$ are $-3$;
-  students should verify that $(-3)/(-3) = 1$, not $-3$.
-\end{teachernote}
-
-\end{notesbox}
+\end{enumerate}
 
 \end{document}

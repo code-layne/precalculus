@@ -1,0 +1,253 @@
+%! Rates of Change in Polar Functions — Unit 7, Lesson 7.8 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 7: Analytic Trigonometry and Polar Coordinates \quad}
+\newcommand{\LessonNumberName}{Lesson 7.8: Rates of Change in Polar Functions}
+
+\begin{document}
+
+\pageheader{Unit 7, Lesson 7.8}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.15.A} --- Compute the average rate of change of a polar
+    function $r = f(\theta)$ over an interval and interpret it as how quickly
+    the radius changes per radian.
+    \ans{Use $(f(\theta_2)-f(\theta_1))/(\theta_2-\theta_1)$; positive $\Rightarrow$ $r$ growing, negative $\Rightarrow$ $r$ shrinking.}
+  \item \textbf{LO 3.15.A} --- Classify intervals as P\&I, P\&D, N\&I, or N\&D
+    and describe the corresponding curve behavior.
+    \ans{P\&I: away from origin; P\&D: toward origin; N\&I: toward origin (opposite ray); N\&D: away from origin (opposite ray).}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{rate of change of a polar function}]
+    For $r = f(\theta)$, the average rate of change over $[\theta_1, \theta_2]$ is
+    $\dfrac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$. Measures how quickly
+    $r$ changes per \ans{radian} of angle change.
+
+  \item[\termblanklong{positive and increasing}]
+    $r > 0$ and $r$ is \ans{growing}. The curve moves
+    \ans{away} from the origin as $\theta$ increases.
+
+  \item[\termblanklong{positive and decreasing}]
+    $r > 0$ and $r$ is \ans{shrinking}. The curve moves
+    \ans{toward} the origin as $\theta$ increases.
+
+  \item[\termblanklong{negative and increasing}]
+    $r < 0$ and $r$ is becoming \ans{less} negative (closer to zero).
+    The curve is traced on the \ans{opposite} ray, moving toward the origin.
+
+  \item[\termblanklong{negative and decreasing}]
+    $r < 0$ and $r$ is becoming \ans{more} negative (farther from zero).
+    The curve is traced on the opposite ray, moving \ans{away from} the origin.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} The table below shows values of $r = 1 + \sin\theta$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ \\
+\hline
+$r$ & 1 & $\approx 1.71$ & 2 & $\approx 1.71$ & 1 & $\approx 0.29$ & 0 & $\approx 0.29$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Q1.} \ans{$[0, \pi/2]$: $r$ increases from 1 to 2.}
+
+\vspace{6pt}
+\textbf{Q2.} \ans{$[\pi/2, 3\pi/2]$: $r$ decreases from 2 to 0.}
+
+\vspace{6pt}
+\textbf{Q3.} \ans{$r = 0$ means the point is at the origin (the pole). The curve passes through the origin.}
+
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Average Rate of Change
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Average Rate of Change of $r$ --- Key}
+
+\textbf{Formula:}
+$$\text{Average Rate of Change} = \frac{f(\theta_2) - f(\theta_1)}{\theta_2 - \theta_1}$$
+
+This tells us: for every additional \ans{radian} that $\theta$ increases,
+$r$ changes by approximately \ans{this amount (the ARC value)}.
+
+\vspace{8pt}
+\textbf{Worked Example:} $r = 2\sin\theta$
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/2$ \\
+\hline
+$r = 2\sin\theta$ & $0$ & $2$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+$$\frac{2 - 0}{\pi/2 - 0} = \frac{4}{\pi}$$
+
+Result $= $ \ans{$4/\pi \approx 1.27$ per radian}
+
+\vspace{6pt}
+Interpret: $r$ increases by approximately \ans{$4/\pi \approx 1.27$} per radian on average.
+
+\vspace{8pt}
+\textbf{Your turn:} ARC from $\theta = \pi/2$ to $\theta = \pi$ for $r = 2\sin\theta$:
+
+\vspace{6pt}
+ARC $= \dfrac{{\color{keyred}\mathbf{0}} - {\color{keyred}\mathbf{2}}}{{\color{keyred}\mathbf{\pi - \pi/2}}} = $ \ans{$-4/\pi \approx -1.27$ per radian}
+
+\vspace{4pt}
+$r$ is \ans{decreasing} on $[\pi/2, \pi]$ (negative ARC).
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Sign and Direction
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Sign and Direction of $r$ --- Key}
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|l|l|p{4.5cm}|}
+\hline
+\textbf{Sign of $r$} & \textbf{Behavior of $r$} & \textbf{What happens in the plane} \\
+\hline
+$r > 0$ & increasing & \ans{Moves away from origin} \\
+\hline
+$r > 0$ & decreasing & \ans{Moves toward origin} \\
+\hline
+$r < 0$ & increasing (less negative) & \ans{Moves toward origin (opposite ray)} \\
+\hline
+$r < 0$ & decreasing (more negative) & \ans{Moves away from origin (opposite ray)} \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\textbf{Key reminder:} When $r < 0$, the point is plotted on the
+\ans{opposite} direction from the terminal ray, at distance
+$|r|$ from the origin.
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.15.A — Intervals from a Table
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.15.A --- Reading Intervals from a Table --- Key}
+
+$r = 1 + \cos\theta$:
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ & $7\pi/4$ \\
+\hline
+$r$ & $2$ & $\approx 1.71$ & $1$ & $\approx 0.29$ & $0$ & $\approx 0.29$ & $1$ & $\approx 1.71$ \\
+\hline
+\end{tabular}
+
+\vspace{8pt}
+\begin{tabular}{|c|p{5cm}|}
+\hline
+\textbf{Interval} & \textbf{Classification} \\
+\hline
+$[0, \pi/4]$ & \ans{Positive and decreasing (P\&D)} \\
+\hline
+$[\pi/4, \pi/2]$ & \ans{Positive and decreasing (P\&D)} \\
+\hline
+$[\pi/2, 3\pi/4]$ & \ans{Positive and decreasing (P\&D)} \\
+\hline
+$[3\pi/4, \pi]$ & \ans{Positive and decreasing (P\&D)} \\
+\hline
+$[\pi, 5\pi/4]$ & \ans{Positive and increasing (P\&I)} \\
+\hline
+$[5\pi/4, 3\pi/2]$ & \ans{Positive and increasing (P\&I)} \\
+\hline
+$[3\pi/2, 7\pi/4]$ & \ans{Positive and increasing (P\&I)} \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+$r = 0$ at $\theta = $ \ans{$\pi$}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Practice
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad $r = 3\cos\theta$:
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ \\
+\hline
+$r$ & $3$ & $\approx 2.12$ & $0$ & $\approx -2.12$ & $-3$ \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+(a)\quad $[0, \pi/4]$: \ans{P\&D} \quad
+$[\pi/4, \pi/2]$: \ans{P\&D} \quad
+$[\pi/2, 3\pi/4]$: \ans{N\&D} \quad
+$[3\pi/4, \pi]$: \ans{N\&D}
+
+\vspace{0.10in}
+\textbf{Guided Practice 2.}
+
+\vspace{4pt}
+(a)\quad ARC $= \dfrac{{\color{keyred}\mathbf{0}} - {\color{keyred}\mathbf{3}}}{\pi/2} = $ \ans{$-6/\pi \approx -1.91$ per radian}
+
+\vspace{6pt}
+(b)\quad ARC $= \dfrac{-3 - 0}{\pi/2} = $ \ans{$-6/\pi \approx -1.91$ per radian}
+
+\vspace{6pt}
+(c)\quad \ans{On $[\pi/2, \pi]$, $r < 0$ and decreasing (N\&D), so the curve moves away from the origin on the opposite ray.}
+
+\end{practicebox}
+
+\end{document}

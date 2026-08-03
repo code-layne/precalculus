@@ -1,4 +1,4 @@
-%! Rational Functions and Zeros — Unit 1, Lesson 1.8 — Guided Notes
+%! Function Model Construction and Application — Unit 1, Lesson 1.8 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,101 +9,176 @@
 \pageheader{Unit 1, Lesson 1.8}{Guided Notes}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Find the real zeros of a rational function by setting the \blank{3cm} equal to zero
-        and checking that the solutions are in the \blank{2cm}. \hfill\textit{(LO 1.8.A)}
-  \item Solve a rational inequality using a \blank{2.5cm} with critical values from
-        both the numerator and the denominator. \hfill\textit{(LO 1.8.A)}
+  \item Construct a polynomial or piecewise function model using restrictions, transformations,
+        or regression. \hfill\textit{(LO 1.14.A)}
+  \item Construct a rational function model from an inverse-proportion context. \hfill\textit{(LO 1.14.B)}
+  \item Apply a function model to predict values and compute average rates of change
+        with appropriate units. \hfill\textit{(LO 1.14.C)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{vocabbox}
-\termblanklong{zero of a rational function}
+\termblanklong{function model}
 \termblanklong{domain restriction}
-\termblanklong{critical value}
-\termblanklong{sign chart}
+\termblanklong{inverse proportion}
+\termblanklong{average rate of change}
+\termblanklong{regression}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{hookbox}
-A company's profit per unit is modeled by $\displaystyle P(x) = \dfrac{x^2 - 9}{x - 1}$
-where $x > 0$, $x \ne 1$.
+A farmer has exactly 80 feet of fencing and wants to build the biggest rectangular pen possible.
+One side of the pen sits against a barn, so no fencing is needed on that side.
+\textbf{Can a function tell us how to maximize area?}
 
-At what production level(s) is the profit per unit equal to zero? When is it positive?
-Why does $x = 1$ need to be excluded?
+\medskip
+Let $w = $ width (in feet) of the pen. Draw a quick label: two sides of width $w$ and one side
+of length $\ell$, with the barn on the fourth side.
 
-\vspace{0.05in}
-\writelines{2}
+\medskip
+\textbf{Question:} What equation relates $w$ and $\ell$ to the 80 feet of fencing?
+
+\vspace{0.06in}
+\writeline
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{Zeros of Rational Functions (EK 1.8.A.1)}
-\textbf{Rule:} For $r(x) = \dfrac{p(x)}{q(x)}$, we have $r(x) = 0$ when:
-\begin{itemize}[itemsep=3pt]
-  \item $p(x) = 0$ (numerator equals \blank{2cm}), AND
-  \item $q(x) \ne 0$ ($x$ is in the \blank{2cm} of $r$).
-\end{itemize}
+\begin{notesbox}{Section 1 --- Building a Model from Restrictions (LO 1.14.A)}
+
+\textbf{Setup.} A rectangular pen has one side against a barn (no fencing needed there).
+Total fencing available: 80 ft. Two widths and one length must use all 80 ft.
 
 \medskip
-\textbf{Worked Example.} Find all zeros of $r(x) = \dfrac{x^2 - 4}{x - 3}$.
+\textbf{Step 1.} Write the fencing constraint: \quad $2w + \ell = $ \blank{2cm}
 
 \medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} r l @{\qquad} l @{}}
-\textbf{Step 1} & Find domain restrictions. & $q(x) = 0 \Rightarrow$ \blank{3.5cm} \\
-                &                           & Domain: all reals except $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 2} & Set numerator $= 0$.      & $x^2 - 4 = 0 \Rightarrow (x - \blank{1cm})(x + \blank{1cm}) = 0$ \\
-                &                           & Solutions: $x =$ \blank{1.5cm} and $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 3} & Check domain.             & Is $x = 2$ in the domain? \blank{1.5cm} \\
-                &                           & Is $x = -2$ in the domain? \blank{1.5cm} \\[4pt]
-\textbf{Step 4} & State zeros.              & Zeros of $r$: $x =$ \blank{3cm} \\
-\end{tabular}
+\textbf{Step 2.} Solve for $\ell$ in terms of $w$: \quad $\ell = $ \blank{4cm}
+
+\medskip
+\textbf{Step 3.} Area of the pen: $A = w \cdot \ell$.  Substitute your expression for $\ell$:
+
+\[
+  A(w) = w \cdot \bigl(\blank{4cm}\bigr) = \blank{6cm}
+\]
+
+\medskip
+\textbf{Step 4.} Identify the \textbf{domain restriction}.
+Width must be positive and fencing constraint must hold:
+
+\[
+  \text{Domain: } \blank{2cm} < w < \blank{2cm}
+\]
+
+\medskip
+\textbf{Step 5.} What is the shape of $A(w)$? Circle one: \quad \textbf{Linear} \quad \textbf{Quadratic} \quad \textbf{Cubic}
+
+Because the leading coefficient is \blank{2cm}, the parabola opens \blank{3cm}.
+
+\medskip
+\textbf{Step 6.} The maximum area occurs at the vertex. For $A(w) = aw^2 + bw$:
+
+\[
+  w_{\max} = -\dfrac{b}{2a} = \blank{4cm} \quad \Longrightarrow \quad A(w_{\max}) = \blank{4cm} \text{ ft}^2
+\]
+
+% Vertex: w = 20 ft, A(20) = 800 ft^2; domain: 0 < w < 40
+
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{Rational Inequalities --- Sign Chart Method (EK 1.8.A.2)}
-\textbf{Key idea:} The sign of $r(x)$ can only change at a \blank{2.5cm} or a
-\blank{3cm}. These are called \textbf{critical values}.
+\begin{notesbox}{Section 2 --- Rational Function Model: Inverse Proportion (LO 1.14.B)}
 
-\medskip
-\textbf{Solve:} $\dfrac{x - 1}{x + 2} \geq 0$
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} r l @{\qquad} l @{}}
-\textbf{Step 1} & Find critical values. & Numerator zero: $x =$ \blank{1.5cm} \quad Denominator zero: $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 2} & Mark on number line.  & Open circle at $x =$ \blank{1cm} (excluded); closed at $x =$ \blank{1cm} (zero). \\[4pt]
-\textbf{Step 3} & Test each interval.   & \\
-\end{tabular}
+\textbf{Context.} Two electrically charged objects exert a force on each other.
+Experiments show the force is \textbf{inversely proportional to the square of the distance}
+between them.
 
 \medskip
-\begin{center}
+This means: \quad $F \propto \dfrac{1}{d^2}$, so we write $F = \dfrac{k}{d^2}$ for some constant $k > 0$.
+
+\medskip
+\textbf{Model:} $\quad r(d) = \dfrac{k}{d^2}$
+
+\medskip
+\textbf{Domain restriction:} $d$ = distance in meters, so $d$ \blank{2cm} $0$.
+
+\medskip
+\textbf{End behavior} (as inputs grow large or approach zero):
+
+\medskip
 \renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|}
 \hline
-\textbf{Interval} & $(-\infty,\,-2)$ & $(-2,\,1)$ & $(1,\,\infty)$ \\
+As $d \to 0^+$ & $r(d) \to $ \blank{2cm} (force becomes very \blank{3cm}) \\
 \hline
-Test value $x$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-Sign of $r(x)$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
+As $d \to \infty$ & $r(d) \to $ \blank{2cm} (force becomes very \blank{3cm}) \\
 \hline
 \end{tabular}
-\end{center}
 
 \medskip
-\textbf{Step 4.} Write the solution (intervals where $r(x) \geq 0$):
+\textbf{Example.} Suppose $k = 900$ (units: N$\cdot$m$^2$). Complete the table:
 
-\vspace{0.08in}
-Solution: \blank{7cm}
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$d$ (m) & 1 & 3 & 5 & 10 \\
+\hline
+$r(d) = 900/d^2$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Section 3 --- Applying the Model (LO 1.14.C)}
+
+\textbf{Return to the pen model:} $A(w) = -2w^2 + 80w$ on $(0, 40)$.
+
+\medskip
+\textbf{(a) Evaluate at specific inputs.}
+
+\[
+  A(10) = -2(\blank{1.5cm})^2 + 80(\blank{1.5cm}) = \blank{5cm} = \blank{2cm} \text{ ft}^2
+\]
+
+\[
+  A(20) = -2(\blank{1.5cm})^2 + 80(\blank{1.5cm}) = \blank{5cm} = \blank{2cm} \text{ ft}^2
+\]
+
+\medskip
+\textbf{(b) Average rate of change of area on $[10, 20]$.}
+
+\[
+  \text{ARC} = \dfrac{A(20) - A(10)}{20 - 10} = \dfrac{\blank{3cm}}{\blank{2cm}} = \blank{3cm}
+\]
+
+Units: \blank{5cm}
+
+\medskip
+\textbf{Interpret:} On average, for each additional foot of width between $w = 10$ ft and $w = 20$ ft,
+the area \blank{3cm} by \blank{3cm} square feet.
+
+\medskip
+\textbf{(c) Predict the width at maximum area.}
+
+From Section 1, the maximum occurs at $w = $ \blank{2cm} ft with area $= $ \blank{3cm} ft$^2$.
+
+The length at that width is $\ell = 80 - 2(\blank{1.5cm}) = $ \blank{3cm} ft.
+
+\medskip
+\textbf{Conclusion:} The optimal pen is \blank{2cm} ft wide and \blank{3cm} ft long.
+
 \end{notesbox}
 
 \end{document}

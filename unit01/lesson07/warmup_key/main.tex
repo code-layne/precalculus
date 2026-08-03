@@ -1,7 +1,7 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,55 +9,66 @@
 \pageheader{Unit 1, Lesson 1.7}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.14in}
+\vspace{0.12in}
 
 \begin{enumerate}[itemsep=14pt]
 
-\item Consider the polynomial $p(x) = -4x^3 + 2x - 9$.
+\item The table below shows equally-spaced inputs and their outputs.
+      Complete the \textbf{first differences} column.
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item What is the degree of $p$? \ans{3} \quad
-        What is its leading coefficient? \ans{$-4$}
-  \item State the end behavior of $p$ using limit notation.
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      $x$ & $y$ & $\Delta y$ (1st diff.) \\
+      \hline
+      0 & 3  & ---         \\
+      \hline
+      1 & 7  & \ans{4} \\
+      \hline
+      2 & 11 & \ans{4} \\
+      \hline
+      3 & 15 & \ans{4} \\
+      \hline
+      4 & 19 & \ans{4} \\
+      \hline
+      \end{tabular}
 
-        \medskip
-        $\displaystyle\lim_{x \to \infty} p(x) = $ \ans{$-\infty$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} p(x) = $ \ans{$+\infty$}
-\end{enumerate}
+      \medskip
+      The first differences are \ans{constant (all 4)}. This means the rate of change is
+      \ans{constant}, so the data is best modeled by a \ans{linear} function.
 
-\item For the polynomial $p(x) = 5x^4 - 3x^2 + 1$:
+\item A second data set has first differences of $2, 4, 6, 8$.
+      Are these first differences constant? \ans{No}
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item As $x \to \infty$, which term dominates? \ans{$5x^4$}
-  \item Complete using limit notation:
+      \medskip
+      Compute the \textbf{second differences} below:
 
-        \medskip
-        $\displaystyle\lim_{x \to \infty} p(x) = $ \ans{$+\infty$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} p(x) = $ \ans{$+\infty$}
-\end{enumerate}
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|}
+      \hline
+      1st diff. & $\Delta^2 y$ (2nd diff.) \\
+      \hline
+      2  & ---         \\
+      \hline
+      4  & \ans{2} \\
+      \hline
+      6  & \ans{2} \\
+      \hline
+      8  & \ans{2} \\
+      \hline
+      \end{tabular}
 
-\item A polynomial $q$ satisfies
-$\displaystyle\lim_{x\to\infty} q(x) = -\infty$
-and
-$\displaystyle\lim_{x\to -\infty} q(x) = -\infty$.
+      \medskip
+      The second differences are \ans{constant (all 2)}. This means the data is best modeled
+      by a \ans{quadratic} function.
 
-What can you conclude about the degree and leading coefficient of $q$?
-Circle all that apply, then explain briefly.
+\item A function's outputs change by roughly the same amount for each unit increase in input.
+      What type of function is the best model? Circle one.
 
-\medskip
-\begin{tabular}{@{}llll@{}}
-\ans{(A)} Even degree &
-\textbf{(B)} Odd degree &
-\textbf{(C)} Positive leading coefficient &
-\ans{(D)} Negative leading coefficient
-\end{tabular}
-
-\vspace{0.15in}
-\ansline{Both limits equal $-\infty$, so the end behavior is the same in both directions.
-This means the degree is \textbf{even} and the leading coefficient is \textbf{negative}
-(an even-degree poly with negative leading coeff falls on both ends).}
+      \medskip
+      \textbf{A.} Linear \textcolor{keyred}{\textbf{$\leftarrow$ correct}} \qquad \textbf{B.} Quadratic \qquad \textbf{C.} Cubic \qquad \textbf{D.} Piecewise
 
 \end{enumerate}
 

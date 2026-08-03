@@ -1,0 +1,177 @@
+%! Logarithmic Functions — Unit 5, Lesson 5.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.08in}
+
+\begin{objectivebox}
+\textbf{LO 2.11.A:} Identify key characteristics of logarithmic functions.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item State the domain, range, and vertical asymptote of $f(x) = a\log_b x$.
+  \item Describe the end behavior, monotonicity, and concavity of a logarithmic function.
+  \item Use the additive transformation identification test to decide if a function is logarithmic.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.06in}
+
+\begin{vocabbox}
+\termblanklong{logarithmic function (general form)}
+\termblanklong{domain of a logarithmic function}
+\termblanklong{vertical asymptote}
+\termblanklong{end behavior}
+\termblanklong{monotone increasing / decreasing}
+\termblanklong{concave up / concave down}
+\termblanklong{additive transformation identification test}
+\end{vocabbox}
+
+\vspace{0.06in}
+
+\begin{hookbox}
+\textbf{Richter Scale Context:} The Richter scale is defined by $M = \log_{10}(I)$, where
+$I$ is earthquake intensity.
+
+\vspace{4pt}
+If intensity $I = 10$, what is the magnitude? \blank{2cm}
+If intensity $I = 100$, magnitude $= $ \blank{2cm}
+If intensity $I = 1000$, magnitude $= $ \blank{2cm}
+
+\vspace{4pt}
+Each time $I$ multiplies by \blank{1.5cm}, the magnitude $M$ increases by \blank{1.5cm}.
+
+\vspace{4pt}
+What inputs $I$ are physically meaningful for this function? \writeline
+\end{hookbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Domain and Range (EK 2.11.A.1)}
+For $f(x) = a\log_b x$ in general form:
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor{sky}
+\textbf{Characteristic} & \textbf{Value} \\
+\hline
+Domain & \blank{5cm} \\
+\hline
+Range  & \blank{5cm} \\
+\hline
+Vertical asymptote & $x = $ \blank{2cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+Why can't we evaluate $\log_b 0$ or $\log_b(-3)$? \writeline
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Characteristics from the Inverse (EK 2.11.A.2)}
+Because $f(x) = \log_b x$ is the inverse of $g(x) = b^x$, it inherits structural properties.
+Complete the comparison table.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{sky}
+\textbf{Property} & \textbf{Exponential $g(x) = b^x$} & \textbf{Logarithmic $f(x) = \log_b x$} \\
+\hline
+Always increasing ($b>1$)? & Yes & \blank{3cm} \\
+\hline
+Always decreasing ($0<b<1$)? & Yes & \blank{3cm} \\
+\hline
+Has local extrema (natural domain)? & No & \blank{3cm} \\
+\hline
+Has an inflection point? & No & \blank{3cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+So logarithmic functions are always \blank{3cm} or always \blank{3cm}, and their graphs
+are either always \blank{3cm} or always \blank{3cm}.
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{End Behavior (EK 2.11.A.4)}
+Fill in the end behavior for each case. The sign of $a$ and the value of $b$ both matter.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{sky}
+\textbf{Conditions} & \TallMath{\lim_{x \to 0^+} a\log_b x} & \TallMath{\lim_{x \to \infty} a\log_b x} \\
+\hline
+$b > 1$, $a > 0$ & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+$b > 1$, $a < 0$ & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+$0 < b < 1$, $a > 0$ & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Additive Transformation Identification Test (EK 2.11.A.3)}
+\textbf{Key Idea:} If $g(x) = f(x + k)$ for $k \ne 0$, then $g$ is an additive
+transformation of $f$.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt, topsep=4pt]
+  \item If the \emph{inputs} of $g(x) = f(x+k)$ are proportional over equal-length output
+        intervals, then $f$ is logarithmic.
+  \item If the inputs of $f$ itself are proportional over equal-length output intervals,
+        that confirms $f$ is logarithmic.
+\end{itemize}
+
+\vspace{6pt}
+\textit{Example.} Below is a table for $f(x) = \log_3 x$. Check: as the output increases
+by 1, does the input multiply by a constant?
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{sky}
+$x$ (input) & $f(x)$ (output) & Ratio of consecutive inputs \\
+\hline
+$1$  & $0$ & --- \\
+\hline
+$3$  & $1$ & $3/1 = $ \blank{1.5cm} \\
+\hline
+$9$  & $2$ & $9/3 = $ \blank{1.5cm} \\
+\hline
+$27$ & $3$ & $27/9 = $ \blank{1.5cm} \\
+\hline
+$81$ & $4$ & $81/27 = $ \blank{1.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+The inputs are proportional (each multiplied by \blank{1.5cm}), so $f$ \blank{3cm}
+(is / is not) logarithmic.
+\end{notesbox}
+
+\end{document}

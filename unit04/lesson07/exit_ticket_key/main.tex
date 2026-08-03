@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Exit Ticket (Answer Key)
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,36 +11,41 @@
 
 \vspace{0.12in}
 
-\begin{notesbox}{Parametrization Check --- Key}
-
-The ellipse $\dfrac{(x+1)^2}{9} + \dfrac{(y-2)^2}{16} = 1$ is implicitly defined.
-
-\vspace{10pt}
-\textbf{1.}\quad Identify $h$, $k$, $a$, and $b$. Write parametric equations.
-
-\vspace{6pt}
-$h = $ \ans{$-1$} \quad $k = $ \ans{$2$} \quad $a = $ \ans{$3$} \quad $b = $ \ans{$4$}
-
-\vspace{10pt}
-$x(t) = $ \ans{$-1 + 3\cos t$} \qquad $y(t) = $ \ans{$2 + 4\sin t$}
-
 \begin{teachernote}
-  A common error: students write $x(t)=h\cos t$ instead of $x(t)=h+a\cos t$ ---
-  forgetting to add the center coordinates. Prompt: ``The parametrization shifts the
-  unit ellipse to be centered at $(h,k)$. What is the center here?''
+Quick sort: item 1 misses $\Rightarrow$ re-teach differences and ratios (LO 2.6.A).
+Item 2 misses $\Rightarrow$ re-teach error formula, especially sign convention (LO 2.6.B).
+Item 3 misses $\Rightarrow$ residual plot interpretation needs reinforcement (EK 2.6.B.1).
+Note: $3 \cdot 1.4^2 = 3 \cdot 1.96 = 5.88$; error $= 6.2 - 5.88 = +0.32$, an underestimate.
 \end{teachernote}
 
-\vspace{10pt}
-\textbf{2.}\quad Topmost and bottommost points.
+\begin{enumerate}[itemsep=14pt]
 
-\vspace{6pt}
-\ans{$y(t) = 2 + 4\sin t$ is maximized when $\sin t = 1$, i.e., $t = \pi/2$.\\[3pt]
-At $t = \pi/2$: $x = -1 + 3\cos(\pi/2) = -1 + 0 = -1$, $y = 2 + 4(1) = 6$.
-\textbf{Topmost point: $(-1,\,6)$.}\\[3pt]
-$y(t)$ is minimized when $\sin t = -1$, i.e., $t = 3\pi/2$.\\[3pt]
-At $t = 3\pi/2$: $x = -1 + 3(0) = -1$, $y = 2 + 4(-1) = -2$.
-\textbf{Bottommost point: $(-1,\,-2)$.}}
+\item The table below shows four data points. Compute the first differences and the successive
+      ratios, then circle the model type that best fits.
 
-\end{notesbox}
+      \vspace{0.06in}
+      \renewcommand{\arraystretch}{1.7}
+      \begin{tabular}{c|c|c|c}
+      $x$ & $y$ & $\Delta_1 = y_{\text{next}} - y$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+      0 &  5 & \ans{5}  & \ans{2} \\
+      1 & 10 & \ans{10} & \ans{2} \\
+      2 & 20 & \ans{20} & \ans{2} \\
+      3 & 40 & --- & --- \\
+      \end{tabular}
+
+      \vspace{0.04in}
+      Best model: \quad Linear \hspace{1.5cm} Quadratic \hspace{1.5cm} \ans{\textbf{Exponential}}
+
+\item $\hat{y}(2) = 3 \cdot 1.4^2 = 3 \cdot 1.96 = $ \ans{$5.88$}
+
+      \vspace{0.04in}
+      Error $= 6.2 - 5.88 = $ \ans{$+0.32$}
+
+      \vspace{0.04in}
+      Is this an overestimate or underestimate? \ans{Underestimate} (error is positive; model predicted too low)
+
+\item \ansline{Yes, a residual plot with no pattern --- even if residuals alternate sign --- indicates the model is appropriate, because there is no systematic trend suggesting the wrong function type.}
+
+\end{enumerate}
 
 \end{document}

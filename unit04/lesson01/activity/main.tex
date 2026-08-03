@@ -1,4 +1,4 @@
-%! Parametric Functions — Unit 4, Lesson 4.1 — Group Activity
+%! Change in Arithmetic and Geometric Sequences — Unit 4, Lesson 4.1 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,92 +9,119 @@
 \pageheader{Unit 4, Lesson 4.1}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.12in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Tracking a Particle's Path]{sky}
-A particle moves in the $xy$-plane. Its position at time $t$ seconds
-is given by the parametric function
-\[
-  f(t) = \bigl(t^2,\; t - 1\bigr), \quad -2 \le t \le 3.
-\]
-Here $x(t) = t^2$ gives the particle's horizontal position and
-$y(t) = t - 1$ gives its vertical position (both in meters).
+\begin{scenariobox}[Sequences in the Wild]{sky}
+\small
+Sequences appear in finance, biology, and technology. In this activity you will identify
+sequence types, write explicit formulas, and use them to answer real questions. Work through
+the tier that matches your current level --- all tiers use the same big ideas.
 \end{scenariobox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{notesbox}{Part 1 --- Building the Table}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{1.}\quad Complete the table of values. Leave no cell blank.
+For each sequence below: (a) identify it as \textbf{arithmetic} or \textbf{geometric},
+(b) find $d$ or $r$, (c) write the explicit formula starting at $n = 0$, and
+(d) find the 10th term ($n = 10$).
 
-\vspace{6pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ (sec) & $x(t) = t^2$ & $y(t) = t - 1$ & Position $(x,\; y)$ \\
-\hline
-$-2$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-$-1$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-$0$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-$1$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-$2$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-$3$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.6cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{2.}\quad What is the particle's starting position (at $t = -2$)?
-What is its ending position (at $t = 3$)?
-\writeline
-
-\end{notesbox}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}p{3.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}X @{}}
+\textbf{Sequence} & \textbf{Type} & $d$ \textbf{or} $r$ & \textbf{Explicit formula} & \textbf{10th term} \\
+\midrule
+$5,\ 8,\ 11,\ 14,\ \ldots$      & \blank{2.0cm} & \blank{1.4cm} & \blank{2.8cm} & \blank{2cm} \\[6pt]
+$3,\ 6,\ 12,\ 24,\ \ldots$      & \blank{2.0cm} & \blank{1.4cm} & \blank{2.8cm} & \blank{2cm} \\[6pt]
+$100,\ 90,\ 80,\ 70,\ \ldots$   & \blank{2.0cm} & \blank{1.4cm} & \blank{2.8cm} & \blank{2cm} \\[6pt]
+$1,\ 5,\ 25,\ 125,\ \ldots$     & \blank{2.0cm} & \blank{1.4cm} & \blank{2.8cm} & \blank{2cm} \\[6pt]
+\end{tabularx}
+\end{tcolorbox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 2 --- Analyzing the Path}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{3.}\quad Look at the rows for $t = -1$ and $t = 1$.
-Both give the same value of $x(t)$. What does this mean for the
-particle's path? Does the particle visit the same location twice?
-Explain.
-\writelines{3}
+\begin{enumerate}[itemsep=12pt]
 
-\vspace{0.04in}
-\textbf{4.}\quad Solve: at what time $t$ does the particle cross
-the $y$-axis (where $x(t) = 0$)? Show your algebra, then state
-the particle's position at that moment.
-\writelines{3}
+  \item An arithmetic sequence has $a_3 = 12$ and $a_7 = 28$.
+        Find the common difference $d$ and write the explicit formula $a_n$.
 
-\vspace{0.04in}
-\textbf{5.}\quad Solve: at what time $t$ is the particle on the
-$x$-axis (where $y(t) = 0$)? Show your algebra, then state the
-particle's position at that moment.
-\writelines{3}
+        \vspace{0.04in}
+        $d = \dfrac{a_7 - a_3}{7 - 3} = $ \blank{4cm}
 
-\end{notesbox}
+        \vspace{0.04in}
+        Explicit formula: $a_n = $ \blank{6cm}
+
+        \vspace{0.04in}
+        Check: $a_3 = $ \blank{2.5cm} \quad $a_7 = $ \blank{2.5cm}
+
+  \item A geometric sequence has $g_2 = 12$ and $g_5 = 96$.
+        Find the common ratio $r$ and write the explicit formula $g_n$.
+
+        \vspace{0.04in}
+        $r^3 = \dfrac{g_5}{g_2} = \dfrac{96}{12} = $ \blank{1.5cm}, so $r = $ \blank{1.5cm}
+
+        \vspace{0.04in}
+        $g_0 = \dfrac{g_2}{r^2} = $ \blank{3cm}
+
+        \vspace{0.04in}
+        Explicit formula: $g_n = $ \blank{6cm}
+
+  \item A phone plan charges \$25 in month 0 and adds \$8 per month.
+
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item Write the explicit formula for the monthly charge $a_n$ in month $n$:
+
+                $a_n = $ \blank{5cm}
+
+          \item Find the charge in month 12: $a_{12} = $ \blank{3cm}
+
+          \item In which month does the charge first exceed \$100? \blank{3cm}
+        \end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 3 --- Extension (Tier E)}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{6.}\quad From your table, you can see that $x = 1$ occurs
-at both $t = -1$ and $t = 1$.
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item[(a)] Write the two distinct ordered pairs $(x, y)$ where $x = 1$.
-    \writeline
-  \item[(b)] Can the parametric curve be expressed as a function
-    $y = g(x)$ on the entire domain $-2 \le t \le 3$? Explain why
-    or why not using the vertical line test.
-    \writelines{3}
-\end{itemize}
+A bacteria colony triples every hour. After 3 hours there are 810 bacteria.
 
-\end{notesbox}
+\begin{enumerate}[itemsep=12pt]
+
+  \item Use the alternate formula $g_n = g_k \cdot r^{(n-k)}$ with $k = 3$, $g_3 = 810$,
+        and $r = 3$ to find $g_0$ (the initial population).
+
+        \vspace{0.04in}
+        $g_0 = g_3 \cdot r^{(0-3)} = 810 \cdot \blank{3cm} = $ \blank{3cm}
+
+  \item Write the explicit formula $g_n$ using $g_0$.
+
+        \vspace{0.04in}
+        $g_n = $ \blank{5cm}
+
+  \item Determine the smallest whole-number value of $n$ for which the population first
+        exceeds 100{,}000. Show your reasoning.
+
+        \vspace{0.04in}
+        We need $g_n > 100{,}000$: \blank{8cm}
+
+        \vspace{0.04in}
+        Smallest $n$: \blank{2cm}
+
+  \item Interpret your answer in context: what does $n$ represent in this problem?
+
+        \vspace{0.04in}
+        \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

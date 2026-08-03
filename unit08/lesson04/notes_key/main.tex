@@ -1,0 +1,145 @@
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item \ansline{Graph an equation in two variables by finding solutions and identifying explicit function pieces.}
+    \item \ansline{Determine whether two variables co-vary positively or negatively by examining the sign of $\Delta y/\Delta x$.}
+    \item \ansline{Identify where the rate of change is zero or undefined and interpret this geometrically.}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{Implicit equation}
+\ans{An equation in two variables where neither variable is isolated; it may describe one or more functions.}
+
+\termblanklong{Explicitly defined function}
+\ans{A function of the form $y = f(x)$, where $y$ is solved for in terms of $x$.}
+
+\termblanklong{Co-variation}
+\ans{The way two quantities change together; characterized by the sign of $\Delta y/\Delta x$.}
+
+\termblanklong{Rate of change ($\Delta y / \Delta x$)}
+\ans{The ratio of the change in $y$ to the change in $x$ between two nearby points. Positive $\Rightarrow$ same direction; negative $\Rightarrow$ opposite directions.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textit{``The equation $x^2 + y^2 = 25$ is not a function --- but it describes a circle.
+Can we still talk about how $x$ and $y$ change together? Can we split it into functions?''}
+
+\vspace{4pt}
+Is $x^2 + y^2 = 25$ a function? Why or why not?
+
+\ansline{No --- it fails the vertical-line test. For most $x$ values there are two $y$ values.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 1 --- Graphing an Implicit Equation}
+
+To graph an equation in two variables, \ans{substitute specific values for one variable and solve for the other, then plot the resulting ordered pairs.}
+
+\vspace{0.1in}
+\textbf{Example: $x^2 + y^2 = 25$}
+
+Complete the table. (Hint: substitute $x$ and solve for $y$.)
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{c|c|c}
+$x$ & $y$ (positive) & $y$ (negative) \\\hline
+$-5$ & \ans{$0$}  & \ans{$0$}  \\
+$-3$ & \ans{$4$}  & \ans{$-4$} \\
+$0$  & \ans{$5$}  & \ans{$-5$} \\
+$3$  & \ans{$4$}  & \ans{$-4$} \\
+$5$  & \ans{$0$}  & \ans{$0$}  \\
+\end{tabular}
+
+\vspace{0.12in}
+This equation describes \ans{2} explicit function(s):
+
+\vspace{4pt}
+$y = $ \ans{$\sqrt{25 - x^2}$} \quad (upper half) \qquad $y = $ \ans{$-\sqrt{25 - x^2}$} \quad (lower half)
+
+\vspace{0.1in}
+Solving for one variable in an implicit equation gives \ans{an explicit function whose graph is part or all of the graph of the original equation.}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 2 --- Co-variation}
+
+\textbf{Definition:} Co-variation describes \ans{how two quantities change together, including whether they change in the same or opposite directions.}
+
+\vspace{8pt}
+\textbf{Example:} Points $(3, 4)$ and $(4, 3)$ are both on the upper half of $x^2 + y^2 = 25$.
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{{\color{keyred}\mathbf{3-4}}}{{\color{keyred}\mathbf{4-3}}} = {\color{keyred}\mathbf{-1}}
+\]
+
+Is this ratio positive or negative? \ans{Negative}
+
+What does this mean about how $x$ and $y$ change together?
+
+\ansline{As $x$ increases, $y$ decreases --- they change in opposite directions.}
+
+\vspace{0.1in}
+\textbf{Rule:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item If $\Delta y/\Delta x$ is \textbf{positive}, the variables \ans{change in the same direction (both increase or both decrease)}.
+    \item If $\Delta y/\Delta x$ is \textbf{negative}, the variables \ans{change in opposite directions}.
+    \item If $\Delta y/\Delta x = 0$, the function has \ans{horizontal} behavior.
+    \item If $\Delta y/\Delta x$ is undefined, the function has \ans{vertical} behavior.
+\end{itemize}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Part 3 --- Second Example: $xy = 4$}
+
+Solve for $y$: \quad $y = $ \ans{$4/x$}
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c}
+$x$ & $y$ \\\hline
+$1$ & \ans{$4$} \\
+$2$ & \ans{$2$} \\
+$4$ & \ans{$1$} \\
+\end{tabular}
+
+\vspace{6pt}
+Compute $\Delta y/\Delta x$ from $x = 2$ to $x = 4$:
+
+\vspace{4pt}
+$\dfrac{\Delta y}{\Delta x} = \dfrac{{\color{keyred}\mathbf{1-2}}}{{\color{keyred}\mathbf{4-2}}} = $ \ans{$-1/2$}
+
+\vspace{6pt}
+As $x$ increases, $y$ \ans{decreases}. Co-variation is \ans{negative}.
+
+\end{notesbox}
+
+\begin{teachernote}
+Part 1: Many students write only the positive square root when completing the table. Reinforce that $y^2 = k$ always yields two solutions ($\pm\sqrt{k}$) unless $k = 0$.\\[3pt]
+Part 2: The fraction $\Delta y/\Delta x = -1$ at these two particular points. Emphasize that this is an approximation of the local behavior, not an exact derivative. The sign is what matters for co-variation.\\[3pt]
+Part 3: For $xy = 4$, $y = 4/x$. Students can verify: $y$ decreases as $x$ increases (for $x > 0$). Connect to the idea that the product of the two variables is always 4 --- a fixed relationship.
+\end{teachernote}
+
+\end{document}

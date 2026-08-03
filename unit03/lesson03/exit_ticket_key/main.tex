@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.3 — Exit Ticket (Answer Key)
+%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,37 +9,39 @@
 \pageheader{Unit 3, Lesson 3.3}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.16in}
+\vspace{0.14in}
 
-\begin{notesbox}{Sine and Cosine Function Values}
+\begin{enumerate}[itemsep=16pt]
 
-\textbf{1.} Fill in the exact values. Show the reference angle and the quadrant you used.
+\item For $r(x) = \dfrac{x - 1}{(x + 2)(x - 4)}$:
 
-\vspace{0.08in}
-\begin{tabularx}{\linewidth}{@{} X X @{}}
-$\cos\!\left(\dfrac{2\pi}{3}\right) = $ \ans{$-\dfrac{1}{2}$} &
-$\sin\!\left(\dfrac{5\pi}{6}\right) = $ \ans{$\dfrac{1}{2}$} \\[1em]
-\end{tabularx}
+\begin{enumerate}[label=(\alph*), itemsep=8pt]
+  \item Find all values of $x$ where the denominator equals zero.
 
-\textit{Reference angle and quadrant:}
+        \ans{$(x+2)(x-4) = 0 \Rightarrow x = -2$ and $x = 4$}
 
-\ans{$2\pi/3$ is in QII; reference angle $= \pi/3$; $\cos(\pi/3) = 1/2$, negate for QII $\Rightarrow -1/2$.\\[3pt]
-$5\pi/6$ is in QII; reference angle $= \pi/6$; $\sin(\pi/6) = 1/2$, positive in QII $\Rightarrow 1/2$.}
+  \item For each value from part (a), evaluate the numerator to determine whether it
+        gives a vertical asymptote.
 
-\vspace{0.16in}
+        At $x = -2$: numerator $=$ \ans{$-2-1 = -3 \ne 0$}. \quad
+        This gives: \ans{vertical asymptote at $x = -2$}
 
-\textbf{2.} $r = 5$, $\theta = 3\pi/4$.
+        At $x = 4$: numerator $=$ \ans{$4-1 = 3 \ne 0$}. \quad
+        This gives: \ans{vertical asymptote at $x = 4$}
 
-Reference angle $= \pi/4$ (QII). $\cos(\pi/4) = \sqrt{2}/2$, negate for QII.
-$\sin(\pi/4) = \sqrt{2}/2$, positive in QII.
+  \item Write the equation(s) of all vertical asymptotes of $r(x)$.
+
+        \ans{$x = -2$ and $x = 4$}
+\end{enumerate}
+
+\item Write the one-sided limits.
+
 \[
-  x = 5\cos\!\left(\tfrac{3\pi}{4}\right) = 5\cdot\left(-\tfrac{\sqrt{2}}{2}\right) = -\tfrac{5\sqrt{2}}{2},
-  \qquad
-  y = 5\sin\!\left(\tfrac{3\pi}{4}\right) = 5\cdot\tfrac{\sqrt{2}}{2} = \tfrac{5\sqrt{2}}{2}
+  \lim_{x \to 3^+} r(x) = \ans{$+\infty$}
+  \qquad\qquad
+  \lim_{x \to 3^-} r(x) = \ans{$-\infty$}
 \]
 
-$P = \Bigl($ \ans{$-\dfrac{5\sqrt{2}}{2}$} $,$ \ans{$\dfrac{5\sqrt{2}}{2}$} $\Bigr)$
-
-\end{notesbox}
+\end{enumerate}
 
 \end{document}

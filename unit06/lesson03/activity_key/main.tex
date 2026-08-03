@@ -1,0 +1,139 @@
+%! Sine, Cosine, and Tangent — Unit 6, Lesson 6.3 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.10in}
+
+\begin{scenariobox}[Scenario]{sky}
+A point $P$ moves around a unit circle as angle $\theta$ increases from $0$.
+The position of $P$ is completely determined by $\theta$: the $x$-coordinate gives $\cos\theta$
+and the $y$-coordinate gives $\sin\theta$.
+In this activity you will read these values directly from the unit circle and connect them to the
+tangent function.
+\end{scenariobox}
+
+\vspace{0.12in}
+
+%-----------------------------------------------------------------------
+% TIER R KEY
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate: Reading the Unit Circle --- Key},
+    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$\theta$ & $P = (x,\, y)$ & $\cos\theta$ & $\sin\theta$ & $\tan\theta$ \\
+\hline
+$0$      & $(1,\; 0)$
+         & \ans{$1$}
+         & \ans{$0$}
+         & \ans{$0$} \\
+$\pi/6$  & $\bigl(\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$
+         & \ans{$\dfrac{\sqrt{3}}{2}$}
+         & \ans{$\dfrac{1}{2}$}
+         & \ans{$\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}$} \\
+$\pi/4$  & \ans{$\bigl(\tfrac{\sqrt{2}}{2},\, \tfrac{\sqrt{2}}{2}\bigr)$}
+         & \ans{$\dfrac{\sqrt{2}}{2}$}
+         & \ans{$\dfrac{\sqrt{2}}{2}$}
+         & \ans{$1$} \\
+$\pi/2$  & \ans{$(0,\; 1)$}
+         & \ans{$0$}
+         & \ans{$1$}
+         & \ans{undefined} \\
+$\pi$    & \ans{$(-1,\; 0)$}
+         & \ans{$-1$}
+         & \ans{$0$}
+         & \ans{$0$} \\
+$3\pi/2$ & $(0,\; -1)$
+         & \ans{$0$}
+         & \ans{$-1$}
+         & \ans{undefined} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{Reflection:} \ans{$\tan\theta$ is undefined at $\theta = \pi/2$ and $\theta = 3\pi/2$
+because $\cos\theta = x = 0$ at those angles, and division by zero is undefined.}
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+%-----------------------------------------------------------------------
+% TIER A KEY
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- On Level --- Key},
+    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+
+\textbf{Part 1.} $P = \bigl(-\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=3pt]
+  \item \ans{$\left(-\tfrac{\sqrt{3}}{2}\right)^2 + \left(\tfrac{1}{2}\right)^2 = \tfrac{3}{4} + \tfrac{1}{4} = 1$ \checkmark}
+  \item \ans{$\sin\theta = \tfrac{1}{2}$, \quad $\cos\theta = -\tfrac{\sqrt{3}}{2}$, \quad
+        $\tan\theta = \tfrac{1/2}{-\sqrt{3}/2} = -\tfrac{1}{\sqrt{3}} = -\tfrac{\sqrt{3}}{3}$}
+  \item \ans{Quadrant II: $x < 0$ and $y > 0$, so the point is left and up from the origin.}
+\end{enumerate}
+
+\textbf{Part 2.} $Q = (-\sqrt{3},\, 1)$ on circle of radius 2.
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=3pt, start=4]
+  \item \ans{$(-\sqrt{3})^2 + 1^2 = 3 + 1 = 4 = 2^2$ \checkmark}
+  \item \ans{$\sin\theta = \tfrac{1}{2}$, \quad $\cos\theta = \tfrac{-\sqrt{3}}{2}$, \quad
+        $\tan\theta = \tfrac{1}{-\sqrt{3}} = -\tfrac{\sqrt{3}}{3}$}
+  \item \ans{The values are identical. The trig ratios depend only on the \emph{direction} of the
+        terminal ray, not the distance from the origin.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+%-----------------------------------------------------------------------
+% TIER E KEY
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend --- Key},
+    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=4pt]
+  \item $\sin\theta = 3/5$, Quadrant II.
+        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+          \item[(a)] \ans{$(3/5)^2 + \cos^2\theta = 1 \;\Rightarrow\; \cos^2\theta = 1 - 9/25 = 16/25
+                \;\Rightarrow\; \cos\theta = \pm 4/5$. In Quadrant II, $x < 0$, so
+                $\cos\theta = -4/5$.}
+          \item[(b)] \ans{$\tan\theta = \sin\theta/\cos\theta = (3/5)/(-4/5) = -3/4$}
+        \end{enumerate}
+
+  \item Symmetry of $-\theta$.
+        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+          \item[(a)] \ans{$\sin(-\theta) = -y = -\sin\theta$}
+          \item[(b)] \ans{$\cos(-\theta) = x = \cos\theta$}
+          \item[(c)] \ans{Reflecting across the $x$-axis maps $(x, y) \to (x, -y)$, so the
+                horizontal distance is unchanged (cosine is even) and the vertical distance
+                negates (sine is odd).}
+        \end{enumerate}
+\end{enumerate}
+
+\begin{teachernote}
+For Tier E question 1, emphasize the sign choice step: after solving $\cos^2\theta = 16/25$,
+students must use the quadrant information to select the negative square root. Many students
+forget this step and take the positive root automatically. Ask: ``Which quadrant are we in?
+What does that mean for the sign of $x$?''
+
+For question 2, the terms \emph{even function} and \emph{odd function} may not yet be formal
+vocabulary, but this is a natural preview. Cosine is even ($f(-x) = f(x)$) and sine is odd
+($f(-x) = -f(x)$). These properties will resurface when graphing in later lessons.
+\end{teachernote}
+\end{tcolorbox}
+
+\end{document}

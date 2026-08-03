@@ -1,0 +1,256 @@
+%! Parametric Functions and Rates of Change — Unit 8, Lesson 8.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 4.3.A} --- Identify the direction of planar motion
+    at any value of the parameter by determining whether $x(t)$ and
+    $y(t)$ are increasing or decreasing at that moment.
+    \ansline{determine direction from whether each component is increasing or decreasing}
+  \item \textbf{LO 4.3.A} --- Explain why the same curve can be traversed
+    in different directions by different parametrizations.
+    \ansline{different parametrizations can produce the same $(x,y)$ pairs in different orders}
+  \item \textbf{LO 4.3.A} --- Compute the average rate of change of $x(t)$
+    and $y(t)$ over $[t_1, t_2]$ and use their ratio to find the slope.
+    \ansline{slope $= \Delta y / \Delta x$ where $\Delta x = x(t_2)-x(t_1)$ and $\Delta y = y(t_2)-y(t_1)$}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{direction of motion}]
+    Determined by whether each component is
+    \ans{increasing} or \ans{decreasing}.
+    If $x(t)$ is increasing $\Rightarrow$ moving \ans{right};
+    if decreasing $\Rightarrow$ moving \ans{left}.
+    If $y(t)$ is increasing $\Rightarrow$ moving \ans{up};
+    if decreasing $\Rightarrow$ moving \ans{down}.
+
+  \item[\termblanklong{ARC of $x(t)$}]
+    The average rate of change of $x(t)$ over $[t_1, t_2]$:
+    \quad $\dfrac{x(t_2) - x(t_1)}{t_2 - t_1}$
+
+  \item[\termblanklong{ARC of $y(t)$}]
+    The average rate of change of $y(t)$ over $[t_1, t_2]$:
+    \quad $\dfrac{y(t_2) - y(t_1)}{t_2 - t_1}$
+
+  \item[\termblanklong{slope of parametric curve}]
+    The slope of the \ans{secant} line connecting two points
+    on the curve:
+    \quad $\dfrac{\Delta y}{\Delta x} = \dfrac{\text{ARC of } y(t)}{\text{ARC of } x(t)}$
+    \quad provided ARC of $x(t) \ne 0$.
+
+  \item[\termblanklong{reparametrization}]
+    A different pair of component functions that traces the
+    \ans{same} set of points in the plane, possibly in a
+    \ans{different} direction.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} Two drones follow the same figure-eight path ---
+Drone~A clockwise, Drone~B counterclockwise.
+
+\vspace{4pt}
+\textbf{Q1.} Can two different parametric functions trace the same path?
+What would have to be different about them?
+
+\vspace{4pt}
+\ans{Yes. The component functions would be different, producing the same set of $(x,y)$ points but at different values of $t$, possibly traversed in a different order (direction).}
+
+\textbf{Q2.} How do you determine which direction a particle is moving
+horizontally at a specific value of $t$?
+
+\vspace{4pt}
+\ans{Compare $x(t)$ at values slightly before and after the given $t$. If $x$ is increasing, the particle moves right; if decreasing, left.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Step 1: Direction of Motion
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.3.A --- Direction of Planar Motion (EK 4.3.A.1--A.2)}
+
+\textbf{Key rule:} Analyze $x(t)$ and $y(t)$ \emph{independently}.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|}
+\hline
+If $x(t)$ is \textbf{increasing} & particle moves \ans{right} \\
+\hline
+If $x(t)$ is \textbf{decreasing} & particle moves \ans{left} \\
+\hline
+If $y(t)$ is \textbf{increasing} & particle moves \ans{up} \\
+\hline
+If $y(t)$ is \textbf{decreasing} & particle moves \ans{down} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Example:} Let $f(t) = (t^2 - 2t,\; 3t - t^2)$ for $0 \le t \le 4$.
+
+\vspace{6pt}
+\textbf{Step 1 --- Build a table of values.}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = t^2 - 2t$ & $y(t) = 3t - t^2$ & $(x,\; y)$ \\
+\hline
+$0$ & \ans{$0$} & \ans{$0$} & \ans{$(0,0)$} \\
+\hline
+$1$ & \ans{$-1$} & \ans{$2$} & \ans{$(-1,2)$} \\
+\hline
+$2$ & \ans{$0$} & \ans{$2$} & \ans{$(0,2)$} \\
+\hline
+$3$ & \ans{$3$} & \ans{$0$} & \ans{$(3,0)$} \\
+\hline
+$4$ & \ans{$8$} & \ans{$-4$} & \ans{$(8,-4)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Step 2 --- Direction at $t = 0.5$.}
+
+Compare $x(0)$ and $x(1)$: $x(0) = $ \ans{$0$}, $x(1) = $ \ans{$-1$}.
+
+Since $x(1)$ \ans{$<$} $x(0)$, the function $x(t)$ is \ans{decreasing} near $t = 0.5$.
+
+$\Rightarrow$ particle is moving \ans{left}
+
+Compare $y(0)$ and $y(1)$: $y(0) = $ \ans{$0$}, $y(1) = $ \ans{$2$}.
+
+Since $y(1)$ \ans{$>$} $y(0)$, the function $y(t)$ is \ans{increasing} near $t = 0.5$.
+
+$\Rightarrow$ particle is moving \ans{up}
+
+\vspace{8pt}
+\textbf{Step 3 --- Direction at $t = 2.5$.}
+
+Compare $x(2)$ and $x(3)$: $x(2) = 0$, $x(3) = 3$; is $x$ increasing or decreasing? \ans{increasing}
+
+$\Rightarrow$ particle is moving \ans{right}
+
+Compare $y(2)$ and $y(3)$: $y(2) = 2$, $y(3) = 0$; is $y$ increasing or decreasing? \ans{decreasing}
+
+$\Rightarrow$ particle is moving \ans{down}
+
+\begin{teachernote}
+  Emphasize that direction at $t = 0.5$ and $t = 2.5$ are opposite in both components,
+  even though the particle may be at the same $(x,y)$ point at some instant. This is
+  EK 4.3.A.2: direction can differ for different values of $t$ even at the same location.
+\end{teachernote}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Step 2: Same Curve, Different Directions
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.3.A --- Same Curve, Different Parametrizations (EK 4.3.A.3)}
+
+\textbf{Key idea:} The same set of points in the plane can be traced by
+different parametric functions --- possibly in different directions.
+
+\vspace{6pt}
+\textbf{Example:} Let $f(t) = (t,\; t^2)$ and $g(t) = (3 - t,\; (3-t)^2)$
+for $0 \le t \le 3$.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c||c|c|}
+\hline
+& \multicolumn{2}{c||}{Robot A: $f(t)=(t,\;t^2)$}
+& \multicolumn{2}{c|}{Robot B: $g(t)=(3{-}t,\;(3{-}t)^2)$} \\
+\hline
+$t$ & $(x,\;y)$ for $f$ & direction & $(x,\;y)$ for $g$ & direction \\
+\hline
+$0$ & \ans{$(0,0)$} & \ans{right, up} & \ans{$(3,9)$} & \ans{left, down} \\
+\hline
+$1$ & \ans{$(1,1)$} & \ans{right, up} & \ans{$(2,4)$} & \ans{left, down} \\
+\hline
+$2$ & \ans{$(2,4)$} & \ans{right, up} & \ans{$(1,1)$} & \ans{left, down} \\
+\hline
+$3$ & \ans{$(3,9)$} & \ans{right, up} & \ans{$(0,0)$} & \ans{left, down} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+Do $f$ and $g$ trace the same set of points? \ans{Yes}
+
+Are they moving in the same direction? \ans{No --- opposite directions}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Step 3: Slope via ARC Ratio
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.3.A --- Slope of the Curve via Average Rates of Change (EK 4.3.A.4)}
+
+\textbf{Formula:} Over the interval $[t_1, t_2]$:
+\[
+  \text{slope of curve} = \frac{\Delta y}{\Delta x}
+  = \frac{y(t_2) - y(t_1)}{x(t_2) - x(t_1)}
+  \quad \text{(provided } x(t_2) \ne x(t_1)\text{)}
+\]
+
+\vspace{6pt}
+\textbf{Example (continued):} Use $f(t) = (t^2 - 2t,\; 3t - t^2)$.
+Find the slope of the curve from $t = 1$ to $t = 3$.
+
+\vspace{6pt}
+$x(1) = $ \ans{$-1$} \qquad $x(3) = $ \ans{$3$} \qquad $\Delta x = $ \ans{$4$}
+
+$y(1) = $ \ans{$2$} \qquad $y(3) = $ \ans{$0$} \qquad $\Delta y = $ \ans{$-2$}
+
+\vspace{6pt}
+Slope $= \dfrac{\Delta y}{\Delta x} = \dfrac{\ans{-2}}{\ans{4}} = $ \ans{$-\tfrac{1}{2}$}
+
+\vspace{6pt}
+\textbf{Interpretation:} The secant line connecting the points on the
+curve at $t = 1$ and $t = 3$ has slope \ans{$-\tfrac{1}{2}$}.
+
+\begin{teachernote}
+  Stress that $\Delta y / \Delta x$ uses the \emph{changes in the output coordinates},
+  not $\Delta y / \Delta t$ or $\Delta x / \Delta t$ individually. The $\Delta t$ cancels
+  when you form the ratio of the two ARCs. Students commonly confuse these.
+\end{teachernote}
+
+\end{notesbox}
+
+\end{document}

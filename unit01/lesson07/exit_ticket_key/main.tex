@@ -1,7 +1,7 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Exit Ticket (Answer Key)
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,48 +9,51 @@
 \pageheader{Unit 1, Lesson 1.7}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.16in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=18pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item Consider the rational function $r(x) = \dfrac{5x^2 - 3}{2x^2 + x - 1}$.
+\item Complete the difference table and identify the best model type.
 
-\begin{enumerate}[label=(\alph*), itemsep=10pt]
-  \item What is the quotient of the leading terms?
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      $x$ & $y$ & $\Delta y$ & $\Delta^2 y$ \\
+      \hline
+      0 & 5  & ---         & ---         \\
+      \hline
+      1 & 9  & \ans{4} & ---      \\
+      \hline
+      2 & 17 & \ans{8} & \ans{4} \\
+      \hline
+      3 & 29 & \ans{12} & \ans{4} \\
+      \hline
+      4 & 45 & \ans{16} & \ans{4} \\
+      \hline
+      \end{tabular}
 
-        \medskip
-        Leading term of numerator: \ans{$5x^2$} \quad
-        Leading term of denominator: \ans{$2x^2$}
+      \medskip
+      The \ans{second} differences are constant, so the best model type is
+      \ans{quadratic} (degree \ans{2}).
 
-        \medskip
-        Quotient: \ans{$5x^2 / 2x^2 = 5/2$}
+\item A shipping company charges a flat rate of \$8 for packages up to 5 lb,
+      then adds \$1.50 per pound above 5 lb. Circle the best model type and give one reason.
 
-  \item Write the end behavior in limit notation:
+      \medskip
+      \textbf{A.} Linear \qquad \textbf{B.} Quadratic \qquad \textbf{C.} Cubic \qquad \textbf{D.} Piecewise-defined \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
 
-        \medskip
-        $\displaystyle\lim_{x \to \infty} r(x) = $ \ans{$\dfrac{5}{2}$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} r(x) = $ \ans{$\dfrac{5}{2}$}
+      \medskip
+      One reason: \ansline{The pricing rule changes at 5 lb, so different formulas apply on different intervals.}
 
-  \item Does the graph of $r$ have a horizontal asymptote?
-        Circle one: \quad \ans{Yes} \quad / \quad No
+\item A quadratic function models the area of a rectangular garden with one fixed wall
+      (using 60 m of fencing for three sides). State one \textbf{domain restriction}
+      and one \textbf{model assumption}.
 
-        \medskip
-        If yes, the horizontal asymptote is at $y = $ \ans{$\dfrac{5}{2}$}.
-\end{enumerate}
+      \medskip
+      Domain restriction: \ansline{$0 < w < 30$ where $w$ is the width (width must be positive and less than half the available fencing).}
 
-\item A rational function has a numerator of degree 3 and a denominator of degree 5.
-
-\begin{enumerate}[label=(\alph*), itemsep=8pt]
-  \item What type of horizontal asymptote does it have?
-        \ans{Horizontal asymptote at $y = 0$ (deg num $<$ deg denom)}
-  \item Write the limit statements:
-
-        \medskip
-        $\displaystyle\lim_{x \to \infty} r(x) = $ \ans{$0$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} r(x) = $ \ans{$0$}
-\end{enumerate}
+      Model assumption: \ansline{The garden is a perfect rectangle and exactly 60 m of fencing is used on the three open sides.}
 
 \end{enumerate}
 

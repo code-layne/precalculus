@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.3 — Group Activity
+%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,120 +11,129 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Exact Values in Engineering and Navigation]{sky}
+\begin{scenariobox}[Analyzing Pressure Gauges]{sky}
 \small
-Engineers and navigators routinely need \emph{exact} trigonometric values rather than decimal approximations.
-A GPS receiver, a satellite dish alignment system, or a structural analysis of a geodesic dome all depend on
-knowing $\sin\theta$ and $\cos\theta$ precisely for key angles.
-In this activity your group will build fluency with exact values and apply them to a real-world context.
+Engineers monitor pressure in a hydraulic system. The pressure at different points in the
+system is modeled by rational functions. A pressure ``spike'' --- where pressure grows without
+bound --- corresponds to a vertical asymptote of the model. For each function below, determine
+where pressure spikes occur.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l @{\qquad} l l @{}}
+$r_1(x) = \dfrac{3}{x - 5}$ &
+$r_2(x) = \dfrac{x + 2}{x^2 - 4}$ &
+$r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$ &
+$r_4(x) = \dfrac{x}{(x+2)^3}$
+\end{tabular}
 \end{scenariobox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER R
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Build the Unit Circle Table},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-The first-quadrant values are given. Use quadrant sign conventions (ASTC) to complete the table.
-Remember: $(\cos\theta, \sin\theta)$ gives the coordinates of the point on the unit circle.
 
-\vspace{0.1in}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.2cm}
-    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
-\toprule
-\textbf{Angle $\theta$} & \textbf{$\cos\theta$} & \textbf{$\sin\theta$} \\
-\midrule
-$0$              & $1$                     & $0$                     \\
-$\pi/6$          & $\sqrt{3}/2$            & $1/2$                   \\
-$\pi/4$          & $\sqrt{2}/2$            & $\sqrt{2}/2$            \\
-$\pi/3$          & $1/2$                   & $\sqrt{3}/2$            \\
-$\pi/2$          & $0$                     & $1$                     \\
-$2\pi/3$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
-$3\pi/4$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
-$5\pi/6$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
-$\pi$            & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
+For each function, set the denominator equal to zero and solve. Assume the numerator is not
+zero at those points and write the vertical asymptote equation(s).
 
-\vspace{0.1in}
-\textbf{Reflection:} What pattern do you notice in $\sin\theta$ as you move from $0$ to $\pi$?
+\begin{enumerate}[itemsep=10pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$
 
-\vspace{0.45in}
+        Denominator $= 0$ when $x =$ \blank{2cm}. \quad Vertical asymptote: \blank{3cm}
+
+  \item $r_2(x) = \dfrac{x + 2}{x^2 - 4}$
+
+        Factor the denominator: $x^2 - 4 =$ \blank{4cm}
+
+        Denominator $= 0$ when $x =$ \blank{3.5cm}. \quad Vertical asymptote(s): \blank{3.5cm}
+
+  \item $r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$
+
+        Denominator $= 0$ when $x =$ \blank{3.5cm}. \quad Vertical asymptote(s): \blank{3.5cm}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$
+
+        Denominator $= 0$ when $x =$ \blank{2cm}. \quad Vertical asymptote: \blank{3cm}
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER A
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Ferris Wheel Coordinates},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-A Ferris wheel has radius 40~ft and its center is at the origin. A car starts at the rightmost point
-(angle $\theta = 0$). As the wheel turns counterclockwise, use $P = (r\cos\theta, r\sin\theta)$
-to find the car's exact $(x, y)$ position at each angle below.
 
-\vspace{0.08in}
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.0cm}
-    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
-\toprule
-\textbf{Angle $\theta$} & \textbf{$x$-coordinate (ft)} & \textbf{$y$-coordinate (ft)} \\
-\midrule
-$\pi/6$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-$\pi/4$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-$\pi/3$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-$\pi/2$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-$2\pi/3$  & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-$5\pi/6$  & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
+Factor both the numerator and denominator of each function. Determine whether each denominator
+zero gives a \textbf{vertical asymptote} (VA) or a \textbf{potential hole} (if the numerator
+is also zero at that point). Write the correct VAs.
 
-\vspace{0.08in}
-\textbf{Question:} At which of these angles is the car highest? What is the maximum possible height?
+\begin{enumerate}[itemsep=12pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$: \quad
+        Numerator at $x=5$: \blank{2cm}. \quad Result: \blank{4cm}
 
-\vspace{0.45in}
+  \item $r_2(x) = \dfrac{x + 2}{x^2 - 4} = \dfrac{x+2}{(x-2)(x+2)}$
+
+        At $x = 2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+        At $x = -2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+  \item $r_3(x) = \dfrac{x^2-1}{(x-1)(x+3)}$.
+        Factor the numerator: $x^2 - 1 =$ \blank{4cm}
+
+        At $x = 1$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+        At $x = -3$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$: \quad
+        At $x = -2$: numerator $=$ \blank{1.5cm} \quad $\Rightarrow$ \blank{4cm}
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER E
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Symmetry and Inverse Reasoning},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-A point $P$ on a circle of radius $r$ has exact coordinates $\left(-\dfrac{r\sqrt{3}}{2},\, \dfrac{r}{2}\right)$.
 
-\vspace{0.08in}
-\textbf{(a)} Determine the angle $\theta \in [0, 2\pi)$ such that $P = (r\cos\theta, r\sin\theta)$.
-Justify your answer by identifying the reference angle and the correct quadrant.
+\begin{enumerate}[itemsep=12pt]
+  \item \textbf{Explaining a hole.} For $r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$,
+        factor the numerator as $(x-1)(x+1)$.
 
-\vspace{0.9in}
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Why is $x = 1$ \emph{not} a vertical asymptote? Use the words
+                ``multiplicity'' or ``cancels'' in your explanation.
 
-$\theta = $ \underline{\hspace{2.2cm}}
+                \vspace{0.25in}
+                \writeline\\[4pt]
+                \writeline
 
-\vspace{0.1in}
-\textbf{(b)} Find all angles $\alpha \in [0, 2\pi)$ such that the point on the unit circle at angle $\alpha$
-has the \emph{same $y$-coordinate} as the point $\left(-\dfrac{\sqrt{3}}{2},\, \dfrac{1}{2}\right)$.
-List both angles and explain the symmetry that guarantees a second solution.
+          \item Confirm that $x = -3$ \textbf{is} a vertical asymptote. Show your reasoning.
 
-\vspace{0.9in}
+                \vspace{0.25in}
+                \writeline
+        \end{enumerate}
 
-$\alpha = $ \underline{\hspace{2.2cm}} and $\alpha = $ \underline{\hspace{2.2cm}}
+  \item \textbf{One-sided limits.} For $r_4(x) = \dfrac{x}{(x+2)^3}$, analyze the sign
+        of $r_4(x)$ as $x \to -2$ from each side.
 
-\vspace{0.1in}
-\textbf{Symmetry explanation:}
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item When $x$ is slightly greater than $-2$ (e.g., $x = -1.9$):
+                Numerator sign: \blank{2cm}. \quad $(x+2)^3$ sign: \blank{2cm}.
+                \quad So $r_4(x)$ is: \blank{2cm}
 
-\vspace{0.5in}
+          \item When $x$ is slightly less than $-2$ (e.g., $x = -2.1$):
+                Numerator sign: \blank{2cm}. \quad $(x+2)^3$ sign: \blank{2cm}.
+                \quad So $r_4(x)$ is: \blank{2cm}
+
+          \item Write the one-sided limits:
+                \[
+                  \lim_{x \to -2^+} r_4(x) = \blank{2.5cm}
+                  \qquad\qquad
+                  \lim_{x \to -2^-} r_4(x) = \blank{2.5cm}
+                \]
+        \end{enumerate}
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}

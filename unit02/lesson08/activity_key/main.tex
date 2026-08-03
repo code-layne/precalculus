@@ -1,4 +1,4 @@
-%! Inverse Functions — Unit 2, Lesson 2.8 — Group Activity (Answer Key)
+%! Modeling with Polynomial Functions — Unit 2, Lesson 2.8 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,149 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.8}{Group Activity --- Answer Key}
-\namepartnerperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
-\vspace{0.08in}
 
-\begin{scenariobox}[Dosage in Reverse]{sky}
-\small
-A nurse uses the formula $D(w) = 1.5w + 10$ to calculate a patient's medication dose $D$ (mg)
-from their weight $w$ (kg). Sometimes the dose is recorded but the weight is missing from the
-chart. Your team will develop and use the inverse formula to recover the weight from the dose.
-Work through the tier your teacher assigns. Be ready to explain your reasoning.
-\end{scenariobox}
+\vspace{0.15in}
 
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = 3x + 6$.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Complete the output table.
-
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$    & 0 & 2 & 4 & 6 \\
-        \hline
-        $f(x)$ & \ans{6} & \ans{12} & \ans{18} & \ans{24} \\
-        \hline
-        \end{tabular}
-
-  \item Reverse the pairs to write the inverse table.
-
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$          & \ans{6} & \ans{12} & \ans{18} & \ans{24} \\
-        \hline
-        $f^{-1}(x)$  & \ans{0} & \ans{2}  & \ans{4}  & \ans{6}  \\
-        \hline
-        \end{tabular}
-
-  \item Use your inverse table to verify: $f(f^{-1}(18)) = $ \ans{18}. Show the steps.
-
-        \vspace{0.06in}
-        $f^{-1}(18) = $ \ans{4}, then $f\!\left({\color{keyred}\mathbf{4}}\right) = 3(4)+6 = $ \ans{18} \checkmark
-
-  \item State the domain and range of $f$ (using the table values):
-
-        Domain of $f$: $\{$\ans{0, 2, 4, 6}$\}$ \quad Range of $f$: $\{$\ans{6, 12, 18, 24}$\}$
-
-        Domain of $f^{-1}$: $\{$\ans{6, 12, 18, 24}$\}$ \quad Range of $f^{-1}$: $\{$\ans{0, 2, 4, 6}$\}$
-
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = \dfrac{x - 2}{5}$.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Find $f^{-1}(x)$ algebraically. Show all four steps.
-
-        \vspace{0.04in}
-        Step 1: $y = $ \ans{$\dfrac{x-2}{5}$}
-
-        Step 2 (swap): $x = $ \ans{$\dfrac{y-2}{5}$}
-
-        Step 3 (solve): \ans{$5x = y - 2$, so $y = 5x + 2$}
-
-        Step 4: $f^{-1}(x) = $ \ans{$5x + 2$}
-
-  \item Verify using composition: show $f(f^{-1}(x)) = x$.
-
-        \vspace{0.04in}
-        $f(f^{-1}(x)) = \dfrac{\left({\color{keyred}\mathbf{5x+2}}\right) - 2}{5} = \dfrac{5x}{5} = $ \ans{$x$} \checkmark
-
-  \item State the domain and range of $f$ and $f^{-1}$:
-
-        Domain of $f$: \ans{all reals} \quad Range of $f$: \ans{all reals}
-
-        Domain of $f^{-1}$: \ans{all reals} \quad Range of $f^{-1}$: \ans{all reals}
-
-  \item In the nurse context, $x$ in $f^{-1}(x)$ represents \ans{the dose} (mg) and
-        the output represents \ans{the patient weight} (kg). If a patient received 7 mg, their weight was
-        \ans{37} kg.
-
-        \begin{teachernote}
-        $f^{-1}(7) = 5(7)+2 = 37$ kg. Note the Tier A function differs from the scenario's
-        $D(w)=1.5w+10$ --- the context still applies as an interpretation exercise.
-        \end{teachernote}
-
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = x^2$ on all real numbers.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Explain why $f(x) = x^2$ is \textbf{not} invertible on all real numbers.
-        Give a specific numerical counterexample.
-
-        \vspace{0.04in}
-        \ansline{$f(2) = 4$ and $f(-2) = 4$: two different inputs map to the same output.}
-        \ansline{The function is not one-to-one, so the reversed pairs would not define a function.}
-
-  \item Restrict the domain of $f$ to $x \ge 0$. On this domain, find $f^{-1}(x)$ algebraically.
-
-        \vspace{0.04in}
-        Step 1: $y = $ \ans{$x^2$} (with domain $x \ge 0$)
-
-        Step 2 (swap): $x = $ \ans{$y^2$}
-
-        Step 3 (solve, taking the non-negative root): $y = $ \ans{$\sqrt{x}$}
-
-        $f^{-1}(x) = $ \ans{$\sqrt{x}$}
-
-  \item Verify: $f(f^{-1}(x)) = \left({\color{keyred}\mathbf{\sqrt{x}}}\right)^2 = $ \ans{$x$} \checkmark
-
-  \item Why was the domain restriction to $x \ge 0$ necessary?
-        What input values must be excluded when the domain is all reals?
-
-        \vspace{0.04in}
-        \ansline{Without the restriction, every positive output value $b$ has two inputs: $\sqrt{b}$ and $-\sqrt{b}$.}
-        \ansline{The negative inputs ($x < 0$) must be excluded so that the function is one-to-one.}
-        \ansline{On $x \ge 0$, each output is produced by exactly one input, making the inverse well-defined.}
-
-\end{enumerate}
-\end{tcolorbox}
+% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Group Activity --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

@@ -1,0 +1,130 @@
+%! Sine and Cosine Function Values — Unit 6, Lesson 6.4 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Exact Values in Engineering and Navigation]{sky}
+\small
+Engineers and navigators routinely need \emph{exact} trigonometric values rather than decimal approximations.
+A GPS receiver, a satellite dish alignment system, or a structural analysis of a geodesic dome all depend on
+knowing $\sin\theta$ and $\cos\theta$ precisely for key angles.
+In this activity your group will build fluency with exact values and apply them to a real-world context.
+\end{scenariobox}
+
+\vspace{0.12in}
+
+%-----------------------------------------------------------------------
+% TIER R
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Build the Unit Circle Table},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+The first-quadrant values are given. Use quadrant sign conventions (ASTC) to complete the table.
+Remember: $(\cos\theta, \sin\theta)$ gives the coordinates of the point on the unit circle.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.2cm}
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\toprule
+\textbf{Angle $\theta$} & \textbf{$\cos\theta$} & \textbf{$\sin\theta$} \\
+\midrule
+$0$              & $1$                     & $0$                     \\
+$\pi/6$          & $\sqrt{3}/2$            & $1/2$                   \\
+$\pi/4$          & $\sqrt{2}/2$            & $\sqrt{2}/2$            \\
+$\pi/3$          & $1/2$                   & $\sqrt{3}/2$            \\
+$\pi/2$          & $0$                     & $1$                     \\
+$2\pi/3$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
+$3\pi/4$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
+$5\pi/6$         & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
+$\pi$            & \underline{\hspace{1.8cm}} & \underline{\hspace{1.8cm}} \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.1in}
+\textbf{Reflection:} What pattern do you notice in $\sin\theta$ as you move from $0$ to $\pi$?
+
+\vspace{0.45in}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%-----------------------------------------------------------------------
+% TIER A
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Ferris Wheel Coordinates},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+A Ferris wheel has radius 40~ft and its center is at the origin. A car starts at the rightmost point
+(angle $\theta = 0$). As the wheel turns counterclockwise, use $P = (r\cos\theta, r\sin\theta)$
+to find the car's exact $(x, y)$ position at each angle below.
+
+\vspace{0.08in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.0cm}
+    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\toprule
+\textbf{Angle $\theta$} & \textbf{$x$-coordinate (ft)} & \textbf{$y$-coordinate (ft)} \\
+\midrule
+$\pi/6$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+$\pi/4$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+$\pi/3$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+$\pi/2$   & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+$2\pi/3$  & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+$5\pi/6$  & \underline{\hspace{2.2cm}} & \underline{\hspace{2.2cm}} \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.08in}
+\textbf{Question:} At which of these angles is the car highest? What is the maximum possible height?
+
+\vspace{0.45in}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+%-----------------------------------------------------------------------
+% TIER E
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Symmetry and Inverse Reasoning},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+A point $P$ on a circle of radius $r$ has exact coordinates $\left(-\dfrac{r\sqrt{3}}{2},\, \dfrac{r}{2}\right)$.
+
+\vspace{0.08in}
+\textbf{(a)} Determine the angle $\theta \in [0, 2\pi)$ such that $P = (r\cos\theta, r\sin\theta)$.
+Justify your answer by identifying the reference angle and the correct quadrant.
+
+\vspace{0.9in}
+
+$\theta = $ \underline{\hspace{2.2cm}}
+
+\vspace{0.1in}
+\textbf{(b)} Find all angles $\alpha \in [0, 2\pi)$ such that the point on the unit circle at angle $\alpha$
+has the \emph{same $y$-coordinate} as the point $\left(-\dfrac{\sqrt{3}}{2},\, \dfrac{1}{2}\right)$.
+List both angles and explain the symmetry that guarantees a second solution.
+
+\vspace{0.9in}
+
+$\alpha = $ \underline{\hspace{2.2cm}} and $\alpha = $ \underline{\hspace{2.2cm}}
+
+\vspace{0.1in}
+\textbf{Symmetry explanation:}
+
+\vspace{0.5in}
+\end{tcolorbox}
+
+\end{document}

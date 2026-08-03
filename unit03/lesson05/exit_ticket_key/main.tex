@@ -1,7 +1,7 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Exit Ticket (Answer Key)
+%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,40 +9,37 @@
 \pageheader{Unit 3, Lesson 3.5}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.18in}
+\vspace{0.14in}
 
-\begin{notesbox}{Exit Ticket: Sinusoidal Functions --- Key}
+\begin{enumerate}[itemsep=16pt]
 
-\textbf{1.} A sinusoidal function has a maximum value of $7$ and a minimum value
-of $1$.
+\item A student needs to find the \textbf{vertical asymptotes and holes} of a rational function.
+      Circle the form that is most useful, and explain why in one phrase.
 
-\medskip
-(a) What is the amplitude of this function?
+      \medskip
+      \ans{A. Factored form} \qquad\qquad \textbf{B.} Standard form
 
-\vspace{0.08in}
-\begin{tabular}{@{}l@{}}
-  Amplitude $= \dfrac{\ans{7} - \ans{1}}{2} = $ \ans{3}
-\end{tabular}
+      \vspace{0.06in}
+      Because: \ansline{factored form shows the zeros of the numerator and denominator, making it easy to identify holes and vertical asymptotes by comparing shared factors.}
 
-\vspace{0.18in}
+\item Perform the first step of polynomial long division to divide $x^2 + 3x + 5$ by $x + 2$.
 
-(b) What is the midline of this function?  Write your answer as an equation.
+      What is the first term of the quotient? \ans{$x$}
 
-\vspace{0.08in}
-\begin{tabular}{@{}l@{}}
-  Midline: $y = \dfrac{\ans{7} + \ans{1}}{2} = $ \ans{$y = 4$}
-\end{tabular}
+      After multiplying and subtracting, what is the new dividend? \ans{$x + 5$}
 
-\vspace{0.25in}
+\item Use Pascal's Triangle to expand $(x + 2)^4$.
+      (Row 4 of Pascal's Triangle: $1 \quad 4 \quad 6 \quad 4 \quad 1$)
 
-\textbf{2.} The period of a sinusoidal function is $\dfrac{\pi}{2}$.
-What is the frequency of this function?
+      \vspace{0.06in}
+      $(x+2)^4 = $ \ans{$x^4 + 8x^3 + 24x^2 + 32x + 16$}
 
-\vspace{0.1in}
-\begin{tabular}{@{}l@{}}
-  Frequency $= \dfrac{1}{\ans{$\pi/2$}} = $ \ans{$\dfrac{2}{\pi}$}
-\end{tabular}
+\end{enumerate}
 
-\end{notesbox}
+\begin{teachernote}
+Item 2: First term of quotient $= x^2 \div x = x$. Multiply: $x(x+2) = x^2+2x$. Subtract from $x^2+3x+5$: new dividend is $x+5$. Final answer (if completed): quotient $x+1$, remainder $3$, so $\frac{x^2+3x+5}{x+2} = x+1+\frac{3}{x+2}$.
+
+Item 3: $(x+2)^4 = 1\cdot x^4 + 4\cdot x^3\cdot 2 + 6\cdot x^2\cdot 4 + 4\cdot x\cdot 8 + 1\cdot 16 = x^4+8x^3+24x^2+32x+16$.
+\end{teachernote}
 
 \end{document}

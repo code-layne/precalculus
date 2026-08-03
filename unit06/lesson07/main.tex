@@ -1,0 +1,315 @@
+%! Sinusoidal Function Transformations — Unit 6, Lesson 6.7 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 6: Trigonometric Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.7: Sinusoidal Function Transformations}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2--3 instructional periods, \MeetingLength\ each)}
+\end{center}
+
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+  \textbf{Primary Objective:} Students will identify the amplitude, period,
+  phase shift, and midline of sinusoidal functions of the form
+  $f(\theta)=a\sin(b(\theta+c))+d$ and $g(\theta)=a\cos(b(\theta+c))+d$,
+  and connect each parameter to an additive or multiplicative transformation
+  of the parent sine or cosine function.
+  \textit{(Big Idea: Functions)}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{1.C} \textit{Construct new functions using transformations} ---
+  Apply amplitude, period, midline, and phase-shift transformations
+  to build $f(\theta)=a\sin(b(\theta+c))+d$ from the parent sine function.
+&
+\textbf{EK 3.6.A.1}: $a\sin(b(\theta+c))+d$ and $a\cos(b(\theta+c))+d$
+(with $a\neq 0$) are sinusoidal transformations of sine/cosine.
+Because $\cos\theta=\sin(\theta+\pi/2)$, the same transformations apply
+to both. \\[4pt]
+
+\textbf{2.B} \textit{Construct equivalent representations} ---
+  Translate between parameter form $a\sin(b(\theta+c))+d$ and feature
+  descriptions (amplitude, period, midline, phase shift), and rewrite
+  a cosine function as a phase-shifted sine function.
+&
+\textbf{EK 3.6.A.2}: $\sin(\theta)+d$ shifts the midline to $y=d$
+(vertical translation). \\[4pt]
+
+&
+\textbf{EK 3.6.A.3}: $\sin(\theta+c)$ shifts the graph $-c$ units
+horizontally (phase shift). \\[4pt]
+
+&
+\textbf{EK 3.6.A.4}: $a\sin(\theta)$ scales amplitude by $|a|$
+(vertical dilation). \\[4pt]
+
+&
+\textbf{EK 3.6.A.5}: $\sin(b\theta)$ scales period by $\tfrac{1}{|b|}$;
+new period $=\dfrac{2\pi}{|b|}$ (horizontal dilation). \\[4pt]
+
+&
+\textbf{EK 3.6.A.6}: $f(\theta)=a\sin(b(\theta+c))+d$ has amplitude
+$|a|$, period $\dfrac{2\pi}{|b|}$, midline $y=d$, phase shift $-c$. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{tabularx}{\linewidth}{@{} p{0.24\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+sinusoidal function &
+  Any function equivalent to $a\sin(b(\theta+c))+d$ (or cosine form)
+  with $a\neq 0$. A transformation of the parent sine or cosine. \\[4pt]
+amplitude &
+  $|a|$ --- half the vertical distance from midline to max (or min).
+  Controls vertical stretch/compression. \\[4pt]
+midline &
+  The horizontal line $y=d$; the average of max and min output values.
+  Determined by the vertical shift $d$. \\[4pt]
+period &
+  Length of one complete cycle; $T=\dfrac{2\pi}{|b|}$.
+  Controlled by the horizontal dilation factor $b$. \\[4pt]
+phase shift &
+  Horizontal translation $= -c$ when written in factored form
+  $b(\theta+c)$. Positive $c$ shifts left; negative $c$ shifts right. \\[4pt]
+vertical dilation &
+  Multiplication of all outputs by $a$; changes amplitude and can
+  reflect over the midline when $a<0$. \\[4pt]
+horizontal dilation &
+  Replacement of $\theta$ by $b\theta$; changes period.
+  $|b|>1$ compresses; $|b|<1$ stretches. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8--10 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Unit-circle exact values}: Evaluating $\sin\theta$ and
+    $\cos\theta$ at $0,\,\pi/6,\,\pi/4,\,\pi/3,\,\pi/2$ and their
+    equivalents --- fluency needed to verify transformations numerically.
+  \item \textbf{Graphs of $y=\sin\theta$ and $y=\cos\theta$}: Students
+    must recall amplitude $= 1$, period $= 2\pi$, midline $y = 0$ from
+    Lessons 3.4--3.5. Today's lesson stretches and shifts those baseline graphs.
+  \item \textbf{Function transformation vocabulary (Units 1--2)}: Vertical
+    shifts, vertical stretches, and horizontal shifts of polynomials and
+    exponentials --- the same language and algebraic structure apply here.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Project two sinusoidal graphs on the board side-by-side.
+Graph~1: $y=\sin\theta$ (amplitude 1, period $2\pi$, midline $y=0$).
+Graph~2: $y=3\sin(2\theta)+1$ (taller, faster, shifted up).
+Both look ``wavy'' --- but they are clearly different.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``The two graphs are related. What changed? What stayed the same?''}
+  \item \textit{``In $y = 3\sin(2\theta)+1$, which number makes the wave
+    taller? Which makes it cycle faster? Which shifts it up?''}
+  \item \textit{``How would you shift the wave to the \emph{right} without
+    changing its height or speed?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} All sinusoidal functions come from the same
+parent shape, but four parameters independently control amplitude, period,
+phase, and midline. Reading these parameters directly from a formula is a
+powerful modeling tool used throughout science, engineering, and music.
+
+\textbf{Transition:} ``Today we'll dissect the general form
+$f(\theta)=a\sin(b(\theta+c))+d$ and learn to identify each of the four
+features just by looking at the equation.''
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Vertical Transformations ($a$ and $d$)} (12 min)
+
+Begin with $y=\sin\theta$. Model $y=3\sin\theta$: every output is
+multiplied by 3, so amplitude becomes 3; period and midline unchanged.
+Then add $d$: $y=3\sin\theta+2$ shifts the midline to $y=2$; max is
+now 5, min is $-1$. Formalize EKs 3.6.A.2 and 3.6.A.4.
+Key questions: what if $a=-2$? (reflection over midline, amplitude still 2)
+What if $|a|<1$? (vertical compression toward midline).
+
+\columnbreak
+
+\textbf{Step 2 --- Horizontal Transformations ($b$ and $c$)} (12 min)
+
+Model $y=\sin(2\theta)$: replace $\theta$ with $2\theta$; the cycle
+completes in $\pi$ instead of $2\pi$, halving the period.
+Formalize EK 3.6.A.5: period $=2\pi/|b|$.
+Introduce $c$: $y=\sin(\theta+\pi/4)$ shifts the graph \emph{left}
+by $\pi/4$ (phase shift $=-c=-\pi/4$). Emphasize factoring:
+$\sin(2\theta+\pi)=\sin(2(\theta+\pi/2))$ --- phase shift $= -\pi/2$,
+not $-\pi$. Students practice factoring two or three examples.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- The General Form and Summary Table} (10 min)
+
+Write $f(\theta)=a\sin(b(\theta+c))+d$ and label all four parameters.
+Complete the summary table in guided notes. Work one full example together:
+$f(\theta)=-2\sin\!\bigl(\tfrac{1}{2}(\theta-\pi)\bigr)+3$ ---
+amplitude $=2$, period $=4\pi$, phase shift $=\pi$ (right),
+midline $y=3$, reflected ($a<0$).
+
+\columnbreak
+
+\textbf{Step 4 --- Sine--Cosine Equivalence} (8 min)
+
+Establish EK 3.6.A.1: $\cos\theta=\sin(\theta+\pi/2)$.
+Demonstrate: $2\cos(3\theta)=2\sin(3(\theta+\pi/6))$.
+Students verify with a table of values at $\theta=0,\,\pi/6$.
+Close with the key idea: \emph{any} sinusoidal function can be written
+as either a sine or cosine transformation; the choice is often one of
+convenience.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 in Period 1; Steps 3--4 and group
+activity in Period 2; review and exit ticket in Period 3 if needed.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Phase-shift sign error (most common)}: Students read $+c$
+    as the phase shift rather than $-c$. Prompt: \textit{``Rewrite
+    $\sin(2\theta+\pi)$ in factored form $\sin(b(\theta+c))$. What must
+    $c$ be? Then the phase shift is $-c$.''}
+  \item \textbf{Period vs.\ $b$}: Students report $b$ as the period.
+    Ask: \textit{``If $b=4$, the wave repeats 4 times faster than normal.
+    Period $=2\pi/4=\pi/2$, not 4.''}
+  \item \textbf{Amplitude and sign}: Students report a negative amplitude
+    when $a<0$. Reinforce: amplitude $=|a|$ is always non-negative;
+    the negative sign causes a reflection.
+  \item \textbf{Midline vs.\ maximum}: Students confuse $d$ with the
+    max output. Prompt: \textit{``Midline $=d$ is the \emph{average}
+    of max and min. Max $= d + |a|$.''}
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+Students work in groups of 3--4 on the tiered activity (teacher-assigned
+or student self-selected with guidance).
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Reinforce)}: Given five equations of the form
+    $a\sin(b\theta)+d$ (no phase shift), students complete a parameter
+    table (amplitude, period, midline, max, min) with sentence frames
+    to guide written explanations.
+  \item \textbf{Tier A (Apply)}: Given equations in factored form
+    $a\sin(b(\theta+c))+d$, students identify all four parameters,
+    determine the sine--cosine equivalence, and match each equation to
+    a provided sinusoidal graph card (no sketching).
+  \item \textbf{Tier E (Extend)}: Given equations in unfactored form
+    (e.g., $-3\cos(2\theta-\pi/3)+1$), students factor the argument,
+    identify all parameters, write each as a sine function, and write
+    a verbal transformation description in the correct algebraic order.
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+Exit ticket administered independently (final 5--7 minutes of Period 2 or 3).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Given $f(\theta)=-3\sin\!\bigl(2(\theta+\tfrac{\pi}{4})\bigr)-1$,
+    students identify amplitude, period, phase shift, and midline.
+  \item Multiple-choice: select the equation matching a verbal description
+    of four sinusoidal parameters.
+\end{enumerate}
+
+\textbf{Data use:} Sort exit tickets by error type --- phase-shift sign
+errors, period-formula errors, amplitude-sign errors. Use distribution
+to determine whether a brief re-teach opener is needed at Lesson 3.7.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework (Lesson 6.7):} 6--7 problems covering: identifying all
+four parameters from sine and cosine equations in factored and unfactored
+form, computing period and amplitude, identifying phase shift direction,
+and 2 AP-style multiple-choice items. Optional extension: rewrite a given
+cosine function as a sine function with an explicit phase shift.
+
+\textbf{Preview of Lesson 3.7 --- Sinusoidal Function Graphs:}
+Ask students: \textit{``Now that you can read amplitude, period, midline,
+and phase shift from an equation, what information would you need to
+produce the actual graph? In Lesson 3.7 we'll go in both directions ---
+from equation to graph, and from graph to equation.''}
+\end{skillbox}
+
+\end{document}

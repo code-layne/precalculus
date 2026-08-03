@@ -1,0 +1,168 @@
+%! Inverses of Exponential Functions — Unit 5, Lesson 5.2 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 5: Logarithmic Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 5.2: Inverses of Exponential Functions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students construct the logarithmic function as the inverse of
+    an exponential function (initial value 1), represent the inverse using tables and algebraic
+    notation, verify the inverse relationship through composition, and connect the
+    additive/multiplicative growth patterns of each function type.
+    \hfill\textit{\small Skills: AP 1.C, AP 2.B \quad LO 2.10.A}
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP 1.C} --- Construct new functions using inverses. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $f(x) = \log_b x$ and $g(x) = b^x$ are inverse functions:
+        $g(f(x)) = f(g(x)) = x$. (EK 2.10.A.3)
+  \item If $(s,t)$ is on $g(x) = b^x$, then $(t,s)$ is on $f(x) = \log_b x$.
+        (EK 2.10.A.5)
+\end{itemize} \\
+\textbf{AP 2.B} --- Construct equivalent representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Exponential output changes multiplicatively as input changes additively;
+        logarithmic output changes additively as input changes multiplicatively.
+        (EK 2.10.A.2)
+  \item General form: $f(x) = a\log_b x$, $b > 0$, $b \ne 1$, $a \ne 0$.
+        (EK 2.10.A.1)
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.28\linewidth} X @{}}
+logarithmic function & A function of the form $f(x) = a\log_b x$ where $b > 0$, $b \ne 1$,
+                       and $a \ne 0$; the inverse of a general-form exponential function with
+                       initial value 1. \\
+base of a logarithm  & The value $b$ in $\log_b x$; the same base as the corresponding
+                       exponential $b^x$. \\
+inverse functions    & Two functions $f$ and $g$ such that $f(g(x)) = g(f(x)) = x$ for all
+                       $x$ in the appropriate domain. \\
+additive change      & Output values that increase (or decrease) by a constant amount across
+                       equal intervals; characteristic of logarithmic functions. \\
+multiplicative change & Output values that increase by a constant factor across equal intervals;
+                       characteristic of exponential functions. \\
+reflection over $y=x$ & The geometric relationship between a function and its inverse: the
+                       graph of $f(x) = \log_b x$ is the reflection of $g(x) = b^x$ over the
+                       line $y = x$. (EK 2.10.A.4) \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    Spiral review (warm-up) covers: evaluating $\log_2 8$ and $2^3$ to notice they share the
+    same result; completing $\log_3(3^5)$ and $3^{\log_3 7}$ to surface the cancellation
+    property; and identifying the reflected point of $(3, 8)$ on an inverse function.
+    These connect directly to EK 2.10.A.3 (composition) and EK 2.10.A.5 (swapped pairs).
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    Write on the board: \textbf{A population model is $P(t) = 2^t$.}
+
+    Ask: ``How long until the population reaches 64?'' Have students guess, then try to solve
+    algebraically. Most will notice $2^t = 64 \Rightarrow t = 6$, but ask: \textbf{``Is there
+    a function that gives us $t$ directly, given $P$?''} Pose the question: ``If exponentiation
+    is the operation, what is the inverse operation?'' This motivates the logarithm as the
+    function that ``undoes'' an exponential.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{multicols}{2}
+\textbf{Part 1 (12 min): Growth Patterns Side-by-Side.}
+
+Build a table for $g(x) = 2^x$ at $x = 0,1,2,3$. Ask: as $x$ increases by 1, what happens
+to $g(x)$? (Multiplies by 2.) Now build the reflected table for $f(x) = \log_2 x$ using the
+swapped pairs $(1,0),(2,1),(4,2),(8,3)$. Ask: as $x$ multiplies by 2, what happens to $f(x)$?
+(Adds 1.) Have students fill the guided-notes table and write the additive/multiplicative
+sentences.
+
+\columnbreak
+
+\textbf{Part 2 (12 min): Inverse Relationship.}
+
+Define: $f$ and $g$ are inverses when $f(g(x)) = g(f(x)) = x$. Verify:
+$g(f(x)) = 2^{\log_2 x} = x$ and $f(g(x)) = \log_2(2^x) = x$.
+
+Emphasize EK 2.10.A.5: if $(s,t)$ is on $g(x) = b^x$, then $(t,s)$ is on $f(x) = \log_b x$.
+Work through the $g(x) = 3^x$ inverse-pair exercise in the notes together.
+
+\textbf{Part 3 (8 min): General Form.}
+
+Introduce $f(x) = a\log_b x$ as the general form (EK 2.10.A.1). Show that the vertical
+dilation by $a$ still preserves the inverse relationship with $g(x) = b^x$ when $a = 1$, but
+stretches/compresses the outputs otherwise. Return to the hook: $t = \log_2 P$, so $t(64) = 6$.
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``How are the input/output patterns of $g(x)=2^x$ and
+        $f(x)=\log_2 x$ opposite?'' Expect: exponential multiplies output; log adds to output.
+  \item Watch for students who write $\log_b(b^x) = b$ instead of $x$ --- address immediately
+        by tracing through the composition step by step.
+  \item After Part 2: ask ``If $(5, 32)$ is on $g(x) = 2^x$, what point is on $f(x) = \log_2 x$?''
+        Expect $(32, 5)$. Students who say $(2,5)$ are confusing the base with the input.
+  \item During Part 3: ensure students see $a\log_b x$ as a vertical dilation and not a change
+        of base or a new kind of function.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Complete a table for $g(x) = 4^x$; swap pairs to form the
+        inverse table; identify the inverse as $\log_4 x$; evaluate from the table; verify
+        composition once.
+  \item \textbf{Tier A (Apply):} Inverse of $g(t) = 5^t$ in the bacteria context; composition
+        verification; evaluate in context (time to reach populations of 125 and 625).
+  \item \textbf{Tier E (Extension):} Compare $f(x) = \log_2 x$ and $h(x) = 3\log_2 x$; build
+        tables; check additive-growth property for both; determine when $f(x) = h(x)$.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+Exit ticket (3 questions, 1 page):
+\begin{enumerate}[leftmargin=1.5em,itemsep=2pt,topsep=2pt]
+  \item If $(2,9)$ is on $g(x)=b^x$, what point is on $f(x)=\log_b x$? (Tests EK 2.10.A.5.)
+  \item Compute $g(f(27))$ where $f(x) = \log_3 x$, $g(x) = 3^x$. (Tests EK 2.10.A.3.)
+  \item Complete a short table for $f(x) = \log_2 x$ using the inverse relationship.
+        (Tests EK 2.10.A.2.)
+\end{enumerate}
+
+Sort by result: students missing \#1 need work on swapped pairs (EK 2.10.A.5);
+missing \#2 need composition practice; missing \#3 need the additive growth pattern
+(EK 2.10.A.2).
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework (6 problems):} write the inverse of $g(x) = 6^x$ and complete a paired table;
+verify $f(x) = \log_5 x$ and $g(x) = 5^x$ are inverses using both compositions; contextual
+inverse with $A(t) = 10^t$ (algae area); written explanation of additive vs.\ multiplicative
+growth patterns; evaluate $h(x) = 2\log_3 x$; AP-style MC on graph reflection.
+
+\textbf{Preview of Lesson 2.11:} Logarithmic functions as function families --- domain, range,
+concavity, end behavior (as $x \to 0^+$ and $x \to \infty$), and why $f(x) = \log_b x$ is
+always strictly increasing (for $b > 1$) or strictly decreasing (for $0 < b < 1$).
+\end{skillbox}
+
+\end{document}

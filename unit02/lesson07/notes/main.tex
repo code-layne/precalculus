@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 2, Lesson 2.7 — Guided Notes
+%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,125 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.7}{Guided Notes}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind. See references/conventions.md.
 
-\vspace{0.06in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Evaluate the \blank{3cm} of two functions for given values using tables or formulas.
-        \hfill\textit{(LO 2.7.A)}
-  \item Construct a formula for $f(g(x))$ by substituting \blank{3cm} for each $x$ in $f$,
-        and explain why $f \circ g$ and $g \circ f$ are generally \blank{3cm}.
-        \hfill\textit{(LO 2.7.B)}
-  \item Rewrite a function as a \blank{3cm} of two simpler functions and connect this to
-        \blank{3cm} of functions. \hfill\textit{(LO 2.7.C)}
-\end{enumerate}
-\end{objectivebox}
+\vspace{0.15in}
 
-\vspace{0.06in}
-
-\begin{vocabbox}
-\termblanklong{composition / composite function}
-\termblanklong{$(f \circ g)(x)$}
-\termblanklong{domain of $f \circ g$}
-\termblanklong{identity function}
-\termblanklong{non-commutativity of composition}
-\termblanklong{decomposition}
-\end{vocabbox}
-
-\vspace{0.06in}
-
-\begin{hookbox}
-A cell carrier charges \$10 per GB of data used: $C(u) = 10u$.
-Daily data use depends on miles driven: $u(d) = 0.5d$ GB.
-
-What is the daily charge as a function of miles? Write it as one formula:
-
-\vspace{0.06in}
-$C\bigl(u(d)\bigr) = C\!\left(\rule{2cm}{0.4pt}\right) = $ \blank{5cm}
-
-\vspace{0.04in}
-This is an example of \blank{6cm}. The output of one function becomes the input of another.
-\end{hookbox}
-
-\vspace{0.06in}
-
-\begin{notesbox}{LO 2.7.A --- Evaluating Compositions from a Table}
-\textbf{Definition:} $(f \circ g)(x) = f(g(x))$. To evaluate: find the \blank{3cm} first, then use it as input for \blank{3cm}.
-
-\medskip
-\renewcommand{\arraystretch}{1.6}
-\begin{center}
-\begin{tabular}{c|c|c}
-$x$ & $f(x)$ & $g(x)$ \\ \hline
-1 & 4 & 2 \\
-2 & 7 & 1 \\
-3 & 10 & 3 \\
-\end{tabular}
-\end{center}
-
-\medskip
-\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
-$f(g(1)):$ \quad $g(1) = $ \blank{1.5cm} \quad so $f\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} &
-$f(g(2)):$ \quad $g(2) = $ \blank{1.5cm} \quad so $f\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} \\[6pt]
-$g(f(1)):$ \quad $f(1) = $ \blank{1.5cm} \quad so $g\!\left(\rule{1cm}{0.4pt}\right) = $ \blank{2cm} &
-\textit{Domain note:} $g(f(1))$ requires $f(1)$ to be an input for $g$. Is it in the table? \blank{2cm}
-\end{tabular}
-
-\medskip
-\textbf{Non-commutativity (EK 2.7.A.3):} In general, $f(g(x))$ \blank{2.5cm} $g(f(x))$.
-\end{notesbox}
-
-\vspace{0.06in}
-
-\begin{notesbox}{LO 2.7.B --- Constructing Compositions Analytically}
-\textbf{Rule (EK 2.7.B.2):} To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
-
-\medskip
-Let $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
-
-\medskip
-\textbf{Build $f(g(x))$:} Replace each $x$ in $f$ with $g(x) = x^2 - 3$:
-
-\[
-  f(g(x)) = 2\bigl(\rule{2.5cm}{0.4pt}\bigr) + 1 = \rule{5cm}{0.4pt}
-\]
-
-\textbf{Build $g(f(x))$:} Replace each $x$ in $g$ with $f(x) = 2x+1$:
-
-\[
-  g(f(x)) = \bigl(\rule{2.5cm}{0.4pt}\bigr)^2 - 3 = \rule{5cm}{0.4pt}
-\]
-
-Are $f(g(x))$ and $g(f(x))$ the same function? \blank{8cm}
-
-\medskip
-\textbf{Identity function (EK 2.7.A.4):} If $f(x) = x$, then $(f \circ g)(x) = $ \blank{4cm} for any $g$.
-\end{notesbox}
-
-\vspace{0.06in}
-
-\begin{notesbox}{LO 2.7.C --- Decomposing Functions; Connections to Transformations}
-\textbf{Decomposition (EK 2.7.C.1):} Find simpler $f$ and $g$ so that $h(x) = f(g(x))$.
-
-\medskip
-\textbf{Example:} Decompose $h(x) = (3x + 2)^4$.
-
-\quad Choose inner function $g(x) = $ \blank{4cm} and outer function $f(u) = $ \blank{4cm}.
-
-\quad Verify: $f(g(x)) = $ \blank{6cm} \checkmark
-
-\medskip
-\textbf{Connections to transformations (EK 2.7.C.2--C.3):}
-
-\quad Horizontal shift: $g(x) = f(x + k)$ is composition of $f$ with $h(x) = $ \blank{3cm}.
-
-\quad Horizontal stretch: $g(x) = f(kx)$ is composition of $f$ with $h(x) = $ \blank{3cm}.
-
-\medskip
-\textit{Example:} $y = (x-5)^2$ is $f(x) = x^2$ composed with $h(x) = $ \blank{3cm}, which shifts $f$ right \blank{2cm} units.
+% TODO: author the Guided Notes. See references/components.md for the expected structure.
+\begin{notesbox}{Guided Notes}
+\writelines{4}
 \end{notesbox}
 
 \end{document}

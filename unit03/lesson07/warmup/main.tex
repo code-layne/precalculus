@@ -1,4 +1,4 @@
-%! Sinusoidal Function Context and Data Modeling — Unit 3, Lesson 3.7 — Warm-Up
+%! Rational Equations and Inequalities — Unit 3, Lesson 3.7 — Warm-Up
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,73 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.7}{Warm-Up}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind. See references/conventions.md.
 
-\vspace{0.12in}
 
-\begin{notesbox}{Spiral Review}
+\vspace{0.15in}
 
-\textbf{1.}\quad The graph below represents one complete period of a sinusoidal
-function $g$.
-
-\vspace{6pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.85]
-  \draw[linegray, step=0.5cm] (0,-1.6) grid (6.4, 1.6);
-  \draw[->] (0,0) -- (6.6,0) node[right]{\small $x$};
-  \draw[->] (0,-1.7) -- (0,1.8) node[above]{\small $g(x)$};
-  % Tick marks x
-  \foreach \x/\lbl in {1.57/\frac{\pi}{2}, 3.14/\pi, 4.71/\frac{3\pi}{2}, 6.28/2\pi} {
-    \draw (\x, 0.06) -- (\x, -0.06);
-    \node[below, font=\tiny] at (\x, -0.06) {$\lbl$};
-  }
-  % Tick marks y
-  \foreach \y/\lbl in {-1.5/-3, 1.5/3} {
-    \draw (0.06, \y) -- (-0.06, \y);
-    \node[left, font=\tiny] at (-0.06, \y) {$\lbl$};
-  }
-  % Sinusoidal curve: 3sin(x) scaled: amplitude 3 drawn as 1.5 in tikz units
-  \draw[navy, thick, domain=0:6.28, samples=100]
-    plot (\x, {1.5*sin(\x r)});
-  % Midline dashed
-  \draw[charcoal, dashed] (0,0) -- (6.6,0);
-\end{tikzpicture}
-\end{center}
-
-\vspace{6pt}
-(a)\quad What is the amplitude of $g$? \writeline
-
-\vspace{4pt}
-(b)\quad What is the period of $g$? \writeline
-
-\vspace{4pt}
-(c)\quad What is the midline (vertical shift) of $g$? \writeline
-
-\vspace{0.14in}
-\textbf{2.}\quad The table below gives values of a periodic function over one period.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$t$ & 0 & 3 & 6 & 9 & 12 \\
-\hline
-$h(t)$ & 2 & 14 & 2 & $-10$ & 2 \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{6pt}
-(a)\quad What is the maximum value? \underline{\hspace{1.8cm}}
-\quad What is the minimum value? \underline{\hspace{1.8cm}}
-
-\vspace{4pt}
-(b)\quad Compute the amplitude: $A = \dfrac{\max - \min}{2} = $ \writeline
-
-\vspace{4pt}
-(c)\quad Compute the midline: $D = \dfrac{\max + \min}{2} = $ \writeline
-
+% TODO: author the Warm-Up. See references/components.md for the expected structure.
+\begin{notesbox}{Warm-Up}
+\writelines{4}
 \end{notesbox}
 
 \end{document}

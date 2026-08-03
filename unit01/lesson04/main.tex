@@ -1,4 +1,4 @@
-%! Polynomial Functions and Rates of Change — Unit 1, Lesson 1.4 — Lesson Plan
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Polynomial and Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 1.4: Polynomial Functions and Rates of Change}
+\newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
+\newcommand{\LessonNumberName}{Lesson 1.4: Transformations of Functions}
 
 \begin{document}
 \begin{center}
@@ -19,136 +19,157 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and interpret key characteristics of polynomial functions --- degree, leading term, local and global extrema, and points of inflection --- using rates of change and graphical behavior. (MP 2.A, 3.A)
+    \textbf{Primary Objective:} Students will identify, describe, and construct transformations
+    of functions using additive transformations (vertical and horizontal translations) and
+    multiplicative transformations (vertical and horizontal dilations, including reflections),
+    and will determine the domain and range of a transformed function from the parent's domain
+    and range.
+    \hfill\textit{\small Skills: MP 1.C, MP 3.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-\textbf{AP Skills}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item \textbf{2.A} --- Identify information from analytical and graphical representations
-    \item \textbf{3.A} --- Describe key characteristics of a function
-\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-\textbf{Key Understandings (LO 1.4.A)}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Polynomial standard form: degree, leading term, leading coefficient
-    \item Local vs.\ global extrema; relationship to switching between increasing/decreasing
-    \item Between every two distinct real zeros, there is at least one local extremum
-    \item Even-degree polynomials have a global max or global min
-    \item Points of inflection occur where rate of change switches from increasing to decreasing (or vice versa)
-\end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 1.C} --- Construct new functions as transformations of known functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $g(x)=f(x)+k$: vertical translation by $k$ units. (EK 1.12.A.1)
+  \item $g(x)=f(x+h)$: horizontal translation by $-h$ units. (EK 1.12.A.2)
+  \item $g(x)=af(x)$: vertical dilation by $|a|$; $a<0$ also reflects over $x$-axis. (EK 1.12.A.3)
+  \item $g(x)=f(bx)$: horizontal dilation by $1/|b|$; $b<0$ also reflects over $y$-axis. (EK 1.12.A.4)
+\end{itemize} \\
+\textbf{MP 3.A} --- Describe characteristics of transformed functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Transformations can be combined: $g(x)=af(x+h)+k$. (EK 1.12.A.5)
+  \item The domain and range of the transformed function may differ from the parent. (EK 1.12.A.6)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{multicols}{2}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item polynomial function
-    \item degree
-    \item leading coefficient
-    \item local maximum / local minimum
-    \item global maximum / global minimum
-    \item point of inflection
-\end{itemize}
-\end{multicols}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth} X @{}}
+parent function         & The original, un-transformed function from which transformed versions are built. \\
+transformation          & An operation that shifts, scales, or reflects the graph of a function. \\
+vertical translation    & $g(x)=f(x)+k$: shifts the graph up or down by $|k|$ units. \\
+horizontal translation  & $g(x)=f(x+h)$: shifts the graph left (if $h>0$) or right (if $h<0$) by $|h|$ units. \\
+vertical dilation       & $g(x)=af(x)$: scales outputs by $|a|$; $a<0$ reflects over $x$-axis. \\
+horizontal dilation     & $g(x)=f(bx)$: scales inputs by $1/|b|$; $b<0$ reflects over $y$-axis. \\
+reflection              & A special dilation with $|a|=1$ or $|b|=1$ and negative sign; flips the graph. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
-            Please see attached spiral review.\\[4pt]
-            \textbf{Skills reviewed:} identifying zeros of a function (Lesson 1.1); concavity and AROC sign patterns (Lesson 1.1); average rate of change patterns and second differences (Lesson 1.3).
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.20\linewidth}\vspace{0pt}\centering
-        \end{minipage}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        Spiral review (warm-up) covers: evaluating $f(x)$, $f(-2)$, and $f(x+1)$ from a formula
+        (Lesson 1.1 function notation); reading domain and range from a table (Lesson 1.1);
+        interpreting end behavior of a polynomial graph (Lessons 1.6--1.7, prerequisite for
+        understanding how dilations affect overall shape).
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-Display (or describe aloud): ``Consider $p(x) = x^3 - 3x$. As $x$ increases from $-\infty$, the function decreases steeply, reaches a valley, climbs through zero, peaks, and then falls back through zero before rising to $+\infty$ again.''
+\textbf{``One function --- four disguises. Can you un-transform it back?''}
 
-Discussion prompts:
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Where are the ``peaks'' and ``valleys'' of this function?
-    \item How many real zeros does $p(x) = x^3 - 3x$ have? (Factor: $x(x-\sqrt{3})(x+\sqrt{3})$)
-    \item Between each pair of zeros, what must happen to the function's direction of change?
-    \item Where does the rate of change itself change direction?
-\end{itemize}
-Use student responses to introduce the vocabulary of local extrema and points of inflection.
+Display the table of $f(x)=x^2$ alongside tables for $f(x)+3$, $f(x-2)$, and $2f(x)$ without
+labeling them. Ask: ``What did I \textit{do} to $f$? How do the outputs change? What stays the
+same?'' Let students discuss for 60 seconds before revealing the rules. Emphasize the goal: given
+a rule, predict the table; given two tables, reverse-engineer the rule.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
-\textbf{1. Polynomial Functions (EK 1.4.A.1)}\\
-Standard form: $p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$, $a_n \neq 0$.
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item \textit{Degree}: $n$ (highest power)
-    \item \textit{Leading term}: $a_n x^n$
-    \item \textit{Leading coefficient}: $a_n$
-    \item A constant function is a polynomial of degree 0.
-\end{itemize}
+\textbf{Part 1 (12 min): Four Transformation Types.}
 
-\textbf{End behavior (verbal descriptions):}
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Even degree, positive leading coeff.: both ends rise
-    \item Even degree, negative leading coeff.: both ends fall
-    \item Odd degree, positive leading coeff.: falls left, rises right
-    \item Odd degree, negative leading coeff.: rises left, falls right
-\end{itemize}
+Walk through each type in the guided notes with the $f(x)=x^2$ example:
+\begin{enumerate}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+  \item \textbf{Vertical shift} $g(x)=f(x)+k$: output changes, input doesn't. Domain unchanged; range shifts.
+  \item \textbf{Horizontal shift} $g(x)=f(x+h)$: input changes, output values unchanged but at different $x$. Stress the direction reversal: $f(x+3)$ shifts \textit{left}.
+  \item \textbf{Vertical dilation} $g(x)=af(x)$: outputs scaled by $a$. Negative $a$ flips.
+  \item \textbf{Horizontal dilation} $g(x)=f(bx)$: inputs scaled, graph compressed ($|b|>1$) or stretched.
+\end{enumerate}
 
 \columnbreak
 
-\textbf{2. Local and Global Extrema (EK 1.4.A.2--4)}\\
-A \textit{local maximum} occurs where the function switches from increasing to decreasing. A \textit{local minimum} occurs where it switches from decreasing to increasing.
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item The greatest local max value is the \textit{global maximum}.
-    \item The least local min value is the \textit{global minimum}.
-    \item Between every two distinct real zeros, at least one local extremum must exist.
-    \item Polynomials of even degree have either a global max or a global min (not both in general).
-\end{itemize}
+\textbf{Part 2 (10 min): Combined Transformations.}
 
-\textbf{3. Points of Inflection (EK 1.4.A.5)}\\
-A \textit{point of inflection} occurs where the rate of change switches from increasing to decreasing, or vice versa --- i.e., where the graph changes from concave up to concave down (or the reverse).
+Model $g(x)=-2f(x+1)-3$ step by step:
+\begin{enumerate}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+  \item Replace $x$ with $x+1$ (shift left 1).
+  \item Multiply by $-2$ (stretch by 2, reflect over $x$-axis).
+  \item Subtract 3 (shift down 3).
+\end{enumerate}
+
+Use a table-of-values approach to show how each step changes the outputs numerically.
+
+\textbf{Part 3 (5 min): Domain and Range.}
+
+For $f$ with domain $[-2,4]$ and range $[0,9]$, work out domain/range of $g(x)=-2f(x+1)-3$:
+domain shifts left 1 $\to [-3,3]$; range: $[0,9]\times(-2)=[-18,0]$, then $-3 \to [-21,-3]$.
+Emphasize that order matters when the factor is negative.
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Circulate during the hook discussion. Listen for students confusing zeros with extrema.
-    \item During notes: cold-call --- ``If a polynomial has three distinct real zeros, what is the \textit{minimum} number of local extrema it must have?''
-    \item During activity Tier A: check that AROC computations use the correct interval endpoints.
-    \item Common misconception: students may think a local extremum must occur \textit{at} a zero. Clarify: extrema occur \textit{between} zeros.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Key misconception to catch:} Students often shift $f(x+3)$ \textit{right} instead of left. Cold-call: ``If $g(x)=f(x+3)$, at what $x$-value does $g$ equal $f(0)$? Why?'' (Answer: $x=-3$, so the graph moved left.)
+  \item Circulate during the notes table-fill: check that students compute $g(x)=2f(x)$ by doubling the $f$ column, not the $x$ column.
+  \item Watch for students who apply transformations in the wrong order for combined cases.
+  \item After Part 3: ask a student to explain why domain shifts left when $h>0$ in $f(x+h)$.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\textbf{Context:} Roller coaster height over time (see Group Activity).
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item \textbf{Tier R (Remediate):} Identify local maxima and minima from a table of values; identify global maximum. No computation required.
-    \item \textbf{Tier A (On-level):} Compute AROCs over intervals; identify sign changes in AROC (local extrema); identify where AROC is increasing vs.\ decreasing (concavity/inflection).
-    \item \textbf{Tier E (Extend):} Determine minimum possible degree of the polynomial; reason about existence of global min using EK 1.4.A.4.
+\begin{multicols}{3}
+\textbf{Tier R --- Remediate}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+  \item Pre-factored transformation tables provided.
+  \item Match the completed table to the rule (multiple choice).
+  \item Focus: reading how outputs change and connecting to the rule label.
 \end{itemize}
+
+\columnbreak
+
+\textbf{Tier A --- Apply}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+  \item Build the table for $g(x)=2f(x-1)+3$ step by step.
+  \item State domain and range of $g$.
+  \item All computation shown in a scaffolded multi-column table.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Tier E --- Extend}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+  \item Given tables for $f$ and $h$, reverse-engineer the rule for $h$ in terms of $f$.
+  \item Identify $a$ and $k$; describe all transformations in words.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-    \item A polynomial has exactly three distinct real zeros. What is the minimum number of local extrema it must have? (EK 1.4.A.3)
-    \item A polynomial $q$ has a point of inflection at $x = 2$. AROC over $[1,2]$ is $6$; AROC over $[2,3]$ is $3$. Is the graph concave up or concave down on each interval?
+Exit ticket (3 questions, 1 page):
+\begin{enumerate}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Identify and describe the transformations in $g(x)=f(x+3)-2$ (tests horizontal shift direction, vertical shift).
+  \item Complete the table for $g(x)=-f(x)$ given $f$ values (tests vertical reflection).
+  \item State the domain of $g(x)=f(x-4)$ given domain of $f$ is $[-2,6]$ (tests domain shift).
 \end{enumerate}
-Look for: correct application of EK 1.4.A.3 (two zeros $\Rightarrow$ at least one extremum between them); correct use of ``concave up $\Rightarrow$ AROC increasing.''
+Collect exit tickets; sort by correctness on Q1 (horizontal shift direction) to identify students needing re-teaching before Lesson 1.13.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework overview:} 5--6 problems reviewing degree/leading coefficient, minimum degree from extrema count, AROC sign changes, even-degree global extremum, and an AP-style MC item.
+\textbf{Homework:} 5 problems covering all four transformation types (identification and description),
+completing transformation tables, domain/range under combined transformations, describing $g(x)=-3f(x+2)+1$
+step by step, and an AP-style MC on range under $g(x)=-2f(x)+1$.
 
-\textbf{Extension:} For $p(x) = x^4 - 4x^2$, compute AROCs over $[-2,-1]$, $[-1,0]$, $[0,1]$, $[1,2]$. Identify sign transitions to locate potential extrema and inflection points.
+\textbf{Reflection:} Students explain in their own words why horizontal transformations act opposite
+to the sign of $h$ (builds conceptual understanding for Lesson 1.13).
 
-\textbf{Preview:} Next lesson --- zeros of polynomial functions, their multiplicities, and an introduction to complex zeros.
+\textbf{Preview of Lesson 1.13:} Building and selecting models for data --- students will need to
+recognize parent function shapes and use transformation parameters to fit a function to a context.
+Transformations are the core tool for that lesson.
 \end{skillbox}
+
 \end{document}

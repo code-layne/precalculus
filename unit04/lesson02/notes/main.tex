@@ -1,4 +1,4 @@
-%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Guided Notes
+%! Change in Linear and Exponential Functions — Unit 4, Lesson 4.2 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,164 +9,119 @@
 \pageheader{Unit 4, Lesson 4.2}{Guided Notes}
 \namedateperiod
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.2.A} --- Identify key characteristics of a
-    parametric planar motion function related to position: find the
-    horizontal and vertical extrema from the max/min values of $x(t)$
-    and $y(t)$, and locate $x$- and $y$-intercepts of the curve from
-    the zeros of $y(t)$ and $x(t)$. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct a \blank{3cm} function from a slope and a point using
+        $f(x) = y_i + m(x - x_i)$. \hfill\textit{(LO 2.2.A)}
+  \item Construct an \blank{3cm} function from a ratio and a point using
+        $f(x) = y_i \cdot r^{x - x_i}$. \hfill\textit{(LO 2.2.A)}
+  \item Determine whether outputs over equal-length intervals show a constant \blank{2.5cm}
+        (linear) or a constant \blank{2cm} (exponential). \hfill\textit{(LO 2.2.B)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=5pt]
-  \item[\termblanklong{horizontal extremum}]
-    The \underline{\hspace{2.6cm}} or \underline{\hspace{2.6cm}}
-    value of $x(t)$; gives the rightmost or leftmost position of the
-    particle.
-
-  \item[\termblanklong{vertical extremum}]
-    The maximum or minimum value of \underline{\hspace{2cm}}; gives
-    the highest or lowest position of the particle.
-
-  \item[\termblanklong{$y$-intercept (of parametric curve)}]
-    A point on the curve where $x(t) = $ \underline{\hspace{1cm}};
-    found by solving $x(t) = 0$ for $t$, then evaluating
-    $y(t)$ at those values.
-
-  \item[\termblanklong{$x$-intercept (of parametric curve)}]
-    A point on the curve where $y(t) = $ \underline{\hspace{1cm}};
-    found by solving $y(t) = 0$ for $t$, then evaluating $x(t)$.
-\end{description}
+\termblanklong{linear function}
+\termblanklong{exponential function}
+\termblanklong{constant rate of change}
+\termblanklong{constant ratio}
+\termblanklong{initial value}
+\termblanklong{domain}
 \end{vocabbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Launch:} A ball's position (feet) at time $t$ seconds is
-$x(t) = -16t^2 + 48t$ and $y(t) = 12t - t^2$.
+Two tables are presented without labels. For each table, analyze how the outputs change.
 
-\vspace{4pt}
-\textbf{Q1.} Which component do you examine to find how high the ball
-goes? What equation do you solve to find when the ball lands?
-\writelines{2}
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{c|c}
+$x$ & $f(x)$ \\ \hline
+0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{c|c}
+$x$ & $g(x)$ \\ \hline
+0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
+\end{tabular}
+
+\medskip
+Table 1: consecutive outputs differ by \blank{2cm}. \quad
+Table 2: consecutive outputs are multiplied by \blank{2cm}.
 \end{hookbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.2.A — Extrema
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.2.A --- Planar Motion: Horizontal and Vertical Extrema}
+\begin{notesbox}{LO 2.2.A --- Linear Functions and Arithmetic Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Arithmetic Sequence} & \textbf{Linear Function} \\
+\midrule
+Formula & $a_n = a_0 + d\,n$ & $f(x) = b + mx$ \\[3pt]
+From one known value & $a_n = a_i + d(n - i)$ & $f(x) = y_i + m(x - x_i)$ \\[3pt]
+``Change'' quantity & common difference $d$ & slope $m$ \\[3pt]
+Domain & \blank{3.5cm} & \blank{3.5cm} \\
+\end{tabularx}
 
-\textbf{Example:} Let $f(t) = (x(t),\, y(t)) = (t^2 - 4t + 3,\;
-{-t^2 + 2t})$ for $0 \le t \le 4$.
+\medskip
+\textbf{Example:} Slope $m = 4$; passes through $(1,\ 7)$.
 
-\vspace{6pt}
-\textbf{Step 1 --- Build the table.}
+\[
+  f(x) = \blank{2cm} + \blank{2cm}(x - \blank{1.5cm})
+       = \blank{6cm}
+\]
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t^2 - 4t + 3$ & $y(t) = -t^2 + 2t$ & $(x,\; y)$ \\
-\hline
-$0$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
-\hline
-$1$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
-\hline
-$2$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
-\hline
-$3$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
-\hline
-$4$ & \blank{2.4cm} & \blank{2.4cm} & \blank{2.8cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Step 2 --- Find horizontal extrema of $x(t) = t^2 - 4t + 3$.}
-
-$x(t)$ is a \underline{\hspace{2.2cm}} parabola. Vertex at
-$t = -\dfrac{b}{2a} = -\dfrac{\hspace{1cm}}{\hspace{1cm}} = $
-\blank{1.2cm}
-
-Minimum value of $x$: $x\bigl($\blank{0.8cm}$\bigr) = $ \blank{2cm}
-\quad (particle's \underline{\hspace{2.2cm}}-most position)
-
-Maximum value of $x$ on $[0,4]$: check endpoints.
-$x(0) = $ \blank{1.2cm}, \quad $x(4) = $ \blank{1.2cm}.
-Maximum is \blank{1.2cm} (particle's \underline{\hspace{2.2cm}}-most position).
-
-\vspace{8pt}
-\textbf{Step 3 --- Find vertical extrema of $y(t) = -t^2 + 2t$.}
-
-Vertex at $t = -\dfrac{b}{2a} = $ \blank{1.2cm}.
-
-Maximum value of $y$: $y\bigl($\blank{0.8cm}$\bigr) = $ \blank{2cm}
-\quad (particle's \underline{\hspace{1.8cm}}-most position)
-
-Minimum of $y$ on $[0,4]$: check endpoints.
-$y(0) = $ \blank{1.2cm}, \quad $y(4) = $ \blank{1.2cm}.
-Minimum is \blank{1.2cm}.
-
+Verify: $f(0) = $ \blank{2cm}, \quad $f(2) = $ \blank{2cm}.
 \end{notesbox}
 
-\vspace{0.07in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.2.A — Intercepts
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.2.A --- Axis Intercepts of a Parametric Curve}
+\begin{notesbox}{LO 2.2.A --- Exponential Functions and Geometric Sequences}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
+ & \textbf{Geometric Sequence} & \textbf{Exponential Function} \\
+\midrule
+Formula & $g_n = g_0 \cdot r^n$ & $f(x) = a \cdot b^x$ \\[3pt]
+From one known value & $g_n = g_i \cdot r^{n - i}$ & $f(x) = y_i \cdot r^{x - x_i}$ \\[3pt]
+``Change'' quantity & common ratio $r$ & base $b$ \\[3pt]
+Domain & \blank{3.5cm} & \blank{3.5cm} \\
+\end{tabularx}
 
-\textbf{Key rule:} Zeros of $x(t)$ give \underline{\hspace{1.5cm}}-intercepts
-of the curve. Zeros of $y(t)$ give \underline{\hspace{1.5cm}}-intercepts.
+\medskip
+\textbf{Example:} Ratio $r = 3$; passes through $(0,\ 2)$.
 
-\vspace{8pt}
-\textbf{Example (continued):} $f(t) = (t^2 - 4t + 3,\; {-t^2 + 2t})$,
-$0 \le t \le 4$.
+\[
+  f(x) = \blank{2cm} \cdot \blank{2cm}^{x - \blank{1.5cm}}
+       = \blank{6cm}
+\]
 
-\vspace{4pt}
-\textbf{Find the $y$-intercepts} (where $x(t) = 0$):
+Verify: $f(1) = $ \blank{2cm}, \quad $f(3) = $ \blank{2cm}.
+\end{notesbox}
 
-Set $t^2 - 4t + 3 = 0$. Factor: $(t - $ \blank{0.8cm}$)(t - $
-\blank{0.8cm}$) = 0$.
+\vspace{0.04in}
 
-$t = $ \blank{1cm} or $t = $ \blank{1cm}.
+\begin{notesbox}{LO 2.2.B --- The Equal-Length Interval Test}
+Over equal-length input intervals $\Delta x$:
 
-Evaluate $y$ at each: $y($\blank{0.6cm}$) = $ \blank{1.2cm},
-\quad $y($\blank{0.6cm}$) = $ \blank{1.2cm}.
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
+ & \textbf{Linear} & \textbf{Exponential} \\
+\midrule
+Output pattern & differences \blank{3cm} & ratios \blank{3cm} \\[3pt]
+How to check & subtract consecutive outputs & divide consecutive outputs \\[3pt]
+Formula built from 2 pts & $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ & $b = \left(\dfrac{y_2}{y_1}\right)^{1/(x_2 - x_1)}$ \\
+\end{tabularx}
 
-$y$-intercepts of the curve: \blank{3cm} and \blank{3cm}.
-
-\vspace{8pt}
-\textbf{Find the $x$-intercepts} (where $y(t) = 0$):
-
-Set $-t^2 + 2t = 0$. Factor: $-t(t - $ \blank{0.8cm}$) = 0$.
-
-$t = $ \blank{1cm} or $t = $ \blank{1cm}.
-
-Evaluate $x$ at each: $x($\blank{0.6cm}$) = $ \blank{1.2cm},
-\quad $x($\blank{0.6cm}$) = $ \blank{1.2cm}.
-
-$x$-intercepts of the curve: \blank{3cm} and \blank{3cm}.
-
+\medskip
+\textbf{Key fact (EK 2.2.B.3):} Two distinct input-output pairs \blank{6cm} determine
+either type of function.
 \end{notesbox}
 
 \end{document}

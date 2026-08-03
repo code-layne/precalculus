@@ -1,4 +1,4 @@
-%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Guided Notes
+%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,119 +9,137 @@
 \pageheader{Unit 2, Lesson 2.2}{Guided Notes}
 \namedateperiod
 
-\vspace{0.06in}
+\vspace{0.12in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Construct a \blank{3cm} function from a slope and a point using
-        $f(x) = y_i + m(x - x_i)$. \hfill\textit{(LO 2.2.A)}
-  \item Construct an \blank{3cm} function from a ratio and a point using
-        $f(x) = y_i \cdot r^{x - x_i}$. \hfill\textit{(LO 2.2.A)}
-  \item Determine whether outputs over equal-length intervals show a constant \blank{2.5cm}
-        (linear) or a constant \blank{2cm} (exponential). \hfill\textit{(LO 2.2.B)}
-\end{enumerate}
+Students will identify and interpret key characteristics of polynomial functions ---
+degree, leading term, local and global extrema, and points of inflection --- using
+rates of change and graphical behavior.
+\begin{center}
+\writeline \writeline
+\end{center}
 \end{objectivebox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
 \begin{vocabbox}
-\termblanklong{linear function}
-\termblanklong{exponential function}
-\termblanklong{constant rate of change}
-\termblanklong{constant ratio}
-\termblanklong{initial value}
-\termblanklong{domain}
+\begin{multicols}{2}
+\termblanklong{polynomial function}
+\termblanklong{degree}
+\termblanklong{leading coefficient}
+\termblanklong{local maximum}
+\termblanklong{local minimum}
+\termblanklong{global maximum}
+\termblanklong{global minimum}
+\termblanklong{point of inflection}
+\end{multicols}
 \end{vocabbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
 \begin{hookbox}
-Two tables are presented without labels. For each table, analyze how the outputs change.
-
-\medskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c|c}
-$x$ & $f(x)$ \\ \hline
-0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
-\end{tabular}
-\qquad\qquad
-\begin{tabular}{c|c}
-$x$ & $g(x)$ \\ \hline
-0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
-\end{tabular}
-
-\medskip
-Table 1: consecutive outputs differ by \blank{2cm}. \quad
-Table 2: consecutive outputs are multiplied by \blank{2cm}.
+Consider $p(x) = x^3 - 3x$. As $x$ increases from very negative values, the function:
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item falls steeply, then reaches a \textbf{valley} (a low point), then rises
+    \item passes through zero, reaches a \textbf{peak} (a high point), then falls again
+    \item passes through zero a second time and continues falling toward $-\infty$
+\end{itemize}
+\vspace{4pt}
+\textbf{Discussion:} Where are the ``peaks'' and ``valleys''? How many zeros does $p$ have?\\
+Where does the \textit{rate of change} change direction?
+\vspace{4pt}
+\writeline \writeline
 \end{hookbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
-\begin{notesbox}{LO 2.2.A --- Linear Functions and Arithmetic Sequences}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
- & \textbf{Arithmetic Sequence} & \textbf{Linear Function} \\
-\midrule
-Formula & $a_n = a_0 + d\,n$ & $f(x) = b + mx$ \\[3pt]
-From one known value & $a_n = a_i + d(n - i)$ & $f(x) = y_i + m(x - x_i)$ \\[3pt]
-``Change'' quantity & common difference $d$ & slope $m$ \\[3pt]
-Domain & \blank{3.5cm} & \blank{3.5cm} \\
-\end{tabularx}
-
-\medskip
-\textbf{Example:} Slope $m = 4$; passes through $(1,\ 7)$.
-
+\begin{notesbox}{Polynomial Functions}
+A \textbf{polynomial function} has the standard form:
 \[
-  f(x) = \blank{2cm} + \blank{2cm}(x - \blank{1.5cm})
-       = \blank{6cm}
+  p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0
 \]
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item The \textbf{degree} is \blank{5cm} (the highest power of $x$).
+    \item The \textbf{leading term} is \blank{4cm}.
+    \item The \textbf{leading coefficient} is \blank{3cm}.
+    \item A \textbf{constant function} (e.g.\ $p(x) = 7$) is a polynomial of degree \blank{1.5cm}.
+\end{itemize}
 
-Verify: $f(0) = $ \blank{2cm}, \quad $f(2) = $ \blank{2cm}.
-\end{notesbox}
+\vspace{4pt}
+\textbf{End behavior} (circle the correct description for each case):
 
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.2.A --- Exponential Functions and Geometric Sequences}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
- & \textbf{Geometric Sequence} & \textbf{Exponential Function} \\
-\midrule
-Formula & $g_n = g_0 \cdot r^n$ & $f(x) = a \cdot b^x$ \\[3pt]
-From one known value & $g_n = g_i \cdot r^{n - i}$ & $f(x) = y_i \cdot r^{x - x_i}$ \\[3pt]
-``Change'' quantity & common ratio $r$ & base $b$ \\[3pt]
-Domain & \blank{3.5cm} & \blank{3.5cm} \\
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+Even degree, positive $a_n$: & Both ends \blank{3cm} / Both ends \blank{3cm} \\
+Even degree, negative $a_n$: & Both ends \blank{3cm} / Both ends \blank{3cm} \\
+Odd degree, positive $a_n$:  & Falls left, rises right \;/\; Rises left, falls right \\
+Odd degree, negative $a_n$:  & Falls left, rises right \;/\; Rises left, falls right \\
 \end{tabularx}
-
-\medskip
-\textbf{Example:} Ratio $r = 3$; passes through $(0,\ 2)$.
-
-\[
-  f(x) = \blank{2cm} \cdot \blank{2cm}^{x - \blank{1.5cm}}
-       = \blank{6cm}
-\]
-
-Verify: $f(1) = $ \blank{2cm}, \quad $f(3) = $ \blank{2cm}.
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
-\begin{notesbox}{LO 2.2.B --- The Equal-Length Interval Test}
-Over equal-length input intervals $\Delta x$:
+\begin{notesbox}{Local and Global Extrema}
+\textbf{Local (relative) maximum:} a point where the function switches from
+\blank{3cm} to \blank{3cm}.\\[4pt]
+\textbf{Local (relative) minimum:} a point where the function switches from
+\blank{3cm} to \blank{3cm}.\\[4pt]
+\textbf{Global (absolute) maximum:} the \blank{4cm} output value over the entire domain.\\[4pt]
+\textbf{Global (absolute) minimum:} the \blank{4cm} output value over the entire domain.
 
-\medskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
- & \textbf{Linear} & \textbf{Exponential} \\
-\midrule
-Output pattern & differences \blank{3cm} & ratios \blank{3cm} \\[3pt]
-How to check & subtract consecutive outputs & divide consecutive outputs \\[3pt]
-Formula built from 2 pts & $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ & $b = \left(\dfrac{y_2}{y_1}\right)^{1/(x_2 - x_1)}$ \\
-\end{tabularx}
+\vspace{6pt}
+\textbf{Key Principle (EK 1.4.A.3):} Between every two \blank{6cm} of a nonconstant polynomial, there must be at least one \blank{5cm}.
 
-\medskip
-\textbf{Key fact (EK 2.2.B.3):} Two distinct input-output pairs \blank{6cm} determine
-either type of function.
+\vspace{6pt}
+\textbf{Even-degree result (EK 1.4.A.4):} A polynomial of even degree always has either a global \blank{2.5cm} or a global \blank{2.5cm} (or both).
+
+\vspace{6pt}
+\textit{Example:} A polynomial has zeros at $x = -2$, $x = 1$, and $x = 4$.\\
+On which intervals between consecutive zeros must a local extremum exist?
+\vspace{4pt}
+\writeline \writeline
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Points of Inflection}
+A \textbf{point of inflection} occurs at an input where the \textbf{rate of change} switches from
+\blank{6cm} to \blank{6cm} (or vice versa).
+
+\vspace{4pt}
+This is the same as saying: the graph changes from \textbf{concave \blank{2cm}} to
+\textbf{concave \blank{2cm}} (or vice versa).
+
+\vspace{6pt}
+\textit{Connection to AROC:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Concave up $\Rightarrow$ AROC is \blank{4cm} as $x$ increases.
+    \item Concave down $\Rightarrow$ AROC is \blank{4cm} as $x$ increases.
+    \item At a point of inflection, AROC transitions from increasing to decreasing (or vice versa).
+\end{itemize}
+
+\vspace{6pt}
+\textit{Example context:} The AROC of a function over $[0,1]$ is $5$, over $[1,2]$ is $8$, and over $[2,3]$ is $4$.\\
+Where is a likely point of inflection? \blank{4cm} \quad Is the graph concave up or down on $[0,2]$? \blank{3cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item A polynomial function $f$ has exactly two distinct real zeros. What is the minimum number of local extrema $f$ must have? Explain your reasoning.
+
+    \vspace{4pt}
+    \writeline \writeline
+
+    \item A polynomial $g$ has degree $4$ and a positive leading coefficient.
+
+    \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+        \item[(a)] Describe the end behavior of $g$.\\[4pt]
+        \blank{10cm}
+        \item[(b)] Does $g$ have a global maximum, a global minimum, or neither? \blank{3cm}
+    \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

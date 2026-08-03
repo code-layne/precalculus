@@ -1,7 +1,7 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Guided Notes (Answer Key)
+%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,170 +9,148 @@
 \pageheader{Unit 3, Lesson 3.5}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-%-----------------------------------------------------------------------
-% OBJECTIVE
-%-----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{itemize}
-  \item Define a sinusoidal function and explain how cosine is related to sine.
-  \item Determine the amplitude, midline, period, and frequency of a sinusoidal
-        function from a verbal description or graph.
-  \item Describe the symmetry of $y=\sin\theta$ and $y=\cos\theta$.
-\end{itemize}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Rewrite a polynomial or rational expression in \ans{factored} form or \ans{standard} form
+        and explain what each form reveals. \hfill\textit{(LO 1.11.A)}
+  \item Perform polynomial \ans{long division} to write $f(x) = g(x)q(x) + r(x)$ and use the result
+        to find \ans{slant} asymptotes. \hfill\textit{(LO 1.11.B)}
+  \item Apply the \ans{binomial} theorem and Pascal's Triangle to expand $(a+b)^n$. \hfill\textit{(LO 1.11.C)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%-----------------------------------------------------------------------
-% VOCABULARY
-%-----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{itemize}
-  \item \termblanklong{sinusoidal function}{\ans{any function formed by additive
-        and multiplicative transformations of $f(\theta)=\sin\theta$}}
-  \item \termblanklong{amplitude}{\ans{half the difference between the maximum
-        and minimum values}}
-  \item \termblanklong{midline}{\ans{the horizontal line $y =
-        \tfrac{\text{max}+\text{min}}{2}$, halfway between max and min}}
-  \item \termblanklong{period}{\ans{the smallest positive $T$ such that
-        $f(\theta + T) = f(\theta)$ for all $\theta$}}
-  \item \termblanklong{frequency}{\ans{$1/T$; the reciprocal of the period}}
-  \item \termblanklong{odd function}{\ans{$f(-x) = -f(x)$; rotational symmetry
-        about the origin}}
-  \item \termblanklong{even function}{\ans{$f(-x) = f(x)$; reflective symmetry
-        over the $y$-axis}}
-\end{itemize}
+\termblanklong{factored form}
+\ansline{A polynomial or rational expression written as a product of linear and/or irreducible quadratic factors.}
+\termblanklong{standard form}
+\ansline{A polynomial written with terms in descending order of degree; reveals degree, leading coefficient, and end behavior.}
+\termblanklong{polynomial long division}
+\ansline{An algorithm for dividing polynomial $f$ by polynomial $g$ to find quotient $q$ and remainder $r$ such that $f = gq + r$.}
+\termblanklong{quotient}
+\ansline{The polynomial $q(x)$ resulting from dividing $f(x)$ by $g(x)$ in long division.}
+\termblanklong{remainder}
+\ansline{The polynomial $r(x)$ left over after long division, with $\deg(r) < \deg(g)$.}
+\termblanklong{slant asymptote}
+\ansline{A linear asymptote $y = q(x)$ that occurs when the degree of the numerator is exactly one more than the degree of the denominator.}
+\termblanklong{binomial theorem}
+\ansline{The formula $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^k$, which uses Pascal's Triangle coefficients.}
+\termblanklong{Pascal's Triangle}
+\ansline{A triangular array of numbers where each entry is the sum of the two entries above it; row $n$ gives the coefficients for $(a+b)^n$.}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%-----------------------------------------------------------------------
-% HOOK
-%-----------------------------------------------------------------------
 \begin{hookbox}
-\textit{``A recording engineer notices that a sound wave has amplitude 0.3 and
-frequency 440 Hz.''}
-
-What does amplitude tell us about the wave?
-
-\medskip
-\ans{The wave oscillates 0.3 units above and below its center (midline),
-controlling perceived loudness.}
-
-\medskip
-What does frequency tell us?  What is the period of one cycle?
-
-\medskip
-\ans{Frequency 440 Hz means 440 complete cycles per second.
-Period $= 1/440 \approx 0.00227$ seconds.}
+Three rational functions are written on the board:
+\[
+  f(x) = \frac{2x^2 - 8}{x^2 + x - 6}
+  \qquad
+  g(x) = \frac{2(x-2)(x+2)}{(x-2)(x+3)}
+  \qquad
+  h(x) = \frac{2(x+2)}{x+3}, \quad x \ne 2
+\]
+These are the \textit{same function} in three different faces. \ans{Factored} form reveals zeros and
+holes. \ans{Standard} form reveals end behavior. The simplified form reveals the \ans{domain restriction} of the
+restricted domain.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%-----------------------------------------------------------------------
-% CHARACTERISTICS OF SINUSOIDAL FUNCTIONS
-%-----------------------------------------------------------------------
-\begin{notesbox}{Characteristics of Sinusoidal Functions --- Key}
-
-\textbf{Amplitude}
-\[
-  \text{Amplitude} = \frac{\ans{max} - \ans{min}}{2}
-  = \text{half the } \ans{vertical range}
-\]
-
-\textbf{Midline}
-\[
-  \text{Midline: } y = \frac{\ans{max} + \ans{min}}{2}
-  = \text{average of } \ans{max and min}
-\]
-
-\textbf{Period} \quad The smallest positive \ans{value $T$} such that
-$f(\theta + k) = f(\theta)$ for all $\theta$.
-
-\textbf{Frequency}
-\[
-  \text{Frequency} = \frac{\ans{1}}{\text{period}}
-  = \frac{1}{\ans{T}}
-\]
+\begin{notesbox}{LO 1.11.A --- Factored Form vs.\ Standard Form}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
+ & \textbf{Factored Form} & \textbf{Standard Form} \\
+\midrule
+What it reveals & \ans{zeros, holes, asymptotes, domain} & \ans{end behavior, degree, leading coefficient} \\[4pt]
+                & zeros, holes, asymptotes & end behavior, degree, leading coefficient \\[4pt]
+Example (poly)  & $(x-1)(x+3)(x-2)$ & $x^3 - 7x + 6$ (expand) \\[4pt]
+Example (rational) & $\dfrac{(x-2)(x+2)}{(x-2)(x+3)}$ & $\dfrac{x^2-4}{x^2+x-6}$ \\
+\end{tabularx}
 
 \medskip
-\textbf{For $f(\theta) = \sin\theta$:}
+\textbf{Key idea (EK 1.11.A.1):} Factored form reveals \ans{zeros}, \ans{asymptotes},
+\ans{holes}, and domain restrictions.
 
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}{@{}llll@{}}
-  Amplitude $=$ \ans{1} &
-  Midline $=$ \ans{$y=0$} &
-  Period $=$ \ans{$2\pi$} &
-  Frequency $=$ \ans{$1/(2\pi)$}
+\textbf{Key idea (EK 1.11.A.2):} Standard form reveals \ans{end behavior and degree}.
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{LO 1.11.B --- Polynomial Long Division}
+\textbf{Division Algorithm:} If $f$ is divided by $g$ (with $\deg g \geq 1$), then
+\[
+  f(x) = g(x)\cdot q(x) + r(x), \quad \text{where } \deg(r) < \deg(g).
+\]
+
+\textbf{Steps:}
+\begin{enumerate}[itemsep=3pt]
+  \item Write numerator and denominator in \ans{descending} order (fill gaps with $0$ coefficients).
+  \item Divide the \ans{leading} term of the dividend by the leading term of the divisor. Write this as the first term of $q(x)$.
+  \item Multiply that term by the \ans{entire divisor} and subtract from the dividend.
+  \item Bring down the next term and repeat until $\deg(\text{remainder}) < \deg(\text{divisor})$.
+\end{enumerate}
+
+\medskip
+\textbf{Example:} Divide $f(x) = 2x^2 + 3x - 5$ by $g(x) = x - 1$.
+
+\smallskip
+\begin{tabular}{r|l}
+\multicolumn{1}{r}{} & \ans{$2x + 5$} \\[2pt]
+\cline{2-2}
+$x - 1$ & $2x^2 + 3x - 5$ \\
+         & $- ($\ans{$2x^2 - 2x$}$)$ \\
+\cline{2-2}
+         & \ans{$5x - 5$} \\
+         & $- ($\ans{$5x - 5$}$)$ \\
+\cline{2-2}
+         & \ans{$0$} \\
 \end{tabular}
 
+\smallskip
+Result: $q(x) = $ \ans{$2x+5$}, $r(x) = $ \ans{$0$}, so $f(x) = (x-1)($\ans{$2x+5$}$) + $\ans{$0$}.
+
+\medskip
+\textbf{Slant Asymptote (EK 1.11.B.2):} When $\deg(f) = \deg(g) + 1$, the slant asymptote of
+$\dfrac{f(x)}{g(x)}$ is $y = q(x)$ (the \ans{quotient polynomial} after long division).
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-%-----------------------------------------------------------------------
-% RELATIONSHIP BETWEEN SINE AND COSINE
-%-----------------------------------------------------------------------
-\begin{notesbox}{Relationship Between Sine and Cosine --- Key}
+\begin{notesbox}{LO 1.11.C --- Binomial Theorem and Pascal's Triangle}
+\textbf{Pascal's Triangle} (fill in the missing entries):
 
-Complete the identity:
+\begin{center}
+\begin{tabular}{ccccccccccc}
+  &   &   &   & 1 &   &   &   &   \\
+  &   &   & 1 &   & 1 &   &   &   \\
+  &   & 1 &   & 2 &   & 1 &   &   \\
+  & 1 &   & 3 &   & 3 &   & 1 &   \\
+1 &   & \ans{4} &   & \ans{6} &   & \ans{4} &   & 1 \\
+\end{tabular}
+\end{center}
+
+\textbf{Rule:} Each entry equals the \ans{sum} of the two entries above it.
+
+\medskip
+\textbf{Binomial Theorem (EK 1.11.C.1):}
 \[
-  \cos\theta = \sin\!\left(\theta + \ans{$\pi/2$}\right)
+  (a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
 \]
+The coefficients $\binom{n}{k}$ match row $n$ of Pascal's Triangle.
 
-This means cosine is a \ans{horizontal shift (phase shift)} of the sine function.
+\medskip
+\textbf{Example:} Expand $(x + 2)^3$.
 
-Therefore cosine is also a \ans{sinusoidal} function.
-
+Using row 3 of Pascal's Triangle ($1,\ 3,\ 3,\ 1$):
+\[
+  (x+2)^3 = 1\cdot x^3 + 3\cdot x^2(\ans{$2$}) + 3\cdot x(\ans{$4$}) + 1\cdot(\ans{$8$})
+           = \ans{$x^3 + 6x^2 + 12x + 8$}
+\]
 \end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-% SYMMETRY
-%-----------------------------------------------------------------------
-\begin{notesbox}{Symmetry of Sine and Cosine --- Key}
-
-\begin{multicols}{2}
-\textbf{Sine --- Odd Function}
-
-$\sin(-\theta) = $ \ans{$-\sin\theta$}
-
-Graphical meaning: the graph has \ans{rotational}
-symmetry about the \ans{origin}.
-
-\columnbreak
-
-\textbf{Cosine --- Even Function}
-
-$\cos(-\theta) = $ \ans{$\cos\theta$}
-
-Graphical meaning: the graph has \ans{reflective}
-symmetry over the \ans{$y$-axis}.
-\end{multicols}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%-----------------------------------------------------------------------
-% PRACTICE
-%-----------------------------------------------------------------------
-\begin{practicebox}
-\textbf{Practice:} A sinusoidal function has maximum value $5$, minimum value $-1$,
-and period $4\pi$.  Find the amplitude, midline, and frequency.
-
-\medskip
-Amplitude $= \dfrac{\ans{5} - (\ans{$-1$})}{2} = $ \ans{3}
-
-\medskip
-Midline: $y = \dfrac{\ans{5} + (\ans{$-1$})}{2} = $ \ans{$y = 2$}
-
-\medskip
-Frequency $= \dfrac{1}{\ans{$4\pi$}} = $ \ans{$\dfrac{1}{4\pi}$}
-\end{practicebox}
 
 \end{document}

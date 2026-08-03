@@ -1,305 +1,96 @@
-%! The Tangent Function — Unit 3, Lesson 3.8 — Lesson Plan
+%! Modeling with Rational Functions — Unit 3, Lesson 3.8 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.8: The Tangent Function}
+\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.8: Modeling with Rational Functions}
 
 \begin{document}
-
-%-----------------------------------------------------------------------
-% 1. TITLE BLOCK
-%-----------------------------------------------------------------------
 \begin{center}
-  {\Large\bfseries\color{navy} Precalculus \quad 2026--2027}\\[4pt]
-  {\large\bfseries Unit 3: Trigonometric and Polar Functions}\\[2pt]
-  {\large\bfseries Lesson 3.8: The Tangent Function}\\[2pt]
-  {\normalsize (2 instructional periods, \MeetingLength\ each)}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\vspace{4pt}
-\hrule
-\vspace{8pt}
-
-%-----------------------------------------------------------------------
-% 2. PRIMARY OBJECTIVE
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective} \hfill \textit{Big Idea: Functions}
-
-  \medskip
-  Students construct representations of the tangent function using the unit
-  circle, describe its key characteristics (period $\pi$, vertical
-  asymptotes, monotone increase, concavity change), and analyze the effect
-  of additive and multiplicative transformations on the tangent graph.
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\vspace{6pt}
-
-%-----------------------------------------------------------------------
-% 3. PRIORITY IDEAS & SKILLS
-%-----------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-  \textbf{Skills:} 2.A (Identify information from representations) \quad
-  3.A (Describe characteristics of functions)
-
-  \medskip
-  \textbf{Essential Knowledge:}
-  \begin{itemize}
-    \item \textbf{EK 3.8.A.1/A.2} $f(\theta)=\tan\theta$ gives the slope of the
-          terminal ray; $\tan\theta = \sin\theta/\cos\theta$ where $\cos\theta\neq 0$.
-    \item \textbf{EK 3.8.B.1} Period is $\pi$ --- slope of the terminal ray repeats
-          every half-revolution.
-    \item \textbf{EK 3.8.B.2} Vertical asymptotes at $\theta = \pi/2 + k\pi$,
-          $k\in\mathbb{Z}$, because $\cos\theta=0$ there.
-    \item \textbf{EK 3.8.B.3} The tangent function is always increasing between
-          consecutive asymptotes; its graph changes from concave down to concave
-          up within each period.
-    \item \textbf{EK 3.8.C.1--C.5} Transformations $g(\theta) = a\cdot\tan(b(\theta+c))+d$:
-          vertical dilation $|a|$, period $\pi/|b|$, phase shift $-c$, vertical
-          translation $d$.
-  \end{itemize}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 4. VOCABULARY
-%-----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-  \begin{multicols}{3}
-  \begin{itemize}
-    \item tangent function
-    \item slope of terminal ray
-    \item vertical asymptote
-    \item period (tangent)
-    \item phase shift
-    \item vertical dilation
-    \item concavity
-    \item inflection point
-  \end{itemize}
-  \end{multicols}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 5. ACTIVATE PRIOR KNOWLEDGE
-%-----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-  \begin{itemize}
-    \item \textbf{Lessons 3.2--3.4} --- Unit circle: $\sin\theta$ and
-          $\cos\theta$ values at multiples of $\pi/6$ and $\pi/4$; interpreting
-          a point on the unit circle as $(\cos\theta, \sin\theta)$.
-    \item \textbf{Algebra} --- Slope of a line through the origin: rise over run.
-    \item \textbf{Pre-3.8} --- Identifying vertical asymptotes of rational
-          functions; behavior near a denominator zero.
-  \end{itemize}
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 6. HOOK
-%-----------------------------------------------------------------------
 \begin{skillbox}[Hook]{sky}
-  \textit{``A lighthouse beam sweeps the shore. A sensor at the end of the
-  dock records how far along the shore the beam strikes as a function of the
-  angle $\theta$ the beam makes with the perpendicular. When the beam is
-  nearly parallel to the shore, the illuminated point races off to infinity.
-  What function models this?''}
-
-  \medskip
-  \begin{itemize}
-    \item If the dock is 1 unit from the lighthouse, the distance along the
-          shore is $\tan\theta$.
-    \item As $\theta\to\pi/2$, $\tan\theta\to+\infty$: the beam sweeps to
-          infinity --- an asymptote in action.
-    \item \textbf{Key idea:} the tangent function is the slope of the terminal
-          ray of angle $\theta$ on the unit circle.
-  \end{itemize}
-
-  \smallskip
-  \textit{Transition:} Today we derive $\tan\theta = \sin\theta/\cos\theta$
-  from the unit circle, describe all key characteristics of the tangent graph,
-  and explore how transformations shift and stretch it.
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 7. LESSON
-%-----------------------------------------------------------------------
-\begin{skillbox}[Lesson --- Period 1: Deriving and Graphing Tangent]{sky}
-  \begin{multicols}{2}
-  \textbf{Tangent as Slope of Terminal Ray}
-
-  Place angle $\theta$ in standard position. The terminal ray passes
-  through $(\cos\theta,\sin\theta)$ and the origin. Its slope is:
-  \[
-    \tan\theta = \frac{\sin\theta}{\cos\theta}
-  \]
-  Defined whenever $\cos\theta\neq 0$.
-
-  \columnbreak
-
-  \textbf{Key Values Table}
-
-  \renewcommand{\arraystretch}{1.35}
-  \begin{tabular}{|c|c|}
-  \hline
-  $\theta$ & $\tan\theta$ \\
-  \hline
-  $0$        & $0$ \\
-  $\pi/4$    & $1$ \\
-  $\pi/3$    & $\sqrt{3}$ \\
-  $\pi/2$    & undefined \\
-  $2\pi/3$   & $-\sqrt{3}$ \\
-  $3\pi/4$   & $-1$ \\
-  $\pi$      & $0$ \\
-  \hline
-  \end{tabular}
-  \end{multicols}
-
-  \textbf{Why period $= \pi$:} After a half-revolution the terminal ray
-  points in the opposite direction, but its slope is identical: the rise
-  and run both change sign, so the ratio is unchanged.  Thus
-  $\tan(\theta+\pi)=\tan\theta$.
-
-  \medskip
-  \textbf{Asymptotes:} When $\cos\theta=0$ (i.e.\ $\theta=\pi/2+k\pi$),
-  the slope is undefined and $|\tan\theta|$ grows without bound --- vertical
-  asymptotes at each of these values.
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\begin{skillbox}[Lesson (cont.) --- Period 2: Characteristics \& Transformations]{sky}
-  \begin{multicols}{2}
-  \textbf{Characteristics in $(-\pi/2,\,\pi/2)$}
-  \begin{itemize}
-    \item Passes through $(0,0)$; always increasing.
-    \item Concave down for $\theta<0$; inflection at $(0,0)$;
-          concave up for $\theta>0$.
-    \item $\tan\theta\to+\infty$ as $\theta\to(\pi/2)^-$.
-    \item $\tan\theta\to-\infty$ as $\theta\to(-\pi/2)^+$.
-  \end{itemize}
-
-  \columnbreak
-
-  \textbf{Transformations: $g(\theta)=a\tan(b(\theta+c))+d$}
-
-  \renewcommand{\arraystretch}{1.4}
-  \begin{tabular}{@{}ll@{}}
-  Parameter & Effect \\
-  \hline
-  $a$ & vertical dilation by $|a|$ \\
-  $b$ & period becomes $\pi/|b|$ \\
-  $c$ & phase shift of $-c$ \\
-  $d$ & vertical translation by $d$ \\
-  \end{tabular}
-  \end{multicols}
-
-  \textbf{Finding new asymptotes:} Set $b(\theta+c)=\pi/2+k\pi$ and
-  solve for $\theta$. Example: for $g(\theta)=\tan(2\theta)$,
-  asymptotes where $2\theta=\pi/2+k\pi$, so $\theta=\pi/4+k\pi/2$.
-\end{skillbox}
-
-%-----------------------------------------------------------------------
-% 8. EXPLICIT INSTRUCTION
-%-----------------------------------------------------------------------
-\begin{skillbox}[Explicit Instruction: Describing Tangent Transformations]{sky}
-  \textbf{Steps:}
-  \begin{enumerate}
-    \item Identify $a$, $b$, $c$, $d$ from $g(\theta)=a\tan(b(\theta+c))+d$.
-    \item State period: $\pi/|b|$.
-    \item Find asymptotes: solve $b(\theta+c)=\pm\pi/2$.
-    \item State phase shift $-c$ and vertical shift $d$.
-    \item State vertical dilation: output values scaled by $|a|$.
-  \end{enumerate}
-
-  \textbf{Worked Example:} $g(\theta)=2\tan\!\left(\tfrac{1}{2}(\theta-\tfrac{\pi}{4})\right)+1$
-
-  \begin{enumerate}
-    \item $a=2$, $b=1/2$, $c=-\pi/4$, $d=1$.
-    \item Period $= \pi\div(1/2) = 2\pi$.
-    \item Asymptotes: $\tfrac{1}{2}(\theta-\tfrac{\pi}{4})=\pm\tfrac{\pi}{2}$
-          $\Rightarrow$ $\theta=\tfrac{\pi}{4}\pm\pi$, so
-          $\theta=\tfrac{5\pi}{4}$ and $\theta=-\tfrac{3\pi}{4}$
-          (plus integer multiples of $2\pi$).
-    \item Phase shift: $+\pi/4$ (right); vertical shift: up $1$.
-    \item All output values doubled (vertical dilation by 2).
-  \end{enumerate}
-\end{skillbox}
-
-%-----------------------------------------------------------------------
-% 9. ACTIVE MONITORING
-%-----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-  Circulate as students work. Watch for:
-  \begin{itemize}
-    \item Confusing the period of tangent ($\pi$) with that of sine/cosine ($2\pi$).
-    \item Placing asymptotes at multiples of $\pi$ instead of $\pi/2+k\pi$.
-    \item Treating $|a|$ as an ``amplitude'' (tangent has no amplitude).
-    \item Forgetting to divide by $|b|$ when computing the new period.
-  \end{itemize}
-
-  \textbf{Cold-call:} ``What is the period of $\tan(3\theta)$?
-  Where are its asymptotes?''
-  \quad (Period $= \pi/3$; asymptotes at $\theta = \pi/6 + k\pi/3$.)
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 10. GROUP WORK & DIFFERENTIATION
-%-----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-  Students work in assigned tiers on the Group Activity.
-  \begin{itemize}
-    \item \textbf{Tier R (Remediate):} Given unit-circle $\sin/\cos$ values,
-          compute $\tan\theta$ at key angles and identify asymptote locations.
-    \item \textbf{Tier A (Approaching Proficiency):} Given a tangent graph,
-          identify period, asymptotes, and concavity; describe the
-          transformation $g(\theta)=a\tan(\theta)+d$.
-    \item \textbf{Tier E (Extension):} Analyze
-          $g(\theta)=2\tan(\theta/2-\pi/4)+1$: identify all parameters,
-          describe the full transformation, find asymptotes, and evaluate $g$
-          at two specific angles.
-  \end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 11. INDIVIDUAL WORK & ASSESSMENT
-%-----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-  \begin{itemize}
-    \item \textbf{Exit Ticket} (last 5--7 min): 3 short items --- computing
-          $\tan\theta$ from given $\sin/\cos$ values, identifying the period
-          of a transformed tangent, and locating one asymptote.
-    \item \textbf{Homework}: 5--6 problems including an AP-style MC and a
-          preview of Lesson 3.9 (inverse trigonometric functions).
-    \item \textbf{Formative data:} Collect exit tickets; students who
-          misplace asymptotes need reteaching before Lesson 3.9.
-  \end{itemize}
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-%-----------------------------------------------------------------------
-% 12. REINFORCEMENT & EXTENSION
-%-----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-  \textbf{Reinforce:} Return to the unit circle. Draw several terminal
-  rays and compute their slopes directly.  The slope of the ray through the
-  origin and $(\cos\theta,\sin\theta)$ is $\sin\theta/\cos\theta$ --- tangent
-  is slope.
-
-  \medskip
-  \textbf{Extension:} Use Desmos to graph $y=a\tan(\theta)$ for several
-  values of $a$. Ask: as $|a|$ increases, how does the graph steepen near
-  its inflection point?
-
-  \medskip
-  \textbf{Preview --- Lesson 3.9: Inverse Trigonometric Functions}
-
-  In Lesson 3.9 students restrict the domains of sine, cosine, and tangent
-  to make them invertible, define $\arcsin$, $\arccos$, and $\arctan$, and
-  evaluate inverse trig expressions --- building directly on today's
-  asymptote behavior of $\tan\theta$ near $\pm\pi/2$.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

@@ -1,4 +1,4 @@
-%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Exit Ticket (Answer Key)
+%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,33 +9,34 @@
 \pageheader{Unit 2, Lesson 2.4}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.16in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=20pt]
+\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
 
-\item Rewrite $f(x) = 3^{x+4}$ in the form $a \cdot b^x$. Show your work.
+\item A polynomial $p$ has degree 4, real coefficients, and the following known zeros:
+      $x = -1$ (multiplicity 2) and $x = 2 + i$.
 
-      \vspace{0.06in}
-      $3^{x+4} = 3^x \cdot 3^{{\color{keyred}\mathbf{4}}} = $ \ans{81} $\cdot\; 3^x$
+      \begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+        \item List \emph{all four} zeros of $p$.
+              \ansline{$x=-1$ (mult.\ 2), $x=2+i$, and $x=2-i$ (conjugate pair).}
 
-      So $a = $ \ans{81} and $b = $ \ans{3}.
+        \item At which real zero is the graph tangent to the $x$-axis?
+              \ansline{At $x=-1$, because its multiplicity is 2 (even), so the graph touches but does not cross.}
+      \end{enumerate}
 
-\item Rewrite $f(x) = 5^{2x}$ as a single base raised to the $x$ power. Show your work.
-
-      \vspace{0.06in}
-      $5^{2x} = (5^{{\color{keyred}\mathbf{2}}})^x = $ \ans{$25^x$}
-
-\item Simplify each expression. Write your answer without negative or fractional exponents
-      where possible.
+\item Determine whether $f(x) = x^5 - 3x^3 + x$ is even, odd, or neither.
 
       \vspace{0.06in}
-      $2^{-3} = $ \ans{$\dfrac{1}{8}$} \qquad\qquad $8^{1/3} = $ \ans{2}
+      $f(-x) = $ \ans{$(-x)^5 - 3(-x)^3 + (-x)$}
 
-      \begin{teachernote}
-        $2^{-3} = 1/2^3 = 1/8$. $8^{1/3} = \sqrt[3]{8} = 2$ since $2^3 = 8$.
-        Students who write $8^{1/3} = 2.67$ are applying a calculator shortcut without
-        understanding the cube-root connection --- re-teach EK 2.4.A.4.
-      \end{teachernote}
+      \vspace{0.08in}
+      Simplified: \ans{$-x^5 + 3x^3 - x = -(x^5 - 3x^3 + x) = -f(x)$}
+
+      \vspace{0.08in}
+      Therefore $f$ is (circle one): \quad \textbf{Even} \quad {\color{keyred}\textbf{Odd}} \quad \textbf{Neither}
+
+      \vspace{0.06in}
+      Because: \ansline{$f(-x) = -f(x)$ for all $x$, which is the definition of an odd function.}
 
 \end{enumerate}
 

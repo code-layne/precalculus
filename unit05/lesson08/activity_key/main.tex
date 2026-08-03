@@ -1,0 +1,175 @@
+%! Semi-log Plots — Unit 5, Lesson 5.8 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.8}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Drug Concentration Over Time]{sky}
+A pharmacologist is studying how a drug concentration $C$ (mg/L) in the bloodstream decays
+over time $t$ (hours).  Your group will use semi-log linearization to determine whether an
+exponential model is appropriate and, if so, to construct that model.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Given data:}
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ (hours) & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$C$ (mg/L) & $100$ & $50$ & $25$ & $12.5$ & $6.25$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Complete the table of $\log_{10}(C)$ values. Round to three decimal places.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$\log_{10}(C)$ & \ans{2.000} & \ans{1.699} & \ans{1.398} & \ans{1.097} & \ans{0.796} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item What is the rate of change of $\log_{10}(C)$ per unit of $t$?
+
+\vspace{4pt}
+Rate of change $\approx $ \ans{$-0.301$} per hour.
+
+\item Is the rate of change constant?  What does this tell you about the appropriate model
+      for this data?
+
+\ansline{Yes, the rate of change is constant ($\approx -0.301$ per hour). This constant rate
+of change in $\log_{10}(C)$ indicates that the data follows an exponential (decay) model.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Continue using the data from Tier R.}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Write the linear model: $\log_{10}(C) = m\cdot t + c$.  Identify $m$ and $c$.
+
+\vspace{4pt}
+$m = $ \ans{$-0.301$} \qquad $c = $ \ans{$2.000$}
+
+\item Find the base $b$ of the exponential model: $b = 10^m \approx $ \ans{$0.5$}.
+      What does the value of $b$ mean in context?
+
+\ansline{$b \approx 0.5$ means the drug concentration is halved each hour (exponential
+decay with a half-life of 1 hour).}
+
+\item Find the initial value: $a = 10^c = $ \ans{$100$}.
+
+\item Write the exponential model: $C(t) = $ \ans{$100 \cdot (0.5)^t$}.
+
+      Verify by computing $C(1)$: \ans{$100 \cdot 0.5 = 50$}. Does this match the table? \ans{Yes}
+
+\item Predict $C(6)$ using the model.  Show your work.
+
+\vspace{4pt}
+$C(6) = $ \ans{$100 \cdot (0.5)^6 = 100 \cdot \tfrac{1}{64} \approx 1.563$ mg/L}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{New data set --- a different drug trial:}
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$C$ (mg/L) & $80$ & $45$ & $30$ & $22$ & $18$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=10pt]
+
+\item Compute $\log_{10}(C)$ for each $t$ value. Round to three decimal places.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $1$ & $2$ & $3$ & $4$ \\
+\hline
+$\log_{10}(C)$ & \ans{1.903} & \ans{1.653} & \ans{1.477} & \ans{1.342} & \ans{1.255} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Do the $\log_{10}(C)$ values change at a constant rate?  What does this suggest?
+
+\ansline{No --- the successive differences are approximately $-0.250$, $-0.176$, $-0.135$,
+$-0.087$, which are decreasing in magnitude. The rate of change is not constant, so a purely
+exponential model may not be a perfect fit for this data.}
+
+\item Despite the imperfect fit, compute an approximate slope using the endpoints:
+\[
+  m \approx \frac{\log_{10}(18) - \log_{10}(80)}{4 - 0} = \frac{{\color{keyred}\mathbf{1.255}} - {\color{keyred}\mathbf{1.903}}}{4} \approx {\color{keyred}\mathbf{-0.162}}.
+\]
+
+\item Using this slope and the $t = 0$ value as the intercept, write the approximate
+      linearized model and recover the corresponding exponential model.
+
+\vspace{4pt}
+$\log_{10}(C) \approx $ \ans{$-0.162\,t + 1.903$}
+
+\vspace{4pt}
+$C(t) \approx $ \ans{$10^{1.903} \cdot (10^{-0.162})^t \approx 80 \cdot (0.688)^t$}
+
+\item Compare this data set to the Tier R data.  Which is better described by an
+      exponential model?  Justify using the semi-log linearization.
+
+\ansline{The Tier R data is better described by an exponential model. In Tier R, the
+$\log_{10}(C)$ values change at a perfectly constant rate of $-0.301$ per hour, which means
+a single exponential function fits the data exactly. In the Tier E data, the rate of change
+of $\log_{10}(C)$ is not constant, so the semi-log plot is not linear and the exponential
+model is only an approximation.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}
