@@ -1,4 +1,4 @@
-%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Guided Notes
+%! Exponential Functions — Unit 4, Lesson 4.3 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,230 +9,133 @@
 \pageheader{Unit 4, Lesson 4.3}{Guided Notes}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.3.A} --- Identify the direction of planar motion
-    at any value of the parameter by determining whether $x(t)$ and
-    $y(t)$ are increasing or decreasing at that moment. \writeline
-  \item \textbf{LO 4.3.A} --- Explain why the same curve can be traversed
-    in different directions by different parametrizations. \writeline
-  \item \textbf{LO 4.3.A} --- Compute the average rate of change of $x(t)$
-    and $y(t)$ over $[t_1, t_2]$ and use their ratio to find the slope
-    of the parametric curve between two points. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the initial value $a$ and base $b$ of $f(x) = ab^x$ and classify as
+        \blank{3cm} growth or \blank{3cm} decay. \hfill\textit{(LO 2.3.A.1)}
+  \item Describe the \blank{2.5cm}, end \blank{2.5cm}, \blank{3cm}, and monotonic
+        nature of an exponential function. \hfill\textit{(LO 2.3.A.3 / A.5)}
+  \item Determine whether a function is exponential by checking whether outputs are
+        \blank{4cm} over equal-length input intervals. \hfill\textit{(LO 2.3.A.3 / A.4)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{direction of motion}]
-    Determined by whether each component is
-    \underline{\hspace{2.5cm}} or \underline{\hspace{2.5cm}}.
-    If $x(t)$ is increasing $\Rightarrow$ moving \underline{\hspace{1.5cm}};
-    if decreasing $\Rightarrow$ moving \underline{\hspace{1.5cm}}.
-    If $y(t)$ is increasing $\Rightarrow$ moving \underline{\hspace{1.5cm}};
-    if decreasing $\Rightarrow$ moving \underline{\hspace{1.5cm}}.
-
-  \item[\termblanklong{ARC of $x(t)$}]
-    The average rate of change of $x(t)$ over $[t_1, t_2]$:
-    \quad $\dfrac{x(t_2) - x(t_1)}{t_2 - t_1}$
-
-  \item[\termblanklong{ARC of $y(t)$}]
-    The average rate of change of $y(t)$ over $[t_1, t_2]$:
-    \quad $\dfrac{y(t_2) - y(t_1)}{t_2 - t_1}$
-
-  \item[\termblanklong{slope of parametric curve}]
-    The slope of the \underline{\hspace{2cm}} line connecting two points
-    on the curve:
-    \quad $\dfrac{\Delta y}{\Delta x} = \dfrac{\text{ARC of } y(t)}{\text{ARC of } x(t)}$
-    \quad provided ARC of $x(t) \ne 0$.
-
-  \item[\termblanklong{reparametrization}]
-    A different pair of component functions that traces the
-    \underline{\hspace{2.5cm}} set of points in the plane, possibly in a
-    \underline{\hspace{2cm}} direction.
-\end{description}
+\termblanklong{exponential function}
+\termblanklong{initial value}
+\termblanklong{base}
+\termblanklong{exponential growth}
+\termblanklong{exponential decay}
+\termblanklong{concave up / concave down}
+\termblanklong{end behavior}
+\termblanklong{horizontal asymptote}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} Two drones follow the same figure-eight path ---
-Drone~A clockwise, Drone~B counterclockwise.
+\textbf{The Doubling Penny:} If you receive 1 penny on Day 1, 2 on Day 2, 4 on Day 3, \ldots,
+how much total after 30 days?
 
-\vspace{4pt}
-\textbf{Q1.} Can two different parametric functions trace the same path?
-What would have to be different about them?
-\writelines{2}
+\medskip
+My guess: \blank{4cm} \quad Actual: $2^{30} - 1 \approx \$\,10.7$ million.
 
-\textbf{Q2.} How do you determine which direction a particle is moving
-horizontally at a specific value of $t$?
-\writeline
+\medskip
+The function modeling Day $x$ is $f(x) = 1 \cdot \blank{1cm}^x$.
+The initial value is \blank{1.5cm} and the base is \blank{1.5cm}.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Step 1: Direction of Motion
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Direction of Planar Motion (EK 4.3.A.1--A.2)}
-
-\textbf{Key rule:} Analyze $x(t)$ and $y(t)$ \emph{independently}.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|l|}
-\hline
-If $x(t)$ is \textbf{increasing} & particle moves \blank{2.5cm} \\
-\hline
-If $x(t)$ is \textbf{decreasing} & particle moves \blank{2.5cm} \\
-\hline
-If $y(t)$ is \textbf{increasing} & particle moves \blank{2.5cm} \\
-\hline
-If $y(t)$ is \textbf{decreasing} & particle moves \blank{2.5cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Example:} Let $f(t) = (t^2 - 2t,\; 3t - t^2)$ for $0 \le t \le 4$.
-
-\vspace{6pt}
-\textbf{Step 1 --- Build a table of values.}
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t^2 - 2t$ & $y(t) = 3t - t^2$ & $(x,\; y)$ \\
-\hline
-$0$ & \blank{2cm} & \blank{2cm} & \blank{2.8cm} \\
-\hline
-$1$ & \blank{2cm} & \blank{2cm} & \blank{2.8cm} \\
-\hline
-$2$ & \blank{2cm} & \blank{2cm} & \blank{2.8cm} \\
-\hline
-$3$ & \blank{2cm} & \blank{2cm} & \blank{2.8cm} \\
-\hline
-$4$ & \blank{2cm} & \blank{2cm} & \blank{2.8cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Step 2 --- Direction at $t = 0.5$.}
-
-Compare $x(0)$ and $x(1)$: $x(0) = $ \blank{1.2cm}, $x(1) = $ \blank{1.2cm}.
-
-Since $x(1)$ \blank{1.2cm} $x(0)$, the function $x(t)$ is \blank{2cm} near $t = 0.5$.
-
-$\Rightarrow$ particle is moving \blank{2.2cm}
-
-Compare $y(0)$ and $y(1)$: $y(0) = $ \blank{1.2cm}, $y(1) = $ \blank{1.2cm}.
-
-Since $y(1)$ \blank{1.2cm} $y(0)$, the function $y(t)$ is \blank{2cm} near $t = 0.5$.
-
-$\Rightarrow$ particle is moving \blank{2.2cm}
-
-\vspace{8pt}
-\textbf{Step 3 --- Direction at $t = 2.5$.}
-
-Compare $x(2)$ and $x(3)$: is $x$ increasing or decreasing? \blank{2.5cm}
-
-$\Rightarrow$ particle is moving \blank{2.2cm}
-
-Compare $y(2)$ and $y(3)$: is $y$ increasing or decreasing? \blank{2.5cm}
-
-$\Rightarrow$ particle is moving \blank{2.2cm}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Step 2: Same Curve, Different Directions
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Same Curve, Different Parametrizations (EK 4.3.A.3)}
-
-\textbf{Key idea:} The same set of points in the plane can be traced by
-different parametric functions --- possibly in different directions.
-
-\vspace{6pt}
-\textbf{Example:} Let $f(t) = (t,\; t^2)$ and $g(t) = (3 - t,\; (3-t)^2)$
-for $0 \le t \le 3$.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c||c|c|}
-\hline
-& \multicolumn{2}{c||}{Robot A: $f(t)=(t,\;t^2)$}
-& \multicolumn{2}{c|}{Robot B: $g(t)=(3{-}t,\;(3{-}t)^2)$} \\
-\hline
-$t$ & $(x,\;y)$ for $f$ & direction & $(x,\;y)$ for $g$ & direction \\
-\hline
-$0$ & \blank{2.2cm} & & \blank{2.2cm} & \\
-\hline
-$1$ & \blank{2.2cm} & & \blank{2.2cm} & \\
-\hline
-$2$ & \blank{2.2cm} & & \blank{2.2cm} & \\
-\hline
-$3$ & \blank{2.2cm} & & \blank{2.2cm} & \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{6pt}
-Do $f$ and $g$ trace the same set of points? \blank{1.5cm}
-
-Are they moving in the same direction? \blank{1.5cm}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Step 3: Slope via ARC Ratio
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Slope of the Curve via Average Rates of Change (EK 4.3.A.4)}
-
-\textbf{Formula:} Over the interval $[t_1, t_2]$:
+\begin{notesbox}{LO 2.3.A.1 --- General Form of an Exponential Function (EK 2.3.A.1)}
 \[
-  \text{slope of curve} = \frac{\Delta y}{\Delta x}
-  = \frac{y(t_2) - y(t_1)}{x(t_2) - x(t_1)}
-  \quad \text{(provided } x(t_2) \ne x(t_1)\text{)}
+  f(x) = a \cdot b^x, \quad a \ne 0,\ b > 0,\ b \ne 1
 \]
 
-\vspace{6pt}
-\textbf{Example (continued):} Use $f(t) = (t^2 - 2t,\; 3t - t^2)$.
-Find the slope of the curve from $t = 1$ to $t = 3$.
+\begin{itemize}[itemsep=3pt]
+  \item $a = f(0) = $ \blank{3cm} (the $y$-intercept / initial value)
+  \item $b = $ \blank{5cm} (the base; applied once per unit input increase)
+  \item \textbf{Exponential growth:} $a > 0$ and $b$ \blank{1.5cm} 1
+  \item \textbf{Exponential decay:} $a > 0$ and \blank{2cm} $< b <$ \blank{1cm}
+\end{itemize}
 
-\vspace{6pt}
-$x(1) = $ \blank{1.5cm} \qquad $x(3) = $ \blank{1.5cm} \qquad $\Delta x = $ \blank{1.5cm}
+\medskip
+\textbf{Example:} $f(x) = 3 \cdot 2^x$. \quad $a = $ \blank{1.5cm} \quad $b = $ \blank{1.5cm}
+\quad Growth or decay? \blank{3cm}
 
-$y(1) = $ \blank{1.5cm} \qquad $y(3) = $ \blank{1.5cm} \qquad $\Delta y = $ \blank{1.5cm}
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2 & 3 \\
+\hline
+$f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+\hline
+\multicolumn{5}{|l|}{Ratio of successive outputs: \quad $\dfrac{f(1)}{f(0)} = $ \blank{1.5cm}
+\quad $\dfrac{f(2)}{f(1)} = $ \blank{1.5cm} \quad $\dfrac{f(3)}{f(2)} = $ \blank{1.5cm}} \\
+\hline
+\end{tabular}
+\end{notesbox}
 
-\vspace{6pt}
-Slope $= \dfrac{\Delta y}{\Delta x} = \dfrac{\blank{1.5cm}}{\blank{1.5cm}} = $ \blank{1.5cm}
+\vspace{0.04in}
 
-\vspace{6pt}
-\textbf{Interpretation:} The secant line connecting the points on the
-curve at $t = 1$ and $t = 3$ has slope \blank{1.5cm}.
+\begin{notesbox}{LO 2.3.A.2/A.3 --- Key Characteristics (EK 2.3.A.2, A.3)}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.28\linewidth} X @{}}
+Domain & \blank{7cm} \\
+Range (when $a > 0$) & \blank{5cm}; horizontal asymptote: $y = $ \blank{1.5cm} \\
+Monotonicity & Always \blank{3cm} if $b > 1$; always \blank{3cm} if $0 < b < 1$ \\
+Extrema on open intervals & \blank{6cm} \\
+Concavity (when $a > 0$) & Always concave \blank{2.5cm}; no \blank{3cm} points \\
+\end{tabularx}
+\end{notesbox}
 
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.5 --- End Behavior (EK 2.3.A.5)}
+For $f(x) = ab^x$ with $a > 0$, $b > 1$ (growth):
+\[
+  \lim_{x \to \infty} f(x) = \blank{2cm}
+  \qquad
+  \lim_{x \to -\infty} f(x) = \blank{2cm}
+\]
+
+For $f(x) = ab^x$ with $a > 0$, $0 < b < 1$ (decay):
+\[
+  \lim_{x \to \infty} f(x) = \blank{2cm}
+  \qquad
+  \lim_{x \to -\infty} f(x) = \blank{2cm}
+\]
+
+\textbf{Example:} State the end behavior of $h(x) = 5 \cdot (0.4)^x$.
+
+\vspace{0.04in}
+$\displaystyle\lim_{x\to\infty} h(x) = $ \blank{2cm} \qquad
+$\displaystyle\lim_{x\to-\infty} h(x) = $ \blank{2cm}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.4 --- Detecting Exponential from a Transformed Table (EK 2.3.A.4)}
+\textbf{Key idea:} If $g(x) = f(x) + k$ and $f$ is exponential, the outputs of $g$ will
+\textit{not} be proportional. To detect $f$: subtract \blank{1.5cm} from each output of $g$,
+then check whether the resulting values have a constant \blank{2cm}.
+
+\medskip
+\textbf{Example:} Outputs of $g(x)$: 7, 10, 16, 28 (inputs 0, 1, 2, 3). Suppose $k = 4$.
+
+\vspace{0.04in}
+Subtract 4: \blank{1.2cm}, \blank{1.2cm}, \blank{1.2cm}, \blank{1.2cm}
+
+Ratios: \blank{1.5cm}, \blank{1.5cm}, \blank{1.5cm}
+
+Are the ratios constant? \blank{2cm} \quad Write $f(x) = $ \blank{3cm}
+\quad Write $g(x) = $ \blank{4cm}
 \end{notesbox}
 
 \end{document}

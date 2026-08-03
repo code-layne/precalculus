@@ -1,4 +1,4 @@
-%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Lesson Plan
+%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.5: Exponential Function Context and Data Modeling}
+\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.5: Polynomial Functions and End Behavior}
 
 \begin{document}
 \begin{center}
@@ -19,11 +19,10 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct exponential function models from
-    contextual data (using a growth/decay ratio and initial value, or two input-output pairs),
-    interpret the base as a growth factor and percent change, and apply models to make
-    predictions within a reasonable domain.
-    \hfill\textit{\small Skills: 1.C and 3.B}
+    \textbf{Primary Objective:} Students will describe the end behavior of polynomial functions
+    using limit notation, and explain how the degree and sign of the leading coefficient determine
+    what happens to output values as $x \to \pm\infty$.
+    \hfill\textit{\small Skill: MP 3.A \quad (Big Idea: VAR)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -32,145 +31,170 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{Skill 1.C} --- Identify mathematical information from graphical, numerical, analytical, and verbal representations. &
+\textbf{MP 3.A} --- Describe characteristics of a function with varying
+levels of precision using appropriate mathematical language and notation.
+(LO 1.6.A) &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Successive output ratios over equal-length input intervals reveal exponential structure. (EK 2.5.A.1)
-  \item A model $f(x) = ab^x$ is built from an initial value $a$ and base $b$, or solved from two points. (EK 2.5.A.3)
-  \item The natural base $e \approx 2.718$ appears in continuous growth models. (EK 2.5.A.6)
-\end{itemize} \\
-\textbf{Skill 3.B} --- Apply an appropriate mathematical definition, theorem, or test. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Base $b$ is the growth factor; $b = 1+r$ for growth, $b = 1-r$ for decay. (EK 2.5.B.1)
-  \item Equivalent forms reveal different time-scale properties: $2^d = (2^7)^{d/7}$. (EK 2.5.B.2)
-  \item Models predict values within contextual domain constraints. (EK 2.5.B.3)
+  \item As $x \to \infty$ or $x \to -\infty$, output values of a nonconstant polynomial either
+        increase or decrease without bound. (EK 1.6.A.1--2)
+  \item End behavior is determined solely by the degree and sign of the leading coefficient. (EK 1.6.A.3)
+  \item The leading term dominates all lower-degree terms for large $|x|$. (EK 1.6.A.3)
+  \item Even-degree: both ends go the same direction; odd-degree: ends go opposite directions.
+  \item Standard notation: $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) = -\infty$.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-exponential model      & A function $f(x) = ab^x$ that models proportional growth or decay over equal-length intervals. \\
-growth factor          & The base $b$ in $f(x) = ab^x$; the multiplier applied at each unit step. \\
-percent change         & The rate $r$ such that $b = 1+r$ (growth) or $b = 1-r$ (decay); expressed as a percentage. \\
-initial value          & The value $a = f(0)$; the output when the input equals zero. \\
-natural base $e$       & The irrational number $e \approx 2.718$; used as the base in continuous growth/decay models. \\
-exponential regression & A technology-produced best-fit exponential model for a data set. \\
-prediction             & Using the model to estimate an output for an input not in the original data. \\
-domain restriction     & Limiting the input values of a model to those that are meaningful in context. \\
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+end behavior       & What happens to $p(x)$ as $x$ increases or decreases without bound. \\
+leading term       & The term with the highest degree in a polynomial. \\
+leading coefficient & The coefficient of the leading term. \\
+limit notation     & $\lim_{x \to \infty} p(x) = \infty$ means output grows without bound as input increases. \\
+dominates          & The leading term dominates when its ratio to all other terms approaches 1 as $x \to \pm\infty$. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers skills from Lesson 2.4: rewriting exponential expressions
-    using exponent rules. Students rewrite $f(x) = 2^{x+5}$ in $a \cdot 2^x$ form, convert
-    $4^{3x}$ to a single base to the $x$ power, and simplify $9^{3/2}$.
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review from Lessons 1.4--1.5).
+            Skills reviewed: identifying degree and leading coefficient, writing a polynomial
+            in factored form from given zeros and multiplicities, real vs.\ complex zeros.
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-Present the following population data on the board:
+    \textbf{Rubber Band Ball:} A student keeps wrapping rubber bands around a ball. Suppose the
+    radius (in mm) is modeled by $r(t) = 2t^3 - 50t^2 + 100t$, where $t$ is time in minutes.
 
-\medskip
-\begin{center}
-\begin{tabular}{c|c}
-\textbf{Year} & \textbf{Population} \\ \hline
-0 & 10{,}000 \\
-1 & 10{,}300 \\
-2 & 10{,}609 \\
-3 & 10{,}927 \\
-\end{tabular}
-\end{center}
+    \medskip
+    \textit{Discussion prompt:} As $t$ gets very large (say $t = 1{,}000$ minutes), does the
+    $-50t^2$ term matter much compared to $2t^3$? At $t = 1{,}000$: $2t^3 = 2 \times 10^9$ but
+    $-50t^2 = -5 \times 10^7$ --- less than $3\%$ of the cubic term. Which term ``wins'' for large $t$?
 
-\medskip
-Ask: \textbf{``Is this growth linear or exponential? What is the growth rate per year?''}
-After student responses, compute successive ratios: $10300/10000 = 1.03$, $10609/10300 \approx 1.03$,
-etc. Reveal: \textit{equal ratios over equal intervals --- this is exponential with a 3\% annual
-growth rate.} Today's lesson: how do we build and use such a model?
+    \medskip
+    Tell students: today we formalize exactly this idea --- the leading term always wins.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
-\textbf{Part 1 (15 min): Build from Ratio and Initial Value.}
 
-If $b$ is the growth factor and $a$ is the initial value:
-$f(x) = a \cdot b^x$. For the hook: $f(t) = 10000 \cdot (1.03)^t$.
+\textbf{Part 1: Leading Term Dominance} (10 min)
 
-Connect percent change to base: growth at rate $r \Rightarrow b = 1+r$;
-decay at rate $r \Rightarrow b = 1-r$.
+Use $p(x) = x^3 - 100x^2$ to show the leading term dominates.
 
-Model 3 examples: (1) 5\% annual growth from 200; (2) 12\% annual decay from 500;
-(3) given a table --- check ratios, read off $a$ and $b$.
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|r|r|}
+\hline
+$x$ & $p(x)$ & $x^3$ \\
+\hline
+$10$    & $-9{,}000$ & $1{,}000$ \\
+$100$   & $0$ & $1{,}000{,}000$ \\
+$1{,}000$ & $9 \times 10^8$ & $10^9$ \\
+\hline
+\end{tabular}
+\smallskip
+
+Ask: At $x = 1{,}000$, the $-100x^2 = -10^8$ is large on its own, but $x^3 = 10^9$ is 10$\times$ bigger.
+The ratio $-100x^2/x^3 = -100/x \to 0$.
+\textbf{Conclusion:} Leading term $x^3$ controls end behavior.
 
 \columnbreak
 
-\textbf{Part 2 (15 min): Build from Two Points.}
+\textbf{Part 2: The Four End-Behavior Cases} (12 min)
 
-Given $(x_1, y_1)$ and $(x_2, y_2)$, set up the system:
-$y_1 = ab^{x_1}$ and $y_2 = ab^{x_2}$.
-Divide to eliminate $a$: $b^{x_2 - x_1} = y_2/y_1$; solve for $b$, then $a$.
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Degree} & \textbf{Lead $a_n$} & $x \to \infty$ & $x \to -\infty$ \\
+\hline
+Even & $>0$ & $\infty$  & $\infty$ \\
+Even & $<0$ & $-\infty$ & $-\infty$ \\
+Odd  & $>0$ & $\infty$  & $-\infty$ \\
+Odd  & $<0$ & $-\infty$ & $\infty$ \\
+\hline
+\end{tabular}
+\smallskip
 
-Model full example: population 4000 at year 2, 6250 at year 5 (Activity Tier A preview).
-
-Introduce the natural base $e \approx 2.718$: used in continuous models, $f(t) = ae^{rt}$.
-Compare to discrete base: $e^{0.03} \approx 1.0305$ (≈ 3.05\% continuous growth).
-
-\end{multicols}
+Key insight: even-degree polynomials behave like $x^2$ (both ends same direction);
+odd-degree behave like $x^3$ (ends go opposite directions).
 
 \medskip
-\textbf{Part 3 (10 min): Apply the Model --- Prediction and Equivalent Forms.}
+\textbf{Part 3: Using Limit Notation} (8 min)
 
-Emphasize domain cautions: does the model apply far in the future?
+Introduce $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$.
 
-Equivalent forms (EK 2.5.B.2): $f(d) = 3 \cdot 2^d$ models daily growth. Rewrite for weekly:
-$f(d) = 3 \cdot (2^7)^{d/7} = 3 \cdot 128^{d/7}$. Each unit of $d/7$ is one week, factor is 128.
-What does $128$ tell us? The quantity multiplies by 128 each week.
+Example: $p(x) = -3x^4 + 2x^2 - 7$.
+Leading term: $-3x^4$ (even, negative).
+
+\[
+  \lim_{x \to \infty} p(x) = -\infty \qquad \lim_{x \to -\infty} p(x) = -\infty
+\]
+
+Practice 2--3 examples chorally before the activity.
+
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call ``If the base is 0.88, is this growth or decay? What is the percent change?''
-        Expect: decay, 12\% per period.
-  \item During two-point model: watch for students who divide equations incorrectly or forget to
-        take the correct root when solving for $b$.
-  \item After Part 2: cold-call ``Why can we divide the two equations to eliminate $a$?''
-        Expect: $a$ is a common factor, dividing creates a ratio equation with only $b$.
-  \item During Part 3: confirm students understand that the base changes when the unit of time changes
-        but the underlying growth is the same function.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Students confuse ``the function has negative output values'' with
+        ``end behavior is $-\infty$.'' Cold-call: ``Does a negative leading coefficient mean
+        ALL outputs are negative?'' (No --- zeros and sign changes still exist.)
+  \item \textbf{Common error:} Students use the constant or a middle term instead of the leading term.
+        Ask: ``Which term matters when $x$ is a billion?''
+  \item \textbf{Notation check:} Students should write $\lim_{x \to \infty} p(x) = \infty$ (not just
+        ``goes to infinity''). AP exam requires limit notation.
+  \item \textbf{Cold-call:} ``Give me a polynomial with $\lim_{x \to \infty} = -\infty$ and
+        $\lim_{x \to -\infty} = \infty$.'' (Any odd-degree, negative-leading-coeff example.)
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Drug concentration model with half-life structure given; build
-        $C(t) = 200 \cdot (0.5)^{t/4}$; complete a table; interpret the base; predict one value.
-  \item \textbf{Tier A (Apply):} Two data points given; construct the model algebraically; find the
-        annual growth rate as a percent; predict a future value with domain note.
-  \item \textbf{Tier E (Extend):} Rewrite a daily model as weekly and 3-day models; explain what each
-        base means; determine the input when the quantity exceeds 10{,}000.
+Students work on the \textbf{Group Activity: End Behavior Explorer} in leveled tiers.
+Each tier uses the same set of four polynomial functions but increases in cognitive demand.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Leading term provided for each polynomial; students use the
+        rules table to fill in $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$ in limit notation.
+  \item \textbf{Tier A (Apply):} Students identify the leading term from the full polynomial
+        expression, predict end behavior, write limit notation, and verify with a calculator.
+  \item \textbf{Tier E (Extend):} Students create their own polynomial with even degree, negative
+        leading coefficient, and exactly 3 real zeros; then describe its end behavior fully.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) write $P(t) = 5000 \cdot (1.06)^t$ and evaluate $P(10)$;
-(2) find $a$ and $b$ from two points $(1, 6)$ and $(3, 54)$;
-(3) interpret what $b = 1.06$ means in context.
-
-Sort by: students who miss item 1 need review of building from percent change (LO 2.5.A);
-students who miss item 2 need re-teaching of the two-point system (LO 2.5.A.3);
-students who miss item 3 need work on contextual interpretation of $b$ (LO 2.5.B.1).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Given $p(x) = -2x^5 + 7x^3 - x + 3$, write $\lim_{x \to \infty} p(x)$ and $\lim_{x \to -\infty} p(x)$.
+  \item A polynomial $q$ has degree 4 and positive leading coefficient. Complete: as $x \to \infty$,
+        $q(x) \to \underline{\phantom{xxx}}$ and as $x \to -\infty$, $q(x) \to \underline{\phantom{xxx}}$.
+\end{enumerate}
+\textbf{Assessment note:} Look for correct identification of the leading term (odd degree, negative
+coefficient in \#1) and proper limit notation. Students who write $-\infty$ and $\infty$ respectively
+for \#1 demonstrate mastery of how odd-degree/negative leading coefficient determines opposite-direction ends.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): convert 8\% annual decay to $ab^t$ form; two-point model with full
-algebraic work; radioactive decay half-life; interpret equivalent forms in different time units;
-AP-style MC with $f(t) = 500e^{0.04t}$; extension with a vertical shift revealing exponential pattern.
+\textbf{Homework:} 5 problems --- end behavior from leading term for 4 polynomials, verbal description
+from a leading term, a conceptual question about parity, a table-based end-behavior inference, and one
+AP-style multiple-choice item.
 
-Extension: when data has a horizontal asymptote (e.g., a cooling problem), adding a constant to
-the dependent variable values can reveal the proportional growth pattern --- preview of transformed
-exponential models.
+\textbf{Extension (optional):} Students investigate $p(x) = x^n$ for $n = 1, 2, 3, 4$ numerically
+at $x = \pm100$ and generalize the four end-behavior patterns from the data.
 
-Preview of Lesson 2.6: logarithmic functions as inverses of exponentials --- how to ``undo'' an
-exponential model to solve for the input (e.g., when will the population reach 20{,}000?).
+\textbf{Preview:} Lesson 1.7 extends end behavior to \textit{rational} functions, where division by a
+polynomial creates vertical asymptotes and horizontal (or oblique) asymptotes.
 \end{skillbox}
-
 \end{document}

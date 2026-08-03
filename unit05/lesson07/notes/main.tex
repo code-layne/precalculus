@@ -1,0 +1,182 @@
+%! Logarithmic Function Context and Data Modeling — Unit 5, Lesson 5.7 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{LO 2.14.A:} Construct a logarithmic function model.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item Recognize when a context or data set calls for a logarithmic model.
+  \item Build a logarithmic model from two input-output pairs using a system of equations.
+  \item Apply transformations of $f(x) = a\log_b x$ to fit a model to a context.
+  \item Use a logarithmic model to predict values of the dependent variable.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{logarithmic model}
+\termblanklong{proportion}
+\termblanklong{real zero}
+\termblanklong{natural logarithm model}
+\termblanklong{logarithmic regression}
+\termblanklong{prediction}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textbf{Consider:} A scientist observes that a bacterial population doubles in the 1st hour,
+doubles again after 2 more hours, then again after 4 more hours.
+
+\vspace{4pt}
+How much time does each additional doubling require? \blank{2cm}, \blank{2cm}, \blank{2cm}
+
+\vspace{4pt}
+As the population grows, the time per doubling is \blank{4cm} (increasing / constant / decreasing).
+
+\vspace{4pt}
+Why might a logarithmic function --- not an exponential one --- model this situation?
+\writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{When to Use a Logarithmic Model (EK 2.14.A.1)}
+A logarithmic model is appropriate when input values change \blank{3cm} over
+equal-length output-value intervals.
+
+\vspace{6pt}
+\textbf{Contrast:}
+\begin{itemize}[leftmargin=1.5em,itemsep=4pt,topsep=2pt]
+  \item \textbf{Exponential:} output changes \blank{3cm} over equal input intervals.
+  \item \textbf{Logarithmic:} input changes \blank{3cm} over equal output intervals.
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Example.} Fill in the table and answer the questions.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ (area, hectares) & $y$ (number of species) \\
+\hline
+$2$  & $1$ \\
+\hline
+$4$  & $2$ \\
+\hline
+$8$  & $3$ \\
+\hline
+$16$ & $4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+As $y$ increases by 1, $x$ \blank{4cm} (describe the pattern). \quad Proportion: \blank{1.5cm}
+
+\vspace{4pt}
+This pattern suggests the model: $y = \log_{\blank{1cm}}(x)$
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Building a Model from Two Input-Output Pairs (EK 2.14.A.2)}
+\textbf{General form:} $f(x) = a\log_b x + k$
+
+\vspace{6pt}
+\textbf{Worked Example.} Given: $f(1) = 0$ and $f(e) = 3$. Find the model.
+
+\vspace{4pt}
+\textit{Step 1.} Substitute $(1,\,0)$: \quad $0 = a\ln(1) + k = a \cdot \blank{1cm} + k$
+\quad so $k = $ \blank{1.5cm}
+
+\vspace{4pt}
+\textit{Step 2.} Substitute $(e,\,3)$: \quad $3 = a\ln(e) + 0 = a \cdot \blank{1cm}$
+\quad so $a = $ \blank{1.5cm}
+
+\vspace{4pt}
+\textit{Model:} $f(x) = $ \blank{4cm}
+
+\vspace{8pt}
+\textbf{Practice.} Given: $f(1) = 2$ and $f(9) = 4$. Use base $b = 3$.
+
+\vspace{4pt}
+\textit{Step 1.} From $f(1) = 2$: since $\log_3(1) = $ \blank{1cm}, we get $k = $ \blank{1.5cm}
+
+\vspace{4pt}
+\textit{Step 2.} From $f(9) = 4$: $4 = a\log_3(9) + k = a \cdot \blank{1cm} + \blank{1cm}$
+\quad so $a = $ \blank{1.5cm}
+
+\vspace{4pt}
+\textit{Model:} $f(x) = $ \blank{4cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Transformations of a Logarithmic Model (EK 2.14.A.3)}
+General form with transformations: $f(x) = a\log_b(x - h) + k$
+
+\vspace{4pt}
+\begin{itemize}[leftmargin=1.5em,itemsep=4pt,topsep=2pt]
+  \item $a$: vertical \blank{3cm} (stretch if $|a|>1$, compression if $|a|<1$)
+  \item $h$: horizontal shift \blank{1cm} units to the \blank{2cm}
+  \item $k$: vertical shift \blank{1cm} units \blank{2cm}
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Context example.} A sound-level function has output 0 dB at intensity $x = 1$
+and increases by 10 dB for every tenfold increase in intensity.
+
+\vspace{4pt}
+The output is 0 when $x = 1$, so \blank{3cm} (which parameter?) equals \blank{1cm}.
+
+\vspace{4pt}
+A tenfold increase in $x$ adds 10 to the output, so $a = $ \blank{1.5cm} and $b = $ \blank{1.5cm}.
+
+\vspace{4pt}
+Model: $S(x) = $ \blank{5cm}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Predicting with a Logarithmic Model (EK 2.14.A.6)}
+Given $f(x) = 2\log_3 x$:
+
+\vspace{6pt}
+\textbf{Predict $f(81)$:} \quad $f(81) = 2\log_3 81 = 2 \cdot \blank{1.5cm} = $ \blank{2cm}
+
+\vspace{6pt}
+\textbf{Solve for $x$ when $f(x) = 5$:}
+
+\vspace{4pt}
+$2\log_3 x = 5 \;\Rightarrow\; \log_3 x = \blank{1.5cm} \;\Rightarrow\; x = 3^{\blank{1.2cm}} = $ \blank{3cm}
+
+\vspace{8pt}
+\textbf{Natural log models (EK 2.14.A.5).} Recall $\ln x = \log_e x$.
+
+\vspace{4pt}
+Useful identities: \quad $\ln(e^n) = $ \blank{1.5cm} \quad and \quad $e^{\ln x} = $ \blank{1.5cm}
+
+\vspace{4pt}
+If $f(x) = 3\ln x$, evaluate $f(e^4) = 3\ln(e^4) = 3 \cdot \blank{1.5cm} = $ \blank{2cm}
+
+\vspace{4pt}
+Solve $3\ln x = 9$: \quad $\ln x = $ \blank{1.5cm} \quad $\Rightarrow$ \quad $x = e^{\blank{1.2cm}} = $ \blank{2cm}
+\end{notesbox}
+
+\end{document}

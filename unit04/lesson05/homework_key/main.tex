@@ -1,110 +1,21 @@
+%! The Number e and Continuous Growth — Unit 4, Lesson 4.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 4, Lesson 4.5}{Homework --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Homework], never in a key.
 
-\vspace{0.1in}
 
-\begin{notesbox}{Practice}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\vspace{0.15in}
 
-\item Consider the equation $x^2 + y^2 = 49$.
-\begin{enumerate}[leftmargin=1.2em, itemsep=6pt]
-    \item[(a)] Solve for $y$. Write the two explicit functions.
-
-    \vspace{0.3in}
-    $f_1(x) = $ \ans{$\sqrt{49 - x^2}$} \qquad $f_2(x) = $ \ans{$-\sqrt{49 - x^2}$}
-
-    \item[(b)] State the domain of each function.
-
-    \vspace{0.2in}
-    Domain: \ans{$[-7,\, 7]$ for both}
-\end{enumerate}
-
-\item Complete the table for the upper half of $x^2 + y^2 = 49$.
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{c|c}
-$x$ & $y = f_1(x)$ \\\hline
-$-7$ & \ans{$0$} \\
-$0$  & \ans{$7$} \\
-$5$  & \ans{$\sqrt{24} \approx 4.899$} \\
-$7$  & \ans{$0$} \\
-\end{tabular}
-
-\item Two points: $(5,\;\sqrt{24})$ and $(6,\;\sqrt{13})$.
-\begin{enumerate}[leftmargin=1.2em, itemsep=6pt]
-    \item[(a)] $\Delta y/\Delta x \approx (3.606 - 4.899)/(6-5) = -1.293/1 \approx$ \ans{$-1.29$}
-
-    \item[(b)] Co-variation: \ans{Negative. As $x$ increases, $y$ decreases (opposite directions).}
-\end{enumerate}
-
-\item Budget constraint: $3x + 5y = 60$.
-\begin{enumerate}[leftmargin=1.2em, itemsep=6pt]
-    \item[(a)] $y = $ \ans{$(60 - 3x)/5 = 12 - 0.6x$}
-
-    \item[(b)] \ansline{As $x$ increases by 1 notebook, $y$ decreases by 0.6 binders (since the coefficient of $x$ is $-0.6$).}
-
-    \item[(c)] Co-variation: \ans{Negative}
-\end{enumerate}
-
-\item Equation $9x^2 + y^2 = 9$. Upper half, $x$ from 0 to 1.
-
-At $x = 0$: $y^2 = 9$, so $y = 3$. \quad At $x = 0.5$: $y^2 = 9 - 9(0.25) = 6.75$, so $y \approx 2.598$.
-
-$\Delta y/\Delta x \approx (2.598 - 3)/0.5 \approx -0.804$.
-
-Co-variation sign: \ans{Negative.} \quad Reason: \ans{As $x$ increases from 0, $y$ decreases from 3, so the ratio is negative.}
-
-\end{enumerate}
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{AP-Style Multiple Choice}
-\textbf{6.} The equation $x^2 - 4y^2 = 16$. Upper branch ($y > 0$), $x$ from 4 to 8.
-
-At $x = 4$: $16 - 4y^2 = 16 \Rightarrow y = 0$. At $x = 8$: $64 - 4y^2 = 16 \Rightarrow 4y^2 = 48 \Rightarrow y = \sqrt{12} \approx 3.46$.
-
-As $x$ increases from 4 to 8, $y$ increases from 0 to $\approx 3.46$. Same direction $\Rightarrow$ positive co-variation.
-
-\vspace{4pt}
-\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=4pt]
-    \item Co-variation is positive because $y$ increases as $x$ increases. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-    \item Co-variation is positive because $y$ decreases as $x$ increases.
-    \item Co-variation is negative because $y$ increases as $x$ increases.
-    \item Co-variation is negative because $y$ decreases as $x$ increases.
-\end{enumerate}
-
-\vspace{4pt}
-\textit{Note:} On the upper branch of a hyperbola $x^2 - 4y^2 = 16$, as $x$ moves away from
-the vertex at $(4, 0)$, $y$ increases. This is opposite behavior from the circle, where the
-upper half has negative co-variation.
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{extensionbox}
-\textbf{Extension (optional):}
-$(x-2)^2 + (y-1)^2 = 25$ is a circle with center $(2, 1)$ and radius 5.
-
-Explicit functions:
-$f_1(x) = 1 + \sqrt{25-(x-2)^2}$ (upper), $f_2(x) = 1 - \sqrt{25-(x-2)^2}$ (lower).
-
-Near $x = 2$: At $x = 2$, $y = 1 + 5 = 6$. At $x = 3$, $y = 1 + \sqrt{24} \approx 5.899$.
-$\Delta y/\Delta x \approx (5.899 - 6)/1 \approx -0.1$. Negative co-variation.
-\end{extensionbox}
-
-\begin{teachernote}
-Problem 4 (budget constraint): This is a linear implicit equation. Co-variation is always negative here (constant rate $-0.6$). Connect to the constant rate of change for linear functions.\\[3pt]
-Problem 6 (MC): The hyperbola's upper branch behaves differently from the circle's upper half. Students who overgeneralize from the circle may choose (C) or (D). Encourage checking with two actual points.\\[3pt]
-Common error across all problems: Students may compute $\Delta x/\Delta y$ instead of $\Delta y/\Delta x$. Remind them: numerator is the variable whose change we're measuring (output in context).
-\end{teachernote}
 
 \end{document}

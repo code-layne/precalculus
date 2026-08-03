@@ -1,7 +1,7 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Group Activity (Answer Key)
+%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,161 +11,127 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Sinusoidal Functions in the Real World]{sky}
-Sinusoidal functions appear everywhere in nature and technology: sound waves,
-tides, seasonal temperature patterns, alternating electric current, and
-the motion of a pendulum.  In each case, the key characteristics ---
-amplitude, midline, period, and frequency --- tell us something meaningful
-about the phenomenon.
+\begin{scenariobox}[Three Faces of the Same Function]{sky}
+\small
+A data analyst receives four rational functions, each expressed in a different form. For each
+function, the team needs to extract specific information. Sometimes the given form is ideal;
+sometimes you must convert to another form first. Your job is to identify what each form reveals
+and to perform the conversion when needed.
+
+\medskip
+The four functions (each given in one form) are:
+\[
+  f(x) = \frac{x^2 - 2x - 8}{x^2 - x - 6}
+  \qquad
+  g(x) = \frac{x^3 + x^2 - 2x}{x - 1}
+  \qquad
+  h(x) = \frac{2(x+3)(x-1)}{(x+3)(x-4)}
+  \qquad
+  k(x) = \frac{x^2 + 5x + 6}{x + 1}
+\]
 \end{scenariobox}
 
 \vspace{0.1in}
 
-%=======================================================================
-% TIER R
-%=======================================================================
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate --- Key},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Use the formulas:
-\[
-  \text{Amplitude} = \frac{\text{max} - \text{min}}{2}
-  \qquad
-  \text{Midline: } y = \frac{\text{max} + \text{min}}{2}
-  \qquad
-  \text{Frequency} = \frac{1}{\text{period}}
-\]
+The numerator and denominator of $f$ and $h$ are already in factored form below.
+Fill in the table using the information each form directly gives you.
 
-\textbf{Function 1.} Max $= 4$, min $= -4$, one cycle from $0$ to $2\pi$.
-
-\medskip
-\begin{tabular}{@{}llll@{}}
-  Amplitude $=$ \ans{4} &
-  Midline $=$ \ans{$y = 0$} &
-  Period $=$ \ans{$2\pi$} &
-  Frequency $=$ \ans{$1/(2\pi)$}
-\end{tabular}
-
-\vspace{0.15in}
-
-\textbf{Function 2.} Max $= 3$, min $= -1$.
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}p{3.4cm} >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
+\textbf{Fn} & \textbf{Factored form} & \textbf{Zeros (from factored form)} & \textbf{Hole or VA at each zero?} \\
+\midrule
+$f$ & $\dfrac{(x-4)(x+2)}{(x-3)(x+2)}$ & \ans{$x=4,\ x=-2$} & \ans{hole at $x=-2$; VA at $x=3$} \\[6pt]
+$h$ & $\dfrac{2(x+3)(x-1)}{(x+3)(x-4)}$ & \ans{$x=-3,\ x=1$} & \ans{hole at $x=-3$; VA at $x=4$} \\[6pt]
+\end{tabularx}
 
 \medskip
-\begin{tabular}{@{}ll@{}}
-  Amplitude $= \ans{2}$ &
-  Midline $= \ans{$y = 1$}$
-\end{tabular}
-
-\vspace{0.1in}
-
-Is the midline $y = 0$ here?  Why or why not?
-
-\medskip
-\ans{No. The midline is $y = 1$ because the average of $3$ and $-1$ is $1$, not
-$0$. The midline is only $y = 0$ when the max and min are opposite in sign and
-equal in magnitude.}
-
+For each function, circle the form that best reveals end behavior:
+\quad $f$: \textbf{Factored} / \ans{Standard} \qquad $h$: \textbf{Factored} / \ans{Standard}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%=======================================================================
-% TIER A
-%=======================================================================
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- At Level --- Key},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Function P:}
+\begin{enumerate}[itemsep=10pt]
+  \item Convert $f(x)$ from its given form to factored form. Identify all zeros, holes, and VAs.
 
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-$\theta$ & $0$ & $\pi/2$ & $\pi$ & $3\pi/2$ & $2\pi$ & $5\pi/2$ & $3\pi$ \\
-\hline
-$P(\theta)$ & $3$ & $5$ & $3$ & $1$ & $3$ & $5$ & $3$ \\
-\hline
-\end{tabular}
+        \vspace{0.06in}
+        Factored $f$: \ans{$\dfrac{(x-4)(x+2)}{(x-3)(x+2)}$}
 
-\medskip
-\textbf{Function Q:}
+        Zeros: \ans{$x=4$} \quad Hole(s): \ans{$(-2,\,6)$} \quad VA(s): \ans{$x=3$}
 
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-$\theta$ & $0$ & $\pi/4$ & $\pi/2$ & $3\pi/4$ & $\pi$ & $5\pi/4$ & $3\pi/2$ \\
-\hline
-$Q(\theta)$ & $0$ & $2$ & $0$ & $-2$ & $0$ & $2$ & $0$ \\
-\hline
-\end{tabular}
+  \item For $g(x)$, the degree of the numerator is one more than the degree of the denominator.
+        Use polynomial long division to rewrite $g(x)$ as $q(x) + \dfrac{r}{x-1}$.
 
-\medskip
-\begin{tabular}{@{}lllll@{}}
-  & \textbf{Amplitude} & \textbf{Midline} & \textbf{Period} & \textbf{Frequency} \\[4pt]
-  Function $P$: & \ans{2} & \ans{$y=3$} & \ans{$2\pi$} & \ans{$1/(2\pi)$} \\[8pt]
-  Function $Q$: & \ans{2} & \ans{$y=0$} & \ans{$\pi$}  & \ans{$1/\pi$}
-\end{tabular}
+        \vspace{0.06in}
+        Long division work space:
 
-\vspace{0.12in}
+        Factor numerator: $x^3+x^2-2x = x(x^2+x-2) = x(x+2)(x-1)$.
 
-Function $P$ is \ans{neither} because:
+        So $g(x) = \dfrac{x(x+2)(x-1)}{x-1} = x(x+2) = x^2+2x$ for $x\ne 1$.
 
-\ans{For $P$ to be even we would need $P(-\theta) = P(\theta)$, and for odd
-$P(-\theta) = -P(\theta)$.  Checking $\theta = \pi/2$: $P(\pi/2) = 5$ but
-$P(-\pi/2)$ is not listed in the table; however, $P$ has midline $y = 3 \ne 0$,
-so it cannot be odd.  And the values are not symmetric about the $y$-axis in the
-standard sense because the function is shifted vertically.}
+        \vspace{0.1in}
 
-Function $Q$ is \ans{odd} because:
+        $g(x) = $ \ans{$x^2 + 2x$} (remainder $= 0$, hole at $x=1$, $y=3$)
 
-\ans{$Q(-\theta) = -Q(\theta)$.  For example, $Q(\pi/4)=2$ and $Q(-\pi/4)=-2$.
-The midline is $y=0$ and the values are negated when $\theta$ is negated, which
-matches the definition of an odd function.}
+  \item For $h(x)$, determine the end behavior using the standard-form leading terms. State the
+        horizontal asymptote (or explain why there is none).
 
+        \vspace{0.06in}
+        Numerator leading term: \ans{$2x^2$} \quad Denominator leading term: \ans{$x^2$}
+
+        \vspace{0.04in}
+        Horizontal asymptote: \ans{$y = 2$} \quad or \quad Slant/end behavior: \ans{HA at $y=2$; same degree}
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%=======================================================================
-% TIER E
-%=======================================================================
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend --- Key},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Part 1.} Amplitude $= 2$, midline $y = 1$, period $= \pi$.
+\begin{enumerate}[itemsep=10pt]
+  \item Use polynomial long division on $k(x) = \dfrac{x^2 + 5x + 6}{x+1}$.
+        Write $k(x) = q(x) + \dfrac{r}{x+1}$ and state the equation of the slant asymptote.
 
-(a) Maximum and minimum values:
+        \vspace{0.06in}
+        Dividing: $x^2+5x+6 \div (x+1)$: quotient $x+4$, remainder $2$.
 
-\medskip
-\ans{max $= $ midline $+$ amplitude $= 1 + 2 = 3$}
+        $k(x) = $ \ans{$x+4+\dfrac{2}{x+1}$} \quad Slant asymptote: $y = $ \ans{$x+4$}
 
-\ans{min $= $ midline $-$ amplitude $= 1 - 2 = -1$}
+  \item Explain in a complete sentence how you would use the result of long division to determine
+        whether $k(x)$ has a slant asymptote or a horizontal asymptote.
 
-\medskip
-(b) Frequency:
+        \vspace{0.06in}
+        \ansline{If the degree of the numerator is exactly one more than the degree of the denominator, the quotient after long division is a non-constant linear polynomial, giving a slant asymptote $y = q(x)$. If degrees are equal, the quotient is a constant, giving a horizontal asymptote.}
 
-\medskip
-\ans{Frequency $= \dfrac{1}{\pi}$}
+  \item Construct a rational function $p(x)$ that satisfies \textit{all} of the following:
+        a hole at $x = 2$, a vertical asymptote at $x = -1$, zeros at $x = 0$ and $x = 5$,
+        and a slant asymptote. Write $p$ in factored form and verify the degree condition for the
+        slant asymptote.
 
-\vspace{0.1in}
+        \vspace{0.06in}
+        $p(x) = $ \ans{$\dfrac{x(x-5)(x-2)}{(x+1)(x-2)}$} (many valid answers)
 
-\textbf{Part 2.}
-
-\ans{On the unit circle, a point at angle $\theta$ has coordinates
-$(\cos\theta,\, \sin\theta)$.  The point at angle $\pi - \theta$ is the
-reflection of the point at $\theta$ across the $y$-axis.  Reflecting across the
-$y$-axis changes the sign of the $x$-coordinate but leaves the $y$-coordinate
-unchanged.  Therefore the $y$-coordinate at $\pi - \theta$ equals the
-$y$-coordinate at $\theta$, which means $\sin(\pi - \theta) = \sin\theta$.}
+        \vspace{0.04in}
+        Degree of numerator: \ans{3} \quad Degree of denominator: \ans{2} \quad Difference: \ans{1}
+\end{enumerate}
+\end{tcolorbox}
 
 \begin{teachernote}
-Full-credit responses should (1) invoke the unit circle interpretation of sine as
-the $y$-coordinate, and (2) explain why the $y$-coordinates of $\theta$ and
-$\pi-\theta$ are equal (reflection over the $y$-axis).  Algebraic approaches
-using the sum formula are acceptable for extra credit discussion.
-\end{teachernote}
+Tier R: Students should recognize that factored form directly gives zeros and hole/VA classification without additional work.
 
-\end{tcolorbox}
+Tier A item 2: The numerator factors cleanly, so no numeric long division is needed. Accept either the factoring approach or numeric long division.
+
+Tier E item 3: Any rational function with numerator degree $=$ denominator degree $+ 1$, the correct zeros, hole at $x=2$, and VA at $x=-1$ is acceptable. The example shown is the minimal such construction.
+\end{teachernote}
 
 \end{document}

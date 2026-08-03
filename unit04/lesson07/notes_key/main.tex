@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Guided Notes (Answer Key)
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,147 +9,111 @@
 \pageheader{Unit 4, Lesson 4.7}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.1in}
+\vspace{0.06in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to:
-\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
-  \item \ansline{write a parametric representation of an ellipse or circle given its standard form.}
-  \item \ansline{write a parametric representation of a parabola using a direct substitution for $x-h$.}
-  \item \ansline{use parametric analysis (extrema, axis intercepts) on a parametrized implicit curve.}
-\end{itemize}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct and compare \ans{linear}, \ans{quadratic}, and \ans{exponential} models for
+        the same data set. \hfill\textit{(LO 2.6.A)}
+  \item Validate a model by examining its \ans{residual} plot for patterns. \hfill\textit{(LO 2.6.B)}
+  \item Interpret model \ans{error} as actual minus predicted and label it an over- or
+        underestimate. \hfill\textit{(LO 2.6.B)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
 \begin{vocabbox}
-\termblanklong{implicit curve}
-\ansline{A curve defined by an equation relating $x$ and $y$ that cannot always be written as $y=f(x)$.}
-
-\termblanklong{parametrization}
-\ansline{A pair of component functions $(x(t), y(t))$ that traces an implicit curve as $t$ varies.}
-
-\termblanklong{ellipse parametrization}
-\ansline{$x(t)=h+a\cos t$, $y(t)=k+b\sin t$, $0\le t\le 2\pi$; from $\cos^2 t+\sin^2 t=1$.}
-
-\termblanklong{parabola parametrization}
-\ansline{Set $x(t)=h+t$, $y(t)=k+at^2$, $t\in\mathbb{R}$; vertex at $t=0$.}
+\termblanklong{competing models}
+\termblanklong{residual}
+\termblanklong{residual plot}
+\termblanklong{error}
+\termblanklong{underestimate}
+\termblanklong{overestimate}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
 \begin{hookbox}
-The ellipse $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ is \emph{not} a function --- it fails the vertical
-line test. But if a particle traces this ellipse over time, we can use parametric tools to find
-its position, extremes, and intercepts. How do we convert this implicit equation to a parametric form?
+Three companies each report 5 years of annual revenue (\$thousands):
 
-\ansline{Set $x/3 = \cos t$ and $y/2 = \sin t$, giving $x(t)=3\cos t$, $y(t)=2\sin t$.}
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c}
+\textbf{Year} & \textbf{Company A} & \textbf{Company B} & \textbf{Company C} \\ \hline
+1 & 10 & 10 & 10 \\
+2 & 14 & 16 & 20 \\
+3 & 18 & 26 & 40 \\
+4 & 22 & 40 & 80 \\
+\end{tabular}
+\end{center}
+
+\medskip
+\textit{Which company's growth looks linear? Quadratic? Exponential?} \\
+A: \ans{linear (constant $\Delta_1 = 4$)} \quad B: \ans{quadratic (constant $\Delta_2$)} \quad C: \ans{exponential (constant ratio $= 2$)}
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
-\begin{notesbox}{Section 1 --- Ellipse Parametrization}
-\small
-\textbf{Setup.} Starting from $\dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1$, set
-$\dfrac{x-h}{a}=\cos t$ and $\dfrac{y-k}{b}=\sin t$.
+\begin{notesbox}{LO 2.6.A --- Reading Data Structure to Choose a Model (EK 2.6.A.1)}
+Use the data table below to compute first differences, second differences, and ratios.
 
-Then: \quad $x(t) = $ \ans{$h + a\cos t$} \quad and \quad $y(t) = $ \ans{$k + b\sin t$}
-
-Domain: $0 \le t \le $ \ans{$2\pi$}
-
-\vspace{0.08in}
-\textbf{Verify.} Substitute back into the ellipse equation and use the identity
-$\cos^2 t + \sin^2 t = 1$:
-
-\vspace{0.06in}
-\hspace{1em} $\dfrac{(x(t)-h)^2}{a^2}+\dfrac{(y(t)-k)^2}{b^2}
-= \dfrac{(\ans{$a\cos t$})^2}{a^2}+\dfrac{(\ans{$b\sin t$})^2}{b^2}
-= $ \ans{$\cos^2 t$} $+$ \ans{$\sin^2 t$} $=$ \ans{$1$} \quad \checkmark
-
-\vspace{0.12in}
-\textbf{Example.} Ellipse $\dfrac{x^2}{16}+\dfrac{y^2}{4}=1$.
-Here $h=$ \ans{$0$}, $k=$ \ans{$0$}, $a=$ \ans{$4$}, $b=$ \ans{$2$}.
-
-\vspace{0.06in}
-Parametrization: \quad $x(t) = $ \ans{$4\cos t$} \quad $y(t) = $ \ans{$2\sin t$} \quad
-$0 \le t \le $ \ans{$2\pi$}
-
-\vspace{0.1in}
-\textbf{Extrema from the parametrization.}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{lll}
-Maximum $x(t)$: \ans{$4$} when $t = $ \ans{$0$} & $\Rightarrow$ & Point: \ans{$(4,\,0)$} \\
-Minimum $x(t)$: \ans{$-4$} when $t = $ \ans{$\pi$} & $\Rightarrow$ & Point: \ans{$(-4,\,0)$} \\
-Maximum $y(t)$: \ans{$2$} when $t = $ \ans{$\pi/2$} & $\Rightarrow$ & Point: \ans{$(0,\,2)$} \\
+\vspace{0.05in}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{c|c|c|c|c}
+$x$ & $y$ & $\Delta_1 = y_{\text{next}}-y$ & $\Delta_2 = \Delta_{1,\text{next}}-\Delta_1$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+0 &  3 & \ans{3}  & \ans{3}  & \ans{2} \\
+1 &  6 & \ans{6}  & \ans{6}  & \ans{2} \\
+2 & 12 & \ans{12} & ---      & \ans{2} \\
+3 & 24 & --- & --- & --- \\
 \end{tabular}
+
+\medskip
+\textbf{Key:} Constant $\Delta_1$ $\Rightarrow$ \ans{linear} \quad
+Constant $\Delta_2$ $\Rightarrow$ \ans{quadratic} \quad
+Constant ratio $\Rightarrow$ \ans{exponential}
+
+\medskip
+\textbf{Contextual clues (EK 2.6.A.2):} If the data is described as ``growing faster and faster
+each period,'' this suggests \ans{exponential} growth. Use both the numbers and the context to decide.
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
-\begin{notesbox}{Section 2 --- Parabola Parametrization}
-\small
-\textbf{Setup.} For $y - k = a(x-h)^2$ (vertical parabola): set $x(t) = $ \ans{$h+t$},
-then $y(t) = $ \ans{$k + at^2$}, $t \in \mathbb{R}$.
+\begin{notesbox}{LO 2.6.B --- Residuals, Error, and Model Validation (EK 2.6.B.1 and B.2)}
+\textbf{Residual formula:} $e = y_{\text{actual}} - \hat{y}_{\text{predicted}}$
 
-Vertex at $t=0$: \ans{$(h,\,k)$}
-
-\vspace{0.1in}
-\textbf{Example.} $y = x^2 - 4x + 3$.
-
-Step 1 --- Complete the square: $y = (x -$ \ans{$2$}$)^2 -$ \ans{$1$}.
-\; Vertex: (\ans{$2$},\,\ans{$-1$}).
-
-Step 2 --- Parametrize: $x(t) = $ \ans{$2+t$}, \quad $y(t) = $ \ans{$t^2 - 1$}.
-
-Step 3 --- Fill the table:
-
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t)=2+t$ & $y(t)=t^2-1$ & Point \\
-\hline
-$-2$ & \ans{$0$} & \ans{$3$} & \ans{$(0,\,3)$} \\
-\hline
-$-1$ & \ans{$1$} & \ans{$0$} & \ans{$(1,\,0)$} \\
-\hline
-$\phantom{-}0$ & \ans{$2$} & \ans{$-1$} & \ans{$(2,\,-1)$} \\
-\hline
-$\phantom{-}1$ & \ans{$3$} & \ans{$0$} & \ans{$(3,\,0)$} \\
-\hline
-$\phantom{-}2$ & \ans{$4$} & \ans{$3$} & \ans{$(4,\,3)$} \\
-\hline
+\medskip
+\begin{tabular}{l|l}
+If $e > 0$ (positive residual): the model is a(n) \ans{underestimate} & the actual value is \emph{above} the prediction. \\[4pt]
+If $e < 0$ (negative residual): the model is a(n) \ans{overestimate} & the actual value is \emph{below} the prediction. \\
 \end{tabular}
-\end{notesbox}
 
-\vspace{0.08in}
+\medskip
+\textbf{Residual plot:} Plot the point $(x_i,\, e_i)$ for each data value.
 
-\begin{notesbox}{Section 3 --- Applying Parametric Tools to Implicit Curves}
-\small
-\textbf{Ellipse:} $x(t) = 3\cos t$, \; $y(t) = 5\sin t$.
-
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item When does the curve cross the \textbf{$y$-axis}?
-    Set $x(t)=0$: $\cos t = 0$ $\Rightarrow$ $t = $ \ans{$\pi/2$\; and\; $3\pi/2$}\\[2pt]
-    \hspace{1.4em} Coordinates at those $t$-values: \ans{$(0,\,5)$ and $(0,\,-5)$}
-
-  \item When does the curve cross the \textbf{$x$-axis}?
-    Set $y(t)=0$: $\sin t = 0$ $\Rightarrow$ $t = $ \ans{$0$\; and\; $\pi$}\\[2pt]
-    \hspace{1.4em} Coordinates at those $t$-values: \ans{$(3,\,0)$ and $(-3,\,0)$}
-
-  \item What is the \textbf{rightmost} point? Max of $x(t)=3\cos t$ is \ans{$3$},
-    at $t = $ \ans{$0$}. Point: \ans{$(3,\,0)$}
-
-  \item What is the \textbf{topmost} point? Max of $y(t)=5\sin t$ is \ans{$5$},
-    at $t = $ \ans{$\pi/2$}. Point: \ans{$(0,\,5)$}
+\begin{itemize}[itemsep=3pt]
+  \item Residuals \textbf{scattered without pattern} $\Rightarrow$ model is \ans{appropriate} for the data.
+  \item Residuals showing a \textbf{curved} or \textbf{systematic pattern} $\Rightarrow$ model is \ans{inappropriate}.
 \end{itemize}
-\end{notesbox}
 
-\begin{teachernote}
-Section 3 is the heart of AP Skill 2.A: students must extract information from the parametric
-representation rather than the Cartesian picture. Emphasize that these intercepts and extrema
-can be found purely from $x(t)$ and $y(t)$ --- no graph required. Common error: students may
-state the rightmost point is where $t$ is largest, not where $x(t)$ is largest. Use cold-call:
-``How do you know $t=0$ gives the maximum of $\cos t$?''
-\end{teachernote}
+\medskip
+\textbf{Example:} An exponential model gives $\hat{y} = 2 \cdot 3^x$.
+
+\vspace{0.04in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c|c|c|c}
+$x$ & Actual $y$ & Predicted $\hat{y}$ & Residual $e = y - \hat{y}$ \\ \hline
+0 & 2.5 & 2  & \ans{$+0.5$} \\
+1 & 7   & 6  & \ans{$+1$} \\
+2 & 17  & 18 & \ans{$-1$} \\
+\end{tabular}
+
+\medskip
+Context note: if a model systematically \ans{underestimates} the actual values, and this leads to
+a safety risk, you may prefer a model that \ans{overestimates} instead.
+\end{notesbox}
 
 \end{document}

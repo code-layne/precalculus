@@ -1,4 +1,4 @@
-%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Homework (Answer Key)
+%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,100 +9,83 @@
 \pageheader{Unit 2, Lesson 2.4}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-\begin{enumerate}[itemsep=18pt]
+\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
 
-\item \textbf{Product Property: Horizontal Translation $\to$ Vertical Dilation.}
-      Rewrite each expression in the form $a \cdot b^x$. Show work.
-
-      \begin{enumerate}[label=(\alph*), itemsep=10pt]
-        \item $f(x) = 2^{x+5}$
-
-              \vspace{0.06in}
-              $2^{x+5} = 2^x \cdot 2^{{\color{keyred}\mathbf{5}}} = $ \ans{32} $\cdot\; 2^x$
-
-        \item $g(x) = 7^{x-2}$
-
-              \vspace{0.06in}
-              $7^{x-2} = 7^x \cdot 7^{{\color{keyred}\mathbf{-2}}} = $ \ans{$\dfrac{1}{49}$} $\cdot\; 7^x$
-      \end{enumerate}
-
-\item \textbf{Power Property: Horizontal Dilation $\to$ Base Change.}
-      Rewrite each expression as a single base raised to the $x$ power. Show work.
-
-      \begin{enumerate}[label=(\alph*), itemsep=10pt]
-        \item $f(x) = 3^{4x}$
-
-              \vspace{0.06in}
-              $3^{4x} = (3^{{\color{keyred}\mathbf{4}}})^x = $ \ans{$81^x$}
-
-        \item $g(x) = 25^{x/2}$
-
-              \vspace{0.06in}
-              $25^{x/2} = (25^{{\color{keyred}\mathbf{1/2}}})^x = $ \ans{$5^x$}
-      \end{enumerate}
-
-\item \textbf{Negative and Fractional Exponents.}
-      Simplify each expression. Write without negative or fractional exponents where possible.
-
-      \begin{enumerate}[label=(\alph*), itemsep=8pt]
-        \item $5^{-2} = $ \ans{$\dfrac{1}{25}$}
-        \item $27^{1/3} = $ \ans{3}
-        \item $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = $ \ans{8}
-      \end{enumerate}
-
-\item \textbf{Show Two Functions Are Equivalent.}
+\item Write a polynomial with real coefficients of \emph{minimum degree} that has zeros
+      at $x = 3$ (multiplicity 2) and $x = 1 - 2i$. Leave your answer in factored form.
+      State the degree.
 
       \vspace{0.06in}
-      $f(x) = 4^{x+3/2} = 4^x \cdot 4^{{\color{keyred}\mathbf{3/2}}} = $ \ans{8} $\cdot\; 4^x$
+      $p(x) = $ \ans{$(x-3)^2\bigl(x-(1-2i)\bigr)\bigl(x-(1+2i)\bigr)$}
+      \hfill Degree: \ans{4}
 
-      \quad ($4^{3/2} = (\sqrt{4})^3 = 2^3 = 8$)
+      \begin{teachernote}
+      Expanded: $(x-3)^2\bigl((x-1)^2+4\bigr)=(x-3)^2(x^2-2x+5)$. Accept either form.
+      \end{teachernote}
+
+\item A degree-5 polynomial with real coefficients has zeros at $x = -2$,
+      $x = 0$ (multiplicity 2), and $x = 1 + i$.
+      List \emph{all five} zeros.
+
+      \ansline{$x=-2$ (mult.\ 1), $x=0$ (mult.\ 2), $x=1+i$, $x=1-i$. Total: $1+2+1+1=5$. \checkmark}
+
+\item Let $p(x) = x^4 - 6x^2 + 9$.
+      \begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+        \item Factor $p(x)$ completely.
+              \ansline{$p(x)=(x^2-3)^2=(x-\sqrt{3})^2(x+\sqrt{3})^2$}
+        \item List all zeros and their multiplicities.
+              \ansline{$x=\sqrt{3}$ (multiplicity 2) and $x=-\sqrt{3}$ (multiplicity 2).}
+        \item Crosses or tangent at each zero?
+              \ansline{Tangent (touches, bounces) at both zeros — both have even multiplicity (2).}
+      \end{enumerate}
+
+\item Is $g(x) = 2x^3 - 5x$ even, odd, or neither?
 
       \vspace{0.06in}
-      $g(x) = 8 \cdot 4^x \cdot \sqrt{4}^{\,-1} = 8 \cdot 4^x \cdot 2^{-1} = $ \ans{4} $\cdot\; 4^x$
+      $g(-x) = $ \ans{$2(-x)^3 - 5(-x)$}
 
-      \begin{teachernote}
-        Note: $f(x) = 8 \cdot 4^x$ and $g(x) = 4 \cdot 4^x$ are NOT equal --- check the problem
-        statement. If $g(x) = 8 \cdot 4^x \cdot (\sqrt{4})^{-1} = 8 \cdot (1/2) \cdot 4^x = 4 \cdot 4^x$,
-        these are not equal. The problem is intentionally asking students to check equality by
-        computing both --- the answer is \textbf{No, they are not equivalent}. This tests careful
-        algebraic work over blind assumption.
-      \end{teachernote}
+      \vspace{0.08in}
+      Simplified: \ans{$-2x^3 + 5x = -(2x^3 - 5x) = -g(x)$}
 
-      Are they equivalent? \ans{No --- $f(x) = 8 \cdot 4^x \ne 4 \cdot 4^x = g(x)$}
+      \vspace{0.08in}
+      $g$ is (circle): \textbf{Even} \quad {\color{keyred}\textbf{Odd}} \quad \textbf{Neither}
 
-\item \textbf{(AP-Style Multiple Choice)} Which expression is equivalent to $16^{x/4}$?
+\item \textbf{AP-Style Multiple Choice.}
+      $p(x) = (x+3)^2(x-1)(x-5)^3$.
 
-      Answer: \ans{(B)} \quad Reasoning: $16^{x/4} = (16^{1/4})^x = 2^x$.
-
-      \begin{teachernote}
-        $16^{1/4} = \sqrt[4]{16} = 2$ since $2^4 = 16$. Answer (C): $4^{x/2} = (4^{1/2})^x = 2^x$ is
-        also equal --- but the intended answer matching the standard form $(b^c)^x \to b^x$ is (B).
-        Accept (C) with full justification.
-      \end{teachernote}
-
-\item \textbf{Extension.} Find $b$ such that $f(x) = b^{2x}$ and $g(x) = 9 \cdot 3^x$ are the
-      same function.
-
-      \vspace{0.06in}
-      Rewrite $f$: $b^{2x} = (b^2)^x$.
-      For $f = g$, we need $(b^2)^x = 9 \cdot 3^x$.
-
-      But $9 \cdot 3^x$ is not in the form $c^x$ unless we write $9 \cdot 3^x = 3^2 \cdot 3^x = 3^{x+2}$,
-      which is not a single-base power of $x$.
-
-      The functions can be equal only if $9 = 1$, which is impossible --- \textbf{there is no value of $b$}
-      that makes $b^{2x}$ (form: $(b^2)^x$, no coefficient) equal to $9 \cdot 3^x$ (form: $a \cdot 3^x$ with $a \ne 1$).
-
-      \ans{No solution.} \quad ($b^{2x}$ has $a = 1$; $g$ has $a = 9 \ne 1$.)
-
-      \begin{teachernote}
-        This problem tests whether students recognize that $b^{2x} = (b^2)^x$ always has $a = 1$
-        (no vertical dilation), so it cannot equal $9 \cdot 3^x$. Stronger students may ask whether
-        $b$ could be complex --- a rich discussion opportunity.
-      \end{teachernote}
+      \begin{enumerate}[leftmargin=1.5em, itemsep=3pt, label=(\Alph*)]
+        \item {\color{keyred}\textbf{(A) $x=-3$ (tangent), $x=1$ (crosses), $x=5$ (crosses)
+              $\leftarrow$ correct}} \\
+              Multiplicity 2 at $x=-3$ (even $\Rightarrow$ tangent); mult.\ 1 at $x=1$
+              (odd $\Rightarrow$ crosses); mult.\ 3 at $x=5$ (odd $\Rightarrow$ crosses).
+        \item (B) Incorrect — reverses behavior at $x=-3$ and $x=1$.
+        \item (C) Incorrect — mult.\ 3 is odd, so $x=5$ crosses, not tangent.
+        \item (D) Incorrect — wrong zeros (sign errors).
+      \end{enumerate}
 
 \end{enumerate}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+A polynomial $p$ of unknown degree has output values recorded at equally-spaced inputs.
+The third differences of those outputs are all constant, each equal to $6$.
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item What is the degree of $p$?
+        \ansline{Degree 3. The $n$th differences of a degree-$n$ polynomial are constant (and nonzero). The 3rd differences are constant, so the degree is 3.}
+  \item Write a general form of a polynomial of that degree:
+        \ans{$p(x)=ax^3+bx^2+cx+d$} (with $a\neq 0$)
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{reflectionbox}
+\textbf{Preview:} In Lesson 1.6 we will study rational functions. As you finish this
+homework, think about: if a polynomial can be written as a ratio $\dfrac{p(x)}{q(x)}$,
+what happens when $q(x) = 0$? We'll explore vertical asymptotes and holes next class.
+\end{reflectionbox}
 
 \end{document}

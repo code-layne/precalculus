@@ -1,4 +1,4 @@
-%! Sinusoidal Function Transformations — Unit 3, Lesson 3.6 — Group Activity (Answer Key)
+%! Graphing Rational Functions — Unit 3, Lesson 3.6 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,146 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.6}{Group Activity --- Answer Key}
-\namepartnerperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
-\vspace{0.10in}
 
-\begin{scenariobox}[Context: Transformations of Sinusoidal Functions]{sky}
-The general form $f(\theta)=a\sin(b(\theta+c))+d$ encodes four independent
-features of a sinusoidal function. In this activity your group will decode
-these parameters from equations, connect them to transformations, and reason
-about how changes to each parameter affect the function.
-\end{scenariobox}
+\vspace{0.15in}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Tier R Key
-%----------------------------------------------------------------------
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Reinforce (Key)},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|l|c|c|c|c|c|}
-\hline
-\textbf{Function} & \textbf{$a$} & \textbf{$b$} & \textbf{Amplitude} & \textbf{Period} & \textbf{Midline} \\
-\hline
-$y = 3\sin(\theta) + 1$ & \ans{3} & \ans{1} & \ans{3} & \ans{$2\pi$} & \ans{$y=1$} \\
-\hline
-$y = -\sin(2\theta)$ & \ans{$-1$} & \ans{2} & \ans{1} & \ans{$\pi$} & \ans{$y=0$} \\
-\hline
-$y = \tfrac{1}{2}\sin(\pi\theta) - 3$ & \ans{$\tfrac{1}{2}$} & \ans{$\pi$} & \ans{$\tfrac{1}{2}$} & \ans{2} & \ans{$y=-3$} \\
-\hline
-$y = 5\cos(\theta) + 2$ & \ans{5} & \ans{1} & \ans{5} & \ans{$2\pi$} & \ans{$y=2$} \\
-\hline
-$y = -4\cos(3\theta) - 1$ & \ans{$-4$} & \ans{3} & \ans{4} & \ans{$2\pi/3$} & \ans{$y=-1$} \\
-\hline
-\end{tabular}
-
-\vspace{8pt}
-\textbf{1.} Maximum $= $ \ans{4} \qquad Minimum $= $ \ans{$-2$}
-
-\vspace{6pt}
-\textbf{2.} \ans{The negative sign reflects the graph over its midline ($y=0$), so the graph starts at 0, goes down first (to $-1$) instead of up.}
-
-\vspace{6pt}
-\textbf{3.}
-Maximum $= (-3) + (1/2) = $ \ans{$-2.5$} \qquad
-Minimum $= (-3) - (1/2) = $ \ans{$-3.5$}
-
-\vspace{6pt}
-\textbf{4.} $f(\theta) = $ \ans{$6\sin(2\theta) - 2$} \quad
-(amplitude 6: $a=6$; period $\pi$: $b=2$; midline $-2$: $d=-2$; no phase shift: $c=0$)
-
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Tier A Key
-%----------------------------------------------------------------------
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply (Key)},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Function 1:} $f(\theta) = 2\sin\!\left(3\!\left(\theta + \dfrac{\pi}{6}\right)\right) - 1$
-
-Amplitude: \ans{2} \quad Period: \ans{$2\pi/3$} \quad
-Phase shift: \ans{$-\pi/6$ (left $\pi/6$)} \quad Midline: \ans{$y=-1$}
-
-\vspace{6pt}
-\textbf{Function 2:} $g(\theta) = -3\cos(2\theta + \pi) + 4$
-
-Factor: $2\theta + \pi = 2\!\left(\theta + \ans{$\pi/2$}\right)$
-
-Amplitude: \ans{3} \quad Period: \ans{$\pi$} \quad
-Phase shift: \ans{$-\pi/2$ (left $\pi/2$)} \quad Midline: \ans{$y=4$}
-
-\vspace{6pt}
-\textbf{Function 3:} $h(\theta) = 4\sin\!\left(\dfrac{1}{2}\theta - \dfrac{\pi}{4}\right)$
-
-Factor: $\tfrac{1}{2}\theta - \tfrac{\pi}{4} = \tfrac{1}{2}\!\left(\theta - \ans{$\pi/2$}\right)$
-
-Amplitude: \ans{4} \quad Period: \ans{$4\pi$} \quad
-Phase shift: \ans{$\pi/2$ (right)} \quad Midline: \ans{$y=0$}
-
-\vspace{6pt}
-\textbf{Function 4:} $k(\theta) = \cos\!\left(2\theta - \dfrac{\pi}{3}\right) + 2$
-
-Factor: \ans{$2(\theta - \pi/6)$}
-
-Amplitude: \ans{1} \quad Period: \ans{$\pi$} \quad
-Phase shift: \ans{$\pi/6$ (right)} \quad Midline: \ans{$y=2$}
-
-\vspace{6pt}
-\textbf{Discussion:} \ans{Yes. Use $\cos\theta = \sin(\theta + \pi/2)$. For Function 2:
-$-3\cos(2(\theta+\pi/2))+4 = -3\sin(2(\theta+\pi/2)+\pi/2)+4 = -3\sin(2\theta+\pi+\pi/2)+4$,
-or equivalently shift the cosine form by an additional $\pi/2$ to convert to sine.
-Each cosine function requires an extra phase shift of $\pi/2$ to become a sine function.}
-
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Tier E Key
-%----------------------------------------------------------------------
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend (Key)},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Function A:} $p(\theta) = -3\cos(2\theta - \pi/3) + 1$
-
-Step 1: $2(\theta - \ans{$\pi/6$})$
-
-Step 2: amplitude \ans{3}, period \ans{$\pi$},
-phase shift \ans{$\pi/6$ right}, midline \ans{$y=1$}, reflected \ans{yes}.
-
-Step 3: $p(\theta) = -3\sin\!\Bigl(2\Bigl(\theta - \ans{$\pi/6$} + \ans{$\pi/4$}\Bigr)\Bigr) + 1
-= -3\sin\!\Bigl(2\Bigl(\theta - \ans{$-\pi/12$}\Bigr)\Bigr) + 1$
-
-\begin{teachernote}
-Step 3 detail: $\cos\theta = \sin(\theta+\pi/2)$, so $\cos(2(\theta-\pi/6)) = \sin(2(\theta-\pi/6)+\pi/2) = \sin(2\theta - \pi/3 + \pi/2) = \sin(2\theta + \pi/6) = \sin(2(\theta + \pi/12))$. Therefore $p(\theta) = -3\sin(2(\theta+\pi/12))+1$, phase shift $= -\pi/12$ (left).
-\end{teachernote}
-
-Step 4: \ans{Start with $y=\sin\theta$. Apply horizontal compression by factor $1/2$ (period becomes $\pi$). Shift left $\pi/12$. Stretch vertically by factor 3. Reflect over the midline. Shift up 1 unit.}
-
-\vspace{6pt}
-\textbf{Function B:} $q(\theta) = 5\sin(3\theta + \pi/2) - 2$
-
-Step 1: \ans{$3(\theta + \pi/6)$}
-
-Step 2: amplitude \ans{5}, period \ans{$2\pi/3$},
-phase shift \ans{$-\pi/6$ (left)}, midline \ans{$y=-2$}.
-
-Step 3: \ans{$q(\theta) = 5\cos(3\theta) - 2$} (since $\sin(\theta+\pi/2)=\cos\theta$)
-
-Step 4: \ans{Start with $y=\sin\theta$. Compress horizontally by factor $1/3$ (period $=2\pi/3$). Shift left $\pi/6$. Stretch vertically by factor 5. Shift down 2.}
-
-\vspace{6pt}
-\textbf{Challenge:} \ans{No. Two functions with the same amplitude and period can still differ in phase shift and midline. Four parameters --- $a$, $b$, $c$, $d$ --- are required to uniquely determine a sinusoidal function (up to whether sine or cosine is used as the parent).}
-
-\end{tcolorbox}
+% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Group Activity --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Guided Notes
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,132 +9,111 @@
 \pageheader{Unit 4, Lesson 4.7}{Guided Notes}
 \namedateperiod
 
-\vspace{0.1in}
+\vspace{0.06in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to:
-\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
-  \item \writeline
-  \item \writeline
-  \item \writeline
-\end{itemize}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Construct and compare \blank{3cm}, \blank{3cm}, and \blank{3cm} models for the
+        same data set. \hfill\textit{(LO 2.6.A)}
+  \item Validate a model by examining its \blank{4cm} plot for patterns. \hfill\textit{(LO 2.6.B)}
+  \item Interpret model \blank{3cm} as actual minus predicted and label it an over- or
+        underestimate. \hfill\textit{(LO 2.6.B)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
 \begin{vocabbox}
-\termblanklong{implicit curve}
-\termblanklong{parametrization}
-\termblanklong{ellipse parametrization}
-\termblanklong{parabola parametrization}
+\termblanklong{competing models}
+\termblanklong{residual}
+\termblanklong{residual plot}
+\termblanklong{error}
+\termblanklong{underestimate}
+\termblanklong{overestimate}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
 \begin{hookbox}
-The ellipse $\dfrac{x^2}{9}+\dfrac{y^2}{4}=1$ is \emph{not} a function --- it fails the vertical
-line test. But if a particle traces this ellipse over time, we can use parametric tools to find
-its position, extremes, and intercepts. How do we convert this implicit equation to a parametric form?
+Three companies each report 5 years of annual revenue (\$thousands):
 
-\writeline
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c}
+\textbf{Year} & \textbf{Company A} & \textbf{Company B} & \textbf{Company C} \\ \hline
+1 & 10 & 10 & 10 \\
+2 & 14 & 16 & 20 \\
+3 & 18 & 26 & 40 \\
+4 & 22 & 40 & 80 \\
+\end{tabular}
+\end{center}
+
+\medskip
+\textit{Which company's growth looks linear? Quadratic? Exponential?} \\
+A: \blank{4cm} \quad B: \blank{4cm} \quad C: \blank{4cm}
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
-\begin{notesbox}{Section 1 --- Ellipse Parametrization}
-\small
-\textbf{Setup.} Starting from $\dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1$, set
-$\dfrac{x-h}{a}=\cos t$ and $\dfrac{y-k}{b}=\sin t$.
+\begin{notesbox}{LO 2.6.A --- Reading Data Structure to Choose a Model (EK 2.6.A.1)}
+Use the data table below to compute first differences, second differences, and ratios.
 
-Then: \quad $x(t) = $ \blank{4cm} \quad and \quad $y(t) = $ \blank{4cm}
-
-Domain: $0 \le t \le $ \blank{1.5cm}
-
-\vspace{0.08in}
-\textbf{Verify.} Substitute back into the ellipse equation and use the identity
-$\cos^2 t + \sin^2 t = 1$:
-
-\vspace{0.06in}
-\hspace{1em} $\dfrac{(x(t)-h)^2}{a^2}+\dfrac{(y(t)-k)^2}{b^2}
-= \dfrac{(\blank{1.8cm})^2}{a^2}+\dfrac{(\blank{1.8cm})^2}{b^2}
-= \blank{1cm} + \blank{1cm} = \blank{0.8cm}$ \quad \checkmark
-
-\vspace{0.12in}
-\textbf{Example.} Ellipse $\dfrac{x^2}{16}+\dfrac{y^2}{4}=1$.
-Here $h=\blank{0.7cm}$, $k=\blank{0.7cm}$, $a=\blank{0.7cm}$, $b=\blank{0.7cm}$.
-
-\vspace{0.06in}
-Parametrization: \quad $x(t) = $ \blank{3.5cm} \quad $y(t) = $ \blank{3.5cm} \quad
-$0 \le t \le \blank{1.2cm}$
-
-\vspace{0.1in}
-\textbf{Extrema from the parametrization.}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{lll}
-Maximum $x(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
-Minimum $x(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
-Maximum $y(t)$: \blank{1.5cm} when $t = $ \blank{1.2cm} & $\Rightarrow$ & Point: \blank{2.2cm} \\
+\vspace{0.05in}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{c|c|c|c|c}
+$x$ & $y$ & $\Delta_1 = y_{\text{next}}-y$ & $\Delta_2 = \Delta_{1,\text{next}}-\Delta_1$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+0 &  3 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+1 &  6 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+2 & 12 & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+3 & 24 & --- & --- & --- \\
 \end{tabular}
+
+\medskip
+\textbf{Key:} Constant $\Delta_1$ $\Rightarrow$ \blank{3cm} \quad
+Constant $\Delta_2$ $\Rightarrow$ \blank{3cm} \quad
+Constant ratio $\Rightarrow$ \blank{3cm}
+
+\medskip
+\textbf{Contextual clues (EK 2.6.A.2):} If the data is described as ``growing faster and faster
+each period,'' this suggests \blank{3cm} growth. Use both the numbers and the context to decide.
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.05in}
 
-\begin{notesbox}{Section 2 --- Parabola Parametrization}
-\small
-\textbf{Setup.} For $y - k = a(x-h)^2$ (vertical parabola): set $x(t) = $ \blank{2.5cm},
-then $y(t) = $ \blank{4cm}, $t \in \mathbb{R}$.
+\begin{notesbox}{LO 2.6.B --- Residuals, Error, and Model Validation (EK 2.6.B.1 and B.2)}
+\textbf{Residual formula:} $e = y_{\text{actual}} - \hat{y}_{\text{predicted}}$
 
-Vertex at $t=0$: \blank{2cm}
-
-\vspace{0.1in}
-\textbf{Example.} $y = x^2 - 4x + 3$.
-
-Step 1 --- Complete the square: $y = (x - \blank{0.7cm})^2 - \blank{0.7cm}$.
-\; Vertex: $(\blank{1cm},\,\blank{1cm})$.
-
-Step 2 --- Parametrize: $x(t) = \blank{2cm}$, \quad $y(t) = \blank{3.5cm}$.
-
-Step 3 --- Fill the table:
-
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t)=2+t$ & $y(t)=t^2-1$ & Point \\
-\hline
-$-2$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
-\hline
-$-1$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
-\hline
-$\phantom{-}0$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
-\hline
-$\phantom{-}1$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
-\hline
-$\phantom{-}2$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2cm} \\
-\hline
+\medskip
+\begin{tabular}{l|l}
+If $e > 0$ (positive residual): the model is a(n) \blank{4cm} & the actual value is \emph{above} the prediction. \\[4pt]
+If $e < 0$ (negative residual): the model is a(n) \blank{4cm} & the actual value is \emph{below} the prediction. \\
 \end{tabular}
-\end{notesbox}
 
-\vspace{0.08in}
+\medskip
+\textbf{Residual plot:} Plot the point $(x_i,\, e_i)$ for each data value.
 
-\begin{notesbox}{Section 3 --- Applying Parametric Tools to Implicit Curves}
-\small
-\textbf{Ellipse:} $x(t) = 3\cos t$, \; $y(t) = 5\sin t$.
-
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item When does the curve cross the \textbf{$y$-axis}?
-    Set $x(t)=0$: $\cos t = 0$ $\Rightarrow$ $t = $ \blank{2.8cm}\\[2pt]
-    \hspace{1.4em} Coordinates at those $t$-values: \blank{4cm}
-
-  \item When does the curve cross the \textbf{$x$-axis}?
-    Set $y(t)=0$: $\sin t = 0$ $\Rightarrow$ $t = $ \blank{2.8cm}\\[2pt]
-    \hspace{1.4em} Coordinates at those $t$-values: \blank{4cm}
-
-  \item What is the \textbf{rightmost} point? Max of $x(t)=3\cos t$ is \blank{0.8cm},
-    occurring at $t = $ \blank{1cm}. Point: \blank{2cm}
-
-  \item What is the \textbf{topmost} point? Max of $y(t)=5\sin t$ is \blank{0.8cm},
-    occurring at $t = $ \blank{1cm}. Point: \blank{2cm}
+\begin{itemize}[itemsep=3pt]
+  \item Residuals \textbf{scattered without pattern} $\Rightarrow$ model is \blank{4cm} for the data.
+  \item Residuals showing a \textbf{curved} or \textbf{systematic pattern} $\Rightarrow$ model is \blank{4cm}.
 \end{itemize}
+
+\medskip
+\textbf{Example:} An exponential model gives $\hat{y} = 2 \cdot 3^x$.
+
+\vspace{0.04in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c|c|c|c}
+$x$ & Actual $y$ & Predicted $\hat{y}$ & Residual $e = y - \hat{y}$ \\ \hline
+0 & 2.5 & 2 & \blank{3cm} \\
+1 & 7   & 6 & \blank{3cm} \\
+2 & 17  & 18 & \blank{3cm} \\
+\end{tabular}
+
+\medskip
+Context note: if a model systematically \blank{3cm} the actual values, and this leads to
+a safety risk, you may prefer a model that \blank{3cm} instead.
 \end{notesbox}
 
 \end{document}

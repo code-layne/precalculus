@@ -1,0 +1,124 @@
+%! The Tangent Function — Unit 7, Lesson 7.1 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 7, Lesson 7.1}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.08in}
+
+\begin{notesbox}{Problems 1--6 --- Key}
+
+\textbf{1.}\quad Unit circle evaluations.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} p{0.28\linewidth} p{0.28\linewidth} p{0.28\linewidth} @{}}
+(a) $\tan(0) = $ \ans{$0$} &
+(b) $\tan\!\left(\dfrac{\pi}{4}\right) = $ \ans{$1$} &
+(c) $\tan\!\left(\dfrac{\pi}{2}\right) = $ \ans{undefined} \\[12pt]
+(d) $\tan(\pi) = $ \ans{$0$} &
+(e) $\tan\!\left(\dfrac{3\pi}{4}\right) = $ \ans{$-1$} &
+(f) $\tan\!\left(-\dfrac{\pi}{4}\right) = $ \ans{$-1$} \\
+\end{tabular}
+
+\vspace{0.12in}
+\textbf{2.}\quad Periods and asymptotes.
+
+\vspace{4pt}
+(a)\quad $g(\theta) = \tan\!\left(\dfrac{\theta}{3}\right)$
+
+\hspace{1em} Period $= $ \ans{$3\pi$} \hfill
+Asymptotes: $\theta = $ \ans{$\dfrac{3\pi}{2} + 3k\pi$ for integer $k$}
+
+\begin{teachernote}
+$b = 1/3$; period $= \pi/(1/3) = 3\pi$.  Asymptotes: $\theta/3 = \pi/2 + k\pi \Rightarrow \theta = 3\pi/2 + 3k\pi$.
+\end{teachernote}
+
+\vspace{0.10in}
+(b)\quad $h(\theta) = \tan(4\theta)$
+
+\hspace{1em} Period $= $ \ans{$\pi/4$} \hfill
+Asymptotes: $\theta = $ \ans{$\dfrac{\pi}{8} + \dfrac{k\pi}{4}$ for integer $k$}
+
+\vspace{0.10in}
+(c)\quad $p(\theta) = -3\tan(\theta) + 2$
+
+\hspace{1em} Period $= $ \ans{$\pi$} \hfill
+Asymptotes: $\theta = $ \ans{$\dfrac{\pi}{2} + k\pi$ for integer $k$}
+
+\begin{teachernote}
+$a$ and $d$ do not affect period or asymptote locations.
+\end{teachernote}
+
+\vspace{0.12in}
+\textbf{3.}\quad $f(\theta) = \tan\!\left(\theta - \dfrac{\pi}{6}\right)$
+
+\vspace{4pt}
+(a)\quad Phase shift: \ans{$+\pi/6$ (shift right $\pi/6$ units)}
+
+\vspace{4pt}
+(b)\quad Asymptote closest to $\theta = 0$ with $\theta > 0$:
+
+\ans{Set $\theta - \pi/6 = \pi/2 \Rightarrow \theta = \pi/2 + \pi/6 = 3\pi/6 + \pi/6 = 4\pi/6 = 2\pi/3$.
+The asymptote is at $\theta = 2\pi/3$.}
+
+\vspace{0.12in}
+\textbf{4.}\quad Description:
+
+\ans{The graph of $g(\theta) = 3\tan(2\theta)$ has period $\pi/2$ (half the period of $\tan\theta$) and all output values are tripled (vertical dilation by 3).  The asymptotes are twice as close together, and the graph rises and falls three times as steeply near each inflection point.}
+
+\vspace{0.12in}
+\textbf{5.}\quad AP-Style MC.
+
+\begin{teachernote}
+Set $\tfrac{\theta}{2}+\tfrac{\pi}{4} = \tfrac{\pi}{2} + k\pi$, so
+$\tfrac{\theta}{2} = \tfrac{\pi}{4}+k\pi$, so $\theta = \tfrac{\pi}{2}+2k\pi$.
+For $k=0$: $\theta = \pi/2$ (B); for $k=1$: $\theta = 5\pi/2$; etc.
+\end{teachernote}
+
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=3pt]
+  \item $\theta = \dfrac{\pi}{4}$
+  \item $\theta = \dfrac{\pi}{2}$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $\theta = \pi$
+  \item $\theta = \dfrac{3\pi}{2}$
+  \item $\theta = 2\pi$
+\end{enumerate}
+
+Answer: \ans{B}
+
+\vspace{0.12in}
+\textbf{6.}\quad
+
+(a)\quad \ans{Yes.  $\tan(-\pi/4) = -1$, $\tan(0) = 0$, $\tan(\pi/4) = 1$, $\tan(\pi/2)$ is undefined, $\tan(3\pi/4) = -1$.  All values match the definition $\tan\theta = \sin\theta/\cos\theta$.}
+
+(b)\quad \ans{The period suggested by the table is $\pi$ (the pattern from $-\pi/4$ to $3\pi/4$ repeats every $\pi$ units).}
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{extensionbox}
+\textbf{Extension (Optional) --- Key:}
+
+\ans{$\tan(\theta+\pi) = \dfrac{\sin(\theta+\pi)}{\cos(\theta+\pi)} = \dfrac{-\sin\theta}{-\cos\theta} = \dfrac{\sin\theta}{\cos\theta} = \tan\theta$.\\[4pt]
+The negatives cancel, confirming $\tan(\theta+\pi) = \tan\theta$.  This is why the period is $\pi$.}
+\end{extensionbox}
+
+\vspace{0.06in}
+
+\begin{tcolorbox}[colback=navylight, colframe=navy, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small\textbf{Preview --- Lesson 3.9: Inverse Trigonometric Functions}\\
+In Lesson 3.9 we will ask: if we know a sine, cosine, or tangent value, can we
+find the angle?  To answer that question we restrict the domain of each
+trigonometric function to make it invertible, then define $\arcsin$, $\arccos$,
+and $\arctan$.  The asymptote behavior you studied today --- $\tan\theta\to\pm\infty$
+as $\theta\to\pm\pi/2$ --- is precisely what tells us the range of $\arctan$.
+\end{tcolorbox}
+
+\end{document}

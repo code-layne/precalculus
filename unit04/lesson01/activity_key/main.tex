@@ -1,4 +1,4 @@
-%! Parametric Functions — Unit 4, Lesson 4.1 — Group Activity (Answer Key)
+%! Change in Arithmetic and Geometric Sequences — Unit 4, Lesson 4.1 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,105 +9,119 @@
 \pageheader{Unit 4, Lesson 4.1}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.12in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Tracking a Particle's Path]{sky}
-A particle moves in the $xy$-plane. Its position at time $t$ seconds
-is given by the parametric function
-\[
-  f(t) = \bigl(t^2,\; t - 1\bigr), \quad -2 \le t \le 3.
-\]
-Here $x(t) = t^2$ gives the particle's horizontal position and
-$y(t) = t - 1$ gives its vertical position (both in meters).
+\begin{scenariobox}[Sequences in the Wild]{sky}
+\small
+Sequences appear in finance, biology, and technology. In this activity you will identify
+sequence types, write explicit formulas, and use them to answer real questions. Work through
+the tier that matches your current level --- all tiers use the same big ideas.
 \end{scenariobox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{notesbox}{Part 1 --- Building the Table}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{1.}\quad Complete the table of values.
+For each sequence below: (a) identify it as \textbf{arithmetic} or \textbf{geometric},
+(b) find $d$ or $r$, (c) write the explicit formula starting at $n = 0$, and
+(d) find the 10th term ($n = 10$).
 
-\vspace{6pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ (sec) & $x(t) = t^2$ & $y(t) = t - 1$ & Position $(x,\; y)$ \\
-\hline
-$-2$ & \ans{$4$}  & \ans{$-3$} & \ans{$(4,\;-3)$} \\
-\hline
-$-1$ & \ans{$1$}  & \ans{$-2$} & \ans{$(1,\;-2)$} \\
-\hline
-$0$  & \ans{$0$}  & \ans{$-1$} & \ans{$(0,\;-1)$} \\
-\hline
-$1$  & \ans{$1$}  & \ans{$0$}  & \ans{$(1,\;0)$}  \\
-\hline
-$2$  & \ans{$4$}  & \ans{$1$}  & \ans{$(4,\;1)$}  \\
-\hline
-$3$  & \ans{$9$}  & \ans{$2$}  & \ans{$(9,\;2)$}  \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{2.}\quad Starting and ending positions:
-
-\ans{Start: $(4,\,-3)$ at $t = -2$. End: $(9,\,2)$ at $t = 3$.}
-
-\end{notesbox}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c >{\centering\arraybackslash}p{3.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}p{2.2cm} >{\centering\arraybackslash}X @{}}
+\textbf{Sequence} & \textbf{Type} & $d$ \textbf{or} $r$ & \textbf{Explicit formula} & \textbf{10th term} \\
+\midrule
+$5,\ 8,\ 11,\ 14,\ \ldots$      & \ans{arithmetic} & \ans{$d=3$} & \ans{$5+3n$}     & \ans{35} \\[6pt]
+$3,\ 6,\ 12,\ 24,\ \ldots$      & \ans{geometric}  & \ans{$r=2$} & \ans{$3\cdot2^n$} & \ans{3072} \\[6pt]
+$100,\ 90,\ 80,\ 70,\ \ldots$   & \ans{arithmetic} & \ans{$d=-10$} & \ans{$100-10n$}  & \ans{0} \\[6pt]
+$1,\ 5,\ 25,\ 125,\ \ldots$     & \ans{geometric}  & \ans{$r=5$} & \ans{$5^n$}       & \ans{$5^{10}=9{,}765{,}625$} \\[6pt]
+\end{tabularx}
+\end{tcolorbox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 2 --- Analyzing the Path}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{3.}\quad $t = -1$ and $t = 1$ both give $x(t) = 1$.
+\begin{enumerate}[itemsep=12pt]
 
-\ans{Both give $x = 1$, but at $t = -1$ the particle is at $(1,\,-2)$
-and at $t = 1$ it is at $(1,\,0)$. The particle does not visit the
-same location twice, but the parametric curve passes through the
-vertical line $x = 1$ at two different heights.}
+  \item An arithmetic sequence has $a_3 = 12$ and $a_7 = 28$.
+        Find the common difference $d$ and write the explicit formula $a_n$.
 
-\vspace{0.04in}
-\textbf{4.}\quad When does the particle cross the $y$-axis ($x = 0$)?
+        \vspace{0.04in}
+        $d = \dfrac{a_7 - a_3}{7 - 3} = $ \ans{$\dfrac{28-12}{4} = 4$}
 
-\ans{$t^2 = 0 \;\Rightarrow\; t = 0$.
-At $t = 0$: $y(0) = -1$.
-The particle crosses the $y$-axis at $(0,\,-1)$.}
+        \vspace{0.04in}
+        Explicit formula: $a_n = $ \ans{$a_3 + 4(n-3) = 12 + 4(n-3) = 4n$}
 
-\vspace{0.04in}
-\textbf{5.}\quad When is the particle on the $x$-axis ($y = 0$)?
+        \vspace{0.04in}
+        Check: $a_3 = $ \ans{12} \quad $a_7 = $ \ans{28}
 
-\ans{$t - 1 = 0 \;\Rightarrow\; t = 1$.
-At $t = 1$: $x(1) = 1$.
-The particle is on the $x$-axis at $(1,\,0)$.}
+  \item A geometric sequence has $g_2 = 12$ and $g_5 = 96$.
+        Find the common ratio $r$ and write the explicit formula $g_n$.
 
-\end{notesbox}
+        \vspace{0.04in}
+        $r^3 = \dfrac{g_5}{g_2} = \dfrac{96}{12} = $ \ans{8}, so $r = $ \ans{2}
+
+        \vspace{0.04in}
+        $g_0 = \dfrac{g_2}{r^2} = $ \ans{$12/4 = 3$}
+
+        \vspace{0.04in}
+        Explicit formula: $g_n = $ \ans{$3 \cdot 2^n$}
+
+  \item A phone plan charges \$25 in month 0 and adds \$8 per month.
+
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item Write the explicit formula for the monthly charge $a_n$ in month $n$:
+
+                $a_n = $ \ans{$25 + 8n$}
+
+          \item Find the charge in month 12: $a_{12} = $ \ans{\$121}
+
+          \item In which month does the charge first exceed \$100? \ans{Month 10 ($a_{10}=\$105$)}
+        \end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 3 --- Extension (Tier E)}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{6.}
+A bacteria colony triples every hour. After 3 hours there are 810 bacteria.
 
-(a) The two ordered pairs where $x = 1$:
+\begin{enumerate}[itemsep=12pt]
 
-\ans{$(1,\,-2)$ (at $t = -1$) and $(1,\,0)$ (at $t = 1$).}
+  \item Use the alternate formula $g_n = g_k \cdot r^{(n-k)}$ with $k = 3$, $g_3 = 810$,
+        and $r = 3$ to find $g_0$ (the initial population).
 
-(b) Can the curve be expressed as $y = g(x)$ on the full domain?
+        \vspace{0.04in}
+        $g_0 = g_3 \cdot r^{(0-3)} = 810 \cdot $ \ans{$3^{-3} = 810/27$} $=$ \ans{30}
 
-\ans{No. The vertical line $x = 1$ intersects the curve at two
-distinct points, $(1,\,-2)$ and $(1,\,0)$. A function can assign
-only one output per input, so the curve fails the vertical line
-test and cannot be written as $y = g(x)$ on $-2 \le t \le 3$.}
+  \item Write the explicit formula $g_n$ using $g_0$.
 
-\begin{teachernote}
-  This is the payoff of Lesson 4.1: parametric curves can fail the
-  vertical line test, which is why parametric form is more expressive
-  than $y = g(x)$. Reference CED Sample Instructional Activity 1
-  (p.\ 108): students discuss why parametric graphs can fail the
-  vertical line test.
-\end{teachernote}
+        \vspace{0.04in}
+        $g_n = $ \ans{$30 \cdot 3^n$}
 
-\end{notesbox}
+  \item Determine the smallest whole-number value of $n$ for which the population first
+        exceeds 100{,}000. Show your reasoning.
+
+        \vspace{0.04in}
+        We need $g_n > 100{,}000$: \ans{$30 \cdot 3^n > 100{,}000 \Rightarrow 3^n > 3333.3$; $3^7 = 2187 < 3334$, $3^8 = 6561 > 3334$}
+
+        \vspace{0.04in}
+        Smallest $n$: \ans{8}
+
+  \item Interpret your answer in context: what does $n$ represent in this problem?
+
+        \vspace{0.04in}
+        \ans{$n$ is the number of hours after the colony began. At $n = 8$ hours, the population first exceeds 100{,}000.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

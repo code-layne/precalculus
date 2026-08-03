@@ -1,4 +1,4 @@
-%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Exit Ticket (Answer Key)
+%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,45 +9,37 @@
 \pageheader{Unit 2, Lesson 2.2}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.14in}
+\vspace{0.15in}
 
-\begin{enumerate}[itemsep=20pt]
+\begin{notesbox}{Exit Ticket --- Key}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
 
-\item The table below shows inputs and outputs for a function.
+\item A polynomial function $p$ has exactly three distinct real zeros.
 
-      \medskip
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}{c|c}
-        $x$ & $f(x)$ \\ \hline
-        0 & 5 \\ 1 & 10 \\ 2 & 20 \\ 3 & 40
-      \end{tabular}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+    \item[(a)] Minimum number of local extrema:
 
-      \medskip
-      \ans{Exponential}
+    Answer: \ans{2}
 
-      \vspace{0.08in}
-      Check: \ans{Ratios: $10/5=2,\ 20/10=2,\ 40/20=2$ --- constant ratio $=2$.}
+    \item[(b)] Supporting principle:
 
-      \vspace{0.06in}
-      Write the formula: $f(x) = $ \ans{$5 \cdot 2^x$}
+    \ans{By EK 1.4.A.3, between every two distinct real zeros of a nonconstant polynomial there must be at least one local maximum or minimum. With three zeros there are two consecutive pairs, each requiring at least one local extremum --- so at least 2 local extrema total.}
+\end{enumerate}
 
-\item Write the exponential function through $(0,\ 3)$ and $(2,\ 75)$.
+\item A polynomial function $q$ has a point of inflection at $x = 2$.
+The AROC of $q$ over $[0, 2]$ is 3, and the AROC of $q$ over $[2, 4]$ is 7.
 
-      \vspace{0.08in}
-      Find the base $b$: $b = \left(\dfrac{75}{3}\right)^{1/2} = $ \ans{$\sqrt{25} = 5$}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+    \item[(a)] Is the AROC increasing or decreasing?
 
-      \vspace{0.08in}
-      Write the function: $f(x) = $ \ans{$3 \cdot 5^x$}
+    \ans{Increasing} --- the AROC goes from 3 to 7.
 
-\item \textbf{True or False:} A linear function and an exponential function can each be
-      uniquely determined by knowing just two input-output pairs. \\[6pt]
-      \ans{True}
+    \item[(b)] Concavity and explanation:
 
-      \vspace{0.06in}
-      Explain: \ans{Two points determine a unique slope (for linear) or a unique base and
-      initial value (for exponential), so both function types are fully specified by two
-      input-output pairs (EK 2.2.B.3).}
+    \ans{Concave up. When the AROC is increasing as $x$ increases, the graph is concave up. The rate of change switches from a smaller value (3) to a larger value (7) as we pass through $x=2$, which is consistent with the graph curving upward. The point of inflection at $x=2$ is where this switch occurs.}
+\end{enumerate}
 
 \end{enumerate}
+\end{notesbox}
 
 \end{document}

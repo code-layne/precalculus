@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Group Activity
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,115 +11,140 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Mission Control --- Parametrizing Conic Paths]{sky}
+\begin{scenariobox}[Choosing the Best Model for Online Store Sales]{sky}
 \small
-Mission Control is tracking three objects. Each follows a conic section path described by
-an implicit equation. Your job: write a parametrization for each object, then use parametric
-tools to extract key position data.
+An online store tracked monthly sales (in \$thousands) for five months. Three regression
+models were fit to the data. In each tier, you will analyze the models and determine which
+one is most appropriate for the data and the context.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c}
+\textbf{Month ($x$)} & \textbf{Actual $y$} & \textbf{Linear $\hat{y}_L$} & \textbf{Quadratic $\hat{y}_Q$} & \textbf{Exponential $\hat{y}_E$} \\
+\hline
+1 &  4 & 3.4  & 3.8  & 3.6 \\
+2 &  8 & 7.8  & 7.2  & 7.9 \\
+3 & 17 & 12.2 & 14.6 & 17.4 \\
+4 & 36 & 16.6 & 26.0 & 38.2 \\
+5 & 75 & 21.0 & 41.4 & 83.9 \\
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 1 — Space Station (ellipse)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 1 --- Space Station (Ellipse)},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-The station's orbital path satisfies $\dfrac{(x-1)^2}{64}+\dfrac{(y+2)^2}{36}=1$ (units: km).
 
-\textbf{(a)} Identify $h$, $k$, $a$, and $b$:
+All three regression models are given in the table above.
 
-\hspace{1em} $h = $ \blank{1.5cm} \quad $k = $ \blank{1.5cm} \quad $a = $ \blank{1.5cm} \quad $b = $ \blank{1.5cm}
+\begin{enumerate}[itemsep=10pt]
+  \item At $x = 3$ (Month 3), compute the error for each model.
+        Recall: error $= y_{\text{actual}} - \hat{y}$.
 
-\vspace{0.08in}
-\textbf{(b)} Write the parametrization ($0 \le t \le 2\pi$):
+        \vspace{0.04in}
+        Error (Linear): $17 - 12.2 = $ \blank{3cm}
 
-\hspace{1em} $x(t) = $ \blank{5cm} \qquad $y(t) = $ \blank{5cm}
+        Error (Quadratic): $17 - 14.6 = $ \blank{3cm}
 
-\vspace{0.08in}
-\textbf{(c)} Find the four extreme positions. Use the parametrization --- do not read from a graph.
+        Error (Exponential): $17 - 17.4 = $ \blank{3cm}
 
-\renewcommand{\arraystretch}{1.6}
-\hspace{1em}
-\begin{tabular}{lll}
-Rightmost ($x$ max): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
-Leftmost ($x$ min): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
-Highest ($y$ max): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
-Lowest ($y$ min): $t = $ \blank{1.5cm} & Point: \blank{3cm} \\
-\end{tabular}
+  \item Which model has the smallest absolute error at Month 3? \blank{5cm}
 
-\vspace{0.08in}
-\textbf{(d)} When does the station cross the $y$-axis? Set $x(t)=0$ and solve for $t$,
-then find the coordinates.
+  \item The store owner says: ``Sales more than doubled every month.'' Circle the model
+        type that best matches this description:
 
-\vspace{0.06in}
-\hspace{1em} $1 + 8\cos t = 0$ $\Rightarrow$ $\cos t = $ \blank{1.8cm} $\Rightarrow$ $t = $ \blank{2.5cm}
+        \hspace{2cm} \textbf{Linear} \hspace{2cm} \textbf{Quadratic} \hspace{2cm} \textbf{Exponential}
 
-\hspace{1em} $y$-axis crossing coordinates: \blank{5cm}
+  \item At $x = 5$, the exponential model predicts \$83.9 thousand but actual sales are
+        \$75 thousand. Is the model an overestimate or underestimate at this point?
+
+        \vspace{0.04in}
+        \blank{4cm} \quad because the error is \blank{2cm} (positive / negative --- circle one).
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 2 — Comet (parabola)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 2 --- Comet (Parabola)},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-The comet follows the path $y + 3 = 2(x-1)^2$.
 
-\textbf{(a)} Identify the vertex: \blank{2.5cm}. \quad Is the parabola vertical or horizontal? \blank{2.5cm}
+Use the actual $y$ values from the scenario table (column 2) to analyze data structure.
 
-\vspace{0.08in}
-\textbf{(b)} Write the parametrization with $x(t) = 1 + t$:
+\begin{enumerate}[itemsep=10pt]
+  \item Compute the first differences ($\Delta_1$) and the successive ratios for the actual data.
 
-\hspace{1em} $x(t) = 1 + t$ \qquad $y(t) = $ \blank{5cm} \qquad $t \in \mathbb{R}$
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{c|c|c|c}
+        $x$ & Actual $y$ & $\Delta_1$ & Ratio $= y_{\text{next}}/y$ \\ \hline
+        1 &  4 & \blank{2.5cm} & \blank{2.5cm} \\
+        2 &  8 & \blank{2.5cm} & \blank{2.5cm} \\
+        3 & 17 & \blank{2.5cm} & \blank{2.5cm} \\
+        4 & 36 & \blank{2.5cm} & \blank{2.5cm} \\
+        5 & 75 & --- & --- \\
+        \end{tabular}
 
-\vspace{0.08in}
-\textbf{(c)} When is the comet on the $x$-axis (i.e., $y = 0$)?
+  \item Based on the table, which model type is most strongly suggested? \blank{5cm}
 
-\hspace{1em} Set $y(t) = 0$: \blank{5cm}
+        Explain using one sentence about what is nearly constant in your table:
+        \writeline
 
-\hspace{1em} Solve for $t$: $t = $ \blank{3cm}
+  \item Using technology, record the $R^2$ value for each regression (if available):
 
-\hspace{1em} Find the $x$-coordinates: $x = $ \blank{3cm}
+        $R^2$ (Linear): \blank{2.5cm} \quad $R^2$ (Quadratic): \blank{2.5cm} \quad
+        $R^2$ (Exponential): \blank{2.5cm}
 
-\hspace{1em} Coordinates where comet crosses $x$-axis: \blank{5cm}
+  \item Combining the $R^2$ values and the data structure, which model is most appropriate?
+        State your conclusion in a complete sentence and reference the contextual clue from
+        the scenario.
+
+        \vspace{0.04in}
+        \writelines{2}
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 3 — Satellite (circle)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 3 --- Satellite (Circle)},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-The satellite follows a circular orbit satisfying $x^2 + y^2 = 100$.
 
-\textbf{(a)} Identify the center and radius:
+The residuals from the linear model for each data point are: $+0.6,\; +0.2,\; +4.8,\; +19.4,\; +54.0$.
 
-\hspace{1em} Center: \blank{2.5cm} \quad Radius: \blank{2.5cm}
+The residuals from the exponential model are: $+0.4,\; +0.1,\; -0.4,\; -2.2,\; -8.9$.
 
-\vspace{0.08in}
-\textbf{(b)} Write the standard parametrization:
+\begin{enumerate}[itemsep=10pt]
+  \item Describe any pattern you observe in the linear model's residuals.
 
-\hspace{1em} $x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
+        \vspace{0.04in}
+        \writeline
 
-Domain for one full counterclockwise orbit: \blank{3cm}
+  \item Describe the pattern (or lack of pattern) in the exponential model's residuals.
 
-\vspace{0.08in}
-\textbf{(c)} Where is the satellite when $t = \pi/4$?
+        \vspace{0.04in}
+        \writeline
 
-\hspace{1em} $x(\pi/4) = $ \blank{3.5cm} \quad (use $\cos(\pi/4) = \sqrt{2}/2$)
+  \item A patternless residual plot supports choosing that model (EK 2.6.B.1). Based on
+        this criterion alone, which model is more appropriate? \blank{5cm}
 
-\hspace{1em} $y(\pi/4) = $ \blank{3.5cm} \quad (use $\sin(\pi/4) = \sqrt{2}/2$)
+  \item The exponential model overestimates actual sales at $x = 4$ and $x = 5$.
+        Give one real-world reason why the store owner might still \emph{prefer} a model
+        that slightly overestimates (i.e., an overestimate has value in this context).
 
-\hspace{1em} Coordinates: \blank{4cm}
+        \vspace{0.04in}
+        \writelines{2}
+
+  \item Write a complete justification (3--4 sentences) for choosing the exponential model,
+        citing: (a) the residual plot pattern, (b) the data structure (ratios), and (c) the
+        contextual clue that ``sales more than doubled every month.''
+
+        \vspace{0.04in}
+        \writelines{3}
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}

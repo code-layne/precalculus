@@ -1,4 +1,4 @@
-%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Group Activity (Answer Key)
+%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,13 +9,21 @@
 \pageheader{Unit 2, Lesson 2.5}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Building Exponential Models]{sky}
+\begin{scenariobox}[End Behavior Explorer]{sky}
 \small
-Exponential models appear in medicine, ecology, finance, and physics. In each tier below, you will
-build and apply an exponential model, interpret its base, and use it to answer a contextual question.
-Work with your group on the tier assigned by your teacher.
+Examine the four polynomial functions below. Use the leading term of each to determine
+end behavior and write your answers using limit notation.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{} c l c l @{}}
+  \textbf{A.} & $f(x) = 2x^5 - 8x^3 + x - 4$ &
+  \textbf{B.} & $g(x) = -x^4 + 3x^2 + 10$ \\[2pt]
+  \textbf{C.} & $h(x) = -4x^3 + 12x^2 - 9x + 1$ &
+  \textbf{D.} & $k(x) = 5x^6 - 100x^4 + 3$ \\
+\end{tabular}
 \end{scenariobox}
 
 \vspace{0.1in}
@@ -24,32 +32,21 @@ Work with your group on the tier assigned by your teacher.
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Context:} A drug's concentration in the bloodstream halves every 4 hours. The initial
-concentration is 200 mg/L.
+Use the \textbf{rules table} from your notes to complete the limit notation for each function.
+The leading term has been identified for you.
 
-\begin{enumerate}[itemsep=10pt]
-  \item The model is $C(t) = 200 \cdot (0.5)^{t/4}$, where $t$ is hours. Complete the table.
-
-        \vspace{0.06in}
-        \renewcommand{\arraystretch}{1.8}
-        \begin{tabular}{c|c}
-        \textbf{Time $t$ (hours)} & \textbf{Concentration $C(t)$ (mg/L)} \\ \hline
-        0  & \ans{200} \\
-        4  & \ans{100} \\
-        8  & \ans{50} \\
-        12 & \ans{25} \\
-        \end{tabular}
-
-  \item What is the base of this exponential model? What does it tell you about the drug?
-
-        \vspace{0.06in}
-        Base: \ans{0.5} \quad Meaning: \ans{Every 4 hours, the concentration is multiplied by 0.5 (halved).}
-
-  \item Use the model to find the concentration after 6 hours. Show your work.
-
-        \vspace{0.06in}
-        $C(6) = 200 \cdot (0.5)^{6/4} = $ \ans{$200 \cdot (0.5)^{1.5} = 200 \cdot 0.3536$} $\approx$ \ans{70.7} mg/L
-\end{enumerate}
+\smallskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Function} & \textbf{Leading Term} & \textbf{Degree} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
+\hline
+$f(x)$ & $2x^5$   & 5 (odd)  & \ans{$\infty$}  & \ans{$-\infty$} \\
+$g(x)$ & $-x^4$   & 4 (even) & \ans{$-\infty$} & \ans{$-\infty$} \\
+$h(x)$ & $-4x^3$  & 3 (odd)  & \ans{$-\infty$} & \ans{$\infty$} \\
+$k(x)$ & $5x^6$   & 6 (even) & \ans{$\infty$}  & \ans{$\infty$} \\
+\hline
+\end{tabular}
 \end{tcolorbox}
 
 \vspace{0.1in}
@@ -58,34 +55,35 @@ concentration is 200 mg/L.
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Context:} A town's population was 4{,}000 in Year 2 and 6{,}250 in Year 5.
-Assume exponential growth.
+\begin{enumerate}[itemsep=8pt]
+  \item For each function, identify the leading term yourself, then write the limit notation.
 
-\begin{enumerate}[itemsep=10pt]
-  \item Set up and solve a system of equations to find $a$ and $b$ in $P(t) = ab^t$.
+  \renewcommand{\arraystretch}{2.0}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  \textbf{Function} & \textbf{Leading Term} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
+  \hline
+  $f(x) = 2x^5 - 8x^3 + x - 4$ & \ans{$2x^5$}   & \ans{$\infty$}  & \ans{$-\infty$} \\
+  $g(x) = -x^4 + 3x^2 + 10$    & \ans{$-x^4$}   & \ans{$-\infty$} & \ans{$-\infty$} \\
+  $h(x) = -4x^3 + 12x^2 - 9x + 1$ & \ans{$-4x^3$} & \ans{$-\infty$} & \ans{$\infty$} \\
+  $k(x) = 5x^6 - 100x^4 + 3$   & \ans{$5x^6$}   & \ans{$\infty$}  & \ans{$\infty$} \\
+  \hline
+  \end{tabular}
 
-        \vspace{0.06in}
-        Equation 1: \ans{$4000 = ab^2$}
+  \item For function $k(x) = 5x^6 - 100x^4 + 3$, a student notices that $-100x^4$ is a large
+        negative number for medium values of $x$ (say $x = 5$). She claims the end behavior
+        should be $-\infty$. Explain why she is wrong.
 
-        Equation 2: \ans{$6250 = ab^5$}
+        \vspace{0.1in}
+        \ansline{The student is looking at an intermediate value, not the long-run behavior. As $x \to \infty$,
+        the ratio $-100x^4 / 5x^6 = -20/x^2 \to 0$, so the $-100x^4$ term becomes negligible
+        compared to $5x^6$. The leading term $5x^6$ dominates, giving end behavior $\infty$.}
 
-        Divide to find $b$: \ans{$\dfrac{6250}{4000} = b^{5-2} = b^3$, so $b^3 = 1.5625$}
+  \item Without a calculator, predict: for which function(s) does $\lim_{x \to \infty} p(x) = \infty$
+        AND $\lim_{x \to -\infty} p(x) = -\infty$? Circle the letter(s).
+        \quad \ans{A} \quad B \quad C \quad D
 
-        \vspace{0.04in}
-        $b = $ \ans{$1.5625^{1/3} \approx 1.16$} \quad then $a = $ \ans{$4000 / (1.16)^2 \approx 2973$}
-
-        \vspace{0.04in}
-        Model: $P(t) = $ \ans{$2973 \cdot (1.16)^t$}
-
-  \item What is the annual growth rate as a percent? \ans{Approximately 16\% per year ($b \approx 1.16$, so $r \approx 0.16$).}
-
-  \item Predict the population at Year 10. Then note: is this prediction within a reasonable domain?
-
-        \vspace{0.06in}
-        $P(10) = $ \ans{$2973 \cdot (1.16)^{10}$} $\approx$ \ans{13{,}100}
-
-        \vspace{0.04in}
-        Domain note: \ans{Year 10 is close to the data range; extrapolating far beyond Year 5 requires caution.}
+        \textit{(Only $f(x) = 2x^5\ldots$: odd degree, positive leading coefficient.)}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -95,47 +93,33 @@ Assume exponential growth.
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Context:} $f(d) = 3 \cdot 2^d$ models the daily growth of a bacterial colony, where
-$d$ is the number of days and $f(d)$ is the colony size in thousands.
+\begin{enumerate}[itemsep=8pt]
+  \item Complete all of Tier A first.
 
-\begin{enumerate}[itemsep=10pt]
-  \item Rewrite $f(d)$ as a model $g(w) = a \cdot b^w$, where $w$ is the number of \textbf{weeks}.
-        Show the algebra clearly.
+  \item Create your own polynomial function that satisfies ALL of the following:
+        \begin{itemize}
+          \item Even degree
+          \item Negative leading coefficient
+          \item Exactly 3 distinct real zeros
+        \end{itemize}
 
-        \vspace{0.06in}
-        $g(w) = $ \ans{$3 \cdot 2^{7w} = 3 \cdot (2^7)^w = 3 \cdot 128^w$} \quad What does the base $b$ mean in this context?
+        Write your polynomial in factored form: \quad $p(x) = $ \ans{$-(x-1)(x+2)(x-3)(x+1)$}
+        \textit{(many valid answers; must have even degree and negative leading coeff)}
 
-        \vspace{0.04in}
-        \ans{The colony multiplies by a factor of 128 every week.}
+        What is the degree of your polynomial? \ans{4 (or any even degree $\geq 4$)}
 
-  \item Rewrite $f(d)$ as a model $h(n) = a \cdot c^n$, where $n$ is the number of \textbf{3-day
-        periods} (so $d = 3n$). What does the base $c$ mean?
+  \item Describe the end behavior of your polynomial using limit notation.
 
-        \vspace{0.06in}
-        $h(n) = $ \ans{$3 \cdot 2^{3n} = 3 \cdot (2^3)^n = 3 \cdot 8^n$} \quad Meaning of base $c$: \ans{The colony multiplies by 8 every 3 days.}
+        $\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
 
-  \item After how many days does the colony first exceed 10{,}000 thousand (i.e., $f(d) > 10000$)?
+  \item Explain in one sentence why a polynomial with even degree and negative leading coefficient
+        must have the same end behavior on both sides.
 
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.6}
-        \begin{tabular}{c|c}
-        $d$ & $f(d) = 3 \cdot 2^d$ \\ \hline
-        10 & \ans{3072} \\
-        11 & \ans{6144} \\
-        12 & \ans{12288} \\
-        \end{tabular}
-
-        \vspace{0.06in}
-        The colony first exceeds 10{,}000 thousand after $d = $ \ans{12} days.
+        \vspace{0.1in}
+        \ansline{For even degree, $x^n$ and $(-x)^n$ are equal, so the leading term gives the same
+        (large positive) magnitude on both sides; multiplying by a negative coefficient makes both
+        sides go to $-\infty$.}
 \end{enumerate}
 \end{tcolorbox}
-
-\begin{teachernote}
-Tier R: $C(6) = 200 \cdot (0.5)^{1.5} = 200/2\sqrt{2} \approx 70.7$ mg/L. Accept 70--71 mg/L.
-
-Tier A: Exact value of $b = (6250/4000)^{1/3} = (25/16)^{1/3}$. Numerically $\approx 1.1604$. Then $a = 4000/b^2 \approx 2973$. Students who get $b \approx 1.16$ and a reasonable $a$ should be credited.
-
-Tier E: Item 3 --- $3 \cdot 2^{12} = 3 \cdot 4096 = 12288 > 10000$, and $3 \cdot 2^{11} = 6144 < 10000$, so the colony first exceeds 10{,}000 thousand after day 12.
-\end{teachernote}
 
 \end{document}

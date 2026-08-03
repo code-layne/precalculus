@@ -1,4 +1,4 @@
-%! Inverse Functions — Unit 2, Lesson 2.8 — Homework (Answer Key)
+%! Modeling with Polynomial Functions — Unit 2, Lesson 2.8 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,136 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.8}{Homework --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Homework], never in a key.
 
-\vspace{0.1in}
 
-\begin{enumerate}[itemsep=14pt]
+\vspace{0.15in}
 
-\item \textbf{Inverse from a Table.} The table below shows values of $f$.
-
-      \vspace{0.06in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$    & $-2$ & $0$ & $3$ & $5$ & $7$ \\
-      \hline
-      $f(x)$ &  $4$ & $1$ & $4$ & $9$ & $16$ \\
-      \hline
-      \end{tabular}
-
-      \vspace{0.08in}
-      (a) Write the inverse table by reversing each pair.
-
-      \vspace{0.04in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$          & \ans{4} & \ans{1} & \ans{4} & \ans{9} & \ans{16} \\
-      \hline
-      $f^{-1}(x)$  & \ans{$-2$} & \ans{0} & \ans{3} & \ans{5} & \ans{7} \\
-      \hline
-      \end{tabular}
-
-      \vspace{0.06in}
-      (b) Is $f$ invertible? Explain by checking for repeated output values.
-
-      \vspace{0.04in}
-      \ansline{No. The output value 4 appears twice (for $x=-2$ and $x=3$).}
-      \ansline{The reversed pairs $\{(4,-2),(4,3)\}$ do not define a function.}
-
-\item \textbf{Find an Inverse Algebraically.} Find $f^{-1}(x)$ for $f(x) = 6x + 2$. Show all steps.
-
-      \vspace{0.06in}
-      Step 1 (write $y$): \ans{$y = 6x + 2$}
-
-      \vspace{0.04in}
-      Step 2 (swap): \ans{$x = 6y + 2$}
-
-      \vspace{0.04in}
-      Step 3 (solve): \ans{$x - 2 = 6y$, so $y = \dfrac{x-2}{6}$}
-
-      \vspace{0.04in}
-      $f^{-1}(x) = $ \ans{$\dfrac{x-2}{6}$}
-
-\item \textbf{Find and Verify.} Let $g(x) = \dfrac{x + 3}{4}$.
-
-      \vspace{0.06in}
-      (a) Find $g^{-1}(x)$ algebraically.
-
-      \vspace{0.04in}
-      $g^{-1}(x) = $ \ans{$4x - 3$}
-
-      \begin{teachernote}
-      Steps: $y=(x+3)/4$ $\to$ swap: $x=(y+3)/4$ $\to$ $4x=y+3$ $\to$ $y=4x-3$.
-      \end{teachernote}
-
-      \vspace{0.06in}
-      (b) Verify using composition: show $g(g^{-1}(x)) = x$.
-
-      \vspace{0.04in}
-      $g(g^{-1}(x)) = \dfrac{\left({\color{keyred}\mathbf{4x-3}}\right) + 3}{4} = \dfrac{4x}{4} = $ \ans{$x$} \checkmark
-
-\item \textbf{Domain Restriction.} Let $h(x) = x^2$.
-
-      \vspace{0.06in}
-      (a) Explain why $h$ is not invertible on all real numbers.
-
-      \vspace{0.04in}
-      \ansline{$h(2)=4$ and $h(-2)=4$: two different inputs produce the same output.}
-      \ansline{The function fails the one-to-one test, so the inverse is not a function.}
-
-      (b) Suggest a domain restriction that makes $h$ invertible.
-
-      \vspace{0.04in}
-      Restricted domain: \ans{$x \ge 0$} (or $x \le 0$)
-
-      (c) Find $h^{-1}(x)$ on your restricted domain.
-
-      \vspace{0.04in}
-      $h^{-1}(x) = $ \ans{$\sqrt{x}$}
-
-\item \textbf{Real-World Inverse.} The function $C(F) = \dfrac{F - 32}{1.8}$ converts
-      Fahrenheit to Celsius.
-
-      \vspace{0.06in}
-      (a) Find $C^{-1}(x)$ algebraically. Show all steps.
-
-      \vspace{0.04in}
-      $C^{-1}(x) = $ \ans{$1.8x + 32$}
-
-      \begin{teachernote}
-      Steps: $y=(F-32)/1.8$; swap $\to$ $x=(y-32)/1.8$; solve $\to$ $y=1.8x+32$.
-      \end{teachernote}
-
-      \vspace{0.06in}
-      (b) Interpret $C^{-1}(x)$ in context: what does the input represent? The output?
-
-      \vspace{0.04in}
-      \ansline{Input: a Celsius temperature. Output: the equivalent Fahrenheit temperature.}
-      \ansline{$C^{-1}$ converts Celsius back to Fahrenheit.}
-
-      (c) Evaluate $C^{-1}(100)$. What does your answer mean?
-
-      \vspace{0.04in}
-      $C^{-1}(100) = $ \ans{212} \quad Meaning: \ansline{100 degrees Celsius equals 212 degrees Fahrenheit (the boiling point of water).}
-
-\item \textbf{AP-Style Multiple Choice.} If $f(3) = 7$ and $f$ is invertible, which of the
-      following must be true?
-
-      \vspace{0.06in}
-      \begin{tabular}{@{}ll@{\qquad}ll@{}}
-      (A) $f^{-1}(7) = 3$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}} & (B) $f^{-1}(3) = 7$ & (C) $f(7) = 3$ & (D) $f^{-1}(3) = \dfrac{1}{7}$
-      \end{tabular}
-
-      \vspace{0.06in}
-      Answer: \ans{A} \quad Explain your choice: \ansline{By definition of the inverse: if $f(3)=7$ then $f^{-1}(7)=3$. (B) reverses the wrong pair; (C) and (D) have no basis in the given information.}
-
-\end{enumerate}
-
-\begin{reflectionbox}
-How does knowing about inverse functions help you understand what a logarithm might be?
-\writelines{2}
-\end{reflectionbox}
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
+\end{notesbox}
 
 \end{document}

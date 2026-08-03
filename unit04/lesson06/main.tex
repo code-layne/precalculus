@@ -1,4 +1,4 @@
-%! Conic Sections — Unit 4, Lesson 4.6 — Lesson Plan
+%! Exponential Function Context and Data Modeling — Unit 4, Lesson 4.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,384 +8,169 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 4: Functions Involving Parameters, Vectors, and Matrices \quad}
-\newcommand{\LessonNumberName}{Lesson 4.6: Conic Sections}
+\newcommand{\UnitNumberName}{Unit 4: Exponential Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.6: Exponential Function Context and Data Modeling}
 
 \begin{document}
-
-%----------------------------------------------------------------------
-% Title Block
-%----------------------------------------------------------------------
 \begin{center}
-  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
-  {\small\bfseries \UnitNumberName \LessonNumberName \quad (3 instructional periods, \MeetingLength\ each)}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-%----------------------------------------------------------------------
-% Primary Objective
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective:} Students will write, interpret, and convert
-  analytic representations of parabolas, ellipses, circles, and hyperbolas
-  with horizontal or vertical lines of symmetry, identifying center or vertex,
-  axes radii, and asymptotes from standard form equations.
-  \textit{(Big Idea: Functions)}
+    \textbf{Primary Objective:} Students will construct exponential function models from
+    contextual data (using a growth/decay ratio and initial value, or two input-output pairs),
+    interpret the base as a growth factor and percent change, and apply models to make
+    predictions within a reasonable domain.
+    \hfill\textit{\small Skills: 1.C and 3.B}
 \end{tcolorbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Priority Ideas & Skills
-%----------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
-\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
 \midrule
-\textbf{1.B} \textit{Express in equivalent forms} ---
-  Rewrite a general second-degree equation (e.g.\ $4x^2 - 9y^2 = 36$) in
-  standard conic form by dividing through or completing the square, then
-  identify the conic type and its key measurements.
-&
-\textbf{EK 4.6.A.1}: A parabola with vertex $(h,k)$ can, if $a \ne 0$, be
-represented analytically as $x - h = a(y - k)^2$ if it opens left or right,
-or as $y - k = a(x - h)^2$ if it opens up or down. \\[4pt]
-
-\textbf{2.A} \textit{Identify information from representations} ---
-  Extract the center, vertex, semi-axes, and asymptotes directly from a
-  standard-form equation without graphing.
-&
-\textbf{EK 4.6.A.2}: An ellipse centered at $(h,k)$ with horizontal radius $a$
-and vertical radius $b$ is represented as
-$\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1$.
-A circle is a special case where $a = b$. \\[4pt]
-
-\textbf{2.B} \textit{Construct equivalent representations} ---
-  Given a verbal or geometric description of a conic (center or vertex plus key
-  measurements), write the standard-form equation.
-&
-\textbf{EK 4.6.A.3}: A hyperbola centered at $(h,k)$ is
-$\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$ (opens left/right)
-or $\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$ (opens up/down),
-with asymptotes $y - k = \pm\dfrac{b}{a}(x - h)$. \\
+\textbf{Skill 1.C} --- Identify mathematical information from graphical, numerical, analytical, and verbal representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Successive output ratios over equal-length input intervals reveal exponential structure. (EK 2.5.A.1)
+  \item A model $f(x) = ab^x$ is built from an initial value $a$ and base $b$, or solved from two points. (EK 2.5.A.3)
+  \item The natural base $e \approx 2.718$ appears in continuous growth models. (EK 2.5.A.6)
+\end{itemize} \\
+\textbf{Skill 3.B} --- Apply an appropriate mathematical definition, theorem, or test. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Base $b$ is the growth factor; $b = 1+r$ for growth, $b = 1-r$ for decay. (EK 2.5.B.1)
+  \item Equivalent forms reveal different time-scale properties: $2^d = (2^7)^{d/7}$. (EK 2.5.B.2)
+  \item Models predict values within contextual domain constraints. (EK 2.5.B.3)
+\end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
-\textbf{Term} & \textbf{Definition / Note} \\
-\midrule
-conic section &
-  A curve formed by the intersection of a plane and a double cone:
-  parabola, ellipse (including circles), or hyperbola. \\[4pt]
-parabola &
-  The set of points equidistant from a fixed focus and a fixed directrix;
-  vertex $(h,k)$ in standard form. \\[4pt]
-vertex &
-  The turning point of a parabola; the point $(h,k)$
-  in $y - k = a(x-h)^2$ or $x - h = a(y-k)^2$. \\[4pt]
-ellipse &
-  The set of points for which the sum of distances to two foci is constant;
-  has a center and two perpendicular axes. \\[4pt]
-center &
-  The point $(h,k)$ at the center of an ellipse or hyperbola. \\[4pt]
-semi-major / semi-minor axis &
-  The larger ($a$) and smaller ($b$) half-axes of an ellipse. \\[4pt]
-circle &
-  Special ellipse with $a = b = r$; equation
-  \TallMath{(x-h)^2 + (y-k)^2 = r^2}. \\[4pt]
-hyperbola &
-  The set of points for which the \emph{difference} of distances to two foci
-  is constant; has two branches and two asymptote lines. \\[4pt]
-asymptote &
-  Lines the hyperbola approaches but never reaches:
-  \TallMath{y - k = \pm\tfrac{b}{a}(x - h)}. \\
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
+exponential model      & A function $f(x) = ab^x$ that models proportional growth or decay over equal-length intervals. \\
+growth factor          & The base $b$ in $f(x) = ab^x$; the multiplier applied at each unit step. \\
+percent change         & The rate $r$ such that $b = 1+r$ (growth) or $b = 1-r$ (decay); expressed as a percentage. \\
+initial value          & The value $a = f(0)$; the output when the input equals zero. \\
+natural base $e$       & The irrational number $e \approx 2.718$; used as the base in continuous growth/decay models. \\
+exponential regression & A technology-produced best-fit exponential model for a data set. \\
+prediction             & Using the model to estimate an output for an input not in the original data. \\
+domain restriction     & Limiting the input values of a model to those that are meaningful in context. \\
 \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Activate Prior Knowledge
-%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{tabularx}{\linewidth}{@{}X c@{}}
-\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
-\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item \textbf{Completing the square}: Rewrite $x^2 - 6x$ as $(x-3)^2 - 9$
-    --- the essential algebraic tool for converting general equations to
-    standard conic form.
-  \item \textbf{Equation of a circle}: Recall $(x-h)^2 + (y-k)^2 = r^2$ as a
-    familiar instance of the ellipse standard form, grounding new content in
-    prior knowledge.
-  \item \textbf{Reading standard form}: Identify center and radii from a
-    given ellipse equation --- directly previews extracting features from
-    ellipse and hyperbola equations.
-\end{itemize}
-\end{minipage}
-&
-\end{tabularx}
+    Spiral review (warm-up) covers skills from Lesson 2.4: rewriting exponential expressions
+    using exponent rules. Students rewrite $f(x) = 2^{x+5}$ in $a \cdot 2^x$ form, convert
+    $4^{3x}$ to a single base to the $x$ power, and simplify $9^{3/2}$.
 \end{skillbox}
 
-\vspace{0.08in}
+\begin{skillbox}[Hook]{sky}
+Present the following population data on the board:
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
-\begin{skillbox}[Hook --- Entry Event]{sky}
-\textbf{Scenario:} ``Planetary orbits are ellipses. Telescope mirrors are
-parabolas. Navigation systems like LORAN use hyperbolas. What do all these
-shapes have in common, and how do we write equations that pin them down
-precisely?''
+\medskip
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Year} & \textbf{Population} \\ \hline
+0 & 10{,}000 \\
+1 & 10{,}300 \\
+2 & 10{,}609 \\
+3 & 10{,}927 \\
+\end{tabular}
+\end{center}
 
-\textbf{Discussion prompts:}
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item \textit{``A satellite dish focuses signals at one point. What shape is
-    the dish, and why does that shape work?''}
-  \item \textit{``Earth's orbit is an ellipse with the Sun at one focus. How
-    is an ellipse different from a circle?''}
-  \item \textit{``Two radio stations broadcast simultaneously. A ship measures
-    the difference in arrival times. The set of positions with a fixed
-    difference in distances to the two stations is what shape?''}
-\end{enumerate}
-
-\textbf{Key tension to surface:} All three conics share elegant standard-form
-equations. Mastering those equations lets us describe physical curves precisely.
-
-\textbf{Transition:} ``Over three periods we master the standard form of each
-conic, identify key features, and write equations from descriptions.''
+\medskip
+Ask: \textbf{``Is this growth linear or exponential? What is the growth rate per year?''}
+After student responses, compute successive ratios: $10300/10000 = 1.03$, $10609/10300 \approx 1.03$,
+etc. Reveal: \textit{equal ratios over equal intervals --- this is exponential with a 3\% annual
+growth rate.} Today's lesson: how do we build and use such a model?
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson — Period 1: Parabolas
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson --- Period 1: Parabolas]{sky}
+\begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
+\textbf{Part 1 (15 min): Build from Ratio and Initial Value.}
 
-\textbf{Step 1 --- Two Orientations} (10 min)
+If $b$ is the growth factor and $a$ is the initial value:
+$f(x) = a \cdot b^x$. For the hook: $f(t) = 10000 \cdot (1.03)^t$.
 
-Present both standard forms:
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item \textbf{Vertical axis:} $y - k = a(x - h)^2$
-    ($a > 0$ opens up; $a < 0$ opens down)
-  \item \textbf{Horizontal axis:} $x - h = a(y - k)^2$
-    ($a > 0$ opens right; $a < 0$ opens left)
-\end{itemize}
-Emphasize: the \emph{squared variable} tells you the axis of symmetry.
+Connect percent change to base: growth at rate $r \Rightarrow b = 1+r$;
+decay at rate $r \Rightarrow b = 1-r$.
+
+Model 3 examples: (1) 5\% annual growth from 200; (2) 12\% annual decay from 500;
+(3) given a table --- check ratios, read off $a$ and $b$.
 
 \columnbreak
 
-\textbf{Step 2 --- Reading the Equation} (20 min)
+\textbf{Part 2 (15 min): Build from Two Points.}
 
-Model: $y + 3 = 2(x - 1)^2$.
-Rewrite as $y - (-3) = 2(x-1)^2$.
-Vertex $(1, -3)$; $a = 2 > 0$ $\Rightarrow$ opens \emph{up}.
+Given $(x_1, y_1)$ and $(x_2, y_2)$, set up the system:
+$y_1 = ab^{x_1}$ and $y_2 = ab^{x_2}$.
+Divide to eliminate $a$: $b^{x_2 - x_1} = y_2/y_1$; solve for $b$, then $a$.
 
-Student practice:
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item $y - 5 = -(x + 2)^2$ --- vertex and direction?
-  \item $x - 4 = -\tfrac{1}{2}(y - 1)^2$ --- vertex and direction?
-\end{itemize}
+Model full example: population 4000 at year 2, 6250 at year 5 (Activity Tier A preview).
 
-Ask: \textit{``How does the sign of $a$ tell you direction without
-graphing?''}
+Introduce the natural base $e \approx 2.718$: used in continuous models, $f(t) = ae^{rt}$.
+Compare to discrete base: $e^{0.03} \approx 1.0305$ (≈ 3.05\% continuous growth).
 
 \end{multicols}
 
-\smallskip
-\textbf{Pacing:} Reserve final 15 min for students to start Tier R portion of activity.
+\medskip
+\textbf{Part 3 (10 min): Apply the Model --- Prediction and Equivalent Forms.}
+
+Emphasize domain cautions: does the model apply far in the future?
+
+Equivalent forms (EK 2.5.B.2): $f(d) = 3 \cdot 2^d$ models daily growth. Rewrite for weekly:
+$f(d) = 3 \cdot (2^7)^{d/7} = 3 \cdot 128^{d/7}$. Each unit of $d/7$ is one week, factor is 128.
+What does $128$ tell us? The quantity multiplies by 128 each week.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson — Period 2: Ellipses and Circles
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson (cont.) --- Period 2: Ellipses and Circles]{sky}
-\begin{multicols}{2}
-
-\textbf{Step 3 --- Ellipse Standard Form} (15 min)
-
-Standard form: $\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1$
-
-Example: $\dfrac{(x+1)^2}{16} + \dfrac{(y-3)^2}{9} = 1$
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Center: $(-1, 3)$
-  \item $a^2 = 16 \Rightarrow a = 4$ (horizontal radius)
-  \item $b^2 = 9 \Rightarrow b = 3$ (vertical radius)
-\end{itemize}
-
-\columnbreak
-
-\textbf{Step 4 --- Circle as Special Ellipse} (15 min)
-
-When $a = b = r$: $(x-h)^2 + (y-k)^2 = r^2$.
-
-Confirm: $\dfrac{(x-2)^2}{25} + \dfrac{(y+1)^2}{25} = 1$ is a circle,
-center $(2,-1)$, $r = 5$.
-
-\textbf{Writing equations:} Center $(3,-2)$, $a = 5$, $b = 2$.
-Have students write the ellipse equation, then write a circle equation from
-center and radius.
-
-\end{multicols}
-
-\smallskip
-\textbf{Pacing:} Reserve 20 min for Tier A activity problems.
-\end{skillbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson — Period 3: Hyperbolas
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson (cont.) --- Period 3: Hyperbolas]{sky}
-\begin{multicols}{2}
-
-\textbf{Step 5 --- Two Orientations} (12 min)
-
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Opens left/right:
-    $\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$
-  \item Opens up/down:
-    $\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$
-\end{itemize}
-
-Key diagnostic: the \emph{positive} squared term tells you the direction
-of opening.
-
-\columnbreak
-
-\textbf{Step 6 --- Asymptotes} (15 min)
-
-From $\dfrac{(x-2)^2}{9} - \dfrac{(y+1)^2}{4} = 1$:
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Center $(2,-1)$; $a = 3$, $b = 2$
-  \item Asymptotes: $y + 1 = \pm\dfrac{2}{3}(x - 2)$
-\end{itemize}
-
-Contrast with ellipse: same form but minus sign; opens rather than closes;
-asymptotes rather than bounded shape.
-
-Students: $\dfrac{(y+3)^2}{16} - \dfrac{(x-1)^2}{9} = 1$ --- identify center,
-$a$, $b$, orientation, and asymptotes.
-
-\end{multicols}
-
-\smallskip
-\textbf{Pacing:} Exit ticket in final 8 minutes; collect for formative review.
-\end{skillbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Active Monitoring
-%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item \textbf{Sign of $h$ and $k$}: Students read $(x+1)^2$ and write center
-    $(1, \cdot)$ instead of $(-1, \cdot)$. Prompt: \textit{``Rewrite as
-    $(x - ?)^2$ so the sign matches the formula.''}
-  \item \textbf{Horizontal vs.\ vertical parabola}: Students confuse which
-    variable is squared. Prompt: \textit{``Which variable is squared? That
-    axis is the axis of symmetry.''}
-  \item \textbf{Radii vs.\ $a^2$}: Students report $a = 16$ instead of $a = 4$.
-    Prompt: \textit{``The denominator is $a^2$. Take the square root to find $a$.''}
-  \item \textbf{Hyperbola direction}: Students pick the wrong orientation.
-    Prompt: \textit{``Which term is positive --- the $x$-term or the $y$-term?
-    That variable's axis is the direction of opening.''}
-  \item \textbf{Asymptote slope}: Students confuse $b/a$ and $a/b$. Prompt:
-    \textit{``Write $y - k = \pm(b/a)(x-h)$ and substitute your $a$ and $b$.''}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If the base is 0.88, is this growth or decay? What is the percent change?''
+        Expect: decay, 12\% per period.
+  \item During two-point model: watch for students who divide equations incorrectly or forget to
+        take the correct root when solving for $b$.
+  \item After Part 2: cold-call ``Why can we divide the two equations to eliminate $a$?''
+        Expect: $a$ is a common factor, dividing creates a ratio equation with only $b$.
+  \item During Part 3: confirm students understand that the base changes when the unit of time changes
+        but the underlying growth is the same function.
 \end{itemize}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Group Work & Differentiation
-%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work in groups of 3--4 on the tiered activity (assign by teacher or
-allow self-selection with guidance).
-
-\begin{multicols}{3}
-
-\textbf{Tier R --- Remediate}
-
-Given equations in standard form, identify:
-\begin{itemize}[leftmargin=1em, itemsep=2pt]
-  \item conic type
-  \item center or vertex
-  \item key measurements ($a$, $b$, or $r$)
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Drug concentration model with half-life structure given; build
+        $C(t) = 200 \cdot (0.5)^{t/4}$; complete a table; interpret the base; predict one value.
+  \item \textbf{Tier A (Apply):} Two data points given; construct the model algebraically; find the
+        annual growth rate as a percent; predict a future value with domain note.
+  \item \textbf{Tier E (Extend):} Rewrite a daily model as weekly and 3-day models; explain what each
+        base means; determine the input when the quantity exceeds 10{,}000.
 \end{itemize}
-No conversion or equation-writing required.
-
-\columnbreak
-
-\textbf{Tier A --- Approaching}
-
-Given verbal descriptions (center or vertex and key measurements), write
-the standard-form equation. Includes one parabola, one ellipse, and one
-hyperbola (with asymptotes).
-
-\columnbreak
-
-\textbf{Tier E --- Extension}
-
-Given general-form equations (e.g.\ $4x^2 - 9y^2 = 36$;
-$x^2 + y^2 - 4x + 6y = 3$), rewrite in standard form and identify all
-features including asymptotes where applicable.
-
-\end{multicols}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Individual Work & Assessment
-%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket administered independently (final 8 minutes of Period 3).
+Exit ticket (3 questions, 1 page): (1) write $P(t) = 5000 \cdot (1.06)^t$ and evaluate $P(10)$;
+(2) find $a$ and $b$ from two points $(1, 6)$ and $(3, 54)$;
+(3) interpret what $b = 1.06$ means in context.
 
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item Write the standard form equation of an ellipse centered at $(3, -1)$
-    with horizontal radius 5 and vertical radius 2.
-  \item Identify the type of conic, its center, and its asymptotes (if any)
-    for $\dfrac{(y+2)^2}{16} - \dfrac{(x-1)^2}{9} = 1$.
-\end{enumerate}
-
-\textbf{Data use:} Students who cannot identify conic type need reinforcement
-reading sign patterns. Students who mix up center signs need targeted reteaching
-of the $(x - h)$ convention.
+Sort by: students who miss item 1 need review of building from percent change (LO 2.5.A);
+students who miss item 2 need re-teaching of the two-point system (LO 2.5.A.3);
+students who miss item 3 need work on contextual interpretation of $b$ (LO 2.5.B.1).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Reinforcement & Extension
-%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework (Lesson 4.6):} 6 problems covering identifying features from
-standard-form equations, writing equations from descriptions, both parabola
-orientations, and one AP-style multiple-choice item.
+Homework (6 problems): convert 8\% annual decay to $ab^t$ form; two-point model with full
+algebraic work; radioactive decay half-life; interpret equivalent forms in different time units;
+AP-style MC with $f(t) = 500e^{0.04t}$; extension with a vertical shift revealing exponential pattern.
 
-\textbf{Extension:} Given $x^2 + 4y^2 - 6x + 8y - 3 = 0$, complete the square
-in both variables to rewrite in standard ellipse form and identify all features.
-This bridges to the Tier E activity and previews algebraic techniques used in
-calculus.
+Extension: when data has a horizontal asymptote (e.g., a cooling problem), adding a constant to
+the dependent variable values can reveal the proportional growth pattern --- preview of transformed
+exponential models.
 
-\textbf{Preview of next lesson:} Ask students: \textit{``We've described conics
-with equations in $x$ and $y$. Could you write parametric equations $x(t)$ and
-$y(t)$ that trace the same shapes? How might that be useful in modeling
-motion?''}
+Preview of Lesson 2.6: logarithmic functions as inverses of exponentials --- how to ``undo'' an
+exponential model to solve for the input (e.g., when will the population reach 20{,}000?).
 \end{skillbox}
 
 \end{document}

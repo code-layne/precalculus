@@ -1,4 +1,4 @@
-%! Inverse Functions — Unit 2, Lesson 2.8 — Group Activity
+%! Modeling with Polynomial Functions — Unit 2, Lesson 2.8 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,141 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.8}{Group Activity}
-\namepartnerperiod
+% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
+% cover this component is stapled behind. See references/conventions.md.
 
-\vspace{0.08in}
 
-\begin{scenariobox}[Dosage in Reverse]{sky}
-\small
-A nurse uses the formula $D(w) = 1.5w + 10$ to calculate a patient's medication dose $D$ (mg)
-from their weight $w$ (kg). Sometimes the dose is recorded but the weight is missing from the
-chart. Your team will develop and use the inverse formula to recover the weight from the dose.
-Work through the tier your teacher assigns. Be ready to explain your reasoning.
-\end{scenariobox}
+\vspace{0.15in}
 
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = 3x + 6$.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Complete the output table.
-
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$    & 0 & 2 & 4 & 6 \\
-        \hline
-        $f(x)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-        \hline
-        \end{tabular}
-
-  \item Reverse the pairs to write the inverse table.
-
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$          & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-        \hline
-        $f^{-1}(x)$  & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-        \hline
-        \end{tabular}
-
-  \item Use your inverse table to verify: $f(f^{-1}(18)) = $ \blank{4cm}. Show the steps.
-
-        \vspace{0.06in}
-        $f^{-1}(18) = $ \blank{2cm}, then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
-
-  \item State the domain and range of $f$ (using the table values):
-
-        Domain of $f$: $\{$\blank{5cm}$\}$ \quad Range of $f$: $\{$\blank{5cm}$\}$
-
-        Domain of $f^{-1}$: $\{$\blank{5cm}$\}$ \quad Range of $f^{-1}$: $\{$\blank{5cm}$\}$
-
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = \dfrac{x - 2}{5}$.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Find $f^{-1}(x)$ algebraically. Show all four steps (write $y$; swap; solve; write $f^{-1}$).
-
-        \vspace{0.04in}
-        Step 1: $y = $ \blank{5cm}
-
-        Step 2 (swap): $x = $ \blank{5cm}
-
-        Step 3 (solve): \blank{8cm}
-
-        Step 4: $f^{-1}(x) = $ \blank{5cm}
-
-  \item Verify using composition: show $f(f^{-1}(x)) = x$.
-
-        \vspace{0.04in}
-        $f(f^{-1}(x)) = \dfrac{\left(\rule{3cm}{0.4pt}\right) - 2}{5} = $ \blank{5cm}
-
-  \item State the domain and range of $f$ and $f^{-1}$ (both are all real numbers here):
-
-        Domain of $f$: \blank{4cm} \quad Range of $f$: \blank{4cm}
-
-        Domain of $f^{-1}$: \blank{4cm} \quad Range of $f^{-1}$: \blank{4cm}
-
-  \item In the nurse context, $x$ in $f^{-1}(x)$ represents \blank{5cm} (mg) and
-        the output represents \blank{5cm} (kg). If a patient received 7 mg, their weight was
-        \blank{3cm} kg.
-
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Given:} $f(x) = x^2$ on all real numbers.
-
-\begin{enumerate}[itemsep=10pt]
-
-  \item Explain why $f(x) = x^2$ is \textbf{not} invertible on all real numbers.
-        Give a specific numerical counterexample.
-
-        \vspace{0.04in}
-        \writelines{2}
-
-  \item Restrict the domain of $f$ to $x \ge 0$. On this domain, find $f^{-1}(x)$ algebraically.
-
-        \vspace{0.04in}
-        Step 1: $y = $ \blank{4cm} (with domain $x \ge 0$)
-
-        Step 2 (swap): $x = $ \blank{4cm}
-
-        Step 3 (solve, taking the non-negative root): $y = $ \blank{4cm}
-
-        $f^{-1}(x) = $ \blank{4cm}
-
-  \item Verify: $f(f^{-1}(x)) = \left(\rule{3cm}{0.4pt}\right)^2 = $ \blank{4cm} \checkmark
-
-  \item Why was the domain restriction to $x \ge 0$ necessary?
-        What input values must be excluded when the domain is all reals?
-
-        \vspace{0.04in}
-        \writelines{3}
-
-\end{enumerate}
-\end{tcolorbox}
+% TODO: author the Group Activity. See references/components.md for the expected structure.
+\begin{notesbox}{Group Activity}
+\writelines{4}
+\end{notesbox}
 
 \end{document}

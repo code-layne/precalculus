@@ -1,7 +1,7 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Homework (Answer Key)
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,68 +9,114 @@
 \pageheader{Unit 1, Lesson 1.7}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{enumerate}[itemsep=14pt]
 
-\item For each rational function below, identify the end behavior type (HA at $y = 0$,
-HA at $y = k$, slant asymptote, or polynomial end behavior) and write both limit statements.
+\item \textbf{Difference table.}
 
-\medskip
-\renewcommand{\arraystretch}{2.4}
-\begin{tabular}{@{}p{3.8cm} p{3.2cm} p{3.0cm} p{3.0cm}@{}}
-\textbf{Function} & \textbf{End Behavior Type} &
-$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ \\
-\hline
-$\dfrac{4x - 1}{2x + 3}$           & \ans{HA at $y=2$}     & \ans{$2$}       & \ans{$2$} \\
-$\dfrac{x^2 + 1}{x^3 - 8}$         & \ans{HA at $y=0$}     & \ans{$0$}       & \ans{$0$} \\
-$\dfrac{-6x^3}{2x^3 + x}$          & \ans{HA at $y=-3$}    & \ans{$-3$}      & \ans{$-3$} \\
-$\dfrac{x^4 - x}{x^2 + 1}$         & \ans{Poly end behavior} & \ans{$+\infty$} & \ans{$+\infty$} \\
-\end{tabular}
+      \medskip
+      \renewcommand{\arraystretch}{1.4}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
+      \hline
+      0 & 2   & ---         & ---         & ---         \\
+      \hline
+      1 & 6   & \ans{4} & ---      & ---         \\
+      \hline
+      2 & 16  & \ans{10} & \ans{6} & ---    \\
+      \hline
+      3 & 38  & \ans{22} & \ans{12} & \ans{6} \\
+      \hline
+      4 & 78  & \ans{40} & \ans{18} & \ans{6} \\
+      \hline
+      5 & 142 & \ans{64} & \ans{24} & \ans{6} \\
+      \hline
+      \end{tabular}
 
-\item Explain why $\displaystyle\lim_{x \to \infty} \frac{7x^3 + 2}{x^3 - 1} = 7$.
+      \medskip
+      The \ans{third} differences are constant, so this data is best modeled by a
+      degree-\ans{3} polynomial.
 
-\ansline{For large $x$, the term $7x^3$ dominates the numerator (the $+2$ is negligible),
-and $x^3$ dominates the denominator (the $-1$ is negligible).
-The quotient of leading terms is $7x^3/x^3 = 7$, so the outputs approach 7 as $x \to \infty$.}
+\item \textbf{Context-to-model matching.}
 
-\item A rational function $r$ satisfies $\displaystyle\lim_{x \to \infty} r(x) = 0$.
-What can you conclude about the degrees of the numerator and denominator?
+      \medskip
+      A $\to$ \ans{3} \qquad B $\to$ \ans{1} \qquad C $\to$ \ans{2} \qquad D $\to$ \ans{1}
 
-\ansline{The degree of the numerator must be strictly less than the degree of the denominator.
-When the denominator dominates, the quotient of leading terms approaches 0, giving a HA at $y = 0$.}
+      \begin{teachernote}
+      B and D are both linear, but they match to model type 1 independently.
+      Profit per unit being constant (D) is also linear. C is quadratic because projectile
+      height as a function of horizontal distance follows $h = ax^2 + bx + c$.
+      \end{teachernote}
 
-\item A rational function has a slant asymptote.
+\item \textbf{Assumption articulation.}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item What must be true about the degrees of the numerator and denominator?
+      (a) \ansline{This model assumes the cyclist travels at a constant (unchanging) speed throughout the trip.}
 
-        \ansline{The degree of the numerator must equal the degree of the denominator plus 1
-        (i.e., deg num $=$ deg denom $+ 1$).}
+      (b) Domain: \ans{$t \geq 0$} \quad Reason: \ansline{Time cannot be negative; the cyclist starts at $t = 0$.}
 
-  \item Can you write the end behavior as a single limit value $\lim_{x\to\infty} r(x) = k$?
+\item \textbf{Piecewise model description.}
 
-        \ansline{No. A slant asymptote means the quotient of leading terms is a non-constant
-        linear expression, so the outputs grow without bound (not toward a constant $k$).
-        The limit notation $\lim_{x\to\infty} r(x) = \pm\infty$ applies instead.}
-\end{enumerate}
+      Piece 1 (when \ans{$0 < h \leq 1$}): $C = $ \ans{$3.00$} \quad Type: \ans{constant}
 
-\item \textbf{AP-Style Multiple Choice.} Which function has a HA at $y = 3/2$?
+      Piece 2 (when \ans{$1 < h \leq k$, where $3 + 1.5(h-1) < 15$}): $C = $ \ans{$3.00 + 1.50(h - 1)$} \quad Type: \ans{linear}
 
-\ans{(B)} $\dfrac{3x^2 - 1}{2x^2 + 7}$ --- the quotient of leading terms is $3x^2/2x^2 = 3/2$.
+      Piece 3 (when \ans{$h > k$ for the maximum threshold}): $C = $ \ans{$15.00$} \quad Type: \ans{constant}
 
-\textit{(A): deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$.
-(C): quotient is $2/3$.
-(D): deg num $>$ deg denom $\Rightarrow$ polynomial end behavior.)}
+      \begin{teachernote}
+      The daily cap is reached when $3 + 1.5(h-1) = 15 \Rightarrow h = 9$ hours.
+      So Piece 2 applies for $1 < h \leq 9$ and Piece 3 for $h > 9$. Accept reasonable interval notation.
+      \end{teachernote}
+
+\item \textbf{Model selection with justification.}
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      $r$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
+      \hline
+      1 & 3   & ---         & ---         \\
+      \hline
+      2 & 12  & \ans{9} & ---      \\
+      \hline
+      3 & 27  & \ans{15} & \ans{6} \\
+      \hline
+      4 & 48  & \ans{21} & \ans{6} \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Model type: \ans{Quadratic}
+
+      Context clue: \ansline{Area is a 2-D (flat surface) measurement, which matches the area $\propto r^2$ shape of a circle or spreading region.}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
-\begin{reflectionbox}
-\textbf{Lesson Preview.} In Lesson 1.8, we examine the \textit{zeros} of rational functions ---
-the input values where the numerator equals zero.  Together with the asymptotes from today,
-these zeros determine the overall shape of the graph of a rational function.
-\end{reflectionbox}
+\begin{extensionbox}
+\textbf{Extension (optional).}
+
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
+\hline
+0 & 0  & ---         & ---         & ---         \\
+\hline
+1 & 2  & \ans{2} & ---      & ---         \\
+\hline
+2 & 8  & \ans{6} & \ans{4} & ---    \\
+\hline
+3 & 18 & \ans{10} & \ans{4} & \ans{0} \\
+\hline
+\end{tabular}
+
+\medskip
+\ansline{The student's claim is partially correct but imprecise. With 4 points, a degree-3 polynomial is the maximum needed; however, the second differences are already constant (all 4), so the data is quadratic (degree 2). A cubic is not required. The unique polynomial of \textit{lowest} degree through these 4 points is actually quadratic ($y = 2x^2$).}
+\end{extensionbox}
 
 \end{document}

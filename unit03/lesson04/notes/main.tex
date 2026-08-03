@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Guided Notes
+%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -12,139 +12,117 @@
 \vspace{0.1in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to:
-\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
-    \item Explain how the unit circle produces the graph of $f(\theta)=\sin\theta$ and
-          the graph of $f(\theta)=\cos\theta$. \writeline
-    \item Identify the domain, range, period, midline, maximum, minimum, and zeros of
-          each function from its graph. \writeline
-\end{itemize}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Determine whether a rational function has a \blank{2.2cm} or a \blank{3.4cm}
+        at a shared zero by comparing \blank{2.8cm}. \hfill\textit{(LO 1.10.A)}
+  \item Find the \blank{2.8cm} of a hole and express the result using
+        \blank{3cm}. \hfill\textit{(LO 1.10.A)}
+\end{enumerate}
 \end{objectivebox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
 \begin{vocabbox}
-\termblanklong{Oscillation}
-\termblanklong{Amplitude (informal)}
-\termblanklong{Period}
-\termblanklong{Midline}
-\termblanklong{Maximum point}
-\termblanklong{Minimum point}
-\termblanklong{Zero of a function}
+\termblanklong{hole in a graph}
+\termblanklong{removable discontinuity}
+\termblanklong{common factor}
+\termblanklong{limit of a function at a point}
 \end{vocabbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
 \begin{hookbox}
-\textbf{Question:} We know the $y$-coordinate of a point on the unit circle at each angle.
-What does the graph of that $y$-coordinate \emph{versus the angle} look like?
-
-\vspace{0.06in}
-\writelines{2}
+Imagine your GPS loses signal for exactly one moment --- at $t = 5$ seconds --- but your
+position function is defined everywhere else. The output \textit{at} $t = 5$ is missing,
+but by looking at outputs for inputs very close to 5, we can determine where the position
+function ``should'' be. This missing-but-predictable point is called a \blank{2cm} in
+the graph of a rational function.
 \end{hookbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-\begin{notesbox}{Building the Graph of $f(\theta)=\sin\theta$}
-The output of $f(\theta)=\sin\theta$ is the \blank{3cm} of the unit-circle point at
-angle $\theta$.
+\begin{notesbox}{Holes vs.\ Vertical Asymptotes}
+Let $r(x)$ be a rational function with a shared zero at $x = a$.
+Let $m$ = multiplicity of $a$ in the \textbf{numerator} and $n$ = multiplicity of $a$ in
+the \textbf{denominator}.
 
-\vspace{6pt}
-Complete the table, then describe the resulting curve in words.
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.55}
-\begin{tabular}{@{}|c|c|@{}}
-    \hline
-    $\theta$ & $\sin\theta$ \\\hline
-    $0$ & \blank{2cm} \\
-    $\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ \\
-    $\dfrac{\pi}{4}$ & \blank{2cm} \\
-    $\dfrac{\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ \\
-    $\dfrac{\pi}{2}$ & \blank{2cm} \\
-    $\pi$ & $0$ \\
-    $\dfrac{3\pi}{2}$ & \blank{2cm} \\
-    $2\pi$ & \blank{2cm} \\\hline
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Condition} & \textbf{Feature at $x = a$} & \textbf{Example} \\
+\hline
+$m \geq n$ & \blank{4cm} & $\dfrac{(x-2)^2}{x-2}$: hole at $x=2$ \\[4pt]
+\hline
+$m < n$ & \blank{4cm} & $\dfrac{x-2}{(x-2)^2}$: VA at $x=2$ \\[4pt]
+\hline
+$a$ only in denominator & \blank{4cm} & $\dfrac{5}{x-2}$: VA at $x=2$ \\[4pt]
+\hline
 \end{tabular}
-\quad
-\begin{minipage}[t]{0.52\linewidth}\vspace{0pt}
-\textbf{Plot these ordered pairs} on the $\theta$-$y$ axes below, then connect them
-smoothly.
 
-\vspace{0.5in}
-\textit{(coordinate axes drawn by teacher on board)}
-
-\vspace{0.3in}
-The curve is called a \blank{4cm}. As $\theta$ increases from $0$ to $2\pi$, the output
-\blank{3cm} between $-1$ and $1$.
-\end{minipage}
+\medskip
+\textbf{Key idea:} A hole occurs when the numerator and denominator \textit{share} a zero
+\textit{and} the numerator's multiplicity is \blank{3cm} or \blank{3cm} the denominator's.
 \end{notesbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-\begin{notesbox}{Building the Graph of $f(\theta)=\cos\theta$}
-The output of $f(\theta)=\cos\theta$ is the \blank{3cm} of the unit-circle point at
-angle $\theta$.
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.55}
-\begin{tabular}{@{}|c|c|@{}}
-    \hline
-    $\theta$ & $\cos\theta$ \\\hline
-    $0$ & \blank{2cm} \\
-    $\dfrac{\pi}{2}$ & \blank{2cm} \\
-    $\pi$ & \blank{2cm} \\
-    $\dfrac{3\pi}{2}$ & \blank{2cm} \\
-    $2\pi$ & \blank{2cm} \\\hline
-\end{tabular}
-\quad
-\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-How does the cosine graph compare to the sine graph in overall shape?
-\writelines{2}
-
-How does the starting value at $\theta=0$ differ?
-\writeline
-\end{minipage}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Key Features of $\sin\theta$ and $\cos\theta$}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabularx}{\linewidth}{@{} l X X @{}}
-    \textbf{Feature} & \textbf{$f(\theta)=\sin\theta$} & \textbf{$f(\theta)=\cos\theta$} \\\hline
-    Domain   & \blank{3.5cm} & \blank{3.5cm} \\
-    Range    & \blank{3.5cm} & \blank{3.5cm} \\
-    Period   & \blank{3.5cm} & \blank{3.5cm} \\
-    Midline  & \blank{3.5cm} & \blank{3.5cm} \\
-    Maximum value & \blank{3.5cm} & \blank{3.5cm} \\
-    Minimum value & \blank{3.5cm} & \blank{3.5cm} \\
-    Zeros on $[0,2\pi)$ & \blank{3.5cm} & \blank{3.5cm} \\
-\end{tabularx}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-Use the description of the sine graph over $[0,2\pi]$ to answer the following.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-    \item At what $\theta$-values in $[0,2\pi]$ does $\sin\theta=0$?
-
-          \blank{8cm}
-
-    \item At what $\theta$-value in $[0,2\pi]$ does $\sin\theta=1$?
-
-          \blank{6cm}
-
-    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ increasing?
-
-          \blank{8cm}
-
-    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ decreasing?
-
-          \blank{8cm}
+\begin{notesbox}{Finding the Coordinates of a Hole}
+\textbf{4-Step Procedure:}
+\begin{enumerate}[itemsep=4pt]
+  \item \blank{7cm} the numerator and denominator.
+  \item Identify \blank{4cm} zeros and compare multiplicities.
+  \item \blank{3.5cm} the common factor from numerator and denominator.
+  \item Substitute $x = c$ into the \blank{4cm} form to find $L$.
 \end{enumerate}
-\end{practicebox}
+
+\medskip
+\textbf{Example 1.} \quad $\displaystyle r(x) = \frac{x^2 - 4}{x - 2}$
+
+\smallskip
+Step 1 --- Factor: $r(x) = \dfrac{\blank{4cm}}{x - 2}$
+
+\smallskip
+Step 2 --- Shared zero: $x = $ \blank{1.5cm} \quad Num.\ mult: \blank{1cm} \quad Denom.\ mult: \blank{1cm} \quad Since $m$ \blank{0.6cm} $n$, this is a \blank{2cm}.
+
+\smallskip
+Step 3 --- Cancel: simplified form $= $ \blank{3.5cm}
+
+\smallskip
+Step 4 --- Substitute $x = 2$: $L = $ \blank{3cm}
+
+\smallskip
+\textbf{Hole at:} $\Big($\blank{1cm}$,$ \blank{1cm}$\Big)$
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Limit Notation for Holes}
+If a rational function $r$ has a hole at $(c, L)$, we write:
+\[
+  \lim_{x \to c} r(x) = L
+\]
+This means: as the input $x$ gets \blank{4cm} to $c$ (from either side), the output $r(x)$
+gets \blank{4cm} to $L$.
+
+\medskip
+Both one-sided limits agree: \quad
+$\displaystyle\lim_{x \to c^-} r(x) = $ \blank{1.5cm} \quad and \quad
+$\displaystyle\lim_{x \to c^+} r(x) = $ \blank{1.5cm}
+
+\medskip
+\textbf{Example 2.} \quad $\displaystyle r(x) = \frac{x^2 - 1}{(x-1)(x+2)}$
+
+Shared zero at $x = 1$. Simplified form: $\dfrac{\blank{3cm}}{\blank{3cm}}$
+
+$L = \dfrac{\blank{1.5cm}}{\blank{1.5cm}} = \blank{1.5cm}$
+
+Limit statement: $\displaystyle \lim_{x \to 1} r(x) = $ \blank{1.5cm} \quad
+Hole at: $\Big($\blank{1cm}$,$ \blank{2cm}$\Big)$
+
+\smallskip
+Is there a VA? \blank{1cm} \quad If so, where? \blank{3cm}
+\end{notesbox}
 
 \end{document}

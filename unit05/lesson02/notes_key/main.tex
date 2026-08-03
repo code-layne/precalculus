@@ -1,0 +1,165 @@
+%! Inverses of Exponential Functions — Unit 5, Lesson 5.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{LO 2.10.A:} Construct representations of the inverse of an exponential function with
+an initial value of 1.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item Write the inverse of $g(x)=b^x$ as $f(x)=\log_b x$ and represent it with a table.
+  \item Verify the inverse relationship using composition: $g(f(x)) = f(g(x)) = x$.
+  \item Explain why exponential growth is multiplicative and logarithmic growth is additive.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{logarithmic function}
+\ansline{A function of the form $f(x) = a\log_b x$ where $b > 0$, $b \ne 1$, $a \ne 0$;
+the inverse of $g(x) = b^x$.}
+
+\termblanklong{base of a logarithm}
+\ansline{The value $b$ in $\log_b x$; must satisfy $b > 0$ and $b \ne 1$.}
+
+\termblanklong{inverse functions}
+\ansline{Two functions $f$ and $g$ such that $f(g(x)) = g(f(x)) = x$.}
+
+\termblanklong{additive change}
+\ansline{Output increases by a constant amount as input changes; characteristic of logarithms.}
+
+\termblanklong{multiplicative change}
+\ansline{Output is multiplied by a constant factor as input increases; characteristic of
+exponentials.}
+
+\termblanklong{reflection over $y = x$}
+\ansline{The graph of $f(x) = \log_b x$ is the mirror image of $g(x) = b^x$ across $y = x$.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textbf{Consider:} A population model is $P(t) = 2^t$. How do we find the time $t$ when the
+population equals 64?
+
+\vspace{4pt}
+My answer: \ansline{$2^t = 64 \Rightarrow t = 6$, because $2^6 = 64$.}
+
+\vspace{4pt}
+What operation is the ``opposite'' of exponentiation? \ansline{The logarithm: $\log_2 64 = 6$.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Additive vs.\ Multiplicative Growth (EK 2.10.A.2)}
+Complete the two tables below, then answer the sentences underneath.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+\textbf{$x$ (add 1)} & \textbf{$g(x)=2^x$ ($\times$?)} \\
+\hline
+$0$ & $1$ \\
+\hline
+$1$ & \ans{2} \\
+\hline
+$2$ & \ans{4} \\
+\hline
+$3$ & \ans{8} \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+\textbf{$x$ (multiply by?)} & \textbf{$f(x)=\log_2 x$ (add 1)} \\
+\hline
+$1$ & $0$ \\
+\hline
+\ans{2} & $1$ \\
+\hline
+\ans{4} & $2$ \\
+\hline
+\ans{8} & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\begin{itemize}[leftmargin=1.5em,itemsep=6pt]
+  \item As $x$ increases by \ans{1}, $g(x) = 2^x$ multiplies by \ans{2}.
+  \item As $x$ multiplies by \ans{2}, $f(x) = \log_2 x$ increases by \ans{1}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Inverse Pairs and Composition (EK 2.10.A.3, 2.10.A.5)}
+\textbf{Rule:} If $(s, t)$ is on $g(x) = b^x$, then $(t, s)$ is on $f(x) = \log_b x$.
+
+\vspace{6pt}
+\textit{Practice.} Listed below are ordered pairs of $g(x) = 3^x$. Write the corresponding
+ordered pairs of $f(x) = \log_3 x$.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{sky}
+\textbf{$x$} & \textbf{$g(x)=3^x$} & \textbf{Point on $g$} & \textbf{Point on $f=\log_3 x$} \\
+\hline
+$0$ & $1$  & $(0,\;1)$  & \ans{$(1,\;0)$} \\
+\hline
+$1$ & $3$  & $(1,\;3)$  & \ans{$(3,\;1)$} \\
+\hline
+$2$ & $9$  & $(2,\;9)$  & \ans{$(9,\;2)$} \\
+\hline
+$3$ & $27$ & $(3,\;27)$ & \ans{$(27,\;3)$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Composition Verification:}
+
+\vspace{4pt}
+$g(f(x)) = 2^{\log_2 x} = $ \ans{$x$} \qquad
+$f(g(x)) = \log_2(2^x) = $ \ans{$x$}
+
+\vspace{4pt}
+This confirms that $f$ and $g$ are \ans{inverse} functions.
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{General Form (EK 2.10.A.1)}
+The general form of a logarithmic function is:
+\[
+  f(x) = a \log_b x, \quad b > 0,\ b \ne 1,\ a \ne 0.
+\]
+
+The parameter $a$ causes a vertical \ans{dilation (stretch or compression)} of the basic logarithm $\log_b x$.
+
+\vspace{4pt}
+Example: for $f(x) = 3\log_2 x$, the base is \ans{2} and $a = $ \ans{3}.
+
+\vspace{4pt}
+Evaluate: $f(4) = 3\log_2 4 = 3 \cdot $ \ans{2} $= $ \ans{6}.
+\end{notesbox}
+
+\end{document}

@@ -1,4 +1,4 @@
-%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Exit Ticket (Answer Key)
+%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,43 +9,44 @@
 \pageheader{Unit 3, Lesson 3.2}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.14in}
 
-\begin{notesbox}{Exit Ticket: Sine, Cosine, and Tangent --- Key}
+\begin{enumerate}[itemsep=16pt]
 
-\textbf{1.} The point $P = \Bigl(-\dfrac{1}{2},\; \dfrac{\sqrt{3}}{2}\Bigr)$ is on the unit circle.
+\item Let $\displaystyle r(x) = \frac{x^2 - x - 6}{x + 4}$.
 
-\medskip
-\begin{tabular}{@{}lll@{}}
-  $\sin\theta =$ \ans{$\dfrac{\sqrt{3}}{2}$} \quad &
-  $\cos\theta =$ \ans{$-\dfrac{1}{2}$} \quad &
-  $\tan\theta =$ \ans{$-\sqrt{3}$}
-\end{tabular}
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item What value(s) of $x$ are \textbf{not} in the domain of $r$?
+              Explain briefly.
 
-\vspace{0.18in}
+              \vspace{0.06in}
+              $x = $ \ans{$-4$} because \ansline{$x + 4 = 0$ at $x = -4$, making the denominator zero and $r(-4)$ undefined.}
 
-Show how you determined the value of $\tan\theta$ from $P$:
+        \item Find all real zeros of $r(x)$.
 
-\medskip
-\ans{$\tan\theta = \dfrac{y}{x} = \dfrac{\;\sqrt{3}/2\;}{-1/2} = \dfrac{\sqrt{3}}{2} \cdot \dfrac{2}{-1} = -\sqrt{3}$}
+              \vspace{0.06in}
+              Factor the numerator: $x^2 - x - 6 = $ \ans{$(x - 3)(x + 2)$}
 
-\vspace{0.18in}
+              \vspace{0.06in}
+              Numerator zeros: $x = $ \ans{$3$ and $x = -2$}
 
-\hrulefill
+              \vspace{0.06in}
+              Check each against the domain restriction:
+              \ansline{Neither $x = 3$ nor $x = -2$ equals $-4$, so both are in the domain.}
 
-\vspace{0.16in}
+              \vspace{0.06in}
+              Zeros of $r$: $x = $ \ans{$3$ and $x = -2$}
+      \end{enumerate}
 
-\textbf{2.} An angle measures $\theta = \dfrac{5\pi}{2}$ radians.
+\item A student says: ``$x = -4$ is a zero of
+      $\displaystyle r(x) = \frac{x + 4}{x^2 - 1}$ because the numerator equals zero
+      when $x = -4$.''
 
-\medskip
-Explain why $\sin\!\Bigl(\dfrac{5\pi}{2}\Bigr) = \sin\!\Bigl(\dfrac{\pi}{2}\Bigr)$:
+      Is the student correct? Circle one: \quad \textbf{No}
 
-\medskip
-\ans{$\dfrac{5\pi}{2} = \dfrac{\pi}{2} + 2\pi$, so these two angles differ by exactly one full
-revolution ($2\pi$). They are coterminal angles and share the same terminal ray.
-Since $\sin\theta$ depends only on the $y$-coordinate of $P$ on the unit circle, and coterminal
-angles produce the same point $P$, their sine values are equal.}
+      \vspace{0.06in}
+      \ansline{The student is \textbf{incorrect}. The numerator $x + 4 = 0$ at $x = -4$, but we also need $x = -4$ to be in the domain of $r$. The denominator $x^2 - 1 = (-4)^2 - 1 = 15 \ne 0$, so $x = -4$ \textbf{is} in the domain. Therefore $r(-4) = 0$, and the student's conclusion is actually correct for the wrong reason --- but the reasoning is incomplete without checking the domain.}
 
-\end{notesbox}
+\end{enumerate}
 
 \end{document}

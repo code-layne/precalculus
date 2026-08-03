@@ -1,7 +1,7 @@
-%! Sine and Cosine Function Values — Unit 3, Lesson 3.3 — Group Activity (Answer Key)
+%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,105 +11,125 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Exact Values in Engineering and Navigation]{sky}
+\begin{scenariobox}[Analyzing Pressure Gauges]{sky}
 \small
-Engineers and navigators routinely need exact trigonometric values rather than decimal approximations.
-In this activity your group will build fluency with exact values and apply them to a real-world context.
+Engineers monitor pressure in a hydraulic system. The pressure at different points in the
+system is modeled by rational functions. A pressure ``spike'' --- where pressure grows without
+bound --- corresponds to a vertical asymptote of the model. For each function below, determine
+where pressure spikes occur.
+
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} l l @{\qquad} l l @{}}
+$r_1(x) = \dfrac{3}{x - 5}$ &
+$r_2(x) = \dfrac{x + 2}{x^2 - 4}$ &
+$r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$ &
+$r_4(x) = \dfrac{x}{(x+2)^3}$
+\end{tabular}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER R
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Build the Unit Circle Table},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.2cm}
-    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
-\toprule
-\textbf{Angle $\theta$} & \textbf{$\cos\theta$} & \textbf{$\sin\theta$} \\
-\midrule
-$0$      & $1$              & $0$              \\
-$\pi/6$  & $\sqrt{3}/2$     & $1/2$            \\
-$\pi/4$  & $\sqrt{2}/2$     & $\sqrt{2}/2$     \\
-$\pi/3$  & $1/2$            & $\sqrt{3}/2$     \\
-$\pi/2$  & $0$              & $1$              \\
-$2\pi/3$ & \ans{$-1/2$}             & \ans{$\sqrt{3}/2$}       \\
-$3\pi/4$ & \ans{$-\sqrt{2}/2$}      & \ans{$\sqrt{2}/2$}       \\
-$5\pi/6$ & \ans{$-\sqrt{3}/2$}      & \ans{$1/2$}              \\
-$\pi$    & \ans{$-1$}               & \ans{$0$}                \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
 
-\vspace{0.08in}
-\textbf{Reflection:} \ans{$\sin\theta$ increases from 0 to 1 on $[0, \pi/2]$, then decreases back to 0 on $[\pi/2, \pi]$ --- it is symmetric about $\theta = \pi/2$.}
+\begin{enumerate}[itemsep=10pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$
+
+        Denominator $= 0$ when $x =$ \ans{$5$}. \quad Vertical asymptote: \ans{$x = 5$}
+
+  \item $r_2(x) = \dfrac{x + 2}{x^2 - 4}$
+
+        Factor the denominator: $x^2 - 4 =$ \ans{$(x-2)(x+2)$}
+
+        Denominator $= 0$ when $x =$ \ans{$2$ and $x=-2$}. \quad
+        Vertical asymptote(s): \ans{$x = 2$ and $x = -2$} \textit{(Tier R assumes no common zeros)}
+
+  \item $r_3(x) = \dfrac{x^2 - 1}{(x-1)(x+3)}$
+
+        Denominator $= 0$ when $x =$ \ans{$1$ and $x=-3$}. \quad
+        Vertical asymptote(s): \ans{$x = 1$ and $x = -3$} \textit{(Tier R; Tier A/E refine this)}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$
+
+        Denominator $= 0$ when $x =$ \ans{$-2$}. \quad Vertical asymptote: \ans{$x = -2$}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER A
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Ferris Wheel Coordinates},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-$r = 40$~ft. Apply $x = 40\cos\theta$, $y = 40\sin\theta$.
 
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash}p{2.0cm}
-    >{\centering\arraybackslash}X >{\centering\arraybackslash}X @{}}
-\toprule
-\textbf{Angle $\theta$} & \textbf{$x$ (ft)} & \textbf{$y$ (ft)} \\
-\midrule
-$\pi/6$  & \ans{$20\sqrt{3}$} & \ans{$20$}           \\
-$\pi/4$  & \ans{$20\sqrt{2}$} & \ans{$20\sqrt{2}$}   \\
-$\pi/3$  & \ans{$20$}         & \ans{$20\sqrt{3}$}   \\
-$\pi/2$  & \ans{$0$}          & \ans{$40$}           \\
-$2\pi/3$ & \ans{$-20$}        & \ans{$20\sqrt{3}$}   \\
-$5\pi/6$ & \ans{$-20\sqrt{3}$}& \ans{$20$}           \\
-\bottomrule
-\end{tabularx}
-\renewcommand{\arraystretch}{1}
+\begin{enumerate}[itemsep=12pt]
+  \item $r_1(x) = \dfrac{3}{x - 5}$: \quad
+        Numerator at $x=5$: \ans{$3 \ne 0$}. \quad Result: \ans{VA at $x = 5$}
 
-\vspace{0.08in}
-\textbf{Question:} \ans{The car is highest at $\theta = \pi/2$, where $y = 40$~ft. The maximum possible height equals the radius, 40~ft (top of the wheel).}
+  \item $r_2(x) = \dfrac{x + 2}{(x-2)(x+2)}$
+
+        At $x = 2$: numerator $=$ \ans{$4 \ne 0$} \quad $\Rightarrow$ \ans{VA at $x = 2$}
+
+        At $x = -2$: numerator $=$ \ans{$0$} \quad $\Rightarrow$ \ans{Potential hole (not a VA); preview for Lesson 1.10}
+
+  \item $r_3(x) = \dfrac{(x-1)(x+1)}{(x-1)(x+3)}$
+
+        Factor the numerator: $x^2 - 1 =$ \ans{$(x-1)(x+1)$}
+
+        At $x = 1$: numerator $=$ \ans{$0$} \quad $\Rightarrow$ \ans{Potential hole (numerator also zero); not a VA}
+
+        At $x = -3$: numerator $=$ \ans{$(-3)^2-1=8\ne0$} \quad $\Rightarrow$ \ans{VA at $x = -3$}
+
+  \item $r_4(x) = \dfrac{x}{(x+2)^3}$: \quad
+        At $x = -2$: numerator $=$ \ans{$-2 \ne 0$} \quad $\Rightarrow$ \ans{VA at $x = -2$}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-%-----------------------------------------------------------------------
-% TIER E
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Symmetry and Inverse Reasoning},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-$P = \left(-\dfrac{r\sqrt{3}}{2},\, \dfrac{r}{2}\right)$
 
-\textbf{(a)} $\cos\theta = -\tfrac{\sqrt{3}}{2}$ and $\sin\theta = \tfrac{1}{2}$.
-$\sin\theta > 0$ places us in QI or QII; $\cos\theta < 0$ places us in QII or QIII. Therefore $\theta$ is in \textbf{QII}.
-Reference angle: $\cos^{-1}\!\left(\tfrac{\sqrt{3}}{2}\right) = \pi/6$, so $\theta = \pi - \pi/6$.
+\begin{enumerate}[itemsep=12pt]
+  \item \textbf{Explaining a hole.} $r_3(x) = \dfrac{(x-1)(x+1)}{(x-1)(x+3)}$
 
-$\theta = $ \ans{$\dfrac{5\pi}{6}$}
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Why is $x = 1$ \emph{not} a vertical asymptote?
 
-\vspace{0.08in}
-\textbf{(b)} On the unit circle, $\sin\alpha = \tfrac{1}{2}$. This occurs at $\alpha = \pi/6$ (QI) and $\alpha = 5\pi/6$ (QII), since the unit circle is symmetric about the $y$-axis.
+                \ans{The factor $(x-1)$ appears in both the numerator and denominator with
+                multiplicity 1 in each. Because the numerator's multiplicity (1) is equal to
+                the denominator's multiplicity (1) --- not less --- the factor cancels. This
+                produces a hole (removable discontinuity) at $x=1$, not a vertical asymptote.}
 
-$\alpha = $ \ans{$\dfrac{\pi}{6}$} and $\alpha = $ \ans{$\dfrac{5\pi}{6}$}
+          \item Confirm that $x = -3$ \textbf{is} a vertical asymptote.
 
-\vspace{0.06in}
-\textbf{Symmetry explanation:}
+                \ans{At $x=-3$: numerator $= (-3-1)(-3+1) = (-4)(-2) = 8 \ne 0$. The denominator
+                is zero but the numerator is not, so $x = -3$ is a vertical asymptote.}
+        \end{enumerate}
 
-\begin{teachernote}
-Students should articulate that the horizontal line $y = \tfrac{1}{2}$ intersects the unit circle at exactly two points, one in QI and one in QII, related by reflection across the $y$-axis. This gives the identity $\sin(\pi - \alpha) = \sin\alpha$. Credit answers that mention ``reflection,'' ``symmetry about the $y$-axis,'' or the identity explicitly.
-\end{teachernote}
+  \item \textbf{One-sided limits.} $r_4(x) = \dfrac{x}{(x+2)^3}$
 
-\ans{The line $y = \tfrac{1}{2}$ intersects the unit circle in two points. They are reflections of each other across the $y$-axis, so if one is at angle $\alpha$ then the other is at $\pi - \alpha$. This is why $\sin(\pi/6) = \sin(5\pi/6) = \tfrac{1}{2}$.}
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $x$ slightly greater than $-2$ (e.g., $x = -1.9$):
+                Numerator sign: \ans{negative ($-1.9 < 0$)}. \quad
+                $(x+2)^3$ sign: \ans{positive (small positive cubed)}. \quad
+                So $r_4(x)$ is: \ans{negative}
+
+          \item $x$ slightly less than $-2$ (e.g., $x = -2.1$):
+                Numerator sign: \ans{negative ($-2.1 < 0$)}. \quad
+                $(x+2)^3$ sign: \ans{negative (small negative cubed)}. \quad
+                So $r_4(x)$ is: \ans{positive}
+
+          \item One-sided limits:
+                \[
+                  \lim_{x \to -2^+} r_4(x) = \ans{$-\infty$}
+                  \qquad\qquad
+                  \lim_{x \to -2^-} r_4(x) = \ans{$+\infty$}
+                \]
+        \end{enumerate}
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}

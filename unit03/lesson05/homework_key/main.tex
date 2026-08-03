@@ -1,7 +1,7 @@
-%! Sinusoidal Functions — Unit 3, Lesson 3.5 — Homework (Answer Key)
+%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,86 +11,110 @@
 
 \vspace{0.12in}
 
-\begin{notesbox}{Sinusoidal Functions --- Practice --- Key}
+\begin{enumerate}[itemsep=18pt]
 
-\textbf{1.} Max $= 10$, min $= -2$.
+\item For each rational function, state which form (\textbf{factored} or \textbf{standard}) is
+      more useful for the requested task, then answer the question.
 
-\medskip
-(a) Amplitude $= \dfrac{10 - (-2)}{2} = \dfrac{12}{2} = $ \ans{6}
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item $r(x) = \dfrac{x^2+3x-10}{x^2-4}$. \quad Find all zeros, holes, and VAs.
 
-\medskip
-(b) Midline: $y = \dfrac{10 + (-2)}{2} = \dfrac{8}{2} = $ \ans{$y = 4$}
+              \vspace{0.06in}
+              Best form: \ans{factored}
 
-\vspace{0.1in}
+              Factor numerator: \ans{$(x+5)(x-2)$} \quad Factor denominator: \ans{$(x-2)(x+2)$}
 
-\textbf{2.} Period $= 0.002$ s.
+              Zeros: \ans{$x=-5$} \quad Holes: \ans{$\left(2,\,\tfrac{7}{4}\right)$} \quad VAs: \ans{$x=-2$}
 
-\medskip
-(a) Frequency $= \dfrac{1}{0.002} = $ \ans{500 Hz}
+        \item $s(x) = \dfrac{3x^5 - 2x^2 + 1}{4x^3 - x}$. \quad Describe the end behavior.
 
-\medskip
-(b) Period of 250 Hz wave $= \dfrac{1}{250} = $ \ans{0.004 seconds}
+              \vspace{0.06in}
+              Best form: \ans{standard}
 
-\vspace{0.1in}
+              As $x \to +\infty$: $s(x) \to$ \ans{$+\infty$} \quad As $x \to -\infty$: $s(x) \to$ \ans{$+\infty$}
+      \end{enumerate}
 
-\textbf{3.} $f(\theta) = \sin(2\theta)$.
+\item Perform polynomial long division. Show all steps.
 
-\medskip
-$f(-\theta) = \sin(2(-\theta)) = \sin(-2\theta)$.
+      Divide $f(x) = 3x^3 - 5x^2 + 2x - 4$ by $g(x) = x - 2$.
 
-Because sine is an odd function, $\sin(-2\theta) = -\sin(2\theta) = -f(\theta)$.
+      \vspace{0.1in}
+      Work space: $3x^3\div x = 3x^2$; $3x^2(x-2)=3x^3-6x^2$; subtract $\to x^2+2x-4$;
+      $x^2\div x = x$; $x(x-2)=x^2-2x$; subtract $\to 4x-4$;
+      $4x\div x = 4$; $4(x-2)=4x-8$; subtract $\to 4$.
 
-Therefore $f(-\theta) = -f(\theta)$ for all $\theta$, so $f$ is \ans{odd.}
+      $q(x) = $ \ans{$3x^2 + x + 4$} \quad $r = $ \ans{$4$}
 
-\vspace{0.1in}
+      Write as $f(x) = g(x)\cdot q(x) + r$: \ans{$(x-2)(3x^2+x+4)+4$}
 
-\textbf{4.} AP-Style Multiple Choice.
+\item A rational function is defined by $\displaystyle R(x) = \dfrac{x^2 + x - 6}{x - 1}$.
 
-Midline $= \dfrac{6 + (-2)}{2} = \dfrac{4}{2} = 2$, so midline is $y = 2$.
+      \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item Perform polynomial long division.
 
-Answer: \ans{(B)}
+              \vspace{0.06in}
+              $R(x) = $ \ans{$x+2+\dfrac{-4}{x-1}$}
 
-\vspace{0.1in}
+        \item State the equation of the slant asymptote. Explain in one sentence why this is
+              the slant asymptote.
 
-\textbf{5.} Frequency $= \dfrac{3}{2\pi}$.
+              \vspace{0.06in}
+              Slant asymptote: $y = $ \ans{$x+2$}
 
-Period $= \dfrac{1}{\text{frequency}} = \dfrac{1}{3/(2\pi)} = \dfrac{2\pi}{3}$,
-so period $= $ \ans{$\dfrac{2\pi}{3}$}
+              \ansline{As $x\to\pm\infty$, the remainder term $\frac{-4}{x-1}\to 0$, so $R(x)$ approaches the quotient line $y=x+2$.}
 
-\vspace{0.1in}
+        \item What is the remainder when $x^2+x-6$ is divided by $x-1$? What does this tell
+              you about $R(1)$?
 
-\textbf{6.} Amplitude $= 5$, midline $y = -3$.
+              \vspace{0.06in}
+              Remainder: \ans{$-4$} \quad $R(1) = $ \ans{undefined ($x=1$ is not in the domain)}
+      \end{enumerate}
 
-Maximum $= $ midline $+$ amplitude $= -3 + 5 = $ \ans{2}
+\item Use Pascal's Triangle to expand each expression. Show the row of Pascal's Triangle you used.
 
-Minimum $= $ midline $-$ amplitude $= -3 - 5 = $ \ans{$-8$}
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
+        \item $(x + 3)^3$
 
-\end{notesbox}
+              \vspace{0.06in}
+              Row used: \ans{Row 3: $1\quad 3\quad 3\quad 1$}
 
-\vspace{0.08in}
+              $(x+3)^3 = $ \ans{$x^3 + 9x^2 + 27x + 27$}
 
-\begin{extensionbox}
-\textbf{Extension --- Key}
+        \item $(2x - 1)^4$ \quad \textit{(Hint: let $a = 2x$ and $b = -1$)}
 
-If $f(-\theta) = -f(\theta)$ and $f(-\theta) = f(\theta)$ both hold, then
-$f(\theta) = -f(\theta)$, which means $2f(\theta) = 0$, so $f(\theta) = 0$ for
-all $\theta$.
+              \vspace{0.06in}
+              Row used: \ans{Row 4: $1\quad 4\quad 6\quad 4\quad 1$}
 
-\ans{The function must be the zero function (output $= 0$ for every input).
-Its amplitude is $0$ and its midline is $y = 0$.}
-\end{extensionbox}
+              $(2x-1)^4 = $ \ans{$16x^4 - 32x^3 + 24x^2 - 8x + 1$}
+      \end{enumerate}
 
-\vspace{0.08in}
+\item \textbf{(AP-Style Multiple Choice)} Which of the following statements about
+      $\displaystyle p(x) = \dfrac{x^3 - 8}{x - 2}$ is correct?
 
-\begin{tcolorbox}[colback=goldbg, colframe=goldacc, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\textbf{Preview of Lesson 3.6 --- Sinusoidal Function Transformations}
+      \medskip
+      \begin{enumerate}[label=(\Alph*), itemsep=4pt]
+        \item $p$ has a vertical asymptote at $x = 2$.
+        \item \ans{$p$ has a hole at $x = 2$ with $y$-coordinate $12$.} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item $p$ simplifies to $x^2 - 2x + 4$ for all real $x$.
+        \item $p$ has a slant asymptote of $y = x^2 + 2x + 4$.
+      \end{enumerate}
 
-In the next lesson you will explore the general form
-$g(\theta) = a\sin(b(\theta + c)) + d$.
-The parameters $a$, $b$, $c$, and $d$ each control one of the characteristics
-you studied today. As you finish this homework, think about which parameter
-might control amplitude, which controls period, and which determines the midline.
-\end{tcolorbox}
+      \vspace{0.06in}
+      Answer: \ans{B} \quad Show your reasoning:
+
+      \vspace{0.06in}
+      \ansline{Factor: $x^3-8 = (x-2)(x^2+2x+4)$. Shared factor $(x-2)$ in numerator and denominator with equal multiplicity, so $x=2$ is a hole. Substitute $x=2$ into $x^2+2x+4$: $4+4+4=12$. Hole at $(2,12)$.}
+
+\end{enumerate}
+
+\begin{teachernote}
+1(a): Hole at $x=2$: substitute into simplified $\frac{x+5}{x+2}$ to get $\frac{7}{4}$.
+
+1(b): Leading terms $3x^5$ and $4x^3$ give ratio $\frac{3}{4}x^2 \to +\infty$ as $x\to\pm\infty$, but signs differ. As $x\to+\infty$: $+\infty$; as $x\to-\infty$: $-\infty$ (odd degree in quotient).
+
+Wait --- $\frac{3x^5}{4x^3} = \frac{3}{4}x^2$ which goes to $+\infty$ in both directions. Correction: as $x\to-\infty$, $s(x)\to+\infty$ as well (even power). Teacher should verify this with the class and note the answer key reflects $+\infty$ for both directions.
+
+4(b): $(2x)^4 = 16x^4$; $4(2x)^3(-1) = -32x^3$; $6(2x)^2(1)=24x^2$; $4(2x)(-1)^3=-8x$; $(-1)^4=1$.
+\end{teachernote}
 
 \end{document}

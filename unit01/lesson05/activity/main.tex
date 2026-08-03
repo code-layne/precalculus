@@ -1,4 +1,4 @@
-%! Polynomial Functions and Complex Zeros — Unit 1, Lesson 1.5 — Group Activity
+%! Composition of Functions — Unit 1, Lesson 1.5 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,146 +9,120 @@
 \pageheader{Unit 1, Lesson 1.5}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Three Polynomial Functions]{sky}
-You will analyze the following three polynomials throughout this activity.
-\[
-  p(x)=(x+2)(x-1)^2(x-3) \qquad
-  q(x)=x^4-5x^2+4 \qquad
-  r(x)=x^3+2x
-\]
+\begin{scenariobox}[Exploring Composition of Functions]{sky}
+\small
+In this activity you will evaluate, construct, and decompose compositions of functions.
+Work with your group on the tier your teacher assigns. Be ready to explain your reasoning.
 \end{scenariobox}
 
 \vspace{0.08in}
 
-% --- Tier R ---
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Work with $p(x)=(x+2)(x-1)^2(x-3)$.
+\textbf{Given:} $f(x) = 2x + 5$ and $g(x) = x - 3$.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item List all zeros of $p(x)$ and state the multiplicity of each.
+\begin{enumerate}[itemsep=10pt]
+  \item Evaluate $f(g(0))$ step by step.
 
-  \renewcommand{\arraystretch}{1.6}
-  \begin{tabularx}{\linewidth}{|X|X|}
-  \hline
-  \rowcolor{sky}
-  \textbf{Zero} & \textbf{Multiplicity} \\
-  \hline
-  & \\
-  \hline
-  & \\
-  \hline
-  & \\
-  \hline
-  & \\
-  \hline
-  \end{tabularx}
+        \vspace{0.04in}
+        $g(0) = $ \blank{3cm} \quad then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
 
-  \item What is the degree of $p(x)$? \blank{2.5cm}
-        How does the degree relate to the total number of zeros (counting multiplicities)?
+  \item Evaluate $f(g(2))$ step by step.
+
+        \vspace{0.04in}
+        $g(2) = $ \blank{3cm} \quad then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
+
+  \item Evaluate $g(f(0))$ step by step.
+
+        \vspace{0.04in}
+        $f(0) = $ \blank{3cm} \quad then $g\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
+
+  \item Based on your answers, is $f(g(0)) = g(f(0))$? What does that tell you about composition?
+
+        \vspace{0.04in}
         \writeline
-
-  \item For each real zero, predict whether the graph \emph{crosses} or is \emph{tangent to}
-        (touches and bounces off) the $x$-axis. Fill in the table.
-
-  \begin{tabularx}{\linewidth}{|X|X|}
-  \hline
-  \rowcolor{sky}
-  \textbf{Zero} & \textbf{Crosses or Tangent?} \\
-  \hline
-  $x=-2$ & \\[8pt]
-  \hline
-  $x=1$  & \\[8pt]
-  \hline
-  $x=3$  & \\[8pt]
-  \hline
-  \end{tabularx}
-
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-% --- Tier A ---
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Complete Tier R first, then work with $q(x)=x^4-5x^2+4$.
+\textbf{Table of values:}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Factor $q(x)$ completely over the reals. (\textit{Hint: let $u=x^2$}.)
-        \writelines{2}
+\vspace{0.04in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c|c|c}
+$x$ & $f(x)$ & $g(x)$ \\ \hline
+1 & 5 & 3 \\
+2 & 8 & 1 \\
+3 & 11 & 4 \\
+4 & 14 & 2 \\
+\end{tabular}
 
-  \item List all real zeros of $q(x)$ and their multiplicities.
-        \writeline
+\begin{enumerate}[itemsep=8pt]
+  \item Fill in the table for $f(g(x))$ and $g(f(x))$.
 
-  \item Compare the graph behavior of $p$ and $q$ at their zeros:
-        which zeros cause the graph to cross, and which cause it to touch?
-        \writelines{2}
+        \vspace{0.04in}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{c|c|c}
+        $x$ & $f(g(x))$ & $g(f(x))$ \\ \hline
+        1 & \blank{2.5cm} & \blank{2.5cm} \\
+        2 & \blank{2.5cm} & \blank{2.5cm} \\
+        3 & \blank{2.5cm} & \blank{2.5cm} \\
+        4 & \blank{2.5cm} & \blank{2.5cm} \\
+        \end{tabular}
 
-  \item Apply the algebraic even/odd test to both $p(x)$ and $q(x)$.
-        For each, find $f(-x)$, simplify, and state whether the function is
-        even, odd, or neither.
+  \item Now let $f(x) = x^2$ and $g(x) = 2x - 1$. Write an analytic formula for $f(g(x))$.
+        Simplify completely.
 
-        $p(-x) = $ \writelines{2}
+        \vspace{0.04in}
+        $f(g(x)) = $ \blank{9cm}
 
-        $q(-x) = $ \writelines{2}
+  \item What is the domain of $f \circ g$ if $f(x) = x^2$ and $g(x) = 2x-1$?
 
+        \vspace{0.04in}
+        Domain of $f \circ g$: \blank{8cm}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.08in}
 
-% --- Tier E ---
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Complete Tiers R and A first, then work with $r(x)=x^3+2x$.
+\textbf{Given:} $h(x) = (3x + 2)^4$.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Factor $r(x)$ by first factoring out the GCF, then solving for all zeros
-        (including complex ones).
-        \writelines{3}
+\begin{enumerate}[itemsep=10pt]
+  \item Find one decomposition $h(x) = f(g(x))$. State $f$ and $g$, then verify.
 
-  \item List all zeros of $r(x)$, including complex zeros, and verify that non-real
-        zeros appear as conjugate pairs.
-        \writeline
+        \vspace{0.04in}
+        $g(x) = $ \blank{5cm} \qquad $f(u) = $ \blank{5cm}
 
-  \item Determine whether $r(x)$ is even, odd, or neither. Show the full algebraic test.
-        \writelines{2}
+        Verify: $f(g(x)) = $ \blank{7cm} $= h(x)$? \blank{2cm}
 
-  \item \textbf{Successive differences for }$q(x)$: Complete the table below for
-        $q(x)=x^4-5x^2+4$ at equally-spaced inputs, then take successive differences
-        until they are constant. What degree does this confirm?
+  \item Find a \textbf{different} valid decomposition $h(x) = p(q(x))$. State $p$ and $q$, then verify.
 
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabularx}{\linewidth}{|X|X|X|X|X|}
-  \hline
-  \rowcolor{sky}
-  $x$ & $q(x)$ & 1st diff & 2nd diff & 3rd diff \\
-  \hline
-  $-2$ & & & & \\
-  \hline
-  $-1$ & & & & \\
-  \hline
-  $0$  & & & & \\
-  \hline
-  $1$  & & & & \\
-  \hline
-  $2$  & & & & \\
-  \hline
-  $3$  & & & & \\
-  \hline
-  \end{tabularx}
+        \vspace{0.04in}
+        $q(x) = $ \blank{5cm} \qquad $p(u) = $ \blank{5cm}
 
-  The \blank{2cm}-th differences are constant, confirming the degree is \blank{2cm}.
+        Verify: $p(q(x)) = $ \blank{7cm} $= h(x)$? \blank{2cm}
 
+  \item For your first decomposition, explain: is $h(x) = f(g(x))$ or $h(x) = g(f(x))$?
+        Write out $g(f(x))$ and show whether it equals $h(x)$.
+
+        \vspace{0.04in}
+        $g(f(x)) = $ \blank{8cm}
+
+        \vspace{0.04in}
+        Does $g(f(x)) = h(x)$? \blank{2cm} \quad Explain: \writeline
 \end{enumerate}
 \end{tcolorbox}
 

@@ -1,4 +1,4 @@
-%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Guided Notes (Answer Key)
+%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,125 +9,137 @@
 \pageheader{Unit 2, Lesson 2.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.06in}
+\vspace{0.12in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Construct a \ans{linear} function from a slope and a point using
-        $f(x) = y_i + m(x - x_i)$. \hfill\textit{(LO 2.2.A)}
-  \item Construct an \ans{exponential} function from a ratio and a point using
-        $f(x) = y_i \cdot r^{x - x_i}$. \hfill\textit{(LO 2.2.A)}
-  \item Determine whether outputs over equal-length intervals show a constant \ans{difference}
-        (linear) or a constant \ans{ratio} (exponential). \hfill\textit{(LO 2.2.B)}
-\end{enumerate}
+Students will identify and interpret key characteristics of polynomial functions ---
+degree, leading term, local and global extrema, and points of inflection --- using
+rates of change and graphical behavior.
+\begin{center}
+\writeline \writeline
+\end{center}
 \end{objectivebox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
 \begin{vocabbox}
-\termblanklong{linear function}
-\ansline{$f(x) = b + mx$; output changes by a constant amount (slope $m$) for every unit increase in input.}
-\termblanklong{exponential function}
-\ansline{$f(x) = ab^x$; output is multiplied by constant base $b$ for every unit increase in input.}
-\termblanklong{constant rate of change}
-\ansline{The slope $m$ of a linear function; equal to $\Delta y/\Delta x$ over any interval.}
-\termblanklong{constant ratio}
-\ansline{The base $b$ of an exponential function; equal to $y_{n+1}/y_n$ over equal-length intervals.}
-\termblanklong{initial value}
-\ansline{The output when $x=0$; equals $b$ for $f(x)=b+mx$ and $a$ for $f(x)=ab^x$.}
-\termblanklong{domain}
-\ansline{The set of allowable inputs; sequences use $\{0,1,2,\ldots\}$ while functions typically use all reals.}
+\begin{multicols}{2}
+\termblanklong{polynomial function}
+\termblanklong{degree}
+\termblanklong{leading coefficient}
+\termblanklong{local maximum}
+\termblanklong{local minimum}
+\termblanklong{global maximum}
+\termblanklong{global minimum}
+\termblanklong{point of inflection}
+\end{multicols}
 \end{vocabbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
 \begin{hookbox}
-Two tables are presented without labels. For each table, analyze how the outputs change.
-
-\medskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c|c}
-$x$ & $f(x)$ \\ \hline
-0 & 3 \\ 1 & 7 \\ 2 & 11 \\ 3 & 15
-\end{tabular}
-\qquad\qquad
-\begin{tabular}{c|c}
-$x$ & $g(x)$ \\ \hline
-0 & 2 \\ 1 & 6 \\ 2 & 18 \\ 3 & 54
-\end{tabular}
-
-\medskip
-Table 1: consecutive outputs differ by \ans{4}. \quad
-Table 2: consecutive outputs are multiplied by \ans{3}.
+Consider $p(x) = x^3 - 3x$. As $x$ increases from very negative values, the function:
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item falls steeply, then reaches a \textbf{valley} (a low point), then rises
+    \item passes through zero, reaches a \textbf{peak} (a high point), then falls again
+    \item passes through zero a second time and continues falling toward $-\infty$
+\end{itemize}
+\vspace{4pt}
+\textbf{Discussion:} Where are the ``peaks'' and ``valleys''? How many zeros does $p$ have?\\
+Where does the \textit{rate of change} change direction?
+\vspace{4pt}
+\ans{$p(x) = x(x^2-3)$ has zeros at $x = 0, \pm\sqrt{3}$. Local max near $x = -1$; local min near $x = 1$. The rate of change changes direction at the inflection point near $x = 0$.}
 \end{hookbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
-\begin{notesbox}{LO 2.2.A --- Linear Functions and Arithmetic Sequences}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
- & \textbf{Arithmetic Sequence} & \textbf{Linear Function} \\
-\midrule
-Formula & $a_n = a_0 + d\,n$ & $f(x) = b + mx$ \\[3pt]
-From one known value & $a_n = a_i + d(n - i)$ & $f(x) = y_i + m(x - x_i)$ \\[3pt]
-``Change'' quantity & common difference $d$ & slope $m$ \\[3pt]
-Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
-\end{tabularx}
-
-\medskip
-\textbf{Example:} Slope $m = 4$; passes through $(1,\ 7)$.
-
+\begin{notesbox}{Polynomial Functions --- Key}
+A \textbf{polynomial function} has the standard form:
 \[
-  f(x) = {\color{keyred}\mathbf{7}} + {\color{keyred}\mathbf{4}}(x - {\color{keyred}\mathbf{1}})
-       = {\color{keyred}\mathbf{4x + 3}}
+  p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0
 \]
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item The \textbf{degree} is \ans{$n$} (the highest power of $x$).
+    \item The \textbf{leading term} is \ans{$a_n x^n$}.
+    \item The \textbf{leading coefficient} is \ans{$a_n$}.
+    \item A \textbf{constant function} (e.g.\ $p(x) = 7$) is a polynomial of degree \ans{zero}.
+\end{itemize}
 
-Verify: $f(0) = $ \ans{3}, \quad $f(2) = $ \ans{11}.
-\end{notesbox}
+\vspace{4pt}
+\textbf{End behavior:}
 
-\vspace{0.04in}
-
-\begin{notesbox}{LO 2.2.A --- Exponential Functions and Geometric Sequences}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.24\linewidth} X X @{}}
- & \textbf{Geometric Sequence} & \textbf{Exponential Function} \\
-\midrule
-Formula & $g_n = g_0 \cdot r^n$ & $f(x) = a \cdot b^x$ \\[3pt]
-From one known value & $g_n = g_i \cdot r^{n - i}$ & $f(x) = y_i \cdot r^{x - x_i}$ \\[3pt]
-``Change'' quantity & common ratio $r$ & base $b$ \\[3pt]
-Domain & \ans{$\{0,1,2,\ldots\}$} & \ans{all real numbers} \\
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+Even degree, positive $a_n$: & \ans{Both ends rise} \\
+Even degree, negative $a_n$: & \ans{Both ends fall} \\
+Odd degree, positive $a_n$:  & \ans{Falls left, rises right} \\
+Odd degree, negative $a_n$:  & \ans{Rises left, falls right} \\
 \end{tabularx}
-
-\medskip
-\textbf{Example:} Ratio $r = 3$; passes through $(0,\ 2)$.
-
-\[
-  f(x) = {\color{keyred}\mathbf{2}} \cdot {\color{keyred}\mathbf{3}}^{x - {\color{keyred}\mathbf{0}}}
-       = {\color{keyred}\mathbf{2 \cdot 3^x}}
-\]
-
-Verify: $f(1) = $ \ans{6}, \quad $f(3) = $ \ans{54}.
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.08in}
 
-\begin{notesbox}{LO 2.2.B --- The Equal-Length Interval Test}
-Over equal-length input intervals $\Delta x$:
+\begin{notesbox}{Local and Global Extrema --- Key}
+\textbf{Local (relative) maximum:} a point where the function switches from
+\ans{increasing} to \ans{decreasing}.\\[4pt]
+\textbf{Local (relative) minimum:} a point where the function switches from
+\ans{decreasing} to \ans{increasing}.\\[4pt]
+\textbf{Global (absolute) maximum:} the \ans{greatest} output value over the entire domain.\\[4pt]
+\textbf{Global (absolute) minimum:} the \ans{least} output value over the entire domain.
 
-\medskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
- & \textbf{Linear} & \textbf{Exponential} \\
-\midrule
-Output pattern & differences \ans{are constant} & ratios \ans{are constant} \\[3pt]
-How to check & subtract consecutive outputs & divide consecutive outputs \\[3pt]
-Formula built from 2 pts & $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ & $b = \left(\dfrac{y_2}{y_1}\right)^{1/(x_2 - x_1)}$ \\
-\end{tabularx}
+\vspace{6pt}
+\textbf{Key Principle (EK 1.4.A.3):} Between every two \ans{distinct real zeros} of a nonconstant polynomial, there must be at least one \ans{local maximum or minimum}.
 
-\medskip
-\textbf{Key fact (EK 2.2.B.3):} Two distinct input-output pairs \ans{uniquely} determine
-either type of function.
+\vspace{6pt}
+\textbf{Even-degree result (EK 1.4.A.4):} A polynomial of even degree always has either a global \ans{maximum} or a global \ans{minimum} (or both).
+
+\vspace{6pt}
+\textit{Example:} A polynomial has zeros at $x = -2$, $x = 1$, and $x = 4$.\\
+On which intervals between consecutive zeros must a local extremum exist?
+\vspace{4pt}
+\ans{On $(-2, 1)$ and on $(1, 4)$. By EK 1.4.A.3, between each pair of consecutive zeros there is at least one local max or min.}
 \end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Points of Inflection --- Key}
+A \textbf{point of inflection} occurs at an input where the \textbf{rate of change} switches from
+\ans{increasing} to \ans{decreasing} (or vice versa).
+
+\vspace{4pt}
+This is the same as saying: the graph changes from \textbf{concave \ans{up}} to
+\textbf{concave \ans{down}} (or vice versa).
+
+\vspace{6pt}
+\textit{Connection to AROC:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Concave up $\Rightarrow$ AROC is \ans{increasing} as $x$ increases.
+    \item Concave down $\Rightarrow$ AROC is \ans{decreasing} as $x$ increases.
+    \item At a point of inflection, AROC transitions from increasing to decreasing (or vice versa).
+\end{itemize}
+
+\vspace{6pt}
+\textit{Example context:} The AROC of a function over $[0,1]$ is $5$, over $[1,2]$ is $8$, and over $[2,3]$ is $4$.\\
+Where is a likely point of inflection? \ans{near $x=2$} \quad Is the graph concave up or down on $[0,2]$? \ans{concave up}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item A polynomial function $f$ has exactly two distinct real zeros. What is the minimum number of local extrema $f$ must have? Explain your reasoning.
+
+    \vspace{4pt}
+    \ans{At least 1 local extremum. By EK 1.4.A.3, between every two distinct real zeros there must be at least one local max or min.}
+
+    \item A polynomial $g$ has degree $4$ and a positive leading coefficient.
+
+    \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+        \item[(a)] Describe the end behavior of $g$.\\[4pt]
+        \ans{Both ends rise (as $x \to \pm\infty$, $g(x) \to +\infty$).}
+        \item[(b)] Does $g$ have a global maximum, a global minimum, or neither? \ans{global minimum}
+    \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

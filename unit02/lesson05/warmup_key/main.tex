@@ -1,4 +1,4 @@
-%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Warm-Up (Answer Key)
+%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,32 +11,39 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=18pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item Rewrite $f(x) = 2^{x+5}$ in the form $a \cdot 2^x$, where $a$ is a constant.
+\item For the polynomial $p(x) = 3x^4 - 2x^2 + 5$, identify each of the following.
 
-      \vspace{0.08in}
-      $f(x) = $ \ans{$32 \cdot 2^x$}
+\medskip
+\begin{tabular}{@{}lll@{}}
+  Degree: \ans{4} \quad & Leading coefficient: \ans{3} \quad & Leading term: \ans{$3x^4$}
+\end{tabular}
 
-\item Rewrite $f(x) = 4^{3x}$ as a single base raised to the $x$ power.
-      \textit{Hint: } $4^{3x} = (4^3)^x$.
+\item A polynomial has zeros at $x = -2$ (multiplicity 1), $x = 1$ (multiplicity 2), and
+$x = 4$ (multiplicity 1).
 
-      \vspace{0.08in}
-      $f(x) = $ \ans{$64^x$}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item What is the degree of this polynomial? \ans{4}
+  \item Write the polynomial in factored form with leading coefficient 1.
 
-\item Simplify $9^{3/2}$. Show your reasoning.
-
-      \vspace{0.08in}
-      $9^{3/2} = $ \ans{27}
-
+  \vspace{0.12in}
+  $p(x) =$ \ans{$(x+2)(x-1)^2(x-4)$}
 \end{enumerate}
 
-\begin{teachernote}
-Item 1: $2^{x+5} = 2^x \cdot 2^5 = 32 \cdot 2^x$.
+\item True or False (circle one) and explain briefly:
 
-Item 2: $4^{3x} = (4^3)^x = 64^x$. Some students may write $(2^2)^{3x} = 2^{6x} = 64^x$ --- accept either.
+\medskip
+\textit{``A polynomial of degree 5 always has exactly 5 real zeros.''}
 
-Item 3: $9^{3/2} = (\sqrt{9})^3 = 3^3 = 27$, or $(9^3)^{1/2} = 729^{1/2} = 27$.
-\end{teachernote}
+\medskip
+\textbf{True} \quad / \quad \ans{False}
+
+\vspace{0.1in}
+\ansline{False. A degree-5 polynomial has exactly 5 zeros counting multiplicity and complex zeros,
+but some zeros may be complex (non-real). It is possible to have as few as 1 real zero (with 2 pairs
+of complex conjugate zeros). Multiplicity also means a repeated real zero counts more than once.}
+
+\end{enumerate}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Homework (Answer Key)
+%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -11,91 +11,80 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
+\begin{enumerate}[itemsep=16pt]
 
-  \item The function $f(\theta) = \sin\theta$ completes one full cycle on $[0, 2\pi]$.
+\item For each rational function below, find all holes and vertical asymptotes.
 
-        \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-            \item How many complete cycles does $f(\theta) = \sin\theta$ complete on
-                  $[0, 6\pi]$? \ans{3 complete cycles}
+      \begin{enumerate}[label=(\alph*), itemsep=10pt]
 
-            \item How many zeros does $f(\theta) = \sin\theta$ have on $[0, 4\pi]$?
-                  (Count $\theta=0$ and $\theta=4\pi$.) \ans{5 zeros ($0, \pi, 2\pi, 3\pi, 4\pi$)}
+        \item $\displaystyle r(x) = \dfrac{x^2 - 5x + 6}{x - 3} = \dfrac{(x-3)(x-2)}{x-3}$
 
-            \item On which interval(s) within $[0, 2\pi]$ is $\sin\theta > 0$?
+              Shared zero $x=3$, $m=n=1$ so \ans{Hole}. Simplified: $x-2$. $L = 3-2 = 1$.
 
-                  \ans{$(0,\,\pi)$}
-        \end{enumerate}
+              Holes: \ans{$(3,\ 1)$} \qquad VAs: \ans{none}
 
-  \item \textbf{True or False?} The range of $f(\theta) = \cos\theta$ is $[0, 1]$.
-        Circle your answer, then explain.
+        \item $\displaystyle r(x) = \dfrac{x^2 - x - 12}{(x-4)(x+1)} = \dfrac{(x-4)(x+3)}{(x-4)(x+1)}$
 
-        \vspace{4pt}
-        \textbf{TRUE} \quad / \quad \textbf{\textcolor{keyred}{FALSE}}
+              Shared zero $x=4$, $m=n=1$ so \ans{Hole}. Simplified: $\dfrac{x+3}{x+1}$. $L = \dfrac{7}{5}$.
 
-        \vspace{6pt}
-        \ansline{False. The range is $[-1,\,1]$. The cosine function takes negative values,}
-        \ansline{for example $\cos\pi = -1$, which is not in $[0,1]$.}
+              Holes: \ans{$\!\left(4,\ \dfrac{7}{5}\right)$} \qquad VAs: \ans{$x = -1$}
 
-  \item Without computing, explain why $\sin(\theta + 2\pi) = \sin\theta$ for any angle
-        $\theta$. Your explanation should reference the unit circle.
+        \item $\displaystyle r(x) = \dfrac{x^2 + 3x}{x^2 + 3x + 2} = \dfrac{x(x+3)}{(x+1)(x+2)}$
 
-        \vspace{4pt}
-        \ansline{Adding $2\pi$ to an angle completes one full revolution on the unit circle,}
-        \ansline{returning the terminal ray to the same position. The $y$-coordinate of the}
-        \ansline{unit-circle point is therefore the same, so $\sin(\theta+2\pi)=\sin\theta$.}
+              No shared zeros (numerator zeros: $0, -3$; denominator zeros: $-1, -2$).
 
-  \item \textbf{AP-Style Multiple Choice.} Which of the following intervals contains a
-        zero of $f(\theta) = \cos\theta$?
+              Holes: \ans{none} \qquad VAs: \ans{$x = -1$ and $x = -2$}
 
-        \vspace{4pt}
-        \begin{enumerate}[label=(\Alph*), leftmargin=1.5em, itemsep=4pt]
-            \item $\left(0,\;\dfrac{\pi}{4}\right)$
-            \item $\left(\dfrac{\pi}{4},\;\dfrac{\pi}{2}\right)$
-            \item $\left(\dfrac{\pi}{2},\;\pi\right)$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-            \item $\left(\pi,\;\dfrac{3\pi}{2}\right)$
-        \end{enumerate}
+      \end{enumerate}
 
-        \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
-            \item $\cos\dfrac{\pi}{2} = 0$, which lies in interval (C) since
-                  $\dfrac{\pi}{4} < \dfrac{\pi}{2} < \pi$. \quad
-                  (The zero at $\dfrac{\pi}{2}$ is the left endpoint of (C) and strictly
-                   inside the open interval.)
-        \end{itemize}
+\item \textbf{Explanation (sample):} \ans{A hole occurs at a shared zero $x = a$ when the
+      numerator's multiplicity $m$ is greater than or equal to the denominator's multiplicity $n$
+      ($m \geq n$). After canceling the shared factor, the function still has a finite value at
+      that input. A vertical asymptote occurs when $m < n$ or when the zero appears only in the
+      denominator --- the denominator approaches 0 faster than the numerator, causing the outputs
+      to grow without bound.}
 
-  \item The maximum value of $f(\theta) = \sin\theta$ is \ans{$1$} and it first occurs
-        at $\theta = $ \ans{$\dfrac{\pi}{2}$}. The next time the function reaches that same
-        maximum is at $\theta = $ \ans{$\dfrac{5\pi}{2}$}.
+\item
 
-  \item On the interval $[0, 2\pi]$, the function $f(\theta) = \cos\theta$ is
-        \textbf{decreasing} on the interval \ans{$[0,\,\pi]$} and \textbf{increasing} on
-        the interval \ans{$[\pi,\,2\pi]$}.
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item $\displaystyle \lim_{x \to 3} r(x) = $ \ans{$5$}
+        \item \ans{As the input $x$ gets arbitrarily close to 3 (from either side), the output $r(x)$
+              gets arbitrarily close to 5, even though the point $(3, 5)$ is missing from the graph.}
+        \item Is $r(3)$ defined? \ans{No} --- \ans{The hole means the function is undefined at $x=3$; it is a removable discontinuity.}
+      \end{enumerate}
+
+\item $\displaystyle r(x) = \dfrac{x^3 - x^2}{x^2 - x}$
+
+      \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item Numerator: \ans{$x^2(x-1)$} \qquad Denominator: \ans{$x(x-1)$}
+
+        \item
+              \renewcommand{\arraystretch}{1.6}
+              \begin{tabular}{|c|c|c|c|}
+              \hline
+              Zero & $m$ & $n$ & Hole or VA? \\
+              \hline
+              \ans{$x=0$} & \ans{2} & \ans{1} & \ans{Hole ($m > n$)} \\
+              \hline
+              \ans{$x=1$} & \ans{1} & \ans{1} & \ans{Hole ($m = n$)} \\
+              \hline
+              \end{tabular}
+
+        \item Simplified: \ans{$x$} \quad (cancel $x(x-1)$ from both)
+
+              Holes: \ans{$(0,\ 0)$} and \ans{$(1,\ 1)$}
+
+              \textit{(Substitute into simplified form $x$: at $x=0$, $L=0$; at $x=1$, $L=1$.)}
+      \end{enumerate}
+
+\item \textbf{(AP-Style)} $r(x) = \dfrac{x^2-4}{x^2-x-2} = \dfrac{(x-2)(x+2)}{(x-2)(x+1)}$
+
+      Shared zero $x=2$, $m=n=1 \Rightarrow$ \ans{Hole}. Simplified: $\dfrac{x+2}{x+1}$. $L = \dfrac{4}{3}$.
+
+      Denominator zero $x=-1$ (not shared) $\Rightarrow$ VA at $x=-1$.
+
+      Answer: \ans{A} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
 
 \end{enumerate}
-
-\vspace{0.1in}
-
-\begin{extensionbox}
-\textbf{Optional Extension:} On what interval(s) in $[0, 2\pi]$ is $f(\theta) = \cos\theta$
-concave down (bending downward)? Relate your answer to the arc of the unit circle: where is
-the unit-circle point moving in a way that causes the $x$-coordinate to decrease at an
-increasing rate?
-
-\vspace{6pt}
-\ansline{$\cos\theta$ is concave down on $(0,\,\pi)$.}
-\ansline{On this interval the unit-circle point moves from $(1,0)$ counterclockwise to $(-1,0)$.}
-\ansline{The $x$-coordinate decreases, and the rate of decrease speeds up near $\theta=\pi/2$}
-\ansline{(where the point moves most steeply leftward), so the curve bends downward.}
-\end{extensionbox}
-
-\vspace{0.1in}
-
-\begin{blurbbox}[Preview: Lesson 3.5]{sky}
-In Lesson 3.5 we will transform the basic graphs of $\sin\theta$ and $\cos\theta$ by
-changing three parameters: \textbf{amplitude} (how tall the wave is), \textbf{period}
-(how wide one cycle is), and \textbf{midline} (where the wave is centered vertically).
-These transformations let us model real-world phenomena such as tides, temperature cycles,
-and sound waves.
-\end{blurbbox}
 
 \end{document}

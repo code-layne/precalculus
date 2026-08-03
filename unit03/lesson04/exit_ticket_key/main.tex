@@ -1,4 +1,4 @@
-%! Sine and Cosine Function Graphs — Unit 3, Lesson 3.4 — Exit Ticket (Answer Key)
+%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -9,33 +9,52 @@
 \pageheader{Unit 3, Lesson 3.4}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
+Consider the rational function $\displaystyle r(x) = \frac{x^2 - x - 2}{x^2 - 4}$.
 
-  \item State the \textbf{domain}, \textbf{range}, and \textbf{period} of
-        $f(\theta) = \cos\theta$.
+\begin{enumerate}[itemsep=14pt]
 
-        \vspace{4pt}
-        Domain: \ans{all real numbers ($-\infty, \infty$)} \quad Range: \ans{$[-1,\,1]$}
+\item Factor the numerator and denominator completely.
 
-        \vspace{8pt}
-        Period: \ans{$2\pi$}
+      \vspace{0.08in}
+      Numerator: $x^2 - x - 2 = $ \ans{$(x-2)(x+1)$}
 
-  \item A student says, ``$\sin\theta$ and $\cos\theta$ have the same graph.''
-        Correct the student's claim by giving \textbf{one specific value of $\theta$}
-        that shows the two functions have different outputs at that angle.
+      \vspace{0.08in}
+      Denominator: $x^2 - 4 = $ \ans{$(x-2)(x+2)$}
 
-        \vspace{6pt}
-        At $\theta = $ \ans{$0$}, $\quad \sin\theta = $ \ans{$0$}
-        $\quad$ but $\quad \cos\theta = $ \ans{$1$}.
+\item List any shared zeros of the numerator and denominator.
 
-        \vspace{8pt}
-        Therefore the graphs are \ans{different} (the same / different).
+      \vspace{0.08in}
+      Shared zero(s): \ans{$x = 2$}
 
-        \vspace{6pt}
-        \ansline{Any valid example earns full credit (e.g.\ $\theta=\pi/2$: $\sin=1$, $\cos=0$).}
-        \ansline{The two graphs have the same shape but different starting values.}
+\item For each shared zero, compare multiplicities and classify as a \textbf{hole} or
+      a \textbf{vertical asymptote}. Then state any additional VAs from non-shared zeros.
+
+      \vspace{0.08in}
+      \renewcommand{\arraystretch}{1.6}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      Zero & Num.\ mult.\ $m$ & Denom.\ mult.\ $n$ & Hole or VA? \\
+      \hline
+      \ans{$x=2$} & \ans{1} & \ans{1} & \ans{Hole ($m = n \geq 1$)} \\
+      \hline
+      \ans{$x=-2$} & \ans{0} & \ans{1} & \ans{VA (denom only)} \\
+      \hline
+      \end{tabular}
+
+\item Find the coordinates $(c, L)$ of any holes. Show the simplification and substitution.
+
+      \vspace{0.08in}
+      Simplified form: \ans{$\dfrac{x+1}{x+2}$}
+
+      \vspace{0.08in}
+      $L = \dfrac{2+1}{2+2}$ \ans{$= \dfrac{3}{4}$} \qquad Hole at: $\Big($\ans{2}$,$ \ans{$\dfrac{3}{4}$}$\Big)$
+
+\item Write the limit statement for the hole using proper notation.
+
+      \vspace{0.08in}
+      $\displaystyle \lim_{x \to \ans{2}} r(x) = $ \ans{$\dfrac{3}{4}$}
 
 \end{enumerate}
 

@@ -1,0 +1,200 @@
+%! Logarithmic Function Context and Data Modeling — Unit 5, Lesson 5.7 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{LO 2.14.A:} Construct a logarithmic function model.
+
+By the end of this lesson I will be able to:
+\begin{itemize}[leftmargin=1.5em,itemsep=3pt,topsep=3pt]
+  \item Recognize when a context or data set calls for a logarithmic model.
+  \item Build a logarithmic model from two input-output pairs using a system of equations.
+  \item Apply transformations of $f(x) = a\log_b x$ to fit a model to a context.
+  \item Use a logarithmic model to predict values of the dependent variable.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{logarithmic model}
+\ansline{A function of the form $f(x)=a\log_b x + k$ used when inputs change proportionally
+over equal-length output intervals.}
+
+\termblanklong{proportion}
+\ansline{The constant factor by which the input is multiplied as the output increases by one
+unit; equals the base $b$ of the logarithmic model.}
+
+\termblanklong{real zero}
+\ansline{The input value where the model output equals zero; for $f(x)=\log_b x$ the real
+zero is $x=1$.}
+
+\termblanklong{natural logarithm model}
+\ansline{A logarithmic model using base $e$: $f(x)=a\ln(x)+k$.}
+
+\termblanklong{logarithmic regression}
+\ansline{A technology-assisted technique that fits a logarithmic curve to a data set.}
+
+\termblanklong{prediction}
+\ansline{Using a model to estimate an output for a given input, or to find the input that
+produces a given output.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\textbf{Consider:} A scientist observes that a bacterial population doubles in the 1st hour,
+doubles again after 2 more hours, then again after 4 more hours.
+
+\vspace{4pt}
+How much time does each additional doubling require?
+\ans{1 hr}, \ans{2 hr}, \ans{4 hr}
+
+\vspace{4pt}
+As the population grows, the time per doubling is \ans{increasing}.
+
+\vspace{4pt}
+Why might a logarithmic function --- not an exponential one --- model this situation?
+\ansline{Equal output increments (one more doubling) correspond to proportionally growing
+input values (the time intervals multiply by 2), which is the defining pattern of a
+logarithmic model.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{When to Use a Logarithmic Model (EK 2.14.A.1)}
+A logarithmic model is appropriate when input values change \ans{proportionally (multiply
+by a constant)} over equal-length output-value intervals.
+
+\vspace{6pt}
+\textbf{Contrast:}
+\begin{itemize}[leftmargin=1.5em,itemsep=4pt,topsep=2pt]
+  \item \textbf{Exponential:} output changes \ans{proportionally} over equal input intervals.
+  \item \textbf{Logarithmic:} input changes \ans{proportionally} over equal output intervals.
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Example.} Fill in the table and answer the questions.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor{sky}
+$x$ (area, hectares) & $y$ (number of species) \\
+\hline
+$2$  & $1$ \\
+\hline
+$4$  & $2$ \\
+\hline
+$8$  & $3$ \\
+\hline
+$16$ & $4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+As $y$ increases by 1, $x$ \ans{doubles (multiplies by 2)}. \quad Proportion: \ans{2}
+
+\vspace{4pt}
+This pattern suggests the model: $y = \log_{\ans{2}}(x)$
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Building a Model from Two Input-Output Pairs (EK 2.14.A.2)}
+\textbf{General form:} $f(x) = a\log_b x + k$
+
+\vspace{6pt}
+\textbf{Worked Example.} Given: $f(1) = 0$ and $f(e) = 3$. Find the model.
+
+\vspace{4pt}
+\textit{Step 1.} Substitute $(1,\,0)$: \quad $0 = a\ln(1) + k = a \cdot \ans{0} + k$
+\quad so $k = $ \ans{0}
+
+\vspace{4pt}
+\textit{Step 2.} Substitute $(e,\,3)$: \quad $3 = a\ln(e) + 0 = a \cdot \ans{1}$
+\quad so $a = $ \ans{3}
+
+\vspace{4pt}
+\textit{Model:} $f(x) = $ \ans{$3\ln(x)$}
+
+\vspace{8pt}
+\textbf{Practice.} Given: $f(1) = 2$ and $f(9) = 4$. Use base $b = 3$.
+
+\vspace{4pt}
+\textit{Step 1.} From $f(1) = 2$: since $\log_3(1) = $ \ans{0}, we get $k = $ \ans{2}
+
+\vspace{4pt}
+\textit{Step 2.} From $f(9) = 4$: $4 = a\log_3(9) + k = a \cdot \ans{2} + \ans{2}$
+\quad so $a = $ \ans{1}
+
+\vspace{4pt}
+\textit{Model:} $f(x) = $ \ans{$\log_3(x) + 2$}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Transformations of a Logarithmic Model (EK 2.14.A.3)}
+General form with transformations: $f(x) = a\log_b(x - h) + k$
+
+\vspace{4pt}
+\begin{itemize}[leftmargin=1.5em,itemsep=4pt,topsep=2pt]
+  \item $a$: vertical \ans{dilation} (stretch if $|a|>1$, compression if $|a|<1$)
+  \item $h$: horizontal shift \ans{$h$} units to the \ans{right}
+  \item $k$: vertical shift \ans{$k$} units \ans{up}
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Context example.} A sound-level function has output 0 dB at intensity $x = 1$
+and increases by 10 dB for every tenfold increase in intensity.
+
+\vspace{4pt}
+The output is 0 when $x = 1$, so \ans{$k$} (which parameter?) equals \ans{0}.
+
+\vspace{4pt}
+A tenfold increase in $x$ adds 10 to the output, so $a = $ \ans{10} and $b = $ \ans{10}.
+
+\vspace{4pt}
+Model: $S(x) = $ \ans{$10\log_{10}(x)$}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Predicting with a Logarithmic Model (EK 2.14.A.6)}
+Given $f(x) = 2\log_3 x$:
+
+\vspace{6pt}
+\textbf{Predict $f(81)$:} \quad $f(81) = 2\log_3 81 = 2 \cdot \ans{4} = $ \ans{8}
+
+\vspace{6pt}
+\textbf{Solve for $x$ when $f(x) = 5$:}
+
+\vspace{4pt}
+$2\log_3 x = 5 \;\Rightarrow\; \log_3 x = \ans{5/2} \;\Rightarrow\; x = 3^{\ans{5/2}} = $ \ans{$9\sqrt{3}$}
+
+\vspace{8pt}
+\textbf{Natural log models (EK 2.14.A.5).} Recall $\ln x = \log_e x$.
+
+\vspace{4pt}
+Useful identities: \quad $\ln(e^n) = $ \ans{$n$} \quad and \quad $e^{\ln x} = $ \ans{$x$}
+
+\vspace{4pt}
+If $f(x) = 3\ln x$, evaluate $f(e^4) = 3\ln(e^4) = 3 \cdot \ans{4} = $ \ans{12}
+
+\vspace{4pt}
+Solve $3\ln x = 9$: \quad $\ln x = $ \ans{3} \quad $\Rightarrow$ \quad $x = e^{\ans{3}} = $ \ans{$e^3$}
+\end{notesbox}
+
+\end{document}

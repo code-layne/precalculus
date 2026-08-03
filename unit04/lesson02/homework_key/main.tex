@@ -1,4 +1,4 @@
-%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Homework (Answer Key)
+%! Change in Linear and Exponential Functions — Unit 4, Lesson 4.2 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,121 +11,86 @@
 
 \vspace{0.10in}
 
-\begin{notesbox}{Parametric Planar Motion Practice --- Key}
+\begin{enumerate}[itemsep=16pt]
 
-\textbf{1.}\quad Let $f(t) = (t^2 - 2t,\; 3t - t^2)$ for $0 \le t \le 4$.
+\item
 
-\vspace{4pt}
-(a)\quad Table:
+      \begin{enumerate}[label=(\alph*), itemsep=12pt]
+        \item
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|c}
+          $x$ & $y$ \\ \hline
+          0 & 80 \\ 1 & 40 \\ 2 & 20 \\ 3 & 10
+        \end{tabular}
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t^2 - 2t$ & $y(t) = 3t - t^2$ & $(x,\; y)$ \\
-\hline
-$0$ & \ans{$0$}  & \ans{$0$}  & \ans{$(0,\;0)$}  \\
-\hline
-$1$ & \ans{$-1$} & \ans{$2$}  & \ans{$(-1,\;2)$} \\
-\hline
-$2$ & \ans{$0$}  & \ans{$2$}  & \ans{$(0,\;2)$}  \\
-\hline
-$3$ & \ans{$3$}  & \ans{$0$}  & \ans{$(3,\;0)$}  \\
-\hline
-$4$ & \ans{$8$}  & \ans{$-4$} & \ans{$(8,\;-4)$} \\
-\hline
-\end{tabular}
-\end{center}
+        \vspace{0.06in}
+        Differences: \ans{$-40, -20, -10$ (not constant)} \quad Ratios: \ans{$0.5, 0.5, 0.5$}
 
-\vspace{8pt}
-(b)\quad Horizontal extrema:
+        Type: \ans{Exponential} \quad Formula: $f(x) = $ \ans{$80 \cdot (0.5)^x$}
 
-\ans{$x(t) = t^2 - 2t$; vertex at $t = 1$. $x(1) = -1$ (minimum,
-leftmost position).\\
-Endpoints: $x(0) = 0$, $x(4) = 8$ (rightmost). Maximum is $x = 8$.}
+        \item
+        \begin{tabular}{c|c}
+          $x$ & $y$ \\ \hline
+          1 & 5 \\ 3 & 11 \\ 5 & 17 \\ 7 & 23
+        \end{tabular}
 
-\vspace{0.08in}
-(c)\quad Vertical extrema:
+        \vspace{0.06in}
+        Interval length = \ans{2} \quad Differences: \ans{$6, 6, 6$ (constant)}
 
-\ans{$y(t) = 3t - t^2 = -(t^2 - 3t)$; vertex at $t = 3/2$.\\
-$y(3/2) = 9/2 - 9/4 = 9/4 = 2.25$ (maximum, highest position).\\
-Endpoints: $y(0) = 0$, $y(4) = -4$ (minimum, lowest position).}
+        Type: \ans{Linear} \quad $m = 6/2 = 3$, Formula: $f(x) = $ \ans{$3x + 2$}
+      \end{enumerate}
 
-\vspace{0.10in}
-\textbf{2.}
+\item Points $(3,\ 4)$ and $(7,\ 20)$.
 
-\vspace{4pt}
-(a)\quad $x$-intercepts (zeros of $y(t)$):
+      Slope: $m = \dfrac{20 - 4}{7 - 3} = $ \ans{4}
 
-\ans{$3t - t^2 = t(3-t) = 0 \;\Rightarrow\; t = 0$ or $t = 3$.\\
-$x(0) = 0$, $x(3) = 3$. $x$-intercepts: $(0,\,0)$ and $(3,\,0)$.}
+      Function: $f(x) = $ \ans{$4 + 4(x - 3) = 4x - 8$}
 
-\vspace{0.04in}
-(b)\quad $y$-intercepts (zeros of $x(t)$):
+\item Points $(1,\ 8)$ and $(4,\ 1000)$.
 
-\ans{$t^2 - 2t = t(t-2) = 0 \;\Rightarrow\; t = 0$ or $t = 2$.\\
-$y(0) = 0$, $y(2) = 2$. $y$-intercepts: $(0,\,0)$ and $(0,\,2)$.}
+      $b = \left(\dfrac{1000}{8}\right)^{1/3} = \left(\ans{125}\right)^{1/3} = $ \ans{5}
 
-\end{notesbox}
+      $a = y_1 / b^{x_1} = 8/5 = 1.6$
 
-\vspace{0.08in}
+      Function: $f(x) = $ \ans{$1.6 \cdot 5^x$} \quad \textit{(or equivalently $8 \cdot 5^{x-1}$)}
 
-\begin{notesbox}{Contextual Problem --- Key}
+\item
 
-\textbf{3.}\quad $x(t) = 4t$, $y(t) = -5t^2 + 20t$, $0 \le t \le 4$.
+      \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item $A(t) = $ \ans{$500 + 50t$}
 
-\vspace{4pt}
-(a)\quad Maximum height:
+        \item $B(t) = $ \ans{$500 \cdot (1.05)^t$}
 
-\ans{$y(t) = -5t^2 + 20t$; vertex at $t = -20/(2 \cdot (-5)) = 2$ s.\\
-$y(2) = -20 + 40 = 20$ m. The ball reaches a maximum height of
-$20$ meters at $t = 2$ seconds.}
+        \item $A(12) = \$$ \ans{1100} \quad $B(12) \approx \$$ \ans{897.93}
 
-\vspace{0.04in}
-(b)\quad When does the ball hit the ground?
+              Higher balance: \ans{Plan A (linear) after 12 months}
 
-\ans{$-5t^2 + 20t = 0 \;\Rightarrow\; -5t(t - 4) = 0 \;\Rightarrow\;
-t = 4$ s (excluding $t = 0$).\\
-$x(4) = 4 \cdot 4 = 16$ m east. The ball lands at $x = 16$ m east.}
+              \textit{(Note: exponential overtakes linear eventually, but not by month 12 at these parameters.)}
+      \end{enumerate}
 
-\end{notesbox}
+\item \textbf{(AP-Style MC)} Answer: \ans{B}
 
-\vspace{0.08in}
+      Explanation: \ans{In table B, ratios of consecutive outputs are all 2 ($6/3=2$, $12/6=2$, $24/12=2$), so
+      outputs change proportionally --- this is the defining property of an exponential function.
+      Table A has constant differences (linear); Table C is $y=x^2$ (quadratic); Table D has
+      $y=0$ at $x=0$, which is impossible for $f(x)=ab^x$ since $a = f(0) = 0$ would make
+      $f$ identically zero.}
 
-\begin{notesbox}{AP-Style Practice --- Key}
+\item \textbf{(Extension)}
 
-\textbf{4.}\quad $h(t) = (t^2 - 2t - 3,\; t^2 - 4)$,
-$-1 \le t \le 4$. Which correctly identifies the $y$-intercepts?
+      \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item $y_1 = ab^{x_1}$ \quad and \quad $y_2 = ab^{x_2}$.
 
-\vspace{6pt}
-\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=4pt]
-  \item $(-4,\; 0)$ and $(5,\; 0)$
-  \item \textcolor{keyred}{\textbf{$(0,\; -3)$ and $(0,\; 5)$ $\leftarrow$ correct}}
-  \item $(0,\; -3)$ only
-  \item $(0,\; -4)$ and $(0,\; 12)$
+        \item Dividing:
+              \[
+                \frac{y_2}{y_1} = \frac{ab^{x_2}}{ab^{x_1}} = b^{x_2 - x_1}.
+              \]
+              Raising both sides to the power $\dfrac{1}{x_2 - x_1}$:
+              \[
+                b = \left(\frac{y_2}{y_1}\right)^{1/(x_2 - x_1)}. \quad \checkmark
+              \]
+      \end{enumerate}
+
 \end{enumerate}
-
-\begin{teachernote}
-  \textbf{Solution:} $y$-intercepts occur where $x(t) = 0$.\\
-  $t^2 - 2t - 3 = (t-3)(t+1) = 0 \;\Rightarrow\; t = 3$ or $t = -1$.
-  Both are in $[-1, 4]$.\\
-  At $t = -1$: $y(-1) = 1 - 4 = -3$ → $(0,\,-3)$.\\
-  At $t = 3$: $y(3) = 9 - 4 = 5$ → $(0,\,5)$.\\
-  Answer: \textbf{(B)}.
-
-  \textbf{Distractor analysis:}\\
-  (A) $(-4, 0)$ and $(5, 0)$: student found $x$-intercepts (zeros of
-  $y(t)$) instead of $y$-intercepts --- the classic rule-reversal error.\\
-  (C) $(0, -3)$ only: student excluded $t = -1$ because they treated
-  the domain as open or forgot to check all zeros.\\
-  (D) Evaluated $y$ at wrong $t$-values or made arithmetic errors.
-
-  Post the rule on the board: \emph{zeros of $x(t)$ → $y$-intercepts
-  of the curve; zeros of $y(t)$ → $x$-intercepts.} If most students
-  choose (A), spend two minutes restating this rule before moving on.
-\end{teachernote}
-
-\end{notesbox}
 
 \end{document}

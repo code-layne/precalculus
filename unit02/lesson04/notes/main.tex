@@ -1,4 +1,4 @@
-%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Guided Notes
+%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,103 +9,158 @@
 \pageheader{Unit 2, Lesson 2.4}{Guided Notes}
 \namedateperiod
 
-\vspace{0.08in}
+\vspace{0.1in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Apply the \blank{3.5cm} property to rewrite a horizontal translation $b^{x+k}$ as a
-        vertical dilation $a \cdot b^x$. \hfill\textit{(EK 2.4.A.1)}
-  \item Apply the \blank{3cm} property to rewrite a horizontal dilation $b^{cx}$ as a
-        \blank{3cm} change. \hfill\textit{(EK 2.4.A.2)}
-  \item Simplify expressions with \blank{3cm} exponents and \blank{3cm} exponents
-        (roots). \hfill\textit{(EK 2.4.A.3, A.4)}
+Students will identify and interpret zeros of polynomial functions (real and complex),
+including multiplicity, and determine whether a polynomial function is even or odd.
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item[\textbullet] \writeline
+  \item[\textbullet] \writeline
+  \item[\textbullet] \writeline
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.06in}
-
 \begin{vocabbox}
-\termblanklong{product property of exponents}
-\termblanklong{power property of exponents}
-\termblanklong{negative exponent}
-\termblanklong{fractional exponent}
-\termblanklong{$k$th root}
-\termblanklong{equivalent form}
-\termblanklong{vertical dilation}
-\termblanklong{horizontal translation}
+\termblanklong{zero (root)}
+\termblanklong{multiplicity}
+\termblanklong{complex zero}
+\termblanklong{complex conjugate pair}
+\termblanklong{even function}
+\termblanklong{odd function}
 \end{vocabbox}
 
-\vspace{0.06in}
-
 \begin{hookbox}
-Two functions are on the board:
-\[
-  f(x) = 2^{x+3} \qquad\qquad g(x) = 8 \cdot 2^x
-\]
-Evaluate each at $x = 0$: $f(0) = $ \blank{2cm}, $g(0) = $ \blank{2cm}. \\[4pt]
-Evaluate each at $x = 1$: $f(1) = $ \blank{2cm}, $g(1) = $ \blank{2cm}. \\[4pt]
-These functions \blank{3cm} (are / are not) equivalent because $2^{x+3} = 2^x \cdot 2^{\blank{1cm}} = \blank{1.5cm} \cdot 2^x$.
+Consider $p(x)=(x-2)^2(x+1)$.
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+  \item Where does the graph of $y=p(x)$ \emph{cross} the $x$-axis? \blank{4cm}
+  \item Where does it \emph{touch and bounce} without crossing? \blank{4cm}
+  \item What is it about the \emph{exponent} on a factor that tells you which will happen?
+        \writeline
+\end{itemize}
 \end{hookbox}
 
-\vspace{0.06in}
+\begin{notesbox}{Zeros and Linear Factors}
+\textbf{Key connection:} For a polynomial $p(x)$, if $p(a) = \blank{1.5cm}$, then $a$
+is called a \blank{3cm} of $p$, and $(x - a)$ is a \blank{3cm} factor of $p$.
 
-\begin{notesbox}{LO 2.4.A --- Product Property (EK 2.4.A.1)}
-\textbf{Product Property:} \quad $b^m \cdot b^n = $ \blank{3cm}
+\vspace{0.15in}
 
-\medskip
-\textbf{Graphical connection:} A horizontal translation $f(x) = b^{x+k}$ is equivalent to a
-vertical dilation $f(x) = \blank{1.5cm} \cdot b^x$, where $a = $ \blank{2cm}.
+\textbf{Multiplicity:} If the factor $(x-a)$ appears \blank{2cm} times, then $a$ has
+multiplicity \blank{1.5cm}. A polynomial of degree $n$ has exactly \blank{1.5cm}
+complex zeros (counting multiplicities).
 
-\medskip
-\textbf{Examples --- rewrite in the form $ab^x$:}
+\vspace{0.1in}
 
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{@{} l @{\quad$=$\quad} l @{\quad$=$\quad} l @{}}
-$5^{x+2}$ & $5^x \cdot 5^{\blank{0.6cm}}$ & \blank{2cm} $\cdot\, 5^x$ \\
-$3^{x-1}$ & $3^x \cdot 3^{\blank{0.6cm}}$ & \blank{2cm} $\cdot\, 3^x$ \\
-$4 \cdot 2^x$ & $2^{\blank{0.6cm}} \cdot 2^x$ & $2^{x + \blank{0.6cm}}$ \\
-\end{tabular}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|X|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Polynomial} & \textbf{Factored Form} & \textbf{Zeros} & \textbf{Multiplicities} \\
+\hline
+$p(x)=(x-2)^2(x+1)$ & & & \\[14pt]
+\hline
+$q(x)=x^3-x^2-6x$ & & & \\[14pt]
+\hline
+$r(x)=(x+1)^3(x-4)^2$ & already factored & & \\[14pt]
+\hline
+\end{tabularx}
 \end{notesbox}
 
-\vspace{0.06in}
+\begin{notesbox}{Graph Behavior at Real Zeros}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|l|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Multiplicity} & \textbf{Graph behavior at the zero} & \textbf{Example} \\
+\hline
+Odd (1, 3, 5, \ldots) & \blank{4cm} the $x$-axis & $(x+1)^1$ in $p(x)$ above \\
+\hline
+Even (2, 4, 6, \ldots) & \blank{4cm} the $x$-axis (tangent) & $(x-2)^2$ in $p(x)$ above \\
+\hline
+\end{tabularx}
 
-\begin{notesbox}{LO 2.4.A --- Power Property (EK 2.4.A.2)}
-\textbf{Power Property:} \quad $(b^m)^n = $ \blank{3cm}
+\vspace{0.1in}
+For $p(x)=(x+2)(x-1)^2(x-3)$, predict the graph's behavior at each zero:
 
-\medskip
-\textbf{Graphical connection:} A horizontal dilation $f(x) = b^{cx}$ is equivalent to a base
-change $f(x) = (\blank{2cm})^x$, where the new base is $b^c$.
-
-\medskip
-\textbf{Examples --- rewrite as a single base to the $x$ power:}
-
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{@{} l @{\quad$=$\quad} l @{\quad$=$\quad} l @{}}
-$2^{3x}$   & $(2^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
-$9^{x/2}$  & $(9^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
-$4^{x/2}$  & $(4^{\blank{0.6cm}})^x$ & $\blank{2cm}^x$ \\
-\end{tabular}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Zero} & \textbf{Multiplicity} & \textbf{Crosses or tangent?} \\
+\hline
+$x = -2$ & \blank{2cm} & \blank{3cm} \\
+\hline
+$x = 1$  & \blank{2cm} & \blank{3cm} \\
+\hline
+$x = 3$  & \blank{2cm} & \blank{3cm} \\
+\hline
+\end{tabularx}
 \end{notesbox}
 
-\vspace{0.06in}
+\begin{notesbox}{Complex Zeros \& Conjugate Pairs}
+\textbf{Complex Conjugate Pairs Theorem:} If $p(x)$ is a polynomial with
+\blank{3cm} coefficients and $a+bi$ (with $b\neq 0$) is a zero, then
+\blank{3cm} is also a zero of $p$.
 
-\begin{notesbox}{LO 2.4.A --- Negative \& Fractional Exponents (EK 2.4.A.3, A.4)}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} >{\bfseries}p{0.38\linewidth} l @{}}
-Negative exponent rule:     & $b^{-n} = \dfrac{1}{\blank{2cm}}$ \\
-Fractional exponent rule:   & $b^{1/k} = \blank{2.5cm}$ \\
-General fractional exponent: & $b^{m/n} = (\sqrt[n]{b})^{\blank{0.8cm}}$ \\
-\end{tabular}
-
-\medskip
-\textbf{Decay connection:} $f(x) = 2^{-x} = \left(\dfrac{\blank{1cm}}{\blank{1cm}}\right)^x$
-
-\medskip
-\textbf{Evaluate:}
-\quad $2^{-3} = $ \blank{2cm}
-\quad $8^{1/3} = $ \blank{2cm}
-\quad $4^{3/2} = $ \blank{2cm}
+\vspace{0.1in}
+\textbf{Example:} Suppose $p(x)$ has real coefficients and $2+3i$ is a zero.
+\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
+  \item The other complex zero must be: \blank{4cm}
+  \item Write the quadratic factor formed by this conjugate pair:\\[4pt]
+        $(x-(2+3i))(x-(2-3i)) = x^2 - \blank{2cm}x + \blank{2cm}$
+  \item If $p$ also has real zero $x=1$, what is the minimum degree of $p$?
+        \blank{2cm}
+\end{itemize}
 \end{notesbox}
+
+\begin{notesbox}{Even and Odd Functions}
+\textbf{Definitions:}
+\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
+  \item $f$ is \textbf{even} if $f(-x) = \blank{2.5cm}$ for all $x$ in its domain.
+        Graph is symmetric about the \blank{3cm}.
+  \item $f$ is \textbf{odd} if $f(-x) = \blank{2.5cm}$ for all $x$ in its domain.
+        Graph is symmetric about the \blank{3cm}.
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Algebraic test — steps:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+  \item Replace every $x$ with \blank{1.5cm} and simplify.
+  \item Compare the result to \blank{3cm} (even) or \blank{3cm} (odd).
+  \item If neither equality holds, the function is \blank{2.5cm}.
+\end{enumerate}
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|X|X|X|}
+\hline
+\rowcolor{sky}
+\textbf{Function} & \textbf{$f(-x) = \ldots$} & \textbf{Even, Odd, or Neither?} \\
+\hline
+$f(x)=x^4-2x^2$ & & \\[12pt]
+\hline
+$g(x)=x^3-x$ & & \\[12pt]
+\hline
+$h(x)=x^2+x$ & & \\[12pt]
+\hline
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item A polynomial with real coefficients has zeros $x=4$ (multiplicity 2) and $x=1-i$.
+        \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+          \item List all zeros of this polynomial.
+                \writeline
+          \item What is the minimum degree?  \blank{2cm}
+          \item At which real zero does the graph touch but not cross the $x$-axis?
+                \blank{3cm}
+        \end{enumerate}
+
+  \item Determine whether $k(x)=2x^6-3x^4+x^2$ is even, odd, or neither.
+        Show the algebraic test.
+        \writelines{3}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

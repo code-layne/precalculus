@@ -1,0 +1,133 @@
+%! Logarithmic Expressions — Unit 5, Lesson 5.1 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.1}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Logarithms in the Real World]{sky}
+\small
+Scientists use logarithms to measure quantities that span huge ranges. The \textbf{decibel scale}
+measures sound intensity: a whisper is about 30 dB and a jet engine about 140 dB, yet the actual
+intensities differ by a factor of $10^{11}$. The \textbf{pH scale} measures acidity: each unit
+of pH corresponds to a 10$\times$ change in hydrogen-ion concentration. Work through the tier that
+best matches your current level.
+\end{scenariobox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part A: Conversion drill.} Convert each equation to the other form.
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} X X @{}}
+\textbf{Exponential $\to$ Logarithmic} & \textbf{Logarithmic $\to$ Exponential} \\
+\midrule
+$3^4 = 81$ \quad $\Rightarrow$ \ans{$\log_3 81 = 4$}  & $\log_2 32 = 5$ \quad $\Rightarrow$ \ans{$2^5 = 32$} \\[4pt]
+$5^3 = 125$ \quad $\Rightarrow$ \ans{$\log_5 125 = 3$} & $\log_3 9 = 2$ \quad $\Rightarrow$ \ans{$3^2 = 9$} \\[4pt]
+$10^2 = 100$ \quad $\Rightarrow$ \ans{$\log_{10} 100 = 2$} & $\log_6 1 = 0$ \quad $\Rightarrow$ \ans{$6^0 = 1$} \\[4pt]
+$4^{1/2} = 2$ \quad $\Rightarrow$ \ans{$\log_4 2 = 1/2$} & $\log_{10} 0.1 = -1$ \quad $\Rightarrow$ \ans{$10^{-1} = 0.1$} \\
+\end{tabularx}
+
+\vspace{0.10in}
+\textbf{Part B: Evaluate each logarithm exactly.}
+
+\vspace{0.06in}
+$\log_2 16 = $ \ans{4} \qquad
+$\log_3 1 = $ \ans{0} \qquad
+$\log_{10} 10{,}000 = $ \ans{4} \qquad
+$\log_5 5 = $ \ans{1}
+
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item Evaluate each logarithm exactly. Show the exponential form you used.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $\log_6 36 = $ \ans{2} \hspace{1em} because $6^{\ans{2}} = 36$
+          \item $\log_{10} 0.001 = $ \ans{$-3$} \hspace{1em} because $10^{\ans{$-3$}} = 0.001$
+          \item $\log_9 3 = $ \ans{$1/2$} \hspace{1em} because $9^{\ans{$1/2$}} = 3$
+        \end{enumerate}
+
+  \item Use a calculator to estimate to 3 decimal places.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $\log_2 7 \approx $ \ans{2.807}
+          \item $\ln 5 \approx $ \ans{1.609}
+        \end{enumerate}
+
+  \item Without a calculator, determine between which two consecutive integers $\log_3 20$ falls.
+        Explain your reasoning.
+
+        \vspace{0.04in}
+        $3^{\ans{2}} = $ \ans{9} $< 20 <$ \ans{27} $= 3^{\ans{3}}$,
+        so $\log_3 20$ is between \ans{2} and \ans{3}.
+
+  \item The pH of a solution is $\text{pH} = -\log_{10}[\text{H}^+]$.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item If $[\text{H}^+] = 10^{-4}$, find the pH. \ans{pH $= -(-4) = 4$}
+          \item If $[\text{H}^+] = 10^{-7}$, find the pH. \ans{pH $= -(-7) = 7$}
+          \item Which solution is more acidic (lower pH)? \ans{$[\text{H}^+] = 10^{-4}$ (pH 4)}
+        \end{enumerate}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item \textbf{Prove two inverse properties.}
+
+        \begin{enumerate}[label=(\alph*), itemsep=8pt]
+          \item Show that $\log_b b^n = n$.
+
+                \begin{teachernote}
+                Let $a = \log_b b^n$. By definition, $b^a = b^n$, so $a = n$.
+                Therefore $\log_b b^n = n$.
+                \end{teachernote}
+
+          \item Show that $b^{\log_b n} = n$.
+
+                \begin{teachernote}
+                Let $a = \log_b n$. By definition, $b^a = n$.
+                Substituting: $b^{\log_b n} = b^a = n$.
+                \end{teachernote}
+        \end{enumerate}
+
+  \item Solve for $x$: $\log_4 x = \dfrac{3}{2}$.
+
+        $4^{3/2} = $ \ans{$(4^{1/2})^3 = 2^3 = 8$}, so $x = $ \ans{8}
+
+  \item Connection between fractional exponents and fractional logarithms:
+
+        \begin{teachernote}
+        A fractional exponent like $4^{3/2}$ means ``raise 4 to the 3rd power then take the
+        square root'' (or vice versa). The logarithm $\log_4 8 = 3/2$ says ``the exponent we
+        need to raise 4 to in order to get 8 is $3/2$'' --- which is exactly the fractional
+        exponent. Logarithms and fractional exponents are two ways of expressing the same
+        inverse relationship.
+        \end{teachernote}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

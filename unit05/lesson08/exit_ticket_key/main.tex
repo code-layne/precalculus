@@ -1,0 +1,59 @@
+%! Semi-log Plots — Unit 5, Lesson 5.8 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.8}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item The table below gives values of $x$ and $y$.  Compute $\log_{10}(y)$ for each $x$.
+      Then find the slope and $y$-intercept of the linear relationship between $x$ and
+      $\log_{10}(y)$.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor{sky}
+$x$ & $y$ & $\log_{10}(y)$ \\
+\hline
+$0$ & $4$   & \ans{0.602} \\
+\hline
+$1$ & $12$  & \ans{1.079} \\
+\hline
+$2$ & $36$  & \ans{1.556} \\
+\hline
+$3$ & $108$ & \ans{2.033} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+Slope of $\log_{10}(y)$ vs.\ $x$: \ans{$0.477 \approx \log_{10}(3)$}
+
+\vspace{4pt}
+$y$-intercept of $\log_{10}(y)$ vs.\ $x$: \ans{$0.602 \approx \log_{10}(4)$}
+
+\item Using the slope and $y$-intercept from Question 1, identify $a$ and $b$, and write
+      the exponential model $y = a \cdot b^x$.  Then verify your model using $x = 1$.
+
+\vspace{4pt}
+$b = 10^{\text{slope}} = $ \ans{$10^{0.477} \approx 3$} \qquad $a = 10^{\text{intercept}} = $ \ans{$10^{0.602} \approx 4$}
+
+\vspace{6pt}
+Exponential model: $y = $ \ans{$4 \cdot 3^x$}
+
+\vspace{6pt}
+Verify: $y(1) = $ \ans{$4 \cdot 3 = 12$}. Does this match the table? \ans{Yes}
+
+\end{enumerate}
+
+\end{document}

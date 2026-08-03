@@ -1,4 +1,4 @@
-%! Exponential Function Manipulation — Unit 2, Lesson 2.4 — Lesson Plan
+%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.4: Exponential Function Manipulation}
+\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.4: Polynomial Functions and Complex Zeros}
 
 \begin{document}
 \begin{center}
@@ -19,151 +19,178 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will rewrite exponential expressions in equivalent
-    forms by applying the product property ($b^m \cdot b^n = b^{m+n}$), the power property
-    ($(b^m)^n = b^{mn}$), and the negative and fractional exponent properties, connecting each
-    algebraic manipulation to a graphical transformation of the exponential function.
-    \hfill\textit{\small Skills: AP 1.B, AP 3.A}
+    \textbf{Primary Objective:} Students will identify and interpret zeros of polynomial
+    functions (real and complex), including multiplicity, and determine whether a polynomial
+    function is even or odd using algebraic and graphical reasoning. \textbf{(MP 1.B, 2.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{AP 1.B} --- Identify an appropriate mathematical rule or procedure based on the
-classification of a given expression. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Product property: $b^m \cdot b^n = b^{m+n}$; a horizontal translation
-        $b^{x+k}$ is equivalent to a vertical dilation $b^k \cdot b^x$. (EK 2.4.A.1)
-  \item Power property: $(b^m)^n = b^{mn}$; a horizontal dilation $b^{cx}$ is
-        equivalent to a base change $(b^c)^x$. (EK 2.4.A.2)
-\end{itemize} \\
-\textbf{AP 3.A} --- Apply an appropriate mathematical definition, theorem, or test. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Negative exponent: $b^{-n} = \dfrac{1}{b^n}$; decay as a base-flip. (EK 2.4.A.3)
-  \item Fractional exponent: $b^{1/k} = \sqrt[k]{b}$; $b^{m/n} = (\sqrt[n]{b})^m$. (EK 2.4.A.4)
-\end{itemize} \\
-\end{tabularx}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{AP Skills}\\
+    \textbf{1.B} Express functions/equations in analytically equivalent forms — factored
+    form reveals zeros and multiplicities.\\[4pt]
+    \textbf{2.B} Construct equivalent representations — connect factored form to graph
+    behavior (cross vs.\ touch) and even/odd classification.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{Key Understandings}\\
+    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+        \item Factor $(x-a)$ $\Leftrightarrow$ zero at $a$; multiplicity $=$ how many times repeated.
+        \item A degree-$n$ polynomial has exactly $n$ complex zeros (counting multiplicities).
+        \item Odd multiplicity $\Rightarrow$ graph \emph{crosses}; even multiplicity $\Rightarrow$
+              graph \emph{touches and bounces}.
+        \item Complex zeros come in conjugate pairs for polynomials with real coefficients.
+        \item Even function: $f(-x)=f(x)$, symmetric about $y$-axis.
+              Odd function: $f(-x)=-f(x)$, symmetric about origin.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.30\linewidth} X @{}}
-product property of exponents & $b^m \cdot b^n = b^{m+n}$; adds exponents when bases match. \\
-power property of exponents   & $(b^m)^n = b^{mn}$; multiplies exponents. \\
-negative exponent             & $b^{-n} = \dfrac{1}{b^n}$; flips to the reciprocal base. \\
-fractional exponent           & $b^{1/k} = \sqrt[k]{b}$; $b^{m/n} = (\sqrt[n]{b})^m$. \\
-$k$th root                    & $\sqrt[k]{b} = b^{1/k}$; the value whose $k$th power equals $b$. \\
-equivalent form               & Two expressions that produce the same output for every input. \\
-vertical dilation             & Multiplying the output by a constant $a$ (stretches or compresses). \\
-horizontal translation        & Replacing $x$ with $x+k$ shifts the graph left ($k>0$) or right. \\
-\end{tabularx}
-\end{skillbox}
-
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers Lesson 2.3: identifying $a$ and $b$ in $f(x) = ab^x$,
-    classifying growth vs.\ decay, evaluating an exponential function at a given input, and
-    writing $f(x)$ from a table of values. Students work three short problems; teacher
-    circulates to assess readiness for exponent manipulation.
-\end{skillbox}
-
-\begin{skillbox}[Hook]{sky}
-Write two functions on the board:
-\[
-  f(x) = 2^{x+3} \qquad\qquad g(x) = 8 \cdot 2^x
-\]
-Ask: \textbf{``Are these the same function? Try $x = 0$, $x = 1$, and $x = -3$.''}
-Give students 90 seconds. After discussion, reveal: \textbf{yes} --- because
-$2^{x+3} = 2^x \cdot 2^3 = 8 \cdot 2^x$.
-Frame: \textit{``Today we master the algebra that connects these forms --- and see how each
-form tells a different story about the same graph.''}
-\end{skillbox}
-
-\begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
-\textbf{Part 1 (15 min): Product Property.}
-
-State: $b^m \cdot b^n = b^{m+n}$.
-Graphical interpretation: a horizontal translation $f(x) = b^{x+k}$ equals a vertical
-dilation $f(x) = b^k \cdot b^x = ab^x$ where $a = b^k$.
-
-Model on the board:
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
-  \item $5^{x+2} = 5^x \cdot 5^2 = 25 \cdot 5^x$
-  \item $3^{x-1} = 3^x \cdot 3^{-1} = \tfrac{1}{3} \cdot 3^x$
-  \item Reverse: $4 \cdot 2^x = 2^2 \cdot 2^x = 2^{x+2}$
+\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+    \item \textbf{Zero (root)} — value $a$ such that $p(a)=0$
+    \item \textbf{Multiplicity} — how many times a linear factor is repeated
+    \item \textbf{Complex zero} — a zero of the form $a+bi$, $b\neq 0$
+    \item \textbf{Complex Conjugate Pairs Theorem} — if $p$ has real coefficients and
+          $a+bi$ is a zero, then $a-bi$ is also a zero
+    \item \textbf{Even function} — $f(-x)=f(x)$; symmetric over $y$-axis
+    \item \textbf{Odd function} — $f(-x)=-f(x)$; symmetric about origin
+    \item \textbf{Successive differences} — method for identifying polynomial degree from
+          a table of equally-spaced values
 \end{itemize}
-
-Pose: ``Which form reveals the $y$-intercept? Which shows the horizontal shift?''
-
-\columnbreak
-
-\textbf{Part 2 (15 min): Power Property.}
-
-State: $(b^m)^n = b^{mn}$.
-Graphical interpretation: a horizontal dilation $f(x) = b^{cx}$ equals a base change
-$f(x) = (b^c)^x$.
-
-Model:
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
-  \item $2^{3x} = (2^3)^x = 8^x$
-  \item $9^{x/2} = (9^{1/2})^x = 3^x$
-\end{itemize}
-
-\textbf{Part 3 (10 min): Negative \& Fractional Exponents.}
-
-$b^{-n} = \dfrac{1}{b^n}$ connects to decay:
-$2^{-x} = \left(\dfrac{1}{2}\right)^x$.
-
-$b^{1/k} = \sqrt[k]{b}$ and $b^{m/n} = (\sqrt[n]{b})^m$.
-Examples: $8^{1/3} = 2$; $4^{3/2} = (\sqrt{4})^3 = 8$.
 \end{multicols}
 \end{skillbox}
 
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        Please see attached spiral review.\\[3pt]
+        \textit{Skills reviewed:} factoring polynomials (GCF, difference of squares,
+        grouping), identifying $x$-intercepts from equations, complex number basics
+        ($a+bi$ form, powers of $i$).
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Display on board:} $p(x)=(x-2)^2(x+1)$
+
+    \medskip
+    Ask students:
+    \begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+        \item Where does the graph of $y=p(x)$ cross the $x$-axis?
+        \item Does the graph cross the $x$-axis at $x=2$, or does it simply touch it?
+              How do you know just by looking at the factor $(x-2)^2$?
+        \item If we multiply out $p(x)$, what is the degree? How many zeros should
+              there be in total?
+    \end{enumerate}
+    \textit{Goal:} Students notice that the exponent on the factor predicts crossing vs.\
+    bouncing — launching the multiplicity concept.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \textbf{1. Zeros and Linear Factors (LO 1.5.A.1--A.2)}
+
+    If $p(a)=0$, then $a$ is a zero of $p$, and $(x-a)$ is a linear factor.
+    Revisit hook polynomial and list all zeros and their multiplicities.
+    Stress: a degree-$n$ polynomial has \emph{exactly} $n$ complex zeros counting multiplicities.
+
+    \medskip
+    \textbf{2. Graph Behavior at Real Zeros (LO 1.5.A.3, A.5)}
+
+    Build a table: \quad
+    \begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{Multiplicity} & \textbf{Graph behavior} & \textbf{Example} \\\hline
+    Odd (1, 3, \ldots) & Crosses $x$-axis & $(x+1)$ in hook poly \\\hline
+    Even (2, 4, \ldots) & Tangent (touches, bounces) & $(x-2)^2$ in hook poly \\\hline
+    \end{tabular}
+
+    Work additional example: $q(x)=x^2(x-3)(x+1)^3$. Ask students to predict
+    crossing/touching at each zero before graphing with technology.
+
+    \medskip
+    \textbf{3. Exactly $n$ Complex Zeros (LO 1.5.A.2)}
+
+    Introduce the Fundamental Theorem of Algebra (not proved, just stated).
+    Example: a degree-4 polynomial must have 4 zeros; some may be complex.
+
+    \medskip
+    \textbf{4. Complex Conjugate Pairs (LO 1.5.A.4)}
+
+    State theorem: for polynomials with real coefficients, complex zeros come in
+    conjugate pairs $a\pm bi$.
+    Example: if $p$ has real coefficients and $2+3i$ is a zero, then $2-3i$ must
+    also be a zero. Build minimal polynomial: $(x-(2+3i))(x-(2-3i))=x^2-4x+13$.
+
+    \medskip
+    \textbf{5. Even and Odd Functions (LO 1.5.B.1--B.2)}
+
+    Algebraic test: substitute $-x$ and simplify.
+    \begin{itemize}[leftmargin=1.2em]
+        \item If $f(-x)=f(x)$ $\Rightarrow$ \textbf{even}; graph symmetric over $y$-axis.
+        \item If $f(-x)=-f(x)$ $\Rightarrow$ \textbf{odd}; graph symmetric about origin.
+        \item Otherwise $\Rightarrow$ \textbf{neither}.
+    \end{itemize}
+    Examples: $f(x)=x^4-2x^2$ (even); $g(x)=x^3-x$ (odd); $h(x)=x^2+x$ (neither).
+
+    \medskip
+    \textbf{6. Successive Differences (LO 1.5.A.6)} (\textit{brief introduction})
+
+    Show a table of values for a cubic over equally-spaced $x$-values. Take first,
+    second, third differences. Third differences are constant $\Rightarrow$ degree 3.
+    Degree $=$ least $n$ for which $n$th differences are constant.
+\end{skillbox}
+
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call --- ``If $f(x) = 7^{x+2}$, what is $a$ in $ab^x$ form?''
-        (Expect $a = 49$.) Watch for students who add the $k$ as a coefficient.
-  \item During Part 2: listen for confusion between $b^{cx}$ and $(bc)^x$; the parentheses
-        determine whether we change the base or multiply a coefficient.
-  \item After Part 2: ``What single base replaces $4^{x/2}$?'' (Expect $2^x$.)
-  \item Throughout: students collapsing $b^{x+k}$ to $(bk)^x$ need re-teaching of product
-        vs.\ power property.
-\end{itemize}
+    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
+        \item Circulate during the multiplicity table: watch for students who think
+              even multiplicity means the graph doesn't touch the axis at all.
+        \item Cold-call: ``If $p(x)=(x-5)^3(x+2)^2$, how many zeros does $p$ have?
+              What is the degree? Does the graph cross or bounce at $x=5$?''
+        \item During even/odd: watch for students who only check a single value of $x$
+              instead of proving algebraically for all $x$.
+        \item Ensure students don't confuse \emph{even/odd function} with
+              \emph{even/odd degree}.
+    \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Identify the property needed, then rewrite each given
-        expression one step at a time into $ab^x$ form: $2^{x+4}$, $3^{2x}$, $5^{-x}$, $4^{x/2}$.
-  \item \textbf{Tier A (Apply):} Match three forms of the same function; rewrite $8^{x/3}$
-        and $27 \cdot 3^{-x}$; show each step explicitly.
-  \item \textbf{Tier E (Extend):} Rewrite $6^{2x+1}$ in three equivalent forms; explain which
-        form is most useful in each of three mathematical contexts.
-\end{itemize}
+    See activity for full tiered problem set (polynomials $p$, $q$, $r$).
+
+    \medskip
+    \textbf{Tier R (Remediate):} Zeros, multiplicities, and crossing/bouncing for $p(x)=(x+2)(x-1)^2(x-3)$.
+
+    \medskip
+    \textbf{Tier A (Apply):} Add factoring and algebraic even/odd test for $q(x)=x^4-5x^2+4$; compare graph behaviors.
+
+    \medskip
+    \textbf{Tier E (Extend):} Complex zeros of $r(x)=x^3+2x$; verify conjugate pairs; determine if $r$ is even, odd, or neither; use successive differences to verify degree of $q$.
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) rewrite $3^{x+4}$ in $a \cdot b^x$ form (product
-property); (2) rewrite $5^{2x}$ as a single base to the $x$ power (power property);
-(3) evaluate $2^{-3}$ and $8^{1/3}$ (negative and fractional exponents).
-
-Sort tickets: students missing item 1 need product-property reinforcement (EK 2.4.A.1);
-missing item 2 need power-property work (EK 2.4.A.2); missing item 3 need exponent-property
-review (EK 2.4.A.3--A.4).
+    \textbf{Exit Ticket} (last 5--7 minutes): two problems on a half-sheet.
+    \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+        \item A degree-4 polynomial with real coefficients has zeros $x=-1$ (mult.\ 2)
+              and $x=2+i$. List all four zeros; identify which real zero causes tangency.
+        \item Determine whether $f(x)=x^5-3x^3+x$ is even, odd, or neither (show work).
+    \end{enumerate}
+    \textit{Collect and use for tomorrow's warm-up review.}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): product-property rewrites (horizontal translation $\to$ vertical
-dilation); power-property rewrites (horizontal dilation $\to$ base change); negative and
-fractional exponent simplification; show two functions equivalent; AP-style MC on equivalent
-expressions for $16^{x/4}$; extension --- find $b$ such that $f(x) = b^{2x}$ equals
-$g(x) = 9 \cdot 3^x$.
+    \textbf{Homework:} 5 problems covering minimal-degree polynomials from zeros, listing
+    all zeros given one complex zero, factoring to find zeros with multiplicities,
+    algebraic even/odd test, and an AP-style MC on zeros of a factored polynomial.
 
-Preview of Lesson 2.5: logarithmic functions as inverses of exponentials --- connecting the
-$ab^x$ form mastered today to logarithmic structure.
+    \medskip
+    \textbf{Extension:} Successive-differences puzzle — given that the third differences
+    of a mystery polynomial's output are all equal to 6, determine the degree and write
+    a general form.
+
+    \medskip
+    \textbf{Preview:} Next lesson (1.6) — Rational Functions: vertical asymptotes, holes,
+    and end behavior.
 \end{skillbox}
-
 \end{document}

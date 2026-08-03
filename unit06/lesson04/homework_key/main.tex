@@ -1,0 +1,95 @@
+%! Sine and Cosine Function Values — Unit 6, Lesson 6.4 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{notesbox}{Sine and Cosine Function Values --- Practice}
+
+\textbf{1.} Complete the table with exact values.
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}l *{6}{>{\centering\arraybackslash}X} @{}}
+\toprule
+$\theta$ (rad) & $\dfrac{5\pi}{4}$ & $\dfrac{4\pi}{3}$ & $\dfrac{3\pi}{2}$ & $\dfrac{5\pi}{3}$ & $\dfrac{7\pi}{4}$ & $\dfrac{11\pi}{6}$ \\
+\midrule
+$\sin\theta$ &
+  \ans{$-\dfrac{\sqrt{2}}{2}$} &
+  \ans{$-\dfrac{\sqrt{3}}{2}$} &
+  \ans{$-1$} &
+  \ans{$-\dfrac{\sqrt{3}}{2}$} &
+  \ans{$-\dfrac{\sqrt{2}}{2}$} &
+  \ans{$-\dfrac{1}{2}$} \\
+$\cos\theta$ &
+  \ans{$-\dfrac{\sqrt{2}}{2}$} &
+  \ans{$-\dfrac{1}{2}$} &
+  \ans{$0$} &
+  \ans{$\dfrac{1}{2}$} &
+  \ans{$\dfrac{\sqrt{2}}{2}$} &
+  \ans{$\dfrac{\sqrt{3}}{2}$} \\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1}
+
+\vspace{0.12in}
+
+\textbf{2.} $r = 8$, $\theta = 7\pi/6$. Reference angle $= \pi/6$ (QIII: both negative).
+\[
+  x = 8\cos\!\left(\tfrac{7\pi}{6}\right) = 8\cdot\left(-\tfrac{\sqrt{3}}{2}\right) = -4\sqrt{3},
+  \qquad
+  y = 8\sin\!\left(\tfrac{7\pi}{6}\right) = 8\cdot\left(-\tfrac{1}{2}\right) = -4
+\]
+
+$P = \Bigl($ \ans{$-4\sqrt{3}$} $,$ \ans{$-4$} $\Bigr)$
+
+\vspace{0.12in}
+
+\textbf{3.} $\sin\theta = -\sqrt{2}/2$ and $\cos\theta < 0$: negative sine and negative cosine $\Rightarrow$ QIII.
+Reference angle $= \pi/4$, so $\theta = \pi + \pi/4$.
+
+$\theta = $ \ans{$\dfrac{5\pi}{4}$}
+
+\vspace{0.12in}
+
+\textbf{4.} $\theta = 5\pi/3$ is in QIV. Reference angle $= \pi/3$.
+$\sin(\pi/3) = \sqrt{3}/2$; negate for QIV: $\sin(5\pi/3) = -\sqrt{3}/2$.
+$y$-coordinate $= r\sin(5\pi/3) = -r\cdot\sqrt{3}/2$.
+
+Answer: \ans{(B)} \quad Justify: \ans{$5\pi/3$ is in QIV (ref.\ angle $\pi/3$); $\sin$ is negative in QIV, so $y = -r\cdot\sqrt{3}/2$.}
+
+\vspace{0.12in}
+
+\textbf{5.} On the unit circle, the point at angle $\theta$ is $(x, y) = (\cos\theta, \sin\theta)$.
+Adding $\pi$ to an angle rotates the point $180^\circ$, reflecting it through the origin.
+This maps $(x, y)$ to $(-x, -y)$.
+Therefore the $x$-coordinate at $\pi + \theta$ is $-\cos\theta$.
+
+\ans{Because rotating by $\pi$ reflects the terminal point through the origin, the $x$-coordinate changes sign: $\cos(\pi+\theta) = -\cos\theta$.}
+
+\end{notesbox}
+
+\begin{extensionbox}
+\textbf{Extension:} $\sin(\pi - \theta) = \sin\theta$.
+
+\ans{The point at angle $\theta$ is $(\cos\theta, \sin\theta)$. Replacing $\theta$ with $\pi - \theta$ reflects the point across the $y$-axis (the $x$-coordinate negates but the $y$-coordinate is unchanged). Therefore $\sin(\pi - \theta) = \sin\theta$.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small\textbf{Preview of Lesson 3.4:} Now that we know exact $\sin\theta$ and $\cos\theta$ values
+at key angles, we will use those values as ordered pairs to build and interpret the
+graphs of $y = \sin x$ and $y = \cos x$. Bring your completed homework table --- those
+values become the points on the graph!
+\end{tcolorbox}
+
+\end{document}

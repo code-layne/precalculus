@@ -1,4 +1,4 @@
-%! Conic Sections — Unit 4, Lesson 4.6 — Exit Ticket (Answer Key)
+%! Exponential Function Context and Data Modeling — Unit 4, Lesson 4.6 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,39 +9,44 @@
 \pageheader{Unit 4, Lesson 4.6}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.14in}
 
-\begin{notesbox}{Conic Sections Check}
+\begin{enumerate}[itemsep=16pt]
 
-\textbf{1.}\quad Write the standard form equation of an ellipse centered at
-$(3, -1)$ with horizontal radius $5$ and vertical radius $2$.
+\item A population grows at 6\% per year and starts at 5{,}000.
 
-\ansline{$\dfrac{(x-3)^2}{25} + \dfrac{(y+1)^2}{4} = 1$}
+      Write the model $P(t)$ in $ab^t$ form: \quad $P(t) = $ \ans{$5000 \cdot (1.06)^t$}
 
-\vspace{0.06in}
+      \vspace{0.06in}
+      Find $P(10)$. Round to the nearest whole number.
 
-\textbf{2.}\quad For the equation $\dfrac{(y+2)^2}{16} - \dfrac{(x-1)^2}{9} = 1$:
+      \vspace{0.06in}
+      $P(10) = $ \ans{$5000 \cdot (1.06)^{10} \approx 5000 \cdot 1.7908 \approx 8{,}954$}
 
-\vspace{4pt}
-(a)\quad What type of conic is this?
-\ansline{Hyperbola (the $y$-term is positive and the two terms are subtracted)}
+\item An exponential model passes through $(1,\,6)$ and $(3,\,54)$. Find $a$ and $b$.
 
-(b)\quad What is the center?
-\ansline{$(1,\,-2)$}
+      \vspace{0.06in}
+      Show your work: \ans{$6 = ab^1$ and $54 = ab^3$. Divide: $54/6 = b^2$, so $b^2 = 9$, $b = 3$.\\[3pt]
+      Then $a = 6/3 = 2$.}
 
-(c)\quad Write both asymptote equations.
+      \vspace{0.06in}
 
-\ansline{$y + 2 = \dfrac{4}{3}(x-1)$ \quad and \quad $y + 2 = -\dfrac{4}{3}(x-1)$}
+      $a = $ \ans{2} \quad $b = $ \ans{3}
 
-\end{notesbox}
+\item For the model in \#1, what does the base $b = 1.06$ tell you about the population?
+      Answer in a complete sentence.
+
+      \vspace{0.06in}
+      \ans{The base $b = 1.06$ means the population grows by a factor of 1.06 each year, which represents a 6\% increase per year.}
+
+\end{enumerate}
 
 \begin{teachernote}
-Problem 1: accept any algebraically equivalent form. The most common error is
-writing $25$ and $4$ without squaring (i.e., $a = 5 \Rightarrow a^2 = 25$) ---
-verify students wrote $a^2$ in the denominator, not $a$.\\[3pt]
-Problem 2: $b^2 = 16 \Rightarrow b = 4$ (from the positive $y$ term) and
-$a^2 = 9 \Rightarrow a = 3$ (from the $x$ term). Asymptote slope is $b/a = 4/3$.
-The hyperbola opens up and down because the $y$-term is positive.
+Item 1: $a = 5000$, $b = 1.06$. $P(10) = 5000(1.06)^{10} \approx 8954$.
+
+Item 2: From dividing the two equations, $b^2 = 9$ so $b = 3$ (reject negative base). Then $a = 6/b = 2$. Model: $f(x) = 2 \cdot 3^x$.
+
+Item 3: Accept any complete sentence that connects $b = 1.06$ to a 6\% annual growth rate.
 \end{teachernote}
 
 \end{document}

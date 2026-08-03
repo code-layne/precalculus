@@ -1,0 +1,178 @@
+%! Sinusoidal Functions — Unit 6, Lesson 6.6 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.6}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+%-----------------------------------------------------------------------
+% OBJECTIVE
+%-----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{itemize}
+  \item Define a sinusoidal function and explain how cosine is related to sine.
+  \item Determine the amplitude, midline, period, and frequency of a sinusoidal
+        function from a verbal description or graph.
+  \item Describe the symmetry of $y=\sin\theta$ and $y=\cos\theta$.
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% VOCABULARY
+%-----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{itemize}
+  \item \termblanklong{sinusoidal function}{\ans{any function formed by additive
+        and multiplicative transformations of $f(\theta)=\sin\theta$}}
+  \item \termblanklong{amplitude}{\ans{half the difference between the maximum
+        and minimum values}}
+  \item \termblanklong{midline}{\ans{the horizontal line $y =
+        \tfrac{\text{max}+\text{min}}{2}$, halfway between max and min}}
+  \item \termblanklong{period}{\ans{the smallest positive $T$ such that
+        $f(\theta + T) = f(\theta)$ for all $\theta$}}
+  \item \termblanklong{frequency}{\ans{$1/T$; the reciprocal of the period}}
+  \item \termblanklong{odd function}{\ans{$f(-x) = -f(x)$; rotational symmetry
+        about the origin}}
+  \item \termblanklong{even function}{\ans{$f(-x) = f(x)$; reflective symmetry
+        over the $y$-axis}}
+\end{itemize}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% HOOK
+%-----------------------------------------------------------------------
+\begin{hookbox}
+\textit{``A recording engineer notices that a sound wave has amplitude 0.3 and
+frequency 440 Hz.''}
+
+What does amplitude tell us about the wave?
+
+\medskip
+\ans{The wave oscillates 0.3 units above and below its center (midline),
+controlling perceived loudness.}
+
+\medskip
+What does frequency tell us?  What is the period of one cycle?
+
+\medskip
+\ans{Frequency 440 Hz means 440 complete cycles per second.
+Period $= 1/440 \approx 0.00227$ seconds.}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% CHARACTERISTICS OF SINUSOIDAL FUNCTIONS
+%-----------------------------------------------------------------------
+\begin{notesbox}{Characteristics of Sinusoidal Functions --- Key}
+
+\textbf{Amplitude}
+\[
+  \text{Amplitude} = \frac{\ans{max} - \ans{min}}{2}
+  = \text{half the } \ans{vertical range}
+\]
+
+\textbf{Midline}
+\[
+  \text{Midline: } y = \frac{\ans{max} + \ans{min}}{2}
+  = \text{average of } \ans{max and min}
+\]
+
+\textbf{Period} \quad The smallest positive \ans{value $T$} such that
+$f(\theta + k) = f(\theta)$ for all $\theta$.
+
+\textbf{Frequency}
+\[
+  \text{Frequency} = \frac{\ans{1}}{\text{period}}
+  = \frac{1}{\ans{T}}
+\]
+
+\medskip
+\textbf{For $f(\theta) = \sin\theta$:}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}llll@{}}
+  Amplitude $=$ \ans{1} &
+  Midline $=$ \ans{$y=0$} &
+  Period $=$ \ans{$2\pi$} &
+  Frequency $=$ \ans{$1/(2\pi)$}
+\end{tabular}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% RELATIONSHIP BETWEEN SINE AND COSINE
+%-----------------------------------------------------------------------
+\begin{notesbox}{Relationship Between Sine and Cosine --- Key}
+
+Complete the identity:
+\[
+  \cos\theta = \sin\!\left(\theta + \ans{$\pi/2$}\right)
+\]
+
+This means cosine is a \ans{horizontal shift (phase shift)} of the sine function.
+
+Therefore cosine is also a \ans{sinusoidal} function.
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% SYMMETRY
+%-----------------------------------------------------------------------
+\begin{notesbox}{Symmetry of Sine and Cosine --- Key}
+
+\begin{multicols}{2}
+\textbf{Sine --- Odd Function}
+
+$\sin(-\theta) = $ \ans{$-\sin\theta$}
+
+Graphical meaning: the graph has \ans{rotational}
+symmetry about the \ans{origin}.
+
+\columnbreak
+
+\textbf{Cosine --- Even Function}
+
+$\cos(-\theta) = $ \ans{$\cos\theta$}
+
+Graphical meaning: the graph has \ans{reflective}
+symmetry over the \ans{$y$-axis}.
+\end{multicols}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%-----------------------------------------------------------------------
+% PRACTICE
+%-----------------------------------------------------------------------
+\begin{practicebox}
+\textbf{Practice:} A sinusoidal function has maximum value $5$, minimum value $-1$,
+and period $4\pi$.  Find the amplitude, midline, and frequency.
+
+\medskip
+Amplitude $= \dfrac{\ans{5} - (\ans{$-1$})}{2} = $ \ans{3}
+
+\medskip
+Midline: $y = \dfrac{\ans{5} + (\ans{$-1$})}{2} = $ \ans{$y = 2$}
+
+\medskip
+Frequency $= \dfrac{1}{\ans{$4\pi$}} = $ \ans{$\dfrac{1}{4\pi}$}
+\end{practicebox}
+
+\end{document}

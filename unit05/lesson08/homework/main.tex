@@ -1,0 +1,99 @@
+%! Semi-log Plots — Unit 5, Lesson 5.8 — Homework
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.8}{Homework}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item \textbf{Conceptual.}  Explain in your own words why exponential data appears linear
+      on a semi-log plot.  Your explanation should reference what happens algebraically when
+      you apply a logarithm to both sides of $y = ab^x$.  (No equations required; write
+      in complete sentences.)
+
+\writelines{3}
+
+\item Given the exponential model $y = 2 \cdot 5^x$, write the linearized form using
+      $\log_{10}$.  Identify the slope and $y$-intercept of the linearized model.
+
+\vspace{4pt}
+Linearized form: $\log_{10}(y) = $ \blank{6cm}
+
+\vspace{4pt}
+Slope $= $ \blank{4cm} \qquad $y$-intercept $= $ \blank{4cm}
+
+\item A semi-log plot of $(x,\,\log_{10}(y))$ data shows a linear pattern with slope $0.477$
+      and $y$-intercept $1.0$.  Write the exponential model $y = a\cdot b^x$.
+
+\vspace{4pt}
+$b = 10^{0.477} \approx $ \blank{2cm} \qquad $a = 10^{1.0} = $ \blank{2cm}
+
+\vspace{4pt}
+Exponential model: $y = $ \blank{5cm}
+
+\item The table below gives data for a population $P$ over time $t$.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\rowcolor{sky}
+$t$ & $0$ & $2$ & $4$ & $6$ \\
+\hline
+$P$ & $500$ & $2000$ & $8000$ & $32000$ \\
+\hline
+$\log_{10}(P)$ & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
+  \item Complete the $\log_{10}(P)$ row (round to three decimal places).
+  \item Find the slope of $\log_{10}(P)$ vs.\ $t$ using any two consecutive points.
+        \quad Slope $= $ \blank{4cm}
+  \item Find $b = 10^{\text{slope}} \approx $ \blank{2.5cm} and $a = 10^{\log_{10}(P_0)} \approx $ \blank{2.5cm}.
+  \item Write the exponential model: $P(t) = $ \blank{5cm}
+  \item Verify: $P(2) = $ \blank{4cm}. Does this match the table? \blank{1.5cm}
+\end{enumerate}
+
+\item \textbf{Comparison.}  Two scientists analyze the same data set.  Scientist A adds a
+      constant to all $y$-values before plotting on a regular graph to check for exponential
+      patterns.  Scientist B uses a semi-log plot instead.  What advantage does Scientist B's
+      approach have?  Reference EK 2.15.A.2 in your response.
+
+\writelines{3}
+
+\item \textbf{AP-style multiple choice.}  For the exponential model $y = 8 \cdot 6^x$,
+      which of the following gives the slope of the linearized semi-log model using
+      base-10 logarithms?
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=2em, itemsep=4pt, label=(\Alph*)]
+  \item $\log_{10}(8)$
+  \item $\log_{10}(6)$
+  \item $\log_{10}(48)$
+  \item $6$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, arc=2mm, left=3mm, right=3mm,
+    top=2mm, bottom=2mm, title=\textbf{Extension}, fonttitle=\bfseries]
+Suppose you take the natural log (ln) of $y = ab^x$ instead of $\log_{10}$.  Write the
+linearized model.  How do the slope and $y$-intercept differ from the base-10 version?
+(Hint: use the change-of-base formula to express $\ln(b)$ in terms of $\log_{10}(b)$.)
+
+\writelines{3}
+\end{tcolorbox}
+
+\end{document}

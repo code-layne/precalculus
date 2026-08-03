@@ -1,4 +1,4 @@
-%! Parametric Functions and Rates of Change — Unit 4, Lesson 4.3 — Guided Notes (Answer Key)
+%! Exponential Functions — Unit 4, Lesson 4.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,248 +9,137 @@
 \pageheader{Unit 4, Lesson 4.3}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.3.A} --- Identify the direction of planar motion
-    at any value of the parameter by determining whether $x(t)$ and
-    $y(t)$ are increasing or decreasing at that moment.
-    \ansline{determine direction from whether each component is increasing or decreasing}
-  \item \textbf{LO 4.3.A} --- Explain why the same curve can be traversed
-    in different directions by different parametrizations.
-    \ansline{different parametrizations can produce the same $(x,y)$ pairs in different orders}
-  \item \textbf{LO 4.3.A} --- Compute the average rate of change of $x(t)$
-    and $y(t)$ over $[t_1, t_2]$ and use their ratio to find the slope.
-    \ansline{slope $= \Delta y / \Delta x$ where $\Delta x = x(t_2)-x(t_1)$ and $\Delta y = y(t_2)-y(t_1)$}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Identify the initial value $a$ and base $b$ of $f(x) = ab^x$ and classify as
+        \ans{exponential} growth or \ans{exponential} decay. \hfill\textit{(LO 2.3.A.1)}
+  \item Describe the \ans{domain}, end \ans{behavior}, \ans{concavity}, and monotonic
+        nature of an exponential function. \hfill\textit{(LO 2.3.A.3 / A.5)}
+  \item Determine whether a function is exponential by checking whether outputs are
+        \ans{proportional} over equal-length input intervals. \hfill\textit{(LO 2.3.A.3 / A.4)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{direction of motion}]
-    Determined by whether each component is
-    \ans{increasing} or \ans{decreasing}.
-    If $x(t)$ is increasing $\Rightarrow$ moving \ans{right};
-    if decreasing $\Rightarrow$ moving \ans{left}.
-    If $y(t)$ is increasing $\Rightarrow$ moving \ans{up};
-    if decreasing $\Rightarrow$ moving \ans{down}.
-
-  \item[\termblanklong{ARC of $x(t)$}]
-    The average rate of change of $x(t)$ over $[t_1, t_2]$:
-    \quad $\dfrac{x(t_2) - x(t_1)}{t_2 - t_1}$
-
-  \item[\termblanklong{ARC of $y(t)$}]
-    The average rate of change of $y(t)$ over $[t_1, t_2]$:
-    \quad $\dfrac{y(t_2) - y(t_1)}{t_2 - t_1}$
-
-  \item[\termblanklong{slope of parametric curve}]
-    The slope of the \ans{secant} line connecting two points
-    on the curve:
-    \quad $\dfrac{\Delta y}{\Delta x} = \dfrac{\text{ARC of } y(t)}{\text{ARC of } x(t)}$
-    \quad provided ARC of $x(t) \ne 0$.
-
-  \item[\termblanklong{reparametrization}]
-    A different pair of component functions that traces the
-    \ans{same} set of points in the plane, possibly in a
-    \ans{different} direction.
-\end{description}
+\termblanklong{exponential function}
+\ansline{A function $f(x) = ab^x$ with $a \ne 0$, $b > 0$, $b \ne 1$.}
+\termblanklong{initial value}
+\ansline{The value $a = f(0)$; the $y$-intercept of the function.}
+\termblanklong{base}
+\ansline{The constant $b$; the multiplicative factor per unit increase in input.}
+\termblanklong{exponential growth}
+\ansline{When $a > 0$ and $b > 1$; outputs increase without bound.}
+\termblanklong{exponential decay}
+\ansline{When $a > 0$ and $0 < b < 1$; outputs approach zero.}
+\termblanklong{concave up / concave down}
+\ansline{Graph curves upward or downward; exponential functions are always one or the other.}
+\termblanklong{end behavior}
+\ansline{Behavior of $f(x)$ as $x \to \pm\infty$, expressed with limit notation.}
+\termblanklong{horizontal asymptote}
+\ansline{Line $y = 0$ that the graph of $f(x) = ab^x$ approaches but never reaches.}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} Two drones follow the same figure-eight path ---
-Drone~A clockwise, Drone~B counterclockwise.
+\textbf{The Doubling Penny:} If you receive 1 penny on Day 1, 2 on Day 2, 4 on Day 3, \ldots,
+how much total after 30 days?
 
-\vspace{4pt}
-\textbf{Q1.} Can two different parametric functions trace the same path?
-What would have to be different about them?
+\medskip
+My guess: \textit{(varies)} \quad Actual: $2^{30} - 1 \approx \$\,10.7$ million.
 
-\vspace{4pt}
-\ans{Yes. The component functions would be different, producing the same set of $(x,y)$ points but at different values of $t$, possibly traversed in a different order (direction).}
-
-\textbf{Q2.} How do you determine which direction a particle is moving
-horizontally at a specific value of $t$?
-
-\vspace{4pt}
-\ans{Compare $x(t)$ at values slightly before and after the given $t$. If $x$ is increasing, the particle moves right; if decreasing, left.}
+\medskip
+The function modeling Day $x$ is $f(x) = 1 \cdot $ \ans{$2$}$^x$.
+The initial value is \ans{1} and the base is \ans{2}.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Step 1: Direction of Motion
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Direction of Planar Motion (EK 4.3.A.1--A.2)}
-
-\textbf{Key rule:} Analyze $x(t)$ and $y(t)$ \emph{independently}.
-
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|l|}
-\hline
-If $x(t)$ is \textbf{increasing} & particle moves \ans{right} \\
-\hline
-If $x(t)$ is \textbf{decreasing} & particle moves \ans{left} \\
-\hline
-If $y(t)$ is \textbf{increasing} & particle moves \ans{up} \\
-\hline
-If $y(t)$ is \textbf{decreasing} & particle moves \ans{down} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Example:} Let $f(t) = (t^2 - 2t,\; 3t - t^2)$ for $0 \le t \le 4$.
-
-\vspace{6pt}
-\textbf{Step 1 --- Build a table of values.}
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t^2 - 2t$ & $y(t) = 3t - t^2$ & $(x,\; y)$ \\
-\hline
-$0$ & \ans{$0$} & \ans{$0$} & \ans{$(0,0)$} \\
-\hline
-$1$ & \ans{$-1$} & \ans{$2$} & \ans{$(-1,2)$} \\
-\hline
-$2$ & \ans{$0$} & \ans{$2$} & \ans{$(0,2)$} \\
-\hline
-$3$ & \ans{$3$} & \ans{$0$} & \ans{$(3,0)$} \\
-\hline
-$4$ & \ans{$8$} & \ans{$-4$} & \ans{$(8,-4)$} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{8pt}
-\textbf{Step 2 --- Direction at $t = 0.5$.}
-
-Compare $x(0)$ and $x(1)$: $x(0) = $ \ans{$0$}, $x(1) = $ \ans{$-1$}.
-
-Since $x(1)$ \ans{$<$} $x(0)$, the function $x(t)$ is \ans{decreasing} near $t = 0.5$.
-
-$\Rightarrow$ particle is moving \ans{left}
-
-Compare $y(0)$ and $y(1)$: $y(0) = $ \ans{$0$}, $y(1) = $ \ans{$2$}.
-
-Since $y(1)$ \ans{$>$} $y(0)$, the function $y(t)$ is \ans{increasing} near $t = 0.5$.
-
-$\Rightarrow$ particle is moving \ans{up}
-
-\vspace{8pt}
-\textbf{Step 3 --- Direction at $t = 2.5$.}
-
-Compare $x(2)$ and $x(3)$: $x(2) = 0$, $x(3) = 3$; is $x$ increasing or decreasing? \ans{increasing}
-
-$\Rightarrow$ particle is moving \ans{right}
-
-Compare $y(2)$ and $y(3)$: $y(2) = 2$, $y(3) = 0$; is $y$ increasing or decreasing? \ans{decreasing}
-
-$\Rightarrow$ particle is moving \ans{down}
-
-\begin{teachernote}
-  Emphasize that direction at $t = 0.5$ and $t = 2.5$ are opposite in both components,
-  even though the particle may be at the same $(x,y)$ point at some instant. This is
-  EK 4.3.A.2: direction can differ for different values of $t$ even at the same location.
-\end{teachernote}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Step 2: Same Curve, Different Directions
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Same Curve, Different Parametrizations (EK 4.3.A.3)}
-
-\textbf{Key idea:} The same set of points in the plane can be traced by
-different parametric functions --- possibly in different directions.
-
-\vspace{6pt}
-\textbf{Example:} Let $f(t) = (t,\; t^2)$ and $g(t) = (3 - t,\; (3-t)^2)$
-for $0 \le t \le 3$.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c||c|c|}
-\hline
-& \multicolumn{2}{c||}{Robot A: $f(t)=(t,\;t^2)$}
-& \multicolumn{2}{c|}{Robot B: $g(t)=(3{-}t,\;(3{-}t)^2)$} \\
-\hline
-$t$ & $(x,\;y)$ for $f$ & direction & $(x,\;y)$ for $g$ & direction \\
-\hline
-$0$ & \ans{$(0,0)$} & \ans{right, up} & \ans{$(3,9)$} & \ans{left, down} \\
-\hline
-$1$ & \ans{$(1,1)$} & \ans{right, up} & \ans{$(2,4)$} & \ans{left, down} \\
-\hline
-$2$ & \ans{$(2,4)$} & \ans{right, up} & \ans{$(1,1)$} & \ans{left, down} \\
-\hline
-$3$ & \ans{$(3,9)$} & \ans{right, up} & \ans{$(0,0)$} & \ans{left, down} \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{6pt}
-Do $f$ and $g$ trace the same set of points? \ans{Yes}
-
-Are they moving in the same direction? \ans{No --- opposite directions}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Step 3: Slope via ARC Ratio
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.3.A --- Slope of the Curve via Average Rates of Change (EK 4.3.A.4)}
-
-\textbf{Formula:} Over the interval $[t_1, t_2]$:
+\begin{notesbox}{LO 2.3.A.1 --- General Form of an Exponential Function (EK 2.3.A.1)}
 \[
-  \text{slope of curve} = \frac{\Delta y}{\Delta x}
-  = \frac{y(t_2) - y(t_1)}{x(t_2) - x(t_1)}
-  \quad \text{(provided } x(t_2) \ne x(t_1)\text{)}
+  f(x) = a \cdot b^x, \quad a \ne 0,\ b > 0,\ b \ne 1
 \]
 
-\vspace{6pt}
-\textbf{Example (continued):} Use $f(t) = (t^2 - 2t,\; 3t - t^2)$.
-Find the slope of the curve from $t = 1$ to $t = 3$.
+\begin{itemize}[itemsep=3pt]
+  \item $a = f(0) = $ \ans{initial value / $y$-intercept}
+  \item $b = $ \ans{common ratio; multiplicative factor per unit input}
+  \item \textbf{Exponential growth:} $a > 0$ and $b$ \ans{$>$} 1
+  \item \textbf{Exponential decay:} $a > 0$ and \ans{$0$} $< b <$ \ans{$1$}
+\end{itemize}
 
-\vspace{6pt}
-$x(1) = $ \ans{$-1$} \qquad $x(3) = $ \ans{$3$} \qquad $\Delta x = $ \ans{$4$}
+\medskip
+\textbf{Example:} $f(x) = 3 \cdot 2^x$. \quad $a = $ \ans{3} \quad $b = $ \ans{2}
+\quad Growth or decay? \ans{Growth}
 
-$y(1) = $ \ans{$2$} \qquad $y(3) = $ \ans{$0$} \qquad $\Delta y = $ \ans{$-2$}
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$    & 0 & 1 & 2 & 3 \\
+\hline
+$f(x)$ & \ans{3} & \ans{6} & \ans{12} & \ans{24} \\
+\hline
+\multicolumn{5}{|l|}{Ratio of successive outputs: \quad $\dfrac{f(1)}{f(0)} = $ \ans{2}
+\quad $\dfrac{f(2)}{f(1)} = $ \ans{2} \quad $\dfrac{f(3)}{f(2)} = $ \ans{2}} \\
+\hline
+\end{tabular}
+\end{notesbox}
 
-\vspace{6pt}
-Slope $= \dfrac{\Delta y}{\Delta x} = \dfrac{\ans{-2}}{\ans{4}} = $ \ans{$-\tfrac{1}{2}$}
+\vspace{0.04in}
 
-\vspace{6pt}
-\textbf{Interpretation:} The secant line connecting the points on the
-curve at $t = 1$ and $t = 3$ has slope \ans{$-\tfrac{1}{2}$}.
+\begin{notesbox}{LO 2.3.A.2/A.3 --- Key Characteristics (EK 2.3.A.2, A.3)}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.28\linewidth} X @{}}
+Domain & \ans{All real numbers, $(-\infty, \infty)$} \\
+Range (when $a > 0$) & \ans{$(0, \infty)$}; horizontal asymptote: $y = $ \ans{$0$} \\
+Monotonicity & Always \ans{increasing} if $b > 1$; always \ans{decreasing} if $0 < b < 1$ \\
+Extrema on open intervals & \ans{None} \\
+Concavity (when $a > 0$) & Always concave \ans{up}; no \ans{inflection} points \\
+\end{tabularx}
+\end{notesbox}
 
-\begin{teachernote}
-  Stress that $\Delta y / \Delta x$ uses the \emph{changes in the output coordinates},
-  not $\Delta y / \Delta t$ or $\Delta x / \Delta t$ individually. The $\Delta t$ cancels
-  when you form the ratio of the two ARCs. Students commonly confuse these.
-\end{teachernote}
+\vspace{0.04in}
 
+\begin{notesbox}{LO 2.3.A.5 --- End Behavior (EK 2.3.A.5)}
+For $f(x) = ab^x$ with $a > 0$, $b > 1$ (growth):
+
+$\displaystyle\lim_{x \to \infty} f(x) = $ \ans{$\infty$} \qquad
+$\displaystyle\lim_{x \to -\infty} f(x) = $ \ans{$0$}
+
+For $f(x) = ab^x$ with $a > 0$, $0 < b < 1$ (decay):
+
+$\displaystyle\lim_{x \to \infty} f(x) = $ \ans{$0$} \qquad
+$\displaystyle\lim_{x \to -\infty} f(x) = $ \ans{$\infty$}
+
+\textbf{Example:} State the end behavior of $h(x) = 5 \cdot (0.4)^x$.
+
+\vspace{0.04in}
+$\displaystyle\lim_{x\to\infty} h(x) = $ \ans{$0$} \qquad
+$\displaystyle\lim_{x\to-\infty} h(x) = $ \ans{$\infty$}
+\end{notesbox}
+
+\vspace{0.04in}
+
+\begin{notesbox}{LO 2.3.A.4 --- Detecting Exponential from a Transformed Table (EK 2.3.A.4)}
+\textbf{Key idea:} If $g(x) = f(x) + k$ and $f$ is exponential, the outputs of $g$ will
+\textit{not} be proportional. To detect $f$: subtract \ans{$k$} from each output of $g$,
+then check whether the resulting values have a constant \ans{ratio}.
+
+\medskip
+\textbf{Example:} Outputs of $g(x)$: 7, 10, 16, 28 (inputs 0, 1, 2, 3). Suppose $k = 4$.
+
+\vspace{0.04in}
+Subtract 4: \ans{3}, \ans{6}, \ans{12}, \ans{24}
+
+Ratios: \ans{2}, \ans{2}, \ans{2}
+
+Are the ratios constant? \ans{Yes} \quad Write $f(x) = $ \ans{$3 \cdot 2^x$}
+\quad Write $g(x) = $ \ans{$3 \cdot 2^x + 4$}
 \end{notesbox}
 
 \end{document}

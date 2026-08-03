@@ -1,0 +1,184 @@
+%! Exponential and Logarithmic Equations and Inequalities — Unit 5, Lesson 5.6 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.13}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Exponential and Logarithmic\\[4pt]
+    Equations and Inequalities}\\[1.2cm]
+    {\color{skymid}\small Precalculus~$\cdot$~Unit 2}
+  \end{minipage}
+\end{frame}
+}
+
+% SLIDE 1: Hook
+\begin{frame}[t, plain]
+  \navyheader{Hook: The Drug Half-Life Problem}
+
+  \vspace{0.3cm}
+  \begin{block}{Consider this scenario:}
+    A drug has a half-life of 4 hours. Initial dose: \textbf{200 mg}.
+
+    \vspace{0.2cm}
+    Model: \quad $D(t) = 200\cdot\!\left(\dfrac{1}{2}\right)^{t/4}$
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Question:} After how many hours will \emph{less than 10 mg} remain?
+
+  \vspace{0.2cm}
+  We need to solve: \quad $\displaystyle 200\cdot\!\left(\dfrac{1}{2}\right)^{t/4} < 10$
+
+  \vspace{0.3cm}
+  \textit{How do we isolate an exponent algebraically?}
+  \setlength{\itemsep}{6pt}
+  \begin{itemize}
+    \item Guess and check is tedious.
+    \item We need a tool that ``brings down'' the exponent.
+    \item \textbf{Logarithms} are that tool. (EK 2.13.A.1)
+  \end{itemize}
+\end{frame}
+
+% SLIDE 2: Solving Exponential Equations
+\begin{frame}[t, plain]
+  \navyheader{Solving Exponential Equations (EK 2.13.A.1)}
+
+  \vspace{0.2cm}
+  \begin{block}{Method 1 --- One-to-One Property (same base)}
+    If $b^a = b^c$ and $b>0$, $b\ne1$, then $a = c$.
+
+    \vspace{0.15cm}
+    \textbf{Example:} $\;2^x = 2^5 \;\Rightarrow\; x = 5$
+  \end{block}
+
+  \vspace{0.25cm}
+  \begin{block}{Method 2 --- Take log of both sides (different bases)}
+    $3^x = 15$
+    \setlength{\itemsep}{4pt}
+    \begin{enumerate}
+      \item Take $\log$: $\;\log(3^x) = \log 15$
+      \item Power rule: $\;x\log 3 = \log 15$
+      \item Solve: $\;x = \dfrac{\log 15}{\log 3} \approx 2.465$
+    \end{enumerate}
+  \end{block}
+
+  \vspace{0.2cm}
+  \textbf{Try it:} Solve $5^x = 100$. \quad $x = \dfrac{\log 100}{\log 5} = \dfrac{2}{\log 5} \approx 2.861$
+\end{frame}
+
+% SLIDE 3: Solving Logarithmic Equations + Extraneous Solutions
+\begin{frame}[t, plain]
+  \navyheader{Logarithmic Equations \& Extraneous Solutions (EK 2.13.A.1--2)}
+
+  \vspace{0.2cm}
+  \begin{block}{Convert to exponential form}
+    $\log_2 x = 4 \;\Rightarrow\; x = 2^4 = 16$\quad
+    \textbf{Check:} $\log_2 16 = 4$ \checkmark
+  \end{block}
+
+  \vspace{0.25cm}
+  \begin{block}{Watch out: combined logs can produce extraneous solutions}
+    Solve $\log_5 x + \log_5(x-4) = 1$:
+    \setlength{\itemsep}{3pt}
+    \begin{enumerate}
+      \item Combine: $\log_5(x(x-4)) = 1$
+      \item Exponential: $x(x-4) = 5$
+      \item Solve: $x^2-4x-5=0 \;\Rightarrow\; (x-5)(x+1)=0$
+      \item Check: $x=-1$ gives $\log_5(-1)$ --- \textbf{undefined!} Extraneous.
+      \item \textbf{Answer: $x = 5$ only.}
+    \end{enumerate}
+  \end{block}
+
+  \vspace{0.1cm}
+  \textit{Always check that every logarithm argument is positive.}
+\end{frame}
+
+% SLIDE 4: Natural Base Identity
+\begin{frame}[t, plain]
+  \navyheader{Natural Base Identity (EK 2.13.A.3)}
+
+  \vspace{0.3cm}
+  \begin{block}{Key Identity}
+    \[
+      b^x = e^{(\ln b)\cdot x}
+    \]
+    Every exponential function can be written with base $e$.
+  \end{block}
+
+  \vspace{0.3cm}
+  \textbf{Examples:}
+  \setlength{\itemsep}{8pt}
+  \begin{itemize}
+    \item $2^x = e^{(\ln 2)\cdot x} \approx e^{0.693x}$
+    \item $10^x = e^{(\ln 10)\cdot x} \approx e^{2.303x}$
+    \item $\left(\tfrac{1}{2}\right)^x = e^{(\ln 1/2)\cdot x} \approx e^{-0.693x}$
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textit{Why is this useful?} It unifies all exponentials under one base and connects
+  them to continuous growth/decay rates in calculus.
+\end{frame}
+
+% SLIDE 5: Inverse of Transformed Exponential
+\begin{frame}[t, plain]
+  \navyheader{Inverse of a Transformed Exponential (EK 2.13.B.1)}
+
+  \vspace{0.2cm}
+  Find the inverse of $f(x) = 3\cdot2^{x-1}+4$.
+
+  \vspace{0.2cm}
+  \begin{block}{Reverse the operations in order}
+    \setlength{\itemsep}{4pt}
+    \begin{enumerate}
+      \item Swap $x$ and $y$: $\quad x = 3\cdot2^{y-1}+4$
+      \item Subtract 4: $\quad x-4 = 3\cdot2^{y-1}$
+      \item Divide by 3: $\quad \dfrac{x-4}{3} = 2^{y-1}$
+      \item Apply $\log_2$: $\quad \log_2\!\dfrac{x-4}{3} = y-1$
+      \item Add 1: $\quad f^{-1}(x) = \log_2\!\dfrac{x-4}{3} + 1$
+    \end{enumerate}
+  \end{block}
+
+  \vspace{0.2cm}
+  Domain of $f$: all reals \quad Range of $f$: $(4, \infty)$
+
+  \vspace{0.1cm}
+  Domain of $f^{-1}$: $(4, \infty)$ \quad Range of $f^{-1}$: all reals
+\end{frame}
+
+% SLIDE 6: Inverse of Transformed Logarithm + Class Practice
+\begin{frame}[t, plain]
+  \navyheader{Inverse of a Transformed Logarithm (EK 2.13.B.2) + Practice}
+
+  \vspace{0.15cm}
+  Find the inverse of $f(x) = 2\log_3(x+1)-5$.
+
+  \begin{block}{Reverse the operations}
+    \setlength{\itemsep}{3pt}
+    \begin{enumerate}
+      \item Swap: $x = 2\log_3(y+1)-5$
+      \item Add 5: $x+5 = 2\log_3(y+1)$
+      \item Divide by 2: $\tfrac{x+5}{2} = \log_3(y+1)$
+      \item Exponentiate: $3^{(x+5)/2} = y+1$
+      \item Subtract 1: $f^{-1}(x) = 3^{(x+5)/2}-1$
+    \end{enumerate}
+  \end{block}
+
+  \vspace{0.15cm}
+  \begin{block}{Class Practice --- try on your own}
+    \setlength{\itemsep}{4pt}
+    \begin{itemize}
+      \item Solve: $4^x = 64$ \hfill \textit{[one-to-one]}
+      \item Solve: $\log_4(x+2) = 3$; check for extraneous solutions.
+      \item Find the inverse of $g(x) = \log_5(x+3)-2$.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\end{document}

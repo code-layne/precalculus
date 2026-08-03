@@ -1,4 +1,4 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Guided Notes
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,105 +9,145 @@
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Determine the end behavior of a rational function by comparing the degrees of the
-        numerator and denominator using the \blank{3.5cm}. \hfill\textit{(LO 1.7.A)}
-  \item Write the end behavior of a rational function in \blank{2.8cm} notation and identify
-        \blank{2.8cm} or \blank{2.4cm} asymptotes. \hfill\textit{(LO 1.7.A)}
+  \item Identify an appropriate function type for a data set or context by analyzing
+        \blank{3.5cm} of change. \hfill\textit{(LO 1.13.A)}
+  \item Describe the \blank{2.8cm} and \blank{2.8cm} restrictions embedded in a function model.
+        \hfill\textit{(LO 1.13.B)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{vocabbox}
-\termblanklong{rational function}
-\termblanklong{quotient of leading terms}
-\termblanklong{horizontal asymptote}
-\termblanklong{slant asymptote}
+\termblanklong{first differences}
+\termblanklong{second differences}
+\termblanklong{domain restriction}
+\termblanklong{piecewise-defined function}
+\termblanklong{model assumption}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
 \begin{hookbox}
-A therapist charges \$200 per session plus a one-time \$50 intake fee.
-Average cost per session: $r(n) = \dfrac{200n + 50}{n}$
+``A scientist hands you a table of mystery data. How do you decide which function type to use?''
 
 \medskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Sessions $n$ & 1 & 10 & 100 & 1000 \\
-\hline
-Avg.\ cost $r(n)$ & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
-\hline
-\end{tabular}
-
-\smallskip
-As $n \to \infty$, the average cost approaches \blank{2cm} because \writelines{1}
+Without graphing, you can inspect the \blank{3cm} to detect the function's degree.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{Quotient of Leading Terms}
-\textbf{Key Idea:} For large $|x|$, a polynomial is dominated by its \blank{2.8cm}.
-So for a rational function, the end behavior is determined by the \textit{quotient of the leading terms}.
-
-\medskip
-\textbf{Worked Example.} Let $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$.
+\begin{notesbox}{Rate-of-Change Clues: The Difference-Table Method}
+\textbf{Setup:} Inputs must be \blank{2.5cm}-spaced. Compute differences of the output column.
 
 \medskip
 \renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
-Step 1: Leading term of numerator: & \blank{3cm} \\
-Step 2: Leading term of denominator: & \blank{3cm} \\
-Step 3: Quotient of leading terms: & \blank{3cm} \\
-Step 4: Horizontal asymptote: $y = $ & \blank{2cm} \\
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $y$ & $\Delta y$ (1st diff.) & $\Delta^2 y$ (2nd diff.) \\
+\hline
+0 & 1  & ---         & ---         \\
+\hline
+1 & 4  & \blank{2cm} & ---         \\
+\hline
+2 & 11 & \blank{2cm} & \blank{2cm} \\
+\hline
+3 & 22 & \blank{2cm} & \blank{2cm} \\
+\hline
+4 & 37 & \blank{2cm} & \blank{2cm} \\
+\hline
 \end{tabular}
 
 \medskip
-In limit notation:
-$\displaystyle\lim_{x\to\infty} r(x) = $ \blank{2.5cm}
-\quad and \quad
-$\displaystyle\lim_{x\to -\infty} r(x) = $ \blank{2.5cm}
+\textbf{Decision tree:}
+\begin{itemize}[itemsep=3pt]
+  \item 1st differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
+  \item 2nd differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
+  \item 3rd differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
+  \item $n$th differences constant $\Rightarrow$ model is degree-\blank{0.8cm} polynomial
+\end{itemize}
 
 \medskip
-\textbf{Numerical check:} $r(100) = \dfrac{30{,}001}{9{,}996} \approx$ \blank{2cm} \quad (close to the HA!)
+\textbf{Key idea:} Constant \textit{first} differences mean a \blank{2.5cm} rate of change.
+Constant \textit{second} differences mean the rate of change is itself \blank{2.5cm}.
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.06in}
 
-\begin{notesbox}{The Three End-Behavior Cases}
-Compare the degree of the numerator (deg num) to the degree of the denominator (deg denom):
+\begin{notesbox}{Shape and Context Clues}
+When you have a description but no table, use context:
 
 \medskip
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.4cm} X X @{}}
-Case & Degree Relationship & End Behavior \\
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{5.2cm}|p{5.2cm}|}
 \hline
-Case 1 & deg num \textbf{$<$} deg denom & \blank{5cm} \\
-Case 2 & deg num \textbf{$=$} deg denom & \blank{5cm} \\
-Case 3 & deg num \textbf{$>$} deg denom & \blank{5cm} \\
-\end{tabularx}
-
-\medskip
-\textit{Special case of Case 3:} If deg num $=$ deg denom $+ 1$, the graph has a
-\blank{2.5cm} asymptote parallel to a \blank{2cm}.
-
-\medskip
-\textbf{Quick Practice.} Classify each rational function below:
-
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}{@{}p{3.8cm} p{1.5cm} p{1.5cm} p{2.5cm} p{2.5cm}@{}}
-\textbf{Function} & \textbf{Deg num} & \textbf{Deg den} & \textbf{Case} & \textbf{Asymptote} \\
+\textbf{Context clue} & \textbf{Best model type} \\
 \hline
-$\dfrac{x+1}{x^2-9}$         & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{3x^2}{x^2+4}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{x^3-2x}{x-3}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{2x+5}{x-1}$          & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+Roughly constant rate of change & \blank{3.5cm} \\
+\hline
+Area or 2-D measurement & \blank{3.5cm} \\
+\hline
+Volume or 3-D measurement & \blank{3.5cm} \\
+\hline
+Multiple local maxima/minima & \blank{3.5cm} \\
+\hline
+Behavior changes at a threshold & \blank{3.5cm} \\
+\hline
 \end{tabular}
+
+\medskip
+\textbf{Special rule:} A degree-$n$ polynomial can model a data set with exactly
+\blank{1cm} points (with distinct inputs).
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Piecewise Models}
+A piecewise-defined function uses \blank{3cm} formulas over \blank{3cm} intervals.
+
+\medskip
+\textbf{Example scenario:} A delivery driver travels at a constant speed for the first
+20 minutes, stops for 5 minutes, then accelerates home. This situation requires
+\blank{1.5cm} pieces because the \blank{4cm} changes over different intervals.
+
+\medskip
+To describe a piecewise model, state:
+\begin{enumerate}[itemsep=3pt]
+  \item The \blank{2.5cm} for each piece.
+  \item The type of function for each piece (e.g., \blank{2cm}, \blank{2cm}).
+  \item The \blank{3cm} conditions (where each piece applies).
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.06in}
+
+\begin{notesbox}{Stating Assumptions and Restrictions}
+Every model embeds assumptions. Fill in the sentence frame:
+
+\medskip
+\begin{center}
+\fbox{\begin{minipage}{0.92\linewidth}
+``This model assumes that \blank{4cm} remains \blank{4cm}
+over \blank{4cm}. The domain is restricted to \blank{4cm}
+because \blank{5cm}.''
+\end{minipage}}
+\end{center}
+
+\medskip
+\textbf{Example:} A quadratic models the area $A$ of a rectangle with a fixed perimeter of
+120 ft, where $\ell$ is one side length.
+
+\medskip
+Assumption: \writeline
+
+Domain restriction: \writeline
+
+Range restriction: \writeline
 \end{notesbox}
 
 \end{document}

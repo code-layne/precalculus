@@ -1,4 +1,4 @@
-%! Parametric Functions Modeling Planar Motion — Unit 4, Lesson 4.2 — Group Activity (Answer Key)
+%! Change in Linear and Exponential Functions — Unit 4, Lesson 4.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,138 +9,106 @@
 \pageheader{Unit 4, Lesson 4.2}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Remote-Control Car]{sky}
-A remote-control car moves along a surface. Its position in meters at
-time $t$ seconds is given by the parametric function
-\[
-  f(t) = \bigl(x(t),\; y(t)\bigr) = \bigl(t^2 - 6t + 5,\;
-  {-t^2 + 4t}\bigr), \quad 0 \le t \le 6,
-\]
-where $x(t)$ measures meters east and $y(t)$ measures meters north.
+\begin{scenariobox}[Linear or Exponential?]{sky}
+\small
+Every function we study today is either linear or exponential --- but they don't come with labels.
+Your job is to investigate tables and pairs of points, apply the equal-length interval test,
+and build the function formula. Work in your assigned tier. Be ready to share your reasoning.
 \end{scenariobox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 1 --- Building the Table}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{1.}\quad Complete the table.
-
-\vspace{6pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ (sec) & $x(t) = t^2 - 6t + 5$ & $y(t) = -t^2 + 4t$ & Position $(x,\; y)$ \\
-\hline
-$0$ & \ans{$5$}   & \ans{$0$}   & \ans{$(5,\;0)$}   \\
-\hline
-$1$ & \ans{$0$}   & \ans{$3$}   & \ans{$(0,\;3)$}   \\
-\hline
-$2$ & \ans{$-3$}  & \ans{$4$}   & \ans{$(-3,\;4)$}  \\
-\hline
-$3$ & \ans{$-4$}  & \ans{$3$}   & \ans{$(-4,\;3)$}  \\
-\hline
-$4$ & \ans{$-3$}  & \ans{$0$}   & \ans{$(-3,\;0)$}  \\
-\hline
-$5$ & \ans{$0$}   & \ans{$-5$}  & \ans{$(0,\;-5)$}  \\
-\hline
-$6$ & \ans{$5$}   & \ans{$-12$} & \ans{$(5,\;-12)$} \\
-\hline
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c X X X X @{}}
+\textbf{Table} & \textbf{Data} & \textbf{1st differences} & \textbf{Ratios} & \textbf{Type} \\
+\midrule
+A &
+\begin{tabular}[t]{c|c}
+$x$ & $y$ \\ \hline
+0 & 6 \\ 1 & 12 \\ 2 & 24 \\ 3 & 48
 \end{tabular}
-\end{center}
+& \ans{6, 12, 24} & \ans{2, 2, 2} & \ans{Exponential} \\[12pt]
+B &
+\begin{tabular}[t]{c|c}
+$x$ & $y$ \\ \hline
+0 & 10 \\ 1 & 13 \\ 2 & 16 \\ 3 & 19
+\end{tabular}
+& \ans{3, 3, 3} & \ans{1.3, 1.23\ldots} & \ans{Linear} \\[12pt]
+\end{tabularx}
 
-\begin{teachernote}
-  Circulate during Part 1 to ensure students are substituting into
-  \emph{both} components before moving on. Common error: substituting
-  $t$ into $x(t)$ only and leaving $y(t)$ blank.
-\end{teachernote}
+\medskip
+\textbf{Table A:} initial value = \ans{6}, $r$ = \ans{2}.
+Formula: $f(x) = $ \ans{$6 \cdot 2^x$}
 
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Part 2 --- Analyzing the Car's Motion}
-
-\textbf{2.}\quad Leftmost east-position:
-
-\ans{$x(t) = t^2 - 6t + 5$; vertex at $t = -(-6)/(2 \cdot 1) = 3$.\\
-$x(3) = 9 - 18 + 5 = -4$ m. The leftmost position is $x = -4$ at $t = 3$ s.}
-
-\vspace{0.06in}
-\textbf{3.}\quad Rightmost east-position:
-
-\ans{Check endpoints: $x(0) = 5$ and $x(6) = 36 - 36 + 5 = 5$.
-The rightmost position is $x = 5$ m (occurring at $t = 0$ and $t = 6$).}
-
-\vspace{0.06in}
-\textbf{4.}\quad Highest north-position:
-
-\ans{$y(t) = -t^2 + 4t$; vertex at $t = -4/(2 \cdot(-1)) = 2$.\\
-$y(2) = -4 + 8 = 4$ m. The highest position is $y = 4$ at $t = 2$ s.}
-
-\vspace{0.06in}
-\textbf{5.}\quad When does the car cross the $x$-axis ($y = 0$)?
-
-\ans{$-t^2 + 4t = 0 \;\Rightarrow\; -t(t - 4) = 0 \;\Rightarrow\;
-t = 0$ or $t = 4$.\\
-At $t = 0$: $(5,\,0)$. At $t = 4$: $(-3,\,0)$.}
-
-\begin{teachernote}
-  Emphasize: zeros of $y(t)$ give $x$-intercepts of the curve. The
-  coordinates are found by evaluating $x(t)$ at the $t$-values, not
-  by setting $x(t) = 0$.
-\end{teachernote}
-
-\vspace{0.06in}
-\textbf{6.}\quad When does the car cross the $y$-axis ($x = 0$)?
-
-\ans{$t^2 - 6t + 5 = 0 \;\Rightarrow\; (t-1)(t-5) = 0 \;\Rightarrow\;
-t = 1$ or $t = 5$.\\
-At $t = 1$: $(0,\,3)$. At $t = 5$: $(0,\,-5)$.}
-
-\begin{teachernote}
-  Reinforce: zeros of $x(t)$ give $y$-intercepts of the parametric
-  curve. Post the rule on the board throughout this section.
-\end{teachernote}
-
-\end{notesbox}
+\smallskip
+\textbf{Table B:} initial value = \ans{10}, $m$ = \ans{3}.
+Formula: $g(x) = $ \ans{$10 + 3x$}
+\end{tcolorbox}
 
 \vspace{0.08in}
 
-\begin{notesbox}{Part 3 --- Extension}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Apply (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{7.}\quad $g(t) = (\cos t,\; \sin t)$ for $0 \le t \le 2\pi$.
+\begin{enumerate}[itemsep=10pt]
+  \item Two points: $(1,\ 6)$ and $(3,\ 54)$.
 
-\vspace{4pt}
-(a)\quad Horizontal extrema:
+        Ratio test: $\dfrac{54}{6} = $ \ans{9} over $3 - 1 = 2$ input units,
+        so $r = $ \ans{$\sqrt{9} = 3$}.
 
-\ans{$\cos t$ has maximum $1$ (at $t = 0,\, 2\pi$) and minimum $-1$
-(at $t = \pi$). The curve extends from $x = -1$ to $x = 1$.}
+        $f(x) = $ \ans{$6 \cdot 3^{x-1}$} \quad Simplified: $f(x) = $ \ans{$2 \cdot 3^x$}
 
-\vspace{0.04in}
-(b)\quad Vertical extrema:
+        \textit{Check: $f(1) = 2 \cdot 3 = 6$\ \checkmark\quad $f(3) = 2 \cdot 27 = 54$\ \checkmark}
 
-\ans{$\sin t$ has maximum $1$ (at $t = \pi/2$) and minimum $-1$
-(at $t = 3\pi/2$). The curve extends from $y = -1$ to $y = 1$.}
+  \item Two points: $(2,\ 7)$ and $(5,\ 16)$.
 
-\vspace{0.04in}
-(c)\quad $y$-intercepts (where $x(t) = \cos t = 0$):
+        Slope: $m = \dfrac{16 - 7}{5 - 2} = $ \ans{3}
 
-\ans{$\cos t = 0$ at $t = \pi/2$ and $t = 3\pi/2$.\\
-$y(\pi/2) = \sin(\pi/2) = 1$ and $y(3\pi/2) = \sin(3\pi/2) = -1$.\\
-$y$-intercepts: $(0,\,1)$ and $(0,\,-1)$.}
+        $g(x) = $ \ans{$7 + 3(x - 2)$} \quad Simplified: $g(x) = $ \ans{$3x + 1$}
 
-\begin{teachernote}
-  This extension introduces the unit circle as a parametric curve.
-  Students who reach this point benefit from seeing that the same
-  analytical tools (find zeros of a component to get intercepts)
-  apply to non-polynomial parametric functions. No graphing is
-  required; the answers follow directly from knowledge of the sine
-  and cosine functions.
-\end{teachernote}
+        \textit{Check: $g(2) = 7$\ \checkmark\quad $g(5) = 16$\ \checkmark}
 
-\end{notesbox}
+  \item Candle: $h(t)$, two points $(2, 14)$ and $(5, 8)$.
+
+        $m = \dfrac{8 - 14}{5 - 2} = -2$. \quad $h(t) = $ \ans{$14 - 2(t-2) = -2t + 18$}
+
+        Set $h(t) = 2$: $-2t + 18 = 2 \Rightarrow t = $ \ans{8 hours}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+  \item Direct interval test on $P$: differences are $4, 12, 36$ (not constant); ratios are
+        $26/22 \approx 1.18,\ 38/26 \approx 1.46,\ 74/38 \approx 1.95$ (not constant).
+        \ans{Neither purely linear nor purely exponential.}
+
+  \item $P - 20$ column: \ans{2, 6, 18, 54}.
+
+        Differences: $4, 12, 36$ (not constant).
+        Ratios: \ans{3, 3, 3} --- \ans{Yes}, constant ratio $= 3$.
+
+  \item $a = 2$, $b = 3$, so $P - 20 = 2 \cdot 3^t$.
+
+        $P(t) = $ \ans{$2 \cdot 3^t + 20$}
+
+  \item \ans{The population is not growing by a pure exponential pattern; there is a background
+        (baseline) of 20 individuals that remains constant, and the additional population above
+        that baseline triples each year. This ``exponential plus a constant'' form means the
+        overall growth rate appears to slow down at first glance but the underlying exponential
+        growth is revealed by subtracting the constant.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

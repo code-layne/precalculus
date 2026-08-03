@@ -1,0 +1,201 @@
+%! Sine and Cosine Function Values — Unit 6, Lesson 6.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 6: Trigonometric Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.4: Sine and Cosine Function Values}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% 1. TITLE BLOCK
+%-----------------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries\color{navy} \CourseName\ \SchoolYear}\\[4pt]
+  {\large\bfseries \UnitNumberName}\\[2pt]
+  {\large\bfseries \LessonNumberName}\\[2pt]
+  {\normalsize Lesson Plan \quad|\quad \MeetingLength}
+\end{center}
+\vspace{6pt}
+\hrule height 1.2pt
+\vspace{10pt}
+
+%-----------------------------------------------------------------------
+% 2. PRIMARY OBJECTIVE
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=sky!30, colframe=navy, title=\textbf{Primary Objective},
+  fonttitle=\bfseries\color{white}, arc=2mm, left=4mm, right=4mm, top=2mm, bottom=2mm]
+Students find exact coordinates of points on a circle of any radius using special right triangle geometry.
+\quad \textit{(Big Idea: Functions)}
+\end{tcolorbox}
+\vspace{8pt}
+
+%-----------------------------------------------------------------------
+% 3. PRIORITY IDEAS & SKILLS
+%-----------------------------------------------------------------------
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\textbf{Learning Objective:} LO 3.3.A --- Determine coordinates of points on a circle centered at the origin.
+
+\medskip
+\textbf{Essential Knowledge:}
+\begin{itemize}
+  \item \textbf{EK 3.3.A.1:} Given angle $\theta$ in standard position and a circle of radius $r$, the terminal ray intersects the circle at $P = (r\cos\theta,\, r\sin\theta)$.
+  \item \textbf{EK 3.3.A.2:} Geometry of isosceles right and equilateral triangles, combined with quadrant sign conventions, yields exact values of $\sin$ and $\cos$ for multiples of $\pi/6$ and $\pi/4$.
+\end{itemize}
+
+\medskip
+\textbf{AP Skills:}
+\begin{itemize}
+  \item \textbf{Skill 2.A} --- Identify mathematical information from graphical, numerical, analytical, and verbal representations.
+  \item \textbf{Skill 3.B} --- Apply numeric results in context and interpret their meaning.
+\end{itemize}
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 4. VOCABULARY
+%-----------------------------------------------------------------------
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{itemize}
+  \item \textbf{Reference angle} --- the acute angle formed between the terminal ray and the $x$-axis.
+  \item \textbf{Exact value} --- a value expressed without approximation (e.g., $\tfrac{\sqrt{3}}{2}$ rather than $0.866\ldots$).
+  \item \textbf{Special angles} --- $\pi/6$, $\pi/4$, $\pi/3$, $\pi/2$ (and their multiples).
+  \item \textbf{45-45-90 triangle} --- isosceles right triangle; legs equal; hypotenuse $= \sqrt{2}\times\text{leg}$.
+  \item \textbf{30-60-90 triangle} --- half of an equilateral triangle; short leg : long leg : hypotenuse $= 1 : \sqrt{3} : 2$.
+  \item \textbf{Quadrant sign conventions} --- which of $\sin\theta$ and $\cos\theta$ are positive or negative in each quadrant (ASTC rule).
+\end{itemize}
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 5. ACTIVATE PRIOR KNOWLEDGE
+%-----------------------------------------------------------------------
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{tabularx}{\linewidth}{@{}X@{}}
+Spiral review connects to today's derivations:
+\begin{itemize}
+  \item \textbf{Pythagorean theorem} --- used in geometry; today applied to recover triangle side ratios from a unit hypotenuse.
+  \item \textbf{$\sin$, $\cos$, $\tan$ from Lesson 3.2} --- students defined these as ratios in right triangles and on the unit circle.
+  \item \textbf{30-60-90 and 45-45-90 side ratios} --- geometry prerequisite; today rederived with hypotenuse $= 1$ to produce exact unit-circle values.
+  \item \textbf{Equation of a circle} --- connects the algebraic form $x^2+y^2=r^2$ to the coordinate formula $P=(r\cos\theta, r\sin\theta)$.
+\end{itemize}
+Use Warm-Up problems 1--2 to surface and address gaps before new derivations.
+\end{tabularx}
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 6. HOOK
+%-----------------------------------------------------------------------
+\begin{skillbox}[Hook]{sky}
+\textbf{GPS Satellite Scenario:} ``A GPS satellite orbits at a radius of 26{,}560~km from Earth's center. Modeling the orbit as a circle centered at the origin, can we find the satellite's exact $(x, y)$ position after it has rotated $\pi/3$ radians from its starting point---\emph{without} a calculator?''
+
+\smallskip
+Ask students: \emph{What information would we need? What formula might connect radius, angle, and coordinates?} Record predictions. Return to this at the close of the lesson to confirm the answer using EK 3.3.A.1 with $r = 26{,}560$.
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 7. LESSON
+%-----------------------------------------------------------------------
+\begin{skillbox}[Lesson]{sky}
+\begin{multicols}{2}
+
+\textbf{Part A --- 45-45-90 Triangle}
+
+Place an isosceles right triangle in QI with hypotenuse $= 1$ (unit circle).
+\begin{itemize}
+  \item Both acute angles are $45^\circ = \pi/4$.
+  \item By the Pythagorean theorem, each leg $= \dfrac{1}{\sqrt{2}} = \dfrac{\sqrt{2}}{2}$.
+  \item Therefore $\cos(\pi/4) = \dfrac{\sqrt{2}}{2}$ and $\sin(\pi/4) = \dfrac{\sqrt{2}}{2}$.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part B --- 30-60-90 Triangle}
+
+Bisect an equilateral triangle (side 1) to form a 30-60-90 triangle:
+\begin{itemize}
+  \item Hyp.$= 1$, short leg $= \tfrac{1}{2}$, long leg $= \tfrac{\sqrt{3}}{2}$.
+  \item $\sin(\pi/6) = \tfrac{1}{2}$, $\cos(\pi/6) = \tfrac{\sqrt{3}}{2}$.
+  \item $\sin(\pi/3) = \tfrac{\sqrt{3}}{2}$, $\cos(\pi/3) = \tfrac{1}{2}$.
+\end{itemize}
+
+\end{multicols}
+
+\medskip
+\textbf{Part C --- Extending to Any Radius $r$ (EK 3.3.A.1)}
+
+On the unit circle, $P = (\cos\theta, \sin\theta)$. On a circle of radius $r$, both coordinates scale by $r$:
+\[
+  P = (r\cos\theta,\; r\sin\theta)
+\]
+\textbf{GPS Hook revisited:} $r = 26{,}560$~km, $\theta = \pi/3$:
+\quad $x = 26{,}560\cdot\tfrac{1}{2} = 13{,}280$~km,
+\quad $y = 26{,}560\cdot\tfrac{\sqrt{3}}{2} = 13{,}280\sqrt{3}$~km.
+
+\medskip
+\textbf{Part D --- Sign Conventions by Quadrant}
+
+``All Students Take Calculus'' (ASTC): \textbf{All} positive in QI; \textbf{Sine} positive in QII; \textbf{Tangent} positive in QIII; \textbf{Cosine} positive in QIV. Negate $\cos\theta$ and/or $\sin\theta$ accordingly when the reference angle lands in QII--QIV.
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 8. ACTIVE MONITORING
+%-----------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}
+  \item \textbf{Circulation cues:} Are students selecting the correct triangle (45-45-90 vs.\ 30-60-90)? Are they attending to quadrant signs?
+  \item \textbf{Common errors to intercept:} Swapping $\sin$ and $\cos$ for $\pi/6$ vs.\ $\pi/3$; forgetting to negate in QII/QIII/QIV; applying unit-circle values without scaling by $r$.
+  \item \textbf{Strategic questions:} ``Which special triangle applies here?'' / ``What quadrant is this angle in? What sign should the $x$-coordinate have?'' / ``If $r = 2$, what would the coordinates become?''
+  \item \textbf{Cold-call before exit ticket:} Ask 2--3 students to state $\cos(2\pi/3)$ and justify using reference angles and quadrant signs.
+\end{itemize}
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 9. GROUP WORK & DIFFERENTIATION
+%-----------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+Students work on the tiered Group Activity (approximately 15 min).
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Fill in the unit circle table for angles $0$ through $\pi$ using exact $(\cos\theta, \sin\theta)$ coordinates. First-quadrant values are scaffolded; students extend using quadrant symmetry.
+  \item \textbf{Tier A (At-level):} Ferris wheel context ($r = 40$~ft, center at origin). Find exact $(x, y)$ positions at $\theta = \pi/6$, $\pi/4$, $\pi/3$, $\pi/2$, $2\pi/3$, and $5\pi/6$. Requires applying EK 3.3.A.1 with $r \ne 1$.
+  \item \textbf{Tier E (Extend):} Given exact coordinates $\bigl(-\tfrac{r\sqrt{3}}{2},\, \tfrac{r}{2}\bigr)$ on a circle of radius $r$, determine $\theta \in [0, 2\pi)$ and find all angles with the same $y$-coordinate; justify using unit-circle symmetry.
+\end{itemize}
+
+Assign tiers by pre-assessment or prior performance. Students may move between tiers.
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 10. INDIVIDUAL WORK & ASSESSMENT
+%-----------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{itemize}
+  \item \textbf{Exit Ticket} (individual, silent, $\approx$5 min): Two items --- one targeting quadrant-II/III exact values (EK 3.3.A.2) and one requiring $P = (r\cos\theta, r\sin\theta)$ with $r \ne 1$ (EK 3.3.A.1). Collected before dismissal.
+  \item \textbf{Data use:} Sort exit tickets into three piles (correct, partially correct, incorrect). Partially correct tickets identify whether the error is in exact-value recall or sign conventions. Use to form targeted review groups at the start of Lesson 3.4.
+\end{itemize}
+\end{skillbox}
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 11. REINFORCEMENT & EXTENSION
+%-----------------------------------------------------------------------
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{itemize}
+  \item \textbf{Homework:} Extends exact-value fluency to QII--QIV angles ($5\pi/4$, $4\pi/3$, $3\pi/2$, etc.), includes a coordinate problem with $r = 8$, an AP-style MC item, and an explanation item about symmetry identities.
+  \item \textbf{Preview of Lesson 3.4:} ``Now that we can find $\sin\theta$ and $\cos\theta$ exactly for key angles, what does the \emph{graph} of $y = \sin x$ look like as $x$ varies continuously? We'll build that picture next class.''
+  \item \textbf{Extension:} Explore the identities $\cos(\pi + \theta) = -\cos\theta$ and $\sin(\pi - \theta) = \sin\theta$ using the unit-circle coordinate definition (previewed in the homework extensionbox).
+\end{itemize}
+\end{skillbox}
+
+\end{document}

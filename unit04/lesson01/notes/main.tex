@@ -1,4 +1,4 @@
-%! Parametric Functions — Unit 4, Lesson 4.1 — Guided Notes
+%! Change in Arithmetic and Geometric Sequences — Unit 4, Lesson 4.1 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,216 +9,150 @@
 \pageheader{Unit 4, Lesson 4.1}{Guided Notes}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.06in}
 
-%----------------------------------------------------------------------
-% Objectives
-%----------------------------------------------------------------------
 \begin{objectivebox}
-\textbf{I will be able to\ldots}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-  \item \textbf{LO 4.1.A} --- Construct a table of values and a graph
-    for a parametric function $f(t) = (x(t),\, y(t))$ by evaluating both
-    component functions at selected values of the parameter $t$, plotting
-    the resulting ordered pairs in order of increasing $t$, and
-    interpreting domain restrictions as start and end points. \writeline
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Express an \blank{3.5cm} sequence as a function $a_n = a_0 + dn$ and identify the
+        common \blank{2.5cm}. \hfill\textit{(LO 2.1.A)}
+  \item Express a \blank{3cm} sequence as a function $g_n = g_0 r^n$ and identify the
+        common \blank{2cm}. \hfill\textit{(LO 2.1.B)}
+  \item Compare how arithmetic and geometric sequences \blank{4cm} across successive terms. \hfill\textit{(LO 2.1.B)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{vocabbox}
-\begin{description}[leftmargin=0pt, itemsep=6pt]
-  \item[\termblanklong{parameter}]
-    The \underline{\hspace{3cm}} variable $t$ in a parametric function;
-    it controls both $x$ and $y$ at the same time.
-
-  \item[\termblanklong{parametric function}]
-    A function $f(t) = (x(t),\, y(t))$ in $\mathbb{R}^2$ consisting of
-    \underline{\hspace{2cm}} component equations, both written in terms
-    of a single variable $t$.
-
-  \item[\termblanklong{parametric curve}]
-    The set of ordered pairs $(x(t),\, y(t))$ traced in the $xy$-plane
-    as $t$ \underline{\hspace{2.5cm}} through its domain.
-    The curve has a \underline{\hspace{2.5cm}} (direction) determined
-    by increasing $t$.
-
-  \item[\termblanklong{start / end point}]
-    When the domain is $a \le t \le b$, the curve begins at
-    \underline{\hspace{2.5cm}} and ends at \underline{\hspace{2.5cm}}.
-\end{description}
+\termblanklong{sequence}
+\termblanklong{arithmetic sequence}
+\termblanklong{geometric sequence}
+\termblanklong{common difference}
+\termblanklong{common ratio}
+\termblanklong{general term (explicit formula)}
+\termblanklong{recursive formula}
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
 \begin{hookbox}
-\textbf{Entry Question:} A drone's position at time $t$ seconds is
-$x(t) = t^2 - 4$ (meters east of launch pad) and $y(t) = 2t$ (meters
-north) for $0 \le t \le 4$.
+Two sequences are written on the board:
+\[
+  2,\ 5,\ 8,\ 11,\ \ldots \qquad\qquad 2,\ 6,\ 18,\ 54,\ \ldots
+\]
+The first sequence \blank{3cm} by the same amount each step.
+The second sequence \blank{3cm} by the same factor each step.
 
-\vspace{4pt}
-\textbf{Q1.} What are the drone's coordinates when $t = 0$? When $t = 2$?
-\writeline
+\medskip
+Estimate: how many steps until each sequence first exceeds 1000?
 
-\textbf{Q2.} Could you describe the drone's path with a single equation
-$y = f(x)$? What information would that equation \emph{not} tell you?
-\writelines{2}
+\medskip
+Sequence 1: about \blank{2cm} steps. \quad Sequence 2: about \blank{2cm} steps.
 \end{hookbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.1.A — Table and Graph
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.1.A --- Parametric Functions: Table and Graph}
+\begin{notesbox}{LO 2.1.A --- Arithmetic Sequences}
+\textbf{Definition:} A \textit{sequence} is a function from the \blank{3cm} numbers to the real numbers.
+Its graph consists of \blank{3cm} points (not a curve).
 
-\textbf{Definition:} A parametric function $f(t) = (x(t),\, y(t))$
-consists of \underline{\hspace{3cm}} component equations. Each value of
-the parameter $t$ produces one ordered pair $(x(t),\, y(t))$ in the
-$xy$-plane.
+\medskip
+\textbf{Arithmetic sequence:} Successive terms differ by a \blank{4cm} value $d$, the
+\textit{common difference}.
 
-\vspace{8pt}
-\textbf{Example:} Let $f(t) = (t + 1,\; t^2 - 3)$ for
-$-2 \le t \le 2$.
-Here $x(t) = t + 1$ and $y(t) = t^2 - 3$.
+\[
+  d = a_n - a_{n-1} \quad \text{(constant for all } n \geq 1\text{)}
+\]
 
-\vspace{6pt}
-\textbf{Step 1 --- Build the table.} Evaluate each component at every
-$t$-value in the domain.
+\textbf{General (explicit) formula:}
+\[
+  a_n = a_0 + d \cdot n
+\]
+where $a_0$ is the \blank{3cm} value (the term when $n = 0$).
 
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$t$ & $x(t) = t + 1$ & $y(t) = t^2 - 3$ & $(x,\; y)$ \\
-\hline
-$-2$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$-1$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$0$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$1$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-$2$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
-\hline
-\end{tabular}
-\end{center}
+\medskip
+\textbf{Alternate form:} If we know the $k$th term $a_k$:
+\[
+  a_n = a_k + d(n - k)
+\]
 
-\vspace{8pt}
-\textbf{Step 2 --- Plot and connect.} Plot each $(x, y)$ ordered pair.
-Then connect the points \emph{in order of increasing $t$} and draw
-arrows to show the direction of the curve.
+\medskip
+\textbf{Example:} The sequence $2,\ 5,\ 8,\ 11,\ \ldots$
 
-\vspace{6pt}
-\begin{center}
-\begin{tikzpicture}[scale=0.78]
-  \draw[linegray, step=1cm] (-2,-4) grid (4,2);
-  \draw[->] (-2.3,0) -- (4.5,0) node[right] {\small $x$};
-  \draw[->] (0,-4.3) -- (0,2.5) node[above] {\small $y$};
-  \foreach \x in {-2,-1,1,2,3,4} {
-    \draw (\x, 0.06) -- (\x, -0.06);
-    \node[below, font=\scriptsize] at (\x, 0) {$\x$};
-  }
-  \foreach \y in {-4,-3,-2,-1,1,2} {
-    \draw (0.06, \y) -- (-0.06, \y);
-    \node[left, font=\scriptsize] at (0, \y) {$\y$};
-  }
-\end{tikzpicture}
-\end{center}
+\smallskip
+Common difference: $d = $ \blank{2cm}
 
-\vspace{4pt}
-The start point is \underline{\hspace{2.5cm}} (at $t = -2$) and the
-end point is \underline{\hspace{2.5cm}} (at $t = 2$).
+\smallskip
+Explicit formula: $a_n = $ \blank{5cm}
 
+\smallskip
+Find the first term exceeding 1000: \blank{6cm}
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% LO 4.1.A — Solving for t
-%----------------------------------------------------------------------
-\begin{notesbox}{LO 4.1.A --- Solving for the Parameter (Skill 1.A)}
+\begin{notesbox}{LO 2.1.B --- Geometric Sequences}
+\textbf{Geometric sequence:} Successive terms have a \blank{4cm} ratio $r$, the
+\textit{common ratio}.
 
-\textbf{Key idea:} To find \emph{when} the curve reaches a specific
-$x$- or $y$-value, set the component equation equal to that value and
-solve for $t$.
+\[
+  r = \frac{g_n}{g_{n-1}} \quad \text{(constant for all } n \geq 1\text{)}
+\]
 
-\vspace{8pt}
-\textbf{Example (using $f(t) = (t+1,\; t^2-3)$, $-2 \le t \le 2$):}
+\textbf{General (explicit) formula:}
+\[
+  g_n = g_0 \cdot r^n
+\]
+where $g_0$ is the \blank{3cm} value.
 
-\vspace{4pt}
-\textbf{Q:} At what point does the curve cross the $y$-axis
-(where $x = 0$)?
+\medskip
+\textbf{Alternate form:} If we know the $k$th term $g_k$:
+\[
+  g_n = g_k \cdot r^{(n-k)}
+\]
 
-Set $x(t) = 0$: \quad $t + 1 = 0 \;\Rightarrow\; t = $ \blank{1.2cm}
+\medskip
+\textbf{Example:} The sequence $2,\ 6,\ 18,\ 54,\ \ldots$
 
-Find $y$: \quad $y\bigl($\blank{1cm}$\bigr) = $ \blank{1cm}${}^2 - 3 = $ \blank{1.5cm}
+\smallskip
+Common ratio: $r = $ \blank{2cm}
 
-The curve crosses the $y$-axis at the point \blank{2.5cm}.
+\smallskip
+Explicit formula: $g_n = $ \blank{5cm}
 
-\vspace{10pt}
-\textbf{Guided Practice.}\quad Use $f(t) = (t+1,\; t^2-3)$,
-$-2 \le t \le 2$.
-
-\vspace{4pt}
-(a)\quad Find all values of $t$ in the domain where $y(t) = -2$.
-Show your algebra.
-\writelines{3}
-
-(b)\quad What are the coordinates of all points on the curve where
-$y = -2$?
-\writeline
-
+\smallskip
+Find the first term exceeding 1000: \blank{6cm}
 \end{notesbox}
 
-\vspace{0.08in}
+\vspace{0.04in}
 
-%----------------------------------------------------------------------
-% Practice
-%----------------------------------------------------------------------
-\begin{practicebox}
+\begin{notesbox}{Comparison: Arithmetic vs.\ Geometric Change (EK 2.1.B.3)}
+Complete the table for both sequences starting at $n = 0$:
 
-\textbf{Practice.}\quad Let $g(t) = (2t - 3,\; 4 - t^2)$ for
-$-1 \le t \le 2$.
-
-\vspace{4pt}
-(a)\quad Complete the table of values.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.8}
 \begin{tabular}{|c|c|c|c|}
 \hline
-$t$ & $x(t) = 2t - 3$ & $y(t) = 4 - t^2$ & $(x,\; y)$ \\
+$n$ & Arithmetic: $a_n = 2 + 3n$ & Geometric: $g_n = 2 \cdot 3^n$ & Difference $g_n - a_n$ \\
 \hline
-$-1$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+0 & 2 & 2 & 0 \\
 \hline
-$0$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+1 & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
 \hline
-$1$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+2 & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
 \hline
-$2$  & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+3 & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+\hline
+4 & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+\hline
+5 & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
 \hline
 \end{tabular}
-\end{center}
 
-\vspace{6pt}
-(b)\quad What are the start and end points of the curve?
-\writeline
-
-(c)\quad Solve for $t$ when $x(t) = 1$. State the coordinates of
-that point.
-\writelines{2}
-
-\end{practicebox}
+\medskip
+\textbf{Key insight:} Arithmetic sequences add \blank{3cm} each step;
+geometric sequences multiply by \blank{3cm} each step.
+Increasing geometric sequences eventually grow \blank{3cm} than arithmetic sequences.
+\end{notesbox}
 
 \end{document}

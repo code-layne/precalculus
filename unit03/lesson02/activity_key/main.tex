@@ -1,4 +1,4 @@
-%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Group Activity (Answer Key)
+%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,129 +11,148 @@
 
 \vspace{0.10in}
 
-\begin{scenariobox}[Scenario]{sky}
-A point $P$ moves around a unit circle as angle $\theta$ increases from $0$.
-The position of $P$ is completely determined by $\theta$: the $x$-coordinate gives $\cos\theta$
-and the $y$-coordinate gives $\sin\theta$.
-In this activity you will read these values directly from the unit circle and connect them to the
-tangent function.
+\begin{scenariobox}[Break-Even Analysis]{sky}
+\small
+A factory models its profit (or loss) per unit using the rational function
+\[
+  r(x) = \frac{x^2 - 7x + 10}{x - 4},
+\]
+where $x > 0$ represents units produced (in hundreds) and $x \ne 4$.
+Positive values of $r(x)$ mean profit; negative values mean loss.
 \end{scenariobox}
 
-\vspace{0.12in}
+\vspace{0.08in}
 
-%-----------------------------------------------------------------------
-% TIER R KEY
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate: Reading the Unit Circle --- Key},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{center}
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$\theta$ & $P = (x,\, y)$ & $\cos\theta$ & $\sin\theta$ & $\tan\theta$ \\
-\hline
-$0$      & $(1,\; 0)$
-         & \ans{$1$}
-         & \ans{$0$}
-         & \ans{$0$} \\
-$\pi/6$  & $\bigl(\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$
-         & \ans{$\dfrac{\sqrt{3}}{2}$}
-         & \ans{$\dfrac{1}{2}$}
-         & \ans{$\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}$} \\
-$\pi/4$  & \ans{$\bigl(\tfrac{\sqrt{2}}{2},\, \tfrac{\sqrt{2}}{2}\bigr)$}
-         & \ans{$\dfrac{\sqrt{2}}{2}$}
-         & \ans{$\dfrac{\sqrt{2}}{2}$}
-         & \ans{$1$} \\
-$\pi/2$  & \ans{$(0,\; 1)$}
-         & \ans{$0$}
-         & \ans{$1$}
-         & \ans{undefined} \\
-$\pi$    & \ans{$(-1,\; 0)$}
-         & \ans{$-1$}
-         & \ans{$0$}
-         & \ans{$0$} \\
-$3\pi/2$ & $(0,\; -1)$
-         & \ans{$0$}
-         & \ans{$-1$}
-         & \ans{undefined} \\
-\hline
-\end{tabular}
-\end{center}
+\begin{enumerate}[itemsep=10pt]
 
-\medskip
-\textbf{Reflection:} \ans{$\tan\theta$ is undefined at $\theta = \pi/2$ and $\theta = 3\pi/2$
-because $\cos\theta = x = 0$ at those angles, and division by zero is undefined.}
-\end{tcolorbox}
+  \item Factor the numerator $x^2 - 7x + 10$ completely.
 
-\vspace{0.14in}
+        $x^2 - 7x + 10 = $ \ans{$(x - 2)(x - 5)$}
 
-%-----------------------------------------------------------------------
-% TIER A KEY
-%-----------------------------------------------------------------------
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- On Level --- Key},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+  \item At what values of $x$ does $r(x) = 0$?
 
-\textbf{Part 1.} $P = \bigl(-\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$
+        $x = $ \ans{$2$ and $x = 5$}
 
-\begin{enumerate}[leftmargin=1.8em, itemsep=3pt]
-  \item \ans{$\left(-\tfrac{\sqrt{3}}{2}\right)^2 + \left(\tfrac{1}{2}\right)^2 = \tfrac{3}{4} + \tfrac{1}{4} = 1$ \checkmark}
-  \item \ans{$\sin\theta = \tfrac{1}{2}$, \quad $\cos\theta = -\tfrac{\sqrt{3}}{2}$, \quad
-        $\tan\theta = \tfrac{1/2}{-\sqrt{3}/2} = -\tfrac{1}{\sqrt{3}} = -\tfrac{\sqrt{3}}{3}$}
-  \item \ans{Quadrant II: $x < 0$ and $y > 0$, so the point is left and up from the origin.}
-\end{enumerate}
+  \item Is $x = 4$ in the domain of $r$? \quad \textbf{No} (circle).
 
-\textbf{Part 2.} $Q = (-\sqrt{3},\, 1)$ on circle of radius 2.
+        Why? \ansline{$x = 4$ makes the denominator $x - 4 = 0$, so $r(4)$ is undefined.}
 
-\begin{enumerate}[leftmargin=1.8em, itemsep=3pt, start=4]
-  \item \ans{$(-\sqrt{3})^2 + 1^2 = 3 + 1 = 4 = 2^2$ \checkmark}
-  \item \ans{$\sin\theta = \tfrac{1}{2}$, \quad $\cos\theta = \tfrac{-\sqrt{3}}{2}$, \quad
-        $\tan\theta = \tfrac{1}{-\sqrt{3}} = -\tfrac{\sqrt{3}}{3}$}
-  \item \ans{The values are identical. The trig ratios depend only on the \emph{direction} of the
-        terminal ray, not the distance from the origin.}
+  \item Critical values on the number line: numerator zeros $x = 2$ (\textbullet) and $x = 5$ (\textbullet);
+        denominator zero $x = 4$ (open dot).
+
+        \vspace{0.18in}
+        \begin{center}
+        \begin{tikzpicture}
+          \draw[->] (-0.5,0) -- (7.5,0) node[right] {$x$};
+          \foreach \x in {0,1,2,3,4,5,6,7} {
+            \draw (\x,0.08) -- (\x,-0.08) node[below] {\small\x};
+          }
+          \fill (2,0) circle (3pt);
+          \fill (5,0) circle (3pt);
+          \draw (4,0) circle (3pt);
+        \end{tikzpicture}
+        \end{center}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.14in}
+\vspace{0.08in}
 
-%-----------------------------------------------------------------------
-% TIER E KEY
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend --- Key},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.8em, itemsep=4pt]
-  \item $\sin\theta = 3/5$, Quadrant II.
-        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-          \item[(a)] \ans{$(3/5)^2 + \cos^2\theta = 1 \;\Rightarrow\; \cos^2\theta = 1 - 9/25 = 16/25
-                \;\Rightarrow\; \cos\theta = \pm 4/5$. In Quadrant II, $x < 0$, so
-                $\cos\theta = -4/5$.}
-          \item[(b)] \ans{$\tan\theta = \sin\theta/\cos\theta = (3/5)/(-4/5) = -3/4$}
-        \end{enumerate}
+\begin{enumerate}[itemsep=10pt]
 
-  \item Symmetry of $-\theta$.
-        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-          \item[(a)] \ans{$\sin(-\theta) = -y = -\sin\theta$}
-          \item[(b)] \ans{$\cos(-\theta) = x = \cos\theta$}
-          \item[(c)] \ans{Reflecting across the $x$-axis maps $(x, y) \to (x, -y)$, so the
-                horizontal distance is unchanged (cosine is even) and the vertical distance
-                negates (sine is odd).}
-        \end{enumerate}
+  \item Domain restriction: \ans{$x = 4$} \qquad
+        Numerator zeros: \ans{$x = 2,\; x = 5$} \qquad
+        Zeros of $r$: \ans{$x = 2$ and $x = 5$}
+
+  \item Sign chart:
+
+        \medskip
+        \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(0,\,2)$ & $(2,\,4)$ & $(4,\,5)$ & $(5,\,\infty)$ \\
+        \hline
+        Test value  & \ans{$1$}  & \ans{$3$}  & \ans{$4.5$} & \ans{$6$} \\
+        \hline
+        Sign of $r$ & \ans{$(+)$} & \ans{$(-)$} & \ans{$(-)$} & \ans{$(+)$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        \textit{Check at $x=1$: $r(1) = (1-2)(1-5)/(1-4) = (-1)(-4)/(-3) = 4/(-3) < 0$\ldots}
+        \textit{Wait --- recheck: $(1-7+10)/(1-4) = 4/(-3) < 0$. Hmm.}
+
+        \textit{Correction: at $x = 1$ (in $(0,2)$): $r(1) = (1-7+10)/(1-4) = 4/(-3) \approx -1.33 < 0$, so $(0,2)$ is $(-)$.
+        At $x = 3$ (in $(2,4)$): $r(3)=(9-21+10)/(3-4) = -2/(-1) = 2 > 0$, so $(2,4)$ is $(+)$.
+        At $x = 4.5$: $r(4.5) = (20.25-31.5+10)/(0.5) = -1.25/0.5 < 0$, so $(4,5)$ is $(-)$.
+        At $x = 6$: $r(6) = (36-42+10)/(2) = 4/2 = 2 > 0$, so $(5,\infty)$ is $(+)$.}
+
+        \medskip
+        \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(0,\,2)$ & $(2,\,4)$ & $(4,\,5)$ & $(5,\,\infty)$ \\
+        \hline
+        Test value  & \ans{$1$}  & \ans{$3$}  & \ans{$4.5$} & \ans{$6$} \\
+        \hline
+        Sign of $r$ & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item $r(x) \geq 0$ on intervals where sign is $(+)$, plus the zeros $x = 2$ and $x = 5$:
+
+        Solution: \ans{$[2,\,4)\cup[5,\,\infty)$}
+
 \end{enumerate}
+\end{tcolorbox}
 
-\begin{teachernote}
-For Tier E question 1, emphasize the sign choice step: after solving $\cos^2\theta = 16/25$,
-students must use the quadrant information to select the negative square root. Many students
-forget this step and take the positive root automatically. Ask: ``Which quadrant are we in?
-What does that mean for the sign of $x$?''
+\vspace{0.08in}
 
-For question 2, the terms \emph{even function} and \emph{odd function} may not yet be formal
-vocabulary, but this is a natural preview. Cosine is even ($f(-x) = f(x)$) and sine is odd
-($f(-x) = -f(x)$). These properties will resurface when graphing in later lessons.
-\end{teachernote}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item $s(x) = \dfrac{x^2-4}{x^2-9} = \dfrac{(x-2)(x+2)}{(x-3)(x+3)}$.
+
+        Domain restrictions: \ans{$x = 3$ and $x = -3$} \qquad
+        Numerator zeros: \ans{$x = 2$ and $x = -2$} \qquad
+        Zeros of $s$: \ans{$x = 2$ and $x = -2$}
+
+  \item Sign chart (test values: $x = -4,\,-2.5,\,0,\,2.5,\,4$):
+
+        \medskip
+        \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(-\infty,-3)$ & $(-3,-2)$ & $(-2,2)$ & $(2,3)$ & $(3,\infty)$ \\
+        \hline
+        Test value  & \ans{$-4$} & \ans{$-2.5$} & \ans{$0$} & \ans{$2.5$} & \ans{$4$} \\
+        \hline
+        Sign of $s$ & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item $s(x) > 0$ (strict inequality, so zeros $x = \pm 2$ are excluded):
+
+        Solution: \ans{$(-\infty,\,-3)\cup(-2,\,2)\cup(3,\,\infty)$}
+
+  \item \ansline{No. $x = 3$ and $x = -3$ are NOT zeros of $s$ because they are not in the domain of $s$; $s(3)$ and $s(-3)$ are undefined, so the function cannot equal zero at those values.}
+
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}

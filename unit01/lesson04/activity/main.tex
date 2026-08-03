@@ -1,4 +1,4 @@
-%! Polynomial Functions and Rates of Change — Unit 1, Lesson 1.4 — Group Activity
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,133 +9,149 @@
 \pageheader{Unit 1, Lesson 1.4}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Roller Coaster Heights]{sky}
-A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
-by a polynomial function $h(t)$. A table of sample values is given below.
+\begin{scenariobox}[Function Makeover Studio]{sky}
+\small
+A design studio applies transformation rules to ``restyle'' functions. The base function $f$
+is defined by the table below. Your team must construct transformed versions, match
+transformations to descriptions, and reverse-engineer transformations from data.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
-\rowcolor{sky}
-$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
-\midrule
-$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
-\end{tabularx}
+\medskip
+\textbf{Base function $f$:}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
+\hline
+\end{tabular}
 \end{scenariobox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Use the table above (no graphing needed).
+Three students each applied a different transformation to $f$. Their tables are shown below.
+Match each table to the correct description by writing the letter in the blank.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Identify the time(s) at which the roller coaster reaches a \textbf{local maximum}
-    (a high point between two lower values). List the time and height.
+\medskip
+\textbf{Descriptions:} \quad
+\textbf{A.}\ $g(x) = f(x) - 3$ \qquad
+\textbf{B.}\ $g(x) = f(x+2)$ \qquad
+\textbf{C.}\ $g(x) = 2f(x)$
 
-    \vspace{4pt}
-    \blank{10cm}
+\medskip
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 1: $g(x)$ & $1$ & $-2$ & $-3$ & $-2$ & $1$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
 
-    \item Identify the time(s) at which the roller coaster reaches a \textbf{local minimum}
-    (a low point between two higher values). List the time and height.
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 2: $g(x)$ & $8$ & $2$ & $0$ & $2$ & $8$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
 
-    \vspace{4pt}
-    \blank{10cm}
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+Table 3: $g(x)$ & $0$ & $1$ & $4$ & $9$ & $16$ \\
+\hline
+\end{tabular}
+\quad Matches description: \blank{1.5cm}
 
-    \item What is the \textbf{global maximum} height over the entire ride?
-    At what time does it occur?
-
-    \vspace{4pt}
-    \blank{10cm}
-
-    \item The coaster returns to height 0 at $t = 0$ and $t = 60$.
-    Based on the table, does the function appear to have any other zeros? If so, where?
-
-    \vspace{4pt}
-    \blank{10cm}
-\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- On Level: Rates of Change and Concavity},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Compute the AROC of $h$ over each interval. Show your work.
+Using the base function $f$ from the scenario, construct the table of values for
+$g(x) = 2f(x - 1) + 3$. Show how you compute each output.
 
-    \renewcommand{\arraystretch}{1.6}
-    \begin{tabularx}{\linewidth}{@{} l X X @{}}
-    \rowcolor{sky}
-    Interval & AROC formula & AROC value \\
-    \midrule
-    $[0, 10]$   & $\dfrac{h(10)-h(0)}{10-0}$   & \blank{2.5cm} \\
-    $[10, 15]$  & $\dfrac{h(15)-h(10)}{15-10}$  & \blank{2.5cm} \\
-    $[15, 20]$  & $\dfrac{h(20)-h(15)}{20-15}$  & \blank{2.5cm} \\
-    $[20, 30]$  & $\dfrac{h(30)-h(20)}{30-20}$  & \blank{2.5cm} \\
-    $[30, 35]$  & $\dfrac{h(35)-h(30)}{35-30}$  & \blank{2.5cm} \\
-    $[35, 40]$  & $\dfrac{h(40)-h(35)}{40-35}$  & \blank{2.5cm} \\
-    $[40, 50]$  & $\dfrac{h(50)-h(40)}{50-40}$  & \blank{2.5cm} \\
-    $[50, 60]$  & $\dfrac{h(60)-h(50)}{60-50}$  & \blank{2.5cm} \\
-    \end{tabularx}
+\medskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $x-1$ & $f(x-1)$ & $2f(x-1)$ & $g(x) = 2f(x-1)+3$ \\
+\hline
+$-1$ & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$0$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$1$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$2$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+$3$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
 
-    \item At which interval(s) does the AROC transition from \textbf{positive to negative}?
-    What does this indicate about the function's behavior?
+\medskip
+State the domain and range of $g$ based on your table.
 
-    \vspace{4pt}
-    \blank{11cm}
+\medskip
+Domain of $g$: \blank{5cm} \quad Range of $g$: \blank{5cm}
 
-    \item At which interval(s) does the AROC transition from \textbf{negative to positive}?
-
-    \vspace{4pt}
-    \blank{11cm}
-
-    \item On which portion of the ride is the AROC \textbf{increasing}? What does that tell you
-    about the concavity of $h$?
-
-    \vspace{4pt}
-    \blank{11cm}
-
-    \item Based on the AROC values, identify a possible \textbf{point of inflection} and explain
-    your reasoning.
-
-    \vspace{4pt}
-    \blank{11cm}
-\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.08in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend: Degree and Global Extrema},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item From the table, count the number of local extrema observed. Based on EK 1.4.A.3
-    (between every two distinct real zeros there is at least one local extremum), what is the
-    \textbf{minimum possible degree} of $h(t)$? Explain.
+A second function $h$ is defined by the table below. By comparing $h$ to the base function
+$f$, identify all transformations applied to $f$ to produce $h$, and write $h(x)$ in terms
+of $f$.
 
-    \vspace{4pt}
-    \blank{11cm}
+\medskip
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+\hline
+$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
+\hline
+$h(x)$ & $-7$ & $-1$ & $1$ & $-1$ & $-7$ \\
+\hline
+\end{tabular}
 
-    \vspace{2pt}
-    \blank{11cm}
+\medskip
+\begin{enumerate}[itemsep=8pt]
+  \item Compare outputs: how does $h(x)$ relate to $f(x)$ at each $x$-value?
 
-    \item The ride begins and ends at $h = 0$, so $t = 0$ and $t = 60$ are zeros. The table
-    suggests at least one more zero exists. Assuming the polynomial has degree $n$, does
-    $h(t)$ have a global minimum on the domain $[0, 60]$? Use EK 1.4.A.4 in your explanation.
+        \vspace{0.05in}
+        \writelines{2}
 
-    \vspace{4pt}
-    \blank{11cm}
+  \item Write $h(x)$ in terms of $f(x)$. Identify $a$ and $k$ in $g(x) = af(x)+k$.
 
-    \vspace{2pt}
-    \blank{11cm}
+        \vspace{0.05in}
+        $h(x) = $ \blank{5cm}, so $a = $ \blank{1.5cm} and $k = $ \blank{1.5cm}
+
+  \item Describe in words all transformations that map $f$ onto $h$.
+
+        \vspace{0.05in}
+        \writelines{2}
 \end{enumerate}
+
 \end{tcolorbox}
 
 \end{document}

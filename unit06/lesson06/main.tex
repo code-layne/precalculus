@@ -1,0 +1,279 @@
+%! Sinusoidal Functions — Unit 6, Lesson 6.6 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 6: Trigonometric Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.6: Sinusoidal Functions}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% 1. TITLE BLOCK
+%-----------------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries\color{navy} Precalculus \quad 2026--2027}\\[4pt]
+  {\large\bfseries Unit 6: Trigonometric Functions}\\[2pt]
+  {\large\bfseries Lesson 6.6: Sinusoidal Functions}\\[2pt]
+  {\normalsize Instructional Periods: 2--3 \quad|\quad Meeting Length: 55 minutes}
+\end{center}
+
+\vspace{4pt}
+\hrule
+\vspace{8pt}
+
+%-----------------------------------------------------------------------
+% 2. PRIMARY OBJECTIVE
+%-----------------------------------------------------------------------
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+  \textbf{Primary Objective} \hfill \textit{Big Idea: Functions}
+
+  \medskip
+  Students identify and describe the key characteristics --- period, frequency,
+  amplitude, and midline --- of sinusoidal functions, including the symmetry
+  properties of sine (odd) and cosine (even).
+\end{tcolorbox}
+
+\vspace{6pt}
+
+%-----------------------------------------------------------------------
+% 3. PRIORITY IDEAS & SKILLS
+%-----------------------------------------------------------------------
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+  \textbf{Skills:} 2.A (Identify key characteristics from representations) \quad
+  3.A (Describe characteristics of functions)
+
+  \medskip
+  \textbf{Essential Knowledge:}
+  \begin{itemize}
+    \item \textbf{EK 3.5.A.1} A \textit{sinusoidal function} involves additive and
+          multiplicative transformations of $f(\theta)=\sin\theta$.
+          Both sine and cosine are sinusoidal; $\cos\theta = \sin(\theta+\pi/2)$.
+    \item \textbf{EK 3.5.A.2} Period and frequency are reciprocals.
+          The period of $\sin\theta$ and $\cos\theta$ is $2\pi$; frequency is
+          $\tfrac{1}{2\pi}$.
+    \item \textbf{EK 3.5.A.3} Amplitude $=\tfrac{\text{max}-\text{min}}{2}$.
+          For $\sin\theta$ and $\cos\theta$, amplitude $= 1$.
+    \item \textbf{EK 3.5.A.4} Midline $= \tfrac{\text{max}+\text{min}}{2}$.
+          For $\sin\theta$ and $\cos\theta$, midline is $y=0$.
+    \item \textbf{EK 3.5.A.5} As inputs increase, sinusoidal graphs oscillate
+          between concave down and concave up.
+    \item \textbf{EK 3.5.A.6} $y=\sin\theta$ has rotational symmetry about the
+          origin (odd); $y=\cos\theta$ has reflective symmetry over the $y$-axis
+          (even).
+  \end{itemize}
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 4. VOCABULARY
+%-----------------------------------------------------------------------
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+  \begin{multicols}{3}
+  \begin{itemize}
+    \item sinusoidal function
+    \item period
+    \item frequency
+    \item amplitude
+    \item midline
+    \item odd function
+    \item even function
+    \item concave up
+    \item concave down
+  \end{itemize}
+  \end{multicols}
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 5. ACTIVATE PRIOR KNOWLEDGE
+%-----------------------------------------------------------------------
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+  \begin{itemize}
+    \item \textbf{Lesson 3.4} --- Graphs of $\sin\theta$ and $\cos\theta$: shape,
+          key points (zeros, maxima, minima), and the unit circle connection.
+    \item \textbf{Lesson 3.1} --- Periodic functions and period: the smallest
+          positive input shift $k$ such that $f(\theta+k)=f(\theta)$ for all $\theta$.
+    \item \textbf{Unit 1} --- Even and odd functions: $f(-x)=f(x)$ (even) vs.\
+          $f(-x)=-f(x)$ (odd); graphical interpretations (y-axis symmetry vs.\
+          rotational symmetry about the origin).
+  \end{itemize}
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 6. HOOK
+%-----------------------------------------------------------------------
+\begin{skillbox}[Hook]{sky}
+  \textit{``A recording engineer notices that a sound wave can be described by a
+  function with amplitude 0.3 and frequency 440 Hz. What information does that
+  tell us about the wave, and how does it relate to the sine function?''}
+
+  \medskip
+  \begin{itemize}
+    \item Amplitude 0.3 means the wave oscillates 0.3 units above and below its
+          centerline --- controlling perceived loudness.
+    \item Frequency 440 Hz means 440 complete cycles per second (the note A above
+          middle C).
+    \item The period of one cycle is $T = \tfrac{1}{440} \approx 0.00227$ seconds.
+    \item \textbf{Key idea:} period and frequency are \textit{reciprocals}:
+          $\text{frequency} = \dfrac{1}{\text{period}}$.
+  \end{itemize}
+
+  \smallskip
+  \textit{Transition:} Today we identify the formal characteristics --- amplitude,
+  midline, period, and frequency --- that describe any sinusoidal function.
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 7. LESSON
+%-----------------------------------------------------------------------
+\begin{skillbox}[Lesson]{sky}
+  \begin{multicols}{2}
+  \textbf{Sinusoidal Functions}
+
+  A \textbf{sinusoidal function} is any function that can be written as an
+  additive and/or multiplicative transformation of $f(\theta)=\sin\theta$.
+  Both sine and cosine are sinusoidal:
+  \[
+    \cos\theta = \sin\!\left(\theta + \tfrac{\pi}{2}\right)
+  \]
+
+  \columnbreak
+
+  \textbf{Amplitude}
+
+  Half the total vertical range:
+  \[
+    \text{amplitude} = \frac{\text{max} - \text{min}}{2}
+  \]
+  Always non-negative.  For $\sin\theta$ and $\cos\theta$: amplitude $=1$.
+  \end{multicols}
+
+  \begin{multicols}{2}
+  \textbf{Midline}
+
+  Horizontal line halfway between max and min:
+  \[
+    \text{midline: } y = \frac{\text{max} + \text{min}}{2}
+  \]
+  For $\sin\theta$ and $\cos\theta$: midline is $y=0$.
+
+  \columnbreak
+
+  \textbf{Period \& Frequency}
+
+  Period $T$: smallest positive value with $f(\theta+T)=f(\theta)$.
+  \[
+    \text{frequency} = \frac{1}{T}
+  \]
+  For $\sin\theta$ and $\cos\theta$: $T=2\pi$, frequency $=\tfrac{1}{2\pi}$.
+  \end{multicols}
+
+  \textbf{Symmetry}
+  \begin{itemize}
+    \item $y=\sin\theta$ is \textbf{odd}: $\sin(-\theta)=-\sin\theta$.
+          Graph has rotational symmetry about the origin.
+    \item $y=\cos\theta$ is \textbf{even}: $\cos(-\theta)=\cos\theta$.
+          Graph has reflective symmetry over the $y$-axis.
+  \end{itemize}
+
+  \textbf{Concavity:} As $\theta$ increases, sinusoidal graphs oscillate between
+  concave down (near maxima) and concave up (near minima).
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 8. EXPLICIT INSTRUCTION
+%-----------------------------------------------------------------------
+\begin{skillbox}[Explicit Instruction: Identifying Characteristics from a Description]{sky}
+  \textbf{Steps:}
+  \begin{enumerate}
+    \item \textbf{Find max and min.}  Compute:
+          amplitude $= \dfrac{\text{max}-\text{min}}{2}$ \quad and \quad
+          midline $= \dfrac{\text{max}+\text{min}}{2}$ (write as $y=\ldots$).
+    \item \textbf{Determine the period.}
+          Read from the graph (length of one complete cycle) or context.
+    \item \textbf{Compute frequency.}  Frequency $= \dfrac{1}{\text{period}}$.
+  \end{enumerate}
+
+  \textbf{Worked Example:} A sinusoidal function has maximum value $8$ and minimum
+  value $-2$, with period $4\pi$.
+  \begin{enumerate}
+    \item Amplitude $= \dfrac{8-(-2)}{2} = 5$
+    \item Midline: $y = \dfrac{8+(-2)}{2} = 3$
+    \item Period $= 4\pi$ (given)
+    \item Frequency $= \dfrac{1}{4\pi}$
+  \end{enumerate}
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 9. ACTIVE MONITORING
+%-----------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring]{redbox}
+  Circulate as students work on guided notes and the group activity.  Watch for:
+  \begin{itemize}
+    \item Confusing amplitude with max value (amplitude is \textit{half} the range).
+    \item Computing midline as average of amplitude and zero rather than of max and min.
+    \item Inverting the period/frequency relationship.
+    \item Misclassifying sine as even or cosine as odd.
+  \end{itemize}
+
+  \textbf{Cold-call check:} ``A function has max $= 5$ and min $= -1$.  What is
+  the amplitude?  The midline?'' \quad (amplitude $= 3$; midline $y=2$.)
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 10. GROUP WORK & DIFFERENTIATION
+%-----------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+  Students work in assigned tiers on the Group Activity (separate document).
+  \begin{itemize}
+    \item \textbf{Tier R (Remediate):} Identifying amplitude, midline, period, and
+          frequency from verbal descriptions with max and min given.
+          Scaffolded formula prompts are included.
+    \item \textbf{Tier A (At Level):} Determining all four characteristics from
+          tables of values; classifying symmetry (odd/even/neither) from a table.
+    \item \textbf{Tier E (Extend):} Reversing the process (given characteristics,
+          find max/min); algebraic justification using the unit circle definition
+          that $\sin(\pi-\theta)=\sin\theta$.
+  \end{itemize}
+  \textbf{Grouping note:} Pairs work best; groups of 3 are acceptable.
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 11. INDIVIDUAL WORK & ASSESSMENT
+%-----------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+  \begin{itemize}
+    \item \textbf{Exit Ticket} (last 5 min): 2 items assessing amplitude/midline
+          computation and period-to-frequency conversion.
+    \item \textbf{Homework}: 5--6 problems including an AP-style multiple-choice
+          item and an extension on odd/even symmetry.
+    \item \textbf{Formative data:} Collect exit tickets to identify students who
+          need reteaching before Lesson 3.6.
+  \end{itemize}
+\end{skillbox}
+
+%-----------------------------------------------------------------------
+% 12. REINFORCEMENT & EXTENSION
+%-----------------------------------------------------------------------
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+  \textbf{Reinforce:} Students who struggle with the formulas benefit from returning
+  to the unit circle: the maximum $y$-value of $\sin\theta$ is $1$ (at
+  $\theta=\pi/2$) and the minimum is $-1$ (at $\theta=3\pi/2$).
+  Amplitude $= \tfrac{1-(-1)}{2} = 1$.
+
+  \medskip
+  \textbf{Preview --- Lesson 3.6: Sinusoidal Function Transformations}
+
+  In the next lesson, students analyze how parameters $a$, $b$, $c$, and $d$
+  transform $f(\theta)=\sin\theta$ in the general form
+  $g(\theta) = a\sin(b(\theta+c))+d$, connecting those parameters directly to
+  the amplitude ($|a|$), period ($\tfrac{2\pi}{|b|}$), horizontal shift ($-c$),
+  and midline ($d$) studied today.
+\end{skillbox}
+
+\end{document}

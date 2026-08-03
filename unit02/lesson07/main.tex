@@ -1,15 +1,15 @@
-%! Composition of Functions — Unit 2, Lesson 2.7 — Lesson Plan
+%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Exponential and Logarithmic Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.7: Composition of Functions}
+\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 2.7: Polynomial Equations and Inequalities}
 
 \begin{document}
 \begin{center}
@@ -19,151 +19,78 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students evaluate and construct compositions of functions
-    analytically and numerically, distinguish $f \circ g$ from $g \circ f$, and decompose
-    a given function into a composition of simpler functions, connecting composition to
-    transformations. \hfill\textit{\small Skills: 1.C and 2.B}
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{Skill 1.C} --- Construct new functions using compositions. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item $(f \circ g)(x) = f(g(x))$: outputs of $g$ become inputs of $f$. (EK 2.7.A.1)
-  \item Values can be found from tables, graphs, or formulas. (EK 2.7.A.2)
-  \item Composition is not commutative: $f(g(x)) \ne g(f(x))$ in general. (EK 2.7.A.3)
-  \item $f(x) = x$ is the identity function; composing with it returns the other function. (EK 2.7.A.4)
-\end{itemize} \\
-\textbf{Skill 2.B} --- Construct equivalent representations. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Substitute $g(x)$ for every $x$ in $f(x)$ to build $f(g(x))$ analytically. (EK 2.7.B.2)
-  \item Composition relates quantities not directly linked by one formula. (EK 2.7.B.1)
-  \item Decompose complex functions into simpler components; link to transformations. (EK 2.7.C.1–C.3)
-\end{itemize} \\
-\end{tabularx}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-composition          & The operation $(f \circ g)(x) = f(g(x))$: feed output of $g$ into $f$. \\
-composite function   & The resulting function $f \circ g$ formed by composing $f$ with $g$. \\
-domain of $f \circ g$ & Inputs $x$ in the domain of $g$ whose outputs $g(x)$ are in the domain of $f$. \\
-identity function    & $f(x) = x$; composing it with any $g$ returns $g$: $(f \circ g)(x) = g(x)$. \\
-non-commutativity    & In general, $f(g(x)) \ne g(f(x))$; order matters in composition. \\
-decomposition        & Writing a complex function $h$ as $f(g(x))$ using simpler $f$ and $g$. \\
-\end{tabularx}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers evaluating a function at a given input
-    ($f(4)$ and $f(-2)$ for $f(x) = 3x-1$), and walking through a step-by-step
-    composition numerically: compute $f(g(1))$ and $g(f(1))$ and compare them.
-    Students also begin to notice that order produces different results.
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-Write on the board: \textbf{``Your cell-carrier charges \$0.10 per mile of data used, and
-your daily driving distance $d$ miles converts to data use as $u(d) = 0.5d$ GB. The charge
-is $C(u) = 10u$ dollars. What is your daily charge as a function of miles driven?''}
-
-After brief class discussion, reveal: $C(u(d)) = C(0.5d) = 10(0.5d) = 5d$.
-We used \textit{composition} to link two quantities not directly related by a single formula.
-\textbf{Today: how to evaluate, build, and decompose compositions.}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-\begin{multicols}{2}
-\textbf{Part 1 (12 min): Evaluate from a Table and Analytically.}
-
-Show the table:
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{c|c|c}
-$x$ & $f(x)$ & $g(x)$ \\ \hline
-1 & 4 & 2 \\
-2 & 7 & 1 \\
-3 & 10 & 3 \\
-\end{tabular}
-\end{center}
-Walk through: $f(g(1)) = f(2) = 7$; $f(g(2)) = f(1) = 4$; $g(f(1)) = g(4) = $ (undefined here,
-so note domain restriction). Stress: use the inner function's output as the outer function's input.
-
-\columnbreak
-
-\textbf{Part 2 (12 min): Construct Analytically.}
-
-Given $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
-
-Build $f(g(x))$: substitute $g(x)$ for every $x$ in $f$:
-$f(g(x)) = 2(x^2-3)+1 = 2x^2-5$.
-
-Build $g(f(x))$: substitute $f(x)$ for every $x$ in $g$:
-$g(f(x)) = (2x+1)^2-3 = 4x^2+4x-2$.
-
-Compare: $f(g(x)) \ne g(f(x))$ --- composition is \textbf{not} commutative.
-\end{multicols}
-
-\medskip
-\textbf{Part 3 (12 min): Decompose and Connect to Transformations.}
-
-Decompose $h(x) = (3x+2)^4$: natural split is $f(u) = u^4$ and $g(x) = 3x+2$, so $h(x) = f(g(x))$.
-Verify: $f(g(x)) = (3x+2)^4$ --- correct.
-
-Connect to transformations (EK 2.7.C.2–C.3): $g(x) = f(x+k)$ is composition of $f$ with
-$h(x) = x+k$; $g(x) = f(kx)$ is composition of $f$ with $h(x) = kx$. Every horizontal
-shift/stretch is secretly a composition.
-
-Identity: $(f \circ \text{id})(x) = f(x+0) = f(x)$. The identity function ``does nothing.''
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call ``Why can't we find $g(f(1))$ from that table?'' Expect:
-        $f(1) = 4$, and 4 is not in the table as an input for $g$.
-  \item During Part 2: watch for students who substitute $g(x)$ into only part of $f$; confirm
-        they replace \textit{every} $x$.
-  \item After Part 2: cold-call ``If $f(g(2)) = 5$, does that mean $g(f(2)) = 5$?'' Expect: not
-        necessarily; show with the example.
-  \item During Part 3: look for students who reverse $f$ and $g$ in the decomposition; test by
-        substituting back.
-\end{itemize}
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Evaluate $f(g(0))$, $f(g(2))$, $g(f(0))$ for given
-        linear functions; decide if $f \circ g = g \circ f$ for these values.
-  \item \textbf{Tier A (Apply):} Fill a table for $f(g(x))$ and $g(f(x))$ from a value table;
-        write analytic formulas for $f \circ g$ when $f(x) = x^2$, $g(x) = 2x-1$; state domain.
-  \item \textbf{Tier E (Extend):} Decompose $h(x) = (3x+2)^4$ two different ways; verify each;
-        explain which decomposition is $f(g(x))$ and which is $g(f(x))$ --- or explain why a
-        swap is impossible.
-\end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) find $f(g(2))$ for $f(x) = x+4$, $g(x) = 3x$;
-(2) write the formula for $(f \circ g)(x)$ and simplify; (3) write $(g \circ f)(x)$ and
-compare.
-
-Sort by: students who miss (1) need review of evaluating the inner function first (LO 2.7.A);
-students who miss (2) need re-teaching of analytic substitution (EK 2.7.B.2);
-students who miss (3) need work on non-commutativity (EK 2.7.A.3).
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): numerical composition from a table; analytic $f(g(x))$ and $g(f(x))$
-for linear and quadratic; evaluate $f \circ g$ at a negative input; decompose a cubic; real-world
-profit composition; AP-style MC on $f \circ g$.
-
-Preview of Lesson 2.8 (Inverse Functions): if we compose a function with its inverse, we get the
-identity function, $f(f^{-1}(x)) = x$. Decomposing a function is the first step toward finding what
-``undoes'' it --- today's decomposition skill leads directly to inverses.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

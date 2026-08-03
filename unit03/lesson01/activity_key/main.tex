@@ -1,4 +1,4 @@
-%! Periodic Phenomena — Unit 3, Lesson 3.1 — Group Activity (Answer Key)
+%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,182 +11,93 @@
 
 \vspace{0.10in}
 
-\begin{scenariobox}[Context: Periodic Patterns in the World]{sky}
-Periodic relationships appear throughout nature, engineering, and everyday
-life. In this activity your group will investigate several real-world
-contexts, determine whether each is periodic, estimate periods, and describe
-key characteristics. Choose \textbf{one tier} below based on your readiness.
+\begin{scenariobox}[Analyzing Concert Venue Costs]{sky}
+\small
+A concert venue is modeling the average cost per person for different events.
+Each rational function below represents a different cost or demand model.
+Analyze the end behavior of each function as audience size $x$ grows without bound.
+
+\medskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}llll@{}}
+$r_1(x) = \dfrac{2x + 5}{x - 1}$ &\quad&
+$r_2(x) = \dfrac{3x^2}{x^2 + 4}$ \\[8pt]
+$r_3(x) = \dfrac{x + 1}{x^2 - 9}$ &\quad&
+$r_4(x) = \dfrac{x^3 - 2x}{x - 3}$ \\
+\end{tabular}
 \end{scenariobox}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Tier R Key
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Reinforce (Key)},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Context:} Portland, OR average daily high temperature by month.
+The leading terms are already extracted for you.
+Compute the quotient of leading terms and state the asymptote type.
 
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\small
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{@{}p{1.2cm} p{2.2cm} p{2.2cm} p{2.8cm} p{3.0cm}@{}}
+\textbf{Fcn} & \textbf{Lead.\ num} & \textbf{Lead.\ den} & \textbf{Quotient} & \textbf{Asymptote?} \\
 \hline
-\textbf{Month} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
-\hline
-\textbf{Year 1} & 47 & 52 & 58 & 63 & 70 & 76 & 82 & 82 & 74 & 63 & 52 & 47 \\
-\hline
-\textbf{Month} & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\
-\hline
-\textbf{Year 2} & 47 & 52 & 58 & 63 & 70 & 76 & 82 & 82 & 74 & 63 & 52 & 47 \\
-\hline
+$r_1$ & $2x$   & $x$   & \ans{$2x/x = 2$}    & \ans{HA: $y=2$} \\
+$r_2$ & $3x^2$ & $x^2$ & \ans{$3x^2/x^2 = 3$} & \ans{HA: $y=3$} \\
+$r_3$ & $x$    & $x^2$ & \ans{$x/x^2 = 1/x \to 0$} & \ans{HA: $y=0$} \\
+$r_4$ & $x^3$  & $x$   & \ans{$x^3/x = x^2$}  & \ans{Polynomial (no HA)} \\
 \end{tabular}
-\end{center}
-
-\vspace{6pt}
-\textbf{1.}\quad Is this relationship periodic? Circle one: \quad \textbf{YES} \quad / \quad \textbf{NO}
-
-Explain: \ans{Yes. The output values in Year 2 (months 13--24) are identical to those in Year 1 (months 1--12), repeating the same sequence over the same input length of 12 months.}
-
-\vspace{4pt}
-\textbf{2.}\quad Estimate the period. The output pattern restarts at month \ans{13},
-so the period is $k =$ \ans{12} months.
-
-\vspace{4pt}
-\textbf{3.}\quad Describe one cycle:
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item Increasing from month \ans{1} to month \ans{7 (or 8)}.
-  \item Decreasing from month \ans{7 (or 8)} to month \ans{12}.
-  \item Maximum: \ans{$82^\circ$F} at month \ans{7 and 8}.
-  \item Minimum: \ans{$47^\circ$F} at month \ans{1 and 12}.
-\end{itemize}
-
-\vspace{4pt}
-\textbf{4.}\quad \ans{Yes. Because the relationship is periodic with period 12, the output values in every subsequent period are identical to those in the first cycle. The same max and min will appear in months 25--36, 37--48, and so on.}
-
 \end{tcolorbox}
-
-\begin{teachernote}
-\textbf{Common errors --- Tier R:}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Students may say the period is 24 (the total span of data shown).
-    Prompt: ``What is the \emph{smallest} input length before the pattern repeats?''
-  \item Students may list the period as a range of months (``months 1--12'')
-    rather than the length ($k = 12$). Distinguish: the period is a
-    \emph{length}, not an interval.
-\end{itemize}
-\end{teachernote}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Tier A Key
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply (Key)},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{1.}\quad Table for two full periods:
+For each function, identify the degrees and leading coefficients, compute the quotient of leading
+terms, write both limit statements, and state the asymptote type.
 
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\medskip
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{@{}p{1.2cm} p{1.2cm} p{1.2cm} p{2.5cm} p{2.8cm} p{2.8cm} p{1.8cm}@{}}
+\textbf{Fcn} & \textbf{Deg n} & \textbf{Deg d} & \textbf{Quotient} &
+$\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ & \textbf{Type} \\
 \hline
-$t$ (sec) & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
-\hline
-$h(t)$ (ft) & \ans{0} & \ans{10} & \ans{0} & \ans{$-10$} & \ans{0} & \ans{10} & \ans{0} & \ans{$-10$} & \ans{0} \\
-\hline
+$r_1$ & \ans{1} & \ans{1} & \ans{$2$}     & \ans{$2$}      & \ans{$2$}      & \ans{HA} \\
+$r_2$ & \ans{2} & \ans{2} & \ans{$3$}     & \ans{$3$}      & \ans{$3$}      & \ans{HA} \\
+$r_3$ & \ans{1} & \ans{2} & \ans{$0$}     & \ans{$0$}      & \ans{$0$}      & \ans{HA} \\
+$r_4$ & \ans{3} & \ans{1} & \ans{$x^2$}   & \ans{$+\infty$} & \ans{$+\infty$} & \ans{Poly} \\
 \end{tabular}
-\end{center}
-
-\vspace{6pt}
-\textbf{2.}\quad \ans{Yes, the relationship is periodic. The sequence 0, 10, 0, $-$10, 0 repeats exactly every 8 seconds, over equal-length intervals.}
-
-\vspace{4pt}
-\textbf{3.}\quad $k =$ \ans{8} seconds.
-
-\vspace{4pt}
-\textbf{4.}\quad
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item Increasing: \ans{$0 \leq t \leq 2$, $8 \leq t \leq 10$ (and repeats every 8 sec)}
-  \item Decreasing: \ans{$2 \leq t \leq 6$, $10 \leq t \leq 14$ (and repeats every 8 sec)}
-\end{itemize}
-
-\vspace{4pt}
-\textbf{5.}\quad Average rate of change from $t=0$ to $t=2$:
-
-$\dfrac{h(2)-h(0)}{2-0} = \dfrac{10-0}{2} = $ \ans{5 ft/sec}
-
 \end{tcolorbox}
-
-\begin{teachernote}
-\textbf{Common errors --- Tier A:}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Students may list the interval $t=6$ to $t=8$ as increasing (it goes
-    from $-10$ to $0$, which is indeed increasing). Accept this; it matches
-    the formal definition.
-  \item Some students divide by 8 instead of 2 when computing the average rate
-    of change. Remind: divide by the \emph{width} of the interval
-    ($b - a = 2 - 0 = 2$).
-\end{itemize}
-\end{teachernote}
 
 \vspace{0.08in}
 
-%----------------------------------------------------------------------
-% Tier E Key
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend (Key)},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\small
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-$t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
-\hline
-$A(t)$ & 0 & 1.5 & 2 & 1.5 & 0 & $-1.5$ & $-2$ & $-1.5$ & 0 & 1.5 & 2 & 1.5 & 0 \\
-\hline
-$B(t)$ & 0 & 3 & 4 & 3 & 0 & $-3$ & $-4$ & $-3$ & 0 & 3 & 4 & 3 & 0 \\
-\hline
-\end{tabular}
-\end{center}
+\begin{enumerate}[itemsep=10pt]
+  \item \textbf{Construct a rational function} with a \textbf{horizontal asymptote at $y = -3$}
+        where the numerator has degree 2 and the denominator has degree 2.
 
-\vspace{6pt}
-\textbf{1.}\quad \ans{Both $A$ and $B$ are periodic. For $A$: the sequence 0, 1.5, 2, 1.5, 0, $-$1.5, $-$2, $-$1.5, 0 repeats with period $k = 8$ hours. For $B$: the same pattern of positions (scaled) repeats with period $k = 8$ hours.}
+        Write your function: $r(x) = $ \ans{$\dfrac{-3x^2 + 1}{x^2 + 5}$} \textit{(many answers possible)}
 
-\vspace{4pt}
-\textbf{2.}\quad Average rate of change of $A$, $t = 0$ to $t = 2$:
+        Verify: What are the leading terms?  Quotient $=$ \ans{$-3x^2/x^2 = -3$}. Does it equal $-3$? \ans{Yes}
 
-$\dfrac{A(2)-A(0)}{2-0} = \dfrac{2-0}{2} = $ \ans{1 m/hr}
+  \item \textbf{Construct a rational function} with a \textbf{slant asymptote at $y = 2x + 1$}.
 
-\vspace{4pt}
-\textbf{3.}\quad Average rate of change of $B$, $t = 0$ to $t = 2$:
+        Write your function: $r(x) = $ \ans{$\dfrac{2x^2 + x + 3}{x}$} \textit{(many answers possible)}
 
-$\dfrac{B(2)-B(0)}{2-0} = \dfrac{4-0}{2} = $ \ans{2 m/hr}
+        \ansline{The numerator has degree 2 and the denominator has degree 1, so deg num $=$ deg denom $+ 1$.
+        This means the quotient of leading terms is a linear expression ($2x$), giving a slant asymptote
+        rather than a constant, so no horizontal asymptote exists.}
 
-\vspace{4pt}
-\textbf{4.}\quad \ans{Buoy B's wave height is changing more rapidly during $0 \leq t \leq 2$ (rate 2 m/hr vs.\ 1 m/hr for Buoy A). Physically, this means Buoy B's water surface is rising twice as fast as Buoy A's during this interval.}
+  \item For your function in part (1), write both limit statements:
 
-\vspace{4pt}
-\textbf{5.}\quad \ans{By EK 3.1.B.3, all characteristics of a periodic function repeat in every period. Since both $A$ and $B$ have period 8, the average rate of change on any interval $[t, t+2]$ equals the rate on $[t+8, t+10]$, $[t+16, t+18]$, and so on --- the same rate reappears at the same relative position in every cycle.}
-
+        $\displaystyle\lim_{x\to\infty} r(x) = $ \ans{$-3$}
+        \qquad
+        $\displaystyle\lim_{x\to -\infty} r(x) = $ \ans{$-3$}
+\end{enumerate}
 \end{tcolorbox}
-
-\begin{teachernote}
-\textbf{Common errors --- Tier E:}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-  \item Students may claim different periods for $A$ and $B$ because $B$ has
-    larger outputs. The \emph{amplitude} differs but the period is the same
-    (8 hours) for both --- reinforce that period is determined by the
-    \emph{input} spacing, not the output magnitudes.
-  \item Students answering \#5 should use the formal definition
-    $f(x+k)=f(x)$ to justify the claim rather than just stating it.
-\end{itemize}
-\end{teachernote}
 
 \end{document}

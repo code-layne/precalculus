@@ -1,4 +1,4 @@
-%! Sine, Cosine, and Tangent — Unit 3, Lesson 3.2 — Group Activity
+%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -11,105 +11,138 @@
 
 \vspace{0.10in}
 
-\begin{scenariobox}[Scenario]{sky}
-A point $P$ moves around a unit circle as angle $\theta$ increases from $0$.
-The position of $P$ is completely determined by $\theta$: the $x$-coordinate gives $\cos\theta$
-and the $y$-coordinate gives $\sin\theta$.
-In this activity you will read these values directly from the unit circle and connect them to the
-tangent function.
+\begin{scenariobox}[Break-Even Analysis]{sky}
+\small
+A factory models its profit (or loss) per unit using the rational function
+\[
+  r(x) = \frac{x^2 - 7x + 10}{x - 4},
+\]
+where $x > 0$ represents units produced (in hundreds) and $x \ne 4$.
+Positive values of $r(x)$ mean profit; negative values mean loss.
 \end{scenariobox}
 
-\vspace{0.12in}
+\vspace{0.08in}
 
-%-----------------------------------------------------------------------
-% TIER R
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate: Reading the Unit Circle},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Directions:} The table below gives the coordinates of $P = (\cos\theta,\, \sin\theta)$ on
-the unit circle for several key angles. Some entries are provided to help you --- fill in all
-remaining blanks.
+\begin{enumerate}[itemsep=10pt]
 
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$\theta$ (radians) & $P = (x,\, y)$ & $\cos\theta = x$ & $\sin\theta = y$ & $\tan\theta = y/x$ \\
-\hline
-$0$      & $(1,\; 0)$                     & $1$  & $0$  & \blank{2cm} \\
-$\pi/6$  & $\bigl(\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$  & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$\pi/4$  & \blank{3.2cm}                  & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$\pi/2$  & $(0,\; 1)$                     & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$\pi$    & \blank{3.2cm}                  & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$3\pi/2$ & $(0,\; -1)$                    & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-\hline
-\end{tabular}
-\end{center}
+  \item Factor the numerator $x^2 - 7x + 10$ completely.
 
-\medskip
-\textbf{Reflection:} For which values of $\theta$ in the table is $\tan\theta$ undefined?
-Why? \hrulefill
+        $x^2 - 7x + 10 = $ \blank{6cm}
 
-\vspace{0.18in}
-\hrulefill
-\end{tcolorbox}
+  \item At what values of $x$ does $r(x) = 0$? (Set the factored numerator equal to zero.)
 
-\vspace{0.14in}
+        $x = $ \blank{5cm}
 
-%-----------------------------------------------------------------------
-% TIER A
-%-----------------------------------------------------------------------
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- On Level: A Point on the Unit Circle and Beyond},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+  \item Is $x = 4$ in the domain of $r$? \quad \textbf{Yes} \quad / \quad \textbf{No} \quad
+        (Circle one.)
 
-\textbf{Part 1.} A point $P = \bigl(-\tfrac{\sqrt{3}}{2},\, \tfrac{1}{2}\bigr)$ is on the unit circle.
+        Why? \blank{8cm}
 
-\begin{enumerate}[leftmargin=1.8em, itemsep=4pt]
-  \item Verify $P$ is on the unit circle. Show that $x^2 + y^2 = 1$. \vspace{0.35in}
-  \item State $\sin\theta$, $\cos\theta$, and $\tan\theta$. \vspace{0.35in}
-  \item In which quadrant does the terminal ray lie? How do the signs of $x$ and $y$ tell you? \vspace{0.35in}
-\end{enumerate}
+  \item List ALL critical values (zeros of numerator AND zeros of denominator) below on the number line.
+        Mark numerator zeros with a closed dot ($\bullet$) and the denominator zero with an open dot ($\circ$).
 
-\textbf{Part 2.} Now suppose a different point $Q = (-\sqrt{3},\, 1)$ is on a circle of \textbf{radius 2}
-centered at the origin.
-
-\begin{enumerate}[leftmargin=1.8em, itemsep=4pt, start=4]
-  \item Verify $Q$ is on the circle of radius 2. \vspace{0.30in}
-  \item Use the general definitions $\sin\theta = y/r$, $\cos\theta = x/r$, $\tan\theta = y/x$
-        to compute $\sin\theta$, $\cos\theta$, $\tan\theta$ for the angle $\theta$ whose terminal
-        ray passes through $Q$. \vspace{0.35in}
-  \item Compare your answers in \#2 and \#5. What do you notice? \vspace{0.25in}
+        \vspace{0.18in}
+        \begin{center}
+        \begin{tikzpicture}
+          \draw[->] (-0.5,0) -- (7.5,0) node[right] {$x$};
+          \foreach \x in {0,1,2,3,4,5,6,7} {
+            \draw (\x,0.08) -- (\x,-0.08) node[below] {\small\x};
+          }
+        \end{tikzpicture}
+        \end{center}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.14in}
+\vspace{0.08in}
 
-%-----------------------------------------------------------------------
-% TIER E
-%-----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend: Using the Pythagorean Identity},
-    fonttitle=\bfseries, arc=2mm, left=4mm, right=4mm, top=3mm, bottom=3mm]
+    title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.8em, itemsep=6pt]
-  \item You are told that $\sin\theta = \dfrac{3}{5}$ and that $\theta$ is in \textbf{Quadrant II}.
-        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-          \item[(a)] Use $\sin^2\theta + \cos^2\theta = 1$ to find $\cos\theta$.
-                Justify the sign of your answer. \vspace{0.55in}
-          \item[(b)] Find $\tan\theta$. \vspace{0.35in}
-        \end{enumerate}
+\begin{enumerate}[itemsep=10pt]
 
-  \item Consider the angle $-\theta$ (a clockwise rotation of the same magnitude as $\theta$).
-        The point $P$ for $\theta$ is at $(x, y)$; the point for $-\theta$ is at $(x, -y)$.
-        \begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-          \item[(a)] Find $\sin(-\theta)$ in terms of $\sin\theta$. \vspace{0.28in}
-          \item[(b)] Find $\cos(-\theta)$ in terms of $\cos\theta$. \vspace{0.28in}
-          \item[(c)] Describe the geometric symmetry that explains these results. \vspace{0.30in}
-        \end{enumerate}
+  \item Find all zeros of $r(x) = \dfrac{x^2 - 7x + 10}{x - 4}$.
+        Show your steps (find domain restriction, factor numerator, check domain).
+
+        \vspace{0.08in}
+        Domain restriction: \blank{3cm} \qquad
+        Numerator zeros: \blank{3.5cm} \qquad
+        Zeros of $r$: \blank{3cm}
+
+  \item Complete the sign chart below for $r(x)$.
+
+        \medskip
+        \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(0,\,2)$ & $(2,\,4)$ & $(4,\,5)$ & $(5,\,\infty)$ \\
+        \hline
+        Test value  & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        Sign of $r$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Solve $r(x) \geq 0$ (units where profit per unit is non-negative).
+        Write your answer in interval notation (remember $x > 0$, $x \ne 4$).
+
+        \vspace{0.08in}
+        Solution: \blank{8cm}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A second model is $\displaystyle s(x) = \dfrac{x^2 - 4}{x^2 - 9}$.
+
+\begin{enumerate}[itemsep=10pt]
+
+  \item Find all zeros of $s(x)$. Show all steps.
+
+        \vspace{0.08in}
+        Domain restrictions: \blank{4cm} \qquad
+        Numerator zeros: \blank{4cm} \qquad
+        Zeros of $s$: \blank{3.5cm}
+
+  \item List ALL critical values and complete a sign chart for $s(x)$.
+        (Hint: there are 4 critical values total.)
+
+        \medskip
+        \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(-\infty,-3)$ & $(-3,-2)$ & $(-2,2)$ & $(2,3)$ & $(3,\infty)$ \\
+        \hline
+        Test value  & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        Sign of $s$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Solve $s(x) > 0$. Write the solution in interval notation.
+
+        \vspace{0.08in}
+        Solution: \blank{8cm}
+
+  \item The denominator of $s$ is zero at $x = 3$ and $x = -3$.
+        Are these values zeros of $s$? Justify your answer in a complete sentence.
+
+        \vspace{0.08in}
+        \writelines{2}
+
 \end{enumerate}
 \end{tcolorbox}
 

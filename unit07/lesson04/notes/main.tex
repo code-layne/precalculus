@@ -1,0 +1,263 @@
+%! The Secant, Cosecant, and Cotangent Functions — Unit 7, Lesson 7.4 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 7, Lesson 7.4}{Guided Notes}
+\namedateperiod
+
+\vspace{0.10in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.11.A} --- Define secant, cosecant, and cotangent as
+    reciprocals of cosine, sine, and tangent, respectively, and evaluate
+    each at unit-circle angles. \writeline
+  \item \textbf{LO 3.11.A} --- Identify the domain, range, vertical asymptotes,
+    and period of $\sec\theta$, $\csc\theta$, and $\cot\theta$. \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{secant}]
+    $\sec\theta = \dfrac{1}{\underline{\hspace{2.2cm}}}$;
+    the reciprocal of cosine.
+    Undefined when $\cos\theta = $ \underline{\hspace{1cm}}.
+
+  \item[\termblanklong{cosecant}]
+    $\csc\theta = \dfrac{1}{\underline{\hspace{2.2cm}}}$;
+    the reciprocal of sine.
+    Undefined when $\sin\theta = $ \underline{\hspace{1cm}}.
+
+  \item[\termblanklong{cotangent}]
+    $\cot\theta = \dfrac{\underline{\hspace{1.8cm}}}{\underline{\hspace{1.8cm}}}$;
+    the reciprocal of tangent.
+    Undefined when $\sin\theta = $ \underline{\hspace{1cm}}.
+
+  \item[\termblanklong{vertical asymptote}]
+    A vertical line $\theta = a$ where the function value grows without
+    \underline{\hspace{2.5cm}}; caused by a \underline{\hspace{1.5cm}} in the denominator.
+
+  \item[\termblanklong{reciprocal function}]
+    A function formed by $\dfrac{1}{f(\theta)}$.
+    Zeros of $f$ become \underline{\hspace{2.5cm}} of the reciprocal,
+    and $f(\theta) = \pm 1$ are \underline{\hspace{2cm}} points (outputs unchanged).
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} The graph shown is $y = \sec\theta$ over $[0, 2\pi]$.
+There are gaps where the function is undefined.
+
+\vspace{4pt}
+\textbf{Q1.} At approximately which $\theta$ values are the gaps located?
+$\theta = $ \underline{\hspace{2.5cm}}
+
+\vspace{4pt}
+\textbf{Q2.} The output values $-0.8$ and $0.3$ never appear. What does that tell
+you about the range of $y = \sec\theta$?
+\writeline
+
+\vspace{4pt}
+\textbf{Q3.} What function do you think causes those gaps?
+\writeline
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.11.A (Part 1) — Secant and Cosecant
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.11.A --- Part 1: Secant and Cosecant Functions}
+
+\textbf{Secant:} $\sec\theta = \dfrac{1}{\cos\theta}$, where $\cos\theta \neq 0$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|}
+\hline
+$\theta$ & $\cos\theta$ & $\sec\theta = \dfrac{1}{\cos\theta}$ \\
+\hline
+$0$ & $1$ & \\
+\hline
+$\dfrac{\pi}{3}$ & $\dfrac{1}{2}$ & \\
+\hline
+$\dfrac{\pi}{2}$ & $0$ & \\
+\hline
+$\pi$ & $-1$ & \\
+\hline
+$\dfrac{3\pi}{2}$ & $0$ & \\
+\hline
+$2\pi$ & $1$ & \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Vertical asymptotes of $\sec\theta$: $\theta = $ \underline{\hspace{4cm}} (in $[0,2\pi]$)
+
+\vspace{4pt}
+General formula for asymptotes: $\theta = \underline{\hspace{3.5cm}}$ for integer $n$
+
+\vspace{4pt}
+Range of $\sec\theta$: \underline{\hspace{5cm}}
+
+\vspace{10pt}
+\textbf{Cosecant:} $\csc\theta = \dfrac{1}{\sin\theta}$, where $\sin\theta \neq 0$.
+
+\vspace{6pt}
+\begin{tabular}{|c|c|c|}
+\hline
+$\theta$ & $\sin\theta$ & $\csc\theta = \dfrac{1}{\sin\theta}$ \\
+\hline
+$0$ & $0$ & \\
+\hline
+$\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ & \\
+\hline
+$\dfrac{\pi}{2}$ & $1$ & \\
+\hline
+$\pi$ & $0$ & \\
+\hline
+$\dfrac{3\pi}{2}$ & $-1$ & \\
+\hline
+$2\pi$ & $0$ & \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Vertical asymptotes of $\csc\theta$: $\theta = $ \underline{\hspace{4cm}} (in $[0,2\pi]$)
+
+\vspace{4pt}
+General formula for asymptotes: $\theta = \underline{\hspace{3.5cm}}$ for integer $n$
+
+\vspace{4pt}
+Range of $\csc\theta$: \underline{\hspace{5cm}}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% LO 3.11.A (Part 2) — Cotangent
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.11.A --- Part 2: Cotangent Function}
+
+\textbf{Cotangent:}
+$\cot\theta = \dfrac{\cos\theta}{\sin\theta} = \dfrac{1}{\tan\theta}$
+\quad (where $\sin\theta \neq 0$)
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\theta$ & $\sin\theta$ & $\cos\theta$ & $\cot\theta = \dfrac{\cos\theta}{\sin\theta}$ \\
+\hline
+$0^+$ (approaching 0) & $\approx 0^+$ & $1$ & \\
+\hline
+$\dfrac{\pi}{4}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & \\
+\hline
+$\dfrac{\pi}{2}$ & $1$ & $0$ & \\
+\hline
+$\dfrac{3\pi}{4}$ & $\dfrac{\sqrt{2}}{2}$ & $-\dfrac{\sqrt{2}}{2}$ & \\
+\hline
+$\pi^-$ (approaching $\pi$) & $\approx 0^+$ & $-1$ & \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+As $\theta$ increases from $0$ to $\pi$, cotangent is \underline{\hspace{3cm}}
+(circle: \textit{increasing} / \textit{decreasing}).
+
+\vspace{4pt}
+Vertical asymptotes of $\cot\theta$: $\theta = \underline{\hspace{4cm}}$ for integer $n$
+
+\vspace{4pt}
+Period of $\cot\theta$: \underline{\hspace{2.5cm}}
+\hspace{1.5cm}
+Range of $\cot\theta$: \underline{\hspace{4.5cm}}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Summary Table
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.11.A --- Summary: The Six Trigonometric Functions}
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} l X X X @{}}
+\hline
+\textbf{Function} & \textbf{Asymptotes} ($\theta$ excluded from domain) & \textbf{Range} & \textbf{Period} \\
+\hline
+$\sec\theta = 1/\cos\theta$ & & & \\
+$\csc\theta = 1/\sin\theta$ & & & \\
+$\cot\theta = \cos\theta/\sin\theta$ & & & \\
+\hline
+\end{tabularx}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Practice
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad Evaluate each reciprocal trig function.
+Use the unit circle values given.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Given} & \textbf{Compute} & \textbf{Value} \\
+\hline
+$\cos\!\left(\dfrac{\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$ &
+$\sec\!\left(\dfrac{\pi}{4}\right) = \dfrac{1}{\cos(\pi/4)} = $ & \\
+\hline
+$\sin\!\left(\dfrac{\pi}{3}\right) = \dfrac{\sqrt{3}}{2}$ &
+$\csc\!\left(\dfrac{\pi}{3}\right) = $ & \\
+\hline
+$\sin\!\left(\dfrac{\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$, $\cos\!\left(\dfrac{\pi}{4}\right) = \dfrac{\sqrt{2}}{2}$ &
+$\cot\!\left(\dfrac{\pi}{4}\right) = \dfrac{\cos(\pi/4)}{\sin(\pi/4)} = $ & \\
+\hline
+\end{tabular}
+
+\vspace{0.10in}
+\textbf{Guided Practice 2.}\quad For each function, identify all vertical asymptotes
+in $[0, 2\pi]$ and state whether the given value is in the domain.
+
+\vspace{4pt}
+(a)\quad $f(\theta) = \sec\theta$. \quad Is $\theta = \pi/3$ in the domain?
+\underline{\hspace{1.5cm}} \quad Asymptotes in $[0,2\pi]$: \underline{\hspace{4cm}}
+
+\vspace{6pt}
+(b)\quad $g(\theta) = \csc\theta$. \quad Is $\theta = \pi$ in the domain?
+\underline{\hspace{1.5cm}} \quad Asymptotes in $[0,2\pi]$: \underline{\hspace{4cm}}
+
+\vspace{6pt}
+(c)\quad $h(\theta) = \cot\theta$. \quad Is $\theta = \pi/2$ in the domain?
+\underline{\hspace{1.5cm}} \quad Asymptotes in $[0,2\pi]$: \underline{\hspace{4cm}}
+
+\end{practicebox}
+
+\end{document}

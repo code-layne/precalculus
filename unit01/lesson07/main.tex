@@ -1,4 +1,4 @@
-%! Rational Functions and End Behavior — Unit 1, Lesson 1.7 — Lesson Plan
+%! Function Model Selection and Assumption Articulation — Unit 1, Lesson 1.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,8 +8,8 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Polynomial and Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 1.7: Rational Functions and End Behavior}
+\newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
+\newcommand{\LessonNumberName}{Lesson 1.7: Function Model Selection and Assumption Articulation}
 
 \begin{document}
 \begin{center}
@@ -19,10 +19,11 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the end behavior of rational functions
-    by examining the quotient of leading terms, identify horizontal and slant asymptotes,
-    and express end behavior using limit notation.
-    \hfill\textit{\small Skills: MP 1.B, 3.A}
+    \textbf{Primary Objective:} Students will select an appropriate function model (linear,
+    quadratic, cubic, polynomial, or piecewise) for a contextual scenario by analyzing rates
+    of change and shape/context clues, and will articulate the underlying assumptions and
+    domain/range restrictions embedded in the model.
+    \hfill\textit{\small Skills: MP 2.A, MP 3.C}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -31,180 +32,128 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 1.B} --- Identify mathematical information from graphical, numerical,
-analytical, and verbal representations. &
+\textbf{MP 2.A} --- Identify information from mathematical representations (tables, graphs,
+descriptions) to determine function type. \newline
+\textbf{MP 3.C} --- Support model-selection conclusions with a logical rationale. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A rational function $r(x) = p(x)/q(x)$ measures the relative size of
-        two polynomials. (EK 1.7.A.1)
-  \item For large $|x|$, leading terms dominate; end behavior equals the quotient
-        of leading terms. (EK 1.7.A.2)
-  \item deg num $>$ deg denom $\Rightarrow$ polynomial end behavior; if the
-        difference in degrees is 1, a slant asymptote exists. (EK 1.7.A.3)
-\end{itemize} \\
-\textbf{MP 3.A} --- Describe characteristics of a function using appropriate
-mathematical language and notation. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item deg num $=$ deg denom $\Rightarrow$ HA at $y = a_n / b_n$. (EK 1.7.A.4)
-  \item deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$. (EK 1.7.A.5)
-  \item HAs are described with limit notation:
-        $\lim_{x\to\infty} r(x) = b$. (EK 1.7.A.6)
+  \item Constant 1st differences $\Rightarrow$ linear; constant 2nd differences $\Rightarrow$
+        quadratic; constant $n$th differences $\Rightarrow$ degree-$n$ polynomial. (EK 1.13.A.1--A.5)
+  \item Area/2-D context $\Rightarrow$ quadratic; volume/3-D context $\Rightarrow$ cubic. (EK 1.13.A.3)
+  \item A degree-$n$ polynomial can pass through $n+1$ points with distinct inputs. (EK 1.13.A.6)
+  \item Piecewise models arise when behavior changes over different intervals. (EK 1.13.A.7)
+  \item Every model carries assumptions about consistency, co-variation, and restricted
+        domain/range. (EK 1.13.B.1--B.4)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.26\linewidth} X @{}}
-rational function         & A function of the form $r(x) = p(x)/q(x)$ where $p$ and $q$ are polynomials. \\
-quotient of leading terms & The ratio of the leading terms of numerator and denominator; governs end behavior. \\
-horizontal asymptote      & A line $y = b$ that the graph approaches (and stays near) as $x \to \pm\infty$. \\
-slant asymptote           & A non-horizontal line that the graph approaches when deg num $=$ deg denom $+ 1$. \\
-end behavior              & The output trend as $x \to +\infty$ or $x \to -\infty$. \\
-limit notation            & $\lim_{x\to\infty} r(x) = b$: outputs get arbitrarily close to $b$ as $x$ grows. \\
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.30\linewidth} X @{}}
+first differences    & The differences between consecutive output values of equally-spaced inputs: $\Delta y_i = y_{i+1} - y_i$. \\
+second differences   & Differences of the first differences; constant for quadratic models. \\
+$n$th differences    & Differences taken $n$ times; constant and nonzero for degree-$n$ polynomial models. \\
+domain restriction   & A limit on the input values that is mathematically, contextually, or practically required. \\
+range restriction    & A limit on the output values (e.g., integer-only outputs due to rounding). \\
+piecewise-defined function & A function defined by different formulas over different intervals of its domain. \\
+model assumption     & A simplifying claim about the real world that must hold for the model to be valid. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review from Lesson 1.6).
-            Skills reviewed: end behavior of polynomial functions using the leading term,
-            limit notation for polynomials, and degree/leading-coefficient analysis.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
-        \end{minipage}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        Spiral review (warm-up) covers: computing first and second differences of a data set;
+        deciding whether a rate of change is constant (linear) or changing (nonlinear).
+        These skills connect directly to the difference-table decision tree introduced today.
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    A therapist charges \$200 per session plus a one-time \$50 intake fee.
-    The \textbf{average cost per session} after $n$ sessions is:
-    \[
-      r(n) = \frac{200n + 50}{n}
-    \]
-    \textit{Discussion prompts:}
-    \begin{enumerate}[itemsep=2pt]
-        \item Evaluate $r(1)$, $r(10)$, $r(100)$. What pattern do you notice?
-        \item As you attend more and more sessions, what does the average cost approach? Why?
-        \item Can the average cost ever equal exactly \$200? What does that tell us about the graph?
-    \end{enumerate}
-    \textit{Takeaway:} The \$50 intake fee is ``spread out'' over more sessions, so the average
-    approaches \$200 but never reaches it --- the graph has a \textbf{horizontal asymptote} at $y = 200$.
-    This is the quotient of leading terms: $200n/n = 200$.
+``A scientist hands you a table of mystery data. How do you decide which function type to use?''
+
+\medskip
+Display a short table with six equally-spaced inputs and outputs. Ask cold-call: ``Is this
+linear, quadratic, or something else? How can you tell without graphing it?'' Let students
+debate for 90 seconds before revealing the difference-table approach.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
+\textbf{Part 1 (12 min): Difference-Table Decision Tree.}
 
-\textbf{Part 1: Quotient of Leading Terms} (10 min)
+Given a table with equally-spaced inputs, compute differences:
+\begin{enumerate}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
+  \item Compute 1st differences ($\Delta y$).
+  \item If constant $\Rightarrow$ \textbf{linear} (degree 1).
+  \item If not constant, compute 2nd differences ($\Delta^2 y$).
+  \item If constant $\Rightarrow$ \textbf{quadratic} (degree 2).
+  \item Continue: constant $n$th differences $\Rightarrow$ degree-$n$ polynomial.
+\end{enumerate}
 
-Key insight: for large $|x|$, lower-degree terms become negligible compared to the
-leading term of each polynomial.  So end behavior is controlled by the
-\textit{quotient of the leading terms}.
-
-\medskip
-\textbf{Worked Example.}
-\[
-  r(x) = \frac{3x^2 + 1}{x^2 - 4}
-\]
-\begin{itemize}
-  \item Leading term of numerator: $3x^2$
-  \item Leading term of denominator: $x^2$
-  \item Quotient: $\dfrac{3x^2}{x^2} = 3$
-  \item As $x \to \pm\infty$, $r(x) \to 3$.
-  \item Horizontal asymptote: $y = 3$.
-\end{itemize}
-
-Numerical check: $r(100) = \dfrac{30{,}001}{9{,}996} \approx 3.001$.
+Pose: ``If 1st differences grow linearly themselves, what does that tell you?'' (Answer: 2nd
+differences are constant, so the data is quadratic.)
 
 \columnbreak
 
-\textbf{Part 2: The Three Cases} (10 min)
+\textbf{Part 2 (10 min): Shape \& Context Clues.}
 
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}p{2.4cm} p{3.6cm}@{}}
-\textbf{Degree comparison} & \textbf{End behavior} \\
-\hline
-deg num $<$ deg denom & HA at $y = 0$ \\
-deg num $=$ deg denom & HA at $y = a_n/b_n$ \\
-deg num $>$ deg denom & Polynomial (slant if diff.\,$= 1$) \\
-\end{tabular}
-
-\medskip
-Quick examples:
-\begin{itemize}
-  \item $\dfrac{x+1}{x^2-9}$: $1 < 2$; HA at $y = 0$.
-  \item $\dfrac{3x^2}{x^2+4}$: $2 = 2$; HA at $y = 3$.
-  \item $\dfrac{x^3-2x}{x-3}$: $3 > 1$; polynomial ($\approx x^2$) end behavior.
+When no table is given, use context:
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
+  \item Roughly constant rate of change $\Rightarrow$ linear.
+  \item Area or 2-D measurement $\Rightarrow$ quadratic.
+  \item Volume or 3-D measurement $\Rightarrow$ cubic.
+  \item Multiple local maxima/minima or multiple real zeros $\Rightarrow$ higher-degree polynomial.
+  \item Behavior changes abruptly at a threshold $\Rightarrow$ piecewise.
 \end{itemize}
 
-\medskip
-\textbf{Part 3: Limit Notation for HAs} (10 min)
+\textbf{Part 3 (10 min): Stating Assumptions (LO 1.13.B).}
 
-When $r$ has a HA at $y = b$:
-\[
-  \lim_{x\to\infty} r(x) = b \qquad \lim_{x\to -\infty} r(x) = b
-\]
-Example: for $r(x) = \dfrac{3x^2+1}{x^2-4}$,
-\[
-  \lim_{x\to\infty} r(x) = 3 \quad \text{and} \quad \lim_{x\to -\infty} r(x) = 3.
-\]
-For $\dfrac{x+1}{x^2-9}$: both limits equal $0$.
+Every model rests on assumptions. Template: ``This model assumes that
+[quantity/behavior] remains [consistent/proportional/valid] over [domain interval].
+The domain is restricted to [values] because [mathematical / contextual reason].''
 
+Walk through a fencing example: ``We model the enclosed area as a quadratic in side length.
+We assume the fencing forms a perfect rectangle and that side length is between 0 and half
+the total fencing available.''
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and the activity, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} Students look at constant terms (e.g., the ``$+1$'' or ``$-4$'')
-        instead of leading terms.  Ask: ``Which term dominates for very large $x$?''
-  \item \textbf{Common error:} Confusing a horizontal asymptote with a zero of the denominator.
-        Clarify: HAs come from degree comparison, not from roots of $q(x)$.
-  \item \textbf{Notation check:} Are students writing $\lim_{x\to\infty}$ correctly?
-  \item \textbf{Cold-call:} ``If the numerator has degree 4 and the denominator degree 6,
-        what is the horizontal asymptote?'' ($y = 0$.)
-  \item \textbf{Cold-call:} ``Give me a rational function with a HA at $y = -2$.''
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item After Part 1: cold-call ``If 3rd differences are constant, what degree polynomial models the data?''
+  \item After Part 2: cold-call ``Why can't you model negative time in the fencing problem?'' (domain restriction)
+  \item Watch for students who compute differences but stop at 1st differences even when they are not constant.
+  \item Watch for students who confuse \textit{contextual} domain restrictions (e.g., length $> 0$) with
+        \textit{mathematical} ones (e.g., denominator $\neq 0$).
+  \item After Part 3: cold-call ``What would constant second differences tell you?'' --- expect ``the data
+        is quadratic'' or ``the rate of change is linear.''
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Analyzing Concert Venue Costs} in leveled tiers.
-All tiers use the same four rational functions in context.
-
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Leading terms are provided; students compute the quotient
-        and state whether a HA exists (and its value).
-  \item \textbf{Tier A (Apply):} Students identify degrees and leading coefficients from the
-        full expressions, compute the quotient, write both limit statements, and name the asymptote type.
-  \item \textbf{Tier E (Extend):} Students construct rational functions meeting specified HA or
-        slant asymptote conditions, then verify with graphing technology.
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Tier R (Remediate):} Given four scenarios with model type choices; circle the best model
+        and complete a fill-in assumption sentence.
+  \item \textbf{Tier A (Apply):} Compute difference tables for provided data, determine degree, name the
+        model type, and state one assumption with domain restriction.
+  \item \textbf{Tier E (Extend):} Write a piecewise model description (two pieces, each with appropriate
+        function type) for a real-world scenario and articulate two assumptions with justification.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item For $r(x) = \dfrac{5x^2 - 3}{2x^2 + x - 1}$: state the quotient of leading terms,
-        write $\lim_{x\to\infty} r(x)$ and $\lim_{x\to -\infty} r(x)$, and identify the HA.
-  \item A rational function has numerator degree 3 and denominator degree 5.
-        State the HA and write the limit statement.
-\end{enumerate}
-\textbf{Assessment note:} Look for correct identification of \textit{leading} terms (not
-constants), proper limit notation, and correct application of the three degree-comparison cases.
+Exit ticket (3 questions, 1 page): (1) complete a first/second differences table and name the
+model type; (2) read a scenario description and circle the best model with one reason; (3) state
+one domain restriction and one assumption for a fencing model. Collect and use to group students
+before Lesson 1.14.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering limit notation for four rational functions, conceptual
-explanation of why equal-degree quotients approach $a_n/b_n$, interpreting a HA at $y = 0$,
-describing end behavior with a slant asymptote, and one AP-style multiple-choice item.
-
-\textbf{Extension (optional):} Students construct and verify their own rational functions with
-prescribed asymptotic behavior, using graphing technology to confirm predictions.
-
-\textbf{Preview:} Lesson 1.8 examines \textit{zeros} of rational functions --- the input values
-where the numerator equals zero --- and how those points interact with the asymptotes from today.
+Homework: 5--6 problems covering difference tables, context-to-model matching, assumption
+articulation, and piecewise model description. Extension: given 4 data points, write the
+unique cubic model in descriptive form and state what real-world meaning the degree implies.
+Preview of Lesson 1.14: students will \textit{construct} function models from scratch --- today's
+selection and assumption skills are the prerequisite.
 \end{skillbox}
+
 \end{document}

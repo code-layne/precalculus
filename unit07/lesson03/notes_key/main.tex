@@ -1,0 +1,233 @@
+%! Trigonometric Equations and Inequalities — Unit 7, Lesson 7.3 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 7, Lesson 7.3}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 3.10.A} --- Solve a trigonometric equation by isolating
+    the trig function and using inverse trig to find all solutions.
+    \ans{Isolate trig function → apply inverse → find both solutions in one period → add $+2\pi k$.}
+  \item \textbf{LO 3.10.A} --- Write the general solution of a trig equation
+    using periodicity, and apply a domain restriction when context requires it.
+    \ans{General solution uses $+2\pi k$; context limits which $k$-values are valid.}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=5pt]
+  \item[\termblanklong{trigonometric equation}]
+    An equation in which the unknown appears inside a
+    \ans{trigonometric} function.
+
+  \item[\termblanklong{principal solution}]
+    The solution obtained by applying an \ans{inverse} trig function
+    directly; limited to the \ans{range} of that inverse function.
+
+  \item[\termblanklong{general solution}]
+    \textbf{All} solutions, expressed by adding integer multiples of the
+    \ans{period} to the principal value(s).
+    Example: $\theta = \tfrac{\pi}{6} + $ \ans{$2\pi k$},
+    $k \in \mathbb{Z}$.
+
+  \item[\termblanklong{domain restriction}]
+    A limit on the variable imposed by the \ans{context} of the
+    problem (e.g.\ $0 \le t \le 24$ for a 24-hour model).
+\end{description}
+\end{vocabbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Section 1
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.2: Infinitely Many Solutions}
+
+\textbf{Key Idea:} Because trig functions are \ans{periodic},
+a trig equation typically has \ans{infinitely} many solutions when
+the domain is all real numbers.
+
+\vspace{6pt}
+\textbf{Example:} Solve $\sin\theta = \dfrac{1}{2}$.
+
+\vspace{4pt}
+\textbf{Step 1 --- Principal value:}
+$\theta = \arcsin\!\bigl(\tfrac{1}{2}\bigr) = $ \ans{$\dfrac{\pi}{6}$}
+
+\vspace{4pt}
+\textbf{Step 2 --- Second solution in $[0, 2\pi)$:}
+Sine is positive in Quadrants \ans{I} and \ans{II}.
+Reflect: $\theta = \pi - $ \ans{$\dfrac{\pi}{6}$} $= $ \ans{$\dfrac{5\pi}{6}$}
+
+\vspace{4pt}
+\textbf{Step 3 --- General solution:}
+Add multiples of the period $2\pi$ to each solution.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{}l@{\hspace{1cm}}l@{}}
+Family 1: $\theta = $ \ans{$\dfrac{\pi}{6} + 2\pi k$} &
+Family 2: $\theta = $ \ans{$\dfrac{5\pi}{6} + 2\pi k$}
+\end{tabular}
+
+\vspace{4pt}
+where $k$ is any \ans{integer}.
+
+\vspace{6pt}
+\textbf{Check:} List 3 specific solutions from each family:
+
+Family 1 ($k = 0, 1, 2$): \ans{$\dfrac{\pi}{6},\; \dfrac{\pi}{6}+2\pi = \dfrac{13\pi}{6},\; \dfrac{\pi}{6}+4\pi = \dfrac{25\pi}{6}$}
+
+Family 2 ($k = 0, 1, -1$): \ans{$\dfrac{5\pi}{6},\; \dfrac{5\pi}{6}+2\pi = \dfrac{17\pi}{6},\; \dfrac{5\pi}{6}-2\pi = -\dfrac{7\pi}{6}$}
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Section 2
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.1: The Four-Step Procedure}
+
+\textbf{Algorithm for solving a trig equation:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{Isolate} the trig function on one side of the equation.
+  \item \textbf{Apply} the inverse trig function to find the principal value.
+  \item \textbf{Find} the second solution in $[0, 2\pi)$ using reference angles
+    and the appropriate quadrant(s).
+  \item \textbf{Write} the general solution by adding $+2\pi k$ (or $+\pi k$
+    for tangent) to each solution.
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{Example:} Solve $2\cos\theta - 1 = 0$.
+
+\vspace{4pt}
+Step 1 --- Isolate: $\cos\theta = $ \ans{$\dfrac{1}{2}$}
+
+\vspace{4pt}
+Step 2 --- Principal value: $\theta = \arccos\!\bigl($\ans{$\tfrac{1}{2}$}$\bigr) = $ \ans{$\dfrac{\pi}{3}$}
+
+\vspace{4pt}
+Step 3 --- Cosine is positive in Q\ans{I} and Q\ans{IV}.
+Second solution: $\theta = $ \ans{$2\pi - \dfrac{\pi}{3} = \dfrac{5\pi}{3}$}
+
+\vspace{4pt}
+Step 4 --- General solution:
+
+$\theta = $ \ans{$\dfrac{\pi}{3} + 2\pi k$} or $\theta = $ \ans{$\dfrac{5\pi}{3} + 2\pi k$},
+$k \in \mathbb{Z}$
+
+\vspace{6pt}
+\textbf{Solutions in $[0, 2\pi)$:}
+\ans{$\theta = \dfrac{\pi}{3}$ and $\theta = \dfrac{5\pi}{3}$}
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Section 3
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 3.10.A --- EK 3.10.A.3: Contextual Domain Restrictions}
+
+\textbf{Context:} The height of water at a harbor (in feet) is modeled by
+$h(t) = 3\sin\!\bigl(\tfrac{\pi}{6}t\bigr) + 5$, where $t$ is hours after
+midnight, $0 \le t \le 24$.
+
+\vspace{6pt}
+\textbf{Question:} When is $h(t) \ge 7$?
+
+\vspace{4pt}
+Step 1 --- Rewrite: $3\sin\!\bigl(\tfrac{\pi}{6}t\bigr) + 5 \ge 7$
+\hspace{1em}$\Rightarrow$\hspace{1em}
+$\sin\!\bigl(\tfrac{\pi}{6}t\bigr) \ge $ \ans{$\dfrac{2}{3}$}
+
+\vspace{4pt}
+Step 2 --- Let $u = \tfrac{\pi}{6}t$. Solve $\sin u = \tfrac{2}{3}$ for the boundary:
+
+\vspace{3pt}
+$u_1 = \arcsin\!\bigl(\tfrac{2}{3}\bigr) \approx $ \ans{$0.7297$} rad
+\hspace{1cm}
+$u_2 = \pi - \arcsin\!\bigl(\tfrac{2}{3}\bigr) \approx $ \ans{$2.4119$} rad
+
+\vspace{4pt}
+Step 3 --- Solve for $t$: $t = \dfrac{6}{\pi} \cdot u$
+
+\vspace{3pt}
+$t_1 \approx $ \ans{$1.39$} hr
+\hspace{1.5cm}
+$t_2 \approx $ \ans{$4.61$} hr
+
+\vspace{4pt}
+Step 4 --- The inequality $h(t) \ge 7$ holds on the interval
+$\ans{1.39} \le t \le \ans{4.61}$.
+
+\vspace{4pt}
+\textbf{Interpret:} The ship can enter between approximately
+\ans{1.39} and \ans{4.61} hours after midnight.
+
+\vspace{4pt}
+\textbf{Why do we restrict to $[0, 24]$?}
+\ans{The model represents one 24-hour period; times outside $[0,24]$ have no physical meaning in this context.}
+
+\end{notesbox}
+
+\vspace{0.06in}
+
+%----------------------------------------------------------------------
+% Practice
+%----------------------------------------------------------------------
+\begin{practicebox}
+
+\textbf{Guided Practice 1.}\quad Solve $\sqrt{2}\,\sin\theta - 1 = 0$ for
+all $\theta \in [0, 2\pi)$. Show the four steps.
+
+\ans{Step 1: $\sin\theta = \tfrac{1}{\sqrt{2}} = \tfrac{\sqrt{2}}{2}$. Step 2: $\theta = \arcsin\!\bigl(\tfrac{\sqrt{2}}{2}\bigr) = \tfrac{\pi}{4}$. Step 3: Sine positive in Q1 and Q2; second solution $\theta = \pi - \tfrac{\pi}{4} = \tfrac{3\pi}{4}$. Step 4: Solutions in $[0,2\pi)$ are $\theta = \tfrac{\pi}{4}$ and $\theta = \tfrac{3\pi}{4}$.}
+
+\vspace{0.08in}
+\textbf{Guided Practice 2.}\quad Write the general solution to $\cos\theta = -\dfrac{\sqrt{3}}{2}$.
+
+\vspace{4pt}
+$\theta = $ \ans{$\dfrac{5\pi}{6} + 2\pi k$} or $\theta = $ \ans{$\dfrac{7\pi}{6} + 2\pi k$}, $k \in \mathbb{Z}$
+
+\begin{teachernote}
+$\cos\theta = -\tfrac{\sqrt{3}}{2}$: reference angle is $\tfrac{\pi}{6}$; cosine is negative in Q2 and Q3,
+giving $\tfrac{5\pi}{6}$ and $\tfrac{7\pi}{6}$ as the two solutions in $[0,2\pi)$.
+\end{teachernote}
+
+\vspace{0.08in}
+\textbf{Guided Practice 3.}\quad A temperature model gives $T(t) = 10\sin\!\bigl(\tfrac{\pi}{12}t\bigr) + 65$
+for $t \in [0, 24]$ (hours). For what hours is $T(t) \ge 70$?
+
+\vspace{4pt}
+Set up the inequality and isolate the trig function:
+
+\ans{$10\sin\!\bigl(\tfrac{\pi}{12}t\bigr) + 65 \ge 70 \Rightarrow \sin\!\bigl(\tfrac{\pi}{12}t\bigr) \ge \tfrac{1}{2}$}
+
+Solve for the boundary values of $t$:
+
+\ans{$\tfrac{\pi}{12}t = \tfrac{\pi}{6}$ or $\tfrac{\pi}{12}t = \tfrac{5\pi}{6}$, so $t = 2$ or $t = 10$. Sine $\ge \tfrac{1}{2}$ between the two boundary values.}
+
+Answer: $T(t) \ge 70$ on \ans{$2 \le t \le 10$}.
+
+\end{practicebox}
+
+\end{document}

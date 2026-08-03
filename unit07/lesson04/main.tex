@@ -1,0 +1,311 @@
+%! The Secant, Cosecant, and Cotangent Functions — Unit 7, Lesson 7.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 7: Analytic Trigonometry and Polar Coordinates \quad}
+\newcommand{\LessonNumberName}{Lesson 7.4: The Secant, Cosecant, and Cotangent Functions}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
+\end{center}
+
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+  \textbf{Primary Objective:} Students will identify the key characteristics
+  of the secant, cosecant, and cotangent functions --- including their definitions
+  as reciprocals, their domains, their vertical asymptotes, and their ranges ---
+  by connecting each reciprocal function to its parent sine, cosine, or tangent
+  function.
+  \textit{(Big Idea: Functions)}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{2.B} \textit{Construct equivalent representations} ---
+  Express sec, csc, and cot as quotients of sine and cosine, and identify
+  which parent-function zero causes each asymptote.
+&
+\textbf{EK 3.11.A.1}: $\sec\theta = \dfrac{1}{\cos\theta}$, defined where
+$\cos\theta \neq 0$. \\[6pt]
+
+\textbf{3.A} \textit{Describe characteristics} ---
+  State the domain, range, period, and vertical asymptote locations for
+  each of the three reciprocal trigonometric functions.
+&
+\textbf{EK 3.11.A.2}: $\csc\theta = \dfrac{1}{\sin\theta}$, defined where
+$\sin\theta \neq 0$. \\[6pt]
+
+&
+\textbf{EK 3.11.A.3}: The graphs of sec and csc have vertical asymptotes
+where $\cos\theta = 0$ and $\sin\theta = 0$, respectively; range
+$= (-\infty,-1]\cup[1,\infty)$. \\[6pt]
+
+&
+\textbf{EK 3.11.A.4}: $\cot\theta = \dfrac{\cos\theta}{\sin\theta}$
+(equivalently, $\dfrac{1}{\tan\theta}$ where $\tan\theta \neq 0$),
+defined where $\sin\theta \neq 0$. \\[6pt]
+
+&
+\textbf{EK 3.11.A.5}: The graph of cot has vertical asymptotes where
+$\sin\theta = 0$ and is decreasing on each interval between consecutive
+asymptotes. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{tabularx}{\linewidth}{@{} p{0.24\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+secant ($\sec\theta$) &
+  $\sec\theta = 1/\cos\theta$; the multiplicative reciprocal of cosine.
+  Undefined when $\cos\theta = 0$, i.e., when $\theta = \pi/2 + n\pi$. \\[4pt]
+cosecant ($\csc\theta$) &
+  $\csc\theta = 1/\sin\theta$; the multiplicative reciprocal of sine.
+  Undefined when $\sin\theta = 0$, i.e., when $\theta = n\pi$. \\[4pt]
+cotangent ($\cot\theta$) &
+  $\cot\theta = \cos\theta/\sin\theta$; the reciprocal of tangent
+  (where $\tan\theta \neq 0$).
+  Undefined when $\sin\theta = 0$. \\[4pt]
+vertical asymptote &
+  A vertical line $\theta = a$ where the function value grows without
+  bound; caused by a zero in the denominator. \\[4pt]
+reciprocal function &
+  A function formed by taking $1/f(\theta)$; zeros of $f$ become
+  asymptotes of the reciprocal, and $f(\theta) = \pm 1$ are invariant
+  points. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8--10 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Unit-circle values for sin and cos}: Students evaluate
+    $\sin\theta$ and $\cos\theta$ at $0,\,\pi/6,\,\pi/4,\,\pi/3,\,\pi/2$
+    and their quadrant-II/III/IV equivalents --- essential for computing
+    sec, csc, and cot by hand.
+  \item \textbf{Tangent as a quotient}: $\tan\theta = \sin\theta/\cos\theta$.
+    Students must recall this ratio formula; cotangent flips it.
+  \item \textbf{Asymptote behavior of $\tan\theta$}: Asymptotes at
+    $\theta = \pi/2 + n\pi$ (where $\cos\theta = 0$) foreshadow the
+    asymptote structure of secant.
+  \item \textbf{Reciprocal arithmetic}: For any nonzero $x$, $1/x$ and $x$
+    share the sign, and $|1/x| \geq 1$ when $|x| \leq 1$.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} Project (or sketch on the board) a portion of the graph
+of $y = \sec\theta$ over $[0, 2\pi]$. The graph shows two ``U-shaped'' arcs
+with a gap at $\theta = \pi/2$ and $\theta = 3\pi/2$, where vertical
+dashed lines mark the asymptotes.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``This is a trigonometric function. What familiar function does
+    it look related to? What causes the gaps?''}
+  \item \textit{``The output values 0.5 and $-0.5$ never appear. Why might
+    the output skip values between $-1$ and $1$?''}
+  \item \textit{``Can a trig function have a range that is NOT an interval?
+    Have you seen that before?''}
+\end{enumerate}
+
+\textbf{Key tension to surface:} We have studied sine, cosine, and tangent.
+Each has a ``partner'' function built by taking reciprocals. The zeros of
+the parent become the asymptotes of the reciprocal, and the invariant points
+($y = \pm 1$) act as the ``bridges'' between the two families.
+
+\textbf{Transition:} ``Today we'll define secant, cosecant, and cotangent
+as reciprocal functions, find their domains and asymptotes, and describe
+the key features of each graph.''
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Secant from Cosine} (12 min)
+
+Define $\sec\theta = 1/\cos\theta$. At each unit-circle angle, if
+$\cos\theta = 0$, sec is undefined; if $\cos\theta = 0.5$, $\sec\theta = 2$.
+Build a small table of values (use guided notes table) and note that
+$\sec\theta \geq 1$ or $\sec\theta \leq -1$ always.
+Point out the ``U-arcs'' that open away from the $\theta$-axis, with vertices
+at the maximum/minimum of cosine. Formalize EK 3.11.A.1 and 3.11.A.3.
+Key question: \textit{``Where are the asymptotes? What equation describes them?''}
+($\theta = \pi/2 + n\pi$.)
+
+\columnbreak
+
+\textbf{Step 2 --- Cosecant from Sine} (10 min)
+
+Parallel development: define $\csc\theta = 1/\sin\theta$. Build the table
+together; asymptotes where $\sin\theta = 0$ ($\theta = n\pi$). Same range
+$(-\infty,-1]\cup[1,\infty)$. Formalize EK 3.11.A.2 and 3.11.A.3.
+Emphasize the structural symmetry: the two functions are horizontal
+translates of each other by $\pi/2$.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Cotangent from Tangent} (10 min)
+
+Define $\cot\theta = \cos\theta/\sin\theta$. Unlike sec and csc, cotangent
+is NOT bounded away from zero; its range is all reals.
+Asymptotes where $\sin\theta = 0$ (same as csc).
+On each interval between asymptotes, cot is \emph{decreasing} (contrast with
+tangent which is increasing). Period $= \pi$. Formalize EK 3.11.A.4 and 3.11.A.5.
+
+\columnbreak
+
+\textbf{Step 4 --- Summary and Connections} (8 min)
+
+Display a 3-column summary table: function, domain restriction, asymptote
+equation, range, period. Students copy into guided notes.
+Key comparison: sec and csc have range $(-\infty,-1]\cup[1,\infty)$; cot has
+range $(-\infty,\infty)$. All three have period $2\pi$ except cot ($\pi$).
+Close: \textit{``These three functions appear in calculus (especially
+derivatives of trig functions) and in right-triangle trigonometry as
+abbreviated notation.''} Preview homework.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 and guided notes (Parts 1--2) in Period 1;
+Steps 3--4, group activity, and exit ticket in Period 2.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Confusing which denominator}: Students may mix up $\sec$ and $\csc$.
+    Prompt: \textit{``Secant goes with co\underline{s}ine? No --- secant goes with
+    cosine (both start with ``co''? Actually sec goes with cos, csc goes with sin.
+    Mnemonic: `cosecant is the reciprocal of the shorter name, sine.'\,''}
+  \item \textbf{Asymptote location}: Students may write $\theta = 0$ as an asymptote
+    of sec. Correct by asking: \textit{``What is $\cos(0)$? Is it zero or one?
+    So sec(0) is $1/1 = 1$, not undefined.''}
+  \item \textbf{Range confusion}: Students expect range to be an interval.
+    Reinforce: \textit{``$|sec\theta| \geq 1$ always. The output is never $1/2$,
+    for example, because that would require $\cos\theta = 2$, which is impossible.''}
+  \item \textbf{Cot increasing vs.\ decreasing}: Some students assume cot is
+    increasing like tan. Show the table of cot values: as $\theta$ increases from
+    $0^+$ to $\pi^-$, cot goes from $+\infty$ to $-\infty$ --- decreasing.
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+Students work in groups of 3--4 on the tiered activity. Teacher assigns tiers
+or students self-select.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Reinforce)}: Given a complete table of $\sin\theta$,
+    $\cos\theta$ values at 12 key angles, students compute sec, csc, and cot
+    at each angle, marking ``undefined'' where appropriate. Identify which
+    entries are undefined and state the corresponding asymptote.
+  \item \textbf{Tier A (Apply)}: Without scaffolding, students determine the
+    full domain of sec, csc, and cot; list all vertical asymptotes in $[0,2\pi]$;
+    evaluate each function at three given angles; and solve a contextual problem
+    comparing the reciprocal value to the original.
+  \item \textbf{Tier E (Extend)}: Students compare the graph behavior of
+    $\sec\theta$ vs.\ $\cos\theta$ to explain why the arcs of sec ``open away''
+    from the $\theta$-axis with vertices at the max/min of cos. Students also
+    verify algebraically that $\cot\theta = \cos\theta/\sin\theta$ using
+    definitions, and investigate what happens to $\cot\theta$ near its asymptotes.
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+Exit ticket administered independently (final 5--7 minutes of Period 2).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item Given $\cos\theta = -1/2$, students find $\sec\theta$.
+  \item Students state which $\theta$ values are excluded from the domain of
+    $\csc\theta$ and explain why.
+  \item Multiple-choice: identify the period of $\cot\theta$.
+\end{enumerate}
+
+\textbf{Data use:} Sort exit tickets for denominator confusion (sec vs.\ csc),
+domain/asymptote errors, and range misconceptions. Use to open Lesson 3.12.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework (Lesson 7.4):} 5--6 problems covering: evaluating sec, csc,
+and cot at specific unit-circle angles; identifying domain restrictions and
+asymptote locations; one problem connecting the graph of $\cos\theta$ to the
+behavior of $\sec\theta$ near the zeros of cosine; and 2 AP-style MC items.
+
+\textbf{Preview of Lesson 3.12 --- Sinusoidal Function Contexts:}
+Ask students: \textit{``We now have six trigonometric functions. In Lesson 3.12
+we'll apply sinusoidal models to real-world contexts --- tides, temperature,
+and periodic motion. As you do your homework tonight, notice how sec and csc
+values become very large near their asymptotes --- that extreme behavior
+appears in physics models involving resonance and oscillation.''}
+\end{skillbox}
+
+\end{document}

@@ -1,309 +1,96 @@
-%! Sinusoidal Function Context and Data Modeling — Unit 3, Lesson 3.7 — Lesson Plan
+%! Rational Equations and Inequalities — Unit 3, Lesson 3.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Trigonometric and Polar Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.7: Sinusoidal Function Context and Data Modeling}
+\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.7: Rational Equations and Inequalities}
 
 \begin{document}
-
-%----------------------------------------------------------------------
-% Title Block
-%----------------------------------------------------------------------
 \begin{center}
-  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
-  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2--3 instructional periods, \MeetingLength\ each)}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-%----------------------------------------------------------------------
-% Primary Objective
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-  \textbf{Primary Objective:} Students will construct sinusoidal function models
-  of periodic phenomena by extracting amplitude, vertical shift, period, and
-  phase shift from contextual data, and will use those models to predict values
-  within a contextual domain.
-  \textit{(Big Idea: Functions; Skills 1.C, 3.C)}
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Priority Ideas & Skills
-%----------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
-\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
-\midrule
-\textbf{1.C} \textit{Construct new functions} ---
-  Build a sinusoidal model from a data set by estimating key parameter values
-  or by performing a sinusoidal regression with technology.
-&
-\textbf{EK 3.7.A.1}: The smallest input-value interval between consecutive
-  maxima (or consecutive minima) in the data estimates the period. \\[4pt]
-
-\textbf{3.C} \textit{Support conclusions with data} ---
-  Evaluate the reasonableness of a sinusoidal model by comparing predicted
-  values to actual data, and clarify the contextual domain over which the
-  model is useful.
-&
-\textbf{EK 3.7.A.2}: Amplitude $= \tfrac{\max - \min}{2}$; vertical
-  shift/midline $= \tfrac{\max + \min}{2}$. \\[4pt]
-
-&
-\textbf{EK 3.7.A.3}: A known input-output pair is compared to the model to
-  estimate the phase shift. \\[4pt]
-
-&
-\textbf{EK 3.7.A.4}: Technology can be used to perform sinusoidal regression
-  and to estimate parameters from data. \\[4pt]
-
-&
-\textbf{EK 3.7.A.5}: Sinusoidal models are valid only over a contextual domain
-  and are used to predict output values from input values. \\
-\end{tabularx}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Vocabulary
-%----------------------------------------------------------------------
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
-\textbf{Term} & \textbf{Definition / Note} \\
-\midrule
-sinusoidal model &
-  A function of the form $f(x) = A\sin(B(x - C)) + D$ (or cosine form)
-  used to represent a periodic real-world quantity. \\[4pt]
-amplitude &
-  Half the range of output values: $A = \tfrac{\max - \min}{2}$. Measures
-  how far the function deviates from its midline. \\[4pt]
-vertical shift (midline) &
-  $D = \tfrac{\max + \min}{2}$; the horizontal axis about which the
-  sinusoidal function oscillates. \\[4pt]
-period &
-  The input-value distance between consecutive maxima (or minima) in
-  the data; equals $\tfrac{2\pi}{B}$ in the model. \\[4pt]
-phase shift &
-  $C$; determined by comparing a known data point (e.g., a maximum) to
-  the standard sine/cosine maximum location. \\[4pt]
-contextual domain &
-  The restricted set of input values over which the model is meaningful
-  given the real-world situation. \\
-\end{tabularx}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Activate Prior Knowledge
-%----------------------------------------------------------------------
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-\begin{tabularx}{\linewidth}{@{}X@{}}
-\textbf{Spiral topics activated during Warm-Up (first 8--10 minutes):}
-\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
-  \item \textbf{Reading sinusoidal graphs (Lessons 3.5--3.6):} Identify amplitude,
-    period, and midline from a graph --- connects directly to extracting the same
-    quantities from data tables.
-  \item \textbf{Computing $(\max + \min)/2$ and $(\max - \min)/2$ from a data set:}
-    A prerequisite numerical skill targeted directly in Warm-Up Problem 2.
-  \item \textbf{Function transformation parameters $A$, $B$, $C$, $D$:}
-    Students should recall how each parameter shifts or scales the parent
-    $\sin$ or $\cos$ function before applying those ideas to real data.
-\end{itemize}
-\end{tabularx}
+    \begin{tabularx}{\linewidth}{@{}X c@{}}
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
+        \end{minipage}
+        &
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
+        \end{minipage}
+    \end{tabularx}
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Hook
-%----------------------------------------------------------------------
-\begin{skillbox}[Hook --- Entry Event]{sky}
-\textbf{Scenario:} Display a scatter plot of average monthly high temperature
-(${}^\circ$F) for a U.S. city over one calendar year. The data trace a smooth
-wave: low in January, peaking in July, dropping again by December.
-
-\textbf{Discussion prompts:}
-\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
-  \item \textit{``What kind of function could model this shape? How do you know?''}
-  \item \textit{``What information from the table would help you write the equation?''}
-  \item \textit{``If we use this model to predict the temperature in month 15,
-    should we trust that prediction? Why or why not?''}
-\end{enumerate}
-
-\textbf{Key tension to surface:} Students know sinusoidal functions from Lessons
-3.5--3.6 but have only worked with equations given directly. Today they must
-\emph{extract} parameters from messy real-world data --- a new challenge.
-
-\textbf{Transition:} ``Today we'll learn a systematic four-step process for turning
-any periodic data set into a sinusoidal model, then evaluate how well our model fits.''
+\begin{skillbox}[Hook]{sky}
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Lesson
-%----------------------------------------------------------------------
-\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
-\begin{multicols}{2}
-
-\textbf{Step 1 --- Estimate Period from Data} (8 min)
-
-Present a 12-month temperature data table. Ask: ``Where are the consecutive
-maxima?'' Model how to identify the $x$-values of two consecutive peaks and
-compute their difference (EK 3.7.A.1). Then compute $B = \tfrac{2\pi}{k}$.
-Verify by checking consecutive minima; both should give the same period.
-
-\columnbreak
-
-\textbf{Step 2 --- Compute Amplitude and Midline} (8 min)
-
-Show the formulas $A = \tfrac{\max - \min}{2}$ and $D = \tfrac{\max + \min}{2}$
-(EK 3.7.A.2). Apply to the temperature data. Discuss the midline in context:
-``the average between the hottest and coolest month.'' Emphasize that amplitude
-is measured \emph{from} the midline, not from zero.
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\textbf{Step 3 --- Determine Phase Shift} (10 min)
-
-For the sine model $f(x) = A\sin(B(x - C)) + D$: standard sine reaches its
-maximum at $B(x - C) = \tfrac{\pi}{2}$, i.e., $x = C + \tfrac{\pi}{2B}$.
-Set this equal to the $x$-value of the data's first maximum; solve for $C$
-(EK 3.7.A.3). Validate: substitute a second data point to check closeness.
-Tip: if a maximum occurs at $x = x_0$, using a cosine model gives $C = x_0$
-directly.
-
-\columnbreak
-
-\textbf{Step 4 --- Validate and Predict} (10 min)
-
-Evaluate the model at several data points. Discuss residuals (predicted minus
-actual). Use the model to predict a value (e.g., temperature in month 14)
-and state the contextual domain (EK 3.7.A.5). Caution: far outside the domain,
-real-world factors (climate change, relocation) may break the assumption of
-perfect periodicity.
-
-\end{multicols}
-
-\begin{multicols}{2}
-
-\textbf{Step 5 --- Technology: Sinusoidal Regression} (8 min)
-
-Demonstrate entering data in Desmos or a graphing calculator and running a
-sinusoidal regression (EK 3.7.A.4). Compare regression parameters to hand
-estimates. Discuss why they may differ: the regression minimizes total error
-across all points, not just the extremes.
-
-\columnbreak
-
-\textbf{Step 6 --- Contextual Domain Discussion} (5 min)
-
-Ask: ``Should we trust this model to predict temperatures 50 years from now?''
-Reinforce EK 3.7.A.5: validity requires the periodic assumption to hold.
-Real climate data, population trends, or equipment changes may violate that
-assumption outside the observed domain.
-
-\end{multicols}
-
-\smallskip
-\textbf{Pacing note:} Steps 1--3 in Period 1; Steps 4--6 + activity in Periods 2--3.
+\begin{skillbox}[Lesson]{sky}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Active Monitoring
-%----------------------------------------------------------------------
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
-  \item \textbf{Period vs.\ half-period:} Students measure from a maximum to the
-    next minimum (half-period). Prompt: \textit{``We need two \emph{peaks} --- maximum
-    to maximum, not maximum to minimum.''}
-  \item \textbf{Amplitude vs.\ maximum value:} Students write $A = \max$. Prompt:
-    \textit{``The amplitude is measured from the midline. What is the midline here?''}
-  \item \textbf{Phase shift sign errors:} The form $\sin(B(x - C))$ shifts right by
-    $C$ (positive $C$ means shift right). Students flip the sign. Reinforce: substitute
-    $x = C$ --- do you get a maximum output?
-  \item \textbf{Contextual domain over-extension:} Students apply the model beyond
-    the data range without comment. Ask: \textit{``What real-world constraint limits
-    meaningful input values for this model?''}
-\end{itemize}
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Group Work & Differentiation
-%----------------------------------------------------------------------
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work in groups of 3--4 on the tiered activity. Assign tiers or allow
-structured self-selection with teacher guidance.
-
-\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
-  \item \textbf{Tier R (Reinforce):} Given a complete data table with max, min,
-    and the period already labeled, students compute $A$, $D$, and $B$ using
-    scaffolded formula templates and fill in the model $f(x) = A\sin(B(x-C))+D$.
-    A step-by-step guide and calculator are provided.
-  \item \textbf{Tier A (Apply):} Given a tidal data table over 24 hours, students
-    identify max, min, period, amplitude, midline, and phase shift; write the full
-    model; and use it to predict the tide height at a specified time.
-  \item \textbf{Tier E (Extend):} Given temperature data for two cities, students
-    build models for both, compare parameters (which city is warmer on average?
-    which has greater seasonal swing?), compute residuals, and determine which
-    city's climate is more faithfully modeled by a sinusoidal function.
-\end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Individual Work & Assessment
-%----------------------------------------------------------------------
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket administered independently (final 5 minutes of Period 2 or 3).
-
-\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
-  \item A small 6-value data table is provided. Students identify the maximum,
-    minimum, amplitude, and midline.
-  \item Students identify the period from consecutive maxima in the table and
-    compute $B$.
-  \item Students use the given model to predict one output value and state whether
-    that input is inside the contextual domain.
-\end{enumerate}
-
-\textbf{Data use:} Sort exit tickets by which parameter caused the most errors.
-Use the most common error to open Lesson 3.8 with a 60-second targeted recap.
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
-\vspace{0.08in}
-
-%----------------------------------------------------------------------
-% Reinforcement & Extension
-%----------------------------------------------------------------------
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework (Lesson 3.7):} 5--6 problems covering: extracting parameters
-from a data table, writing a sinusoidal model, using the model to predict,
-evaluating model fit, and 2 AP-style multiple-choice items. An optional extension
-asks students to run a sinusoidal regression in Desmos and compare the regression
-equation to their hand-built model.
-
-\textbf{Preview of Lesson 3.8 --- The Tangent Function:}
-Ask students: \textit{``Sine and cosine model bounded, wave-like phenomena.
-What if a periodic quantity shoots off toward infinity rather than staying bounded?
-What function might capture that behavior?''} Lesson 3.8 introduces the tangent
-function, its vertical asymptotes, and its definition as $\tan\theta = \sin\theta / \cos\theta$.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
 
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

@@ -1,0 +1,119 @@
+%! Logarithmic Function Context and Data Modeling — Unit 5, Lesson 5.7 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{enumerate}[leftmargin=1.8em, itemsep=14pt]
+
+\item Classify each table.
+
+\vspace{6pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{cc}
+  \begin{tabular}{|c|c|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $y$ \\
+  \hline
+  $1$ & $0$ \\
+  \hline
+  $3$ & $1$ \\
+  \hline
+  $9$ & $2$ \\
+  \hline
+  $27$ & $3$ \\
+  \hline
+  \end{tabular}
+  \qquad\qquad &
+  \begin{tabular}{|c|c|}
+  \hline
+  \rowcolor{sky}
+  $x$ & $y$ \\
+  \hline
+  $0$ & $2$ \\
+  \hline
+  $1$ & $6$ \\
+  \hline
+  $2$ & $18$ \\
+  \hline
+  $3$ & $54$ \\
+  \hline
+  \end{tabular}
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\textbf{Table A:} \quad \ans{Logarithmic} \quad because
+\ansline{as $y$ increases by 1, $x$ multiplies by 3 --- proportional input change for
+equal output increments is the logarithmic pattern.}
+
+\vspace{4pt}
+\textbf{Table B:} \quad \ans{Exponential} \quad because
+\ansline{over equal $x$-intervals (add 1), the output multiplies by 3 --- proportional
+output change for equal input increments is the exponential pattern.}
+
+\item Model from $f(1)=0$ and $f(e^3)=6$, $f(x)=a\ln(x)$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item $a\ln(e^3) = 6 \;\Rightarrow\; a \cdot $ \ans{3} $= 6 \;\Rightarrow\; a = $ \ans{2}
+
+  \item $f(x) = $ \ans{$2\ln(x)$}
+
+  \item $f(e^5) = $ \ans{$2\ln(e^5) = 2 \cdot 5 = 10$}
+\end{enumerate}
+
+\item Species-count model $S(A) = a\log_{10}(A)+k$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item Equation 1: \ans{$3 = a\log_{10}(1)+k = k$} \quad Equation 2: \ans{$6 = a\log_{10}(10)+k = a+k$}
+
+  \item $k = $ \ans{3} \qquad $a = $ \ans{3}
+
+  \item $S(A) = $ \ans{$3\log_{10}(A)+3$} \qquad $S(10000) = $ \ans{$3(4)+3 = 15$}
+\end{enumerate}
+
+\item $f(x) = 2\log_2(x-1)+3$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
+  \item Domain: \ans{$x > 1$, i.e.\ $(1,\,\infty)$}
+
+  \item $f(5) = 2\log_2(5-1)+3 = 2\log_2(\ans{4})+3 = 2\cdot\ans{2}+3 = $ \ans{7}
+
+  \item Solve $f(x)=7$:
+  \ansline{$2\log_2(x-1)+3 = 7 \;\Rightarrow\; 2\log_2(x-1) = 4 \;\Rightarrow\;
+  \log_2(x-1) = 2 \;\Rightarrow\; x-1 = 4 \;\Rightarrow\; x = 5$}
+  $x = $ \ans{5}
+\end{enumerate}
+
+\item AP-style MC: \ans{(B)} --- A child's height grows rapidly then slows, which is
+      best modeled by a logarithmic function (increasing but concave down, decelerating
+      growth). Choice (A) and (D) are exponential; (C) is linear.
+
+\item Extension:
+\ansline{By change-of-base, $\log_{10}(x) = \dfrac{\ln x}{\ln 10}$, so
+$a\log_{10}(x) = \dfrac{a}{\ln 10}\cdot\ln x$. This means $g(x) = a\log_{10}(x)$
+is a vertical dilation of $f(x) = a\ln(x)$ by the factor $\dfrac{1}{\ln 10} \approx 0.4343$.
+Equivalently, $f(x) = \ln(10)\cdot g(x)$, so $f$ is a vertical stretch of $g$ by
+$\ln 10 \approx 2.303$.}
+
+\end{enumerate}
+
+\vspace{0.12in}
+
+\begin{reflectionbox}
+What is one thing from today's lesson that you feel confident about, and one question you
+still have about constructing or using logarithmic models?
+
+\writelines{2}
+\end{reflectionbox}
+
+\end{document}

@@ -1,4 +1,4 @@
-%! Change in Linear and Exponential Functions — Unit 2, Lesson 2.2 — Group Activity
+%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,132 +9,132 @@
 \pageheader{Unit 2, Lesson 2.2}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.10in}
 
-\begin{scenariobox}[Linear or Exponential?]{sky}
-\small
-Every function we study today is either linear or exponential --- but they don't come with labels.
-Your job is to investigate tables and pairs of points, apply the equal-length interval test,
-and build the function formula. Work in your assigned tier. Be ready to share your reasoning.
+\begin{scenariobox}[Roller Coaster Heights]{sky}
+A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
+by a polynomial function $h(t)$. A table of sample values is given below.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
+\rowcolor{sky}
+$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
+\midrule
+$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
+\end{tabularx}
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.10in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate},
+    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each table below, compute consecutive differences \textbf{and} consecutive ratios. Circle the
-pattern that is constant, then identify $m$ or $r$ and the initial value. Write the formula.
+Use the table above (no graphing needed).
 
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} c X X X X @{}}
-\textbf{Table} & \textbf{Data} & \textbf{1st differences} & \textbf{Ratios} & \textbf{Type} \\
-\midrule
-A &
-\begin{tabular}[t]{c|c}
-$x$ & $y$ \\ \hline
-0 & 6 \\ 1 & 12 \\ 2 & 24 \\ 3 & 48
-\end{tabular}
-& \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\[12pt]
-B &
-\begin{tabular}[t]{c|c}
-$x$ & $y$ \\ \hline
-0 & 10 \\ 1 & 13 \\ 2 & 16 \\ 3 & 19
-\end{tabular}
-& \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\[12pt]
-\end{tabularx}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Identify the time(s) at which the roller coaster reaches a \textbf{local maximum}
+    (a high point between two lower values). List the time and height.
 
-\medskip
-\textbf{Table A:} initial value = \blank{2cm}, $m$ or $r$ = \blank{2cm}.
-Formula: $f(x) = $ \blank{5cm}
+    \vspace{4pt}
+    \blank{10cm}
 
-\smallskip
-\textbf{Table B:} initial value = \blank{2cm}, $m$ or $r$ = \blank{2cm}.
-Formula: $g(x) = $ \blank{5cm}
-\end{tcolorbox}
+    \item Identify the time(s) at which the roller coaster reaches a \textbf{local minimum}
+    (a low point between two higher values). List the time and height.
 
-\vspace{0.08in}
+    \vspace{4pt}
+    \blank{10cm}
 
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+    \item What is the \textbf{global maximum} height over the entire ride?
+    At what time does it occur?
 
-\begin{enumerate}[itemsep=10pt]
-  \item Two points: $(1,\ 6)$ and $(3,\ 54)$. Test whether the relationship is exponential.
+    \vspace{4pt}
+    \blank{10cm}
 
-        \vspace{0.06in}
-        Ratio test: $\dfrac{54}{6} = \blank{1.5cm}$ over $3 - 1 = 2$ input units,
-        so $r = \blank{2.5cm}$.
+    \item The coaster returns to height 0 at $t = 0$ and $t = 60$.
+    Based on the table, does the function appear to have any other zeros? If so, where?
 
-        Write the exponential function: $f(x) = \blank{2cm} \cdot \blank{2cm}^{x - \blank{1cm}}$
-
-        \vspace{0.04in}
-        Simplify to $f(x) = ab^x$: $f(x) = $ \blank{5cm}
-
-  \item Two points: $(2,\ 7)$ and $(5,\ 16)$. Test whether the relationship is linear.
-
-        \vspace{0.06in}
-        Slope: $m = \dfrac{16 - 7}{5 - 2} = \blank{2cm}$
-
-        Write the linear function: $g(x) = \blank{2cm} + \blank{2cm}(x - \blank{1cm})$
-
-        \vspace{0.04in}
-        Simplify to $g(x) = b + mx$: $g(x) = $ \blank{5cm}
-
-  \item A candle burns down at a constant rate. After 2 hours it is 14 cm tall; after 5 hours it
-        is 8 cm tall. Write a linear function $h(t)$ for the height (cm) at time $t$ (hours).
-        After how many hours will the candle be 2 cm tall?
-
-        \vspace{0.06in}
-        $h(t) = $ \blank{5cm} \quad Reaches 2 cm when $t = $ \blank{2.5cm}
+    \vspace{4pt}
+    \blank{10cm}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.10in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier A --- On Level: Rates of Change and Concavity},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=10pt]
-  \item A biologist records the following population data.
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item Compute the AROC of $h$ over each interval. Show your work.
 
-        \medskip
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{c|c|c}
-          $t$ (years) & Population $P$ & $P - 20$ \\ \hline
-          0 & 22 & \blank{1.2cm} \\
-          1 & 26 & \blank{1.2cm} \\
-          2 & 38 & \blank{1.2cm} \\
-          3 & 74 & \blank{1.2cm} \\
-        \end{tabular}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabularx}{\linewidth}{@{} l X X @{}}
+    \rowcolor{sky}
+    Interval & AROC formula & AROC value \\
+    \midrule
+    $[0, 10]$   & $\dfrac{h(10)-h(0)}{10-0}$   & \blank{2.5cm} \\
+    $[10, 15]$  & $\dfrac{h(15)-h(10)}{15-10}$  & \blank{2.5cm} \\
+    $[15, 20]$  & $\dfrac{h(20)-h(15)}{20-15}$  & \blank{2.5cm} \\
+    $[20, 30]$  & $\dfrac{h(30)-h(20)}{30-20}$  & \blank{2.5cm} \\
+    $[30, 35]$  & $\dfrac{h(35)-h(30)}{35-30}$  & \blank{2.5cm} \\
+    $[35, 40]$  & $\dfrac{h(40)-h(35)}{40-35}$  & \blank{2.5cm} \\
+    $[40, 50]$  & $\dfrac{h(50)-h(40)}{50-40}$  & \blank{2.5cm} \\
+    $[50, 60]$  & $\dfrac{h(60)-h(50)}{60-50}$  & \blank{2.5cm} \\
+    \end{tabularx}
 
-        \medskip
-        Apply the equal-length interval test directly to $P$. Is it linear? Exponential?
+    \item At which interval(s) does the AROC transition from \textbf{positive to negative}?
+    What does this indicate about the function's behavior?
 
-        \vspace{0.06in}
-        \writelines{2}
+    \vspace{4pt}
+    \blank{11cm}
 
-  \item Now complete the $P - 20$ column above. Apply the interval test to $P - 20$.
+    \item At which interval(s) does the AROC transition from \textbf{negative to positive}?
 
-        \vspace{0.06in}
-        First differences of $P - 20$: \blank{5cm}
+    \vspace{4pt}
+    \blank{11cm}
 
-        Ratios of $P - 20$: \blank{5cm} \quad Constant ratio? \blank{2cm}
+    \item On which portion of the ride is the AROC \textbf{increasing}? What does that tell you
+    about the concavity of $h$?
 
-  \item If $P - 20 = a \cdot b^t$, find $a$ and $b$, then write $P(t)$.
+    \vspace{4pt}
+    \blank{11cm}
 
-        \vspace{0.06in}
-        $a = $ \blank{2cm}, \quad $b = $ \blank{2cm}
+    \item Based on the AROC values, identify a possible \textbf{point of inflection} and explain
+    your reasoning.
 
-        $P(t) = $ \blank{6cm}
+    \vspace{4pt}
+    \blank{11cm}
+\end{enumerate}
+\end{tcolorbox}
 
-  \item In a complete sentence, explain what it means that the population follows an
-        ``exponential-plus-constant'' pattern rather than a pure exponential pattern.
+\vspace{0.10in}
 
-        \vspace{0.06in}
-        \writelines{2}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extend: Degree and Global Extrema},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+    \item From the table, count the number of local extrema observed. Based on EK 1.4.A.3
+    (between every two distinct real zeros there is at least one local extremum), what is the
+    \textbf{minimum possible degree} of $h(t)$? Explain.
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \vspace{2pt}
+    \blank{11cm}
+
+    \item The ride begins and ends at $h = 0$, so $t = 0$ and $t = 60$ are zeros. The table
+    suggests at least one more zero exists. Assuming the polynomial has degree $n$, does
+    $h(t)$ have a global minimum on the domain $[0, 60]$? Use EK 1.4.A.4 in your explanation.
+
+    \vspace{4pt}
+    \blank{11cm}
+
+    \vspace{2pt}
+    \blank{11cm}
 \end{enumerate}
 \end{tcolorbox}
 

@@ -1,4 +1,4 @@
-%! Exponential Function Context and Data Modeling — Unit 2, Lesson 2.5 — Guided Notes
+%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,129 +9,100 @@
 \pageheader{Unit 2, Lesson 2.5}{Guided Notes}
 \namedateperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Construct an exponential model from a \blank{3cm} factor and \blank{3cm} value,
-        or from \blank{2.5cm} input-output pairs. \hfill\textit{(LO 2.5.A)}
-  \item Interpret the base $b$ as a \blank{3cm} factor and connect it to \blank{3cm} change. \hfill\textit{(LO 2.5.B)}
-  \item Use the model to \blank{3cm} values within a reasonable \blank{3cm}. \hfill\textit{(LO 2.5.B)}
+  \item Describe the end behavior of a polynomial function and write it using
+        \blank{3cm} notation. \hfill\textit{(LO 1.6.A)}
+  \item Determine the end behavior of a polynomial from its \blank{2cm} and the
+        \blank{3cm} of its leading coefficient. \hfill\textit{(EK 1.6.A.3)}
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{exponential model}
-\termblanklong{growth factor}
-\termblanklong{percent change}
-\termblanklong{initial value}
-\termblanklong{natural base $e$}
-\termblanklong{prediction}
-\termblanklong{domain restriction}
+\termblanklong{end behavior}
+\termblanklong{leading term}
+\termblanklong{leading coefficient}
+\termblanklong{limit notation ($\lim_{x \to \infty}$)}
+\termblanklong{dominates}
 \end{vocabbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
 \begin{hookbox}
-A town's population over four years:
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{c|c|c}
-\textbf{Year} & \textbf{Population} & \textbf{Ratio (successive)} \\ \hline
-0 & 10{,}000 & --- \\
-1 & 10{,}300 & $10300 \div 10000 = $ \blank{2cm} \\
-2 & 10{,}609 & $10609 \div 10300 \approx $ \blank{2cm} \\
-3 & 10{,}927 & $10927 \div 10609 \approx $ \blank{2cm} \\
-\end{tabular}
-\end{center}
-\medskip
-The ratios are \blank{2.5cm}, so the growth is \blank{3cm}. The growth rate per year is \blank{2cm}.
+A student wraps rubber bands around a ball. The radius (in mm) grows according to
+$r(t) = 2t^3 - 50t^2 + 100t$.
+
+At $t = 1{,}000$ minutes: \quad $2t^3 = $ \blank{3cm} \quad $-50t^2 = $ \blank{3cm}
+
+What percentage of the cubic term is the $-50t^2$ term? \blank{3cm}
+
+Which term ``wins'' as $t$ gets very large?  \blank{4cm}
 \end{hookbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.5.A --- Building a Model from Initial Value and Ratio}
-\textbf{General Form:} $f(x) = a \cdot b^x$, where $a = $ \blank{3cm} and $b = $ \blank{3cm}.
-
-\medskip
-\textbf{Connecting $b$ to percent change (EK 2.5.B.1):}
-\begin{itemize}[itemsep=3pt]
-  \item Growth at rate $r$: $b = $ \blank{2.5cm}
-  \item Decay at rate $r$: $b = $ \blank{2.5cm}
-\end{itemize}
+\begin{notesbox}{Leading Term Dominance}
+\textbf{Key Idea:} For large $|x|$, the \blank{3cm} term of a polynomial dominates
+all lower-degree terms.
 
 \medskip
-\textbf{Example 1:} A population starts at 10{,}000 and grows 3\% per year. Write the model.
+\textbf{Example.} Let $p(x) = x^3 - 100x^2$.
+Complete the table by computing $p(x)$ and comparing it to $x^3$:
 
 \smallskip
-$a = $ \blank{2.5cm} \quad $b = $ \blank{2.5cm} \quad Model: $P(t) = $ \blank{5cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $p(x) = x^3 - 100x^2$ & $x^3$ & $\dfrac{-100x^2}{x^3} = \dfrac{-100}{x}$ \\
+\hline
+$100$   & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+$1{,}000$ & \blank{2.5cm} & \blank{2.5cm} & \blank{2.5cm} \\
+\hline
+\end{tabular}
 
 \medskip
-\textbf{Example 2:} A car's value starts at \$28{,}000 and depreciates 12\% per year. Write the model.
-
-\smallskip
-$a = $ \blank{2.5cm} \quad $b = $ \blank{2.5cm} \quad Model: $V(t) = $ \blank{5cm}
+As $x \to \infty$, the ratio $-100/x \to$ \blank{1.5cm}, so $p(x)$ behaves like \blank{2cm}.
 
 \medskip
-\textbf{Example 3:} A bank account earns 4.5\% interest annually on an initial \$1{,}000.
-
-\smallskip
-Model: $A(t) = $ \blank{7cm} \quad After 6 years: $A(6) = $ \blank{3cm}
+\textbf{Conclusion:} To find end behavior, look only at the \blank{3.5cm}.
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.5.A --- Building a Model from Two Points (EK 2.5.A.3)}
-\textbf{Strategy:} Given $(x_1, y_1)$ and $(x_2, y_2)$, write two equations:
-\[
-  y_1 = a \cdot b^{x_1} \qquad \text{and} \qquad y_2 = a \cdot b^{x_2}
-\]
-Divide the second by the first to eliminate $a$:
-\[
-  \frac{y_2}{y_1} = b^{\,x_2 - x_1} \qquad \Rightarrow \qquad b = \left(\frac{y_2}{y_1}\right)^{1/(x_2-x_1)}
-\]
-Then solve for $a$: $a = y_1 / b^{x_1}$.
+\begin{notesbox}{The Four End-Behavior Cases}
+The end behavior of any polynomial is determined by its \textbf{degree} (even or odd) and the
+\textbf{sign} of its leading coefficient.
 
 \medskip
-\textbf{Example:} An exponential function passes through $(0, 5)$ and $(3, 40)$.
-
-\smallskip
-Step 1 --- Find $b$: \blank{8cm}
-
-\smallskip
-Step 2 --- Find $a$: \blank{6cm}
-
-\smallskip
-Model: $f(x) = $ \blank{6cm}
-
-\medskip
-\textbf{Natural base $e$ (EK 2.5.A.6):} $e \approx $ \blank{2cm}. Used in continuous models: $f(t) = a \cdot e^{rt}$.
-
-Example: $f(t) = 500 e^{0.04t}$ grows \blank{2cm}\% continuously per year.
-\end{notesbox}
-
-\vspace{0.06in}
-
-\begin{notesbox}{LO 2.5.B --- Equivalent Forms and Predictions (EK 2.5.B.2)}
-\textbf{Equivalent forms reveal different time-scale properties.}
-
-$f(d) = 3 \cdot 2^d$ models growth where $d$ = days.
-
-Rewrite for weeks (let $w = d/7$, so $d = 7w$):
-\[
-  f(d) = 3 \cdot 2^d = 3 \cdot 2^{7w} = 3 \cdot (2^7)^w = 3 \cdot \blank{3cm}^w
-\]
-The base \blank{3cm} means the quantity multiplies by \blank{4cm} each week.
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Degree} & \textbf{Leading Coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
+\hline
+Even & Positive ($a_n > 0$) & \blank{2cm} & \blank{2cm} \\
+Even & Negative ($a_n < 0$) & \blank{2cm} & \blank{2cm} \\
+Odd  & Positive ($a_n > 0$) & \blank{2cm} & \blank{2cm} \\
+Odd  & Negative ($a_n < 0$) & \blank{2cm} & \blank{2cm} \\
+\hline
+\end{tabular}
 
 \medskip
-\textbf{Prediction and domain caution:} Use the model for inputs \blank{5cm}.
+\textbf{Memory aid:} Even-degree polynomials have both ends going the \blank{1.5cm} direction.
+Odd-degree polynomials have ends going \blank{2cm} directions.
 
-Predict the town population at $t = 20$: $P(20) = 10000 \cdot (1.03)^{20} \approx $ \blank{3cm}
+\medskip
+\textbf{Practice.} State the end behavior of $p(x) = -3x^4 + 2x^2 - 7$.
 
-\textit{Domain note:} Is $t = 200$ realistic? \blank{5cm}
+\smallskip
+Leading term: \blank{3cm} \quad Degree: \blank{1.5cm} \quad Sign: \blank{2cm}
+
+\medskip
+$\lim_{x \to \infty} p(x) = $ \blank{2cm} \qquad $\lim_{x \to -\infty} p(x) = $ \blank{2cm}
 \end{notesbox}
 
 \end{document}

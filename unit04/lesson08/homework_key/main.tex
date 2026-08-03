@@ -1,125 +1,21 @@
-%! Vectors — Unit 4, Lesson 4.8 — Homework Key
+%! Growth, Decay, and Interest Applications — Unit 4, Lesson 4.8 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
-\pageheader{Unit 4, Lesson 4.8}{Homework Key}
-\namedateperiod
+\pageheader{Unit 4, Lesson 4.8}{Homework --- Answer Key}
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Homework], never in a key.
 
-\vspace{0.10in}
 
-\begin{notesbox}{Vector Components and Magnitude}
+\vspace{0.15in}
 
-\textbf{1.}\quad Find the component form and magnitude of the vector from
-$P_1 = (-2, 1)$ to $P_2 = (4, 9)$.
-
-\vspace{4pt}
-$\vec{v} = \langle$ \ans{6}$,$ \ans{8}$\rangle$ \qquad
-$\|\vec{v}\| = \ans{$\sqrt{6^2+8^2}=\sqrt{100}=10$}$
-
-\begin{teachernote}
-Component form: $\langle 4-(-2),\;9-1\rangle = \langle 6,8\rangle$.
-Magnitude: $\sqrt{36+64}=10$.
-\end{teachernote}
-
-\vspace{14pt}
-\textbf{2.}\quad A force vector has magnitude $r = 13$ and direction angle
-$\theta = 67.4^\circ$. Given $\cos 67.4^\circ \approx 0.385$ and
-$\sin 67.4^\circ \approx 0.923$, find the component form of the vector.
-Round to one decimal place.
-
-\vspace{4pt}
-$a = r\cos\theta \approx \ans{$13(0.385)\approx 5.0$}$ \qquad
-$b = r\sin\theta \approx \ans{$13(0.923)\approx 12.0$}$
-
-\vspace{4pt}
-$\vec{v} \approx \langle$ \ans{5.0}$,$ \ans{12.0}$\rangle$
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Scalar Multiplication and Vector Addition}
-
-\textbf{3.}\quad Let $\vec{u} = \langle 2, -3\rangle$ and $\vec{w} = \langle -4, 1\rangle$.
-Compute each of the following.
-
-\vspace{4pt}
-(a)\quad $\vec{u} + \vec{w} = \ans{$\langle 2+(-4),\;-3+1\rangle = \langle -2,-2\rangle$}$
-
-\vspace{8pt}
-(b)\quad $3\vec{u} = \ans{$\langle 6,-9\rangle$}$
-
-\vspace{8pt}
-(c)\quad $2\vec{u} - \vec{w} = \langle 2(2)-(-4),\; 2(-3)-1 \rangle = \ans{$\langle 8,-7\rangle$}$
-
-\vspace{8pt}
-(d)\quad Express $\vec{u}$ in terms of $\hat{\imath}$ and $\hat{\jmath}$:
-$\vec{u} = \ans{$2\hat{\imath} - 3\hat{\jmath}$}$
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Unit Vectors and Dot Product}
-
-\textbf{4.}\quad Find the unit vector in the direction of $\vec{v} = \langle -6, 8\rangle$.
-
-\vspace{4pt}
-$\|\vec{v}\| = \ans{10}$ \qquad
-$\hat{u} = \left\langle \dfrac{-6}{\ans{10}},\; \dfrac{8}{\ans{10}}\right\rangle
-= \langle$ \ans{$-\tfrac{3}{5}$}$,$ \ans{$\tfrac{4}{5}$}$\rangle$
-
-\vspace{14pt}
-\textbf{5.}\quad Let $\vec{p} = \langle 3, -4\rangle$ and $\vec{q} = \langle 4, 3\rangle$.
-
-\vspace{4pt}
-(a)\quad Compute $\vec{p} \cdot \vec{q}$: \quad
-$(3)(4) + (-4)(3) = \ans{$12-12=0$}$
-
-\vspace{8pt}
-(b)\quad Are $\vec{p}$ and $\vec{q}$ perpendicular?
-Circle one: \quad \textbf{Yes} \quad \textbf{No}
-
-\vspace{4pt}
-Justify: \ansline{Yes --- the dot product equals 0, which means the vectors are perpendicular.}
-
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Angle Between Vectors and Vector Addition Triangle}
-
-\textbf{6.}\quad Two vectors have magnitudes $\|\vec{u}\| = 5$ and $\|\vec{w}\| = 7$,
-and the angle between them is $\theta = 60^\circ$.
-
-\vspace{4pt}
-(a)\quad Use the Law of Cosines to find the magnitude of $\vec{r} = \vec{u} + \vec{w}$.
-(Recall: $\|\vec{r}\|^2 = \|\vec{u}\|^2 + \|\vec{w}\|^2 - 2\|\vec{u}\|\,\|\vec{w}\|\cos\theta$
-where $\theta$ is the angle between $\vec{u}$ and $\vec{w}$.)
-
-\vspace{4pt}
-\ans{Angle in triangle $= 180^\circ - 60^\circ = 120^\circ$.\\[3pt]
-$\|\vec{r}\|^2 = 25+49-2(5)(7)\cos(120^\circ) = 74+35 = 109$.\\[3pt]
-$\|\vec{r}\| = \sqrt{109} \approx 10.4$.}
-
-\begin{teachernote}
-When the angle between vectors is $60^\circ$ as drawn from the same tail, the Law-of-Cosines triangle uses the supplement $120^\circ$. Result: $\|\vec{r}\|\approx10.44$.
-\end{teachernote}
-
-\vspace{8pt}
-(b)\quad Given $\vec{a} = \langle 1, 2\rangle$ and $\vec{b} = \langle 2, -1\rangle$,
-use the dot product formula $\theta = \cos^{-1}\!\left(\dfrac{\vec{a}\cdot\vec{b}}{\|\vec{a}\|\,\|\vec{b}\|}\right)$
-to find the angle between $\vec{a}$ and $\vec{b}$. Show all steps.
-
-\vspace{4pt}
-\ans{$\vec{a}\cdot\vec{b}=(1)(2)+(2)(-1)=2-2=0$.\\[3pt]
-$\|\vec{a}\|=\sqrt{5}$,\quad $\|\vec{b}\|=\sqrt{5}$.\\[3pt]
-$\cos\theta=\dfrac{0}{\sqrt{5}\cdot\sqrt{5}}=0$,\quad so $\theta=\cos^{-1}(0)=90^\circ$.}
-
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
 
 \end{document}

@@ -1,0 +1,159 @@
+%! Sine and Cosine Function Graphs — Unit 6, Lesson 6.5 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item Explain how the unit circle produces the graph of $f(\theta)=\sin\theta$ and
+          the graph of $f(\theta)=\cos\theta$. \ansline{The $y$-coordinate of the unit-circle point at angle $\theta$ gives $\sin\theta$; the $x$-coordinate gives $\cos\theta$.}
+    \item Identify the domain, range, period, midline, maximum, minimum, and zeros of
+          each function from its graph. \ansline{Domain: all reals; Range: $[-1,1]$; Period: $2\pi$; Midline: $y=0$; Max: $1$; Min: $-1$.}
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Oscillation}
+\ansline{Repeated back-and-forth variation between two extreme values.}
+\termblanklong{Amplitude (informal)}
+\ansline{Half the total vertical range; equals 1 for $\sin\theta$ and $\cos\theta$.}
+\termblanklong{Period}
+\ansline{The smallest positive input change for one complete cycle; $2\pi$ for both functions.}
+\termblanklong{Midline}
+\ansline{The horizontal line halfway between the maximum and minimum; $y=0$ for both functions.}
+\termblanklong{Maximum point}
+\ansline{The highest point on the graph; output value equals 1.}
+\termblanklong{Minimum point}
+\ansline{The lowest point on the graph; output value equals $-1$.}
+\termblanklong{Zero of a function}
+\ansline{An input $\theta$ where $f(\theta)=0$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\textbf{Question:} We know the $y$-coordinate of a point on the unit circle at each angle.
+What does the graph of that $y$-coordinate \emph{versus the angle} look like?
+
+\vspace{0.06in}
+\ansline{It forms a wave that oscillates between $-1$ and $1$, repeating every $2\pi$.}
+\ansline{}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Building the Graph of $f(\theta)=\sin\theta$}
+The output of $f(\theta)=\sin\theta$ is the \ans{$y$-coordinate} of the unit-circle point
+at angle $\theta$.
+
+\vspace{6pt}
+Complete the table, then describe the resulting curve in words.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{@{}|c|c|@{}}
+    \hline
+    $\theta$ & $\sin\theta$ \\\hline
+    $0$ & \ans{$0$} \\
+    $\dfrac{\pi}{6}$ & $\dfrac{1}{2}$ \\
+    $\dfrac{\pi}{4}$ & \ans{$\dfrac{\sqrt{2}}{2}$} \\
+    $\dfrac{\pi}{3}$ & $\dfrac{\sqrt{3}}{2}$ \\
+    $\dfrac{\pi}{2}$ & \ans{$1$} \\
+    $\pi$ & $0$ \\
+    $\dfrac{3\pi}{2}$ & \ans{$-1$} \\
+    $2\pi$ & \ans{$0$} \\\hline
+\end{tabular}
+\quad
+\begin{minipage}[t]{0.52\linewidth}\vspace{0pt}
+\textbf{Plot these ordered pairs} on the $\theta$-$y$ axes below, then connect them
+smoothly.
+
+\vspace{0.5in}
+\textit{(coordinate axes drawn by teacher on board)}
+
+\vspace{0.3in}
+The curve is called a \ans{sine wave}. As $\theta$ increases from $0$ to $2\pi$, the output
+\ans{oscillates} between $-1$ and $1$.
+\end{minipage}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Building the Graph of $f(\theta)=\cos\theta$}
+The output of $f(\theta)=\cos\theta$ is the \ans{$x$-coordinate} of the unit-circle point
+at angle $\theta$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.55}
+\begin{tabular}{@{}|c|c|@{}}
+    \hline
+    $\theta$ & $\cos\theta$ \\\hline
+    $0$ & \ans{$1$} \\
+    $\dfrac{\pi}{2}$ & \ans{$0$} \\
+    $\pi$ & \ans{$-1$} \\
+    $\dfrac{3\pi}{2}$ & \ans{$0$} \\
+    $2\pi$ & \ans{$1$} \\\hline
+\end{tabular}
+\quad
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+How does the cosine graph compare to the sine graph in overall shape?
+\ansline{Same wave shape; both oscillate between $-1$ and $1$ with period $2\pi$.}
+\ansline{}
+
+How does the starting value at $\theta=0$ differ?
+\ansline{$\cos(0)=1$ (max), but $\sin(0)=0$.}
+\end{minipage}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Key Features of $\sin\theta$ and $\cos\theta$}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+    \textbf{Feature} & \textbf{$f(\theta)=\sin\theta$} & \textbf{$f(\theta)=\cos\theta$} \\\hline
+    Domain   & \ans{all real numbers} & \ans{all real numbers} \\
+    Range    & \ans{$[-1,\,1]$} & \ans{$[-1,\,1]$} \\
+    Period   & \ans{$2\pi$} & \ans{$2\pi$} \\
+    Midline  & \ans{$y=0$} & \ans{$y=0$} \\
+    Maximum value & \ans{$1$} & \ans{$1$} \\
+    Minimum value & \ans{$-1$} & \ans{$-1$} \\
+    Zeros on $[0,2\pi)$ & \ans{$0,\,\pi,\,2\pi$} & \ans{$\dfrac{\pi}{2},\,\dfrac{3\pi}{2}$} \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+Use the description of the sine graph over $[0,2\pi]$ to answer the following.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+    \item At what $\theta$-values in $[0,2\pi]$ does $\sin\theta=0$?
+
+          \ans{$\theta=0,\;\pi,\;2\pi$}
+
+    \item At what $\theta$-value in $[0,2\pi]$ does $\sin\theta=1$?
+
+          \ans{$\theta=\dfrac{\pi}{2}$}
+
+    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ increasing?
+
+          \ans{$\left(0,\,\dfrac{\pi}{2}\right)$ and $\left(\dfrac{3\pi}{2},\,2\pi\right)$}
+
+    \item On what interval(s) in $[0,2\pi]$ is $\sin\theta$ decreasing?
+
+          \ans{$\left(\dfrac{\pi}{2},\,\dfrac{3\pi}{2}\right)$}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

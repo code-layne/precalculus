@@ -1,4 +1,4 @@
-%! Parametrization of Implicitly Defined Functions — Unit 4, Lesson 4.7 — Group Activity (Answer Key)
+%! Competing Function Model Validation — Unit 4, Lesson 4.7 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,111 +11,107 @@
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Mission Control --- Parametrizing Conic Paths]{sky}
+\begin{teachernote}
+Tier R: focus students on sign interpretation of error. Tier A: circulate while students
+compute differences/ratios --- accept ratios in the range 2.0--2.2 as ``approximately constant.''
+Tier E: scoring rubric: 1 pt each for (1) identifying increasing pattern in linear residuals,
+(2) noting no pattern in exponential, (3) correct model choice, (4) valid real-world reason,
+(5) complete 3--4 sentence justification.
+\end{teachernote}
+
+\begin{scenariobox}[Choosing the Best Model for Online Store Sales]{sky}
 \small
-Mission Control is tracking three objects. Each follows a conic section path described by
-an implicit equation. Your job: write a parametrization for each object, then use parametric
-tools to extract key position data.
+An online store tracked monthly sales (in \$thousands) for five months. Three regression
+models were fit to the data. In each tier, you will analyze the models and determine which
+one is most appropriate for the data and the context.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c}
+\textbf{Month ($x$)} & \textbf{Actual $y$} & \textbf{Linear $\hat{y}_L$} & \textbf{Quadratic $\hat{y}_Q$} & \textbf{Exponential $\hat{y}_E$} \\
+\hline
+1 &  4 & 3.4  & 3.8  & 3.6 \\
+2 &  8 & 7.8  & 7.2  & 7.9 \\
+3 & 17 & 12.2 & 14.6 & 17.4 \\
+4 & 36 & 16.6 & 26.0 & 38.2 \\
+5 & 75 & 21.0 & 41.4 & 83.9 \\
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 1 — Space Station (ellipse)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 1 --- Space Station (Ellipse) --- Key},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
-The station's orbital path satisfies $\dfrac{(x-1)^2}{64}+\dfrac{(y+2)^2}{36}=1$.
 
-\textbf{(a)} $h = $ \ans{$1$} \quad $k = $ \ans{$-2$} \quad $a = $ \ans{$8$} \quad $b = $ \ans{$6$}
+\begin{enumerate}[itemsep=10pt]
+  \item Error (Linear): $17 - 12.2 = $ \ans{$+4.8$}
 
-\vspace{0.08in}
-\textbf{(b)} Parametrization:
+        Error (Quadratic): $17 - 14.6 = $ \ans{$+2.4$}
 
-$x(t) = $ \ans{$1 + 8\cos t$} \qquad $y(t) = $ \ans{$-2 + 6\sin t$}
+        Error (Exponential): $17 - 17.4 = $ \ans{$-0.4$}
 
-\vspace{0.08in}
-\textbf{(c)} Four extreme positions:
+  \item Which model has the smallest absolute error at Month 3? \ans{Exponential ($|{-0.4}| = 0.4$)}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{lll}
-Rightmost ($x$ max): $t = $ \ans{$0$} & Point: \ans{$(9,\,-2)$} \\
-Leftmost ($x$ min): $t = $ \ans{$\pi$} & Point: \ans{$(-7,\,-2)$} \\
-Highest ($y$ max): $t = $ \ans{$\pi/2$} & Point: \ans{$(1,\,4)$} \\
-Lowest ($y$ min): $t = $ \ans{$3\pi/2$} & Point: \ans{$(1,\,-8)$} \\
-\end{tabular}
+  \item Circle the model type that best matches ``sales more than doubled every month'':
 
-\vspace{0.08in}
-\textbf{(d)} $y$-axis crossing: set $x(t)=0 \Rightarrow 1+8\cos t=0 \Rightarrow \cos t = $ \ans{$-\tfrac{1}{8}$}
+        \hspace{2cm} Linear \hspace{2cm} Quadratic \hspace{2cm} \ans{\textbf{Exponential}}
 
-$t = $ \ans{$\arccos(-\tfrac{1}{8}) \approx 1.696$ rad (and $2\pi - 1.696 \approx 4.587$ rad)}
-
-$y$-axis crossing coordinates: \ans{$\bigl(0,\,-2+6\sin(\arccos(-1/8))\bigr) \approx (0,\,3.97)$ and $(0,\,-7.97)$}
-
-\begin{teachernote}
-  Students often stop at $\cos t = -1/8$ and forget to find the $y$-coordinate.
-  Prompt: ``You found the time $t$ --- now plug it back into $y(t)$ to get the position.''
-  For the exact form: $\sin(\arccos(-1/8)) = \pm\sqrt{1-1/64} = \pm\sqrt{63}/8 = \pm 3\sqrt{7}/8$.
-\end{teachernote}
+  \item At $x = 5$: error $= 75 - 83.9 = -8.9$ (negative), so the exponential model is a(n)
+        \ans{overestimate} because the error is \ans{negative}.
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 2 — Comet (parabola)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 2 --- Comet (Parabola) --- Key},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
 
-\textbf{(a)} Vertex: \ans{$(1,\,-3)$} \quad Orientation: \ans{vertical (opens upward)}
+\begin{enumerate}[itemsep=10pt]
+  \item
+        \renewcommand{\arraystretch}{1.7}
+        \begin{tabular}{c|c|c|c}
+        $x$ & Actual $y$ & $\Delta_1$ & Ratio \\ \hline
+        1 &  4 & \ans{4}  & \ans{2.0} \\
+        2 &  8 & \ans{9}  & \ans{2.125} \\
+        3 & 17 & \ans{19} & \ans{$\approx 2.12$} \\
+        4 & 36 & \ans{39} & \ans{$\approx 2.08$} \\
+        5 & 75 & --- & --- \\
+        \end{tabular}
 
-\vspace{0.08in}
-\textbf{(b)} $x(t) = 1+t$, \quad $y(t) = $ \ans{$2t^2 - 3$}
+  \item Most strongly suggested model: \ans{exponential}
 
-\vspace{0.08in}
-\textbf{(c)} $x$-axis: set $y(t) = 2t^2 - 3 = 0$:
+        Explanation: \ansline{The successive ratios are approximately constant (near 2.1), signaling exponential growth.}
 
-$t = $ \ans{$\pm\sqrt{3/2} = \pm\tfrac{\sqrt{6}}{2} \approx \pm 1.225$}
+  \item $R^2$ values depend on student technology output. Expect exponential $R^2 > 0.99$.
 
-$x = 1 + t$: \quad \ans{$x = 1 + \tfrac{\sqrt{6}}{2} \approx 2.225$ \quad and \quad $x = 1 - \tfrac{\sqrt{6}}{2} \approx -0.225$}
-
-Coordinates: \ans{$\bigl(1+\tfrac{\sqrt{6}}{2},\,0\bigr)$ and $\bigl(1-\tfrac{\sqrt{6}}{2},\,0\bigr)$}
+  \item Sample answer: \ansline{The exponential model is most appropriate because the ratios are nearly constant ($\approx 2.1$), the $R^2$ value is highest for exponential regression, and the context states that sales doubled each month --- a hallmark of exponential growth.}
+\end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-%----------------------------------------------------------------------
-% Object 3 — Satellite (circle)
-%----------------------------------------------------------------------
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Object 3 --- Satellite (Circle) --- Key},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small
 
-\textbf{(a)} Center: \ans{$(0,0)$} \quad Radius: \ans{$10$}
+\begin{enumerate}[itemsep=10pt]
+  \item Pattern in linear residuals: \ansline{The residuals increase sharply (0.6, 0.2, 4.8, 19.4, 54.0) --- a clear upward curve, not random.}
 
-\vspace{0.08in}
-\textbf{(b)} $x(t) = $ \ans{$10\cos t$} \qquad $y(t) = $ \ans{$10\sin t$}
+  \item Exponential residuals: \ansline{The residuals alternate sign and stay small ($+0.4, +0.1, -0.4, -2.2, -8.9$); no clear curve, though they grow slightly at the end.}
 
-Domain: \ans{$0 \le t \le 2\pi$}
+  \item Based on the residual plot criterion, the more appropriate model is: \ans{exponential}
 
-\vspace{0.08in}
-\textbf{(c)} At $t = \pi/4$:
+  \item Sample real-world reason: \ansline{An overestimate of future sales helps the store plan for extra inventory, reducing the risk of stockouts.}
 
-$x(\pi/4) = 10\cos(\pi/4) = $ \ans{$10 \cdot \dfrac{\sqrt{2}}{2} = 5\sqrt{2} \approx 7.07$}
-
-$y(\pi/4) = 10\sin(\pi/4) = $ \ans{$10 \cdot \dfrac{\sqrt{2}}{2} = 5\sqrt{2} \approx 7.07$}
-
-Coordinates: \ans{$(5\sqrt{2},\,5\sqrt{2})$}
-
-\begin{teachernote}
-  A common error: students write $r = 100$ (confusing $r^2$ with $r$). Remind them:
-  $x^2 + y^2 = r^2$, so $r^2 = 100$ gives $r = 10$.
-\end{teachernote}
+  \item Sample full justification: \ansline{The exponential model is the most appropriate choice for three reasons.\\[3pt]
+  First, the residuals from the linear model show a strongly increasing pattern (from 0.6 to 54.0), indicating the linear model systematically underestimates --- the wrong function type.\\[3pt]
+  Second, the exponential residuals show no clear pattern and remain relatively small, satisfying the residual-plot criterion for a good fit.\\[3pt]
+  Third, the contextual clue that ``sales more than doubled every month'' is the defining property of exponential growth, confirming the model choice.}
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}

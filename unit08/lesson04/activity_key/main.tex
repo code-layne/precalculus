@@ -1,0 +1,118 @@
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Part 1 --- Graphing $x^2 + y^2 = 36$},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{1.} Substitute each $x$ value into $x^2 + y^2 = 36$ and solve for both $y$ values.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{c|c|c}
+$x$ & $y$ (positive / upper) & $y$ (negative / lower) \\\hline
+$-6$         & \ans{$0$}             & \ans{$0$}              \\[2pt]
+$-3\sqrt{2}$ & \ans{$3\sqrt{2} \approx 4.243$} & \ans{$-3\sqrt{2} \approx -4.243$} \\[2pt]
+$0$          & \ans{$6$}             & \ans{$-6$}             \\[2pt]
+$3\sqrt{2}$  & \ans{$3\sqrt{2} \approx 4.243$} & \ans{$-3\sqrt{2} \approx -4.243$} \\[2pt]
+$6$          & \ans{$0$}             & \ans{$0$}              \\
+\end{tabular}
+
+\vspace{0.12in}
+\textbf{2.} This equation defines \ans{2} explicit function(s).
+
+\vspace{6pt}
+$f_1(x) = $ \ans{$\sqrt{36-x^2}$} \qquad $f_2(x) = $ \ans{$-\sqrt{36-x^2}$}
+
+\vspace{0.1in}
+\textbf{3.} Domain of $f_1$: \ans{$[-6,\,6]$} \qquad Domain of $f_2$: \ans{$[-6,\,6]$}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Part 2 --- Analyzing Co-variation on $x^2 + y^2 = 36$},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c}
+$x$ & $y$ \\\hline
+$3.0$ & $5.196$ \\
+$3.1$ & $5.155$ \\
+$3.2$ & $5.113$ \\
+\end{tabular}
+
+\vspace{0.12in}
+\textbf{4.} $\Delta y/\Delta x$ from $x = 3.0$ to $x = 3.1$:
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{{\color{keyred}\mathbf{5.155 - 5.196}}}{{\color{keyred}\mathbf{3.1 - 3.0}}} = {\color{keyred}\mathbf{-0.41}}
+\]
+
+\textbf{5.} $\Delta y/\Delta x$ from $x = 3.1$ to $x = 3.2$:
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{{\color{keyred}\mathbf{5.113 - 5.155}}}{{\color{keyred}\mathbf{3.2 - 3.1}}} = {\color{keyred}\mathbf{-0.42}}
+\]
+
+\textbf{6.} Is $\Delta y/\Delta x$ positive or negative? \ans{Negative (both times).}
+
+\textbf{7.} What does this tell you?
+
+\ansline{As $x$ increases, $y$ decreases along the upper semicircle --- opposite-direction co-variation.}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Part 3 --- The Equation $xy = 12$},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{8.} $y = $ \ans{$12/x$}
+
+\vspace{0.1in}
+\textbf{9.}
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c|c}
+$x$ & $y$ \\\hline
+$1$  & \ans{$12$} \\
+$2$  & \ans{$6$}  \\
+$3$  & \ans{$4$}  \\
+$4$  & \ans{$3$}  \\
+$6$  & \ans{$2$}  \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{10.} As $x$ increases (for $x > 0$), $y$ \ans{decreases}.
+
+\textbf{11.}
+\[
+\frac{\Delta y}{\Delta x} = \frac{{\color{keyred}\mathbf{4 - 6}}}{{\color{keyred}\mathbf{3 - 2}}} = {\color{keyred}\mathbf{-2}}
+\]
+
+Positive or negative? \ans{Negative.} \quad What does this confirm?
+
+\ansline{Co-variation is negative: as $x$ increases, $y$ decreases. The variables change in opposite directions.}
+
+\end{tcolorbox}
+
+\begin{teachernote}
+Part 1: For $x = -3\sqrt{2} \approx -4.243$: $(-3\sqrt{2})^2 = 18$, so $y^2 = 18$, giving $y = \pm 3\sqrt{2}$. Students may need a reminder to square the expression first.\\[3pt]
+Part 2: The ratios $-0.41$ and $-0.42$ are approximations; accept answers close to these values. The key insight is that both are negative, confirming opposite-direction co-variation on the upper semicircle.\\[3pt]
+Part 3: $\Delta y/\Delta x = (4-6)/(3-2) = -2$. Students should connect the negative ratio to the fact that $xy = 12$ means one variable must decrease if the other increases (their product stays fixed).
+\end{teachernote}
+
+\end{document}

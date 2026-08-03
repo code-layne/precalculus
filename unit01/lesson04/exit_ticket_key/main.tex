@@ -1,7 +1,7 @@
-%! Polynomial Functions and Rates of Change — Unit 1, Lesson 1.4 — Exit Ticket (Answer Key)
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,37 +9,37 @@
 \pageheader{Unit 1, Lesson 1.4}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{notesbox}{Exit Ticket --- Key}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\begin{enumerate}[itemsep=16pt]
 
-\item A polynomial function $p$ has exactly three distinct real zeros.
+\item The function $g$ is defined by $g(x) = f(x+3) - 2$. Describe the transformations
+      applied to the graph of $f$ to produce the graph of $g$.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-    \item[(a)] Minimum number of local extrema:
+      \vspace{0.08in}
+      \ansline{Horizontal shift left 3 units (because $h=3>0$) and vertical shift down 2 units (because $k=-2$).}
 
-    Answer: \ans{2}
+\item The table below shows values of $f$. Complete the table for $g(x) = -f(x)$.
 
-    \item[(b)] Supporting principle:
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+      \hline
+      $f(x)$ & $3$  & $1$  & $0$ & $-1$ & $-3$ \\
+      \hline
+      $g(x) = -f(x)$ & \ans{$-3$} & \ans{$-1$} & \ans{$0$} & \ans{$1$} & \ans{$3$} \\
+      \hline
+      \end{tabular}
 
-    \ans{By EK 1.4.A.3, between every two distinct real zeros of a nonconstant polynomial there must be at least one local maximum or minimum. With three zeros there are two consecutive pairs, each requiring at least one local extremum --- so at least 2 local extrema total.}
+\item The domain of $f$ is $[-2,\,6]$. State the domain of $g(x) = f(x-4)$.
+
+      \vspace{0.08in}
+      Domain of $g$: \ans{$[2,\,10]$}
+
+      \textit{(Shift right 4: add 4 to each endpoint. $-2+4=2$; $6+4=10$.)}
+
 \end{enumerate}
-
-\item A polynomial function $q$ has a point of inflection at $x = 2$.
-The AROC of $q$ over $[0, 2]$ is 3, and the AROC of $q$ over $[2, 4]$ is 7.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-    \item[(a)] Is the AROC increasing or decreasing?
-
-    \ans{Increasing} --- the AROC goes from 3 to 7.
-
-    \item[(b)] Concavity and explanation:
-
-    \ans{Concave up. When the AROC is increasing as $x$ increases, the graph is concave up. The rate of change switches from a smaller value (3) to a larger value (7) as we pass through $x=2$, which is consistent with the graph curving upward. The point of inflection at $x=2$ is where this switch occurs.}
-\end{enumerate}
-
-\end{enumerate}
-\end{notesbox}
 
 \end{document}

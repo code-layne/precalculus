@@ -1,0 +1,305 @@
+%! Parametrically Defined Circles and Lines — Unit 8, Lesson 8.3 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 8: Parametric Functions, Vectors, and Matrices \quad}
+\newcommand{\LessonNumberName}{Lesson 8.3: Parametrically Defined Circles and Lines}
+
+\begin{document}
+
+%----------------------------------------------------------------------
+% Title Block
+%----------------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries \CourseName: \SchoolYear} \\[4pt]
+  {\small\bfseries \UnitNumberName \LessonNumberName \quad (2 instructional periods, \MeetingLength\ each)}
+\end{center}
+
+%----------------------------------------------------------------------
+% Primary Objective
+%----------------------------------------------------------------------
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+  \textbf{Primary Objective:} Students will express circular paths
+  parametrically using transformations of $(x(t),\,y(t)) = (\cos t,\,\sin t)$
+  and model linear motion along a line segment using an initial point and
+  constant rates of change. \textit{(Big Idea: Functions)}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Priority Ideas & Skills
+%----------------------------------------------------------------------
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+\textbf{AP Skills} & \textbf{Key Understandings (EKs)} \\
+\midrule
+\textbf{1.B} \textit{Express in equivalent forms} ---
+  Rewrite a verbal or geometric description of circular or linear
+  motion as a pair of parametric equations, and identify the radius,
+  center, direction, and speed from the algebraic form.
+&
+\textbf{EK 4.4.A.1}: A complete counterclockwise revolution around
+the unit circle that starts and ends at $(1,\,0)$, centered at the
+origin, is modeled by $(x(t),\,y(t)) = (\cos t,\,\sin t)$ with
+domain $0 \le t \le 2\pi$. \\[4pt]
+
+\textbf{1.C} \textit{Construct new functions via transformations} ---
+  Apply horizontal/vertical shifts and scale factors to $(\cos t,\,\sin t)$
+  to obtain the parametrization of any circle; modify the argument of
+  $t$ to control direction and speed.
+&
+\textbf{EK 4.4.A.2}: Transformations of $(\cos t,\,\sin t)$ can model
+any circular path: scaling $r$ sets the radius, shifting by $(h,\,k)$
+moves the center, and replacing $t$ with $-t$ reverses orientation. \\[4pt]
+
+&
+\textbf{EK 4.4.A.3}: A linear path along the segment from
+$(x_1,\,y_1)$ to $(x_2,\,y_2)$ can be parametrized by
+$x(t)=x_1+(x_2-x_1)t$, $y(t)=y_1+(y_2-y_1)t$ for $0\le t\le 1$,
+using an initial position and constant rates of change. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+\textbf{Term} & \textbf{Definition / Note} \\
+\midrule
+unit circle parametrization &
+  $(x(t),\,y(t))=(\cos t,\,\sin t)$, $0\le t\le 2\pi$; models one
+  full counterclockwise revolution around the unit circle. \\[4pt]
+radius / center &
+  In $(h+r\cos t,\;k+r\sin t)$, $r$ is the radius and $(h,\,k)$
+  is the center of the circular path. \\[4pt]
+orientation &
+  The direction of travel along a curve: \emph{counterclockwise}
+  when $t$ increases in $({\cos t},\,{\sin t})$; \emph{clockwise}
+  when $t$ is replaced by $-t$. \\[4pt]
+linear parametrization &
+  $x(t)=x_1+(x_2-x_1)t$, $y(t)=y_1+(y_2-y_1)t$, $0\le t\le 1$;
+  traces the segment from $(x_1,\,y_1)$ to $(x_2,\,y_2)$ at
+  constant speed. The coefficients $(x_2-x_1)$ and $(y_2-y_1)$
+  are the rates of change of $x$ and $y$ with respect to $t$. \\
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Activate Prior Knowledge
+%----------------------------------------------------------------------
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{tabularx}{\linewidth}{@{}X c@{}}
+\begin{minipage}[t]{0.96\linewidth}\vspace{0pt}
+\textbf{Spiral topics activated during Warm-Up (first 8 minutes):}
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item \textbf{Cosine and sine values}: $\cos$ and $\sin$ at $0$, $\pi/2$,
+    $\pi$, $3\pi/2$, $2\pi$ --- the key outputs that define the unit circle path.
+  \item \textbf{Function transformations}: vertical/horizontal shifts and
+    scale factors applied to sine and cosine --- maps directly to the
+    $(h + r\cos t,\; k + r\sin t)$ template.
+  \item \textbf{Counterclockwise motion on the unit circle}: interpreting
+    quarter-turn and half-turn positions geometrically --- connects the angle
+    $t$ to a physical location on the circle.
+\end{itemize}
+\end{minipage}
+&
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{skillbox}[Hook --- Entry Event]{sky}
+\textbf{Scenario:} A Ferris wheel has a radius of 30 ft and its center
+is 35 ft above the ground. A rider boards at the rightmost seat, which
+starts at ground height $+$ 35 ft, exactly 30 ft to the right of center.
+
+\textbf{Discussion prompts:}
+\begin{enumerate}[leftmargin=1.4em, itemsep=3pt]
+  \item \textit{``Write parametric equations that give the rider's height
+    $y$ and horizontal position $x$ at time $t$ as the wheel completes
+    one counterclockwise revolution.''}
+  \item \textit{``What if the wheel runs clockwise instead? How do you
+    change the equations?''}
+  \item \textit{``What is the rider's highest point, and what value of $t$
+    achieves it?''}
+\end{enumerate}
+
+\textbf{Key tension:} A description like ``height varies as a sine wave''
+captures $y$ alone. The parametric form tracks \emph{both} coordinates
+simultaneously and encodes direction --- essential for real motion.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Lesson
+%----------------------------------------------------------------------
+\begin{skillbox}[Lesson --- Instruction Sequence]{sky}
+\begin{multicols}{2}
+
+\textbf{Step 1 --- Unit Circle Parametrization} (8 min)
+
+Write $(x(t),\,y(t)) = (\cos t,\,\sin t)$, domain $0 \le t \le 2\pi$.
+Evaluate at $t = 0, \pi/2, \pi, 3\pi/2, 2\pi$ to fill a class table.
+Identify the starting point $(1,\,0)$, the quarter-turn point $(0,\,1)$,
+the half-turn point $(-1,\,0)$, and the return to $(1,\,0)$.
+Emphasize: \emph{counterclockwise} direction, one full revolution.
+(EK 4.4.A.1)
+
+\columnbreak
+
+\textbf{Step 2 --- Transformations of the Circle} (12 min)
+
+General form: $x(t) = h + r\cos t$, $y(t) = k + r\sin t$.
+Show how each parameter changes the picture:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item $r$ scales the radius.
+  \item $(h,k)$ shifts the center.
+  \item Replacing $t$ with $-t$: $\cos(-t)=\cos t$, $\sin(-t)=-\sin t$
+    --- reverses orientation to \emph{clockwise}.
+  \item Replacing $t$ with $ct$ ($c > 1$) speeds up the revolution;
+    replacing with $t/(2\pi) \cdot T$ scales the period to $T$.
+\end{itemize}
+Apply to Ferris wheel: $h=0$, $k=35$, $r=30$.
+(EK 4.4.A.2)
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\textbf{Step 3 --- Linear Parametrization} (10 min)
+
+Segment from $(x_1,\,y_1)$ to $(x_2,\,y_2)$:
+\[
+  x(t) = x_1 + (x_2-x_1)\,t,\quad y(t) = y_1 + (y_2-y_1)\,t,\quad 0\le t\le 1.
+\]
+At $t=0$: start point. At $t=1$: end point. At $t=0.5$: midpoint.
+The coefficients are rates of change: $\Delta x / \Delta t$ and $\Delta y / \Delta t$.
+Connect to slope: $\Delta y / \Delta x = (y_2-y_1)/(x_2-x_1)$.
+(EK 4.4.A.3)
+
+\columnbreak
+
+\textbf{Step 4 --- Apply Both Contexts} (10 min)
+
+\textbf{Circular:} Ferris wheel --- state equations, find highest point
+($y$ is max when $\sin t = 1$, i.e.\ $t = \pi/2$; height $= 65$ ft).
+For one revolution in 40 seconds, scale: $t_{\text{real}} = 40t/(2\pi)$,
+so rider is highest at $t_{\text{real}} = 10$ seconds.
+
+\textbf{Linear:} Delivery drone flies from $(2,\,3)$ to $(8,\,11)$.
+Equations: $x(t) = 2 + 6t$, $y(t) = 3 + 8t$, $0\le t\le 1$.
+Find position at $t=0.5$: $(5, 7)$ --- the midpoint.
+
+\end{multicols}
+
+\smallskip
+\textbf{Pacing note:} Steps 1--2 fill Period 1; Steps 3--4 + activity in Period 2.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Active Monitoring
+%----------------------------------------------------------------------
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{itemize}[leftmargin=1.4em, itemsep=3pt]
+  \item \textbf{Radius vs.\ center confusion}: Students may swap $r$
+    and $(h,k)$ in the formula. Prompt: \textit{``Which part of
+    $h + r\cos t$ shifts the whole circle, and which part controls how
+    wide it is?''}
+  \item \textbf{Clockwise sign error}: Students may negate both
+    components. Prompt: \textit{``What is $\cos(-t)$? What is
+    $\sin(-t)$? So which one changes sign when we reverse direction?''}
+  \item \textbf{Linear endpoints}: Students may evaluate $t=0$ and $t=1$
+    and get the wrong direction. Ask: \textit{``Where does your curve
+    start? Where does it end? Does that match the problem?''}
+  \item \textbf{Highest point on a circle}: Students may guess the center
+    height. Prompt: \textit{``What value of $\sin t$ is the largest
+    possible? What $t$ gives that value?''}
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Group Work & Differentiation
+%----------------------------------------------------------------------
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+Students work in groups of 3--4 on the tiered activity.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=4pt]
+  \item \textbf{Tier R (Remediate)}: Write the parametrization for a
+    circle centered at the origin with radius 5 starting at $(5,\,0)$.
+    Verify that the point at $t = \pi/2$ is $(0,\,5)$.
+  \item \textbf{Tier A (Approaching Proficiency)}: Write the
+    parametrization for a circle centered at $(-2,\,4)$ with radius 3
+    traversed \emph{clockwise}. Also write the parametrization for
+    the segment from $(1,\,2)$ to $(7,\,-4)$.
+  \item \textbf{Tier E (Extension)}: For the Ferris wheel, determine
+    the parameter value $t$ when the rider is at the highest point.
+    If the wheel completes one revolution in 40 seconds, at what
+    actual time (in seconds) is the rider highest? Generalize: if the
+    period is $T$ seconds, write a formula for $t_{\text{real}}$ as a
+    function of $T$.
+\end{itemize}
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Individual Work & Assessment
+%----------------------------------------------------------------------
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+Exit ticket administered independently (final 5 minutes of Period 2).
+
+\begin{enumerate}[leftmargin=1.4em, itemsep=4pt]
+  \item A circle is centered at $(3,\,-1)$ with radius $4$. Write
+    parametric equations for counterclockwise motion starting at $(7,\,-1)$.
+  \item Write a parametrization for the line segment from $(0,\,6)$ to
+    $(4,\,0)$. At what parameter value $t$ does the segment cross the
+    $x$-axis?
+\end{enumerate}
+
+\textbf{Data use:} Students who cannot write the Ferris-wheel equations
+without scaffolding need more support with the transformation template;
+revisit in the opening of Lesson 4.5.
+\end{skillbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Reinforcement & Extension
+%----------------------------------------------------------------------
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework (Lesson 8.3):} 5--6 problems covering: writing
+circular parametrizations from a description, evaluating at specific
+$t$-values, finding when a circular path reaches a given point,
+writing and evaluating a linear segment parametrization, and one
+AP-style multiple-choice item.
+
+\textbf{Preview of Lesson 4.5 --- Implicitly Defined Functions:}
+Ask students: \textit{``We wrote $x(t) = h + r\cos t$ and
+$y(t) = k + r\sin t$. If you eliminate $t$ using the identity
+$\cos^2 t + \sin^2 t = 1$, what equation in $x$ and $y$ do you get?''}
+Lesson 4.5 explores how to recover the Cartesian equation from a
+parametric form and what is gained or lost.
+\end{skillbox}
+
+\end{document}

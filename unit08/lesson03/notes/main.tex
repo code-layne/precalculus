@@ -1,0 +1,192 @@
+%! Parametrically Defined Circles and Lines — Unit 8, Lesson 8.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 4.4.A} --- Express the motion of a point around a
+    circle parametrically by applying transformations to
+    $(x(t),\,y(t)) = (\cos t,\,\sin t)$, and parametrize the segment
+    between two given points using an initial position and constant
+    rates of change. \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{unit circle parametrization}]
+    The equations $x(t) = \cos t$, $y(t) = \sin t$, $0 \le t \le 2\pi$
+    model one full \underline{\hspace{3cm}} revolution starting at
+    \underline{\hspace{2cm}} and centered at the \underline{\hspace{2cm}}.
+
+  \item[\termblanklong{radius / center}]
+    In $(h + r\cos t,\; k + r\sin t)$: $r$ is the
+    \underline{\hspace{2cm}} and $(h,\,k)$ is the
+    \underline{\hspace{2cm}} of the circular path.
+
+  \item[\termblanklong{orientation}]
+    Using $(\cos t,\,\sin t)$ gives \underline{\hspace{3cm}} motion.
+    Replacing $t$ with $-t$ gives \underline{\hspace{3cm}} motion.
+
+  \item[\termblanklong{linear parametrization}]
+    The parametrization $x(t) = x_1 + (x_2-x_1)t$,
+    $y(t) = y_1 + (y_2-y_1)t$, $0\le t\le 1$, traces the segment from
+    \underline{\hspace{2.5cm}} to \underline{\hspace{2.5cm}}.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} A Ferris wheel has radius 30 ft with its center
+35 ft above the ground. A rider boards at the rightmost seat.
+
+\vspace{4pt}
+\textbf{Q1.} What are the rider's starting coordinates $(x,\,y)$ relative
+to a center at the origin?
+\writeline
+
+\textbf{Q2.} As the wheel turns counterclockwise, what do you expect
+to happen to the rider's height $y$?
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 1 — Unit Circle
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 1: Unit Circle Parametrization (EK 4.4.A.1)}
+
+\textbf{Definition:} The parametric function
+$(x(t),\,y(t)) = (\cos t,\,\sin t)$, $0 \le t \le 2\pi$, traces the
+\underline{\hspace{3cm}} circle exactly \underline{\hspace{2cm}} time,
+moving \underline{\hspace{3cm}}.
+
+\vspace{6pt}
+\textbf{Complete the table:}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t) = \cos t$ & $y(t) = \sin t$ & $(x,\;y)$ \\
+\hline
+$0$          & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$\pi/2$      & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$\pi$        & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$3\pi/2$     & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$2\pi$       & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 2 — Transformed Circles
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 2: Transformations of the Circle (EK 4.4.A.2)}
+
+\textbf{General form:}
+\[
+  x(t) = \underline{\hspace{1cm}} + \underline{\hspace{0.8cm}}\cos t, \qquad
+  y(t) = \underline{\hspace{1cm}} + \underline{\hspace{0.8cm}}\sin t, \qquad
+  0 \le t \le 2\pi
+\]
+\begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+  \item Center: \underline{\hspace{3cm}} \quad Radius: \underline{\hspace{2cm}}
+  \item Counterclockwise when $t$ increases \quad / \quad Clockwise: replace $t$
+    with \underline{\hspace{1.5cm}}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Ferris Wheel Example.} Radius 30 ft, center at $(0,\,35)$, counterclockwise:
+
+\vspace{4pt}
+$x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
+
+\vspace{6pt}
+Evaluate at $t = \pi/2$: \quad $x(\pi/2) = $ \blank{2cm}, \quad $y(\pi/2) = $ \blank{2cm}
+
+The rider is at position \blank{3cm} after a quarter turn.
+
+\vspace{6pt}
+\textbf{Clockwise version} (replace $t$ with $-t$):
+
+$x(t) = $ \blank{4cm} \qquad $y(t) = $ \blank{4cm}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Notes Box 3 — Linear Segment
+%----------------------------------------------------------------------
+\begin{notesbox}{LO 4.4.A --- Part 3: Linear Parametrization (EK 4.4.A.3)}
+
+\textbf{Segment from $(x_1,\,y_1)$ to $(x_2,\,y_2)$:}
+\[
+  x(t) = x_1 + (x_2-x_1)\,t, \qquad y(t) = y_1 + (y_2-y_1)\,t, \qquad 0 \le t \le 1
+\]
+At $t=0$: position is \underline{\hspace{2.5cm}}.
+At $t=1$: position is \underline{\hspace{2.5cm}}.
+At $t=0.5$: position is the \underline{\hspace{2cm}}.
+
+\vspace{6pt}
+\textbf{Example:} Segment from $(2,\,5)$ to $(6,\,1)$.
+
+\vspace{4pt}
+$x(t) = 2 + \bigl($ \blank{1.2cm} $\bigr)t = $ \blank{3.2cm} \qquad
+$y(t) = 5 + \bigl($ \blank{1.2cm} $\bigr)t = $ \blank{3.2cm}
+
+\vspace{6pt}
+\textbf{Complete the table:}
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$t$ & $x(t)$ & $y(t)$ & $(x,\;y)$ \\
+\hline
+$0$   & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$0.5$ & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+$1$   & \blank{1.8cm} & \blank{1.8cm} & \blank{2.4cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{notesbox}
+
+\end{document}

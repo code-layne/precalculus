@@ -1,4 +1,4 @@
-%! Rational Functions and Zeros — Unit 1, Lesson 1.8 — Group Activity (Answer Key)
+%! Function Model Construction and Application — Unit 1, Lesson 1.8 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,16 +9,13 @@
 \pageheader{Unit 1, Lesson 1.8}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 
-\begin{scenariobox}[Break-Even Analysis]{sky}
+\begin{scenariobox}[The Engineering Design Challenge]{sky}
 \small
-A factory models its profit (or loss) per unit using the rational function
-\[
-  r(x) = \frac{x^2 - 7x + 10}{x - 4},
-\]
-where $x > 0$ represents units produced (in hundreds) and $x \ne 4$.
-Positive values of $r(x)$ mean profit; negative values mean loss.
+Engineers use function models to make decisions. In each scenario below, you will
+\textbf{construct a model} and \textbf{apply it} to answer design questions.
+Work through your assigned tier. If you finish early, try the next tier.
 \end{scenariobox}
 
 \vspace{0.08in}
@@ -27,35 +24,45 @@ Positive values of $r(x)$ mean profit; negative values mean loss.
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
+\textbf{Scenario:} A rectangular solar panel array has one side against a wall.
+The available border is 60 m. The area function has already been set up for you:
+\[
+  A(w) = -2w^2 + 60w, \quad 0 < w < 30
+\]
+where $w$ is the width in meters and $A$ is the area in square meters.
+
 \begin{enumerate}[itemsep=10pt]
+  \item Evaluate the model at each width. Show your substitution.
 
-  \item Factor the numerator $x^2 - 7x + 10$ completely.
+        \medskip
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|p{5cm}|c|}
+        \hline
+        $w$ (m) & Work & $A(w)$ (m$^2$) \\
+        \hline
+        5  & $-2(25)+300$ & \ans{250} \\
+        \hline
+        10 & $-2(100)+600$ & \ans{400} \\
+        \hline
+        15 & $-2(225)+900$ & \ans{450} \\
+        \hline
+        25 & $-2(625)+1500$ & \ans{250} \\
+        \hline
+        \end{tabular}
 
-        $x^2 - 7x + 10 = $ \ans{$(x - 2)(x - 5)$}
+  \item Compute the average rate of change of $A$ on the interval $[5, 15]$.
 
-  \item At what values of $x$ does $r(x) = 0$?
+        \vspace{0.06in}
+        $\text{ARC} = \dfrac{A(15) - A(5)}{15 - 5} = \dfrac{{\color{keyred}\mathbf{200}}}{{\color{keyred}\mathbf{10}}} = {}$ \ans{20}
 
-        $x = $ \ans{$2$ and $x = 5$}
+        \vspace{0.04in}
+        Units: \ans{m$^2$ per m (square meters per meter of width)}
 
-  \item Is $x = 4$ in the domain of $r$? \quad \textbf{No} (circle).
+  \item Based on your table in part (1), between which two widths does the maximum area
+        appear to occur?
 
-        Why? \ansline{$x = 4$ makes the denominator $x - 4 = 0$, so $r(4)$ is undefined.}
-
-  \item Critical values on the number line: numerator zeros $x = 2$ (\textbullet) and $x = 5$ (\textbullet);
-        denominator zero $x = 4$ (open dot).
-
-        \vspace{0.18in}
-        \begin{center}
-        \begin{tikzpicture}
-          \draw[->] (-0.5,0) -- (7.5,0) node[right] {$x$};
-          \foreach \x in {0,1,2,3,4,5,6,7} {
-            \draw (\x,0.08) -- (\x,-0.08) node[below] {\small\x};
-          }
-          \fill (2,0) circle (3pt);
-          \fill (5,0) circle (3pt);
-          \draw (4,0) circle (3pt);
-        \end{tikzpicture}
-        \end{center}
+        \vspace{0.06in}
+        Between $w = $ \ans{10} m and $w = $ \ans{25} m \ans{(vertex at $w=15$; maximum is 450 m$^2$)}.
 \end{enumerate}
 \end{tcolorbox}
 
@@ -65,55 +72,48 @@ Positive values of $r(x)$ mean profit; negative values mean loss.
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
+\textbf{Scenario:} A storage company charges based on distance from a central depot.
+Testing shows that the shipping cost $C$ (in dollars) is inversely proportional to the
+square of the distance $d$ (in km) from the depot, with proportionality constant $k = 2000$.
+
 \begin{enumerate}[itemsep=10pt]
+  \item Write the rational function model $C(d)$.
 
-  \item Domain restriction: \ans{$x = 4$} \qquad
-        Numerator zeros: \ans{$x = 2,\; x = 5$} \qquad
-        Zeros of $r$: \ans{$x = 2$ and $x = 5$}
+        \vspace{0.06in}
+        $C(d) = $ \ans{$\dfrac{2000}{d^2}$}
 
-  \item Sign chart:
+  \item State the domain restriction and explain it in context.
 
-        \medskip
-        \begin{center}
-        \renewcommand{\arraystretch}{1.6}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        \textbf{Interval} & $(0,\,2)$ & $(2,\,4)$ & $(4,\,5)$ & $(5,\,\infty)$ \\
-        \hline
-        Test value  & \ans{$1$}  & \ans{$3$}  & \ans{$4.5$} & \ans{$6$} \\
-        \hline
-        Sign of $r$ & \ans{$(+)$} & \ans{$(-)$} & \ans{$(-)$} & \ans{$(+)$} \\
-        \hline
-        \end{tabular}
-        \end{center}
+        \vspace{0.06in}
+        Domain: \ans{$d > 0$} \quad because \ansline{distance cannot be zero or negative --- the depot must exist at a positive distance from the delivery point.}
 
-        \textit{Check at $x=1$: $r(1) = (1-2)(1-5)/(1-4) = (-1)(-4)/(-3) = 4/(-3) < 0$\ldots}
-        \textit{Wait --- recheck: $(1-7+10)/(1-4) = 4/(-3) < 0$. Hmm.}
-
-        \textit{Correction: at $x = 1$ (in $(0,2)$): $r(1) = (1-7+10)/(1-4) = 4/(-3) \approx -1.33 < 0$, so $(0,2)$ is $(-)$.
-        At $x = 3$ (in $(2,4)$): $r(3)=(9-21+10)/(3-4) = -2/(-1) = 2 > 0$, so $(2,4)$ is $(+)$.
-        At $x = 4.5$: $r(4.5) = (20.25-31.5+10)/(0.5) = -1.25/0.5 < 0$, so $(4,5)$ is $(-)$.
-        At $x = 6$: $r(6) = (36-42+10)/(2) = 4/2 = 2 > 0$, so $(5,\infty)$ is $(+)$.}
+  \item Complete the table and describe the trend.
 
         \medskip
-        \begin{center}
-        \renewcommand{\arraystretch}{1.6}
+        \renewcommand{\arraystretch}{1.5}
         \begin{tabular}{|c|c|c|c|c|}
         \hline
-        \textbf{Interval} & $(0,\,2)$ & $(2,\,4)$ & $(4,\,5)$ & $(5,\,\infty)$ \\
+        $d$ (km) & 2 & 4 & 10 & 20 \\
         \hline
-        Test value  & \ans{$1$}  & \ans{$3$}  & \ans{$4.5$} & \ans{$6$} \\
-        \hline
-        Sign of $r$ & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+        $C(d)$ (\$) & \ans{500} & \ans{125} & \ans{20} & \ans{5} \\
         \hline
         \end{tabular}
-        \end{center}
 
-  \item $r(x) \geq 0$ on intervals where sign is $(+)$, plus the zeros $x = 2$ and $x = 5$:
+        \vspace{0.06in}
+        Trend: As distance increases, cost \ans{decreases (approaches 0)}.
 
-        Solution: \ans{$[2,\,4)\cup[5,\,\infty)$}
+  \item Compute the average rate of change of $C$ on $[2, 4]$. Include units.
 
+        \vspace{0.06in}
+        $\text{ARC} = \dfrac{C(4) - C(2)}{4 - 2} = \dfrac{{\color{keyred}\mathbf{-375}}}{{\color{keyred}\mathbf{2}}} = {}$ \ans{$-187.50$}
+
+        Units: \ans{dollars per km (\$/km)}
 \end{enumerate}
+
+\begin{teachernote}
+ARC $= -187.50$ \$/km: the negative sign indicates cost decreases as distance increases.
+Students should note this is the average decrease, not a steady rate (the model is not linear).
+\end{teachernote}
 \end{tcolorbox}
 
 \vspace{0.08in}
@@ -122,36 +122,57 @@ Positive values of $r(x)$ mean profit; negative values mean loss.
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
+\textbf{Scenario:} An engineer collects three data points for a project's profit $P$
+(in thousands of dollars) versus number of units produced $x$ (in hundreds):
+
+\medskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 \\
+\hline
+$P(x)$ & $-1$ & 5 & 5 \\
+\hline
+\end{tabular}
+
 \begin{enumerate}[itemsep=10pt]
+  \item Assume $P(x) = ax^2 + bx + c$. Substitute each data point to write a system
+        of three equations in $a$, $b$, $c$.
 
-  \item $s(x) = \dfrac{x^2-4}{x^2-9} = \dfrac{(x-2)(x+2)}{(x-3)(x+3)}$.
+        \vspace{0.06in}
+        $(1,-1)$: \ans{$a + b + c = -1$}
 
-        Domain restrictions: \ans{$x = 3$ and $x = -3$} \qquad
-        Numerator zeros: \ans{$x = 2$ and $x = -2$} \qquad
-        Zeros of $s$: \ans{$x = 2$ and $x = -2$}
+        \vspace{0.04in}
+        $(2, 5)$: \ans{$4a + 2b + c = 5$}
 
-  \item Sign chart (test values: $x = -4,\,-2.5,\,0,\,2.5,\,4$):
+        \vspace{0.04in}
+        $(3, 5)$: \ans{$9a + 3b + c = 5$}
 
-        \medskip
-        \begin{center}
-        \renewcommand{\arraystretch}{1.6}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        \textbf{Interval} & $(-\infty,-3)$ & $(-3,-2)$ & $(-2,2)$ & $(2,3)$ & $(3,\infty)$ \\
-        \hline
-        Test value  & \ans{$-4$} & \ans{$-2.5$} & \ans{$0$} & \ans{$2.5$} & \ans{$4$} \\
-        \hline
-        Sign of $s$ & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
-        \hline
-        \end{tabular}
-        \end{center}
+  \item Solve the system. Show your elimination or substitution steps.
 
-  \item $s(x) > 0$ (strict inequality, so zeros $x = \pm 2$ are excluded):
+        \vspace{0.08in}
+        \begin{teachernote}
+        Subtract eq1 from eq2: $3a + b = 6$. Subtract eq2 from eq3: $5a + b = 0$.
+        Subtract: $2a = -6 \Rightarrow a = -3$. Then $b = 0 - 5(-3) = 15$. Then $c = -1 - (-3) - 15 = -13$.
+        \end{teachernote}
 
-        Solution: \ans{$(-\infty,\,-3)\cup(-2,\,2)\cup(3,\,\infty)$}
+        $a = $ \ans{$-3$} \quad $b = $ \ans{$15$} \quad $c = $ \ans{$-13$}
 
-  \item \ansline{No. $x = 3$ and $x = -3$ are NOT zeros of $s$ because they are not in the domain of $s$; $s(3)$ and $s(-3)$ are undefined, so the function cannot equal zero at those values.}
+  \item Write the complete quadratic model.
 
+        \vspace{0.06in}
+        $P(x) = $ \ans{$-3x^2 + 15x - 13$}
+
+  \item State one assumption this model makes that may not hold in reality.
+
+        \vspace{0.06in}
+        \ansline{The model assumes profit follows a perfect quadratic pattern; real-world profit may fluctuate irregularly or not be symmetric.}
+
+  \item Predict the profit when $x = 4$ (400 units). Is this prediction inside or outside
+        the range of the data?
+
+        \vspace{0.06in}
+        $P(4) = -3(16) + 15(4) - 13 = -48 + 60 - 13 = $ \ans{$-1$ thousand dollars}. This is \ans{outside (extrapolation beyond)} the data range.
 \end{enumerate}
 \end{tcolorbox}
 

@@ -1,0 +1,185 @@
+%! Conic Sections — Unit 8, Lesson 8.5 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.5}{Guided Notes}
+\namedateperiod
+
+\vspace{0.10in}
+
+%----------------------------------------------------------------------
+% Objectives
+%----------------------------------------------------------------------
+\begin{objectivebox}
+\textbf{I will be able to\ldots}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \textbf{LO 4.6.A} --- Write the standard form equation of a parabola,
+    ellipse (including circles), or hyperbola given key features; and identify
+    those features from a given equation. \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Vocabulary
+%----------------------------------------------------------------------
+\begin{vocabbox}
+\begin{description}[leftmargin=0pt, itemsep=6pt]
+  \item[\termblanklong{conic section}]
+    A curve formed by the intersection of a plane and a double cone:
+    a \underline{\hspace{2cm}}, an \underline{\hspace{2cm}}, or a
+    \underline{\hspace{2cm}}.
+
+  \item[\termblanklong{vertex (parabola)}]
+    The point $(h, k)$ in the standard form $y - k = a(x-h)^2$ or
+    $x - h = a(y-k)^2$. It is the \underline{\hspace{2.5cm}} point of the parabola.
+
+  \item[\termblanklong{center (ellipse / hyperbola)}]
+    The point $(h, k)$ at the \underline{\hspace{2.5cm}} of an ellipse or hyperbola;
+    read from $h$ and $k$ in the standard form.
+
+  \item[\termblanklong{semi-major / semi-minor axis}]
+    For an ellipse: the larger radius is $a$ (\underline{\hspace{2cm}}) and the
+    smaller is $b$ (\underline{\hspace{2cm}}).
+
+  \item[\termblanklong{asymptote (hyperbola)}]
+    Lines the hyperbola approaches but never reaches:
+    $y - k = \pm\dfrac{\;\;}{\;\;}(x - h)$. \quad Fill in $b$ over $a$.
+\end{description}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Hook
+%----------------------------------------------------------------------
+\begin{hookbox}
+\textbf{Entry Question:} Planetary orbits, telescope mirrors, and navigation
+systems all use conic sections.
+
+\vspace{4pt}
+\textbf{Q1.} Name one real-world application of a parabola and one of an ellipse.
+\writelines{2}
+
+\textbf{Q2.} What do you predict all three conic shapes have in common
+algebraically?
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Section 1 — Parabolas
+%----------------------------------------------------------------------
+\begin{notesbox}{Section 1 --- Parabolas (LO 4.6.A, EK 4.6.A.1)}
+
+\textbf{Standard forms:}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.38\linewidth} p{0.30\linewidth} X @{}}
+\textbf{Form} & \textbf{Axis} & \textbf{Direction} \\
+\midrule
+$y - k = a(x - h)^2$ & vertical & $a > 0$: opens \underline{\hspace{1.2cm}};
+  $a < 0$: opens \underline{\hspace{1.2cm}} \\[4pt]
+$x - h = a(y - k)^2$ & horizontal & $a > 0$: opens \underline{\hspace{1.2cm}};
+  $a < 0$: opens \underline{\hspace{1.2cm}} \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Worked Example:}\quad $y + 3 = 2(x - 1)^2$
+
+Rewrite: $y - (\underline{\phantom{-3}}) = 2(x - \underline{\phantom{1}})^2$
+
+Vertex: \blank{3cm} \quad $a = \blank{1.2cm}$, so opens: \blank{2cm}
+
+\vspace{10pt}
+\textbf{Student Practice:}\quad $y - 5 = -(x + 2)^2$
+
+Vertex: \blank{3cm} \quad $a = \blank{1.2cm}$, so opens: \blank{2cm}
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Section 2 — Ellipses and Circles
+%----------------------------------------------------------------------
+\begin{notesbox}{Section 2 --- Ellipses and Circles (LO 4.6.A, EK 4.6.A.2)}
+
+\textbf{Standard form of an ellipse:}
+\[
+  \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+\]
+
+\textbf{Worked Example:}\quad
+$\dfrac{(x+1)^2}{16} + \dfrac{(y-3)^2}{9} = 1$
+
+\vspace{6pt}
+Center: \blank{3cm} \quad
+$a^2 = \blank{1.2cm} \Rightarrow a = \blank{1.2cm}$ (horizontal) \quad
+$b^2 = \blank{1.2cm} \Rightarrow b = \blank{1.2cm}$ (vertical)
+
+\vspace{10pt}
+\textbf{Circle (special case):}\quad When $a = b = r$, the equation becomes
+
+\[
+  (x - h)^2 + (y - k)^2 = r^2
+\]
+
+\textbf{Student Practice:}\quad
+$\dfrac{(x-3)^2}{25} + \dfrac{(y+1)^2}{4} = 1$
+
+Center: \blank{3cm} \quad $a = \blank{1.2cm}$ \quad $b = \blank{1.2cm}$
+
+\end{notesbox}
+
+\vspace{0.08in}
+
+%----------------------------------------------------------------------
+% Section 3 — Hyperbolas
+%----------------------------------------------------------------------
+\begin{notesbox}{Section 3 --- Hyperbolas (LO 4.6.A, EK 4.6.A.3)}
+
+\textbf{Standard forms:}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+\textbf{Form} & \textbf{Opens} \\
+\midrule
+$\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1$ &
+  left and right ($x$-term positive) \\[4pt]
+$\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1$ &
+  up and down ($y$-term positive) \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Asymptotes:}\quad $y - k = \pm\dfrac{b}{a}(x - h)$
+
+\vspace{10pt}
+\textbf{Worked Example:}\quad
+$\dfrac{(x-2)^2}{9} - \dfrac{(y+1)^2}{4} = 1$
+
+Center: \blank{3cm} \quad $a = \blank{1.2cm}$ \quad $b = \blank{1.2cm}$ \quad
+Opens: \blank{2cm}
+
+Asymptotes: $y + 1 = \pm\blank{2.5cm}(x - 2)$
+
+\vspace{10pt}
+\textbf{Student Practice:}\quad
+$\dfrac{(y+3)^2}{16} - \dfrac{(x-1)^2}{9} = 1$
+
+Center: \blank{3cm} \quad $a = \blank{1.2cm}$ \quad $b = \blank{1.2cm}$ \quad
+Opens: \blank{2cm}
+
+Asymptotes: $y + 3 = \pm\blank{2.5cm}(x - 1)$
+
+\end{notesbox}
+
+\end{document}

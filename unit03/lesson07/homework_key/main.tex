@@ -1,4 +1,4 @@
-%! Sinusoidal Function Context and Data Modeling — Unit 3, Lesson 3.7 — Homework (Answer Key)
+%! Rational Equations and Inequalities — Unit 3, Lesson 3.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,106 +7,15 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.7}{Homework --- Answer Key}
-\namedateperiod
+% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
+% in the lesson plan as \begin{teachernote}[Homework], never in a key.
 
-\vspace{0.10in}
 
-\begin{notesbox}{Problems 1--6 --- Key}
+\vspace{0.15in}
 
-\textbf{1.}\quad Daylight hours data.
-
-\vspace{4pt}
-\begin{center}
-\renewcommand{\arraystretch}{1.35}
-\small
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-Month $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
-\hline
-$L(x)$ (hr) & 9.0 & 10.2 & 11.8 & 13.3 & 14.5 & 15.0 & 14.5 & 13.3 & 11.8 & 10.2 & 9.0 & 8.5 \\
-\hline
-\end{tabular}
-\end{center}
-
-\vspace{4pt}
-(a)\quad Max $= $ \ans{15.0} at month \ans{6};
-\quad Min $= $ \ans{8.5} at month \ans{12}
-
-\vspace{4pt}
-(b)\quad $A = \dfrac{15.0 - 8.5}{2} = $ \ans{3.25}
-\quad $D = \dfrac{15.0 + 8.5}{2} = $ \ans{11.75}
-
-\vspace{4pt}
-(c)\quad $k = $ \ans{12} months \qquad $B = \dfrac{2\pi}{12} = $ \ans{$\tfrac{\pi}{6} \approx 0.524$}
-
-\vspace{4pt}
-(d)\quad $L(x) = $ \ans{$3.25\cos\!\left(\tfrac{\pi}{6}(x - 6)\right) + 11.75$}
-
-\vspace{4pt}
-(e)\quad $L(3.5) = 3.25\cos\!\left(\tfrac{\pi}{6}(3.5-6)\right)+11.75 = 3.25\cos\!\left(-\tfrac{5\pi}{12}\right)+11.75 \approx 3.25(0.259)+11.75 \approx $ \ans{12.59 hr}
-
-\vspace{0.12in}
-\textbf{2.} Max $= 20$, min $= 4$, period $= 10$, max at $x = 2$.
-
-\vspace{4pt}
-(a)\quad $A = \dfrac{20-4}{2} = $ \ans{8} \quad $D = \dfrac{20+4}{2} = $ \ans{12}
-
-\vspace{4pt}
-(b)\quad $B = \dfrac{2\pi}{10} = $ \ans{$\tfrac{\pi}{5}$}
-
-\vspace{4pt}
-(c)\quad $w(x) = $ \ans{$8\cos\!\left(\tfrac{\pi}{5}(x-2)\right)+12$}
-
-\vspace{4pt}
-(d)\quad $w(7) = 8\cos\!\left(\tfrac{\pi}{5}(7-2)\right)+12 = 8\cos(\pi)+12 = 8(-1)+12 = $ \ans{4}
-
-\vspace{0.12in}
-\textbf{3.} $h(t) = 6\sin\!\left(\tfrac{\pi}{5}(t - 2.5)\right) + 8$
-
-\vspace{4pt}
-(a)\quad \ans{Amplitude $= 6$; midline $= 8$ m; period $= \tfrac{2\pi}{\pi/5} = 10$ sec; phase shift $= 2.5$ sec (right).}
-
-\vspace{4pt}
-(b)\quad \ans{Maximum height $= 8 + 6 = 14$ m; minimum height $= 8 - 6 = 2$ m.}
-
-\vspace{4pt}
-(c)\quad \ansline{At $t = 0$ the point is at its minimum height of 2 m --- it is at the lowest point of the ride at the start of observation.}
-
-\vspace{0.12in}
-\textbf{4. (AP-Style MC)}\quad $A = \dfrac{50-10}{2} = 20$; $D = \dfrac{50+10}{2} = 30$.
-
-Answer: \ans{(C)} \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-
-\vspace{0.12in}
-\textbf{5. (AP-Style MC)}\quad $B = \tfrac{\pi}{3}$, so $k = \tfrac{2\pi}{\pi/3} = 6$. Max $= 4 + 7 = 11$.
-
-Answer: \ans{(B)} \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-
+% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
+\begin{notesbox}{Homework --- Key}
+\ansline{TODO: answer}
 \end{notesbox}
-
-\vspace{0.08in}
-
-\begin{extensionbox}
-\textbf{Extension (Optional):}
-
-\vspace{4pt}
-(a)\quad Sample regression equation (Desmos output will vary slightly):
-\ansline{Approximately $L(x) \approx 3.25\sin(0.524x - 1.571) + 11.75$, or equivalently in cosine form.}
-
-\vspace{4pt}
-(b)\quad \ansline{The regression amplitude ($a \approx 3.25$) and vertical shift ($d \approx 11.75$) should match the hand-computed values closely, because those are determined by max and min. Small differences arise because the regression fits all 12 data points simultaneously, minimizing total squared error rather than using only the max/min pair. Any asymmetry in the data (the slight dip to 8.5 in December vs.\ 9.0 in January) will shift the regression parameters slightly.}
-\end{extensionbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=navylight, colframe=navy, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm]
-\small\textbf{Preview --- Lesson 3.8: The Tangent Function}\\
-Sine and cosine model bounded, wave-like phenomena that oscillate between a
-maximum and minimum. In Lesson 3.8 we'll explore the \emph{tangent} function ---
-a periodic function that has no maximum or minimum and shoots off to $\pm\infty$
-in every period. Come ready to connect tangent to the unit circle ratio
-$\tan\theta = \sin\theta / \cos\theta$.
-\end{tcolorbox}
 
 \end{document}
