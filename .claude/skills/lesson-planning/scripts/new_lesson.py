@@ -149,16 +149,12 @@ def main() -> None:
     (dest / "images").mkdir(parents=True, exist_ok=True)
 
     if not args.no_plan:
-        if "warmup" in components and "warmup" in prefab:
-            # Prefab warm-up lives at warmup/main.pdf in the source tree, so the thumbnail
-            # resolves directly with no dependency on build order.
-            spiral = r"            \includegraphics[width=\linewidth,page=1]{warmup/main}"
-        else:
-            # Authored (or no) warm-up: it compiles to target/, so there is no source PDF to
-            # embed — keep the spiral review text-only (AP Stats style).
-            spiral = ("            % TODO: spiral-review thumbnail. Authored warm-ups compile to\n"
-                      "            % target/, so leave this text-only (as in AP Stats) unless you\n"
-                      "            % keep a source PDF in the warmup/ directory to embed.")
+        # The spiral review is ALWAYS text-only. Warm-up thumbnails via
+        # \includegraphics{warmup/main} are not used in this course or any other:
+        # they couple the plan to build order, break whenever the warm-up is
+        # authored rather than prefab, and add nothing a sentence doesn't say.
+        spiral = ("            % TODO: list the prerequisite skills this warm-up reviews,\n"
+                  "            % in words. Do not embed a warm-up thumbnail.")
         write(dest / "main.tex",
               render("lesson_plan.tex", {**base, "UNITTITLE": args.unit_title,
                                          "COURSEMACROS": course_macros, "SPIRALWARMUP": spiral}),
