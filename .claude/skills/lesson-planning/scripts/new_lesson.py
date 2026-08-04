@@ -108,7 +108,6 @@ def main() -> None:
     p.add_argument("--prefab", default="", help="comma list of dirs that will hold a dropped-in "
                                                 "prefab PDF (placed as <dir>/main.pdf), e.g. warmup,warmup_key")
     p.add_argument("--course", help="course name for cover/slides (default: detected or 'TODO Course')")
-    p.add_argument("--year", default="2026--2027", help="school year (used only if not defined in shared/)")
     p.add_argument("--meeting-length", default="55 minutes", help="meeting length (used only if not in shared/)")
     p.add_argument("--no-plan", action="store_true", help="do not scaffold the lesson-plan main.tex")
     p.add_argument("--force", action="store_true", help="overwrite existing files")
@@ -137,7 +136,6 @@ def main() -> None:
     else:
         course_macros = (
             f"\\newcommand{{\\CourseName}}{{{course_name}}}\n"
-            f"\\newcommand{{\\SchoolYear}}{{{args.year}}}\n"
             f"\\newcommand{{\\MeetingLength}}{{{args.meeting_length}}}\n"
         )
 

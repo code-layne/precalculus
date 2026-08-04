@@ -1,4 +1,4 @@
-# Precalculus — Course Plan (2026–2027)
+# Precalculus — Course Plan
 
 **Track:** non-honors. An honors precalculus course runs separately; this course's job is
 to cover the fundamentals of precalculus thoroughly so a student moves comfortably into a

@@ -29,7 +29,8 @@ General rules:
 order (same skeleton for review and primary-content lessons; review lessons simply carry no
 AP tags and list review topics):
 
-1. **Title block** — `\CourseName: \SchoolYear` + `\UnitNumberName \LessonNumberName`.
+1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. No school year
+   anywhere in the title block.
 2. **Primary Objective** — a `tcolorbox` (sky/navy). One or two sentences. For AP courses,
    end with the governing big idea, e.g. `(Big Idea: VAR)`.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
