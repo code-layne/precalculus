@@ -30,25 +30,25 @@
 \newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
 \newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
 \newcommand{\termblank}[1]{%
-  \noindent\textbf{\textcolor{navy}{#1:}}\quad\blank{6.5cm}\\[1pt]%
+  \noindent\textbf{\textcolor{plum}{#1:}}\quad\blank{6.5cm}\\[1pt]%
   \writeline\\[2pt]}
 % VOCABPAR: the \noindent below is a NO-OP mid-paragraph, so a vocabbox that opens
 % with an intro sentence runs that sentence into the first term. Fix it per-lesson
 % (\par\vspace{2pt} after the intro, in the blank AND the key), not here — patching
 % it would re-flow every already-verified lesson. See references/conventions.md.
 \newcommand{\termblanklong}[1]{%
-  \noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \noindent\textbf{\textcolor{plum}{#1:}}\\[1pt]%
   \writeline\\[1pt]\writeline\\[3pt]}
 
 % ── Page header: \pageheader{Unit X, Lesson Y.Z}{Document Type} ───────────────
-% Produces the full-width navy colorbox header used on all student documents.
+% Produces the full-width plum colorbox header used on all student documents.
 \newcommand{\pageheader}[2]{%
     \noindent
-    \colorbox{navy}{%
+    \colorbox{plum}{%
         \parbox{\dimexpr\linewidth}{%
             \vspace{6pt}%
             \color{white}\textbf{\large Precalculus \hfill #1}\\[2pt]%
-            {\color{skymid}\small\textbf{#2}}%
+            {\color{lilacmid}\small\textbf{#2}}%
             \vspace{6pt}%
         }%
     }%
