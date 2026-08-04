@@ -7,105 +7,187 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Group Activity --- Answer Key}
-\namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Roller Coaster Heights]{sky}
-A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
-by a polynomial function $h(t)$. A table of sample values is given below.
+\begin{scenariobox}[The Drone Survey]{plumlight}
+\small
+A survey drone flies over a canyon for six minutes. The polynomial function
+$a$ gives its altitude in feet $x$ minutes after takeoff, on the restricted
+domain $[0, 6]$. Every tier uses this same table and pre-drawn graph --- no
+drawing required.
 
-\vspace{6pt}
+\smallskip
+\begin{center}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
-\rowcolor{sky}
-$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
-\midrule
-$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
-\end{tabularx}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ (minutes) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+$a(x)$ (feet) & 200 & 400 & 240 & 100 & 210 & 380 & 500 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm, y=0.62cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,5);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$ (min)};
+  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $a(x)$ (ft)};
+  \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
+  \node[left] at (0,1) {\small 100};
+  \node[left] at (0,2) {\small 200};
+  \node[left] at (0,3) {\small 300};
+  \node[left] at (0,4) {\small 400};
+  \node[left] at (0,5) {\small 500};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,2) (0.5,3.3) (1,4) (1.5,3.4) (2,2.4) (2.5,1.4) (3,1)
+     (3.5,1.3) (4,2.1) (4.5,3.0) (5,3.8) (5.5,4.5) (6,5)};
+  \fill[goldacc] (0,2) circle (2.7pt); \node[below right] at (0.05,2) {\small $P$};
+  \fill[goldacc] (1,4) circle (2.7pt); \node[above] at (1,4.15) {\small $Q$};
+  \fill[goldacc] (3,1) circle (2.7pt); \node[below] at (3,0.9) {\small $R$};
+  \fill[goldacc] (6,5) circle (2.7pt); \node[left] at (5.85,4.9) {\small $S$};
+\end{tikzpicture}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Local maximum time(s) and height:
+Read every answer off the labeled graph.
 
-    \ans{$t = 15$ s, $h = 120$ ft; and $t = 35$ s, $h = 50$ ft.}
+\begin{enumerate}[itemsep=6pt]
+  \item The drone is \textbf{climbing} (the graph increases) on
+        \ans{$(0,1)$} and on \ans{$(3,6)$} , and \textbf{descending} on
+        \ans{$(1,3)$} .
 
-    \item Local minimum time(s) and height:
+  \item Point $Q$ is a local \ans{maximum} . Its altitude is \ans{400}
+        feet, reached at $x = $ \ans{1} minutes.
 
-    \ans{$t = 30$ s, $h = 30$ ft; and $t = 50$ s, $h = 10$ ft.}
+  \item Point $R$ is a local \ans{minimum} . Its altitude is \ans{100}
+        feet, reached at $x = $ \ans{3} minutes.
 
-    \item Global maximum height and time:
+  \item The domain stops at $x = 0$ and $x = 6$, and both endpoints are
+        included. Point $P$ is a local \ans{minimum} , and point $S$ is a
+        local \ans{maximum} .
 
-    \ans{120 ft at $t = 15$ s.}
-
-    \item Other apparent zeros:
-
-    \ans{No other zeros are evident from the table; the height does not return to 0 between $t=0$ and $t=60$ (the minimum observed is 10 ft at $t=50$).}
+  \item Over the whole flight, the \textbf{global maximum} altitude is
+        \ans{500} feet and the \textbf{global minimum} altitude is
+        \ans{100} feet.
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- On Level: Rates of Change and Concavity --- Key},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item AROC values:
+Work from the \textbf{table} --- cover the graph until question 5.
 
-    \renewcommand{\arraystretch}{1.4}
-    \begin{tabularx}{\linewidth}{@{} l X X @{}}
-    \rowcolor{sky}
-    Interval & AROC formula & AROC value \\
-    \midrule
-    $[0, 10]$   & $(80-0)/10$      & \ans{8 ft/s}  \\
-    $[10, 15]$  & $(120-80)/5$     & \ans{8 ft/s}  \\
-    $[15, 20]$  & $(80-120)/5$     & \ans{$-8$ ft/s} \\
-    $[20, 30]$  & $(30-80)/10$     & \ans{$-5$ ft/s} \\
-    $[30, 35]$  & $(50-30)/5$      & \ans{4 ft/s}  \\
-    $[35, 40]$  & $(30-50)/5$      & \ans{$-4$ ft/s} \\
-    $[40, 50]$  & $(10-30)/10$     & \ans{$-2$ ft/s} \\
-    $[50, 60]$  & $(0-10)/10$      & \ans{$-1$ ft/s} \\
-    \end{tabularx}
+\begin{enumerate}[itemsep=6pt]
+  \item Complete the AROC row (feet per minute).
 
-    \item AROC transitions from positive to negative:
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ \\
+        \hline
+        \textbf{AROC} & \ans{200} & \ans{$-160$} & \ans{$-140$} & \ans{110} & \ans{170} & \ans{120} \\
+        \hline
+        \end{tabular}
 
-    \ans{Between the $[10,15]$ and $[15,20]$ intervals (near $t=15$) and between the $[30,35]$ and $[35,40]$ intervals (near $t=35$). These indicate local maxima at approximately $t=15$ and $t=35$.}
+  \item The AROC changes from \textbf{positive to negative} between the
+        intervals $[0,1]$ and $[1,2]$, so a local \ans{maximum} must occur at
+        $x = $ \ans{1} .
 
-    \item AROC transitions from negative to positive:
+  \item The AROC changes from \textbf{negative to positive} between the
+        intervals $[2,3]$ and $[3,4]$, so a local \ans{minimum} must occur at
+        $x = $ \ans{3} .
 
-    \ans{Between the $[20,30]$ and $[30,35]$ intervals (near $t=30$). This indicates a local minimum near $t=30$.}
+  \item Now watch the AROCs themselves rather than their signs.
 
-    \item Portion where AROC is increasing and concavity:
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The AROCs are \textbf{smallest} over the interval
+                \ans{$[1,2]$} , so the rate of change turns around near
+                $x = $ \ans{2} --- a point of inflection, where the
+                graph switches from concave \ans{down} to concave
+                \ans{up} .
+          \item The AROCs are \textbf{largest} over the interval
+                \ans{$[4,5]$} , so a second point of inflection lies near
+                $x = $ \ans{5} .
+        \end{enumerate}
 
-    \ans{The AROC increases from $-5$ to $4$ between the $[20,30]$ and $[30,35]$ intervals, suggesting $h$ is concave up near $t=30$. Also, the AROC values over $[40,50]$ and $[50,60]$ are $-2$ and $-1$ --- increasing (becoming less negative) --- suggesting concave up near the end of the ride.}
+  \item Uncover the graph. In one sentence, say why an inflection point is
+        \textit{not} the same thing as a local maximum or minimum.
 
-    \item Possible point of inflection:
-
-    \ans{Near $t=10$--$15$: the AROC is constant at 8, then drops sharply, suggesting the concavity changes around $t=12$--$13$. Also near $t=20$--$30$: AROC goes from $-8$ to $-5$ to $+4$, suggesting an inflection between $t=20$ and $t=35$.}
+        \vspace{0.05in}
+        \ansline{At a local max or min the AROC changes sign --- the drone stops climbing and starts}
+        \ansline{descending. At an inflection point the AROC only stops growing and starts shrinking.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend: Degree and Global Extrema --- Key},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Minimum possible degree:
+\begin{enumerate}[itemsep=6pt]
+  \item A polynomial of degree $n$ can turn around at most $n - 1$ times.
+        Fill in the greatest possible number of local extrema.
 
-    \ans{The table shows 2 local maxima (near $t=15$ and $t=35$) and at least 1 local minimum (near $t=30$), for at least 3 local extrema. By EK 1.4.A.3, between each pair of consecutive distinct real zeros there is at least one local extremum. With zeros at $t=0$ and $t=60$, two extrema between them require at least one additional zero. To accommodate 3 local extrema (2 max, 1 min) and zeros, the minimum degree is \textbf{4} (a degree-4 polynomial can have up to 3 local extrema).}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Degree} & 3 & 4 & 6 \\
+        \hline
+        \textbf{At most how many local extrema?} & \ans{2} & \ans{3} & \ans{5} \\
+        \hline
+        \end{tabular}
 
-    \item Global minimum and EK 1.4.A.4:
+  \item A polynomial $p$ has exactly four distinct real zeros.
 
-    \ans{On the closed interval $[0,60]$, the function does achieve a global minimum (the smallest output value). From the table, the minimum height is 0 ft (at both endpoints). EK 1.4.A.4 states that even-degree polynomials have either a global max or global min; if $h$ has even degree, both ends share the same end behavior, consistent with $h(0)=h(60)=0$. The global minimum on $[0,60]$ is 0 ft.}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $p$ must have at least \ans{3} local extrema. Justify
+                using the rule about zeros.
+
+                \vspace{0.05in}
+                \ansline{Four zeros make three consecutive pairs, and each pair forces at least one turn.}
+          \item Combine that with question 1: the smallest degree $p$ could
+                have is \ans{4} .
+        \end{enumerate}
+
+  \item Consider the drone's model $a$ over \textit{all} real numbers rather
+        than only $[0,6]$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item If $a$ has \textbf{even} degree, must it have a global
+                maximum or a global minimum? \ans{Yes} \; Explain.
+
+                \vspace{0.05in}
+                \ansline{Both ends run the same direction, so the outputs are bounded on one side.}
+          \item If $a$ has \textbf{odd} degree, which of the two does it
+                have? \ans{Neither one} \; Explain using end behavior.
+
+                \vspace{0.05in}
+                \ansline{One end goes to $+\infty$ and the other to $-\infty$, so no output is greatest or least.}
+        \end{enumerate}
+
+  \item \textbf{True or false, with justification:} ``A polynomial with
+        exactly one local extremum must have degree 2.''
+
+        \vspace{0.05in}
+        \ansline{False. Degree 2 is the smallest that works, but $p(x) = x^4$ also has exactly one local}
+        \ansline{extremum (a minimum at $x = 0$). ``At most $n-1$'' is a ceiling, not a count.}
 \end{enumerate}
 \end{tcolorbox}
 

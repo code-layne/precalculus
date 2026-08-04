@@ -7,15 +7,202 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Group Activity}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[Four Polynomials, Two Zeros]{plumlight}
+\small
+Every polynomial below has exactly the same two real zeros, $x = -2$ and
+$x = 1$. Only the \textbf{multiplicities} change --- and that is enough to
+change the picture. All three graphs are pre-drawn; read them, do not draw.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\smallskip
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\textbf{A:} $p(x) = (x+2)(x-1)$ &\quad
+\textbf{B:} $p(x) = (x+2)(x-1)^2$ &\quad
+\textbf{C:} $p(x) = (x+2)^2(x-1)^2$ &\quad
+\textbf{D:} $p(x) = (x+2)^2(x-1)^3$
+\end{tabular}
+\end{center}
+
+\smallskip
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\begin{tikzpicture}[x=0.52cm, y=0.4cm]
+  \draw[linegray, very thin, step=1] (-3,-2) grid (3,3);
+  \draw[->, thick] (-3.3,0) -- (3.3,0) node[below right] {\scriptsize $x$};
+  \draw[->, thick] (0,-2.3) -- (0,3.3);
+  \foreach \x in {-2,-1,1,2} \node[below] at (\x,-0.15) {\scriptsize $\x$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.6,-1.94) (-2.2,-0.51) (-2,0) (-1.5,0.78) (-1,1) (-0.5,0.84)
+     (0,0.5) (0.5,0.16) (1,0) (1.5,0.22) (2,1) (2.4,2.16)};
+  \fill[plum] (-2,0) circle (2pt);
+  \fill[plum] (1,0) circle (2pt);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.52cm, y=0.4cm]
+  \draw[linegray, very thin, step=1] (-3,-2) grid (3,3);
+  \draw[->, thick] (-3.3,0) -- (3.3,0) node[below right] {\scriptsize $x$};
+  \draw[->, thick] (0,-2.3) -- (0,3.3);
+  \foreach \x in {-2,-1,1,2} \node[below] at (\x,-0.15) {\scriptsize $\x$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-3,2) (-2.5,0.875) (-2,0) (-1.5,-0.625) (-1,-1) (-0.5,-1.125)
+     (0,-1) (0.5,-0.625) (1,0) (1.5,0.875) (2,2)};
+  \fill[plum] (-2,0) circle (2pt);
+  \fill[plum] (1,0) circle (2pt);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.52cm, y=0.4cm]
+  \draw[linegray, very thin, step=1] (-3,-2) grid (3,3);
+  \draw[->, thick] (-3.3,0) -- (3.3,0) node[below right] {\scriptsize $x$};
+  \draw[->, thick] (0,-2.3) -- (0,3.3);
+  \foreach \x in {-2,-1,1,2} \node[below] at (\x,-0.15) {\scriptsize $\x$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.7,1.68) (-2.5,0.77) (-2,0) (-1.5,0.39) (-1,1) (-0.5,1.27)
+     (0,1) (0.5,0.39) (1,0) (1.5,0.77) (1.7,1.68)};
+  \fill[plum] (-2,0) circle (2pt);
+  \fill[plum] (1,0) circle (2pt);
+\end{tikzpicture}
+\\[2pt]
+\textbf{Graph I} & \textbf{Graph II} & \textbf{Graph III}
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the table for polynomials A--D. The degree is the sum of the
+        multiplicities.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        & \textbf{Multiplicity of $x = -2$} & \textbf{Multiplicity of $x = 1$} & \textbf{Degree} \\
+        \hline
+        \textbf{A} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        \textbf{B} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        \textbf{C} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        \textbf{D} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        \end{tabular}
+
+  \item Circle the correct word. At $x = 1$, polynomial \textbf{A}
+        \textbf{crosses} / \textbf{is tangent to} the $x$-axis, and
+        polynomial \textbf{B} \textbf{crosses} / \textbf{is tangent to} the
+        $x$-axis.
+
+  \item Which polynomial is tangent to the $x$-axis at \textit{both}
+        intercepts? \quad \blank{2cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Match each graph to one of A--D. One formula is left over.
+
+        \smallskip
+        Graph I: \blank{1.4cm} \qquad Graph II: \blank{1.4cm} \qquad
+        Graph III: \blank{1.4cm} \qquad Left over: \blank{1.4cm}
+
+  \item Justify \textbf{one} of your matches using multiplicity --- not by
+        the shape alone. Name the intercept, its multiplicity, and what the
+        graph does there.
+
+        \vspace{0.05in}
+        \writeline\\
+        \writeline
+
+  \item The leftover formula is not graphed above. Fill in what its graph
+        \textit{would} do:
+
+        \smallskip
+        At $x = -2$ the multiplicity is \blank{1.2cm}, so the graph
+        \blank{2.6cm} the axis. At $x = 1$ the multiplicity is
+        \blank{1.2cm}, so the graph \blank{2.6cm} the axis.
+
+  \item Exactly one of A--D has \textit{both} multiplicities even, so its
+        graph touches the $x$-axis twice and never passes through it. Which
+        one is it, and how do the multiplicities tell you?
+
+        \vspace{0.05in}
+        \writeline\\
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Build a polynomial to order: degree 3, a zero at $x = -3$ of
+        multiplicity 2, a zero at $x = 1$, and $p(0) = 18$.
+
+        \begin{work}
+          p(x) &= a(x+3)^2(x-1) \\
+          p(0) &= a(3)^2(-1) \\
+               &= -9a \\
+           -9a &= 18 \\
+             a &= -2
+        \end{work}
+
+        $p(x) = $ \blank{5cm}
+
+  \item Write a degree-4 polynomial whose graph meets the $x$-axis at exactly
+        two points and \textit{never} crosses it. Then explain, in terms of
+        multiplicity, why your answer works.
+
+        \vspace{0.05in}
+        $p(x) = $ \blank{5cm}
+
+        \vspace{0.05in}
+        \writeline\\
+        \writeline
+
+  \item The table below shows a polynomial $q$ at equally spaced inputs.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+        \hline
+        $q(x)$ & 0 & 2 & 16 & 54 & 128 & 250 \\
+        \hline
+        \end{tabular}
+        \smallskip
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The first constant row of differences is the \blank{1.6cm}
+                differences, so $\deg q = $ \blank{1.2cm}
+          \item $q(0) = 0$, so $x = 0$ is a zero. Could that zero have
+                multiplicity 4? Explain using the degree.
+
+                \vspace{0.05in}
+                \writeline\\
+                \writeline
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

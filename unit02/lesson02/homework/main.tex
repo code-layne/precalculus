@@ -7,134 +7,132 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Homework}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{notesbox}{Homework: Polynomial Functions and Rates of Change}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item For the polynomial $p(x) = x^4 - 8x^2 + 7$:
+\item The graph of a polynomial $f$ on the restricted domain $[0, 5]$ is
+      shown.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] Identify the degree: \blank{2.5cm} \quad Leading coefficient: \blank{2.5cm}
-
-    \item[(b)] A polynomial of degree $n$ can have at most $n - 1$ local extrema.
-    How many local extrema can $p$ have at most?
-
-    \vspace{3pt}
-    \blank{8cm}
-
-    \item[(c)] Based on the degree and leading coefficient, describe the end behavior of $p$.
-
-    \vspace{3pt}
-    \blank{10cm}
-\end{enumerate}
-
-\item A polynomial function $f$ has exactly two local maxima and two local minima.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] What is the minimum number of local extrema $f$ has in total? \blank{2.5cm}
-
-    \item[(b)] What is the minimum possible degree of $f$? Explain.
-
-    \vspace{3pt}
-    \blank{10cm}
-\end{enumerate}
-
-\item The AROC of a function $g$ over $[0, 2]$ is 8 and the AROC over $[2, 4]$ is $-3$.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] What must have occurred near $x = 2$? Circle one and explain.
-
-    \vspace{3pt}
-    \hspace{1em}\textbf{A.} Local maximum \hfill \textbf{B.} Local minimum \hfill \textbf{C.} Point of inflection \hspace{1em}
-
-    \vspace{3pt}
-    Explanation: \blank{9cm}
-
-    \item[(b)] Is the behavior at $x = 2$ consistent with a point of inflection? Explain.
-
-    \vspace{3pt}
-    \blank{10cm}
-\end{enumerate}
-
-\item A polynomial has even degree and a positive leading coefficient.
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-    \item[(a)] Does it have a global maximum, a global minimum, or neither? Circle one.
-
-    \vspace{3pt}
-    \hspace{2em} Global maximum \hfill Global minimum \hfill Neither \hspace{2em}
-
-    \item[(b)] Explain using the end behavior of even-degree polynomials with positive leading coefficient.
-
-    \vspace{3pt}
-    \blank{10cm}
-
-    \vspace{2pt}
-    \blank{10cm}
-\end{enumerate}
-
-\item \textbf{(AP-Style Multiple Choice)} A polynomial function $h$ has values as shown:
-
-\renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tabular}{@{} c|ccccc @{}}
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
-\hline
-$h(x)$ & $-5$ & $3$  & $4$ & $1$ & $-2$ \\
-\end{tabular}
+\begin{tikzpicture}[x=0.8cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (5,5);
+  \draw[->, thick] (0,0) -- (5.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,1) (0.5,3.2) (1,5) (1.5,3.9) (2,2.2) (2.5,0.7) (3,0)
+     (3.5,0.5) (4,1.7) (4.5,3.0) (5,4)};
+  \fill[goldacc] (1,5) circle (2.7pt);
+  \fill[goldacc] (3,0) circle (2.7pt);
+\end{tikzpicture}
 \end{center}
 
-Based on this table, which of the following best describes $h$?
-
-\vspace{4pt}
-\begin{enumerate}[leftmargin=1.5em, itemsep=4pt, label=\Alph*.]
-    \item $h$ has a local maximum near $x = -1$ and a local minimum near $x = 1$.
-    \item $h$ has a local minimum near $x = -1$ and a local maximum near $x = 1$.
-    \item $h$ has a local maximum near $x = 0$ only.
-    \item $h$ has no local extrema on $[-2, 2]$.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Increasing on \blank{1.6cm} and \blank{1.6cm} ; decreasing on
+        \blank{1.6cm} .
+  \item Local maximum value \blank{1.2cm} at $x = $ \blank{1.2cm} ;
+        local minimum value \blank{1.2cm} at $x = $ \blank{1.2cm} .
+  \item Both endpoints are included in the domain. The endpoint $x = 0$ is a
+        local \blank{2cm} and the endpoint $x = 5$ is a local
+        \blank{2cm} .
+  \item Global maximum value \blank{1.2cm} ; global minimum value
+        \blank{1.2cm} .
 \end{enumerate}
 
-\vspace{4pt}
-Answer: \blank{2cm} \quad Reason: \blank{8cm}
+\boxguard[18]
+\item The table gives values of a polynomial $q$.
 
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.10in}
-
-\begin{extensionbox}
-\textbf{Extension (Optional):} For $p(x) = x^4 - 4x^2$, compute the AROC over each interval below.
-Then identify where the AROC transitions from positive to negative (or negative to positive)
-and mark potential local extrema. Also identify a likely point of inflection.
-
+\smallskip
 \renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} l X X @{}}
-\rowcolor{goldbg}
-Interval & AROC $= \dfrac{p(b)-p(a)}{b-a}$ & Value \\
-\midrule
-$[-2, -1]$ & $\dfrac{p(-1)-p(-2)}{-1-(-2)}$ & \blank{2.5cm} \\
-$[-1,  0]$ & $\dfrac{p(0)-p(-1)}{0-(-1)}$   & \blank{2.5cm} \\
-$[ 0,  1]$ & $\dfrac{p(1)-p(0)}{1-0}$        & \blank{2.5cm} \\
-$[ 1,  2]$ & $\dfrac{p(2)-p(1)}{2-1}$        & \blank{2.5cm} \\
-\end{tabularx}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$q(x)$ & 2 & 9 & 14 & 17 & 22 & 31 \\
+\hline
+\end{tabular}
+\smallskip
 
-\vspace{6pt}
-Where do sign changes in AROC occur? \blank{5cm}\quad Local extrema at: \blank{4cm}
+AROCs over $[0,1], [1,2], [2,3], [3,4], [4,5]$: \quad
+\blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
 
-\vspace{4pt}
-Where is AROC switching from increasing to decreasing (or vice versa)?\\[4pt]
-\blank{12cm}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Does $q$ have a local maximum or minimum on $[0,5]$? \quad
+        \textbf{Yes} / \textbf{No} \quad Why? \blank{4.4cm}
+  \item The AROCs decrease and then increase, so a point of inflection lies
+        near $x = $ \blank{1.2cm} .
+  \item There the graph changes from concave \blank{1.4cm} to concave
+        \blank{1.4cm} .
+\end{enumerate}
+
+\item A polynomial $p$ has exactly four distinct real zeros:
+      $x = -3$, $x = 0$, $x = 2$, and $x = 5$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item At least how many local extrema must $p$ have? \blank{1.4cm}
+  \item Explain your answer in one sentence.
+
+        \vspace{0.05in}
+        \writeline
+\end{enumerate}
+
+\item Decide whether each statement \textbf{must} be true. Circle one and give
+      a one-line reason.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item A polynomial of degree 6 has either a global maximum or a global
+        minimum. \quad \textbf{True} / \textbf{False}
+
+        Reason: \blank{9cm}
+
+  \item A polynomial of degree 5 has a global maximum. \quad
+        \textbf{True} / \textbf{False}
+
+        Reason: \blank{9cm}
+
+  \item A polynomial with three distinct real zeros has at least two local
+        extrema. \quad \textbf{True} / \textbf{False}
+
+        Reason: \blank{9cm}
+\end{enumerate}
+
+\item The average rates of change of a polynomial $p$ over the five
+      consecutive intervals $[0,1], [1,2], [2,3], [3,4], [4,5]$ are
+      $8,\ 5,\ 3,\ 4,\ 6$. Which statement must be true?
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $p$ has a local minimum somewhere on $(0, 5)$.
+  \item The graph of $p$ has a point of inflection on $(0, 5)$.
+  \item $p$ has a global maximum at $x = 5$.
+  \item $p$ is decreasing on part of $(0, 5)$.
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+A polynomial $r$ has degree 5 and exactly five distinct real zeros. Use both
+of today's counting rules --- ``at least one turn between consecutive zeros''
+and ``at most $n-1$ turns for degree $n$'' --- to pin down exactly how many
+local extrema $r$ has.
+
+\vspace{0.05in}
+\writelines{2}
 \end{extensionbox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
-\begin{spiralbox}
-\textbf{Preview:} In Lesson 1.5, we will explore the \textbf{zeros of polynomial functions}
-in depth --- including their multiplicities, how multiplicity affects the graph's behavior at
-a zero, and an introduction to \textbf{complex zeros}.
-\end{spiralbox}
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.3}
+Today the zeros of a polynomial were only landmarks --- the fence posts that
+forced a turn between them. In Lesson 2.3, \textit{Polynomial Functions and
+Real Zeros}, the zeros become the main event: how to find them from a factored
+form, and what the graph does when it reaches one.
+\end{notesbox}
 
 \end{document}

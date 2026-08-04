@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
   {\color{white}\textbf{\large Lesson 2.1 \quad Quadratic Functions Revisited}}
 \end{center}
 
@@ -27,8 +27,16 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item I can read the vertex, the axis of symmetry, and the zeros of a
+        quadratic from its standard, vertex, and factored forms, and move
+        from standard form to the vertex using $x = -\dfrac{b}{2a}$.
+  \item I can compute the average rate of change of a linear or quadratic
+        function over an interval, from a formula or a table, and recognize
+        it as the slope of a secant line.
+  \item I can build a table of first and second differences and use it to
+        decide whether a function is linear or quadratic, to recover the
+        leading coefficient, and to justify concavity from numerical
+        evidence.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -38,16 +46,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & TODO & \blank{1.2cm} \\
-2 & Group Activity & TODO & \blank{1.2cm} \\
-3 & Exit Ticket  & TODO & \blank{1.2cm} \\
-4 & Homework     & TODO & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills               & \blank{1.2cm} \\
+2 & Guided Notes   & Three forms, AROC, and difference tables          & \blank{1.2cm} \\
+3 & Group Activity & Nova Cycles: pricing a helmet for revenue         & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on AROC and difference patterns & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                            & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Lesson 2.0 introduced the polynomial family; today we return to its most
+familiar member and look at it with Unit 1's tools. The parabola you graphed
+in Algebra 2 has a second life: its average rates of change over equal steps
+are not constant, but they change at a perfectly constant rate --- and that
+single fact will identify a quadratic from nothing but a column of numbers.
+\end{remindbox}
 
 \end{document}

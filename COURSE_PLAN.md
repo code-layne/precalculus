@@ -7,7 +7,8 @@ exponential/logarithmic/trigonometric core is spread out and reinforced, and the
 parameters-vectors-matrices material is condensed into a single closing unit.
 
 **Structure:** 8 units × 8 lessons = **64 lessons**, plus a sample test per unit.
-Unit 1 numbers its eight lessons 1.0–1.7 (see the Unit 1 replan note below).
+Units 1 and 2 number their eight lessons 1.0–1.7 and 2.0–2.7 (see the replan notes below);
+units 3–8 still number theirs X.1–X.8 and adopt the X.0 opener as each is reauthored.
 Pacing target: 18–22 class periods per unit (55-minute meetings).
 
 **Content source:** the AP Precalculus CED (`spec/`) remains the content backbone.
@@ -65,20 +66,31 @@ travel together (1.3), and the two modeling lessons merge into a single closer (
 
 ### Unit 2: Polynomial Functions
 
+Replanned August 2026: Unit 2 numbers its eight lessons **2.0–2.7**, matching Unit 1. The
+unit opens with an introduction lesson (2.0), and to stay at eight the old 2.8 (Modeling)
+folds into the equations/inequalities lesson, now 2.7. Lessons 2.1–2.6 keep their titles
+and their directories — no lesson was renumbered.
+
 | # | Lesson | Source | Status |
 |---|--------|--------|--------|
+| 2.0 | Introduction to Polynomial Functions | New (unit introduction) | new |
 | 2.1 | Quadratic Functions Revisited | New (extends CED 1.3) | new |
 | 2.2 | Polynomial Functions and Rates of Change | CED 1.4 (was 1.4) | moved |
 | 2.3 | Polynomial Functions and Real Zeros | New (split of CED 1.5) | new |
 | 2.4 | Polynomial Functions and Complex Zeros | CED 1.5 (was 1.5) | moved |
 | 2.5 | Polynomial Functions and End Behavior | CED 1.6 (was 1.6) | moved |
 | 2.6 | Equivalent Representations of Polynomial Expressions | New (split of CED 1.11) | new |
-| 2.7 | Polynomial Equations and Inequalities | New | new |
-| 2.8 | Modeling with Polynomial Functions | New (extends CED 1.14) | new |
+| 2.7 | Polynomial Equations, Inequalities, and Modeling | New (absorbs CED 1.14 modeling) | new |
 
 Rationale: the CED covers polynomials in three dense lessons; the non-honors track gets
-eight. Real zeros are separated from complex zeros, equation/inequality solving gets its
-own lesson (a calculus prerequisite), and modeling closes the unit.
+eight. The unit opens with an orientation lesson (2.0) that names the polynomial family
+before any analysis of it. Real zeros stay separated from complex zeros — the split is the
+unit's main concession to the non-honors pace, so it is the one protected when a merge is
+needed. Equation and inequality solving (a calculus prerequisite) closes the unit together
+with the modeling work it motivates.
+
+**Pending:** `unit02/lesson08` still holds the old standalone Modeling lesson. Its material
+folds into 2.7 when 2.7 is reauthored; the directory is removed at that point, not before.
 
 ### Unit 3: Rational Functions
 

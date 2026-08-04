@@ -1,0 +1,135 @@
+%! Introduction to Polynomial Functions — Unit 2, Lesson 2.0 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.0}{Homework --- Answer Key}
+
+\vspace{0.12in}
+
+\begin{enumerate}[itemsep=10pt]
+
+\item Name the parts of each polynomial.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.26\linewidth}|c|c|c|c|}
+\hline
+\textbf{Polynomial} & \textbf{Degree} & \textbf{Leading term} &
+\textbf{Leading coef.} & \textbf{Constant term} \\
+\hline
+$p(x) = 3x^5 - x^2 + 8$ & \ans{5} & \ans{$3x^5$} & \ans{3} & \ans{8} \\
+\hline
+$q(x) = -x^2 + 4x$ & \ans{2} & \ans{$-x^2$} & \ans{$-1$} & \ans{0} \\
+\hline
+\end{tabular}
+
+\item Is each expression a polynomial? Circle one and give a short reason.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f(x) = 2x^3 - 9x + 4$ \quad \ans{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \ansline{Every exponent on $x$ is a whole number and the coefficients are real.}
+
+  \item $g(x) = \dfrac{7}{x^2} + x$ \quad \textbf{Yes} / \ans{No}
+
+        \vspace{0.05in}
+        \ansline{$7/x^2 = 7x^{-2}$ --- the variable is in a denominator, a negative exponent.}
+
+  \item $h(x) = 4\sqrt{x} + 1$ \quad \textbf{Yes} / \ans{No}
+
+        \vspace{0.05in}
+        \ansline{$\sqrt{x} = x^{1/2}$, and a fractional exponent is not a whole number.}
+
+  \item $k(x) = \dfrac{x^4}{3} - 2x$ \quad \ans{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \ansline{Dividing by the number $3$ only makes the coefficient $\frac{1}{3}$.}
+\end{enumerate}
+
+\item Write each polynomial in standard form and name its degree family.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.24\linewidth}|p{0.30\linewidth}|p{0.24\linewidth}|}
+\hline
+\textbf{As given} & \textbf{Standard form} & \textbf{Degree family} \\
+\hline
+$6 - 4x$ & \ans{$-4x + 6$} & \ans{linear} \\
+\hline
+$5x^2 + x^3 - 1$ & \ans{$x^3 + 5x^2 - 1$} & \ans{cubic} \\
+\hline
+$-3 + 2x^2$ & \ans{$2x^2 - 3$} & \ans{quadratic} \\
+\hline
+\end{tabular}
+
+\item Two polynomial graphs are shown. Both are smooth and unbroken.
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+    plot ({\x}, {-0.5*\x*\x*\x + 1.5*\x});
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+    plot ({\x}, {0.5*\x*\x - 2});
+\end{tikzpicture}
+\\[2pt]
+\textbf{Graph P} & \textbf{Graph Q}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Graph P has \ans{2} turning points, so its polynomial has degree at
+        least \ans{3}.
+  \item Graph Q has \ans{1} turning points, so its polynomial has degree at
+        least \ans{2}.
+  \item Name one feature that neither graph has, because no polynomial graph ever
+        has it. \ans{a hole, jump, or corner}
+\end{enumerate}
+
+\item Which of the following is \textbf{NOT} a polynomial function?
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $p(x) = x^4 - 3x^2 + 7$
+  \item $p(x) = 5$
+  \item $p(x) = 2x^{-3} + x$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $p(x) = -x^3 + \dfrac{x}{2}$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+A polynomial graph is smooth and unbroken and has exactly 4 turning points. What is
+the smallest degree its polynomial could have? Could its degree be 7 instead?
+Explain both answers.
+
+\vspace{0.05in}
+\ansline{Smallest degree $5$: a degree-$n$ graph has at most $n-1$ turns, so $n - 1 \ge 4$. Degree $7$ also works --- ``at most $6$'' permits any number up to six, including four.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.1}
+Today you learned to recognize the polynomial family and name its parts. Next
+lesson, \textbf{Quadratic Functions Revisited}, we zoom in on the degree-2 members
+you already know from Algebra 2 --- vertex, axis of symmetry, and the two forms a
+quadratic can be written in --- and use them as the model for everything the rest
+of the unit does with higher degrees.
+\end{notesbox}
+
+\end{document}

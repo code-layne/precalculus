@@ -2,8 +2,6 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
@@ -16,180 +14,281 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and interpret zeros of polynomial
-    functions (real and complex), including multiplicity, and determine whether a polynomial
-    function is even or odd using algebraic and graphical reasoning. \textbf{(MP 1.B, 2.B)}
+    \textbf{Primary Objective:} Students will use the Fundamental Theorem of
+    Algebra to count the complex zeros of a polynomial of degree $n$, reconcile
+    that count with the $x$-intercepts visible on a graph, use conjugate pairs
+    to name a missing non-real zero and to build a polynomial from a zero list,
+    and classify a polynomial function as even, odd, or neither.
+    \hfill\textit{\small (CED Topic 1.5 --- Skills 1.B, 2.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{AP Skills}\\
-    \textbf{1.B} Express functions/equations in analytically equivalent forms — factored
-    form reveals zeros and multiplicities.\\[4pt]
-    \textbf{2.B} Construct equivalent representations — connect factored form to graph
-    behavior (cross vs.\ touch) and even/odd classification.
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{Key Understandings}\\
-    \begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-        \item Factor $(x-a)$ $\Leftrightarrow$ zero at $a$; multiplicity $=$ how many times repeated.
-        \item A degree-$n$ polynomial has exactly $n$ complex zeros (counting multiplicities).
-        \item Odd multiplicity $\Rightarrow$ graph \emph{crosses}; even multiplicity $\Rightarrow$
-              graph \emph{touches and bounces}.
-        \item Complex zeros come in conjugate pairs for polynomials with real coefficients.
-        \item Even function: $f(-x)=f(x)$, symmetric about $y$-axis.
-              Odd function: $f(-x)=-f(x)$, symmetric about origin.
-    \end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{1.B} --- Express functions, equations, or expressions in analytically
+equivalent forms useful in a given context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item If $a$ is a complex number and $p(a) = 0$, then $a$ is a zero of $p$
+        and a root of $p(x) = 0$. Zeros need not be real. (1.5.A.1)
+  \item A polynomial function of degree $n$ has \textbf{exactly $n$ complex
+        zeros}, counting multiplicities --- the Fundamental Theorem of
+        Algebra. (1.5.A.2)
+\end{itemize} \\
+\textbf{2.B} --- Construct equivalent graphical, numerical, analytical, and
+verbal representations of functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Real zeros are the $x$-intercepts you can see; non-real zeros are
+        nowhere on the graph. Degree $-$ (real zeros with multiplicity)
+        $=$ number of non-real zeros. (1.5.A.2)
+  \item If $a + bi$ is a zero of a polynomial with real coefficients, so is
+        $a - bi$. Non-real zeros arrive two at a time, so their count is even
+        and an odd-degree polynomial always has a real zero. (1.5.A.4)
+\end{itemize} \\
+\textbf{LO 1.5.B} --- Determine whether a polynomial function is even or odd. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Even: $f(-x) = f(x)$, symmetric over the line $x = 0$. Odd:
+        $f(-x) = -f(x)$, symmetric about the point $(0,0)$. (1.5.B.1--2)
+  \item Shortcut for polynomials: all-even exponents $\Rightarrow$ even;
+        all-odd exponents $\Rightarrow$ odd; a mix $\Rightarrow$ neither. A
+        constant term counts as $x^0$, an even power.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Imaginary unit    & The number $i$, defined by $i^2 = -1$. \\
+Complex number    & Any number $a + bi$ with $a$ and $b$ real; $a$ is the real part and $b$ the imaginary part. Every real number is complex (with $b = 0$). \\
+Non-real zero     & A zero $a + bi$ with $b \ne 0$. It is not an $x$-intercept and does not appear on the graph at all. \\
+Complex conjugate & The partner $a - bi$ of $a + bi$. Their product $(a+bi)(a-bi) = a^2 + b^2$ is real. \\
+Fundamental Theorem of Algebra & A polynomial function of degree $n$ has exactly $n$ complex zeros, counting multiplicities. \\
+Even function     & $f(-x) = f(x)$ for every $x$ in the domain; the graph is symmetric over the line $x = 0$. \\
+Odd function      & $f(-x) = -f(x)$ for every $x$ in the domain; the graph is symmetric about the point $(0,0)$. \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: reading real zeros and their multiplicities off a factored
+    polynomial and totaling the degree from the exponents on its factors
+    (Lesson 2.3), and one item of Algebra 2 complex arithmetic --- $i^2 = -1$
+    and the product of a conjugate pair. Item 2's factor $x^2 + 1$ is the one
+    students cannot break apart over the real numbers; that dead end is the
+    door into today's lesson.
+\end{skillbox}
+
+\begin{skillbox}[Hook]{lilac}
+    \textbf{The missing zeros.} Project the pre-drawn graph of
+    $p(x) = x^4 - 3x^2 - 4$ from the notes. It is a degree-4 polynomial, and
+    its graph crosses the $x$-axis exactly twice, at $x = -2$ and $x = 2$.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: Lesson 2.3 tied zeros to factors, and a degree-4 polynomial
+              has four factors' worth of zeros. We can see two. Are the other
+              two missing, or are we not looking in the right place?
+        \item Factor on the board: $p(x) = (x-2)(x+2)(x^2+1)$. The first two
+              factors give the intercepts. Ask what $x^2 + 1 = 0$ gives.
+    \end{enumerate}
+    \textit{Discussion prompt:} $x^2 = -1$ has no \textit{real} solution ---
+    but it has two solutions the moment we allow $i$. Today the count comes out
+    exactly right, every time, provided we are willing to look off the graph.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
-\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-    \item \textbf{Zero (root)} — value $a$ such that $p(a)=0$
-    \item \textbf{Multiplicity} — how many times a linear factor is repeated
-    \item \textbf{Complex zero} — a zero of the form $a+bi$, $b\neq 0$
-    \item \textbf{Complex Conjugate Pairs Theorem} — if $p$ has real coefficients and
-          $a+bi$ is a zero, then $a-bi$ is also a zero
-    \item \textbf{Even function} — $f(-x)=f(x)$; symmetric over $y$-axis
-    \item \textbf{Odd function} — $f(-x)=-f(x)$; symmetric about origin
-    \item \textbf{Successive differences} — method for identifying polynomial degree from
-          a table of equally-spaced values
+
+\textbf{Part 1: A Complex-Number Refresher} (10 min)
+
+\begin{itemize}
+  \item Recall from Algebra 2: $i^2 = -1$. A \textbf{complex number} is
+        $a + bi$ with $a$ and $b$ real --- real part $a$, imaginary part $b$.
+  \item Every real number is already complex ($b = 0$). ``Non-real'' means
+        $b \ne 0$; that is the new territory.
+  \item Evaluate at a complex input exactly as always: for $p(x) = x^2 + 1$,
+        $p(i) = i^2 + 1 = -1 + 1 = 0$. So $i$ \textit{is} a zero, by the same
+        definition used in 2.3.
+  \item Conjugates: $(3+2i)(3-2i) = 9 + 4 = 13$. The $i$ terms cancel and the
+        product is real --- hold on to that; it explains Part 3.
+\end{itemize}
+
+\textbf{Part 2: Exactly $n$ Zeros} (13 min)
+
+\begin{itemize}
+  \item State it plainly: a polynomial function of degree $n$ has
+        \textbf{exactly $n$ complex zeros, counting multiplicities}. Not ``at
+        most'' --- exactly.
+  \item Return to the hook: degree 4, zeros $2, -2, i, -i$. Four of them. The
+        graph showed two because only real zeros can be $x$-intercepts.
+  \item Fill the zero-census table together. The subtraction to rehearse:
+        degree $-$ (real zeros counted with multiplicity) $=$ non-real zeros.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: Non-Real Zeros Come in Pairs} (12 min)
+
+\begin{itemize}
+  \item If $a + bi$ is a zero of a polynomial with real coefficients, then
+        $a - bi$ is a zero too. Point back to Part 1: the conjugate pair is
+        what multiplies out to a \textit{real} quadratic factor.
+  \item Two consequences worth writing down: the number of non-real zeros is
+        always \textbf{even}, and an \textbf{odd-degree} polynomial must have
+        at least one real zero --- so its graph must cross the $x$-axis.
+  \item Build from a zero list: zeros $2$ and $1 + 3i$ force $1 - 3i$, giving
+        $(x-2)(x^2 - 2x + 10) = x^3 - 4x^2 + 14x - 20$. Point out that the
+        coefficients came out real.
+\end{itemize}
+
+\textbf{Part 4: Even and Odd Polynomials} (12 min)
+
+\begin{itemize}
+  \item Definitions first: $f(-x) = f(x)$ is \textbf{even} (mirror over the
+        line $x = 0$); $f(-x) = -f(x)$ is \textbf{odd} (half-turn about the
+        origin).
+  \item Verify by substitution, not by eye: for $g(x) = x^3 - 4x$,
+        $g(-x) = -x^3 + 4x = -g(x)$.
+  \item Then the polynomial shortcut: all-even exponents $\Rightarrow$ even,
+        all-odd $\Rightarrow$ odd, a mix $\Rightarrow$ neither. Flag the trap:
+        a constant is $x^0$, an even power, so $x^3 + 5$ is neither.
+  \item Close the loop --- the hook polynomial $x^4 - 3x^2 - 4$ is even, and
+        the pre-drawn graph shows the mirror.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X@{}}
-        Please see attached spiral review.\\[3pt]
-        \textit{Skills reviewed:} factoring polynomials (GCF, difference of squares,
-        grouping), identifying $x$-intercepts from equations, complex number basics
-        ($a+bi$ form, powers of $i$).
-    \end{tabularx}
-\end{skillbox}
-
-\begin{skillbox}[Hook]{sky}
-    \textbf{Display on board:} $p(x)=(x-2)^2(x+1)$
-
-    \medskip
-    Ask students:
-    \begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
-        \item Where does the graph of $y=p(x)$ cross the $x$-axis?
-        \item Does the graph cross the $x$-axis at $x=2$, or does it simply touch it?
-              How do you know just by looking at the factor $(x-2)^2$?
-        \item If we multiply out $p(x)$, what is the degree? How many zeros should
-              there be in total?
-    \end{enumerate}
-    \textit{Goal:} Students notice that the exponent on the factor predicts crossing vs.\
-    bouncing — launching the multiplicity concept.
-\end{skillbox}
-
-\begin{skillbox}[Lesson]{sky}
-    \textbf{1. Zeros and Linear Factors (LO 1.5.A.1--A.2)}
-
-    If $p(a)=0$, then $a$ is a zero of $p$, and $(x-a)$ is a linear factor.
-    Revisit hook polynomial and list all zeros and their multiplicities.
-    Stress: a degree-$n$ polynomial has \emph{exactly} $n$ complex zeros counting multiplicities.
-
-    \medskip
-    \textbf{2. Graph Behavior at Real Zeros (LO 1.5.A.3, A.5)}
-
-    Build a table: \quad
-    \begin{tabular}{|l|l|l|}
-    \hline
-    \textbf{Multiplicity} & \textbf{Graph behavior} & \textbf{Example} \\\hline
-    Odd (1, 3, \ldots) & Crosses $x$-axis & $(x+1)$ in hook poly \\\hline
-    Even (2, 4, \ldots) & Tangent (touches, bounces) & $(x-2)^2$ in hook poly \\\hline
-    \end{tabular}
-
-    Work additional example: $q(x)=x^2(x-3)(x+1)^3$. Ask students to predict
-    crossing/touching at each zero before graphing with technology.
-
-    \medskip
-    \textbf{3. Exactly $n$ Complex Zeros (LO 1.5.A.2)}
-
-    Introduce the Fundamental Theorem of Algebra (not proved, just stated).
-    Example: a degree-4 polynomial must have 4 zeros; some may be complex.
-
-    \medskip
-    \textbf{4. Complex Conjugate Pairs (LO 1.5.A.4)}
-
-    State theorem: for polynomials with real coefficients, complex zeros come in
-    conjugate pairs $a\pm bi$.
-    Example: if $p$ has real coefficients and $2+3i$ is a zero, then $2-3i$ must
-    also be a zero. Build minimal polynomial: $(x-(2+3i))(x-(2-3i))=x^2-4x+13$.
-
-    \medskip
-    \textbf{5. Even and Odd Functions (LO 1.5.B.1--B.2)}
-
-    Algebraic test: substitute $-x$ and simplify.
-    \begin{itemize}[leftmargin=1.2em]
-        \item If $f(-x)=f(x)$ $\Rightarrow$ \textbf{even}; graph symmetric over $y$-axis.
-        \item If $f(-x)=-f(x)$ $\Rightarrow$ \textbf{odd}; graph symmetric about origin.
-        \item Otherwise $\Rightarrow$ \textbf{neither}.
-    \end{itemize}
-    Examples: $f(x)=x^4-2x^2$ (even); $g(x)=x^3-x$ (odd); $h(x)=x^2+x$ (neither).
-
-    \medskip
-    \textbf{6. Successive Differences (LO 1.5.A.6)} (\textit{brief introduction})
-
-    Show a table of values for a cubic over equally-spaced $x$-values. Take first,
-    second, third differences. Third differences are constant $\Rightarrow$ degree 3.
-    Degree $=$ least $n$ for which $n$th differences are constant.
-\end{skillbox}
-
 \begin{skillbox}[Active Monitoring]{redbox}
-    \begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-        \item Circulate during the multiplicity table: watch for students who think
-              even multiplicity means the graph doesn't touch the axis at all.
-        \item Cold-call: ``If $p(x)=(x-5)^3(x+2)^2$, how many zeros does $p$ have?
-              What is the degree? Does the graph cross or bounce at $x=5$?''
-        \item During even/odd: watch for students who only check a single value of $x$
-              instead of proving algebraically for all $x$.
-        \item Ensure students don't confuse \emph{even/odd function} with
-              \emph{even/odd degree}.
-    \end{itemize}
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} reading ``4 zeros'' off a graph with 2
+        intercepts. Cold-call: ``How many of those four does the graph get to
+        show you? Where are the other two hiding?''
+  \item \textbf{Common error:} dropping multiplicity in the census ---
+        counting $(x+1)^3$ as one real zero instead of three. Ask: ``Counting
+        \textit{multiplicities}. How many times does that factor appear?''
+  \item \textbf{Common error:} giving the conjugate of $3 - 5i$ as $-3 + 5i$.
+        Only the \textit{imaginary} part flips sign; the real part stays put.
+  \item \textbf{Common error:} calling $x^3 + 5$ odd because of the $x^3$.
+        Push: ``What power of $x$ is the 5 sitting on? Is that even or odd?''
+  \item \textbf{Language:} require ``non-real zero,'' not ``imaginary zero''
+        or ``fake zero.'' The zeros are perfectly real objects; they are just
+        not real \textit{numbers}.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    See activity for full tiered problem set (polynomials $p$, $q$, $r$).
+Students work on the \textbf{Group Activity: The Missing Zeros Bureau} in
+leveled tiers. Every tier reads the same pre-drawn cubic graph --- no tier
+draws anything.
 
-    \medskip
-    \textbf{Tier R (Remediate):} Zeros, multiplicities, and crossing/bouncing for $p(x)=(x+2)(x-1)^2(x-3)$.
-
-    \medskip
-    \textbf{Tier A (Apply):} Add factoring and algebraic even/odd test for $q(x)=x^4-5x^2+4$; compare graph behaviors.
-
-    \medskip
-    \textbf{Tier E (Extend):} Complex zeros of $r(x)=x^3+2x$; verify conjugate pairs; determine if $r$ is even, odd, or neither; use successive differences to verify degree of $q$.
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Total the zeros from the degree alone,
+        subtract the real ones to get the non-real count, and name conjugate
+        partners for four given non-real numbers.
+  \item \textbf{Tier A (Approaching Proficiency):} Build a degree-3
+        polynomial from the zeros $-1$ and $2i$ (supplying $-2i$), then
+        classify four functions as even, odd, or neither and verify one by
+        substitution.
+  \item \textbf{Tier E (Extension):} Reconcile the pre-drawn graph of
+        $p(x) = x^3 - 3x^2 + 4x - 2$ with the algebraic count --- one visible
+        intercept, degree 3, so two non-real zeros --- confirm $x = 1$ by
+        evaluation, find $1 \pm i$ from the remaining quadratic, and justify
+        in writing why every odd-degree polynomial with real coefficients must
+        cross the $x$-axis (AP Skill 2.B).
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    \textbf{Exit Ticket} (last 5--7 minutes): two problems on a half-sheet.
-    \begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-        \item A degree-4 polynomial with real coefficients has zeros $x=-1$ (mult.\ 2)
-              and $x=2+i$. List all four zeros; identify which real zero causes tangency.
-        \item Determine whether $f(x)=x^5-3x^3+x$ is even, odd, or neither (show work).
-    \end{enumerate}
-    \textit{Collect and use for tomorrow's warm-up review.}
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item For $p(x) = (x-4)(x^2+25)$: give the degree, list all complex zeros
+        (worked space provided), and state how many $x$-intercepts the graph
+        has.
+  \item A degree-4 polynomial with real coefficients has $2 - i$ as a zero.
+        Name another zero, then say how many real zeros it has, counting
+        multiplicity.
+  \item Classify three polynomials as even, odd, or neither.
+\end{enumerate}
+\textbf{Assessment note:} Item 1(c) is the diagnostic --- a student who writes
+``3 intercepts'' because they found three zeros has not separated the
+algebraic count from the graph, and that separation is the whole lesson. Item
+3(c), $x^3 + x^2$, is the mixed-exponent check; a miss there is a definition
+miss, not an arithmetic slip.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    \textbf{Homework:} 5 problems covering minimal-degree polynomials from zeros, listing
-    all zeros given one complex zero, factoring to find zeros with multiplicities,
-    algebraic even/odd test, and an AP-style MC on zeros of a factored polynomial.
+\textbf{Homework:} 5 problems covering degree and complete zero lists from
+factored forms, a zero-census table completed by subtraction, building a
+degree-3 polynomial from the zeros $5$ and $1 - 2i$, an even/odd/neither
+classification set with one substitution verification, and one AP-style
+multiple-choice item on counting non-real zeros.
 
-    \medskip
-    \textbf{Extension:} Successive-differences puzzle — given that the third differences
-    of a mystery polynomial's output are all equal to 6, determine the degree and write
-    a general form.
+\textbf{Extension (optional):} Multiply out
+$\big(x - (a+bi)\big)\big(x - (a-bi)\big)$ to get $x^2 - 2ax + (a^2+b^2)$ ---
+a quadratic with \textit{real} coefficients. That is why conjugate pairs are
+forced, and why every real-coefficient polynomial factors into real linear and
+real quadratic pieces.
 
-    \medskip
-    \textbf{Preview:} Next lesson (1.6) — Rational Functions: vertical asymptotes, holes,
-    and end behavior.
+\textbf{Preview:} Next lesson (2.5, Polynomial Functions and End Behavior)
+leaves the zeros behind and looks at the two far ends of the graph: what the
+degree and the leading coefficient together predict as $x$ runs off toward
+$\infty$ and toward $-\infty$.
 \end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Items 1 and 2 are pure 2.3 recall
+and should be quick; do not reteach multiplicity here, just confirm it. Item
+2's $x^2 + 1$ factor is deliberately un-factorable over the reals --- if a
+student announces ``that one has no zeros,'' write the claim on the board and
+save it for the hook rather than correcting it now. Item 3 is the Algebra 2
+hinge: a class that cannot produce $i^2 = -1$ on demand needs Part 1 stretched
+to a full 15 minutes.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Part 2 is the centerpiece and deserves the most air time --- ``exactly $n$,''
+with the word \textit{exactly} circled. The census table is the backbone: work
+row 1 aloud, let pairs do rows 2--4, then share. Row 1 is the hook polynomial,
+so the graph on the previous page is the answer key for it. Part 3's
+conjugate-pair result is stated, not proved; the proof is the homework
+extension. Keep Part 1 tight --- it is a refresher, and the only two moves the
+lesson needs from it are evaluating $p$ at a complex input and recognizing a
+conjugate pair. If time runs short, compress Part 1, never Part 4: even/odd is
+its own learning objective and appears on the exit ticket.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers reference the same cubic graph, so groups can be regrouped
+mid-activity without new setup. Tier R is deliberately arithmetic-light: the
+entire task is ``degree minus real equals non-real,'' repeated until it is
+automatic. Tier A's build-a-polynomial item is the one to check for real
+coefficients at the end --- if a student's expanded answer still contains an
+$i$, they multiplied the conjugate factors wrong, and that is worth the whole
+group's attention. Tier E's question 3 is the writing task; accept any version
+of ``non-real zeros come in pairs, so an odd total cannot be all non-real.''
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Sort by item 1(c) first: ``1 intercept'' is
+the target, ``3 intercepts'' is the reteach pile. On item 2(b), accept ``2''
+with or without reasoning; the reasoning surfaces in tomorrow's warm-up either
+way. Item 3 should take under a minute for a student who internalized the
+exponent shortcut --- if it took much longer, Part 4 needs a five-minute
+revisit before 2.5.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 2's census table is the one to grade first; it isolates the counting
+idea from every other skill in the lesson. Problem 5 is the AP-style item ---
+distractor D (``3'') is chosen by students who subtract without remembering
+that non-real zeros come in pairs, and it is worth two minutes of autopsy
+tomorrow because it is exactly the misconception 2.7 will punish. The
+extension is the proof behind Part 3; if the class produced the ``why do they
+have to come in pairs?'' question during the lesson, assign it explicitly and
+open tomorrow with a student presenting it.
+\end{teachernote}
 \end{document}

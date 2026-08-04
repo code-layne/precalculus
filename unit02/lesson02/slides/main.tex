@@ -1,140 +1,256 @@
 %! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
 % TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.4}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 2.2}\\[0.5cm]
     {\color{white}\bfseries\LARGE Polynomial Functions and Rates of Change}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
   \end{minipage}
 \end{frame}
 }
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: Peaks and Valleys}
-  \vspace{0.3cm}
-  \begin{block}{Consider $p(x) = x^3 - 3x$}
-    As $x$ increases from $-\infty$:
-    \begin{itemize}
-      \setlength{\itemsep}{6pt}
-      \item The function \textbf{falls}, reaches a valley, then \textbf{rises}
-      \item It crosses zero, reaches a peak, then \textbf{falls} again
-      \item It crosses zero twice more, then rises to $+\infty$
-    \end{itemize}
+  \plumheader{Hook: Two Summits, One Highest Point}
+  \sectionlabel[goldacc]{Think About It}
+
+  A trail guide lists two summits on the Ridge Trail:
+
+  \bigskip
+  \begin{center}
+    {\LARGE \textbf{Bell Knob, 1{,}200 ft \qquad Signal Peak, 1{,}850 ft}}
+  \end{center}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Are both of these really summits?
+    \item Which one goes on the sign at the trailhead?
+  \end{itemize}
+
+  \bigskip
+  \textit{Each is highest \textbf{nearby} --- a \textbf{local} maximum. Only
+  Signal Peak is highest \textbf{anywhere} --- the \textbf{global} maximum.}
+\end{frame}
+
+% SECTION 1 — THE DEFINITION
+\begin{frame}[t, plain]
+  \plumheader{1. Polynomial Functions --- The Definition, Precisely}
+
+  \begin{block}{Standard form}
+    \[
+      p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0
+    \]
+    where \(n\) is a positive integer, every \(a_i\) is real, and
+    \(a_n \neq 0\).
   \end{block}
-  \vspace{0.3cm}
-  \textbf{Discussion questions:}
-  \begin{itemize}
-    \item Where are the ``peaks'' and ``valleys''?
-    \item How many zeros does $p$ have?
-    \item Where does the \emph{rate of change} change direction?
+
+  \medskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item \textbf{Degree:} \(n\) --- the greatest exponent on \(x\)
+    \item \textbf{Leading term:} \(a_n x^n\) \quad
+          \textbf{Leading coefficient:} \(a_n\)
+    \item A constant function such as \(p(x) = 7\) has degree \textbf{0}
+  \end{itemize}
+
+  \bigskip
+  \textit{Quick check:} \(f(x) = 4x^3 - x^2 + 9\) --- degree 3, leading term
+  \(4x^3\), leading coefficient 4.
+\end{frame}
+
+% SECTION 2 — INCREASING, DECREASING, LOCAL EXTREMA
+\begin{frame}[t, plain]
+  \plumheader{2. Increasing, Decreasing, and Local Extrema}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.72cm, y=0.44cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (6,7);
+        \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {2,4,6} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(0,1) (0.8,3.3) (1.5,5.2) (2,6) (2.5,5.2) (3,4.0)
+           (3.5,2.6) (4,2) (4.5,2.6) (5,3.6) (5.5,5.1) (6,7)};
+        \fill[goldacc] (0,1) circle (2.5pt); \node[below right] at (0.05,1) {\small \(A\)};
+        \fill[goldacc] (2,6) circle (2.5pt); \node[above] at (2,6.15) {\small \(B\)};
+        \fill[goldacc] (4,2) circle (2.5pt); \node[below] at (4,1.9) {\small \(C\)};
+        \fill[goldacc] (6,7) circle (2.5pt); \node[left] at (5.85,6.9) {\small \(D\)};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Increasing on \((0,2)\) and \((4,6)\); decreasing on \((2,4)\)
+        \item \(B\): increasing \(\to\) decreasing, a \textbf{local maximum}
+              --- value \textbf{6} at \(x=2\)
+        \item \(C\): decreasing \(\to\) increasing, a \textbf{local minimum}
+              --- value \textbf{2} at \(x=4\)
+      \end{itemize}
+
+      \medskip
+      \begin{block}{Included endpoints count}
+        The domain is \([0,6]\): \(A\) is a local \textbf{minimum} and \(D\) a
+        local \textbf{maximum}, just for being included endpoints.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — LOCAL VS GLOBAL
+\begin{frame}[t, plain]
+  \plumheader{3. Local vs.\ Global Extrema}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Local maxima}
+        \(7\) at \(D\), \quad \(6\) at \(B\)\\[4pt]
+        Greatest of them \(\Rightarrow\)
+        \textbf{global maximum \(= 7\)} at \(x = 6\)
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Local minima}
+        \(1\) at \(A\), \quad \(2\) at \(C\)\\[4pt]
+        Least of them \(\Rightarrow\)
+        \textbf{global minimum \(= 1\)} at \(x = 0\)
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{The trap}
+    \(B\) is a local maximum but \textbf{not} the global one --- the graph
+    climbs higher later. ``Local'' means highest \textit{nearby}; ``global''
+    means highest \textit{anywhere on the domain}.
+  \end{block}
+
+  \bigskip
+  \textit{Say it carefully: a maximum is an \textbf{output value}; it
+  \textbf{occurs at} an input value.}
+\end{frame}
+
+% SECTION 4 — WHAT ZEROS AND DEGREE GUARANTEE
+\begin{frame}[t, plain]
+  \plumheader{4. What the Zeros and the Degree Guarantee}
+
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.68cm, y=0.36cm]
+        \draw[linegray, very thin, step=1] (0,-3) grid (6,3);
+        \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-3.4) -- (0,3.6) node[above] {\small \(p(x)\)};
+        \foreach \x in {1,2,3,4,5,6} \node[below left] at (\x,0) {\small \x};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(0.35,-2.7) (1,0) (1.5,1.5) (2,2) (2.5,1.5) (3,0)
+           (3.5,-1.5) (4,-2) (4.5,-1.5) (5,0) (5.65,2.7)};
+        \fill[plum] (1,0) circle (2.5pt);
+        \fill[plum] (3,0) circle (2.5pt);
+        \fill[plum] (5,0) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{block}{Between two zeros, a turn}
+        Between every two distinct real zeros there is \textbf{at least one}
+        local maximum or minimum --- the graph left the axis, so it has to
+        turn to come back.
+      \end{block}
+
+      \medskip
+      \(k\) distinct real zeros \(\Rightarrow\) at least \(k-1\) local extrema.
+  \end{columns}
+
+  \bigskip
+  \begin{block}{Degree decides whether a global extremum exists}
+    \textbf{Even degree:} has a global maximum \textit{or} a global minimum.
+    \quad
+    \textbf{Odd degree:} \textbf{neither} --- one end runs to \(+\infty\),
+    the other to \(-\infty\).
+  \end{block}
+\end{frame}
+
+% SECTION 5 — POINTS OF INFLECTION
+\begin{frame}[t, plain]
+  \plumheader{5. Points of Inflection --- Where the \textit{Rate} Turns}
+
+  From Lesson 2.1: AROCs increasing \(\Rightarrow\) concave up; AROCs
+  decreasing \(\Rightarrow\) concave down.
+
+  \bigskip
+  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+  \(x\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+  \hline
+  \(f(x)\) & 1 & 3 & 8 & 17 & 25 & 29 \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  AROCs over \([0,1], [1,2], [2,3], [3,4], [4,5]\): \quad
+  \(2,\ 5,\ 9,\ 8,\ 4\)
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{7pt}
+    \item The AROCs rise to 9, then fall --- the \textbf{rate} turns around
+          near \(x = 3\).
+    \item Concave \textbf{up} before \(x=3\), concave \textbf{down} after:
+          \(x = 3\) is a \textbf{point of inflection}.
   \end{itemize}
 \end{frame}
 
-% POLYNOMIAL STANDARD FORM
+% THE CONTRAST
 \begin{frame}[t, plain]
-  \navyheader{Polynomial Standard Form}
-  \vspace{0.3cm}
-  \[
-    p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \quad a_n \neq 0
-  \]
-  \vspace{0.2cm}
-  \begin{itemize}
-    \setlength{\itemsep}{8pt}
-    \item \textbf{Degree:} $n$ --- the highest power of $x$
-    \item \textbf{Leading term:} $a_n x^n$
-    \item \textbf{Leading coefficient:} $a_n$
-    \item A \textbf{constant function} ($p(x) = c$) is a polynomial of degree 0
-  \end{itemize}
-  \vspace{0.4cm}
-  \begin{block}{End Behavior (Even Degree)}
-    Positive $a_n$: both ends rise \quad Negative $a_n$: both ends fall
-  \end{block}
-  \begin{block}{End Behavior (Odd Degree)}
-    Positive $a_n$: falls left, rises right \quad Negative $a_n$: rises left, falls right
-  \end{block}
-\end{frame}
+  \plumheader{Extremum vs.\ Inflection --- Keep Them Apart}
 
-% LOCAL AND GLOBAL EXTREMA
-\begin{frame}[t, plain]
-  \navyheader{Local and Global Extrema}
-  \vspace{0.3cm}
-  \begin{itemize}
-    \setlength{\itemsep}{10pt}
-    \item \textbf{Local maximum:} the function switches from \emph{increasing} to \emph{decreasing}
-    \item \textbf{Local minimum:} the function switches from \emph{decreasing} to \emph{increasing}
-    \item \textbf{Global maximum:} the greatest local max value (highest overall output)
-    \item \textbf{Global minimum:} the least local min value (lowest overall output)
-  \end{itemize}
-  \vspace{0.4cm}
-  \begin{block}{Key Result (EK 1.4.A.4)}
-    Polynomials of \textbf{even degree} always have either a global maximum or a global minimum.
-  \end{block}
-\end{frame}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Local maximum or minimum}
+        The \textbf{function} turns around.\\[6pt]
+        The AROCs change \textbf{sign}
+        (\(+\) to \(-\), or \(-\) to \(+\)).
+      \end{block}
 
-% BETWEEN ZEROS --- EK 1.4.A.3
-\begin{frame}[t, plain]
-  \navyheader{Between Zeros: A Required Extremum}
-  \vspace{0.3cm}
-  \begin{block}{Essential Knowledge 1.4.A.3}
-    Between every two \textbf{distinct real zeros} of a nonconstant polynomial, there must be
-    at least one \textbf{local maximum or local minimum}.
-  \end{block}
-  \vspace{0.4cm}
-  \textbf{Why?} A continuous function that starts and ends at zero must turn around at least once in between.
-  \vspace{0.4cm}
-  \begin{itemize}
-    \setlength{\itemsep}{8pt}
-    \item 2 zeros $\Rightarrow$ at least 1 local extremum between them
-    \item 3 zeros $\Rightarrow$ at least 2 local extrema
-    \item $k$ zeros $\Rightarrow$ at least $k-1$ local extrema
-  \end{itemize}
-\end{frame}
+    \column{0.48\textwidth}
+      \begin{block}{Point of inflection}
+        The \textbf{rate of change} turns around.\\[6pt]
+        The AROCs change \textbf{direction} --- they stop growing and start
+        shrinking, without changing sign.
+      \end{block}
+  \end{columns}
 
-% POINTS OF INFLECTION
-\begin{frame}[t, plain]
-  \navyheader{Points of Inflection}
-  \vspace{0.3cm}
-  \begin{block}{Definition (EK 1.4.A.5)}
-    A \textbf{point of inflection} occurs where the \textbf{rate of change} switches from
-    increasing to decreasing (or vice versa) --- where the graph changes from concave up to
-    concave down, or the reverse.
+  \bigskip
+  \begin{block}{The example that settles it}
+    In the table \(2,\ 5,\ 9,\ 8,\ 4\), \textbf{every AROC is positive}. The
+    function is increasing the whole way, so it has \textbf{no local extrema}
+    at all --- and it still has a point of inflection at \(x=3\).
   \end{block}
-  \vspace{0.4cm}
-  \begin{itemize}
-    \setlength{\itemsep}{8pt}
-    \item \textbf{Concave up:} AROC is increasing as $x$ increases
-    \item \textbf{Concave down:} AROC is decreasing as $x$ increases
-    \item At an inflection point: AROC transitions between increasing and decreasing
-  \end{itemize}
-  \vspace{0.3cm}
-  \textit{Example:} AROC over $[0,1]$ is 5, over $[1,2]$ is 8, over $[2,3]$ is 4.\\
-  Likely inflection near $x = 2$ (AROC switches from increasing to decreasing).
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
-  \navyheader{Class Practice}
-  \vspace{0.3cm}
-  Work with your partner:
-  \begin{enumerate}
-    \setlength{\itemsep}{10pt}
-    \item A polynomial has zeros at $x = -3$, $x = 0$, and $x = 5$.\\
-    What is the minimum number of local extrema it must have?
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
 
-    \item A polynomial $f$ has degree 4 and positive leading coefficient.\\
-    Does $f$ have a global maximum, global minimum, or neither?
-
-    \item The AROC of a function over $[1,3]$ is $-4$ and over $[3,5]$ is $2$.\\
-    What occurred near $x = 3$?
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item A polynomial \(g\) has exactly four distinct real zeros. At least
+          how many local extrema must \(g\) have, and why?
+    \item A polynomial \(h\) has AROCs \(4,\ 9,\ 15,\ 11,\ 6\) over five
+          consecutive equal-length intervals covering \([0,5]\).
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item Does \(h\) have a local maximum or minimum on \([0,5]\)?
+            \item Near which input is there a point of inflection?
+          \end{enumerate}
+    \item True or false: a polynomial of degree 7 must have a global
+          minimum. Justify in one sentence.
   \end{enumerate}
 \end{frame}
 

@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
@@ -16,80 +16,279 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will read the vertex, axis of
+    symmetry, and zeros of a quadratic from its standard, vertex, and factored
+    forms; compute average rates of change of linear and quadratic functions
+    over equal-length intervals; and use first and second differences to
+    classify a function and justify its concavity.
+    \hfill\textit{\small (CED Topic 1.3 --- Skills 2.B, 3.B, 3.C)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{2.B} --- Identify a re-expression of mathematical information
+presented in a given representation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item One quadratic, three equivalent forms: standard $ax^2+bx+c$ shows the
+        $y$-intercept, vertex form $a(x-h)^2+k$ shows the vertex, factored
+        form $a(x-r_1)(x-r_2)$ shows the zeros.
+  \item The axis of symmetry $x = -\dfrac{b}{2a}$ is the bridge from standard
+        form back to the vertex.
+\end{itemize} \\
+\textbf{3.B} --- Apply numerical results in a given mathematical or applied
+context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item AROC over $[a,b]$ is $\dfrac{f(b)-f(a)}{b-a}$, the slope of the secant
+        line through $(a, f(a))$ and $(b, f(b))$. (1.3.A.3)
+  \item For a linear function the AROC is the same over every interval, so
+        those rates change at a rate of zero. (1.3.A.1, 1.3.B.1)
+\end{itemize} \\
+\textbf{3.C} --- Support conclusions or choices with a logical rationale or
+appropriate data. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item For a quadratic, the AROCs over consecutive equal-length intervals
+        are themselves given by a \textit{linear} function, so they change at
+        a constant rate. (1.3.A.2, 1.3.B.2)
+  \item Constant second differences are the numerical fingerprint of a
+        quadratic; with unit steps that constant is $2a$.
+  \item AROCs increasing over small intervals $\Rightarrow$ concave up;
+        decreasing $\Rightarrow$ concave down. (1.3.B.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Standard form    & $f(x) = ax^2 + bx + c$ --- the $y$-intercept is $c$, and the sign of $a$ gives the direction of opening. \\
+Vertex form      & $f(x) = a(x-h)^2 + k$ --- the vertex is $(h, k)$ and the axis of symmetry is the line $x = h$. \\
+Factored form    & $f(x) = a(x-r_1)(x-r_2)$ --- the zeros (roots, $x$-intercepts) are $r_1$ and $r_2$. \\
+Axis of symmetry & The vertical line $x = -\dfrac{b}{2a}$ through the vertex; the parabola is a mirror image across it. \\
+Average rate of change (AROC) & Over $[a,b]$: $\dfrac{f(b)-f(a)}{b-a}$, the slope of the secant line joining the endpoints. \\
+Secant line      & The line through $(a, f(a))$ and $(b, f(b))$; its slope is the AROC over $[a,b]$. \\
+First differences & Successive output differences for equally spaced inputs; with a step of 1 they \textit{are} the AROCs. \\
+Second differences & The differences of the first differences --- constant exactly when the function is quadratic. \\
+Concave up / down & AROCs increasing $\Rightarrow$ concave up ($a > 0$); AROCs decreasing $\Rightarrow$ concave down ($a < 0$). \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: the slope formula from two points (the algebra every AROC
+    runs on, from Lesson 1.3), evaluating a quadratic at several inputs with
+    the parentheses habit (Lesson 1.1), and subtracting consecutive outputs to
+    fill a row of first differences. Item 3 supplies the mechanic the whole
+    lesson is built on --- students fill the row today with no interpretation
+    attached, then spend the period learning what the row means.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{The staircase of odd numbers.} Put the perfect squares on the
+    board: $0,\ 1,\ 4,\ 9,\ 16,\ 25$.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask for the gaps between consecutive squares: $1, 3, 5, 7, 9$ ---
+              every odd number, in order. Let the surprise land.
+        \item Now ask for the gaps between \textit{those}: $2, 2, 2, 2$. Dead
+              constant.
+    \end{enumerate}
+    \textit{Discussion prompt:} the squares are not evenly spaced, but their
+    spacings are. Every quadratic hides an arithmetic pattern one level down
+    --- today we learn to hunt for it, name it, and read the leading
+    coefficient straight out of it.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson]{lilac}
+\begin{multicols}{2}
+
+\textbf{Part 1: Three Forms, Three Features} (8 min)
+
+\begin{itemize}
+  \item Brisk Algebra 2 recall --- this is activation, not the lesson. Put
+        $f(x) = x^2 - 6x + 5$ on the board in all three forms: standard,
+        $(x-3)^2 - 4$, and $(x-1)(x-5)$.
+  \item Ask what each form \textit{hands you for free}: $c = 5$ is the
+        $y$-intercept; $(3, -4)$ is the vertex; $1$ and $5$ are the zeros.
+        Same function, three different features made visible.
+  \item Axis of symmetry from standard form: $x = -\dfrac{b}{2a} = 3$, then
+        evaluate to get $k$. That is the bridge students need all unit.
+\end{itemize}
+
+\textbf{Part 2: AROC and the Secant Line, Recalled} (10 min)
+
+\begin{itemize}
+  \item Recall Lesson 1.3: the AROC over $[a,b]$ is
+        $\dfrac{f(b)-f(a)}{b-a}$ --- output change over input change.
+  \item Run it on the same quadratic over $[1, 4]$: $f(1) = 0$, $f(4) = -3$,
+        AROC $= -1$. Project the pre-drawn parabola from the notes with the
+        dashed secant already on it --- the $-1$ is that line's slope.
+  \item Then over $[3, 6]$: AROC $= +3$. Same function, different interval,
+        different rate. \textbf{That is the whole difference} between a line
+        and a parabola, and Part 3 makes it numerical.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: The Difference Table} (14 min)
+
+\begin{itemize}
+  \item Build the table for $L(x) = 3x - 2$ at $x = 0,1,2,3,4$: outputs
+        $-2, 1, 4, 7, 10$; first differences $3, 3, 3, 3$; second differences
+        $0, 0, 0$. Because the step is 1, each first difference \textit{is}
+        an AROC.
+  \item Build the table for $Q(x) = 2x^2 - 4x + 1$: outputs
+        $1, -1, 1, 7, 17$; first differences $-2, 2, 6, 10$; second
+        differences $4, 4, 4$.
+  \item Land the sentence: the quadratic's AROCs are not constant, but they
+        step by a constant $4$ --- \textit{the AROCs themselves follow a
+        linear pattern}. Write it on the board and leave it up.
+\end{itemize}
+
+\textbf{Part 4: Second Differences, $a$, and Concavity} (12 min)
+
+\begin{itemize}
+  \item With inputs stepping by 1, the constant second difference equals
+        $2a$. Check it: $4 = 2(2)$ for $Q$. Students can now read a leading
+        coefficient out of a table with no formula in sight.
+  \item If the step is $h$ instead of 1, the constant is $2ah^2$ --- state
+        it, use it once, do not drill it.
+  \item Concavity: $Q$'s AROCs $-2, 2, 6, 10$ are increasing, so the graph is
+        concave up --- and $a = 2 > 0$ agrees. Ask for the concave-down
+        version before you supply it.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} differencing in the wrong direction ---
+        earlier output minus later. Cold-call: ``Which output comes second?
+        That one goes first.''
+  \item \textbf{Common error:} calling first differences AROCs when the
+        inputs do \textit{not} step by 1. Ask: ``What is your step? Then what
+        do you still have to divide by?''
+  \item \textbf{Common error:} concluding ``quadratic'' from first
+        differences that merely change. Push: ``Change is not enough --- do
+        they change by the \textit{same amount} every time?''
+  \item \textbf{Common error:} reading the vertex of $a(x-h)^2 + k$ with the
+        sign of $h$ unflipped --- $(x+1)^2$ means $h = -1$.
+  \item \textbf{Units:} every AROC in an applied context is output units per
+        input unit. ``Dollars per \textit{what}?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Nova Cycles --- Pricing a
+Helmet} in leveled tiers. Every tier reads the same revenue table and the
+same pre-drawn parabola --- no tier draws anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Two scaffolded AROC computations from
+        the table over $[0, 5]$ and $[5, 10]$ with the fraction pre-labeled,
+        a ``which stretch grew faster'' comparison, and one rising/falling
+        sign read on $[20, 25]$.
+  \item \textbf{Tier A (Approaching Proficiency):} Complete the full AROC row
+        ($50, 30, 10, -10, -30, -50$), spot the constant step of $-20$,
+        conclude quadratic and concave down, and interpret one AROC in a
+        sentence with units (dollars of revenue per dollar of price).
+  \item \textbf{Tier E (Extension):} Work backward. From the AROC step of
+        $-20$ over intervals of length $h = 5$, recover the leading
+        coefficient from $2ah = -20$, then justify the concavity and locate
+        the maximum from the sign change in the AROCs alone --- numerical
+        evidence only, no graph (Skill 3.C).
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Compute the AROC of $f(x) = x^2 - 2x$ over $[1, 4]$ (worked space
+        provided).
+  \item Two functions' first differences over equal-length intervals
+        ($6,6,6,6$ vs.\ $2,6,10,14$): name which is linear and which is
+        quadratic, give the second differences of the quadratic one, and
+        justify the classification in a sentence.
+  \item From $f(x) = -3(x-2)^2 + 7$: name the vertex, the axis of symmetry,
+        and the concavity.
+\end{enumerate}
+\textbf{Assessment note:} Item 2 is the lesson's real check --- a student who
+answers ``B is quadratic'' with no second-difference evidence has the pattern
+memorized but not the reasoning (Skill 3.C). Item 3 is the Algebra 2 recall
+half; a miss there is a prerequisite gap to patch before 2.3, not a miss on
+today's new content.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems covering features read from vertex and factored
+form, AROC from a formula over two intervals with a concavity conclusion, a
+full difference table to complete for a quadratic, a two-table classification
+with a written justification, and one AP-style multiple-choice item that
+recovers the leading coefficient from a constant second difference.
+
+\textbf{Extension (optional):} The table for $f(x) = x^3$ has second
+differences $6, 12, 18$ --- not constant, so not quadratic --- but the
+\textit{third} differences are constant at $6$. The staircase simply has one
+more step, which is exactly the door into 2.2.
+
+\textbf{Preview:} Next lesson (2.2, Polynomial Functions and Rates of Change)
+takes the difference table past degree two and asks what a polynomial's rates
+of change reveal about where its graph turns.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. Item 1 is the slope formula that
+becomes today's AROC for the fourth lesson running --- if it is still shaky,
+that is the reteach. Item 2's four evaluations feed straight into the notes'
+difference tables, so insist on the parentheses habit. Item 3 asks only for
+the subtraction row, with no interpretation attached; resist students who
+want to announce ``it's quadratic'' --- tell them to hold that thought for
+fifteen minutes.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+Part 1 is recall and should move fast --- eight minutes, no more. The whole
+lesson lives in the two difference tables of Part 3, so protect them: build
+the linear one \textit{with} the class, then let students attempt the
+quadratic one before you reveal it. The one sentence worth writing on the
+board and leaving up is ``for a quadratic, the AROCs themselves are linear.''
+The $2ah^2$ generalization in Part 4 is stated once and used once; if the
+room is struggling, keep every example at step 1, where the constant is just
+$2a$, and move on. The practice box's second item is the Tier E skill in
+miniature --- if most students land it, push more groups toward Tier E.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+All three tiers read the same revenue table, so groups can be reshuffled
+mid-period with no new setup. Tier R must say the units aloud --- ``fifty
+dollars of revenue per dollar of price'' --- because the compound unit is
+what makes the context real. Tier A's constant $-20$ is the payoff; a group
+reporting $-100$ differenced the revenues instead of the AROCs. Tier E's
+$2ah = -20$ is the first time all year students recover a coefficient from
+rates rather than points, and the sign-change argument is worth a whole-class
+share in the closing minutes: the AROC runs $+10$ then $-10$, so the turn
+happens between $p = 15$ and $p = 20$, and symmetry pins it at $p = 15$.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+Collected, completion credit only. Read item 2 first and sort by the
+\textit{justification}, not the label: ``B is quadratic because its second
+differences are a constant 4'' is proficient; ``B is quadratic'' alone is
+not. Item 3's most common miss is a vertex of $(-2, 7)$ --- the unflipped $h$
+--- which is a five-minute warm-up fix tomorrow, not a reteach.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+Problem 5 is the AP-style item: distractor B reports the second difference
+itself as $a$, and distractor D doubles where it should halve. Both are worth
+a two-minute autopsy tomorrow. Problem 4 is the written-justification item;
+grade it against Skill 3.C wording and hand back exemplars. The extension on
+$x^3$ is the only cubic anyone sees before 2.2 --- if the class ran short
+today, assign it explicitly and open tomorrow's warm-up window with it.
 \end{teachernote}
 \end{document}

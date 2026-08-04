@@ -7,15 +7,287 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Guided Notes}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Read the vertex, axis of symmetry, and zeros of a quadratic from its
+        \blank{2cm}, \blank{1.8cm}, and \blank{2cm} forms.
+  \item Compute the \blank{4.2cm} of a quadratic over an interval and
+        recognize it as the slope of a \blank{2cm} line.
+  \item Use \blank{1.8cm} and \blank{2cm} differences to tell a linear
+        function from a quadratic one and to justify \blank{2.2cm}.
+\end{enumerate}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Vertex form:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Average rate of change (AROC):}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Secant line:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{First differences:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Second differences:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Concave up / concave down:}}\\[1pt]
+\writeline
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+Here are the perfect squares: $0,\ 1,\ 4,\ 9,\ 16,\ 25$. The gaps between
+them are $1,\ 3,\ 5,\ 7,\ 9$ --- every odd number, in order. Now find the
+gaps between \textit{those} numbers. What do you get, and why is that
+surprising?
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{1. Three Forms, Three Features}
+A quadratic can be written three different ways. They are the same function
+--- but each one hands you a different feature for free.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Form} & \textbf{Looks like} & \textbf{Shows you at a glance} \\
+\hline
+Standard & $ax^2 + bx + c$ & the $y$-intercept, which is \blank{1.4cm} \\
+\hline
+Vertex   & $a(x-h)^2 + k$  & the vertex, the point ( \blank{1cm} , \blank{1cm} ) \\
+\hline
+Factored & $a(x-r_1)(x-r_2)$ & the \blank{1.8cm} : $r_1$ and $r_2$ \\
+\hline
+\end{tabular}
+\smallskip
+
+From standard form, the \textbf{axis of symmetry} is the vertical line
+$x = -\dfrac{b}{2a}$, and the vertex sits on it.
+
+\smallskip
+\textbf{Example 1.} Let $f(x) = x^2 - 6x + 5$. Find the vertex.
+
+\begin{work}
+  x &= -\frac{b}{2a} \\
+    &= -\frac{-6}{2(1)} \\
+    &= 3 \\
+  f(3) &= (3)^2 - 6(3) + 5 \\
+       &= -4
+\end{work}
+
+\begin{itemize}[itemsep=4pt]
+  \item Vertex: ( \blank{1cm} , \blank{1cm} ) \qquad Axis of symmetry:
+        $x = $ \blank{1.2cm}
+  \item Vertex form: $f(x) = $ \blank{4cm}
+  \item Factored form: $f(x) = (x-1)(x-5)$, so the zeros are \blank{1cm} and
+        \blank{1cm}
+  \item Here $a = 1 > 0$, so the parabola opens \blank{1.4cm} and the graph
+        is concave \blank{1.4cm}.
+\end{itemize}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. Average Rate of Change --- The Secant Line Returns}
+From Lesson 1.3: the \textbf{average rate of change} of $f$ over $[a, b]$ is
+
+\begin{center}
+$\text{AROC over } [a,b] \;=\;
+\dfrac{\text{change in \blank{1.6cm}}}{\text{change in \blank{1.6cm}}}
+\;=\; \dfrac{f(b) - f(a)}{b - a}$
+\end{center}
+
+and it is the \blank{1.6cm} of the \textbf{secant line} through $(a, f(a))$
+and $(b, f(b))$.
+
+\smallskip
+\textbf{Example 2.} For the same $f(x) = x^2 - 6x + 5$, find the AROC over
+$[1, 4]$.
+
+\begin{work}
+  f(1) &= (1)^2 - 6(1) + 5 \\
+       &= 0 \\
+  f(4) &= (4)^2 - 6(4) + 5 \\
+       &= -3 \\
+  \text{AROC} &= \frac{-3 - 0}{4 - 1} \\
+              &= -1
+\end{work}
+
+The dashed line below is that secant. Its slope is the AROC.
+
+\begin{center}
+\begin{tikzpicture}[x=0.72cm, y=0.32cm]
+  \draw[linegray, very thin, step=1] (0,-5) grid (6,5);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {-4,-2,2,4} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,5) (1,0) (2,-3) (3,-4) (4,-3) (5,0) (6,5)};
+  \draw[dashed, thick, goldacc] (1,0) -- (4,-3);
+  \fill[plum] (1,0) circle (2.5pt);
+  \fill[plum] (3,-4) circle (2.5pt);
+  \fill[plum] (4,-3) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[itemsep=4pt]
+  \item AROC over $[3, 6]$: \quad $\dfrac{5 - (-4)}{6 - 3} = $ \blank{1.4cm}
+  \item Same function, different interval, \blank{2.6cm} rate. A line could
+        never do that --- and that difference is the rest of the lesson.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{3. Difference Tables --- Linear vs.\ Quadratic}
+When the inputs are equally spaced, a \textbf{first difference} is one output
+minus the one before it, and a \textbf{second difference} is one first
+difference minus the one before it. With a step of $1$, each first difference
+\textit{is} an AROC.
+
+\medskip
+\textbf{Linear:} $L(x) = 3x - 2$
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$L(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
+
+Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
+
+For a \textbf{linear} function the AROC is \blank{2.2cm} over every interval,
+so the second differences are all \blank{1cm}.
+
+\medskip
+\textbf{Quadratic:} $Q(x) = 2x^2 - 4x + 1$
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$Q(x)$ & 1 & $-1$ & 1 & 7 & 17 \\
+\hline
+\end{tabular}
+\smallskip
+
+First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
+
+Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
+
+The first differences are \textbf{not} constant --- but look at how they
+change: each one is \blank{1cm} more than the one before. The AROCs of a
+quadratic form a \blank{2cm} pattern of their own.
+
+\medskip
+\textbf{The headline:} for a quadratic, the average rates of change over
+consecutive equal-length intervals change at a \blank{2.4cm} rate.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Second Differences, the Leading Coefficient, and Concavity}
+\textbf{The fingerprint.} If the inputs step by $h$, then a quadratic
+$f(x) = ax^2 + bx + c$ has constant second differences equal to $2ah^2$.
+When the step is $h = 1$, that constant is simply $2a$.
+
+\begin{itemize}[itemsep=4pt]
+  \item Check it on $Q(x) = 2x^2 - 4x + 1$: the second difference was
+        \blank{1cm} , and $2a = 2(2) = $ \blank{1cm} --- they match.
+  \item So a table alone gives you $a$: if the second differences are a
+        constant $10$ with unit steps, then $a = $ \blank{1.2cm} .
+\end{itemize}
+
+\textbf{Concavity, from the numbers alone.} When the AROCs (first
+differences) are \textit{increasing}, the graph is concave \blank{1.2cm};
+when they are \textit{decreasing}, the graph is concave \blank{1.4cm}.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Function} & \textbf{First differences} & \textbf{Second differences} \\
+\hline
+Linear    & constant                        & all \blank{1.2cm} \\
+\hline
+Quadratic & change by a \blank{1.6cm} step  & constant and \blank{1.8cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+Since $Q$'s first differences $-2, 2, 6, 10$ are increasing, $Q$ is concave
+\blank{1.2cm} --- and $a = 2$ is \blank{1.6cm} , which agrees.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[24]
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = -x^2 + 6x$. Complete the table and the difference rows.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $p(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \smallskip
+
+        First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} ,
+        \blank{1cm}
+
+        Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
+
+        The graph is concave \blank{1.4cm} , and $a = $ \blank{1.2cm} .
+
+  \item A quadratic's AROCs over $[0,1]$, $[1,2]$, and $[2,3]$ are
+        $1,\ 7,\ 13$.
+
+        \begin{work}
+          \text{step} &= 7 - 1 \\
+                      &= 6 \\
+          2a &= 6 \\
+           a &= 3
+        \end{work}
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The AROCs step by \blank{1.2cm} each time, so the leading
+                coefficient is $a = $ \blank{1.2cm} .
+          \item The AROCs are increasing, so the graph is concave
+                \blank{1.4cm} .
+        \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -7,160 +7,284 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{objectivebox}
-Students will identify and interpret zeros of polynomial functions (real and complex),
-including multiplicity, and determine whether a polynomial function is even or odd.
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item[\textbullet] \ansline{Identify zeros and multiplicities from factored form.}
-  \item[\textbullet] \ansline{Determine graph behavior (cross vs.\ touch) at each real zero.}
-  \item[\textbullet] \ansline{Test a function for even, odd, or neither algebraically.}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Explain why a polynomial can have zeros that never show up as
+        \ans{$x$-intercepts} on its graph.
+  \item Use the Fundamental Theorem of Algebra to count the \ans{$n$}
+        complex zeros of a polynomial of degree $n$.
+  \item Use \ans{conjugate} pairs to name a missing zero and to build a
+        polynomial from a list of zeros.
+  \item Decide whether a polynomial function is \ans{even},
+        \ans{odd}, or neither.
 \end{enumerate}
 \end{objectivebox}
 
+\vspace{0.1in}
+
+\boxguard
 \begin{vocabbox}
-\termblanklong{zero (root)} \ansline{A value $a$ such that $p(a)=0$.}
-\termblanklong{multiplicity} \ansline{The number of times a linear factor $(x-a)$ is repeated in a polynomial.}
-\termblanklong{complex zero} \ansline{A zero of the form $a+bi$ with $b\neq 0$.}
-\termblanklong{complex conjugate pair} \ansline{Two zeros of the form $a+bi$ and $a-bi$; they always appear together for polynomials with real coefficients.}
-\termblanklong{even function} \ansline{A function satisfying $f(-x)=f(x)$; graph is symmetric about the $y$-axis.}
-\termblanklong{odd function} \ansline{A function satisfying $f(-x)=-f(x)$; graph is symmetric about the origin.}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Imaginary unit:}}\\[1pt]
+\ansline{The number $i$, defined by $i^2 = -1$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Complex number:}}\\[1pt]
+\ansline{Any number $a + bi$ with $a$, $b$ real; $a$ is the real part, $b$ the imaginary part.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Non-real zero:}}\\[1pt]
+\ansline{A zero $a + bi$ with $b \ne 0$ --- not an $x$-intercept, and not on the graph at all.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Complex conjugate:}}\\[1pt]
+\ansline{The partner $a - bi$ of $a + bi$; only the sign in front of the $i$ changes.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Fundamental Theorem of Algebra:}}\\[1pt]
+\ansline{A polynomial of degree $n$ has exactly $n$ complex zeros, counting multiplicities.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Even function:}}\\[1pt]
+\ansline{$f(-x) = f(x)$ for every $x$; the graph is symmetric over the line $x = 0$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Odd function:}}\\[1pt]
+\ansline{$f(-x) = -f(x)$ for every $x$; the graph is symmetric about the point $(0,0)$.}
 \end{vocabbox}
 
+\vspace{0.1in}
+
+\boxguard[34]
 \begin{hookbox}
-Consider $p(x)=(x-2)^2(x+1)$.
-\begin{itemize}[leftmargin=1.2em, itemsep=3pt]
-  \item Where does the graph of $y=p(x)$ \emph{cross} the $x$-axis? \ans{$x=-1$}
-  \item Where does it \emph{touch and bounce} without crossing? \ans{$x=2$}
-  \item What is it about the \emph{exponent} on a factor that tells you which will happen?
-        \ansline{If the exponent (multiplicity) is odd, the graph crosses; if even, it is tangent (touches and bounces).}
-\end{itemize}
+Below is the graph of $p(x) = x^4 - 3x^2 - 4$, a polynomial of degree 4. It
+crosses the $x$-axis exactly twice.
+
+\begin{center}
+\begin{tikzpicture}[x=1.0cm, y=0.28cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-7) grid (2.4,5);
+  \draw[->, thick] (-2.7,0) -- (2.8,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-7.6) -- (0,5.8) node[above] {\small $p(x)$};
+  \foreach \x in {-2,-1,1,2} \node[below] at (\x,-0.3) {\small \x};
+  \foreach \y in {-6,-4,-2,2,4} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.9) (-2,0) (-1.6,-5.13) (-1.2,-6.25) (-0.8,-5.51)
+     (-0.4,-4.45) (0,-4) (0.4,-4.45) (0.8,-5.51) (1.2,-6.25)
+     (1.6,-5.13) (2,0) (2.2,4.9)};
+  \fill[plum] (-2,0) circle (2.5pt);
+  \fill[plum] (2,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+Lesson 2.3 tied every zero to a factor. A degree-4 polynomial has four factors'
+worth of zeros --- but the graph shows only two. Where are the other two?
+
+\ansline{They are there, but they are not real numbers: $p(x) = (x-2)(x+2)(x^2+1)$, and}
+\ansline{$x^2 + 1 = 0$ gives $x = i$ and $x = -i$. A graph can only show real zeros.}
 \end{hookbox}
 
-\begin{notesbox}{Zeros and Linear Factors}
-\textbf{Key connection:} For a polynomial $p(x)$, if $p(a) = $ \ans{$0$}, then $a$
-is called a \ans{zero (root)} of $p$, and $(x - a)$ is a \ans{linear} factor of $p$.
-
-\vspace{0.15in}
-
-\textbf{Multiplicity:} If the factor $(x-a)$ appears \ans{$n$} times, then $a$ has
-multiplicity \ans{$n$}. A polynomial of degree $n$ has exactly \ans{$n$}
-complex zeros (counting multiplicities).
-
 \vspace{0.1in}
 
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|X|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Polynomial} & \textbf{Factored Form} & \textbf{Zeros} & \textbf{Multiplicities} \\
-\hline
-$p(x)=(x-2)^2(x+1)$ & already factored & \ans{$x=2,\;x=-1$} & \ans{2 and 1} \\
-\hline
-$q(x)=x^3-x^2-6x$ & \ans{$x(x-3)(x+2)$} & \ans{$0,3,-2$} & \ans{all mult.\ 1} \\
-\hline
-$r(x)=(x+1)^3(x-4)^2$ & already factored & \ans{$x=-1,\;x=4$} & \ans{3 and 2} \\
-\hline
-\end{tabularx}
-\end{notesbox}
+\boxguard[30]
+\begin{notesbox}{1. A Complex-Number Refresher}
+From Algebra 2: the \textbf{imaginary unit} $i$ is the number with
+$i^2 = $ \ans{$-1$}. A \textbf{complex number} has the form $a + bi$, where
+$a$ and $b$ are real numbers.
 
-\begin{notesbox}{Graph Behavior at Real Zeros}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|l|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Multiplicity} & \textbf{Graph behavior at the zero} & \textbf{Example} \\
-\hline
-Odd (1, 3, 5, \ldots) & \ans{Crosses} the $x$-axis & $(x+1)^1$ in $p(x)$ above \\
-\hline
-Even (2, 4, 6, \ldots) & \ans{Touches/bounces off} the $x$-axis (tangent) & $(x-2)^2$ in $p(x)$ above \\
-\hline
-\end{tabularx}
-
-\vspace{0.1in}
-For $p(x)=(x+2)(x-1)^2(x-3)$, predict the graph's behavior at each zero:
-
-\begin{tabularx}{\linewidth}{|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Zero} & \textbf{Multiplicity} & \textbf{Crosses or tangent?} \\
-\hline
-$x = -2$ & \ans{1} & \ans{Crosses} \\
-\hline
-$x = 1$  & \ans{2} & \ans{Tangent (touches, bounces)} \\
-\hline
-$x = 3$  & \ans{1} & \ans{Crosses} \\
-\hline
-\end{tabularx}
-\end{notesbox}
-
-\begin{notesbox}{Complex Zeros \& Conjugate Pairs}
-\textbf{Complex Conjugate Pairs Theorem:} If $p(x)$ is a polynomial with
-\ans{real} coefficients and $a+bi$ (with $b\neq 0$) is a zero, then
-\ans{$a-bi$} is also a zero of $p$.
-
-\vspace{0.1in}
-\textbf{Example:} Suppose $p(x)$ has real coefficients and $2+3i$ is a zero.
-\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
-  \item The other complex zero must be: \ans{$2-3i$}
-  \item Write the quadratic factor formed by this conjugate pair:\\[4pt]
-        $(x-(2+3i))(x-(2-3i)) = x^2 - $ \ans{$4$}$x + $ \ans{$13$}
-  \item If $p$ also has real zero $x=1$, what is the minimum degree of $p$?
-        \ans{3}
-\end{itemize}
-\end{notesbox}
-
-\begin{notesbox}{Even and Odd Functions}
-\textbf{Definitions:}
-\begin{itemize}[leftmargin=1.2em, itemsep=4pt]
-  \item $f$ is \textbf{even} if $f(-x) = $ \ans{$f(x)$} for all $x$ in its domain.
-        Graph is symmetric about the \ans{$y$-axis}.
-  \item $f$ is \textbf{odd} if $f(-x) = $ \ans{$-f(x)$} for all $x$ in its domain.
-        Graph is symmetric about the \ans{origin}.
+\begin{itemize}[itemsep=4pt]
+  \item $a$ is the \ans{real} part and $b$ is the \ans{imaginary} part.
+  \item Every real number is already complex: $7 = 7 + 0i$. A number is
+        \textbf{non-real} exactly when $b$ \ans{$\ne$} $0$.
+  \item The \textbf{complex conjugate} of $a + bi$ is \ans{$a - bi$}. Only the
+        sign in front of the $i$ changes.
 \end{itemize}
 
-\vspace{0.1in}
-\textbf{Algebraic test — steps:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
-  \item Replace every $x$ with \ans{$-x$} and simplify.
-  \item Compare the result to \ans{$f(x)$} (even) or \ans{$-f(x)$} (odd).
-  \item If neither equality holds, the function is \ans{neither}.
-\end{enumerate}
+\textbf{Example 1.} Show that $i$ is a zero of $p(x) = x^2 + 1$. Nothing new
+here --- a zero is still an input that makes the output $0$.
 
-\vspace{0.1in}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{\linewidth}{|X|X|X|}
-\hline
-\rowcolor{sky}
-\textbf{Function} & \textbf{$f(-x) = \ldots$} & \textbf{Even, Odd, or Neither?} \\
-\hline
-$f(x)=x^4-2x^2$ & \ans{$x^4-2x^2 = f(x)$} & \ans{Even} \\
-\hline
-$g(x)=x^3-x$ & \ans{$-x^3+x = -g(x)$} & \ans{Odd} \\
-\hline
-$h(x)=x^2+x$ & \ans{$x^2-x$; not $h(x)$ or $-h(x)$} & \ans{Neither} \\
-\hline
-\end{tabularx}
+\begin{work}
+  p(i) &= (i)^2 + 1 \\
+       &= -1 + 1 \\
+       &= 0
+\end{work}
+
+\textbf{Example 2.} Multiply the conjugate pair $3 + 2i$ and $3 - 2i$.
+
+\begin{work}
+  (3+2i)(3-2i) &= 9 - 6i + 6i - 4i^2 \\
+               &= 9 - 4(-1) \\
+               &= 13
+\end{work}
+
+The $i$ terms cancelled and the answer came out \ans{real}. Remember this
+--- it is the reason for Section 3.
 \end{notesbox}
 
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. The Fundamental Theorem of Algebra --- Exactly $n$ Zeros}
+\textbf{Fundamental Theorem of Algebra.} A polynomial function of degree $n$
+has \textbf{exactly} \ans{$n$} complex zeros, counting multiplicities.
+
+\begin{itemize}[itemsep=4pt]
+  \item ``Exactly,'' not ``at most.'' The count is guaranteed once we allow
+        non-real numbers as inputs.
+  \item \textbf{Real} zeros are the ones you can see: they are the
+        \ans{$x$-intercepts} of the graph.
+  \item \textbf{Non-real} zeros are not on the graph \textit{at all}. A graph
+        can never show them, so they must be found from the factors.
+\end{itemize}
+
+\textbf{The hook, resolved.} $p(x) = x^4 - 3x^2 - 4 = (x-2)(x+2)(x^2+1)$.
+Setting $x^2 + 1 = 0$ gives $x^2 = -1$, so $x = $ \ans{$\pm i$}. All four
+zeros: $2$, $-2$, and the pair \ans{$i$, $-i$}.
+
+\medskip
+\textbf{Zero census.} Complete the table. Count real zeros \textit{with
+multiplicity}, then subtract from the degree.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Factored form} & \textbf{Degree} & \textbf{\# real} & \textbf{\# non-real} & \textbf{Total} \\
+\hline
+$(x-2)(x+2)(x^2+1)$ & \ans{4} & \ans{2} & \ans{2} & \ans{4} \\
+\hline
+$(x+1)^3(x^2+4)$ & \ans{5} & \ans{3} & \ans{2} & \ans{5} \\
+\hline
+$x(x^2+9)$ & \ans{3} & \ans{1} & \ans{2} & \ans{3} \\
+\hline
+$(x-1)^2(x^2+1)^2$ & \ans{6} & \ans{2} & \ans{4} & \ans{6} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+\textbf{The move to memorize:} degree $-$ (real zeros with multiplicity) $=$
+number of \ans{non-real} zeros.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{3. Non-Real Zeros Come in Pairs}
+\textbf{The conjugate pair rule.} If $a + bi$ is a zero of a polynomial with
+real coefficients, then \ans{$a - bi$} is also a zero.
+
+\begin{itemize}[itemsep=4pt]
+  \item Consequence 1: the number of non-real zeros of such a polynomial is
+        always \ans{even} --- they cannot arrive one at a time.
+  \item Consequence 2: a polynomial of \textbf{odd} degree has an odd total
+        number of zeros, so they cannot all be non-real. It must have at least
+        one \ans{real} zero --- its graph \textit{has} to cross the
+        $x$-axis.
+  \item Look back at Section 1: a conjugate pair multiplies out to a factor
+        with real coefficients, which is why the pair is forced.
+\end{itemize}
+
+\textbf{Example 3.} A polynomial $p$ has real coefficients, degree 3, leading
+coefficient 1, and zeros $x = 2$ and $x = 1 + 3i$. Name the third zero, then
+write $p(x)$.
+
+Third zero: \ans{$1 - 3i$}
+
+\begin{work}
+  p(x) &= (x-2)\big(x - (1+3i)\big)\big(x - (1-3i)\big) \\
+       &= (x-2)\big((x-1) - 3i\big)\big((x-1) + 3i\big) \\
+       &= (x-2)\big((x-1)^2 - 9i^2\big) \\
+       &= (x-2)\big(x^2 - 2x + 1 + 9\big) \\
+       &= (x-2)(x^2 - 2x + 10) \\
+       &= x^3 - 4x^2 + 14x - 20
+\end{work}
+
+Every coefficient came out \ans{real} --- exactly what the conjugate pair
+guarantees.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[34]
+\begin{notesbox}{4. Even and Odd Polynomial Functions}
+\begin{itemize}[itemsep=4pt]
+  \item $f$ is \textbf{even} when $f(-x) = $ \ans{$f(x)$} for every $x$. Its
+        graph is symmetric over the line \ans{$x = 0$}.
+  \item $f$ is \textbf{odd} when $f(-x) = $ \ans{$-f(x)$} for every $x$. Its
+        graph is symmetric about the point \ans{$(0,0)$}.
+  \item Most functions are \textbf{neither}. ``Odd'' is not the same as ``not
+        even.''
+\end{itemize}
+
+\textbf{Example 4.} Test $g(x) = x^3 - 4x$ by substituting $-x$.
+
+\begin{work}
+  g(-x) &= (-x)^3 - 4(-x) \\
+        &= -x^3 + 4x \\
+        &= -(x^3 - 4x) \\
+        &= -g(x)
+\end{work}
+
+So $g$ is \ans{odd}.
+
+\medskip
+\textbf{The polynomial shortcut.} Look only at the exponents:
+
+\begin{itemize}[itemsep=4pt]
+  \item Every exponent \textbf{even} $\Rightarrow$ the function is
+        \ans{even}. \quad (Careful: a constant term is $x^0$, an
+        \textit{even} power.)
+  \item Every exponent \textbf{odd} $\Rightarrow$ the function is
+        \ans{odd}.
+  \item A \textbf{mix} of even and odd exponents $\Rightarrow$ \ans{neither}.
+\end{itemize}
+
+\textbf{Reading the symmetry.} Graph A is $y = x^4 - 4x^2$; graph B is
+$y = x^3 - 3x$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.25cm]
+  \draw[->, thick] (-2.6,0) -- (2.7,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4.8) -- (0,5.0) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
+     (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
+  \node[below] at (0,-5.4) {\small \textbf{Graph A}};
+\end{tikzpicture}
+\hspace{1.1cm}
+\begin{tikzpicture}[x=0.55cm, y=0.25cm]
+  \draw[->, thick] (-2.6,0) -- (2.7,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4.8) -- (0,5.0) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38) (0,0)
+     (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2)};
+  \node[below] at (0,-5.4) {\small \textbf{Graph B}};
+\end{tikzpicture}
+\end{center}
+
+Graph A is \ans{even} (mirror over the $y$-axis); graph B is
+\ans{odd} (half-turn about the origin).
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
 \begin{practicebox}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
-  \item A polynomial with real coefficients has zeros $x=4$ (multiplicity 2) and $x=1-i$.
-        \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
-          \item List all zeros of this polynomial.
-                \ansline{$x=4$ (mult.\ 2), $x=1-i$, and $x=1+i$ (conjugate pair).}
-          \item What is the minimum degree?  \ans{4}
-          \item At which real zero does the graph touch but not cross the $x$-axis?
-                \ans{$x=4$} (multiplicity 2)
-        \end{enumerate}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = (x-6)(x^2 + 2x + 5)$. Give the degree, then list all
+        complex zeros.
 
-  \item Determine whether $k(x)=2x^6-3x^4+x^2$ is even, odd, or neither.
-        Show the algebraic test.
-        \ansline{$k(-x)=2(-x)^6-3(-x)^4+(-x)^2=2x^6-3x^4+x^2=k(x)$.}
-        \ansline{Since $k(-x)=k(x)$, the function is \textbf{even}.}
+        \begin{work}
+          x^2 + 2x + 5 &= 0 \\
+                     x &= \frac{-2 \pm \sqrt{4 - 20}}{2} \\
+                       &= \frac{-2 \pm 4i}{2} \\
+                       &= -1 \pm 2i
+        \end{work}
+
+        Degree $= $ \ans{3} \qquad Zeros: \ans{$6$, $-1 + 2i$, $-1 - 2i$}
+
+  \item Classify each polynomial as \textbf{even}, \textbf{odd}, or
+        \textbf{neither}.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f(x) = x^4 - 7x^2 + 1$ \quad \ans{even}
+          \item $g(x) = x^5 - x$ \quad \ans{odd}
+          \item $h(x) = x^4 + x$ \quad \ans{neither}
+        \end{enumerate}
 \end{enumerate}
 \end{practicebox}
 
