@@ -1,26 +1,248 @@
 %! Transformations of Functions — Unit 1, Lesson 1.4 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.12}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 1.4}\\[0.5cm]
     {\color{white}\bfseries\LARGE Transformations of Functions}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 1}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \plumheader{Hook: One Function, Three Disguises}
+  \sectionlabel[goldacc]{Think About It}
+
+  Start with \(f(x) = x^2\). Here are three tables built from it.
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{block}{Table A}
+        \(7,\ 4,\ 3,\ 4,\ 7\)\\[3pt]
+        Every output \textbf{3 larger}.
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Table B}
+        \(4,\ 1,\ 0,\ 1,\ 4\)\\[3pt]
+        The \textbf{same outputs} --- at different inputs.
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Table C}
+        \(8,\ 2,\ 0,\ 2,\ 8\)\\[3pt]
+        Every output \textbf{doubled}.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Table B is the interesting one: nothing happened to the outputs at
+  all. So what moved?}
+\end{frame}
+
+% SECTION 1 — OUTSIDE / INSIDE
+\begin{frame}[t, plain]
+  \plumheader{1. The Parent Function and the Outside/Inside Rule}
+
+  The \textbf{parent function} is the plain curve everything else is built
+  from. Today: \(f(x) = x^2\), with reference points
+  \((-2,4)\), \((-1,1)\), \((0,0)\), \((1,1)\), \((2,4)\).
+
+  \bigskip
+  \begin{block}{The one sentence for today}
+    A change \textbf{outside} \(f\) touches the \textbf{outputs}: the graph
+    moves \textbf{vertically}, and it does what you expect.
+
+    \medskip
+    A change \textbf{inside} \(f\) touches the \textbf{inputs}: the graph
+    moves \textbf{horizontally}, and it does the \textbf{opposite} of what
+    you expect.
+  \end{block}
+
+  \bigskip
+  \textit{Before computing anything: is this change outside \(f\), or inside
+  \(f\)?}
+\end{frame}
+
+% SECTION 2 — VERTICAL TRANSLATION
+\begin{frame}[t, plain]
+  \plumheader{2. Vertical Translation: \(g(x) = f(x) + k\)}
+
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.3cm]
+        \draw[linegray, very thin, step=1] (-3,0) grid (3,8);
+        \draw[->, thick] (-3.3,0) -- (3.5,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small \(y\)};
+        \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[thick, linegray] plot [smooth] coordinates
+          {(-2.8,7.84) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.8,7.84)};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-2.2,7.84) (-2,7) (-1,4) (0,3) (1,4) (2,7) (2.2,7.84)};
+      \end{tikzpicture}
+      \end{center}
+      \centering{\scriptsize gray \(= f(x)\) \quad plum \(= f(x)+3\)}
+
+    \column{0.5\textwidth}
+      The \(+k\) is \textbf{outside}, so every output changes.
+
+      \medskip
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \(x\) & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+      \hline
+      \(f(x)\) & 4 & 1 & 0 & 1 & 4 \\
+      \hline
+      \(f(x)+3\) & 7 & 4 & 3 & 4 & 7 \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \(k>0\): up. \quad \(k<0\): down.
+        \item Domain unchanged; range slides by \(k\).
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — HORIZONTAL TRANSLATION
+\begin{frame}[t, plain]
+  \plumheader{3. Horizontal Translation: \(g(x) = f(x+h)\)}
+
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.38cm, y=0.3cm]
+        \draw[linegray, very thin, step=1] (-6,0) grid (3,6);
+        \draw[->, thick] (-6.3,0) -- (3.5,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small \(y\)};
+        \foreach \x in {-6,-4,-2,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[thick, linegray] plot [smooth] coordinates
+          {(-2.45,6) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.45,6)};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-5.45,6) (-5,4) (-4,1) (-3,0) (-2,1) (-1,4) (-0.55,6)};
+      \end{tikzpicture}
+      \end{center}
+      \centering{\scriptsize gray \(= f(x)\) \quad plum \(= f(x+3)\)}
+
+    \column{0.46\textwidth}
+      The \(+h\) is \textbf{inside}, so the inputs change --- and the
+      direction \textbf{reverses}.
+
+      \medskip
+      \begin{block}{Why left?}
+        \(f\) bottoms out when its input is \(0\).\\[3pt]
+        \(g\) bottoms out when \(x + 3 = 0\),\\[3pt]
+        so at \(x = -3\) --- three units \textbf{left}.
+      \end{block}
+
+      \medskip
+      \(h > 0\): left. \quad \(h < 0\): right.
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — DILATIONS AND REFLECTIONS
+\begin{frame}[t, plain]
+  \plumheader{4. Dilations and Reflections}
+
+  \begin{columns}[T]
+    \column{0.42\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.22cm]
+        \draw[linegray, very thin, step=1] (-2.4,-4) grid (2.4,8);
+        \draw[->, thick] (-2.7,0) -- (2.9,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-4.4) -- (0,8.6) node[above] {\small \(y\)};
+        \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-4,4,8} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[thick, linegray] plot [smooth] coordinates
+          {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-2,8) (-1,2) (0,0) (1,2) (2,8)};
+        \draw[very thick, goldacc] plot [smooth] coordinates
+          {(-2,-4) (-1,-1) (0,0) (1,-1) (2,-4)};
+      \end{tikzpicture}
+      \end{center}
+      \centering{\scriptsize gray \(=f(x)\) \quad plum \(=2f(x)\) \quad
+      gold \(=-f(x)\)}
+
+    \column{0.54\textwidth}
+      \begin{block}{Vertical: \(g(x) = a f(x)\) --- outside}
+        \(|a|>1\) stretches away from the \(x\)-axis;
+        \(0<|a|<1\) compresses toward it.\\[3pt]
+        \(a<0\) also \textbf{flips} over the \(x\)-axis.
+      \end{block}
+
+      \medskip
+      \begin{block}{Horizontal: \(g(x) = f(bx)\) --- inside}
+        \(f(2x)\) hits the same heights at \textbf{half} the \(x\):
+        a horizontal \textbf{compression} by \(\tfrac{1}{2}\).\\[3pt]
+        Inside, so opposite again.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 5 — COMBINING + DOMAIN/RANGE
+\begin{frame}[t, plain]
+  \plumheader{5. Combining Them --- and Domain \& Range}
+
+  \begin{center}
+    {\Large \(g(x) = a\,f(x+h) + k\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{block}{Decode \(g(x) = -2f(x+1)-3\)}
+        \(h = 1\): shift \textbf{left} 1 \\[3pt]
+        \(a = -2\): stretch by 2, \textbf{flip} over the \(x\)-axis \\[3pt]
+        \(k = -3\): shift \textbf{down} 3
+      \end{block}
+
+    \column{0.5\textwidth}
+      \begin{block}{Domain \(=[-2,4]\), Range \(=[0,9]\)}
+        Domain: \(-2 \le x+1 \le 4 \Rightarrow [-3, 3]\) \\[3pt]
+        Range: \(\times(-2) \Rightarrow [-18, 0]\),
+        then \(-3 \Rightarrow [-21, -3]\)
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{Rule of thumb}
+    \textbf{Horizontal} changes move the \textbf{domain}.
+    \textbf{Vertical} changes move the \textbf{range}.
+    Multiplying by a negative \textbf{swaps} which endpoint is smaller.
+  \end{block}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item Describe each transformation of the graph of \(f\):
+          \begin{enumerate}[(a)]\setlength{\itemsep}{4pt}
+            \item \(g(x) = f(x) - 6\)
+            \item \(g(x) = f(x + 5)\)
+            \item \(g(x) = -f(x)\)
+          \end{enumerate}
+    \item The domain of \(f\) is \([1, 7]\) and its range is \([-4, 2]\).
+          Find the domain and range of \(g(x) = f(x-3) + 5\).
+    \item A table shows \(f(0)=1, f(1)=3, f(2)=5\) and
+          \(p(0)=2, p(1)=6, p(2)=10\). Write \(p\) in terms of \(f\) ---
+          and say whether the change was inside or outside.
+  \end{enumerate}
 \end{frame}
 
 \end{document}
