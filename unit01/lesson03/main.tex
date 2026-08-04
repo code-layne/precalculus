@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
@@ -16,180 +16,252 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will compute and interpret average rates of change
-    over an interval, approximate the instantaneous rate of change at a point, and use the
-    sign of the rate of change to describe how two quantities co-vary. (MP 2.A, 3.A)
+    \textbf{Primary Objective:} Students will compute the average rate of change
+    of a function over an interval from a formula, a table, or a graph;
+    interpret its sign and units in context; and use the pattern of average
+    rates of change to tell linear functions from quadratic ones and to name
+    concavity. \hfill\textit{\small (CED Topics 1.2 \& 1.3 --- Skills 2.A, 3.A, 3.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{\color{navy}Mathematical Practices}
-    \begin{itemize}
-        \item \textbf{MP 2.A} — Identify information from representations (tables, graphs,
-              verbal descriptions) to answer a question or construct a model.
-        \item \textbf{MP 3.A} — Describe characteristics of a function, including rate of
-              change, sign, and how two quantities vary together.
-    \end{itemize}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{\color{navy}Key Understandings}
-    \begin{itemize}
-        \item AROC $= \dfrac{\Delta y}{\Delta x} = \dfrac{f(b)-f(a)}{b-a}$ is the constant
-              rate that produces the same net change over $[a,b]$.
-        \item The rate of change \emph{at a point} can be approximated by computing AROC
-              over successively smaller intervals containing that point.
-        \item A \emph{positive} AROC means the output increases as the input increases;
-              a \emph{negative} AROC means the output decreases as the input increases.
-    \end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{2.A} --- Identify information from graphical, numerical, analytical,
+or verbal representations to answer a question. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item AROC over $[a,b]$ is $\dfrac{f(b)-f(a)}{b-a}$: the one constant rate
+        that yields the same net change the function produced. (1.2.A.1)
+  \item Geometrically, AROC is the slope of the secant line through
+        $(a, f(a))$ and $(b, f(b))$. (1.3.A.3)
+\end{itemize} \\
+\textbf{3.A} --- Describe the characteristics of a function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A positive rate of change means the two quantities move in the same
+        direction; a negative one means opposite directions. (1.2.B.2--3)
+  \item Rates carry units: output units per input unit. (1.2.B.1)
+\end{itemize} \\
+\textbf{3.B} --- Apply numerical results in context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Linear: AROC is constant over every interval. Quadratic: AROCs over
+        consecutive equal-length intervals change at a constant rate.
+        (1.3.A.1--2, 1.3.B.1--2)
+  \item AROCs increasing $\Rightarrow$ concave up; AROCs decreasing
+        $\Rightarrow$ concave down --- the precise version of 1.2's bending
+        language. (1.3.B.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Rate of change   & How fast the output changes with respect to the input, measured in output units per input unit. \\
+Average rate of change (AROC) & Over $[a,b]$: $\dfrac{f(b)-f(a)}{b-a}$ --- the constant rate that would produce the same net change in output over the interval. \\
+Secant line      & The line through two points $(a, f(a))$ and $(b, f(b))$ on a graph; its slope is the AROC over $[a,b]$. \\
+Positive / negative rate & Positive: the quantities rise or fall together. Negative: as one increases, the other decreases. \\
+First differences & The AROCs over consecutive equal-length input intervals --- the "steps" in a table with equally spaced inputs. \\
+Concave up / down (from 1.2) & AROCs increasing $\Rightarrow$ concave up; AROCs decreasing $\Rightarrow$ concave down. \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: the slope formula from two points (the algebra AROC runs
+    on), evaluating a function at an input with the parentheses habit
+    (Lesson 1.1), and reading a table for increasing/decreasing behavior and a
+    zero (Lesson 1.2). Item 1's slope computation is reused verbatim in
+    Part 1 --- same numbers, new name.
+\end{skillbox}
+
+\begin{skillbox}[Hook]{lilac}
+    \textbf{The road-trip average.} A family drives 120 miles in 3 hours and
+    the GPS reports: \textit{average speed 40 mph}.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: were they going exactly 40 the whole time? (Traffic, gas
+              stop, open highway --- of course not.)
+        \item Push for what ``average'' \textit{promises}: one steady speed of
+              40 mph would have covered the \textit{same 120 miles in the same
+              3 hours}.
+    \end{enumerate}
+    \textit{Discussion prompt:} that promise is today's definition. The
+    average rate of change is the one constant rate that gets the same net
+    change done --- and unlike the speedometer, we can compute it for
+    \textit{any} function from just two points.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
+
+\textbf{Part 1: AROC = Slope, Upgraded} (12 min)
+
 \begin{itemize}
-    \item \textbf{average rate of change (AROC)} — the ratio $\dfrac{f(b)-f(a)}{b-a}$
-          representing the constant rate that yields the same change in output over
-          the interval $[a,b]$.
-    \item \textbf{secant line} — the line through $(a,f(a))$ and $(b,f(b))$; its slope
-          equals the AROC over $[a,b]$.
-    \item \textbf{rate of change at a point} — the instantaneous rate of change, approximated
-          by AROC over small intervals containing the point.
-    \item \textbf{positive / negative rate of change} — a positive ROC means the two
-          quantities change in the \emph{same} direction; a negative ROC means they change
-          in \emph{opposite} directions.
+  \item Recall the slope formula on the warm-up's two points --- then rename:
+        for a function, $\text{AROC} = \dfrac{f(b)-f(a)}{b-a}$, change in
+        output over change in input.
+  \item Example: $f(x) = x^2$ on $[1, 4]$ gives AROC $= 5$. The curve is not
+        a line --- 5 is the slope of the \textbf{secant line} through
+        $(1,1)$ and $(4,16)$.
+  \item Anchor the meaning: 5 is the constant rate that produces the same net
+        change ($+15$) over the same run ($3$). Connect to the hook's GPS.
+\end{itemize}
+
+\textbf{Part 2: AROC from a Table and a Graph} (12 min)
+
+\begin{itemize}
+  \item Table of temperatures: compute AROC over $[0,2]$, $[2,4]$, $[4,6]$;
+        ask which stretch warmed fastest and how they know.
+  \item Project the pre-drawn hill graph from the notes. Read coordinates,
+        compute AROC on $[0,4]$ ($=1$) and on $[4,8]$ ($=-1$); the dashed
+        secant makes ``slope between two points'' visible.
+  \item Watch the subtraction order: $f(b)-f(a)$ upstairs, $b-a$ downstairs,
+        \textit{same order both floors}.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: What the Sign Says} (8 min)
+
+\begin{itemize}
+  \item Positive AROC: the quantities move together (climbing temperature).
+        Negative: opposite directions (cooling after sunset). Zero: no net
+        change --- flag that it does \textit{not} mean nothing happened.
+  \item Units discipline: every AROC is output units per input unit ---
+        $^\circ$F per hour, feet per second. Require the units in every
+        spoken answer from here on.
+\end{itemize}
+
+\textbf{Part 4: The Pattern of the AROCs --- Linear vs.\ Quadratic} (14 min)
+
+\begin{itemize}
+  \item $f(x) = 2x+1$: AROCs over $[0,1], [1,2], [2,3], [3,4]$ are
+        $2, 2, 2, 2$. Linear means the AROC never changes --- that is what
+        ``slope'' being one number means.
+  \item $g(x) = x^2$: AROCs are $1, 3, 5, 7$ --- not constant, but climbing
+        by exactly $2$ each step. Quadratic means the AROCs themselves change
+        at a constant rate.
+  \item Close the loop with 1.2: AROCs increasing $\Rightarrow$ concave up
+        (the parabola bends upward); AROCs decreasing $\Rightarrow$ concave
+        down. Yesterday's ``bending'' now has a computation behind it.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-            Please see attached spiral review (Warm-Up). Skills reviewed:
-            \begin{itemize}
-                \item Slope formula: $m = \dfrac{y_2-y_1}{x_2-x_1}$
-                \item Evaluating functions from tables and graphs
-                \item Identifying increasing/decreasing intervals (Lesson 1.1)
-            \end{itemize}
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.22\linewidth}\vspace{0pt}\centering
-            % Authored warm-up compiles to target/; no source PDF to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{skillbox}
-
-\begin{skillbox}[Hook]{sky}
-    \textbf{Scenario (2 min):} ``You're driving on the highway. Your GPS says your average
-    speed over the last hour was 62 mph. Were you always going exactly 62 mph? What does
-    `average' mean here?''
-
-    \medskip
-    Facilitate a brief discussion: students will likely note that speed varied — sometimes
-    faster, sometimes slower. The average speed is the \emph{one constant speed} that would
-    cover the same distance in the same time. This is exactly what AROC captures.
-    Transition: ``Today we'll make this idea precise and apply it to any function.''
-\end{skillbox}
-
-\begin{skillbox}[Lesson]{sky}
-    \textbf{Part 1 — Derive and define AROC (10 min)}
-
-    Write the slope formula on the board; ask: ``What if the two points lie on a curve, not
-    a line?'' Build AROC $= \dfrac{f(b)-f(a)}{b-a} = \dfrac{\Delta f}{\Delta x}$.
-    Label: numerator $=$ change in output, denominator $=$ change in input. Emphasize that
-    AROC equals the \emph{slope of the secant line} connecting the two points.
-
-    \medskip\textbf{Part 2 — Compute AROC from tables and graphs (12 min)}
-
-    \begin{multicols}{2}
-    Display a table of population data (as in the Group Activity). Model: compute AROC
-    over 1990--2000, then 2000--2010. Ask: ``Which decade saw faster growth? How do you
-    know?'' Have students compute AROC over 2010--2020 individually. Cold-call to share.
-
-    \columnbreak
-    Then show a graph of a function. Ask students to estimate AROC between two labeled
-    points by reading coordinates. Discuss how a steeper secant line corresponds to a larger
-    (in absolute value) AROC.
-    \end{multicols}
-
-    \textbf{Part 3 — Approximate ROC at a point (10 min)}
-
-    Present the question: ``What is the rate of change of the population \emph{at} 2010,
-    not just over an interval?'' Build a table of AROC over shrinking intervals:
-    $[2005,2010]$, $[2008,2010]$, $[2009,2010]$, $[2009.5,2010]$. Students fill in the
-    table from the Guided Notes. Observe: AROC approaches a limiting value. That limiting
-    value approximates the ROC at a point. Connect to vocabulary: rate of change at a
-    point, secant lines approaching a tangent.
-
-    \medskip\textbf{Part 4 — Sign of rate of change (8 min)}
-
-    Discuss: if AROC is positive, what does that tell you about the two quantities? Negative?
-    Use real-world examples: temperature rising (positive), elevation decreasing as you walk
-    downhill (negative). Students fill in the sign-of-ROC section of the notes.
-\end{skillbox}
-
 \begin{skillbox}[Active Monitoring]{redbox}
-    \textbf{During Part 1:} Are students correctly identifying $a$, $b$, $f(a)$, $f(b)$
-    from a table? Watch for subtraction-order errors ($f(b)-f(a)$ in numerator vs.\
-    $b-a$ in denominator).
-
-    \medskip\textbf{During Part 2:} Do students recognize that ``greater AROC'' means
-    steeper secant line? Ask: ``What would a zero AROC tell you about the function?''
-
-    \medskip\textbf{During Part 3:} Are students seeing the pattern of the AROC values
-    converging? Ask: ``Why do smaller intervals give a better approximation?''
-
-    \medskip\textbf{Cold-call prompts:}
-    \begin{itemize}
-        \item ``Give me the units of this AROC. What do those units mean in context?''
-        \item ``If AROC is negative, what does that say about the shape of the function
-              on that interval?''
-    \end{itemize}
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} subtraction order flipped in one floor of the
+        fraction --- $f(a)-f(b)$ over $b-a$. Cold-call: ``Which output goes
+        first? Then which input goes first?''
+  \item \textbf{Common error:} reporting the net change ($f(b)-f(a)$ alone)
+        as the rate. Ask: ``Per what? Where did the divide go?''
+  \item \textbf{Common error:} calling a negative AROC ``no change'' or
+        ``slower.'' Push: ``Negative says \textit{direction}, not speed ---
+        which quantity is falling?''
+  \item \textbf{Units:} answers without units are incomplete. ``Three
+        \textit{what} per \textit{what}?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    Students work in groups on the Group Activity (city population context).
+Students work on the \textbf{Group Activity: The Water Balloon Launch} in
+leveled tiers. Every tier reads the same table and pre-drawn parabola --- no
+tier sketches anything.
 
-    \textbf{Tier R (Remediate):} Compute AROC over two given intervals; determine which
-    interval has greater growth rate. Scaffolded formula with blanks.
-
-    \textbf{Tier A (Apply):} Compute AROC over multiple decades, compare growth rates,
-    interpret negative AROC; identify the decade of fastest growth.
-
-    \textbf{Tier E (Extend):} Approximate instantaneous ROC at a given year using
-    successively smaller intervals; reflect on the limitations of the approximation.
-
-    \medskip\textbf{Support:} Remind Tier R groups that AROC $= \dfrac{f(b)-f(a)}{b-a}$
-    is just slope with function notation. Let them label $a, b, f(a), f(b)$ before computing.
-
-    \textbf{Challenge:} Ask Tier E groups: ``What happens if you try to use an interval
-    of length 0? What mathematical operation does that resemble?'' (Preview of limits.)
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Scaffolded AROC computations over
+        $[0,1]$ and $[1,2]$ with labeled blanks, then ``which second did it
+        climb faster?'' and a rising/falling sign read.
+  \item \textbf{Tier A (Apply):} Fill the full AROC table ($48, 16, -16,
+        -48$), interpret the $-16$ in a sentence with units, spot the
+        constant $-32$ step, and explain why AROC $=0$ on $[0,4]$ is
+        technically right but misleading.
+  \item \textbf{Tier E (Extend):} Shrink the interval at $t=1$ ---
+        AROCs over $[1,2]$, $[1,1.5]$, $[1,1.1]$ from supplied values close
+        in on the balloon's speed \textit{at} the instant $t=1$
+        (CED 1.2.A.2, exposure only), plus ``when is the rate zero?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    \textbf{Exit Ticket (5 min):} Two questions.
-    \begin{enumerate}
-        \item Given $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$: compute AROC from $x=2$ to
-              $x=5$; then approximate the ROC at $x=5$ using the interval $[5,5.1]$.
-        \item AROC of $g$ from $x=0$ to $x=3$ is $-4$. Describe what this tells you
-              about how $g$'s output changes.
-    \end{enumerate}
-    \textbf{Look for:} correct formula application, correct arithmetic, and whether
-    students can articulate the meaning of a negative AROC in words.
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Compute the AROC of $f(x) = x^2 + 1$ over $[1, 3]$ (worked space
+        provided).
+  \item From a temperature table, compute the AROC over $[0, 4]$ and write
+        one sentence interpreting its sign and units.
+  \item Two functions' AROC lists over equal steps ($5,5,5,5$ vs.\
+        $2,5,8,11$): identify the linear one, and the concavity of the other.
+\end{enumerate}
+\textbf{Assessment note:} Item 2 is the interpretation check --- a correct
+$-3$ with no units or no direction sentence means Part 3 needs a warm-up
+revisit tomorrow. Item 3 requires no arithmetic at all; a miss there is a
+concept miss on the lesson's big idea, not a computation slip.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    \textbf{Homework:} 5 problems covering AROC from tables and context, approximating
-    ROC at a point, and a True/False interpretation question. An AP-style MC problem
-    comparing rates of change from a table is included.
+\textbf{Homework:} 5 problems covering AROC from a formula (two intervals),
+AROC from a population table with a fastest-decade comparison, a
+sign-and-units interpretation sentence, an AROC-pattern table that classifies
+a function and its concavity, and one AP-style multiple-choice AROC item.
 
-    \textbf{Extension:} For $f(x)=x^2$, compute AROC over $[2,2+h]$ and let $h\to 0$.
-    What value does the AROC approach? (Connects to the derivative at $x=2$.)
+\textbf{Extension (optional):} For $f(x) = x^2$, AROCs over $[3, 3.1]$ and
+$[3, 3.01]$ (values supplied) creep toward 6 --- the rate of change
+\textit{at} $x = 3$. A first, informal look at the idea calculus makes exact.
 
-    \textbf{Preview:} Next lesson (1.3) examines how AROC behaves differently for linear
-    vs.\ quadratic functions — specifically, what ``constant rate of change'' and
-    ``changing rate of change'' mean geometrically and numerically.
+\textbf{Preview:} Next lesson (1.4, Transformations of Functions) leaves
+rates for shapes: what happens to a graph when we shift it, flip it, or
+stretch it --- and how the formula records each move.
 \end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1 is the load-bearing one:
+its slope computation returns in Part 1 renamed as AROC, so a student who
+fumbles the subtraction order here will fumble it all lesson --- note names.
+Item 2 keeps the parentheses habit alive; item 3's table read (falling
+outputs, zero at $x=6$) is the 1.2 language today's sign discussion builds on.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Part 1: write the slope formula and the AROC formula side by side and let
+students see they are the same fraction wearing function notation --- ``slope,
+upgraded'' is the phrase to repeat. The secant line on the hill graph is
+pre-drawn; students only read coordinates off it. Part 4 is the absorbed
+Topic 1.3 material at exposure depth: the goal is the \textit{pattern}
+($2,2,2,2$ vs.\ $1,3,5,7$) and the concavity link, not second-difference
+drill. If time runs short, compress Part 3 into Part 2's table discussion ---
+do not cut Part 4, it is the exit ticket's item 3.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers read the same table and parabola, so groups can be regrouped
+mid-activity without new setup. Tier R must say answers with units aloud
+(``48 feet per second''). Tier A's AROC $= 0$ on $[0,4]$ question is the
+hinge --- the balloon went up 64 feet and came back, and the average erases
+the whole story; that insight is worth a whole-class share in the closing
+minutes. Tier E's shrinking-interval table previews instantaneous rate:
+keep it informal, ``the AROCs are closing in on 32,'' and resist the word
+``limit'' unless a student produces it.
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Scan item 2 first: the diagnostic miss is
+a bare ``$-3$'' with no per-hour and no falling-temperature sentence ---
+sort those for a reteach. On item 3, accept ``concave up'' or ``bends
+upward'' for function B; the point is that they classified from the AROC
+list alone, without a graph.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 5 is the AP-style item; distractor B is the net change with the
+divide dropped and distractor C uses the whole table's endpoints instead of
+the named interval --- both are worth two minutes of autopsy tomorrow. The
+extension is the only instantaneous-rate item outside Tier E; if the class
+never reached the Tier E discussion, assign it explicitly and open 1.4's
+warm-up window with it.
+\end{teachernote}
 \end{document}
