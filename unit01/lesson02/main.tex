@@ -1,15 +1,15 @@
-%! Rates of Change — Unit 1, Lesson 1.2 — Lesson Plan
+%! Change in Tandem — Unit 1, Lesson 1.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.2: Rates of Change}
+\newcommand{\LessonNumberName}{Lesson 1.2: Change in Tandem}
 
 \begin{document}
 \begin{center}
@@ -19,178 +19,190 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will compute and interpret average rates of change
-    over an interval, approximate the instantaneous rate of change at a point, and use the
-    sign of the rate of change to describe how two quantities co-vary. (MP 2.A, 3.A)
+    \textbf{Primary Objective:} Students will describe how the input and output values
+    of a function vary together, identify intervals where a function is increasing or
+    decreasing, and construct a graph representing two covarying quantities in context.
+    \hfill\textit{\small Skills: MP 2.B, 3.A}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{\color{navy}Mathematical Practices}
-    \begin{itemize}
-        \item \textbf{MP 2.A} — Identify information from representations (tables, graphs,
-              verbal descriptions) to answer a question or construct a model.
-        \item \textbf{MP 3.A} — Describe characteristics of a function, including rate of
-              change, sign, and how two quantities vary together.
-    \end{itemize}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-    \textbf{\color{navy}Key Understandings}
-    \begin{itemize}
-        \item AROC $= \dfrac{\Delta y}{\Delta x} = \dfrac{f(b)-f(a)}{b-a}$ is the constant
-              rate that produces the same net change over $[a,b]$.
-        \item The rate of change \emph{at a point} can be approximated by computing AROC
-              over successively smaller intervals containing that point.
-        \item A \emph{positive} AROC means the output increases as the input increases;
-              a \emph{negative} AROC means the output decreases as the input increases.
-    \end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{MP 2.B} --- Construct equivalent graphical, numerical,
+analytical, or verbal representations of a function, and identify
+information from one to apply to another. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A function maps each input to exactly one output. (1.1.A.1)
+  \item Input-output values vary in tandem according to the function rule. (1.1.A.2)
+  \item A graph displays all input-output pairs and visual trends. (1.1.B.1)
+  \item A verbal description can serve as the basis for constructing a graph. (1.1.B.2)
+\end{itemize} \\
+\textbf{MP 3.A} --- Describe characteristics of a function using
+appropriate mathematical language and notation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item If $a < b \Rightarrow f(a) < f(b)$, the function is increasing. (1.1.A.3)
+  \item If $a < b \Rightarrow f(a) > f(b)$, the function is decreasing. (1.1.A.4)
+  \item Concave up: rate of change is increasing on that interval. (1.1.B.3)
+  \item Concave down: rate of change is decreasing on that interval. (1.1.B.4)
+  \item Zeros occur where the output equals 0. (1.1.B.5)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\begin{multicols}{2}
-\begin{itemize}
-    \item \textbf{average rate of change (AROC)} — the ratio $\dfrac{f(b)-f(a)}{b-a}$
-          representing the constant rate that yields the same change in output over
-          the interval $[a,b]$.
-    \item \textbf{secant line} — the line through $(a,f(a))$ and $(b,f(b))$; its slope
-          equals the AROC over $[a,b]$.
-    \item \textbf{rate of change at a point} — the instantaneous rate of change, approximated
-          by AROC over small intervals containing the point.
-    \item \textbf{positive / negative rate of change} — a positive ROC means the two
-          quantities change in the \emph{same} direction; a negative ROC means they change
-          in \emph{opposite} directions.
-\end{itemize}
-\end{multicols}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+function          & A rule that assigns each input exactly one output; written $f(x)$. \\
+domain            & The set of all allowable inputs (independent variable values). \\
+range             & The set of all possible outputs (dependent variable values). \\
+independent var.  & The input variable; plotted on the horizontal axis. \\
+dependent var.    & The output variable; plotted on the vertical axis. \\
+increasing        & $f$ is increasing on an interval if $a < b \Rightarrow f(a) < f(b)$. \\
+decreasing        & $f$ is decreasing on an interval if $a < b \Rightarrow f(a) > f(b)$. \\
+concave up        & The rate of change is increasing on that interval (bowl opens up). \\
+concave down      & The rate of change is decreasing on that interval (bowl opens down). \\
+zeros             & Input values where $f(x) = 0$; the graph crosses or touches the $x$-axis. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
-            Please see attached spiral review (Warm-Up). Skills reviewed:
-            \begin{itemize}
-                \item Slope formula: $m = \dfrac{y_2-y_1}{x_2-x_1}$
-                \item Evaluating functions from tables and graphs
-                \item Identifying increasing/decreasing intervals (Lesson 1.1)
-            \end{itemize}
+        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
+            Please see attached warm-up (spiral review).
+            Skills reviewed: evaluating expressions from a table,
+            identifying intervals of increase/decrease from a graph description,
+            writing domain in interval notation.
         \end{minipage}
         &
-        \begin{minipage}[t]{0.22\linewidth}\vspace{0pt}\centering
-            % Authored warm-up compiles to target/; no source PDF to embed.
+        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
+            \textit{\small (authored warm-up compiles to target/)}
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    \textbf{Scenario (2 min):} ``You're driving on the highway. Your GPS says your average
-    speed over the last hour was 62 mph. Were you always going exactly 62 mph? What does
-    `average' mean here?''
-
-    \medskip
-    Facilitate a brief discussion: students will likely note that speed varied — sometimes
-    faster, sometimes slower. The average speed is the \emph{one constant speed} that would
-    cover the same distance in the same time. This is exactly what AROC captures.
-    Transition: ``Today we'll make this idea precise and apply it to any function.''
+    A car pulls away from a stop sign. \textbf{Think about two different graphs:}
+    \begin{enumerate}[itemsep=2pt]
+        \item The car's \textit{speed} vs.\ time --- does it start fast or slow? Does it keep accelerating?
+        \item The car's \textit{distance from the stop sign} vs.\ time --- does it grow quickly at first or slowly?
+    \end{enumerate}
+    \textit{Discussion prompt:} Without drawing, describe in words what each graph would look like.
+    Which graph is concave up? Which might eventually concave down? How does one graph's shape
+    relate to the behavior of the other?
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    \textbf{Part 1 — Derive and define AROC (10 min)}
+\begin{multicols}{2}
 
-    Write the slope formula on the board; ask: ``What if the two points lie on a curve, not
-    a line?'' Build AROC $= \dfrac{f(b)-f(a)}{b-a} = \dfrac{\Delta f}{\Delta x}$.
-    Label: numerator $=$ change in output, denominator $=$ change in input. Emphasize that
-    AROC equals the \emph{slope of the secant line} connecting the two points.
+\textbf{Part 1: Functions and Covariation} (12 min)
 
-    \medskip\textbf{Part 2 — Compute AROC from tables and graphs (12 min)}
+Introduce the function definition using a water-filling-a-tank context:
+as time increases, the volume of water in the tank increases.
+\begin{itemize}
+  \item Ask: Is volume a function of time? (Yes -- for each moment there is
+        exactly one volume.)
+  \item Identify: \textit{independent variable} = time, \textit{dependent variable} = volume.
+  \item Domain: $[0, T]$ where $T$ = fill time; Range: $[0, V]$ where $V$ = tank capacity.
+\end{itemize}
 
-    \begin{multicols}{2}
-    Display a table of population data (as in the Group Activity). Model: compute AROC
-    over 1990--2000, then 2000--2010. Ask: ``Which decade saw faster growth? How do you
-    know?'' Have students compute AROC over 2010--2020 individually. Cold-call to share.
+\textbf{Worked Example 1 (numerical).} Present a table:
 
-    \columnbreak
-    Then show a graph of a function. Ask students to estimate AROC between two labeled
-    points by reading coordinates. Discuss how a steeper secant line corresponds to a larger
-    (in absolute value) AROC.
-    \end{multicols}
+\smallskip
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$t$ (min) & 0 & 2 & 4 & 6 \\
+\hline
+$V$ (gal)  & 0 & 8 & 16 & 24 \\
+\hline
+\end{tabular}
+\smallskip
 
-    \textbf{Part 3 — Approximate ROC at a point (10 min)}
+Ask: As $t$ goes from 0 to 6, does $V$ increase or decrease?
+Is the rate of gain constant? (Yes here --- linear.)
 
-    Present the question: ``What is the rate of change of the population \emph{at} 2010,
-    not just over an interval?'' Build a table of AROC over shrinking intervals:
-    $[2005,2010]$, $[2008,2010]$, $[2009,2010]$, $[2009.5,2010]$. Students fill in the
-    table from the Guided Notes. Observe: AROC approaches a limiting value. That limiting
-    value approximates the ROC at a point. Connect to vocabulary: rate of change at a
-    point, secant lines approaching a tangent.
+\columnbreak
 
-    \medskip\textbf{Part 4 — Sign of rate of change (8 min)}
+\textbf{Part 2: Increasing, Decreasing, \& Concavity} (12 min)
 
-    Discuss: if AROC is positive, what does that tell you about the two quantities? Negative?
-    Use real-world examples: temperature rising (positive), elevation decreasing as you walk
-    downhill (negative). Students fill in the sign-of-ROC section of the notes.
+Modify the context: now the tank fills \textit{quickly at first} (drain partially
+open, then closes), so:
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$t$ & 0 & 2 & 4 & 6 \\
+\hline
+$V$ & 0 & 14 & 20 & 24 \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{itemize}
+  \item $V$ is increasing on $[0, 6]$: as $t$ grows, $V$ grows.
+  \item From $t=0$ to $2$: gains 14 gal; from $t=2$ to $4$: gains 6 gal;
+        from $t=4$ to $6$: gains 4 gal.
+  \item Rate of increase is \textit{slowing down} $\Rightarrow$ \textbf{concave down}.
+\end{itemize}
+
+Now suppose water drains slowly at first then faster:
+rate of change increasing $\Rightarrow$ \textbf{concave up}.
+
+\textbf{Zeros:} The graph of $V$ hits the $x$-axis when $V = 0$ (tank empty).
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    \textbf{During Part 1:} Are students correctly identifying $a$, $b$, $f(a)$, $f(b)$
-    from a table? Watch for subtraction-order errors ($f(b)-f(a)$ in numerator vs.\
-    $b-a$ in denominator).
-
-    \medskip\textbf{During Part 2:} Do students recognize that ``greater AROC'' means
-    steeper secant line? Ask: ``What would a zero AROC tell you about the function?''
-
-    \medskip\textbf{During Part 3:} Are students seeing the pattern of the AROC values
-    converging? Ask: ``Why do smaller intervals give a better approximation?''
-
-    \medskip\textbf{Cold-call prompts:}
-    \begin{itemize}
-        \item ``Give me the units of this AROC. What do those units mean in context?''
-        \item ``If AROC is negative, what does that say about the shape of the function
-              on that interval?''
-    \end{itemize}
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} Students may confuse "function is decreasing" with "output is negative."
+        Cold-call: "Can a function be decreasing but have positive outputs?" (Yes --- falling from 10 to 2.)
+  \item \textbf{Common error:} Concavity confused with increasing/decreasing.
+        Ask: "Can a function be increasing AND concave down at the same time?" (Yes --- the fast-fill tank.)
+  \item \textbf{Notation check:} Are students writing intervals correctly, e.g.\ $(1, 3)$ vs.\ $[1, 3]$?
+  \item \textbf{Cold-call:} "Give me an interval where the hiker's elevation is increasing but the rate of change is decreasing."
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    Students work in groups on the Group Activity (city population context).
+Students work on the \textbf{Group Activity: Hiker's Elevation} in leveled tiers.
+Each tier uses the same context (time vs.\ elevation) but increases in demand.
 
-    \textbf{Tier R (Remediate):} Compute AROC over two given intervals; determine which
-    interval has greater growth rate. Scaffolded formula with blanks.
-
-    \textbf{Tier A (Apply):} Compute AROC over multiple decades, compare growth rates,
-    interpret negative AROC; identify the decade of fastest growth.
-
-    \textbf{Tier E (Extend):} Approximate instantaneous ROC at a given year using
-    successively smaller intervals; reflect on the limitations of the approximation.
-
-    \medskip\textbf{Support:} Remind Tier R groups that AROC $= \dfrac{f(b)-f(a)}{b-a}$
-    is just slope with function notation. Let them label $a, b, f(a), f(b)$ before computing.
-
-    \textbf{Challenge:} Ask Tier E groups: ``What happens if you try to use an interval
-    of length 0? What mathematical operation does that resemble?'' (Preview of limits.)
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Completed table provided; students identify domain, range,
+        and whether elevation is increasing or decreasing on two labeled intervals.
+  \item \textbf{Tier A (Apply):} Same table plus a verbal description; students determine
+        increasing/decreasing intervals and whether the rate of change is increasing or decreasing
+        (concavity) by comparing table differences. No freehand drawing required --- students
+        match descriptions.
+  \item \textbf{Tier E (Extend):} Analyze a second function (hiker's speed vs.\ time), compare
+        to elevation, and explain what concavity of the elevation graph reveals about the hiker's pace.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    \textbf{Exit Ticket (5 min):} Two questions.
-    \begin{enumerate}
-        \item Given $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$: compute AROC from $x=2$ to
-              $x=5$; then approximate the ROC at $x=5$ using the interval $[5,5.1]$.
-        \item AROC of $g$ from $x=0$ to $x=3$ is $-4$. Describe what this tells you
-              about how $g$'s output changes.
-    \end{enumerate}
-    \textbf{Look for:} correct formula application, correct arithmetic, and whether
-    students can articulate the meaning of a negative AROC in words.
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Given a verbal description of function behavior, state domain, range, and intervals of
+        increase/decrease.
+  \item Interpret concavity: what does concave up vs.\ concave down tell you about the rate of change?
+\end{enumerate}
+\textbf{Assessment note:} Look for correct use of interval notation and the formal increasing/decreasing
+language ($a < b \Rightarrow f(a) \lessgtr f(b)$). Concavity explanations should reference rate of change,
+not just shape.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    \textbf{Homework:} 5 problems covering AROC from tables and context, approximating
-    ROC at a point, and a True/False interpretation question. An AP-style MC problem
-    comparing rates of change from a table is included.
+\textbf{Homework:} 5 problems covering domain/range from a table, increasing/decreasing from a verbal
+description, a first look at average rate of change (teaser for Lesson 1.2), concavity reasoning, and
+one AP-style multiple-choice item.
 
-    \textbf{Extension:} For $f(x)=x^2$, compute AROC over $[2,2+h]$ and let $h\to 0$.
-    What value does the AROC approach? (Connects to the derivative at $x=2$.)
+\textbf{Extension (optional):} A piecewise context (hiker rests, then resumes) asks students to
+identify behavior on each piece and predict overall concavity.
 
-    \textbf{Preview:} Next lesson (1.3) examines how AROC behaves differently for linear
-    vs.\ quadratic functions — specifically, what ``constant rate of change'' and
-    ``changing rate of change'' mean geometrically and numerically.
+\textbf{Preview:} Next lesson, we formalize the idea of \textit{rate of change} --- how fast
+the output changes per unit of input --- and compute it precisely.
 \end{skillbox}
 \end{document}

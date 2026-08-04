@@ -1,186 +1,182 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Rates of Change — Unit 1, Lesson 1.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE
+% ── TITLE SLIDE ──────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Rates of Change in Linear and Quadratic Functions}\\[1.2cm]
+    {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Rates of Change}\\[1.2cm]
     {\color{skymid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
 }
 
-% HOOK SLIDE
+% ── HOOK ─────────────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{Hook: What Happens When We Compute Many AROCs?}
+  \navyheader{Hook: The Highway Problem}
+  \sectionlabel[goldacc]{Think About It}
+
   \vspace{0.3cm}
+  {\large\bfseries You're driving on the highway.}
 
-  Consider $f(x) = x^2$:
+  \vspace{0.5cm}
+  Your GPS says your \textbf{average speed} over the last hour was \textbf{62 mph}.
 
-  \medskip
-  \begin{tabular}{|c|c|c|c|c|c|}
-  \hline
-  $x$    & 0 & 1 & 2 & 3 & 4 \\
-  \hline
-  $f(x)$ & 0 & 1 & 4 & 9 & 16 \\
-  \hline
-  \end{tabular}
-
-  \medskip
-  \textbf{Compute:} AROC on $[0,1]$, $[1,2]$, $[2,3]$, $[3,4]$
-
-  \medskip
+  \vspace{0.6cm}
   \begin{itemize}
-    \item What pattern do you see in the AROCs?
-    \item What do you predict for the AROC on $[4,5]$?
-    \item What are the \textit{differences} of those AROCs?
+    \setlength{\itemsep}{10pt}
+    \item Were you going \emph{exactly} 62 mph the whole time?
+    \item What does ``average speed'' actually mean?
+    \item How is this related to the functions we study?
   \end{itemize}
+
+  \vspace{0.6cm}
+  {\color{navy}\textit{Average speed = one constant speed that covers the same distance
+  in the same time.}}
 \end{frame}
 
-% LINEAR AROC SLIDE
+% ── AROC DEFINITION ──────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{AROC of Linear Functions}
+  \navyheader{Average Rate of Change (AROC)}
+  \sectionlabel{Definition}
+
+  The \textbf{average rate of change} of $f$ over $[a,b]$:
+
   \vspace{0.3cm}
-
-  \sectionlabel[goldacc]{Key Idea: Linear $\Rightarrow$ Constant AROC}
-
-  \medskip
-  For $f(x) = 2x + 1$:
-
-  \medskip
-  \begin{tabular}{|c|c|c|}
-  \hline
-  \textbf{Interval} & \textbf{AROC} & \textbf{Second Difference} \\
-  \hline
-  $[0,1]$ & 2 & \\
-  $[1,2]$ & 2 & 0 \\
-  $[2,3]$ & 2 & 0 \\
-  $[3,4]$ & 2 & 0 \\
-  \hline
-  \end{tabular}
-
-  \medskip
-  \begin{itemize}
-    \item The AROC equals the slope of the secant line \textit{and} the slope of the function.
-    \item Second differences are \textbf{zero} for linear functions.
-  \end{itemize}
-\end{frame}
-
-% QUADRATIC AROC SLIDE
-\begin{frame}[t, plain]
-  \navyheader{AROC of Quadratic Functions: First \& Second Differences}
-  \vspace{0.3cm}
-
-  \sectionlabel[goldacc]{Key Idea: Quadratic $\Rightarrow$ Constant Second Differences}
-
-  \medskip
-  For $f(x) = x^2$:
-
-  \medskip
-  \begin{tabular}{|c|c|c|}
-  \hline
-  \textbf{Interval} & \textbf{AROC (1st diff.)} & \textbf{Change in AROC (2nd diff.)} \\
-  \hline
-  $[0,1]$ & 1 & \\
-  $[1,2]$ & 3 & $+2$ \\
-  $[2,3]$ & 5 & $+2$ \\
-  $[3,4]$ & 7 & $+2$ \\
-  \hline
-  \end{tabular}
-
-  \medskip
-  \begin{itemize}
-    \item First differences form a \textbf{linear} (arithmetic) sequence.
-    \item Second differences are \textbf{constant and nonzero} for quadratic functions.
-  \end{itemize}
-\end{frame}
-
-% SECANT LINES SLIDE
-\begin{frame}[t, plain]
-  \navyheader{Secant Lines}
-  \vspace{0.3cm}
-
-  \sectionlabel[sky]{Definition}
-
-  The \textbf{secant line} through $(a, f(a))$ and $(b, f(b))$ has slope:
   \[
-    m_{\text{sec}} = \frac{f(b) - f(a)}{b - a}
-  \]
-  This slope is exactly the \textbf{AROC} of $f$ on $[a,b]$.
-
-  \medskip
-  \textbf{Example:} For $f(x) = x^2$, the secant from $(1,1)$ to $(3,9)$:
-  \[
-    m = \frac{9-1}{3-1} = \frac{8}{2} = 4
+      \text{AROC} = \frac{\Delta f}{\Delta x} = \frac{f(b)-f(a)}{b-a}
   \]
 
-  \medskip
+  \vspace{0.2cm}
   \begin{itemize}
-    \item This is the AROC on $[1,3]$.
-    \item As the interval shrinks, the secant approaches the tangent line.
+    \setlength{\itemsep}{8pt}
+    \item \textbf{Numerator} $= f(b)-f(a)$: change in \emph{output}
+    \item \textbf{Denominator} $= b-a$: change in \emph{input}
+    \item Equals the slope of the \textbf{secant line} through $(a,f(a))$ and $(b,f(b))$
+    \item Positive AROC $\Rightarrow$ output and input change in the \emph{same} direction
+    \item Negative AROC $\Rightarrow$ output and input change in \emph{opposite} directions
   \end{itemize}
 \end{frame}
 
-% CONCAVITY SLIDE
+% ── WORKED EXAMPLE FROM TABLE ─────────────────────────────────────────────────
 \begin{frame}[t, plain]
-  \navyheader{AROCs and Concavity}
+  \navyheader{Computing AROC from a Table}
+  \sectionlabel{Worked Example}
+
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $x$ & 1 & 2 & 4 & 7 \\
+  \hline
+  $h(x)$ & 3 & 7 & 11 & 20 \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.5cm}
+  \textbf{Find the AROC of $h$ over $[1,\,4]$:}
+
+  \[
+      \text{AROC} = \frac{h(4)-h(1)}{4-1} = \frac{11-3}{3} = \frac{8}{3} \approx 2.67
+  \]
+
   \vspace{0.3cm}
+  \textbf{Interpretation:} On average, for every 1-unit increase in $x$, $h$ increases
+  by about $2.67$ units.
 
-  \sectionlabel[greenacc]{Connecting the Pattern to the Graph}
+  \vspace{0.4cm}
+  \textbf{Your turn:} Find the AROC of $h$ over $[2,\,7]$.
+\end{frame}
 
-  \medskip
+% ── APPROXIMATING ROC AT A POINT ─────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Approximating Rate of Change at a Point}
+  \sectionlabel{Shrinking Intervals}
+
+  \textbf{Question:} What is the rate of change of $h$ \emph{exactly} at $x = 2$?
+
+  \vspace{0.3cm}
+  Use successively smaller intervals:
+
+  \vspace{0.2cm}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|}
+  \hline
+  \textbf{Interval} & \textbf{AROC} \\
+  \hline
+  $[2,\;2.5]$ & $\dfrac{9-7}{0.5} = 4$ \\
+  \hline
+  $[2,\;2.1]$ & $\dfrac{7.4-7}{0.1} = 4$ \\
+  \hline
+  $[2,\;2.01]$ & $\dfrac{7.04-7}{0.01} = 4$ \\
+  \hline
+  \end{tabular}
+
+  \vspace{0.4cm}
+  As the interval shrinks, AROC $\to$ \textbf{4}.
+  This approximates the \textbf{rate of change at} $x = 2$.
+
+  \vspace{0.2cm}
+  {\color{navy}\small (In calculus, this limiting value is called the \emph{derivative}.)}
+\end{frame}
+
+% ── SIGN OF ROC ──────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Sign of the Rate of Change}
+  \sectionlabel{Positive vs.\ Negative}
+
+  \vspace{0.3cm}
   \begin{columns}[t]
-    \begin{column}{0.48\textwidth}
-      \textbf{Concave Up}\\[4pt]
-      AROCs are \textit{increasing} as $x$ increases.\\[4pt]
-      Second differences $> 0$.\\[4pt]
-      Example: $f(x) = x^2$\\
-      AROCs: $1, 3, 5, 7, \ldots$
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \textbf{Concave Down}\\[4pt]
-      AROCs are \textit{decreasing} as $x$ increases.\\[4pt]
-      Second differences $< 0$.\\[4pt]
-      Example: $f(x) = -x^2$\\
-      AROCs: $-1, -3, -5, -7, \ldots$
-    \end{column}
-  \end{columns}
+  \column{0.48\textwidth}
+    \textbf{\color{greenacc}Positive AROC}\\[6pt]
+    As $x$ increases, $f(x)$ \textbf{increases}.\\[4pt]
+    The two quantities change in the \emph{same direction}.\\[12pt]
+    \textit{Examples:}
+    \begin{itemize}
+      \item Temperature rising as time passes
+      \item Revenue growing with more units sold
+    \end{itemize}
 
-  \medskip
-  \begin{block}{Summary}
-    Linear: 1st differences constant, 2nd differences $= 0$.\\
-    Quadratic: 2nd differences constant $\neq 0$.
-  \end{block}
+  \column{0.48\textwidth}
+    \textbf{\color{redacc}Negative AROC}\\[6pt]
+    As $x$ increases, $f(x)$ \textbf{decreases}.\\[4pt]
+    The two quantities change in \emph{opposite directions}.\\[12pt]
+    \textit{Examples:}
+    \begin{itemize}
+      \item Elevation decreasing as you walk downhill
+      \item Tank emptying as time passes
+    \end{itemize}
+  \end{columns}
 \end{frame}
 
-% CLASS PRACTICE SLIDE
+% ── CLASS PRACTICE ────────────────────────────────────────────────────────────
 \begin{frame}[t, plain]
   \navyheader{Class Practice}
-  \vspace{0.3cm}
+  \sectionlabel[goldacc]{Try These}
 
-  Work with your group on the \textbf{Falling Ball Activity}.
+  \vspace{0.2cm}
+  \textbf{1.} A function $f$ has $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$.
 
-  \medskip
   \begin{itemize}
-    \item \textbf{Tier R:} Compute AROCs for $h(t) = 144 - 16t^2$ over 0.5-sec intervals.
-    \item \textbf{Tier A:} Compute second differences and identify the function type.
-    \item \textbf{Tier E:} Predict the AROC on $[3.0, 3.5]$ using the pattern. Verify.
+    \setlength{\itemsep}{6pt}
+    \item[(a)] Compute the AROC of $f$ over $[2,\,5]$.
+    \item[(b)] Approximate the rate of change at $x=5$ using the interval $[5,\,5.1]$.
   \end{itemize}
 
-  \medskip
-  \textbf{Key questions to think about:}
-  \begin{enumerate}
-    \item Why are the second differences constant?
-    \item What does the sign of the second difference tell you about concavity?
-    \item How does this connect to the physics of gravity?
-  \end{enumerate}
+  \vspace{0.5cm}
+  \textbf{2.} The AROC of a function $g$ from $x=0$ to $x=3$ is $-4$.
+
+  Describe in words how $g$'s output changes on this interval.
+
+  \vspace{0.5cm}
+  \textbf{3.} Using the population table from the activity, which decade had the
+  greatest rate of growth? How do you know?
 \end{frame}
 
 \end{document}

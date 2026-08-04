@@ -1,15 +1,15 @@
-%! Change in Tandem — Unit 1, Lesson 1.1 — Lesson Plan
+%! Function Fundamentals — Unit 1, Lesson 1.1 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.1: Change in Tandem}
+\newcommand{\LessonNumberName}{Lesson 1.1: Function Fundamentals}
 
 \begin{document}
 \begin{center}
@@ -19,190 +19,78 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe how the input and output values
-    of a function vary together, identify intervals where a function is increasing or
-    decreasing, and construct a graph representing two covarying quantities in context.
-    \hfill\textit{\small Skills: MP 2.B, 3.A}
+    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
+    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{MP 2.B} --- Construct equivalent graphical, numerical,
-analytical, or verbal representations of a function, and identify
-information from one to apply to another. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A function maps each input to exactly one output. (1.1.A.1)
-  \item Input-output values vary in tandem according to the function rule. (1.1.A.2)
-  \item A graph displays all input-output pairs and visual trends. (1.1.B.1)
-  \item A verbal description can serve as the basis for constructing a graph. (1.1.B.2)
-\end{itemize} \\
-\textbf{MP 3.A} --- Describe characteristics of a function using
-appropriate mathematical language and notation. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item If $a < b \Rightarrow f(a) < f(b)$, the function is increasing. (1.1.A.3)
-  \item If $a < b \Rightarrow f(a) > f(b)$, the function is decreasing. (1.1.A.4)
-  \item Concave up: rate of change is increasing on that interval. (1.1.B.3)
-  \item Concave down: rate of change is decreasing on that interval. (1.1.B.4)
-  \item Zeros occur where the output equals 0. (1.1.B.5)
-\end{itemize} \\
-\end{tabularx}
+    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
+    %       right minipage = Key Understandings (paraphrased from EKs).
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-function          & A rule that assigns each input exactly one output; written $f(x)$. \\
-domain            & The set of all allowable inputs (independent variable values). \\
-range             & The set of all possible outputs (dependent variable values). \\
-independent var.  & The input variable; plotted on the horizontal axis. \\
-dependent var.    & The output variable; plotted on the vertical axis. \\
-increasing        & $f$ is increasing on an interval if $a < b \Rightarrow f(a) < f(b)$. \\
-decreasing        & $f$ is decreasing on an interval if $a < b \Rightarrow f(a) > f(b)$. \\
-concave up        & The rate of change is increasing on that interval (bowl opens up). \\
-concave down      & The rate of change is decreasing on that interval (bowl opens down). \\
-zeros             & Input values where $f(x) = 0$; the graph crosses or touches the $x$-axis. \\
-\end{tabularx}
+    % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review).
-            Skills reviewed: evaluating expressions from a table,
-            identifying intervals of increase/decrease from a graph description,
-            writing domain in interval notation.
+        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+            Please see attached spiral review.  % TODO: list skills reviewed
         \end{minipage}
         &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
+        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+            % TODO: list the prerequisite skills this warm-up reviews,
+            % in words. Do not embed a warm-up thumbnail.
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    A car pulls away from a stop sign. \textbf{Think about two different graphs:}
-    \begin{enumerate}[itemsep=2pt]
-        \item The car's \textit{speed} vs.\ time --- does it start fast or slow? Does it keep accelerating?
-        \item The car's \textit{distance from the stop sign} vs.\ time --- does it grow quickly at first or slowly?
-    \end{enumerate}
-    \textit{Discussion prompt:} Without drawing, describe in words what each graph would look like.
-    Which graph is concave up? Which might eventually concave down? How does one graph's shape
-    relate to the behavior of the other?
+    % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-\begin{multicols}{2}
-
-\textbf{Part 1: Functions and Covariation} (12 min)
-
-Introduce the function definition using a water-filling-a-tank context:
-as time increases, the volume of water in the tank increases.
-\begin{itemize}
-  \item Ask: Is volume a function of time? (Yes -- for each moment there is
-        exactly one volume.)
-  \item Identify: \textit{independent variable} = time, \textit{dependent variable} = volume.
-  \item Domain: $[0, T]$ where $T$ = fill time; Range: $[0, V]$ where $V$ = tank capacity.
-\end{itemize}
-
-\textbf{Worked Example 1 (numerical).} Present a table:
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$t$ (min) & 0 & 2 & 4 & 6 \\
-\hline
-$V$ (gal)  & 0 & 8 & 16 & 24 \\
-\hline
-\end{tabular}
-\smallskip
-
-Ask: As $t$ goes from 0 to 6, does $V$ increase or decrease?
-Is the rate of gain constant? (Yes here --- linear.)
-
-\columnbreak
-
-\textbf{Part 2: Increasing, Decreasing, \& Concavity} (12 min)
-
-Modify the context: now the tank fills \textit{quickly at first} (drain partially
-open, then closes), so:
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$t$ & 0 & 2 & 4 & 6 \\
-\hline
-$V$ & 0 & 14 & 20 & 24 \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{itemize}
-  \item $V$ is increasing on $[0, 6]$: as $t$ grows, $V$ grows.
-  \item From $t=0$ to $2$: gains 14 gal; from $t=2$ to $4$: gains 6 gal;
-        from $t=4$ to $6$: gains 4 gal.
-  \item Rate of increase is \textit{slowing down} $\Rightarrow$ \textbf{concave down}.
-\end{itemize}
-
-Now suppose water drains slowly at first then faster:
-rate of change increasing $\Rightarrow$ \textbf{concave up}.
-
-\textbf{Zeros:} The graph of $V$ hits the $x$-axis when $V = 0$ (tank empty).
-\end{multicols}
+    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} Students may confuse "function is decreasing" with "output is negative."
-        Cold-call: "Can a function be decreasing but have positive outputs?" (Yes --- falling from 10 to 2.)
-  \item \textbf{Common error:} Concavity confused with increasing/decreasing.
-        Ask: "Can a function be increasing AND concave down at the same time?" (Yes --- the fast-fill tank.)
-  \item \textbf{Notation check:} Are students writing intervals correctly, e.g.\ $(1, 3)$ vs.\ $[1, 3]$?
-  \item \textbf{Cold-call:} "Give me an interval where the hiker's elevation is increasing but the rate of change is decreasing."
-\end{itemize}
+    % TODO: what to circulate and check for; cold-call prompts.
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Hiker's Elevation} in leveled tiers.
-Each tier uses the same context (time vs.\ elevation) but increases in demand.
-
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Completed table provided; students identify domain, range,
-        and whether elevation is increasing or decreasing on two labeled intervals.
-  \item \textbf{Tier A (Apply):} Same table plus a verbal description; students determine
-        increasing/decreasing intervals and whether the rate of change is increasing or decreasing
-        (concavity) by comparing table differences. No freehand drawing required --- students
-        match descriptions.
-  \item \textbf{Tier E (Extend):} Analyze a second function (hiker's speed vs.\ time), compare
-        to elevation, and explain what concavity of the elevation graph reveals about the hiker's pace.
-\end{itemize}
+    % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item Given a verbal description of function behavior, state domain, range, and intervals of
-        increase/decrease.
-  \item Interpret concavity: what does concave up vs.\ concave down tell you about the rate of change?
-\end{enumerate}
-\textbf{Assessment note:} Look for correct use of interval notation and the formal increasing/decreasing
-language ($a < b \Rightarrow f(a) \lessgtr f(b)$). Concavity explanations should reference rate of change,
-not just shape.
+    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering domain/range from a table, increasing/decreasing from a verbal
-description, a first look at average rate of change (teaser for Lesson 1.2), concavity reasoning, and
-one AP-style multiple-choice item.
-
-\textbf{Extension (optional):} A piecewise context (hiker rests, then resumes) asks students to
-identify behavior on each piece and predict overall concavity.
-
-\textbf{Preview:} Next lesson, we formalize the idea of \textit{rate of change} --- how fast
-the output changes per unit of input --- and compute it precisely.
+    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
 \end{skillbox}
+
+% ── Teacher notes — one per component, in packet order ────────────────────────
+% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
+% key with no counterpart in the blank, so it makes the key longer than the
+% blank. See references/conventions.md ("teachernote").
+\begin{teachernote}[Warm-Up]
+    % TODO: pacing, common errors, what to look for.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+    % TODO
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+    % TODO
+\end{teachernote}
 \end{document}

@@ -39,20 +39,27 @@ Status legend: **moved** = old lesson relocated, body not yet reauthored;
 
 ### Unit 1: Functions and Change
 
+Replanned August 2026: Unit 1 numbers its eight lessons **1.0–1.7** (the unit opens with
+an introduction lesson). Two pairs from the original 8-unit map were merged (old 1.2+1.3
+→ 1.3; old 1.7+1.8 → 1.7), and two new lessons were added at the front.
+
 | # | Lesson | Source | Status |
 |---|--------|--------|--------|
-| 1.1 | Change in Tandem | CED 1.1 (was 1.1) | moved |
-| 1.2 | Rates of Change | CED 1.2 (was 1.2) | moved |
-| 1.3 | Rates of Change in Linear and Quadratic Functions | CED 1.3 (was 1.3) | moved |
+| 1.0 | Introduction to Functions and Change | New (unit introduction) | new |
+| 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | new |
+| 1.2 | Change in Tandem | CED 1.1 (was 1.1) | moved |
+| 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | moved |
 | 1.4 | Transformations of Functions | CED 1.12 (was 1.12) | moved |
 | 1.5 | Composition of Functions | CED 2.7 (was 2.7) | moved |
 | 1.6 | Inverse Functions | CED 2.8 (was 2.8) | moved |
-| 1.7 | Function Model Selection and Assumption Articulation | CED 1.13 (was 1.13) | moved |
-| 1.8 | Function Model Construction and Application | CED 1.14 (was 1.14) | moved |
+| 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | moved |
 
-Rationale: the function toolkit (transformations, composition, inverses) is pulled
-forward so every later unit can use it. Composition and inverses land here — before
-exponentials need them — instead of mid-Unit-2 as in the CED.
+Rationale: the unit opens with an orientation lesson (1.0) and an explicit
+function-fundamentals ramp (1.1) for the non-honors track, then the function toolkit
+(transformations, composition, inverses) is pulled forward so every later unit can use
+it. Composition and inverses land here — before exponentials need them — instead of
+mid-Unit-2 as in the CED. Average rate of change and its linear/quadratic application
+travel together (1.3), and the two modeling lessons merge into a single closer (1.7).
 
 ### Unit 2: Polynomial Functions
 
@@ -173,6 +180,14 @@ calculus); the vector and matrix material is compressed hardest.
 | 4.11 | The Inverse and Determinant of a Matrix | 8.7 |
 | 4.13 | Matrices as Functions | 8.8 |
 | 4.14 | Matrices Modeling Contexts | 8.8 |
+
+From the Unit 1 replan (August 2026; old numbers are the 8-unit numbering in use just
+before the replan):
+
+| Old lesson | Title | Absorbed into |
+|-----------|-------|---------------|
+| 1.3 | Rates of Change in Linear and Quadratic Functions | 1.3 (Rates of Change) |
+| 1.8 | Function Model Construction and Application | 1.7 (Function Model Selection and Construction) |
 
 The dropped directories' full content is in git history (tree at tag/commit prior to the
 restructure, under `unit04/lessonNN`). When reauthoring an absorbing lesson, pull the
