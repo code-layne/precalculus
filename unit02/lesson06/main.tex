@@ -2,8 +2,6 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
@@ -16,80 +14,320 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will decide which analytic form of a
+    polynomial --- factored or standard --- answers a given question, convert
+    between the two by multiplying out and by using the binomial theorem with
+    Pascal's Triangle, carry out polynomial long division to write
+    $f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$, and use both forms of one
+    polynomial to answer questions in an applied context.
+    \hfill\textit{\small (CED Topic 1.11, polynomial half --- Skills 1.B, 3.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{1.B} --- Express functions, equations, or expressions in analytically
+equivalent forms useful in a given context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The \textbf{factored} form readily provides the real zeros, so it
+        reveals the $x$-intercepts and the intervals that bound domain and
+        range questions in context. (1.11.A.1)
+  \item The \textbf{standard} form displays the leading term, so it reveals
+        end behavior --- and its constant term is the $y$-intercept.
+        (1.11.A.2)
+  \item The binomial theorem uses one row of Pascal's Triangle to expand
+        $(a+b)^n$, including $p(x) = (x+c)^n$. (1.11.C.1)
+\end{itemize} \\
+\textbf{3.B} --- Apply numerical results in a given mathematical or applied
+context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Polynomial long division mirrors numerical long division: dividing $f$
+        by $g$ gives $f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$.
+        (1.11.B.1)
+  \item Remainder $0$ is exactly the statement that $g$ is a \textit{factor}
+        of $f$ --- the factor/zero equivalence from Lesson 2.3, now with a
+        procedure attached to it.
+  \item Information pulled from different forms of the \textit{same}
+        polynomial answers different questions about one situation.
+        (1.11.A.3)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Standard form     & A polynomial written as a sum of terms in descending degree, $a_nx^n + \cdots + a_1x + a_0$. The leading term is visible, and $a_0$ is the $y$-intercept. \\
+Factored form     & The same polynomial written as a product of factors. Each linear factor $(x - a)$ hands over the real zero $a$. \\
+Pascal's Triangle & The number triangle whose row $n$ lists the coefficients of $(a+b)^n$; each entry is the sum of the two directly above it. \\
+Binomial theorem  & The rule that expands $(a+b)^n$ using row $n$ of Pascal's Triangle, with the power of $a$ falling and the power of $b$ rising across the terms. \\
+Polynomial long division & The algorithm that divides one polynomial by another, one leading term at a time, exactly as numerical long division does. \\
+Quotient and remainder & In $f(x) = g(x)q(x) + r(x)$, $q$ is the quotient and $r$ is the remainder. \\
+Division algorithm & For polynomials $f$ and $g \ne 0$ there are $q$ and $r$ with $f(x) = g(x)q(x) + r(x)$ and $\deg r < \deg g$. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: reading degree, leading coefficient, and end behavior in
+    limit notation off a polynomial in standard form (Lesson 2.5); listing the
+    real zeros with their multiplicities off a polynomial in factored form
+    (Lesson 2.3); and one Algebra 2 item multiplying two binomials. Items 1 and
+    2 are deliberately the two forms this lesson compares --- each answers a
+    question the other cannot, which is the whole lesson in ninety seconds.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{One function, two costumes.} Put both lines on the board at once
+    and say nothing about which is which:
+    \begin{enumerate}[itemsep=2pt]
+        \item $p(x) = (x+1)(x-2)(x-3)$ \qquad and \qquad
+              $p(x) = x^3 - 4x^2 + x + 6$.
+        \item Ask groups to verify with one multiplication that these really
+              are the same function --- then ask two questions:
+              \textit{Where does the graph cross the $x$-axis?} and
+              \textit{What does the graph do as $x \to -\infty$?}
+    \end{enumerate}
+    \textit{Discussion prompt:} nobody reaches for the same line twice. The
+    intercepts fall out of the product; the end behavior falls out of the
+    leading term $x^3$. Neither form is ``simplified'' and neither is
+    ``better'' --- today we learn to \textit{pick} the form the question wants,
+    and to move between them on demand.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson]{lilac}
+\begin{multicols}{2}
+
+\textbf{Part 1: Which Form Answers Which Question?} (12 min --- the spine)
+
+\begin{itemize}
+  \item Build the two-column table with the class. Factored form: real zeros
+        (2.3), hence $x$-intercepts, hence the intervals that matter in
+        context. Standard form: leading term, hence end behavior (2.5), and
+        the constant term, hence the $y$-intercept.
+  \item Degree is the one thing \textit{both} forms give: add the exponents on
+        the factors, or read the highest power.
+  \item Run the hook polynomial through every row of the table so students see
+        one function answering four questions from two forms.
+  \item Say the AP language out loud: this is choosing an equivalent form
+        \textit{useful in a given context} --- Skill 1.B.
+\end{itemize}
+
+\textbf{Part 2: Factored $\rightarrow$ Standard, and the Binomial Theorem}
+(12 min)
+
+\begin{itemize}
+  \item Expanding is just distributing, two factors at a time. Model
+        $(x+1)(x-2)(x-3)$: pair the first two, then multiply by the third.
+  \item Then the special case worth a tool: $(x+c)^n$. Multiplying four copies
+        of $(x+2)$ by hand is slow and error-prone.
+  \item Show Pascal's Triangle rows 0--5 already printed. Row $n$ gives the
+        coefficients of $(a+b)^n$, and each entry is the sum of the two
+        directly above it.
+  \item Expand $(x+2)^4$ with row 4 ($1, 4, 6, 4, 1$): powers of $x$ fall
+        $4,3,2,1,0$ while powers of $2$ rise $0,1,2,3,4$. Result
+        $x^4 + 8x^3 + 24x^2 + 32x + 16$. Keep this brisk --- it is a tool, not
+        a derivation.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: Long Division and the Division Algorithm} (19 min --- the
+core)
+
+\begin{itemize}
+  \item Open with the numerical analogue: $17 \div 5$ is $3$ with remainder
+        $2$, so $17 = 5 \cdot 3 + 2$, and the remainder is smaller than the
+        divisor.
+  \item State the polynomial version: $f(x) = g(x)q(x) + r(x)$ with
+        $\deg r < \deg g$. ``Smaller'' now means \textit{lower degree}.
+  \item Model the tableau for $2x^3 - 3x^2 - 5x + 6$ divided by $x-2$: divide
+        leading by leading, multiply, subtract, bring down. Remainder $0$,
+        quotient $2x^2 + x - 3$.
+  \item Now cash it in against Lesson 2.3: remainder $0$ $\Longleftrightarrow$
+        $(x-2)$ is a \textbf{factor} $\Longleftrightarrow$ $2$ is a zero. So
+        long division is how you \textit{test} a proposed factor and how you
+        \textit{reduce} a polynomial once one zero is known.
+  \item Second model, with a nonzero remainder: $x^3 - 4x^2 + 2x + 5$ divided
+        by $x-3$ gives $q(x) = x^2 - x - 1$ and $r = 2$. Write the
+        division-algorithm sentence and check the degree condition aloud.
+\end{itemize}
+
+\textbf{Part 4: Both Forms, One Context} (10 min)
+
+\begin{itemize}
+  \item Open box cut from a $12 \times 16$ sheet:
+        $V(x) = x(12-2x)(16-2x) = 4x^3 - 56x^2 + 192x$.
+  \item Factored form answers ``for what $x$ is the volume $0$?'' and so pins
+        the physical domain $0 < x < 6$. Standard form answers ``what is the
+        leading term, and what does the model do for large $x$?''
+  \item Land Skill 3.B: the numbers mean something here. $x = 8$ is an
+        algebraic zero the box cannot have.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction --- The Long-Division Routine]{lilac}
+Model the same four beats every single time, and name them aloud while you
+write:
+\begin{enumerate}[itemsep=2pt]
+  \item \textbf{Divide:} leading term of what is left $\div$ leading term of
+        the divisor. That is the next term of the quotient.
+  \item \textbf{Multiply:} that quotient term times the whole divisor.
+  \item \textbf{Subtract:} the leading terms must cancel. If they do not, the
+        divide step was wrong.
+  \item \textbf{Bring down:} the next term, and repeat until what is left has
+        lower degree than the divisor. What is left is $r(x)$.
+\end{enumerate}
+Insist on placeholder zeros for missing degrees --- $x^3 + 3x^2 - 2$ is
+written $x^3 + 3x^2 + 0x - 2$. A missing column is where most wrong answers
+start.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} reaching for the factored form to get end
+        behavior. Cold-call: ``Which term wins when $x$ is huge? Can you see
+        that term in this form?''
+  \item \textbf{Common error:} calling standard form ``simplified'' and
+        treating the conversion as one-directional. Both forms are equally
+        finished; ask ``which one does \textit{this} question want?''
+  \item \textbf{Common error:} in the subtraction step, distributing the minus
+        sign to only the first term. Require the subtracted line in
+        parentheses before subtracting.
+  \item \textbf{Common error:} dropping a placeholder $0x$ column, which
+        shifts every later term by one degree.
+  \item \textbf{Common error:} applying the Pascal row but forgetting to raise
+        $c$ to a power --- $(x+2)^4$ coming out as
+        $x^4 + 8x^3 + 12x^2 + 8x + 2$.
+  \item \textbf{Language:} ``quotient'' and ``remainder,'' not ``the answer''
+        and ``the leftover.''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Same Polynomial, Two Jobs} in
+leveled tiers. Every tier works from printed expressions --- no tier draws
+anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Label four questions ``factored'' or
+        ``standard,'' complete row 3 of Pascal's Triangle and use it on
+        $(x+1)^3$, expand one pair of binomials, and complete the
+        division-algorithm sentence.
+  \item \textbf{Tier A (Approaching Proficiency):} Take
+        $p(x) = (x+2)(x-1)(x-3)$ through both forms and pull four different
+        facts out of them, expand $(x+3)^4$ with row 4, and divide
+        $x^3 + 2x^2 - 5x - 6$ by $x+1$.
+  \item \textbf{Tier E (Extension):} Test the proposed factor $(x-2)$ against
+        $x^3 - 6x^2 + 11x - 6$ by division and factor it completely; divide by
+        a \textit{quadratic} divisor ($x^3 + 3x^2 - 2$ by $x^2 - 1$) and check
+        the degree condition on the remainder; and justify in writing why
+        ``remainder $0$'' and ``the divisor is a factor'' are the same
+        statement (AP Skill 1.B).
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item One function in two forms, $q(x) = (x+1)(x-5) = x^2 - 4x - 5$: name
+        which form answers each of three questions, then answer them.
+  \item Expand $(x+2)^3$ using row 3 of Pascal's Triangle (worked space
+        provided).
+  \item Divide $x^2 + 5x + 1$ by $x + 2$, then say whether $x+2$ is a factor.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 is the diagnostic --- a student who writes
+``factored'' for the end-behavior question has not separated the two forms,
+and that separation is the whole lesson. Item 3's remainder of $-5$ checks
+that they read ``not a factor'' off the remainder rather than off the look of
+the quotient.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems covering the form/information decision on a
+cubic given in both forms, two expansions into standard form, a Pascal's
+Triangle row plus two binomial expansions, one long division of
+$x^3 - 2x^2 - 5x + 6$ by $x - 1$ with the division-algorithm sentence and a
+complete factorization, and one AP-style multiple-choice item on a remainder.
+
+\textbf{Extension (optional):} Substitute $x = a$ into
+$f(x) = (x-a)q(x) + r$ --- every term carrying the factor $(x-a)$ dies, so
+$r = f(a)$. That is the remainder theorem, and it turns Lesson 2.3's factor
+theorem into a one-evaluation test.
+
+\textbf{Preview:} Lesson 2.7, \textit{Polynomial Equations, Inequalities, and
+Modeling}, puts these forms to work: solving $p(x) = 0$ starts by getting to
+factored form, and reading where $p(x) > 0$ starts from the zeros and the end
+behavior --- one fact from each form.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. Items 1 and 2 are the two halves
+of today's argument, so review them side by side rather than in order: ask
+whether item 1's form could have answered item 2's question, and the reverse.
+It cannot, and that exchange is worth more than either answer. Item 3 is the
+Algebra 2 hinge --- a class that cannot multiply two binomials cleanly will
+not survive Part 2, so if more than a few students stumble, budget five extra
+minutes there and compress Part 4 to the domain question only.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+Parts 1 and 3 carry the lesson; Part 2 is real content but it is a tool, so
+resist the urge to derive Pascal's Triangle. State the addition rule, point at
+one entry, expand $(x+2)^4$, move on. In Part 1, fill the form/information
+table \textit{with} the class rather than handing it over --- the table is the
+lesson's one-page summary, and students who copy it passively still reach for
+the wrong form on the exit ticket. Part 3 needs the full nineteen minutes:
+write the first tableau slowly, narrating divide--multiply--subtract--bring
+down, and do the subtraction in parentheses on the board every time. The
+payoff line is the one connecting back to 2.3 --- say it explicitly, ``the
+remainder is zero exactly when the divisor is a factor,'' and write the double
+arrow. If the clock runs out, cut Part 4's second question, never the second
+division example: a class that has only ever seen a remainder of $0$ has not
+seen the division algorithm.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+Tier R's first item is deliberately not a computation --- it is the sorting
+decision, repeated four times, and a group that gets it wrong needs Part 1
+retaught before any division practice will stick. Tier A's item 3 is the
+standard-issue long division; check the subtraction lines, not the final
+answer, because a right answer reached through a wrong subtraction will not
+repeat. Tier E's quadratic divisor separates students who learned the routine
+from students who memorized ``divide by $x$ minus something,'' and its
+remainder $x + 1$ is the first time $\deg r < \deg g$ has any content, since a
+linear remainder is not a constant. Item 3 is the writing task; accept any
+version of ``if the remainder is zero then $f(x) = g(x)q(x)$, and that is what
+factor means.''
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+Collected, completion credit only. Sort by item 1's form labels first: a
+student who answers all three questions correctly but labels the forms wrong
+got there by computing rather than by choosing, and that is a Part 1 reteach
+even though the answers are right. On item 3, a remainder of $-5$ paired with
+``yes, it is a factor'' is a definition miss and worth naming to the whole
+class tomorrow. The ticket should take five minutes; if item 2 alone takes
+that long, the binomial theorem needs one more example before 2.7.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+Problem 1 is the one to grade first --- it isolates the form/information
+decision from every procedure in the lesson. Problem 4 uses
+$x^3 - 2x^2 - 5x + 6$, the same polynomial from Lesson 2.3's warm-up and
+guided notes, so students should recognize that $x = 1$ was already confirmed
+as a zero; if nobody notices, open tomorrow with the two pages side by side.
+Problem 5 is the AP-style item --- distractor D (``$0$'') is chosen by
+students who assume every division comes out even, which is exactly what the
+second guided-notes example exists to prevent. The extension is the remainder
+theorem; if a group asked ``do we have to divide every time?'' during the
+lesson, assign it explicitly and open 2.7 with a student presenting it.
 \end{teachernote}
 \end{document}

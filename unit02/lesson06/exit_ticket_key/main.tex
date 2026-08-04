@@ -7,15 +7,52 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.6}{Exit Ticket --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Exit Ticket], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=12pt]
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\item These are two forms of the same function:
+      $q(x) = (x+1)(x-5) = x^2 - 4x - 5$. For each question, name the form you
+      would use, then answer it.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $x$-intercepts. \quad Form: \ans{factored} \quad
+        Answer: \ans{$(-1,0)$, $(5,0)$}
+  \item $\lim_{x \to \infty} q(x)$. \quad Form: \ans{standard} \quad
+        Answer: \ans{$\infty$}
+  \item $y$-intercept. \quad Form: \ans{standard} \quad
+        Answer: \ans{$-5$}
+\end{enumerate}
+
+\item Use row 3 of Pascal's Triangle ($1, 3, 3, 1$) to expand $(x+2)^3$.
+
+\begin{work}
+  (x+2)^3 &= x^3 + 3x^2(2) + 3x(2)^2 + (2)^3 \\
+          &= x^3 + 6x^2 + 12x + 8
+\end{work}
+
+$(x+2)^3 = $ \ans{$x^3 + 6x^2 + 12x + 8$}
+
+\item Divide $x^2 + 5x + 1$ by $x + 2$.
+
+\begin{work}
+  &\begin{array}{r@{\;}rrr}
+              &    x  &  +3  &     \\ \cline{2-4}
+   x+2\,\big) &   x^2 & +5x  & +1  \\
+   -          &   x^2 & +2x  &     \\ \cline{2-4}
+              &       &  3x  & +1  \\
+   -          &       &  3x  & +6  \\ \cline{2-4}
+              &       &      & -5
+  \end{array}
+\end{work}
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Quotient: \ans{$x + 3$} \qquad Remainder: \ans{$-5$}
+  \item Is $x+2$ a factor of $x^2 + 5x + 1$? \quad \ans{No} \quad
+        How do you know? \ans{the remainder is not $0$}
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}

@@ -73,14 +73,14 @@ and their directories — no lesson was renumbered.
 
 | # | Lesson | Source | Status |
 |---|--------|--------|--------|
-| 2.0 | Introduction to Polynomial Functions | New (unit introduction) | new |
-| 2.1 | Quadratic Functions Revisited | New (extends CED 1.3) | new |
-| 2.2 | Polynomial Functions and Rates of Change | CED 1.4 (was 1.4) | moved |
-| 2.3 | Polynomial Functions and Real Zeros | New (split of CED 1.5) | new |
-| 2.4 | Polynomial Functions and Complex Zeros | CED 1.5 (was 1.5) | moved |
-| 2.5 | Polynomial Functions and End Behavior | CED 1.6 (was 1.6) | moved |
-| 2.6 | Equivalent Representations of Polynomial Expressions | New (split of CED 1.11) | new |
-| 2.7 | Polynomial Equations, Inequalities, and Modeling | New (absorbs CED 1.14 modeling) | new |
+| 2.0 | Introduction to Polynomial Functions | New (unit introduction) | authored |
+| 2.1 | Quadratic Functions Revisited | New (extends CED 1.3) | authored |
+| 2.2 | Polynomial Functions and Rates of Change | CED 1.4 (was 1.4) | authored |
+| 2.3 | Polynomial Functions and Real Zeros | New (split of CED 1.5) | authored |
+| 2.4 | Polynomial Functions and Complex Zeros | CED 1.5 (was 1.5) | authored |
+| 2.5 | Polynomial Functions and End Behavior | CED 1.6 (was 1.6) | authored |
+| 2.6 | Equivalent Representations of Polynomial Expressions | New (split of CED 1.11) | authored |
+| 2.7 | Polynomial Equations, Inequalities, and Modeling | New (absorbs CED 1.14 modeling) | authored |
 
 Rationale: the CED covers polynomials in three dense lessons; the non-honors track gets
 eight. The unit opens with an orientation lesson (2.0) that names the polynomial family
@@ -89,8 +89,11 @@ unit's main concession to the non-honors pace, so it is the one protected when a
 needed. Equation and inequality solving (a calculus prerequisite) closes the unit together
 with the modeling work it motivates.
 
-**Pending:** `unit02/lesson08` still holds the old standalone Modeling lesson. Its material
-folds into 2.7 when 2.7 is reauthored; the directory is removed at that point, not before.
+**Unit 2 is fully reauthored.** The old standalone Modeling lesson at `unit02/lesson08` has
+been retired: its material folded into 2.7 (the open-box model, the domain restriction drawn
+from context, and regression as the technology route), and the directory was removed. Unit 2
+is the first unit whose eight lessons are all written to the new plan and born
+convention-compliant.
 
 ### Unit 3: Rational Functions
 

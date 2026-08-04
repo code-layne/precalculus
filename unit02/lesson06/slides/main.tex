@@ -1,0 +1,309 @@
+%! Equivalent Representations of Polynomial Expressions — Unit 2, Lesson 2.6 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.6}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Equivalent Representations of Polynomial Expressions}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: One Function, Two Costumes}
+  \sectionlabel[goldacc]{Think About It}
+
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.72cm, y=0.20cm]
+        \draw[linegray, very thin, xstep=1, ystep=2] (-1.6,-8) grid (3.6,6);
+        \draw[->, thick] (-1.9,0) -- (3.9,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-8.6) -- (0,6.8) node[above] {\small \(p(x)\)};
+        \foreach \x in {-1,1,2,3} \node[below] at (\x,-0.4) {\small \x};
+        \foreach \y in {-8,-4,4} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-1.5,-7.88) (-1.3,-4.26) (-1.1,-1.27) (-1,0) (-0.8,2.13)
+           (-0.5,4.38) (0,6) (0.5,5.63) (1,4) (1.5,1.88) (2,0)
+           (2.5,-0.88) (2.8,-0.61) (3,0) (3.3,1.68) (3.5,3.38)};
+        \fill[plum] (-1,0) circle (2.5pt);
+        \fill[plum] (2,0) circle (2.5pt);
+        \fill[plum] (3,0) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.5\textwidth}
+      These are the \textbf{same} function:
+      \[ p(x) = (x+1)(x-2)(x-3) \]
+      \[ p(x) = x^3 - 4x^2 + x + 6 \]
+
+      \bigskip
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Where does the graph cross the \(x\)-axis?
+        \item What is \(\lim_{x \to -\infty} p(x)\)?
+      \end{itemize}
+
+      \bigskip
+      \textit{Which line did you use for each --- and why was it not the same
+      line twice?}
+  \end{columns}
+\end{frame}
+
+% SECTION 1 — WHICH FORM ANSWERS WHICH QUESTION
+\begin{frame}[t, plain]
+  \plumheader{1. Which Form Answers Which Question?}
+
+  \begin{block}{Neither form is ``more simplified''}
+    They are the same function. Each one puts different information on the
+    surface --- so read the question first, \textit{then} choose the form.
+  \end{block}
+
+  \medskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{|l|c|l|}
+  \hline
+  \textbf{The question} & \textbf{Which form?} & \textbf{Why} \\
+  \hline
+  Where are the \(x\)-intercepts? & factored & each factor \((x-a)\) gives the zero \(a\) \\
+  \hline
+  What is \(\lim_{x \to \pm\infty} p(x)\)? & standard & the leading term \(a_nx^n\) decides both ends \\
+  \hline
+  What is the \(y\)-intercept? & standard & the constant term \(a_0\) \textit{is} \(p(0)\) \\
+  \hline
+  What is the degree? & either & add the exponents, or read the highest power \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \bigskip
+  \textit{AP Skill 1.B: express an expression in an equivalent form
+  \textbf{useful in a given context}.}
+\end{frame}
+
+% SECTION 1, CONT. — THE HOOK, ANSWERED
+\begin{frame}[t, plain]
+  \plumheader{The Hook, Answered}
+
+  \[ p(x) = (x+1)(x-2)(x-3) = x^3 - 4x^2 + x + 6 \]
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{From the factored form}
+        \(x\)-intercepts at \(x = -1,\ 2,\ 3\) --- one from each factor, and
+        the graph confirms all three.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{From the standard form}
+        Leading term \(x^3\): odd degree, positive coefficient, so
+        \(\lim_{x \to -\infty} p(x) = -\infty\).\\[4pt]
+        Constant term \(6\): the \(y\)-intercept.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  Check the \(y\)-intercept the other way:
+  \(p(0) = (1)(-2)(-3) = 6\). Same number, both forms --- because it is the
+  same function.
+\end{frame}
+
+% SECTION 2 — EXPANDING AND PASCAL'S TRIANGLE
+\begin{frame}[t, plain]
+  \plumheader{2. Factored \(\rightarrow\) Standard}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{Just distribute, two factors at a time}
+        \begin{align*}
+          p(x) &= (x+1)(x-2)(x-3) \\
+               &= \big(x^2 - x - 2\big)(x-3) \\
+               &= x^3 - 4x^2 + x + 6
+        \end{align*}
+      \end{block}
+
+      \medskip
+      \textbf{But \((x+2)^4\)?} Four binomials by hand is slow and
+      error-prone. There is a better tool.
+
+    \column{0.44\textwidth}
+      \begin{block}{Pascal's Triangle}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{r c}
+        row \(0\): & \(1\) \\
+        row \(1\): & \(1 \quad 1\) \\
+        row \(2\): & \(1 \quad 2 \quad 1\) \\
+        row \(3\): & \(1 \quad 3 \quad 3 \quad 1\) \\
+        row \(4\): & \(1 \quad 4 \quad 6 \quad 4 \quad 1\) \\
+        row \(5\): & \(1 \quad 5 \quad 10 \quad 10 \quad 5 \quad 1\) \\
+        \end{tabular}
+        \end{center}
+        Each entry is the sum of the two directly above it.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 2, CONT. — THE BINOMIAL THEOREM
+\begin{frame}[t, plain]
+  \plumheader{The Binomial Theorem}
+
+  \begin{block}{The rule}
+    To expand \((a+b)^n\), use row \(n\) of the triangle. Across the terms the
+    power of \(a\) \textbf{falls} from \(n\) to \(0\) while the power of \(b\)
+    \textbf{rises} from \(0\) to \(n\).
+  \end{block}
+
+  \bigskip
+  \begin{block}{Expand \((x+2)^4\) --- row 4 is \(1, 4, 6, 4, 1\)}
+    \begin{align*}
+      (x+2)^4 &= x^4 + 4x^3(2) + 6x^2(2)^2 + 4x(2)^3 + (2)^4 \\
+              &= x^4 + 8x^3 + 24x^2 + 32x + 16
+    \end{align*}
+  \end{block}
+
+  \bigskip
+  \textit{The trap: the coefficients from the row are not the whole story ---
+  \(c\) gets raised to a power too.}
+\end{frame}
+
+% SECTION 3 — THE DIVISION ALGORITHM
+\begin{frame}[t, plain]
+  \plumheader{3. Long Division and the Division Algorithm}
+
+  \begin{block}{Numbers first}
+    \(17 \div 5\) is \(3\) with remainder \(2\), so \(17 = 5 \cdot 3 + 2\) ---
+    and the remainder is \textbf{smaller} than the divisor.
+  \end{block}
+
+  \bigskip
+  \begin{block}{Polynomials, with ``smaller'' meaning lower degree}
+    \[ f(x) = g(x)\,q(x) + r(x), \qquad \deg r < \deg g \]
+    \(q\) is the \textbf{quotient}, \(r\) is the \textbf{remainder}.
+  \end{block}
+
+  \bigskip
+  \textbf{The routine:} divide \(\rightarrow\) multiply \(\rightarrow\)
+  subtract \(\rightarrow\) bring down. Repeat until what is left has lower
+  degree than the divisor.
+\end{frame}
+
+% SECTION 3, CONT. — WORKED DIVISION
+\begin{frame}[t, plain]
+  \plumheader{Divide \(2x^3 - 3x^2 - 5x + 6\) by \(x - 2\)}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \[
+        \begin{array}{r@{\;}rrrr}
+                    &  2x^2 &   +x  &  -3  &     \\ \cline{2-5}
+         x-2\,\big) &  2x^3 & -3x^2 & -5x  & +6  \\
+         -          &  2x^3 & -4x^2 &      &     \\ \cline{2-5}
+                    &       &   x^2 & -5x  & +6  \\
+         -          &       &   x^2 & -2x  &     \\ \cline{2-5}
+                    &       &       & -3x  & +6  \\
+         -          &       &       & -3x  & +6  \\ \cline{2-5}
+                    &       &       &      &  0
+        \end{array}
+      \]
+
+    \column{0.44\textwidth}
+      \begin{block}{Result}
+        \(q(x) = 2x^2 + x - 3\), \quad \(r = 0\), so
+        \[ 2x^3 - 3x^2 - 5x + 6 = (x-2)\big(2x^2 + x - 3\big) \]
+      \end{block}
+
+      \medskip
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Every subtraction must kill the leading term. If it does not,
+              the divide step was wrong.
+        \item Missing degree? Write the placeholder: \(0x^2\).
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SECTION 3, CONT. — REMAINDER ZERO MEANS FACTOR
+\begin{frame}[t, plain]
+  \plumheader{Remainder \(0\) Means ``Factor''}
+
+  \begin{block}{One statement, three ways (Lesson 2.3, with a procedure attached)}
+    \[ r = 0 \iff (x-a) \text{ is a factor of } f \iff f(a) = 0 \]
+  \end{block}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item So long division is how you \textbf{test} a proposed factor \dots
+    \item \dots and how you \textbf{reduce} a polynomial once one zero is
+          known: divide it out and work on the smaller quotient.
+  \end{itemize}
+
+  \bigskip
+  \begin{block}{Not every division comes out even}
+    \(x^3 - 4x^2 + 2x + 5\) divided by \(x - 3\) gives
+    \(q(x) = x^2 - x - 1\) and \(r = 2\):
+    \[ x^3 - 4x^2 + 2x + 5 = (x-3)\big(x^2 - x - 1\big) + 2 \]
+    Here \(\deg r = 0 < 1 = \deg g\), and \(x-3\) is \textbf{not} a factor.
+  \end{block}
+\end{frame}
+
+% SECTION 4 — BOTH FORMS IN CONTEXT
+\begin{frame}[t, plain]
+  \plumheader{4. Both Forms, One Context}
+
+  An open-top box is cut from a \(12 \times 16\) sheet by removing a square of
+  side \(x\) from each corner:
+  \[ V(x) = x(12-2x)(16-2x) = 4x^3 - 56x^2 + 192x \]
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Factored form}
+        \(V(x) = 0\) at \(x = 0,\ 6,\ 8\).\\[4pt]
+        A real box needs \(0 < x < 6\). The zero \(x = 8\) is algebraically
+        correct and physically impossible.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Standard form}
+        Leading term \(4x^3\), so
+        \(\lim_{x \to \infty} V(x) = \infty\).\\[4pt]
+        In context that limit is meaningless --- the model only describes the
+        box on its restricted domain.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{AP Skill 3.B: the numbers have to mean something in the situation,
+  not just in the algebra.}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item Write \(p(x) = (x+4)(x-1)(x-2)\) in standard form, then give the
+          \(y\)-intercept and \(\lim_{x \to -\infty} p(x)\).
+    \item Which form would you use to find the \(x\)-intercepts of a
+          polynomial? To find its end behavior? Why?
+    \item Use row 3 of Pascal's Triangle to expand \((x+1)^3\).
+    \item Divide \(x^3 - 5x + 3\) by \(x - 2\). What is the remainder --- and
+          is \(x-2\) a factor?
+    \item A division gives \(f(x) = (x^2-1)(x+3) + (x+1)\). Explain why the
+          remainder \(x+1\) is allowed here but would not be allowed if the
+          divisor were \(x - 1\).
+  \end{enumerate}
+\end{frame}
+
+\end{document}

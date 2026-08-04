@@ -1,148 +1,255 @@
 %! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
 % TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.6}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 2.5}\\[0.5cm]
     {\color{white}\bfseries\LARGE Polynomial Functions and End Behavior}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
   \end{minipage}
 \end{frame}
 }
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: The Rubber Band Ball}
+  \plumheader{Hook: The Graph That Lies}
   \sectionlabel[goldacc]{Think About It}
 
-  A student keeps wrapping rubber bands around a ball. The radius (in mm) is modeled by:
-  \[
-    r(t) = 2t^3 - 50t^2 + 100t
-  \]
-
-  \bigskip
   \begin{columns}[T]
-    \column{0.52\textwidth}
-      \begin{block}{At $t = 10$ minutes}
-        \begin{itemize}\setlength{\itemsep}{5pt}
-          \item $2t^3 = 2{,}000$
-          \item $-50t^2 = -5{,}000$
-          \item $100t = 1{,}000$
-          \item $r(10) = -2{,}000$
-        \end{itemize}
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=1.0cm, y=1.1cm]
+        \draw[linegray, very thin, xstep=0.5, ystep=0.5] (-1,-1.5) grid (3.5,0.5);
+        \draw[->, thick] (-1.3,0) -- (3.9,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-1.8) -- (0,0.9) node[above] {\small \(p(x)\)};
+        \foreach \x/\lab in {1/20, 2/40, 3/60} \node[above] at (\x,0.08) {\small \lab};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-1,-0.48) (-0.5,-0.11) (0,0) (0.5,-0.09) (1,-0.32) (1.5,-0.63)
+           (2,-0.96) (2.5,-1.25) (3,-1.44) (3.33,-1.48) (3.5,-1.47)};
+        \fill[plum] (0,0) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.46\textwidth}
+      \(p(x) = x^3 - 100x^2\) on \(-20 \le x \le 70\).
+
+      \bigskip
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item It dives to about \(-150{,}000\) and flattens out.
+        \item It looks like a function that has given up.
+        \item Predict: is \(p(1000)\) big and negative?
+      \end{itemize}
+
+      \bigskip
+      \textit{\(p(1000) = 900{,}000{,}000\). Positive --- nearly a billion.
+      Nothing was wrong with the window. It was just too small.}
+  \end{columns}
+\end{frame}
+
+% SECTION 1 — LIMIT NOTATION
+\begin{frame}[t, plain]
+  \plumheader{1. Limit Notation --- Language for the Two Far Ends}
+
+  \begin{block}{The behavior, in words}
+    As the input values of a nonconstant polynomial increase without bound, the
+    output values either \textbf{increase without bound} or \textbf{decrease
+    without bound}. There is no third option --- a polynomial cannot level off.
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Running right}
+        \[ \lim_{x \to \infty} p(x) = \infty
+           \qquad \lim_{x \to \infty} p(x) = -\infty \]
       \end{block}
 
-    \column{0.42\textwidth}
-      \begin{block}{At $t = 1{,}000$ minutes}
-        \begin{itemize}\setlength{\itemsep}{5pt}
-          \item $2t^3 = 2 \times 10^9$
-          \item $-50t^2 = -5 \times 10^7$
-          \item $100t = 10^5$
-        \end{itemize}
+    \column{0.48\textwidth}
+      \begin{block}{Running left}
+        \[ \lim_{x \to -\infty} p(x) = \infty
+           \qquad \lim_{x \to -\infty} p(x) = -\infty \]
       \end{block}
   \end{columns}
 
   \bigskip
-  \textit{Discussion:} Which term dominates as $t \to \infty$? Does $-50t^2$ matter when $t$ is huge?
+  \textit{\(\infty\) is not a number. You never substitute it and never get it
+  back --- the statement \textbf{describes} a behavior, it does not compute one.
+  Never write \(p(\infty) = \infty\).}
 \end{frame}
 
-% LEADING TERM DOMINANCE
+% SECTION 2 — DOMINANCE
 \begin{frame}[t, plain]
-  \navyheader{Leading Term Dominance}
+  \plumheader{2. Why the Leading Term Wins}
 
-  \begin{block}{Key Idea}
-    For large $|x|$, the \textbf{leading term} dominates all lower-degree terms.\\
-    To find end behavior: look \textbf{only at the leading term}.
+  \begin{block}{The claim --- and it is a \textit{because}}
+    Degree and the sign of the leading term decide end behavior \textbf{because}
+    for inputs of large magnitude, the leading term dominates the values of
+    every lower-degree term.
+  \end{block}
+
+  \medskip
+  \begin{center}
+  \begin{tabular}{|r|c|c|c|c|}
+  \hline
+  \(x\) & \textbf{leading: \(x^3\)} & \textbf{the rest: \(-100x^2\)} & \(p(x)\) & \textbf{rest \(\div\) leading} \\
+  \hline
+  \(10\)      & \(1 \times 10^{3}\)    & \(-1 \times 10^{4}\)   & \(-9 \times 10^{3}\)    & \(-10\) \\
+  \hline
+  \(50\)      & \(1.25 \times 10^{5}\) & \(-2.5 \times 10^{5}\) & \(-1.25 \times 10^{5}\) & \(-2\) \\
+  \hline
+  \(100\)     & \(1 \times 10^{6}\)    & \(-1 \times 10^{6}\)   & \(0\)                   & \(-1\) \\
+  \hline
+  \(500\)     & \(1.25 \times 10^{8}\) & \(-2.5 \times 10^{7}\) & \(1 \times 10^{8}\)     & \(-0.2\) \\
+  \hline
+  \(1{,}000\) & \(1 \times 10^{9}\)    & \(-1 \times 10^{8}\)   & \(9 \times 10^{8}\)     & \(-0.1\) \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \bigskip
+  \textit{The last column is \(\dfrac{-100x^2}{x^3} = \dfrac{-100}{x} \to 0\).
+  The rest never gets small --- it gets small \textbf{compared with} the leading
+  term.}
+\end{frame}
+
+% SECTION 3 — THE FOUR CASES
+\begin{frame}[t, plain]
+  \plumheader{3. The Four Cases}
+
+  \begin{block}{Only two questions matter}
+    Is the degree \textbf{even or odd}? Is the leading coefficient
+    \textbf{positive or negative}? Two choices twice over --- four cases, and
+    there are no others.
   \end{block}
 
   \bigskip
-  \textbf{Example:} $p(x) = x^3 - 100x^2$
-
-  \smallskip
-  \begin{tabular}{|c|r|r|r|}
+  \begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
   \hline
-  $x$ & $p(x)$ & $x^3$ & $-100/x$ \\
+   & \textbf{Degree} & \textbf{Leading coeff.} & \(\lim_{x \to \infty} p(x)\) & \(\lim_{x \to -\infty} p(x)\) \\
   \hline
-  $100$   & $0$           & $10^6$ & $-1$ \\
-  $1{,}000$ & $9\times10^8$ & $10^9$ & $-0.1$ \\
-  $10{,}000$ & $9.9\times10^{11}$ & $10^{12}$ & $-0.01$ \\
+  Case 1 & Even & Positive & \(\infty\)  & \(\infty\) \\
+  \hline
+  Case 2 & Even & Negative & \(-\infty\) & \(-\infty\) \\
+  \hline
+  Case 3 & Odd  & Positive & \(\infty\)  & \(-\infty\) \\
+  \hline
+  Case 4 & Odd  & Negative & \(-\infty\) & \(\infty\) \\
   \hline
   \end{tabular}
+  \end{center}
 
   \bigskip
-  As $x \to \infty$: the ratio $-100x^2 / x^3 = -100/x \to 0$.
-
-  \medskip
-  $p(x)$ behaves like $x^3$. \quad So $\lim_{x \to \infty} p(x) = \infty$.
+  \textit{Even degree sends both ends the same way; odd degree sends them
+  opposite ways; a negative leading coefficient flips both.}
 \end{frame}
 
-% THE FOUR CASES
+% SECTION 3, CONT. — THE FOUR GRAPHS
 \begin{frame}[t, plain]
-  \navyheader{The Four End-Behavior Cases}
+  \plumheader{The Four Cases, Drawn}
 
-  End behavior depends on: \textbf{degree (even/odd)} and \textbf{sign of leading coefficient}.
+  \begin{center}
+  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
+    \draw[->, thick] (-2.7,0) -- (2.8,0);
+    \draw[->, thick] (0,-5.0) -- (0,5.2);
+    \draw[very thick, plum] plot [smooth] coordinates
+      {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
+       (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
+    \node[below, align=center, text width=3.2cm] at (0,-5.8)
+      {\small \textbf{Case 1}\\ even, \(a_n > 0\)};
+  \end{tikzpicture}
+  \hspace{0.9cm}
+  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
+    \draw[->, thick] (-2.7,0) -- (2.8,0);
+    \draw[->, thick] (0,-5.0) -- (0,5.2);
+    \draw[very thick, plum] plot [smooth] coordinates
+      {(-2.2,-4.07) (-2,0) (-1.7,3.21) (-1.4,4.0) (-1,3) (-0.5,0.94)
+       (0,0) (0.5,0.94) (1,3) (1.4,4.0) (1.7,3.21) (2,0) (2.2,-4.07)};
+    \node[below, align=center, text width=3.2cm] at (0,-5.8)
+      {\small \textbf{Case 2}\\ even, \(a_n < 0\)};
+  \end{tikzpicture}
+  \hspace{0.9cm}
+  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
+    \draw[->, thick] (-2.7,0) -- (2.8,0);
+    \draw[->, thick] (0,-5.0) -- (0,5.2);
+    \draw[very thick, plum] plot [smooth] coordinates
+      {(-2.2,-4.05) (-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38)
+       (0,0) (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2) (2.2,4.05)};
+    \node[below, align=center, text width=3.2cm] at (0,-5.8)
+      {\small \textbf{Case 3}\\ odd, \(a_n > 0\)};
+  \end{tikzpicture}
+  \hspace{0.9cm}
+  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
+    \draw[->, thick] (-2.7,0) -- (2.8,0);
+    \draw[->, thick] (0,-5.0) -- (0,5.2);
+    \draw[very thick, plum] plot [smooth] coordinates
+      {(-2.2,4.05) (-2,2) (-1.8,0.43) (-1.5,-1.13) (-1,-2) (-0.5,-1.38)
+       (0,0) (0.5,1.38) (1,2) (1.5,1.13) (1.8,-0.43) (2,-2) (2.2,-4.05)};
+    \node[below, align=center, text width=3.2cm] at (0,-5.8)
+      {\small \textbf{Case 4}\\ odd, \(a_n < 0\)};
+  \end{tikzpicture}
+  \end{center}
 
   \bigskip
-  \renewcommand{\arraystretch}{1.6}
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  \textbf{Degree} & \textbf{Lead Coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
-  \hline
-  Even & Positive & $\infty$  & $\infty$ \\
-  Even & Negative & $-\infty$ & $-\infty$ \\
-  Odd  & Positive & $\infty$  & $-\infty$ \\
-  Odd  & Negative & $-\infty$ & $\infty$ \\
-  \hline
-  \end{tabular}
+  \textit{An odd-degree polynomial has one end up and one end down, so its graph
+  must cross the \(x\)-axis --- the same conclusion Lesson 2.4 reached by
+  counting conjugate pairs.}
+\end{frame}
 
-  \bigskip
+% SECTION 4 — READING IT OFF ANY FORM
+\begin{frame}[t, plain]
+  \plumheader{4. Reading End Behavior Off Any Form}
+
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{Even Degree}
-        Both ends go the \textbf{same direction}.\\
-        Think: $y = x^2$ (both ends up).
+      \begin{block}{Standard form hands it to you}
+        \(p(x) = 9 + 2x^4 - x^7\)\\[4pt]
+        Read the \textbf{exponents}, not the order. Leading term \(-x^7\):
+        odd degree, negative \(a_n\).
+        \[ \lim_{x \to \infty} p(x) = -\infty \]
+        \[ \lim_{x \to -\infty} p(x) = \infty \]
       \end{block}
+
     \column{0.48\textwidth}
-      \begin{block}{Odd Degree}
-        Ends go \textbf{opposite directions}.\\
-        Think: $y = x^3$ (left down, right up).
+      \begin{block}{Factored form hides it --- never expand}
+        \(q(x) = 2(x-3)^2(x+1)(x^2+4)\)\\[4pt]
+        Degree: \(2 + 1 + 2 = 5\). Leading term:
+        \(2 \cdot x^2 \cdot x \cdot x^2 = 2x^5\).
+        \[ \lim_{x \to \infty} q(x) = \infty \]
+        \[ \lim_{x \to -\infty} q(x) = -\infty \]
       \end{block}
   \end{columns}
+
+  \bigskip
+  \textit{Two forms, two jobs: factored form gave you the \textbf{zeros} in 2.4;
+  standard form gives you the \textbf{end behavior} today. Lesson 2.6 shows they
+  are the same polynomial.}
 \end{frame}
 
-% LIMIT NOTATION PRACTICE
+% CLASS PRACTICE
 \begin{frame}[t, plain]
-  \navyheader{Limit Notation Practice}
+  \plumheader{Class Practice}
   \sectionlabel[redacc]{Try It}
 
-  For each polynomial, identify the leading term and write the two limits.
-
-  \bigskip
-  \textbf{1.} \quad $f(x) = -3x^4 + 2x^2 - 7$
-
-  \medskip
-  Leading term: \underline{\hspace{3cm}} \quad Degree: \underline{\hspace{1.5cm}} \quad Sign: \underline{\hspace{1.5cm}}
-
-  \medskip
-  $\displaystyle\lim_{x \to \infty} f(x) = $ \underline{\hspace{2cm}} \qquad
-  $\displaystyle\lim_{x \to -\infty} f(x) = $ \underline{\hspace{2cm}}
-
-  \bigskip
-  \textbf{2.} \quad $g(x) = 5x^7 - 200x^5 + 3x - 9$
-
-  \medskip
-  Leading term: \underline{\hspace{3cm}} \quad Degree: \underline{\hspace{1.5cm}} \quad Sign: \underline{\hspace{1.5cm}}
-
-  \medskip
-  $\displaystyle\lim_{x \to \infty} g(x) = $ \underline{\hspace{2cm}} \qquad
-  $\displaystyle\lim_{x \to -\infty} g(x) = $ \underline{\hspace{2cm}}
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item Write both limit statements for \(p(x) = -x^6 + 4x^3 - 11\).
+    \item Write both limit statements for \(r(x) = -5(x+2)^3(x-1)^2\) --- do not
+          expand.
+    \item A polynomial has \(\lim_{x \to \infty} p(x) = \infty\) and
+          \(\lim_{x \to -\infty} p(x) = -\infty\). Even or odd degree? Positive
+          or negative \(a_n\)?
+    \item For \(x^4 - 500x^3\), past what input is the leading term the larger
+          of the two in size?
+    \item Explain in one sentence why \(x^5 - 900x^4 + 12\) and \(x^5 + 7x\)
+          have identical end behavior.
+  \end{enumerate}
 \end{frame}
 
 \end{document}

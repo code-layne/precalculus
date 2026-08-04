@@ -7,15 +7,206 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.6}{Group Activity --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[Same Polynomial, Two Jobs]{plumlight}
+\small
+Your group is the conversion desk. Every polynomial that arrives has a
+question attached, and the job is to get it into the form that answers the
+question --- and no further. Two references, good for every tier:
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{r c}
+row $0$: & $1$ \\
+row $1$: & $1 \quad 1$ \\
+row $2$: & $1 \quad 2 \quad 1$ \\
+row $3$: & $1 \quad 3 \quad 3 \quad 1$ \\
+row $4$: & $1 \quad 4 \quad 6 \quad 4 \quad 1$ \\
+row $5$: & $1 \quad 5 \quad 10 \quad 10 \quad 5 \quad 1$ \\
+\end{tabular}
+\end{center}
+
+\smallskip
+\textbf{Division algorithm:} $f(x) = g(x)\,q(x) + r(x)$ with
+$\deg r < \deg g$.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Write \textbf{factored} or \textbf{standard} --- whichever form
+        answers the question faster.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Where does the graph cross the $x$-axis? \quad \ans{factored}
+          \item What is $\lim_{x \to \infty} p(x)$? \quad \ans{standard}
+          \item What is the $y$-intercept? \quad \ans{standard}
+          \item What are the real zeros? \quad \ans{factored}
+        \end{enumerate}
+
+  \item Row 3 of Pascal's Triangle is \ans{1}, \ans{3}, \ans{3},
+        \ans{1}. Use it to expand $(x+1)^3$.
+
+        \begin{work}
+          (x+1)^3 &= x^3 + 3x^2(1) + 3x(1)^2 + (1)^3 \\
+                  &= x^3 + 3x^2 + 3x + 1
+        \end{work}
+
+        $(x+1)^3 = $ \ans{$x^3 + 3x^2 + 3x + 1$}
+
+  \item Multiply out $(x-5)(x+2)$ and write the result in standard form.
+
+        \begin{work}
+          (x-5)(x+2) &= x^2 + 2x - 5x - 10 \\
+                     &= x^2 - 3x - 10
+        \end{work}
+
+        $(x-5)(x+2) = $ \ans{$x^2 - 3x - 10$}
+
+  \item Complete the division algorithm.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f(x) = g(x)\,\cdot$ \ans{$q(x)$} $+$ \ans{$r(x)$}
+          \item The degree of $r$ must be \ans{less than} the degree of $g$.
+          \item If $g$ is a factor of $f$, the remainder is \ans{$0$}.
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = (x+2)(x-1)(x-4)$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Real zeros, straight from this form: \ans{$-2$, $1$, $4$}
+          \item Write $p$ in standard form.
+
+                \begin{work}
+                  p(x) &= (x+2)(x-1)(x-4) \\
+                       &= \big(x^2 + x - 2\big)(x-4) \\
+                       &= x^3 - 4x^2 + x^2 - 4x - 2x + 8 \\
+                       &= x^3 - 3x^2 - 6x + 8
+                \end{work}
+
+                $p(x) = $ \ans{$x^3 - 3x^2 - 6x + 8$}
+          \item $y$-intercept: \ans{$8$} \quad Which form gave it to you?
+                \ans{standard}
+          \item $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$} \quad Which form?
+                \ans{standard}
+        \end{enumerate}
+
+  \item Use row 4 of Pascal's Triangle to expand $(x+3)^4$. Do not multiply
+        four binomials.
+
+        \begin{work}
+          (x+3)^4 &= x^4 + 4x^3(3) + 6x^2(3)^2 + 4x(3)^3 + (3)^4 \\
+                  &= x^4 + 12x^3 + 54x^2 + 108x + 81
+        \end{work}
+
+        $(x+3)^4 = $ \ans{$x^4 + 12x^3 + 54x^2 + 108x + 81$}
+
+  \item Divide $x^3 + 2x^2 - 5x - 6$ by $x + 1$.
+
+        \begin{work}
+          &\begin{array}{r@{\;}rrrr}
+                      &   x^2 &   +x  &  -6  &     \\ \cline{2-5}
+           x+1\,\big) &   x^3 & +2x^2 & -5x  & -6  \\
+           -          &   x^3 &  +x^2 &      &     \\ \cline{2-5}
+                      &       &   x^2 & -5x  & -6  \\
+           -          &       &   x^2 &  +x  &     \\ \cline{2-5}
+                      &       &       & -6x  & -6  \\
+           -          &       &       & -6x  & -6  \\ \cline{2-5}
+                      &       &       &      &  0
+          \end{array}
+        \end{work}
+
+        Quotient: \ans{$x^2 + x - 6$} \qquad Remainder: \ans{$0$}
+
+        Is $x+1$ a factor of $x^3 + 2x^2 - 5x - 6$? \quad \ans{Yes}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Someone claims $(x-2)$ is a factor of $f(x) = x^3 - 6x^2 + 11x - 6$.
+        Test the claim by dividing.
+
+        \begin{work}
+          &\begin{array}{r@{\;}rrrr}
+                      &   x^2 &  -4x  &  +3  &     \\ \cline{2-5}
+           x-2\,\big) &   x^3 & -6x^2 & +11x & -6  \\
+           -          &   x^3 & -2x^2 &      &     \\ \cline{2-5}
+                      &       & -4x^2 & +11x & -6  \\
+           -          &       & -4x^2 &  +8x &     \\ \cline{2-5}
+                      &       &       &  +3x & -6  \\
+           -          &       &       &  +3x & -6  \\ \cline{2-5}
+                      &       &       &      &  0
+          \end{array}
+        \end{work}
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Remainder: \ans{$0$} \quad So the claim is
+                \ans{true} / \textbf{false}.
+          \item Factor the quotient, then write $f$ completely factored:
+                \ans{$f(x) = (x-1)(x-2)(x-3)$}
+          \item All real zeros of $f$: \ans{$1$, $2$, $3$} \quad
+                $y$-intercept: \ans{$-6$}
+        \end{enumerate}
+
+  \item Divide $x^3 + 3x^2 - 2$ by $x^2 - 1$. The divisor is now
+        \textit{quadratic} --- and the dividend is missing its $x$ term.
+
+        \begin{work}
+          &\begin{array}{r@{\;}rrrr}
+                        &       &       &    x  &  +3  \\ \cline{2-5}
+           x^2-1\,\big) &   x^3 & +3x^2 &  +0x  &  -2  \\
+           -            &   x^3 &       &   -x  &      \\ \cline{2-5}
+                        &       & +3x^2 &   +x  &  -2  \\
+           -            &       & +3x^2 &       &  -3  \\ \cline{2-5}
+                        &       &       &   +x  &  +1
+          \end{array}
+        \end{work}
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $q(x) = $ \ans{$x + 3$} \qquad $r(x) = $ \ans{$x + 1$}
+          \item Write the division-algorithm sentence:
+
+                \smallskip
+                $x^3 + 3x^2 - 2 = (x^2-1)\,\cdot$ \ans{$(x+3)$} $+$
+                \ans{$(x+1)$}
+          \item $\deg r = $ \ans{1} and $\deg g = $ \ans{2}, so the
+                degree condition \ans{is} / \textbf{is not} satisfied.
+        \end{enumerate}
+
+  \item Explain why ``the remainder is $0$'' and ``the divisor is a factor''
+        say exactly the same thing. Use the division algorithm in your answer,
+        and connect it to the factor/zero equivalence from Lesson 2.3.
+
+        \vspace{0.05in}
+        \ansline{If $r(x) = 0$ then $f(x) = g(x)q(x)$, so $g$ divides $f$ exactly --- which is}
+        \ansline{what ``factor'' means. When $g(x) = x - a$, that also makes $f(a) = 0$, so $a$}
+        \ansline{is a zero of $f$ --- the factor/zero equivalence from Lesson 2.3.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
+%! Polynomial Equations, Inequalities, and Modeling — Unit 2, Lesson 2.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,15 +7,48 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.7}{Exit Ticket --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Exit Ticket], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=12pt]
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\item Solve $x^3 = 4x$. (Careful --- do not divide by $x$.)
+
+\begin{work}
+  x^3 - 4x &= 0 \\
+  x\big(x^2 - 4\big) &= 0 \\
+  x(x-2)(x+2) &= 0
+\end{work}
+
+Solutions: \ans{$x = 0,\ x = 2,\ x = -2$}
+
+\item Let $p(x) = (x+3)(x-1)$, with real zeros $-3$ and $1$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Interval} & $(-\infty,-3)$ & $(-3,1)$ & $(1,\infty)$ \\
+\hline
+\textbf{Test value} & \ans{$-4$} & \ans{$0$} & \ans{$2$} \\
+\hline
+\textbf{Sign of $p$} & \ans{$+$} & \ans{$-$} & \ans{$+$} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+The solution of $p(x) < 0$, in interval notation: \ans{$(-3, 1)$}
+
+\item An open box is made from a square of card 12 cm on a side by cutting a
+      square of side $x$ from each corner: $V(x) = x(12-2x)^2$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item What domain restriction does the context force? \quad \ans{$0 < x < 6$}
+  \item Find $V(2)$ and give it with its units. \quad \ans{$128$ cm$^3$}
+\end{enumerate}
+
+\end{enumerate}
 
 \end{document}

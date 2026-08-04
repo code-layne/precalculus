@@ -2,8 +2,6 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
@@ -16,12 +14,14 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the end behavior of polynomial functions
-    using limit notation, and explain how the degree and sign of the leading coefficient determine
-    what happens to output values as $x \to \pm\infty$.
-    \hfill\textit{\small Skill: MP 3.A \quad (Big Idea: VAR)}
+    \textbf{Primary Objective:} Students will describe the end behavior of a
+    polynomial function in limit notation, explain \textit{why} the leading term
+    decides that behavior --- because for large $|x|$ every lower-degree term is
+    negligible beside it --- and read end behavior off a polynomial written in
+    standard form or in factored form.
+    \hfill\textit{\small (CED Topic 1.6 --- Skill 3.A)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -30,170 +30,267 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 3.A} --- Describe characteristics of a function with varying
-levels of precision using appropriate mathematical language and notation.
-(LO 1.6.A) &
+\textbf{3.A} --- Describe the characteristics of a function with varying levels
+of precision, depending on the function representation and the mathematical
+tools available. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item As $x \to \infty$ or $x \to -\infty$, output values of a nonconstant polynomial either
-        increase or decrease without bound. (EK 1.6.A.1--2)
-  \item End behavior is determined solely by the degree and sign of the leading coefficient. (EK 1.6.A.3)
-  \item The leading term dominates all lower-degree terms for large $|x|$. (EK 1.6.A.3)
-  \item Even-degree: both ends go the same direction; odd-degree: ends go opposite directions.
-  \item Standard notation: $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) = -\infty$.
+  \item As the input values of a nonconstant polynomial increase without bound,
+        the output values either increase or decrease without bound:
+        $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) =
+        -\infty$. (1.6.A.1)
+  \item The same is true as input values decrease without bound:
+        $\lim_{x \to -\infty} p(x) = \infty$ or $= -\infty$. (1.6.A.2)
+\end{itemize} \\
+\textbf{LO 1.6.A} --- Describe end behaviors of polynomial functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The \textbf{degree} and the \textbf{sign of the leading term} determine
+        end behavior, \textit{because} for inputs of large magnitude the
+        leading term dominates the values of every lower-degree term.
+        (1.6.A.3)
+  \item Even degree $\Rightarrow$ both ends run the same way; odd degree
+        $\Rightarrow$ the ends run opposite ways. A negative leading
+        coefficient flips both.
+  \item Limit notation is \textit{language for a described behavior}, not a
+        computation --- and it is the language calculus will use.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.24\linewidth} X @{}}
-End behavior       & What happens to $p(x)$ as $x$ increases or decreases without bound. \\
-Leading term       & The term with the highest degree in a polynomial. \\
-Leading coefficient & The coefficient of the leading term. \\
-Limit notation     & $\lim_{x \to \infty} p(x) = \infty$ means output grows without bound as input increases. \\
-Dominates          & The leading term dominates when its ratio to all other terms approaches 1 as $x \to \pm\infty$. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+End behavior            & What the output values of $p$ do as the input runs off toward $\infty$ and toward $-\infty$ --- the two far ends of the graph. \\
+Increase without bound  & The outputs pass every number you can name and never turn back. ``Decrease without bound'' is the same idea downward. \\
+Limit notation          & $\lim_{x \to \infty} p(x) = \infty$, read ``as $x$ increases without bound, $p(x)$ increases without bound.'' A shorthand for a description, not an arithmetic answer. \\
+Leading term            & The term of highest degree, written $a_n x^n$. In factored form it is the product of the leading pieces of all the factors. \\
+Leading coefficient     & The number $a_n$ multiplying the leading term. Only its \textit{sign} matters for end behavior. \\
+Dominance               & For large $|x|$, the leading term is so much larger than the rest that the rest is negligible: the ratio (rest)~$\div$~(leading term) shrinks toward $0$. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review from Lessons 1.4--1.5).
-            Skills reviewed: identifying degree and leading coefficient, writing a polynomial
-            in factored form from given zeros and multiplicities, real vs.\ complex zeros.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: totaling the degree of a polynomial from its factored form
+    and separating real zeros from non-real ones (Lesson 2.4), and two Algebra 2
+    prerequisites this lesson depends on --- naming the leading term and leading
+    coefficient of a polynomial whose terms are \textit{out of degree order},
+    and evaluating a polynomial at a large input without a calculator. Item 3
+    is the numerical seed of the whole lesson: the cubic term has already
+    overtaken the quadratic one by $x = 100$.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    \textbf{Rubber Band Ball:} A student keeps wrapping rubber bands around a ball. Suppose the
-    radius (in mm) is modeled by $r(t) = 2t^3 - 50t^2 + 100t$, where $t$ is time in minutes.
-
-    \medskip
-    \textit{Discussion prompt:} As $t$ gets very large (say $t = 1{,}000$ minutes), does the
-    $-50t^2$ term matter much compared to $2t^3$? At $t = 1{,}000$: $2t^3 = 2 \times 10^9$ but
-    $-50t^2 = -5 \times 10^7$ --- less than $3\%$ of the cubic term. Which term ``wins'' for large $t$?
-
-    \medskip
-    Tell students: today we formalize exactly this idea --- the leading term always wins.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{The graph that lies.} Project the pre-drawn graph of
+    $p(x) = x^3 - 100x^2$ from the notes. On the window $-20 \le x \le 70$ the
+    curve heads down and flattens out near the bottom --- it looks for all the
+    world like a function that has given up and stays negative.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask for a prediction: what is $p(1000)$ --- big and negative, or
+              something else?
+        \item Then give it: $p(1000) = 900{,}000{,}000$. Positive, and nearly a
+              billion.
+    \end{enumerate}
+    \textit{Discussion prompt:} Nothing about the window was wrong; the window
+    was just too small. $-100x^2$ is winning at $x = 20$ and losing badly at
+    $x = 1000$. Today we find out which term is in charge \textit{eventually},
+    and we learn the notation for saying so.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Leading Term Dominance} (10 min)
+\textbf{Part 1: Limit Notation as Vocabulary} (10 min)
 
-Use $p(x) = x^3 - 100x^2$ to show the leading term dominates.
+\begin{itemize}
+  \item Say the words first, symbols second: ``as $x$ increases without bound,
+        $p(x)$ increases without bound.'' Then write
+        $\lim_{x \to \infty} p(x) = \infty$ underneath it.
+  \item Insist on the reading: this is a \textbf{description}, not a
+        computation. $\infty$ is not a number you plugged in and not a number
+        that came out --- it is shorthand for ``and it never stops.''
+  \item Four sentences, four symbols. Drill the translation both ways: give a
+        sentence, get the notation; give the notation, get the sentence.
+  \item Flag the payoff: this is the notation calculus runs on. Getting it
+        fluent now costs one lesson and saves a semester.
+\end{itemize}
 
-\smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|r|r|}
-\hline
-$x$ & $p(x)$ & $x^3$ \\
-\hline
-$10$    & $-9{,}000$ & $1{,}000$ \\
-$100$   & $0$ & $1{,}000{,}000$ \\
-$1{,}000$ & $9 \times 10^8$ & $10^9$ \\
-\hline
-\end{tabular}
-\smallskip
+\textbf{Part 2: Why the Leading Term Wins} (14 min)
 
-Ask: At $x = 1{,}000$, the $-100x^2 = -10^8$ is large on its own, but $x^3 = 10^9$ is 10$\times$ bigger.
-The ratio $-100x^2/x^3 = -100/x \to 0$.
-\textbf{Conclusion:} Leading term $x^3$ controls end behavior.
+\begin{itemize}
+  \item This is the conceptual heart --- EK 1.6.A.3 is a \textit{because}, and
+        the table is the evidence for it. Do not skip to the rules.
+  \item Build the dominance table for $p(x) = x^3 - 100x^2$ at
+        $x = 10, 50, 100, 500, 1000$: leading term, the rest, $p(x)$, and the
+        ratio (rest) $\div$ (leading term).
+  \item That last column is the whole argument. It equals $-100/x$, so it runs
+        $-10, -2, -1, -0.2, -0.1$ --- the rest becomes a rounding error beside
+        the leading term.
+  \item Land it: end behavior of $x^3 - 100x^2$ is the end behavior of $x^3$.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2: The Four End-Behavior Cases} (12 min)
+\textbf{Part 3: The Four Cases} (14 min)
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Degree} & \textbf{Lead $a_n$} & $x \to \infty$ & $x \to -\infty$ \\
-\hline
-Even & $>0$ & $\infty$  & $\infty$ \\
-Even & $<0$ & $-\infty$ & $-\infty$ \\
-Odd  & $>0$ & $\infty$  & $-\infty$ \\
-Odd  & $<0$ & $-\infty$ & $\infty$ \\
-\hline
-\end{tabular}
-\smallskip
+\begin{itemize}
+  \item Only two things about the leading term matter: is the degree
+        \textbf{even or odd}, and is the coefficient \textbf{positive or
+        negative}. Two choices twice over gives four cases and no more.
+  \item Fill the $2 \times 2$ table together, one row at a time, tying each row
+        to its pre-drawn graph on the same page.
+  \item The one-sentence summary to write down: even degree sends both ends
+        the same way, odd degree sends them opposite ways, and a negative
+        leading coefficient flips both ends.
+  \item Sanity check to teach: an odd-degree polynomial has one end up and one
+        end down, so it must cross the $x$-axis --- exactly what 2.4 proved
+        from the zero count.
+\end{itemize}
 
-Key insight: even-degree polynomials behave like $x^2$ (both ends same direction);
-odd-degree behave like $x^3$ (ends go opposite directions).
+\textbf{Part 4: Reading It Off Any Form} (12 min)
 
-\medskip
-\textbf{Part 3: Using Limit Notation} (8 min)
-
-Introduce $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$.
-
-Example: $p(x) = -3x^4 + 2x^2 - 7$.
-Leading term: $-3x^4$ (even, negative).
-
-\[
-  \lim_{x \to \infty} p(x) = -\infty \qquad \lim_{x \to -\infty} p(x) = -\infty
-\]
-
-Practice 2--3 examples chorally before the activity.
-
+\begin{itemize}
+  \item \textbf{Standard form} hands you the leading term for free --- as long
+        as the terms are in degree order. Scramble one on purpose
+        ($9 + 2x^4 - x^7$) so nobody grabs the first term they see.
+  \item \textbf{Factored form} hides it. Add the exponents for the degree;
+        multiply the leading pieces of the factors for the coefficient. Never
+        expand.
+  \item Work $q(x) = 2(x-3)^2(x+1)(x^2+4)$: degree $2+1+2 = 5$, leading term
+        $2x^5$, so odd and positive.
+  \item Close the arc: 2.4 counted the zeros --- the middle of the graph. 2.5
+        describes the two far ends. Both are now on the table.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
 While students work on guided notes and practice, circulate and check:
 \begin{itemize}
-  \item \textbf{Common error:} Students confuse ``the function has negative output values'' with
-        ``end behavior is $-\infty$.'' Cold-call: ``Does a negative leading coefficient mean
-        ALL outputs are negative?'' (No --- zeros and sign changes still exist.)
-  \item \textbf{Common error:} Students use the constant or a middle term instead of the leading term.
-        Ask: ``Which term matters when $x$ is a billion?''
-  \item \textbf{Notation check:} Students should write $\lim_{x \to \infty} p(x) = \infty$ (not just
-        ``goes to infinity''). AP exam requires limit notation.
-  \item \textbf{Cold-call:} ``Give me a polynomial with $\lim_{x \to \infty} = -\infty$ and
-        $\lim_{x \to -\infty} = \infty$.'' (Any odd-degree, negative-leading-coeff example.)
+  \item \textbf{Common error:} taking the \textit{first} term written as the
+        leading term. Cold-call on $p(x) = 9 + 2x^4 - x^7$: ``Which exponent is
+        the biggest? Where is that term sitting?''
+  \item \textbf{Common error:} reading ``negative leading coefficient'' as
+        ``all outputs are negative.'' Push back with the hook: $x^3 - 100x^2$
+        is negative on a wide stretch and still runs to $+\infty$.
+  \item \textbf{Common error:} in factored form, calling $(x^2+4)$ degree 1, or
+        forgetting the outside constant when building the leading coefficient.
+  \item \textbf{Notation:} require $\lim_{x \to \infty} p(x) = \infty$, not
+        ``goes to infinity'' and not $p(\infty) = \infty$. The second is not
+        notation this course allows --- $\infty$ is never an input.
+  \item \textbf{Language:} ``increases without bound,'' not ``gets really
+        big.'' The phrase is the definition.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: End Behavior Explorer} in leveled tiers.
-Each tier uses the same set of four polynomial functions but increases in cognitive demand.
+Students work on the \textbf{Group Activity: The End Behavior Desk} in leveled
+tiers. Tier E reads two pre-drawn graphs --- no tier draws anything.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Leading term provided for each polynomial; students use the
-        rules table to fill in $\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$ in limit notation.
-  \item \textbf{Tier A (Apply):} Students identify the leading term from the full polynomial
-        expression, predict end behavior, write limit notation, and verify with a calculator.
-  \item \textbf{Tier E (Extend):} Students create their own polynomial with even degree, negative
-        leading coefficient, and exactly 3 real zeros; then describe its end behavior fully.
+  \item \textbf{Tier R (Remediate):} The leading term is supplied for each of
+        four polynomials; students classify degree parity and coefficient sign,
+        then read both limit statements straight off the four-case table.
+  \item \textbf{Tier A (Approaching Proficiency):} Students extract the leading
+        term themselves --- two in standard form (one scrambled), two in
+        factored form --- and write both limit statements for each.
+  \item \textbf{Tier E (Extension):} Students read end behavior off two
+        pre-drawn graphs and write it in limit notation, run the dominance
+        ratio for $x^4 - 500x^3$ to find where the leading term takes over,
+        build a polynomial to a prescribed end behavior and zero count, and
+        justify in writing why two polynomials with the same leading term must
+        share end behavior (AP Skill 3.A).
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item Given $p(x) = -2x^5 + 7x^3 - x + 3$, write $\lim_{x \to \infty} p(x)$ and $\lim_{x \to -\infty} p(x)$.
-  \item A polynomial $q$ has degree 4 and positive leading coefficient. Complete: as $x \to \infty$,
-        $q(x) \to \underline{\phantom{xxx}}$ and as $x \to -\infty$, $q(x) \to \underline{\phantom{xxx}}$.
+  \item For $p(x) = -2x^5 + 7x^3 - x + 3$: name the leading term, then write
+        both limit statements.
+  \item For $q(x) = 3(x-1)^2(x+4)^2$ in factored form (worked space provided):
+        give the degree and leading coefficient, then both limit statements.
+  \item Reverse it --- a polynomial has $\lim_{x \to \infty} p(x) = \infty$ and
+        $\lim_{x \to -\infty} p(x) = -\infty$. Is the degree even or odd? Is
+        the leading coefficient positive or negative?
 \end{enumerate}
-\textbf{Assessment note:} Look for correct identification of the leading term (odd degree, negative
-coefficient in \#1) and proper limit notation. Students who write $-\infty$ and $\infty$ respectively
-for \#1 demonstrate mastery of how odd-degree/negative leading coefficient determines opposite-direction ends.
+\textbf{Assessment note:} Item 2 is the diagnostic. A student who expands
+$3(x-1)^2(x+4)^2$ before answering has the right answer and the wrong method,
+and will run out of time on a real assessment; a student who writes degree 2 has
+not seen that the exponents add. Item 3 tests whether the four-case table was
+memorized as a table or understood as two independent yes/no questions.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems --- end behavior from leading term for 4 polynomials, verbal description
-from a leading term, a conceptual question about parity, a table-based end-behavior inference, and one
-AP-style multiple-choice item.
+\textbf{Homework:} 5 problems covering end behavior from standard form (one
+deliberately scrambled), end behavior from factored form with a worked degree
+and leading coefficient, a dominance-ratio table for $x^4 - 1000x^3$, reading
+end behavior off two pre-drawn graphs, and one AP-style multiple-choice item.
 
-\textbf{Extension (optional):} Students investigate $p(x) = x^n$ for $n = 1, 2, 3, 4$ numerically
-at $x = \pm100$ and generalize the four end-behavior patterns from the data.
+\textbf{Extension (optional):} Factor the leading term out of
+$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_0$ to get
+$p(x) = a_n x^n\!\left(1 + \frac{a_{n-1}}{a_n x} + \dots +
+\frac{a_0}{a_n x^n}\right)$. Every fraction in the bracket has an $x$ in the
+denominator, so the bracket closes on $1$ --- which is the dominance table of
+Part 2, written once and for all.
 
-\textbf{Preview:} Lesson 1.7 extends end behavior to \textit{rational} functions, where division by a
-polynomial creates vertical asymptotes and horizontal (or oblique) asymptotes.
+\textbf{Preview:} Next lesson (2.6, Equivalent Representations of Polynomial
+Expressions) puts the two halves side by side: the \textit{standard} form is
+the one that hands you the end behavior, the \textit{factored} form is the one
+that hands you the zeros, and they are the same polynomial.
 \end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 2 is the one to watch --- the
+terms are out of degree order on purpose, and a student who answers ``$7$'' or
+``$x^2$'' has revealed exactly the habit Part 4 has to break. Do not correct it
+at the desk; collect the wrong answers and open Part 4 with them. Item 3 is
+arithmetic students can do on paper: $100^3 = 1{,}000{,}000$ and
+$50 \cdot 100^2 = 500{,}000$. If more than a third of the room stalls there, the
+dominance table in Part 2 needs to be worked column by column at the board
+rather than in pairs.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Part 2 is the centerpiece; protect its fourteen minutes. The temptation is to
+state the four cases early and let the table become decoration --- resist it,
+because the four cases are memorizable in ninety seconds and the reason behind
+them is the only part that survives to calculus. Work the $x = 10$ row aloud,
+let pairs do $x = 50$ and $x = 100$, then work $x = 500$ and $x = 1000$ together
+and make somebody say out loud what the last column is doing. Part 1 can be
+brisk but must not be skipped: the notation is assessed on every item today. If
+time is short, compress Part 3 --- the graphs carry it --- never Parts 1 or 2.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+Tier R exists to make the four-case lookup automatic; if a group finishes it in
+four minutes, that is the design working, and they move to Tier A. Tier A's
+item 1(b) is the scrambled polynomial and item 2 is factored form --- those two
+are the whole point of the tier, so check them before checking anything else.
+In Tier E, question 2 asks where the leading term overtakes the rest for
+$x^4 - 500x^3$; the answer is $x = 500$, and students who find it by testing
+values rather than by solving are doing exactly the right thing. Question 4 is
+the writing task; accept any version of ``the lower-degree terms stop mattering,
+so only the leading term is left to decide the ends.''
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Sort by item 2 first: degree 4 and leading
+coefficient 3 is the target; ``degree 2'' is the reteach pile and needs sixty
+seconds on adding exponents at the start of 2.6. Item 3 is the fastest read on
+conceptual understanding --- a student who has to reconstruct the whole table to
+answer it has memorized rather than understood, which is fine for today and
+worth a revisit before the unit test. Accept ``odd'' and ``positive'' without
+justification.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 3's ratio table is the one to grade first; it isolates dominance from
+every other skill and a wrong final row means Part 2 did not land. Problem 5 is
+the AP-style item --- distractor B ($-2x^4 + x$) is chosen by students who see
+the negative sign, stop, and never check the degree's parity, and it is worth
+two minutes tomorrow because Unit 2's test will ask it again. The extension is
+the algebra behind Part 2; if anyone asked ``but does it \textit{always} win?''
+during the lesson, assign it by name and open 2.6 with that student at the
+board.
+\end{teachernote}
 \end{document}

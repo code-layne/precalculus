@@ -1,4 +1,4 @@
-%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Group Activity (Answer Key)
+%! Polynomial Equations, Inequalities, and Modeling — Unit 2, Lesson 2.7 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,15 +7,219 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.7}{Group Activity --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[The Packaging Desk]{plumlight}
+\small
+Your group runs the packaging desk. Today's stock is a flat sheet of card
+measuring \textbf{16 cm by 24 cm}. A square of side $x$ is cut from each of the
+four corners and the flaps are folded up to make an open box. Every tier works
+this same sheet --- no tier draws a graph.
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{center}
+\begin{tikzpicture}[x=0.20cm, y=0.20cm]
+  \draw[very thick, plum] (0,0) rectangle (24,16);
+  \draw[fill=lilacmid, draw=plum] (0,0) rectangle (3,3);
+  \draw[fill=lilacmid, draw=plum] (21,0) rectangle (24,3);
+  \draw[fill=lilacmid, draw=plum] (0,13) rectangle (3,16);
+  \draw[fill=lilacmid, draw=plum] (21,13) rectangle (24,16);
+  \node[below] at (12,-0.4) {\small $24$ cm};
+  \node[left] at (-0.6,8) {\small $16$ cm};
+  \node[right] at (3.4,1.5) {\small $x$};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Solve each equation. Each one is already set against $0$, or gets there
+        in one step.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $(x-3)(x+5) = 0$ \quad \ans{$x = 3,\ x = -5$}
+          \item $x(x-7) = 0$ \quad \ans{$x = 0,\ x = 7$}
+          \item $x^2 - 6x = 0$
+
+                \begin{work}
+                  x^2 - 6x &= 0 \\
+                  x(x-6) &= 0
+                \end{work}
+
+                Solutions: \ans{$x = 0,\ x = 6$}
+        \end{enumerate}
+
+  \item Let $p(x) = (x+3)(x-2)$. Its real zeros are $-3$ and $2$. Fill in the
+        sign chart, then answer.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Interval} & $(-\infty,-3)$ & $(-3,2)$ & $(2,\infty)$ \\
+        \hline
+        \textbf{Test value} & \ans{$-4$} & \ans{$0$} & \ans{$3$} \\
+        \hline
+        \textbf{Sign of $p$} & \ans{$+$} & \ans{$-$} & \ans{$+$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        The solution of $p(x) > 0$ is \ans{$(-\infty,-3) \cup (2,\infty)$}
+
+  \item The sheet is 16 cm by 24 cm and $x$ is the corner cut.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item A cut cannot have zero or negative length, so $x >$
+                \ans{$0$}
+          \item The two cuts on the \textbf{16 cm} side must not meet, so
+                $x <$ \ans{$8$}
+          \item The domain of the model is therefore \ans{$0 < x < 8$}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Solve $x^3 = 2x^2 + 8x$.
+
+        \begin{work}
+          x^3 - 2x^2 - 8x &= 0 \\
+          x\big(x^2 - 2x - 8\big) &= 0 \\
+          x(x-4)(x+2) &= 0
+        \end{work}
+
+        Solutions: \ans{$x = 0,\ x = 4,\ x = -2$}
+
+        Which solution would you have lost by dividing both sides by $x$ at the
+        start? \quad \ans{$x = 0$}
+
+  \item Solve $(x+2)(x-1)(x-3) \le 0$.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $(-\infty,-2)$ & $(-2,1)$ & $(1,3)$ & $(3,\infty)$ \\
+        \hline
+        \textbf{Test value} & \ans{$-3$} & \ans{$0$} & \ans{$2$} & \ans{$4$} \\
+        \hline
+        \textbf{Sign} & \ans{$-$} & \ans{$+$} & \ans{$-$} & \ans{$+$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        Solution in interval notation: \ans{$(-\infty,-2] \cup [1,3]$}
+
+        Are the zeros included this time? \quad \ans{Yes} / \textbf{No}
+        \quad Why? \ans{$\le$ allows equality}
+
+  \item Build the volume model for the 16 cm by 24 cm sheet.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Height \ans{$x$}, width $16 - $ \ans{$2x$},
+                length $24 - $ \ans{$2x$}
+          \item $V(x) = $ \ans{$x(16-2x)(24-2x)$}
+          \item A 3 cm cut: $V(3) = $ \ans{$540$}
+
+                Write the answer as a sentence with units.
+
+                \vspace{0.05in}
+                \ansline{A 3 cm corner cut makes a box holding $540$ cubic centimeters.}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Write $V(x) = x(16-2x)(24-2x)$ in expanded form, then state the domain
+        the context forces.
+
+        \begin{work}
+          V(x) &= x(16-2x)(24-2x) \\
+               &= x\big(384 - 32x - 48x + 4x^2\big) \\
+               &= x\big(4x^2 - 80x + 384\big) \\
+               &= 4x^3 - 80x^2 + 384x
+        \end{work}
+
+        Three separate restrictions: $x > $ \ans{$0$}, \quad
+        $x < $ \ans{$8$} (16 cm side), \quad $x < $ \ans{$12$} (24 cm side).
+
+        Domain: \ans{$0 < x < 8$}
+
+  \item Confirm that a 2 cm cut gives a box of volume $480$
+        cm\textsuperscript{3}.
+
+        \begin{work}
+          V(2) &= 2(16-4)(24-4) \\
+               &= 2(12)(20) \\
+               &= 480
+        \end{work}
+
+  \item Which cuts give a box holding \textbf{at least} $480$
+        cm\textsuperscript{3}? Solve $V(x) \ge 480$ on the domain.
+
+        \begin{work}
+          4x^3 - 80x^2 + 384x &\ge 480 \\
+          x^3 - 20x^2 + 96x - 120 &\ge 0 \\
+          (x-2)\big(x^2 - 18x + 60\big) &\ge 0
+        \end{work}
+
+        \begin{work}
+          x^2 - 18x + 60 &= 0 \\
+          x &= \frac{18 \pm \sqrt{324 - 240}}{2} \\
+            &= \frac{18 \pm 2\sqrt{21}}{2} \\
+            &= 9 \pm \sqrt{21}
+        \end{work}
+
+        One of those two roots must be thrown out. Which one, and on what
+        grounds? \quad \ans{$9+\sqrt{21} \approx 13.58$; it is outside $0<x<8$}
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Interval in the domain} & $(0,\,2)$ & $(2,\,4.42)$ & $(4.42,\,8)$ \\
+        \hline
+        \textbf{Test value} & \ans{$1$} & \ans{$3$} & \ans{$6$} \\
+        \hline
+        \textbf{Is $V(x) \ge 480$?} & \ans{no} & \ans{yes} & \ans{no} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        Solution in interval notation: \ans{$\big[2,\ 9-\sqrt{21}\big]$}
+
+        Now say it in a sentence, with units.
+
+        \vspace{0.05in}
+        \ansline{Any corner cut from $2$ cm to about $4.42$ cm gives a box holding at least}
+        \ansline{$480$ cubic centimeters; outside that range the box holds less.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

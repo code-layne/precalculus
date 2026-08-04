@@ -7,107 +7,160 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.5}{Homework}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item For each polynomial, state the degree, leading coefficient, and end behavior using
-limit notation.
-
-\renewcommand{\arraystretch}{2.2}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Polynomial} & \textbf{Degree} & \textbf{Lead Coeff.} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
-\hline
-$p(x) = 4x^3 - 9x + 1$         & \blank{1.5cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$q(x) = -7x^2 + 5x^4 - 3$      & \blank{1.5cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$r(x) = -x^5 + 2x^3 + 8$       & \blank{1.5cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-$s(x) = 6 - 3x + x^2 - 2x^6$   & \blank{1.5cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
-\hline
-\end{tabular}
-
-\item A polynomial has leading term $-3x^6$. Describe its end behavior in words (not limit notation).
-
-\vspace{0.25in}
-\writeline
-
-\item Can a polynomial of \textit{even} degree have $\lim_{x \to \infty} p(x) = \infty$ and
-$\lim_{x \to -\infty} p(x) = -\infty$? Explain your reasoning.
-
-\vspace{0.25in}
-\writeline\\[4pt]
-\writeline
-
-\item The table below shows output values for a polynomial $f$.
+\item From standard form. Name the leading term, then write both limit
+      statements. Watch the exponents, not the order of the terms.
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
 \hline
-$x$    & $-100$ & $-10$ & $0$ & $10$ & $100$ \\
+\textbf{Polynomial} & \textbf{Leading term} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
 \hline
-$f(x)$ & $-50{,}000{,}000$ & $-500$ & $3$ & $-490$ & $-49{,}999{,}997$ \\
+$p(x) = 5x^4 - 3x + 8$      & \blank{2cm} & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+$q(x) = -x^3 + 2x^2 - 9$    & \blank{2cm} & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+$r(x) = 6 - 2x^2 + x^5$     & \blank{2cm} & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+$s(x) = -4x^{10} + x^{7}$   & \blank{2cm} & \blank{1.6cm} & \blank{1.6cm} \\
 \hline
 \end{tabular}
+\end{center}
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Based on the table, is the degree of $f$ most likely even or odd? \blank{2.5cm}
-        Explain: \blank{6cm}
+\item From factored form. Add the exponents for the degree, multiply the
+      leading pieces for the leading term --- do not expand.
 
-  \item Is the leading coefficient most likely positive or negative? \blank{2.5cm}
-        Explain: \blank{6cm}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f(x) = -3(x-2)(x+5)^3$
 
-  \item Write the likely end behavior using limit notation.
+        \begin{work}
+          \text{degree of } f &= 1 + 3 \\
+                              &= 4 \\
+          \text{leading term} &= -3 \cdot x \cdot x^{3} \\
+                              &= -3x^{4}
+        \end{work}
 
-        $\lim_{x \to \infty} f(x) = $ \blank{2.5cm} \qquad $\lim_{x \to -\infty} f(x) = $ \blank{2.5cm}
+        Degree: \blank{1.2cm} \quad
+        $\lim_{x \to \infty} f(x) = $ \blank{1.6cm} \quad
+        $\lim_{x \to -\infty} f(x) = $ \blank{1.6cm}
+
+  \item $g(x) = 2x(x^2+7)(x-1)^2$
+
+        \begin{work}
+          \text{degree of } g &= 1 + 2 + 2 \\
+                              &= 5 \\
+          \text{leading term} &= 2 \cdot x \cdot x^{2} \cdot x^{2} \\
+                              &= 2x^{5}
+        \end{work}
+
+        Degree: \blank{1.2cm} \quad
+        $\lim_{x \to \infty} g(x) = $ \blank{1.6cm} \quad
+        $\lim_{x \to -\infty} g(x) = $ \blank{1.6cm}
 \end{enumerate}
 
-\item \textbf{AP-Style Multiple Choice.} Which of the following polynomial functions has
-$\lim_{x \to -\infty} f(x) = \infty$ and $\lim_{x \to \infty} f(x) = -\infty$?
+\item Dominance check for $p(x) = x^4 - 1000x^3$. The ratio of the rest to the
+      leading term is $\dfrac{-1000x^3}{x^4} = \dfrac{-1000}{x}$.
 
-\begin{enumerate}[label=(\Alph*), itemsep=3pt]
-  \item $f(x) = 3x^4 - x^2 + 2$
-  \item $f(x) = -2x^4 + 5x^3 - 1$
-  \item $f(x) = x^5 + 3x^2 - 7$
-  \item $f(x) = -x^5 + 4x^3 - x + 6$
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $100$ & $1{,}000$ & $10{,}000$ & $100{,}000$ \\
+\hline
+rest $\div$ leading & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+So the $-1000x^3$ term is \blank{2.6cm} compared with $x^4$ once $x$ is large,
+and therefore
+
+$\lim_{x \to \infty} p(x) = $ \blank{1.6cm} \qquad
+$\lim_{x \to -\infty} p(x) = $ \blank{1.6cm}
+
+\boxguard[30]
+\item Read the end behavior off each graph. You are not given either equation.
+
+\begin{center}
+\begin{tikzpicture}[x=0.65cm, y=0.26cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-5) grid (2.4,5);
+  \draw[->, thick] (-2.8,0) -- (2.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.6) -- (0,5.6) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
+     (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
+  \node[below] at (0,-6.2) {\small \textbf{Graph A}};
+\end{tikzpicture}
+\hspace{1.6cm}
+\begin{tikzpicture}[x=0.65cm, y=0.26cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-5) grid (2.4,5);
+  \draw[->, thick] (-2.8,0) -- (2.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.6) -- (0,5.6) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,-4.05) (-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38)
+     (0,0) (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2) (2.2,4.05)};
+  \node[below] at (0,-6.2) {\small \textbf{Graph B}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Graph A: \; $\lim_{x \to \infty} y = $ \blank{1.4cm}, \;
+        $\lim_{x \to -\infty} y = $ \blank{1.4cm}, \;
+        degree \blank{1.4cm}, \; $a_n$ \blank{1.8cm}.
+  \item Graph B: \; $\lim_{x \to \infty} y = $ \blank{1.4cm}, \;
+        $\lim_{x \to -\infty} y = $ \blank{1.4cm}, \;
+        degree \blank{1.4cm}, \; $a_n$ \blank{1.8cm}.
+\end{enumerate}
+
+\item Which polynomial function satisfies both
+      $\lim_{x \to -\infty} p(x) = \infty$ and
+      $\lim_{x \to \infty} p(x) = -\infty$?
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $p(x) = 2x^4 - x$
+  \item $p(x) = -2x^4 + x$
+  \item $p(x) = 2x^3 - x$
+  \item $p(x) = -2x^3 + x$
 \end{enumerate}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{extensionbox}
-\textbf{Extension (optional).} Complete the table for $p(x) = x^n$ at $x = 100$ and $x = -100$
-for $n = 1, 2, 3, 4$. Use the pattern you see to write the four end-behavior rules from memory
-(without looking at your notes).
+Factor the leading term out of a general polynomial:
+\[
+  p(x) = a_n x^n\left(1 + \frac{a_{n-1}}{a_n x} + \frac{a_{n-2}}{a_n x^2}
+         + \dots + \frac{a_0}{a_n x^n}\right).
+\]
+Every fraction inside the parentheses has an $x$ in its denominator. Explain in
+one or two sentences what the parentheses close in on as $x$ increases without
+bound, and why that proves the dominance table from today's notes in one stroke.
 
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|}
-\hline
-$n$ & $p(100) = 100^n$ & $p(-100) = (-100)^n$ \\
-\hline
-1 & \blank{3cm} & \blank{3cm} \\
-2 & \blank{3cm} & \blank{3cm} \\
-3 & \blank{3cm} & \blank{3cm} \\
-4 & \blank{3cm} & \blank{3cm} \\
-\hline
-\end{tabular}
-
-\medskip
-Pattern: when $n$ is even, $p(100)$ and $p(-100)$ have the \blank{2cm} sign.
-When $n$ is odd, they have \blank{2cm} signs.
+\vspace{0.05in}
+\writelines{2}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\begin{reflectionbox}
-\textbf{Lesson Preview.} In Lesson 1.7, we study \textit{rational functions} --- ratios of polynomials.
-End behavior takes a new form: instead of going to $\pm\infty$, rational functions can approach
-finite horizontal asymptotes. Think about what happens when you divide a polynomial by another
-polynomial of the same or higher degree.
-\end{reflectionbox}
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.6}
+You now have both halves of a polynomial graph: Lesson 2.4 counted the zeros in
+the middle, and today described the two far ends. Notice that each half came
+from a different \textit{form} --- factored form handed over the zeros,
+standard form handed over the end behavior. Lesson 2.6, \textit{Equivalent
+Representations of Polynomial Expressions}, puts the two forms side by side and
+shows how to move between them, so you can always reach for the one that
+answers the question in front of you.
+\end{notesbox}
 
 \end{document}
