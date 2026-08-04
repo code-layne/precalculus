@@ -1,0 +1,51 @@
+%! Introduction to Polynomial Functions — Unit 2, Lesson 2.0 — Warm-Up
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.0}{Warm-Up}
+
+\vspace{0.12in}
+
+\begin{enumerate}[itemsep=10pt]
+
+\item Evaluate $3x^2 - 5x + 4$ when $x = 2$.
+
+\vspace{0.1in}
+Value: \blank{3cm}
+
+\item Combine like terms: \quad $4x^2 + 7x - x^2 - 2 + 3x$
+
+\begin{work}
+  4x^2 + 7x - x^2 - 2 + 3x &= (4x^2 - x^2) + (7x + 3x) - 2 \\
+                           &= 3x^2 + 10x - 2
+\end{work}
+
+Simplified: \blank{4cm}
+
+\item If $f(x) = x^3 - 4x$, find $f(3)$. \qquad $f(3) = $ \blank{3cm}
+
+\item The graph of $g$ is shown below.
+
+\begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.30cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,8);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $g(x)$};
+  \foreach \x in {2,4,6} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {2,4,6,8} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,2) -- (2,6) -- (4,6) -- (6,1);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $g(2) = $ \blank{2.5cm}
+  \item The graph meets the vertical axis at $g(0) = $ \blank{2.5cm}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
