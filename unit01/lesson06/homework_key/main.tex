@@ -7,136 +7,153 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Homework --- Answer Key}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item \textbf{Inverse from a Table.} The table below shows values of $f$.
+\item Two functions are given by tables.
 
-      \vspace{0.06in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$    & $-2$ & $0$ & $3$ & $5$ & $7$ \\
-      \hline
-      $f(x)$ &  $4$ & $1$ & $4$ & $9$ & $16$ \\
-      \hline
-      \end{tabular}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$f(x)$ & 7 & 4 & 1 & $-2$ \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$g(x)$ & 5 & 2 & 2 & 9 \\
+\hline
+\end{tabular}
+\end{center}
 
-      \vspace{0.08in}
-      (a) Write the inverse table by reversing each pair.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Complete the table for $f^{-1}$ by trading rows.
 
-      \vspace{0.04in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$          & \ans{4} & \ans{1} & \ans{4} & \ans{9} & \ans{16} \\
-      \hline
-      $f^{-1}(x)$  & \ans{$-2$} & \ans{0} & \ans{3} & \ans{5} & \ans{7} \\
-      \hline
-      \end{tabular}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & 7 & 4 & 1 & $-2$ \\
+        \hline
+        $f^{-1}(x)$ & \ans{0} & \ans{1} & \ans{2}
+          & \ans{3} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-      \vspace{0.06in}
-      (b) Is $f$ invertible? Explain by checking for repeated output values.
+  \item Is $g$ invertible? \ans{No}
 
-      \vspace{0.04in}
-      \ansline{No. The output value 4 appears twice (for $x=-2$ and $x=3$).}
-      \ansline{The reversed pairs $\{(4,-2),(4,3)\}$ do not define a function.}
+        Why or why not? \ans{$g(1) = g(2) = 2$, so one output has two inputs.}
+\end{enumerate}
 
-\item \textbf{Find an Inverse Algebraically.} Find $f^{-1}(x)$ for $f(x) = 6x + 2$. Show all steps.
+\item Find the inverse of each function by swapping and solving.
 
-      \vspace{0.06in}
-      Step 1 (write $y$): \ans{$y = 6x + 2$}
+\begin{work}
+              y &= 5x + 3 \\
+              x &= 5y + 3 \\
+          x - 3 &= 5y \\
+  \frac{x-3}{5} &= y \\
+              y &= \frac{x}{2} - 7 \\
+              x &= \frac{y}{2} - 7 \\
+          x + 7 &= \frac{y}{2} \\
+       2(x + 7) &= y
+\end{work}
 
-      \vspace{0.04in}
-      Step 2 (swap): \ans{$x = 6y + 2$}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $f(x) = 5x + 3$ \qquad $f^{-1}(x) = $ \ans{$(x-3)/5$}
+  \item $g(x) = \dfrac{x}{2} - 7$ \qquad $g^{-1}(x) = $ \ans{$2(x+7)$}
+\end{enumerate}
 
-      \vspace{0.04in}
-      Step 3 (solve): \ans{$x - 2 = 6y$, so $y = \dfrac{x-2}{6}$}
+\item Use your answer to 2(a) to verify the pair \textbf{in both directions}.
 
-      \vspace{0.04in}
-      $f^{-1}(x) = $ \ans{$\dfrac{x-2}{6}$}
+\begin{work}
+  f\big(f^{-1}(x)\big) &= 5\left(\frac{x-3}{5}\right) + 3 \\
+                       &= (x - 3) + 3 \\
+                       &= x \\
+  f^{-1}\big(f(x)\big) &= \frac{(5x + 3) - 3}{5} \\
+                       &= \frac{5x}{5} \\
+                       &= x
+\end{work}
 
-\item \textbf{Find and Verify.} Let $g(x) = \dfrac{x + 3}{4}$.
+$f\big(f^{-1}(x)\big) = $ \ans{$x$} \qquad
+$f^{-1}\big(f(x)\big) = $ \ans{$x$}
 
-      \vspace{0.06in}
-      (a) Find $g^{-1}(x)$ algebraically.
+\boxguard[20]
+\item \textbf{Back to the thermometer.} The lab's conversion rule is
+      $F(x) = 1.8x + 32$, taking degrees Celsius to degrees Fahrenheit.
 
-      \vspace{0.04in}
-      $g^{-1}(x) = $ \ans{$4x - 3$}
+\begin{work}
+                     y &= 1.8x + 32 \\
+                     x &= 1.8y + 32 \\
+                x - 32 &= 1.8y \\
+     \frac{x - 32}{1.8} &= y \\
+           F^{-1}(212) &= \frac{212 - 32}{1.8} \\
+                       &= 100
+\end{work}
 
-      \begin{teachernote}
-      Steps: $y=(x+3)/4$ $\to$ swap: $x=(y+3)/4$ $\to$ $4x=y+3$ $\to$ $y=4x-3$.
-      \end{teachernote}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $F^{-1}(x) = $ \ans{$(x-32)/1.8$}
+  \item $F^{-1}(212) = $ \ans{100}. In one sentence, what does that number
+        mean? \ans{Water boils at 100 degrees Celsius.}
+  \item $F(50) = $ \ans{122}, so $\dfrac{1}{F(50)} = $ \ans{$1/122$},
+        while $F^{-1}(50) = $ \ans{10}. Circle one:
+        $F^{-1}(50)$ \textbf{is} / \ans{is not} the same as
+        $\dfrac{1}{F(50)}$.
+\end{enumerate}
 
-      \vspace{0.06in}
-      (b) Verify using composition: show $g(g^{-1}(x)) = x$.
+\item $f(x) = x^2$ has no inverse on all real numbers.
 
-      \vspace{0.04in}
-      $g(g^{-1}(x)) = \dfrac{\left({\color{keyred}\mathbf{4x-3}}\right) + 3}{4} = \dfrac{4x}{4} = $ \ans{$x$} \checkmark
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Name two different inputs with the same output:
+        \ans{$-3$} and \ans{3} both give \ans{9}.
+  \item Restrict the domain to \ans{$x \ge 0$} so that $f$ becomes one-to-one.
+  \item On that restricted domain, $f^{-1}(x) = $ \ans{$\sqrt{x}$}, with domain
+        \ans{$x \ge 0$}.
+\end{enumerate}
 
-\item \textbf{Domain Restriction.} Let $h(x) = x^2$.
+\item A function $f$ satisfies $f(3) = -2$. Which statement must be true?
 
-      \vspace{0.06in}
-      (a) Explain why $h$ is not invertible on all real numbers.
-
-      \vspace{0.04in}
-      \ansline{$h(2)=4$ and $h(-2)=4$: two different inputs produce the same output.}
-      \ansline{The function fails the one-to-one test, so the inverse is not a function.}
-
-      (b) Suggest a domain restriction that makes $h$ invertible.
-
-      \vspace{0.04in}
-      Restricted domain: \ans{$x \ge 0$} (or $x \le 0$)
-
-      (c) Find $h^{-1}(x)$ on your restricted domain.
-
-      \vspace{0.04in}
-      $h^{-1}(x) = $ \ans{$\sqrt{x}$}
-
-\item \textbf{Real-World Inverse.} The function $C(F) = \dfrac{F - 32}{1.8}$ converts
-      Fahrenheit to Celsius.
-
-      \vspace{0.06in}
-      (a) Find $C^{-1}(x)$ algebraically. Show all steps.
-
-      \vspace{0.04in}
-      $C^{-1}(x) = $ \ans{$1.8x + 32$}
-
-      \begin{teachernote}
-      Steps: $y=(F-32)/1.8$; swap $\to$ $x=(y-32)/1.8$; solve $\to$ $y=1.8x+32$.
-      \end{teachernote}
-
-      \vspace{0.06in}
-      (b) Interpret $C^{-1}(x)$ in context: what does the input represent? The output?
-
-      \vspace{0.04in}
-      \ansline{Input: a Celsius temperature. Output: the equivalent Fahrenheit temperature.}
-      \ansline{$C^{-1}$ converts Celsius back to Fahrenheit.}
-
-      (c) Evaluate $C^{-1}(100)$. What does your answer mean?
-
-      \vspace{0.04in}
-      $C^{-1}(100) = $ \ans{212} \quad Meaning: \ansline{100 degrees Celsius equals 212 degrees Fahrenheit (the boiling point of water).}
-
-\item \textbf{AP-Style Multiple Choice.} If $f(3) = 7$ and $f$ is invertible, which of the
-      following must be true?
-
-      \vspace{0.06in}
-      \begin{tabular}{@{}ll@{\qquad}ll@{}}
-      (A) $f^{-1}(7) = 3$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}} & (B) $f^{-1}(3) = 7$ & (C) $f(7) = 3$ & (D) $f^{-1}(3) = \dfrac{1}{7}$
-      \end{tabular}
-
-      \vspace{0.06in}
-      Answer: \ans{A} \quad Explain your choice: \ansline{By definition of the inverse: if $f(3)=7$ then $f^{-1}(7)=3$. (B) reverses the wrong pair; (C) and (D) have no basis in the given information.}
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $f^{-1}(3) = -2$
+  \item $f^{-1}(-2) = 3$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $f^{-1}(3) = -\dfrac{1}{2}$
+  \item $f^{-1}(-2) = -\dfrac{1}{3}$
+\end{enumerate}
 
 \end{enumerate}
 
-\begin{reflectionbox}
-How does knowing about inverse functions help you understand what a logarithm might be?
-\writelines{2}
-\end{reflectionbox}
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+Let $f(x) = x^2$ on all real numbers and let $h(x) = \sqrt{x}$. Compute
+$f\big(h(9)\big)$ and $h\big(f(-3)\big)$. One of them returns the number you
+started with and the other does not. Explain which composition fails and what
+domain restriction on $f$ repairs the claim that $f$ and $h$ are inverses.
+
+\ansline{$f(h(9)) = (\sqrt{9})^2 = 9$, but $h(f(-3)) = \sqrt{9} = 3$, not $-3$.}
+\ansline{The second fails because $f$ is not one-to-one; restricting $f$ to $x \ge 0$ repairs it.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 1.7}
+Today you learned to run a function backwards. Lesson 1.7, \textit{Function
+Model Selection and Construction}, asks the prior question: which kind of
+function should model a situation in the first place? Once a model is chosen,
+inverting it is how you answer ``what input produced this output?'' Much later,
+in Unit 5, the logarithm arrives as nothing more than the inverse of the
+exponential function --- built with exactly today's method.
+\end{notesbox}
 
 \end{document}

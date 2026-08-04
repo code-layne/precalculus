@@ -7,146 +7,332 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.06in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Determine the \ans{inverse function} of a function from a table or set of ordered pairs, and
-        state when a function is \ans{invertible} on a given domain. \hfill\textit{(LO 2.8.A)}
-  \item Find the inverse of a function \ans{analytically} by swapping $x$ and $y$ and solving,
-        and verify the result using \ans{composition}. \hfill\textit{(LO 2.8.B)}
-  \item Restrict the \ans{domain} of a non-invertible function to make it invertible.
-        \hfill\textit{(LO 2.8.B)}
+  \item Reverse the input--output pairs of a function to build $f^{-1}$, and
+        explain why the \ans{domain} and \ans{range} trade places.
+  \item Find $f^{-1}(x)$ by writing $y = f(x)$, \ans{swapping} $x$ and $y$, and
+        \ans{solving} for $y$.
+  \item Verify a pair of inverses using \ans{composition}, and restrict a domain
+        when a function is not \ans{one-to-one}.
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{Inverse function}
-\termblanklong{Invertible}
-\termblanklong{One-to-one function}
-\termblanklong{Domain restriction}
-\termblanklong{$f^{-1}$ (f-inverse)}
-\termblanklong{Identity function}
-\termblanklong{Reflection over $y = x$}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Inverse function:}}\\[1pt]
+\ansline{The function that reverses $f$: if $f(a) = b$, then $f^{-1}(b) = a$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{One-to-one:}}\\[1pt]
+\ansline{No two different inputs give the same output --- outputs never repeat.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
+\ansline{Cutting the domain down to a piece where the function is one-to-one.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
+\ansline{The function that returns its own input, $I(x) = x$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Reflection over $y = x$:}}\\[1pt]
+\ansline{$f^{-1}$'s graph is the mirror image of $f$'s across the line $y = x$.}
 \end{vocabbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-A nurse uses the formula $D(w) = 1.5w + 10$ to find a patient's medication dose $D$ (mg)
-from their weight $w$ (kg).
+The weather app says $68^\circ$F. Your friend in Paris wants that in Celsius.
+The only rule on the board is $F(x) = 1.8x + 32$ --- and it converts Celsius
+\textit{into} Fahrenheit, which is the wrong direction.
 
-\medskip
-If a patient received 55 mg, what was their weight? \ans{30 kg}
+\smallskip
+What do you do to $68$ to get back to Celsius, and in what \textit{order}?
 
-\medskip
-The formula that converts dose back to weight is called the \ans{inverse function} of $D$.
-We write it as \ans{$D^{-1}$}.
+\ansline{Undo the rule backwards: subtract 32 first, then divide by 1.8.}
+\ansline{$(68 - 32) \div 1.8 = 20$, so $20^\circ$C. That undoing is itself a function.}
 \end{hookbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.8.A --- Inverse Functions from Tables (EK 2.8.A.1 \& 2.8.A.2)}
-\textbf{Key Idea:} If $f(a) = b$, then $f^{-1}(b) = $ \ans{$a$}.
-The inverse reverses every \ans{input-output} pair.
+\boxguard[26]
+\begin{notesbox}{1. ``Undoing'' Is a Reversed Mapping}
+The rule $F(x) = 1.8x + 32$ takes a Celsius temperature and returns a
+Fahrenheit one. Its \textbf{inverse}, written $F^{-1}$, runs the same pairs
+backwards.
 
 \medskip
-\textbf{Step 1: Complete the output table for $f(x) = 4x - 1$.}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.32\linewidth} X @{}}
+\hline
+$F$ sends \ldots\ to \ldots & $F^{-1}$ sends it back \\
+\hline
+$F(20) = 68$ & $F^{-1}(68) = $ \ans{20} \\
+\hline
+$F(0) = 32$  & $F^{-1}(32) = $ \ans{0} \\
+\hline
+$F(a) = b$   & $F^{-1}($ \ans{$b$} $) = $ \ans{$a$} \\
+\hline
+\end{tabularx}
+\end{center}
 
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|c|}
+\medskip
+\textbf{The definition, in one line:} if $f(a) = b$, then $f^{-1}(b) = a$.
+
+\medskip
+\textbf{Warning --- the biggest mistake in this lesson.} The $-1$ in $f^{-1}$
+is a \textbf{name}, not an exponent:
+\begin{center}
+$f^{-1}(x) \ne \dfrac{1}{f(x)}$
+\end{center}
+
+See it in numbers. Since $F(10) = 1.8(10) + 32 = 50$, we get
+$F^{-1}(50) = $ \ans{10}. \\
+But $F(50) = 1.8(50) + 32 = $ \ans{122}, so
+$\dfrac{1}{F(50)} = $ \ans{$1/122$}.
+
+\smallskip
+Those two answers are \ans{nowhere near each other}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{2. Inverses from Tables --- and the Domain/Range Swap}
+\textbf{Example 1.} Complete the Fahrenheit row for $F(x) = 1.8x + 32$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$    & 1 & 2 & 3 & 4 \\
+$x$ (degrees C) & $-10$ & 0 & 10 & 20 & 100 \\
 \hline
-$f(x)$ & \ans{3} & \ans{7} & \ans{11} & \ans{15} \\
+$F(x)$ (degrees F) & \ans{14} & \ans{32} & \ans{50}
+  & \ans{68} & \ans{212} \\
 \hline
 \end{tabular}
+\end{center}
 
-\medskip
-\textbf{Step 2: Fill in the inverse table by reversing every pair.}
+\smallskip
+Now build $F^{-1}$ by \textbf{trading the two rows}. Nothing is computed here
+--- the same pairs are read backwards.
 
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|c|}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$          & \ans{3} & \ans{7} & \ans{11} & \ans{15} \\
+$x$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
 \hline
-$f^{-1}(x)$  & \ans{1} & \ans{2} & \ans{3}  & \ans{4}  \\
+$F^{-1}(x)$ (degrees C) & \ans{$-10$} & \ans{0} & \ans{10}
+  & \ans{20} & \ans{100} \\
 \hline
 \end{tabular}
+\end{center}
 
 \medskip
-\textbf{Invertible check:} Does $f$ map each input to a \ans{unique} output?
-If any two inputs share the same output, the function is \textbf{not} invertible. \ans{Yes, $f$ is invertible.}
-
-\medskip
-Domain and range swap: the domain of $f^{-1}$ is the \ans{range} of $f$, and vice versa.
+\begin{itemize}[itemsep=4pt]
+  \item Domain of $F^{-1}$ $=$ the \ans{range} of $F$. \quad
+        Range of $F^{-1}$ $=$ the \ans{domain} of $F$.
+  \item \textbf{The catch.} Reversing works only when no two inputs share an
+        output. Take $g = \{(1,5), (2,5), (3,8)\}$. Reversed, the input 5 would
+        have to produce \ans{two} different outputs, so the reversal is
+        \ans{not a function}.
+  \item A function whose outputs never repeat is called \ans{one-to-one}, and
+        only such a function is \ans{invertible}.
+\end{itemize}
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.8.B --- Analytic Inverse Method (EK 2.8.B.4)}
-To find $f^{-1}(x)$ for $f(x) = 4x - 1$:
-
-\medskip
-\textbf{Step 1:} Write $y = 4x - 1$.
-
-\medskip
-\textbf{Step 2:} Swap $x$ and $y$: \quad $x = $ \ans{$4y - 1$}
-
-\medskip
-\textbf{Step 3:} Solve for $y$:
-\[
-  x + 1 = 4y \qquad \Rightarrow \qquad y = \dfrac{x + 1}{4}
-\]
+\boxguard[26]
+\begin{notesbox}{3. The Analytic Method: Swap and Solve}
+\begin{enumerate}[itemsep=3pt]
+  \item Write $y = f(x)$.
+  \item \ans{Swap} $x$ and $y$. \quad \textit{(This is the inversion. The
+        rest is algebra.)}
+  \item \ans{Solve} for $y$.
+  \item Rename the result $f^{-1}(x)$.
+\end{enumerate}
 
 \medskip
-\textbf{Step 4:} Write $f^{-1}(x) = $ \ans{$\dfrac{x+1}{4}$}
+\textbf{Example 2.} Find $f^{-1}(x)$ for $f(x) = 4x - 1$.
+
+\begin{work}
+              y &= 4x - 1 \\
+              x &= 4y - 1 \\
+          x + 1 &= 4y \\
+  \frac{x+1}{4} &= y
+\end{work}
+
+$f^{-1}(x) = $ \ans{$(x+1)/4$}
+
+\medskip
+\textbf{Example 3.} Find $F^{-1}(x)$ for the temperature rule
+$F(x) = 1.8x + 32$.
+
+\begin{work}
+                  y &= 1.8x + 32 \\
+                  x &= 1.8y + 32 \\
+             x - 32 &= 1.8y \\
+  \frac{x - 32}{1.8} &= y
+\end{work}
+
+$F^{-1}(x) = $ \ans{$(x-32)/1.8$}
+
+\smallskip
+Check it against the table: $F^{-1}(68) = \dfrac{68 - 32}{1.8} = $
+\ans{20}, which matches the \ans{table} from Part 2.
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{Composition Verification (EK 2.8.B.1)}
-\textbf{Key property:} $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$.
-
-\medskip
-\textbf{Verify $f(f^{-1}(x)) = x$ for $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$:}
-
-\[
-  f\!\left(f^{-1}(x)\right) = 4 \cdot \left({\color{keyred}\mathbf{\dfrac{x+1}{4}}}\right) - 1
-  = {\color{keyred}\mathbf{(x+1) - 1}} = x \quad \checkmark
-\]
+\boxguard[26]
+\begin{notesbox}{4. Verification by Composition}
+Lesson 1.5 built the tool: $(f \circ g)(x) = f(g(x))$ means run $g$ first, then
+feed its output into $f$. Here that tool becomes a \textbf{test}.
 
 \medskip
-\textbf{Also verify $f^{-1}(f(x)) = x$:}
+\begin{center}
+$f$ and $f^{-1}$ are inverses exactly when \quad
+$f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x$.
+\end{center}
 
-\[
-  f^{-1}\!\left(f(x)\right) = \dfrac{({\color{keyred}\mathbf{4x-1}}) + 1}{4}
-  = {\color{keyred}\mathbf{\dfrac{4x}{4}}} = x \quad \checkmark
-\]
+The function that returns its own input, $I(x) = x$, is the
+\ans{identity} function. Composing a function with its inverse --- in
+\textbf{either} order --- produces it.
 
 \medskip
-Both compositions must equal $x$; if either fails, the inverse is \ans{incorrect}.
+\textbf{Example 4.} Verify that $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$
+are inverses.
+
+\begin{work}
+  f\big(f^{-1}(x)\big) &= 4\left(\frac{x+1}{4}\right) - 1 \\
+                       &= (x + 1) - 1 \\
+                       &= x \\
+  f^{-1}\big(f(x)\big) &= \frac{(4x - 1) + 1}{4} \\
+                       &= \frac{4x}{4} \\
+                       &= x
+\end{work}
+
+Both compositions collapsed to \ans{$x$}, so $f$ and $f^{-1}$ really are
+\ans{inverses}.
+
+\medskip
+\textbf{You already did this.} In the warm-up you found $f(g(7)) = 7$ and
+$g(f(7)) = 7$ with these exact two functions. The algebra above does the same
+check for \ans{every input} at once, not just for 7.
+
+\smallskip
+\textbf{Why both directions, and not just one?}
+
+\ansline{Both must collapse to $x$; one direction alone is not enough.}
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{Domain Restriction (EK 2.8.A.1, EK 2.8.B.5)}
-$f(x) = x^2$ is \textbf{not} invertible on all real numbers because:
-$f(2) = $ \ans{4} and $f(-2) = $ \ans{4} --- two different inputs produce the same output.
+\boxguard[30]
+\begin{notesbox}{5. When There Is No Inverse --- and the Mirror Line $y = x$}
+\textbf{Example 5.} $f(x) = x^2$ on all real numbers.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The inputs \ans{$-2$} and \ans{2} both produce the output 4. Reversing
+would send 4 to two places at once, so $f$ is \textbf{not} \ans{one-to-one} on all
+real numbers --- and therefore not \ans{invertible} there.
 
 \medskip
-Restrict the domain to $x \ge 0$: then every output comes from exactly \ans{one} input.
+\textbf{The repair: restrict the domain.} Keep only $x \ge 0$. On that piece
+the outputs never repeat, and
+
+\begin{center}
+$f^{-1}(x) = $ \ans{$\sqrt{x}$} \qquad with domain \ans{$x \ge 0$}
+\end{center}
 
 \medskip
-On the restricted domain $[0, \infty)$: $f^{-1}(x) = $ \ans{$\sqrt{x}$}
+\textbf{The graph of an inverse.} Every point $(a, b)$ on $y = f(x)$ becomes
+the point $(b, a)$ on $y = f^{-1}(x)$ --- so the two graphs are mirror images
+across the dashed line below.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.44cm, y=0.44cm]
+  \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
+  \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small $y$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[dashed, thick, slate] (-5,-5) -- (5,5);
+  \node[font=\tiny, slate, above left] at (4.6,4.6) {$y = x$};
+  \draw[very thick, plum] (-3,-5) -- (2,5);
+  \draw[very thick, goldacc] (-5,-3) -- (5,2);
+  \fill[plum] (0,1) circle (2.2pt);
+  \fill[goldacc] (1,0) circle (2.2pt);
+  \fill[plum] (2,5) circle (2.2pt);
+  \fill[goldacc] (5,2) circle (2.2pt);
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{plum}{\textbf{plum}} $= f(x) = 2x + 1$ \qquad
+ \textcolor{goldacc}{\textbf{gold}} $= f^{-1}(x) = \dfrac{x-1}{2}$ \qquad
+ \textcolor{slate}{\textbf{dashed}} $= y = x$}
 
 \medskip
-The domain of $f^{-1}$ is \ans{$[0,\infty)$}; the range is \ans{$[0,\infty)$}.
+\begin{itemize}[itemsep=4pt]
+  \item The point $(0, 1)$ on $f$ corresponds to the point $($ \ans{1} ,
+        \ans{0} $)$ on $f^{-1}$.
+  \item The point $(2, 5)$ on $f$ corresponds to the point $($ \ans{5} ,
+        \ans{2} $)$ on $f^{-1}$.
+  \item The two graphs are reflections of each other over the line
+        \ans{$y = x$}.
+\end{itemize}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $f(x) = 3x + 6$. Find $f^{-1}(x)$, then verify by computing
+        $f^{-1}(f(x))$.
+
+        \begin{work}
+                      y &= 3x + 6 \\
+                      x &= 3y + 6 \\
+                  x - 6 &= 3y \\
+          \frac{x-6}{3} &= y \\
+          f^{-1}\big(f(x)\big) &= \frac{(3x + 6) - 6}{3} \\
+                               &= \frac{3x}{3} \\
+                               &= x
+        \end{work}
+
+        $f^{-1}(x) = $ \ans{$(x-6)/3$} \qquad
+        $f^{-1}\big(f(x)\big) = $ \ans{$x$}
+
+  \item A function $f$ satisfies $f(-4) = 7$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f^{-1}(7) = $ \ans{$-4$}
+          \item In one sentence, why is $f^{-1}(7)$ not equal to
+                $\dfrac{1}{7}$?
+
+                \ansline{The $-1$ is a name, not an exponent --- no reciprocal is involved.}
+        \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -16,11 +16,14 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students determine and represent inverse functions using tables
-    and algebra, verify inverses using composition, and restrict domains to create invertible
-    functions. \hfill\textit{\small Skills: AP 1.A, AP 2.B}
+    \textbf{Primary Objective:} Students will build the inverse of a function by
+    reversing its input--output pairs and by the analytic swap-and-solve method;
+    will verify a pair of inverses by composition, using
+    $f(f^{-1}(x)) = f^{-1}(f(x)) = x$; and will decide when a domain must be
+    restricted before a function can be inverted.
+    \hfill\textit{\small (CED Topic 2.8 --- Skills 1.A, 2.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -29,146 +32,266 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{AP 1.A} --- Solve equations and inequalities analytically. &
+\textbf{1.A} --- Solve equations and inequalities represented analytically,
+with and without technology. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item If $f(a) = b$, then $f^{-1}(b) = a$; inverse pairs are reversed input-output pairs.
-        (EK 2.8.A.2)
-  \item A function is invertible on a domain when every output comes from a unique input.
-        (EK 2.8.A.1)
+  \item A function is invertible on a domain exactly when each output comes
+        from a unique input --- it is \textbf{one-to-one} there. Otherwise the
+        domain must be \textbf{restricted}. (2.8.A.1)
+  \item The analytic method: write $y = f(x)$, swap $x$ and $y$, solve for $y$,
+        and rename the result $f^{-1}(x)$. (2.8.B.4)
 \end{itemize} \\
-\textbf{AP 2.B} --- Construct equivalent representations of functions. &
+\textbf{2.B} --- Construct equivalent graphical, numerical, analytical, and
+verbal representations of functions. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The inverse is found analytically by swapping $x$ and $y$ in $y = f(x)$ then solving
-        for $y$. (EK 2.8.B.4)
-  \item Verification: $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. (EK 2.8.B.1)
-  \item Domain restriction may be needed to make a function invertible. (EK 2.8.A.1)
+  \item If $f(a) = b$ then $f^{-1}(b) = a$: the inverse reverses every
+        input--output pair, so the \textbf{domain and range swap}. (2.8.A.2)
+  \item The graph of $y = f^{-1}(x)$ is the reflection of $y = f(x)$ over the
+        line $y = x$. (2.8.B.3)
+\end{itemize} \\
+\textbf{Synthesis} --- inverses are checked, not asserted. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Verification by composition: $f(f^{-1}(x)) = f^{-1}(f(x)) = x$, the
+        identity function. Lesson 1.5 built exactly this tool. (2.8.B.1)
+  \item \textbf{Notation warning:} $f^{-1}(x) \ne \dfrac{1}{f(x)}$. The $-1$ is
+        a name, not an exponent --- today's signature error.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.28\linewidth} X @{}}
-Inverse function      & A function $f^{-1}$ that reverses the mapping of $f$: if $f(a)=b$, then $f^{-1}(b)=a$. \\
-Invertible            & A function is invertible on a domain when each output is produced by exactly one input (one-to-one on that domain). \\
-One-to-one function   & A function where no two different inputs produce the same output. \\
-Domain restriction    & Limiting the domain of a function so that it becomes one-to-one and thus invertible. \\
-$f^{-1}$              & Notation for the inverse function of $f$; read ``$f$-inverse.'' Note: $f^{-1}(x) \ne 1/f(x)$. \\
-Identity function     & The function $h(x) = x$; the composition of $f$ and its inverse equals the identity. \\
-Reflection over $y=x$ & The graph of $y = f^{-1}(x)$ is the reflection of $y = f(x)$ across the line $y = x$. (EK 2.8.B.3) \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.28\linewidth} X @{}}
+Inverse function      & The function $f^{-1}$ that reverses $f$: if $f(a) = b$, then $f^{-1}(b) = a$. Read ``$f$-inverse.'' \\
+One-to-one            & No two different inputs produce the same output. A function is invertible on a domain exactly when it is one-to-one there. \\
+Domain restriction    & Cutting a function's domain down to a piece on which it \textit{is} one-to-one, so an inverse exists there. \\
+Identity function     & The function that returns its own input, $I(x) = x$. Composing a function with its inverse produces it, in either order. \\
+Reflection over $y=x$ & The graph of $y = f^{-1}(x)$ is the mirror image of $y = f(x)$ across the line $y = x$; every point $(a,b)$ becomes $(b,a)$. \\
+$f^{-1}$ vs.\ $1/f$   & \TallMath{f^{-1}(x) \ne \frac{1}{f(x)}} --- the $-1$ names the reversing function; it is not a reciprocal or an exponent. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers: solving a linear equation for $x$ given $f(x)$
-    (prerequisite for the analytic inverse method); recognizing that two functions whose
-    compositions both equal $x$ are inverses of each other (EK 2.8.B.1 preview); and
-    reversing a table of input-output pairs (EK 2.8.A.2 preview with concrete numbers).
-    These connect directly to determining inverses from tables and algebraically.
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: solving a linear equation for $x$ (the algebra that Step 3
+    of the analytic method reduces to), evaluating a composition numerically
+    from Lesson 1.5, and reversing a small table of input--output pairs.
+    Item 2 is the load-bearing one --- students compute $f(g(7)) = 7$ and
+    $g(f(7)) = 7$ without being told why, and Part 4 reveals that they were
+    verifying a pair of inverses the whole time.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-Present context: a nurse uses the formula $D(w) = 1.5w + 10$ to calculate a medication dose
-$D$ (mg) from a patient's weight $w$ (kg).
-
-Ask: \textbf{``If a patient received 55 mg, what was their weight?''}
-
-Have students work backward. After responses: \textbf{``What formula lets us go from dose back
-to weight? Can we always undo a formula?''} Introduce the idea that ``undoing'' is exactly what
-an inverse function does.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{Give me back the Celsius.} Project the weather app: $68^\circ$F.
+    The only conversion rule on the board is $F(x) = 1.8x + 32$, which turns
+    Celsius \textit{into} Fahrenheit --- the wrong direction.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: what do you do to $68$ to get back to Celsius, and in what
+              \textit{order}? (Subtract 32 first, then divide by 1.8 --- undo
+              the last step first.)
+        \item Then press: you just followed a rule. Write it down. That new
+              rule is a function too, and it has a name.
+    \end{enumerate}
+    \textit{Discussion prompt:} every function that never repeats an output has
+    a partner that runs it backwards. Today we build the partner, check it, and
+    learn when it refuses to exist.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
-\textbf{Part 1 (10 min): Inverses from Tables.}
 
-A function maps inputs to outputs. The inverse reverses all pairs. For $f$:
+\textbf{Part 1: ``Undoing'' as a Reversed Mapping} (8 min)
 
-\begin{tabular}{c|cccc}
-$x$    & 1 & 2 & 3 & 4 \\\hline
-$f(x)$ & 3 & 7 & 11 & 15
-\end{tabular}
+\begin{itemize}
+  \item State the definition once, in the form students will use all lesson:
+        \textbf{if $f(a) = b$, then $f^{-1}(b) = a$} (2.8.A.2). Read it aloud
+        both ways off the temperature rule: $F(20) = 68$, so
+        $F^{-1}(68) = 20$.
+  \item Deliver the notation warning \textit{now}, before any algebra:
+        $f^{-1}(x)$ is \textbf{not} $1/f(x)$. Make it numerical rather than a
+        slogan --- $F(10) = 50$ gives $F^{-1}(50) = 10$, while
+        $1/F(50) = 1/122$. Two wildly different numbers.
+\end{itemize}
 
-The inverse $f^{-1}$ swaps each pair:
+\textbf{Part 2: Inverses from Tables --- the Domain/Range Swap} (10 min)
 
-\begin{tabular}{c|cccc}
-$x$         & 3 & 7 & 11 & 15 \\\hline
-$f^{-1}(x)$ & 1 & 2 & 3  & 4
-\end{tabular}
+\begin{itemize}
+  \item Fill the $F$ table, then build the $F^{-1}$ table by trading the two
+        rows. Nothing is computed; the pairs are re-read backwards.
+  \item Name the consequence explicitly: the \textbf{domain of $f^{-1}$ is the
+        range of $f$}, and vice versa (2.8.A.2).
+  \item Counterexample: $g = \{(1,5),(2,5),(3,8)\}$. Reversed, the input 5
+        would need two outputs --- so the reversal is not a function
+        (2.8.A.1).
+\end{itemize}
 
-Key: $f$ must be \textit{one-to-one} --- no repeated outputs.
-Ask: \textbf{``Is every function invertible?''} Show a counterexample: $\{(1,5),(2,5)\}$ cannot
-be reversed because two inputs share an output.
+\textbf{Part 3: Swap and Solve} (14 min)
+
+\begin{itemize}
+  \item The four steps: write $y = f(x)$; \textbf{swap} $x$ and $y$; solve for
+        $y$; rename $f^{-1}(x)$ (2.8.B.4). Step 2 is the inversion --- steps 3
+        and 4 are bookkeeping.
+  \item Do it twice, deliberately. First $f(x) = 4x - 1$, giving
+        $f^{-1}(x) = \dfrac{x+1}{4}$; then the lesson's context,
+        $F(x) = 1.8x + 32$, giving $F^{-1}(x) = \dfrac{x-32}{1.8}$.
+  \item Close the loop: evaluate $F^{-1}(68)$ and get $20$ --- the same number
+        the table gave in Part 2.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2 (15 min): Analytic Inverse Method.}
+\textbf{Part 4: Verification by Composition} (10 min)
 
-To find $f^{-1}(x)$ algebraically for $f(x) = 4x - 1$:
+\begin{itemize}
+  \item \textbf{This is where Lesson 1.5 pays off.} Composition was defined
+        there; here it becomes a test. Two functions are inverses exactly when
+        \textbf{both} compositions collapse to the identity:
+        $f(f^{-1}(x)) = f^{-1}(f(x)) = x$ (2.8.B.1).
+  \item Verify $f(x) = 4x-1$ against $f^{-1}(x) = \dfrac{x+1}{4}$ in both
+        orders, line by line. Then point back at the warm-up: they already got
+        $7$ both ways with these exact functions. Algebra just does every input
+        at once.
+  \item Insist on \textit{both} directions. One composition alone does not
+        settle it.
+\end{itemize}
 
-\textbf{Step 1:} Write $y = 4x - 1$.
+\textbf{Part 5: No Inverse --- and the Mirror Line} (8 min)
 
-\textbf{Step 2:} Swap $x$ and $y$: $x = 4y - 1$.
-
-\textbf{Step 3:} Solve for $y$: $y = \dfrac{x+1}{4}$.
-
-\textbf{Step 4:} Write $f^{-1}(x) = \dfrac{x+1}{4}$.
-
-\textbf{Part 3 (10 min): Composition Verification.}
-
-Verify: $f(f^{-1}(x)) = 4\!\cdot\!\dfrac{x+1}{4} - 1 = x+1-1 = x$. \checkmark
-
-Also: $f^{-1}(f(x)) = \dfrac{(4x-1)+1}{4} = \dfrac{4x}{4} = x$. \checkmark
-
-\textbf{Part 4 (5 min): Domain Restriction.}
-
-$f(x)=x^2$ is not invertible on all reals ($f(2)=f(-2)=4$). Restrict to $x\ge0$:
-then $f^{-1}(x)=\sqrt{x}$, which is well-defined.
+\begin{itemize}
+  \item $f(x) = x^2$ fails: $f(-2) = f(2) = 4$, so reversing sends 4 to two
+        places. Restrict to $x \ge 0$; then $f^{-1}(x) = \sqrt{x}$ (2.8.A.1).
+  \item Read the pre-drawn figure: $y = f^{-1}(x)$ is the reflection of
+        $y = f(x)$ over $y = x$, and $(0,1)$ on one graph corresponds to
+        $(1,0)$ on the other (2.8.B.3). Students read the figure --- they do
+        not draw it.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call ``If $f(3)=11$, what does $f^{-1}(11)$ equal?'' Expect: 3.
-        Watch for students who confuse $f^{-1}(x)$ with $1/f(x)$.
-  \item During Part 2: watch for students who forget to swap $x$ and $y$ --- they solve the
-        original equation instead. Emphasize Step 2 is the key inversion step.
-  \item After verification: cold-call ``Why must both compositions equal $x$, not just one?''
-        (Both directions must undo each other.)
-  \item During Part 4: ensure students articulate \textit{why} the restriction is needed ---
-        failing the one-to-one test, not just a convention.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} writing $f^{-1}(x) = \dfrac{1}{f(x)}$. This is
+        the lesson's signature error. Cold-call with numbers, never with a
+        rule: ``$F(10) = 50$. What is $F^{-1}(50)$? Now what is $1/F(50)$?
+        Are those the same number?''
+  \item \textbf{Common error:} skipping the swap in Step 2 and simply solving
+        the original equation for $x$. Ask: ``Which variable is the input of
+        the \textit{new} function?''
+  \item \textbf{Common error:} in the table reversal, recomputing outputs
+        instead of trading rows. Nothing is calculated in Part 2 --- the same
+        pairs are read backwards.
+  \item \textbf{Common error:} verifying only $f(f^{-1}(x))$ and stopping.
+        Both directions, every time.
+  \item \textbf{Common error:} claiming $f(x)=x^2$ ``has no inverse.'' It has
+        none \textit{on all real numbers}; on $x \ge 0$ it has one. Push for
+        the domain in the sentence.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Given $f(x)=3x+6$, complete the output table, reverse pairs
-        to get the inverse table, verify one pair using composition, and state domain and range of
-        $f$ and $f^{-1}$.
-  \item \textbf{Tier A (Apply):} Find $f^{-1}(x)$ algebraically for $f(x)=(x-2)/5$; verify using
-        composition; state domain and range; interpret $f^{-1}$ in the nurse-dosage context.
-  \item \textbf{Tier E (Extend):} Restrict the domain of $f(x)=x^2$ to make it invertible, find
-        $f^{-1}(x)$, verify, and explain why the restriction is mathematically necessary.
+Students work on the \textbf{Group Activity: Reading the Thermometer
+Backwards} in leveled tiers. Every tier uses the same conversion rule
+$F(x) = 1.8x + 32$ and the same table --- no tier draws anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Complete the Fahrenheit row, build the
+        $F^{-1}$ table by trading rows, read $F^{-1}(68)$ off it, and state
+        the domain and range of both functions to see them swap.
+  \item \textbf{Tier A (Apply):} Find $F^{-1}(x)$ by swap-and-solve, verify
+        with $F(F^{-1}(x))$, evaluate $F^{-1}(212)$, and write one sentence
+        interpreting what $F^{-1}$ does in context.
+  \item \textbf{Tier E (Extend):} A greenhouse temperature
+        $T(t) = (t-6)^2 + 50$ is not one-to-one on $0 \le t \le 12$ --- find
+        two times with the same temperature, restrict the domain, invert on
+        the restriction, and finish with the $F^{-1}(50)$ versus $1/F(50)$
+        comparison.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) write $f^{-1}$ as ordered pairs given
-$f=\{(1,4),(2,9),(3,16)\}$; (2) find $f^{-1}(x)$ algebraically for $f(x)=2x-5$;
-(3) verify by computing $f(f^{-1}(x))=x$.
-
-Sort by performance: students missing \#1 need reinforcement of the reversal idea (LO 2.8.A);
-students missing \#2--3 need algebraic inverse practice (LO 2.8.B).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Given $f = \{(1,4),(2,9),(3,16)\}$, write $f^{-1}$ as ordered pairs and
+        state its domain.
+  \item Find $f^{-1}(x)$ for $f(x) = 2x - 5$ (worked space provided).
+  \item Verify by computing $f(f^{-1}(x))$, then circle the true statement
+        about $f^{-1}$ versus $1/f$.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 checks the reversal idea (2.8.A); items 2--3
+check the analytic method and verification (2.8.B). The circle in item 3 is the
+diagnostic --- a student who circles $f^{-1}(x) = 1/f(x)$ needs Part 1 retaught
+in tomorrow's warm-up window regardless of how items 1 and 2 went.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): reverse a table and check invertibility; find $f^{-1}$ for two linear
-functions; verify using composition; address domain restriction for $x^2$; real-world temperature
-conversion $C(F)=(F-32)/1.8$ and its inverse; AP-style MC on the definition of $f^{-1}$.
+\textbf{Homework:} 6 problems covering table reversal and invertibility, two
+swap-and-solve inverses, verification in both directions, the temperature
+context (including the $f^{-1}$ versus $1/f$ comparison), domain restriction
+for $f(x) = x^2$, and one AP-style multiple-choice item on what $f(3) = -2$
+tells you about $f^{-1}$.
 
-\textbf{Preview of Lesson 2.9 (Logarithms):} The exponential function $f(x)=b^x$ is one-to-one
-and therefore invertible. Its inverse is the logarithm: $f^{-1}(x)=\log_b(x)$. Logarithms are
-the algebraic tool that ``undoes'' an exponential --- exactly the inversion skill practiced today.
+\textbf{Extension (optional):} Two functions are given whose compositions are
+\textit{almost} the identity --- $f(f^{-1}(x)) = x$ but the second composition
+is not $x$ on the stated domain. Students find where the claim breaks and
+repair it with a domain restriction.
+
+\textbf{Preview:} Next lesson (1.7, Function Model Selection and Construction)
+asks which kind of function fits a context --- and inverting a model is how you
+answer ``what input produced this output?'' Long-range: in Unit 5 the
+logarithm arrives as nothing more than the inverse of the exponential
+function, built by exactly today's method.
 \end{skillbox}
 
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators except for item 1(b). Item 2 is the
+one that pays off: students compute $f(g(7))$ and $g(f(7))$ and both come back
+to 7, with no explanation offered. Do not explain it at the warm-up --- let it
+sit. In Part 4, put the warm-up back on the board and say ``you verified a pair
+of inverses before I told you what one was.'' Item 3's table reversal is Part 2
+in miniature; if a student recomputes outputs instead of trading rows, that is
+the exact misconception Part 2 addresses.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Front-load the notation warning in Part 1 and make it numerical --- ``$1/122$
+versus $10$'' beats any amount of ``the $-1$ isn't an exponent.'' Part 3 is
+where the time goes; do both worked examples, and do not let the class talk you
+out of the second one because ``it's the same as the first.'' The repetition is
+the point for this track. Part 4 is the payoff for Lesson 1.5: name the
+identity function out loud, since 1.5's plan promised this lesson would deliver
+it. If time runs short, compress Part 5's $x^2$ discussion to the single
+sentence ``$f(-2)$ and $f(2)$ are both 4'' and keep the figure read --- the
+reflection over $y = x$ is assessed on the homework.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers run on the same conversion rule and the same table, so groups
+can be re-sorted mid-activity without new setup. Tier R's last question --- the
+domain and range of $F$ and $F^{-1}$ side by side --- is that tier's whole
+point; make them say the word ``swap'' out loud. Tier A's interpretation
+sentence is worth more than its algebra: ``$F^{-1}$ takes a Fahrenheit reading
+and returns the Celsius temperature'' is the target. Tier E's greenhouse
+function is the only place a non-linear restriction is practiced; if the class
+never reaches it, assign homework problem 5 as the substitute.
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Sort by item 3's circled statement first,
+then by item 2. Accept $\dfrac{x+5}{2}$ or $0.5x + 2.5$ on item 2 --- both are
+correct and the second often signals a student who solved cleanly. On item 1, a
+student who writes the pairs in a different order is fine; a student who writes
+$\left\{\left(1,\tfrac14\right),\ldots\right\}$ has the reciprocal
+misconception and goes in the reteach pile with the item-3 misses.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 4 is the storyline problem and the one to scan first --- part (c) is
+the notation warning in numbers, and a wrong answer there predicts trouble in
+Unit 5. On problem 6, distractor A swaps the roles of input and output in the
+inverse, C applies the reciprocal misconception to the output, and D applies it
+to both --- each is worth thirty seconds of autopsy tomorrow. The extension is
+genuinely hard for this track; assign it to students who finished Tier E, not
+to everyone.
+\end{teachernote}
 \end{document}

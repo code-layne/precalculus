@@ -7,146 +7,331 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Guided Notes}
-\namedateperiod
 
-\vspace{0.06in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Determine the \blank{4cm} of a function from a table or set of ordered pairs, and
-        state when a function is \blank{3cm} on a given domain. \hfill\textit{(LO 2.8.A)}
-  \item Find the inverse of a function \blank{3cm} by swapping $x$ and $y$ and solving,
-        and verify the result using \blank{3cm}. \hfill\textit{(LO 2.8.B)}
-  \item Restrict the \blank{3cm} of a non-invertible function to make it invertible.
-        \hfill\textit{(LO 2.8.B)}
+  \item Reverse the input--output pairs of a function to build $f^{-1}$, and
+        explain why the \blank{2cm} and \blank{1.8cm} trade places.
+  \item Find $f^{-1}(x)$ by writing $y = f(x)$, \blank{2.2cm} $x$ and $y$, and
+        \blank{2.2cm} for $y$.
+  \item Verify a pair of inverses using \blank{2.8cm}, and restrict a domain
+        when a function is not \blank{2.4cm}.
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{Inverse function}
-\termblanklong{Invertible}
-\termblanklong{One-to-one function}
-\termblanklong{Domain restriction}
-\termblanklong{$f^{-1}$ (f-inverse)}
-\termblanklong{Identity function}
-\termblanklong{Reflection over $y = x$}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Inverse function:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{One-to-one:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Reflection over $y = x$:}}\\[1pt]
+\writeline
 \end{vocabbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-A nurse uses the formula $D(w) = 1.5w + 10$ to find a patient's medication dose $D$ (mg)
-from their weight $w$ (kg).
+The weather app says $68^\circ$F. Your friend in Paris wants that in Celsius.
+The only rule on the board is $F(x) = 1.8x + 32$ --- and it converts Celsius
+\textit{into} Fahrenheit, which is the wrong direction.
 
-\medskip
-If a patient received 55 mg, what was their weight? \blank{5cm}
+\smallskip
+What do you do to $68$ to get back to Celsius, and in what \textit{order}?
 
-\medskip
-The formula that converts dose back to weight is called the \blank{5cm} of $D$.
-We write it as \blank{3cm}.
+\writelines{2}
 \end{hookbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.8.A --- Inverse Functions from Tables (EK 2.8.A.1 \& 2.8.A.2)}
-\textbf{Key Idea:} If $f(a) = b$, then $f^{-1}(b) = $ \blank{2cm}.
-The inverse reverses every \blank{4cm} pair.
+\boxguard[26]
+\begin{notesbox}{1. ``Undoing'' Is a Reversed Mapping}
+The rule $F(x) = 1.8x + 32$ takes a Celsius temperature and returns a
+Fahrenheit one. Its \textbf{inverse}, written $F^{-1}$, runs the same pairs
+backwards.
 
 \medskip
-\textbf{Step 1: Complete the output table for $f(x) = 4x - 1$.}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.32\linewidth} X @{}}
+\hline
+$F$ sends \ldots\ to \ldots & $F^{-1}$ sends it back \\
+\hline
+$F(20) = 68$ & $F^{-1}(68) = $ \blank{2cm} \\
+\hline
+$F(0) = 32$  & $F^{-1}(32) = $ \blank{2cm} \\
+\hline
+$F(a) = b$   & $F^{-1}($ \blank{1.2cm} $) = $ \blank{1.2cm} \\
+\hline
+\end{tabularx}
+\end{center}
 
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|c|}
+\medskip
+\textbf{The definition, in one line:} if $f(a) = b$, then $f^{-1}(b) = a$.
+
+\medskip
+\textbf{Warning --- the biggest mistake in this lesson.} The $-1$ in $f^{-1}$
+is a \textbf{name}, not an exponent:
+\begin{center}
+$f^{-1}(x) \ne \dfrac{1}{f(x)}$
+\end{center}
+
+See it in numbers. Since $F(10) = 1.8(10) + 32 = 50$, we get
+$F^{-1}(50) = $ \blank{1.4cm}. \\
+But $F(50) = 1.8(50) + 32 = $ \blank{1.4cm}, so
+$\dfrac{1}{F(50)} = $ \blank{1.6cm}.
+
+\smallskip
+Those two answers are \blank{5cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{2. Inverses from Tables --- and the Domain/Range Swap}
+\textbf{Example 1.} Complete the Fahrenheit row for $F(x) = 1.8x + 32$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$    & 1 & 2 & 3 & 4 \\
+$x$ (degrees C) & $-10$ & 0 & 10 & 20 & 100 \\
 \hline
-$f(x)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+$F(x)$ (degrees F) & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
 \hline
 \end{tabular}
+\end{center}
 
-\medskip
-\textbf{Step 2: Fill in the inverse table by reversing every pair.}
+\smallskip
+Now build $F^{-1}$ by \textbf{trading the two rows}. Nothing is computed here
+--- the same pairs are read backwards.
 
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|c|}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$          & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+$x$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
 \hline
-$f^{-1}(x)$  & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+$F^{-1}(x)$ (degrees C) & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
 \hline
 \end{tabular}
+\end{center}
 
 \medskip
-\textbf{Invertible check:} Does $f$ map each input to a \blank{4cm} output?
-If any two inputs share the same output, the function is \textbf{not} invertible. \blank{3cm}
-
-\medskip
-Domain and range swap: the domain of $f^{-1}$ is the \blank{3cm} of $f$, and vice versa.
+\begin{itemize}[itemsep=4pt]
+  \item Domain of $F^{-1}$ $=$ the \blank{2cm} of $F$. \quad
+        Range of $F^{-1}$ $=$ the \blank{2cm} of $F$.
+  \item \textbf{The catch.} Reversing works only when no two inputs share an
+        output. Take $g = \{(1,5), (2,5), (3,8)\}$. Reversed, the input 5 would
+        have to produce \blank{1.4cm} different outputs, so the reversal is
+        \blank{3.4cm}.
+  \item A function whose outputs never repeat is called \blank{2.6cm}, and
+        only such a function is \blank{2.4cm}.
+\end{itemize}
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.8.B --- Analytic Inverse Method (EK 2.8.B.4)}
-To find $f^{-1}(x)$ for $f(x) = 4x - 1$:
-
-\medskip
-\textbf{Step 1:} Write $y = 4x - 1$.
-
-\medskip
-\textbf{Step 2:} Swap $x$ and $y$: \quad $x = $ \blank{5cm}
-
-\medskip
-\textbf{Step 3:} Solve for $y$:
-\[
-  x + 1 = 4y \qquad \Rightarrow \qquad y = \dfrac{x + 1}{4}
-\]
+\boxguard[26]
+\begin{notesbox}{3. The Analytic Method: Swap and Solve}
+\begin{enumerate}[itemsep=3pt]
+  \item Write $y = f(x)$.
+  \item \blank{2.4cm} $x$ and $y$. \quad \textit{(This is the inversion. The
+        rest is algebra.)}
+  \item \blank{2.4cm} for $y$.
+  \item Rename the result $f^{-1}(x)$.
+\end{enumerate}
 
 \medskip
-\textbf{Step 4:} Write $f^{-1}(x) = $ \blank{4cm}
+\textbf{Example 2.} Find $f^{-1}(x)$ for $f(x) = 4x - 1$.
+
+\begin{work}
+              y &= 4x - 1 \\
+              x &= 4y - 1 \\
+          x + 1 &= 4y \\
+  \frac{x+1}{4} &= y
+\end{work}
+
+$f^{-1}(x) = $ \blank{3cm}
+
+\medskip
+\textbf{Example 3.} Find $F^{-1}(x)$ for the temperature rule
+$F(x) = 1.8x + 32$.
+
+\begin{work}
+                  y &= 1.8x + 32 \\
+                  x &= 1.8y + 32 \\
+             x - 32 &= 1.8y \\
+  \frac{x - 32}{1.8} &= y
+\end{work}
+
+$F^{-1}(x) = $ \blank{3cm}
+
+\smallskip
+Check it against the table: $F^{-1}(68) = \dfrac{68 - 32}{1.8} = $
+\blank{1.4cm}, which matches the \blank{3cm} from Part 2.
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{Composition Verification (EK 2.8.B.1)}
-\textbf{Key property:} $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$.
-
-\medskip
-\textbf{Verify $f(f^{-1}(x)) = x$ for $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$:}
-
-\[
-  f\!\left(f^{-1}(x)\right) = 4 \cdot \left(\rule{3cm}{0.4pt}\right) - 1
-  = \rule{4cm}{0.4pt} = x \quad \checkmark
-\]
+\boxguard[26]
+\begin{notesbox}{4. Verification by Composition}
+Lesson 1.5 built the tool: $(f \circ g)(x) = f(g(x))$ means run $g$ first, then
+feed its output into $f$. Here that tool becomes a \textbf{test}.
 
 \medskip
-\textbf{Also verify $f^{-1}(f(x)) = x$:}
+\begin{center}
+$f$ and $f^{-1}$ are inverses exactly when \quad
+$f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x$.
+\end{center}
 
-\[
-  f^{-1}\!\left(f(x)\right) = \dfrac{(\rule{3cm}{0.4pt}) + 1}{4}
-  = \rule{4cm}{0.4pt} = x \quad \checkmark
-\]
+The function that returns its own input, $I(x) = x$, is the
+\blank{3cm} function. Composing a function with its inverse --- in
+\textbf{either} order --- produces it.
 
 \medskip
-Both compositions must equal $x$; if either fails, the inverse is \blank{3cm}.
+\textbf{Example 4.} Verify that $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$
+are inverses.
+
+\begin{work}
+  f\big(f^{-1}(x)\big) &= 4\left(\frac{x+1}{4}\right) - 1 \\
+                       &= (x + 1) - 1 \\
+                       &= x \\
+  f^{-1}\big(f(x)\big) &= \frac{(4x - 1) + 1}{4} \\
+                       &= \frac{4x}{4} \\
+                       &= x
+\end{work}
+
+Both compositions collapsed to \blank{1.2cm}, so $f$ and $f^{-1}$ really are
+\blank{2.6cm}.
+
+\medskip
+\textbf{You already did this.} In the warm-up you found $f(g(7)) = 7$ and
+$g(f(7)) = 7$ with these exact two functions. The algebra above does the same
+check for \blank{3.6cm} at once, not just for 7.
+
+\smallskip
+\textbf{Why both directions, and not just one?}
+
+\writeline
 \end{notesbox}
 
-\vspace{0.04in}
+\vspace{0.1in}
 
-\begin{notesbox}{Domain Restriction (EK 2.8.A.1, EK 2.8.B.5)}
-$f(x) = x^2$ is \textbf{not} invertible on all real numbers because:
-$f(2) = $ \blank{2cm} and $f(-2) = $ \blank{2cm} --- two different inputs produce the same output.
+\boxguard[30]
+\begin{notesbox}{5. When There Is No Inverse --- and the Mirror Line $y = x$}
+\textbf{Example 5.} $f(x) = x^2$ on all real numbers.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The inputs \blank{1.2cm} and \blank{1.2cm} both produce the output 4. Reversing
+would send 4 to two places at once, so $f$ is \textbf{not} \blank{2.6cm} on all
+real numbers --- and therefore not \blank{2.4cm} there.
 
 \medskip
-Restrict the domain to $x \ge 0$: then every output comes from exactly \blank{2cm} input.
+\textbf{The repair: restrict the domain.} Keep only $x \ge 0$. On that piece
+the outputs never repeat, and
+
+\begin{center}
+$f^{-1}(x) = $ \blank{2.4cm} \qquad with domain \blank{2.4cm}
+\end{center}
 
 \medskip
-On the restricted domain $[0, \infty)$: $f^{-1}(x) = $ \blank{4cm}
+\textbf{The graph of an inverse.} Every point $(a, b)$ on $y = f(x)$ becomes
+the point $(b, a)$ on $y = f^{-1}(x)$ --- so the two graphs are mirror images
+across the dashed line below.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.44cm, y=0.44cm]
+  \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
+  \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small $y$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[dashed, thick, slate] (-5,-5) -- (5,5);
+  \node[font=\tiny, slate, above left] at (4.6,4.6) {$y = x$};
+  \draw[very thick, plum] (-3,-5) -- (2,5);
+  \draw[very thick, goldacc] (-5,-3) -- (5,2);
+  \fill[plum] (0,1) circle (2.2pt);
+  \fill[goldacc] (1,0) circle (2.2pt);
+  \fill[plum] (2,5) circle (2.2pt);
+  \fill[goldacc] (5,2) circle (2.2pt);
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{plum}{\textbf{plum}} $= f(x) = 2x + 1$ \qquad
+ \textcolor{goldacc}{\textbf{gold}} $= f^{-1}(x) = \dfrac{x-1}{2}$ \qquad
+ \textcolor{slate}{\textbf{dashed}} $= y = x$}
 
 \medskip
-The domain of $f^{-1}$ is \blank{3cm}; the range is \blank{3cm}.
+\begin{itemize}[itemsep=4pt]
+  \item The point $(0, 1)$ on $f$ corresponds to the point $($ \blank{0.9cm} ,
+        \blank{0.9cm} $)$ on $f^{-1}$.
+  \item The point $(2, 5)$ on $f$ corresponds to the point $($ \blank{0.9cm} ,
+        \blank{0.9cm} $)$ on $f^{-1}$.
+  \item The two graphs are reflections of each other over the line
+        \blank{1.8cm}.
+\end{itemize}
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $f(x) = 3x + 6$. Find $f^{-1}(x)$, then verify by computing
+        $f^{-1}(f(x))$.
+
+        \begin{work}
+                      y &= 3x + 6 \\
+                      x &= 3y + 6 \\
+                  x - 6 &= 3y \\
+          \frac{x-6}{3} &= y \\
+          f^{-1}\big(f(x)\big) &= \frac{(3x + 6) - 6}{3} \\
+                               &= \frac{3x}{3} \\
+                               &= x
+        \end{work}
+
+        $f^{-1}(x) = $ \blank{2.8cm} \qquad
+        $f^{-1}\big(f(x)\big) = $ \blank{1.6cm}
+
+  \item A function $f$ satisfies $f(-4) = 7$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f^{-1}(7) = $ \blank{2cm}
+          \item In one sentence, why is $f^{-1}(7)$ not equal to
+                $\dfrac{1}{7}$?
+
+                \writeline
+        \end{enumerate}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

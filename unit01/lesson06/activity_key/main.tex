@@ -7,148 +7,199 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Group Activity --- Answer Key}
-\namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Dosage in Reverse]{sky}
+\begin{scenariobox}[Reading the Thermometer Backwards]{plumlight}
 \small
-A nurse uses the formula $D(w) = 1.5w + 10$ to calculate a patient's medication dose $D$ (mg)
-from their weight $w$ (kg). Sometimes the dose is recorded but the weight is missing from the
-chart. Your team will develop and use the inverse formula to recover the weight from the dose.
-Work through the tier your teacher assigns. Be ready to explain your reasoning.
+A lab thermometer reports in Celsius, but the safety manual is written in
+Fahrenheit. The conversion rule is
+\begin{center}
+$F(x) = 1.8x + 32$,
+\end{center}
+where $x$ is a temperature in degrees Celsius and $F(x)$ is the same
+temperature in degrees Fahrenheit. All day the lab needs it the \textit{other}
+way: a Fahrenheit reading comes in and somebody has to say what it is in
+Celsius. Every tier below works from this same rule and this same table.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ (degrees C) & $-10$ & 0 & 10 & 20 & 100 \\
+\hline
+$F(x)$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
+\hline
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Given:} $f(x) = 3x + 6$.
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Check two of the entries.} Use $F(x) = 1.8x + 32$ to confirm
+        two values in the table above.
 
-\begin{enumerate}[itemsep=10pt]
+        \begin{work}
+          F(10) &= 1.8(10) + 32 \\
+                &= 50 \\
+          F(20) &= 1.8(20) + 32 \\
+                &= 68
+        \end{work}
 
-  \item Complete the output table.
+        $F(10) = $ \ans{50} \qquad $F(20) = $ \ans{68}
 
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
+  \item \textbf{Turn the table around.} Build $F^{-1}$ by trading the two rows
+        --- do not compute anything.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$    & 0 & 2 & 4 & 6 \\
+        $x$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
         \hline
-        $f(x)$ & \ans{6} & \ans{12} & \ans{18} & \ans{24} \\
+        $F^{-1}(x)$ (degrees C) & \ans{$-10$} & \ans{0} & \ans{10}
+          & \ans{20} & \ans{100} \\
         \hline
         \end{tabular}
+        \end{center}
 
-  \item Reverse the pairs to write the inverse table.
+  \item \textbf{Read it off.} A reading of $68^\circ$F comes in.
 
-        \vspace{0.04in}
-        \renewcommand{\arraystretch}{1.7}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$          & \ans{6} & \ans{12} & \ans{18} & \ans{24} \\
-        \hline
-        $f^{-1}(x)$  & \ans{0} & \ans{2}  & \ans{4}  & \ans{6}  \\
-        \hline
-        \end{tabular}
+        $F^{-1}(68) = $ \ans{20} degrees Celsius.
 
-  \item Use your inverse table to verify: $f(f^{-1}(18)) = $ \ans{18}. Show the steps.
+  \item \textbf{The swap.} Using only the two tables above:
 
-        \vspace{0.06in}
-        $f^{-1}(18) = $ \ans{4}, then $f\!\left({\color{keyred}\mathbf{4}}\right) = 3(4)+6 = $ \ans{18} \checkmark
-
-  \item State the domain and range of $f$ (using the table values):
-
-        Domain of $f$: $\{$\ans{0, 2, 4, 6}$\}$ \quad Range of $f$: $\{$\ans{6, 12, 18, 24}$\}$
-
-        Domain of $f^{-1}$: $\{$\ans{6, 12, 18, 24}$\}$ \quad Range of $f^{-1}$: $\{$\ans{0, 2, 4, 6}$\}$
-
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Domain of $F$ (the top row of the first table):
+                \ans{$\{-10, 0, 10, 20, 100\}$}
+          \item Range of $F$: \ans{$\{14, 32, 50, 68, 212\}$}
+          \item So the domain of $F^{-1}$ is the \ans{range} of $F$, and the
+                range of $F^{-1}$ is the \ans{domain} of $F$.
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Given:} $f(x) = \dfrac{x - 2}{5}$.
+The lab wants a formula, not a table --- one that turns \textit{any}
+Fahrenheit reading into Celsius.
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Swap and solve.} Find $F^{-1}(x)$ for $F(x) = 1.8x + 32$.
 
-  \item Find $f^{-1}(x)$ algebraically. Show all four steps.
+        \begin{work}
+                            y &= 1.8x + 32 \\
+                            x &= 1.8y + 32 \\
+                       x - 32 &= 1.8y \\
+            \frac{x - 32}{1.8} &= y
+        \end{work}
 
-        \vspace{0.04in}
-        Step 1: $y = $ \ans{$\dfrac{x-2}{5}$}
+        $F^{-1}(x) = $ \ans{$(x-32)/1.8$}
 
-        Step 2 (swap): $x = $ \ans{$\dfrac{y-2}{5}$}
+  \item \textbf{Verify it.} Show that running $F^{-1}$ and then $F$ returns the
+        original input.
 
-        Step 3 (solve): \ans{$5x = y - 2$, so $y = 5x + 2$}
+        \begin{work}
+          F\big(F^{-1}(x)\big) &= 1.8\left(\frac{x - 32}{1.8}\right) + 32 \\
+                               &= (x - 32) + 32 \\
+                               &= x
+        \end{work}
 
-        Step 4: $f^{-1}(x) = $ \ans{$5x + 2$}
+        $F\big(F^{-1}(x)\big) = $ \ans{$x$}, the \ans{identity} function ---
+        so $F$ and $F^{-1}$ are inverses.
 
-  \item Verify using composition: show $f(f^{-1}(x)) = x$.
+  \item \textbf{Use it.} Water boils at $212^\circ$F.
 
-        \vspace{0.04in}
-        $f(f^{-1}(x)) = \dfrac{\left({\color{keyred}\mathbf{5x+2}}\right) - 2}{5} = \dfrac{5x}{5} = $ \ans{$x$} \checkmark
+        \begin{work}
+          F^{-1}(212) &= \frac{212 - 32}{1.8} \\
+                      &= \frac{180}{1.8} \\
+                      &= 100
+        \end{work}
 
-  \item State the domain and range of $f$ and $f^{-1}$:
+        $F^{-1}(212) = $ \ans{100} degrees Celsius.
 
-        Domain of $f$: \ans{all reals} \quad Range of $f$: \ans{all reals}
+  \item \textbf{Say what it does.} In one sentence, describe what the function
+        $F^{-1}$ takes in and what it gives back.
 
-        Domain of $f^{-1}$: \ans{all reals} \quad Range of $f^{-1}$: \ans{all reals}
-
-  \item In the nurse context, $x$ in $f^{-1}(x)$ represents \ans{the dose} (mg) and
-        the output represents \ans{the patient weight} (kg). If a patient received 7 mg, their weight was
-        \ans{37} kg.
-
-        \begin{teachernote}
-        $f^{-1}(7) = 5(7)+2 = 37$ kg. Note the Tier A function differs from the scenario's
-        $D(w)=1.5w+10$ --- the context still applies as an interpretation exercise.
-        \end{teachernote}
-
+        \ansline{It takes a Fahrenheit reading in and gives the Celsius temperature back.}
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Given:} $f(x) = x^2$ on all real numbers.
+A greenhouse in the same lab warms and then cools again. Its temperature
+$t$ hours after 6:00 a.m.\ is modeled by $T(t) = (t-6)^2 + 50$ for
+$0 \le t \le 12$.
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Why $T$ has no inverse on $[0, 12]$.} Evaluate $T$ at two
+        different times.
 
-  \item Explain why $f(x) = x^2$ is \textbf{not} invertible on all real numbers.
-        Give a specific numerical counterexample.
+        \begin{work}
+          T(4) &= (4-6)^2 + 50 \\
+               &= 54 \\
+          T(8) &= (8-6)^2 + 50 \\
+               &= 54
+        \end{work}
 
-        \vspace{0.04in}
-        \ansline{$f(2) = 4$ and $f(-2) = 4$: two different inputs map to the same output.}
-        \ansline{The function is not one-to-one, so the reversed pairs would not define a function.}
+        $T(4) = $ \ans{54} and $T(8) = $ \ans{54}. Two different
+        inputs, one output --- so $T$ is not \ans{one-to-one} on $[0,12]$ and
+        cannot be reversed there.
 
-  \item Restrict the domain of $f$ to $x \ge 0$. On this domain, find $f^{-1}(x)$ algebraically.
+  \item \textbf{Restrict, then invert.} Keep only $6 \le t \le 12$, where the
+        greenhouse is warming. Writing the input as $x$, find $T^{-1}(x)$ on
+        that piece.
 
-        \vspace{0.04in}
-        Step 1: $y = $ \ans{$x^2$} (with domain $x \ge 0$)
+        \begin{work}
+                        y &= (x-6)^2 + 50 \\
+                        x &= (y-6)^2 + 50 \\
+                   x - 50 &= (y-6)^2 \\
+            \sqrt{x - 50} &= y - 6 \\
+          6 + \sqrt{x-50} &= y
+        \end{work}
 
-        Step 2 (swap): $x = $ \ans{$y^2$}
+        $T^{-1}(x) = $ \ans{$6 + \sqrt{x-50}$}
 
-        Step 3 (solve, taking the non-negative root): $y = $ \ans{$\sqrt{x}$}
+        Why did we keep only the \textbf{positive} square root?
 
-        $f^{-1}(x) = $ \ans{$\sqrt{x}$}
+        \ansline{On the restricted domain $t \ge 6$, so $y - 6$ is never negative.}
 
-  \item Verify: $f(f^{-1}(x)) = \left({\color{keyred}\mathbf{\sqrt{x}}}\right)^2 = $ \ans{$x$} \checkmark
+  \item \textbf{The notation trap, in numbers.} Fill in the table for
+        $F(x) = 1.8x + 32$ and its inverse.
 
-  \item Why was the domain restriction to $x \ge 0$ necessary?
-        What input values must be excluded when the domain is all reals?
+        \smallskip
+        \renewcommand{\arraystretch}{1.6}
+        \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        & value at $x = 50$ & what it means \\
+        \hline
+        $F^{-1}(50)$ & \ans{10} & \ans{$50^\circ$F is $10^\circ$C} \\
+        \hline
+        $\dfrac{1}{F(50)}$ & \ans{$1/122$} & \ans{a reciprocal, not a temperature} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-        \vspace{0.04in}
-        \ansline{Without the restriction, every positive output value $b$ has two inputs: $\sqrt{b}$ and $-\sqrt{b}$.}
-        \ansline{The negative inputs ($x < 0$) must be excluded so that the function is one-to-one.}
-        \ansline{On $x \ge 0$, each output is produced by exactly one input, making the inverse well-defined.}
-
+        These two expressions are \ans{completely different}.
 \end{enumerate}
 \end{tcolorbox}
 

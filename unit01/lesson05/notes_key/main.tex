@@ -7,135 +7,338 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.06in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Evaluate the \ans{composition} of two functions for given values using tables or formulas.
-        \hfill\textit{(LO 2.7.A)}
-  \item Construct a formula for $f(g(x))$ by substituting \ans{$g(x)$} for each $x$ in $f$,
-        and explain why $f \circ g$ and $g \circ f$ are generally \ans{different}.
-        \hfill\textit{(LO 2.7.B)}
-  \item Rewrite a function as a \ans{composition} of two simpler functions and connect this to
-        \ans{transformations} of functions. \hfill\textit{(LO 2.7.C)}
+  \item Evaluate $f(g(x))$ at a number by working from the \ans{inside} out
+        --- the \ans{inner} function runs first.
+  \item Build $(f \circ g)(x)$ by \ans{substituting} $g(x)$ for every $x$ in
+        $f(x)$, and explain why $f(g(x))$ and $g(f(x))$ are usually
+        \ans{different}.
+  \item \ans{Decompose} a function into an inner and an outer piece, and
+        recognize a horizontal shift as a \ans{composition}.
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{Composition / composite function}
-\termblanklong{$(f \circ g)(x)$}
-\termblanklong{Domain of $f \circ g$}
-\termblanklong{Identity function}
-\termblanklong{Non-commutativity of composition}
-\termblanklong{Decomposition}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Composition:}}\\[1pt]
+\ansline{Running two functions back to back: $(f \circ g)(x) = f(g(x))$, read ``$f$ of $g$ of $x$.''}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Inner and outer function:}}\\[1pt]
+\ansline{In $f(g(x))$, $g$ is the inner function and runs first; $f$ is the outer function and runs on its result.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
+\ansline{$I(x) = x$ --- the do-nothing function. $I(f(x)) = f(x)$ and $f(I(x)) = f(x)$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Decomposition:}}\\[1pt]
+\ansline{Writing one function $h$ as $f(g(x))$ for simpler pieces --- composition run backwards.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain of a composite:}}\\[1pt]
+\ansline{The inputs $g$ accepts whose outputs $g(x)$ are also inputs $f$ accepts.}
 \end{vocabbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-A cell carrier charges \$10 per GB of data used: $C(u) = 10u$.
-Daily data use depends on miles driven: $u(d) = 0.5d$ GB.
+A \$60 jacket, a \$10 coupon, and 6\% sales tax. Your clerk takes the coupon
+off first, then adds the tax. The clerk at the next register adds the tax
+first, then takes the coupon off.
 
-What is the daily charge as a function of miles? Write it as one formula:
+\smallskip
+Same jacket, same coupon, same tax rate. Do the two of you pay the same
+amount?
 
-\vspace{0.06in}
-$C\bigl(u(d)\bigr) = C\!\left(\ans{0.5d}\right) = $ \ans{$5d$}
-
-\vspace{0.04in}
-This is an example of \ans{composition of functions}. The output of one function becomes the input of another.
+\ansline{No. Coupon first: $1.06(60 - 10) = \$53.00$. Tax first: $1.06(60) - 10 = \$53.60$.}
+\ansline{Same two operations, opposite order, sixty cents apart --- so order is part of the answer.}
 \end{hookbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.7.A --- Evaluating Compositions from a Table}
-\textbf{Definition:} $(f \circ g)(x) = f(g(x))$. To evaluate: find the \ans{inner function ($g$)} first, then use it as input for \ans{the outer function ($f$)}.
+\boxguard[26]
+\begin{notesbox}{1. Two Machines in a Row}
+A \textbf{composition} runs two functions back to back: the output of the first
+becomes the input of the second. We write it
+
+\begin{center}
+$(f \circ g)(x) = f\big(g(x)\big)$, \quad read ``$f$ of $g$ of $x$.''
+\end{center}
+
+The circle is \textit{not} multiplication. Here is the picture:
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[thick, plum, fill=lilac, rounded corners=2pt]
+    (-0.85,-0.55) rectangle (0.85,0.55);
+  \node at (0,0) {\large $g$};
+  \draw[thick, plum, fill=lilac, rounded corners=2pt]
+    (4.15,-0.55) rectangle (5.85,0.55);
+  \node at (5,0) {\large $f$};
+  \draw[->, very thick, plum] (-2.6,0) -- (-0.95,0);
+  \node[above, font=\small] at (-1.75,0.06) {$x$};
+  \draw[->, very thick, plum] (0.95,0) -- (4.05,0);
+  \node[above, font=\small] at (2.5,0.06) {$g(x)$};
+  \draw[->, very thick, plum] (5.95,0) -- (8.2,0);
+  \node[above, font=\small] at (7.05,0.06) {$f(g(x))$};
+  \node[below, font=\small\itshape, text=slate] at (0,-0.62) {runs first};
+  \node[below, font=\small\itshape, text=slate] at (5,-0.62) {runs second};
+\end{tikzpicture}
+\end{center}
+
+\smallskip
+Notice which letter runs first. In $f(g(x))$ the function written
+\textit{last} is the one that goes \textit{first} --- exactly like innermost
+parentheses in arithmetic.
 
 \medskip
-\renewcommand{\arraystretch}{1.6}
 \begin{center}
-\begin{tabular}{c|c|c}
-$x$ & $f(x)$ & $g(x)$ \\ \hline
-1 & 4 & 2 \\
-2 & 7 & 1 \\
-3 & 10 & 3 \\
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.94\linewidth}{@{} >{\bfseries}p{0.30\linewidth} X @{}}
+\hline
+The rule for today & Work from the \ans{inside} out. The
+  \ans{inner} function runs first, and the number it produces is what you
+  hand to the outer function. \\
+\hline
+$(f \circ g)(x)$ means & $f($ \ans{$g(x)$} $)$, \quad \textit{not}
+  $f(x) \cdot g(x)$. \\
+\hline
+\end{tabularx}
+\end{center}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. Composite Values from a Table}
+Everything a composition needs is a value to look up, so a table is enough ---
+no formulas required.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$f(x)$ & 3 & 4 & 0 & 2 & 1 \\
+\hline
+$g(x)$ & 2 & 3 & 7 & 0 & 4 \\
+\hline
 \end{tabular}
 \end{center}
 
 \medskip
-\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
-$f(g(1)):$ \quad $g(1) = $ \ans{2} \quad so $f\!\left(\ans{2}\right) = $ \ans{7} &
-$f(g(2)):$ \quad $g(2) = $ \ans{1} \quad so $f\!\left(\ans{1}\right) = $ \ans{4} \\[6pt]
-$g(f(1)):$ \quad $f(1) = $ \ans{4} \quad so $g\!\left(\ans{4}\right) = $ \ans{undef.} &
-\textit{Domain note:} $g(f(1))$ requires $f(1)$ to be an input for $g$. Is it in the table? \ans{No}
+\textbf{Example 1.} Find $f(g(1))$ --- and \textit{write the middle number
+down}.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.2em]
+  \item The inner function runs first: $g(1) = $ \ans{3}
+  \item Hand that to the outer function: $f($ \ans{3} $) = $
+        \ans{2}
+\end{enumerate}
+
+\medskip
+\textbf{Example 2.} Now reverse the order: find $g(f(1))$.
+
+\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.2em]
+  \item Now $f$ is on the inside: $f(1) = $ \ans{4}
+  \item Hand that to $g$: $g($ \ans{4} $) = $ \ans{4}
+\end{enumerate}
+
+\smallskip
+Same two functions, same input, \ans{different} answers. Composition is
+\textbf{not commutative}: in general $f(g(x))$ \ans{$\ne$} $g(f(x))$.
+
+\medskip
+\textbf{Example 3 (a warning).} Try $f(g(2))$. First $g(2) = $ \ans{7}.
+Now look for $f($ \ans{7} $)$ in the table --- it is
+\ans{not there}. The inner output has to be something the outer function
+actually accepts; that is the \textbf{domain of a composite}.
+
+\medskip
+\textbf{Your turn.} Complete the bottom row.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 3 & 4 \\
+\hline
+$g(x)$ & 2 & 3 & 0 & 4 \\
+\hline
+$(f \circ g)(x) = f(g(x))$ & \ans{0} & \ans{2} & \ans{3}
+  & \ans{1} \\
+\hline
 \end{tabular}
-
-\medskip
-\textbf{Non-commutativity (EK 2.7.A.3):} In general, $f(g(x))$ \ans{$\ne$} $g(f(x))$.
+\end{center}
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.7.B --- Constructing Compositions Analytically}
-\textbf{Rule (EK 2.7.B.2):} To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
+\boxguard[26]
+\begin{notesbox}{3. Building a Composite Analytically}
+With formulas instead of a table, the recipe is one sentence:
 
-\medskip
-Let $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
+\begin{center}
+To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
+\end{center}
 
-\medskip
-\textbf{Build $f(g(x))$:} Replace each $x$ in $f$ with $g(x) = x^2 - 3$:
-
-\[
-  f(g(x)) = 2\bigl(\ans{$x^2-3$}\bigr) + 1 = \ans{$2x^2-5$}
-\]
-
-\textbf{Build $g(f(x))$:} Replace each $x$ in $g$ with $f(x) = 2x+1$:
-
-\[
-  g(f(x)) = \bigl(\ans{$2x+1$}\bigr)^2 - 3 = \ans{$4x^2+4x-2$}
-\]
-
-Are $f(g(x))$ and $g(f(x))$ the same function? \ans{No --- composition is not commutative.}
+You already did this in the warm-up, when $f(x) = 2x+1$ turned $f(x^2)$ into
+$2x^2+1$. The only new part is the name.
 
 \medskip
-\textbf{Identity function (EK 2.7.A.4):} If $f(x) = x$, then $(f \circ g)(x) = $ \ans{$g(x)$} for any $g$.
+\textbf{Example 4.} Let $f(x) = 2x + 1$ and $g(x) = x^2 - 3$. Build both
+composites.
+
+\begin{work}
+  f(g(x)) &= f(x^2 - 3) \\
+          &= 2(x^2 - 3) + 1 \\
+          &= 2x^2 - 6 + 1 \\
+          &= 2x^2 - 5 \\
+  g(f(x)) &= g(2x + 1) \\
+          &= (2x + 1)^2 - 3 \\
+          &= 4x^2 + 4x + 1 - 3 \\
+          &= 4x^2 + 4x - 2
+\end{work}
+
+$(f \circ g)(x) = $ \ans{$2x^2 - 5$} \qquad $(g \circ f)(x) = $ \ans{$4x^2 + 4x - 2$}
+
+\smallskip
+These are not even the same shape of expression, which settles the question:
+order \ans{matters}.
+
+\medskip
+\textbf{Two routes, one number.} Check $f(g(2))$ both ways. Step by step:
+$g(2) = 1$, so $f(1) = $ \ans{3}. From the formula:
+$2(2)^2 - 5 = $ \ans{3}. A composite value can come from a table, a
+graph, or an expression --- the answer does not care which.
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{LO 2.7.C --- Decomposing Functions; Connections to Transformations}
-\textbf{Decomposition (EK 2.7.C.1):} Find simpler $f$ and $g$ so that $h(x) = f(g(x))$.
+\boxguard[26]
+\begin{notesbox}{4. Order Matters --- the Checkout Counter}
+Back to the jacket. Two functions act on the price $p$:
 
-\medskip
-\textbf{Example:} Decompose $h(x) = (3x + 2)^4$.
+\begin{center}
+\textbf{Coupon:} $c(p) = p - 10$ \qquad\qquad
+\textbf{Tax:} $t(x) = 1.06x$
+\end{center}
 
-\quad Choose inner function $g(x) = $ \ans{$3x+2$} and outer function $f(u) = $ \ans{$u^4$}.
-
-\quad Verify: $f(g(x)) = $ \ans{$(3x+2)^4$} \checkmark
-
-\medskip
-\textbf{Connections to transformations (EK 2.7.C.2--C.3):}
-
-\quad Horizontal shift: $g(x) = f(x + k)$ is composition of $f$ with $h(x) = $ \ans{$x+k$}.
-
-\quad Horizontal stretch: $g(x) = f(kx)$ is composition of $f$ with $h(x) = $ \ans{$kx$}.
+Neither one alone answers ``what do I pay?'' --- but chaining them does. That
+is what composition is \textit{for}: linking two quantities no single formula
+connects.
 
 \medskip
-\textit{Example:} $y = (x-5)^2$ is $f(x) = x^2$ composed with $h(x) = $ \ans{$x-5$}, which shifts $f$ right \ans{5} units.
+\textbf{Example 5.} The jacket costs \$60. Compute both orders.
+
+\begin{work}
+  t(c(60)) &= t(60 - 10) \\
+           &= 1.06(50) \\
+           &= 53.00 \\
+  c(t(60)) &= c(1.06 \cdot 60) \\
+           &= 63.60 - 10 \\
+           &= 53.60
+\end{work}
+
+Coupon first: \$\ans{53.00} \qquad Tax first: \$\ans{53.60}
+
+\medskip
+\textbf{Why?} Build both symbolically and the gap stops being a coincidence.
+
+\begin{work}
+  t(c(p)) &= 1.06(p - 10) \\
+          &= 1.06p - 10.60 \\
+  c(t(p)) &= 1.06p - 10
+\end{work}
+
+The two rules differ by \$\ans{0.60} at \textit{every} price, because
+taxing first charges you tax on the \ans{ten dollars} you never actually paid.
 \end{notesbox}
 
-\begin{teachernote}
-Table evaluation: $f(g(1)) = f(2) = 7$; $f(g(2)) = f(1) = 4$; $g(f(1)) = g(4)$ --- the value 4 does not appear
-as an $x$-input in the $g(x)$ column, so it is undefined from this table.
+\vspace{0.1in}
 
-Non-commutativity: stress that $f(g(x)) = 2x^2 - 5$ and $g(f(x)) = 4x^2 + 4x - 2$ are entirely different polynomials.
+\boxguard[26]
+\begin{notesbox}{5. Decomposition, Identity, and Lesson 1.4}
+\textbf{Decomposition} is composition run backwards: given one function, find
+an inner and an outer piece that rebuild it.
 
-Decomposition: accept other valid splits, e.g.\ $g(x) = 3x$ and $f(u) = (u+2)^4$ is also valid.
-Connection to transformations is key for LO 2.7.C.2--C.3 review.
-\end{teachernote}
+\medskip
+\textbf{Example 6.} Decompose $h(x) = (3x + 2)^4$. Ask: with a calculator,
+what would you compute \textit{first}? That is the inner function.
+
+\smallskip
+Inner: $g(x) = $ \ans{$3x + 2$} \qquad Outer: $f(u) = $ \ans{$u^4$}
+
+\smallskip
+Check by substituting back: $f(g(x)) = $ \ans{$(3x+2)^4$}
+
+\medskip
+\textbf{The identity function.} $I(x) = x$ hands back whatever you give it, so
+composing with it changes nothing:
+
+\smallskip
+$I(f(x)) = $ \ans{$f(x)$} \qquad and \qquad $f(I(x)) = $ \ans{$f(x)$}
+
+\smallskip
+Hold on to this one --- next lesson is about finding a partner function that
+turns $f$ into exactly $I$.
+
+\medskip
+\textbf{Lesson 1.4 was composition all along.} Every ``inside'' change you
+made last lesson was a composition with a simple function.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.94\linewidth}{@{} >{\bfseries}p{0.26\linewidth} X @{}}
+\hline
+From Lesson 1.4 & Written as a composition \\
+\hline
+$g(x) = f(x+3)$ & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$x + 3$} \\
+\hline
+$g(x) = f(2x)$  & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$2x$} \\
+\hline
+\end{tabularx}
+\end{center}
+
+\smallskip
+Now the reversal makes sense: the inner function gets to the $x$
+\ans{before} $f$ does, so it is the \textbf{inputs} it rewrites.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Use the table in section 2 to evaluate each composite.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f(g(3)) = $ \ans{3}
+          \item $g(f(3)) = $ \ans{7}
+        \end{enumerate}
+
+  \item Let $f(x) = x^2$ and $g(x) = x - 5$. Build both composites and
+        simplify.
+
+        \begin{work}
+          f(g(x)) &= f(x - 5) \\
+                  &= (x - 5)^2 \\
+                  &= x^2 - 10x + 25 \\
+          g(f(x)) &= g(x^2) \\
+                  &= x^2 - 5
+        \end{work}
+
+        $(f \circ g)(x) = $ \ans{$x^2 - 10x + 25$} \qquad
+        $(g \circ f)(x) = $ \ans{$x^2 - 5$}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
   {\color{white}\textbf{\large Lesson 1.6 \quad Inverse Functions}}
 \end{center}
 
@@ -27,15 +27,13 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can determine the input-output pairs of the inverse of a function from a table or a
-        set of ordered pairs, and I can explain when a function is invertible on a given domain.
-        \hfill\textit{(LO 2.8.A)}
-  \item I can find the inverse of a function analytically by swapping $x$ and $y$ and solving,
-        and I can verify the result using composition: $f(f^{-1}(x)) = x$.
-        \hfill\textit{(LO 2.8.B)}
-  \item I can restrict the domain of a non-invertible function to make it invertible, and I can
-        identify the domain and range of both $f$ and $f^{-1}$.
-        \hfill\textit{(LO 2.8.B)}
+  \item I can reverse the input--output pairs of a function to build its
+        inverse, and explain why the domain and range trade places.
+  \item I can find $f^{-1}(x)$ by writing $y = f(x)$, swapping $x$ and $y$,
+        and solving for $y$ --- and I know that $f^{-1}(x)$ is \textit{not}
+        $\dfrac{1}{f(x)}$.
+  \item I can verify a pair of inverses by composition, and restrict a domain
+        when a function is not one-to-one.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -45,17 +43,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review: solving for input; inverses via composition; reversing pairs & \blank{1.2cm} \\
-2 & Guided Notes   & Inverse pairs from tables; analytic method; composition verification; domain restriction & \blank{1.2cm} \\
-3 & Group Activity & Tiered: reverse a table; find inverse algebraically; restrict domain of $x^2$ (R/A/E) & \blank{1.2cm} \\
-4 & Exit Ticket    & Write $f^{-1}$ from ordered pairs; find inverse algebraically; verify via composition & \blank{1.2cm} \\
-5 & Homework       & Table inverses; analytic inverses; composition verification; domain restriction; real-world; AP MC & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                & \blank{1.2cm} \\
+2 & Guided Notes   & Building, checking, and reading inverse functions   & \blank{1.2cm} \\
+3 & Group Activity & Reading the thermometer backwards                   & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on finding and verifying $f^{-1}$ & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                              & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Lesson 1.5 fed one function into another. Today we build the function that
+\textbf{undoes} another one --- and we use composition to prove it works: run a
+function and its inverse back to back, in either order, and you land exactly
+where you started. One warning carries the whole lesson: the $-1$ in $f^{-1}$
+is a \textbf{name}, not an exponent.
+\end{remindbox}
 
 \end{document}

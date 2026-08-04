@@ -7,35 +7,48 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Exit Ticket --- Answer Key}
-\namedateperiod
 
-\vspace{0.14in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=18pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item Given $f = \{(1,4),\ (2,9),\ (3,16)\}$, write $f^{-1}$ as a set of ordered pairs.
+\item A function is given as a set of ordered pairs:
+      $f = \{(1, 4),\ (2, 9),\ (3, 16)\}$.
 
-      \vspace{0.06in}
-      $f^{-1} = \big\{$\ans{$(4,1),\ (9,2),\ (16,3)$}$\big\}$
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Write $f^{-1}$ as a set of ordered pairs: \ans{$\{(4,1),\ (9,2),\ (16,3)\}$}
+  \item Domain of $f^{-1}$: \ans{$\{4, 9, 16\}$}
+\end{enumerate}
 
-\item Find $f^{-1}(x)$ algebraically for $f(x) = 2x - 5$. Show all steps.
+\item Find $f^{-1}(x)$ for $f(x) = 2x - 5$.
 
-      \vspace{0.06in}
-      Step 1 (write $y$): \ans{$y = 2x - 5$}
+\begin{work}
+          y &= 2x - 5 \\
+          x &= 2y - 5 \\
+      x + 5 &= 2y \\
+  \frac{x+5}{2} &= y
+\end{work}
 
-      \vspace{0.04in}
-      Step 2 (swap $x$ and $y$): \ans{$x = 2y - 5$}
+$f^{-1}(x) = $ \ans{$(x+5)/2$}
 
-      \vspace{0.04in}
-      Step 3 (solve for $y$): \ans{$x + 5 = 2y$, so $y = \dfrac{x+5}{2}$}
+\item Verify your answer to problem 2 by computing $f\big(f^{-1}(x)\big)$.
 
-      \vspace{0.04in}
-      $f^{-1}(x) = $ \ans{$\dfrac{x+5}{2}$}
+\begin{work}
+  f\big(f^{-1}(x)\big) &= 2\left(\frac{x+5}{2}\right) - 5 \\
+                       &= (x + 5) - 5 \\
+                       &= x
+\end{work}
 
-\item Verify your answer to \#2: compute $f(f^{-1}(x))$ and confirm it equals $x$.
+$f\big(f^{-1}(x)\big) = $ \ans{$x$}
 
-      \vspace{0.06in}
-      $f(f^{-1}(x)) = 2\left({\color{keyred}\mathbf{\dfrac{x+5}{2}}}\right) - 5 = (x+5) - 5 = $ \ans{$x$} \quad \checkmark
+\smallskip
+Circle the statement that is \textbf{true}:
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $f^{-1}(x) = \dfrac{1}{f(x)}$
+  \item $f^{-1}$ reverses $f$: if $f(a) = b$, then $f^{-1}(b) = a$
+        \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
 
 \end{enumerate}
 

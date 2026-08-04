@@ -7,122 +7,186 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Group Activity}
-\namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Exploring Composition of Functions]{sky}
+\begin{scenariobox}[The Checkout Counter]{plumlight}
 \small
-In this activity you will evaluate, construct, and decompose compositions of functions.
-Work with your group on the tier your teacher assigns. Be ready to explain your reasoning.
+A store is running a \$10-off coupon, and the state charges 6\% sales tax.
+Both are functions of a dollar amount:
+
+\smallskip
+\begin{center}
+\textbf{Coupon:} $c(p) = p - 10$ \qquad\qquad
+\textbf{Sales tax:} $t(x) = 1.06x$
+\end{center}
+
+\smallskip
+The register has to run \textit{both} --- but a register can only do one thing
+at a time, so somebody had to choose an order. Every tier below uses these
+same two functions. Round money answers to the nearest cent.
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Given:} $f(x) = 2x + 5$ and $g(x) = x - 3$.
-
-\begin{enumerate}[itemsep=10pt]
-  \item Evaluate $f(g(0))$ step by step.
-
-        \vspace{0.04in}
-        $g(0) = $ \blank{3cm} \quad then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
-
-  \item Evaluate $f(g(2))$ step by step.
-
-        \vspace{0.04in}
-        $g(2) = $ \blank{3cm} \quad then $f\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
-
-  \item Evaluate $g(f(0))$ step by step.
-
-        \vspace{0.04in}
-        $f(0) = $ \blank{3cm} \quad then $g\!\left(\rule{1.5cm}{0.4pt}\right) = $ \blank{4cm}
-
-  \item Based on your answers, is $f(g(0)) = g(f(0))$? What does that tell you about composition?
-
-        \vspace{0.04in}
-        \writeline
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-\textbf{Table of values:}
-
-\vspace{0.04in}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{c|c|c}
-$x$ & $f(x)$ & $g(x)$ \\ \hline
-1 & 5 & 3 \\
-2 & 8 & 1 \\
-3 & 11 & 4 \\
-4 & 14 & 2 \\
-\end{tabular}
+The store's register applies the \textbf{coupon first}, then the tax. That is
+the composite $t(c(p))$ --- inner function $c$, outer function $t$.
 
 \begin{enumerate}[itemsep=8pt]
-  \item Fill in the table for $f(g(x))$ and $g(f(x))$.
+  \item \textbf{One machine at a time.} Fill the middle row first, all the way
+        across, before you touch the bottom row.
 
-        \vspace{0.04in}
+        \smallskip
         \renewcommand{\arraystretch}{1.6}
-        \begin{tabular}{c|c|c}
-        $x$ & $f(g(x))$ & $g(f(x))$ \\ \hline
-        1 & \blank{2.5cm} & \blank{2.5cm} \\
-        2 & \blank{2.5cm} & \blank{2.5cm} \\
-        3 & \blank{2.5cm} & \blank{2.5cm} \\
-        4 & \blank{2.5cm} & \blank{2.5cm} \\
+        \begin{center}
+        \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        Sticker price $p$ & \$30 & \$50 & \$60 & \$80 \\
+        \hline
+        After the coupon: $c(p)$ & \blank{1.5cm} & \blank{1.5cm}
+          & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
+        At the register: $t(c(p))$ & \blank{1.5cm} & \blank{1.5cm}
+          & \blank{1.5cm} & \blank{1.5cm} \\
+        \hline
         \end{tabular}
+        \end{center}
 
-  \item Now let $f(x) = x^2$ and $g(x) = 2x - 1$. Write an analytic formula for $f(g(x))$.
-        Simplify completely.
+  \item \textbf{Which machine ran first?} \quad
+        $c$ \; / \; $t$ \; (circle one)
 
-        \vspace{0.04in}
-        $f(g(x)) = $ \blank{9cm}
+        In $t(c(p))$, the function written \textbf{last} runs
+        \blank{2cm}.
 
-  \item What is the domain of $f \circ g$ if $f(x) = x^2$ and $g(x) = 2x-1$?
+  \item \textbf{Say what the middle row is.} The numbers you wrote in the
+        middle row are not what anyone pays. In one sentence, what do they
+        represent?
 
-        \vspace{0.04in}
-        Domain of $f \circ g$: \blank{8cm}
+        \vspace{0.05in}
+        \writeline
+
+  \item A \$45 shirt goes through the same register. Work it in two steps.
+
+        \begin{work}
+          t(c(45)) &= t(45 - 10) \\
+                   &= 1.06(35) \\
+                   &= 37.10
+        \end{work}
+
+        The customer pays \$\blank{2cm}.
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Given:} $h(x) = (3x + 2)^4$.
+A second store rings up the \textbf{tax first}, then takes the coupon off ---
+the composite $c(t(p))$. A \$60 jacket is on sale at both stores.
 
-\begin{enumerate}[itemsep=10pt]
-  \item Find one decomposition $h(x) = f(g(x))$. State $f$ and $g$, then verify.
+\begin{enumerate}[itemsep=8pt]
+  \item Compute both totals, one step at a time.
 
-        \vspace{0.04in}
-        $g(x) = $ \blank{5cm} \qquad $f(u) = $ \blank{5cm}
+        \begin{work}
+          t(c(60)) &= t(60 - 10) \\
+                   &= 1.06(50) \\
+                   &= 53.00 \\
+          c(t(60)) &= c(1.06 \cdot 60) \\
+                   &= 63.60 - 10 \\
+                   &= 53.60
+        \end{work}
 
-        Verify: $f(g(x)) = $ \blank{7cm} $= h(x)$? \blank{2cm}
+        Coupon first: \$\blank{2cm} \qquad Tax first: \$\blank{2cm}
 
-  \item Find a \textbf{different} valid decomposition $h(x) = p(q(x))$. State $p$ and $q$, then verify.
+  \item Build both composites as formulas in $p$.
 
-        \vspace{0.04in}
-        $q(x) = $ \blank{5cm} \qquad $p(u) = $ \blank{5cm}
+        \begin{work}
+          t(c(p)) &= 1.06(p - 10) \\
+                  &= 1.06p - 10.60 \\
+          c(t(p)) &= 1.06p - 10
+        \end{work}
 
-        Verify: $p(q(x)) = $ \blank{7cm} $= h(x)$? \blank{2cm}
+        $t(c(p)) = $ \blank{3.6cm} \qquad $c(t(p)) = $ \blank{3cm}
 
-  \item For your first decomposition, explain: is $h(x) = f(g(x))$ or $h(x) = g(f(x))$?
-        Write out $g(f(x))$ and show whether it equals $h(x)$.
+  \item Subtract the two formulas. The gap is \$\blank{1.6cm}, and it is the
+        same at \textbf{every} price. Which store should the shopper use?
 
-        \vspace{0.04in}
-        $g(f(x)) = $ \blank{8cm}
+        \vspace{0.05in}
+        \writeline
 
-        \vspace{0.04in}
-        Does $g(f(x)) = h(x)$? \blank{2cm} \quad Explain: \writeline
+  \item Explain where that gap comes from --- what exactly is the second store
+        charging tax on that the first store is not?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Swap the coupon for a percentage.} The store replaces the \$10
+        coupon with 25\% off: $d(p) = 0.75p$. A \$40 item goes through.
+
+        \begin{work}
+          d(t(40)) &= d(42.40) \\
+                   &= 0.75(42.40) \\
+                   &= 31.80 \\
+          t(d(40)) &= t(30) \\
+                   &= 1.06(30) \\
+                   &= 31.80
+        \end{work}
+
+        $d(t(40)) = $ \$\blank{1.8cm} \qquad $t(d(40)) = $ \$\blank{1.8cm}
+
+        These two \textbf{are} equal. So ``order matters'' is a warning, not a
+        law --- some pairs commute. In one sentence, what is different about
+        $d$ and $t$ that lets them trade places, when $c$ and $t$ cannot?
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item \textbf{Read the receipt backwards.} A register prints the rule
+        $R(p) = 1.06p - 10.60$. Which composite is it?
+
+        \smallskip
+        $R = t \circ c$ \; / \; $R = c \circ t$ \quad (circle one)
+
+        \smallskip
+        Justify by rebuilding it: $R(p) = $ \blank{5cm}
+
+  \item \textbf{The do-nothing function.} A register in a tax-free state runs
+        $I(p) = p$ before the coupon.
+
+        \smallskip
+        $c(I(p)) = $ \blank{2.4cm} \qquad $I(c(p)) = $ \blank{2.4cm}
+
+        \smallskip
+        A function that leaves every other function alone is called the
+        \blank{3cm} function.
+
+  \item \textbf{Back to Lesson 1.4.} You wrote $g(x) = f(x + 3)$ last lesson
+        and called it a horizontal shift. Write it as a composition:
+
+        \smallskip
+        $g(x) = f(h(x))$ \quad where \quad $h(x) = $ \blank{2.6cm}
+
+        \smallskip
+        So a change made \textit{inside} $f$ is really a
+        \blank{3cm} --- which is why it acts on the inputs.
 \end{enumerate}
 \end{tcolorbox}
 

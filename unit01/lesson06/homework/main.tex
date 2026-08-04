@@ -7,125 +7,153 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.6}{Homework}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item \textbf{Inverse from a Table.} The table below shows values of $f$.
+\item Two functions are given by tables.
 
-      \vspace{0.06in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$    & $-2$ & $0$ & $3$ & $5$ & $7$ \\
-      \hline
-      $f(x)$ &  $4$ & $1$ & $4$ & $9$ & $16$ \\
-      \hline
-      \end{tabular}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$f(x)$ & 7 & 4 & 1 & $-2$ \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$g(x)$ & 5 & 2 & 2 & 9 \\
+\hline
+\end{tabular}
+\end{center}
 
-      \vspace{0.08in}
-      (a) Write the inverse table by reversing each pair.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Complete the table for $f^{-1}$ by trading rows.
 
-      \vspace{0.04in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      $x$          & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-      \hline
-      $f^{-1}(x)$  & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-      \hline
-      \end{tabular}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & 7 & 4 & 1 & $-2$ \\
+        \hline
+        $f^{-1}(x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+          & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-      \vspace{0.06in}
-      (b) Is $f$ invertible? Explain by checking for repeated output values.
+  \item Is $g$ invertible? \blank{2cm}
 
-      \vspace{0.04in}
-      \writelines{2}
+        Why or why not? \blank{7cm}
+\end{enumerate}
 
-\item \textbf{Find an Inverse Algebraically.} Find $f^{-1}(x)$ for $f(x) = 6x + 2$. Show all steps.
+\item Find the inverse of each function by swapping and solving.
 
-      \vspace{0.06in}
-      Step 1 (write $y$): \blank{7cm}
+\begin{work}
+              y &= 5x + 3 \\
+              x &= 5y + 3 \\
+          x - 3 &= 5y \\
+  \frac{x-3}{5} &= y \\
+              y &= \frac{x}{2} - 7 \\
+              x &= \frac{y}{2} - 7 \\
+          x + 7 &= \frac{y}{2} \\
+       2(x + 7) &= y
+\end{work}
 
-      \vspace{0.04in}
-      Step 2 (swap): \blank{7cm}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $f(x) = 5x + 3$ \qquad $f^{-1}(x) = $ \blank{3.4cm}
+  \item $g(x) = \dfrac{x}{2} - 7$ \qquad $g^{-1}(x) = $ \blank{3.4cm}
+\end{enumerate}
 
-      \vspace{0.04in}
-      Step 3 (solve): \blank{9cm}
+\item Use your answer to 2(a) to verify the pair \textbf{in both directions}.
 
-      \vspace{0.04in}
-      $f^{-1}(x) = $ \blank{5cm}
+\begin{work}
+  f\big(f^{-1}(x)\big) &= 5\left(\frac{x-3}{5}\right) + 3 \\
+                       &= (x - 3) + 3 \\
+                       &= x \\
+  f^{-1}\big(f(x)\big) &= \frac{(5x + 3) - 3}{5} \\
+                       &= \frac{5x}{5} \\
+                       &= x
+\end{work}
 
-\item \textbf{Find and Verify.} Let $g(x) = \dfrac{x + 3}{4}$.
+$f\big(f^{-1}(x)\big) = $ \blank{1.6cm} \qquad
+$f^{-1}\big(f(x)\big) = $ \blank{1.6cm}
 
-      \vspace{0.06in}
-      (a) Find $g^{-1}(x)$ algebraically.
+\boxguard[20]
+\item \textbf{Back to the thermometer.} The lab's conversion rule is
+      $F(x) = 1.8x + 32$, taking degrees Celsius to degrees Fahrenheit.
 
-      \vspace{0.04in}
-      $g^{-1}(x) = $ \blank{7cm}
+\begin{work}
+                     y &= 1.8x + 32 \\
+                     x &= 1.8y + 32 \\
+                x - 32 &= 1.8y \\
+     \frac{x - 32}{1.8} &= y \\
+           F^{-1}(212) &= \frac{212 - 32}{1.8} \\
+                       &= 100
+\end{work}
 
-      \vspace{0.06in}
-      (b) Verify using composition: show $g(g^{-1}(x)) = x$.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $F^{-1}(x) = $ \blank{3.4cm}
+  \item $F^{-1}(212) = $ \blank{2cm}. In one sentence, what does that number
+        mean? \blank{6cm}
+  \item $F(50) = $ \blank{1.6cm}, so $\dfrac{1}{F(50)} = $ \blank{1.6cm},
+        while $F^{-1}(50) = $ \blank{1.6cm}. Circle one:
+        $F^{-1}(50)$ \textbf{is} / \textbf{is not} the same as
+        $\dfrac{1}{F(50)}$.
+\end{enumerate}
 
-      \vspace{0.04in}
-      $g(g^{-1}(x)) = \dfrac{\left(\rule{3cm}{0.4pt}\right) + 3}{4} = $ \blank{4cm}
+\item $f(x) = x^2$ has no inverse on all real numbers.
 
-\item \textbf{Domain Restriction.} Let $h(x) = x^2$.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Name two different inputs with the same output:
+        \blank{2cm} and \blank{2cm} both give \blank{2cm}.
+  \item Restrict the domain to \blank{2.4cm} so that $f$ becomes one-to-one.
+  \item On that restricted domain, $f^{-1}(x) = $ \blank{2.4cm}, with domain
+        \blank{2.4cm}.
+\end{enumerate}
 
-      \vspace{0.06in}
-      (a) Explain why $h$ is not invertible on all real numbers.
+\item A function $f$ satisfies $f(3) = -2$. Which statement must be true?
 
-      \vspace{0.04in}
-      \writelines{2}
-
-      (b) Suggest a domain restriction that makes $h$ invertible.
-
-      \vspace{0.04in}
-      Restricted domain: \blank{5cm}
-
-      (c) Find $h^{-1}(x)$ on your restricted domain.
-
-      \vspace{0.04in}
-      $h^{-1}(x) = $ \blank{5cm}
-
-\item \textbf{Real-World Inverse.} The function $C(F) = \dfrac{F - 32}{1.8}$ converts
-      Fahrenheit to Celsius.
-
-      \vspace{0.06in}
-      (a) Find $C^{-1}(x)$ algebraically. Show all steps.
-
-      \vspace{0.04in}
-      $C^{-1}(x) = $ \blank{8cm}
-
-      \vspace{0.06in}
-      (b) Interpret $C^{-1}(x)$ in context: what does the input represent? The output?
-
-      \vspace{0.04in}
-      \writelines{2}
-
-      (c) Evaluate $C^{-1}(100)$. What does your answer mean?
-
-      \vspace{0.04in}
-      $C^{-1}(100) = $ \blank{4cm} \quad Meaning: \writeline
-
-\item \textbf{AP-Style Multiple Choice.} If $f(3) = 7$ and $f$ is invertible, which of the
-      following must be true?
-
-      \vspace{0.06in}
-      \begin{tabular}{@{}ll@{\qquad}ll@{}}
-      (A) $f^{-1}(7) = 3$ & (B) $f^{-1}(3) = 7$ & (C) $f(7) = 3$ & (D) $f^{-1}(3) = \dfrac{1}{7}$
-      \end{tabular}
-
-      \vspace{0.06in}
-      Answer: \blank{3cm} \quad Explain your choice: \writeline
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $f^{-1}(3) = -2$
+  \item $f^{-1}(-2) = 3$
+  \item $f^{-1}(3) = -\dfrac{1}{2}$
+  \item $f^{-1}(-2) = -\dfrac{1}{3}$
+\end{enumerate}
 
 \end{enumerate}
 
-\begin{reflectionbox}
-How does knowing about inverse functions help you understand what a logarithm might be?
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+Let $f(x) = x^2$ on all real numbers and let $h(x) = \sqrt{x}$. Compute
+$f\big(h(9)\big)$ and $h\big(f(-3)\big)$. One of them returns the number you
+started with and the other does not. Explain which composition fails and what
+domain restriction on $f$ repairs the claim that $f$ and $h$ are inverses.
+
+\vspace{0.05in}
 \writelines{2}
-\end{reflectionbox}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 1.7}
+Today you learned to run a function backwards. Lesson 1.7, \textit{Function
+Model Selection and Construction}, asks the prior question: which kind of
+function should model a situation in the first place? Once a model is chosen,
+inverting it is how you answer ``what input produced this output?'' Much later,
+in Unit 5, the logarithm arrives as nothing more than the inverse of the
+exponential function --- built with exactly today's method.
+\end{notesbox}
 
 \end{document}
