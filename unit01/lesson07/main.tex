@@ -16,13 +16,14 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will select an appropriate function model (linear,
-    quadratic, cubic, polynomial, or piecewise) for a contextual scenario by analyzing rates
-    of change and shape/context clues, and will articulate the underlying assumptions and
-    domain/range restrictions embedded in the model.
-    \hfill\textit{\small Skills: MP 2.A, MP 3.C}
+    \textbf{Primary Objective:} Students will choose a function type for a data set
+    or a context --- by reading first and second differences from a table and by
+    reading shape clues from the description --- will \textbf{build} the model from a
+    contextual restriction, and will state the domain restriction and the
+    assumption the model rests on.
+    \hfill\textit{\small (CED Topics 1.13 \& 1.14 --- Skills 2.A, 1.C)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -31,128 +32,287 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 2.A} --- Identify information from mathematical representations (tables, graphs,
-descriptions) to determine function type. \newline
-\textbf{MP 3.C} --- Support model-selection conclusions with a logical rationale. &
+\textbf{2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations to answer a question. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Constant 1st differences $\Rightarrow$ linear; constant 2nd differences $\Rightarrow$
-        quadratic; constant $n$th differences $\Rightarrow$ degree-$n$ polynomial. (EK 1.13.A.1--A.5)
-  \item Area/2-D context $\Rightarrow$ quadratic; volume/3-D context $\Rightarrow$ cubic. (EK 1.13.A.3)
-  \item A degree-$n$ polynomial can pass through $n+1$ points with distinct inputs. (EK 1.13.A.6)
-  \item Piecewise models arise when behavior changes over different intervals. (EK 1.13.A.7)
-  \item Every model carries assumptions about consistency, co-variation, and restricted
-        domain/range. (EK 1.13.B.1--B.4)
+  \item Over \textbf{equally spaced} inputs: constant first differences
+        $\Rightarrow$ linear; constant second differences $\Rightarrow$ quadratic;
+        constant $n$th differences $\Rightarrow$ degree-$n$ polynomial.
+        (1.13.A.1--A.5)
+  \item Context carries the clue when no table does: area $\Rightarrow$ quadratic,
+        volume $\Rightarrow$ cubic, inverse proportion $\Rightarrow$ rational, a
+        rule that changes at a threshold $\Rightarrow$ piecewise. (1.13.A.3, A.7)
+  \item A degree-$n$ polynomial can be fit through $n+1$ points with distinct
+        inputs. (1.13.A.6)
+\end{itemize} \\
+\textbf{1.C} --- Construct a new function from a context, a transformation, or a
+regression. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Building a model from a restriction: write the constraint, solve it for
+        one variable, substitute into the quantity you actually want.
+        (1.14.A.1--A.2)
+  \item A model is used, not just written: evaluate it, and compute the average
+        rate of change $\frac{f(b)-f(a)}{b-a}$ \textbf{with units} ---
+        output units per input unit. (1.14.C.1)
+\end{itemize} \\
+\textbf{Synthesis} --- every model comes with fine print. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The domain is restricted by the context, not by the algebra: negative
+        widths and negative lengths are not modeling errors, they are
+        \textbf{outside the domain}. (1.13.B.1--B.4)
+  \item Naming the assumption is part of the answer. A model that fits the numbers
+        can still be wrong about the world.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.30\linewidth} X @{}}
-First differences    & The differences between consecutive output values of equally-spaced inputs: $\Delta y_i = y_{i+1} - y_i$. \\
-Second differences   & Differences of the first differences; constant for quadratic models. \\
-$n$th differences    & Differences taken $n$ times; constant and nonzero for degree-$n$ polynomial models. \\
-Domain restriction   & A limit on the input values that is mathematically, contextually, or practically required. \\
-Range restriction    & A limit on the output values (e.g., integer-only outputs due to rounding). \\
-Piecewise-defined function & A function defined by different formulas over different intervals of its domain. \\
-Model assumption     & A simplifying claim about the real world that must hold for the model to be valid. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.28\linewidth} X @{}}
+Function model        & A function built to stand in for a real situation, so the situation can be predicted and measured. \\
+First differences     & The differences between consecutive outputs of \textbf{equally spaced} inputs. Constant first differences mean a linear model. \\
+Second differences    & The differences of the first differences. Constant second differences mean a quadratic model --- the rate of change is itself changing at a constant rate. \\
+Constraint            & The equation the context forces on the variables, such as ``the fencing totals 80 feet.'' It is what lets two variables collapse into one. \\
+Domain restriction    & The inputs the \textit{context} allows, which is usually narrower than what the algebra allows. \\
+Piecewise-defined function & A function given by different rules on different intervals; used when behavior changes at a threshold. \\
+Inverse proportion    & \TallMath{y = \frac{k}{x^n}} --- as one quantity grows the other shrinks. Modeled by a rational function; Unit 3 takes this up in full. \\
+Model assumption      & The simplifying claim about the world that has to be true for the model to be trusted. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X@{}}
-        Spiral review (warm-up) covers: computing first and second differences of a data set;
-        deciding whether a rate of change is constant (linear) or changing (nonlinear).
-        These skills connect directly to the difference-table decision tree introduced today.
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: computing differences down an output column and judging
+    whether a rate of change is constant (Lessons 1.2--1.3); solving a literal
+    equation such as $2w + \ell = 80$ for one variable (the algebra Part 3 runs
+    on); and computing an average rate of change from a table with correct units
+    (Lesson 1.3). Item 2 is the load-bearing one --- students solve for $\ell$ and
+    then evaluate $w(80 - 2w)$ without being told what it is. Part 3 reveals it as
+    the area of today's pen.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-``A scientist hands you a table of mystery data. How do you decide which function type to use?''
-
-\medskip
-Display a short table with six equally-spaced inputs and outputs. Ask cold-call: ``Is this
-linear, quadratic, or something else? How can you tell without graphing it?'' Let students
-debate for 90 seconds before revealing the difference-table approach.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{Eighty feet of fence and a barn.} The garden club has exactly 80 feet
+    of fencing for a rectangular pen. One whole side runs along the barn wall, so
+    that side needs no fence at all.
+    \begin{enumerate}[itemsep=2pt]
+        \item Take a vote before any algebra: \textit{should the pen be a square?}
+              Most classes say yes. Record the vote on the board --- it will be
+              wrong, and that is the point.
+        \item Then ask the question the lesson answers twice: what \textit{kind}
+              of function turns a width into an area, and how would you know
+              before you built it?
+    \end{enumerate}
+    \textit{Discussion prompt:} today we answer that question two ways --- from a
+    table of measurements, and from the fencing constraint itself --- and the two
+    answers had better agree.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
-\textbf{Part 1 (12 min): Difference-Table Decision Tree.}
 
-Given a table with equally-spaced inputs, compute differences:
-\begin{enumerate}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
-  \item Compute 1st differences ($\Delta y$).
-  \item If constant $\Rightarrow$ \textbf{linear} (degree 1).
-  \item If not constant, compute 2nd differences ($\Delta^2 y$).
-  \item If constant $\Rightarrow$ \textbf{quadratic} (degree 2).
-  \item Continue: constant $n$th differences $\Rightarrow$ degree-$n$ polynomial.
-\end{enumerate}
+\textbf{Part 1: Reading the Model Off a Table} (12 min)
 
-Pose: ``If 1st differences grow linearly themselves, what does that tell you?'' (Answer: 2nd
-differences are constant, so the data is quadratic.)
+\begin{itemize}
+  \item State the requirement first: differences only mean something when the
+        inputs are \textbf{equally spaced}. Write it on the board and leave it
+        there.
+  \item Table A ($y = 5, 8, 11, 14, 17$): first differences all 3 $\Rightarrow$
+        linear (1.13.A.1--A.2). Table B is the garden club's five trial layouts;
+        first differences $250, 150, 50, -50$ are \textit{not} constant, but the
+        second differences are all $-100$ $\Rightarrow$ quadratic (1.13.A.4).
+  \item Say the meaning, not just the rule: constant first differences mean the
+        \textit{amount} of change repeats; constant second differences mean the
+        \textit{rate} of change changes at a steady rate. Extend the pattern
+        aloud --- constant third differences would mean cubic (1.13.A.5).
+\end{itemize}
+
+\textbf{Part 2: Reading the Model Off the Context} (8 min)
+
+\begin{itemize}
+  \item Fill the clue table together. Area $\Rightarrow$ quadratic and volume
+        $\Rightarrow$ cubic are the two to make automatic (1.13.A.3): they follow
+        from multiplying two lengths or three.
+  \item Inverse proportion $\Rightarrow$ rational is \textbf{exposure only}
+        today --- name it, show $y = k/x$, and say Unit 3 is where it lives.
+  \item A rule that changes at a threshold $\Rightarrow$ piecewise (1.13.A.7).
+        Close with the counting fact: $n+1$ points with distinct inputs can be fit
+        by a degree-$n$ polynomial (1.13.A.6) --- which is exactly why fitting the
+        highest degree you can is a bad habit.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2 (10 min): Shape \& Context Clues.}
+\textbf{Part 3: Building the Model from the Constraint} (14 min)
 
-When no table is given, use context:
-\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=2pt]
-  \item Roughly constant rate of change $\Rightarrow$ linear.
-  \item Area or 2-D measurement $\Rightarrow$ quadratic.
-  \item Volume or 3-D measurement $\Rightarrow$ cubic.
-  \item Multiple local maxima/minima or multiple real zeros $\Rightarrow$ higher-degree polynomial.
-  \item Behavior changes abruptly at a threshold $\Rightarrow$ piecewise.
+\begin{itemize}
+  \item This is the heart of the lesson and where the time goes. Four steps, said
+        out loud each time: name the variables, write the \textbf{constraint},
+        solve the constraint for one variable, substitute into the quantity you
+        want (1.14.A.1--A.2).
+  \item $2w + \ell = 80 \Rightarrow \ell = 80 - 2w \Rightarrow
+        A(w) = w(80 - 2w) = 80w - 2w^2$. Two lengths multiplied --- quadratic, as
+        Part 2 predicted.
+  \item Then the payoff: check $A(20) = 800$ against Table B. \textbf{The table
+        and the constraint produced the same function.} Say that sentence.
+  \item Restrict the domain from the context: $0 < w < 40$. Ask why 40, not
+        ``because the graph stops.''
 \end{itemize}
 
-\textbf{Part 3 (10 min): Stating Assumptions (LO 1.13.B).}
+\textbf{Part 4: Using the Model} (10 min)
 
-Every model rests on assumptions. Template: ``This model assumes that
-[quantity/behavior] remains [consistent/proportional/valid] over [domain interval].
-The domain is restricted to [values] because [mathematical / contextual reason].''
+\begin{itemize}
+  \item Evaluate $A(10) = 600$ and $A(20) = 800$. Average rate of change on
+        $[10,20]$ is $+20$; on $[20,30]$ it is $-20$ (1.14.C.1).
+  \item \textbf{Units are not optional:} square feet per foot of width. Make every
+        student say the full phrase once.
+  \item Sign change from $+$ to $-$ means the maximum sits between. Vertex at
+        $w = -b/(2a) = 20$, area $800$ ft$^2$, length $\ell = 40$ ft. Return to the
+        opening vote: the best pen is $20 \times 40$, \textbf{not} a square.
+\end{itemize}
 
-Walk through a fencing example: ``We model the enclosed area as a quadratic in side length.
-We assume the fencing forms a perfect rectangle and that side length is between 0 and half
-the total fencing available.''
+\textbf{Part 5: The Fine Print} (8 min)
+
+\begin{itemize}
+  \item Domain $0 < w < 40$; range $0 < A \le 800$ (1.13.B.1--B.4).
+  \item Assumptions: all 80 ft is used, the barn wall is at least 40 ft long, the
+        pen is exactly rectangular, no gate gap. If the barn is only 30 ft long
+        the rule changes for small $w$ --- \textbf{piecewise}, and a callback to
+        Part 2.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call ``If 3rd differences are constant, what degree polynomial models the data?''
-  \item After Part 2: cold-call ``Why can't you model negative time in the fencing problem?'' (domain restriction)
-  \item Watch for students who compute differences but stop at 1st differences even when they are not constant.
-  \item Watch for students who confuse \textit{contextual} domain restrictions (e.g., length $> 0$) with
-        \textit{mathematical} ones (e.g., denominator $\neq 0$).
-  \item After Part 3: cold-call ``What would constant second differences tell you?'' --- expect ``the data
-        is quadratic'' or ``the rate of change is linear.''
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} taking differences when the inputs are not equally
+        spaced. This is the lesson's signature error and it is silent --- the
+        numbers still subtract. Ask ``what is the gap between your inputs?''
+        before you ask what the differences are.
+  \item \textbf{Common error:} stopping at the first differences, seeing that they
+        are not constant, and concluding ``not a polynomial.'' Prompt: ``take the
+        differences again.''
+  \item \textbf{Common error:} in Part 3, writing $A = w\ell$ and stopping.
+        A model must be a function of \textbf{one} variable. Ask: ``what does the
+        constraint let you replace?''
+  \item \textbf{Common error:} $2w + \ell = 80$ becoming $\ell = 80 - w$ or
+        $\ell = 40 - 2w$. Catch it early --- every later answer inherits it.
+  \item \textbf{Common error:} the domain given as ``all real numbers'' or
+        ``$w > 0$'' with no upper end. Push for the sentence: at $w = 40$ there is
+        no fencing left for the length.
+  \item \textbf{Common error:} an average rate of change reported as a bare number.
+        No units, no credit --- square feet per foot.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Given four scenarios with model type choices; circle the best model
-        and complete a fill-in assumption sentence.
-  \item \textbf{Tier A (Apply):} Compute difference tables for provided data, determine degree, name the
-        model type, and state one assumption with domain restriction.
-  \item \textbf{Tier E (Extend):} Write a piecewise model description (two pieces, each with appropriate
-        function type) for a real-world scenario and articulate two assumptions with justification.
+Students work on the \textbf{Group Activity: The Courtyard Committee} in leveled
+tiers. Every tier uses the same courtyard scenario --- 60 feet of edging along
+the building wall --- so groups can be re-sorted mid-period without new setup.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Complete a difference table for the
+        committee's trial layouts, name the model type from the second
+        differences, and match four short scenarios to their model types.
+  \item \textbf{Tier A (Apply):} Build $A(w) = 60w - 2w^2$ from the 60-foot
+        constraint, state the domain, evaluate at two widths, and find the
+        maximum.
+  \item \textbf{Tier E (Extend):} Compute two average rates of change with units
+        and interpret them; then a code rule forces $w \ge 18$, moving the maximum
+        to the endpoint --- the restriction changes the answer. Closes with one
+        inverse-proportion item as a bridge to Unit 3.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) complete a first/second differences table and name the
-model type; (2) read a scenario description and circle the best model with one reason; (3) state
-one domain restriction and one assumption for a fencing model. Collect and use to group students
-before Lesson 1.14.
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Complete a difference table and name the model type it points to.
+  \item Build an area model from a 40-foot fencing constraint and state its
+        domain (worked space provided).
+  \item Name the model type for a stated context and write the assumption the
+        model rests on.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 checks 1.13.A (selection from a table), item 2
+checks 1.14.A (construction from a constraint), item 3 checks 1.13.B (the fine
+print). Item 2 is the diagnostic --- a student who writes $A(w) = w(40 - w)$ has
+forgotten that two widths are fenced and needs Part 3 retaught in tomorrow's
+warm-up window.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework: 5--6 problems covering difference tables, context-to-model matching, assumption
-articulation, and piecewise model description. Extension: given 4 data points, write the
-unique cubic model in descriptive form and state what real-world meaning the degree implies.
-Preview of Lesson 1.14: students will \textit{construct} function models from scratch --- today's
-selection and assumption skills are the prerequisite.
+\textbf{Homework:} 6 problems covering difference tables (including a cubic),
+matching contexts to model types, building a model from a perimeter constraint,
+the full pen storyline (evaluate, average rate of change with units, maximum),
+an inverse-proportion model, and one AP-style multiple-choice item on what
+constant second differences imply.
+
+\textbf{Extension (optional):} The barn wall turns out to be only 30 feet long,
+so widths below 25 feet need fencing on part of the fourth side too. Students
+find the threshold, write the two rules, and explain why the model is now
+piecewise.
+
+\textbf{Preview:} Unit 1 ends here. Lesson 2.1 (Quadratic Functions Revisited)
+opens Unit 2 with the function $A(w) = 80w - 2w^2$ still on the board --- vertex
+form, the axis of symmetry, and why $-b/(2a)$ works instead of just that it does.
+Every model built today was a polynomial; Unit 2 is where polynomials get
+studied on their own terms.
 \end{skillbox}
 
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, calculators fine. Item 1 is the only place all period
+where students see a table whose inputs are \textit{not} equally spaced --- part
+(c) is the trap, and it is worth ten seconds of ``look at the $x$ row first''
+when you review. Item 2 does the Part 3 algebra with no context attached; do not
+tell them what $w(80-2w)$ is. In Part 3, put the warm-up back on the board and
+say ``you built today's model before you knew what it was for.'' Item 3 is
+Lesson 1.3 with units, and units are what Part 4 grades on.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Part 1's requirement --- equally spaced inputs --- must be said before the first
+subtraction, not after the first wrong answer. Part 2 is deliberately fast; the
+inverse-proportion row is a name-drop, and if a student asks what a rational
+function is, ``a fraction with a variable underneath, and Unit 3 is about them''
+is a complete answer today. Part 3 is where the period is won or lost: do all
+four steps out loud, and do not let the class skip the substitution because
+``it's obvious.'' The single most important line in the lesson is the check at
+the end of Part 3 --- the constraint and the table produced the same function. If
+time runs short, compress Part 5 to the domain and one assumption, and let the
+homework carry the range and the piecewise wrinkle.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers run on the same 60-foot courtyard, so a group that finishes
+Tier R can move to Tier A without re-reading the scenario. Tier R's matching
+question is worth more than its table --- students who can classify from context
+are ready for Unit 2. Tier A's step 1 is the one to check as you circulate: if
+the constraint is written $w + \ell = 60$, everything downstream is wrong and
+quiet about it. Tier E's code rule ($w \ge 18$) is the most valuable idea in the
+activity: the vertex is still at $w = 15$, but 15 is no longer in the domain, so
+the maximum moves to the endpoint. If the class never reaches Tier E, assign
+homework problem 4(c) as the substitute.
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Sort by item 2 first. Accept
+$A(w) = 40w - 2w^2$ or $A(w) = w(40 - 2w)$ --- both are correct and the factored
+form often signals a student who understood the substitution rather than
+memorizing a formula. A domain of $0 < w < 20$ is the target; $w > 0$ alone is
+half credit and goes in the reteach pile. On item 3, any defensible assumption
+earns the point --- the skill is that the student wrote one at all.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 4 is the storyline problem and the one to scan first --- part (b)'s units
+predict who is ready for Unit 2's modeling work. Problem 5 is the only
+inverse-proportion practice students get before Unit 3; expect the arithmetic on
+$k = F d^2$ to be shakier than the concept, and grade the domain sentence, not
+the decimal. On problem 6, distractor A is the student who never took the second
+differences, C is the student who counted rows instead of differences, and D
+confuses ``constant second differences'' with ``second differences of zero'' ---
+each is worth thirty seconds tomorrow. The extension is genuinely hard for this
+track; assign it to students who finished Tier E, not to everyone.
+\end{teachernote}
 \end{document}

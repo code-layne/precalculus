@@ -7,147 +7,371 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Guided Notes}
-\namedateperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Identify an appropriate function type for a data set or context by analyzing
-        \blank{3.5cm} of change. \hfill\textit{(LO 1.13.A)}
-  \item Describe the \blank{2.8cm} and \blank{2.8cm} restrictions embedded in a function model.
-        \hfill\textit{(LO 1.13.B)}
+  \item Decide what kind of function fits a table by taking \blank{2cm} and
+        \blank{2.2cm} differences of \blank{2.6cm} spaced inputs.
+  \item Choose a model type from the \blank{2.4cm} alone --- area, volume,
+        inverse proportion, or a rule that changes at a threshold.
+  \item Build a model by writing the \blank{2.4cm}, solving it for one variable,
+        and \blank{2.6cm} into the quantity I want.
+  \item Use a model: evaluate it, find an average rate of change with
+        \blank{1.8cm}, and state the \blank{2.4cm} it rests on.
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{First differences}
-\termblanklong{Second differences}
-\termblanklong{Domain restriction}
-\termblanklong{Piecewise-defined function}
-\termblanklong{Model assumption}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Function model:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{First differences:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Second differences:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Constraint:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Model assumption:}}\\[1pt]
+\writeline
 \end{vocabbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-``A scientist hands you a table of mystery data. How do you decide which function type to use?''
+The garden club has exactly \textbf{80 feet of fencing} for a rectangular pen.
+One whole side runs along the barn wall, so that side needs no fence at all.
 
-\medskip
-Without graphing, you can inspect the \blank{3cm} to detect the function's degree.
+\smallskip
+Before any algebra --- should the pen be a square? Vote, then write down
+\textit{why} you voted that way.
+
+\writelines{2}
 \end{hookbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Rate-of-Change Clues: The Difference-Table Method}
-\textbf{Setup:} Inputs must be \blank{2.5cm}-spaced. Compute differences of the output column.
+\boxguard[26]
+\begin{notesbox}{1. Reading the Model Off a Table}
+\textbf{The requirement, first.} Differences only mean something when the inputs
+are \blank{3cm} spaced. Check the $x$ row before you subtract anything.
 
 \medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|}
+\textbf{Table A.} Take the first differences.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & $y$ & $\Delta y$ (1st diff.) & $\Delta^2 y$ (2nd diff.) \\
+$x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-0 & 1  & ---         & ---         \\
+$y$ & 5 & 8 & 11 & 14 & 17 \\
 \hline
-1 & 4  & \blank{2cm} & ---         \\
-\hline
-2 & 11 & \blank{2cm} & \blank{2cm} \\
-\hline
-3 & 22 & \blank{2cm} & \blank{2cm} \\
-\hline
-4 & 37 & \blank{2cm} & \blank{2cm} \\
+1st difference & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
 \hline
 \end{tabular}
+\end{center}
+
+\smallskip
+The first differences are constant, so Table A is \blank{2.4cm}.
 
 \medskip
-\textbf{Decision tree:}
-\begin{itemize}[itemsep=3pt]
-  \item 1st differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
-  \item 2nd differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
-  \item 3rd differences \textbf{constant} $\Rightarrow$ model is \blank{2.5cm} (degree \blank{0.8cm})
-  \item $n$th differences constant $\Rightarrow$ model is degree-\blank{0.8cm} polynomial
+\textbf{Table B --- the garden club's five trial layouts.} Here $w$ is the width
+in feet and $A$ is the area in square feet.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+\hline
+$A$ (ft$^2$) & 350 & 600 & 750 & 800 & 750 \\
+\hline
+1st difference & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+2nd difference & --- & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The first differences are \textbf{not} constant --- so we take differences again.
+The second differences are all \blank{1.6cm}, so Table B is \blank{2.6cm}.
+
+\medskip
+\textbf{The decision tree.}
+\begin{itemize}[itemsep=4pt]
+  \item 1st differences constant $\Rightarrow$ \blank{2.4cm} \quad (degree \blank{0.8cm})
+  \item 2nd differences constant $\Rightarrow$ \blank{2.4cm} \quad (degree \blank{0.8cm})
+  \item 3rd differences constant $\Rightarrow$ \blank{2.4cm} \quad (degree \blank{0.8cm})
+  \item $n$th differences constant $\Rightarrow$ a degree-\blank{0.8cm} polynomial
 \end{itemize}
 
 \medskip
-\textbf{Key idea:} Constant \textit{first} differences mean a \blank{2.5cm} rate of change.
-Constant \textit{second} differences mean the rate of change is itself \blank{2.5cm}.
+\textbf{What it means.} Constant \textit{first} differences say the
+\blank{2.4cm} of change repeats. Constant \textit{second} differences say the
+\blank{2.4cm} of change is itself changing at a steady rate.
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Shape and Context Clues}
-When you have a description but no table, use context:
+\boxguard[26]
+\begin{notesbox}{2. Reading the Model Off the Context}
+No table? The description carries the clue.
 
-\medskip
+\smallskip
 \renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|p{5.2cm}|p{5.2cm}|}
+\begin{center}
+\begin{tabularx}{0.94\linewidth}{@{} >{\raggedright\arraybackslash}p{0.52\linewidth} X @{}}
 \hline
-\textbf{Context clue} & \textbf{Best model type} \\
+\textbf{What the context says} & \textbf{Model type} \\
 \hline
-Roughly constant rate of change & \blank{3.5cm} \\
+The same amount is added each step & \blank{2.8cm} \\
 \hline
-Area or 2-D measurement & \blank{3.5cm} \\
+An \textbf{area}, or two lengths multiplied & \blank{2.8cm} \\
 \hline
-Volume or 3-D measurement & \blank{3.5cm} \\
+A \textbf{volume}, or three lengths multiplied & \blank{2.8cm} \\
 \hline
-Multiple local maxima/minima & \blank{3.5cm} \\
+Several turns --- it rises, falls, rises again & \blank{2.8cm} \\
 \hline
-Behavior changes at a threshold & \blank{3.5cm} \\
+One quantity is \textbf{inversely proportional} to another & \blank{2.8cm} \\
 \hline
-\end{tabular}
+The rule \textbf{changes at a threshold} & \blank{2.8cm} \\
+\hline
+\end{tabularx}
+\end{center}
 
 \medskip
-\textbf{Special rule:} A degree-$n$ polynomial can model a data set with exactly
-\blank{1cm} points (with distinct inputs).
+\textbf{Inverse proportion} means $y = \dfrac{k}{x^n}$: as $x$ grows, $y$
+\blank{2.2cm}. These are \textbf{rational} functions --- Unit 3 is about them.
+Today you only have to recognize the words.
+
+\medskip
+\textbf{A counting fact.} A degree-$n$ polynomial can be fit through
+\blank{1.2cm} points with distinct inputs. So four points can always be fit by a
+cubic --- which is exactly why ``it fits the data'' is not by itself a reason to
+believe a model.
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Piecewise Models}
-A piecewise-defined function uses \blank{3cm} formulas over \blank{3cm} intervals.
+\boxguard[30]
+\begin{notesbox}{3. Building the Model from the Constraint}
+Back to the 80 feet of fencing. Let $w$ be the width and $\ell$ the length.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \fill[lilac] (0,0) rectangle (5,1.9);
+  \draw[very thick, slate] (-0.5,1.9) -- (5.5,1.9);
+  \node[slate, above, font=\small] at (2.5,1.95) {barn wall --- no fencing needed};
+  \draw[very thick, plum] (0,1.9) -- (0,0) -- (5,0) -- (5,1.9);
+  \node[plum, left,  font=\small] at (0,0.95) {$w$};
+  \node[plum, right, font=\small] at (5,0.95) {$w$};
+  \node[plum, below, font=\small] at (2.5,0) {$\ell$};
+\end{tikzpicture}
+\end{center}
 
 \medskip
-\textbf{Example scenario:} A delivery driver travels at a constant speed for the first
-20 minutes, stops for 5 minutes, then accelerates home. This situation requires
-\blank{1.5cm} pieces because the \blank{4cm} changes over different intervals.
+\textbf{Step 1 --- write the constraint.} Two widths and one length use all the
+fencing:
+\begin{center}
+\blank{1cm} $w \; + \;$ \blank{1cm} $= 80$
+\end{center}
+
+\textbf{Step 2 --- solve the constraint for one variable.}
+\begin{center}
+$\ell = $ \blank{3.4cm}
+\end{center}
+
+\textbf{Step 3 --- substitute into the quantity you actually want.} We want
+\textbf{area}, and area is $A = w \cdot \ell$.
+
+\begin{work}
+  A(w) &= w \cdot \ell \\
+       &= w(80 - 2w) \\
+       &= 80w - 2w^2
+\end{work}
+
+\begin{center}
+$A(w) = $ \blank{4.4cm}
+\end{center}
+
+\textbf{Step 4 --- restrict the domain from the context.} The width must be
+positive, and the length $80 - 2w$ must be positive too:
+
+\begin{center}
+\blank{1.2cm} $< w <$ \blank{1.2cm}
+\end{center}
+
+Why the upper end? At that width there is \blank{5cm}.
 
 \medskip
-To describe a piecewise model, state:
-\begin{enumerate}[itemsep=3pt]
-  \item The \blank{2.5cm} for each piece.
-  \item The type of function for each piece (e.g., \blank{2cm}, \blank{2cm}).
-  \item The \blank{3cm} conditions (where each piece applies).
-\end{enumerate}
+\textbf{Now check it against Table B.} From the table, $A(20) = 800$. From the
+model:
+
+\begin{work}
+  A(20) &= 80(20) - 2(20)^2 \\
+        &= 1600 - 800 \\
+        &= 800
+\end{work}
+
+\smallskip
+The table and the constraint produced the \blank{3cm} function --- and Part 2
+predicted its type, because area is \blank{2.6cm} lengths multiplied.
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Stating Assumptions and Restrictions}
-Every model embeds assumptions. Fill in the sentence frame:
+\boxguard[30]
+\begin{notesbox}{4. Using the Model}
+A model that is never used is just algebra. Ours is $A(w) = 80w - 2w^2$ on
+$0 < w < 40$.
 
 \medskip
+\textbf{(a) Evaluate.}
+
+\begin{work}
+  A(10) &= 80(10) - 2(10)^2 \\
+        &= 800 - 200 \\
+        &= 600 \\
+  A(30) &= 80(30) - 2(30)^2 \\
+        &= 2400 - 1800 \\
+        &= 600
+\end{work}
+
+$A(10) = $ \blank{1.8cm} ft$^2$ \qquad $A(30) = $ \blank{1.8cm} ft$^2$
+
+\medskip
+\textbf{(b) Average rate of change --- with units.}
+
+\begin{work}
+  \frac{A(20) - A(10)}{20 - 10} &= \frac{800 - 600}{10} \\
+                                &= 20 \\
+  \frac{A(30) - A(20)}{30 - 20} &= \frac{600 - 800}{10} \\
+                                &= -20
+\end{work}
+
+On $[10, 20]$: \blank{1.6cm} \qquad On $[20, 30]$: \blank{1.6cm}
+
+\smallskip
+Units: \blank{6.4cm}
+
+\smallskip
+In words: between $w = 10$ and $w = 20$, each extra foot of width adds about
+\blank{1.6cm} square feet of area --- but past $w = 20$ each extra foot
+\blank{2.6cm} the area.
+
+\medskip
+\textbf{(c) The sign change locates the maximum.} The rate went from
+\blank{1cm} to \blank{1cm}, so the largest area happens \textbf{between} $w = 10$
+and $w = 30$. For $A(w) = aw^2 + bw$ the vertex sits at $w = -\dfrac{b}{2a}$:
+
+\begin{work}
+  w &= -\frac{b}{2a} \\
+    &= -\frac{80}{2(-2)} \\
+    &= 20
+\end{work}
+
+Best width $w = $ \blank{1.6cm} ft, \quad length $\ell = 80 - 2(20) = $
+\blank{1.6cm} ft, \quad area $= $ \blank{2cm} ft$^2$.
+
+\smallskip
+\textbf{Back to the vote.} The best pen is \blank{1.4cm} ft by \blank{1.4cm} ft
+--- it is \textbf{not} a square, because one side is free.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{5. The Fine Print: Restrictions and Assumptions}
+Every model carries restrictions the algebra will not tell you about.
+
+\medskip
+\begin{itemize}[itemsep=5pt]
+  \item \textbf{Domain restriction:} $w$ is a width in feet, so
+        \blank{1.2cm} $< w <$ \blank{1.2cm}. Values outside this are not bad
+        arithmetic --- they are outside the \blank{2.2cm}.
+  \item \textbf{Range restriction:} the area satisfies \blank{1.2cm} $< A \le$
+        \blank{1.6cm} square feet.
+\end{itemize}
+
+\medskip
+\textbf{The assumption sentence.} Fill in the frame:
+
+\smallskip
 \begin{center}
 \fbox{\begin{minipage}{0.92\linewidth}
-``This model assumes that \blank{4cm} remains \blank{4cm}
-over \blank{4cm}. The domain is restricted to \blank{4cm}
-because \blank{5cm}.''
+\medskip
+``This model assumes that \blank{4.4cm} , and it is only trustworthy for
+inputs \blank{4cm} .''
+\medskip
 \end{minipage}}
 \end{center}
 
 \medskip
-\textbf{Example:} A quadratic models the area $A$ of a rectangle with a fixed perimeter of
-120 ft, where $\ell$ is one side length.
+Name two things the pen model assumes about the real world:
+
+\writeline
 
 \medskip
-Assumption: \writeline
-
-Domain restriction: \writeline
-
-Range restriction: \writeline
+\textbf{When one rule is not enough.} Suppose the barn wall is only 30 feet
+long. Then a pen with $\ell > 30$ needs fencing on part of the fourth side too,
+and the area rule \textbf{changes} at that threshold. A function with different
+rules on different intervals is \blank{3cm} --- exactly the last row of the
+table in Part 2.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Take differences until they are constant, then name the model type.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $y$ & 0 & 1 & 8 & 27 & 64 \\
+        \hline
+        1st & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        2nd & --- & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        3rd & --- & --- & --- & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        Model type: \blank{3cm}
+
+  \item A garden bed is built against a wall using 30 feet of edging on the
+        other three sides. Build the area model and state its domain.
+
+        \begin{work}
+           2w + \ell &= 30 \\
+                \ell &= 30 - 2w \\
+                A(w) &= w(30 - 2w) \\
+                     &= 30w - 2w^2
+        \end{work}
+
+        $A(w) = $ \blank{4cm} \qquad Domain: \blank{1cm} $< w <$ \blank{1cm}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

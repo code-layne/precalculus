@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
   {\color{white}\textbf{\large Lesson 1.7 \quad Function Model Selection and Construction}}
 \end{center}
 
@@ -27,10 +27,15 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can identify the appropriate function type (linear, quadratic, cubic, polynomial,
-        piecewise) for a given data set or contextual scenario by analyzing rates of change.
-  \item I can articulate the assumptions and domain/range restrictions embedded in a
-        function model.
+  \item I can decide what kind of function fits a data set by taking first and
+        second differences of equally spaced inputs.
+  \item I can choose a model type from the context alone --- area, volume,
+        inverse proportion, or a rule that changes at a threshold.
+  \item I can build a function model from a constraint by solving for one
+        variable and substituting, and I can state the domain the context
+        allows.
+  \item I can use a model: evaluate it, find an average rate of change
+        \textit{with units}, and name the assumption it rests on.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,17 +45,29 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review: first and second differences, constant vs.\ changing rates & \blank{1.2cm} \\
-2 & Guided Notes   & Difference-table decision tree; shape/context clues; assumption templates & \blank{1.2cm} \\
-3 & Group Activity & Data Dispatch Agency --- select models and state assumptions for scenarios & \blank{1.2cm} \\
-4 & Exit Ticket    & Difference table, model classification, and assumption statement & \blank{1.2cm} \\
-5 & Homework       & Independent practice: differences, matching, assumption articulation & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                   & \blank{1.2cm} \\
+2 & Guided Notes   & Choosing, building, and using a function model         & \blank{1.2cm} \\
+3 & Group Activity & The courtyard committee                               & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on selection and construction        & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                                 & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Every lesson so far has handed you a function. Today you pick one, and then you
+build it. A table tells you which type through its \textbf{differences}; a
+context tells you through its \textbf{shape}. Then a single constraint --- ``the
+fencing totals 80 feet'' --- turns two unknowns into one, and you have a model.
+The last step is the one people skip: say what the model assumes, and say which
+inputs it is allowed to take.
+\end{remindbox}
 
 \end{document}

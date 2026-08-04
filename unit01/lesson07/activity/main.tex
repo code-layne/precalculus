@@ -7,156 +7,213 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Group Activity}
-\namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Data Dispatch Agency]{sky}
+\begin{scenariobox}[The Courtyard Committee]{plumlight}
 \small
-Your team works at the Data Dispatch Agency. Four requests just arrived, each describing a
-real-world situation that needs a function model. For each dispatch, your team must (1) select
-the best model type, and (2) state the key assumptions and domain restriction. Work through
-the tier that matches your group's assignment.
+The school's courtyard committee has \textbf{60 feet of metal edging} for a new
+rectangular flower bed. One long side of the bed runs against the building wall,
+so that side needs no edging at all --- only the two ends and the front are
+edged. The committee wants the largest possible planting area.
+
+\smallskip
+Let $w$ be the width of the bed in feet (the two short ends) and $\ell$ the
+length along the wall. The committee measured five trial layouts before anyone
+did any algebra:
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+\hline
+$A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+\hline
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-\textbf{The four dispatches:}
-
-\begin{itemize}[itemsep=3pt]
-  \item \textbf{Dispatch 1.} A city tracks its population each year. The population increases by
-        approximately 850 people per year for the past decade.
-  \item \textbf{Dispatch 2.} A farmer wants to fence a rectangular pen using 200 m of fencing.
-        She records the area for different choices of one side length.
-  \item \textbf{Dispatch 3.} A warehouse stores boxes stacked in cubic arrangements.
-        The total number of boxes for a stack of side length $n$ units is recorded.
-  \item \textbf{Dispatch 4.} A ride-share app charges \$2.50 per mile for the first 5 miles,
-        then \$1.75 per mile for each mile after that.
-\end{itemize}
-
-\vspace{0.08in}
-
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each dispatch, \textbf{circle the best model type} from the three choices given, then
-complete the assumption sentence.
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Check the input row first.} Are the widths equally spaced?
+        \blank{2cm} \quad By how much each step? \blank{2cm}
 
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} c X p{5.5cm} @{}}
-\textbf{Dispatch} & \textbf{Best model (circle one)} & \textbf{Complete the assumption} \\
-\midrule
-1 & Linear \quad Quadratic \quad Cubic & ``This model assumes the population grows by a \blank{2.5cm} amount each year.'' \\
-2 & Linear \quad Quadratic \quad Cubic & ``This model assumes the pen is a \blank{2cm} and the perimeter is exactly \blank{1.5cm} m.'' \\
-3 & Linear \quad Quadratic \quad Cubic & ``This model assumes the stacks form perfect \blank{2cm} shapes.'' \\
-4 & Linear \quad Quadratic \quad Piecewise & ``This model assumes the rate changes at exactly \blank{1.5cm} miles.'' \\
-\end{tabularx}
+  \item \textbf{Take the differences.} Fill in both rows.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+        \hline
+        $A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+        \hline
+        1st difference & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        2nd difference & --- & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item \textbf{Name it.} The first differences are \blank{3cm}, but the second
+        differences are all \blank{1.6cm}, so this data is best modeled by a
+        \blank{2.6cm} function.
+
+  \item \textbf{Match each context to its model type.} Write a letter in each
+        blank: \textbf{L} linear, \textbf{Q} quadratic, \textbf{C} cubic,
+        \textbf{R} rational, \textbf{P} piecewise.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The volume of a cube-shaped bin, as a function of its edge
+                length. \blank{1.2cm}
+          \item A phone plan costs \$30 a month plus \$5 for each extra
+                gigabyte. \blank{1.2cm}
+          \item The brightness of a lamp, which is inversely proportional to
+                the square of your distance from it. \blank{1.2cm}
+          \item A garage charges \$4 for the first hour and \$2 for every hour
+                after that. \blank{1.2cm}
+          \item The area of a rug whose length is always twice its width, as a
+                function of the width. \blank{1.2cm}
+        \end{enumerate}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each dispatch, compute differences from the table provided, determine the degree, name
-the model type, and state one assumption with domain restriction.
+The committee wants a formula, not five measurements.
 
-\medskip
-\textbf{Dispatch 1 table:}
-\quad
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
-\hline
-Year ($x$) & Population ($y$) & $\Delta y$ \\
-\hline
-0 & 12{,}000 & --- \\
-\hline
-1 & 12{,}850 & \blank{1.8cm} \\
-\hline
-2 & 13{,}700 & \blank{1.8cm} \\
-\hline
-3 & 14{,}550 & \blank{1.8cm} \\
-\hline
-\end{tabular}
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Write the constraint.} Two ends and one front use all 60 feet
+        of edging.
 
-\medskip
-Model type: \blank{3cm} \quad Degree: \blank{1cm}
+        \blank{1cm} $w \; + \;$ \blank{1cm} $= 60$ \qquad so \quad $\ell = $
+        \blank{3.2cm}
 
-\medskip
-Assumption: \writeline
+  \item \textbf{Substitute.} Area is $A = w \cdot \ell$. Build the model.
 
-Domain restriction (give an inequality): \blank{5cm}
+        \begin{work}
+          A(w) &= w(60 - 2w) \\
+               &= 60w - 2w^2
+        \end{work}
 
-\bigskip
-\textbf{Dispatch 2 table:} (side length $\ell$ in meters, area $A$ in m$^2$)
-\quad
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$\ell$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
-\hline
-10 & 900  & ---         & ---         \\
-\hline
-20 & 1600 & \blank{1.5cm} & ---      \\
-\hline
-30 & 2100 & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-40 & 2400 & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-50 & 2500 & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-\end{tabular}
+        $A(w) = $ \blank{4cm}
 
-\medskip
-Model type: \blank{3cm} \quad Degree: \blank{1cm}
+  \item \textbf{Restrict the domain.} The width and the length must both be
+        positive:
 
-\medskip
-Domain restriction: \blank{6cm}
+        \blank{1.2cm} $< w <$ \blank{1.2cm}
+
+        Why that upper end? \blank{6cm}
+
+  \item \textbf{Check against the committee's table.} Evaluate the model at two
+        of the measured widths.
+
+        \begin{work}
+          A(10) &= 60(10) - 2(10)^2 \\
+                &= 600 - 200 \\
+                &= 400 \\
+          A(15) &= 60(15) - 2(15)^2 \\
+                &= 900 - 450 \\
+                &= 450
+        \end{work}
+
+        $A(10) = $ \blank{1.8cm} \qquad $A(15) = $ \blank{1.8cm} \qquad
+        Do these match the table? \blank{1.8cm}
+
+  \item \textbf{Find the largest bed.} For $A(w) = aw^2 + bw$ the vertex is at
+        $w = -\dfrac{b}{2a}$.
+
+        \begin{work}
+          w &= -\frac{60}{2(-2)} \\
+            &= 15
+        \end{work}
+
+        Best width $= $ \blank{1.6cm} ft, \quad length $= $ \blank{1.6cm} ft,
+        \quad area $= $ \blank{2cm} ft$^2$.
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Two average rates of change --- with units.} Use
+        $A(w) = 60w - 2w^2$.
 
-  \item \textbf{Dispatch 4 --- Piecewise model.} Write a two-piece description of the ride-share
-        cost function $C(m)$ where $m$ is the number of miles driven.
+        \begin{work}
+          \frac{A(10) - A(5)}{10 - 5} &= \frac{400 - 250}{5} \\
+                                      &= 30 \\
+          \frac{A(20) - A(15)}{20 - 15} &= \frac{400 - 450}{5} \\
+                                        &= -10
+        \end{work}
 
-        \medskip
-        Piece 1 (applies when \blank{3cm}): $C(m) = $ \blank{5cm}
+        On $[5, 10]$: \blank{1.6cm} \qquad On $[15, 20]$: \blank{1.6cm}
+
+        Units: \blank{6cm}
+
+        Explain what the change of sign tells the committee.
 
         \vspace{0.05in}
-        Function type for Piece 1: \blank{3.5cm}
+        \writeline
 
-        \medskip
-        Piece 2 (applies when \blank{3cm}): $C(m) = $ \blank{5cm}
+  \item \textbf{A code rule changes the answer.} The building code requires a
+        walkway, so the bed's width must be \textbf{at least 18 feet}. The new
+        domain is $18 \le w < 30$.
 
-        \vspace{0.05in}
-        Function type for Piece 2: \blank{3.5cm}
+        \begin{work}
+          A(18) &= 60(18) - 2(18)^2 \\
+                &= 1080 - 648 \\
+                &= 432
+        \end{work}
 
-  \item State \textbf{two assumptions} embedded in the Dispatch 4 model and explain
-        why each assumption is needed for the model to be valid.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Is the old best width $w = 15$ still allowed? \blank{2cm}
+          \item $A(18) = $ \blank{2cm} ft$^2$
+          \item On $18 \le w < 30$ the area only \blank{2.6cm} as $w$ grows, so
+                the largest legal bed is at $w = $ \blank{1.6cm}.
+          \item In one sentence: what changed the answer --- the model, or the
+                domain?
 
-        \medskip
-        Assumption 1: \writeline
-        Why it matters: \writeline
+                \vspace{0.05in}
+                \writeline
+        \end{enumerate}
 
-        \medskip
-        Assumption 2: \writeline
-        Why it matters: \writeline
+  \item \textbf{A different kind of model (a look ahead to Unit 3).} A lamp's
+        brightness $L$ is \textbf{inversely proportional to the square} of the
+        distance $d$ in meters: $L = \dfrac{k}{d^2}$. At $d = 2$ m the meter
+        reads $L = 90$.
 
-  \item For Dispatch 3, a student claims a cubic model is appropriate because ``volume is
-        three-dimensional.'' Explain in one or two sentences whether this reasoning is
-        mathematically sound, referencing differences.
+        \begin{work}
+          90 &= \frac{k}{2^2} \\
+           k &= 360 \\
+        L(6) &= \frac{360}{6^2} \\
+             &= 10
+        \end{work}
 
-        \medskip
-        \writelines{2}
-
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $k = $ \blank{2cm} \qquad so $L(d) = $ \blank{3cm}
+          \item $L(6) = $ \blank{2cm}
+          \item Domain restriction: $d$ \blank{2.4cm}, because
+                \blank{5cm}
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 

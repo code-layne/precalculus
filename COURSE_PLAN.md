@@ -54,7 +54,7 @@ an introduction lesson). Two pairs from the original 8-unit map were merged (old
 | 1.4 | Transformations of Functions | CED 1.12 (was 1.12) | authored |
 | 1.5 | Composition of Functions | CED 2.7 (was 2.7) | authored |
 | 1.6 | Inverse Functions | CED 2.8 (was 2.8) | authored |
-| 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | moved |
+| 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | authored |
 
 Rationale: the unit opens with an orientation lesson (1.0) and an explicit
 function-fundamentals ramp (1.1) for the non-honors track, then the function toolkit
