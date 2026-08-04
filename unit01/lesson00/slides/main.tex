@@ -1,25 +1,25 @@
 %! Introduction to Functions and Change — Unit 1, Lesson 1.0 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
 % TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.0}\\[0.5cm]
     {\color{white}\bfseries\LARGE Introduction to Functions and Change}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
 }
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: The Trustworthy Machine}
+  \plumheader{Hook: The Trustworthy Machine}
   \sectionlabel[goldacc]{Think About It}
 
   A vending machine and a claw machine both take your money.
@@ -50,21 +50,21 @@
   the vending machine to ``break the rules''?
 \end{frame}
 
-% QUANTITIES THAT CHANGE TOGETHER
+% SECTION 1 — QUANTITIES THAT CHANGE TOGETHER
 \begin{frame}[t, plain]
-  \navyheader{Quantities That Change Together}
+  \plumheader{1. Quantities That Change Together}
 
   This whole unit is about two quantities linked so that one \textbf{responds} to
   the other.
 
-  \bigskip
+  \medskip
   \begin{block}{Input and Output}
     The quantity we \textbf{choose or track} is the \textbf{input} (independent
     variable). The quantity that \textbf{responds} is the \textbf{output}
     (dependent variable). Ordered pairs are written (input, output).
   \end{block}
 
-  \bigskip
+  \medskip
   \begin{tabular}{|p{0.45\textwidth}|c|c|}
   \hline
   \textbf{Situation} & \textbf{Input} & \textbf{Output} \\
@@ -75,15 +75,18 @@
   \hline
   A ball dropped from a rooftop & ? & ? \\
   \hline
+  Pumping gas into a car & ? & ? \\
+  \hline
   \end{tabular}
 
   \medskip
-  \textit{Ask yourself:} which quantity do \textit{you} control?
+  \textbf{The ``you-control'' test:} which quantity do \textit{you} choose or
+  control? That one is the input.
 \end{frame}
 
-% WHAT IS A FUNCTION
+% SECTION 2 — WHAT IS A FUNCTION
 \begin{frame}[t, plain]
-  \navyheader{What Is a Function? (First Look)}
+  \plumheader{2. What Is a Function? (First Look)}
 
   \begin{block}{Definition (informal)}
     A rule is a \textbf{function} when each input produces \textbf{exactly one}
@@ -110,9 +113,9 @@
   \end{tabular}
 \end{frame}
 
-% THE FINE PRINT
+% SECTION 2, CONT. — THE FINE PRINT
 \begin{frame}[t, plain]
-  \navyheader{The Fine Print: Many-to-One vs.\ One-to-Many}
+  \plumheader{The Fine Print: Many-to-One vs.\ One-to-Many}
 
   \begin{columns}[T]
     \column{0.48\textwidth}
@@ -135,13 +138,17 @@
   \end{columns}
 
   \bigskip
+  \textbf{In one sentence:} two inputs may share an output, but one input may never
+  have two outputs.
+
+  \medskip
   \textbf{Challenge:} Give a rule from your life that IS a function. Now break it
   so it isn't.
 \end{frame}
 
-% A GRAPH TELLS A STORY
+% SECTION 3 — A GRAPH TELLS A STORY
 \begin{frame}[t, plain]
-  \navyheader{A Graph Tells a Story}
+  \plumheader{3. A Graph Tells a Story}
 
   A cyclist rides away from home, rests, and rides back.
 
@@ -155,9 +162,9 @@
         \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small distance (blocks)};
         \foreach \x in {2,4,6,8,10} \node[below] at (\x,0) {\small \x};
         \foreach \y in {1,3,5} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, navy] (0,0) -- (4,5) node[midway, above left] {\small\bfseries A};
-        \draw[very thick, navy] (4,5) -- (6,5) node[midway, above] {\small\bfseries B};
-        \draw[very thick, navy] (6,5) -- (10,0) node[midway, above right] {\small\bfseries C};
+        \draw[very thick, plum] (0,0) -- (4,5) node[midway, above left] {\small\bfseries A};
+        \draw[very thick, plum] (4,5) -- (6,5) node[midway, above] {\small\bfseries B};
+        \draw[very thick, plum] (6,5) -- (10,0) node[midway, above right] {\small\bfseries C};
       \end{tikzpicture}
       \end{center}
 
@@ -172,13 +179,41 @@
 
   \bigskip
   \textit{No formula needed:} Where is the rider at \(t = 5\)? The graph \textit{is}
-  the information. (A flat segment is not ``nothing happening'' --- time keeps
-  moving; the distance holds steady.)
+  the information. A flat segment is not ``nothing happening'' --- time keeps
+  moving; the \textbf{output} holds steady. And each time has exactly one distance,
+  so distance \textbf{is} a function of time.
+\end{frame}
+
+% SECTION 4 — A TABLE TELLS THE SAME STORY
+\begin{frame}[t, plain]
+  \plumheader{4. A Table Tells the Same Story}
+
+  A candle is lit and measured each hour.
+
+  \medskip
+  \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  Hours burning & 0 & 1 & 2 & 3 & 4 \\
+  \hline
+  Height (cm) & 20 & 17 & 14 & 14 & 11 \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Input: hours burning \quad Output: candle height
+    \item Hour 0 \(\to\) 2: height \textbf{decreasing} \quad
+          Hour 2 \(\to\) 3: height \textbf{constant}
+    \item Read a graph \textit{or} a table the same way: watch what the
+          \textbf{output} does as the \textbf{input} moves forward.
+    \item Each hour has exactly one height \(\to\) the height \textbf{is} a
+          function of the hours burning.
+  \end{itemize}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
-  \navyheader{Class Practice}
+  \plumheader{Class Practice}
   \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{8pt}
