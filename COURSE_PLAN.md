@@ -49,7 +49,7 @@ an introduction lesson). Two pairs from the original 8-unit map were merged (old
 |---|--------|--------|--------|
 | 1.0 | Introduction to Functions and Change | New (unit introduction) | authored |
 | 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | authored |
-| 1.2 | Change in Tandem | CED 1.1 (was 1.1) | moved |
+| 1.2 | Change in Tandem | CED 1.1 (was 1.1) | authored |
 | 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | moved |
 | 1.4 | Transformations of Functions | CED 1.12 (was 1.12) | moved |
 | 1.5 | Composition of Functions | CED 2.7 (was 2.7) | moved |
