@@ -1,0 +1,208 @@
+%! Introduction to Functions and Change — Unit 1, Lesson 1.0 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 1.0}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Introduction to Functions and Change}\\[1.2cm]
+    {\color{skymid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \navyheader{Hook: The Trustworthy Machine}
+  \sectionlabel[goldacc]{Think About It}
+
+  A vending machine and a claw machine both take your money.
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Vending Machine}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item Press \textbf{B4} \(\to\) same bag of chips
+          \item Every. Single. Time.
+          \item Same input, same output
+        \end{itemize}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Claw Machine}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item Drop the claw \(\to\) who knows?
+          \item Same move, different results
+          \item Same input, \textbf{unpredictable} output
+        \end{itemize}
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Discussion:} Which machine can you \textbf{trust}? What would it mean for
+  the vending machine to ``break the rules''?
+\end{frame}
+
+% QUANTITIES THAT CHANGE TOGETHER
+\begin{frame}[t, plain]
+  \navyheader{Quantities That Change Together}
+
+  This whole unit is about two quantities linked so that one \textbf{responds} to
+  the other.
+
+  \bigskip
+  \begin{block}{Input and Output}
+    The quantity we \textbf{choose or track} is the \textbf{input} (independent
+    variable). The quantity that \textbf{responds} is the \textbf{output}
+    (dependent variable). Ordered pairs are written (input, output).
+  \end{block}
+
+  \bigskip
+  \begin{tabular}{|p{0.45\textwidth}|c|c|}
+  \hline
+  \textbf{Situation} & \textbf{Input} & \textbf{Output} \\
+  \hline
+  Pay-per-minute phone plan & minutes talked & cost of the bill \\
+  \hline
+  A lit candle burning down & ? & ? \\
+  \hline
+  A ball dropped from a rooftop & ? & ? \\
+  \hline
+  \end{tabular}
+
+  \medskip
+  \textit{Ask yourself:} which quantity do \textit{you} control?
+\end{frame}
+
+% WHAT IS A FUNCTION
+\begin{frame}[t, plain]
+  \navyheader{What Is a Function? (First Look)}
+
+  \begin{block}{Definition (informal)}
+    A rule is a \textbf{function} when each input produces \textbf{exactly one}
+    output --- same input, same output, every time. \textit{(Notation arrives in
+    Lesson 1.1.)}
+  \end{block}
+
+  \bigskip
+  Function or not? Test each rule aloud:
+
+  \medskip
+  \begin{tabular}{|p{0.62\textwidth}|c|}
+  \hline
+  \textbf{Rule} & \textbf{Function?} \\
+  \hline
+  each student \(\to\) their student ID number & yes \\
+  \hline
+  each month \(\to\) the students born that month & ? \\
+  \hline
+  each number \(\to\) its double & ? \\
+  \hline
+  each shoe size \(\to\) a student who wears that size & ? \\
+  \hline
+  \end{tabular}
+\end{frame}
+
+% THE FINE PRINT
+\begin{frame}[t, plain]
+  \navyheader{The Fine Print: Many-to-One vs.\ One-to-Many}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Allowed: many-to-one}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item Two inputs \textbf{may share} an output
+          \item Both twins \(\to\) the same birthday
+          \item Each input still has exactly one output --- still a function
+        \end{itemize}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Broken: one-to-many}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item One input with \textbf{two outputs}
+          \item Shoe size 9 \(\to\) two different students
+          \item The machine is no longer trustworthy --- not a function
+        \end{itemize}
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Challenge:} Give a rule from your life that IS a function. Now break it
+  so it isn't.
+\end{frame}
+
+% A GRAPH TELLS A STORY
+\begin{frame}[t, plain]
+  \navyheader{A Graph Tells a Story}
+
+  A cyclist rides away from home, rests, and rides back.
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (10,6);
+        \draw[->, thick] (0,0) -- (10.6,0) node[below right] {\small time (min)};
+        \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small distance (blocks)};
+        \foreach \x in {2,4,6,8,10} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {1,3,5} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, navy] (0,0) -- (4,5) node[midway, above left] {\small\bfseries A};
+        \draw[very thick, navy] (4,5) -- (6,5) node[midway, above] {\small\bfseries B};
+        \draw[very thick, navy] (6,5) -- (10,0) node[midway, above right] {\small\bfseries C};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.46\textwidth}
+      Read it left to right, like a story:
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \textbf{A} (\(t=0\) to \(4\)): rising --- \textbf{increasing} --- riding away
+        \item \textbf{B} (\(t=4\) to \(6\)): flat --- \textbf{constant} --- resting
+        \item \textbf{C} (\(t=6\) to \(10\)): falling --- \textbf{decreasing} --- riding home
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textit{No formula needed:} Where is the rider at \(t = 5\)? The graph \textit{is}
+  the information. (A flat segment is not ``nothing happening'' --- time keeps
+  moving; the distance holds steady.)
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \navyheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \item A movie theater tracks tickets sold and money collected each night.
+          Name the input and the output. Is the money collected a function of the
+          tickets sold?
+    \item The table shows quiz scores after different amounts of studying.
+
+          \smallskip
+          \begin{tabular}{|c|c|c|c|c|}
+          \hline
+          Hours studied & 0 & 1 & 2 & 3 \\
+          \hline
+          Quiz score & 60 & 70 & 80 & 80 \\
+          \hline
+          \end{tabular}
+
+          \smallskip
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item Describe the score's behavior from 0 to 2 hours, then from 2 to 3 hours.
+            \item Inputs 2 and 3 share the output 80. Is the score still a function
+                  of hours studied? Explain.
+          \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+\end{document}
