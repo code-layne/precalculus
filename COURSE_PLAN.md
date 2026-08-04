@@ -7,6 +7,7 @@ exponential/logarithmic/trigonometric core is spread out and reinforced, and the
 parameters-vectors-matrices material is condensed into a single closing unit.
 
 **Structure:** 8 units × 8 lessons = **64 lessons**, plus a sample test per unit.
+Unit 1 numbers its eight lessons 1.0–1.7 (see the Unit 1 replan note below).
 Pacing target: 18–22 class periods per unit (55-minute meetings).
 
 **Content source:** the AP Precalculus CED (`spec/`) remains the content backbone.
@@ -35,7 +36,8 @@ skill; there is no bulk sweep.
 ## Unit and lesson map
 
 Status legend: **moved** = old lesson relocated, body not yet reauthored;
-**new** = scaffolded skeleton awaiting authoring.
+**new** = scaffolded skeleton awaiting authoring;
+**authored** = written to the new scope, born convention-compliant.
 
 ### Unit 1: Functions and Change
 
@@ -45,7 +47,7 @@ an introduction lesson). Two pairs from the original 8-unit map were merged (old
 
 | # | Lesson | Source | Status |
 |---|--------|--------|--------|
-| 1.0 | Introduction to Functions and Change | New (unit introduction) | new |
+| 1.0 | Introduction to Functions and Change | New (unit introduction) | authored |
 | 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | new |
 | 1.2 | Change in Tandem | CED 1.1 (was 1.1) | moved |
 | 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | moved |

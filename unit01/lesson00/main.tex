@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
@@ -19,78 +19,222 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify the input and output quantities
+    in real-world relationships, explain in everyday language what makes a
+    relationship a \textit{function} (each input produces exactly one output), and
+    read the story a graph tells --- where a quantity rises, falls, or holds steady.
+    \hfill\textit{\small (Unit introduction --- no CED topic)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+Identify the input and output quantities in a contextual relationship
+and decide which depends on which. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The input (independent) quantity is the one we choose or track;
+        the output (dependent) quantity responds to it.
+  \item Ordered pairs list input first, output second.
+\end{itemize} \\
+Decide informally whether a rule is a function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A function sends each input to \textit{exactly one} output ---
+        a dependable machine.
+  \item Two inputs sharing an output is fine (many-to-one); one input
+        with two outputs is not (one-to-many).
+\end{itemize} \\
+Read qualitative behavior from a graph or table. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A graph tells a story: rising, falling, or flat segments describe
+        how the output changes as the input moves.
+  \item Students interpret pre-drawn graphs; no freehand sketching.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+quantity             & Something measurable that can change: time, height, cost, temperature. \\
+input                & The quantity we choose or track; listed first in an ordered pair. \\
+output               & The quantity that responds; listed second in an ordered pair. \\
+independent variable & Another name for the input quantity. \\
+dependent variable   & Another name for the output quantity --- it \textit{depends} on the input. \\
+function             & A rule that sends each input to exactly one output. (Informal today; notation in 1.1.) \\
+increasing / decreasing / constant & How an output behaves as the input grows: rising, falling, or holding steady. \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: evaluating an algebraic expression at a value,
+    solving a two-step linear equation,
+    reading a value from a table and describing its trend,
+    recognizing a point on a coordinate axis.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+    \textbf{The trustworthy machine.} A vending machine and a claw machine both take
+    your money. Press B4 on the vending machine and you get the same bag of chips
+    \textit{every single time}; drop the claw and you get\ldots{} who knows.
+    \begin{enumerate}[itemsep=2pt]
+        \item Which machine can you \textit{trust}? Why?
+        \item What would it mean for the vending machine to ``break the rules''?
+    \end{enumerate}
+    \textit{Discussion prompt:} mathematics reserves a special name for the
+    trustworthy machine --- a \textit{function}: same input, same output, every time.
+    Collect student examples of dependable and undependable ``machines'' from life.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{multicols}{2}
+
+\textbf{Part 1: Quantities That Change Together} (12 min)
+
+Everything in this unit is about two quantities linked so that one responds to the
+other:
+\begin{itemize}
+  \item Minutes of talk time and the phone bill; hours a candle burns and its
+        height; time since you dropped a ball and its height.
+  \item For each pair, ask: which one do we \textit{choose or track} (input), and
+        which one \textit{responds} (output)?
+  \item Name the synonyms now: input = independent variable, output = dependent
+        variable. Ordered pairs list (input, output).
+\end{itemize}
+
+\textbf{Part 2: What Is a Function? (First Look)} (12 min)
+
+\begin{itemize}
+  \item The vending-machine idea, stated carefully: a rule is a \textbf{function}
+        when each input produces \textit{exactly one} output.
+  \item Examples and non-examples, tested aloud: student $\to$ ID number (yes);
+        month $\to$ students born that month (no --- one month, many students);
+        number $\to$ its double (yes); shoe size $\to$ a student who wears it
+        (no --- ambiguous).
+  \item Stress the asymmetry: two inputs may share an output (both twins have the
+        same birthday), but one input may never have two outputs.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: A Graph Tells a Story} (12 min)
+
+\begin{itemize}
+  \item Project the bike-ride graph from the guided notes (distance from home vs.\
+        time): ride away, rest, ride back.
+  \item Read it left to right as a story: rising segment = moving away, flat
+        segment = resting, falling segment = returning.
+  \item Ask where the rider is at $t = 5$ without any formula --- the graph
+        \textit{is} the information.
+  \item Vocabulary in action: increasing, decreasing, constant. No sketching ---
+        students only read and interpret.
+\end{itemize}
+
+\textbf{Where this unit goes.} This opener sets the unit's two big questions: how do
+we \textit{describe} a relationship between quantities (1.1 gives functions their
+notation, domain, and range), and how do we describe the way they \textit{change
+together} (1.2 onward)? Nothing today needs symbols --- the goal is that every
+student leaves able to say ``input, output, one output per input, and the graph
+tells the story.''
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} swapping input and output (``the bill determines the
+        minutes''). Cold-call: ``Which quantity do \textit{you} control?''
+  \item \textbf{Common error:} rejecting many-to-one rules as non-functions.
+        Ask: ``Two students both wear size 9. Does student $\to$ shoe size stop
+        being a function?'' (No --- each student still has one size.)
+  \item \textbf{Graph reading:} students describing a flat segment as ``nothing
+        happening.'' Push for precision: the input (time) is still moving; the
+        output is constant.
+  \item \textbf{Cold-call:} ``Give me a rule from your life that IS a function.
+        Now break it so it isn't.''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Graph Stories} in leveled tiers.
+Every tier reads pre-drawn or tabled data --- no tier sketches anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Match the labeled segments of the bathtub graph
+        (fill, soak, drain) to their descriptions and read values off the graph.
+  \item \textbf{Tier A (Apply):} A phone-battery table across a day: label each
+        interval increasing/decreasing, identify input and output, and explain why
+        battery percent is a function of time.
+  \item \textbf{Tier E (Extend):} A runner's distance-from-start story: complete a
+        table linking distance behavior to whether speed is zero or positive, and
+        resolve the puzzle ``two times share the same distance --- does that break
+        the function rule?''
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Identify the input and output quantities for an oven preheating.
+  \item Decide whether ``each car $\to$ its license plate number'' is a function,
+        with one sentence of reasoning.
+  \item From a small table of plant heights, name the interval where the height is
+        increasing.
+\end{enumerate}
+\textbf{Assessment note:} Item 2 is the heart of the lesson --- look for the phrase
+``exactly one'' (or an equivalent) in the reasoning, not just a circled yes. Sort
+tickets by item 2 and revisit the many-to-one vs.\ one-to-many distinction in the
+1.1 warm-up if more than a handful miss it.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 5 problems covering input/output identification in two contexts,
+three function-or-not judgments with reasons, a candle-height table read, a
+behavior-from-a-table item, and one SOL-style multiple-choice item.
+
+\textbf{Extension (optional):} Two different vending-machine buttons dispense the
+same snack --- is the machine still a function? Students explain why many-to-one
+does not break the rule.
+
+\textbf{Preview:} Next lesson (1.1, Function Fundamentals) functions get their
+notation --- $f(x)$ --- along with domain, range, and evaluating; in 1.2 we study
+how two quantities change \textit{in tandem}.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. The four items are pure Algebra 1
+maintenance --- this is also your first diagnostic look at the class. A student
+stuck on item 1 or 2 needs watching when evaluation returns with $f(x)$ notation
+in 1.1.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+Keep Part 2 verbal and fast --- the examples table does the work, and formal
+notation is deliberately absent (it arrives in 1.1; do not front-load it today).
+The bike-ride figure is pre-drawn: students annotate and fill blanks only. If time
+is short, the second practice item folds into the activity's Tier A discussion.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+Mixed-readiness groups work well today since no tier needs algebra. Tier R groups
+should articulate the segment story aloud before writing. The Tier E puzzle
+(repeated outputs) is the deepest idea in the lesson --- if a Tier E pair nails it,
+have them present it during the closing minutes.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+Collected, completion credit only (``mistakes happen, blanks don't''). Grade item 2
+with a one-second scan for ``exactly one'' reasoning --- that phrase predicts
+readiness for the formal definition in 1.1.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+Problem 5 is the first SOL-style multiple-choice item of the year --- tell students
+to expect one on most homeworks. The extension answer (many-to-one is fine) mirrors
+the Tier E puzzle, so students who did Tier E can be pointed at it as review rather
+than new work.
 \end{teachernote}
 \end{document}

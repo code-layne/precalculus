@@ -7,15 +7,135 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Group Activity}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[Graph Stories]{sky}
+\small
+Every graph in this activity tells a story about two quantities changing together.
+Your job is to read the stories --- no drawing required. The graph below shows the
+depth of water in a bathtub over 12 minutes.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.09cm]
+  \draw[->, thick] (0,0) -- (12.8,0) node[below right] {\small time (min)};
+  \draw[->, thick] (0,0) -- (0,30) node[above] {\small depth (cm)};
+  \foreach \x in {2,4,6,8,10,12} \draw (\x,0) -- (\x,-1.5) node[below] {\small \x};
+  \foreach \y in {8,16,24} \draw (0,\y) -- (-0.2,\y) node[left] {\small \y};
+  \draw[very thick, navy] (0,0) -- (3,24) node[midway, above left] {\small\bfseries A};
+  \draw[very thick, navy] (3,24) -- (8,24) node[midway, above] {\small\bfseries B};
+  \draw[very thick, navy] (8,24) -- (12,0) node[midway, above right] {\small\bfseries C};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Write the letter of the matching segment next to each description.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The tub is filling with water. \quad Segment \blank{1.5cm}
+          \item Someone is soaking; the water level holds steady. \quad Segment \blank{1.5cm}
+          \item The tub is draining. \quad Segment \blank{1.5cm}
+        \end{enumerate}
+
+  \item How deep is the water at $t = 5$ minutes? \quad \blank{2.5cm} cm
+
+  \item At what time is the tub empty again? \quad $t = $ \blank{2.5cm} minutes
+
+  \item For this graph: \quad Input quantity: \blank{2.6cm} \quad
+        Output quantity: \blank{3cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A phone's battery percentage is recorded during one day.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Time & 7 am & 9 am & 11 am & 1 pm & 3 pm & 5 pm \\
+\hline
+Battery \% & 100 & 80 & 60 & 95 & 75 & 55 \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{enumerate}[itemsep=8pt]
+  \item From 7 am to 11 am the battery percentage is \blank{2.8cm};
+        from 11 am to 1 pm it is \blank{2.8cm};
+        from 1 pm to 5 pm it is \blank{2.8cm}.
+
+  \item What probably happened between 11 am and 1 pm?
+
+        \vspace{0.05in}
+        \writeline
+
+  \item Input quantity: \blank{2.8cm} \quad Output quantity: \blank{3.2cm}
+
+  \item At any single moment, can this phone show two different battery
+        percentages? What does your answer tell you about whether battery
+        percentage is a \textbf{function} of time?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A runner leaves the starting line, jogs to a bench, sits for a water break, then
+jogs back to the start. ``Distance'' below means distance from the starting line.
+
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the speed column.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Interval} & \textbf{Distance is\ldots} & \textbf{Speed: zero or positive?} \\
+        \hline
+        start $\to$ bench & increasing & \blank{2.4cm} \\
+        \hline
+        resting at the bench & constant & \blank{2.4cm} \\
+        \hline
+        bench $\to$ start & decreasing & \blank{2.4cm} \\
+        \hline
+        \end{tabular}
+
+  \item The runner is 0.3 km from the start at one moment on the way out
+        \textit{and} at one moment on the way back. Two times share the same
+        distance --- does that break the function rule for distance as a function
+        of time? Explain.
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item Flip it: is \textbf{time} a function of \textbf{distance} for this runner?
+        Explain using the 0.3 km moment.
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

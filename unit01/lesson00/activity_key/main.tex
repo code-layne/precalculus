@@ -7,15 +7,135 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.0}{Group Activity --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[Graph Stories]{sky}
+\small
+Every graph in this activity tells a story about two quantities changing together.
+Your job is to read the stories --- no drawing required. The graph below shows the
+depth of water in a bathtub over 12 minutes.
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.09cm]
+  \draw[->, thick] (0,0) -- (12.8,0) node[below right] {\small time (min)};
+  \draw[->, thick] (0,0) -- (0,30) node[above] {\small depth (cm)};
+  \foreach \x in {2,4,6,8,10,12} \draw (\x,0) -- (\x,-1.5) node[below] {\small \x};
+  \foreach \y in {8,16,24} \draw (0,\y) -- (-0.2,\y) node[left] {\small \y};
+  \draw[very thick, navy] (0,0) -- (3,24) node[midway, above left] {\small\bfseries A};
+  \draw[very thick, navy] (3,24) -- (8,24) node[midway, above] {\small\bfseries B};
+  \draw[very thick, navy] (8,24) -- (12,0) node[midway, above right] {\small\bfseries C};
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Write the letter of the matching segment next to each description.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The tub is filling with water. \quad Segment \ans{A}
+          \item Someone is soaking; the water level holds steady. \quad Segment \ans{B}
+          \item The tub is draining. \quad Segment \ans{C}
+        \end{enumerate}
+
+  \item How deep is the water at $t = 5$ minutes? \quad \ans{24} cm
+
+  \item At what time is the tub empty again? \quad $t = $ \ans{12} minutes
+
+  \item For this graph: \quad Input quantity: \ans{time} \quad
+        Output quantity: \ans{water depth}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A phone's battery percentage is recorded during one day.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Time & 7 am & 9 am & 11 am & 1 pm & 3 pm & 5 pm \\
+\hline
+Battery \% & 100 & 80 & 60 & 95 & 75 & 55 \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{enumerate}[itemsep=8pt]
+  \item From 7 am to 11 am the battery percentage is \ans{decreasing};
+        from 11 am to 1 pm it is \ans{increasing};
+        from 1 pm to 5 pm it is \ans{decreasing}.
+
+  \item What probably happened between 11 am and 1 pm?
+
+        \vspace{0.05in}
+        \ansline{The phone was plugged in and charging, so the percentage rose from 60 to 95.}
+
+  \item Input quantity: \ans{time of day} \quad Output quantity: \ans{battery percentage}
+
+  \item At any single moment, can this phone show two different battery
+        percentages? What does your answer tell you about whether battery
+        percentage is a \textbf{function} of time?
+
+        \vspace{0.05in}
+        \ansline{No --- at each moment the phone shows exactly one percentage. That is precisely the function rule: each input (time) has exactly one output (percentage), so battery percentage is a function of time.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+A runner leaves the starting line, jogs to a bench, sits for a water break, then
+jogs back to the start. ``Distance'' below means distance from the starting line.
+
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the speed column.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Interval} & \textbf{Distance is\ldots} & \textbf{Speed: zero or positive?} \\
+        \hline
+        start $\to$ bench & increasing & \ans{positive} \\
+        \hline
+        resting at the bench & constant & \ans{zero} \\
+        \hline
+        bench $\to$ start & decreasing & \ans{positive} \\
+        \hline
+        \end{tabular}
+
+  \item The runner is 0.3 km from the start at one moment on the way out
+        \textit{and} at one moment on the way back. Two times share the same
+        distance --- does that break the function rule for distance as a function
+        of time? Explain.
+
+        \vspace{0.05in}
+        \ansline{No. Each time still has exactly one distance. The function rule only forbids one input having two outputs; two inputs sharing an output is allowed.}
+
+  \item Flip it: is \textbf{time} a function of \textbf{distance} for this runner?
+        Explain using the 0.3 km moment.
+
+        \vspace{0.05in}
+        \ansline{No. The input 0.3 km corresponds to two different times (once going out, once coming back), so one input has two outputs --- the function rule fails.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
