@@ -1,4 +1,4 @@
-%! Prerequisite Skills Review — Unit 1, Lesson 1.0 — Guided Notes
+%! Introduction to Functions and Change — Unit 1, Lesson 1.0 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -13,12 +13,12 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Evaluate an algebraic expression at a given value using the correct
-        \blank{2.8cm} of \blank{2.8cm}.
-  \item Solve linear equations and inequalities, writing the solution set of an
-        inequality in \blank{2.8cm} notation.
-  \item Read \blank{2.4cm} pairs in the coordinate plane and name the
-        \blank{2.4cm} a point lies in.
+  \item Identify the \blank{2.2cm} and \blank{2.2cm} quantities in a real-world
+        relationship and decide which depends on the other.
+  \item Explain what makes a relationship a function: each input produces
+        \blank{2.8cm} output.
+  \item Read a graph and describe where it is \blank{2.4cm}, \blank{2.4cm},
+        or constant.
 \end{enumerate}
 \end{objectivebox}
 
@@ -28,17 +28,17 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{navy}{expression:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{quantity:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{navy}{equation:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{input:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{navy}{solution:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{output:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{navy}{inequality:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{independent variable:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{navy}{interval notation:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{dependent variable:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{navy}{ordered pair:}}\\[1pt]
+\noindent\textbf{\textcolor{navy}{function (informal):}}\\[1pt]
 \writeline
 \end{vocabbox}
 
@@ -46,111 +46,106 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-A phone plan costs $C = 25 + 0.10t$ dollars per month, where $t$ is minutes of talk
-time. Three questions: What does a 200-minute month cost? A bill was \$40 --- how many
-minutes? Which months cost under \$30?
+A vending machine and a claw machine both take your money. Press B4 on the vending
+machine and you get the same bag of chips every single time; drop the claw
+and you get\ldots{} who knows.
 
-Which question is ``plug in'' and which is ``work backward''? What is the difference?
+Which machine can you \textit{trust}, and what does that have to do with math?
 \writelines{2}
 \end{hookbox}
 
 \vspace{0.1in}
 
 \boxguard
-\begin{notesbox}{1. Evaluating Expressions}
-\textbf{Order of operations:} parentheses, \blank{2.4cm}, multiplication and
-division, then \blank{2.4cm} and subtraction.
-
-\textbf{Substitution habit:} when substituting a negative value, always put it inside
-\blank{3cm}.
+\begin{notesbox}{1. Quantities That Change Together}
+This whole unit studies pairs of quantities where one \textbf{responds} to the
+other. The quantity we choose or track is the \textbf{input}; the quantity that
+responds is the \textbf{output}.
 
 \medskip
-\textbf{Example 1.} Evaluate $3x^2 - 2x + 1$ at $x = -2$.
-
-\begin{work}
-  3(-2)^2 - 2(-2) + 1 &= 3(4) + 4 + 1 \\
-                      &= 12 + 4 + 1 \\
-                      &= 17
-\end{work}
-
-Value: \blank{2.5cm}
+Complete the table; the first row is done for you.
 
 \smallskip
-\textit{Check yourself:} $(-2)^2 = $ \blank{1.5cm} but $-2^2 = $ \blank{1.5cm} ---
-the parentheses are the whole difference.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{0.40\linewidth}|c|c|}
+\hline
+\textbf{Situation} & \textbf{Input} & \textbf{Output} \\
+\hline
+Talking on a pay-per-minute phone plan & minutes talked & cost of the bill \\
+\hline
+A lit candle slowly burning down & \blank{2.4cm} & \blank{2.4cm} \\
+\hline
+A ball dropped from a rooftop & \blank{2.4cm} & \blank{2.4cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+The input is also called the \blank{2.8cm} variable, and the output the
+\blank{2.8cm} variable. Ordered pairs are written ( \blank{1.4cm} ,
+\blank{1.4cm} ).
 \end{notesbox}
 
 \vspace{0.1in}
 
 \boxguard
-\begin{notesbox}{2. Solving Equations \& Inequalities}
-\textbf{Golden rule:} undo operations in \blank{2.5cm} order, doing the same thing
-to both sides.
+\begin{notesbox}{2. What Is a Function? (First Look)}
+A rule is a \textbf{function} when each input produces \blank{3cm} output ---
+same input, same output, every time. (The notation arrives in Lesson 1.1.)
 
 \medskip
-\textbf{Example 2.} Solve $4x - 7 = 13$.
-
-\begin{work}
-  4x - 7 &= 13 \\
-      4x &= 20 \\
-       x &= 5
-\end{work}
-
-\textbf{Example 3.} Solve $5 - 2x > 11$.
-
-\begin{work}
-  5 - 2x &> 11 \\
-     -2x &> 6 \\
-       x &< -3
-\end{work}
-
-\textbf{The flip rule:} multiplying or dividing both sides by a negative number
-\blank{2.5cm} the inequality symbol.
-
-\medskip
-\textbf{Interval notation.} Complete the table.
+Decide whether each rule is a function; the first row is done for you.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|}
+\begin{tabular}{|p{0.58\linewidth}|c|}
 \hline
-\textbf{Inequality} & \textbf{Interval notation} \\
+\textbf{Rule} & \textbf{Function?} \\
 \hline
-$x < -3$ & \blank{2.6cm} \\
+each student $\to$ their student ID number & yes \\
 \hline
-$-1 \le x < 4$ & \blank{2.6cm} \\
+each month $\to$ the students born that month & \blank{1.8cm} \\
 \hline
-$x \ge 0$ & \blank{2.6cm} \\
+each number $\to$ its double & \blank{1.8cm} \\
+\hline
+each shoe size $\to$ a student who wears that size & \blank{1.8cm} \\
 \hline
 \end{tabular}
+\smallskip
+
+\textbf{The fine print:} two inputs may share an output, but one input may never
+have \blank{3cm}.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{notesbox}{3. The Coordinate Plane}
-An ordered pair $(x, y)$ lists the \blank{2.2cm} first and the \blank{2.2cm} second.
+\boxguard[30]
+\begin{notesbox}{3. A Graph Tells a Story}
+A cyclist rides away from home, rests, and rides back. The graph shows distance
+from home as time passes.
 
-\textbf{Quadrants:} numbered I--IV counterclockwise from the upper right. Complete
-the table; the first row is done for you.
+\begin{center}
+\begin{tikzpicture}[x=0.65cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (10,6);
+  \draw[->, thick] (0,0) -- (10.6,0) node[below right] {\small time (min)};
+  \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small distance (blocks)};
+  \foreach \x in {2,4,6,8,10} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,3,5} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, navy] (0,0) -- (4,5) node[midway, above left] {\small\bfseries A};
+  \draw[very thick, navy] (4,5) -- (6,5) node[midway, above] {\small\bfseries B};
+  \draw[very thick, navy] (6,5) -- (10,0) node[midway, above right] {\small\bfseries C};
+\end{tikzpicture}
+\end{center}
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{Point} & \textbf{Signs} $(x, y)$ & \textbf{Quadrant} \\
-\hline
-$(3, 8)$ & $(+, +)$ & I \\
-\hline
-$(-5, 2)$ & \blank{1.8cm} & \blank{1.8cm} \\
-\hline
-$(-1, -6)$ & \blank{1.8cm} & \blank{1.8cm} \\
-\hline
-$(4, -3)$ & \blank{1.8cm} & \blank{1.8cm} \\
-\hline
-$(0, 7)$ & --- & \blank{1.8cm} \\
-\hline
-\end{tabular}
+\begin{itemize}[itemsep=4pt]
+  \item Input quantity: \blank{2.6cm} \quad Output quantity: \blank{3.4cm}
+  \item Segment A ($t=0$ to $4$): the distance is \blank{2.6cm} --- the rider is
+        \blank{3.4cm}.
+  \item Segment B ($t=4$ to $6$): the graph is \blank{2.6cm} --- the rider is
+        \blank{3.4cm}.
+  \item Segment C ($t=6$ to $10$): the distance is \blank{2.6cm} --- the rider is
+        \blank{3.4cm}.
+  \item At $t = 5$, the rider is \blank{1.8cm} blocks from home.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
@@ -158,24 +153,38 @@ $(0, 7)$ & --- & \blank{1.8cm} \\
 \boxguard
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item Evaluate $x^2 - 3x$ at $x = -4$.
+  \item A movie theater tracks the number of tickets sold and the money collected
+        each night.
 
-\begin{work}
-  (-4)^2 - 3(-4) &= 16 + 12 \\
-                 &= 28
-\end{work}
+        Input: \blank{3cm} \quad Output: \blank{3cm}
 
-        Value: \blank{2.5cm}
+        Is the money collected a function of the tickets sold? Explain.
 
-  \item Solve $7 - 3x \ge 22$ and write the solution set in interval notation.
+        \vspace{0.05in}
+        \writeline
 
-\begin{work}
-  7 - 3x &\ge 22 \\
-     -3x &\ge 15 \\
-       x &\le -5
-\end{work}
+  \item The table shows quiz scores after different amounts of studying.
 
-        Interval notation: \blank{3cm}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Hours studied & 0 & 1 & 2 & 3 \\
+        \hline
+        Quiz score & 60 & 70 & 80 & 80 \\
+        \hline
+        \end{tabular}
+        \smallskip
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item From 0 to 2 hours, the score \blank{2.6cm}; from 2 to 3 hours it is
+                \blank{2.6cm}.
+          \item Inputs 2 and 3 share the output 80. Is the score still a function
+                of hours studied? Explain.
+
+                \vspace{0.05in}
+                \writeline
+        \end{enumerate}
 \end{enumerate}
 \end{practicebox}
 

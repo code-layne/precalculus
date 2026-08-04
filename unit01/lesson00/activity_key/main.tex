@@ -1,4 +1,4 @@
-%! Prerequisite Skills Review — Unit 1, Lesson 1.0 — Group Activity (Answer Key)
+%! Introduction to Functions and Change — Unit 1, Lesson 1.0 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -10,12 +10,23 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[Car-Wash Fundraiser]{sky}
+\begin{scenariobox}[Graph Stories]{sky}
 \small
-The math club runs a Saturday car wash. Supplies cost \$40, and the club charges
-\$8 per car, so the club's profit after washing $c$ cars is
-\[ P = 8c - 40. \]
-Work through the tier your teacher assigns. Every tier uses this same formula.
+Every graph in this activity tells a story about two quantities changing together.
+Your job is to read the stories --- no drawing required. The graph below shows the
+depth of water in a bathtub over 12 minutes.
+
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.09cm]
+  \draw[->, thick] (0,0) -- (12.8,0) node[below right] {\small time (min)};
+  \draw[->, thick] (0,0) -- (0,30) node[above] {\small depth (cm)};
+  \foreach \x in {2,4,6,8,10,12} \draw (\x,0) -- (\x,-1.5) node[below] {\small \x};
+  \foreach \y in {8,16,24} \draw (0,\y) -- (-0.2,\y) node[left] {\small \y};
+  \draw[very thick, navy] (0,0) -- (3,24) node[midway, above left] {\small\bfseries A};
+  \draw[very thick, navy] (3,24) -- (8,24) node[midway, above] {\small\bfseries B};
+  \draw[very thick, navy] (8,24) -- (12,0) node[midway, above right] {\small\bfseries C};
+\end{tikzpicture}
+\end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
@@ -26,33 +37,20 @@ Work through the tier your teacher assigns. Every tier uses this same formula.
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Complete the table of profits.
+  \item Write the letter of the matching segment next to each description.
 
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        Cars washed $c$ & 0 & 5 & 10 & 20 \\
-        \hline
-        Profit $P$ (\$) & \ans{$-40$} & \ans{0} & \ans{40} & \ans{120} \\
-        \hline
-        \end{tabular}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The tub is filling with water. \quad Segment \ans{A}
+          \item Someone is soaking; the water level holds steady. \quad Segment \ans{B}
+          \item The tub is draining. \quad Segment \ans{C}
+        \end{enumerate}
 
-  \item The profit at $c = 0$ is negative. What does that number mean for the club?
+  \item How deep is the water at $t = 5$ minutes? \quad \ans{24} cm
 
-        \vspace{0.05in}
-        \ansline{If no cars are washed, the club loses the \$40 it spent on supplies.}
+  \item At what time is the tub empty again? \quad $t = $ \ans{12} minutes
 
-  \item Solve $8c - 40 = 0$ to find the \textbf{break-even point} --- the number of
-        cars where the club stops losing money.
-
-\begin{work}
-  8c - 40 &= 0 \\
-       8c &= 40 \\
-        c &= 5
-\end{work}
-
-        Break-even: \ans{5} cars
+  \item For this graph: \quad Input quantity: \ans{time} \quad
+        Output quantity: \ans{water depth}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -63,33 +61,37 @@ Work through the tier your teacher assigns. Every tier uses this same formula.
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
+A phone's battery percentage is recorded during one day.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Time & 7 am & 9 am & 11 am & 1 pm & 3 pm & 5 pm \\
+\hline
+Battery \% & 100 & 80 & 60 & 95 & 75 & 55 \\
+\hline
+\end{tabular}
+\smallskip
+
 \begin{enumerate}[itemsep=8pt]
-  \item The club's goal is a \$120 profit. Solve $8c - 40 = 120$ to find how many
-        cars that takes.
+  \item From 7 am to 11 am the battery percentage is \ans{decreasing};
+        from 11 am to 1 pm it is \ans{increasing};
+        from 1 pm to 5 pm it is \ans{decreasing}.
 
-\begin{work}
-  8c - 40 &= 120 \\
-       8c &= 160 \\
-        c &= 20
-\end{work}
-
-        Cars needed: \ans{20}
-
-  \item A rival goal: profit of \textbf{at least} \$200. Solve $8c - 40 \ge 200$ and
-        write the solution in interval notation.
-
-\begin{work}
-  8c - 40 &\ge 200 \\
-       8c &\ge 240 \\
-        c &\ge 30
-\end{work}
-
-        Interval notation: \ans{$[30, \infty)$}
-
-  \item Write one sentence interpreting your interval answer in terms of cars washed.
+  \item What probably happened between 11 am and 1 pm?
 
         \vspace{0.05in}
-        \ansline{The club must wash 30 or more cars to make a profit of at least \$200.}
+        \ansline{The phone was plugged in and charging, so the percentage rose from 60 to 95.}
+
+  \item Input quantity: \ans{time of day} \quad Output quantity: \ans{battery percentage}
+
+  \item At any single moment, can this phone show two different battery
+        percentages? What does your answer tell you about whether battery
+        percentage is a \textbf{function} of time?
+
+        \vspace{0.05in}
+        \ansline{No --- at each moment the phone shows exactly one percentage. That is precisely the function rule: each input (time) has exactly one output (percentage), so battery percentage is a function of time.}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -100,26 +102,39 @@ Work through the tier your teacher assigns. Every tier uses this same formula.
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The science club runs a rival car wash with cheaper supplies but a lower price:
-their profit is $P = 6c + 10$.
+A runner leaves the starting line, jogs to a bench, sits for a water break, then
+jogs back to the start. ``Distance'' below means distance from the starting line.
 
 \begin{enumerate}[itemsep=8pt]
-  \item Solve $8c - 40 = 6c + 10$ to find the number of cars where the two clubs
-        earn the same profit.
+  \item Complete the speed column.
 
-\begin{work}
-  8c - 40 &= 6c + 10 \\
-       2c &= 50 \\
-        c &= 25
-\end{work}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Interval} & \textbf{Distance is\ldots} & \textbf{Speed: zero or positive?} \\
+        \hline
+        start $\to$ bench & increasing & \ans{positive} \\
+        \hline
+        resting at the bench & constant & \ans{zero} \\
+        \hline
+        bench $\to$ start & decreasing & \ans{positive} \\
+        \hline
+        \end{tabular}
 
-        Same profit at $c = $ \ans{25} cars; that profit is \$\ans{160}
-
-  \item For more than that many cars, which club earns more? Explain using the two
-        formulas --- not by testing single values.
+  \item The runner is 0.3 km from the start at one moment on the way out
+        \textit{and} at one moment on the way back. Two times share the same
+        distance --- does that break the function rule for distance as a function
+        of time? Explain.
 
         \vspace{0.05in}
-        \ansline{The math club. Its profit grows \$8 per car versus \$6 per car, so once the clubs tie at 25 cars, the math club gains \$2 more with every additional car and stays ahead for all $c > 25$.}
+        \ansline{No. Each time still has exactly one distance. The function rule only forbids one input having two outputs; two inputs sharing an output is allowed.}
+
+  \item Flip it: is \textbf{time} a function of \textbf{distance} for this runner?
+        Explain using the 0.3 km moment.
+
+        \vspace{0.05in}
+        \ansline{No. The input 0.3 km corresponds to two different times (once going out, once coming back), so one input has two outputs --- the function rule fails.}
 \end{enumerate}
 \end{tcolorbox}
 

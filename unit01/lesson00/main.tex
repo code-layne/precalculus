@@ -1,4 +1,4 @@
-%! Prerequisite Skills Review — Unit 1, Lesson 1.0 — Lesson Plan
+%! Introduction to Functions and Change — Unit 1, Lesson 1.0 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,7 +9,7 @@
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.0: Prerequisite Skills Review}
+\newcommand{\LessonNumberName}{Lesson 1.0: Introduction to Functions and Change}
 
 \begin{document}
 \begin{center}
@@ -19,11 +19,11 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will refresh the algebra skills this course
-    leans on every day --- evaluating expressions with correct order of operations,
-    solving linear equations and inequalities, writing solution sets in interval
-    notation, and reading information from the coordinate plane.
-    \hfill\textit{\small (Course opener --- no CED topic)}
+    \textbf{Primary Objective:} Students will identify the input and output quantities
+    in real-world relationships, explain in everyday language what makes a
+    relationship a \textit{function} (each input produces exactly one output), and
+    read the story a graph tells --- where a quantity rises, falls, or holds steady.
+    \hfill\textit{\small (Unit introduction --- no CED topic)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -32,200 +32,209 @@
 \textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-Evaluate algebraic expressions at given input values, respecting the
-order of operations. &
+Identify the input and output quantities in a contextual relationship
+and decide which depends on which. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Substituting a negative value requires parentheses: at $x=-2$,
-        $x^2$ means $(-2)^2 = 4$, not $-4$.
-  \item An expression has a \textit{value}; an equation has a \textit{solution}.
+  \item The input (independent) quantity is the one we choose or track;
+        the output (dependent) quantity responds to it.
+  \item Ordered pairs list input first, output second.
 \end{itemize} \\
-Solve linear equations and inequalities; express solution sets in
-interval notation. &
+Decide informally whether a rule is a function. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Undo operations in reverse order; whatever is done to one side
-        is done to the other.
-  \item Multiplying or dividing an inequality by a negative number
-        reverses the inequality symbol.
-  \item Interval notation is the course's default language for sets of
-        numbers: $x < -3$ is written $(-\infty, -3)$.
+  \item A function sends each input to \textit{exactly one} output ---
+        a dependable machine.
+  \item Two inputs sharing an output is fine (many-to-one); one input
+        with two outputs is not (one-to-many).
 \end{itemize} \\
-Read and interpret points in the coordinate plane. &
+Read qualitative behavior from a graph or table. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item An ordered pair $(x, y)$ lists input first, output second.
-  \item The signs of the coordinates locate the quadrant.
+  \item A graph tells a story: rising, falling, or flat segments describe
+        how the output changes as the input moves.
+  \item Students interpret pre-drawn graphs; no freehand sketching.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-variable           & A letter standing for a number that can change or is unknown. \\
-expression         & A combination of numbers, variables, and operations; it has a value but no equals sign. \\
-equation           & A statement that two expressions are equal; it can be solved. \\
-solution           & A value of the variable that makes an equation or inequality true. \\
-inequality         & A statement comparing two expressions with $<$, $>$, $\le$, or $\ge$. \\
-interval notation  & A way to write a set of numbers using endpoints, e.g.\ $(-2, 5]$. \\
-ordered pair       & A point $(x, y)$ in the coordinate plane: input first, output second. \\
-quadrant           & One of the four regions of the coordinate plane cut out by the axes. \\
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+quantity             & Something measurable that can change: time, height, cost, temperature. \\
+input                & The quantity we choose or track; listed first in an ordered pair. \\
+output               & The quantity that responds; listed second in an ordered pair. \\
+independent variable & Another name for the input quantity. \\
+dependent variable   & Another name for the output quantity --- it \textit{depends} on the input. \\
+function             & A rule that sends each input to exactly one output. (Informal today; notation in 1.1.) \\
+increasing / decreasing / constant & How an output behaves as the input grows: rising, falling, or holding steady. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     Please see attached warm-up (spiral review).
-    Skills reviewed: order of operations on a numeric expression,
-    evaluating an algebraic expression at a value,
+    Skills reviewed: evaluating an algebraic expression at a value,
     solving a two-step linear equation,
-    naming the quadrant of a given point.
+    reading a value from a table and describing its trend,
+    recognizing a point on a coordinate axis.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    Put the monthly cell-phone cost $C = 25 + 0.10t$ on the board ($t$ = minutes of
-    talk time). \textbf{Three rapid-fire questions, no calculators:}
+    \textbf{The trustworthy machine.} A vending machine and a claw machine both take
+    your money. Press B4 on the vending machine and you get the same bag of chips
+    \textit{every single time}; drop the claw and you get\ldots{} who knows.
     \begin{enumerate}[itemsep=2pt]
-        \item What does a 200-minute month cost? \textit{(evaluate)}
-        \item A bill came to \$40 --- how many minutes was that? \textit{(solve)}
-        \item Which months cost under \$30? \textit{(inequality)}
+        \item Which machine can you \textit{trust}? Why?
+        \item What would it mean for the vending machine to ``break the rules''?
     \end{enumerate}
-    \textit{Discussion prompt:} All three questions use the same formula --- what changed
-    was whether we were \textit{plugging in} or \textit{working backward}. That
-    distinction (evaluate vs.\ solve) is the spine of the whole lesson.
+    \textit{Discussion prompt:} mathematics reserves a special name for the
+    trustworthy machine --- a \textit{function}: same input, same output, every time.
+    Collect student examples of dependable and undependable ``machines'' from life.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
 \begin{multicols}{2}
 
-\textbf{Part 1: Evaluating Expressions} (12 min)
+\textbf{Part 1: Quantities That Change Together} (12 min)
 
-Anchor on the substitution-with-parentheses habit:
+Everything in this unit is about two quantities linked so that one responds to the
+other:
 \begin{itemize}
-  \item Evaluate $3x^2 - 2x + 1$ at $x = -2$ \textit{with} parentheses on the board:
-        $3(-2)^2 - 2(-2) + 1 = 17$.
-  \item Common wrong answers are $-11$ and $9$ --- both come from dropping the
-        parentheses on $(-2)^2$ or mishandling $-2(-2)$.
-  \item Name the rule: exponents before multiplication; substitute inside
-        parentheses \textit{every} time.
+  \item Minutes of talk time and the phone bill; hours a candle burns and its
+        height; time since you dropped a ball and its height.
+  \item For each pair, ask: which one do we \textit{choose or track} (input), and
+        which one \textit{responds} (output)?
+  \item Name the synonyms now: input = independent variable, output = dependent
+        variable. Ordered pairs list (input, output).
 \end{itemize}
 
-\textbf{Part 2: Solving Equations \& Inequalities} (15 min)
+\textbf{Part 2: What Is a Function? (First Look)} (12 min)
 
 \begin{itemize}
-  \item Solve $4x - 7 = 13$ --- narrate ``undo in reverse order'': add 7, divide by 4.
-  \item Solve $5 - 2x > 11$ --- the divide-by-$(-2)$ step \textbf{flips} the symbol:
-        $x < -3$.
-  \item Translate the answer to interval notation: $(-\infty, -3)$. Establish
-        interval notation as the course default now, before Lessons 1.1--1.2 need it
-        for domains and intervals of increase.
+  \item The vending-machine idea, stated carefully: a rule is a \textbf{function}
+        when each input produces \textit{exactly one} output.
+  \item Examples and non-examples, tested aloud: student $\to$ ID number (yes);
+        month $\to$ students born that month (no --- one month, many students);
+        number $\to$ its double (yes); shoe size $\to$ a student who wears it
+        (no --- ambiguous).
+  \item Stress the asymmetry: two inputs may share an output (both twins have the
+        same birthday), but one input may never have two outputs.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: The Coordinate Plane} (10 min)
+\textbf{Part 3: A Graph Tells a Story} (12 min)
 
 \begin{itemize}
-  \item Ordered pair $(x, y)$: input first, output second --- this becomes
-        (input, output) for functions starting in Lesson 1.1.
-  \item Quadrant sign patterns: I $(+,+)$, II $(-,+)$, III $(-,-)$, IV $(+,-)$;
-        points on an axis are in no quadrant.
-  \item Fill in a point-to-quadrant table together --- students classify given
-        points; no plotting from scratch.
+  \item Project the bike-ride graph from the guided notes (distance from home vs.\
+        time): ride away, rest, ride back.
+  \item Read it left to right as a story: rising segment = moving away, flat
+        segment = resting, falling segment = returning.
+  \item Ask where the rider is at $t = 5$ without any formula --- the graph
+        \textit{is} the information.
+  \item Vocabulary in action: increasing, decreasing, constant. No sketching ---
+        students only read and interpret.
 \end{itemize}
 
-\textbf{Why this lesson exists.} This is a non-honors course opener with no CED
-topic. Every skill here is used within two weeks: evaluation feeds function
-notation (1.1--1.2), inequalities and interval notation feed domains and
-increasing/decreasing intervals (1.1--1.2), and coordinate reading feeds every graph
-in the course. Treat the day as diagnosis as much as review --- the exit ticket
-tells you who needs intervention before Lesson 1.1.
+\textbf{Where this unit goes.} This opener sets the unit's two big questions: how do
+we \textit{describe} a relationship between quantities (1.1 gives functions their
+notation, domain, and range), and how do we describe the way they \textit{change
+together} (1.2 onward)? Nothing today needs symbols --- the goal is that every
+student leaves able to say ``input, output, one output per input, and the graph
+tells the story.''
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
 While students work on guided notes and practice, circulate and check:
 \begin{itemize}
-  \item \textbf{Common error:} substituting $-2$ into $x^2$ without parentheses and
-        getting $-4$. Cold-call: ``What is $(-3)^2$? What is $-3^2$? Why are they different?''
-  \item \textbf{Common error:} forgetting to flip the inequality when dividing by a
-        negative. Ask: ``Is $x = -10$ a solution of $5 - 2x > 11$? Check it against your answer.''
-  \item \textbf{Notation check:} interval notation direction --- smaller endpoint always
-        first; $\infty$ always gets a parenthesis, never a bracket.
-  \item \textbf{Cold-call:} ``Give me a point in Quadrant III. Now give me a point that is in
-        \textit{no} quadrant.''
+  \item \textbf{Common error:} swapping input and output (``the bill determines the
+        minutes''). Cold-call: ``Which quantity do \textit{you} control?''
+  \item \textbf{Common error:} rejecting many-to-one rules as non-functions.
+        Ask: ``Two students both wear size 9. Does student $\to$ shoe size stop
+        being a function?'' (No --- each student still has one size.)
+  \item \textbf{Graph reading:} students describing a flat segment as ``nothing
+        happening.'' Push for precision: the input (time) is still moving; the
+        output is constant.
+  \item \textbf{Cold-call:} ``Give me a rule from your life that IS a function.
+        Now break it so it isn't.''
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Car-Wash Fundraiser} in leveled tiers.
-Every tier uses the same profit formula $P = 8c - 40$ ($c$ = cars washed).
+Students work on the \textbf{Group Activity: Graph Stories} in leveled tiers.
+Every tier reads pre-drawn or tabled data --- no tier sketches anything.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Evaluate $P$ for given values of $c$ by completing
-        a table, then solve $8c - 40 = 0$ to find the break-even point.
-  \item \textbf{Tier A (Apply):} Solve $8c - 40 = 120$ for a profit goal, solve the
-        inequality $8c - 40 \ge 200$, and write the answer in interval notation with a
-        sentence interpreting it.
-  \item \textbf{Tier E (Extend):} Compare against a rival club's plan $P = 6c + 10$:
-        solve $8c - 40 = 6c + 10$ to find where the plans tie, and explain which plan
-        earns more for larger numbers of cars and why.
+  \item \textbf{Tier R (Remediate):} Match the labeled segments of the bathtub graph
+        (fill, soak, drain) to their descriptions and read values off the graph.
+  \item \textbf{Tier A (Apply):} A phone-battery table across a day: label each
+        interval increasing/decreasing, identify input and output, and explain why
+        battery percent is a function of time.
+  \item \textbf{Tier E (Extend):} A runner's distance-from-start story: complete a
+        table linking distance behavior to whether speed is zero or positive, and
+        resolve the puzzle ``two times share the same distance --- does that break
+        the function rule?''
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item Evaluate $2x^2 - 5x$ at $x = -1$.
-  \item Solve $3(x - 4) = 21$.
-  \item Write the inequality $x > -2$ in interval notation.
+  \item Identify the input and output quantities for an oven preheating.
+  \item Decide whether ``each car $\to$ its license plate number'' is a function,
+        with one sentence of reasoning.
+  \item From a small table of plant heights, name the interval where the height is
+        increasing.
 \end{enumerate}
-\textbf{Assessment note:} This exit ticket is a diagnostic. Sort collected tickets into
-three piles (0--1 correct, 2 correct, 3 correct) and use the piles to seed Tier R
-membership for Lesson 1.1. Watch for the $(-1)^2$ sign error on item 1 --- it predicts
-trouble with every evaluation in Unit 1.
+\textbf{Assessment note:} Item 2 is the heart of the lesson --- look for the phrase
+``exactly one'' (or an equivalent) in the reasoning, not just a circled yes. Sort
+tickets by item 2 and revisit the many-to-one vs.\ one-to-many distinction in the
+1.1 warm-up if more than a handful miss it.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering evaluation at a negative input, two-step and
-distributed linear equations, an inequality answered in interval notation, quadrant
-classification from a table, and one SOL-style multiple-choice item.
+\textbf{Homework:} 5 problems covering input/output identification in two contexts,
+three function-or-not judgments with reasons, a candle-height table read, a
+behavior-from-a-table item, and one SOL-style multiple-choice item.
 
-\textbf{Extension (optional):} Solve the literal equation $P = 2\ell + 2w$ for $w$ ---
-rearranging formulas is a quiet calculus-readiness skill.
+\textbf{Extension (optional):} Two different vending-machine buttons dispense the
+same snack --- is the machine still a function? Students explain why many-to-one
+does not break the rule.
 
-\textbf{Preview:} Next lesson (1.1, Function Fundamentals) we give the input--output
-relationship a name --- \textit{function} --- and learn its notation; in 1.2 we study
+\textbf{Preview:} Next lesson (1.1, Function Fundamentals) functions get their
+notation --- $f(x)$ --- along with domain, range, and evaluating; in 1.2 we study
 how two quantities change \textit{in tandem}.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. All four items are Algebra 1 level on
-purpose --- a student stuck here needs a seat near the front during Part 1. Item 4
-(quadrant naming) is the fastest to grade at a glance.
+Five minutes, silent start, no calculators. The four items are pure Algebra 1
+maintenance --- this is also your first diagnostic look at the class. A student
+stuck on item 1 or 2 needs watching when evaluation returns with $f(x)$ notation
+in 1.1.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-The three worked examples (evaluate, solve, inequality) are in \textit{work} blocks:
-students get blank work space, the key shows the steps. Insist on the parentheses
-habit in Example 1 even from students who get 17 without them --- the habit is what
-transfers to $f(-2)$ notation next lesson. The vocabulary box is light; move through
-it quickly and spend the time in Parts 1--2.
+Keep Part 2 verbal and fast --- the examples table does the work, and formal
+notation is deliberately absent (it arrives in 1.1; do not front-load it today).
+The bike-ride figure is pre-drawn: students annotate and fill blanks only. If time
+is short, the second practice item folds into the activity's Tier A discussion.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-Assign tiers from what you saw during notes, not from last year's grades. Tier R
-groups should reach the break-even question --- it is the payoff. If a Tier E pair
-finishes early, ask them to find a value of $c$ where the rival plan is better and
-defend it with a computation.
+Mixed-readiness groups work well today since no tier needs algebra. Tier R groups
+should articulate the segment story aloud before writing. The Tier E puzzle
+(repeated outputs) is the deepest idea in the lesson --- if a Tier E pair nails it,
+have them present it during the closing minutes.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected and sorted, not graded for accuracy --- completion credit only (``mistakes
-happen, blanks don't''). The three-pile sort described in the Assessment box takes
-under five minutes and is the whole point of the day.
+Collected, completion credit only (``mistakes happen, blanks don't''). Grade item 2
+with a one-second scan for ``exactly one'' reasoning --- that phrase predicts
+readiness for the formal definition in 1.1.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
 Problem 5 is the first SOL-style multiple-choice item of the year --- tell students
-to expect one on most homeworks. The extension (solving $P = 2\ell + 2w$ for $w$) is
-genuinely optional; do not chase completion on it.
+to expect one on most homeworks. The extension answer (many-to-one is fine) mirrors
+the Tier E puzzle, so students who did Tier E can be pointed at it as review rather
+than new work.
 \end{teachernote}
 \end{document}

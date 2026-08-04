@@ -42,12 +42,12 @@ Status legend: **moved** = old lesson relocated, body not yet reauthored;
 ### Unit 1: Functions and Change
 
 Replanned August 2026: Unit 1 numbers its eight lessons **1.0–1.7** (the unit opens with
-a prerequisite-skills review lesson). Two pairs from the original 8-unit map were merged
-(old 1.2+1.3 → 1.3; old 1.7+1.8 → 1.7), and two new lessons were added at the front.
+an introduction lesson). Two pairs from the original 8-unit map were merged (old 1.2+1.3
+→ 1.3; old 1.7+1.8 → 1.7), and two new lessons were added at the front.
 
 | # | Lesson | Source | Status |
 |---|--------|--------|--------|
-| 1.0 | Prerequisite Skills Review | New (course opener) | authored |
+| 1.0 | Introduction to Functions and Change | New (unit introduction) | authored |
 | 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | new |
 | 1.2 | Change in Tandem | CED 1.1 (was 1.1) | moved |
 | 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | moved |
@@ -56,10 +56,8 @@ a prerequisite-skills review lesson). Two pairs from the original 8-unit map wer
 | 1.6 | Inverse Functions | CED 2.8 (was 2.8) | moved |
 | 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | moved |
 
-Rationale: the unit opens with a prerequisite-skills review (1.0, authored: order of
-operations, linear equations and inequalities, interval notation, the coordinate
-plane) and an explicit function-fundamentals ramp (1.1) for the non-honors track,
-then the function toolkit
+Rationale: the unit opens with an orientation lesson (1.0) and an explicit
+function-fundamentals ramp (1.1) for the non-honors track, then the function toolkit
 (transformations, composition, inverses) is pulled forward so every later unit can use
 it. Composition and inverses land here — before exponentials need them — instead of
 mid-Unit-2 as in the CED. Average rate of change and its linear/quadratic application
