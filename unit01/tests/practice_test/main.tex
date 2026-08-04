@@ -1,0 +1,174 @@
+%! Unit 1: Functions and Change — Summative Assessment — Practice Test --- Study Copy (blank)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Functions and Change}{Practice Test --- Study Copy}
+\namedateperiod
+
+\vspace{0.10in}
+\begin{remindbox}
+\small
+\textbf{This is a practice test.} It mirrors the real Unit 1 test in length, format,
+and the ideas it covers, but the numbers and contexts differ. Work every problem
+with no notes, then check your answers against the key.
+\end{remindbox}
+
+% ======================================================================
+\parthead{Part A --- Vocabulary (8 pts)}
+Write the letter of the best description next to each term.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.42\textwidth}
+\begin{enumerate}[leftmargin=2.2em, itemsep=7pt, label=\arabic*.]
+  \item Function \blank{1.2cm}
+  \item Domain \blank{1.2cm}
+  \item Range \blank{1.2cm}
+  \item Average rate of change \blank{1.2cm}
+  \item Concave up \blank{1.2cm}
+  \item Parent function \blank{1.2cm}
+  \item Composition \blank{1.2cm}
+  \item Inverse function \blank{1.2cm}
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.55\textwidth}
+\small
+\begin{description}[leftmargin=1.4em, itemsep=3pt]
+  \item[(A)] The set of every output the function actually produces.
+  \item[(B)] The simplest form of a family, before any shift or stretch.
+  \item[(C)] A rule that sends each input to \emph{exactly one} output.
+  \item[(D)] The function that reverses the input--output pairs of $f$.
+  \item[(E)] Feeding the output of one function into another: $f(g(x))$.
+  \item[(F)] The slope of the secant line, $\dfrac{f(b)-f(a)}{b-a}$.
+  \item[(G)] The set of every input the function is allowed to take.
+  \item[(H)] Bending upward --- the rate of change is increasing.
+\end{description}
+\end{minipage}
+
+% ======================================================================
+\parthead{Part B --- Multiple Choice (12 pts)}
+Circle the best answer.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt]
+  \item A relation fails to be a function exactly when
+    \hfill (A) two inputs share an output \quad (B) one input has two outputs \\
+    \phantom{x}\hfill (C) the graph crosses the $x$-axis \quad (D) the domain is restricted
+  \item If a function is decreasing and concave up on an interval, its output is
+    \hfill (A) falling faster and faster \quad (B) falling, but more and more slowly \\
+    \phantom{x}\hfill (C) rising more and more slowly \quad (D) changing at a constant rate
+  \item A table of $f$ has equally spaced inputs and \textbf{constant second} differences.
+    The best model is
+    \hfill (A) linear \quad (B) quadratic \quad (C) exponential \quad (D) none of these
+  \item The graph of $g(x) = f(x+3)$ is the graph of $f$ shifted
+    \hfill (A) $3$ right \quad (B) $3$ left \quad (C) $3$ up \quad (D) $3$ down
+  \item If $f(x) = x^2$ and $g(x) = x - 1$, then $(f \circ g)(4)$ equals
+    \hfill (A) $9$ \quad (B) $15$ \quad (C) $16$ \quad (D) $3$
+  \item A function has an inverse that is also a function exactly when the function is
+    \hfill (A) increasing somewhere \quad (B) one-to-one \quad
+    (C) concave up \quad (D) defined at $0$
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part C --- Short Answer \& Computation (30 pts)}
+Show your work.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=13pt]
+  \item Let $f(x) = 2x^2 - 5$. Compute \textbf{(a)} $f(3)$, \quad \textbf{(b)} $f(-2)$, \quad
+        \textbf{(c)} the value of $x$ (there are two) for which $f(x) = 3$.
+        \vspace{1.6cm}
+  \item The graph of $y = f(x)$ is shown below.
+        \textbf{(a)} On what interval is $f$ decreasing?
+        \textbf{(b)} Is $f$ concave up or concave down on the whole picture?
+        \textbf{(c)} List the zeros of $f$.
+        \textbf{(d)} What is $f(3)$?
+
+        \vspace{2pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.68]
+          \draw[linegray, very thin] (-0.4,-2.4) grid (6.4,3.4);
+          \draw[->] (-0.4,0) -- (6.6,0) node[right]{\small $x$};
+          \draw[->] (0,-2.4) -- (0,3.6) node[above]{\small $y$};
+          \foreach \x in {1,...,6} \draw (\x,0.09) -- (\x,-0.09) node[below]{\scriptsize $\x$};
+          \foreach \y in {-2,-1,1,2,3} \draw (0.09,\y) -- (-0.09,\y) node[left]{\scriptsize $\y$};
+          \draw[plum, very thick] plot[smooth] coordinates
+            {(0,2.5) (1,0) (2,-1.5) (3,-2) (4,-1.5) (5,0) (6,2.5)};
+        \end{tikzpicture}
+        \end{center}
+        \vspace{0.9cm}
+  \item A tank is draining. The volume $V$ (gallons) after $t$ minutes is given below.
+
+        \vspace{2pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $t$ (min) & $0$ & $4$ & $8$ & $12$ \\ \hline
+        $V$ (gal) & $180$ & $148$ & $124$ & $108$ \\ \hline
+        \end{tabular}
+        \end{center}
+        \vspace{2pt}
+        \textbf{(a)} Find the average rate of change of $V$ from $t = 0$ to $t = 8$.
+        \textbf{(b)} Give its units and say in one sentence what it means for the tank.
+        \textbf{(c)} Is the tank draining faster or slower as time goes on? Justify with the numbers.
+        \vspace{1.8cm}
+  \item The table below has equally spaced inputs. Compute the first differences and the
+        second differences, then name the function type (linear, quadratic, or neither).
+
+        \vspace{2pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+        $g(x)$ & $2$ & $5$ & $12$ & $23$ & $38$ \\ \hline
+        \end{tabular}
+        \end{center}
+        \vspace{1.6cm}
+  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and range
+        $[0,\infty)$. Let $g(x) = -2f(x - 1) + 4$.
+        \textbf{(a)} Describe every transformation, in order.
+        \textbf{(b)} State the domain and range of $g$.
+        \vspace{1.8cm}
+  \item Let $f(x) = 3x + 1$ and $g(x) = x^2 - 2$.
+        \textbf{(a)} Compute $f(g(2))$. \quad \textbf{(b)} Compute $g(f(2))$.
+        \textbf{(c)} Write a formula for $(f \circ g)(x)$.
+        \textbf{(d)} What do (a) and (b) show about the order of composition?
+        \vspace{1.8cm}
+  \item Let $f(x) = \dfrac{x - 5}{2}$.
+        \textbf{(a)} Find $f^{-1}(x)$ using the swap-and-solve method.
+        \textbf{(b)} Verify your answer by computing $f\!\left(f^{-1}(x)\right)$.
+        \vspace{1.8cm}
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part D --- Extended Response (10 pts)}
+Explain your reasoning in full sentences.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=16pt]
+  \item A rectangular dog run is built against a barn wall, so only \textbf{three} sides need
+        fencing. The builder has $60$ feet of fence. Let $x$ be the length of each of the two
+        sides perpendicular to the barn.
+        \textbf{(a)} Write the area $A$ as a function of $x$.
+        \textbf{(b)} What type of function is $A$, and how do you know?
+        \textbf{(c)} State the domain restriction that the context forces, and explain why.
+        \textbf{(d)} State one assumption this model rests on.
+        \vspace{2.6cm}
+  \item Let $f(x) = x^2$ with domain all real numbers.
+        \textbf{(a)} Explain why $f$ has no inverse function on that domain.
+        \textbf{(b)} Give a domain restriction that fixes the problem, and write the resulting
+        inverse.
+        \textbf{(c)} Explain how the graph of a function and the graph of its inverse are related.
+        \vspace{2.2cm}
+\end{enumerate}
+
+\end{document}
