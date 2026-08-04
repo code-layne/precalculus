@@ -7,97 +7,108 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.2}{Homework}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=12pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item The table below shows values of a function $f$.
+\item A pumpkin is planted at $t = 0$ and harvested at $t = 16$ weeks. Its
+      weight grows the whole time: slowly at first, then faster and faster
+      until week 10 --- after week 10 it keeps gaining, but the weekly gains
+      shrink.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Circle one: over $0 < t < 16$, the weight is \textbf{increasing} /
+        \textbf{decreasing}.
+  \item The weight function is concave \textbf{up} on \blank{1cm}
+        $< t <$ \blank{1cm} and concave \textbf{down} on \blank{1cm}
+        $< t <$ \blank{1cm}.
+\end{enumerate}
+
+\item The graph of a function $f$ is shown.
+
+\begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.55cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (7,4);
+  \draw[->, thick] (0,0) -- (7.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5,6,7} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,2,3,4} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,4) -- (4,0);
+  \draw[very thick, plum] (4,0) -- (7,3);
+  \fill[plum] (0,4) circle (2.5pt);
+  \fill[plum] (7,3) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Decreasing for \blank{1cm} $< x <$ \blank{1cm} \qquad
+        Increasing for \blank{1cm} $< x <$ \blank{1cm}
+  \item The zero of $f$ is $x = $ \blank{1.4cm}.
+  \item Domain: \blank{1.2cm} $\le x \le$ \blank{1.2cm} \qquad
+        Range: \blank{1.2cm} $\le y \le$ \blank{1.2cm}
+\end{enumerate}
+
+\item A savings account balance $S(m)$, in dollars, is shown for the first
+      months of the year.
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-$x$    & 1  & 2  & 3  & 4  & 5  & 6  \\
+$m$ (months) & 0 & 1 & 2 & 3 \\
 \hline
-$f(x)$ & 10 & 16 & 20 & 22 & 21 & 17 \\
+$S(m)$ (\$) & 400 & 440 & 490 & 550 \\
 \hline
 \end{tabular}
+\smallskip
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item State the domain of $f$ based on the table. \blank{5cm}
-  \item State the range of $f$ based on the table. \blank{5cm}
-  \item On what interval(s) is $f$ increasing? \blank{4cm} \; Decreasing? \blank{4cm}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item The monthly gains are \blank{1.2cm} , \blank{1.2cm} ,
+        \blank{1.2cm} dollars.
+  \item Circle one: $S$ is \textbf{concave up} / \textbf{concave down},
+        because the rate of change is \blank{2.4cm}.
 \end{enumerate}
 
-\item A ball is thrown upward from the ground. Its height above the ground is 0 at $t = 0$,
-rises to a maximum of 64 ft at $t = 2$ seconds, then returns to 0 at $t = 4$ seconds.
+\item Can a function be \textbf{decreasing} and \textbf{concave up} at the
+      same time? If yes, describe a real context that behaves this way; if
+      no, explain why not.
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item On what interval is the height function increasing? \blank{4cm}
-  \item On what interval is it decreasing? \blank{4cm}
-  \item What are the zeros of the height function (i.e., when is height $= 0$)?
+\vspace{0.05in}
+\writelines{2}
 
-        \blank{6cm}
-\end{enumerate}
+\item A function is increasing and concave down on an interval. Which
+      description fits?
 
-\item \textbf{Rate of Change Preview.} Using the table from Problem 1:
-
-Compute the average rate of change of $f$ from $x = 1$ to $x = 3$:
-
-\[
-  \text{Avg.\ rate of change} = \frac{f(3) - f(1)}{3 - 1} = \frac{\blank{1.2cm} - \blank{1.2cm}}{\blank{1.2cm}} = \blank{2cm}
-\]
-
-\item Is the following statement true or false? Explain your reasoning.
-
-\textit{"If a graph is concave up on an interval, then the function must be increasing on that interval."}
-
-\vspace{0.3in}
-\writeline\\[4pt]
-\writeline
-
-\item \textbf{AP-Style Multiple Choice.} A function $g$ is defined so that as $x$ increases on
-$[2, 6]$, the output $g(x)$ increases, but the amount of increase gets smaller with each unit.
-Which of the following best describes the graph of $g$ on $[2, 6]$?
-
-\begin{enumerate}[label=(\Alph*), itemsep=3pt]
-  \item Increasing and concave up
-  \item Increasing and concave down
-  \item Decreasing and concave up
-  \item Decreasing and concave down
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item The outputs fall, dropping faster and faster.
+  \item The outputs climb, but the gains shrink as the input grows.
+  \item The outputs climb, and the gains grow as the input grows.
+  \item The outputs fall, but the drops shrink as the input grows.
 \end{enumerate}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{extensionbox}
-\textbf{Extension (optional).} A hiker takes a break partway through a trail. Her elevation
-$E$ (in feet) behaves as follows:
-\begin{itemize}
-  \item From $t = 0$ to $t = 2$: elevation increases from 300 ft to 1{,}200 ft.
-        The gain per hour is getting smaller (starts fast, slows down).
-  \item From $t = 2$ to $t = 3$: elevation stays constant at 1{,}200 ft (she rests).
-  \item From $t = 3$ to $t = 5$: elevation increases from 1{,}200 ft to 2{,}000 ft.
-        The gain per hour is getting larger (she's energized again).
-\end{itemize}
+A hiker climbs for 2 hours, rests on a ledge for 1 hour, then climbs the
+rest of the way. During the resting hour, her elevation function is neither
+increasing nor decreasing. Why does neither definition apply? (Hint: compare
+$E(a)$ and $E(b)$ for two moments $a < b$ during the rest.)
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Identify all intervals where $E$ is increasing, decreasing, or constant.
-  \item On which piece(s) of the domain is the graph of $E$ concave up? Concave down? Explain.
-  \item At $t = 2$ and $t = 3$, what happens to the rate of change? What does that mean for concavity?
-\end{enumerate}
+\vspace{0.05in}
+\writelines{2}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\begin{reflectionbox}
-\textbf{Lesson Preview.} In Lesson 1.2, we will formalize the idea of \textit{rate of change}
-and compute it precisely --- seeing exactly how fast a function's output changes per unit of input.
-Problem 3 above gave you a first look. Come ready to connect that computation to the ideas of
-increasing, decreasing, and concavity from today.
-\end{reflectionbox}
+\boxguard
+\begin{notesbox}{Preview of Lesson 1.3}
+Today we said a tank gains ``14, then 6, then 4 gallons'' and called the
+change slowing. Lesson 1.3, \textit{Rates of Change}, puts one number on a
+whole interval's change --- the \textit{average rate of change} --- and
+computes it exactly.
+\end{notesbox}
 
 \end{document}
