@@ -7,15 +7,278 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Guided Notes}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Read the real \blank{1.6cm} of a polynomial from its factored form,
+        and write a factored form from a list of zeros.
+  \item Find the \blank{2.4cm} of each real zero and predict whether the graph
+        \blank{1.7cm} the $x$-axis there or is \blank{1.9cm} to it.
+  \item Find the \blank{1.6cm} of a polynomial from a table of values using
+        successive differences.
+\end{enumerate}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Zero of a function:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Root:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{$x$-intercept:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Linear factor:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Multiplicity:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Tangent to the $x$-axis:}}\\[1pt]
+\writeline
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+Four questions, four different tests, one polynomial $p(x) = x^2 - x - 6$:
+
+\smallskip
+\textit{Solve $p(x) = 0$.} \quad \textit{Find the roots.} \quad
+\textit{Find the zeros of $p$.} \quad \textit{Find the $x$-intercepts.}
+
+\smallskip
+What do all four questions have in common --- and what is the one answer?
+
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{1. Four Names for One Idea}
+A number $a$ is a \textbf{zero} of the function $p$ when
+$p(a) = $ \blank{1.2cm}. That one fact wears several different names,
+depending on who is asking.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{The wording} & \textbf{What it asks for} \\
+\hline
+$a$ is a \textbf{zero} of $p$ & an input that makes the \blank{1.8cm} zero \\
+$a$ is a \textbf{root} of $p(x) = 0$ & a \blank{1.8cm} of the equation \\
+$(a, 0)$ is an \textbf{$x$-intercept} & where the \blank{1.6cm} meets the $x$-axis \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+\textbf{Example 1.} Is $x = 3$ a zero of $p(x) = x^3 - 2x^2 - 5x + 6$?
+
+\begin{work}
+  p(3) &= (3)^3 - 2(3)^2 - 5(3) + 6 \\
+       &= 27 - 18 - 15 + 6 \\
+       &= 0
+\end{work}
+
+Because $p(3) = 0$: the number $3$ is a \blank{1.6cm} of $p$, the point
+\blank{1.6cm} is an $x$-intercept of the graph, and $x = 3$ is a
+\blank{1.8cm} of the equation $p(x) = 0$.
+
+\smallskip
+\textit{Looking ahead:} a polynomial can only change sign at a real zero, so
+these zeros become the \textit{endpoints} of the intervals we will use to
+solve polynomial inequalities in Lesson 2.7.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. The Factor/Zero Equivalence}
+This is the spine of the lesson. For a \textbf{real} number $a$:
+
+\begin{center}
+\fbox{\parbox{0.86\linewidth}{\centering
+$(x - a)$ is a factor of $p(x)$ \quad \textbf{if and only if} \quad
+$a$ is a zero of $p$.}}
+\end{center}
+
+\textbf{Reading zeros off a factored form.} Set each factor equal to zero ---
+the zero-product property from the warm-up.
+
+\smallskip
+$p(x) = (x - 2)(x + 3)(x - 5)$ \qquad zeros: \blank{1cm} , \blank{1cm} ,
+\blank{1cm}
+
+\begin{itemize}[itemsep=3pt]
+  \item Watch the sign flip: the factor $(x + 3)$ gives the zero
+        $x = $ \blank{1.2cm} , not $+3$.
+  \item This polynomial has degree \blank{1cm} and \blank{1cm} real zeros, so
+        its graph has \blank{1cm} $x$-intercepts.
+\end{itemize}
+
+\textbf{Writing a factored form from zeros.} Run the equivalence backwards:
+each zero $a$ contributes the factor \blank{2cm}.
+
+\smallskip
+Degree 3, zeros $-1$, $0$, and $4$: \quad $p(x) = $ \blank{5cm}
+
+\smallskip
+\textbf{Example 2.} Write a degree-2 polynomial with zeros $2$ and $-4$ whose
+graph passes through $(0, -16)$.
+
+\begin{work}
+  p(x) &= a(x-2)(x+4) \\
+  p(0) &= a(0-2)(0+4) \\
+       &= -8a \\
+   -8a &= -16 \\
+     a &= 2
+\end{work}
+
+$p(x) = $ \blank{5cm}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[34]
+\begin{notesbox}{3. Multiplicity --- and What the Graph Does There}
+When the linear factor $(x - a)$ is repeated $n$ times, the zero $a$ has
+\textbf{multiplicity} \blank{1cm}.
+
+\smallskip
+$p(x) = (x + 1)^2(x - 3)(x - 4)^3$ \qquad degree $= 2 + 1 + 3 = $ \blank{1cm}
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Zero} & \textbf{Multiplicity} & \textbf{Even or odd?} & \textbf{Graph at that intercept} \\
+\hline
+$x = -1$ & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
+\hline
+$x = 3$  & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
+\hline
+$x = 4$  & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{The rule.}
+\begin{itemize}[itemsep=4pt]
+  \item \textbf{Odd} multiplicity: the outputs on the two sides of $a$ have
+        \blank{2cm} signs, so the graph \blank{2cm} the $x$-axis.
+  \item \textbf{Even} multiplicity: the outputs on both sides of $a$ have the
+        \blank{1.6cm} sign, so the graph touches the axis and turns back ---
+        it is \blank{2cm} to the $x$-axis at $x = a$.
+\end{itemize}
+
+\medskip
+\textbf{Read the graph.} Below is $y = (x + 1)^2(x - 2)$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.62cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (-2,-2) grid (3,3);
+  \draw[->, thick] (-2.3,0) -- (3.3,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-2.3) -- (0,3.3) node[above] {\small $y$};
+  \foreach \x in {-2,-1,1,2,3} \node[below] at (\x,-0.12) {\small $\x$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2,-2) (-1.5,-0.44) (-1,0) (-0.5,-0.31) (0,-1) (0.5,-1.69)
+     (1,-2) (1.5,-1.56) (2,0) (2.4,2.31)};
+  \fill[plum] (-1,0) circle (2.5pt);
+  \fill[plum] (2,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[itemsep=3pt]
+  \item At $x = -1$ the graph is \blank{2cm} to the axis, matching the factor
+        $(x+1)$ appearing \blank{1.4cm} times.
+  \item At $x = 2$ the graph \blank{1.8cm} the axis, matching multiplicity
+        \blank{1cm}.
+\end{itemize}
+
+\smallskip
+\textit{Looking ahead:} here the multiplicities add up to the degree. When
+they do \textit{not}, something is missing --- that is Lesson 2.4's question.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Finding the Degree from Successive Differences}
+In Lesson 2.1 a \textbf{linear} function had constant \textit{first}
+differences and a \textbf{quadratic} had constant \textit{second}
+differences. The pattern keeps going.
+
+\begin{center}
+\fbox{\parbox{0.90\linewidth}{\centering
+Over \textbf{equally spaced} inputs, the degree of a polynomial is the
+\textit{least} $n$ for which the $n$th differences are constant.}}
+\end{center}
+
+Complete each row by subtracting neighboring entries in the row above.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$f(x)$ & 5 & 4 & 9 & 26 & 61 & 120 \\
+\hline
+1st differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
+\hline
+2nd differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
+\hline
+3rd differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}[itemsep=3pt]
+  \item The first constant row is the \blank{1.4cm} differences, so $f$ has
+        degree \blank{1cm}.
+  \item Careful: this test only works when the inputs are \blank{3.4cm}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = (x - 6)(x + 2)^2$. Its degree is \blank{1cm}.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Zero $x = 6$, multiplicity \blank{1cm}; the graph
+                \blank{2.4cm} the $x$-axis there.
+          \item Zero $x = $ \blank{1.2cm} , multiplicity \blank{1cm}; the
+                graph is \blank{2.4cm} to the $x$-axis there.
+        \end{enumerate}
+
+  \item Write a degree-3 polynomial in factored form with a zero at $x = 3$ of
+        multiplicity 2, a zero at $x = -5$, and $p(0) = 90$.
+
+        \begin{work}
+          p(x) &= a(x-3)^2(x+5) \\
+          p(0) &= a(-3)^2(5) \\
+               &= 45a \\
+           45a &= 90 \\
+             a &= 2
+        \end{work}
+
+        $p(x) = $ \blank{5cm}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -2,8 +2,6 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
@@ -16,138 +14,269 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify and interpret key characteristics of polynomial functions --- degree, leading term, local and global extrema, and points of inflection --- using rates of change and graphical behavior. (MP 2.A, 3.A)
+    \textbf{Primary Objective:} Students will read the increasing and
+    decreasing intervals of a polynomial function from a graph and from a
+    table; identify local (relative) and global (absolute) maxima and minima,
+    including at an included endpoint; justify why a turn must occur between
+    two distinct real zeros and why even degree forces a global extremum; and
+    locate a point of inflection as the input where the \textit{rate} of
+    change turns around. \hfill\textit{\small (CED Topic 1.4 --- Skills 2.A, 3.A)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-\textbf{AP Skills}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item \textbf{2.A} --- Identify information from analytical and graphical representations
-    \item \textbf{3.A} --- Describe key characteristics of a function
-\end{itemize}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
-\textbf{Key Understandings (LO 1.4.A)}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Polynomial standard form: degree, leading term, leading coefficient
-    \item Local vs.\ global extrema; relationship to switching between increasing/decreasing
-    \item Between every two distinct real zeros, there is at least one local extremum
-    \item Even-degree polynomials have a global max or global min
-    \item Points of inflection occur where rate of change switches from increasing to decreasing (or vice versa)
-\end{itemize}
-\end{minipage}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{2.A} --- Identify information from graphical, numerical, analytical,
+or verbal representations to answer a question or construct a model. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A nonconstant polynomial is any expression equivalent to
+        $a_n x^n + \cdots + a_0$ with $n$ a positive integer and
+        $a_n \ne 0$; a constant has degree zero. (1.4.A.1)
+  \item Where a polynomial switches between increasing and decreasing --- or
+        at an included endpoint --- it has a local maximum or minimum. The
+        greatest local max is the global max; the least local min is the
+        global min. (1.4.A.2)
+\end{itemize} \\
+\textbf{3.A} --- Describe the characteristics of a function with varying
+levels of precision, depending on the representation available. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Between every two distinct real zeros of a nonconstant polynomial
+        there is at least one local maximum or minimum. (1.4.A.3)
+  \item Even-degree polynomials have a global maximum or a global minimum;
+        odd-degree ones have neither. (1.4.A.4)
+  \item A point of inflection is an input where the rate of change switches
+        between increasing and decreasing --- equivalently, where concavity
+        flips. (1.4.A.5)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Increasing / decreasing interval & An interval on which outputs rise as inputs rise, or fall as inputs rise. \\
+Local (relative) maximum / minimum & An output value where the function switches between increasing and decreasing, or the value at an included endpoint of a restricted domain. \\
+Global (absolute) maximum / minimum & The greatest of all local maxima; the least of all local minima --- the extreme output over the whole domain. \\
+Concavity (from 2.1) & AROCs increasing $\Rightarrow$ concave up; AROCs decreasing $\Rightarrow$ concave down. \\
+Point of inflection & An input where the rate of change switches between increasing and decreasing --- where concavity changes. \\
+Zero of a polynomial & An input where the output is 0; today, only a landmark that forces a turn between consecutive zeros. \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: naming degree, leading term, and leading coefficient from
+    standard form (Lesson 2.0); computing an average rate of change over an
+    interval from a table (Lessons 1.3 and 2.1); and reading concavity off a
+    list of AROCs over consecutive equal-length intervals (Lesson 2.1). Item
+    3's ``decreasing AROCs $\Rightarrow$ concave down'' is the exact move
+    Part 4 rebuilds into the definition of a point of inflection.
+\end{skillbox}
+
+\begin{skillbox}[Hook]{lilac}
+    \textbf{Two summits, one highest point.} A trail guide lists two summits
+    on the Ridge Trail: Bell Knob at 1{,}200 feet and Signal Peak at 1{,}850
+    feet.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: are both of these really summits? (Yes --- each is the
+              high point of its own stretch of trail.)
+        \item Then: which one would you put on the sign at the trailhead?
+              (Signal Peak --- it is the highest point \textit{anywhere} on
+              the trail.)
+    \end{enumerate}
+    \textit{Discussion prompt:} mathematics gives those two ideas different
+    names. Bell Knob is a \textbf{local} maximum; Signal Peak is a local
+    maximum \textit{and} the \textbf{global} maximum. Today every graph gets
+    read that way.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item polynomial function
-    \item degree
-    \item leading coefficient
-    \item local maximum / local minimum
-    \item global maximum / global minimum
-    \item point of inflection
-\end{itemize}
-\end{multicols}
-\end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.75\linewidth}\vspace{0pt}
-            Please see attached spiral review.\\[4pt]
-            \textbf{Skills reviewed:} identifying zeros of a function (Lesson 1.1); concavity and AROC sign patterns (Lesson 1.1); average rate of change patterns and second differences (Lesson 1.3).
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.20\linewidth}\vspace{0pt}\centering
-        \end{minipage}
-    \end{tabularx}
-\end{skillbox}
+\textbf{Part 1: The Definition, Stated Precisely} (7 min)
 
-\begin{skillbox}[Hook]{sky}
-Display (or describe aloud): ``Consider $p(x) = x^3 - 3x$. As $x$ increases from $-\infty$, the function decreases steeply, reaches a valley, climbs through zero, peaks, and then falls back through zero before rising to $+\infty$ again.''
-
-Discussion prompts:
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Where are the ``peaks'' and ``valleys'' of this function?
-    \item How many real zeros does $p(x) = x^3 - 3x$ have? (Factor: $x(x-\sqrt{3})(x+\sqrt{3})$)
-    \item Between each pair of zeros, what must happen to the function's direction of change?
-    \item Where does the rate of change itself change direction?
-\end{itemize}
-Use student responses to introduce the vocabulary of local extrema and points of inflection.
-\end{skillbox}
-
-\begin{skillbox}[Lesson]{sky}
-\begin{multicols}{2}
-\textbf{1. Polynomial Functions (EK 1.4.A.1)}\\
-Standard form: $p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$, $a_n \neq 0$.
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item \textit{Degree}: $n$ (highest power)
-    \item \textit{Leading term}: $a_n x^n$
-    \item \textit{Leading coefficient}: $a_n$
-    \item A constant function is a polynomial of degree 0.
+\begin{itemize}
+  \item Restate 1.4.A.1 once, cleanly: $p(x) = a_n x^n + \cdots + a_0$, $n$ a
+        positive integer, coefficients real, $a_n \ne 0$. Degree, leading
+        term, leading coefficient. A constant is degree zero.
+  \item This is review from 2.0 --- keep it to the quick check
+        ($f(x) = 4x^3 - x^2 + 9$) and move on. The lesson is about
+        \textit{behavior}, not form.
 \end{itemize}
 
-\textbf{End behavior (verbal descriptions):}
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item Even degree, positive leading coeff.: both ends rise
-    \item Even degree, negative leading coeff.: both ends fall
-    \item Odd degree, positive leading coeff.: falls left, rises right
-    \item Odd degree, negative leading coeff.: rises left, falls right
+\textbf{Part 2: Increasing, Decreasing, Local Extrema} (13 min)
+
+\begin{itemize}
+  \item Project the notes' Section 2 graph on $[0,6]$ with points $A$--$D$
+        pre-marked. Students only read and label --- nothing is drawn.
+  \item Increasing on $(0,2)$ and $(4,6)$; decreasing on $(2,4)$. $B$ is a
+        local max (value 6 at $x=2$); $C$ a local min (value 2 at $x=4$).
+  \item Then the endpoint clause of 1.4.A.2: the domain is closed, so $A$ is
+        a local minimum and $D$ a local maximum \textit{because they are
+        included endpoints}. Students almost never volunteer this.
+  \item Language discipline: the max is the \textit{value}; it
+        \textit{occurs at} an input.
 \end{itemize}
 
 \columnbreak
 
-\textbf{2. Local and Global Extrema (EK 1.4.A.2--4)}\\
-A \textit{local maximum} occurs where the function switches from increasing to decreasing. A \textit{local minimum} occurs where it switches from decreasing to increasing.
-\begin{itemize}[leftmargin=1.2em, itemsep=1pt]
-    \item The greatest local max value is the \textit{global maximum}.
-    \item The least local min value is the \textit{global minimum}.
-    \item Between every two distinct real zeros, at least one local extremum must exist.
-    \item Polynomials of even degree have either a global max or a global min (not both in general).
+\textbf{Part 3: Local vs.\ Global, and What Zeros Force} (15 min)
+
+\begin{itemize}
+  \item Same graph: list local maxima $\{6, 7\}$ and local minima
+        $\{1, 2\}$. Greatest and least give the global max 7 (at $x=6$) and
+        global min 1 (at $x=0$). $B$ is the trap --- a local max that is not
+        the global one.
+  \item Section 4's graph has zeros at $1, 3, 5$. Ask what the curve
+        \textit{had} to do between consecutive zeros; land on 1.4.A.3.
+        Generalize: $k$ distinct real zeros force at least $k-1$ turns.
+  \item Even degree $\Rightarrow$ a global max or a global min (1.4.A.4);
+        odd degree $\Rightarrow$ neither, because the two ends run opposite
+        directions. Stay verbal --- formal end behavior is Lesson 2.5.
 \end{itemize}
 
-\textbf{3. Points of Inflection (EK 1.4.A.5)}\\
-A \textit{point of inflection} occurs where the rate of change switches from increasing to decreasing, or vice versa --- i.e., where the graph changes from concave up to concave down (or the reverse).
+\textbf{Part 4: Points of Inflection} (15 min)
+
+\begin{itemize}
+  \item Return to 2.1's tool: AROCs over consecutive equal-length intervals.
+        The notes' table gives $2, 5, 9, 8, 4$ --- rising, then falling.
+  \item The \textit{rate} turns around near $x=3$: concave up before,
+        concave down after. That input is the point of inflection.
+  \item Drive the contrast: every AROC in that table is positive, so the
+        function never turns around at all --- no local extrema, yet an
+        inflection point. Extremum = AROCs change \textit{sign};
+        inflection = AROCs change \textit{direction}.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item Circulate during the hook discussion. Listen for students confusing zeros with extrema.
-    \item During notes: cold-call --- ``If a polynomial has three distinct real zeros, what is the \textit{minimum} number of local extrema it must have?''
-    \item During activity Tier A: check that AROC computations use the correct interval endpoints.
-    \item Common misconception: students may think a local extremum must occur \textit{at} a zero. Clarify: extrema occur \textit{between} zeros.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} naming an extremum by its input instead of its
+        output (``the maximum is 2''). Ask: ``Is 2 the height or the
+        location?''
+  \item \textbf{Common error:} calling every local maximum the global
+        maximum. Point at $B$: ``Is anything on this graph higher?''
+  \item \textbf{Common error:} confusing an inflection point with a turning
+        point. Diagnostic question: ``Did the function turn around there, or
+        just the rate?''
+  \item \textbf{Common error:} placing a required extremum \textit{at} a
+        zero rather than \textit{between} two of them.
+  \item \textbf{Watch for:} students skipping the included endpoints when
+        listing local extrema on a restricted domain.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\textbf{Context:} Roller coaster height over time (see Group Activity).
-\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
-    \item \textbf{Tier R (Remediate):} Identify local maxima and minima from a table of values; identify global maximum. No computation required.
-    \item \textbf{Tier A (On-level):} Compute AROCs over intervals; identify sign changes in AROC (local extrema); identify where AROC is increasing vs.\ decreasing (concavity/inflection).
-    \item \textbf{Tier E (Extend):} Determine minimum possible degree of the polynomial; reason about existence of global min using EK 1.4.A.4.
+Students work on the \textbf{Group Activity: The Drone Survey} in leveled
+tiers. Every tier uses the same table and pre-drawn altitude graph on
+$[0,6]$ --- no tier draws anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Read climbing/descending intervals and
+        the four labeled points off the graph; classify $Q$ and $R$ as local
+        extrema and $P$ and $S$ as endpoint extrema; report the global max
+        (500 ft) and global min (100 ft).
+  \item \textbf{Tier A (Approaching Proficiency):} From the table alone,
+        fill the AROC row ($200, -160, -140, 110, 170, 120$), locate the
+        local max at $x=1$ and local min at $x=3$ from sign changes, then
+        find the two inflection points from where the AROCs bottom out
+        ($x \approx 2$) and top out ($x \approx 5$).
+  \item \textbf{Tier E (Extension):} At most $n-1$ local extrema for degree
+        $n$; four distinct zeros force at least three turns, so degree
+        $\ge 4$; justify 1.4.A.4 for even and odd degree; then the
+        true/false item --- exactly one local extremum does \textit{not}
+        force degree 2 ($x^4$ is the counterexample).
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket:}
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-    \item A polynomial has exactly three distinct real zeros. What is the minimum number of local extrema it must have? (EK 1.4.A.3)
-    \item A polynomial $q$ has a point of inflection at $x = 2$. AROC over $[1,2]$ is $6$; AROC over $[2,3]$ is $3$. Is the graph concave up or concave down on each interval?
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item From a pre-drawn graph on $[0,5]$: intervals of increase and
+        decrease, and the inputs of the local maximum and local minimum.
+  \item From the same graph: the global maximum and global minimum values and
+        where they occur.
+  \item From an AROC list ($3, 7, 12, 9, 5$): decide there is no local
+        extremum, and locate the point of inflection and the concavity
+        change.
 \end{enumerate}
-Look for: correct application of EK 1.4.A.3 (two zeros $\Rightarrow$ at least one extremum between them); correct use of ``concave up $\Rightarrow$ AROC increasing.''
+\textbf{Assessment note:} Item 2 separates local from global --- a student
+who names 4 (the local max of item 1) as the global maximum has the exact
+misconception the hook targeted. Item 3 needs no graph at all; a miss there
+is a miss on the lesson's hardest idea, not on arithmetic.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework overview:} 5--6 problems reviewing degree/leading coefficient, minimum degree from extrema count, AROC sign changes, even-degree global extremum, and an AP-style MC item.
+\textbf{Homework:} 5 problems --- reading all four kinds of extrema off a
+pre-drawn graph with included endpoints, an AROC row from a table with an
+inflection point but no extremum, a minimum-extrema count from four distinct
+zeros, three must-be-true statements on degree and zeros, and one AP-style
+multiple-choice item on what an AROC list guarantees.
 
-\textbf{Extension:} For $p(x) = x^4 - 4x^2$, compute AROCs over $[-2,-1]$, $[-1,0]$, $[0,1]$, $[1,2]$. Identify sign transitions to locate potential extrema and inflection points.
+\textbf{Extension (optional):} Degree 5 with five distinct real zeros ---
+the ``at least $k-1$'' and ``at most $n-1$'' bounds both equal 4, so the
+count is pinned to exactly 4 local extrema.
 
-\textbf{Preview:} Next lesson --- zeros of polynomial functions, their multiplicities, and an introduction to complex zeros.
+\textbf{Preview:} Next lesson (2.3, Polynomial Functions and Real Zeros)
+promotes the zeros from landmarks to the main event: finding them from a
+factored form and describing what the graph does at each one.
 \end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1 is pure 2.0 recall and
+should take seconds; if it does not, the whole class needs a two-minute
+standard-form reset before Part 1. Item 2's AROC is the computation Tier A of
+the activity runs six times, so watch the subtraction order here. Item 3 is
+the load-bearing one: ``decreasing AROCs $\Rightarrow$ concave down'' is
+re-used verbatim in Part 4 to define a point of inflection --- note anyone who
+guesses.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+Part 1 is deliberately thin --- resist re-teaching standard form. The whole
+lesson lives in Sections 2--5. The included-endpoint clause in Section 2 is
+the piece most classes skip and most AP items reward; say out loud that $A$
+and $D$ are local extrema \textit{only because the domain stops there}.
+Section 5 is the hard one: work the AROC row $2, 5, 9, 8, 4$ on the board
+before students fill it in, and keep returning to the sentence ``every one of
+these is positive, so the function never turned around.'' If time runs short,
+compress Section 3 into Section 2's discussion --- do not cut Section 5, it is
+exit ticket item 3 and homework items 2 and 5.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers share the drone table and graph, so groups can be re-sorted
+mid-period without new setup. Tier A should keep the graph covered through
+question 4 --- the point is that a table alone locates extrema and inflection
+points; question 5 is the reveal. Tier A's two inflection answers
+($x \approx 2$ and $x \approx 5$) are approximate by design: accept any
+answer that names the right interval and says why. Tier E question 4 is the
+best whole-class share in the closing minutes --- ``at most $n-1$'' is a
+ceiling, not a count, and $x^4$ settles it in one line.
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Scan item 2 first: a student who writes 4
+as the global maximum is reading ``the tallest bump'' instead of ``the
+greatest output,'' which is the endpoint idea from Section 2 --- sort those
+for a two-minute reteach. On item 3(a) accept any reason equivalent to ``all
+the AROCs are positive.'' On 3(b) accept $x = 3$ or ``between 2 and 4.''
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 1(c) is the included-endpoint check and problem 2 is the
+inflection-without-extremum check; those two carry the diagnostic weight.
+Problem 5 is the AP-style item: distractor A is the student who reads a
+falling AROC as a falling function, and distractor D is the same error stated
+directly --- both are worth two minutes of autopsy tomorrow. The extension is
+the only place the two counting bounds are squeezed together; if Tier E never
+got there, assign it explicitly and open 2.3's warm-up window with it.
+\end{teachernote}
 \end{document}

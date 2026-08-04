@@ -7,15 +7,129 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.0}{Homework}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=10pt]
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\item Name the parts of each polynomial.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.26\linewidth}|c|c|c|c|}
+\hline
+\textbf{Polynomial} & \textbf{Degree} & \textbf{Leading term} &
+\textbf{Leading coef.} & \textbf{Constant term} \\
+\hline
+$p(x) = 3x^5 - x^2 + 8$ & \blank{1.2cm} & \blank{1.8cm} & \blank{1.4cm} & \blank{1.4cm} \\
+\hline
+$q(x) = -x^2 + 4x$ & \blank{1.2cm} & \blank{1.8cm} & \blank{1.4cm} & \blank{1.4cm} \\
+\hline
+\end{tabular}
+
+\item Is each expression a polynomial? Circle one and give a short reason.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f(x) = 2x^3 - 9x + 4$ \quad \textbf{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \writeline
+
+  \item $g(x) = \dfrac{7}{x^2} + x$ \quad \textbf{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \writeline
+
+  \item $h(x) = 4\sqrt{x} + 1$ \quad \textbf{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \writeline
+
+  \item $k(x) = \dfrac{x^4}{3} - 2x$ \quad \textbf{Yes} / \textbf{No}
+
+        \vspace{0.05in}
+        \writeline
+\end{enumerate}
+
+\item Write each polynomial in standard form and name its degree family.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.24\linewidth}|p{0.30\linewidth}|p{0.24\linewidth}|}
+\hline
+\textbf{As given} & \textbf{Standard form} & \textbf{Degree family} \\
+\hline
+$6 - 4x$ & \blank{3.2cm} & \blank{2.6cm} \\
+\hline
+$5x^2 + x^3 - 1$ & \blank{3.2cm} & \blank{2.6cm} \\
+\hline
+$-3 + 2x^2$ & \blank{3.2cm} & \blank{2.6cm} \\
+\hline
+\end{tabular}
+
+\item Two polynomial graphs are shown. Both are smooth and unbroken.
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+    plot ({\x}, {-0.5*\x*\x*\x + 1.5*\x});
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+    plot ({\x}, {0.5*\x*\x - 2});
+\end{tikzpicture}
+\\[2pt]
+\textbf{Graph P} & \textbf{Graph Q}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Graph P has \blank{1.4cm} turning points, so its polynomial has degree at
+        least \blank{1.4cm}.
+  \item Graph Q has \blank{1.4cm} turning points, so its polynomial has degree at
+        least \blank{1.4cm}.
+  \item Name one feature that neither graph has, because no polynomial graph ever
+        has it. \blank{4cm}
+\end{enumerate}
+
+\item Which of the following is \textbf{NOT} a polynomial function?
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $p(x) = x^4 - 3x^2 + 7$
+  \item $p(x) = 5$
+  \item $p(x) = 2x^{-3} + x$
+  \item $p(x) = -x^3 + \dfrac{x}{2}$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+A polynomial graph is smooth and unbroken and has exactly 4 turning points. What is
+the smallest degree its polynomial could have? Could its degree be 7 instead?
+Explain both answers.
+
+\vspace{0.05in}
+\writelines{2}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.1}
+Today you learned to recognize the polynomial family and name its parts. Next
+lesson, \textbf{Quadratic Functions Revisited}, we zoom in on the degree-2 members
+you already know from Algebra 2 --- vertex, axis of symmetry, and the two forms a
+quadratic can be written in --- and use them as the model for everything the rest
+of the unit does with higher degrees.
 \end{notesbox}
 
 \end{document}

@@ -7,15 +7,279 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.3}{Guided Notes --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Read the real \ans{zeros} of a polynomial from its factored form,
+        and write a factored form from a list of zeros.
+  \item Find the \ans{multiplicity} of each real zero and predict whether the graph
+        \ans{crosses} the $x$-axis there or is \ans{tangent} to it.
+  \item Find the \ans{degree} of a polynomial from a table of values using
+        successive differences.
+\end{enumerate}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Zero of a function:}}\\[1pt]
+\ansline{A number $a$ with $p(a) = 0$ --- an input whose output is zero.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Root:}}\\[1pt]
+\ansline{A solution of the equation $p(x) = 0$; same numbers as the zeros of $p$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{$x$-intercept:}}\\[1pt]
+\ansline{A point $(a, 0)$ where the graph meets the $x$-axis; $a$ is a real zero.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Linear factor:}}\\[1pt]
+\ansline{A factor of the form $(x - a)$; it is a factor exactly when $a$ is a zero.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Multiplicity:}}\\[1pt]
+\ansline{The number of times the linear factor $(x - a)$ is repeated in $p(x)$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Tangent to the $x$-axis:}}\\[1pt]
+\ansline{The graph touches the axis at an intercept and turns back --- even multiplicity.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+Four questions, four different tests, one polynomial $p(x) = x^2 - x - 6$:
+
+\smallskip
+\textit{Solve $p(x) = 0$.} \quad \textit{Find the roots.} \quad
+\textit{Find the zeros of $p$.} \quad \textit{Find the $x$-intercepts.}
+
+\smallskip
+What do all four questions have in common --- and what is the one answer?
+
+\ansline{All four ask for the inputs that make the output zero: $(x-3)(x+2) = 0$.}
+\ansline{$x = 3$ and $x = -2$; as intercepts, the points $(3,0)$ and $(-2,0)$.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{1. Four Names for One Idea}
+A number $a$ is a \textbf{zero} of the function $p$ when
+$p(a) = $ \ans{0}. That one fact wears several different names,
+depending on who is asking.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{The wording} & \textbf{What it asks for} \\
+\hline
+$a$ is a \textbf{zero} of $p$ & an input that makes the \ans{output} zero \\
+$a$ is a \textbf{root} of $p(x) = 0$ & a \ans{solution} of the equation \\
+$(a, 0)$ is an \textbf{$x$-intercept} & where the \ans{graph} meets the $x$-axis \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+\textbf{Example 1.} Is $x = 3$ a zero of $p(x) = x^3 - 2x^2 - 5x + 6$?
+
+\begin{work}
+  p(3) &= (3)^3 - 2(3)^2 - 5(3) + 6 \\
+       &= 27 - 18 - 15 + 6 \\
+       &= 0
+\end{work}
+
+Because $p(3) = 0$: the number $3$ is a \ans{zero} of $p$, the point
+\ans{$(3, 0)$} is an $x$-intercept of the graph, and $x = 3$ is a
+\ans{root} of the equation $p(x) = 0$.
+
+\smallskip
+\textit{Looking ahead:} a polynomial can only change sign at a real zero, so
+these zeros become the \textit{endpoints} of the intervals we will use to
+solve polynomial inequalities in Lesson 2.7.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. The Factor/Zero Equivalence}
+This is the spine of the lesson. For a \textbf{real} number $a$:
+
+\begin{center}
+\fbox{\parbox{0.86\linewidth}{\centering
+$(x - a)$ is a factor of $p(x)$ \quad \textbf{if and only if} \quad
+$a$ is a zero of $p$.}}
+\end{center}
+
+\textbf{Reading zeros off a factored form.} Set each factor equal to zero ---
+the zero-product property from the warm-up.
+
+\smallskip
+$p(x) = (x - 2)(x + 3)(x - 5)$ \qquad zeros: \ans{2} , \ans{$-3$} ,
+\ans{5}
+
+\begin{itemize}[itemsep=3pt]
+  \item Watch the sign flip: the factor $(x + 3)$ gives the zero
+        $x = $ \ans{$-3$} , not $+3$.
+  \item This polynomial has degree \ans{3} and \ans{3} real zeros, so
+        its graph has \ans{3} $x$-intercepts.
+\end{itemize}
+
+\textbf{Writing a factored form from zeros.} Run the equivalence backwards:
+each zero $a$ contributes the factor \ans{$(x - a)$}.
+
+\smallskip
+Degree 3, zeros $-1$, $0$, and $4$: \quad $p(x) = $ \ans{$x(x+1)(x-4)$}
+
+\smallskip
+\textbf{Example 2.} Write a degree-2 polynomial with zeros $2$ and $-4$ whose
+graph passes through $(0, -16)$.
+
+\begin{work}
+  p(x) &= a(x-2)(x+4) \\
+  p(0) &= a(0-2)(0+4) \\
+       &= -8a \\
+   -8a &= -16 \\
+     a &= 2
+\end{work}
+
+$p(x) = $ \ans{$2(x-2)(x+4)$}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[34]
+\begin{notesbox}{3. Multiplicity --- and What the Graph Does There}
+When the linear factor $(x - a)$ is repeated $n$ times, the zero $a$ has
+\textbf{multiplicity} \ans{$n$}.
+
+\smallskip
+$p(x) = (x + 1)^2(x - 3)(x - 4)^3$ \qquad degree $= 2 + 1 + 3 = $ \ans{6}
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Zero} & \textbf{Multiplicity} & \textbf{Even or odd?} & \textbf{Graph at that intercept} \\
+\hline
+$x = -1$ & \ans{2} & \ans{even} & \ans{tangent} \\
+\hline
+$x = 3$  & \ans{1} & \ans{odd} & \ans{crosses} \\
+\hline
+$x = 4$  & \ans{3} & \ans{odd} & \ans{crosses} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\textbf{The rule.}
+\begin{itemize}[itemsep=4pt]
+  \item \textbf{Odd} multiplicity: the outputs on the two sides of $a$ have
+        \ans{opposite} signs, so the graph \ans{crosses} the $x$-axis.
+  \item \textbf{Even} multiplicity: the outputs on both sides of $a$ have the
+        \ans{same} sign, so the graph touches the axis and turns back ---
+        it is \ans{tangent} to the $x$-axis at $x = a$.
+\end{itemize}
+
+\medskip
+\textbf{Read the graph.} Below is $y = (x + 1)^2(x - 2)$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.62cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (-2,-2) grid (3,3);
+  \draw[->, thick] (-2.3,0) -- (3.3,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-2.3) -- (0,3.3) node[above] {\small $y$};
+  \foreach \x in {-2,-1,1,2,3} \node[below] at (\x,-0.12) {\small $\x$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2,-2) (-1.5,-0.44) (-1,0) (-0.5,-0.31) (0,-1) (0.5,-1.69)
+     (1,-2) (1.5,-1.56) (2,0) (2.4,2.31)};
+  \fill[plum] (-1,0) circle (2.5pt);
+  \fill[plum] (2,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[itemsep=3pt]
+  \item At $x = -1$ the graph is \ans{tangent} to the axis, matching the factor
+        $(x+1)$ appearing \ans{two} times.
+  \item At $x = 2$ the graph \ans{crosses} the axis, matching multiplicity
+        \ans{1}.
+\end{itemize}
+
+\smallskip
+\textit{Looking ahead:} here the multiplicities add up to the degree. When
+they do \textit{not}, something is missing --- that is Lesson 2.4's question.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Finding the Degree from Successive Differences}
+In Lesson 2.1 a \textbf{linear} function had constant \textit{first}
+differences and a \textbf{quadratic} had constant \textit{second}
+differences. The pattern keeps going.
+
+\begin{center}
+\fbox{\parbox{0.90\linewidth}{\centering
+Over \textbf{equally spaced} inputs, the degree of a polynomial is the
+\textit{least} $n$ for which the $n$th differences are constant.}}
+\end{center}
+
+Complete each row by subtracting neighboring entries in the row above.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$f(x)$ & 5 & 4 & 9 & 26 & 61 & 120 \\
+\hline
+1st differences & \multicolumn{6}{c|}{\ans{$-1$} \ \ans{5} \ \ans{17} \ \ans{35} \ \ans{59}} \\
+\hline
+2nd differences & \multicolumn{6}{c|}{\ans{6} \ \ans{12} \ \ans{18} \ \ans{24}} \\
+\hline
+3rd differences & \multicolumn{6}{c|}{\ans{6} \ \ans{6} \ \ans{6}} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{itemize}[itemsep=3pt]
+  \item The first constant row is the \ans{3rd} differences, so $f$ has
+        degree \ans{3}.
+  \item Careful: this test only works when the inputs are \ans{equally spaced}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = (x - 6)(x + 2)^2$. Its degree is \ans{3}.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Zero $x = 6$, multiplicity \ans{1}; the graph
+                \ans{crosses} the $x$-axis there.
+          \item Zero $x = $ \ans{$-2$} , multiplicity \ans{2}; the
+                graph is \ans{tangent} to the $x$-axis there.
+        \end{enumerate}
+
+  \item Write a degree-3 polynomial in factored form with a zero at $x = 3$ of
+        multiplicity 2, a zero at $x = -5$, and $p(0) = 90$.
+
+        \begin{work}
+          p(x) &= a(x-3)^2(x+5) \\
+          p(0) &= a(-3)^2(5) \\
+               &= 45a \\
+           45a &= 90 \\
+             a &= 2
+        \end{work}
+
+        $p(x) = $ \ans{$2(x-3)^2(x+5)$}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

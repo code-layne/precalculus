@@ -1,26 +1,317 @@
 %! Introduction to Polynomial Functions — Unit 2, Lesson 2.0 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
+% TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.0}\\[0.5cm]
     {\color{white}\bfseries\LARGE Introduction to Polynomial Functions}\\[1.2cm]
-    {\color{skymid}\small TODO Course~$\cdot$~Unit 2}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
   \end{minipage}
 \end{frame}
 }
 
-% CONTENT SLIDE
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{TODO: section title}
-  % TODO: slide content
+  \plumheader{Hook: Which Three Belong Together?}
+  \sectionlabel[goldacc]{Think About It}
+
+  Six expressions. Three belong to the same family; three do not.
+
+  \bigskip
+  \begin{center}
+    \Large
+    $3x^2 - 5$ \qquad $\dfrac{4}{x}$ \qquad $x^3 - 2x + 1$ \qquad
+    $\sqrt{x} + 6$ \qquad $7$ \qquad $2^x$
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Question 1}
+        Which three did you circle --- and what \textbf{rule} did you use?
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Question 2}
+        Does the lone $7$ belong with them, or not? Defend your answer.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Almost everyone sorts these correctly on instinct. Today we sharpen the
+  instinct into a definition.}
+\end{frame}
+
+% SECTION 1 — WHAT IS A POLYNOMIAL FUNCTION
+\begin{frame}[t, plain]
+  \plumheader{1. What Is a Polynomial Function?}
+
+  \begin{block}{Informally}
+    Add up terms, where every term is a \textbf{number} times $x$ raised to a
+    \textbf{whole-number} power.
+  \end{block}
+
+  \medskip
+  Take $p(x) = 4x^3 - 7x^2 + 2x - 9$ apart: \quad
+  $4x^3$, \quad $-7x^2$, \quad $2x$, \quad $-9$.
+
+  \smallskip
+  \textit{Quietly, the last two are $2x^1$ and $-9x^0$ --- every term fits the pattern.}
+
+  \bigskip
+  \begin{block}{Formally}
+    \[
+      p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0
+    \]
+    where $n$ is a positive integer, every coefficient is a \textbf{real} number,
+    and the leading coefficient $a_n$ is \textbf{not zero}.
+  \end{block}
+
+  \medskip
+  \textbf{And the lone 7?} A constant is a polynomial too --- of \textbf{degree 0}.
+\end{frame}
+
+% SECTION 2 — THE PARTS, BY NAME
+\begin{frame}[t, plain]
+  \plumheader{2. The Parts of a Polynomial, by Name}
+
+  For $p(x) = 4x^3 - 7x^2 + 2x - 9$:
+
+  \medskip
+  \begin{tabular}{|p{0.26\textwidth}|p{0.40\textwidth}|c|}
+  \hline
+  \textbf{Part} & \textbf{What it is} & \textbf{Here} \\
+  \hline
+  Degree & the highest exponent on $x$ & ? \\
+  \hline
+  Leading term & the term carrying that exponent & ? \\
+  \hline
+  Leading coefficient & the number in front of it & ? \\
+  \hline
+  Constant term & the term with no $x$ & ? \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \begin{block}{Standard form}
+    Terms run from the \textbf{highest} power down to the \textbf{lowest} --- which
+    parks the leading term and the constant term at the two ends, where they are
+    easy to read.
+  \end{block}
+
+  \medskip
+  \textbf{Watch the sign:} in $-x^3$, the leading coefficient is $\mathbf{-1}$, not
+  $1$. The minus belongs to the number.
+\end{frame}
+
+% SECTION 3 — SPOTTING THE IMPOSTORS
+\begin{frame}[t, plain]
+  \plumheader{3. Spotting the Impostors}
+  \sectionlabel[redacc]{The Big One}
+
+  Rewrite each one to expose the problem:
+
+  \medskip
+  \begin{tabular}{|p{0.22\textwidth}|p{0.24\textwidth}|p{0.40\textwidth}|}
+  \hline
+  \textbf{Expression} & \textbf{Rewritten} & \textbf{Why it fails} \\
+  \hline
+  $\dfrac{4}{x}$ & $4x^{-1}$ & the exponent is \textbf{negative} \\
+  \hline
+  $\sqrt{x} + 6$ & $x^{1/2} + 6$ & the exponent is a \textbf{fraction} \\
+  \hline
+  $2^x$ & --- & the \textbf{variable} is in the exponent \\
+  \hline
+  $\dfrac{3}{x+1}$ & --- & the \textbf{variable} is in a denominator \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \begin{block}{The three-question test --- all three must be yes}
+    \begin{enumerate}\setlength{\itemsep}{3pt}
+      \item Is every exponent on $x$ a whole number?
+      \item Is $x$ out of every denominator?
+      \item Is $x$ out of every exponent?
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+% SECTION 3, CONT. — THE TWO TRAPS
+\begin{frame}[t, plain]
+  \plumheader{The Two Traps}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{$\dfrac{x^2}{5}$ \quad IS a polynomial}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item Dividing by a \textbf{number} is multiplying by $\frac{1}{5}$
+          \item So this is just $\frac{1}{5}x^2$
+          \item The $x$ is on top, where it belongs
+        \end{itemize}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{$\sqrt{7}\,x^2 - \frac{1}{2}x$ \quad IS a polynomial}
+        \begin{itemize}\setlength{\itemsep}{6pt}
+          \item The radical is a \textbf{coefficient}, not an exponent
+          \item Coefficients may be any real number --- even $\pi$
+          \item The exponents here are $2$ and $1$
+        \end{itemize}
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{In one sentence:} the coefficients are never the problem. Only the
+  \textbf{exponents on $x$} --- and where the $x$ is sitting --- decide the question.
+
+  \medskip
+  \textit{Challenge:} give me an expression that is one small change away from being
+  a polynomial. Now make the change.
+\end{frame}
+
+% SECTION 4 — THE FAMILY BY DEGREE
+\begin{frame}[t, plain]
+  \plumheader{4. The Family, Sorted by Degree}
+
+  \begin{tabular}{|c|c|l|p{0.32\textwidth}|}
+  \hline
+  \textbf{Degree} & \textbf{Name} & \textbf{Example} & \textbf{Its graph} \\
+  \hline
+  0 & constant  & $p(x) = 6$              & a flat horizontal line \\
+  \hline
+  1 & linear    & $p(x) = 2x - 5$         & a straight slanted line \\
+  \hline
+  2 & quadratic & $p(x) = x^2 - 4x + 3$   & a parabola \\
+  \hline
+  3 & cubic     & $p(x) = x^3 - 2x$       & new to us this unit \\
+  \hline
+  4 & quartic   & $p(x) = x^4 - 5x^2 + 4$ & new to us this unit \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  Degrees 0, 1, and 2 are old friends from Algebra 1, Algebra 2, and Unit 1.
+
+  \medskip
+  Lesson 2.1 revisits degree \textbf{2}; the rest of the unit works with degree
+  \textbf{3} and higher.
+\end{frame}
+
+% SECTION 5 — WHAT THE FAMILY LOOKS LIKE
+\begin{frame}[t, plain]
+  \plumheader{5. What the Whole Family Looks Like}
+
+  Every polynomial graph is \textbf{smooth} (no corners) and \textbf{unbroken}
+  (no holes, no jumps).
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{center}
+      \begin{tabular}{ccc}
+      \begin{tikzpicture}[x=0.42cm, y=0.30cm]
+        \draw[->, thick] (-3.2,0) -- (3.2,0);
+        \draw[->, thick] (0,-3.2) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.8:2.8, samples=80, smooth, variable=\x]
+          plot ({\x}, {0.5*\x*\x - 2});
+      \end{tikzpicture}
+      &
+      \begin{tikzpicture}[x=0.42cm, y=0.30cm]
+        \draw[->, thick] (-3.2,0) -- (3.2,0);
+        \draw[->, thick] (0,-3.2) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+          plot ({\x}, {0.4*\x*\x*\x - 1.6*\x});
+      \end{tikzpicture}
+      &
+      \begin{tikzpicture}[x=0.42cm, y=0.30cm]
+        \draw[->, thick] (-3.2,0) -- (3.2,0);
+        \draw[->, thick] (0,-3.2) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.4:2.4, samples=80, smooth, variable=\x]
+          plot ({\x}, {0.35*\x*\x*\x*\x - 1.8*\x*\x + 1});
+      \end{tikzpicture}
+      \\[2pt]
+      \small\textbf{A} (deg 2) & \small\textbf{B} (deg 3) & \small\textbf{C} (deg 4)
+      \end{tabular}
+      \end{center}
+
+    \column{0.44\textwidth}
+      \begin{block}{Turning point}
+        A spot where the graph stops rising and starts falling --- or stops falling
+        and starts rising.
+      \end{block}
+
+      \medskip
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item A: \textbf{1} turn \quad B: \textbf{2} turns \quad C: \textbf{3} turns
+        \item Degree $n$ $\Rightarrow$ \textbf{at most} $n - 1$ turning points
+        \item Fewer is allowed: $p(x) = x^3$ has none
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textit{Smooth and unbroken is exactly why polynomials are the family calculus
+  starts with.}
+\end{frame}
+
+% WHERE THIS UNIT IS GOING
+\begin{frame}[t, plain]
+  \plumheader{Where This Unit Is Going}
+
+  Today we only \textbf{named} the family. From here:
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item \textbf{2.1} Quadratic Functions Revisited
+        \item \textbf{2.2} Polynomial Functions and Rates of Change
+        \item \textbf{2.3} Polynomial Functions and Real Zeros
+        \item \textbf{2.4} Polynomial Functions and Complex Zeros
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item \textbf{2.5} Polynomial Functions and End Behavior
+        \item \textbf{2.6} Equivalent Representations of Polynomial Expressions
+        \item \textbf{2.7} Polynomial Equations, Inequalities, and Modeling
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  Every one of those lessons assumes you can look at an expression and say, without
+  hesitating: \textit{``that is a polynomial, and its degree is\ldots''}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item For $p(x) = -2x^4 + x^3 - 6$, name the degree, leading term, leading
+          coefficient, and constant term. What is this polynomial called, and how
+          many turning points could its graph have at most?
+
+    \item Polynomial or not? Give a one-sentence reason for each.
+
+          \medskip
+          \begin{columns}[T]
+            \column{0.45\textwidth}
+              (a) \quad $h(x) = 6x^5 - \dfrac{x}{4} + 11$
+            \column{0.45\textwidth}
+              (b) \quad $k(x) = 3x^2 + \dfrac{5}{x}$
+          \end{columns}
+
+    \item Write $9x - x^3 + 2$ in standard form, then read off its leading
+          coefficient. \textit{(Careful with the sign.)}
+  \end{enumerate}
 \end{frame}
 
 \end{document}

@@ -1,0 +1,243 @@
+%! Quadratic Functions Revisited — Unit 2, Lesson 2.1 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.1}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Quadratic Functions Revisited}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Staircase of Odd Numbers}
+  \sectionlabel[goldacc]{Think About It}
+
+  Here are the perfect squares:
+
+  \bigskip
+  \begin{center}
+    {\LARGE \textbf{\(0 \quad 1 \quad 4 \quad 9 \quad 16 \quad 25\)}}
+  \end{center}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item The gaps between them: \(1,\ 3,\ 5,\ 7,\ 9\) --- every odd number,
+          in order.
+    \item The gaps between \textbf{those}: \(2,\ 2,\ 2,\ 2\).
+  \end{itemize}
+
+  \bigskip
+  \textit{The squares are unevenly spaced --- but their spacings are
+  perfectly even. Every quadratic hides that pattern one level down.}
+\end{frame}
+
+% SECTION 1 — THREE FORMS
+\begin{frame}[t, plain]
+  \plumheader{1. Three Forms, Three Features}
+
+  \begin{block}{Same function, three ways to write it}
+    \begin{itemize}\setlength{\itemsep}{5pt}
+      \item \textbf{Standard:} \(ax^2 + bx + c\) --- shows the
+            \(y\)-intercept \(c\).
+      \item \textbf{Vertex:} \(a(x-h)^2 + k\) --- shows the vertex
+            \((h, k)\) and the axis \(x = h\).
+      \item \textbf{Factored:} \(a(x-r_1)(x-r_2)\) --- shows the zeros
+            \(r_1\) and \(r_2\).
+    \end{itemize}
+  \end{block}
+
+  \medskip
+  \begin{block}{Example: \(f(x) = x^2 - 6x + 5\)}
+    Axis of symmetry: \(x = -\dfrac{b}{2a} = -\dfrac{-6}{2(1)} = 3\), and
+    \(f(3) = -4\).
+    \[
+      f(x) = (x-3)^2 - 4 = (x-1)(x-5)
+    \]
+    Vertex \((3, -4)\); zeros \(1\) and \(5\); \(y\)-intercept \(5\).
+  \end{block}
+\end{frame}
+
+% SECTION 2 — AROC AND THE SECANT LINE
+\begin{frame}[t, plain]
+  \plumheader{2. AROC and the Secant Line, Recalled}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.62cm, y=0.30cm]
+        \draw[linegray, very thin, step=1] (0,-5) grid (6,5);
+        \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {-4,-2,2,4} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(0,5) (1,0) (2,-3) (3,-4) (4,-3) (5,0) (6,5)};
+        \draw[dashed, thick, goldacc] (1,0) -- (4,-3);
+        \fill[plum] (1,0) circle (2.5pt);
+        \fill[plum] (3,-4) circle (2.5pt);
+        \fill[plum] (4,-3) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.48\textwidth}
+      \[
+        \text{AROC over } [a,b] = \frac{f(b) - f(a)}{b - a}
+      \]
+      For \(f(x) = x^2 - 6x + 5\):
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Over \([1,4]\): \(\dfrac{-3 - 0}{4 - 1} = -1\)
+        \item Over \([3,6]\): \(\dfrac{5 - (-4)}{6 - 3} = 3\)
+      \end{itemize}
+
+      \medskip
+      The dashed \textbf{secant line} has slope \(-1\). Same function,
+      different interval, \textbf{different rate} --- a line could never
+      do that.
+  \end{columns}
+\end{frame}
+
+% SECTION 3a — DIFFERENCE TABLE, LINEAR
+\begin{frame}[t, plain]
+  \plumheader{3. The Difference Table --- Linear}
+
+  \(L(x) = 3x - 2\), with inputs stepping by 1.
+
+  \bigskip
+  \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  \(x\) & 0 & 1 & 2 & 3 & 4 \\
+  \hline
+  \(L(x)\) & \(-2\) & 1 & 4 & 7 & 10 \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item First differences: \(3,\ 3,\ 3,\ 3\) --- and with a step of 1,
+          each one \textbf{is} an AROC.
+    \item Second differences: \(0,\ 0,\ 0\).
+  \end{itemize}
+
+  \bigskip
+  \begin{block}{Linear}
+    The AROC is the \textbf{same over every interval}, so those rates change
+    at a rate of \textbf{zero}.
+  \end{block}
+\end{frame}
+
+% SECTION 3b — DIFFERENCE TABLE, QUADRATIC
+\begin{frame}[t, plain]
+  \plumheader{3. The Difference Table --- Quadratic}
+
+  \(Q(x) = 2x^2 - 4x + 1\), same inputs, same step.
+
+  \bigskip
+  \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  \(x\) & 0 & 1 & 2 & 3 & 4 \\
+  \hline
+  \(Q(x)\) & 1 & \(-1\) & 1 & 7 & 17 \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item First differences: \(-2,\ 2,\ 6,\ 10\) --- \textbf{not} constant.
+    \item Second differences: \(4,\ 4,\ 4\) --- \textbf{constant}.
+  \end{itemize}
+
+  \bigskip
+  \begin{block}{The headline}
+    The AROCs of a quadratic are not constant --- but they change at a
+    \textbf{constant rate}. The rates themselves follow a
+    \textbf{linear} pattern.
+  \end{block}
+\end{frame}
+
+% SECTION 4 — SECOND DIFFERENCES AND a
+\begin{frame}[t, plain]
+  \plumheader{4. Second Differences and the Leading Coefficient}
+
+  \begin{block}{The fingerprint}
+    For \(f(x) = ax^2 + bx + c\) with inputs stepping by \(h\), the second
+    differences are constant and equal to \(2ah^2\).
+    \[
+      h = 1 \quad \Longrightarrow \quad \text{second difference} = 2a
+    \]
+  \end{block}
+
+  \medskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Check on \(Q\): second difference \(4\), and \(2a = 2(2) = 4\).
+    \item Constant second differences of \(10\) with unit steps
+          \(\Rightarrow a = 5\).
+    \item Read a leading coefficient out of a table with \textbf{no formula
+          in sight}.
+  \end{itemize}
+\end{frame}
+
+% CONCAVITY
+\begin{frame}[t, plain]
+  \plumheader{Concavity, from the Numbers Alone}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{AROCs increasing}
+        Concave \textbf{up} \quad (\(a > 0\))\\[4pt]
+        \(Q\): \(-2,\ 2,\ 6,\ 10\) climbs, and \(a = 2\).
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{AROCs decreasing}
+        Concave \textbf{down} \quad (\(a < 0\))\\[4pt]
+        \(p(x) = -x^2 + 6x\): \(5,\ 3,\ 1,\ -1\) falls, and \(a = -1\).
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Function} & \textbf{First differences} & \textbf{Second differences} \\
+  \hline
+  Linear    & constant                     & all zero \\
+  \hline
+  Quadratic & change by a constant step    & constant, not zero \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \textit{Careful: first differences are AROCs only when the input step
+  is 1. Otherwise, divide by the step.}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item For \(p(x) = -x^2 + 6x\) at \(x = 0,1,2,3,4\): fill the outputs,
+          the first differences, and the second differences. What is \(a\),
+          and what is the concavity?
+    \item A quadratic's AROCs over \([0,1]\), \([1,2]\), \([2,3]\) are
+          \(1,\ 7,\ 13\).
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item By how much does each AROC step? What is \(a\)?
+            \item Concave up or concave down --- and how do you know?
+          \end{enumerate}
+    \item A table's second differences are \(6, 12, 18\). Is the function
+          quadratic? Justify your answer with the numbers.
+  \end{enumerate}
+\end{frame}
+
+\end{document}
