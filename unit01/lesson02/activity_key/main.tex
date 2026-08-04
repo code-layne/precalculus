@@ -1,4 +1,4 @@
-%! Rates of Change — Unit 1, Lesson 1.2 — Group Activity (Answer Key)
+%! Change in Tandem — Unit 1, Lesson 1.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,118 +9,125 @@
 \pageheader{Unit 1, Lesson 1.2}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{scenariobox}[City Population Data]{sky}
-The table below shows the population (in thousands) of a city over several decades.
+\begin{scenariobox}[Hiker's Elevation]{sky}
+\small
+A hiker records their elevation above sea level (in feet) at the end of each hour during a
+7-hour trail hike. The data is shown in the table below.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|C{2.2cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|}
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-\textbf{Year}       & 1970 & 1980 & 1990 & 2000 & 2010 & 2020 \\
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \hline
-\textbf{Pop.\ (thousands)} & 120  & 145  & 178  & 221  & 198  & 215  \\
+\textbf{Elevation} $E(t)$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
 \hline
 \end{tabular}
-
-\vspace{4pt}
-Let $P(t)$ denote the population (in thousands) in year $t$.
 \end{scenariobox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{R1.} AROC over $[1970,\,1990]$:
-\[
-    \text{AROC} = \frac{P(1990) - P(1970)}{1990 - 1970}
-    = \frac{178 - 120}{20}
-    = \frac{58}{20} = \ans{2.9} \text{ thousands per year}
-\]
+\begin{enumerate}[itemsep=8pt]
+  \item What are the \textbf{domain} and \textbf{range} of $E$ based on the table?
 
-\textbf{R2.} AROC over $[1990,\,2010]$:
-\[
-    \text{AROC} = \frac{P(2010) - P(1990)}{2010 - 1990}
-    = \frac{198 - 178}{20}
-    = \frac{20}{20} = \ans{1} \text{ thousand per year}
-\]
+        Domain: \ans{$\{0, 1, 2, 3, 4, 5, 6, 7\}$ or $[0,7]$} \qquad Range: \ans{$\{500, 1700, 2400, 2700, 2800\}$}
 
-\textbf{R3.} \ans{1970--1990 had faster growth.} The AROC was 2.9 thousand/year during
-1970--1990 vs.\ only 1 thousand/year during 1990--2010. A larger positive AROC indicates
-faster growth.
+  \item On the interval $[0, 4]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        \ans{Increasing}
+
+  \item On the interval $[4, 7]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        \ans{Decreasing}
+
+  \item At what hour does the hiker reach the highest elevation? \ans{Hour 4}
+        What is that elevation? \ans{2,800 ft}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\begin{teachernote}
+Tier R focus: domain, range, and basic increasing/decreasing from a table. Watch for students
+listing the range incorrectly --- they should list the actual output values seen in the table,
+or the interval if treating the function as continuous. Accept either for now; distinguish
+discrete vs.\ continuous in a later lesson.
+\end{teachernote}
+
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{A1.} AROC by decade:
+\begin{enumerate}[itemsep=8pt]
+  \item Compute the change in elevation per hour:
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.0cm}|C{5.5cm}|C{3.0cm}|}
-\hline
-\rowcolor{sky}
-\textbf{Decade} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
-\hline
-1970 -- 1980 & $\dfrac{145-120}{10}$ & \ans{2.5} \\
-\hline
-1980 -- 1990 & $\dfrac{178-145}{10}$ & \ans{3.3} \\
-\hline
-1990 -- 2000 & $\dfrac{221-178}{10}$ & \ans{4.3} \\
-\hline
-2000 -- 2010 & $\dfrac{198-221}{10}$ & \ans{$-$2.3} \\
-\hline
-2010 -- 2020 & $\dfrac{215-198}{10}$ & \ans{1.7} \\
-\hline
-\end{tabular}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Interval & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ & $[6,7]$ \\
+        \hline
+        Change (ft/hr) & \ans{+1200} & \ans{+700} & \ans{+300} & \ans{+100} & \ans{$-$400} & \ans{$-$1000} & \ans{$-$900} \\
+        \hline
+        \end{tabular}
 
-\vspace{8pt}
-\textbf{A2.} Greatest growth: \ans{1990--2000} (AROC $= 4.3$ thousand/year).
+  \item On $[0, 4]$, the rate of change is: \ans{Decreasing}
 
-\textbf{A3.} Negative decade: \ans{2000--2010}. A negative AROC means \ans{the population
-decreased — as the year increased, the population went down (from 221 to 198 thousand).}
+        Therefore the graph on $[0, 4]$ is concave: \ans{Down}
+
+  \item Which best describes the graph of $E$ on $[0, 4]$? \ans{A --- Rises steeply then more gradually}
+
+  \item Does $E$ ever equal 0 based on the table? \ans{No --- the lowest value shown is 500 ft.}
+        Explain: \ans{All table values are positive (at least 500). Without more data we cannot confirm a zero exists.}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\begin{teachernote}
+Tier A focus: computing successive differences to identify concavity. Emphasize that the rate
+of change is a sequence of numbers; if that sequence is decreasing, the graph is concave down.
+Students often want to say "concave up because the function is going up" --- redirect to the
+behavior of the changes, not the function values.
+\end{teachernote}
+
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{E1.} AROC near $t = 2010$:
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.2cm}|C{5.5cm}|C{3.2cm}|}
+Speed data:
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
+Hour $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \hline
-$[2005,\;2010]$ & $\dfrac{198-210}{5}$ & \ans{$-$2.4} \\
-\hline
-$[2008,\;2010]$ & $\dfrac{198-206}{2}$ & \ans{$-$4} \\
-\hline
-$[2009,\;2010]$ & $\dfrac{198-200}{1}$ & \ans{$-$2} \\
-\hline
-$[2009.5,\;2010]$ & $\dfrac{198-199}{0.5}$ & \ans{$-$2} \\
+Speed $S(t)$ & 3.5 & 3.0 & 2.5 & 1.8 & 1.2 & 2.0 & 2.8 & 3.2 \\
 \hline
 \end{tabular}
 
-\vspace{8pt}
-\textbf{E2.} The AROC appears to approach approximately \ans{$-$2 thousand/year}.
+\begin{enumerate}[itemsep=8pt]
+  \item Increasing: \ans{$[4, 7]$} \qquad Decreasing: \ans{$[0, 4]$}
 
-\textbf{E3.} \ans{Limitation: we only have discrete data points, so we can't actually
-shrink the interval to zero — there are no data values between the given years. An interval
-of length 0 would require dividing by zero, which is undefined. In calculus, the limit
-of these AROCs (as the interval length approaches 0) is the derivative, but with discrete
-data we can only approximate it.}
+  \item When going uphill steeply, speed is relatively \ans{high}. As the trail flattens near the summit,
+        speed \ans{decreases because the effort per foot of elevation gain increases; the hiker slows as the climb gets harder}.
+
+        \vspace{0.05in}
+        \ansline{Speed decreases steadily from 3.5 mph at the start to 1.2 mph at the summit (hour 4), consistent with increasing steepness.}
+
+  \item The elevation function is concave down on $[0, 4]$, meaning the rate of change of elevation
+        is decreasing. \ansline{The hiker gains less elevation per hour as time goes on during the ascent --- the rate of change of elevation is slowing, i.e., the function is increasing but at a decreasing rate.}\\[2pt]
+        \ansline{(Phrased another way: the gain per hour shrinks from 1200 ft/hr down to 100 ft/hr.)}
+
+  \item \ansline{The rate of change of elevation corresponds to the steepness of the trail. As elevation gain per hour decreases (concave down), the hiker's speed also decreases --- both functions decrease on $[0,4]$. They are inversely related to effort: as the trail gets harder (more elevation per mile), the hiker slows.}
+\end{enumerate}
 \end{tcolorbox}
+
+\begin{teachernote}
+Tier E pushes students to connect two covarying functions (elevation and speed) and interpret
+concavity in terms of real-world meaning. Strong responses will use phrases like "rate of change
+of elevation is decreasing" rather than just "the graph curves down."
+\end{teachernote}
 
 \end{document}
