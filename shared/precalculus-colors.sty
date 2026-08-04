@@ -1,13 +1,17 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{precalculus-colors}[2026/06/01 Precalculus shared color palette]
+\ProvidesPackage{precalculus-colors}[2026/08/03 Precalculus shared color palette]
 
 \RequirePackage{xcolor}
 
-% ── Primary palette ───────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
+% ── Primary palette — plum based ──────────────────────────────────────────────
+% Plum is the course's primary accent (frames, page headers, banners, titles);
+% lilac is its pale companion background.
+\definecolor{plum}{HTML}{4B2A6C}
+\definecolor{plumlight}{HTML}{6E4699}
+\definecolor{lilac}{HTML}{F4EFFA}
+\definecolor{lilacmid}{HTML}{DCCCEE}
+
+% ── Accent families ───────────────────────────────────────────────────────────
 \definecolor{goldacc}{HTML}{D4820A}
 \definecolor{goldbg}{HTML}{FEF3E2}
 \definecolor{hookbg}{HTML}{FEF3E2}
@@ -24,3 +28,13 @@
 \definecolor{goldbox}{HTML}{FFF7E6}
 \colorlet{greenbox}{greenbg}
 \colorlet{redbox}{redbg}
+\colorlet{plumbox}{lilac}
+
+% ── Deprecated aliases ────────────────────────────────────────────────────────
+% The palette's dominant color was formerly navy (inherited from the statistics
+% course); these keep older references working. Prefer the plum/lilac names
+% above in new material.
+\colorlet{navy}{plum}
+\colorlet{navylight}{plumlight}
+\colorlet{sky}{lilac}
+\colorlet{skymid}{lilacmid}

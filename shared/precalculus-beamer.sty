@@ -19,21 +19,25 @@
 \setbeamertemplate{footline}{}
 \setbeamertemplate{headline}{}
 \setbeamercolor{normal text}{fg=charcoal}
+\setbeamercolor{structure}{fg=plum}
 \setbeamerfont{normal text}{family=\sffamily}
 
-% ── \navyheader{Title} ────────────────────────────────────────────────────────
-% Full-width navy bar across the top of a slide with white title text.
-\newcommand{\navyheader}[1]{%
+% ── \plumheader{Title} ────────────────────────────────────────────────────────
+% Full-width plum bar across the top of a slide with white title text.
+% \navyheader is a deprecated alias kept for decks authored under the old
+% navy palette; prefer \plumheader in new material.
+\newcommand{\plumheader}[1]{%
   \begin{tikzpicture}[remember picture, overlay]
-    \fill[navy] (current page.north west)
+    \fill[plum] (current page.north west)
       rectangle ([yshift=-1.35cm]current page.north east);
     \node[anchor=west, text=white, font=\bfseries\large,
           inner xsep=0.55cm, inner ysep=0pt]
       at ([yshift=-0.68cm]current page.north west) {#1};
   \end{tikzpicture}%
   \vspace{1.05cm}\par}
+\let\navyheader\plumheader
 
 % ── \sectionlabel[color]{LABEL TEXT} ─────────────────────────────────────────
 % Small-caps section label above slide content.
-\newcommand{\sectionlabel}[2][navy]{%
+\newcommand{\sectionlabel}[2][plum]{%
   {\color{#1}\bfseries\footnotesize\MakeUppercase{#2}}\par\smallskip}
