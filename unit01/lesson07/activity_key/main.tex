@@ -1,154 +1,219 @@
 %! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Group Activity --- Answer Key}
-\namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Data Dispatch Agency]{sky}
+\begin{scenariobox}[The Courtyard Committee]{plumlight}
 \small
-Your team works at the Data Dispatch Agency. Four requests just arrived, each describing a
-real-world situation that needs a function model. For each dispatch, your team must (1) select
-the best model type, and (2) state the key assumptions and domain restriction. Work through
-the tier that matches your group's assignment.
+The school's courtyard committee has \textbf{60 feet of metal edging} for a new
+rectangular flower bed. One long side of the bed runs against the building wall,
+so that side needs no edging at all --- only the two ends and the front are
+edged. The committee wants the largest possible planting area.
+
+\smallskip
+Let $w$ be the width of the bed in feet (the two short ends) and $\ell$ the
+length along the wall. The committee measured five trial layouts before anyone
+did any algebra:
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+\hline
+$A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+\hline
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
-\textbf{The four dispatches:}
-
-\begin{itemize}[itemsep=3pt]
-  \item \textbf{Dispatch 1.} A city tracks its population each year. The population increases by
-        approximately 850 people per year for the past decade.
-  \item \textbf{Dispatch 2.} A farmer wants to fence a rectangular pen using 200 m of fencing.
-        She records the area for different choices of one side length.
-  \item \textbf{Dispatch 3.} A warehouse stores boxes stacked in cubic arrangements.
-        The total number of boxes for a stack of side length $n$ units is recorded.
-  \item \textbf{Dispatch 4.} A ride-share app charges \$2.50 per mile for the first 5 miles,
-        then \$1.75 per mile for each mile after that.
-\end{itemize}
-
-\vspace{0.08in}
-
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-For each dispatch, \textbf{circle the best model type} from the three choices given, then
-complete the assumption sentence.
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Check the input row first.} Are the widths equally spaced?
+        \ans{Yes} \quad By how much each step? \ans{5 ft}
 
-\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\linewidth}{@{} c X p{5.5cm} @{}}
-\textbf{Dispatch} & \textbf{Best model (circle one)} & \textbf{Complete the assumption} \\
-\midrule
-1 & \ans{Linear} \quad Quadratic \quad Cubic & ``This model assumes the population grows by a \ans{constant} amount each year.'' \\
-2 & Linear \quad \ans{Quadratic} \quad Cubic & ``This model assumes the pen is a \ans{rectangle} and the perimeter is exactly \ans{200} m.'' \\
-3 & Linear \quad Quadratic \quad \ans{Cubic} & ``This model assumes the stacks form perfect \ans{cube} shapes.'' \\
-4 & Linear \quad Quadratic \quad \ans{Piecewise} & ``This model assumes the rate changes at exactly \ans{5} miles.'' \\
-\end{tabularx}
+  \item \textbf{Take the differences.} Fill in both rows.
 
-\begin{teachernote}
-Dispatch 3 is cubic because $n^3$ boxes fit in a cube of side $n$. The volume/3-D clue justifies cubic.
-\end{teachernote}
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+        \hline
+        $A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+        \hline
+        1st difference & --- & \ans{150} & \ans{50} & \ans{$-50$} & \ans{$-150$} \\
+        \hline
+        2nd difference & --- & --- & \ans{$-100$} & \ans{$-100$} & \ans{$-100$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item \textbf{Name it.} The first differences are \ans{not constant}, but the second
+        differences are all \ans{$-100$}, so this data is best modeled by a
+        \ans{quadratic} function.
+
+  \item \textbf{Match each context to its model type.} Write a letter in each
+        blank: \textbf{L} linear, \textbf{Q} quadratic, \textbf{C} cubic,
+        \textbf{R} rational, \textbf{P} piecewise.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The volume of a cube-shaped bin, as a function of its edge
+                length. \ans{C}
+          \item A phone plan costs \$30 a month plus \$5 for each extra
+                gigabyte. \ans{L}
+          \item The brightness of a lamp, which is inversely proportional to
+                the square of your distance from it. \ans{R}
+          \item A garage charges \$4 for the first hour and \$2 for every hour
+                after that. \ans{P}
+          \item The area of a rug whose length is always twice its width, as a
+                function of the width. \ans{Q}
+        \end{enumerate}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Dispatch 1 table:}
-\quad
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
-\hline
-Year ($x$) & Population ($y$) & $\Delta y$ \\
-\hline
-0 & 12{,}000 & --- \\
-\hline
-1 & 12{,}850 & \ans{850} \\
-\hline
-2 & 13{,}700 & \ans{850} \\
-\hline
-3 & 14{,}550 & \ans{850} \\
-\hline
-\end{tabular}
+The committee wants a formula, not five measurements.
 
-\medskip
-Model type: \ans{Linear} \quad Degree: \ans{1}
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Write the constraint.} Two ends and one front use all 60 feet
+        of edging.
 
-\medskip
-Assumption: \ansline{The population increases by the same amount each year (constant rate of change).}
+        \ans{2} $w \; + \;$ \ans{$\ell$} $= 60$ \qquad so \quad $\ell = $
+        \ans{$60 - 2w$}
 
-Domain restriction: \ans{$x \geq 0$ (years since tracking began; no negative years)}
+  \item \textbf{Substitute.} Area is $A = w \cdot \ell$. Build the model.
 
-\bigskip
-\textbf{Dispatch 2 table:}
-\quad
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$\ell$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
-\hline
-10 & 900  & ---         & ---         \\
-\hline
-20 & 1600 & \ans{700} & ---      \\
-\hline
-30 & 2100 & \ans{500} & \ans{$-200$} \\
-\hline
-40 & 2400 & \ans{300} & \ans{$-200$} \\
-\hline
-50 & 2500 & \ans{100} & \ans{$-200$} \\
-\hline
-\end{tabular}
+        \begin{work}
+          A(w) &= w(60 - 2w) \\
+               &= 60w - 2w^2
+        \end{work}
 
-\medskip
-Model type: \ans{Quadratic} \quad Degree: \ans{2}
+        $A(w) = $ \ans{$60w - 2w^2$}
 
-\medskip
-Domain restriction: \ans{$0 < \ell < 100$ (length positive; other side $= 100 - \ell > 0$)}
+  \item \textbf{Restrict the domain.} The width and the length must both be
+        positive:
 
-\begin{teachernote}
-$A = \ell(100 - \ell) = 100\ell - \ell^2$ with perimeter 200 m means each pair of sides sums to 100 m.
-Second differences are all $-200$ (inputs spaced by 10, so $2a \cdot 10^2 = -200$ gives $a = -1$, consistent with $-\ell^2$).
-\end{teachernote}
+        \ans{0} $< w <$ \ans{30}
+
+        Why that upper end? \ans{At $w = 30$ no edging is left for the front.}
+
+  \item \textbf{Check against the committee's table.} Evaluate the model at two
+        of the measured widths.
+
+        \begin{work}
+          A(10) &= 60(10) - 2(10)^2 \\
+                &= 600 - 200 \\
+                &= 400 \\
+          A(15) &= 60(15) - 2(15)^2 \\
+                &= 900 - 450 \\
+                &= 450
+        \end{work}
+
+        $A(10) = $ \ans{400} \qquad $A(15) = $ \ans{450} \qquad
+        Do these match the table? \ans{Yes}
+
+  \item \textbf{Find the largest bed.} For $A(w) = aw^2 + bw$ the vertex is at
+        $w = -\dfrac{b}{2a}$.
+
+        \begin{work}
+          w &= -\frac{60}{2(-2)} \\
+            &= 15
+        \end{work}
+
+        Best width $= $ \ans{15} ft, \quad length $= $ \ans{30} ft,
+        \quad area $= $ \ans{450} ft$^2$.
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Two average rates of change --- with units.} Use
+        $A(w) = 60w - 2w^2$.
 
-  \item \textbf{Dispatch 4 --- Piecewise model.}
+        \begin{work}
+          \frac{A(10) - A(5)}{10 - 5} &= \frac{400 - 250}{5} \\
+                                      &= 30 \\
+          \frac{A(20) - A(15)}{20 - 15} &= \frac{400 - 450}{5} \\
+                                        &= -10
+        \end{work}
 
-        Piece 1 (applies when \ans{$0 \leq m \leq 5$}): $C(m) = $ \ans{$2.50m$}
+        On $[5, 10]$: \ans{30} \qquad On $[15, 20]$: \ans{$-10$}
 
-        Function type for Piece 1: \ans{linear}
+        Units: \ans{square feet of area per foot of width}
 
-        Piece 2 (applies when \ans{$m > 5$}): $C(m) = $ \ans{$2.50(5) + 1.75(m - 5) = 1.75m + 3.75$}
+        Explain what the change of sign tells the committee.
 
-        Function type for Piece 2: \ans{linear}
+        \vspace{0.05in}
+        \ansline{Area is still growing on $[5,10]$ but shrinking on $[15,20]$, so the largest bed lies between them.}
 
-  \item Two assumptions:
+  \item \textbf{A code rule changes the answer.} The building code requires a
+        walkway, so the bed's width must be \textbf{at least 18 feet}. The new
+        domain is $18 \le w < 30$.
 
-        Assumption 1: \ansline{The per-mile rate is exactly constant within each piece (no surge pricing).}
-        Why it matters: \ansline{If rates fluctuate, the piecewise linear model is no longer valid.}
+        \begin{work}
+          A(18) &= 60(18) - 2(18)^2 \\
+                &= 1080 - 648 \\
+                &= 432
+        \end{work}
 
-        Assumption 2: \ansline{The distance is measured in whole or fractional miles with no minimum charge beyond the stated rates.}
-        Why it matters: \ansline{Many services charge minimums; ignoring them changes the model's starting value.}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Is the old best width $w = 15$ still allowed? \ans{No}
+          \item $A(18) = $ \ans{432} ft$^2$
+          \item On $18 \le w < 30$ the area only \ans{decreases} as $w$ grows, so
+                the largest legal bed is at $w = $ \ans{18}.
+          \item In one sentence: what changed the answer --- the model, or the
+                domain?
 
-  \item \ansline{Yes, the reasoning is mathematically sound. Because the number of boxes equals $n^3$ (a cubic formula), the third differences of the output data will be constant and nonzero, confirming a degree-3 (cubic) polynomial model.}
+                \vspace{0.05in}
+                \ansline{The domain. $A(w)$ is the same function; the code just removed the input where its maximum lived.}
+        \end{enumerate}
 
+  \item \textbf{A different kind of model (a look ahead to Unit 3).} A lamp's
+        brightness $L$ is \textbf{inversely proportional to the square} of the
+        distance $d$ in meters: $L = \dfrac{k}{d^2}$. At $d = 2$ m the meter
+        reads $L = 90$.
+
+        \begin{work}
+          90 &= \frac{k}{2^2} \\
+           k &= 360 \\
+        L(6) &= \frac{360}{6^2} \\
+             &= 10
+        \end{work}
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $k = $ \ans{360} \qquad so $L(d) = $ \ans{$360/d^2$}
+          \item $L(6) = $ \ans{10}
+          \item Domain restriction: $d$ \ans{$> 0$}, because
+                \ans{distance cannot be zero or negative}
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 

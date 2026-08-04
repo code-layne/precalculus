@@ -7,137 +7,168 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Homework}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item \textbf{Difference table.} Complete the table and identify the polynomial degree.
+\item Take differences until they are constant, then name each model type.
 
-      \medskip
-      \renewcommand{\arraystretch}{1.4}
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      $x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
-      \hline
-      0 & 2   & ---         & ---         & ---         \\
-      \hline
-      1 & 6   & \blank{1.6cm} & ---      & ---         \\
-      \hline
-      2 & 16  & \blank{1.6cm} & \blank{1.6cm} & ---    \\
-      \hline
-      3 & 38  & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-      \hline
-      4 & 78  & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-      \hline
-      5 & 142 & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-      \hline
-      \end{tabular}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$y$ & 11 & 8 & 5 & 2 & $-1$ \\
+\hline
+1st & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$y$ & 1 & 3 & 11 & 31 & 69 \\
+\hline
+1st & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\hline
+2nd & --- & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\hline
+3rd & --- & --- & --- & \blank{1cm} & \blank{1cm} \\
+\hline
+\end{tabular}
+\end{center}
 
-      \medskip
-      The \blank{3cm} differences are constant, so this data is best modeled by a
-      degree-\blank{0.8cm} polynomial.
+\smallskip
+Left table: \blank{2.6cm} \qquad Right table: \blank{2.6cm}
 
-\item \textbf{Context-to-model matching.} Match each scenario (A--D) to the best model type (1--4).
+\item Match each context to its model type. Write a letter in each blank:
+      \textbf{L} linear, \textbf{Q} quadratic, \textbf{C} cubic,
+      \textbf{R} rational, \textbf{P} piecewise.
 
-      \medskip
-      \begin{tabular}{@{} p{0.55\linewidth} p{0.35\linewidth} @{}}
-      \textbf{Scenario} & \textbf{Model type} \\
-      \midrule
-      A. Water drains from a cylindrical tank; volume depends on the cube of the radius. & 1. Linear \\
-      B. A taxi charges a flat fee plus a fixed rate per mile. & 2. Quadratic \\
-      C. A ball is launched; height depends on horizontal distance. & 3. Cubic \\
-      D. Profit per unit is constant regardless of units sold. & 4. Piecewise \\
-      \end{tabular}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item A pool is filled at a steady 12 gallons per minute. \blank{1.2cm}
+  \item The amount of paint needed to cover a square wall, as a function of the
+        wall's side length. \blank{1.2cm}
+  \item A city charges \$0.05 per gallon of water for the first 5{,}000 gallons
+        and \$0.09 per gallon after that. \blank{1.2cm}
+  \item The time to drive 300 miles, as a function of average speed
+        (time $=$ 300/speed). \blank{1.2cm}
+  \item The amount of concrete needed to fill a cube-shaped footing, as a
+        function of the footing's edge length. \blank{1.2cm}
+\end{enumerate}
 
-      \medskip
-      A $\to$ \blank{0.8cm} \qquad B $\to$ \blank{0.8cm} \qquad C $\to$ \blank{0.8cm} \qquad D $\to$ \blank{0.8cm}
+\item \textbf{A rectangle with no wall to lean on.} A gardener has 100 feet of
+      fencing for a rectangular plot and must fence \textbf{all four sides}.
 
-\item \textbf{Assumption articulation.} A linear function models the distance $d$ (in miles)
-      a cyclist travels as a function of time $t$ (in hours).
+\begin{work}
+   2w + 2\ell &= 100 \\
+         \ell &= 50 - w \\
+         A(w) &= w(50 - w) \\
+              &= 50w - w^2 \\
+            w &= -\frac{50}{2(-1)} \\
+              &= 25
+\end{work}
 
-      \medskip
-      (a) State one assumption this model makes about the cyclist's speed.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Constraint: \blank{4cm} \qquad so $\ell = $ \blank{2.8cm}
+  \item $A(w) = $ \blank{4cm} \qquad Domain: \blank{1cm} $< w <$ \blank{1cm}
+  \item The largest area occurs at $w = $ \blank{1.6cm} ft, which makes the plot
+        a \blank{2.4cm}. Explain in one sentence why this answer is a square but
+        the barn pen from class was not.
 
-      \vspace{0.04in}
-      \writeline
+        \writeline
+\end{enumerate}
 
-      \medskip
-      (b) Give a domain restriction and explain why it applies.
+\boxguard[24]
+\item \textbf{Back to the pen.} The garden club's model is
+      $A(w) = 80w - 2w^2$ on $0 < w < 40$.
 
-      \vspace{0.04in}
-      Domain: \blank{4cm} \quad Reason: \writeline
+\begin{work}
+   A(5) &= 80(5) - 2(5)^2 \\
+        &= 400 - 50 \\
+        &= 350 \\
+  A(35) &= 80(35) - 2(35)^2 \\
+        &= 2800 - 2450 \\
+        &= 350 \\
+  \frac{A(15) - A(5)}{15 - 5} &= \frac{750 - 350}{10} \\
+                              &= 40
+\end{work}
 
-\item \textbf{Piecewise model description.} A parking garage charges \$3.00 for the first hour
-      and \$1.50 per hour (or fraction thereof) for each additional hour, up to a daily maximum
-      of \$15.00. Describe a piecewise model for the cost $C$ as a function of hours $h$.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $A(5) = $ \blank{1.8cm} ft$^2$ \qquad $A(35) = $ \blank{1.8cm} ft$^2$.
+        Two different widths, the same area --- why does that make sense?
 
-      \medskip
-      Piece 1 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+        \blank{7cm}
+  \item Average rate of change from $w = 5$ to $w = 15$: \blank{1.8cm},
+        with units \blank{5cm}.
+  \item Is $w = 45$ in the domain of this model? \blank{1.6cm} \quad Why not?
+        \blank{5.6cm}
+\end{enumerate}
 
-      \vspace{0.06in}
-      Piece 2 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+\item \textbf{An inverse-proportion model.} The force $F$ between two magnets is
+      inversely proportional to the square of the distance $d$ between them, so
+      $F = \dfrac{k}{d^2}$. At $d = 3$ cm the force measures 20 newtons.
 
-      \vspace{0.06in}
-      Piece 3 (when \blank{3cm}): $C = $ \blank{4cm} \quad Type: \blank{2.5cm}
+\begin{work}
+    20 &= \frac{k}{3^2} \\
+     k &= 180 \\
+  F(6) &= \frac{180}{6^2} \\
+       &= 5
+\end{work}
 
-\item \textbf{Model selection with justification.} A scientist measures the spread of a
-      chemical across a flat surface. The affected area (in cm$^2$) at several distances
-      $r$ (in cm) from the source is recorded below.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $k = $ \blank{2cm} \qquad so $F(d) = $ \blank{3cm}
+  \item $F(6) = $ \blank{2cm} newtons
+  \item Domain restriction: $d$ \blank{2cm}, because \blank{5cm}
+\end{enumerate}
 
-      \medskip
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}{|c|c|c|c|}
-      \hline
-      $r$ & $A$ & $\Delta A$ & $\Delta^2 A$ \\
-      \hline
-      1 & 3   & ---         & ---         \\
-      \hline
-      2 & 12  & \blank{1.8cm} & ---      \\
-      \hline
-      3 & 27  & \blank{1.8cm} & \blank{1.8cm} \\
-      \hline
-      4 & 48  & \blank{1.8cm} & \blank{1.8cm} \\
-      \hline
-      \end{tabular}
+\item A table of equally spaced inputs has second differences that are all
+      equal to 4. Which statement is correct?
 
-      \medskip
-      Based on differences, what model type fits? \blank{3.5cm}
-
-      \vspace{0.06in}
-      Is there a context clue that supports this choice? Explain in one sentence.
-
-      \vspace{0.04in}
-      \writeline
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item Linear, because the differences are constant.
+  \item Quadratic, because the second differences are constant.
+  \item Degree 5, because the table has five rows.
+  \item No polynomial model fits, because the second differences are not zero.
+\end{enumerate}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{extensionbox}
-\textbf{Extension (optional).} The table below lists four data points. A student claims
-a cubic polynomial is the unique model because there are 4 points. Is this claim correct?
-Explain by computing differences and stating the degree of the unique polynomial.
+The barn wall turns out to be only \textbf{30 feet long}. If the pen's length
+$\ell$ is more than 30 feet, the part beyond the barn has to be fenced too ---
+so the fencing equation changes.
 
-\medskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & $y$ & $\Delta y$ & $\Delta^2 y$ & $\Delta^3 y$ \\
-\hline
-0 & 0  & ---         & ---         & ---         \\
-\hline
-1 & 2  & \blank{1.6cm} & ---      & ---         \\
-\hline
-2 & 8  & \blank{1.6cm} & \blank{1.6cm} & ---    \\
-\hline
-3 & 18 & \blank{1.6cm} & \blank{1.6cm} & \blank{1.6cm} \\
-\hline
-\end{tabular}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item When $\ell > 30$, the fence must cover $2w + \ell + (\ell - 30) = 80$.
+        Solve that for $\ell$: \blank{3.4cm}
+  \item That case applies when $w$ is \textbf{less than} \blank{1.6cm} feet.
+  \item Write the two area rules. \quad $A(w) = w(55 - w)$ for
+        \blank{2.6cm}, \quad and $A(w) = w(80 - 2w)$ for \blank{2.6cm}.
+  \item Both rules give the same area at the threshold. Check it:
+        \blank{2cm} ft$^2$. Why must a piecewise model agree at the threshold?
 
-\medskip
-\writelines{2}
+        \writeline
+\end{enumerate}
 \end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.1}
+Every model you built today came out a polynomial, and the useful one came out
+quadratic. Unit 2 opens with \textit{Quadratic Functions Revisited}, and
+$A(w) = 80w - 2w^2$ is still on the board: where the vertex formula
+$-\frac{b}{2a}$ comes from, what vertex form shows that standard form hides, and
+why a parabola is symmetric about its vertex --- which is exactly why $A(5)$ and
+$A(35)$ came out equal in problem 4.
+\end{notesbox}
 
 \end{document}

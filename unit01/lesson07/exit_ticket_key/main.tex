@@ -1,59 +1,68 @@
 %! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.7}{Exit Ticket --- Answer Key}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item Complete the difference table and identify the best model type.
+\item Take differences until they are constant, then name the model type.
 
-      \medskip
-      \renewcommand{\arraystretch}{1.4}
-      \begin{tabular}{|c|c|c|c|}
-      \hline
-      $x$ & $y$ & $\Delta y$ & $\Delta^2 y$ \\
-      \hline
-      0 & 5  & ---         & ---         \\
-      \hline
-      1 & 9  & \ans{4} & ---      \\
-      \hline
-      2 & 17 & \ans{8} & \ans{4} \\
-      \hline
-      3 & 29 & \ans{12} & \ans{4} \\
-      \hline
-      4 & 45 & \ans{16} & \ans{4} \\
-      \hline
-      \end{tabular}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$y$ & 2 & 5 & 14 & 29 & 50 \\
+\hline
+1st difference & --- & \ans{3} & \ans{9} & \ans{15} & \ans{21} \\
+\hline
+2nd difference & --- & --- & \ans{6} & \ans{6} & \ans{6} \\
+\hline
+\end{tabular}
+\end{center}
 
-      \medskip
-      The \ans{second} differences are constant, so the best model type is
-      \ans{quadratic} (degree \ans{2}).
+\smallskip
+Model type: \ans{quadratic}
 
-\item A shipping company charges a flat rate of \$8 for packages up to 5 lb,
-      then adds \$1.50 per pound above 5 lb. Circle the best model type and give one reason.
+\item A dog run is built against the side of a garage using \textbf{40 feet} of
+      fencing on the other three sides. Let $w$ be the width (the two fenced
+      ends) and $\ell$ the length along the garage.
 
-      \medskip
-      \textbf{A.} Linear \qquad \textbf{B.} Quadratic \qquad \textbf{C.} Cubic \qquad \textbf{D.} Piecewise-defined \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\begin{work}
+   2w + \ell &= 40 \\
+        \ell &= 40 - 2w \\
+        A(w) &= w(40 - 2w) \\
+             &= 40w - 2w^2
+\end{work}
 
-      \medskip
-      One reason: \ansline{The pricing rule changes at 5 lb, so different formulas apply on different intervals.}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Constraint: \ans{2} $w \; + \;$ \ans{$\ell$} $= 40$
+  \item $A(w) = $ \ans{$40w - 2w^2$}
+  \item Domain: \ans{0} $< w <$ \ans{20}
+\end{enumerate}
 
-\item A quadratic function models the area of a rectangular garden with one fixed wall
-      (using 60 m of fencing for three sides). State one \textbf{domain restriction}
-      and one \textbf{model assumption}.
+\item A shipping crate is a cube. Its volume is written as a function of the
+      cube's edge length.
 
-      \medskip
-      Domain restriction: \ansline{$0 < w < 30$ where $w$ is the width (width must be positive and less than half the available fencing).}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Circle the best model type: \quad
+        \textbf{Linear} \quad \textbf{Quadratic} \quad
+        \textbf{Cubic}~\textcolor{keyred}{\textbf{$\leftarrow$}} \quad
+        \textbf{Piecewise}
+  \item Write one assumption the dog-run model in problem 2 makes about the
+        real world.
 
-      Model assumption: \ansline{The garden is a perfect rectangle and exactly 60 m of fencing is used on the three open sides.}
+        \ansline{All 40 ft of fencing is used, the run is exactly rectangular, and the garage wall is long enough.}
+\end{enumerate}
 
 \end{enumerate}
 
