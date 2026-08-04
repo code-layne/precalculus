@@ -7,151 +7,229 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Group Activity}
-\namepartnerperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Function Makeover Studio]{sky}
+\begin{scenariobox}[The Skate Park Ramp]{plumlight}
 \small
-A design studio applies transformation rules to ``restyle'' functions. The base function $f$
-is defined by the table below. Your team must construct transformed versions, match
-transformations to descriptions, and reverse-engineer transformations from data.
+A skate park's ramp has a curved cross-section modeled by the parent function
+$f(x) = x^2$, where $x$ is the horizontal distance in feet from the low point
+and $f(x)$ is the height of the ramp surface in feet. The design team keeps
+asking for changes --- but the \textit{curve} never changes, only where it
+sits and how big it is. Every tier uses this same table and pre-drawn graph.
 
-\medskip
-\textbf{Base function $f$:}
-\renewcommand{\arraystretch}{1.2}
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+$x$ (feet) & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
+$f(x)$ (feet) & 4 & 1 & 0 & 1 & 4 \\
 \hline
 \end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm, y=0.42cm]
+  \draw[linegray, very thin, step=1] (-2,0) grid (2,5);
+  \draw[->, thick] (-2.4,0) -- (2.5,0) node[below right] {\small $x$ (ft)};
+  \draw[->, thick] (0,0) -- (0,5.5) node[above] {\small $f(x)$ (ft)};
+  \foreach \x in {-2,-1,1,2} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y in {1,2,3,4,5} \node[left, font=\small] at (0,\y) {\y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
+  \fill[plum] (-2,4) circle (2.5pt);
+  \fill[plum] (-1,1) circle (2.5pt);
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (1,1) circle (2.5pt);
+  \fill[plum] (2,4) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard[30]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Three students each applied a different transformation to $f$. Their tables are shown below.
-Match each table to the correct description by writing the letter in the blank.
-
-\medskip
-\textbf{Descriptions:} \quad
-\textbf{A.}\ $g(x) = f(x) - 3$ \qquad
-\textbf{B.}\ $g(x) = f(x+2)$ \qquad
-\textbf{C.}\ $g(x) = 2f(x)$
-
-\medskip
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
-\hline
-Table 1: $g(x)$ & $1$ & $-2$ & $-3$ & $-2$ & $1$ \\
-\hline
-\end{tabular}
-\quad Matches description: \blank{1.5cm}
-
-\medskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
-\hline
-Table 2: $g(x)$ & $8$ & $2$ & $0$ & $2$ & $8$ \\
-\hline
-\end{tabular}
-\quad Matches description: \blank{1.5cm}
-
-\medskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
-\hline
-Table 3: $g(x)$ & $0$ & $1$ & $4$ & $9$ & $16$ \\
-\hline
-\end{tabular}
-\quad Matches description: \blank{1.5cm}
-
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-Using the base function $f$ from the scenario, construct the table of values for
-$g(x) = 2f(x - 1) + 3$. Show how you compute each output.
-
-\medskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & $x-1$ & $f(x-1)$ & $2f(x-1)$ & $g(x) = 2f(x-1)+3$ \\
-\hline
-$-1$ & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-$0$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-$1$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-$2$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-$3$  & \blank{1.2cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-\end{tabular}
-
-\medskip
-State the domain and range of $g$ based on your table.
-
-\medskip
-Domain of $g$: \blank{5cm} \quad Range of $g$: \blank{5cm}
-
-\end{tcolorbox}
-
-\vspace{0.08in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-A second function $h$ is defined by the table below. By comparing $h$ to the base function
-$f$, identify all transformations applied to $f$ to produce $h$, and write $h(x)$ in terms
-of $f$.
-
-\medskip
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$    & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
-\hline
-$f(x)$ & $4$  & $1$  & $0$ & $1$ & $4$ \\
-\hline
-$h(x)$ & $-7$ & $-1$ & $1$ & $-1$ & $-7$ \\
-\hline
-\end{tabular}
-
-\medskip
 \begin{enumerate}[itemsep=8pt]
-  \item Compare outputs: how does $h(x)$ relate to $f(x)$ at each $x$-value?
+  \item \textbf{Build it on a platform.} The crew raises the whole ramp onto a
+        3-foot platform: $g(x) = f(x) + 3$. Complete the table.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        \hline
+        $f(x)$ & 4 & 1 & 0 & 1 & 4 \\
+        \hline
+        $g(x) = f(x) + 3$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+          & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        The whole ramp moved \textbf{up} / \textbf{down} (circle one) by
+        \blank{1.2cm} feet.
+
+  \item \textbf{Sink it in a pit.} Now the crew drops the ramp 1 foot into a
+        pit: $h(x) = f(x) - 1$. Complete the table.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        \hline
+        $h(x) = f(x) - 1$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+          & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        The whole ramp moved \textbf{up} / \textbf{down} (circle one) by
+        \blank{1.2cm} feet.
+
+  \item \textbf{The sorting question.} In both rules, the ``$+3$'' and the
+        ``$-1$'' were written \textbf{outside} / \textbf{inside} (circle one)
+        the function $f$.
+
+        So they changed the \blank{2cm} column of the table, and the ramp
+        moved \blank{2.6cm}.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The design is revised to $g(x) = 2f(x - 1)$: the ramp is moved down the park
+and made twice as steep.
+
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the table \textbf{one step at a time} --- do the inside
+        change first, then the outside one.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & $-1$ & 0 & 1 & 2 & 3 \\
+        \hline
+        $x - 1$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        \hline
+        $f(x-1)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+          & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        $g(x) = 2f(x-1)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+          & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Describe both moves in words --- name a direction and an amount for
+        each.
 
         \vspace{0.05in}
         \writelines{2}
 
-  \item Write $h(x)$ in terms of $f(x)$. Identify $a$ and $k$ in $g(x) = af(x)+k$.
+  \item The low point of the original ramp is at $(0, 0)$. The low point of
+        the new ramp $g$ is at $($ \blank{1cm} , \blank{1cm} $)$.
+
+  \item On the blueprint, $f$ has domain $[-2, 2]$ and range $[0, 4]$. Find
+        the domain and range of $g$.
+
+        \begin{work}
+          \text{Domain: } -2 &\le x - 1 \le 2 \\
+                          -1 &\le x \le 3 \\
+          \text{Range: } 0 &\le y \le 4 \\
+                         0 &\le 2y \le 8
+        \end{work}
+
+        Domain of $g$: \blank{2.6cm} \qquad Range of $g$: \blank{2.6cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item \textbf{Reverse-engineer it.} A second ramp $k$ is a transformation of
+        $f$. Here are its values.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        \hline
+        $k(x)$ & $-8$ & $-2$ & 0 & $-2$ & $-8$ \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        Write $k$ in terms of $f$: \quad $k(x) = $ \blank{3cm}
+
+        Describe the two things that happened to the graph:
 
         \vspace{0.05in}
-        $h(x) = $ \blank{5cm}, so $a = $ \blank{1.5cm} and $k = $ \blank{1.5cm}
+        \writeline
 
-  \item Describe in words all transformations that map $f$ onto $h$.
+  \item A third design $m$ has these values.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $m(x)$ & 5 & 2 & 1 & 2 & 5 \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        The low point moved from $(0,0)$ to $($ \blank{1cm} , \blank{1cm} $)$,
+        so \quad $m(x) = $ \blank{4cm}
+
+  \item \textbf{Inside is not the same as outside.} Use $f(x) = x^2$ and the
+        extra value $f(0.5) = 0.25$ to fill in this comparison.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $x$ & $f(2x)$ & $2f(x)$ \\
+        \hline
+        $0.5$ & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        $1$ & \blank{1.4cm} & \blank{1.4cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        Multiplying \textit{inside} and multiplying \textit{outside} give
+        different graphs. Explain what each one does.
 
         \vspace{0.05in}
         \writelines{2}
 \end{enumerate}
-
 \end{tcolorbox}
 
 \end{document}

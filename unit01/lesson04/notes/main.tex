@@ -7,198 +7,375 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.4}{Guided Notes}
-\namedateperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Describe how $g(x) = af(x+h)+k$ transforms the graph of $f$ using
-        \blank{3cm} and \blank{3cm}. \hfill\textit{(LO 1.12.A)}
-  \item Determine the \blank{2.4cm} and \blank{2cm} of a transformed function
-        from the parent's domain and range. \hfill\textit{(LO 1.12.A)}
+  \item Tell a change made \blank{2cm} a function from a change made
+        \blank{1.8cm} it, and predict which way the graph moves.
+  \item Build a table and describe the graph of $g(x) = af(x+h)+k$ using
+        \blank{2.6cm} (shifts) and \blank{2.2cm} (stretches and flips).
+  \item Find the \blank{2cm} and \blank{1.8cm} of a transformed function from
+        those of its parent.
 \end{enumerate}
 \end{objectivebox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{Parent function}
-\termblanklong{Transformation}
-\termblanklong{Vertical translation}
-\termblanklong{Horizontal translation}
-\termblanklong{Vertical dilation}
-\termblanklong{Horizontal dilation}
-\termblanklong{Reflection}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Parent function:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Transformation:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Translation (shift):}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Dilation (stretch or compress):}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Reflection:}}\\[1pt]
+\writeline
 \end{vocabbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-One function --- four disguises. Can you un-transform it back? \\[4pt]
-Each transformation below produces the \textit{same} parent shape in a different location
-or size. Your job today is to decode the rule so you can construct \textit{any} disguise
-or reverse-engineer it from a table.
+Here is $f(x) = x^2$, and three tables built from it. One has every output 3
+larger. One has every output doubled. And one has the \textit{exact same
+outputs} as $f$ --- just at different inputs.
+
+\smallskip
+What could I have done to $f$ that leaves every output untouched but still
+moves the graph?
+
+\writelines{2}
 \end{hookbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Type 1 — Vertical Translation: $g(x) = f(x) + k$}
-\textbf{Rule (EK 1.12.A.1):} Adding $k$ to the output \blank{4.5cm} the graph by $k$ units.
-\begin{itemize}[itemsep=2pt]
-  \item $k > 0$: shift \blank{1.8cm} \hspace{1cm} $k < 0$: shift \blank{1.8cm}
-\end{itemize}
-
-\smallskip
-\textbf{Example:} Let $f(x) = x^2$. Let $g(x) = f(x) + 3 = x^2 + 3$.
+\boxguard[26]
+\begin{notesbox}{1. The Parent Function and the Outside/Inside Rule}
+A \textbf{parent function} is the plain, untransformed function a whole family
+of graphs is built from. Today's parent is $f(x) = x^2$, and these five points
+are our reference frame:
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & $f(x) = x^2$ & $g(x) = f(x)+3$ \\
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$-2$ & $4$ & \blank{1.8cm} \\
-$-1$ & $1$ & \blank{1.8cm} \\
-$0$  & $0$ & \blank{1.8cm} \\
-$1$  & $1$ & \blank{1.8cm} \\
-$2$  & $4$ & \blank{1.8cm} \\
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
 \hline
 \end{tabular}
+\end{center}
+
+Every rule today changes $f$ in exactly one of two places, and \textit{where}
+it changes decides everything:
 
 \medskip
-\textbf{Effect on domain/range:} Domain \blank{3cm}. Range shifts \blank{3cm}.
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.94\linewidth}{@{} >{\bfseries}p{0.30\linewidth} X @{}}
+\hline
+Outside $f$ & like $f(x) + 3$ or $2f(x)$: it changes the
+  \blank{2cm}, so the graph moves \blank{2.2cm} --- and it does
+  \blank{3.2cm} you expect. \\
+\hline
+Inside $f$ & like $f(x+3)$ or $f(2x)$: it changes the
+  \blank{2cm}, so the graph moves \blank{2.6cm} --- and it does the
+  \blank{2.4cm} of what you expect. \\
+\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+Before you compute anything with a new rule, say out loud: \textit{is this
+change outside $f$, or inside $f$?}
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Type 2 — Horizontal Translation: $g(x) = f(x + h)$}
-\textbf{Rule (EK 1.12.A.2):} Replacing $x$ with $x+h$ shifts the graph
-\blank{4cm} by $|h|$ units.
-\begin{itemize}[itemsep=2pt]
-  \item $h > 0$: shift \blank{2cm} \hspace{1cm} $h < 0$: shift \blank{2cm}
-\end{itemize}
+\boxguard[30]
+\begin{notesbox}{2. Vertical Translation: $g(x) = f(x) + k$}
+The $+k$ sits \textbf{outside} $f$, so it changes every output. The graph
+slides \textbf{up} when $k > 0$ and \textbf{down} when $k < 0$, by $|k|$
+units.
 
-\smallskip
-\textbf{Caution:} $g(x) = f(x+3)$ shifts the graph \blank{2cm} (not right), because we
-need $x + 3 = 0$, so $x = $ \blank{1.5cm}.
+\medskip
+\textbf{Example 1.} $f(x) = x^2$ and $g(x) = f(x) + 3$. Complete the table.
 
 \smallskip
-\textbf{Example:} $f(x) = x^2$, $g(x) = f(x-2) = (x-2)^2$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & $f(x) = x^2$ & $g(x) = f(x-2)$ \\
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$0$ & $0$ & \blank{1.8cm} \\
-$1$ & $1$ & \blank{1.8cm} \\
-$2$ & $4$ & \blank{1.8cm} \\
-$3$ & $9$ & \blank{1.8cm} \\
-$4$ & $16$ & \blank{1.8cm} \\
+$f(x)$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+$g(x) = f(x) + 3$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
 \hline
 \end{tabular}
+\end{center}
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.52cm, y=0.34cm]
+  \draw[linegray, very thin, step=1] (-3,0) grid (3,8);
+  \draw[->, thick] (-3.3,0) -- (3.5,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $y$};
+  \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[thick, linegray] plot [smooth] coordinates
+    {(-2.8,7.84) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.8,7.84)};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,7.84) (-2,7) (-1,4) (0,3) (1,4) (2,7) (2.2,7.84)};
+  \fill[plum] (0,3) circle (2pt);
+  \fill[linegray] (0,0) circle (2pt);
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{linegray}{\textbf{gray}} $= f(x) = x^2$ \qquad
+ \textcolor{plum}{\textbf{plum}} $= g(x) = f(x)+3$}
 
 \medskip
-\textbf{Effect on domain/range:} Domain shifts \blank{3cm}. Range \blank{3cm}.
+\begin{itemize}[itemsep=4pt]
+  \item The lowest point moved from $(0,0)$ to $($ \blank{0.8cm} ,
+        \blank{0.8cm} $)$ --- straight \blank{1.4cm} by 3.
+  \item \textbf{Domain} of $g$: \blank{3.4cm} (unchanged --- the inputs never
+        moved).
+  \item \textbf{Range} of $g$: $f$ had range $[0, \infty)$, so $g$ has range
+        \blank{2.6cm}.
+\end{itemize}
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Type 3 — Vertical Dilation: $g(x) = af(x)$, $a \ne 0$}
-\textbf{Rule (EK 1.12.A.3):} Multiplying the \textit{output} by $a$ scales the graph
-\blank{3cm} by $|a|$.
-\begin{itemize}[itemsep=2pt]
-  \item $|a| > 1$: \blank{3cm} (stretches) \hspace{0.5cm}
-        $0 < |a| < 1$: \blank{3cm} (compresses)
-  \item $a < 0$: also reflects over the \blank{3cm}
-\end{itemize}
+\boxguard[30]
+\begin{notesbox}{3. Horizontal Translation: $g(x) = f(x + h)$}
+The $+h$ sits \textbf{inside} $f$, so it changes the inputs --- and the graph
+moves the \textit{opposite} way from what the sign suggests.
 
-\smallskip
-\textbf{Example:} $f(x) = x^2$; $g(x) = 2f(x) = 2x^2$; $h(x) = -f(x) = -x^2$.
+\medskip
+\textbf{Example 2.} $g(x) = f(x + 3)$, where $f(x) = x^2$. Complete the table.
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & $f(x) = x^2$ & $g(x) = 2f(x)$ & $h(x) = -f(x)$ \\
+$x$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ \\
 \hline
-$-2$ & $4$ & \blank{1.5cm} & \blank{1.5cm} \\
-$-1$ & $1$ & \blank{1.5cm} & \blank{1.5cm} \\
-$0$  & $0$ & \blank{1.5cm} & \blank{1.5cm} \\
-$1$  & $1$ & \blank{1.5cm} & \blank{1.5cm} \\
-$2$  & $4$ & \blank{1.5cm} & \blank{1.5cm} \\
+$x + 3$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$g(x) = f(x+3)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
 \hline
 \end{tabular}
+\end{center}
+
+\smallskip
+\textbf{Look at what you wrote.} The output list is \blank{3.4cm} to $f$'s
+list --- nothing happened to the outputs at all. What moved were the
+\blank{2cm} they happen at.
 
 \medskip
-\textbf{Effect on domain/range:} Domain \blank{3cm}. Range is multiplied by \blank{2cm}.
+\textbf{Why left?} Remember the warm-up. $f$ hits its lowest point when its
+input is $0$, so $g$ hits its lowest point when $x + 3 = 0$, that is, when
+$x = $ \blank{1.2cm} --- which is 3 units to the \blank{1.4cm}.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.42cm, y=0.34cm]
+  \draw[linegray, very thin, step=1] (-6,0) grid (3,6);
+  \draw[->, thick] (-6.3,0) -- (3.5,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small $y$};
+  \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[thick, linegray] plot [smooth] coordinates
+    {(-2.45,6) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.45,6)};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-5.45,6) (-5,4) (-4,1) (-3,0) (-2,1) (-1,4) (-0.55,6)};
+  \fill[plum] (-3,0) circle (2pt);
+  \fill[linegray] (0,0) circle (2pt);
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{linegray}{\textbf{gray}} $= f(x) = x^2$ \qquad
+ \textcolor{plum}{\textbf{plum}} $= g(x) = f(x+3)$}
+
+\medskip
+\begin{itemize}[itemsep=4pt]
+  \item $h > 0$ (as in $f(x+3)$): shift \blank{1.6cm}. \quad
+        $h < 0$ (as in $f(x-2)$): shift \blank{1.6cm}.
+  \item \textbf{Domain} shifts by the same amount; \textbf{range}
+        \blank{3cm} --- the outputs never changed.
+\end{itemize}
 \end{notesbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
-\begin{notesbox}{Type 4 — Horizontal Dilation: $g(x) = f(bx)$, $b \ne 0$}
-\textbf{Rule (EK 1.12.A.4):} Multiplying the \textit{input} by $b$ scales the graph
-\blank{3cm} by $\dfrac{1}{|b|}$.
-\begin{itemize}[itemsep=2pt]
-  \item $|b| > 1$: \blank{3cm} (compresses horizontally) \hspace{0.3cm}
-        $0 < |b| < 1$: \blank{3cm} (stretches horizontally)
-  \item $b < 0$: also reflects over the \blank{3cm}
-\end{itemize}
+\boxguard[30]
+\begin{notesbox}{4. Dilations and Reflections}
+\textbf{Vertical dilation: $g(x) = af(x)$.} The $a$ is \textbf{outside}, so it
+multiplies every output. $|a| > 1$ \textbf{stretches} the graph away from the
+$x$-axis; $0 < |a| < 1$ \textbf{compresses} it toward the $x$-axis. If
+$a < 0$, the graph also \textbf{flips} over the $x$-axis.
 
-\smallskip
-\textbf{Example:} $f(x) = x^2$; $g(x) = f(2x) = (2x)^2 = 4x^2$.
+\medskip
+\textbf{Example 3.} Complete both rows for $f(x) = x^2$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & $f(x) = x^2$ & $g(x) = f(2x)$ \\
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$-1$ & $1$ & \blank{1.8cm} \\
-$-\frac{1}{2}$ & $\frac{1}{4}$ & \blank{1.8cm} \\
-$0$  & $0$ & \blank{1.8cm} \\
-$\frac{1}{2}$ & $\frac{1}{4}$ & \blank{1.8cm} \\
-$1$  & $1$ & \blank{1.8cm} \\
+$f(x)$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+$g(x) = 2f(x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+$p(x) = -f(x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
 \hline
 \end{tabular}
-\end{notesbox}
+\end{center}
 
-\vspace{0.06in}
-
-\begin{notesbox}{Combined Transformations: $g(x) = af(x+h)+k$}
-\textbf{Rule (EK 1.12.A.5):} Apply transformations in this order: \\[4pt]
-\textbf{Step 1:} Horizontal dilation/reflection ($b$) \quad
-\textbf{Step 2:} Horizontal shift ($h$) \\
-\textbf{Step 3:} Vertical dilation/reflection ($a$) \quad
-\textbf{Step 4:} Vertical shift ($k$)
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.62cm, y=0.26cm]
+  \draw[linegray, very thin, step=1] (-2.4,-4) grid (2.4,8);
+  \draw[->, thick] (-2.7,0) -- (2.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4.4) -- (0,8.6) node[above] {\small $y$};
+  \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[thick, linegray] plot [smooth] coordinates
+    {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2,8) (-1,2) (0,0) (1,2) (2,8)};
+  \draw[very thick, goldacc] plot [smooth] coordinates
+    {(-2,-4) (-1,-1) (0,0) (1,-1) (2,-4)};
+\end{tikzpicture}
+\end{center}
+{\small\textcolor{linegray}{\textbf{gray}} $= f(x)$ \qquad
+ \textcolor{plum}{\textbf{plum}} $= 2f(x)$ \qquad
+ \textcolor{goldacc}{\textbf{gold}} $= -f(x)$}
 
 \medskip
-\textbf{Example:} Describe all transformations applied to $f$ to produce
+\begin{itemize}[itemsep=4pt]
+  \item $g(x) = 2f(x)$ is a vertical \blank{2cm} by a factor of
+        \blank{0.9cm}.
+  \item $p(x) = -f(x)$ is a \blank{2.2cm} over the \blank{1.6cm}-axis.
+\end{itemize}
+
+\medskip
+\textbf{Horizontal dilation: $g(x) = f(bx)$.} The $b$ is \textbf{inside}, so
+--- opposite again --- the graph is squeezed by a factor of $\dfrac{1}{|b|}$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-1$ & $-0.5$ & 0 & $0.5$ & 1 \\
+\hline
+$2x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$g(x) = f(2x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+$g$ reaches the same heights as $f$, but at \blank{2.4cm} the $x$-value ---
+so the graph is \blank{2.6cm} horizontally, by a factor of \blank{1cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{5. Combining Them --- and Domain \& Range}
+Every transformation today fits one template:
+
+\begin{center}
+$g(x) = a\,f(x + h) + k$
+\end{center}
+
+\textbf{Example 4.} Describe every move that turns $f$ into
 $g(x) = -2f(x+1) - 3$.
 
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|l|}
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabularx}{0.92\linewidth}{@{} >{\bfseries}p{0.16\linewidth} >{\itshape}p{0.20\linewidth} X @{}}
 \hline
-\textbf{Parameter} & \textbf{Transformation} \\
+Parameter & Inside or out? & What it does to the graph \\
 \hline
-$a = -2$  & \blank{7cm} \\
+$h = 1$   & inside  & \blank{7.4cm} \\
 \hline
-$h = 1$   & \blank{7cm} \\
+$a = -2$  & outside & \blank{7.4cm} \\
 \hline
-$k = -3$  & \blank{7cm} \\
+$k = -3$  & outside & \blank{7.4cm} \\
 \hline
-\end{tabular}
+\end{tabularx}
+\end{center}
 
 \medskip
-\textbf{Effect on domain/range (EK 1.12.A.6):}
-If the domain of $f$ is $[-2,\,4]$ and the range of $f$ is $[0,\,9]$, then:
+\textbf{Domain and range.} Horizontal changes move the \blank{2cm};
+vertical changes move the \blank{1.8cm}.
 
-\medskip
-Domain of $g$: \blank{5cm} \quad Range of $g$: \blank{5cm}
+\smallskip
+Suppose $f$ has domain $[-2, 4]$ and range $[0, 9]$. For the same
+$g(x) = -2f(x+1) - 3$:
+
+\begin{work}
+  \text{Domain: } -2 &\le x + 1 \le 4 \\
+                  -3 &\le x \le 3 \\
+  \text{Range: } 0 &\le y \le 9 \\
+              -18 &\le -2y \le 0 \\
+              -21 &\le -2y - 3 \le -3
+\end{work}
+
+Domain of $g$: \blank{3cm} \qquad Range of $g$: \blank{3cm}
+
+\smallskip
+\textbf{Careful:} multiplying by a negative \textit{swaps} which endpoint is
+smaller --- always rewrite the interval with the smaller number first.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Describe, in words, each transformation of the graph of $f$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $g(x) = f(x) - 6$: \blank{7cm}
+          \item $g(x) = f(x + 5)$: \blank{7cm}
+          \item $g(x) = -f(x)$: \blank{7cm}
+        \end{enumerate}
+
+  \item The domain of $f$ is $[1, 7]$ and its range is $[-4, 2]$. Find the
+        domain and range of $g(x) = f(x - 3) + 5$.
+
+        \begin{work}
+          \text{Domain: } 1 &\le x - 3 \le 7 \\
+                          4 &\le x \le 10 \\
+          \text{Range: } -4 &\le y \le 2 \\
+                          1 &\le y + 5 \le 7
+        \end{work}
+
+        Domain: \blank{2.6cm} \qquad Range: \blank{2.6cm}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
