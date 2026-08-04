@@ -1,0 +1,191 @@
+%! Unit 1: Functions and Change — Summative Assessment — Unit Test (KEY)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit 1: Functions and Change}{Unit Test --- Answer Key}
+\namedateperiod
+
+\vspace{0.06in}
+\noindent\textbf{Instructions:} Show all work. No notes unless your teacher says so.
+
+% ======================================================================
+\parthead{Part A --- Vocabulary (8 pts)}
+Write the letter of the best description next to each term.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.42\textwidth}
+\begin{enumerate}[leftmargin=2.2em, itemsep=7pt, label=\arabic*.]
+  \item Range \ans{H}
+  \item Composition \ans{G}
+  \item Parent function \ans{E}
+  \item Function \ans{F}
+  \item Inverse function \ans{C}
+  \item Concave up \ans{B}
+  \item Domain \ans{A}
+  \item Average rate of change \ans{D}
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.55\textwidth}
+\small
+\begin{description}[leftmargin=1.4em, itemsep=3pt]
+  \item[(A)] The set of every input the function is allowed to take.
+  \item[(B)] Bending upward --- the rate of change is increasing.
+  \item[(C)] The function that reverses the input--output pairs of $f$.
+  \item[(D)] The slope of the secant line, $\dfrac{f(b)-f(a)}{b-a}$.
+  \item[(E)] The simplest form of a family, before any shift or stretch.
+  \item[(F)] A rule that sends each input to \emph{exactly one} output.
+  \item[(G)] Feeding the output of one function into another: $f(g(x))$.
+  \item[(H)] The set of every output the function actually produces.
+\end{description}
+\end{minipage}
+
+% ======================================================================
+\parthead{Part B --- Multiple Choice (12 pts)}
+Circle the best answer.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt]
+  \item A table of values represents a function exactly when
+    \hfill (A) no output repeats \quad \textbf{(B) no input repeats with two different outputs} \ans{$\leftarrow$} \\
+    \phantom{x}\hfill (C) the outputs increase \quad (D) the inputs are equally spaced
+  \item If a function is increasing and concave down on an interval, its output is
+    \hfill (A) rising faster and faster \quad \textbf{(B) rising, but more and more slowly} \ans{$\leftarrow$} \\
+    \phantom{x}\hfill (C) falling more and more slowly \quad (D) changing at a constant rate
+  \item A table of $f$ has equally spaced inputs and \textbf{constant first} differences.
+    The best model is
+    \hfill (A) quadratic \quad \textbf{(B) linear} \ans{$\leftarrow$} \quad (C) exponential \quad (D) none of these
+  \item The graph of $g(x) = f(x) - 6$ is the graph of $f$ shifted
+    \hfill \textbf{(A) $6$ down} \ans{$\leftarrow$} \quad (B) $6$ up \quad (C) $6$ left \quad (D) $6$ right
+  \item If $f(x) = x + 5$ and $g(x) = x^2$, then $(f \circ g)(3)$ equals
+    \hfill (A) $64$ \quad \textbf{(B) $14$} \ans{$\leftarrow$} \quad (C) $34$ \quad (D) $11$
+  \item If $f$ and $f^{-1}$ are inverses, then $f\!\left(f^{-1}(x)\right)$ equals
+    \hfill (A) $1$ \quad (B) $0$ \quad \textbf{(C) $x$} \ans{$\leftarrow$} \quad (D) $\dfrac{1}{f(x)}$
+\end{enumerate}
+
+\boxguard[8]
+\begin{teachernote}
+Item 1: (A) is the classic confusion --- outputs \emph{may} repeat. Item 3: constant
+\emph{first} differences means linear; students who over-apply the quadratic rule from the
+practice test will pick (A). Item 5: (A) $= 64$ comes from $g(f(3))$ done wrong,
+(D) $= 11$ from $g(f(3))$-style order $(3+5)$ then squaring incorrectly --- ask the miss to
+name the inner function out loud.
+\end{teachernote}
+
+% ======================================================================
+\parthead{Part C --- Short Answer \& Computation (30 pts)}
+Show your work.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+  \item Let $f(x) = 3x^2 - 4$. Compute \textbf{(a)} $f(2)$, \quad \textbf{(b)} $f(-3)$, \quad
+        \textbf{(c)} the value of $x$ (there are two) for which $f(x) = 8$.
+        \ans{(a) $f(2) = 3(4) - 4 = 8$. \ (b) $f(-3) = 3(9) - 4 = 23$. \ (c) $3x^2 - 4 = 8 \Rightarrow 3x^2 = 12 \Rightarrow x^2 = 4 \Rightarrow x = \pm 2$.}
+  \item The graph of $y = f(x)$ is shown below.
+        \textbf{(a)} On what interval is $f$ increasing?
+        \textbf{(b)} Is $f$ concave up or concave down on the whole picture?
+        \textbf{(c)} List the zeros of $f$.
+        \textbf{(d)} What is $f(3)$?
+
+        \vspace{2pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.68]
+          \draw[linegray, very thin] (-0.4,-3.4) grid (6.4,2.4);
+          \draw[->] (-0.4,0) -- (6.6,0) node[right]{\small $x$};
+          \draw[->] (0,-3.4) -- (0,2.6) node[above]{\small $y$};
+          \foreach \x in {1,...,6} \draw (\x,0.09) -- (\x,-0.09) node[below]{\scriptsize $\x$};
+          \foreach \y in {-3,-2,-1,1,2} \draw (0.09,\y) -- (-0.09,\y) node[left]{\scriptsize $\y$};
+          \draw[plum, very thick] plot[smooth] coordinates
+            {(0,-2.5) (1,0) (2,1.5) (3,2) (4,1.5) (5,0) (6,-2.5)};
+        \end{tikzpicture}
+        \end{center}
+        \ans{(a) Increasing on $0 < x < 3$ (decreasing on $3 < x < 6$). \ (b) Concave down everywhere shown --- the curve bends downward and the rate of change is decreasing. \ (c) Zeros at $x = 1$ and $x = 5$. \ (d) $f(3) = 2$ (the high point).}
+  \item A candle is burning down. Its height $H$ (centimeters) after $t$ hours is given below.
+
+        \vspace{2pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $t$ (hr) & $0$ & $2$ & $4$ & $6$ \\ \hline
+        $H$ (cm) & $36$ & $24$ & $16$ & $12$ \\ \hline
+        \end{tabular}
+        \end{center}
+        \vspace{2pt}
+        \textbf{(a)} Find the average rate of change of $H$ from $t = 0$ to $t = 4$.
+        \textbf{(b)} Give its units and say in one sentence what it means for the candle.
+        \textbf{(c)} Is the candle burning down faster or slower as time goes on? Justify with the numbers.
+        \ans{(a) $\dfrac{H(4) - H(0)}{4 - 0} = \dfrac{16 - 36}{4} = \dfrac{-20}{4} = -5$. \ (b) Centimeters per hour: over the first $4$ hours the candle lost height at an average of $5$ cm each hour (negative because the height is falling). \ (c) Slower. The change over each $2$-hour block is $-12$, then $-8$, then $-4$ centimeters --- the drops are shrinking, so the burning is slowing down.}
+  \item The table below has equally spaced inputs. Compute the first differences and the
+        second differences, then name the function type (linear, quadratic, or neither).
+
+        \vspace{2pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+        $h(x)$ & $1$ & $4$ & $13$ & $28$ & $49$ \\ \hline
+        \end{tabular}
+        \end{center}
+        \ans{First differences: $3,\ 9,\ 15,\ 21$ (not constant, so not linear). Second differences: $6,\ 6,\ 6$ --- constant. The function is \emph{quadratic}.}
+  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and range
+        $[0,\infty)$. Let $g(x) = 4f(x + 3) - 2$.
+        \textbf{(a)} Describe every transformation, in order.
+        \textbf{(b)} State the domain and range of $g$.
+        \ans{(a) $g(x) = 4\sqrt{x+3} - 2$: shift left $3$, then vertical stretch by a factor of $4$, then shift down $2$. (No reflection --- the coefficient $4$ is positive.) \ (b) Domain: $x + 3 \ge 0$, so $[-3, \infty)$. Range: $\sqrt{x+3} \ge 0$, so $4\sqrt{x+3} \ge 0$ and $g(x) \ge -2$ --- the range is $[-2, \infty)$.}
+  \item Let $f(x) = 2x - 3$ and $g(x) = x^2 + 1$.
+        \textbf{(a)} Compute $f(g(2))$. \quad \textbf{(b)} Compute $g(f(2))$.
+        \textbf{(c)} Write a formula for $(f \circ g)(x)$.
+        \textbf{(d)} What do (a) and (b) show about the order of composition?
+        \ans{(a) $g(2) = 4 + 1 = 5$, so $f(g(2)) = f(5) = 7$. \ (b) $f(2) = 1$, so $g(f(2)) = g(1) = 2$. \ (c) $(f \circ g)(x) = 2(x^2 + 1) - 3 = 2x^2 - 1$. \ (d) $7 \ne 2$: order matters. Composition is not commutative --- $f(g(x))$ and $g(f(x))$ are generally different functions.}
+  \item Let $f(x) = 3x + 7$.
+        \textbf{(a)} Find $f^{-1}(x)$ using the swap-and-solve method.
+        \textbf{(b)} Verify your answer by computing $f\!\left(f^{-1}(x)\right)$.
+        \ans{(a) Write $y = 3x + 7$, swap: $x = 3y + 7$, solve: $x - 7 = 3y \Rightarrow y = \dfrac{x-7}{3}$. So $f^{-1}(x) = \dfrac{x-7}{3}$. \ (b) $f\!\left(f^{-1}(x)\right) = 3 \cdot \dfrac{x-7}{3} + 7 = (x - 7) + 7 = x$. $\checkmark$}
+\end{enumerate}
+
+% ======================================================================
+\parthead{Part D --- Extended Response (10 pts)}
+Explain your reasoning in full sentences.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+  \item A rectangular plot is fenced along a straight river, so only \textbf{three} sides need
+        fencing. The farmer has $100$ feet of fence. Let $x$ be the length of each of the two
+        sides perpendicular to the river.
+        \textbf{(a)} Write the area $A$ as a function of $x$.
+        \textbf{(b)} What type of function is $A$, and how do you know?
+        \textbf{(c)} State the domain restriction that the context forces, and explain why.
+        \textbf{(d)} State one assumption this model rests on.
+        \ans{(a) The two perpendicular sides use $2x$ feet, so the side parallel to the river is $100 - 2x$. Then $A(x) = x(100 - 2x) = 100x - 2x^2$. \ (b) Quadratic --- the highest power of $x$ is $2$, and equally spaced $x$-values would give constant second differences. It opens downward, so it has a maximum. \ (c) $0 < x < 50$: a side length must be positive, and the river side $100 - 2x$ must also be positive, which forces $x < 50$. Outside that window the ``rectangle'' has no meaning. \ (d) Any one of: no fence is used along the river; the riverbank is straight and long enough; the plot is exactly rectangular; no fence is lost to a gate or to overlap.}
+  \item Let $f(x) = x^2 - 4$ with domain all real numbers.
+        \textbf{(a)} Explain why $f$ has no inverse function on that domain.
+        \textbf{(b)} Give a domain restriction that fixes the problem, and write the resulting
+        inverse.
+        \textbf{(c)} Explain how the graph of a function and the graph of its inverse are related.
+        \ans{(a) $f$ is not one-to-one: $f(3) = f(-3) = 5$. Reversing the pairs would send the input $5$ to two different outputs, $3$ and $-3$, and that is not a function. (Equivalently, $f$ fails the horizontal line test.) \ (b) Restrict the domain to $x \ge 0$. On $[0,\infty)$ the function is one-to-one; swapping and solving, $x = y^2 - 4 \Rightarrow y = \sqrt{x+4}$, so $f^{-1}(x) = \sqrt{x+4}$ with domain $[-4, \infty)$. \ (c) They are reflections of each other over the line $y = x$: the point $(a,b)$ on $f$ becomes $(b,a)$ on $f^{-1}$, because the inverse swaps input and output.}
+\end{enumerate}
+
+\boxguard[8]
+\begin{teachernote}
+\textbf{Scoring Part D (5 pts each).} Award full credit only when the student both gives
+the correct result and \emph{justifies} it. D1: 2 pts (a) $A(x) = 100x - 2x^2$ with the
+$100 - 2x$ side reasoned out; 1 pt (b) quadratic \emph{with} a reason; 1 pt (c)
+$0 < x < 50$ tied to the context, not just stated; 1 pt (d) any defensible assumption. A
+student who writes $2x + 2y = 100$ (all four sides) has missed the river --- give partial
+credit for correct method on a wrong perimeter. D2: 2 pts (a) not one-to-one \emph{with} a
+counterexample pair; 2 pts (b) restriction \emph{and} $f^{-1}(x) = \sqrt{x+4}$ (accept
+$x \le 0$ with $f^{-1}(x) = -\sqrt{x+4}$); 1 pt (c) reflection over $y = x$. Full-credit
+language for the arc: \emph{one-to-one $\to$ reverse the pairs $\to$ restrict to make it
+work $\to$ reflect over $y = x$}.
+\end{teachernote}
+
+\end{document}
