@@ -7,15 +7,325 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.6}{Guided Notes --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Guided Notes], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Decide which form of a polynomial --- \ans{factored} or
+        \ans{standard} --- answers a given question.
+  \item Rewrite a polynomial in factored form as a polynomial in standard form
+        by \ans{multiplying} it out.
+  \item Use one row of \ans{Pascal's} Triangle to expand $(x+c)^n$.
+  \item Divide one polynomial by another and write
+        $f(x) = g(x)q(x) + r(x)$, where the \ans{remainder} has lower degree
+        than the divisor.
+\end{enumerate}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Standard form:}}\\[1pt]
+\ansline{A sum of terms in descending degree, $a_nx^n + \cdots + a_1x + a_0$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Factored form:}}\\[1pt]
+\ansline{The same polynomial written as a product of factors.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Pascal's Triangle:}}\\[1pt]
+\ansline{The number triangle whose row $n$ gives the coefficients of $(a+b)^n$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Binomial theorem:}}\\[1pt]
+\ansline{Expand $(a+b)^n$ with row $n$: powers of $a$ fall, powers of $b$ rise.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Polynomial long division:}}\\[1pt]
+\ansline{Dividing one polynomial by another, one leading term at a time.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Quotient and remainder:}}\\[1pt]
+\ansline{In $f(x) = g(x)q(x) + r(x)$, $q$ is the quotient and $r$ is the remainder.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Division algorithm:}}\\[1pt]
+\ansline{$f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard[34]
+\begin{hookbox}
+These two lines describe the \textit{same} function:
+\[
+  p(x) = (x+1)(x-2)(x-3) \qquad\text{and}\qquad p(x) = x^3 - 4x^2 + x + 6 .
+\]
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm, y=0.22cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-1.6,-8) grid (3.6,6);
+  \draw[->, thick] (-1.9,0) -- (3.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-8.6) -- (0,6.8) node[above] {\small $p(x)$};
+  \foreach \x in {-1,1,2,3} \node[below] at (\x,-0.4) {\small \x};
+  \foreach \y in {-8,-6,-4,-2,2,4,6} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-1.5,-7.88) (-1.3,-4.26) (-1.1,-1.27) (-1,0) (-0.8,2.13)
+     (-0.5,4.38) (0,6) (0.5,5.63) (1,4) (1.5,1.88) (2,0)
+     (2.5,-0.88) (2.8,-0.61) (3,0) (3.3,1.68) (3.5,3.38)};
+  \fill[plum] (-1,0) circle (2.5pt);
+  \fill[plum] (2,0) circle (2.5pt);
+  \fill[plum] (3,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+Two questions: \textit{Where does the graph cross the $x$-axis?} and
+\textit{What is $\lim_{x \to -\infty} p(x)$?} Which line would you use for
+each --- and why is it not the same line twice?
+
+\ansline{Factored form for the intercepts: $x = -1$, $2$, $3$, one from each factor.}
+\ansline{Standard form for the end behavior: the leading term is $x^3$, so $p(x) \to -\infty$.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{1. Which Form Answers Which Question?}
+Neither form is ``more simplified'' than the other. They are the same
+function, and each one puts different information on the surface.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|p{0.30\linewidth}|C{2.4cm}|p{0.36\linewidth}|}
+\hline
+\textbf{The question} & \textbf{Which form?} & \textbf{What that form shows} \\
+\hline
+Where does the graph cross the $x$-axis? & \ans{factored} &
+Each linear factor $(x-a)$ hands over the real zero $a$. \\
+\hline
+What is $\lim_{x \to \pm\infty} p(x)$? & \ans{standard} &
+The leading term $a_nx^n$ decides both ends. \\
+\hline
+What is the $y$-intercept? & \ans{standard} &
+The constant term $a_0$ \textit{is} $p(0)$. \\
+\hline
+What is the degree? & \ans{either} &
+Add the exponents on the factors, or read the highest power. \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+\textbf{The hook, answered.} Use $p(x) = (x+1)(x-2)(x-3) = x^3-4x^2+x+6$.
+
+\begin{itemize}[itemsep=4pt]
+  \item $x$-intercepts: \ans{$-1$, $2$, $3$} \quad (from the \ans{factored} form)
+  \item $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$} \quad (from the
+        \ans{standard} form --- leading term $x^3$)
+  \item $y$-intercept: \ans{$6$} \quad Check it the other way:
+        $p(0) = (1)(-2)(-3) = $ \ans{$6$}
+\end{itemize}
+
+\textbf{The habit to build:} read the question first, \textit{then} choose the
+form. Changing forms is work --- do it on purpose.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. Factored $\rightarrow$ Standard, and the Binomial Theorem}
+Going from factored to standard form is just distributing, two factors at a
+time.
+
+\textbf{Example 1.} Expand $p(x) = (x+1)(x-2)(x-3)$.
+
+\begin{work}
+  p(x) &= (x+1)(x-2)(x-3) \\
+       &= \big(x^2 - x - 2\big)(x-3) \\
+       &= x^3 - 3x^2 - x^2 + 3x - 2x + 6 \\
+       &= x^3 - 4x^2 + x + 6
+\end{work}
+
+\medskip
+\textbf{The shortcut for $(x+c)^n$.} Multiplying four copies of $(x+2)$ by
+hand is slow. \textbf{Pascal's Triangle} gives the coefficients directly ---
+each entry is the sum of the two directly above it.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{r c}
+row $0$: & $1$ \\
+row $1$: & $1 \quad 1$ \\
+row $2$: & $1 \quad 2 \quad 1$ \\
+row $3$: & $1 \quad 3 \quad 3 \quad 1$ \\
+row $4$: & $1 \quad 4 \quad 6 \quad 4 \quad 1$ \\
+row $5$: & $1 \quad 5 \quad 10 \quad 10 \quad 5 \quad 1$ \\
+\end{tabular}
+\end{center}
+\smallskip
+
+\textbf{Binomial theorem.} To expand $(a+b)^n$, use row \ans{$n$} of the
+triangle. Across the terms, the power of $a$ \ans{falls} from $n$ down to
+$0$ while the power of $b$ \ans{rises} from $0$ up to $n$.
+
+\textbf{Example 2.} Expand $(x+2)^4$. Row 4 is $1, 4, 6, 4, 1$.
+
+\begin{work}
+  (x+2)^4 &= x^4 + 4x^3(2) + 6x^2(2)^2 + 4x(2)^3 + (2)^4 \\
+          &= x^4 + 8x^3 + 24x^2 + 32x + 16
+\end{work}
+
+Sanity check against Lesson 2.3: $(x+2)^4$ has exactly one real zero,
+$x = $ \ans{$-2$}, with multiplicity \ans{4} --- and the expanded
+form has leading term \ans{$x^4$} and constant term \ans{$16$}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{3. Long Division and the Division Algorithm}
+Numbers first: $17 \div 5$ is $3$ with remainder $2$, so
+$17 = 5 \cdot 3 + 2$ --- and the remainder is \textit{smaller} than the
+divisor. Polynomials work the same way, with ``smaller'' meaning
+\textbf{lower degree}.
+
+\medskip
+\textbf{The division algorithm.} If $f$ is divided by $g$, then
+\[
+  f(x) = g(x)\,q(x) + r(x), \qquad \deg r < \deg g,
+\]
+where $q$ is the \ans{quotient} and $r$ is the \ans{remainder}.
+
+\medskip
+\textbf{The routine:} divide $\rightarrow$ multiply $\rightarrow$ subtract
+$\rightarrow$ bring down. Repeat until what is left has lower degree than the
+divisor.
+
+\textbf{Example 3.} Divide $2x^3 - 3x^2 - 5x + 6$ by $x - 2$.
+
+\begin{work}
+  &\begin{array}{r@{\;}rrrr}
+              &  2x^2 &   +x  &  -3  &     \\ \cline{2-5}
+   x-2\,\big) &  2x^3 & -3x^2 & -5x  & +6  \\
+   -          &  2x^3 & -4x^2 &      &     \\ \cline{2-5}
+              &       &   x^2 & -5x  & +6  \\
+   -          &       &   x^2 & -2x  &     \\ \cline{2-5}
+              &       &       & -3x  & +6  \\
+   -          &       &       & -3x  & +6  \\ \cline{2-5}
+              &       &       &      &  0
+  \end{array}
+\end{work}
+
+Quotient: \ans{$2x^2 + x - 3$} \qquad Remainder: \ans{$0$}
+
+\medskip
+\textbf{Cash it in against Lesson 2.3.} The remainder is $0$, so
+$2x^3 - 3x^2 - 5x + 6 = (x-2)(2x^2 + x - 3)$ --- which says $(x-2)$ is a
+\ans{factor} of $f$, which says $x = 2$ is a \ans{zero} of $f$. All three
+statements are the same statement:
+\[
+  r = 0 \iff (x-a) \text{ is a factor of } f \iff f(a) = 0 .
+\]
+So long division is how you \textbf{test} a proposed factor, and how you
+\textbf{reduce} a polynomial once one zero is known.
+
+\medskip
+\textbf{Example 4.} Divide $x^3 - 4x^2 + 2x + 5$ by $x - 3$. This one does
+\textit{not} come out even.
+
+\begin{work}
+  &\begin{array}{r@{\;}rrrr}
+              &   x^2 &   -x  &  -1  &     \\ \cline{2-5}
+   x-3\,\big) &   x^3 & -4x^2 & +2x  & +5  \\
+   -          &   x^3 & -3x^2 &      &     \\ \cline{2-5}
+              &       &  -x^2 & +2x  & +5  \\
+   -          &       &  -x^2 & +3x  &     \\ \cline{2-5}
+              &       &       &  -x  & +5  \\
+   -          &       &       &  -x  & +3  \\ \cline{2-5}
+              &       &       &      &  2
+  \end{array}
+\end{work}
+
+Write the result in division-algorithm form:
+
+\smallskip
+$f(x) = (x-3)\,\cdot$ \ans{$(x^2 - x - 1)$} $+$ \ans{$2$}
+
+\smallskip
+Degree check: $\deg r = $ \ans{0} and $\deg g = $ \ans{1}, so
+$\deg r < \deg g$. \quad Is $x-3$ a factor of $f$? \ans{No}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Both Forms, One Context}
+An open-top box is made from a $12$ in.\ by $16$ in.\ sheet of cardboard by
+cutting a square of side $x$ from each corner and folding up the sides. The
+volume is
+\[
+  V(x) = x(12-2x)(16-2x).
+\]
+
+\textbf{Expand it into standard form.}
+
+\begin{work}
+  V(x) &= x(12-2x)(16-2x) \\
+       &= x\big(192 - 24x - 32x + 4x^2\big) \\
+       &= x\big(4x^2 - 56x + 192\big) \\
+       &= 4x^3 - 56x^2 + 192x
+\end{work}
+
+Now let each form do its own job.
+
+\begin{itemize}[itemsep=4pt]
+  \item \textbf{Factored form.} $V(x) = 0$ when $x = $ \ans{$0$, $6$, $8$}.
+  \item A real box needs $x > 0$ \textit{and} both side lengths positive, so
+        the domain in context is $0 < x < $ \ans{6}. The zero
+        $x = $ \ans{8} is algebraically correct and physically
+        impossible.
+  \item \textbf{Standard form.} Leading term: \ans{$4x^3$}, so
+        $\lim_{x \to \infty} V(x) = $ \ans{$\infty$}.
+  \item In context that limit is \ans{meaningless} --- the model only describes
+        the box for $0 < x < 6$.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = (x+4)(x-1)(x-2)$. Write $p$ in standard form, then read
+        off the $y$-intercept and the end behavior.
+
+        \begin{work}
+          p(x) &= (x+4)(x-1)(x-2) \\
+               &= \big(x^2 + 3x - 4\big)(x-2) \\
+               &= x^3 - 2x^2 + 3x^2 - 6x - 4x + 8 \\
+               &= x^3 + x^2 - 10x + 8
+        \end{work}
+
+        Standard form: \ans{$x^3 + x^2 - 10x + 8$}
+
+        $y$-intercept: \ans{$8$} \qquad
+        $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
+
+  \item Divide $x^3 - 5x + 3$ by $x - 2$. Watch the missing $x^2$ term ---
+        write it as $0x^2$.
+
+        \begin{work}
+          &\begin{array}{r@{\;}rrrr}
+                      &   x^2 &  +2x  &  -1  &     \\ \cline{2-5}
+           x-2\,\big) &   x^3 & +0x^2 & -5x  & +3  \\
+           -          &   x^3 & -2x^2 &      &     \\ \cline{2-5}
+                      &       &  2x^2 & -5x  & +3  \\
+           -          &       &  2x^2 & -4x  &     \\ \cline{2-5}
+                      &       &       &  -x  & +3  \\
+           -          &       &       &  -x  & +2  \\ \cline{2-5}
+                      &       &       &      &  1
+          \end{array}
+        \end{work}
+
+        Quotient: \ans{$x^2 + 2x - 1$} \qquad Remainder: \ans{$1$}
+
+        Is $x-2$ a factor of $x^3 - 5x + 3$? \quad \ans{No}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

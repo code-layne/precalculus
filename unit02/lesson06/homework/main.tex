@@ -7,15 +7,142 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.6}{Homework}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=10pt]
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
+\item One function, two forms:
+      $p(x) = (x+3)(x-1)(x-2) = x^3 - 7x + 6$. For each question, name the
+      form you would use, then answer it.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $x$-intercepts. \quad Form: \blank{2.4cm} \quad
+        Answer: \blank{4.4cm}
+  \item $\lim_{x \to -\infty} p(x)$. \quad Form: \blank{2.4cm} \quad
+        Answer: \blank{2cm}
+  \item $y$-intercept. \quad Form: \blank{2.4cm} \quad
+        Answer: \blank{2cm}
+  \item Degree. \quad Form: \blank{2.4cm} \quad
+        Answer: \blank{2cm}
+\end{enumerate}
+
+\item Rewrite each product in standard form.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $(x-2)(x+5) = $ \blank{5cm}
+  \item $(x+1)(x-1)(x+3)$
+
+        \begin{work}
+          (x+1)(x-1)(x+3) &= \big(x^2 - 1\big)(x+3) \\
+                          &= x^3 + 3x^2 - x - 3
+        \end{work}
+
+        $(x+1)(x-1)(x+3) = $ \blank{6cm}
+\end{enumerate}
+
+\item Use Pascal's Triangle and the binomial theorem.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Row 5 of Pascal's Triangle: \blank{0.9cm}, \blank{0.9cm},
+        \blank{1.1cm}, \blank{1.1cm}, \blank{0.9cm}, \blank{0.9cm}
+  \item Expand $(x+1)^5$.
+
+        \begin{work}
+          (x+1)^5 &= 1x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1 \\
+                  &= x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1
+        \end{work}
+
+        $(x+1)^5 = $ \blank{7cm}
+
+  \item Expand $(x-2)^3$. Careful --- here the second term of the binomial is
+        $-2$, so its powers alternate in sign.
+
+        \begin{work}
+          (x-2)^3 &= x^3 + 3x^2(-2) + 3x(-2)^2 + (-2)^3 \\
+                  &= x^3 - 6x^2 + 12x - 8
+        \end{work}
+
+        $(x-2)^3 = $ \blank{6cm}
+\end{enumerate}
+
+\boxguard[24]
+\item Divide $x^3 - 2x^2 - 5x + 6$ by $x - 1$. (You met this polynomial in
+      Lesson 2.3 --- you already confirmed there that $x = 1$ is a zero.)
+
+\begin{work}
+  &\begin{array}{r@{\;}rrrr}
+              &   x^2 &   -x  &  -6  &     \\ \cline{2-5}
+   x-1\,\big) &   x^3 & -2x^2 & -5x  & +6  \\
+   -          &   x^3 &  -x^2 &      &     \\ \cline{2-5}
+              &       &  -x^2 & -5x  & +6  \\
+   -          &       &  -x^2 &  +x  &     \\ \cline{2-5}
+              &       &       & -6x  & +6  \\
+   -          &       &       & -6x  & +6  \\ \cline{2-5}
+              &       &       &      &  0
+  \end{array}
+\end{work}
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Quotient: \blank{3cm} \qquad Remainder: \blank{1.4cm}
+  \item Division-algorithm form:
+
+        \smallskip
+        $x^3 - 2x^2 - 5x + 6 = (x-1)\,\cdot$ \blank{3.4cm} $+$ \blank{1.2cm}
+  \item Is $x-1$ a factor? \quad \blank{1.6cm}
+  \item Factor the quotient and write $p$ completely factored:
+        \blank{5.6cm}
+
+        All real zeros: \blank{3.6cm}
+\end{enumerate}
+
+\item When $x^3 - 4x^2 + x + 5$ is divided by $x - 2$, the remainder is
+
+\begin{work}
+  &\begin{array}{r@{\;}rrrr}
+              &   x^2 &  -2x  &  -3  &     \\ \cline{2-5}
+   x-2\,\big) &   x^3 & -4x^2 &  +x  & +5  \\
+   -          &   x^3 & -2x^2 &      &     \\ \cline{2-5}
+              &       & -2x^2 &  +x  & +5  \\
+   -          &       & -2x^2 & +4x  &     \\ \cline{2-5}
+              &       &       & -3x  & +5  \\
+   -          &       &       & -3x  & +6  \\ \cline{2-5}
+              &       &       &      & -1
+  \end{array}
+\end{work}
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $-1$
+  \item $0$
+  \item $1$
+  \item $5$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+Start from the division algorithm with a linear divisor:
+$f(x) = (x-a)\,q(x) + r$, where $r$ is a constant because
+$\deg r < \deg(x-a) = 1$. Now substitute $x = a$ and simplify. What is $r$ in
+terms of $f$? Write one sentence explaining how this makes Lesson 2.3's factor
+theorem into a test you can run with a single evaluation.
+
+\vspace{0.05in}
+\writelines{2}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.7}
+You can now move a polynomial between the form that shows its zeros and the
+form that shows its end behavior. Lesson 2.7, \textit{Polynomial Equations,
+Inequalities, and Modeling}, spends both of them: solving $p(x) = 0$ starts by
+getting to factored form, and deciding where $p(x) > 0$ starts from the zeros
+\textit{and} the end behavior --- one fact from each form.
 \end{notesbox}
 
 \end{document}

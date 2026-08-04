@@ -7,118 +7,206 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.5}{Group Activity --- Answer Key}
-\namepartnerperiod
 
 \vspace{0.12in}
 
-\begin{scenariobox}[End Behavior Explorer]{plumlight}
+\begin{scenariobox}[The End Behavior Desk]{plumlight}
 \small
-Examine the four polynomial functions below. Use the leading term of each to determine
-end behavior and write your answers using limit notation.
+Your group takes the end-behavior desk: every polynomial that arrives leaves
+with both of its far ends described, in limit notation, without anyone graphing
+anything. Tier E reads the two pre-drawn graphs below --- no tier draws
+anything.
 
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} c l c l @{}}
-  \textbf{A.} & $f(x) = 2x^5 - 8x^3 + x - 4$ &
-  \textbf{B.} & $g(x) = -x^4 + 3x^2 + 10$ \\[2pt]
-  \textbf{C.} & $h(x) = -4x^3 + 12x^2 - 9x + 1$ &
-  \textbf{D.} & $k(x) = 5x^6 - 100x^4 + 3$ \\
-\end{tabular}
+\begin{center}
+\begin{tikzpicture}[x=0.7cm, y=0.28cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-5) grid (2.4,5);
+  \draw[->, thick] (-2.8,0) -- (2.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.6) -- (0,5.6) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,-4.07) (-2,0) (-1.7,3.21) (-1.4,4.0) (-1,3) (-0.5,0.94)
+     (0,0) (0.5,0.94) (1,3) (1.4,4.0) (1.7,3.21) (2,0) (2.2,-4.07)};
+  \node[below] at (0,-6.2) {\small \textbf{Graph P}};
+\end{tikzpicture}
+\hspace{1.6cm}
+\begin{tikzpicture}[x=0.7cm, y=0.28cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-5) grid (2.4,5);
+  \draw[->, thick] (-2.8,0) -- (2.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.6) -- (0,5.6) node[above] {\small $y$};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.05) (-2,2) (-1.8,0.43) (-1.5,-1.13) (-1,-2) (-0.5,-1.38)
+     (0,0) (0.5,1.38) (1,2) (1.5,1.13) (1.8,-0.43) (2,-2) (2.2,-4.05)};
+  \node[below] at (0,-6.2) {\small \textbf{Graph Q}};
+\end{tikzpicture}
+\end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Use the \textbf{rules table} from your notes to complete the limit notation for each function.
-The leading term has been identified for you.
-
-\smallskip
-\renewcommand{\arraystretch}{2.0}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Function} & \textbf{Leading Term} & \textbf{Degree} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
-\hline
-$f(x)$ & $2x^5$   & 5 (odd)  & \ans{$\infty$}  & \ans{$-\infty$} \\
-$g(x)$ & $-x^4$   & 4 (even) & \ans{$-\infty$} & \ans{$-\infty$} \\
-$h(x)$ & $-4x^3$  & 3 (odd)  & \ans{$-\infty$} & \ans{$\infty$} \\
-$k(x)$ & $5x^6$   & 6 (even) & \ans{$\infty$}  & \ans{$\infty$} \\
-\hline
-\end{tabular}
-\end{tcolorbox}
-
-\vspace{0.1in}
-
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
 \begin{enumerate}[itemsep=8pt]
-  \item For each function, identify the leading term yourself, then write the limit notation.
+  \item The leading term is already done for you. Fill the rest of each row
+        from the four-case table in your notes.
 
-  \renewcommand{\arraystretch}{2.0}
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  \textbf{Function} & \textbf{Leading Term} & $\lim_{x \to \infty}$ & $\lim_{x \to -\infty}$ \\
-  \hline
-  $f(x) = 2x^5 - 8x^3 + x - 4$ & \ans{$2x^5$}   & \ans{$\infty$}  & \ans{$-\infty$} \\
-  $g(x) = -x^4 + 3x^2 + 10$    & \ans{$-x^4$}   & \ans{$-\infty$} & \ans{$-\infty$} \\
-  $h(x) = -4x^3 + 12x^2 - 9x + 1$ & \ans{$-4x^3$} & \ans{$-\infty$} & \ans{$\infty$} \\
-  $k(x) = 5x^6 - 100x^4 + 3$   & \ans{$5x^6$}   & \ans{$\infty$}  & \ans{$\infty$} \\
-  \hline
-  \end{tabular}
+        \smallskip
+        \renewcommand{\arraystretch}{1.6}
+        \begin{center}
+        \small
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Leading term} & \textbf{Even or odd?} & \textbf{Sign of $a_n$?} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
+        \hline
+        $4x^2$   & \ans{Even} & \ans{Positive} & \ans{$\infty$} & \ans{$\infty$} \\
+        \hline
+        $-x^5$   & \ans{Odd} & \ans{Negative} & \ans{$-\infty$} & \ans{$\infty$} \\
+        \hline
+        $-3x^8$  & \ans{Even} & \ans{Negative} & \ans{$-\infty$} & \ans{$-\infty$} \\
+        \hline
+        $7x^3$   & \ans{Odd} & \ans{Positive} & \ans{$\infty$} & \ans{$-\infty$} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-  \item For function $k(x) = 5x^6 - 100x^4 + 3$, a student notices that $-100x^4$ is a large
-        negative number for medium values of $x$ (say $x = 5$). She claims the end behavior
-        should be $-\infty$. Explain why she is wrong.
+  \item Complete the summary sentence.
 
-        \vspace{0.1in}
-        \ansline{The student is looking at an intermediate value, not the long-run behavior. As $x \to \infty$,
-        the ratio $-100x^4 / 5x^6 = -20/x^2 \to 0$, so the $-100x^4$ term becomes negligible
-        compared to $5x^6$. The leading term $5x^6$ dominates, giving end behavior $\infty$.}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item An \textbf{even} degree sends both ends in the \ans{same}
+                direction.
+          \item An \textbf{odd} degree sends the ends in \ans{opposite}
+                directions.
+          \item A \textbf{negative} leading coefficient \ans{flips} both
+                ends.
+        \end{enumerate}
 
-  \item Without a calculator, predict: for which function(s) does $\lim_{x \to \infty} p(x) = \infty$
-        AND $\lim_{x \to -\infty} p(x) = -\infty$? Circle the letter(s).
-        \quad \ans{A} \quad B \quad C \quad D
-
-        \textit{(Only $f(x) = 2x^5\ldots$: odd degree, positive leading coefficient.)}
+  \item Two of the four polynomials in question 1 have a graph that must cross
+        the $x$-axis. Which two? \quad \ans{$-x^5$ and $7x^3$ (odd degree)}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Complete all of Tier A first.
+  \item Find the leading term yourself, then write both limit statements.
+        Read the exponents, not the order the terms appear in.
 
-  \item Create your own polynomial function that satisfies ALL of the following:
-        \begin{itemize}
-          \item Even degree
-          \item Negative leading coefficient
-          \item Exactly 3 distinct real zeros
-        \end{itemize}
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $f(x) = 3x^4 - 9x^2 + 1$
 
-        Write your polynomial in factored form: \quad $p(x) = $ \ans{$-(x-1)(x+2)(x-3)(x+1)$}
-        \textit{(many valid answers; must have even degree and negative leading coeff)}
+                Leading term: \ans{$3x^4$} \quad
+                $\lim_{x \to \infty} f(x) = $ \ans{$\infty$} \quad
+                $\lim_{x \to -\infty} f(x) = $ \ans{$\infty$}
 
-        What is the degree of your polynomial? \ans{4 (or any even degree $\geq 4$)}
+          \item $g(x) = 12 - 5x^3 + 2x^6 - x^7$
 
-  \item Describe the end behavior of your polynomial using limit notation.
+                Leading term: \ans{$-x^7$} \quad
+                $\lim_{x \to \infty} g(x) = $ \ans{$-\infty$} \quad
+                $\lim_{x \to -\infty} g(x) = $ \ans{$\infty$}
+        \end{enumerate}
 
-        $\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
+  \item Now in factored form. Add the exponents for the degree, multiply the
+        leading pieces for the leading term --- do not expand.
 
-  \item Explain in one sentence why a polynomial with even degree and negative leading coefficient
-        must have the same end behavior on both sides.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $h(x) = (x-4)(x+1)(x-7)$
 
-        \vspace{0.1in}
-        \ansline{For even degree, $x^n$ and $(-x)^n$ are equal, so the leading term gives the same
-        (large positive) magnitude on both sides; multiplying by a negative coefficient makes both
-        sides go to $-\infty$.}
+                \begin{work}
+                  \text{degree of } h &= 1 + 1 + 1 \\
+                                      &= 3 \\
+                  \text{leading term} &= x \cdot x \cdot x \\
+                                      &= x^{3}
+                \end{work}
+
+                $\lim_{x \to \infty} h(x) = $ \ans{$\infty$} \quad
+                $\lim_{x \to -\infty} h(x) = $ \ans{$-\infty$}
+
+          \item $k(x) = -2(x+3)^2(x^2+1)$
+
+                \begin{work}
+                  \text{degree of } k &= 2 + 2 \\
+                                      &= 4 \\
+                  \text{leading term} &= -2 \cdot x^{2} \cdot x^{2} \\
+                                      &= -2x^{4}
+                \end{work}
+
+                $\lim_{x \to \infty} k(x) = $ \ans{$-\infty$} \quad
+                $\lim_{x \to -\infty} k(x) = $ \ans{$-\infty$}
+        \end{enumerate}
+
+  \item Which of the four functions above are guaranteed to cross the
+        $x$-axis, and what is it about them that guarantees it?
+
+        \vspace{0.05in}
+        \ansline{$g$ and $h$. Both have odd degree, so one end runs to $\infty$ and the other to}
+        \ansline{$-\infty$; a continuous graph cannot get from one to the other without crossing.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Read Graphs P and Q at the top of the page. Neither equation is given
+        --- the ends are enough.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Graph P: \; $\lim_{x \to \infty} y = $ \ans{$-\infty$},
+                \; $\lim_{x \to -\infty} y = $ \ans{$-\infty$}, \;
+                so the degree is \ans{even} and $a_n$ is \ans{negative}.
+          \item Graph Q: \; $\lim_{x \to \infty} y = $ \ans{$-\infty$},
+                \; $\lim_{x \to -\infty} y = $ \ans{$\infty$}, \;
+                so the degree is \ans{odd} and $a_n$ is \ans{negative}.
+        \end{enumerate}
+
+  \item For $p(x) = x^4 - 500x^3$, find the exact input past which the leading
+        term is larger in size than the rest.
+
+        \begin{work}
+          \frac{-500x^3}{x^4} &= \frac{-500}{x} \\
+          \left|\frac{-500}{x}\right| &< 1 \\
+          x &> 500
+        \end{work}
+
+        The leading term takes over for $x > $ \ans{$500$}. Fill in the
+        ratio at three inputs:
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $x$ & $50$ & $500$ & $5{,}000$ \\
+        \hline
+        rest $\div$ leading & \ans{$-10$} & \ans{$-1$} & \ans{$-0.1$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Write a polynomial in \textbf{factored form} that has even degree, a
+        negative leading coefficient, and exactly three distinct real zeros.
+
+        \vspace{0.05in}
+        $p(x) = $ \ans{$-(x+2)(x-1)^2(x-4)$ --- degree 4, $a_n = -1$, zeros $-2$, $1$, $4$}
+
+  \item Explain why $p(x) = x^5 - 900x^4 + 12$ and $q(x) = x^5 + 7x$ have
+        exactly the same end behavior, even though their graphs look nothing
+        alike on a standard window.
+
+        \vspace{0.05in}
+        \ansline{Both have leading term $x^5$. The $-900x^4$ term is huge on a small window, but}
+        \ansline{its ratio to $x^5$ is $-900/x$, which shrinks to $0$ --- so past a few thousand it is}
+        \ansline{negligible. Only the leading term survives at the ends, and theirs is identical.}
 \end{enumerate}
 \end{tcolorbox}
 

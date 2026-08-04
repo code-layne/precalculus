@@ -47,20 +47,25 @@ the `main.tex` ones with `latexmk -xelatex`, and builds **five work products** i
 There is no combined "full" packet — the plan and the two slide products are separate teacher
 artifacts, and the key packet is the student packet answered, **page for page**. A prefab
 `main.pdf` is fed straight to `pdfunite` from the source tree with no compile step — so dropping
-in a ready-made PDF is all that's needed (Step 4).
+in a ready-made PDF is all that's needed (Step 5).
 
 ## Multi-lesson dispatch — REQUIRED when generating more than one lesson
 
 **When the request covers two or more lessons, do NOT author them sequentially.**
 Spawn one subagent per lesson in a single message using the `Agent` tool, each briefed
 with the lesson number, CED topic content, and a pointer to this skill. The coordinator
-(this agent) gathers CED content first (Step 0–1 below, once), then fans out.
+(this agent) pulls from upstream and gathers CED content first (Steps 0–2 below, once), then
+fans out. The upstream pull happens **once, in the coordinator, before any subagent is spawned** —
+subagents inherit the synced tree and must not run their own merge.
 
 Pattern for a two-lesson request:
 
 ```
-# Coordinator does once:
-- detect prefix, read one model lesson, extract CED topics for L7.4 and L7.5
+# Coordinator does once, FIRST — before reading or scaffolding anything:
+git fetch origin && git merge --no-edit origin/main
+
+# Coordinator does once, after the merge:
+- detect prefix, read COURSE_PLAN.md, read one model lesson, extract CED topics for L7.4 and L7.5
 
 # Coordinator scaffolds ALL lesson directories before spawning subagents:
 python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 04 --components cover,warmup,notes,activity,exit_ticket,homework
@@ -180,9 +185,37 @@ cause a compile error. When in doubt, `grep` the `.sty` file for the color name 
 Follow these steps in order. Read the referenced files as you reach each step rather than
 all upfront.
 
-### Step 0 — Detect project context (always do this first)
+### Step 0 — Pull from upstream (always do this first, before reading anything)
 
-Never assume the prefix or conventions. Inspect the project:
+Lessons are authored in parallel branches and worktrees, so `shared/`, `COURSE_PLAN.md`, and the
+conventions move underneath you between sessions. **Sync with `origin/main` before you read a
+single file** — everything Step 1 detects (prefix, palette, macros, which lessons exist) is only
+valid against the current tree.
+
+```bash
+git fetch origin
+git status --short            # must be clean; commit or stash first if not
+git merge --no-edit origin/main
+```
+
+Then:
+
+- **Resolve any conflicts before authoring.** Never start writing lesson content on top of a
+  half-merged tree.
+- **Re-read `COURSE_PLAN.md` after the merge**, even if you read it earlier in the session — a
+  lesson's title, topic mapping, or component list may have changed upstream.
+- **Re-read the model lesson after the merge, not before.** Style-package changes (a renamed
+  color, a new box environment, a convention retrofit) land on main constantly; a preamble copied
+  from a pre-merge read is exactly how a lesson builds locally and breaks on main.
+- If the merge brings in changes to `shared/*.sty`, delete stale build stamps before rebuilding:
+  `find .stamps -name "*.stamp" -delete`.
+
+If there is no `origin` remote, or the repo is detached from any upstream, say so and continue —
+do not invent a remote.
+
+### Step 1 — Detect project context
+
+Never assume the prefix or conventions. Inspect the project **after the Step 0 merge**:
 
 1. **Find the prefix.** `ls shared/*-colors.sty` → the prefix is the part before `-colors.sty`
    (e.g. `algebra2`, `apstats`). All `\usepackage{<prefix>-article}` etc. must use it.
@@ -202,7 +235,7 @@ Never assume the prefix or conventions. Inspect the project:
    and tone. Conventions are summarized in `references/conventions.md`, but the live project
    is the source of truth.
 
-### Step 1 — Gather inputs
+### Step 2 — Gather inputs
 
 - **AP path:** locate the CED, extract the unit → topic → Learning Objective → Essential
   Knowledge content relevant to this lesson, plus the governing Big Idea and AP Skill. See
@@ -214,7 +247,7 @@ Either way, the lesson-plan *structure* is identical (`references/components.md`
 plan"). Review units (e.g. Algebra 2 Unit 1) use the same skeleton; they simply fill the
 Priority Ideas & Skills with review topics and usually carry no AP-framework tags.
 
-### Step 2 — Scaffold the lesson directory
+### Step 3 — Scaffold the lesson directory
 
 Run the scaffold script, which creates the directory, the one-line `Makefile`
 (`include ../../shared/lesson.mk`), and the component subdirectories you request:
@@ -231,9 +264,9 @@ root you're working in.
 It auto-detects the prefix and writes each authored component's `main.tex` as a correctly-
 preambled skeleton (and the matching `_key` skeleton for keyed components). Pass `--prefab warmup`
 to create that component as an empty drop-in directory instead, where you place the supplied
-`main.pdf` (Step 4). Then fill in the skeletons.
+`main.pdf` (Step 5). Then fill in the skeletons.
 
-### Step 3 — Author the lesson plan and components
+### Step 4 — Author the lesson plan and components
 
 Author each file following `references/components.md`, which gives the required section
 structure and a worked skeleton for every component and its key. Hold to these invariants:
@@ -261,7 +294,7 @@ structure and a worked skeleton for every component and its key. Hold to these i
   warm-up is authored or prefab. It couples the plan to build order and breaks the moment a
   prefab warm-up becomes an authored one.
 
-### Step 4 — Handle prefab components
+### Step 5 — Handle prefab components
 
 When the user supplies a ready-made PDF for a component (a pre-built warm-up, a publisher
 worksheet), just drop it in — no wrapper needed:
@@ -274,7 +307,7 @@ skipping compilation. Use `--prefab <comp>` when scaffolding to create the empty
 directory. (This relies on the `lesson.mk` that supports prefab `main.pdf` discovery — if a
 project's Makefile still only globs `main.tex`, update it first; see `references/build.md`.)
 
-### Step 5 — Build
+### Step 6 — Build
 
 Build from the lesson directory (or the unit/root for wider packets):
 
@@ -352,8 +385,11 @@ both sides. Report any component that still differs and why.
 
 ## Guardrails
 
+- **Pull from upstream first, every time.** `git fetch origin && git merge --no-edit origin/main`
+  before reading the project, gathering inputs, or authoring — and re-read `COURSE_PLAN.md` and the
+  model lesson after the merge. See Step 0.
 - Detect, don't assume: prefix, course macros, and the AP-vs-standards path all come from
-  inspecting the project (Step 0).
+  inspecting the project (Step 1).
 - Mirror an existing built lesson for tone and preamble; the live project overrides this doc.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in.
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.

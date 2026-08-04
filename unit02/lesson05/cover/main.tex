@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
   {\color{white}\textbf{\large Lesson 2.5 \quad Polynomial Functions and End Behavior}}
 \end{center}
 
@@ -27,10 +27,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can describe the end behavior of a polynomial function using limit notation
-        ($\lim_{x \to \infty}$ and $\lim_{x \to -\infty}$). \hfill\textit{(LO 1.6.A)}
-  \item I can determine the end behavior of a polynomial from its degree and the sign of
-        its leading coefficient, and explain why the leading term dominates for large $|x|$. \hfill\textit{(EK 1.6.A.3)}
+  \item I can say in words what it means for the output values of a polynomial
+        to increase or decrease without bound, and I can write that description
+        in limit notation such as $\lim_{x \to \infty} p(x) = \infty$.
+  \item I can show with numbers that the leading term of a polynomial dominates
+        every lower-degree term once the inputs are large, and I can use that
+        fact to explain why the leading term alone decides end behavior.
+  \item I can use the degree and the sign of the leading coefficient to place a
+        polynomial in one of the four end-behavior cases and write both limit
+        statements for it.
+  \item I can find the leading term of a polynomial written in standard form or
+        in factored form, and I can read end behavior off a graph.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,16 +47,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review: degree, leading coefficient, zeros and multiplicity & \blank{1.2cm} \\
-2 & Group Activity & End Behavior Explorer --- four polynomials, tiered                & \blank{1.2cm} \\
-3 & Exit Ticket    & Limit notation for end behavior                                   & \blank{1.2cm} \\
-4 & Homework       & Practice and extension                                            & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                        & \blank{1.2cm} \\
+2 & Guided Notes   & Limit notation, dominance, and the four end-behavior cases  & \blank{1.2cm} \\
+3 & Group Activity & The End Behavior Desk: predicting both far ends             & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on limit notation and leading terms       & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                                      & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Last lesson was about the middle of the graph --- the place where the zeros
+live. Today is about the two far ends, and they turn out to be decided by a
+single term. Once $|x|$ is large enough, every lower-degree term is a rounding
+error beside the leading one, so the \textbf{degree} and the \textbf{sign of the
+leading coefficient} are the only two facts you need.
+\end{remindbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Homework (Answer Key)
+%! Polynomial Equations, Inequalities, and Modeling — Unit 2, Lesson 2.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -7,15 +7,157 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.7}{Homework --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Homework], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=10pt]
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\item Solve each equation by factoring. Set one side to $0$ first.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $x^3 - 7x^2 + 12x = 0$
+
+        \begin{work}
+          x^3 - 7x^2 + 12x &= 0 \\
+          x\big(x^2 - 7x + 12\big) &= 0 \\
+          x(x-3)(x-4) &= 0
+        \end{work}
+
+        Solutions: \ans{$x = 0,\ x = 3,\ x = 4$}
+
+  \item $x^3 = 9x$
+
+        \begin{work}
+          x^3 - 9x &= 0 \\
+          x\big(x^2 - 9\big) &= 0 \\
+          x(x-3)(x+3) &= 0
+        \end{work}
+
+        Solutions: \ans{$x = 0,\ x = 3,\ x = -3$}
+
+        Which solution disappears if you divide both sides by $x$ in the first
+        step? \quad \ans{$x = 0$}
+\end{enumerate}
+
+\item Solve $(x+2)(x-1)(x-5) < 0$ by sign analysis.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Interval} & $(-\infty,-2)$ & $(-2,1)$ & $(1,5)$ & $(5,\infty)$ \\
+\hline
+\textbf{Test value} & \ans{$-3$} & \ans{$0$} & \ans{$2$} & \ans{$6$} \\
+\hline
+\textbf{Sign} & \ans{$-$} & \ans{$+$} & \ans{$-$} & \ans{$+$} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+Solution in interval notation: \ans{$(-\infty,-2) \cup (1,5)$}
+
+\item Let $p(x) = (x-3)^2(x+1)$. Solve $p(x) \ge 0$.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Zeros and multiplicities: \ans{$x = 3$ (mult.\ 2), $x = -1$ (mult.\ 1)}
+  \item Sign on $(-\infty,-1)$: \ans{$-$} \quad
+        on $(-1,3)$: \ans{$+$} \quad
+        on $(3,\infty)$: \ans{$+$}
+  \item Solution in interval notation: \ans{$[-1, \infty)$}
+  \item At which zero does the sign \textit{fail} to change, and what feature
+        of that zero explains it? \quad \ans{$x = 3$; even multiplicity}
+\end{enumerate}
+
+\boxguard[20]
+\item A sheet of card measures 18 cm by 24 cm. Squares of side $x$ are cut from
+      the four corners and the flaps folded up to make an open box, so
+      $V(x) = x(18-2x)(24-2x)$.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item State the domain restriction the context forces, and say in a few words
+        where it comes from. \quad \ans{$0 < x < 9$; the 18 cm side}
+  \item Write $V(x)$ in expanded form.
+
+        \begin{work}
+          V(x) &= x(18-2x)(24-2x) \\
+               &= x\big(432 - 36x - 48x + 4x^2\big) \\
+               &= x\big(4x^2 - 84x + 432\big) \\
+               &= 4x^3 - 84x^2 + 432x
+        \end{work}
+
+        $V(x) = $ \ans{$4x^3 - 84x^2 + 432x$}
+  \item Find $V(4)$ and report it in a sentence with units.
+
+        \vspace{0.05in}
+        \ansline{$V(4) = 4(10)(16) = 640$: a 4 cm cut makes a box holding $640$ cubic centimeters.}
+\end{enumerate}
+
+\item A data set has equally spaced inputs. Its successive differences are the
+      route to the right regression.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\
+\hline
+$y$ & $2$ & $2$ & $8$ & $26$ & $62$ & $122$ \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item First differences: \ans{$0,\ 6,\ 18,\ 36,\ 60$}
+  \item Second differences: \ans{$6,\ 12,\ 18,\ 24$}
+  \item Third differences: \ans{$6,\ 6,\ 6$}
+  \item Which regression --- linear, quadratic, cubic, or quartic --- fits this
+        data exactly, and how do the differences tell you?
+        \quad \ans{cubic; the third differences are constant}
+  \item The calculator returns the coefficients. Name one thing it does
+        \textit{not} decide for you. \quad \ans{the degree of the model}
+\end{enumerate}
+
+\item The solution set of $x(x-2)^2 > 0$ is
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $(0, \infty)$
+  \item $(0,2) \cup (2,\infty)$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct: $x=2$ gives $0$, and $0 > 0$ is false}}
+  \item $[0, \infty)$
+  \item $(2, \infty)$
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+Why is one test value per interval enough? Suppose $p$ is positive at some
+point of an interval and negative at another point of the same interval, and
+that the interval contains no zeros of $p$. Explain, in two or three sentences,
+why that is impossible. (Your argument will use the fact that a polynomial
+graph has no breaks in it --- calculus will give that fact a name.)
+
+\vspace{0.05in}
+\ansline{The graph of a polynomial has no breaks, so to get from a positive output down to a}
+\ansline{negative one it has to pass through $0$ somewhere in between --- and that point would}
+\ansline{be a zero inside the interval, which we assumed there were none of.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview: The Unit 2 Test, and Unit 3}
+That closes Unit 2. The \textbf{Unit 2 Test} runs the whole arc: end behavior,
+real and complex zeros, multiplicity, equivalent forms, and today's equations,
+inequalities, and models. Then \textbf{Unit 3, Rational Functions}, divides one
+polynomial by another. Today's sign chart shows up again almost immediately
+there --- with one new rule. A rational expression can change sign at a zero of
+its \textit{denominator} too, at a point that is not even in the domain.
 \end{notesbox}
 
 \end{document}

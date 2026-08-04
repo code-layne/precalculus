@@ -7,102 +7,324 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.5}{Guided Notes --- Answer Key}
-\namedateperiod
 
 \vspace{0.12in}
 
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Describe the end behavior of a polynomial function and write it using
-        \ans{limit} notation. \hfill\textit{(LO 1.6.A)}
-  \item Determine the end behavior of a polynomial from its \ans{degree} and the
-        \ans{sign} of its leading coefficient. \hfill\textit{(EK 1.6.A.3)}
+  \item Say what it means for output values to increase or decrease
+        \ans{without} bound, and write that description in \ans{limit}
+        notation.
+  \item Show with numbers that the \ans{leading} term dominates every
+        lower-degree term once the inputs are large.
+  \item Use the degree and the \ans{sign} of the leading coefficient to
+        place a polynomial in one of the \ans{four} end-behavior cases.
+  \item Find the leading term from \ans{standard} form or from
+        \ans{factored} form.
 \end{enumerate}
 \end{objectivebox}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{vocabbox}
-\termblanklong{End behavior}
-\termblanklong{Leading term}
-\termblanklong{Leading coefficient}
-\termblanklong{Limit notation ($\lim_{x \to \infty}$)}
-\termblanklong{Dominates}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{End behavior:}}\\[1pt]
+\ansline{What the outputs of $p$ do as $x$ runs off toward $\infty$ and toward $-\infty$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Increase without bound:}}\\[1pt]
+\ansline{The outputs pass every number you can name and never turn back.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Limit notation:}}\\[1pt]
+\ansline{$\lim_{x \to \infty} p(x) = \infty$ --- shorthand for a described behavior, not a computation.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading term:}}\\[1pt]
+\ansline{The highest-degree term, $a_n x^n$. In factored form, multiply the leading pieces.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading coefficient:}}\\[1pt]
+\ansline{The number $a_n$ multiplying the leading term. Only its sign matters for end behavior.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Dominance:}}\\[1pt]
+\ansline{For large $|x|$ the rest of the polynomial is negligible beside the leading term.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard[34]
 \begin{hookbox}
-A student wraps rubber bands around a ball. The radius (in mm) grows according to
-$r(t) = 2t^3 - 50t^2 + 100t$.
+Below is the graph of $p(x) = x^3 - 100x^2$ on the window
+$-20 \le x \le 70$. It dives to about $-150{,}000$ and then flattens out along
+the bottom --- it looks like a function that has given up.
 
-At $t = 1{,}000$ minutes: \quad $2t^3 = $ \ans{$2 \times 10^9$} \quad $-50t^2 = $ \ans{$-5 \times 10^7$}
+\begin{center}
+\begin{tikzpicture}[x=1.1cm, y=1.2cm]
+  \draw[linegray, very thin, xstep=0.5, ystep=0.5] (-1,-1.5) grid (3.5,0.5);
+  \draw[->, thick] (-1.3,0) -- (3.9,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-1.8) -- (0,0.9) node[above] {\small $p(x)$};
+  \foreach \x/\lab in {1/20, 2/40, 3/60} \node[above] at (\x,0.08) {\small \lab};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-1,-0.48) (-0.5,-0.11) (0,0) (0.5,-0.09) (1,-0.32) (1.5,-0.63)
+     (2,-0.96) (2.5,-1.25) (3,-1.44) (3.33,-1.48) (3.5,-1.47)};
+  \fill[plum] (0,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
 
-What percentage of the cubic term is the $-50t^2$ term? \ans{about $2.5\%$}
+And yet $p(1000) = 900{,}000{,}000$ --- positive, and nearly a billion. Nothing
+about the window was wrong; it was just too small. What happened between
+$x = 70$ and $x = 1000$?
 
-Which term ``wins'' as $t$ gets very large? \ans{$2t^3$ (the leading term)}
+\ansline{The $x^3$ term overtook the $-100x^2$ term. At $x = 70$ the $-100x^2$ piece was still}
+\ansline{bigger; past $x = 100$ the cubic term wins, and from there it wins by more and more.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{Leading Term Dominance}
-\textbf{Key Idea:} For large $|x|$, the \ans{leading} term of a polynomial dominates
-all lower-degree terms.
+\boxguard[30]
+\begin{notesbox}{1. Limit Notation --- Language for the Two Far Ends}
+Lesson 2.4 was about the middle of the graph, where the zeros live. This lesson
+is about the two \textbf{far ends}.
 
-\medskip
-\textbf{Example.} Let $p(x) = x^3 - 100x^2$.
-Complete the table by computing $p(x)$ and comparing it to $x^3$:
+\begin{itemize}[itemsep=4pt]
+  \item If the input values of a nonconstant polynomial increase without bound,
+        the output values must either increase without bound or
+        \ans{decrease} without bound. There is no third option --- a polynomial
+        cannot level off.
+  \item In symbols: \quad $\lim_{x \to \infty} p(x) = \infty$ \quad or \quad
+        $\lim_{x \to \infty} p(x) = -\infty$.
+  \item Going the other way, ``as the input values \textbf{decrease} without
+        bound'' is written $x \to $ \ans{$-\infty$}.
+\end{itemize}
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|}
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\small
+\begin{tabular}{|l|l|}
 \hline
-$x$ & $p(x) = x^3 - 100x^2$ & $x^3$ & $\dfrac{-100x^2}{x^3} = \dfrac{-100}{x}$ \\
+\textbf{Notation} & \textbf{Said out loud} \\
 \hline
-$100$   & \ans{$0$} & \ans{$1{,}000{,}000$} & \ans{$-1$} \\
-$1{,}000$ & \ans{$9 \times 10^8$} & \ans{$10^9$} & \ans{$-0.1$} \\
+$\lim_{x \to \infty} p(x) = \infty$ & As $x$ increases without bound, $p(x)$ increases without bound. \\
+\hline
+$\lim_{x \to \infty} p(x) = -\infty$ & \ans{As $x$ increases without bound, $p(x)$ decreases without bound.} \\
+\hline
+$\lim_{x \to -\infty} p(x) = \infty$ & \ans{As $x$ decreases without bound, $p(x)$ increases without bound.} \\
+\hline
+\ans{$\lim_{x \to -\infty} p(x) = -\infty$} & As $x$ decreases without bound, $p(x)$ decreases without bound. \\
 \hline
 \end{tabular}
+\end{center}
+\smallskip
 
-\medskip
-As $x \to \infty$, the ratio $-100/x \to$ \ans{$0$}, so $p(x)$ behaves like \ans{$x^3$}.
-
-\medskip
-\textbf{Conclusion:} To find end behavior, look only at the \ans{leading term}.
+\textbf{Careful.} $\infty$ is not a number. You never substitute it and you
+never get it back as an output. The whole statement is a \ans{description} of a
+behavior, not the answer to a computation --- so never write
+$p(\infty) = \infty$. This is the notation calculus runs on, so it is worth
+getting exactly right now.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{The Four End-Behavior Cases}
-The end behavior of any polynomial is determined by its \textbf{degree} (even or odd) and the
-\textbf{sign} of its leading coefficient.
-
-\medskip
-\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Degree} & \textbf{Leading Coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
-\hline
-Even & Positive ($a_n > 0$) & \ans{$\infty$}  & \ans{$\infty$} \\
-Even & Negative ($a_n < 0$) & \ans{$-\infty$} & \ans{$-\infty$} \\
-Odd  & Positive ($a_n > 0$) & \ans{$\infty$}  & \ans{$-\infty$} \\
-Odd  & Negative ($a_n < 0$) & \ans{$-\infty$} & \ans{$\infty$} \\
-\hline
-\end{tabular}
-
-\medskip
-\textbf{Memory aid:} Even-degree polynomials have both ends going the \ans{same} direction.
-Odd-degree polynomials have ends going \ans{opposite} directions.
-
-\medskip
-\textbf{Practice.} State the end behavior of $p(x) = -3x^4 + 2x^2 - 7$.
+\boxguard[30]
+\begin{notesbox}{2. Why the Leading Term Wins}
+\textbf{The claim.} The degree and the sign of the leading term determine end
+behavior --- \textit{because} once the inputs are large, the leading term
+dominates the values of every lower-degree term. That ``because'' needs
+evidence, so here it is.
 
 \smallskip
-Leading term: \ans{$-3x^4$} \quad Degree: \ans{4 (even)} \quad Sign: \ans{negative}
+Let $p(x) = x^3 - 100x^2$. The leading term is \ans{$x^3$}, and ``the rest''
+is $-100x^2$. Complete the last two columns.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\small
+\begin{tabular}{|r|c|c|c|c|}
+\hline
+$x$ & \textbf{leading: $x^3$} & \textbf{the rest: $-100x^2$} & $p(x)$ & \textbf{rest $\div$ leading} \\
+\hline
+$10$      & $1 \times 10^{3}$    & $-1 \times 10^{4}$   & $-9 \times 10^{3}$ & $-10$ \\
+\hline
+$50$      & $1.25 \times 10^{5}$ & $-2.5 \times 10^{5}$ & \ans{$-1.25 \times 10^{5}$} & \ans{$-2$} \\
+\hline
+$100$     & $1 \times 10^{6}$    & $-1 \times 10^{6}$   & \ans{$0$} & \ans{$-1$} \\
+\hline
+$500$     & $1.25 \times 10^{8}$ & $-2.5 \times 10^{7}$ & \ans{$1 \times 10^{8}$} & \ans{$-0.2$} \\
+\hline
+$1{,}000$ & $1 \times 10^{9}$    & $-1 \times 10^{8}$   & \ans{$9 \times 10^{8}$} & \ans{$-0.1$} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+The last column is the whole argument. Algebraically it is
+$\dfrac{-100x^2}{x^3} = \dfrac{-100}{x}$, which shrinks toward \ans{$0$} as
+$x$ increases. The rest of the polynomial does not become small --- at
+$x = 1000$ it is a hundred million --- it becomes small \textit{compared with
+the leading term}.
 
 \medskip
-$\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
+\textbf{Conclusion (EK 1.6.A.3).} At the far ends, $x^3 - 100x^2$ behaves
+exactly like \ans{$x^3$}. Every lower-degree term is negligible, so only the
+\ans{leading} term decides end behavior.
+
+\medskip
+\textbf{Back to the hook.} The window stopped at $x = 70$, and $-100x^2$ was
+still ahead of $x^3$ there. It loses the lead for good at $x = $
+\ans{$100$}, which the table above shows exactly.
 \end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[34]
+\begin{notesbox}{3. The Four Cases}
+Only two things about the leading term $a_n x^n$ matter: whether the degree $n$
+is \ans{even} or \ans{odd}, and whether $a_n$ is \ans{positive} or
+\ans{negative}. Two choices twice over gives four cases, and there are no
+others.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & \textbf{Degree} & \textbf{Leading coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
+\hline
+Case 1 & Even & Positive & \ans{$\infty$} & \ans{$\infty$} \\
+\hline
+Case 2 & Even & Negative & \ans{$-\infty$} & \ans{$-\infty$} \\
+\hline
+Case 3 & Odd  & Positive & \ans{$\infty$} & \ans{$-\infty$} \\
+\hline
+Case 4 & Odd  & Negative & \ans{$-\infty$} & \ans{$\infty$} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+\begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.22cm]
+  \draw[->, thick] (-2.7,0) -- (2.8,0);
+  \draw[->, thick] (0,-5.0) -- (0,5.2);
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
+     (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
+  \node[below, align=center, text width=3.4cm] at (0,-5.6)
+    {\small \textbf{Case 1}\\ even degree, $a_n > 0$};
+\end{tikzpicture}
+\hspace{1.4cm}
+\begin{tikzpicture}[x=0.5cm, y=0.22cm]
+  \draw[->, thick] (-2.7,0) -- (2.8,0);
+  \draw[->, thick] (0,-5.0) -- (0,5.2);
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,-4.07) (-2,0) (-1.7,3.21) (-1.4,4.0) (-1,3) (-0.5,0.94)
+     (0,0) (0.5,0.94) (1,3) (1.4,4.0) (1.7,3.21) (2,0) (2.2,-4.07)};
+  \node[below, align=center, text width=3.4cm] at (0,-5.6)
+    {\small \textbf{Case 2}\\ even degree, $a_n < 0$};
+\end{tikzpicture}
+
+\vspace{0.22in}
+
+\begin{tikzpicture}[x=0.5cm, y=0.22cm]
+  \draw[->, thick] (-2.7,0) -- (2.8,0);
+  \draw[->, thick] (0,-5.0) -- (0,5.2);
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,-4.05) (-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38)
+     (0,0) (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2) (2.2,4.05)};
+  \node[below, align=center, text width=3.4cm] at (0,-5.6)
+    {\small \textbf{Case 3}\\ odd degree, $a_n > 0$};
+\end{tikzpicture}
+\hspace{1.4cm}
+\begin{tikzpicture}[x=0.5cm, y=0.22cm]
+  \draw[->, thick] (-2.7,0) -- (2.8,0);
+  \draw[->, thick] (0,-5.0) -- (0,5.2);
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-2.2,4.05) (-2,2) (-1.8,0.43) (-1.5,-1.13) (-1,-2) (-0.5,-1.38)
+     (0,0) (0.5,1.38) (1,2) (1.5,1.13) (1.8,-0.43) (2,-2) (2.2,-4.05)};
+  \node[below, align=center, text width=3.4cm] at (0,-5.6)
+    {\small \textbf{Case 4}\\ odd degree, $a_n < 0$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\textbf{One sentence to remember.} Even degree sends both ends the
+\ans{same} way; odd degree sends them \ans{opposite} ways; and a negative
+leading coefficient \ans{flips} both ends.
+
+\medskip
+\textbf{A check on Lesson 2.4.} An odd-degree polynomial has one end up and one
+end down, so its graph must cross the $x$-axis --- it must have at least one
+\ans{real} zero. That is the same conclusion 2.4 reached by counting
+conjugate pairs, arrived at from the opposite direction.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Reading End Behavior Off Any Form}
+\textbf{Standard form} hands you the leading term --- provided you read the
+\textit{exponents} and not the left-to-right order.
+
+\medskip
+\textbf{Example 1.} $p(x) = 9 + 2x^4 - x^7$.
+
+\smallskip
+Leading term: \ans{$-x^7$} \qquad Degree: \ans{$7$}, which is
+\ans{odd} \qquad Sign of $a_n$: \ans{negative}
+
+\smallskip
+$\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad
+$\lim_{x \to -\infty} p(x) = $ \ans{$\infty$}
+
+\medskip
+\textbf{Factored form} hides the leading term --- but you never have to expand.
+Add the exponents to get the degree; multiply the leading pieces of the factors
+to get the leading term.
+
+\medskip
+\textbf{Example 2.} $q(x) = 2(x-3)^2(x+1)(x^2+4)$.
+
+\begin{work}
+  \text{degree of } q &= 2 + 1 + 2 \\
+                      &= 5 \\
+  \text{leading term} &= 2 \cdot x^{2} \cdot x \cdot x^{2} \\
+                      &= 2x^{5}
+\end{work}
+
+Odd degree, positive leading coefficient, so
+$\lim_{x \to \infty} q(x) = $ \ans{$\infty$} and
+$\lim_{x \to -\infty} q(x) = $ \ans{$-\infty$}.
+
+\medskip
+\textbf{Two forms, two jobs.} Factored form told you the \ans{zeros} back in
+Lesson 2.4; standard form tells you the \ans{end behavior} today. Lesson 2.6 puts
+them side by side and shows they are the same polynomial.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Let $p(x) = -x^6 + 4x^3 - 11$.
+
+        \smallskip
+        Leading term: \ans{$-x^6$} \qquad
+        $\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad
+        $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
+
+  \item Let $r(x) = -5(x+2)^3(x-1)^2$. Do not expand.
+
+        \begin{work}
+          \text{degree of } r &= 3 + 2 \\
+                              &= 5 \\
+          \text{leading term} &= -5 \cdot x^{3} \cdot x^{2} \\
+                              &= -5x^{5}
+        \end{work}
+
+        Degree: \ans{$5$} \qquad Leading coefficient: \ans{$-5$}
+
+        \smallskip
+        $\lim_{x \to \infty} r(x) = $ \ans{$-\infty$} \qquad
+        $\lim_{x \to -\infty} r(x) = $ \ans{$\infty$}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

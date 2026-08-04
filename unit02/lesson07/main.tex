@@ -1,14 +1,12 @@
-%! Polynomial Equations and Inequalities — Unit 2, Lesson 2.7 — Lesson Plan
+%! Polynomial Equations, Inequalities, and Modeling — Unit 2, Lesson 2.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.7: Polynomial Equations and Inequalities}
+\newcommand{\LessonNumberName}{Lesson 2.7: Polynomial Equations, Inequalities, and Modeling}
 
 \begin{document}
 \begin{center}
@@ -16,80 +14,337 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will solve polynomial equations by
+    collecting every term on one side and applying the zero-product property;
+    solve polynomial inequalities by sign analysis, using multiplicity to
+    predict where the sign changes and reporting the answer in interval
+    notation; construct a polynomial model from a physical context together
+    with the domain restriction that context forces; and use the model --- and
+    an inequality on it --- to answer a question in a sentence with units.
+    \hfill\textit{\small (CED Topic 1.14 --- Skills 1.C, 3.B; plus
+    calculus-prerequisite equation and inequality work)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{1.C} --- Construct new functions using given functions, useful in
+modeling contexts. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A model can be built from the restrictions a mathematical or physical
+        scenario imposes --- the algebra alone never supplies the domain.
+        (1.14.A.1)
+  \item A model can also be built by transforming a parent function to match a
+        data set or a described scenario. (1.14.A.2)
+  \item Technology fits a linear, quadratic, cubic, or quartic model to data by
+        \textit{regression}; the analyst still chooses the degree. (1.14.A.3)
+\end{itemize} \\
+\textbf{3.B} --- Apply numerical results in a given mathematical or applied
+context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A model is used to draw conclusions about the scenario it came from:
+        answer the question, then say what the number \textit{means}, in a
+        sentence, with units. (1.14.C.1)
+  \item A value rejected by the algebra can still be rejected a second time by
+        the context --- a root outside the domain is not an answer.
+\end{itemize} \\
+\textbf{Calculus prerequisite} --- Solve polynomial equations and inequalities.
+&
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A solution of $p(x) = 0$, a real zero of $p$, and an $x$-intercept of
+        the graph are one object under three names (Lesson 2.3).
+  \item Between consecutive real zeros the sign of $p$ cannot change, so one
+        test value decides an entire interval.
+  \item Odd multiplicity $\Rightarrow$ the sign changes at that zero; even
+        multiplicity $\Rightarrow$ it does not (Lesson 2.3).
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Polynomial equation & An equation $p(x) = q(x)$ with polynomials on both sides; it is solved by rewriting it as $p(x) - q(x) = 0$. \\
+Zero-product property & If a product of factors equals $0$, at least one factor equals $0$. It works only against $0$ --- never against any other number. \\
+Polynomial inequality & A statement $p(x) > 0$, $\ge 0$, $< 0$, or $\le 0$; its solution is a union of intervals, not a list of numbers. \\
+Sign chart & A number line cut at the real zeros of $p$, with the sign of $p$ recorded on each piece. \\
+Test value & Any convenient input inside an interval; its sign is the sign of $p$ on the whole interval. \\
+Domain restriction & The set of inputs a context allows. It comes from the scenario --- lengths are positive, a cut cannot exceed the sheet --- not from the formula. \\
+Regression & A technology routine that fits a model of a chosen degree (linear, quadratic, cubic, quartic) to a data set. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: factoring a polynomial completely by pulling out the
+    greatest common factor and then factoring the remaining quadratic
+    (Lesson 2.6), and reading real zeros with their multiplicities off a
+    factored form and calling each one crossing or tangent (Lesson 2.3). Item 3
+    evaluates $V(x) = x(20-2x)(30-2x)$ at $x = 2$ --- the students do not yet
+    know what $V$ is, and that is deliberate: the same expression is built from
+    scratch in Part 3.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{The card, the scissors, and the question.} Hold up a rectangular
+    sheet of card, $20$ cm by $30$ cm. Cut a square of side $x$ from each of
+    the four corners and fold the flaps up: an open box.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: how big can $x$ be? Take answers until someone says
+              ``$10$ --- past that the flaps meet and there is nothing left.''
+              Write $0 < x < 10$ on the board and label it \textit{the context,
+              not the algebra}.
+        \item Project the pre-drawn graph of $V$ from the notes with the line
+              $V = 1000$ drawn across it. Ask: which cuts give a box holding
+              \textbf{at least} $1000$ cm\textsuperscript{3}?
+    \end{enumerate}
+    \textit{Discussion prompt:} that is not an equation --- it is an
+    \textit{inequality}, and its answer is a stretch of the number line rather
+    than a list. We need both halves of today's lesson to answer it, and we
+    will, in Part 4.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson]{lilac}
+\begin{multicols}{2}
+
+\textbf{Part 1: Solving Polynomial Equations} (10 min)
+
+\begin{itemize}
+  \item Say the through-line of the unit out loud: a solution of $p(x) = 0$,
+        a real zero of $p$, and an $x$-intercept of the graph are the same
+        object under three names.
+  \item The routine: (1) collect everything on one side so the other side is
+        $0$; (2) factor completely; (3) set each factor to $0$.
+  \item Work $x^3 + 6x = 5x^2$. Move everything left:
+        $x^3 - 5x^2 + 6x = 0$, then $x(x-2)(x-3) = 0$, so $x = 0, 2, 3$.
+  \item \textbf{Name the classic error before anyone makes it:} dividing both
+        sides by $x$ at the start. It is legal only if $x \ne 0$ --- and
+        $x = 0$ is one of the answers, so dividing deletes it.
+\end{itemize}
+
+\textbf{Part 2: Polynomial Inequalities by Sign Analysis} (15 min)
+
+\begin{itemize}
+  \item Keep the same polynomial: solve $x^3 - 5x^2 + 6x > 0$. The zeros
+        $0, 2, 3$ cut the line into four intervals.
+  \item The idea that makes it work: a polynomial can only change sign by
+        passing through $0$, so \textit{inside} an interval with no zeros the
+        sign cannot change. One test value settles the whole interval.
+  \item Fill the sign chart together: $-1 \to -12$, $1 \to 2$,
+        $2.5 \to -0.625$, $4 \to 8$. Answer $(0,2) \cup (3,\infty)$.
+  \item Then the multiplicity connection back to 2.3: for
+        $(x+2)(x-1)^2$, the sign changes at $-2$ (odd) and does \textit{not}
+        change at $1$ (even). Solve $> 0$: the answer
+        $(-2,1) \cup (1,\infty)$ has a hole punched in it at $1$ because the
+        inequality is strict.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: Building the Model} (13 min)
+
+\begin{itemize}
+  \item Return to the card. Derive the three dimensions in front of them:
+        height $x$, width $20 - 2x$, length $30 - 2x$ --- \textit{two} corners
+        come off each side, which is where the $2x$ comes from.
+  \item $V(x) = x(20-2x)(30-2x)$, and expanded
+        $V(x) = 4x^3 - 100x^2 + 600x$. Ask which form is more useful for each
+        job.
+  \item \textbf{The AP move (1.14.A.1):} the domain. Ask for three separate
+        reasons: $x > 0$, $20 - 2x > 0$, $30 - 2x > 0$. The binding one is
+        $x < 10$. Write $0 < x < 10$ and say plainly that no step of the
+        algebra produced it.
+\end{itemize}
+
+\textbf{Part 4: Answering Questions With the Model} (12 min)
+
+\begin{itemize}
+  \item Evaluate: $V(3) = 3(14)(24) = 1008$. Require the sentence: ``A
+        $3$-cm cut gives a box holding $1008$ cubic centimeters.''
+  \item Close the loop --- the hook question is an inequality on a model:
+        $V(x) \ge 1000$. Reduce to $x^3 - 25x^2 + 150x - 250 \ge 0$, note
+        $x = 5$ works, factor to $(x-5)(x^2 - 20x + 50)$, get
+        $x = 10 \pm 5\sqrt{2}$.
+  \item $10 + 5\sqrt{2} \approx 17.07$ is a perfectly good root and a
+        perfectly bad answer --- it is outside $0 < x < 10$. Reject it by the
+        context.
+  \item Sign chart on the domain gives $10 - 5\sqrt{2} \le x \le 5$, about
+        $2.93$ cm to $5$ cm. Finish with the sentence and the units.
+  \item Mention regression (1.14.A.3) in one minute: given \textit{data}
+        rather than a scenario, technology fits a cubic or quartic for you.
+        You still choose the degree, and you still say what it means.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction --- The Sign-Analysis Routine]{lilac}
+Model these five steps every time, and require them on the activity and
+homework:
+\begin{enumerate}[itemsep=2pt]
+  \item Rewrite the inequality so one side is $0$.
+  \item Factor completely and find every real zero.
+  \item Mark the zeros on a number line; they cut it into intervals.
+  \item Test one convenient value in each interval and record the sign.
+  \item Read off the intervals that match the inequality. Include the zeros
+        when the symbol is $\ge$ or $\le$; exclude them when it is $>$ or $<$.
+        Report in interval notation, joining pieces with $\cup$.
+\end{enumerate}
+Worked live: $x^3 - 5x^2 + 6x > 0 \Rightarrow x(x-2)(x-3) > 0 \Rightarrow$
+zeros $0, 2, 3 \Rightarrow$ signs $-, +, -, + \Rightarrow (0,2) \cup
+(3,\infty)$.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} dividing both sides by $x$ (or by $x - 2$) to
+        ``simplify.'' Cold-call: ``What value of $x$ did you just assume was
+        impossible? Check whether it is actually a solution.''
+  \item \textbf{Common error:} setting factors equal to the number on the
+        right, e.g.\ from $(x-1)(x+4) = 6$ writing $x - 1 = 6$. Push: ``The
+        zero-product property is about \textit{zero}. Move the 6 first.''
+  \item \textbf{Common error:} answering an inequality with a list of numbers
+        instead of intervals. ``You solved the equation. The question asked
+        where it is positive.''
+  \item \textbf{Common error:} testing a value \textit{at} a zero instead of
+        between zeros. Every test value must be strictly inside its interval.
+  \item \textbf{Common error:} in the modeling half, giving the domain as
+        ``all real numbers'' because the cubic is defined everywhere. Ask:
+        ``Cut a $-3$ cm square. Show me.''
+  \item \textbf{Language:} a bare number is not an answer to a modeling
+        question. Require the noun and the unit every time.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: The Packaging Desk} in leveled
+tiers. Every tier works the same physical context --- a $16$ cm $\times$ $24$
+cm sheet --- so groups can be moved between tiers without new materials, and
+no tier draws a graph.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Solve three factored or
+        easily-factored equations, complete a two-interval sign chart for
+        $(x+3)(x-2)$, and state the domain restriction for the sheet from the
+        context.
+  \item \textbf{Tier A (Approaching Proficiency):} Solve $x^3 = 2x^2 + 8x$
+        with the everything-on-one-side move, complete a four-interval sign
+        chart for $(x+2)(x-1)(x-3) \le 0$ and report in interval notation, then
+        build $V(x) = x(16-2x)(24-2x)$ and evaluate $V(3)$ with a sentence.
+  \item \textbf{Tier E (Extension):} Expand $V$ to $4x^3 - 80x^2 + 384x$,
+        justify the domain $0 < x < 8$ from three separate restrictions, then
+        solve $V(x) \ge 480$ --- factoring out $(x-2)$, solving
+        $x^2 - 18x + 60 = 0$ for $9 \pm \sqrt{21}$, \textbf{rejecting
+        $9 + \sqrt{21} \approx 13.58$ on domain grounds}, and reporting
+        $[\,2,\ 9-\sqrt{21}\,]$ in a sentence with units (AP Skill 3.B).
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item Solve $x^3 = 4x$ (worked space provided) --- the divide-by-$x$ trap.
+  \item Complete a three-column sign chart for $p(x) = (x+3)(x-1)$ and give
+        the solution of $p(x) < 0$ in interval notation.
+  \item For a box cut from a $12$ cm square, $V(x) = x(12-2x)^2$: state the
+        domain restriction the context forces, and compute $V(2)$ with units.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 is the diagnostic --- an answer of
+``$x = \pm 2$'' means the student divided by $x$ and lost a solution, and that
+is a reteach, not a slip. On item 2 the target answer is $(-3,1)$; a student
+who writes $\{-3, 1\}$ solved the equation instead of the inequality. Item 3(a)
+is the 1.14.A.1 check: ``$0 < x < 6$'' earns it, ``all reals'' does not.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 6 problems --- two equations solved by factoring (one
+requiring the everything-on-one-side move), a three-zero sign chart with the
+answer in interval notation, a repeated-factor inequality where the sign fails
+to change at the even-multiplicity zero, a full modeling item on an $18$ cm
+$\times$ $24$ cm sheet (domain, expanded form, evaluation with units), a
+regression item on choosing the degree from constant successive differences,
+and one AP-style multiple-choice item on $x(x-2)^2 > 0$.
+
+\textbf{Extension (optional):} Why is one test value per interval enough? A
+polynomial is continuous, so to get from a positive output to a negative one
+it must pass through $0$ --- and there are no zeros strictly inside the
+interval. Students write the argument in two or three sentences; it is the
+Intermediate Value Theorem in everything but name, and calculus will name it.
+
+\textbf{Preview:} This closes Unit 2. The \textbf{Unit 2 Test} covers
+polynomial behavior end to end --- end behavior, real and complex zeros,
+multiplicity, equivalent forms, and today's equations, inequalities, and
+models. Then \textbf{Unit 3, Rational Functions}, divides one polynomial by
+another. Today's sign chart returns almost immediately there, with one new
+rule: a rational expression can also change sign where its \textit{denominator}
+is zero, at a point that is not in the domain at all.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. Items 1 and 2 are straight recall
+from 2.6 and 2.3 and should be quick --- do not reteach factoring here, just
+confirm it, because every inequality today begins with a factoring step and a
+class that is slow on item 1 will be slow all period. Item 3 is arithmetic on
+purpose: students evaluate $V(2) = 832$ without being told what $V$ models.
+Do not explain it during review. When the same expression is derived from the
+card in Part 3, ask who recognizes it; the recognition is worth more than the
+explanation would have been.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+Part 2 is the centerpiece and should get the most clock. Resist handing over
+the sign chart as a procedure --- ask first why one test value is allowed to
+speak for infinitely many, and let a student say ``because it would have to
+cross zero to change sign.'' Write that sentence down; it is the homework
+extension and it is calculus. Part 1 is short by design: the routine is three
+steps and the only real content is the warning about dividing by $x$, which is
+worth writing on the board in a different color. In Part 3 the derivation of
+$20 - 2x$ deserves a physical demonstration --- fold an actual card, because
+the students who write $20 - x$ are not making an algebra mistake, they are
+picturing one corner instead of two. If time runs short, compress Part 1, never
+Part 4: 1.14.C.1 lives entirely in Part 4 and it is where the two halves of the
+lesson finally meet.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+All three tiers share the $16 \times 24$ sheet, so a group can be moved up or
+down mid-period with no new handout. Tier R is deliberately light on algebra:
+the whole task is ``zeros cut the line, test one point per piece,'' repeated
+until it is automatic. In Tier A, watch question 1 --- a group that starts by
+dividing by $x$ will get two solutions instead of three, and that is the moment
+to stop the room. Tier E question 3 is the payoff of the whole lesson: the
+quadratic yields two roots and one of them, $9 + \sqrt{21} \approx 13.58$, is
+mathematically flawless and physically absurd. Make a group say out loud
+\textit{why} it is rejected; ``because the sheet is only 16 cm wide'' is the
+answer, and ``because it is too big'' is not.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+Collected, completion credit only. Sort by item 1 first: $\{0, 2, -2\}$ is the
+target and $\{2, -2\}$ is the reteach pile, and the two piles will be roughly
+the size of the split you saw while circulating. On item 2, accept $(-3,1)$
+only --- brackets there are wrong because the inequality is strict, and it is
+worth thirty seconds of whole-class correction tomorrow rather than a comment
+on each paper. Item 3(b) should include the units; if more than a few papers
+give a bare $128$, open the test review with the sentence requirement, since
+the Unit 2 test scores it.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+Problem 3 is the one to grade first --- it is the only item where a zero fails
+to produce a sign change, and a student who reports $[-1,3] \cup [3,\infty)$
+rather than $[-1,\infty)$ has the multiplicity idea but not the interval
+notation, which is a very different conversation from one who reports
+$[3,\infty)$ alone. Problem 6 is the AP-style item: distractor A, $(0,\infty)$,
+is chosen by everyone who forgets that $x = 2$ makes the product zero and a
+strict inequality excludes it, and it is worth two minutes of autopsy because
+the same puncture appears on the unit test. Since this is the last homework of
+the unit, collect the extension too --- the continuity argument is the one
+piece of today that Unit 3 assumes and never restates.
 \end{teachernote}
 \end{document}

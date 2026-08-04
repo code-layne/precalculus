@@ -1,0 +1,319 @@
+%! Polynomial Equations, Inequalities, and Modeling — Unit 2, Lesson 2.7 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.7}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Polynomial Equations, Inequalities, and Modeling}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Card and the Scissors}
+  \sectionlabel[goldacc]{Think About It}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.52cm, y=0.0026cm]
+        \draw[linegray, very thin, xstep=1, ystep=200] (0,0) grid (10,1200);
+        \draw[->, thick] (-0.5,0) -- (10.9,0) node[below right] {\small \(x\) (cm)};
+        \draw[->, thick] (0,-70) -- (0,1330) node[above] {\small \(V\)};
+        \foreach \x in {2,4,6,8,10} \node[below] at (\x,-30) {\small \x};
+        \foreach \y in {400,800,1200} \node[left] at (0,\y) {\small \y};
+        \draw[thick, dashed, goldacc] (0,1000) -- (10.4,1000);
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(0,0) (1,504) (2,832) (3,1008) (3.9,1056) (5,1000) (6,864)
+           (7,672) (8,448) (9,216) (10,0)};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.44\textwidth}
+      A card \(20\) cm by \(30\) cm. Cut a square of side \(x\) from each
+      corner, fold up the flaps.
+
+      \bigskip
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item How large is \(x\) allowed to be?
+        \item Which cuts give a box holding \textbf{at least}
+              \(1000\) cm\textsuperscript{3}?
+      \end{itemize}
+
+      \bigskip
+      \textit{The second question is an \textbf{inequality} about a
+      \textbf{model}. We need both halves of today to answer it.}
+  \end{columns}
+\end{frame}
+
+% SECTION 1 — SOLVING POLYNOMIAL EQUATIONS
+\begin{frame}[t, plain]
+  \plumheader{1. Solving Polynomial Equations}
+
+  \begin{block}{Three names, one object (Lesson 2.3)}
+    \(a\) solves \(p(x) = 0\) \quad\(\Longleftrightarrow\)\quad \(a\) is a real
+    zero of \(p\) \quad\(\Longleftrightarrow\)\quad \((a,0)\) is an
+    \(x\)-intercept.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \textbf{The routine}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \item Move every term to one side, so the other side is \(0\).
+        \item Factor completely.
+        \item Set each factor to \(0\) and solve.
+      \end{enumerate}
+
+    \column{0.52\textwidth}
+      \begin{block}{Solve \(x^3 + 6x = 5x^2\)}
+        \[ x^3 - 5x^2 + 6x = 0 \]
+        \[ x(x-2)(x-3) = 0 \]
+        \[ x = 0, \quad x = 2, \quad x = 3 \]
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 1, CONT. — THE TRAP
+\begin{frame}[t, plain]
+  \plumheader{The One Move That Costs You a Solution}
+  \sectionlabel[redacc]{Warning}
+
+  \begin{block}{Do not divide both sides by \(x\)}
+    From \(x^3 + 6x = 5x^2\) it is tempting to divide through by \(x\) and get
+    \(x^2 + 6 = 5x\), which yields \(x = 2\) and \(x = 3\).
+  \end{block}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{10pt}
+    \item Dividing by \(x\) quietly assumes \(x \ne 0\).
+    \item But \(x = 0\) \textit{is} a solution --- so the division deleted it.
+    \item Collect terms and factor instead. The zero-product property works
+          only against \textbf{zero}: from \((x-1)(x+4) = 6\) you may
+          \textit{not} write \(x - 1 = 6\).
+  \end{itemize}
+
+  \bigskip
+  \textit{Rule of thumb: never divide by something that could be zero. Factor
+  it out instead --- it is carrying an answer.}
+\end{frame}
+
+% SECTION 2 — SIGN ANALYSIS
+\begin{frame}[t, plain]
+  \plumheader{2. Polynomial Inequalities --- Sign Analysis}
+
+  \begin{block}{Why one test value speaks for a whole interval}
+    A polynomial can change sign only by passing through \(0\). Between two
+    consecutive real zeros there is no zero to pass through --- so the sign
+    \textbf{cannot change} there.
+  \end{block}
+
+  \bigskip
+  \begin{enumerate}\setlength{\itemsep}{7pt}
+    \item Rewrite so one side is \(0\); factor completely.
+    \item Mark every real zero on a number line. They cut it into intervals.
+    \item Test one convenient value in each interval; record the sign.
+    \item Keep the intervals that match the inequality.
+    \item Include the zeros for \(\ge\) or \(\le\), exclude them for \(>\) or
+          \(<\). Report in interval notation, joined with \(\cup\).
+  \end{enumerate}
+\end{frame}
+
+% SECTION 2, CONT. — WORKED SIGN CHART
+\begin{frame}[t, plain]
+  \plumheader{Worked: \(x^3 - 5x^2 + 6x > 0\)}
+
+  Factored: \(x(x-2)(x-3)\). Real zeros \(0\), \(2\), \(3\).
+
+  \bigskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Interval} & \((-\infty,0)\) & \((0,2)\) & \((2,3)\) & \((3,\infty)\) \\
+  \hline
+  \textbf{Test value} & \(-1\) & \(1\) & \(2.5\) & \(4\) \\
+  \hline
+  \textbf{Value of \(p\)} & \(-12\) & \(2\) & \(-0.625\) & \(8\) \\
+  \hline
+  \textbf{Sign} & \(-\) & \(+\) & \(-\) & \(+\) \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \bigskip
+  \begin{block}{Answer}
+    We want \(p(x) > 0\), so keep the \(+\) intervals:
+    \(\;(0,2) \cup (3,\infty)\).
+  \end{block}
+
+  \bigskip
+  \textit{An inequality's answer is a set of intervals, never a list of
+  numbers.}
+\end{frame}
+
+% SECTION 2, CONT. — MULTIPLICITY AND STRICTNESS
+\begin{frame}[t, plain]
+  \plumheader{Multiplicity Predicts the Sign Flips}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Odd multiplicity}
+        The sign \textbf{changes} at that zero --- the graph crosses.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Even multiplicity}
+        The sign \textbf{does not change} --- the graph is tangent and turns
+        back.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{Solve \((x+2)(x-1)^2 > 0\)}
+    Zeros: \(-2\) (multiplicity 1), \(1\) (multiplicity 2).
+    Signs: \(-\), \(+\), \(+\).
+    \[ \text{Answer:}\quad (-2,1) \cup (1,\infty) \]
+  \end{block}
+
+  \bigskip
+  \textit{Why the hole at \(x = 1\)? Because the product is \(0\) there, and
+  \(0 > 0\) is false. With \(\ge\) the answer would be \([-2,\infty)\).}
+\end{frame}
+
+% SECTION 3 — BUILDING THE MODEL
+\begin{frame}[t, plain]
+  \plumheader{3. Building a Model From a Context}
+
+  \begin{columns}[T]
+    \column{0.42\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.17cm, y=0.17cm]
+        \draw[very thick, plum] (0,0) rectangle (30,20);
+        \draw[fill=lilacmid, draw=plum] (0,0) rectangle (4,4);
+        \draw[fill=lilacmid, draw=plum] (26,0) rectangle (30,4);
+        \draw[fill=lilacmid, draw=plum] (0,16) rectangle (4,20);
+        \draw[fill=lilacmid, draw=plum] (26,16) rectangle (30,20);
+        \node[below] at (15,-0.6) {\small \(30\) cm};
+        \node[left] at (-0.8,10) {\small \(20\) cm};
+        \node[right] at (4.5,2) {\small \(x\)};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.54\textwidth}
+      Height \(x\); width \(20 - 2x\); length \(30 - 2x\) --- \textbf{two}
+      corners come off each side.
+
+      \medskip
+      \begin{block}{The model}
+        \[ V(x) = x(20-2x)(30-2x) = 4x^3 - 100x^2 + 600x \]
+      \end{block}
+
+      \medskip
+      \begin{block}{The domain --- from the card, not the algebra}
+        \(x > 0\), \quad \(20 - 2x > 0\), \quad \(30 - 2x > 0\)
+        \[ \Longrightarrow \quad 0 < x < 10 \]
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — USING THE MODEL
+\begin{frame}[t, plain]
+  \plumheader{4. Using the Model to Answer Questions}
+
+  \begin{block}{A \(3\) cm cut}
+    \[ V(3) = 3(14)(24) = 1008 \]
+    \textit{Cutting \(3\) cm squares gives a box that holds \(1008\) cubic
+    centimeters.} A bare number is not an answer.
+  \end{block}
+
+  \bigskip
+  \begin{block}{The hook question: \(V(x) \ge 1000\)}
+    \[ 4x^3 - 100x^2 + 600x - 1000 \ge 0
+       \;\Longrightarrow\;
+       (x-5)\big(x^2 - 20x + 50\big) \ge 0 \]
+    \[ x = 5 \qquad\text{and}\qquad x = 10 \pm 5\sqrt{2} \]
+  \end{block}
+
+  \bigskip
+  \textit{\(10 + 5\sqrt{2} \approx 17.07\) solves the equation perfectly --- and
+  is not an answer, because the card is only \(20\) cm across.}
+\end{frame}
+
+% SECTION 4, CONT. — CLOSING THE LOOP
+\begin{frame}[t, plain]
+  \plumheader{Closing the Loop}
+
+  Work on the domain \(0 < x < 10\) only. Zeros inside it:
+  \(10 - 5\sqrt{2} \approx 2.93\) and \(5\).
+
+  \bigskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|l|c|c|c|}
+  \hline
+  \textbf{Interval} & \((0,\,2.93)\) & \((2.93,\,5)\) & \((5,\,10)\) \\
+  \hline
+  \textbf{Test value} & \(1\) & \(4\) & \(8\) \\
+  \hline
+  \textbf{\(V\) there} & \(504\) & \(1056\) & \(448\) \\
+  \hline
+  \textbf{\(V \ge 1000\)?} & no & \textbf{yes} & no \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \bigskip
+  \begin{block}{Answer, in a sentence, with units}
+    \(\big[10 - 5\sqrt{2},\ 5\big]\): any corner cut from about \(2.93\) cm to
+    \(5\) cm gives a box holding at least \(1000\) cubic centimeters.
+  \end{block}
+\end{frame}
+
+% REGRESSION
+\begin{frame}[t, plain]
+  \plumheader{When You Are Handed Data Instead}
+
+  \begin{block}{Regression}
+    Given a data set rather than a scenario, you do not derive a formula --- you
+    \textbf{fit} one. Technology runs a linear, quadratic, cubic, or quartic
+    regression and returns the best-matching polynomial.
+  \end{block}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{10pt}
+    \item The calculator picks the \textbf{coefficients}.
+    \item \textbf{You} pick the degree --- constant \(n\)th differences over
+          equally spaced inputs point to degree \(n\) (Lesson 2.3).
+    \item \textbf{You} state the domain the context allows.
+    \item \textbf{You} say what the answer means, in a sentence, with units.
+  \end{itemize}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item Solve \(x^3 = 3x^2 + 10x\). Which solution would dividing by \(x\)
+          have cost you?
+    \item Solve \((x-1)(x+4) \le 0\) and give the answer in interval notation.
+    \item Solve \((x-3)^2(x+1) \ge 0\). At which zero does the sign fail to
+          change, and why?
+    \item A \(16\) cm by \(24\) cm sheet: write \(V(x)\) and state its domain.
+    \item Find \(V(3)\) for that sheet and report it in a sentence with units.
+  \end{enumerate}
+\end{frame}
+
+\end{document}
