@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
   {\color{white}\textbf{\large Lesson 2.2 \quad Polynomial Functions and Rates of Change}}
 \end{center}
 
@@ -27,9 +27,18 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can identify the degree, leading term, and leading coefficient of a polynomial function and use them to describe end behavior.
-  \item I can locate and classify local and global maxima and minima of a polynomial function.
-  \item I can identify points of inflection as places where the rate of change switches from increasing to decreasing (or vice versa).
+  \item I can read the intervals where a polynomial function is increasing or
+        decreasing from a pre-drawn graph or from a table of values.
+  \item I can identify local (relative) maxima and minima --- including at an
+        included endpoint of a restricted domain --- and decide which of them
+        are the global (absolute) maximum and minimum.
+  \item I can explain why there must be a local maximum or minimum between
+        two distinct real zeros, and why an even-degree polynomial has a
+        global maximum or a global minimum while an odd-degree one has
+        neither.
+  \item I can locate a point of inflection as the input where the
+        \textit{rate of change} turns around, and tell that apart from where
+        the function itself turns around.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -39,16 +48,27 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Review of polynomial basics and zeros          & \blank{1.2cm} \\
-2 & Group Activity & Exploring polynomial key features              & \blank{1.2cm} \\
-3 & Exit Ticket    & Identifying extrema and inflection from descriptions & \blank{1.2cm} \\
-4 & Homework       & Practice and extension                         & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                  & \blank{1.2cm} \\
+2 & Guided Notes   & Extrema, the zero rule, and points of inflection      & \blank{1.2cm} \\
+3 & Group Activity & The drone survey: reading a flight for its turns      & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on local vs.\ global and inflection & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                                & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Lesson 2.1 gave quadratics a rate-of-change fingerprint. Today that reading
+scales up to polynomials of any degree: where the graph turns around, which
+turn is the highest one, and --- the new idea --- where the \textit{rate} of
+change turns around, even though the function does not.
+\end{remindbox}
 
 \end{document}

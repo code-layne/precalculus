@@ -7,134 +7,187 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Group Activity}
-\namepartnerperiod
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{scenariobox}[Roller Coaster Heights]{plumlight}
-A roller coaster's height (in feet) above the ground during a 60-second ride is modeled
-by a polynomial function $h(t)$. A table of sample values is given below.
+\begin{scenariobox}[The Drone Survey]{plumlight}
+\small
+A survey drone flies over a canyon for six minutes. The polynomial function
+$a$ gives its altitude in feet $x$ minutes after takeoff, on the restricted
+domain $[0, 6]$. Every tier uses this same table and pre-drawn graph --- no
+drawing required.
 
-\vspace{6pt}
+\smallskip
+\begin{center}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}c *{9}{X} @{}}
-\rowcolor{sky}
-$t$ (sec) & 0 & 10 & 15 & 20 & 30 & 35 & 40 & 50 & 60 \\
-\midrule
-$h(t)$ (ft) & 0 & 80 & 120 & 80 & 30 & 50 & 30 & 10 & 0 \\
-\end{tabularx}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$x$ (minutes) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+$a(x)$ (feet) & 200 & 400 & 240 & 100 & 210 & 380 & 500 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=0.9cm, y=0.62cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,5);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$ (min)};
+  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $a(x)$ (ft)};
+  \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
+  \node[left] at (0,1) {\small 100};
+  \node[left] at (0,2) {\small 200};
+  \node[left] at (0,3) {\small 300};
+  \node[left] at (0,4) {\small 400};
+  \node[left] at (0,5) {\small 500};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,2) (0.5,3.3) (1,4) (1.5,3.4) (2,2.4) (2.5,1.4) (3,1)
+     (3.5,1.3) (4,2.1) (4.5,3.0) (5,3.8) (5.5,4.5) (6,5)};
+  \fill[goldacc] (0,2) circle (2.7pt); \node[below right] at (0.05,2) {\small $P$};
+  \fill[goldacc] (1,4) circle (2.7pt); \node[above] at (1,4.15) {\small $Q$};
+  \fill[goldacc] (3,1) circle (2.7pt); \node[below] at (3,0.9) {\small $R$};
+  \fill[goldacc] (6,5) circle (2.7pt); \node[left] at (5.85,4.9) {\small $S$};
+\end{tikzpicture}
+\end{center}
 \end{scenariobox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier R --- Remediate: Reading Key Features from a Table},
+    title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Use the table above (no graphing needed).
+Read every answer off the labeled graph.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Identify the time(s) at which the roller coaster reaches a \textbf{local maximum}
-    (a high point between two lower values). List the time and height.
+\begin{enumerate}[itemsep=6pt]
+  \item The drone is \textbf{climbing} (the graph increases) on
+        \blank{1.6cm} and on \blank{1.6cm} , and \textbf{descending} on
+        \blank{1.6cm} .
 
-    \vspace{4pt}
-    \blank{10cm}
+  \item Point $Q$ is a local \blank{2cm} . Its altitude is \blank{1.6cm}
+        feet, reached at $x = $ \blank{1.2cm} minutes.
 
-    \item Identify the time(s) at which the roller coaster reaches a \textbf{local minimum}
-    (a low point between two higher values). List the time and height.
+  \item Point $R$ is a local \blank{2cm} . Its altitude is \blank{1.6cm}
+        feet, reached at $x = $ \blank{1.2cm} minutes.
 
-    \vspace{4pt}
-    \blank{10cm}
+  \item The domain stops at $x = 0$ and $x = 6$, and both endpoints are
+        included. Point $P$ is a local \blank{2cm} , and point $S$ is a
+        local \blank{2cm} .
 
-    \item What is the \textbf{global maximum} height over the entire ride?
-    At what time does it occur?
-
-    \vspace{4pt}
-    \blank{10cm}
-
-    \item The coaster returns to height 0 at $t = 0$ and $t = 60$.
-    Based on the table, does the function appear to have any other zeros? If so, where?
-
-    \vspace{4pt}
-    \blank{10cm}
+  \item Over the whole flight, the \textbf{global maximum} altitude is
+        \blank{1.6cm} feet and the \textbf{global minimum} altitude is
+        \blank{1.6cm} feet.
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- On Level: Rates of Change and Concavity},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item Compute the AROC of $h$ over each interval. Show your work.
+Work from the \textbf{table} --- cover the graph until question 5.
 
-    \renewcommand{\arraystretch}{1.6}
-    \begin{tabularx}{\linewidth}{@{} l X X @{}}
-    \rowcolor{sky}
-    Interval & AROC formula & AROC value \\
-    \midrule
-    $[0, 10]$   & $\dfrac{h(10)-h(0)}{10-0}$   & \blank{2.5cm} \\
-    $[10, 15]$  & $\dfrac{h(15)-h(10)}{15-10}$  & \blank{2.5cm} \\
-    $[15, 20]$  & $\dfrac{h(20)-h(15)}{20-15}$  & \blank{2.5cm} \\
-    $[20, 30]$  & $\dfrac{h(30)-h(20)}{30-20}$  & \blank{2.5cm} \\
-    $[30, 35]$  & $\dfrac{h(35)-h(30)}{35-30}$  & \blank{2.5cm} \\
-    $[35, 40]$  & $\dfrac{h(40)-h(35)}{40-35}$  & \blank{2.5cm} \\
-    $[40, 50]$  & $\dfrac{h(50)-h(40)}{50-40}$  & \blank{2.5cm} \\
-    $[50, 60]$  & $\dfrac{h(60)-h(50)}{60-50}$  & \blank{2.5cm} \\
-    \end{tabularx}
+\begin{enumerate}[itemsep=6pt]
+  \item Complete the AROC row (feet per minute).
 
-    \item At which interval(s) does the AROC transition from \textbf{positive to negative}?
-    What does this indicate about the function's behavior?
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ \\
+        \hline
+        \textbf{AROC} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        \end{tabular}
 
-    \vspace{4pt}
-    \blank{11cm}
+  \item The AROC changes from \textbf{positive to negative} between the
+        intervals $[0,1]$ and $[1,2]$, so a local \blank{2cm} must occur at
+        $x = $ \blank{1.2cm} .
 
-    \item At which interval(s) does the AROC transition from \textbf{negative to positive}?
+  \item The AROC changes from \textbf{negative to positive} between the
+        intervals $[2,3]$ and $[3,4]$, so a local \blank{2cm} must occur at
+        $x = $ \blank{1.2cm} .
 
-    \vspace{4pt}
-    \blank{11cm}
+  \item Now watch the AROCs themselves rather than their signs.
 
-    \item On which portion of the ride is the AROC \textbf{increasing}? What does that tell you
-    about the concavity of $h$?
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The AROCs are \textbf{smallest} over the interval
+                \blank{1.6cm} , so the rate of change turns around near
+                $x = $ \blank{1.2cm} --- a point of inflection, where the
+                graph switches from concave \blank{1.4cm} to concave
+                \blank{1.4cm} .
+          \item The AROCs are \textbf{largest} over the interval
+                \blank{1.6cm} , so a second point of inflection lies near
+                $x = $ \blank{1.2cm} .
+        \end{enumerate}
 
-    \vspace{4pt}
-    \blank{11cm}
+  \item Uncover the graph. In one sentence, say why an inflection point is
+        \textit{not} the same thing as a local maximum or minimum.
 
-    \item Based on the AROC values, identify a possible \textbf{point of inflection} and explain
-    your reasoning.
-
-    \vspace{4pt}
-    \blank{11cm}
+        \vspace{0.05in}
+        \writeline\\
+        \writeline
 \end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.10in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend: Degree and Global Extrema},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-    \item From the table, count the number of local extrema observed. Based on EK 1.4.A.3
-    (between every two distinct real zeros there is at least one local extremum), what is the
-    \textbf{minimum possible degree} of $h(t)$? Explain.
+\begin{enumerate}[itemsep=6pt]
+  \item A polynomial of degree $n$ can turn around at most $n - 1$ times.
+        Fill in the greatest possible number of local extrema.
 
-    \vspace{4pt}
-    \blank{11cm}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Degree} & 3 & 4 & 6 \\
+        \hline
+        \textbf{At most how many local extrema?} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
 
-    \vspace{2pt}
-    \blank{11cm}
+  \item A polynomial $p$ has exactly four distinct real zeros.
 
-    \item The ride begins and ends at $h = 0$, so $t = 0$ and $t = 60$ are zeros. The table
-    suggests at least one more zero exists. Assuming the polynomial has degree $n$, does
-    $h(t)$ have a global minimum on the domain $[0, 60]$? Use EK 1.4.A.4 in your explanation.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $p$ must have at least \blank{1.2cm} local extrema. Justify
+                using the rule about zeros.
 
-    \vspace{4pt}
-    \blank{11cm}
+                \vspace{0.05in}
+                \writeline
+          \item Combine that with question 1: the smallest degree $p$ could
+                have is \blank{1.2cm} .
+        \end{enumerate}
 
-    \vspace{2pt}
-    \blank{11cm}
+  \item Consider the drone's model $a$ over \textit{all} real numbers rather
+        than only $[0,6]$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item If $a$ has \textbf{even} degree, must it have a global
+                maximum or a global minimum? \blank{2cm} \; Explain.
+
+                \vspace{0.05in}
+                \writeline
+          \item If $a$ has \textbf{odd} degree, which of the two does it
+                have? \blank{2.4cm} \; Explain using end behavior.
+
+                \vspace{0.05in}
+                \writeline
+        \end{enumerate}
+
+  \item \textbf{True or false, with justification:} ``A polynomial with
+        exactly one local extremum must have degree 2.''
+
+        \vspace{0.05in}
+        \writeline\\
+        \writeline
 \end{enumerate}
 \end{tcolorbox}
 

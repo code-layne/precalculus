@@ -1,0 +1,267 @@
+%! Polynomial Functions and Real Zeros — Unit 2, Lesson 2.3 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.3}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Polynomial Functions and Real Zeros}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: Four Questions, One Answer}
+  \sectionlabel[goldacc]{Think About It}
+
+  One polynomial, \(p(x) = x^2 - x - 6\). Four prompts from four tests:
+
+  \bigskip
+  \begin{center}
+    {\large \textbf{Solve \(p(x) = 0\).} \quad \textbf{Find the roots.} \quad
+    \textbf{Find the zeros.} \quad \textbf{Find the \(x\)-intercepts.}}
+  \end{center}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Are these four problems, or one problem in four costumes?
+    \item \(p(x) = (x-3)(x+2)\), so the answer to all four is \(3\) and \(-2\).
+  \end{itemize}
+
+  \bigskip
+  \textit{Only the packaging changes: \(x = 3\) as a root, \((3, 0)\) as an
+  intercept.}
+\end{frame}
+
+% SECTION 1 — FOUR NAMES
+\begin{frame}[t, plain]
+  \plumheader{1. Four Names for One Idea}
+
+  \begin{block}{The definition}
+    \(a\) is a \textbf{zero} of \(p\) exactly when \(p(a) = 0\).
+  \end{block}
+
+  \medskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item \(a\) is a \textbf{zero} of \(p\) --- function language.
+    \item \(a\) is a \textbf{root} of \(p(x) = 0\) --- equation language.
+    \item \((a, 0)\) is an \textbf{\(x\)-intercept} --- graph language.
+  \end{itemize}
+
+  \bigskip
+  \begin{block}{Example: is \(x = 3\) a zero of \(p(x) = x^3 - 2x^2 - 5x + 6\)?}
+    \(p(3) = 27 - 18 - 15 + 6 = 0\). \quad Yes.
+  \end{block}
+
+  \medskip
+  \textit{A zero is a \textbf{number}. An intercept is a \textbf{point}.
+  Answer the question that was asked.}
+\end{frame}
+
+% SECTION 2 — THE EQUIVALENCE
+\begin{frame}[t, plain]
+  \plumheader{2. The Factor/Zero Equivalence}
+
+  \begin{block}{The spine of the lesson (for real \(a\))}
+    \[
+      (x - a) \text{ is a factor of } p(x)
+      \quad \Longleftrightarrow \quad
+      a \text{ is a zero of } p
+    \]
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Factors \(\rightarrow\) zeros}
+
+      \medskip
+      \(p(x) = (x-2)(x+3)(x-5)\)
+
+      \medskip
+      Zeros: \(2,\ -3,\ 5\)
+
+      \medskip
+      \textit{Watch the flip: \((x+3)\) gives \(-3\).}
+
+    \column{0.48\textwidth}
+      \textbf{Zeros \(\rightarrow\) factors}
+
+      \medskip
+      Degree 3; zeros \(-1,\ 0,\ 4\)
+
+      \medskip
+      \(p(x) = x(x+1)(x-4)\)
+
+      \medskip
+      \textit{A zero of \(0\) gives the bare factor \(x\).}
+  \end{columns}
+\end{frame}
+
+% SECTION 2, CONT. — PINNING DOWN a
+\begin{frame}[t, plain]
+  \plumheader{Building a Polynomial to Order}
+
+  \begin{block}{The routine}
+    \begin{enumerate}\setlength{\itemsep}{4pt}
+      \item Each zero \(a\) becomes the factor \((x - a)\) --- flip the sign.
+      \item Raise each factor to its multiplicity.
+      \item Check the degree: the multiplicities must add up.
+      \item Given a point, write \(p(x) = a(\cdots)\) and solve for \(a\).
+    \end{enumerate}
+  \end{block}
+
+  \bigskip
+  \begin{block}{Example: zeros \(2\) and \(-4\), and \(p(0) = -16\)}
+    \(p(x) = a(x-2)(x+4)\), \quad
+    \(p(0) = a(-2)(4) = -8a = -16\), \quad so \(a = 2\).
+    \[
+      p(x) = 2(x-2)(x+4)
+    \]
+  \end{block}
+\end{frame}
+
+% SECTION 3 — MULTIPLICITY
+\begin{frame}[t, plain]
+  \plumheader{3. Multiplicity}
+
+  If \((x - a)\) is repeated \(n\) times, the zero \(a\) has
+  \textbf{multiplicity} \(n\).
+
+  \bigskip
+  \(p(x) = (x+1)^2(x-3)(x-4)^3\) \quad --- degree \(2 + 1 + 3 = 6\).
+
+  \bigskip
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  \textbf{Zero} & \textbf{Multiplicity} & \textbf{Even/odd} & \textbf{At that intercept} \\
+  \hline
+  \(x = -1\) & 2 & even & tangent \\
+  \hline
+  \(x = 3\)  & 1 & odd  & crosses \\
+  \hline
+  \(x = 4\)  & 3 & odd  & crosses \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  \textit{The multiplicities of the real zeros add to the degree here. When
+  they do not --- that is Lesson 2.4.}
+\end{frame}
+
+% SECTION 3, CONT. — THE SIGN ARGUMENT
+\begin{frame}[t, plain]
+  \plumheader{Why Even Multiplicity Means Tangent}
+
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.58cm, y=0.46cm]
+        \draw[linegray, very thin, step=1] (-2,-2) grid (3,3);
+        \draw[->, thick] (-2.3,0) -- (3.3,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-2.3) -- (0,3.3) node[above] {\small \(y\)};
+        \foreach \x in {-2,-1,1,2,3} \node[below] at (\x,-0.12) {\small $\x$};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(-2,-2) (-1.5,-0.44) (-1,0) (-0.5,-0.31) (0,-1) (0.5,-1.69)
+           (1,-2) (1.5,-1.56) (2,0) (2.4,2.31)};
+        \fill[plum] (-1,0) circle (2.5pt);
+        \fill[plum] (2,0) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+      \begin{center}\small \(y = (x+1)^2(x-2)\)\end{center}
+
+    \column{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Near \(x = a\), the factor \((x-a)^n\) controls the sign.
+        \item \textbf{Even} \(n\): never negative, so the outputs on both
+              sides share a sign --- the graph must turn back
+              (\textbf{tangent}).
+        \item \textbf{Odd} \(n\): the sign flips --- the graph
+              \textbf{crosses}.
+      \end{itemize}
+
+      \medskip
+      Tangent at \(x = -1\) (multiplicity 2); crossing at \(x = 2\)
+      (multiplicity 1).
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — SUCCESSIVE DIFFERENCES
+\begin{frame}[t, plain]
+  \plumheader{4. Degree from Successive Differences}
+
+  \begin{block}{The test}
+    Over \textbf{equally spaced} inputs, the degree is the \textit{least}
+    \(n\) for which the \(n\)th differences are constant.
+  \end{block}
+
+  \bigskip
+  \begin{tabular}{|l|c|c|c|c|c|c|}
+  \hline
+  \(x\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+  \hline
+  \(f(x)\) & 5 & 4 & 9 & 26 & 61 & 120 \\
+  \hline
+  1st & \multicolumn{6}{c|}{\(-1 \quad 5 \quad 17 \quad 35 \quad 59\)} \\
+  \hline
+  2nd & \multicolumn{6}{c|}{\(6 \quad 12 \quad 18 \quad 24\)} \\
+  \hline
+  3rd & \multicolumn{6}{c|}{\(6 \quad 6 \quad 6\)} \\
+  \hline
+  \end{tabular}
+
+  \bigskip
+  Third differences are constant \(\Rightarrow\) \(\deg f = 3\).
+  \quad \textit{(Lesson 2.1 gave first and second differences --- same ladder.)}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item \(p(x) = (x-6)(x+2)^2\). Give each zero with its multiplicity, say
+          whether the graph crosses or is tangent there, and state the degree.
+    \item Write a degree-3 polynomial in factored form with a zero at
+          \(x = 3\) of multiplicity 2, a zero at \(x = -5\), and
+          \(p(0) = 90\).
+    \item A table of equally spaced values has constant \textbf{fourth}
+          differences. What is the degree? Could one of its zeros have
+          multiplicity 5?
+  \end{enumerate}
+\end{frame}
+
+% CLOSE
+\begin{frame}[t, plain]
+  \plumheader{Where This Goes Next}
+
+  \begin{block}{Today}
+    \((x-a)\) is a factor \(\Longleftrightarrow\) \(a\) is a zero.
+    Multiplicity decides crossing vs.\ tangent. Successive differences
+    recover the degree.
+  \end{block}
+
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Every polynomial today had real zeros adding (with multiplicity) up
+          to its degree.
+    \item But \(p(x) = x^2 + 1\) has degree 2 and \textbf{no}
+          \(x\)-intercepts.
+  \end{itemize}
+
+  \bigskip
+  \textit{Lesson 2.4, Polynomial Functions and Complex Zeros: where the
+  missing zeros went.}
+\end{frame}
+
+\end{document}

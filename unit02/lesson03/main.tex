@@ -2,8 +2,6 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{55 minutes}
@@ -16,80 +14,285 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will use the factor/zero equivalence
+    to read the real zeros of a polynomial from its factored form and to build
+    a factored form from given zeros; determine the multiplicity of each real
+    zero and predict whether the graph crosses the $x$-axis or is tangent to
+    it there; and find the degree of a polynomial from successive differences
+    over equally spaced inputs.
+    \hfill\textit{\small (CED Topic 1.5, real-zeros half --- Skills 1.B, 2.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{AP Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{1.B} --- Express functions, equations, or expressions in analytically
+equivalent forms that are useful in a given context. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item If $p(a) = 0$ then $a$ is a zero of $p$ and a root of $p(x) = 0$.
+        (1.5.A.1)
+  \item For a \textit{real} number $a$: $(x - a)$ is a linear factor of $p$
+        \textbf{if and only if} $a$ is a zero of $p$. Both directions matter
+        --- read zeros off factors, build factors from zeros. (1.5.A.1)
+\end{itemize} \\
+\textbf{2.B} --- Construct equivalent graphical, numerical, analytical, and
+verbal representations of functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A repeated linear factor $(x-a)^n$ gives the zero $a$
+        \textit{multiplicity} $n$. (1.5.A.2, real half)
+  \item If $a$ is a real zero, the graph has an $x$-intercept at $(a, 0)$;
+        real zeros will later serve as endpoints for polynomial inequalities.
+        (1.5.A.3)
+  \item Even multiplicity: outputs near $x = a$ keep the same sign and the
+        graph is \textit{tangent} to the axis. Odd multiplicity: sign changes,
+        the graph \textit{crosses}. (1.5.A.5)
+  \item Degree from data: over equally spaced inputs, the degree is the least
+        $n$ with constant $n$th differences. (1.5.A.6)
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Zero of a function & A number $a$ with $p(a) = 0$ --- an input whose output is zero. \\
+Root               & A solution of the equation $p(x) = 0$; the roots of $p(x)=0$ are exactly the zeros of $p$. \\
+$x$-intercept      & A point $(a, 0)$ where the graph meets the $x$-axis; $a$ is a real zero of $p$. \\
+Linear factor      & A factor of the form $(x - a)$. For real $a$, it divides $p(x)$ exactly when $a$ is a zero of $p$. \\
+Multiplicity       & The number of times the linear factor $(x - a)$ is repeated in the factored form of $p(x)$. \\
+Tangent to the $x$-axis & The graph touches the axis at an intercept and turns back without crossing --- the signature of even multiplicity. \\
+Successive differences & Differences of differences over equally spaced inputs; the degree is the least $n$ giving a constant $n$th row. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: factoring a quadratic trinomial, solving a factored
+    equation with the zero-product property, and evaluating a polynomial at
+    a value with the parentheses habit. Item 3's polynomial
+    $p(x) = x^3 - 2x^2 - 5x + 6$ returns verbatim in Guided Notes Example 1 ---
+    students verify $p(1) = 0$ on the warm-up and $p(3) = 0$ ten minutes
+    later, which is the whole zero test.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook]{lilac}
+    \textbf{Four questions, one answer.} Put $p(x) = x^2 - x - 6$ on the board
+    with four prompts pulled from four different tests:
+    \begin{enumerate}[itemsep=2pt]
+        \item \textit{Solve $p(x) = 0$.} \quad \textit{Find the roots.} \quad
+              \textit{Find the zeros of $p$.} \quad
+              \textit{Find the $x$-intercepts.}
+        \item Ask groups to decide, without computing, whether these are four
+              problems or one problem in four costumes.
+    \end{enumerate}
+    \textit{Discussion prompt:} they are one problem. The numbers $3$ and
+    $-2$ answer all four; only the packaging changes ($x = 3$ as a root,
+    $(3, 0)$ as an intercept). Today we get the vocabulary straight and then
+    learn what the graph does at each of those numbers.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson]{lilac}
+\begin{multicols}{2}
+
+\textbf{Part 1: Four Names for One Idea} (8 min)
+
+\begin{itemize}
+  \item Define: $a$ is a zero of $p$ when $p(a) = 0$. Then walk the table of
+        synonyms --- zero (function language), root (equation language),
+        $x$-intercept (graph language).
+  \item Insist on the format difference: a zero is a \textit{number}, an
+        intercept is a \textit{point}. That distinction is worth a point on
+        every future test.
+  \item Example 1: verify $p(3) = 0$ for $p(x) = x^3 - 2x^2 - 5x + 6$. Then
+        say the three conclusions aloud in the three languages.
+\end{itemize}
+
+\textbf{Part 2: The Factor/Zero Equivalence} (16 min --- the core)
+
+\begin{itemize}
+  \item State it as a two-way street:
+        $(x - a)$ is a factor $\Longleftrightarrow$ $a$ is a zero.
+  \item Left to right: $p(x) = (x-2)(x+3)(x-5)$ has zeros $2, -3, 5$. Drill
+        the sign flip on $(x+3)$ --- this is the most common error of the day.
+  \item Right to left: zeros $-1, 0, 4$ of degree 3 give
+        $p(x) = x(x+1)(x-4)$. Note that a zero of $0$ contributes the bare
+        factor $x$.
+  \item Example 2: zeros $2$ and $-4$ with $p(0) = -16$ pins down the leading
+        coefficient $a = 2$. This is the AP Skill 1.B move: the factored form
+        is chosen because it makes the zeros visible.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Part 3: Multiplicity and the Graph} (16 min)
+
+\begin{itemize}
+  \item Define multiplicity by counting repeats of a factor; note that the
+        multiplicities of the real zeros sum to the degree in every example
+        today.
+  \item Fill the table for $(x+1)^2(x-3)(x-4)^3$: multiplicity, even/odd,
+        crosses/tangent.
+  \item Motivate the rule with signs, not memorization: near $x = a$ the
+        factor $(x-a)^n$ controls the sign. An even power is never negative,
+        so the outputs on both sides match --- the graph must turn back.
+  \item Read the pre-drawn graph of $y = (x+1)^2(x-2)$: tangent at $-1$,
+        crossing at $2$. Nobody draws anything.
+\end{itemize}
+
+\textbf{Part 4: Degree from Successive Differences} (10 min)
+
+\begin{itemize}
+  \item Recall 2.1: linear $\Rightarrow$ constant first differences;
+        quadratic $\Rightarrow$ constant second. Extend the ladder.
+  \item Work the table $5, 4, 9, 26, 61, 120$ row by row on the board:
+        $-1, 5, 17, 35, 59$; then $6, 12, 18, 24$; then $6, 6, 6$. Degree 3.
+  \item Name the fine print out loud: the inputs must be equally spaced, and
+        we need the \textit{least} $n$ with a constant row.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction --- Building a Polynomial from Zeros]{lilac}
+Model the four-step routine every time, and require it on the activity and
+homework:
+\begin{enumerate}[itemsep=2pt]
+  \item Turn each zero $a$ into the factor $(x - a)$ --- flip the sign.
+  \item Raise each factor to its stated multiplicity.
+  \item Check the degree: the multiplicities must add to the required degree.
+  \item If a point is given, write $p(x) = a\,(\cdots)$, substitute the point,
+        and solve for $a$.
+\end{enumerate}
+Worked live: degree 3, zero $3$ of multiplicity 2, zero $-5$, $p(0) = 90$
+$\Rightarrow$ $45a = 90 \Rightarrow a = 2 \Rightarrow p(x) = 2(x-3)^2(x+5)$.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} sign flip dropped --- reading the zero of
+        $(x + 3)$ as $3$. Cold-call: ``What input makes that factor zero?''
+  \item \textbf{Common error:} confusing multiplicity with the zero itself
+        (``the zero is 2 with multiplicity $-1$''). Have them point at the
+        exponent and then at the number inside the parentheses.
+  \item \textbf{Common error:} answering with a number when a point is asked
+        for, or vice versa. ``Zero or intercept? One is a number, one is a
+        point.''
+  \item \textbf{Common error:} in a difference table, subtracting the wrong
+        direction (later minus earlier is the rule) or stopping at the second
+        row out of habit from 2.1.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+Students work on the \textbf{Group Activity: Four Polynomials, Two Zeros} in
+leveled tiers. All four formulas (A--D) share the zeros $-2$ and $1$ and
+differ only in multiplicity, and all three graphs are pre-drawn --- no tier
+draws anything.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Read the multiplicity of each zero off
+        A--D, add them to get the degree, and label crossing vs.\ tangent at
+        $x = 1$.
+  \item \textbf{Tier A (Approaching Proficiency):} Match Graphs I, II, III to
+        B, A, C (D is the leftover), justify one match from multiplicity
+        rather than shape, and predict what D's graph would do
+        (tangent at $-2$, crossing at $1$).
+  \item \textbf{Tier E (Extension):} Construct $p$ with prescribed zeros,
+        multiplicities, degree, and a point ($a = -2$,
+        $p(x) = -2(x+3)^2(x-1)$); build a quartic tangent at two points and
+        never crossing; and use a difference table to get $\deg q = 3$, then
+        argue that a zero cannot have multiplicity 4.
+\end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item For $p(x) = (x-4)(x+1)^2$: table of zero, multiplicity, and
+        crosses-or-tangent, plus the degree.
+  \item Write a factored polynomial with a zero at $-3$ of multiplicity 1 and
+        a zero at $2$ of multiplicity 2; state its degree.
+  \item From a table of equally spaced values, compute first and second
+        differences and name the degree.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 is the diagnostic --- a student who writes
+``tangent'' at $x = 4$ has memorized ``squared means tangent'' without
+attaching it to the right factor. Item 2 catches the sign flip: a zero at
+$-3$ must give $(x + 3)$. Item 3 is pure procedure; a miss there is an
+arithmetic slip, not a concept gap.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework:} 6 problems --- zeros, degree, and intercepts-as-points
+from a factored cubic; two build-from-zeros items; a multiplicity table for a
+degree-6 polynomial; a verify-the-zero computation feeding a
+multiplicity read; a successive-difference table; and one AP-style
+multiple-choice item on tangent vs.\ crossing.
+
+\textbf{Extension (optional):} A degree-4 polynomial tangent at exactly two
+points --- and an argument that three tangent points would force degree at
+least 6, since each needs an even multiplicity.
+
+\textbf{Preview:} Lesson 2.4, \textit{Polynomial Functions and Complex
+Zeros}, takes up the loose thread: $p(x) = x^2 + 1$ has degree 2 and no
+$x$-intercepts at all, so where did its zeros go?
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. Item 2 is the load-bearing one:
+the zero-product property is the entire mechanism behind reading zeros off a
+factored form, and if students cannot articulate ``one of the factors must be
+zero'' they will not be able to justify anything in Part 2. Item 3 is not
+just arithmetic --- it is the definition of a zero in disguise, so when you
+review it, say the sentence ``so $x = 1$ \textit{is} a zero'' out loud and
+leave it on the board for Part 1.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+Part 2 deserves the most clock. Write the equivalence as a double arrow and
+physically trace it in both directions with your finger --- students who only
+ever go factors-to-zeros collapse when asked to build a polynomial. The
+sign-flip error in $(x+3)$ is the single most frequent mistake of this
+lesson; catching it at the board costs thirty seconds and saves the homework.
+In Part 3, resist stating the crossing/tangent rule first: run the sign
+argument (an even power is never negative) and let the rule fall out, or it
+becomes one more memorized pair of words. If time is short, compress Part 4
+to a single board demonstration --- but do not skip it, it is exit-ticket
+item 3 and it is the only place 1.5.A.6 appears in the unit.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-    % TODO
+The design point is that A--D all have the \textit{same} two zeros, so a
+group cannot match graphs by reading intercepts --- multiplicity is the only
+discriminator. Expect Tier A to try shape-matching first; push back with
+``which factor is squared, and what does that force at that intercept?''
+Groups can be moved between tiers mid-period without new materials since
+every tier reads the same four formulas. Tier E item 3 is the bridge to
+tomorrow: once they see that degree caps multiplicity, the question ``what if
+the real multiplicities do not add up to the degree?'' becomes natural ---
+bank it and open Lesson 2.4 with it.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-    % TODO
+Collected, completion credit only. Sort by item 1: a wrong crosses/tangent
+pairing means Part 3 needs a five-minute revisit tomorrow before 2.4 adds
+complex zeros on top. On item 2 accept either factor order but not
+$(x - 3)(x + 2)^2$ --- that is the sign flip and it is worth naming to the
+whole class. No notes; the whole ticket should take five minutes.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+Problem 4 is the one to review first: part (a) is the definition of a zero
+and part (b) hands them the factored form so the multiplicity read is
+isolated from any factoring skill --- factoring technique is Lesson 2.6's
+job, not tonight's. Problem 6 is the AP-style item; distractor C reverses the
+multiplicities and distractor D makes both even, so both are worth naming
+aloud. The extension's second half is a genuine proof-shaped argument; accept
+any wording that counts even multiplicities to at least 6.
 \end{teachernote}
 \end{document}

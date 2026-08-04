@@ -7,79 +7,125 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Homework}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item Write a polynomial with real coefficients of \emph{minimum degree} that has zeros
-      at $x = 3$ (multiplicity 2) and $x = 1 - 2i$. Leave your answer in factored form.
-      State the degree.
+\item For each polynomial, give the degree, list \textbf{all} complex zeros,
+      and state how many $x$-intercepts the graph has.
 
-      \vspace{0.06in}
-      $p(x) = $ \blank{8cm} \hfill Degree: \blank{2cm}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $p(x) = (x - 2)(x^2 + 1)$
 
-\item A degree-5 polynomial with real coefficients has zeros at $x = -2$,
-      $x = 0$ (multiplicity 2), and $x = 1 + i$.
-      List \emph{all five} zeros.
+        Degree: \blank{1.2cm} \quad Zeros: \blank{4.4cm} \quad
+        Intercepts: \blank{1.2cm}
 
-      \writeline
+  \item $q(x) = (x + 4)^2(x^2 + 25)$
 
-\item Let $p(x) = x^4 - 6x^2 + 9$.
-      \begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-        \item Factor $p(x)$ completely. (\textit{Hint: is it a perfect square?})
-              \writelines{2}
-        \item List all zeros and their multiplicities.
-              \writeline
-        \item At each real zero, does the graph cross or is it tangent to the $x$-axis?
-              \writeline
-      \end{enumerate}
+        Degree: \blank{1.2cm} \quad Zeros: \blank{4.4cm} \quad
+        Intercepts: \blank{1.2cm}
+\end{enumerate}
 
-\item Is $g(x) = 2x^3 - 5x$ even, odd, or neither? Show the complete algebraic test.
+\item Complete the zero census. Every row uses
+      degree $-$ (\# real) $=$ \# non-real.
 
-      \vspace{0.06in}
-      $g(-x) = $ \blank{7cm}
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Degree} & \textbf{\# real zeros (with mult.)} & \textbf{\# non-real zeros} \\
+\hline
+4 & 2 & \blank{1.4cm} \\
+\hline
+5 & \blank{1.4cm} & 0 \\
+\hline
+6 & 2 & \blank{1.4cm} \\
+\hline
+3 & \blank{1.4cm} & 2 \\
+\hline
+7 & 3 & \blank{1.4cm} \\
+\hline
+\end{tabular}
+\end{center}
 
-      \vspace{0.08in}
-      Simplified: \blank{7cm}
+\boxguard[20]
+\item A polynomial $p$ has real coefficients, degree 3, leading coefficient 1,
+      and zeros $x = 5$ and $x = 1 - 2i$.
 
-      \vspace{0.08in}
-      $g$ is (circle): \textbf{Even} \quad \textbf{Odd} \quad \textbf{Neither}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item The third zero is \blank{2.4cm}
+  \item Write $p(x)$ in expanded form.
 
-\item \textbf{AP-Style Multiple Choice.} A polynomial $p(x)$ is defined by
-      \[
-        p(x) = (x+3)^2(x-1)(x-5)^3.
-      \]
-      Which of the following correctly describes all zeros of $p$ and the graph's behavior
-      at each?
-      \begin{enumerate}[leftmargin=1.5em, itemsep=3pt, label=(\Alph*)]
-        \item $x=-3$ (tangent), $x=1$ (crosses), $x=5$ (crosses)
-        \item $x=-3$ (crosses), $x=1$ (tangent), $x=5$ (crosses)
-        \item $x=-3$ (tangent), $x=1$ (crosses), $x=5$ (tangent)
-        \item $x=3$ (tangent), $x=-1$ (crosses), $x=-5$ (crosses)
-      \end{enumerate}
+        \begin{work}
+          p(x) &= (x-5)\big((x-1) + 2i\big)\big((x-1) - 2i\big) \\
+               &= (x-5)\big((x-1)^2 - 4i^2\big) \\
+               &= (x-5)\big(x^2 - 2x + 1 + 4\big) \\
+               &= (x-5)(x^2 - 2x + 5) \\
+               &= x^3 - 7x^2 + 15x - 25
+        \end{work}
+
+        $p(x) = $ \blank{6cm}
+\end{enumerate}
+
+\item Classify each polynomial function as \textbf{even}, \textbf{odd}, or
+      \textbf{neither}.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $f(x) = x^6 - 4x^2$ \quad \blank{2.4cm}
+  \item $g(x) = 2x^5 - x^3$ \quad \blank{2.4cm}
+  \item $h(x) = x^4 + x^3 - 1$ \quad \blank{2.4cm}
+  \item $k(x) = -3x^2 + 7$ \quad \blank{2.4cm}
+\end{enumerate}
+
+\smallskip
+Now verify your answer to (b) by substituting $-x$.
+
+\begin{work}
+  g(-x) &= 2(-x)^5 - (-x)^3 \\
+        &= -2x^5 + x^3 \\
+        &= -\big(2x^5 - x^3\big) \\
+        &= -g(x)
+\end{work}
+
+So $g$ is \blank{2cm}.
+
+\item A polynomial function $p$ of degree 5 has real coefficients and exactly
+      three distinct real zeros, each of multiplicity 1. How many non-real
+      zeros does $p$ have?
+
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $0$
+  \item $1$
+  \item $2$
+  \item $3$
+\end{enumerate}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
+\boxguard
 \begin{extensionbox}
-A polynomial $p$ of unknown degree has output values recorded at equally-spaced inputs.
-The third differences of those outputs are all constant, each equal to $6$.
-\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item What is the degree of $p$? Explain how successive differences reveal degree.
-        \writeline
-  \item Write a general form of a polynomial of that degree: \blank{5cm}
-\end{enumerate}
+Multiply out $\big(x - (a+bi)\big)\big(x - (a-bi)\big)$, where $a$ and $b$ are
+real. You should get $x^2 - 2ax + (a^2 + b^2)$ --- a quadratic with
+\textit{real} coefficients. Explain in one sentence how this result forces
+non-real zeros to come in conjugate pairs.
+
+\vspace{0.05in}
+\writelines{2}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\begin{reflectionbox}
-\textbf{Preview:} In Lesson 1.6 we will study rational functions. As you finish this
-homework, think about: if a polynomial can be written as a ratio $\dfrac{p(x)}{q(x)}$,
-what happens when $q(x) = 0$? We'll explore vertical asymptotes and holes next class.
-\end{reflectionbox}
+\boxguard
+\begin{notesbox}{Preview of Lesson 2.5}
+We now know how many zeros a polynomial has and where they hide. Next we stop
+looking near the zeros and look at the two far ends of the graph. Lesson 2.5,
+\textit{Polynomial Functions and End Behavior}, shows how the degree and the
+leading coefficient together decide what the graph does as $x$ runs off toward
+$\infty$ and toward $-\infty$.
+\end{notesbox}
 
 \end{document}

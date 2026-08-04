@@ -7,143 +7,175 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.4}{Group Activity --- Answer Key}
-\namepartnerperiod
+
+\vspace{0.12in}
+
+\begin{scenariobox}[The Missing Zeros Bureau]{plumlight}
+\small
+Your group works the missing-zeros desk: every polynomial that comes in must
+leave with \textit{all} of its zeros accounted for, whether or not the graph is
+willing to show them. Tier E uses the pre-drawn graph of
+$p(x) = x^3 - 3x^2 + 4x - 2$ below --- no tier draws anything.
+
+\begin{center}
+\begin{tikzpicture}[x=1.0cm, y=0.32cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (-1,-4) grid (3,4);
+  \draw[->, thick] (-1.3,0) -- (3.3,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4.8) -- (0,4.8) node[above] {\small $p(x)$};
+  \foreach \x in {-1,1,2,3} \node[below] at (\x,-0.2) {\small \x};
+  \foreach \y in {-4,-2,2,4} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(-0.4,-4.14) (-0.2,-2.93) (0,-2) (0.4,-0.82) (0.7,-0.33)
+     (1,0) (1.3,0.33) (1.6,0.82) (2,2) (2.2,2.93) (2.4,4.14)};
+  \fill[plum] (1,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
 
 \vspace{0.1in}
 
-\begin{scenariobox}[Three Polynomial Functions]{plumlight}
-You will analyze the following three polynomials throughout this activity.
-\[
-  p(x)=(x+2)(x-1)^2(x-3) \qquad
-  q(x)=x^4-5x^2+4 \qquad
-  r(x)=x^3+2x
-\]
-\end{scenariobox}
-
-\vspace{0.08in}
-
-% --- Tier R ---
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Work with $p(x)=(x+2)(x-1)^2(x-3)$.
+\begin{enumerate}[itemsep=8pt]
+  \item A polynomial function has degree 7. Counting multiplicities, how many
+        complex zeros does it have? \quad \ans{7}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item List all zeros of $p(x)$ and state the multiplicity of each.
+  \item Every case below uses the same move:
+        degree $-$ (\# real zeros) $=$ \# non-real zeros. Fill the last column.
 
-  \renewcommand{\arraystretch}{1.6}
-  \begin{tabularx}{\linewidth}{|X|X|}
-  \hline
-  \rowcolor{sky}
-  \textbf{Zero} & \textbf{Multiplicity} \\
-  \hline
-  \ans{$x=-2$} & \ans{1} \\
-  \hline
-  \ans{$x=1$}  & \ans{2} \\
-  \hline
-  \ans{$x=3$}  & \ans{1} \\
-  \hline
-  & \\
-  \hline
-  \end{tabularx}
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Degree} & \textbf{\# real zeros (with mult.)} & \textbf{\# non-real zeros} \\
+        \hline
+        4 & 4 & \ans{0} \\
+        \hline
+        4 & 2 & \ans{2} \\
+        \hline
+        5 & 3 & \ans{2} \\
+        \hline
+        6 & 0 & \ans{6} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-  \item What is the degree of $p(x)$? \ans{4}
-        How does the degree relate to the total number of zeros (counting multiplicities)?
-        \ansline{The degree equals the total count of zeros: $1+2+1=4$.}
+  \item Name the complex conjugate of each number. Only the sign in front of
+        the $i$ changes.
 
-  \item For each real zero, predict whether the graph \emph{crosses} or is \emph{tangent to}
-        (touches and bounces off) the $x$-axis.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $2 + 5i$ \quad \ans{$2 - 5i$}
+          \item $-1 + i$ \quad \ans{$-1 - i$}
+          \item $4i$ \quad \ans{$-4i$}
+          \item $3 - 7i$ \quad \ans{$3 + 7i$}
+        \end{enumerate}
 
-  \begin{tabularx}{\linewidth}{|X|X|}
-  \hline
-  \rowcolor{sky}
-  \textbf{Zero} & \textbf{Crosses or Tangent?} \\
-  \hline
-  $x=-2$ & \ans{Crosses (multiplicity 1)} \\
-  \hline
-  $x=1$  & \ans{Tangent/bounces (multiplicity 2)} \\
-  \hline
-  $x=3$  & \ans{Crosses (multiplicity 1)} \\
-  \hline
-  \end{tabularx}
-
+  \item A polynomial with real coefficients has $6 - i$ as one of its zeros.
+        Name another zero you get for free. \quad \ans{$6 + i$}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-% --- Tier A ---
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Factor $q(x)$ completely over the reals.
-        \ansline{$q(x)=(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2)$}
+\begin{enumerate}[itemsep=8pt]
+  \item A polynomial $p$ has real coefficients, degree 3, leading coefficient
+        1, and zeros $x = -1$ and $x = 2i$.
 
-  \item List all real zeros of $q(x)$ and their multiplicities.
-        \ansline{$x=1,\;x=-1,\;x=2,\;x=-2$, each with multiplicity 1.}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The third zero must be \ans{$-2i$}, because
+                \ans{non-real zeros come in conjugate pairs}.
+          \item Write $p(x)$ in expanded form.
 
-  \item Compare graph behavior at zeros of $p$ and $q$:
-        \ansline{$p$: crosses at $x=-2,3$; tangent at $x=1$. \; $q$: crosses at all four zeros.}
+                \begin{work}
+                  p(x) &= (x+1)(x - 2i)(x + 2i) \\
+                       &= (x+1)\big(x^2 - 4i^2\big) \\
+                       &= (x+1)(x^2 + 4) \\
+                       &= x^3 + x^2 + 4x + 4
+                \end{work}
 
-  \item Algebraic even/odd test:
+                $p(x) = $ \ans{$x^3 + x^2 + 4x + 4$}
+        \end{enumerate}
 
-        $p(-x) = $ \ansline{$(-x+2)(-x-1)^2(-x-3)$; neither $p(x)$ nor $-p(x)$. \textbf{Neither.}}
+  \item Classify each function as \textbf{even}, \textbf{odd}, or
+        \textbf{neither}. Look at the exponents --- and remember a constant
+        term rides on $x^0$.
 
-        $q(-x) = $ \ansline{$(-x)^4-5(-x)^2+4=x^4-5x^2+4=q(x)$. \textbf{Even.}}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $f(x) = 2x^6 - x^2 + 5$ \quad \ans{even}
+          \item $g(x) = -x^7 + 3x$ \quad \ans{odd}
+          \item $h(x) = x^4 + x^3$ \quad \ans{neither}
+          \item $k(x) = x^2 - 9$ \quad \ans{even}
+        \end{enumerate}
 
+  \item Prove your answer to 2(b) by substituting $-x$ --- do not argue from
+        the exponents this time.
+
+        \begin{work}
+          g(-x) &= -(-x)^7 + 3(-x) \\
+                &= x^7 - 3x \\
+                &= -\big(-x^7 + 3x\big) \\
+                &= -g(x)
+        \end{work}
+
+        Therefore $g$ is \ans{odd}.
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-% --- Tier E ---
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
-  \item Factor $r(x)=x^3+2x$ and solve for all zeros.
-        \ansline{$r(x)=x(x^2+2)$. Zeros: $x=0$; $x^2=-2 \Rightarrow x=\pm i\sqrt{2}$.}
+\begin{enumerate}[itemsep=8pt]
+  \item Read the graph of $p(x) = x^3 - 3x^2 + 4x - 2$ at the top of the page,
+        then reconcile it with the algebra.
 
-  \item List all zeros, verify conjugate pairs.
-        \ansline{$x=0$; $x=i\sqrt{2}$ and $x=-i\sqrt{2}$ form a conjugate pair. \checkmark}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Number of $x$-intercepts on the graph: \ans{1}
+          \item So the number of \textbf{real} zeros is \ans{1}
+          \item The degree is \ans{3}, so the total number of complex
+                zeros is \ans{3}
+          \item Therefore $p$ has \ans{2} non-real zeros.
+        \end{enumerate}
 
-  \item Even, odd, or neither for $r(x)$:
-        \ansline{$r(-x)=-x^3-2x=-(x^3+2x)=-r(x)$. \textbf{Odd.}}
+  \item Confirm the visible zero, then find the hidden pair. It happens that
+        $p(x) = (x - 1)(x^2 - 2x + 2)$.
 
-  \item Successive differences for $q(x)$ (degree 4 $\Rightarrow$ 4th differences constant):
+        \begin{work}
+          p(1) &= (1)^3 - 3(1)^2 + 4(1) - 2 \\
+               &= 1 - 3 + 4 - 2 \\
+               &= 0
+        \end{work}
 
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabularx}{\linewidth}{|X|X|X|X|X|}
-  \hline
-  \rowcolor{sky}
-  $x$ & $q(x)$ & 1st diff & 2nd diff & 3rd diff \\
-  \hline
-  $-2$ & \ans{0}  &            &            & \\
-  \hline
-  $-1$ & \ans{0}  & \ans{0}    &            & \\
-  \hline
-  $0$  & \ans{4}  & \ans{4}    & \ans{4}    & \\
-  \hline
-  $1$  & \ans{0}  & \ans{$-4$} & \ans{$-8$} & \ans{$-12$} \\
-  \hline
-  $2$  & \ans{0}  & \ans{0}    & \ans{4}    & \ans{12} \\
-  \hline
-  $3$  & \ans{40} & \ans{40}   & \ans{40}   & \ans{36} \\
-  \hline
-  \end{tabularx}
+        \begin{work}
+          x^2 - 2x + 2 &= 0 \\
+                     x &= \frac{2 \pm \sqrt{4 - 8}}{2} \\
+                       &= \frac{2 \pm 2i}{2} \\
+                       &= 1 \pm i
+        \end{work}
 
-  \begin{teachernote}
-  The 4th differences are constant (= 24), confirming degree 4. Students need
-  one additional row ($x=4$, $q(4)=180$) to see 4th differences become constant.
-  Accept ``4th differences constant'' as a complete answer for the degree confirmation.
-  \end{teachernote}
+        The two non-real zeros are \ans{$1 + i$ and $1 - i$}. Are they a conjugate pair?
+        \quad \ans{Yes} / \textbf{No}
 
-  The \ans{4th} differences are constant, confirming the degree is \ans{4}.
+  \item Explain why \textit{every} polynomial of odd degree with real
+        coefficients must cross the $x$-axis at least once. Use the pairing
+        rule in your answer.
 
+        \vspace{0.05in}
+        \ansline{An odd-degree polynomial has an odd total number of zeros. Non-real zeros}
+        \ansline{always come in conjugate pairs, so the non-real count is even --- an even}
+        \ansline{count can never use up an odd total, so at least one zero must be real.}
 \end{enumerate}
 \end{tcolorbox}
 

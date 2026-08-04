@@ -7,39 +7,59 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.2}{Exit Ticket --- Answer Key}
-\namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{notesbox}{Exit Ticket --- Key}
-\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item A polynomial function $p$ has exactly three distinct real zeros.
+\item The graph of a polynomial $f$ on the restricted domain $[0, 5]$ is
+      shown.
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-    \item[(a)] Minimum number of local extrema:
+\begin{center}
+\begin{tikzpicture}[x=0.75cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (5,5);
+  \draw[->, thick] (0,0) -- (5.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,2) (0.5,3.3) (1,4) (1.5,3.3) (2,2.2) (2.5,1.3) (3,1)
+     (3.5,1.5) (4,2.6) (4.5,3.8) (5,5)};
+  \fill[goldacc] (1,4) circle (2.7pt);
+  \fill[goldacc] (3,1) circle (2.7pt);
+\end{tikzpicture}
+\end{center}
 
-    Answer: \ans{2}
-
-    \item[(b)] Supporting principle:
-
-    \ans{By EK 1.4.A.3, between every two distinct real zeros of a nonconstant polynomial there must be at least one local maximum or minimum. With three zeros there are two consecutive pairs, each requiring at least one local extremum --- so at least 2 local extrema total.}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $f$ is increasing on \ans{$(0,1)$} and on \ans{$(3,5)$} , and
+        decreasing on \ans{$(1,3)$} .
+  \item $f$ has a local maximum at $x = $ \ans{1} and a local
+        minimum at $x = $ \ans{3} .
 \end{enumerate}
 
-\item A polynomial function $q$ has a point of inflection at $x = 2$.
-The AROC of $q$ over $[0, 2]$ is 3, and the AROC of $q$ over $[2, 4]$ is 7.
+\item Using the same graph:
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
-    \item[(a)] Is the AROC increasing or decreasing?
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item The global maximum value is \ans{5} , at $x = $
+        \ans{5} .
+  \item The global minimum value is \ans{1} , at $x = $
+        \ans{3} .
+\end{enumerate}
 
-    \ans{Increasing} --- the AROC goes from 3 to 7.
+\item A different polynomial $g$ has these average rates of change over the
+      consecutive intervals $[0,1], [1,2], [2,3], [3,4], [4,5]$:
 
-    \item[(b)] Concavity and explanation:
+      \begin{center}
+      $3,\quad 7,\quad 12,\quad 9,\quad 5$
+      \end{center}
 
-    \ans{Concave up. When the AROC is increasing as $x$ increases, the graph is concave up. The rate of change switches from a smaller value (3) to a larger value (7) as we pass through $x=2$, which is consistent with the graph curving upward. The point of inflection at $x=2$ is where this switch occurs.}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Does $g$ have a local maximum or minimum on $[0, 5]$? \quad
+        \textbf{Yes} / \ans{No} \quad Why? \ans{every AROC is positive}
+  \item A point of inflection occurs near $x = $ \ans{3} , where the
+        graph changes from concave \ans{up} to concave \ans{down} .
 \end{enumerate}
 
 \end{enumerate}
-\end{notesbox}
 
 \end{document}

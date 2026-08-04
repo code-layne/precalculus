@@ -1,0 +1,327 @@
+%! Introduction to Polynomial Functions — Unit 2, Lesson 2.0 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.0}{Guided Notes}
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Decide whether a given expression defines a \blank{2.8cm} function, and
+        say why an expression that fails does fail.
+  \item Name the \blank{1.8cm}, leading term, leading \blank{2.6cm}, and constant
+        term of a polynomial, and write one in \blank{2.6cm} form.
+  \item Name the low-degree families and count \blank{2.4cm} points on a
+        pre-drawn polynomial graph.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Polynomial function:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Degree:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading term:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading coefficient:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Constant term:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Standard form:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Turning point:}}\\[1pt]
+\writeline
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+Six expressions are written on the board. Three of them belong to the same family;
+three do not.
+
+\begin{center}
+$3x^2 - 5$ \qquad $\dfrac{4}{x}$ \qquad $x^3 - 2x + 1$ \qquad
+$\sqrt{x} + 6$ \qquad $7$ \qquad $2^x$
+\end{center}
+
+Circle the three you think belong together, then write the rule you used.
+\writelines{2}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{1. What Is a Polynomial Function?}
+\textbf{Informally.} A polynomial function is what you get when you add up terms,
+and every term is built the same way: a \textbf{number} multiplied by $x$ raised to
+a \textbf{whole-number} power.
+
+\medskip
+For example, $p(x) = 4x^3 - 7x^2 + 2x - 9$ is the sum of four terms:
+$4x^3$, \; $-7x^2$, \; $2x$, \; and $-9$.
+(The last two are quietly $2x^1$ and $-9x^0$ --- every term really does fit the
+pattern.)
+
+\medskip
+\textbf{Formally.} A polynomial function can always be written
+\[
+  p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0 .
+\]
+
+\begin{itemize}[itemsep=4pt]
+  \item Every exponent on $x$ is a \blank{3.2cm} number: $0, 1, 2, 3, \ldots$
+  \item Every coefficient $a_n, a_{n-1}, \ldots, a_0$ is a \blank{2.6cm} number.
+  \item The very first coefficient, $a_n$, is not allowed to be \blank{1.4cm}
+        --- otherwise that term would not really be there.
+  \item A lone number such as $p(x) = 7$ counts too: it is a polynomial of degree
+        \blank{1.4cm}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{2. The Parts of a Polynomial, by Name}
+Every polynomial has the same four parts, and each one has a name you are expected
+to use. Fill in the right column for $p(x) = 4x^3 - 7x^2 + 2x - 9$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{0.26\linewidth}|p{0.40\linewidth}|c|}
+\hline
+\textbf{Part} & \textbf{What it is} & \textbf{For $p(x)$ above} \\
+\hline
+Degree & the highest exponent on $x$ & \blank{2.0cm} \\
+\hline
+Leading term & the whole term carrying that highest exponent & \blank{2.0cm} \\
+\hline
+Leading coefficient & the number in front of the leading term & \blank{2.0cm} \\
+\hline
+Constant term & the term with no $x$ at all & \blank{2.0cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+A polynomial is in \textbf{standard form} when the terms run from the
+\blank{2.4cm} power down to the \blank{2.4cm} power. That ordering is worth the
+trouble: it puts the two parts we care about most --- the leading term and the
+constant term --- at the two ends where they are easy to find.
+
+\medskip
+Rewrite each polynomial in standard form, then read off its parts.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.26\linewidth}|p{0.30\linewidth}|c|c|}
+\hline
+\textbf{As written} & \textbf{Standard form} & \textbf{Degree} & \textbf{Leading coef.} \\
+\hline
+$5x - 2 + 3x^4 - x^2$ & \blank{3.4cm} & \blank{1.2cm} & \blank{1.4cm} \\
+\hline
+$9x - x^3 + 2$ & \blank{3.4cm} & \blank{1.2cm} & \blank{1.4cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+\textbf{Watch the sign.} When a term is written $-x^3$, its coefficient is
+\blank{1.4cm}, not $1$. The minus sign belongs to the number.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{3. What Is \textit{Not} a Polynomial}
+This is the skill the rest of the unit leans on. Decide, and say why. The first row
+is done for you.
+
+\smallskip
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|p{0.20\linewidth}|c|p{0.46\linewidth}|}
+\hline
+\textbf{Expression} & \textbf{Polynomial?} & \textbf{Why / why not} \\
+\hline
+$5x^3 - x + 8$ & yes & every exponent on $x$ is a whole number \\
+\hline
+$\dfrac{4}{x}$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+$\sqrt{x} + 6$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+$2^x$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+$\dfrac{3}{x+1}$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+$\dfrac{x^2}{5}$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+$\sqrt{7}\,x^2 - \dfrac{1}{2}x$ & \blank{1.4cm} & \blank{4.4cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+\textbf{The three-question test.} An expression in $x$ is a polynomial only when
+all three answers are yes.
+
+\begin{enumerate}[label=(\arabic*), itemsep=4pt]
+  \item Is every exponent on $x$ a \blank{3.4cm} number?
+        (So no $x^{-2}$ and no $x^{1/2}$.)
+  \item Is $x$ kept out of every \blank{3.0cm}? (So no $\frac{4}{x}$.)
+  \item Is $x$ kept out of every \blank{3.0cm}? (So no $2^x$.)
+\end{enumerate}
+
+\medskip
+\textbf{The coefficients are never the problem.} $\sqrt{7}$, $-\frac{1}{2}$, and
+even $\pi$ are all perfectly legal \blank{2.8cm}. Dividing a term by a
+\textit{number} is fine too, since $\dfrac{x^2}{5}$ is just $\frac{1}{5}x^2$. Only
+the \blank{2.6cm} on $x$ decide the question.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{4. The Family, Sorted by Degree}
+The low degrees have names, and you already know most of them.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|l|p{0.32\linewidth}|}
+\hline
+\textbf{Degree} & \textbf{Name} & \textbf{Example} & \textbf{What its graph looks like} \\
+\hline
+0 & constant & $p(x) = 6$ & a flat horizontal line \\
+\hline
+1 & \blank{2.2cm} & $p(x) = 2x - 5$ & a straight slanted line \\
+\hline
+2 & \blank{2.2cm} & $p(x) = x^2 - 4x + 3$ & a parabola \\
+\hline
+3 & \blank{2.2cm} & $p(x) = x^3 - 2x$ & new to us this unit \\
+\hline
+4 & quartic & $p(x) = x^4 - 5x^2 + 4$ & new to us this unit \\
+\hline
+\end{tabular}
+\smallskip
+
+Degrees 0, 1, and 2 are old friends from Algebra 1, Algebra 2, and Unit 1. Lesson
+2.1 revisits degree \blank{1.2cm} before the unit moves on to degree
+\blank{1.2cm} and higher.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{5. What the Whole Family Looks Like}
+No matter the degree, every polynomial graph keeps two habits: it is
+\textbf{smooth} (no sharp corners) and \textbf{unbroken} (no holes, no jumps). You
+could trace one from left to right without lifting your pencil.
+
+\medskip
+A \textbf{turning point} is a spot where the graph stops rising and starts falling,
+or stops falling and starts rising.
+
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.8:2.8, samples=80, smooth, variable=\x]
+    plot ({\x}, {0.5*\x*\x - 2});
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth, variable=\x]
+    plot ({\x}, {0.4*\x*\x*\x - 1.6*\x});
+\end{tikzpicture}
+&
+\begin{tikzpicture}[x=0.50cm, y=0.34cm]
+  \draw[->, thick] (-3.2,0) -- (3.2,0);
+  \draw[->, thick] (0,-3.2) -- (0,3.4);
+  \draw[very thick, plum, domain=-2.4:2.4, samples=80, smooth, variable=\x]
+    plot ({\x}, {0.35*\x*\x*\x*\x - 1.8*\x*\x + 1});
+\end{tikzpicture}
+\\[2pt]
+\textbf{Graph A} & \textbf{Graph B} & \textbf{Graph C}
+\end{tabular}
+\end{center}
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Graph} & \textbf{Degree} & \textbf{Turning points you can count} & \textbf{Degree $-\,1$} \\
+\hline
+A & 2 & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+B & 3 & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+C & 4 & \blank{1.6cm} & \blank{1.6cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+\textbf{The pattern.} A polynomial of degree $n$ has \textbf{at most}
+\blank{2.4cm} turning points. It may have fewer --- the graph of $p(x) = x^3$ has
+none at all --- but it can never have more.
+
+\medskip
+Smooth and unbroken is exactly why polynomials are the family calculus starts
+with: nothing surprising ever happens between two points on the graph.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{6. Where This Unit Is Going}
+Today we only named the family. From here: Lesson 2.1 revisits quadratics, the
+degree-2 members you already know. Lesson 2.2 measures how fast a polynomial
+changes, and 2.3 and 2.4 hunt for the inputs that make a polynomial equal zero
+--- first the real ones, then the complex ones. Lesson 2.5 studies what happens at
+the far left and far right ends of a graph, 2.6 rewrites polynomials in equivalent
+forms, and 2.7 puts it all to work solving equations and inequalities and building
+models. Every one of those lessons assumes you can look at an expression and say,
+without hesitating, ``that is a polynomial, and its degree is \ldots''
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item Consider $p(x) = -2x^4 + x^3 - 6$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Degree: \blank{1.6cm} \quad Leading term: \blank{2.2cm} \quad
+                Leading coefficient: \blank{1.6cm} \quad
+                Constant term: \blank{1.6cm}
+          \item By degree, this polynomial is called a \blank{2.6cm}, and it has
+                at most \blank{1.4cm} turning points.
+        \end{enumerate}
+
+  \item Is each expression a polynomial? Circle one and give a short reason.
+
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $h(x) = 6x^5 - \dfrac{x}{4} + 11$ \quad \textbf{Yes} / \textbf{No}
+
+                \vspace{0.05in}
+                \writeline
+
+          \item $k(x) = 3x^2 + \dfrac{5}{x}$ \quad \textbf{Yes} / \textbf{No}
+
+                \vspace{0.05in}
+                \writeline
+        \end{enumerate}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

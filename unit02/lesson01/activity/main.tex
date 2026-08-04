@@ -7,15 +7,155 @@
 \begin{document}
 
 \pageheader{Unit 2, Lesson 2.1}{Group Activity}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[Nova Cycles: Pricing a Helmet]{plumlight}
+\small
+Nova Cycles is deciding what to charge for a bike helmet. Their sales model
+gives the weekly revenue $R(p)$, in dollars, when the price is $p$ dollars.
+Every tier uses this same table and pre-drawn graph --- no drawing required.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$p$ (dollars) & 0 & 5 & 10 & 15 & 20 & 25 & 30 \\
+\hline
+$R(p)$ (dollars) & 0 & 250 & 400 & 450 & 400 & 250 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=0.85cm, y=0.34cm]
+  \draw[linegray, very thin, xstep=1, ystep=1] (0,0) grid (6,9);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $p$ (\$)};
+  \draw[->, thick] (0,0) -- (0,9.8) node[above] {\small $R(p)$ (\$)};
+  \foreach \x/\l in {1/5, 2/10, 3/15, 4/20, 5/25, 6/30}
+    \node[below] at (\x,0) {\small \l};
+  \foreach \y/\l in {3/150, 6/300, 9/450} \node[left] at (0,\y) {\small \l};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,0) (1,5) (2,8) (3,9) (4,8) (5,5) (6,0)};
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (1,5) circle (2.5pt);
+  \fill[plum] (3,9) circle (2.5pt);
+  \fill[plum] (5,5) circle (2.5pt);
+  \fill[plum] (6,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Fill in the blanks to compute the AROC over $[0, 5]$:
+
+        \vspace{0.05in}
+        AROC $= \dfrac{R(5) - R(0)}{5 - 0} = \dfrac{\text{\blank{1.2cm}} - \text{\blank{1.2cm}}}{5 - 0}
+        = $ \blank{1.4cm} dollars of revenue per dollar of price
+
+  \item Now the AROC over $[5, 10]$:
+
+        \vspace{0.05in}
+        AROC $= \dfrac{R(10) - R(5)}{10 - 5} = $ \blank{1.4cm} dollars of
+        revenue per dollar of price
+
+  \item Over which stretch did revenue grow \textbf{faster} --- from \$0 to
+        \$5, or from \$5 to \$10? \quad \blank{2.4cm}
+
+  \item Between $p = 20$ and $p = 25$, is revenue rising or falling? \quad
+        \textbf{Rising} / \textbf{Falling}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the AROC row. Every interval has the same length, $h = 5$.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $[0,5]$ & $[5,10]$ & $[10,15]$ & $[15,20]$ & $[20,25]$ & $[25,30]$ \\
+        \hline
+        \textbf{AROC} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+
+  \item Write one sentence interpreting the AROC over $[20, 25]$ --- include
+        its sign and its units.
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item Look at your row: each AROC changes by the same amount from one
+        interval to the next. That step is \blank{1.4cm} --- so $R$ is a
+        \blank{2.4cm} function, and its graph is concave \blank{1.4cm}.
+
+  \item Compute the AROC over the whole price range, $[0, 30]$. \quad
+        \blank{1.4cm}
+
+        Revenue clearly changed --- so why is this answer useless for
+        choosing a price?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Work backward to the formula. For a quadratic, consecutive AROCs over
+        equal intervals of length $h$ differ by exactly $2ah$. Your AROCs
+        step by $-20$, and here $h = 5$. Find the leading coefficient $a$.
+
+        \begin{work}
+          2ah &= -20 \\
+          2a(5) &= -20 \\
+          10a &= -20 \\
+            a &= -2
+        \end{work}
+
+        $a = $ \blank{1.4cm}
+
+  \item Using \textbf{only} the numbers in your AROC row --- no graph ---
+        justify the claim ``the revenue function is concave down.'' Name the
+        evidence you used.
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item The AROC is $+10$ over $[10, 15]$ and $-10$ over $[15, 20]$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Revenue stops rising and starts falling somewhere between
+                $p = $ \blank{1.2cm} and $p = $ \blank{1.2cm} .
+          \item The price that maximizes revenue is \blank{1.4cm} dollars.
+                Explain how the two AROCs above pin it there.
+
+                \vspace{0.05in}
+                \writelines{2}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

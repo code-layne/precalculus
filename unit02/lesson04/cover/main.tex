@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
   {\color{white}\textbf{\large Lesson 2.4 \quad Polynomial Functions and Complex Zeros}}
 \end{center}
 
@@ -27,14 +27,18 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can identify the zeros of a polynomial from its factored form and state their
-        multiplicities.
-  \item I can explain whether a polynomial's graph crosses or is tangent to the $x$-axis
-        at each real zero based on the multiplicity.
-  \item I can determine whether a polynomial function is even, odd, or neither using the
-        algebraic test $f(-x)=f(x)$ or $f(-x)=-f(x)$.
-  \item I can use complex conjugate pairs to identify all zeros of a polynomial with real
-        coefficients.
+  \item I can explain why a polynomial can have zeros that never appear as
+        $x$-intercepts, and I can evaluate a polynomial at a complex input to
+        check whether that input is a zero.
+  \item I can use the Fundamental Theorem of Algebra to say that a polynomial
+        of degree $n$ has exactly $n$ complex zeros counting multiplicities,
+        and I can split that total into the real zeros a graph shows and the
+        non-real zeros it hides.
+  \item I can use conjugate pairs to name a missing non-real zero, explain why
+        an odd-degree polynomial must have a real zero, and build a polynomial
+        from a complete list of its zeros.
+  \item I can decide whether a polynomial function is even, odd, or neither,
+        both by substituting $-x$ and by reading the symmetry of a graph.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -44,16 +48,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Factoring review and zero identification        & \blank{1.2cm} \\
-2 & Group Activity & Analyzing zeros and symmetry of polynomials     & \blank{1.2cm} \\
-3 & Exit Ticket    & Zeros, multiplicity, and even/odd               & \blank{1.2cm} \\
-4 & Homework       & Practice and extension                          & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                  & \blank{1.2cm} \\
+2 & Guided Notes   & Complex zeros, conjugate pairs, even and odd functions & \blank{1.2cm} \\
+3 & Group Activity & The Missing Zeros Bureau: accounting for every zero    & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on counting and classifying zeros    & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                                 & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Last lesson every zero was something you could point at on the graph. Today
+the count stops depending on what you can see: a degree-$n$ polynomial has
+\textbf{exactly} $n$ zeros, and the ones the graph refuses to show up as
+$x$-intercepts are the non-real ones --- always arriving two at a time, always
+as a conjugate pair.
+\end{remindbox}
 
 \end{document}

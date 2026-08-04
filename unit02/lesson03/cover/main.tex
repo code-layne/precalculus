@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 2}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
   {\color{white}\textbf{\large Lesson 2.3 \quad Polynomial Functions and Real Zeros}}
 \end{center}
 
@@ -27,8 +27,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item I can explain why \textit{zero}, \textit{root}, \textit{solution},
+        and \textit{$x$-intercept} all point at the same numbers, and check
+        whether a given value is a zero of a polynomial.
+  \item I can use the factor/zero equivalence in both directions: read the
+        real zeros off a factored polynomial, and write a factored polynomial
+        from a list of zeros and a point on its graph.
+  \item I can find the multiplicity of each real zero and predict whether the
+        graph crosses the $x$-axis there or is tangent to it --- and match a
+        pre-drawn graph to its factored form using that reasoning.
+  \item I can find the degree of a polynomial from a table of equally spaced
+        values by taking successive differences.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -38,16 +47,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up      & TODO & \blank{1.2cm} \\
-2 & Group Activity & TODO & \blank{1.2cm} \\
-3 & Exit Ticket  & TODO & \blank{1.2cm} \\
-4 & Homework     & TODO & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills                  & \blank{1.2cm} \\
+2 & Guided Notes   & Zeros, factors, multiplicity, degree from differences & \blank{1.2cm} \\
+3 & Group Activity & Four polynomials, two zeros: matching graphs to forms & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on multiplicity and degree          & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                                & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Lesson 2.2 asked where a polynomial turns; today we ask where it \textbf{hits
+zero}. One equivalence carries the whole lesson: $(x-a)$ is a factor exactly
+when $a$ is a zero. Count how many times a factor repeats --- its
+multiplicity --- and you can say, without graphing, whether the curve cuts
+through the $x$-axis or just kisses it and turns back.
+\end{remindbox}
 
 \end{document}
