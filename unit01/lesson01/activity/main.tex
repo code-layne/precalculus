@@ -7,15 +7,120 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Group Activity}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[The Drone Flight]{plumlight}
+\small
+A camera drone takes off from a rooftop 2 meters up, climbs, hovers to film, and
+then descends to the ground. The function $h$ gives its height in meters
+$t$ minutes after launch. Every tier reads this same graph --- no drawing
+required.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $t$ (min)};
+  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $h(t)$ (m)};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {2,4,6} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,2) -- (2,6);
+  \draw[very thick, plum] (2,6) -- (5,6);
+  \draw[very thick, plum] (5,6) -- (8,0);
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (8,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Read outputs from the graph.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $h(0) = $ \blank{1.6cm} \quad (how high the drone starts)
+          \item $h(3) = $ \blank{1.6cm}
+        \end{enumerate}
+
+  \item The statement $h(1) = 4$ is a full sentence in disguise. Write it in
+        words.
+
+        \vspace{0.05in}
+        \writeline
+
+  \item The drone lands when its height is 0. At what time does it land?
+        \quad $t = $ \blank{2cm} minutes
+
+  \item For this function: \quad Input quantity: \blank{2.8cm} \quad
+        Output quantity: \blank{3.2cm}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Evaluate $h(6)$ from the graph. \quad $h(6) = $ \blank{1.6cm}
+
+  \item Solve $h(t) = 4$. \quad $t = $ \blank{1.4cm} and $t = $ \blank{1.4cm}
+
+        Why is it okay for this equation to have two answers, even though $h$ is
+        a function?
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item State the domain and range of $h$ as inequalities.
+
+        \vspace{0.05in}
+        Domain: \blank{1.2cm} $\le t \le$ \blank{1.2cm} \quad
+        Range: \blank{1.2cm} $\le h \le$ \blank{1.2cm}
+
+  \item Use the graph to explain how we know $h$ \textbf{is} a function of $t$.
+
+        \vspace{0.05in}
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Flip the machine: is \textbf{time} a function of \textbf{height} for
+        this flight? Use the two moments when the drone is 4 meters up in your
+        explanation.
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item A different function is given by the formula $g(x) = \dfrac{12}{x - 5}$.
+        Which input must be excluded from the domain, and why?
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item The formula behind the drone's descent works for any $t$, yet we say
+        the domain of $h$ is only $0 \le t \le 8$. Why does the \textit{context}
+        shrink the domain?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

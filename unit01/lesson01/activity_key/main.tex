@@ -7,15 +7,120 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.1}{Group Activity --- Answer Key}
-% NAMESTRIP: no \namedateperiod here — mirrors the blank. Teacher-only prose goes
-% in the lesson plan as \begin{teachernote}[Group Activity], never in a key.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{scenariobox}[The Drone Flight]{plumlight}
+\small
+A camera drone takes off from a rooftop 2 meters up, climbs, hovers to film, and
+then descends to the ground. The function $h$ gives its height in meters
+$t$ minutes after launch. Every tier reads this same graph --- no drawing
+required.
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $t$ (min)};
+  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $h(t)$ (m)};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {2,4,6} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,2) -- (2,6);
+  \draw[very thick, plum] (2,6) -- (5,6);
+  \draw[very thick, plum] (5,6) -- (8,0);
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (8,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Read outputs from the graph.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $h(0) = $ \ans{2} \quad (how high the drone starts)
+          \item $h(3) = $ \ans{6}
+        \end{enumerate}
+
+  \item The statement $h(1) = 4$ is a full sentence in disguise. Write it in
+        words.
+
+        \vspace{0.02in}
+        \ansline{One minute after launch, the drone is 4 meters above the ground.}
+
+  \item The drone lands when its height is 0. At what time does it land?
+        \quad $t = $ \ans{8} minutes
+
+  \item For this function: \quad Input quantity: \ans{time (minutes)} \quad
+        Output quantity: \ans{height of the drone (meters)}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Evaluate $h(6)$ from the graph. \quad $h(6) = $ \ans{4}
+
+  \item Solve $h(t) = 4$. \quad $t = $ \ans{1} and $t = $ \ans{6}
+
+        Why is it okay for this equation to have two answers, even though $h$ is
+        a function?
+
+        \vspace{0.02in}
+        \ansline{Two inputs may share an output (many-to-one is allowed). Each time still has exactly one height, so $h$ is still a function --- the drone just passes 4 meters once going up and once coming down.}
+
+  \item State the domain and range of $h$ as inequalities.
+
+        \vspace{0.05in}
+        Domain: \ans{0} $\le t \le$ \ans{8} \quad
+        Range: \ans{0} $\le h \le$ \ans{6}
+
+  \item Use the graph to explain how we know $h$ \textbf{is} a function of $t$.
+
+        \vspace{0.02in}
+        \ansline{Every time $t$ has exactly one height on the graph --- no input has two outputs.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[itemsep=8pt]
+  \item Flip the machine: is \textbf{time} a function of \textbf{height} for
+        this flight? Use the two moments when the drone is 4 meters up in your
+        explanation.
+
+        \vspace{0.02in}
+        \ansline{No. The single input ``height 4 m'' has two outputs ($t = 1$ and $t = 6$) --- one input with two outputs breaks the function rule.}
+
+  \item A different function is given by the formula $g(x) = \dfrac{12}{x - 5}$.
+        Which input must be excluded from the domain, and why?
+
+        \vspace{0.02in}
+        \ansline{$x = 5$ must be excluded: it makes the denominator 0, and division by zero is undefined. The domain is all real numbers except 5.}
+
+  \item The formula behind the drone's descent works for any $t$, yet we say
+        the domain of $h$ is only $0 \le t \le 8$. Why does the \textit{context}
+        shrink the domain?
+
+        \vspace{0.02in}
+        \ansline{The flight only exists from launch ($t = 0$) to landing ($t = 8$) --- inputs outside that window describe no real moment of the flight, so the context limits which inputs make sense.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
