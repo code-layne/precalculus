@@ -1,4 +1,4 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,143 +9,137 @@
 \pageheader{Unit 1, Lesson 1.3}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.15in}
 
 \begin{objectivebox}
-By the end of this lesson, I will be able to:
-\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
-  \item \ansline{Determine the AROC of a linear function and explain why it is constant.}
-  \item \ansline{Compute first and second differences for a quadratic function and describe the pattern.}
-  \item \ansline{Use the AROC pattern to determine whether a graph is concave up or concave down.}
-\end{enumerate}
+\textbf{LO 1.2.A:} Compare the rates of change at two points using average rates of change
+near the points.\quad \ansline{AROC over small intervals approximates ROC at a point; compare by computing.}
+
+\textbf{LO 1.2.B:} Describe how two quantities vary together at different points and over
+different intervals of a function.\quad \ansline{Sign and magnitude of AROC describe co-variation direction and speed.}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\termblanklong{secant line}
-\ansline{The line through two points on a graph, $(a,f(a))$ and $(b,f(b))$; its slope equals the AROC on $[a,b]$.}
+\noindent\textbf{\textcolor{navy}{average rate of change (AROC):}}\\[1pt]
+\ansline{The ratio $\dfrac{f(b)-f(a)}{b-a}$ — the constant rate that produces the same net change in output over the interval $[a,b]$; equals the slope of the secant line.}\\[2pt]
 
-\termblanklong{first differences}
-\ansline{The successive AROCs computed over consecutive equal-length intervals.}
-
-\termblanklong{second differences}
-\ansline{The differences of consecutive first differences; constant for quadratic functions.}
+\noindent\textbf{\textcolor{navy}{rate of change at a point:}}\\[1pt]
+\ansline{The instantaneous rate of change at $x=c$, approximated by computing AROC over successively smaller intervals containing $c$.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 \begin{hookbox}
-We computed one AROC last lesson. What if we compute many AROCs in a row for $f(x) = x^2$?
+\textit{You're driving on the highway. Your GPS says your average speed over the last
+hour was 62 mph. Were you always going exactly 62 mph? What does ``average'' mean here?}
 
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$    & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$f(x)$ & 0 & 1 & 4 & 9 & 16 \\
-\hline
-\end{tabular}
-
-\smallskip
-What pattern do you notice in the successive AROCs?
-
-\ansline{The AROCs are 1, 3, 5, 7 --- they increase by 2 each time (an arithmetic pattern).}
-\ansline{The second differences are all 2, which is constant.}
+\medskip
+The average speed is the \ans{one constant} speed that covers the \ans{same total} distance in the
+\ans{same} time. This is the key idea behind average rate of change.
 \end{hookbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{AROC of Linear Functions}
-Use $f(x) = 2x + 1$. Complete the table.
+\begin{notesbox}{Average Rate of Change}
+The \textbf{average rate of change (AROC)} of a function $f$ over the interval $[a,b]$ is:
 
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|}
+\[
+    \text{AROC} = \frac{\Delta f}{\Delta x}
+    = \frac{f(b) - f(a)}{b - a}
+\]
+
+\vspace{4pt}
+Label: the numerator represents \ans{change in output ($\Delta f$)}; the denominator represents \ans{change in input ($\Delta x$)}.
+
+\medskip
+Geometrically, the AROC equals the slope of the \ans{secant} line through
+$(a,\,f(a))$ and $(b,\,f(b))$.
+
+\medskip\textbf{Worked Example.} The table gives values of a function $h$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
 \hline
-\textbf{Interval} & $f(\text{left})$ & $f(\text{right})$ & \textbf{AROC} \\
+\rowcolor{sky}
+$x$    & 1  & 2  & 4  & 7 \\
 \hline
-$[0, 1]$ & $f(0) = 1$ & $f(1) = 3$ & \ans{2} \\
-$[1, 2]$ & $f(1) = 3$ & $f(2) = 5$ & \ans{2} \\
-$[2, 3]$ & $f(2) = 5$ & $f(3) = 7$ & \ans{2} \\
-$[3, 4]$ & $f(3) = 7$ & $f(4) = 9$ & \ans{2} \\
+$h(x)$ & 3  & 7  & 11 & 20 \\
 \hline
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
-\smallskip
-\textbf{Conclusion:} For a linear function, the AROC is \ans{constant (always equal to the slope)}.
+\vspace{6pt}
+Compute the AROC of $h$ over $[1,\,4]$:
+\[
+    \text{AROC} = \frac{h(4) - h(1)}{4 - 1}
+    = \frac{11 - 3}{4 - 1}
+    = \frac{8}{3} \approx \ans{2.67}
+\]
 
-This is because the slope of any secant line on a linear graph equals \ans{the slope of the line itself}.
+Interpretation: for every 1-unit increase in $x$, $h$ increases by approximately
+\ans{2.67}.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{AROC of Quadratic Functions}
-Use $f(x) = x^2$. Complete the table and the second-differences column.
+\begin{notesbox}{Approximating Rate of Change at a Point}
+The AROC over a \textbf{small} interval containing $x = c$ approximates the
+\textbf{rate of change at the point} $x = c$.
 
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|}
+\medskip
+\textbf{Example.} Approximate the rate of change of $h$ at $x = 2$.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.8cm}|C{4.5cm}|C{3.8cm}|}
 \hline
-\textbf{Interval} & \textbf{AROC (first difference)} & \textbf{Change in AROC (second difference)} \\
+\rowcolor{sky}
+\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC value} \\
 \hline
-$[0, 1]$ & \ans{1} & \\
-$[1, 2]$ & \ans{3} & \ans{2} \\
-$[2, 3]$ & \ans{5} & \ans{2} \\
-$[3, 4]$ & \ans{7} & \ans{2} \\
+$[2,\;2.5]$ & $\dfrac{h(2.5)-h(2)}{2.5-2}$ & \ans{4} \\
+\hline
+$[2,\;2.1]$ & $\dfrac{h(2.1)-h(2)}{2.1-2}$ & \ans{4} \\
+\hline
+$[2,\;2.01]$ & $\dfrac{h(2.01)-h(2)}{2.01-2}$ & \ans{4} \\
 \hline
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
-\smallskip
-\textbf{Conclusion:} For a quadratic function, the second differences are \ans{constant (nonzero)}.
+\begin{teachernote}
+$h(2.5)=9$: AROC $=(9-7)/0.5=4$. $h(2.1)=7.4$: AROC $=0.4/0.1=4$. $h(2.01)=7.04$: AROC $=0.04/0.01=4$. All equal 4, consistent with $h$ having slope 4 near $x=2$.
+\end{teachernote}
 
-The first differences form a \ans{linear (arithmetic)} pattern.
+\vspace{4pt}
+As the interval shrinks, the AROC appears to approach \ans{4}.
+This value approximates the rate of change of $h$ \textbf{at} $x = 2$.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{Secant Lines \& Concavity}
-\textbf{Secant line:} The line connecting two points $(a, f(a))$ and $(b, f(b))$ on a graph.
-
-Its slope $= \dfrac{f(b)-f(a)}{b-a} =$ \ans{the AROC on $[a,b]$}
-
-\medskip
-\textbf{Concavity from AROC pattern:}
-\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
-  \item If the AROCs are \textit{increasing} as $x$ increases, the graph is \ans{concave up}.
-  \item If the AROCs are \textit{decreasing} as $x$ increases, the graph is \ans{concave down}.
-\end{itemize}
-
-\medskip
-\textit{Example:} For $f(x) = x^2$, the AROCs over unit intervals are $1, 3, 5, 7, \ldots$
-
-These are \ans{increasing}, so the graph is \ans{concave up}.
+\begin{notesbox}{Sign of Rate of Change}
+\begin{tabular}{@{}p{0.46\linewidth}p{0.46\linewidth}@{}}
+\textbf{Positive AROC:} & \textbf{Negative AROC:} \\[2pt]
+As $x$ \ans{increases}, $f(x)$ \ans{increases}. & As $x$ \ans{increases}, $f(x)$ \ans{decreases}. \\[4pt]
+The function is \ans{increasing} on the interval. & The function is \ans{decreasing} on the interval. \\[4pt]
+\textit{Example:} \ans{temperature rising} & \textit{Example:} \ans{elevation decreasing} \\
+\end{tabular}
 \end{notesbox}
 
 \vspace{0.1in}
 
 \begin{practicebox}
-\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+\textbf{1.} Compute the AROC over $[2,\,7]$:
+$\dfrac{h(7)-h(2)}{7-2} = \dfrac{20-7}{5} = \dfrac{13}{5} =$ \ans{2.6}.
+This is \ans{less} than AROC over $[1,4] \approx 2.67$. The function grew slightly faster
+on $[1,4]$ than on $[2,7]$.
 
-\item For $g(x) = -x^2 + 4x$, compute the AROC on $[0,1]$, $[1,2]$, $[2,3]$, $[3,4]$.
-Then compute the second differences. Is the graph concave up or concave down?
+\writeline
 
-\medskip
-AROCs: $g(0)=0, g(1)=3, g(2)=4, g(3)=3, g(4)=0$.
+\textbf{2.} \ans{Decreases.} A negative AROC means $f(b)-f(a) < 0$, so $f(b) < f(a)$ —
+the output went down as the input went from 0 to 5.
 
-AROC on $[0,1]$: \ans{3}; $[1,2]$: \ans{1}; $[2,3]$: \ans{$-1$}; $[3,4]$: \ans{$-3$}.
-
-Second differences: \ans{$-2$} (constant). Graph is \ans{concave down}.
-
-\item A function $p(x)$ has AROC values $12, 9, 6, 3$ on consecutive equal-length intervals.
-Are the second differences positive or negative? What does this tell you about the concavity?
-
-\medskip
-Second differences: \ans{$-3$} (negative). The AROCs are decreasing, so the graph is \ans{concave down}.
-
-\end{enumerate}
+\writeline
 \end{practicebox}
 
 \end{document}

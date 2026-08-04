@@ -1,4 +1,4 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Homework (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,122 +9,82 @@
 \pageheader{Unit 1, Lesson 1.3}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.12in}
+\vspace{0.15in}
 
-\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
+\begin{notesbox}{Practice --- Key}
 
-\item For $f(x) = -2x + 5$, compute the AROC on each interval below.
-Are the AROCs constant? What is the slope of $f$?
+\textbf{1.} Table of $f$:
+\quad $f(0)=6,\ f(2)=14,\ f(5)=26,\ f(8)=38,\ f(12)=50$.
 
-\smallskip
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Interval} & \textbf{AROC} \\
-\hline
-$[0, 1]$ & \ans{$-2$} \\
-$[1, 2]$ & \ans{$-2$} \\
-$[2, 3]$ & \ans{$-2$} \\
-\hline
-\end{tabular}
-
-\vspace{0.05in}
-Are the AROCs constant? \ans{Yes} \quad Slope of $f$: \ans{$-2$}
-
-\vspace{0.1in}
-
-\item For $g(x) = x^2 - 3x$, compute the AROC on $[0,1]$, $[1,2]$, and $[2,3]$. Then compute the second differences.
-
-\smallskip
-Values: $g(0)=0$, $g(1)=-2$, $g(2)=-2$, $g(3)=0$.
-
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Interval} & \textbf{AROC} & \textbf{Second Difference} \\
-\hline
-$[0, 1]$ & \ans{$-2$} & \\
-$[1, 2]$ & \ans{$0$}  & \ans{$2$} \\
-$[2, 3]$ & \ans{$2$}  & \ans{$2$} \\
-\hline
-\end{tabular}
-
-\vspace{0.1in}
-
-\item The table of values is shown below.
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$y$ & 3 & 7 & 13 & 21 & 31 \\
-\hline
-\end{tabular}
-
-\medskip
-First differences: $4, 6, 8, 10$. Second differences: $2, 2, 2$.
-
-\ansline{The second differences are constant and nonzero, so the data represent a quadratic function.}
-
-\item The AROC of a function is increasing as $x$ increases. Is the graph concave up or concave down?
-
-\ansline{Concave up. When successive AROCs (first differences) increase, the graph bends upward like a bowl.}
-
-\item \textbf{AP-style:}
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$    & 1 & 2 & 3 & 4 \\
-\hline
-$f(x)$ & 5 & 8 & 11 & 14 \\
-\hline
-\end{tabular}
-
-\medskip
-First differences: $3, 3, 3$ --- constant. Second differences: $0, 0$.
-
-\begin{enumerate}[label=(\Alph*), itemsep=3pt]
-  \item $f$ is quadratic because the first differences are constant.
-  \item $f$ is linear because the first differences are constant. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $f$ is quadratic because the second differences are constant.
-  \item $f$ is neither linear nor quadratic because the second differences are not zero.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item AROC over $[0,5]$: $\dfrac{26-6}{5-0} = \dfrac{20}{5} =$ \ans{4}
+    \item AROC over $[5,12]$: $\dfrac{50-26}{12-5} = \dfrac{24}{7} \approx$ \ans{3.43}
+    \item \ans{$[0,5]$ has the greater AROC (4 vs.\ $\approx$3.43).
+          The function grew faster on the first interval.}
 \end{enumerate}
+
+\vspace{6pt}
+
+\textbf{2.} Water tank draining from 500 gal to 320 gal in 2 hours.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item AROC $= \dfrac{320-500}{2} = \dfrac{-180}{2} =$ \ans{$-90$ gallons per hour}
+    \item \ans{The negative sign means the water volume is \emph{decreasing} — as time
+          passes, the tank loses water at an average rate of 90 gallons per hour.}
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{3.} $p(3)=41$, $p(3.1)=42.05$, $p(3.01)=41.1005$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item AROC over $[3,3.1]$: $\dfrac{42.05-41}{0.1} = \dfrac{1.05}{0.1} =$ \ans{10.5}
+    \item AROC over $[3,3.01]$: $\dfrac{41.1005-41}{0.01} = \dfrac{0.1005}{0.01} =$ \ans{10.05}
+    \item \ans{Approximately 10} (the AROCs are converging toward 10 as the interval shrinks).
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{4.} \ans{\textbf{False.}} A negative AROC means the net change in output is
+negative over the interval — but the function could increase on part of the interval
+and decrease on another part, as long as the overall change is negative. For example,
+$f$ could rise then fall sharply, giving a negative net change but not being everywhere
+decreasing.
+
+\vspace{6pt}
+
+\textbf{5.} AROC of $q$ over $[1,9]$: $\dfrac{q(9)-q(1)}{9-1} = \dfrac{10-8}{8} = \dfrac{2}{8} = 0.25$.
+
+Correct answer: \ans{(A) --- the AROC is $0.25$ and is positive.}
 
 \begin{teachernote}
-(A) is a common distractor --- constant first differences mean \textit{linear}, not quadratic.
-(C) is also a distractor: second differences of zero are consistent with linear, not quadratic.
+(B) has the subtraction reversed. (C) confuses AROC with a simple difference. (D) is
+false — AROC is fully determined by the endpoint values.
 \end{teachernote}
 
-\end{enumerate}
+\end{notesbox}
 
-\vspace{0.15in}
+\vspace{0.1in}
 
 \begin{extensionbox}
-For $f(x) = x^3$:
+\textbf{Extension (optional) --- Key:}
 
-\smallskip
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-$x$          & 0 & 1 & 2 & 3 \\
-\hline
-$f(x)$       & 0 & 1 & 8 & 27 \\
-\hline
-1st diff.\ (AROC) & & \ans{1} & \ans{7} & \ans{19} \\
-\hline
-2nd diff.    &   & & \ans{6} & \ans{12} \\
-\hline
-3rd diff.    &   & & & \ans{6} \\
-\hline
-\end{tabular}
+\[
+    \text{AROC} = \frac{(2+h)^2 - 4}{h}
+    = \frac{4h + h^2}{h}
+    = \ans{4 + h}
+\]
 
-\medskip
-\ansline{The third differences are constant (equal to 6). The second differences form a linear pattern. This confirms that it takes 3 rounds of differencing to reach a constant for a cubic function --- consistent with its degree.}
+As $h \to 0$, the AROC approaches \ans{4}. This is the instantaneous rate of change (derivative)
+of $f(x)=x^2$ at $x=2$.
 \end{extensionbox}
 
-\vspace{0.15in}
+\vspace{0.1in}
 
 \begin{remindbox}
-\textbf{Preview:} Next lesson, we'll study polynomial functions more broadly and connect their degree to these difference patterns. How many differences do you think it takes to reach a constant for a cubic function?
+\textbf{Preview:} In Lesson 1.3, we will explore how the AROC behaves differently for
+\emph{linear} vs.\ \emph{quadratic} functions — and what it means for a function to have
+a \emph{constant} rate of change vs.\ a \emph{changing} rate of change.
 \end{remindbox}
 
 \end{document}

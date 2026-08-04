@@ -1,4 +1,4 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Group Activity (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,108 +9,118 @@
 \pageheader{Unit 1, Lesson 1.3}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.12in}
+\vspace{0.15in}
 
-\begin{scenariobox}[A Ball in Free Fall]{sky}
-A ball is dropped from a height of 144 feet. Its height above the ground (in feet) is given by
-$h(t) = 144 - 16t^2$, where $t$ is time in seconds. The table below shows heights at half-second intervals.
+\begin{scenariobox}[City Population Data]{sky}
+The table below shows the population (in thousands) of a city over several decades.
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|C{2.2cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|}
 \hline
-$t$ (sec)   & 0   & 0.5 & 1.0 & 1.5 & 2.0  & 2.5  & 3.0 \\
+\rowcolor{sky}
+\textbf{Year}       & 1970 & 1980 & 1990 & 2000 & 2010 & 2020 \\
 \hline
-$h(t)$ (ft) & 144 & 140 & 128 & 108 & 80   & 44   & 0   \\
+\textbf{Pop.\ (thousands)} & 120  & 145  & 178  & 221  & 198  & 215  \\
 \hline
 \end{tabular}
-\renewcommand{\arraystretch}{1}
+
+\vspace{4pt}
+Let $P(t)$ denote the population (in thousands) in year $t$.
 \end{scenariobox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Directions:} Compute the AROC of height over each 0.5-second interval.
+\textbf{R1.} AROC over $[1970,\,1990]$:
+\[
+    \text{AROC} = \frac{P(1990) - P(1970)}{1990 - 1970}
+    = \frac{178 - 120}{20}
+    = \frac{58}{20} = \ans{2.9} \text{ thousands per year}
+\]
 
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Interval} & \textbf{AROC (ft/sec)} \\
-\hline
-$[0,\; 0.5]$    & \ans{$-8$} \\
-$[0.5,\; 1.0]$  & \ans{$-24$} \\
-$[1.0,\; 1.5]$  & \ans{$-40$} \\
-$[1.5,\; 2.0]$  & \ans{$-56$} \\
-$[2.0,\; 2.5]$  & \ans{$-72$} \\
-$[2.5,\; 3.0]$  & \ans{$-88$} \\
-\hline
-\end{tabular}
-\renewcommand{\arraystretch}{1}
+\textbf{R2.} AROC over $[1990,\,2010]$:
+\[
+    \text{AROC} = \frac{P(2010) - P(1990)}{2010 - 1990}
+    = \frac{198 - 178}{20}
+    = \frac{20}{20} = \ans{1} \text{ thousand per year}
+\]
 
-\vspace{0.1in}
-Are the AROCs increasing or decreasing? \ans{Decreasing (becoming more negative)}
-
-\vspace{0.08in}
-What does this tell you about the ball's speed as it falls? \ansline{The ball is speeding up --- the magnitude of the AROC (speed) grows with each interval, meaning the ball falls faster and faster.}
+\textbf{R3.} \ans{1970--1990 had faster growth.} The AROC was 2.9 thousand/year during
+1970--1990 vs.\ only 1 thousand/year during 1990--2010. A larger positive AROC indicates
+faster growth.
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Approaching Proficiency},
+    title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Directions:} Using the AROCs from Tier R, compute the second differences.
+\textbf{A1.} AROC by decade:
 
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|c|c|}
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.0cm}|C{5.5cm}|C{3.0cm}|}
 \hline
-\textbf{Interval} & \textbf{AROC (first diff.)} & \textbf{Change in AROC (second diff.)} \\
+\rowcolor{sky}
+\textbf{Decade} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
 \hline
-$[0,\; 0.5]$    & \ans{$-8$}  & \\
-$[0.5,\; 1.0]$  & \ans{$-24$} & \ans{$-16$} \\
-$[1.0,\; 1.5]$  & \ans{$-40$} & \ans{$-16$} \\
-$[1.5,\; 2.0]$  & \ans{$-56$} & \ans{$-16$} \\
-$[2.0,\; 2.5]$  & \ans{$-72$} & \ans{$-16$} \\
-$[2.5,\; 3.0]$  & \ans{$-88$} & \ans{$-16$} \\
+1970 -- 1980 & $\dfrac{145-120}{10}$ & \ans{2.5} \\
+\hline
+1980 -- 1990 & $\dfrac{178-145}{10}$ & \ans{3.3} \\
+\hline
+1990 -- 2000 & $\dfrac{221-178}{10}$ & \ans{4.3} \\
+\hline
+2000 -- 2010 & $\dfrac{198-221}{10}$ & \ans{$-$2.3} \\
+\hline
+2010 -- 2020 & $\dfrac{215-198}{10}$ & \ans{1.7} \\
 \hline
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
-\vspace{0.1in}
-Are the second differences constant? \ans{Yes}
+\vspace{8pt}
+\textbf{A2.} Greatest growth: \ans{1990--2000} (AROC $= 4.3$ thousand/year).
 
-\vspace{0.08in}
-What function type does this constant second difference confirm for $h(t)$? \ansline{Quadratic --- constant nonzero second differences are the hallmark of a quadratic function.}
+\textbf{A3.} Negative decade: \ans{2000--2010}. A negative AROC means \ans{the population
+decreased — as the year increased, the population went down (from 221 to 198 thousand).}
 \end{tcolorbox}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extension},
+    title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{Directions:} Use the constant second difference you found to \textit{predict} the AROC on $[3.0, 3.5]$ without computing from the formula. Then verify.
+\textbf{E1.} AROC near $t = 2010$:
 
-\vspace{0.06in}
-\textbf{Prediction:} The AROC on $[2.5, 3.0]$ is \ans{$-88$}. The constant second difference is \ans{$-16$}.
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{|C{3.2cm}|C{5.5cm}|C{3.2cm}|}
+\hline
+\rowcolor{sky}
+\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
+\hline
+$[2005,\;2010]$ & $\dfrac{198-210}{5}$ & \ans{$-$2.4} \\
+\hline
+$[2008,\;2010]$ & $\dfrac{198-206}{2}$ & \ans{$-$4} \\
+\hline
+$[2009,\;2010]$ & $\dfrac{198-200}{1}$ & \ans{$-$2} \\
+\hline
+$[2009.5,\;2010]$ & $\dfrac{198-199}{0.5}$ & \ans{$-$2} \\
+\hline
+\end{tabular}
 
-Therefore, I predict the AROC on $[3.0, 3.5]$ is \ans{$-88 + (-16) = -104$ ft/sec}.
+\vspace{8pt}
+\textbf{E2.} The AROC appears to approach approximately \ans{$-$2 thousand/year}.
 
-\vspace{0.1in}
-\textbf{Verification:} $h(3.5) = 144 - 16(3.5)^2 = 144 - 196 = -52$ ft. Since this is below ground, the ball has already landed, but the formula gives the AROC as $\dfrac{-52 - 0}{0.5} = -104$ ft/sec.
-
-Actual AROC: \ans{$-104$ ft/sec} \quad Does it match your prediction? \ans{Yes}
-
-\vspace{0.1in}
-\textbf{Physics connection:}
-
-\ansline{Gravity provides a constant downward acceleration (approximately $32$ ft/sec$^2$). A constant acceleration means the velocity changes by the same amount in each equal time interval, which produces constant second differences in position data.}
+\textbf{E3.} \ans{Limitation: we only have discrete data points, so we can't actually
+shrink the interval to zero — there are no data values between the given years. An interval
+of length 0 would require dividing by zero, which is undefined. In calculus, the limit
+of these AROCs (as the interval length approaches 0) is the derivative, but with discrete
+data we can only approximate it.}
 \end{tcolorbox}
 
 \end{document}

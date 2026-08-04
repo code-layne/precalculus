@@ -1,4 +1,4 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Homework
+%! Rates of Change — Unit 1, Lesson 1.3 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,115 +9,118 @@
 \pageheader{Unit 1, Lesson 1.3}{Homework}
 \namedateperiod
 
-\vspace{0.12in}
-
-\begin{enumerate}[leftmargin=1.5em, itemsep=14pt]
-
-\item For $f(x) = -2x + 5$, compute the AROC on each interval below.
-Are the AROCs constant? What is the slope of $f$?
-
-\smallskip
-\begin{tabular}{|l|c|}
-\hline
-\textbf{Interval} & \textbf{AROC} \\
-\hline
-$[0, 1]$ & \blank{2.5cm} \\
-$[1, 2]$ & \blank{2.5cm} \\
-$[2, 3]$ & \blank{2.5cm} \\
-\hline
-\end{tabular}
-
-\vspace{0.05in}
-Are the AROCs constant? \blank{2cm} \quad Slope of $f$: \blank{2cm}
-
-\vspace{0.3in}
-
-\item For $g(x) = x^2 - 3x$, compute the AROC on $[0,1]$, $[1,2]$, and $[2,3]$. Then compute the second differences.
-
-\smallskip
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Interval} & \textbf{AROC} & \textbf{Second Difference} \\
-\hline
-$[0, 1]$ & \blank{2.5cm} & \\
-$[1, 2]$ & \blank{2.5cm} & \blank{2.5cm} \\
-$[2, 3]$ & \blank{2.5cm} & \blank{2.5cm} \\
-\hline
-\end{tabular}
-
-\vspace{0.3in}
-
-\item The table of values is shown below. Determine whether the data could represent a linear, quadratic, or neither function type, based on first and second differences. Justify your answer.
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$y$ & 3 & 7 & 13 & 21 & 31 \\
-\hline
-\end{tabular}
-
-\vspace{0.55in}
-
-\item The AROC of a function is increasing as $x$ increases. Is the graph concave up or concave down? Explain.
-
-\vspace{0.5in}
-
-\item \textbf{AP-style:} The table shows values of a function $f$.
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$    & 1 & 2 & 3 & 4 \\
-\hline
-$f(x)$ & 5 & 8 & 11 & 14 \\
-\hline
-\end{tabular}
-
-\medskip
-Which of the following best describes the function $f$?
-
-\begin{enumerate}[label=(\Alph*), itemsep=3pt]
-  \item $f$ is quadratic because the first differences are constant.
-  \item $f$ is linear because the first differences are constant.
-  \item $f$ is quadratic because the second differences are constant.
-  \item $f$ is neither linear nor quadratic because the second differences are not zero.
-\end{enumerate}
-
-\end{enumerate}
-
 \vspace{0.15in}
 
-\begin{extensionbox}
-For $f(x) = x^3$, compute the function values at $x = 0, 1, 2, 3, 4$ and fill in the table.
+\begin{notesbox}{Practice}
 
-\smallskip
-\begin{tabular}{|l|c|c|c|c|}
+\textbf{1.} The table shows selected values of a function $f$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
 \hline
-$x$          & 0 & 1 & 2 & 3 \\
+\rowcolor{sky}
+$x$    & 0  & 2  & 5  & 8  & 12 \\
 \hline
-$f(x)$       & 0 & 1 & 8 & 27 \\
-\hline
-1st diff.\ (AROC) & & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-2nd diff.    &   & & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-3rd diff.    &   & & & \blank{1.5cm} \\
+$f(x)$ & 6  & 14 & 26 & 38 & 50 \\
 \hline
 \end{tabular}
 
-\medskip
-What patterns do you notice? What function type do you think describes the second differences?
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of $f$ over $[0,\,5]$. \writeline
+    \item Compute the AROC of $f$ over $[5,\,12]$. \writeline
+    \item Which interval has the greater average rate of change?
+          What does this tell you about the function? \writeline
+\end{enumerate}
 
-\writeline
+\vspace{6pt}
+
+\textbf{2.} A water tank is draining. At 8:00 a.m.\ it holds 500 gallons; at
+10:00 a.m.\ it holds 320 gallons.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of the water volume over the 2-hour period.
+          Include units. \writeline
+    \item Interpret the sign of your answer in context: what does it mean that the
+          AROC is negative? \writeline
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{3.} A function $p$ has the values: $p(3) = 41$, $p(3.1) = 42.05$,
+$p(3.01) = 41.1005$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+    \item Compute the AROC of $p$ over $[3,\,3.1]$. \writeline
+    \item Compute the AROC of $p$ over $[3,\,3.01]$. \writeline
+    \item Based on your answers, approximate the rate of change of $p$
+          \emph{at} $x = 3$. \writeline
+\end{enumerate}
+
+\vspace{6pt}
+
+\textbf{4.} \textbf{True or False} — circle your answer, then explain.
+
+\medskip
+\textit{``A negative average rate of change means the function must be decreasing
+on the entire interval.''}
+
+\medskip
+\textbf{True} \quad / \quad \textbf{False}
+
+\writeline\writeline
+
+\vspace{6pt}
+
+\textbf{5.} (AP-Style) The table below gives values of a function $q$.
+
+\vspace{4pt}
+\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\hline
+\rowcolor{sky}
+$x$    & 1 & 3 & 5 & 9 \\
+\hline
+$q(x)$ & 8 & 2 & 6 & 10 \\
+\hline
+\end{tabular}
+
+\vspace{6pt}
+Which of the following best describes the AROC of $q$ over $[1,\,9]$?
+
+\begin{enumerate}[label=(\Alph*), itemsep=3pt]
+    \item The AROC is $\dfrac{10-8}{9-1} = 0.25$ and is positive.
+    \item The AROC is $\dfrac{8-10}{9-1} = -0.25$ and is negative.
+    \item The AROC is 2 because $q$ increases by 2 on average.
+    \item The AROC cannot be determined from this table.
+\end{enumerate}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\textbf{Extension (optional):} Let $f(x) = x^2$. Compute the AROC of $f$ over the
+interval $[2,\,2+h]$ for $h \neq 0$.
+
+\[
+    \text{AROC} = \frac{f(2+h) - f(2)}{h}
+    = \frac{(2+h)^2 - 4}{h}
+    = \frac{4 + 4h + h^2 - 4}{h}
+    = \frac{4h + h^2}{h}
+    = \hphantom{000}
+\]
+
+What value does this AROC approach as $h$ gets closer and closer to 0?
+
 \writeline
 \end{extensionbox}
 
-\vspace{0.15in}
+\vspace{0.1in}
 
 \begin{remindbox}
-\textbf{Preview:} Next lesson, we'll study polynomial functions more broadly and connect their degree to these difference patterns. How many differences do you think it takes to reach a constant for a cubic function?
+\textbf{Preview:} In Lesson 1.3, we will explore how the AROC behaves differently for
+\emph{linear} vs.\ \emph{quadratic} functions — and what it means for a function to have
+a \emph{constant} rate of change vs.\ a \emph{changing} rate of change.
 \end{remindbox}
 
 \end{document}

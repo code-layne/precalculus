@@ -1,4 +1,4 @@
-%! Rates of Change — Unit 1, Lesson 1.2 — Guided Notes (Answer Key)
+%! Change in Tandem — Unit 1, Lesson 1.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,137 +9,148 @@
 \pageheader{Unit 1, Lesson 1.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
 \begin{objectivebox}
-\textbf{LO 1.2.A:} Compare the rates of change at two points using average rates of change
-near the points.\quad \ansline{AROC over small intervals approximates ROC at a point; compare by computing.}
-
-\textbf{LO 1.2.B:} Describe how two quantities vary together at different points and over
-different intervals of a function.\quad \ansline{Sign and magnitude of AROC describe co-variation direction and speed.}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Describe how the input and output values of a function vary together, and identify
+        intervals where the function is \ans{increasing} or \ans{decreasing}. \hfill\textit{(LO 1.1.A)}
+  \item Construct a graph representing two quantities varying together in context, and identify
+        where the graph is concave \ans{up} or concave \ans{down}. \hfill\textit{(LO 1.1.B)}
+\end{enumerate}
 \end{objectivebox}
 
 \vspace{0.1in}
 
 \begin{vocabbox}
-\noindent\textbf{\textcolor{navy}{average rate of change (AROC):}}\\[1pt]
-\ansline{The ratio $\dfrac{f(b)-f(a)}{b-a}$ — the constant rate that produces the same net change in output over the interval $[a,b]$; equals the slope of the secant line.}\\[2pt]
-
-\noindent\textbf{\textcolor{navy}{rate of change at a point:}}\\[1pt]
-\ansline{The instantaneous rate of change at $x=c$, approximated by computing AROC over successively smaller intervals containing $c$.}
+\noindent\textbf{\textcolor{navy}{function:}}\\[1pt]
+\ansline{A rule that assigns each input exactly one output.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{domain (independent variable):}}\\[1pt]
+\ansline{The set of all allowable inputs; the independent variable; plotted on the horizontal axis.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{range (dependent variable):}}\\[1pt]
+\ansline{The set of all possible outputs; the dependent variable; plotted on the vertical axis.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{increasing:}}\\[1pt]
+\ansline{$f$ is increasing on an interval if $a < b$ implies $f(a) < f(b)$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{decreasing:}}\\[1pt]
+\ansline{$f$ is decreasing on an interval if $a < b$ implies $f(a) > f(b)$.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{concave up:}}\\[1pt]
+\ansline{The rate of change is increasing on that interval; the graph curves upward like a bowl.}\\[3pt]
+\noindent\textbf{\textcolor{navy}{concave down:}}\\[1pt]
+\ansline{The rate of change is decreasing on that interval; the graph curves downward like a hill.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
 \begin{hookbox}
-\textit{You're driving on the highway. Your GPS says your average speed over the last
-hour was 62 mph. Were you always going exactly 62 mph? What does ``average'' mean here?}
+A car pulls away from a stop sign. Consider two quantities: the car's \textit{speed} and
+the car's \textit{distance from the sign}, both as functions of time.
 
-\medskip
-The average speed is the \ans{one constant} speed that covers the \ans{same total} distance in the
-\ans{same} time. This is the key idea behind average rate of change.
+Without drawing, describe in words what each relationship looks like:
+\ansline{Speed starts at 0 and increases (concave up at first as the car accelerates). Distance also starts at 0 and increases; the graph is concave up because the car covers more ground each second.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{Average Rate of Change}
-The \textbf{average rate of change (AROC)} of a function $f$ over the interval $[a,b]$ is:
-
-\[
-    \text{AROC} = \frac{\Delta f}{\Delta x}
-    = \frac{f(b) - f(a)}{b - a}
-\]
-
-\vspace{4pt}
-Label: the numerator represents \ans{change in output ($\Delta f$)}; the denominator represents \ans{change in input ($\Delta x$)}.
+\begin{notesbox}{Functions \& Covariation}
+A \textbf{function} is a rule that assigns each \ans{input} exactly \ans{one} output.
 
 \medskip
-Geometrically, the AROC equals the slope of the \ans{secant} line through
-$(a,\,f(a))$ and $(b,\,f(b))$.
+\textbf{Example 1 (Numerical).} A tank is being filled with water.
 
-\medskip\textbf{Worked Example.} The table gives values of a function $h$.
-
-\vspace{4pt}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\smallskip
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-$x$    & 1  & 2  & 4  & 7 \\
+Time $t$ (min)   & 0 & 2 & 4 & 6 \\
 \hline
-$h(x)$ & 3  & 7  & 11 & 20 \\
+Volume $V$ (gal) & 0 & 8 & 16 & 24 \\
 \hline
 \end{tabular}
+\smallskip
 
-\vspace{6pt}
-Compute the AROC of $h$ over $[1,\,4]$:
-\[
-    \text{AROC} = \frac{h(4) - h(1)}{4 - 1}
-    = \frac{11 - 3}{4 - 1}
-    = \frac{8}{3} \approx \ans{2.67}
-\]
+\begin{itemize}
+  \item The \textbf{independent variable} (input) is \ans{time $t$}.
+  \item The \textbf{dependent variable} (output) is \ans{volume $V$}.
+  \item Domain: \ans{$[0, 6]$} \quad Range: \ans{$[0, 24]$}
+  \item As $t$ increases, $V$ \ans{increases}. The function is \ans{increasing} on $[0, 6]$.
+\end{itemize}
 
-Interpretation: for every 1-unit increase in $x$, $h$ increases by approximately
-\ans{2.67}.
+\medskip
+\textbf{Example 2 (Verbal).} A hiker's elevation above sea level starts at 500 ft, rises steeply to
+2{,}400 ft over the first 2 hours, continues rising more gradually to 2{,}800 ft by hour 4, then
+descends back to 500 ft by hour 7.
+
+\begin{itemize}
+  \item Elevation is \textbf{increasing} on the interval \ans{$[0, 4]$}.
+  \item Elevation is \textbf{decreasing} on the interval \ans{$[4, 7]$}.
+  \item The domain of the hiker's elevation function (based on this description) is \ans{$[0, 7]$}.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\begin{notesbox}{Approximating Rate of Change at a Point}
-The AROC over a \textbf{small} interval containing $x = c$ approximates the
-\textbf{rate of change at the point} $x = c$.
+\begin{notesbox}{Increasing, Decreasing, \& Concavity}
+\textbf{Formal Definitions:}
+
+A function $f$ is \textbf{increasing} on an interval if, for any $a < b$ in that interval,
+$f(a)$ \ans{$<$} $f(b)$.
+
+A function $f$ is \textbf{decreasing} on an interval if, for any $a < b$ in that interval,
+$f(a)$ \ans{$>$} $f(b)$.
 
 \medskip
-\textbf{Example.} Approximate the rate of change of $h$ at $x = 2$.
+\textbf{Concavity} describes whether the rate of change is itself increasing or decreasing:
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.8cm}|C{4.5cm}|C{3.8cm}|}
+\begin{itemize}
+  \item \textbf{Concave up:} the rate of change is \ans{increasing}
+        (graph curves like a bowl that opens \ans{upward}).
+  \item \textbf{Concave down:} the rate of change is \ans{decreasing}
+        (graph curves like a hill that opens \ans{downward}).
+\end{itemize}
+
+\medskip
+\textbf{Hiker example continued.} The table below shows elevation at each hour.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC value} \\
+Hour $t$          & 0   & 1     & 2     & 3     & 4     & 5     & 6     & 7 \\
 \hline
-$[2,\;2.5]$ & $\dfrac{h(2.5)-h(2)}{2.5-2}$ & \ans{4} \\
+Elevation $E$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
 \hline
-$[2,\;2.1]$ & $\dfrac{h(2.1)-h(2)}{2.1-2}$ & \ans{4} \\
-\hline
-$[2,\;2.01]$ & $\dfrac{h(2.01)-h(2)}{2.01-2}$ & \ans{4} \\
+Change per hour   & --- & \ans{+1200} & \ans{+700} & \ans{+300} & \ans{+100} & \ans{$-$400} & \ans{$-$1000} & \ans{$-$900} \\
 \hline
 \end{tabular}
+\smallskip
+
+On $[0, 4]$, the changes per hour are \ans{decreasing (1200, 700, 300, 100)}, so the graph is concave \ans{down}.\\
+On $[4, 7]$, the changes per hour are \ans{more negative each hour}, so the graph is concave \ans{down} on $[4,6]$.
 
 \begin{teachernote}
-$h(2.5)=9$: AROC $=(9-7)/0.5=4$. $h(2.1)=7.4$: AROC $=0.4/0.1=4$. $h(2.01)=7.04$: AROC $=0.04/0.01=4$. All equal 4, consistent with $h$ having slope 4 near $x=2$.
+  On $[4, 7]$: changes are $-400, -1000, -900$. The magnitude increases then slightly decreases at the end ---
+  accept concave down on $[4, 6]$ (becoming steeper) and note the irregularity from $6$ to $7$.
+  The main takeaway: the descent accelerates, which is concave down.
 \end{teachernote}
-
-\vspace{4pt}
-As the interval shrinks, the AROC appears to approach \ans{4}.
-This value approximates the rate of change of $h$ \textbf{at} $x = 2$.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{Sign of Rate of Change}
-\begin{tabular}{@{}p{0.46\linewidth}p{0.46\linewidth}@{}}
-\textbf{Positive AROC:} & \textbf{Negative AROC:} \\[2pt]
-As $x$ \ans{increases}, $f(x)$ \ans{increases}. & As $x$ \ans{increases}, $f(x)$ \ans{decreases}. \\[4pt]
-The function is \ans{increasing} on the interval. & The function is \ans{decreasing} on the interval. \\[4pt]
-\textit{Example:} \ans{temperature rising} & \textit{Example:} \ans{elevation decreasing} \\
-\end{tabular}
 \end{notesbox}
 
 \vspace{0.1in}
 
 \begin{practicebox}
-\textbf{1.} Compute the AROC over $[2,\,7]$:
-$\dfrac{h(7)-h(2)}{7-2} = \dfrac{20-7}{5} = \dfrac{13}{5} =$ \ans{2.6}.
-This is \ans{less} than AROC over $[1,4] \approx 2.67$. The function grew slightly faster
-on $[1,4]$ than on $[2,7]$.
+\begin{enumerate}[itemsep=8pt]
+  \item For the hiker's elevation function above, state all intervals where $E$ is increasing,
+        all intervals where $E$ is decreasing, and the domain and range.
 
-\writeline
+        Increasing: \ans{$[0, 4]$} \quad Decreasing: \ans{$[4, 7]$}
 
-\textbf{2.} \ans{Decreases.} A negative AROC means $f(b)-f(a) < 0$, so $f(b) < f(a)$ —
-the output went down as the input went from 0 to 5.
+        Domain: \ans{$[0, 7]$} \quad Range: \ans{$[500, 2800]$}
 
-\writeline
+  \item The graph of a function $g$ is concave up on $[1, 5]$. A classmate says "that means $g$ is
+        increasing on $[1, 5]$." Is the classmate correct? Explain.
+
+        \vspace{0.1in}
+        \ansline{No. Concave up means the rate of change is increasing, not that the function itself is increasing. For example, a function could be decreasing but slowing down (becoming less negative) --- that would be concave up but still decreasing.}
+\end{enumerate}
 \end{practicebox}
 
 \end{document}

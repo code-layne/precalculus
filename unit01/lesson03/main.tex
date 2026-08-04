@@ -1,4 +1,4 @@
-%! Rates of Change in Linear and Quadratic Functions — Unit 1, Lesson 1.3 — Lesson Plan
+%! Rates of Change — Unit 1, Lesson 1.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,7 +9,7 @@
 \newcommand{\SchoolYear}{2026--2027}
 \newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.3: Rates of Change in Linear and Quadratic Functions}
+\newcommand{\LessonNumberName}{Lesson 1.3: Rates of Change}
 
 \begin{document}
 \begin{center}
@@ -19,169 +19,178 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will determine how average rates of change behave
-    for linear and quadratic functions, connecting the pattern of successive AROCs to the
-    concavity of the graph.
-    \hfill\textit{\small Skills: MP 3.B, 3.C}
+    \textbf{Primary Objective:} Students will compute and interpret average rates of change
+    over an interval, approximate the instantaneous rate of change at a point, and use the
+    sign of the rate of change to describe how two quantities co-vary. (MP 2.A, 3.A)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
-\textbf{Key Understandings} \\
-\midrule
-\textbf{MP 3.B} --- Apply numerical results in a mathematical or applied context.
-
-\medskip
-\textbf{MP 3.C} --- Support conclusions with a logical rationale or appropriate data. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item For a linear function, the AROC is constant over \textit{any} interval. (1.3.A.1)
-  \item For a quadratic function, successive equal-length AROCs form a linear pattern. (1.3.A.2)
-  \item The AROC over $[a,b]$ equals the slope of the secant line through $(a,f(a))$ and $(b,f(b))$. (1.3.A.3)
-  \item Linear functions: the AROCs change at a rate of zero (second differences $= 0$). (1.3.B.1)
-  \item Quadratic functions: the AROCs change at a constant nonzero rate (second differences constant). (1.3.B.2)
-  \item Increasing AROCs $\Rightarrow$ concave up; decreasing AROCs $\Rightarrow$ concave down. (1.3.B.3)
-\end{itemize} \\
-\end{tabularx}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{\color{navy}Mathematical Practices}
+    \begin{itemize}
+        \item \textbf{MP 2.A} — Identify information from representations (tables, graphs,
+              verbal descriptions) to answer a question or construct a model.
+        \item \textbf{MP 3.A} — Describe characteristics of a function, including rate of
+              change, sign, and how two quantities vary together.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+    \textbf{\color{navy}Key Understandings}
+    \begin{itemize}
+        \item AROC $= \dfrac{\Delta y}{\Delta x} = \dfrac{f(b)-f(a)}{b-a}$ is the constant
+              rate that produces the same net change over $[a,b]$.
+        \item The rate of change \emph{at a point} can be approximated by computing AROC
+              over successively smaller intervals containing that point.
+        \item A \emph{positive} AROC means the output increases as the input increases;
+              a \emph{negative} AROC means the output decreases as the input increases.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-secant line       & The line through two points on a graph, $(a, f(a))$ and $(b, f(b))$; its slope equals the AROC over $[a,b]$. \\
-first differences & The successive AROCs computed over consecutive equal-length intervals. \\
-second differences & The differences of consecutive first differences; constant for quadratic functions. \\
-constant rate of change & A rate that does not vary over any interval; characteristic of linear functions. \\
-\end{tabularx}
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textbf{average rate of change (AROC)} — the ratio $\dfrac{f(b)-f(a)}{b-a}$
+          representing the constant rate that yields the same change in output over
+          the interval $[a,b]$.
+    \item \textbf{secant line} — the line through $(a,f(a))$ and $(b,f(b))$; its slope
+          equals the AROC over $[a,b]$.
+    \item \textbf{rate of change at a point} — the instantaneous rate of change, approximated
+          by AROC over small intervals containing the point.
+    \item \textbf{positive / negative rate of change} — a positive ROC means the two
+          quantities change in the \emph{same} direction; a negative ROC means they change
+          in \emph{opposite} directions.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
     \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached spiral review.
-            Skills reviewed: computing AROC (Lesson 1.2), slope of a line,
-            distinguishing linear from quadratic functions.
+        \begin{minipage}[t]{0.72\linewidth}\vspace{0pt}
+            Please see attached spiral review (Warm-Up). Skills reviewed:
+            \begin{itemize}
+                \item Slope formula: $m = \dfrac{y_2-y_1}{x_2-x_1}$
+                \item Evaluating functions from tables and graphs
+                \item Identifying increasing/decreasing intervals (Lesson 1.1)
+            \end{itemize}
         \end{minipage}
         &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
+        \begin{minipage}[t]{0.22\linewidth}\vspace{0pt}\centering
+            % Authored warm-up compiles to target/; no source PDF to embed.
         \end{minipage}
     \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    We computed one AROC last lesson.
-    \textbf{What if we compute many in a row for $f(x) = x^2$?}
-
-    \smallskip
-    \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    $x$    & 0 & 1 & 2 & 3 & 4 \\
-    \hline
-    $f(x)$ & 0 & 1 & 4 & 9 & 16 \\
-    \hline
-    \end{tabular}
-
-    \smallskip
-    Compute the AROC on $[0,1]$, $[1,2]$, $[2,3]$, $[3,4]$.
-    \textit{Discussion:} ``What pattern do you notice in those four numbers?
-    What do you think the AROC on $[4,5]$ will be?''
+    \textbf{Scenario (2 min):} ``You're driving on the highway. Your GPS says your average
+    speed over the last hour was 62 mph. Were you always going exactly 62 mph? What does
+    `average' mean here?''
 
     \medskip
-    Use student responses to motivate the ideas of \emph{first differences} and \emph{second differences}.
+    Facilitate a brief discussion: students will likely note that speed varied — sometimes
+    faster, sometimes slower. The average speed is the \emph{one constant speed} that would
+    cover the same distance in the same time. This is exactly what AROC captures.
+    Transition: ``Today we'll make this idea precise and apply it to any function.''
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{sky}
-\begin{multicols}{2}
+    \textbf{Part 1 — Derive and define AROC (10 min)}
 
-\textbf{Part 1: AROC of Linear Functions} (10 min)
+    Write the slope formula on the board; ask: ``What if the two points lie on a curve, not
+    a line?'' Build AROC $= \dfrac{f(b)-f(a)}{b-a} = \dfrac{\Delta f}{\Delta x}$.
+    Label: numerator $=$ change in output, denominator $=$ change in input. Emphasize that
+    AROC equals the \emph{slope of the secant line} connecting the two points.
 
-Use $f(x) = 2x + 1$. Build a table together on the board:
+    \medskip\textbf{Part 2 — Compute AROC from tables and graphs (12 min)}
 
-\smallskip
-\begin{tabular}{|c|c|c|}
-\hline
-Interval & $\Delta f$ & AROC \\
-\hline
-$[0,1]$ & $3-1=2$ & 2 \\
-$[1,2]$ & $5-3=2$ & 2 \\
-$[2,3]$ & $7-5=2$ & 2 \\
-\hline
-\end{tabular}
-\smallskip
+    \begin{multicols}{2}
+    Display a table of population data (as in the Group Activity). Model: compute AROC
+    over 1990--2000, then 2000--2010. Ask: ``Which decade saw faster growth? How do you
+    know?'' Have students compute AROC over 2010--2020 individually. Cold-call to share.
 
-Ask: \textbf{``Why is the AROC always the same for a linear function?''}
-(The slope of the secant line between any two points on a line is the slope of the line.)
+    \columnbreak
+    Then show a graph of a function. Ask students to estimate AROC between two labeled
+    points by reading coordinates. Discuss how a steeper secant line corresponds to a larger
+    (in absolute value) AROC.
+    \end{multicols}
 
-Second differences = $2 - 2 = 0$: linear $\Rightarrow$ zero second differences.
+    \textbf{Part 3 — Approximate ROC at a point (10 min)}
 
-\columnbreak
+    Present the question: ``What is the rate of change of the population \emph{at} 2010,
+    not just over an interval?'' Build a table of AROC over shrinking intervals:
+    $[2005,2010]$, $[2008,2010]$, $[2009,2010]$, $[2009.5,2010]$. Students fill in the
+    table from the Guided Notes. Observe: AROC approaches a limiting value. That limiting
+    value approximates the ROC at a point. Connect to vocabulary: rate of change at a
+    point, secant lines approaching a tangent.
 
-\textbf{Part 2: AROC of Quadratic Functions} (12 min)
+    \medskip\textbf{Part 4 — Sign of rate of change (8 min)}
 
-Use $f(x) = x^2$. First differences (AROCs over unit intervals):
-$1, 3, 5, 7, \ldots$ --- ask: \textbf{``What kind of pattern is this?''}
-
-Second differences: $3-1=2$, $5-3=2$, $7-5=2$ --- constant.
-
-\textit{Key takeaway:} For a quadratic function the first differences form a linear (arithmetic) sequence; the second differences are constant and nonzero.
-
-\textbf{Part 3: Secant Lines \& Concavity} (8 min)
-
-Secant line through $(1,1)$ and $(3,9)$: slope $= \frac{9-1}{3-1} = 4$.
-This is exactly the AROC on $[1,3]$.
-
-\textbf{Concavity connection:} Since the first differences of $f(x)=x^2$ are increasing ($1 < 3 < 5 < 7$), the graph is \emph{concave up}. If first differences were decreasing, the graph would be concave down.
-
-\end{multicols}
+    Discuss: if AROC is positive, what does that tell you about the two quantities? Negative?
+    Use real-world examples: temperature rising (positive), elevation decreasing as you walk
+    downhill (negative). Students fill in the sign-of-ROC section of the notes.
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and the activity, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} Students compute $f(b) - f(a)$ but forget to divide by $b - a$.
-        Cold-call: ``The change in output from $x=2$ to $x=4$ is 12. What is the AROC?''
-  \item \textbf{Common error:} Students think a quadratic AROC is constant (confusing with linear).
-        Ask: ``Are your first differences for $x^2$ the same each time? What about the \emph{differences} of those differences?''
-  \item \textbf{Notation:} Watch for students writing ``AROC = 3, 5, 7'' without labeling intervals.
-  \item \textbf{Cold-call:} ``How do you know from a table alone whether a function is linear or quadratic?''
-\end{itemize}
+    \textbf{During Part 1:} Are students correctly identifying $a$, $b$, $f(a)$, $f(b)$
+    from a table? Watch for subtraction-order errors ($f(b)-f(a)$ in numerator vs.\
+    $b-a$ in denominator).
+
+    \medskip\textbf{During Part 2:} Do students recognize that ``greater AROC'' means
+    steeper secant line? Ask: ``What would a zero AROC tell you about the function?''
+
+    \medskip\textbf{During Part 3:} Are students seeing the pattern of the AROC values
+    converging? Ask: ``Why do smaller intervals give a better approximation?''
+
+    \medskip\textbf{Cold-call prompts:}
+    \begin{itemize}
+        \item ``Give me the units of this AROC. What do those units mean in context?''
+        \item ``If AROC is negative, what does that say about the shape of the function
+              on that interval?''
+    \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Falling Ball} in leveled tiers.
-All tiers use height data from $h(t) = 144 - 16t^2$ at half-second intervals.
+    Students work in groups on the Group Activity (city population context).
 
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Compute the AROC of height over each 0.5-second interval.
-        Identify whether AROCs are increasing or decreasing. Interpret what this says about the ball's speed.
-  \item \textbf{Tier A (Apply):} Compute first differences and second differences. Show second differences are constant.
-        Identify the function type from this pattern.
-  \item \textbf{Tier E (Extend):} Use the constant second difference to predict the AROC on $[3.0, 3.5]$
-        without computing from the formula. Verify. Connect constant second differences to constant acceleration.
-\end{itemize}
+    \textbf{Tier R (Remediate):} Compute AROC over two given intervals; determine which
+    interval has greater growth rate. Scaffolded formula with blanks.
+
+    \textbf{Tier A (Apply):} Compute AROC over multiple decades, compare growth rates,
+    interpret negative AROC; identify the decade of fastest growth.
+
+    \textbf{Tier E (Extend):} Approximate instantaneous ROC at a given year using
+    successively smaller intervals; reflect on the limitations of the approximation.
+
+    \medskip\textbf{Support:} Remind Tier R groups that AROC $= \dfrac{f(b)-f(a)}{b-a}$
+    is just slope with function notation. Let them label $a, b, f(a), f(b)$ before computing.
+
+    \textbf{Challenge:} Ask Tier E groups: ``What happens if you try to use an interval
+    of length 0? What mathematical operation does that resemble?'' (Preview of limits.)
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item A table of values for $h(x)$: compute consecutive AROCs, check second differences, identify function type.
-  \item For a linear function with AROC $= 4$ on $[2,5]$: state the AROC on $[5,10]$ and justify.
-\end{enumerate}
-\textbf{Assessment note:} Look for students explaining \textit{why} the AROC is constant for linear functions
-(not just observing that it is). Quadratic identification should cite constant second differences, not just guess.
+    \textbf{Exit Ticket (5 min):} Two questions.
+    \begin{enumerate}
+        \item Given $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$: compute AROC from $x=2$ to
+              $x=5$; then approximate the ROC at $x=5$ using the interval $[5,5.1]$.
+        \item AROC of $g$ from $x=0$ to $x=3$ is $-4$. Describe what this tells you
+              about how $g$'s output changes.
+    \end{enumerate}
+    \textbf{Look for:} correct formula application, correct arithmetic, and whether
+    students can articulate the meaning of a negative AROC in words.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems --- constant AROC verification for a linear function, first and second differences
-for a quadratic, table-based function-type identification, concavity reasoning from AROC patterns, and one
-AP-style MC using a table of values.
+    \textbf{Homework:} 5 problems covering AROC from tables and context, approximating
+    ROC at a point, and a True/False interpretation question. An AP-style MC problem
+    comparing rates of change from a table is included.
 
-\textbf{Extension (optional):} Students explore $f(x) = x^3$ and compute first, second, and third differences,
-predicting what function type governs the second differences.
+    \textbf{Extension:} For $f(x)=x^2$, compute AROC over $[2,2+h]$ and let $h\to 0$.
+    What value does the AROC approach? (Connects to the derivative at $x=2$.)
 
-\textbf{Preview:} Next lesson, we study polynomial functions more broadly and connect a polynomial's degree
-to the number of differences needed to reach a constant.
+    \textbf{Preview:} Next lesson (1.3) examines how AROC behaves differently for linear
+    vs.\ quadratic functions — specifically, what ``constant rate of change'' and
+    ``changing rate of change'' mean geometrically and numerically.
 \end{skillbox}
 \end{document}

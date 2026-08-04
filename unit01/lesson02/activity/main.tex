@@ -1,4 +1,4 @@
-%! Rates of Change — Unit 1, Lesson 1.2 — Group Activity
+%! Change in Tandem — Unit 1, Lesson 1.2 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,130 +9,129 @@
 \pageheader{Unit 1, Lesson 1.2}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-\begin{scenariobox}[City Population Data]{sky}
-The table below shows the population (in thousands) of a city over several decades.
+\begin{scenariobox}[Hiker's Elevation]{sky}
+\small
+A hiker records their elevation above sea level (in feet) at the end of each hour during a
+7-hour trail hike. The data is shown in the table below.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|C{2.2cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|}
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-\textbf{Year}       & 1970 & 1980 & 1990 & 2000 & 2010 & 2020 \\
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \hline
-\textbf{Pop.\ (thousands)} & 120  & 145  & 178  & 221  & 198  & 215  \\
+\textbf{Elevation} $E(t)$ (ft) & 500 & 1{,}700 & 2{,}400 & 2{,}700 & 2{,}800 & 2{,}400 & 1{,}400 & 500 \\
 \hline
 \end{tabular}
-
-\vspace{4pt}
-Let $P(t)$ denote the population (in thousands) in year $t$.
 \end{scenariobox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{R1.} Compute the AROC of the population over the interval $[1970,\,1990]$.
-Use the formula $\text{AROC} = \dfrac{P(b)-P(a)}{b-a}$.
+\begin{enumerate}[itemsep=8pt]
+  \item What are the \textbf{domain} and \textbf{range} of $E$ based on the table?
 
-\[
-    \text{AROC} = \frac{P(\hphantom{0000}) - P(\hphantom{0000})}{\hphantom{0000} - \hphantom{0000}}
-    = \frac{\hphantom{000} - \hphantom{000}}{\hphantom{0000}}
-    = \hphantom{000} \text{ thousands per year}
-\]
+        Domain: \blank{4cm} \qquad Range: \blank{4cm}
 
-\vspace{6pt}
-\textbf{R2.} Compute the AROC over $[1990,\,2010]$.
+  \item On the interval $[0, 4]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        Circle one: \quad \textbf{Increasing} \quad / \quad \textbf{Decreasing}
 
-\[
-    \text{AROC} = \frac{P(\hphantom{0000}) - P(\hphantom{0000})}{\hphantom{0000} - \hphantom{0000}}
-    = \hphantom{0000} \text{ thousands per year}
-\]
+  \item On the interval $[4, 7]$, is the elevation \textbf{increasing} or \textbf{decreasing}?
+        Circle one: \quad \textbf{Increasing} \quad / \quad \textbf{Decreasing}
 
-\vspace{6pt}
-\textbf{R3.} During which time period did the population grow \emph{faster}?
-How do you know?
-
-\writeline\writeline
+  \item At what hour does the hiker reach the highest elevation? \blank{2cm}
+        What is that elevation? \blank{2cm}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Apply},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{A1.} Compute the AROC for each decade in the table. Fill in the table.
+\begin{enumerate}[itemsep=8pt]
+  \item Compute the change in elevation per hour for each consecutive pair of hours.
+        Record in the table.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.0cm}|C{5.5cm}|C{3.0cm}|}
-\hline
-\rowcolor{sky}
-\textbf{Decade} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
-\hline
-1970 -- 1980 & $\dfrac{P(1980)-P(1970)}{10}$ & \blank{2cm} \\
-\hline
-1980 -- 1990 & $\dfrac{P(1990)-P(1980)}{10}$ & \blank{2cm} \\
-\hline
-1990 -- 2000 & $\dfrac{P(2000)-P(1990)}{10}$ & \blank{2cm} \\
-\hline
-2000 -- 2010 & $\dfrac{P(2010)-P(2000)}{10}$ & \blank{2cm} \\
-\hline
-2010 -- 2020 & $\dfrac{P(2020)-P(2010)}{10}$ & \blank{2cm} \\
-\hline
-\end{tabular}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Interval & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ & $[6,7]$ \\
+        \hline
+        Change (ft/hr) & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
 
-\vspace{8pt}
-\textbf{A2.} Which decade had the \emph{greatest} rate of population growth? \blank{3cm}
+  \item On $[0, 4]$, the rate of change is (circle): \quad
+        \textbf{Increasing} \quad / \quad \textbf{Decreasing} \quad / \quad \textbf{Constant}
 
-\vspace{6pt}
-\textbf{A3.} One of the AROC values is \emph{negative}. Which decade? \blank{2.5cm}
-What does a negative AROC mean in this context?
+        Therefore the graph on $[0, 4]$ is concave: \quad \textbf{Up} \quad / \quad \textbf{Down}
 
-\writeline\writeline
+  \item Which of the following best describes the graph of $E$ on $[0, 4]$?
+        Circle the letter.
+        \begin{enumerate}[label=\Alph*.]
+          \item Rises steeply then more gradually (slowing rate of gain)
+          \item Rises gradually then more steeply (increasing rate of gain)
+          \item Rises at a constant rate
+        \end{enumerate}
+
+  \item At what input value does $E$ have a zero? (Where does the graph touch the $x$-axis?)
+        Based on the table, does $E$ ever equal 0? \blank{3cm}
+        Explain: \blank{5cm}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extend},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Suppose additional data gives: $P(2005) = 210$, $P(2008) = 206$, $P(2009) = 200$,
-$P(2009.5) = 199$.
+The hiker also records their \textbf{walking speed} (in miles per hour) each hour:
 
-\textbf{E1.} Use successively smaller intervals to approximate the rate of change of
-$P$ at $t = 2010$. Complete the table below (use $P(2010) = 198$).
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.2cm}|C{5.5cm}|C{3.2cm}|}
+\medskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-\rowcolor{sky}
-\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
+\textbf{Hour} $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \hline
-$[2005,\;2010]$ & $\dfrac{P(2010)-P(2005)}{5}$ & \blank{2cm} \\
-\hline
-$[2008,\;2010]$ & $\dfrac{P(2010)-P(2008)}{2}$ & \blank{2cm} \\
-\hline
-$[2009,\;2010]$ & $\dfrac{P(2010)-P(2009)}{1}$ & \blank{2cm} \\
-\hline
-$[2009.5,\;2010]$ & $\dfrac{P(2010)-P(2009.5)}{0.5}$ & \blank{2cm} \\
+\textbf{Speed} $S(t)$ (mph) & 3.5 & 3.0 & 2.5 & 1.8 & 1.2 & 2.0 & 2.8 & 3.2 \\
 \hline
 \end{tabular}
 
-\vspace{8pt}
-\textbf{E2.} What value does the AROC appear to be approaching? \blank{3cm}
+\medskip
+\begin{enumerate}[itemsep=8pt]
+  \item On what intervals is $S$ increasing? On what intervals is $S$ decreasing?
 
-\vspace{6pt}
-\textbf{E3.} What are the limitations of using this approach to find the exact rate of
-change at $t = 2010$? Could you ever use an interval of length 0? Why or why not?
+        Increasing: \blank{3.5cm} \qquad Decreasing: \blank{3.5cm}
 
-\writeline\writeline
+  \item When the hiker is going uphill steeply (hours 0--1), the speed is relatively
+        \blank{1.5cm} (high/low). What happens to speed as the trail flattens near the summit?
+
+        \vspace{0.2in}
+        \writeline
+
+  \item The elevation function $E$ is concave down on $[0, 4]$.
+        What does this tell you about the hiker's \textit{pace} over the ascent?
+        Use the word ``rate of change'' in your response.
+
+        \vspace{0.2in}
+        \writeline\\[2pt]
+        \writeline
+
+  \item Compare the behavior of $E$ and $S$ on $[0, 4]$.
+        What is the relationship between the \textit{rate of change of elevation} and the \textit{speed} of the hiker?
+
+        \vspace{0.2in}
+        \writeline\\[2pt]
+        \writeline
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}
