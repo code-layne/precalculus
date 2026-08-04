@@ -1,201 +1,247 @@
 %! Change in Tandem — Unit 1, Lesson 1.2 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
 % TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.1}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
     {\color{white}\bfseries\LARGE Change in Tandem}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
 }
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: A Car Leaves a Stop Sign}
+  \plumheader{Hook: The Car and the Stop Sign}
   \sectionlabel[goldacc]{Think About It}
 
-  A car accelerates away from a stop sign. Consider two quantities, each as a function of time:
+  A car pulls away from a stop sign. Two quantities start changing at once:
 
   \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Speed vs.\ Time}
-        \begin{itemize}\setlength{\itemsep}{6pt}
-          \item Speed starts at \textbf{0} mph.
-          \item As the driver presses the gas, speed \textbf{increases}.
-          \item Does it increase slowly at first, or quickly?
-        \end{itemize}
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{Distance vs.\ Time}
-        \begin{itemize}\setlength{\itemsep}{6pt}
-          \item Distance also starts at \textbf{0}.
-          \item As the car moves, distance \textbf{increases}.
-          \item Does it grow slowly at first, or quickly?
-        \end{itemize}
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{Discussion:} How does the shape of one graph relate to the behavior of the other?
-\end{frame}
-
-% WHAT IS A FUNCTION
-\begin{frame}[t, plain]
-  \navyheader{What Is a Function?}
-
-  \begin{block}{Definition}
-    A \textbf{function} is a rule that assigns each \textbf{input} (independent variable)
-    exactly \textbf{one output} (dependent variable).
-  \end{block}
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \textbf{Domain \& Range}
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item \textbf{Domain} = set of all allowable inputs
-        \item \textbf{Range} = set of all possible outputs
-        \item Inputs plotted on the \textit{horizontal} axis
-        \item Outputs plotted on the \textit{vertical} axis
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \textbf{Water Tank Example}
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      $t$ (min) & 0 & 2 & 4 & 6 \\
-      \hline
-      $V$ (gal)  & 0 & 8 & 16 & 24 \\
-      \hline
-      \end{tabular}
-
-      \smallskip
-      Domain: $[0, 6]$ \quad Range: $[0, 24]$
-  \end{columns}
-\end{frame}
-
-% INCREASING AND DECREASING
-\begin{frame}[t, plain]
-  \navyheader{Increasing \& Decreasing Functions}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Increasing}
-        $f$ is \textbf{increasing} on an interval if:\\[4pt]
-        for any $a < b$ in that interval,
-        \[ f(a) < f(b) \]
-        \textit{As the input grows, the output grows.}
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{Decreasing}
-        $f$ is \textbf{decreasing} on an interval if:\\[4pt]
-        for any $a < b$ in that interval,
-        \[ f(a) > f(b) \]
-        \textit{As the input grows, the output shrinks.}
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textbf{Hiker Example:} Elevation rises from hour 0 to hour 4 \textbf{(increasing)}, then
-  falls from hour 4 to hour 7 \textbf{(decreasing)}.
-
-  \medskip
-  \textit{Key:} A function can be increasing on one interval and decreasing on another.
-\end{frame}
-
-% CONCAVE UP AND CONCAVE DOWN
-\begin{frame}[t, plain]
-  \navyheader{Concave Up \& Concave Down}
-
-  Concavity describes whether the \textbf{rate of change} is itself increasing or decreasing.
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Concave Up}
-        \begin{itemize}\setlength{\itemsep}{5pt}
-          \item Rate of change is \textbf{increasing}
-          \item Graph curves upward like a bowl
-          \item Example: distance as a car accelerates
-        \end{itemize}
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{Concave Down}
-        \begin{itemize}\setlength{\itemsep}{5pt}
-          \item Rate of change is \textbf{decreasing}
-          \item Graph curves downward like a hill
-          \item Example: hiker ascending (gains less elevation per hour)
-        \end{itemize}
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textbf{Important:} Concavity $\neq$ increasing/decreasing.\\
-  A function can be \textit{increasing and concave down} at the same time!
-\end{frame}
-
-% ZEROS OF A FUNCTION
-\begin{frame}[t, plain]
-  \navyheader{Zeros of a Function}
-
-  \begin{block}{Definition}
-    The \textbf{zeros} of a function $f$ are the input values where $f(x) = 0$.\\
-    On a graph, zeros are where the graph \textbf{crosses or touches the $x$-axis}.
-  \end{block}
-
-  \bigskip
-  \textbf{Example:} A ball is thrown upward. Its height $h(t)$ in feet satisfies:
-  \begin{itemize}\setlength{\itemsep}{6pt}
-    \item $h(0) = 0$ \quad (starts at ground level)
-    \item $h(2) = 64$ \quad (maximum height)
-    \item $h(4) = 0$ \quad (returns to ground)
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Its \textbf{speed} climbs from 0 --- quickly at first, then levels
+          off near the limit.
+    \item Its \textbf{distance} from the sign grows --- slowly at first, then
+          faster and faster.
   \end{itemize}
 
-  \medskip
-  Zeros of $h$: \quad $t = 0$ \quad and \quad $t = 4$
+  \bigskip
+  Both are increasing. \textbf{In words: what makes the two stories
+  different?}
 
-  \medskip
-  $h$ is increasing on $[0, 2]$ and decreasing on $[2, 4]$.
+  \bigskip
+  \textit{Today we build the vocabulary that tells them apart.}
 \end{frame}
 
-% CLASS PRACTICE
+% SECTION 1 — TWO QUANTITIES IN TANDEM
 \begin{frame}[t, plain]
-  \navyheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \plumheader{1. Two Quantities in Tandem}
 
-  Use the hiker's elevation table below.
+  A hose fills a tank: as time passes, the volume responds. The two
+  quantities \textbf{vary in tandem}, linked by the function rule.
 
-  \smallskip
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  \bigskip
+  \begin{tabular}{|c|c|c|c|c|}
   \hline
-  Hour $t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+  \(t\) (min) & 0 & 2 & 4 & 6 \\
   \hline
-  Elev.\ $E(t)$ (ft) & 500 & 1700 & 2400 & 2700 & 2800 & 2400 & 1400 & 500 \\
+  \(V\) (gal) & 0 & 8 & 16 & 24 \\
   \hline
   \end{tabular}
 
   \bigskip
-  \begin{enumerate}\setlength{\itemsep}{7pt}
-    \item State the domain and range.
-    \item On what interval(s) is $E$ increasing? Decreasing?
-    \item Compute the change in elevation per hour on $[0,1]$, $[1,2]$, and $[2,3]$.
-          Is the rate of change increasing or decreasing on $[0, 4]$?
-          What does that tell you about the concavity?
-    \item Does $E$ have any zeros based on this data? Explain.
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Input (independent): \textbf{time}. Output (dependent):
+          \textbf{volume}.
+    \item Every 2 minutes, 8 more gallons --- a perfectly steady climb.
+    \item As \(t\) increases, \(V\) \textbf{increases}: the graph rises left
+          to right.
+  \end{itemize}
+\end{frame}
+
+% SECTION 2 — INCREASING AND DECREASING
+\begin{frame}[t, plain]
+  \plumheader{2. Increasing and Decreasing}
+
+  \begin{block}{The definitions, with teeth}
+    \(f\) is \textbf{increasing} on an interval: whenever \(a < b\),
+    \(f(a) < f(b)\) --- larger inputs give larger outputs.\\[4pt]
+    \(f\) is \textbf{decreasing} on an interval: whenever \(a < b\),
+    \(f(a) > f(b)\) --- larger inputs give smaller outputs.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.45cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (8,5);
+        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] (0,1) -- (3,5);
+        \draw[very thick, plum] (3,5) -- (6,2);
+        \draw[very thick, plum] (6,2) -- (8,4);
+        \fill[plum] (0,1) circle (2.5pt);
+        \fill[plum] (8,4) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Increasing for \(0 < x < 3\) and \(6 < x < 8\)
+        \item Decreasing for \(3 < x < 6\)
+        \item Intervals are named by \textbf{inputs} (\(x\)-values), never
+              outputs.
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textbf{Watch out:} decreasing \(\ne\) negative --- falling from 5 to 2
+  stays positive the whole way.
+\end{frame}
+
+% SECTION 3 — CONCAVITY, TABLES
+\begin{frame}[t, plain]
+  \plumheader{3. Concavity --- How the Change Changes}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Tank, drain half-open}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \(t\) & 0 & 2 & 4 & 6 \\
+        \hline
+        \(V\) & 0 & 14 & 20 & 24 \\
+        \hline
+        \end{tabular}\\[6pt]
+        Gains: 14, 6, 4 --- rate of change \textbf{decreasing}\\
+        \(\Rightarrow\) \textbf{concave down}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Savings account}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \(m\) & 0 & 1 & 2 & 3 \\
+        \hline
+        \(S\) & 100 & 120 & 145 & 175 \\
+        \hline
+        \end{tabular}\\[6pt]
+        Gains: 20, 25, 30 --- rate of change \textbf{increasing}\\
+        \(\Rightarrow\) \textbf{concave up}
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  The concavity call comes from the \textbf{arithmetic of the gains}, not
+  from squinting at a picture.
+\end{frame}
+
+% SECTION 3, CONT. — THE TWO BENDS
+\begin{frame}[t, plain]
+  \plumheader{The Two Bends}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=1.1cm, y=0.8cm]
+        \draw[->, thick] (0,0) -- (3.4,0);
+        \draw[->, thick] (0,0) -- (0,2.8);
+        \draw[very thick, plum] (0,0.2) .. controls (1.8,0.5) .. (3,2.4);
+      \end{tikzpicture}\\[4pt]
+      slow, then fast --- \textbf{concave up} (bowl)
+      \end{center}
+
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=1.1cm, y=0.8cm]
+        \draw[->, thick] (0,0) -- (3.4,0);
+        \draw[->, thick] (0,0) -- (0,2.8);
+        \draw[very thick, plum] (0,0.2) .. controls (1.2,2.1) .. (3,2.4);
+      \end{tikzpicture}\\[4pt]
+      fast, then slow --- \textbf{concave down} (dome)
+      \end{center}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{Independent questions}
+    ``Increasing or decreasing?'' and ``concave up or down?'' are
+    \textbf{separate calls} --- the half-open-drain tank is increasing
+    \textit{and} concave down at the same time. All four combinations exist.
+  \end{block}
+\end{frame}
+
+% SECTION 4 — ZEROS
+\begin{frame}[t, plain]
+  \plumheader{4. Zeros}
+
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.5cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (8,4);
+        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small \(g(x)\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {1,2,3,4} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] (0,4) -- (2,0);
+        \draw[very thick, plum] (2,0) -- (4,3);
+        \draw[very thick, plum] (4,3) -- (6,0);
+        \draw[very thick, plum] (6,0) -- (8,2);
+        \fill[plum] (0,4) circle (2.5pt);
+        \fill[plum] (8,2) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item A \textbf{zero}: an input whose output is 0 --- the graph meets
+              the horizontal axis.
+        \item Zeros of \(g\): \(x = 2\) and \(x = 6\).
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{A zero is an event}
+    Drone: \(h(8) = 0\) --- it lands. Tank: \(w(7) = 0\) --- it's empty.
+    Translate the zero into a sentence, just like \(f(3) = 7\) in Lesson 1.1.
+  \end{block}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item A tank is draining:
+
+          \smallskip
+          \begin{tabular}{|c|c|c|c|c|}
+          \hline
+          \(t\) (min) & 0 & 2 & 4 & 6 \\
+          \hline
+          \(w\) (gal) & 30 & 24 & 16 & 6 \\
+          \hline
+          \end{tabular}
+
+          \smallskip
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item Increasing or decreasing?
+            \item Find the drops. Concave up or concave down?
+          \end{enumerate}
+    \item If \(w(7) = 0\), say the sentence that zero is telling us.
+    \item In one sentence: how can a function be increasing and concave down
+          at the same time?
   \end{enumerate}
 \end{frame}
 
