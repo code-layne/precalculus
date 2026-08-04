@@ -7,91 +7,121 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Homework --- Answer Key}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item \textbf{Numerical Composition.} Use the table to evaluate each composition.
+\item The table gives every value of two functions $f$ and $g$. Evaluate each
+      composite by working from the inside out.
 
-      \vspace{0.06in}
-      \renewcommand{\arraystretch}{1.6}
-      \begin{tabular}{c|c|c}
-      $x$ & $f(x)$ & $g(x)$ \\ \hline
-      $-1$ & 3 & 5 \\
-      0    & 1 & $-1$ \\
-      1    & 4 & 0 \\
-      5    & 2 & 1 \\
-      \end{tabular}
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$f(x)$ & 5 & 1 & 4 & 2 & 3 \\
+\hline
+$g(x)$ & 3 & 5 & 1 & 5 & 2 \\
+\hline
+\end{tabular}
+\end{center}
 
-      \vspace{0.08in}
-      (a) $f(g(1)) = $ \ans{$f(0) = 1$} \qquad (b) $g(f(1)) = $ \ans{$g(4)$ --- undefined from table}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f(g(1)) = $ \ans{4} \qquad (inner value: \ans{3})
+  \item $g(f(1)) = $ \ans{2} \qquad (inner value: \ans{5})
+  \item $f(g(3)) = $ \ans{5} \qquad (inner value: \ans{1})
+  \item $g(g(4)) = $ \ans{2} \qquad (inner value: \ans{5})
+\end{enumerate}
 
-      \vspace{0.06in}
-      (c) $f(g(0)) = $ \ans{$f(-1) = 3$} \qquad (d) $g(f(-1)) = $ \ans{$g(3)$ --- undefined from table}
+\item Let $f(x) = x^2 + 1$ and $g(x) = x - 4$. Build both composites and
+      simplify completely.
 
-      \begin{teachernote}
-      (a) $g(1)=0$, $f(0)=1$. (b) $f(1)=4$; 4 is not an $x$-input in the table for $g$ --- undefined.
-      (c) $g(0)=-1$, $f(-1)=3$. (d) $f(-1)=3$; 3 is not an $x$-input for $g$ --- undefined.
-      Emphasize this illustrates the domain restriction of compositions.
-      \end{teachernote}
+\begin{work}
+  f(g(x)) &= f(x - 4) \\
+          &= (x - 4)^2 + 1 \\
+          &= x^2 - 8x + 16 + 1 \\
+          &= x^2 - 8x + 17 \\
+  g(f(x)) &= g(x^2 + 1) \\
+          &= (x^2 + 1) - 4 \\
+          &= x^2 - 3
+\end{work}
 
-\item \textbf{Analytic Composition.} Let $f(x) = 5x - 2$ and $g(x) = x^2$.
+$(f \circ g)(x) = $ \ans{$x^2 - 8x + 17$} \qquad $(g \circ f)(x) = $ \ans{$x^2 - 3$}
 
-      \vspace{0.06in}
-      (a) Find a formula for $f(g(x))$. Simplify.
+\item \textbf{Back at the checkout counter.} The \$10 coupon is
+      $c(p) = p - 10$ and the 6\% sales tax is $t(x) = 1.06x$. A \$45 shirt
+      goes through two different registers.
 
-      \vspace{0.06in}
-      $f(g(x)) = $ \ans{$5x^2 - 2$}
+\begin{work}
+  t(c(45)) &= t(35) \\
+           &= 1.06(35) \\
+           &= 37.10 \\
+  c(t(45)) &= c(47.70) \\
+           &= 47.70 - 10 \\
+           &= 37.70
+\end{work}
 
-      \vspace{0.06in}
-      (b) Find a formula for $g(f(x))$. Simplify.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Coupon first, then tax: \$\ans{37.10}
+  \item Tax first, then coupon: \$\ans{37.70}
+  \item The shopper saves \$\ans{0.60} by having the coupon rung up
+        first.
+\end{enumerate}
 
-      \vspace{0.06in}
-      $g(f(x)) = $ \ans{$(5x-2)^2 = 25x^2 - 20x + 4$}
+\boxguard[16]
+\item \textbf{Taking functions apart.}
 
-\item Using your formulas from \#2, evaluate $(f \circ g)(-1)$.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Decompose $h(x) = \sqrt{4x - 7}$. \quad
+        Inner: $g(x) = $ \ans{$4x - 7$} \quad Outer: $f(u) = $ \ans{$\sqrt{u}$}
+  \item In Lesson 1.4 you shifted a graph with $k(x) = f(x + 6)$. Write it as
+        a composition: $k(x) = f(g(x))$ where $g(x) = $ \ans{$x + 6$}
+  \item Was that change made \textbf{inside} or \textbf{outside} $f$?
+        \quad \ans{inside}
+\end{enumerate}
 
-      \vspace{0.06in}
-      $(f \circ g)(-1) = $ \ans{$5(-1)^2 - 2 = 5 - 2 = 3$}
+\item Let $f(x) = 3x - 2$ and $g(x) = x^2$. Which expression is
+      $(f \circ g)(x)$?
 
-\item \textbf{Decomposition.} Write $h(x) = (x-5)^3$ as $f(g(x))$. Identify $f$ and $g$.
-
-      \vspace{0.06in}
-      $g(x) = $ \ans{$x - 5$} \qquad $f(u) = $ \ans{$u^3$}
-
-      \vspace{0.04in}
-      Verify: $f(g(x)) = $ \ans{$(x-5)^3$}
-
-\item \textbf{Real-World Application.}
-
-      (a) Write a formula for $P(u(p))$. Simplify.
-
-      \vspace{0.06in}
-      $P(u(p)) = $ \ans{$4(500-10p) - 200 = 2000 - 40p - 200 = 1800 - 40p$}
-
-      \vspace{0.06in}
-      (b) Evaluate $P(u(30))$ and interpret your answer in context.
-
-      \vspace{0.06in}
-      $P(u(30)) = $ \ans{$1800 - 40(30) = 1800 - 1200 = 600$} \quad Meaning: \ansline{When the price is \$30, the company earns a profit of \$600.}
-
-\item \textbf{AP-Style Multiple Choice.}
-
-      \vspace{0.06in}
-      \begin{tabular}{@{}ll@{\qquad}ll@{}}
-      \textcolor{keyred}{\textbf{(A) $2(x+1)^2$}} & (B) $2x^2 + 1$ & (C) $2x^2 + 2$ & (D) $2x + 2$
-      \end{tabular}
-
-      \vspace{0.06in}
-      Answer: \ans{A} \quad Show work: \ans{$f(g(x)) = f(x+1) = 2(x+1)^2$}
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $3x^2 - 2$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $(3x - 2)^2$
+  \item $9x^2 - 12x + 4$
+  \item $3x^3 - 2x^2$
+\end{enumerate}
 
 \end{enumerate}
 
-\begin{reflectionbox}
-What is one thing about composition of functions that surprised you or that you want to remember?
-\writelines{2}
-\end{reflectionbox}
+\vspace{0.1in}
+
+\boxguard
+\begin{extensionbox}
+The \textbf{identity function} is $I(x) = x$. Let $f(x) = 5x - 2$.
+
+\smallskip
+First check that $I$ really does nothing: $f(I(x)) = $ \ans{$5x - 2$} and
+$I(f(x)) = $ \ans{$5x - 2$}.
+
+\smallskip
+Now the interesting question: is there a function $g$ with
+$f(g(x)) = x$ --- a function that \textit{undoes} $f$? Try to find it, and
+explain how you searched.
+
+\ansline{Yes: $g(x) = \dfrac{x+2}{5}$, since $f(g(x)) = 5 \cdot \dfrac{x+2}{5} - 2 = x$.}
+\ansline{Undo $f$'s steps backwards: $f$ multiplies by 5 then subtracts 2, so $g$ adds 2 then divides by 5.}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{notesbox}{Preview of Lesson 1.6}
+The extension asked for a function that undoes $f$. Lesson 1.6,
+\textit{Inverse Functions}, gives that function a name and a notation:
+$f^{-1}$. The test for it is a composition --- $f(f^{-1}(x)) = x$ --- which is
+exactly the identity function you met today.
+\end{notesbox}
 
 \end{document}

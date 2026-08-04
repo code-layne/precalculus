@@ -7,16 +7,16 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
+  {\color{lilacmid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
   {\color{white}\textbf{\large Lesson 1.5 \quad Composition of Functions}}
 \end{center}
 
@@ -27,14 +27,12 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can evaluate $(f \circ g)(x) = f(g(x))$ for given values using tables, formulas, or
-        step-by-step substitution, and I understand that the domain of $f \circ g$ is restricted
-        to inputs of $g$ whose outputs lie in the domain of $f$.
-  \item I can construct the formula for a composite function $f(g(x))$ by substituting $g(x)$
-        for every instance of $x$ in $f$, and I can explain why $f \circ g$ and $g \circ f$ are
-        generally different functions.
-  \item I can decompose a given function into a composition of two simpler functions and connect
-        additive and multiplicative transformations to composition.
+  \item I can evaluate a composite function such as $f(g(3))$ from a table or
+        from formulas, working from the \textit{inside out}.
+  \item I can build $(f \circ g)(x)$ and $(g \circ f)(x)$ by substitution, and
+        show that changing the order usually changes the function.
+  \item I can decompose a function into an inner and an outer piece --- and
+        recognize a horizontal shift as a composition in disguise.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -44,17 +42,28 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X r @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review: evaluating functions; step-by-step composition (Lesson 2.6) & \blank{1.2cm} \\
-2 & Guided Notes   & Evaluating compositions; constructing formulas; non-commutativity; decomposition & \blank{1.2cm} \\
-3 & Group Activity & Tiered: evaluate, tabulate, and decompose compositions (R/A/E) & \blank{1.2cm} \\
-4 & Exit Ticket    & Evaluate $f(g(2))$; write formula for $f \circ g$; compare with $g \circ f$ & \blank{1.2cm} \\
-5 & Homework       & Numerical and analytic compositions; decomposition; real-world; AP MC & \blank{1.2cm} \\
+1 & Warm-Up        & Spiral review of prerequisite skills              & \blank{1.2cm} \\
+2 & Guided Notes   & Chaining functions: evaluate, build, take apart   & \blank{1.2cm} \\
+3 & Group Activity & The checkout counter: coupon first, or tax first? & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on evaluating and building      & \blank{1.2cm} \\
+5 & Homework       & Practice and extension                            & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Last lesson one function's graph moved. Today \textbf{two functions work in a
+row}: the output of the first becomes the input of the second, written
+$(f \circ g)(x) = f(g(x))$. Two sentences carry the lesson --- work from the
+\textit{inside out}, and the \textit{order} is part of the answer. A \$10
+coupon and a 6\% sales tax do not cost the same in both orders.
+\end{remindbox}
 
 \end{document}

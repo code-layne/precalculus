@@ -16,12 +16,15 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students evaluate and construct compositions of functions
-    analytically and numerically, distinguish $f \circ g$ from $g \circ f$, and decompose
-    a given function into a composition of simpler functions, connecting composition to
-    transformations. \hfill\textit{\small Skills: 1.C and 2.B}
+    \textbf{Primary Objective:} Students will evaluate composite functions
+    numerically from a table and analytically from formulas, construct
+    $(f \circ g)(x)$ by substituting $g(x)$ for every $x$ in $f(x)$, show that
+    $f(g(x))$ and $g(f(x))$ are generally different, and decompose a function
+    into an inner and an outer piece --- recognizing a horizontal shift or
+    dilation as a composition in disguise.
+    \hfill\textit{\small (CED Topic 2.7 --- Skills 1.C, 2.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -30,139 +33,265 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{Skill 1.C} --- Construct new functions using compositions. &
+\textbf{1.C} --- Construct new functions, using composition, that may be useful
+in modeling contexts, criteria, or data. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item $(f \circ g)(x) = f(g(x))$: outputs of $g$ become inputs of $f$. (EK 2.7.A.1)
-  \item Values can be found from tables, graphs, or formulas. (EK 2.7.A.2)
-  \item Composition is not commutative: $f(g(x)) \ne g(f(x))$ in general. (EK 2.7.A.3)
-  \item $f(x) = x$ is the identity function; composing with it returns the other function. (EK 2.7.A.4)
+  \item $(f \circ g)(x) = f(g(x))$: the output of the inner function $g$
+        becomes the input of the outer function $f$. (2.7.A.1)
+  \item A composite value can be found from a table, a graph, or an analytic
+        expression --- always working from the inside out. (2.7.A.2)
 \end{itemize} \\
-\textbf{Skill 2.B} --- Construct equivalent representations. &
+\textbf{2.B} --- Construct equivalent representations of functions and
+expressions. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Substitute $g(x)$ for every $x$ in $f(x)$ to build $f(g(x))$ analytically. (EK 2.7.B.2)
-  \item Composition relates quantities not directly linked by one formula. (EK 2.7.B.1)
-  \item Decompose complex functions into simpler components; link to transformations. (EK 2.7.C.1–C.3)
+  \item Composition is \textbf{not} commutative: in general
+        $f(g(x)) \ne g(f(x))$ --- order changes the answer. (2.7.A.3)
+  \item The identity function $f(x) = x$ leaves the other function alone:
+        composing with it returns that function unchanged. (2.7.A.4)
+\end{itemize} \\
+\textbf{Synthesis} --- build, then take apart. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Composition links two quantities that no single formula connects
+        directly. (2.7.B.1)
+  \item Build $f(g(x))$ analytically by substituting $g(x)$ for \textit{every}
+        $x$ in $f(x)$. (2.7.B.2)
+  \item Any function can be decomposed into simpler pieces; a horizontal shift
+        $f(x+k)$ or dilation $f(kx)$ \textit{is} a composition.
+        (2.7.C.1--C.3)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-Composition          & The operation $(f \circ g)(x) = f(g(x))$: feed output of $g$ into $f$. \\
-Composite function   & The resulting function $f \circ g$ formed by composing $f$ with $g$. \\
-Domain of $f \circ g$ & Inputs $x$ in the domain of $g$ whose outputs $g(x)$ are in the domain of $f$. \\
-Identity function    & $f(x) = x$; composing it with any $g$ returns $g$: $(f \circ g)(x) = g(x)$. \\
-Non-commutativity    & In general, $f(g(x)) \ne g(f(x))$; order matters in composition. \\
-Decomposition        & Writing a complex function $h$ as $f(g(x))$ using simpler $f$ and $g$. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Composition            & Feeding one function's output into another function. Written $(f \circ g)(x) = f(g(x))$ and read ``$f$ of $g$ of $x$.'' \\
+Inner and outer function & In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result. \\
+Identity function      & $I(x) = x$ --- the do-nothing function. $f(I(x)) = f(x)$ and $I(f(x)) = f(x)$. \\
+Decomposition          & Writing a single function $h$ as $f(g(x))$ for simpler pieces $f$ and $g$ --- composition run backwards. \\
+Domain of a composite  & The inputs $x$ that $g$ accepts \textit{and} whose outputs $g(x)$ are inputs $f$ accepts. If either machine jams, there is no value. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    Spiral review (warm-up) covers evaluating a function at a given input
-    ($f(4)$ and $f(-2)$ for $f(x) = 3x-1$), and walking through a step-by-step
-    composition numerically: compute $f(g(1))$ and $g(f(1))$ and compare them.
-    Students also begin to notice that order produces different results.
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: evaluating a function at a numerical input with the
+    parentheses habit (Lesson 1.1), substituting an \textit{expression} rather
+    than a number into a rule (Lesson 1.1), reading values off a table both
+    directions (Lesson 1.1), and the inside/outside sort from Lesson 1.4.
+    Item 1(c) is the load-bearing one --- $f(x^2) = 2x^2+1$ is exactly the
+    substitution move Part 3 needs, done once before it has a name.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-Write on the board: \textbf{``Your cell-carrier charges \$0.10 per mile of data used, and
-your daily driving distance $d$ miles converts to data use as $u(d) = 0.5d$ GB. The charge
-is $C(u) = 10u$ dollars. What is your daily charge as a function of miles driven?''}
-
-After brief class discussion, reveal: $C(u(d)) = C(0.5d) = 10(0.5d) = 5d$.
-We used \textit{composition} to link two quantities not directly related by a single formula.
-\textbf{Today: how to evaluate, build, and decompose compositions.}
+\begin{skillbox}[Hook]{lilac}
+    \textbf{Two registers, one jacket.} A \$60 jacket, a \$10 coupon, and 6\%
+    sales tax. Your clerk takes the coupon off first, then adds the tax. The
+    clerk at the next register adds the tax first, then takes the coupon off.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask for a show of hands: same total, or different? Most classes
+              split, and most students argue ``same --- it's the same two
+              things.''
+        \item Work both totals on the board: \$53.00 and \$53.60. Sixty cents
+              apart, from the same two operations.
+    \end{enumerate}
+    \textit{Discussion prompt:} the coupon and the tax are each a
+    \textit{function} of the price. Today we chain functions together, and the
+    order of the chain is part of the answer.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
-\textbf{Part 1 (12 min): Evaluate from a Table and Analytically.}
 
-Show the table:
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{c|c|c}
-$x$ & $f(x)$ & $g(x)$ \\ \hline
-1 & 4 & 2 \\
-2 & 7 & 1 \\
-3 & 10 & 3 \\
-\end{tabular}
-\end{center}
-Walk through: $f(g(1)) = f(2) = 7$; $f(g(2)) = f(1) = 4$; $g(f(1)) = g(4) = $ (undefined here,
-so note domain restriction). Stress: use the inner function's output as the outer function's input.
+\textbf{Part 1: Two Machines in a Row} (8 min)
+
+\begin{itemize}
+  \item Draw the two-machine picture: $x$ goes into $g$, $g(x)$ comes out and
+        goes straight into $f$, and $f(g(x))$ comes out the far end.
+  \item Give the notation once and insist on it: $(f \circ g)(x) = f(g(x))$,
+        read ``$f$ of $g$ of $x$.'' The circle is not multiplication.
+  \item The organizing sentence, repeated all lesson: \textbf{work from the
+        inside out --- the inner function runs first.} In $f(g(x))$ the letter
+        written \textit{last} runs \textit{first}.
+\end{itemize}
+
+\textbf{Part 2: Composite Values from a Table} (12 min)
+
+\begin{itemize}
+  \item Using the notes table, do $f(g(1))$ out loud in two recorded steps:
+        first $g(1) = 3$, then $f(3) = 2$. Insist on writing the middle number
+        down --- that habit is the whole part.
+  \item Then $g(f(1))$: $f(1) = 4$, so $g(4) = 4$. Different answer, same two
+        functions. Name it: composition is not commutative (2.7.A.3).
+  \item Domain at exposure depth: $f(g(2))$ needs $f(7)$, and 7 is not an input
+        in the table --- no value. The inner output has to be something the
+        outer function accepts.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2 (12 min): Construct Analytically.}
+\textbf{Part 3: Building a Composite Analytically} (12 min)
 
-Given $f(x) = 2x + 1$ and $g(x) = x^2 - 3$.
+\begin{itemize}
+  \item State the rule as a recipe: to build $f(g(x))$, \textbf{substitute
+        $g(x)$ for every $x$ in $f(x)$} (2.7.B.2). Say ``every.''
+  \item Work $f(g(x))$ and then $g(f(x))$ for $f(x) = 2x+1$, $g(x) = x^2-3$.
+        The results are $2x^2-5$ and $4x^2+4x-2$ --- not even the same shape.
+  \item Check a value both ways: $f(g(2)) = 3$ from the formula and from the
+        two-step evaluation. Same number, two routes (2.7.A.2).
+\end{itemize}
 
-Build $f(g(x))$: substitute $g(x)$ for every $x$ in $f$:
-$f(g(x)) = 2(x^2-3)+1 = 2x^2-5$.
+\textbf{Part 4: Order Matters --- the Checkout Counter} (10 min)
 
-Build $g(f(x))$: substitute $f(x)$ for every $x$ in $g$:
-$g(f(x)) = (2x+1)^2-3 = 4x^2+4x-2$.
+\begin{itemize}
+  \item Name the hook's two functions: coupon $c(p) = p - 10$, tax
+        $t(x) = 1.06x$. Neither one alone answers ``what do I pay?'' ---
+        chaining them does (2.7.B.1).
+  \item Build both orders symbolically: $t(c(p)) = 1.06p - 10.60$ and
+        $c(t(p)) = 1.06p - 10$. They differ by \$0.60 at \textit{every} price,
+        because the second one taxes the ten dollars you never paid.
+\end{itemize}
 
-Compare: $f(g(x)) \ne g(f(x))$ --- composition is \textbf{not} commutative.
+\textbf{Part 5: Decomposition, Identity, and Lesson 1.4} (8 min)
+
+\begin{itemize}
+  \item Decompose $h(x) = (3x+2)^4$: inner $g(x) = 3x+2$, outer $f(u) = u^4$.
+        Test it by substituting back. ``What would you do first with a
+        calculator?'' finds the inner function every time.
+  \item Identity function $I(x) = x$: composing with it changes nothing
+        (2.7.A.4). Flag it --- it is the target of Lesson 1.6.
+  \item \textbf{Deliver on 1.4's promise.} Every $f(x+3)$ they wrote last
+        lesson was $f(g(x))$ with $g(x) = x+3$; every $f(2x)$ was $f(g(x))$
+        with $g(x) = 2x$. Inside changes were compositions all along ---
+        that is why they act on inputs (2.7.C.2--C.3).
+\end{itemize}
 \end{multicols}
-
-\medskip
-\textbf{Part 3 (12 min): Decompose and Connect to Transformations.}
-
-Decompose $h(x) = (3x+2)^4$: natural split is $f(u) = u^4$ and $g(x) = 3x+2$, so $h(x) = f(g(x))$.
-Verify: $f(g(x)) = (3x+2)^4$ --- correct.
-
-Connect to transformations (EK 2.7.C.2–C.3): $g(x) = f(x+k)$ is composition of $f$ with
-$h(x) = x+k$; $g(x) = f(kx)$ is composition of $f$ with $h(x) = kx$. Every horizontal
-shift/stretch is secretly a composition.
-
-Identity: $(f \circ \text{id})(x) = f(x+0) = f(x)$. The identity function ``does nothing.''
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item After Part 1: cold-call ``Why can't we find $g(f(1))$ from that table?'' Expect:
-        $f(1) = 4$, and 4 is not in the table as an input for $g$.
-  \item During Part 2: watch for students who substitute $g(x)$ into only part of $f$; confirm
-        they replace \textit{every} $x$.
-  \item After Part 2: cold-call ``If $f(g(2)) = 5$, does that mean $g(f(2)) = 5$?'' Expect: not
-        necessarily; show with the example.
-  \item During Part 3: look for students who reverse $f$ and $g$ in the decomposition; test by
-        substituting back.
+While students work on guided notes and practice, circulate and check:
+\begin{itemize}
+  \item \textbf{Common error:} evaluating $f(g(1))$ as $f(1)$ times $g(1)$, or
+        as $f(1)$ then looking up $g$. Cold-call: ``Which number goes into the
+        second machine? Write it down before you use it.''
+  \item \textbf{Common error:} running the outer function first --- computing
+        $f(1)$ when the problem says $f(g(1))$. Point at the parentheses:
+        ``Innermost parentheses first, like any arithmetic.''
+  \item \textbf{Common error:} in $f(g(x))$ with $f(x) = 2x+1$, substituting
+        into only the first $x$. Ask them to circle every $x$ in $f$ before
+        replacing anything.
+  \item \textbf{Common error:} asserting $f(g(x)) = g(f(x))$ because ``it's
+        like multiplying.'' Send them back to the checkout counter --- \$53.00
+        versus \$53.60 settles it faster than any algebra.
+  \item \textbf{Common error:} decomposing backwards, calling $f(u) = 3u+2$ the
+        outer function of $(3x+2)^4$. Have them substitute back and see they
+        built $3x^4+2$ instead.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Evaluate $f(g(0))$, $f(g(2))$, $g(f(0))$ for given
-        linear functions; decide if $f \circ g = g \circ f$ for these values.
-  \item \textbf{Tier A (Apply):} Fill a table for $f(g(x))$ and $g(f(x))$ from a value table;
-        write analytic formulas for $f \circ g$ when $f(x) = x^2$, $g(x) = 2x-1$; state domain.
-  \item \textbf{Tier E (Extend):} Decompose $h(x) = (3x+2)^4$ two different ways; verify each;
-        explain which decomposition is $f(g(x))$ and which is $g(f(x))$ --- or explain why a
-        swap is impossible.
+Students work on the \textbf{Group Activity: The Checkout Counter} in leveled
+tiers. Every tier uses the same two functions --- coupon $c(p) = p-10$ and tax
+$t(x) = 1.06x$ --- so groups can be regrouped mid-activity without new setup.
+
+\begin{itemize}
+  \item \textbf{Tier R (Remediate):} Fill a table of $c(p)$, then a second row
+        of $t(c(p))$, one machine at a time; then answer which function ran
+        first and what the middle row physically \textit{is}.
+  \item \textbf{Tier A (Apply):} Compute $t(c(60))$ and $c(t(60))$ in recorded
+        steps, build both formulas symbolically, and state which order the
+        shopper wants and by how much.
+  \item \textbf{Tier E (Extend):} Replace the coupon with a 25\% discount
+        $d(p) = 0.75p$ and discover that $d$ and $t$ \textit{do} commute ---
+        then explain why. Finish by decomposing the register's printed rule and
+        rewriting $f(x+3)$ from Lesson 1.4 as a composition.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (3 questions, 1 page): (1) find $f(g(2))$ for $f(x) = x+4$, $g(x) = 3x$;
-(2) write the formula for $(f \circ g)(x)$ and simplify; (3) write $(g \circ f)(x)$ and
-compare.
-
-Sort by: students who miss (1) need review of evaluating the inner function first (LO 2.7.A);
-students who miss (2) need re-teaching of analytic substitution (EK 2.7.B.2);
-students who miss (3) need work on non-commutativity (EK 2.7.A.3).
+\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
+\begin{enumerate}
+  \item For $f(x) = x+4$ and $g(x) = 3x$, evaluate $f(g(2))$ and $g(f(2))$
+        (work space provided).
+  \item For the same $f$ and $g$, write $(f \circ g)(x)$ and $(g \circ f)(x)$
+        simplified, then say whether they are the same function.
+  \item Decompose $h(x) = (x-5)^3$ into an outer function and an inner
+        function.
+\end{enumerate}
+\textbf{Assessment note:} Item 1 is the diagnostic --- two matching answers
+means the student ran the same machine twice and Part 2 needs a reteach in
+tomorrow's warm-up window. Item 2 misses split two ways: $3x+12$ in both slots
+is a substitution error, while $3(x+4)$ left unsimplified is only a bookkeeping
+miss. Item 3 with $f(u) = u - 5$ on the outside is the decomposition reversal
+from Active Monitoring.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework (6 problems): numerical composition from a table; analytic $f(g(x))$ and $g(f(x))$
-for linear and quadratic; evaluate $f \circ g$ at a negative input; decompose a cubic; real-world
-profit composition; AP-style MC on $f \circ g$.
+\textbf{Homework:} 5 problems covering table-based composition in both orders,
+analytic construction of $f \circ g$ and $g \circ f$ for a quadratic and a
+linear function, the checkout-counter context at a new price, decomposition
+(including rewriting a Lesson 1.4 horizontal shift as a composition), and one
+AP-style multiple-choice item on $f \circ g$.
 
-Preview of Lesson 2.8 (Inverse Functions): if we compose a function with its inverse, we get the
-identity function, $f(f^{-1}(x)) = x$. Decomposing a function is the first step toward finding what
-``undoes'' it --- today's decomposition skill leads directly to inverses.
+\textbf{Extension (optional):} Verify that the identity $I(x) = x$ leaves
+$f(x) = 5x-2$ unchanged in either order, then hunt for a function $g$ with
+$f(g(x)) = x$. Students who find $g(x) = \dfrac{x+2}{5}$ have invented the
+inverse function a day early.
+
+\textbf{Preview:} Next lesson (1.6, Inverse Functions) answers the question the
+extension raises: which function \textit{undoes} $f$? The test is a
+composition --- $f(f^{-1}(x)) = x$, the identity function from Part 5.
 \end{skillbox}
 
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1(c) is the payoff: substituting
+$x^2$ into $f(x) = 2x+1$ is a routine algebra question here and the entire
+mechanic of Part 3 --- when you get there, say out loud that they already did
+it. Item 2's backwards table read (``which $x$ gives 0?'') is the habit Part 2
+leans on when the inner output has to be looked up as an input. Item 3 is a
+one-line callback to 1.4 so Part 5's punchline lands.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The single most valuable thing you can enforce today is \textbf{writing the
+middle number down}. A student who computes $f(g(1))$ in their head and writes
+only the final answer has no place to be wrong out loud, and no place for you to
+catch it. Part 2's two-step layout is built for that; do not let them skip the
+first blank. Part 4 is the meaning of the lesson, not a detour --- if you are
+short on time, compress Part 3's second work block ($g(f(x))$) rather than
+cutting Part 4 or 5. Domain of a composite stays at exposure depth: the table
+value $f(g(2))$ that has no answer is enough, and no student needs interval
+algebra today.
+\end{teachernote}
+
+\begin{teachernote}[Group Activity]
+All three tiers use the same coupon and tax functions, so a student who finishes
+Tier R can move straight into Tier A without re-reading a scenario. Tier R's
+middle row is the point of that tier: make groups say what the number
+\textit{is} (the price after the coupon, before tax) rather than just computing
+it. Tier A's \$0.60 gap is worth a whole-class pause --- ask why it is exactly
+sixty cents at every price, and let someone get to ``it's the tax on the ten
+dollars.'' Tier E's discovery that a percentage discount \textit{does} commute
+with tax is the best share of the day: order matters in general, not always,
+and knowing the difference is the sophisticated version of the idea.
+\end{teachernote}
+
+\begin{teachernote}[Exit Ticket]
+Collected, completion credit only. Sort by item 1: $f(g(2)) = 10$ and
+$g(f(2)) = 18$ is the target, and any pile where the two answers match is your
+reteach group. On item 2 accept $3(x+4)$ as well as $3x+12$ --- the second slot
+is testing substitution, not distribution. Item 3 has more than one defensible
+answer if a student splits it differently; the test is whether substituting back
+rebuilds $h$, so read their check, not their letters.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Problem 4(b) --- rewriting $f(x+6)$ as a composition --- is the one that closes
+the loop with Lesson 1.4, and it is the item to scan first; a student who cannot
+do it did not hear Part 5. On problem 5, distractor B is $(g \circ f)(x)$ left
+unexpanded, C is $(g \circ f)(x)$ expanded, and D is the ``circle means
+multiply'' error, $f(x) \cdot g(x)$ --- each is worth thirty seconds of autopsy
+tomorrow. The extension is the direct on-ramp to 1.6; if the class never
+reached Tier E, assign it explicitly so someone arrives tomorrow having already
+built an inverse.
+\end{teachernote}
 \end{document}

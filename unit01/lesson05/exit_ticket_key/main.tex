@@ -7,43 +7,47 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.5}{Exit Ticket --- Answer Key}
-\namedateperiod
+
+\vspace{0.12in}
+
+\textit{Let $f(x) = x + 4$ and $g(x) = 3x$ for items 1 and 2.}
 
 \vspace{0.1in}
 
-\textit{Let $f(x) = x + 4$ and $g(x) = 3x$.}
+\begin{enumerate}[itemsep=12pt]
 
-\vspace{0.1in}
+\item Evaluate both composites at $x = 2$. Write the middle number down.
 
-\begin{enumerate}[itemsep=16pt]
+\begin{work}
+  f(g(2)) &= f(6) \\
+          &= 6 + 4 \\
+          &= 10 \\
+  g(f(2)) &= g(6) \\
+          &= 3(6) \\
+          &= 18
+\end{work}
 
-\item Find $f(g(2))$. Show each step.
+$f(g(2)) = $ \ans{10} \qquad $g(f(2)) = $ \ans{18}
 
-      \vspace{0.06in}
-      $g(2) = $ \ans{6} \qquad $f\!\left(\ans{6}\right) = $ \ans{10}
+\item Write each composite as a simplified formula.
 
-\item Write a simplified formula for $(f \circ g)(x)$.
+\begin{work}
+  (f \circ g)(x) &= f(3x) \\
+                 &= 3x + 4 \\
+  (g \circ f)(x) &= g(x + 4) \\
+                 &= 3x + 12
+\end{work}
 
-      \vspace{0.06in}
-      $(f \circ g)(x) = f(g(x)) = f\!\left(\ans{$3x$}\right) = $ \ans{$3x + 4$}
+$(f \circ g)(x) = $ \ans{$3x + 4$} \qquad $(g \circ f)(x) = $ \ans{$3x + 12$}
 
-\item Write a simplified formula for $(g \circ f)(x)$. Is it the same as $(f \circ g)(x)$?
+\smallskip
+Are they the same function? \ans{No}
 
-      \vspace{0.06in}
-      $(g \circ f)(x) = g(f(x)) = g\!\left(\ans{$x+4$}\right) = $ \ans{$3(x+4) = 3x+12$}
+\item Decompose $h(x) = (x - 5)^3$ into an inner and an outer function.
 
-      \vspace{0.06in}
-      Same as $(f \circ g)(x)$? \ans{No. $3x+4 \ne 3x+12$. Composition is not commutative.}
+\smallskip
+Inner: $g(x) = $ \ans{$x - 5$} \qquad Outer: $f(u) = $ \ans{$u^3$}
 
 \end{enumerate}
-
-\begin{teachernote}
-Item 1: $g(2) = 6$; $f(6) = 10$.
-
-Item 2: $(f \circ g)(x) = 3x+4$.
-
-Item 3: $(g \circ f)(x) = 3x+12$. These differ by 8 --- a good discussion point on why order matters.
-Students who get item 2 correct but item 3 wrong often forget to distribute the 3.
-\end{teachernote}
 
 \end{document}
