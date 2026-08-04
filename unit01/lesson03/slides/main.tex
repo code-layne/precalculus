@@ -1,182 +1,213 @@
 %! Rates of Change — Unit 1, Lesson 1.3 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% ── TITLE SLIDE ──────────────────────────────────────────────────────────────
+% TITLE SLIDE
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
+    {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
     {\color{white}\bfseries\LARGE Rates of Change}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
 }
 
-% ── HOOK ─────────────────────────────────────────────────────────────────────
+% HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: The Highway Problem}
+  \plumheader{Hook: The Road-Trip Average}
   \sectionlabel[goldacc]{Think About It}
 
-  \vspace{0.3cm}
-  {\large\bfseries You're driving on the highway.}
+  A family drives 120 miles in 3 hours. The GPS reports:
 
-  \vspace{0.5cm}
-  Your GPS says your \textbf{average speed} over the last hour was \textbf{62 mph}.
+  \bigskip
+  \begin{center}
+    {\LARGE \textbf{average speed 40 mph}}
+  \end{center}
 
-  \vspace{0.6cm}
-  \begin{itemize}
-    \setlength{\itemsep}{10pt}
-    \item Were you going \emph{exactly} 62 mph the whole time?
-    \item What does ``average speed'' actually mean?
-    \item How is this related to the functions we study?
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Were they going exactly 40 the whole time?
+    \item So what does the 40 \textbf{promise}?
   \end{itemize}
 
-  \vspace{0.6cm}
-  {\color{navy}\textit{Average speed = one constant speed that covers the same distance
-  in the same time.}}
+  \bigskip
+  \textit{One steady 40 mph would cover the same 120 miles in the same
+  3 hours --- that promise is today's definition.}
 \end{frame}
 
-% ── AROC DEFINITION ──────────────────────────────────────────────────────────
+% SECTION 1 — AROC DEFINITION
 \begin{frame}[t, plain]
-  \navyheader{Average Rate of Change (AROC)}
-  \sectionlabel{Definition}
+  \plumheader{1. Average Rate of Change --- Slope, Upgraded}
 
-  The \textbf{average rate of change} of $f$ over $[a,b]$:
+  \begin{block}{The definition}
+    \[
+      \text{AROC over } [a, b]
+      \;=\; \frac{\text{change in output}}{\text{change in input}}
+      \;=\; \frac{f(b) - f(a)}{b - a}
+    \]
+    The slope formula, wearing function notation --- and it works on
+    \textbf{any} function, not just lines.
+  \end{block}
 
-  \vspace{0.3cm}
-  \[
-      \text{AROC} = \frac{\Delta f}{\Delta x} = \frac{f(b)-f(a)}{b-a}
-  \]
+  \medskip
+  \begin{block}{Example: \(f(x) = x^2\) over \([1, 4]\)}
+    \(f(1) = 1\), \quad \(f(4) = 16\)
+    \[
+      \text{AROC} = \frac{16 - 1}{4 - 1} = \frac{15}{3} = 5
+    \]
+  \end{block}
 
-  \vspace{0.2cm}
-  \begin{itemize}
-    \setlength{\itemsep}{8pt}
-    \item \textbf{Numerator} $= f(b)-f(a)$: change in \emph{output}
-    \item \textbf{Denominator} $= b-a$: change in \emph{input}
-    \item Equals the slope of the \textbf{secant line} through $(a,f(a))$ and $(b,f(b))$
-    \item Positive AROC $\Rightarrow$ output and input change in the \emph{same} direction
-    \item Negative AROC $\Rightarrow$ output and input change in \emph{opposite} directions
-  \end{itemize}
+  \medskip
+  The line through \((1,1)\) and \((4,16)\) is the \textbf{secant line};
+  the AROC is its \textbf{slope}.
 \end{frame}
 
-% ── WORKED EXAMPLE FROM TABLE ─────────────────────────────────────────────────
+% SECTION 2 — FROM A TABLE
 \begin{frame}[t, plain]
-  \navyheader{Computing AROC from a Table}
-  \sectionlabel{Worked Example}
+  \plumheader{2. AROC from a Table}
 
-  \vspace{0.2cm}
-  \renewcommand{\arraystretch}{1.5}
+  \(T(t)\) is the temperature in \(^\circ\)F \(t\) hours after sunrise.
+
+  \bigskip
   \begin{tabular}{|c|c|c|c|c|}
   \hline
-  $x$ & 1 & 2 & 4 & 7 \\
+  \(t\) (hours) & 0 & 2 & 4 & 6 \\
   \hline
-  $h(x)$ & 3 & 7 & 11 & 20 \\
-  \hline
-  \end{tabular}
-
-  \vspace{0.5cm}
-  \textbf{Find the AROC of $h$ over $[1,\,4]$:}
-
-  \[
-      \text{AROC} = \frac{h(4)-h(1)}{4-1} = \frac{11-3}{3} = \frac{8}{3} \approx 2.67
-  \]
-
-  \vspace{0.3cm}
-  \textbf{Interpretation:} On average, for every 1-unit increase in $x$, $h$ increases
-  by about $2.67$ units.
-
-  \vspace{0.4cm}
-  \textbf{Your turn:} Find the AROC of $h$ over $[2,\,7]$.
-\end{frame}
-
-% ── APPROXIMATING ROC AT A POINT ─────────────────────────────────────────────
-\begin{frame}[t, plain]
-  \navyheader{Approximating Rate of Change at a Point}
-  \sectionlabel{Shrinking Intervals}
-
-  \textbf{Question:} What is the rate of change of $h$ \emph{exactly} at $x = 2$?
-
-  \vspace{0.3cm}
-  Use successively smaller intervals:
-
-  \vspace{0.2cm}
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|c|c|}
-  \hline
-  \textbf{Interval} & \textbf{AROC} \\
-  \hline
-  $[2,\;2.5]$ & $\dfrac{9-7}{0.5} = 4$ \\
-  \hline
-  $[2,\;2.1]$ & $\dfrac{7.4-7}{0.1} = 4$ \\
-  \hline
-  $[2,\;2.01]$ & $\dfrac{7.04-7}{0.01} = 4$ \\
+  \(T(t)\) (\(^\circ\)F) & 40 & 52 & 58 & 54 \\
   \hline
   \end{tabular}
 
-  \vspace{0.4cm}
-  As the interval shrinks, AROC $\to$ \textbf{4}.
-  This approximates the \textbf{rate of change at} $x = 2$.
+  \bigskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item AROC over \([0,2]\): \((52-40)/2 = 6\) \(^\circ\)F per hour
+    \item AROC over \([2,4]\): \((58-52)/2 = 3\) \(^\circ\)F per hour
+    \item AROC over \([4,6]\): \((54-58)/2 = -2\) \(^\circ\)F per hour
+  \end{itemize}
 
-  \vspace{0.2cm}
-  {\color{navy}\small (In calculus, this limiting value is called the \emph{derivative}.)}
+  \bigskip
+  \begin{block}{Watch the order}
+    Output difference upstairs, input difference downstairs ---
+    \textbf{subtracted in the same order on both floors}.
+  \end{block}
 \end{frame}
 
-% ── SIGN OF ROC ──────────────────────────────────────────────────────────────
+% SECTION 2, CONT. — FROM A GRAPH
 \begin{frame}[t, plain]
-  \navyheader{Sign of the Rate of Change}
-  \sectionlabel{Positive vs.\ Negative}
+  \plumheader{AROC from a Graph}
 
-  \vspace{0.3cm}
-  \begin{columns}[t]
-  \column{0.48\textwidth}
-    \textbf{\color{greenacc}Positive AROC}\\[6pt]
-    As $x$ increases, $f(x)$ \textbf{increases}.\\[4pt]
-    The two quantities change in the \emph{same direction}.\\[12pt]
-    \textit{Examples:}
-    \begin{itemize}
-      \item Temperature rising as time passes
-      \item Revenue growing with more units sold
-    \end{itemize}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.45cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {1,2,3,4,5,6,7} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] plot [smooth] coordinates
+          {(0,2) (2,5) (4,6) (6,5) (8,2)};
+        \draw[dashed, thick, goldacc] (0,2) -- (4,6);
+        \fill[plum] (0,2) circle (2.5pt);
+        \fill[plum] (4,6) circle (2.5pt);
+        \fill[plum] (8,2) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
 
-  \column{0.48\textwidth}
-    \textbf{\color{redacc}Negative AROC}\\[6pt]
-    As $x$ increases, $f(x)$ \textbf{decreases}.\\[4pt]
-    The two quantities change in \emph{opposite directions}.\\[12pt]
-    \textit{Examples:}
-    \begin{itemize}
-      \item Elevation decreasing as you walk downhill
-      \item Tank emptying as time passes
-    \end{itemize}
+    \column{0.46\textwidth}
+      \begin{itemize}\setlength{\itemsep}{8pt}
+        \item Read the two points, then divide:
+        \item AROC over \([0,4]\):
+              \(\dfrac{6-2}{4-0} = 1\)
+        \item AROC over \([4,8]\):
+              \(\dfrac{2-6}{8-4} = -1\)
+      \end{itemize}
+
+      \medskip
+      The dashed \textbf{secant line} makes the first answer visible:
+      slope 1.
   \end{columns}
 \end{frame}
 
-% ── CLASS PRACTICE ────────────────────────────────────────────────────────────
+% SECTION 3 — SIGN AND UNITS
 \begin{frame}[t, plain]
-  \navyheader{Class Practice}
-  \sectionlabel[goldacc]{Try These}
+  \plumheader{3. What the Sign Says}
 
-  \vspace{0.2cm}
-  \textbf{1.} A function $f$ has $f(2)=10$, $f(5)=25$, $f(5.1)=25.3$.
+  \begin{block}{Sign = direction}
+    \textbf{Positive} AROC: the quantities move in the \textbf{same}
+    direction. \quad
+    \textbf{Negative} AROC: as one increases, the other \textbf{decreases}.
+  \end{block}
 
-  \begin{itemize}
-    \setlength{\itemsep}{6pt}
-    \item[(a)] Compute the AROC of $f$ over $[2,\,5]$.
-    \item[(b)] Approximate the rate of change at $x=5$ using the interval $[5,\,5.1]$.
+  \medskip
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item The \(-2\) from the table: temperature \textbf{falling} 2 degrees
+          per hour.
+    \item Zero AROC: no \textbf{net} change --- careful, it does not mean
+          nothing happened.
+    \item Every rate carries \textbf{units}: output units per input unit
+          (\(^\circ\)F per hour, feet per second, people per year).
   \end{itemize}
 
-  \vspace{0.5cm}
-  \textbf{2.} The AROC of a function $g$ from $x=0$ to $x=3$ is $-4$.
+  \bigskip
+  \textit{From now on, an answer without units is half an answer.}
+\end{frame}
 
-  Describe in words how $g$'s output changes on this interval.
+% SECTION 4 — LINEAR VS QUADRATIC
+\begin{frame}[t, plain]
+  \plumheader{4. The Pattern of the AROCs}
 
-  \vspace{0.5cm}
-  \textbf{3.} Using the population table from the activity, which decade had the
-  greatest rate of growth? How do you know?
+  Compute the AROC over each unit interval --- then watch the
+  \textbf{pattern}.
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Linear: \(f(x) = 2x + 1\)}
+        Outputs: 1, 3, 5, 7, 9\\[4pt]
+        AROCs: \(2,\ 2,\ 2,\ 2\)\\[4pt]
+        The AROC is \textbf{constant} --- that is what one fixed
+        ``slope'' means.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Quadratic: \(g(x) = x^2\)}
+        Outputs: 0, 1, 4, 9, 16\\[4pt]
+        AROCs: \(1,\ 3,\ 5,\ 7\)\\[4pt]
+        Not constant --- but each step climbs by exactly \textbf{2}:
+        the AROCs change at a \textbf{constant rate}.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{block}{The concavity link (from 1.2)}
+    AROCs \textbf{increasing} \(\Rightarrow\) concave \textbf{up}. \quad
+    AROCs \textbf{decreasing} \(\Rightarrow\) concave \textbf{down}.
+  \end{block}
+\end{frame}
+
+% CLASS PRACTICE
+\begin{frame}[t, plain]
+  \plumheader{Class Practice}
+  \sectionlabel[redacc]{Try It}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \item Let \(h(x) = x^2 - 3x\). Find the AROC over \([2, 5]\).
+    \item A function's AROCs over consecutive equal-length intervals are
+          \(10,\ 7,\ 4,\ 1\).
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item By how much does each AROC change? Is the function linear
+                  or quadratic?
+            \item Is its graph concave up or concave down?
+          \end{enumerate}
+    \item A pool drains so that the AROC of the water volume is \(-50\)
+          gallons per minute over \([0, 10]\). Say what that means in one
+          sentence --- with units.
+  \end{enumerate}
 \end{frame}
 
 \end{document}

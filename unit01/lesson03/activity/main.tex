@@ -7,132 +7,159 @@
 \begin{document}
 
 \pageheader{Unit 1, Lesson 1.3}{Group Activity}
-\namepartnerperiod
-
-\vspace{0.15in}
-
-\begin{scenariobox}[City Population Data]{sky}
-The table below shows the population (in thousands) of a city over several decades.
-
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|C{2.2cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|C{1.6cm}|}
-\hline
-\rowcolor{sky}
-\textbf{Year}       & 1970 & 1980 & 1990 & 2000 & 2010 & 2020 \\
-\hline
-\textbf{Pop.\ (thousands)} & 120  & 145  & 178  & 221  & 198  & 215  \\
-\hline
-\end{tabular}
-
-\vspace{4pt}
-Let $P(t)$ denote the population (in thousands) in year $t$.
-\end{scenariobox}
 
 \vspace{0.12in}
 
+\begin{scenariobox}[The Water Balloon Launch]{plumlight}
+\small
+A water balloon is launched straight up from the ground. The function $h$
+gives its height in feet $t$ seconds after launch. Every tier uses this same
+table and pre-drawn graph --- no drawing required.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$t$ (seconds) & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$h(t)$ (feet) & 0 & 48 & 64 & 48 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[x=1.1cm, y=0.55cm]
+  \draw[linegray, very thin, xstep=1, ystep=1] (0,0) grid (4,4);
+  \draw[->, thick] (0,0) -- (4.5,0) node[below right] {\small $t$ (s)};
+  \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small $h(t)$ (ft)};
+  \foreach \x in {1,2,3,4} \node[below] at (\x,0) {\small \x};
+  \node[left] at (0,1) {\small 16};
+  \node[left] at (0,2) {\small 32};
+  \node[left] at (0,3) {\small 48};
+  \node[left] at (0,4) {\small 64};
+  \draw[very thick, plum] plot [smooth] coordinates
+    {(0,0) (1,3) (2,4) (3,3) (4,0)};
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (1,3) circle (2.5pt);
+  \fill[plum] (2,4) circle (2.5pt);
+  \fill[plum] (3,3) circle (2.5pt);
+  \fill[plum] (4,0) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{R1.} Compute the AROC of the population over the interval $[1970,\,1990]$.
-Use the formula $\text{AROC} = \dfrac{P(b)-P(a)}{b-a}$.
+\begin{enumerate}[itemsep=8pt]
+  \item Fill in the blanks to compute the AROC over $[0, 1]$:
 
-\[
-    \text{AROC} = \frac{P(\hphantom{0000}) - P(\hphantom{0000})}{\hphantom{0000} - \hphantom{0000}}
-    = \frac{\hphantom{000} - \hphantom{000}}{\hphantom{0000}}
-    = \hphantom{000} \text{ thousands per year}
-\]
+        \vspace{0.05in}
+        AROC $= \dfrac{h(1) - h(0)}{1 - 0} = \dfrac{\text{\blank{1.2cm}} - \text{\blank{1.2cm}}}{1 - 0}
+        = $ \blank{1.4cm} feet per second
 
-\vspace{6pt}
-\textbf{R2.} Compute the AROC over $[1990,\,2010]$.
+  \item Now the AROC over $[1, 2]$:
 
-\[
-    \text{AROC} = \frac{P(\hphantom{0000}) - P(\hphantom{0000})}{\hphantom{0000} - \hphantom{0000}}
-    = \hphantom{0000} \text{ thousands per year}
-\]
+        \vspace{0.05in}
+        AROC $= \dfrac{h(2) - h(1)}{2 - 1} = $ \blank{1.4cm} feet per second
 
-\vspace{6pt}
-\textbf{R3.} During which time period did the population grow \emph{faster}?
-How do you know?
+  \item During which second did the balloon climb \textbf{faster} --- the
+        first ($0$ to $1$) or the second ($1$ to $2$)? \quad \blank{2.4cm}
 
-\writeline\writeline
+  \item Between $t = 2$ and $t = 3$, is the balloon rising or falling? \quad
+        \textbf{Rising} / \textbf{Falling}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Apply},
+    title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\textbf{A1.} Compute the AROC for each decade in the table. Fill in the table.
+\begin{enumerate}[itemsep=8pt]
+  \item Complete the AROC table.
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.0cm}|C{5.5cm}|C{3.0cm}|}
-\hline
-\rowcolor{sky}
-\textbf{Decade} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
-\hline
-1970 -- 1980 & $\dfrac{P(1980)-P(1970)}{10}$ & \blank{2cm} \\
-\hline
-1980 -- 1990 & $\dfrac{P(1990)-P(1980)}{10}$ & \blank{2cm} \\
-\hline
-1990 -- 2000 & $\dfrac{P(2000)-P(1990)}{10}$ & \blank{2cm} \\
-\hline
-2000 -- 2010 & $\dfrac{P(2010)-P(2000)}{10}$ & \blank{2cm} \\
-\hline
-2010 -- 2020 & $\dfrac{P(2020)-P(2010)}{10}$ & \blank{2cm} \\
-\hline
-\end{tabular}
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \textbf{Interval} & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ \\
+        \hline
+        \textbf{AROC (ft/s)} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
 
-\vspace{8pt}
-\textbf{A2.} Which decade had the \emph{greatest} rate of population growth? \blank{3cm}
+  \item Write one sentence interpreting the AROC over $[2, 3]$ --- include
+        its sign and its units.
 
-\vspace{6pt}
-\textbf{A3.} One of the AROC values is \emph{negative}. Which decade? \blank{2.5cm}
-What does a negative AROC mean in this context?
+        \vspace{0.05in}
+        \writelines{2}
 
-\writeline\writeline
+  \item Look at your table: each AROC changes by the same amount from one
+        interval to the next. That step is \blank{1.4cm} ft/s per second ---
+        so $h$ is a \blank{2.4cm} function, and its graph is concave
+        \blank{1.4cm}.
+
+  \item Compute the AROC over the whole flight, $[0, 4]$. \quad
+        \blank{1.4cm} ft/s
+
+        The balloon clearly moved --- why is this answer technically correct
+        but misleading?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
 \end{tcolorbox}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier E --- Extend},
+    title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-Suppose additional data gives: $P(2005) = 210$, $P(2008) = 206$, $P(2009) = 200$,
-$P(2009.5) = 199$.
+\begin{enumerate}[itemsep=8pt]
+  \item How fast is the balloon moving \textit{at the instant} $t = 1$? An
+        average needs two points --- so shrink the interval. Use these extra
+        values:
 
-\textbf{E1.} Use successively smaller intervals to approximate the rate of change of
-$P$ at $t = 2010$. Complete the table below (use $P(2010) = 198$).
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        $t$ & 1.5 & 1.1 \\
+        \hline
+        $h(t)$ & 60 & 51.04 \\
+        \hline
+        \end{tabular}
+        \smallskip
 
-\vspace{6pt}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|C{3.2cm}|C{5.5cm}|C{3.2cm}|}
-\hline
-\rowcolor{sky}
-\textbf{Interval} & \textbf{AROC formula} & \textbf{AROC (th./yr)} \\
-\hline
-$[2005,\;2010]$ & $\dfrac{P(2010)-P(2005)}{5}$ & \blank{2cm} \\
-\hline
-$[2008,\;2010]$ & $\dfrac{P(2010)-P(2008)}{2}$ & \blank{2cm} \\
-\hline
-$[2009,\;2010]$ & $\dfrac{P(2010)-P(2009)}{1}$ & \blank{2cm} \\
-\hline
-$[2009.5,\;2010]$ & $\dfrac{P(2010)-P(2009.5)}{0.5}$ & \blank{2cm} \\
-\hline
-\end{tabular}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item AROC over $[1, 2]$: \blank{1.4cm} ft/s
+          \item AROC over $[1, 1.5]$: \blank{1.4cm} ft/s
+          \item AROC over $[1, 1.1]$: \blank{1.4cm} ft/s
+        \end{enumerate}
 
-\vspace{8pt}
-\textbf{E2.} What value does the AROC appear to be approaching? \blank{3cm}
+  \item The AROCs in question 1 are closing in on a value. Estimate the
+        balloon's speed at the instant $t = 1$: about \blank{1.6cm} ft/s.
+        Why does a smaller interval give a better estimate?
 
-\vspace{6pt}
-\textbf{E3.} What are the limitations of using this approach to find the exact rate of
-change at $t = 2010$? Could you ever use an interval of length 0? Why or why not?
+        \vspace{0.05in}
+        \writelines{2}
 
-\writeline\writeline
+  \item At what instant is the balloon's rate of change equal to zero, and
+        what is happening physically at that moment?
+
+        \vspace{0.05in}
+        \writelines{2}
+\end{enumerate}
 \end{tcolorbox}
 
 \end{document}
