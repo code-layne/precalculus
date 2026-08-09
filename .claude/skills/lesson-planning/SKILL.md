@@ -5,20 +5,36 @@ description: >-
   shared/ style package and a Makefile hierarchy that compiles components with latexmk
   and merges them with pdfunite). Use this whenever the user wants to create, draft, or
   build a lesson, a lesson plan, a unit, or any lesson component — warm-up, guided notes,
-  activity, exit ticket, homework, cover sheet, or their answer keys — for a course like
-  Algebra 2 or AP Statistics. If the course has College Board AP CED documents (files
-  named ap-*), use them to drive objectives, skills, and standards; otherwise generate
-  from a lesson title, description, and a list of standards. Trigger this even when the
-  user just says "make lesson 2.3" or "I need a warm-up and key for tomorrow," and even
-  if they don't say the words "skill" or "LaTeX."
+  activity, exit ticket, homework, cover sheet, or their answer keys. This project is the
+  **Precalculus** course: `COURSE_PLAN.md` is the authoritative unit/lesson map, and the AP
+  Precalculus CED in `spec/` drives each lesson's objectives and essential knowledge. Also
+  use it to author unit-level tests and unit covers. Trigger this even when the user just
+  says "make lesson 2.3" or "I need a warm-up and key for tomorrow," and even if they don't
+  say the words "skill" or "LaTeX."
 ---
 
-# Lesson Planning
+# Lesson Planning — Precalculus
 
-This skill authors lessons for an existing LaTeX curriculum project and produces print-ready
-PDFs through the project's own build system. **It builds around the project's conventions —
-it does not invent its own.** The two reference courses (`algebra2`, `apstats`) are
-structurally identical: only the style-package prefix differs.
+This skill authors lessons for the **Precalculus** curriculum and produces print-ready PDFs
+through the project's own build system. **It builds around the project's conventions — it does
+not invent its own.**
+
+The course at a glance:
+
+- **Track is non-honors.** An honors precalculus course runs separately. This course's job is to
+  cover the fundamentals thoroughly so a student moves comfortably into a *regular* college
+  calculus course — depth over breadth. Scaffold accordingly.
+- **Structure is 8 units × 8 lessons = 64 lessons**, plus a sample test per unit.
+  **`COURSE_PLAN.md` is authoritative** for the unit/lesson map, each lesson's status, and which
+  CED topic drives it. Read it before authoring; it does not mirror the CED 1:1.
+- **Content source is the AP Precalculus CED** (`spec/ap-precalculus-*.pdf`). Lessons
+  `COURSE_PLAN.md` marks **New** have no CED topic — they exist to slow the ramp for the
+  non-honors track or to add calculus-readiness material.
+- **The course is named "Precalculus", not "AP Precalculus".** The CED is the content backbone,
+  but the course title carries no AP prefix. (Framework terms like "AP Skill" keep theirs.)
+- **Style prefix is `precalculus`** — `shared/precalculus-{colors,article,boxes,key,beamer}.sty`.
+  The palette is **plum with gold accents**. A teacher **slide deck** is supported, and every
+  lesson ships one.
 
 ## What a lesson is
 
@@ -49,6 +65,30 @@ artifacts, and the key packet is the student packet answered, **page for page**.
 `main.pdf` is fed straight to `pdfunite` from the source tree with no compile step — so dropping
 in a ready-made PDF is all that's needed (Step 5).
 
+## What a unit is
+
+A unit (`unitXX/`) holds its eight lessons plus **unit-level summative assessments**, scaffolded
+automatically when the unit is first created (Step 3):
+
+- **`tests/`** — the blank tests, one subdir each: **`practice_test/`** (a study copy students
+  keep) and **`actual_test/`** (the real test given in a testing setting). Its `Makefile`
+  (`include ../../shared/tests.mk`) compiles both, and its `drop` target publishes the
+  *practice* test to `sample_test/main.pdf`.
+- **`test_keys/`** — **`practice_test_key/`** and **`actual_test_key/`**, with
+  `include ../../shared/test_keys.mk`; its `drop` publishes to `sample_test_key/main.pdf`.
+- **`sample_test/`**, **`sample_test_key/`** — drop-in dirs. `shared/unit.mk` merges
+  `sample_test` at the tail of the unit **student** packet and `sample_test_key` at the tail of
+  the unit **key** packet. The *actual* test and its key are merged into nothing.
+- **`unit_cover/`** — the unit packet's front matter, and optionally **`unit_cover_key/`**: the
+  same page 1 (both wrappers `\input unit_cover/body.tex`, so they cannot drift) plus a page of
+  **exam scoring notes**, merged into the **key packet only**. That page is where a unit test's
+  answer rationale and extended-response scoring belong — never at the foot of a `*_test_key`,
+  because the practice test is bound into the *student* packet and the rationale would ride
+  along in front of students. A unit with no `unit_cover_key/` gets the plain cover in both.
+
+The eight existing units predate the `body.tex` split: each has a single `unit_cover/main.tex`.
+Adding a key cover to one means moving the sheet body into `unit_cover/body.tex` first.
+
 ## Multi-lesson dispatch — REQUIRED when generating more than one lesson
 
 **When the request covers two or more lessons, do NOT author them sequentially.**
@@ -68,16 +108,17 @@ git fetch origin && git merge --no-edit origin/main
 - detect prefix, read COURSE_PLAN.md, read one model lesson, extract CED topics for L7.4 and L7.5
 
 # Coordinator scaffolds ALL lesson directories before spawning subagents:
-python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 04 --components cover,warmup,notes,activity,exit_ticket,homework
-python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 05 --components cover,warmup,notes,activity,exit_ticket,homework
+python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 04 --course "Precalculus" --title "..." --unit-title "..."
+python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 05 --course "Precalculus" --title "..." --unit-title "..."
 
 # Then in ONE message, spawn two agents in parallel:
 Agent(lesson=7.4, ced_content=..., model_lesson_path=...)
 Agent(lesson=7.5, ced_content=..., model_lesson_path=...)
 
 # Each subagent uses the Write tool only to fill in content (no Bash needed).
-# Coordinator then runs: make -C unit07/lesson04 all && make -C unit07/lesson05 all
-# and verifies warmup/exit_ticket page counts before opening the PR.
+# Coordinator then builds and GATES both before opening the PR:
+#   make -C unit07/lesson04 all && make -C unit07/lesson05 all
+#   make -C unit07 check        ← one report covering every lesson in the unit
 ```
 
 **Why the coordinator must scaffold:** Subagents run in a fresh permission context and
@@ -151,8 +192,8 @@ The only lesson-plan box environment is `skillbox`. `fixedskillbox` is not defin
 causes "Environment fixedskillbox undefined" every time.
 
 ```latex
-% WRONG:  \begin{fixedskillbox}[...]{sky}
-% RIGHT:  \begin{skillbox}[...]{sky}
+% WRONG:  \begin{fixedskillbox}[...]{lilac}
+% RIGHT:  \begin{skillbox}[...]{lilac}
 ```
 
 After writing each lesson plan, grep for `fixedskillbox` and confirm zero hits.
@@ -161,24 +202,28 @@ After writing each lesson plan, grep for `fixedskillbox` and confirm zero hits.
 
 - `\ding{55}` — `pifont` not loaded; use `\textbf{$\times$}` instead
 - bare `gold` color — use `goldbg` / `goldacc`
-- `\usepackage{apstats-boxes}` in a key file — keys use `apstats-key` only (it includes boxes)
+- `\usepackage{precalculus-boxes}` in a key file — keys use `precalculus-key` only (it includes boxes)
 - `fixedskillbox` anywhere (see rule 4)
 - `tierbox` — does not exist; use `tcolorbox` with `[colback=white, colframe=black!40, title=\textbf{Tier R --- ...}, fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]`
 
 ### 6. Only use colors defined in `shared/*-colors.sty`
 
 Before using any color name in a box or tcolorbox, verify it is defined in the project's
-color file (`shared/<prefix>-colors.sty`). Never invent color names. Defined colors for
-`apstats`:
+color file (`shared/precalculus-colors.sty`). Never invent color names. Defined colors:
 
 ```
-navy  navylight  sky  skymid  goldacc  goldbg  hookbg
+plum  plumlight  lilac  lilacmid  goldacc  goldbg  hookbg
 greenbg  greenacc  redbg  redacc  charcoal  slate  linegray  keyred
-goldbox  greenbox  redbox
+goldbox  greenbox  redbox  plumbox
+navy  navylight  sky  skymid          ← DEPRECATED aliases onto the plum ramp
 ```
 
-Any other name (e.g. `bluebox`, `purplebox`, `orangebox`, `gold`) is **undefined** and will
-cause a compile error. When in doubt, `grep` the `.sty` file for the color name first.
+**Use `plum`/`lilac` in new material.** `navy`, `navylight`, `sky`, and `skymid` still compile —
+they are `\colorlet` aliases kept so older lessons keep building — but they name the wrong color
+and must not appear in anything newly authored.
+
+Any other name (e.g. `royal`, `burgundy`, `bluebox`, `purplebox`, `orangebox`, `gold`) is
+**undefined** and will cause a compile error. When in doubt, `grep` the `.sty` file first.
 
 ## Workflow
 
@@ -217,35 +262,39 @@ do not invent a remote.
 
 Never assume the prefix or conventions. Inspect the project **after the Step 0 merge**:
 
-1. **Find the prefix.** `ls shared/*-colors.sty` → the prefix is the part before `-colors.sty`
-   (e.g. `algebra2`, `apstats`). All `\usepackage{<prefix>-article}` etc. must use it.
+1. **Confirm the prefix.** `ls shared/*-colors.sty` → here it is `precalculus`. All
+   `\usepackage{precalculus-article}` etc. must use it.
 2. **Learn course-level macros.** Grep the shared styles and an existing lesson plan for
-   `\CourseName`, `\MeetingLength`, `\UnitNumberName`, `\LessonNumberName`.
-   Some courses define course-level macros inside the style package (apstats); others define
-   them per lesson plan (algebra2). Define in the new files only what isn't already provided.
+   `\CourseName`, `\MeetingLength`, `\UnitNumberName`, `\LessonNumberName`. Define in the new
+   files only what isn't already provided.
 3. **Choose the input path.** Look for College Board CED files in a `spec/` directory, named
    `ap-*.pdf` (the detailed `...course-and-exam-description.pdf`, the `...course-at-a-glance.pdf`,
-   and supporting overview/poster files). If present → **AP path** (`references/ap-workflow.md`).
-   If absent → **standards path** (`references/standards-workflow.md`). In an AP course, one CED
-   **Topic** (e.g. Topic 1.1) maps to one lesson (Lesson 1.1).
+   and supporting overview/poster files). If present → **CED path** (`references/ap-workflow.md`).
+   If absent → **standards path** (`references/standards-workflow.md`).
+   **In this course the CED does not map 1:1 to lessons.** `COURSE_PLAN.md` is the authoritative
+   unit/lesson map (8 units × 8 lessons, non-honors); it names the CED topic that drives each
+   lesson, and lessons marked **New** have no CED topic at all — those take the standards path.
+   Read `COURSE_PLAN.md` for the target lesson before opening the CED.
 4. **Find the insertion point.** List `unit*/lesson*` to determine the next unit/lesson
    number and whether the target lesson already exists.
-5. **Read one built lesson as a model.** Open an existing fully-built lesson in the same
-   course (or, if none, the closest sibling course) and mirror its preamble lines, box usage,
-   and tone. Conventions are summarized in `references/conventions.md`, but the live project
-   is the source of truth.
+5. **Read one built lesson as a model.** Open an existing **reauthored** lesson (per
+   `COURSE_PLAN.md`'s status column) and mirror its preamble lines, box usage, and tone. Do not
+   model on a lesson still marked **moved** — its body is pre-restructure content that has not
+   been brought up to the conventions or the plum palette. Conventions are summarized in
+   `references/conventions.md`, but the live project is the source of truth.
 
 ### Step 2 — Gather inputs
 
-- **AP path:** locate the CED, extract the unit → topic → Learning Objective → Essential
-  Knowledge content relevant to this lesson, plus the governing Big Idea and AP Skill. See
-  `references/ap-workflow.md`. Confirm the topic mapping with the user before authoring.
+- **CED path:** read `COURSE_PLAN.md` for the lesson's row (title, focus, and the "CED n.m"
+  topic that drives it), then extract that topic's Learning Objective → Essential Knowledge
+  content from the CED, plus the governing Big Idea and Skill. See `references/ap-workflow.md`.
+  Confirm the topic mapping with the user before authoring.
 - **Standards path:** collect the lesson title, a short description, and the list of standards
   being addressed. See `references/standards-workflow.md`.
 
 Either way, the lesson-plan *structure* is identical (`references/components.md` → "Lesson
-plan"). Review units (e.g. Algebra 2 Unit 1) use the same skeleton; they simply fill the
-Priority Ideas & Skills with review topics and usually carry no AP-framework tags.
+plan"). A review or ramp-slowing lesson uses the same skeleton; it simply fills the Priority
+Ideas & Skills with the prerequisite skills being re-activated and carries no CED tags.
 
 ### Step 3 — Scaffold the lesson directory
 
@@ -254,8 +303,14 @@ Run the scaffold script, which creates the directory, the one-line `Makefile`
 
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
+  --title "Composition of Functions" --unit-title "Functions and Their Graphs" --course "Precalculus" \
   --components cover,warmup,notes,activity,exit_ticket,homework,slides
 ```
+
+It also creates the root and unit `Makefile`s if they are missing, and — **when the unit is new**
+— scaffolds that unit's `tests/`, `test_keys/`, `sample_test/`, and `sample_test_key/` (see "What
+a unit is"). It never clobbers: re-scaffolding a later lesson leaves authored tests alone. Pass
+`--no-tests` to skip, or `--tests` to force the test dirs into an existing unit.
 
 The script is bundled with the skill, so it is invoked via `${CLAUDE_SKILL_DIR}` (the working
 directory at runtime is the user's project, not the skill folder); `--project .` is the project
@@ -327,16 +382,45 @@ per-lesson in `target/compiled/unitXX/`. Output lands in `target/`. The build ne
 surface the `.log` and fix the offending `.tex` rather than editing the build system. Details
 and troubleshooting in `references/build.md`.
 
-After building, confirm the pair is aligned — the student and key packets must report the
-**same page count**:
+### Step 7 — Gate it with `make check`
+
+**`make all` exiting 0 does not mean the lesson is correct.** A LaTeX compile is perfectly happy
+with a key that runs a page longer than its blank, a two-page exit ticket, and `\ans` buried in
+math. `make check` is what turns those into failures:
+
+```bash
+make -C unit02/lesson03 check     # one lesson — builds first, then gates
+make -C unit02 check              # every lesson in the unit, in one report
+make check                        # the whole curriculum
+```
+
+It enforces page parity (every keyed component equals its `_key`), the one-page rule for the
+warm-up and exit ticket on **both** sides, `\ans`/`\ansline` never inside math, no `teachernote`
+in a component key, and no name row on a worksheet. It reports **every** violation in one pass
+and exits 1, so it is the gate to run before opening a PR — not a smoke test. Implemented in
+`shared/lesson_check.py`; full list in `references/conventions.md` ("The convention gate").
+
+Source-only checks, no build required:
+
+```bash
+python3 shared/lesson_check.py unit02/lesson03 --no-pages
+```
+
+`check` supersedes the manual page-count comparison — but if you want it directly, the student
+and key packets must report the **same page count**:
 
 ```bash
 for f in target/compiled/unit02/lesson03_{student,key}.pdf; do pdfinfo "$f" | awk -v f="$f" '/^Pages/{print f, $2}'; done
 ```
 
+**The gate does not walk `unitXX/tests/`.** A test blank legitimately keeps its name row, so the
+checker skips it — that is a limit of the checker, not an exemption. A unit test key must still
+carry no `teachernote` (scoring notes go on page 2 of `unitXX/unit_cover_key/`) and must still
+paginate identically to its blank. Verify both by hand.
+
 ## Reviewing or revising a lesson — the five conventions, in order
 
-The conventions landed **after** most of this course was authored, so any of the 58 existing
+The conventions landed **after** most of this course was authored, so any of the 64 existing
 lessons can be behind on one. The user brings a lesson forward by name:
 
 > `/lesson-planning apply boxguard namestrip retrofit to 6.1 and 6.3`
@@ -364,11 +448,12 @@ against.
 Full spec for each: `references/conventions.md` ("The five conventions").
 
 **There is no bulk sweep.** Retrofitting every lesson at once would re-flow the pagination of
-all 58 verified lessons; do them lesson-by-lesson as they are reviewed.
+all 64 lesson slots at once; do them lesson-by-lesson as they are reviewed.
 
-**Always finish with the evidence**, per lesson: `make -C unitXX/lessonYY all` exits 0, every
-component's page count equals its `_key`'s, and the warm-up and exit ticket are still 1 page on
-both sides. Report any component that still differs and why.
+**Always finish with the evidence**, per lesson: `make -C unitXX/lessonYY all` exits 0 **and**
+`make -C unitXX/lessonYY check` passes — the latter is what proves every component's page count
+equals its `_key`'s and the warm-up and exit ticket are still 1 page on both sides. Report any
+violation the gate still reports and why.
 
 ## Reference files
 
@@ -376,12 +461,14 @@ both sides. Report any component that still differs and why.
   answer-key macros, color palette, per-document-type preambles, and **the five conventions**
   (vocabpar, teachernote, namestrip, work rule, boxguard). Read before authoring.
 - `references/components.md` — section-by-section spec and a skeleton for the lesson plan and
-  each component + key.
-- `references/ap-workflow.md` — reading an AP CED and mapping Big Idea / Skill / LO / EK into
-  the lesson.
-- `references/standards-workflow.md` — the title + description + standards path.
+  each component + key, plus the **unit tests** and the **unit cover pair**.
+- `references/ap-workflow.md` — reading the AP Precalculus CED and mapping Big Idea / Skill /
+  LO / EK into the lesson. Pair it with `COURSE_PLAN.md`, which is authoritative for *which*
+  CED topic drives a given lesson.
+- `references/standards-workflow.md` — the title + description + standards path, used for the
+  lessons `COURSE_PLAN.md` marks **New** (no CED topic).
 - `references/build.md` — the Makefile hierarchy, scaffolding, prefab PDFs, build commands,
-  and troubleshooting.
+  the `check` gate, unit assessments, and troubleshooting.
 
 ## Guardrails
 

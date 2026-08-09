@@ -180,11 +180,23 @@ define paginate
 	       grep -E "^(!|l\.)" $(PAGINATE_DIR)/paginate.log | head -10; exit 1; }
 endef
 
+# ── Convention gate ───────────────────────────────────────────────────────────
+# A LaTeX compile exits 0 on a key that runs a page longer than its blank, on a
+# two-page exit ticket, and on \ans buried in math. `check` is what turns those
+# into build failures. It depends on ALIGN_STAMPS because the page-parity and
+# one-page checks read the compiled per-component PDFs — comparing the merged
+# packets would prove nothing, since the pagination pass has already padded them
+# to match. See shared/lesson_check.py for the full list of checks.
+CHECK_SCRIPT := $(PROJECT_ROOT)/shared/lesson_check.py
+
 # ── Targets ───────────────────────────────────────────────────────────────────
 # `slides` and `pptx` are .PHONY, so the slides/ directory never shadows them.
-.PHONY: all plan slides pptx student key clean
+.PHONY: all plan slides pptx student key check clean
 
 all: plan slides pptx student key
+
+check: $(ALIGN_STAMPS)
+	@python3 $(CHECK_SCRIPT) --project $(PROJECT_ROOT) $(UNIT)/$(LESSON)
 
 # ── plan / slides / pptx ──────────────────────────────────────────────────────
 

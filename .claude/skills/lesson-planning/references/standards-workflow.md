@@ -1,7 +1,9 @@
 # Standards Workflow
 
-Use this when the project has **no** `spec/ap-*` documents (e.g. Algebra 2). The lesson is
-driven by three inputs the user supplies:
+Use this for the lessons `COURSE_PLAN.md` marks **New** — the ramp-slowing and
+calculus-readiness lessons that have **no CED topic** behind them. (It is also the path for a
+project with no `spec/ap-*` documents at all.) The lesson is driven by three inputs the user
+supplies:
 
 1. **Lesson title** — e.g. "Solving Linear Equations".
 2. **Description** — a few sentences on what the lesson covers and why.
@@ -10,14 +12,15 @@ driven by three inputs the user supplies:
    standards, or a district scope-and-sequence). Take them as given; don't invent codes.
 
 If the user gives only a title, ask for the description and standards before authoring — those
-two are what make the lesson plan specific rather than generic. A review lesson (e.g. Algebra 2
-Unit 1) uses the same skeleton; its "standards" are typically the prerequisite skills being
-re-activated.
+two are what make the lesson plan specific rather than generic. For a **New** lesson in this
+course, the "standards" are typically the prerequisite skills being re-activated, or the
+calculus-readiness idea the lesson exists to add; `COURSE_PLAN.md`'s focus column is the
+starting point.
 
 ## Mapping inputs into the lesson
 
-The document structure is identical to the AP path (`references/components.md`); only the
-*source* of the content differs. There are no Big Idea / Skill tags.
+The document structure is identical to the CED path (`references/components.md`); only the
+*source* of the content differs. There are no Mathematical Practice tags.
 
 | Lesson element | Source |
 | --- | --- |
@@ -33,14 +36,15 @@ The document structure is identical to the AP path (`references/components.md`);
 
 1. Confirm the title, description, and standards with the user; clarify scope if a standard is
    broad enough to span multiple lessons.
-2. Scaffold the lesson (`scripts/new_lesson.py`) with the components you need — note Algebra 2
-   uses inline course macros, so pass `--course` (and `--year` if it differs) so the generated
-   lesson plan defines `\CourseName` correctly.
+2. Scaffold the lesson (`scripts/new_lesson.py`) with the components you need. This course
+   defines `\CourseName`/`\MeetingLength` **inline in the lesson plan**, not in the style
+   package, so pass `--course "Precalculus"` or the generated plan says "TODO Course".
 3. Author the lesson plan and components per `references/components.md`, keeping the objective
    and learning targets traceable to the standards.
-4. Mirror Algebra 2's existing assessment conventions where they apply — e.g. an "SOL-Style
-   Multiple Choice" item in the Individual Work & Assessment section and on the exit ticket.
-5. Build (`references/build.md`).
+4. Mirror the course's existing assessment conventions — e.g. a standards-style multiple-choice
+   item in the Individual Work & Assessment section and on the exit ticket.
+5. Build, then gate it: `make -C unitXX/lessonYY all && make -C unitXX/lessonYY check`
+   (`references/build.md`).
 
-The live project is the gold reference: open a built Algebra 2 lesson and match its tone,
-section depth, and box usage.
+The live project is the gold reference: open a **reauthored** lesson (per `COURSE_PLAN.md`'s
+status column) and match its tone, section depth, and box usage.

@@ -1,0 +1,34 @@
+%! Unit @@UNITINT@@: @@UNITTITLE@@ — Summative Assessment — @@TESTKIND@@ (KEY)
+\documentclass[10pt]{article}
+\usepackage{@@PREFIX@@-article}
+\usepackage{@@PREFIX@@-key}   % pulls in -boxes; do NOT also load -boxes
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+\begin{document}
+
+\pageheader{Unit @@UNITINT@@: @@UNITTITLE@@}{@@TESTKIND@@ --- Answer Key}
+
+% Mirror the blank test EXACTLY, filling each answer with \ans{...} (inline) or
+% \ansline{...} (on a write-line), worked steps in a byte-identical work block.
+% NO teachernote here: the practice test rides in the STUDENT packet, and the
+% key must stay the same length as its blank. Answer rationale and Part D
+% scoring go on page 2 of unit@@UNITINT@@/unit_cover_key/main.tex (key packet only).
+% ======================================================================
+\parthead{Part A --- Vocabulary}
+% TODO: answers via \ans{...}
+
+\parthead{Part B --- Multiple Choice}
+% TODO: mark correct options, e.g. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+
+\parthead{Part C --- Short Answer \& Computation}
+% TODO: worked answers via \ans{...}
+
+\parthead{Part D --- Extended Response}
+% TODO: sample response in a work block; scoring rubric on unit_cover_key p2.
+
+\end{document}
