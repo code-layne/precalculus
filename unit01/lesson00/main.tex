@@ -16,12 +16,15 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify the input and output quantities
-    in real-world relationships, explain in everyday language what makes a
-    relationship a \textit{function} (each input produces exactly one output), and
-    read the story a graph tells --- where a quantity rises, falls, or holds steady.
+    \textbf{Primary Objective:} Students will identify the input and output
+    quantities in a real-world relationship and say which depends on the other,
+    explain in everyday language what makes a relationship a \textit{function}
+    (each input produces exactly one output), distinguish the allowed
+    many-to-one case from the disqualifying one-to-many case, and read a
+    pre-drawn graph or a table to say where a quantity is increasing,
+    decreasing, or constant.
     \hfill\textit{\small (Unit introduction --- no CED topic)}
 \end{tcolorbox}
 
@@ -37,18 +40,22 @@ and decide which depends on which. &
   \item The input (independent) quantity is the one we choose or track;
         the output (dependent) quantity responds to it.
   \item Ordered pairs list input first, output second.
+  \item The ``you-control'' test settles most cases in one question.
 \end{itemize} \\
-Decide informally whether a rule is a function. &
+Decide informally whether a rule is a function, and justify the decision. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
   \item A function sends each input to \textit{exactly one} output ---
         a dependable machine.
-  \item Two inputs sharing an output is fine (many-to-one); one input
-        with two outputs is not (one-to-many).
+  \item Many-to-one is allowed; one-to-many is not. The rule constrains
+        each \textit{input}, never the outputs.
+  \item Reversing the roles can turn a function into a non-function.
 \end{itemize} \\
-Read qualitative behavior from a graph or table. &
+Read qualitative behavior from a pre-drawn graph or a table. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A graph tells a story: rising, falling, or flat segments describe
+  \item A graph tells a story: rising, falling, and flat stretches describe
         how the output changes as the input moves.
+  \item A flat stretch means the output holds steady --- not that
+        nothing is happening.
   \item Students interpret pre-drawn graphs; no freehand sketching.
 \end{itemize} \\
 \end{tabularx}
@@ -56,18 +63,20 @@ Read qualitative behavior from a graph or table. &
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.24\linewidth} X @{}}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
 Quantity             & Something measurable that can change: time, height, cost, temperature. \\
 Input                & The quantity we choose or track; listed first in an ordered pair. \\
 Output               & The quantity that responds; listed second in an ordered pair. \\
 Independent variable & Another name for the input quantity. \\
 Dependent variable   & Another name for the output quantity --- it \textit{depends} on the input. \\
 Function             & A rule that sends each input to exactly one output. (Informal today; notation in 1.1.) \\
+Many-to-one          & Two or more inputs sharing one output. Allowed --- still a function. \\
+One-to-many          & One input with two different outputs. Not allowed --- not a function. \\
 Increasing / decreasing / constant & How an output behaves as the input grows: rising, falling, or holding steady. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
     Skills reviewed: evaluating an algebraic expression at a value,
     solving a two-step linear equation,
@@ -75,7 +84,7 @@ Increasing / decreasing / constant & How an output behaves as the input grows: r
     recognizing a point on a coordinate axis.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
+\begin{skillbox}[Hook]{lilac}
     \textbf{The trustworthy machine.} A vending machine and a claw machine both take
     your money. Press B4 on the vending machine and you get the same bag of chips
     \textit{every single time}; drop the claw and you get\ldots{} who knows.
@@ -86,12 +95,14 @@ Increasing / decreasing / constant & How an output behaves as the input grows: r
     \textit{Discussion prompt:} mathematics reserves a special name for the
     trustworthy machine --- a \textit{function}: same input, same output, every time.
     Collect student examples of dependable and undependable ``machines'' from life.
+    Do not define anything yet; the hook only needs to establish that
+    \textit{dependability} is the property worth naming.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Quantities That Change Together} (12 min)
+\textbf{Part 1: Quantities That Change Together} (10 min)
 
 Everything in this unit is about two quantities linked so that one responds to the
 other:
@@ -102,6 +113,8 @@ other:
         which one \textit{responds} (output)?
   \item Name the synonyms now: input = independent variable, output = dependent
         variable. Ordered pairs list (input, output).
+  \item Land the ``you-control'' test as the portable version students can use
+        on any context they meet later.
 \end{itemize}
 
 \textbf{Part 2: What Is a Function? (First Look)} (12 min)
@@ -113,8 +126,10 @@ other:
         month $\to$ students born that month (no --- one month, many students);
         number $\to$ its double (yes); shoe size $\to$ a student who wears it
         (no --- ambiguous).
-  \item Stress the asymmetry: two inputs may share an output (both twins have the
-        same birthday), but one input may never have two outputs.
+  \item Then the asymmetry, which is the hardest idea of the period: two inputs
+        may share an output (both twins have the same birthday), but one input
+        may never have two outputs. Say it twice, in both directions.
+  \item Keep it verbal --- notation is deliberately absent today.
 \end{itemize}
 
 \columnbreak
@@ -132,15 +147,21 @@ other:
         students only read and interpret.
 \end{itemize}
 
-\textbf{Where this unit goes.} This opener sets the unit's two big questions: how do
-we \textit{describe} a relationship between quantities (1.1 gives functions their
-notation, domain, and range), and how do we describe the way they \textit{change
-together} (1.2 onward)? Nothing today needs symbols --- the goal is that every
-student leaves able to say ``input, output, one output per input, and the graph
-tells the story.''
+\textbf{Part 4: A Table, and Where the Unit Goes} (10 min)
+
+\begin{itemize}
+  \item The candle table makes the same three moves as the graph. The point is
+        that the representation changed but the reading did not.
+  \item Its hour-2-to-3 flat stretch is the table's version of segment B ---
+        connect the two explicitly.
+  \item Close on notes section 5, the unit map: read it aloud, do not add to it.
+        Students should leave knowing that 1.1 gives functions their notation and
+        that the rest of the unit is about how quantities change together.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
+\boxguard
 \begin{skillbox}[Active Monitoring]{redbox}
 While students work on guided notes and practice, circulate and check:
 \begin{itemize}
@@ -149,6 +170,9 @@ While students work on guided notes and practice, circulate and check:
   \item \textbf{Common error:} rejecting many-to-one rules as non-functions.
         Ask: ``Two students both wear size 9. Does student $\to$ shoe size stop
         being a function?'' (No --- each student still has one size.)
+  \item \textbf{Common error:} stating the rule about outputs (``each output has
+        one input''). Insist on the direction: the rule constrains each
+        \textit{input}.
   \item \textbf{Graph reading:} students describing a flat segment as ``nothing
         happening.'' Push for precision: the input (time) is still moving; the
         output is constant.
@@ -168,9 +192,10 @@ Every tier reads pre-drawn or tabled data --- no tier sketches anything.
         interval increasing/decreasing, identify input and output, and explain why
         battery percent is a function of time.
   \item \textbf{Tier E (Extend):} A runner's distance-from-start story: complete a
-        table linking distance behavior to whether speed is zero or positive, and
+        table linking distance behavior to whether speed is zero or positive,
         resolve the puzzle ``two times share the same distance --- does that break
-        the function rule?''
+        the function rule?'', and then reverse the roles to find a genuine
+        non-function.
 \end{itemize}
 \end{skillbox}
 
@@ -181,7 +206,7 @@ Every tier reads pre-drawn or tabled data --- no tier sketches anything.
   \item Decide whether ``each car $\to$ its license plate number'' is a function,
         with one sentence of reasoning.
   \item From a small table of plant heights, name the interval where the height is
-        increasing.
+        constant and the interval where it is increasing.
 \end{enumerate}
 \textbf{Assessment note:} Item 2 is the heart of the lesson --- look for the phrase
 ``exactly one'' (or an equivalent) in the reasoning, not just a circled yes. Sort
@@ -192,7 +217,7 @@ tickets by item 2 and revisit the many-to-one vs.\ one-to-many distinction in th
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \textbf{Homework:} 5 problems covering input/output identification in two contexts,
 three function-or-not judgments with reasons, a candle-height table read, a
-behavior-from-a-table item, and one SOL-style multiple-choice item.
+behavior-from-a-context item, and one SOL-style multiple-choice item.
 
 \textbf{Extension (optional):} Two different vending-machine buttons dispense the
 same snack --- is the machine still a function? Students explain why many-to-one
@@ -210,18 +235,25 @@ stuck on item 1 or 2 needs watching when evaluation returns with $f(x)$ notation
 in 1.1.
 \end{teachernote}
 
+\boxguard[11]
 \begin{teachernote}[Guided Notes]
 Keep Part 2 verbal and fast --- the examples table does the work, and formal
 notation is deliberately absent (it arrives in 1.1; do not front-load it today).
-The bike-ride figure is pre-drawn: students annotate and fill blanks only. If time
-is short, the second practice item folds into the activity's Tier A discussion.
+The many-to-one / one-to-many table underneath it is the block worth slowing for:
+students who can only state the rule in one direction will misread the exit
+ticket. The bike-ride and candle figures are pre-drawn; students annotate and fill
+blanks only. Section 5 is the unit map and is read-only --- assign it aloud in the
+last minute of notes and do not add to it. If time is short, the second practice
+item folds into the activity's Tier A discussion.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
 Mixed-readiness groups work well today since no tier needs algebra. Tier R groups
-should articulate the segment story aloud before writing. The Tier E puzzle
-(repeated outputs) is the deepest idea in the lesson --- if a Tier E pair nails it,
-have them present it during the closing minutes.
+should articulate the segment story aloud before writing. Tier E's last two items
+are the deepest idea in the lesson --- the runner's distance is a function of time,
+but time is \textit{not} a function of distance. If a Tier E pair gets both, have
+them present the pair during the closing minutes; it is the same asymmetry the exit
+ticket tests.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
