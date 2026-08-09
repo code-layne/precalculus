@@ -19,194 +19,219 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: One Symbol, a Whole Sentence}
+  \plumheader{Hook: The Machine Gets a Name}
   \sectionlabel[goldacc]{Think About It}
 
-  A ball is launched from the ground, and \(h(t)\) gives its height in feet
-  \(t\) seconds after launch.
+  Yesterday's trustworthy vending machine is back --- this time with a label.
+  Let \(P(b)\) be the price in dollars of the item at button \(b\).
 
   \bigskip
   \begin{center}
-    {\LARGE \(h(2) = 61\)}
+    {\Huge\bfseries\color{plum} \(P(\text{B4}) = 1.25\)}
   \end{center}
 
   \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item What is this equation \textbf{saying}? Say it as a full sentence.
-    \item What would \(h(0) = 0\) say?
-    \item What would \(h(5) = 0\) say?
-  \end{itemize}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Say it out loud}
+        What is this equation \textit{saying}? Give a full English sentence, not
+        a reading of the symbols.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        What is the \textbf{input} here? Does an input have to be a
+        \textbf{number}?
+      \end{block}
+  \end{columns}
 
   \bigskip
-  \textit{Yesterday's trustworthy machine is about to get a name.}
+  \textit{One short symbol just packed in the machine, the input, and the
+  output. That is the whole point of function notation.}
 \end{frame}
 
 % SECTION 1 — FUNCTION NOTATION
 \begin{frame}[t, plain]
   \plumheader{1. Function Notation --- Naming the Machine}
 
-  \begin{block}{The three parts of \(f(x)\)}
-    \(f\) is the \textbf{name} of the function (the machine itself),
-    \(x\) is the \textbf{input} (what goes in the slot), and
-    \(f(x)\) is the \textbf{output} (what comes out).
+  \begin{block}{Three parts, one symbol}
+    In \(f(x)\): \quad \(f\) is the \textbf{name} of the function \(\cdot\)
+    \(x\) is the \textbf{input} \(\cdot\) \(f(x)\) is the \textbf{output}.
   \end{block}
 
   \medskip
-  Read \(f(x)\) as ``\(f\) \textbf{of} \(x\)'' --- it is \textbf{not}
-  \(f\) times \(x\).
+  Read \(f(x)\) as ``\textbf{\(f\) of \(x\)}.'' It is \textbf{not} \(f\) times
+  \(x\) --- the parentheses hold the input, they do not multiply.
 
-  \medskip
-  \begin{block}{In context}
-    A phone plan charges by the minute: \(C(m) = 0.10m + 5\).
-    The machine's name is \(C\); the input \(m\) is the minutes used;
-    the output \(C(m)\) is the cost of the bill.
-  \end{block}
+  \smallskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{In context.} A rideshare fare:
+      \[ F(m) = 2.50 + 1.75m \]
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Name: \(F\)
+        \item Input \(m\): miles driven
+        \item Output \(F(m)\): the fare, in dollars
+        \item So \(F(4)\) asks: what does a 4-mile ride cost?
+      \end{itemize}
 
-  \medskip
-  \textbf{One statement, three facts.} \quad \(f(3) = 7\) says:
-  the input is 3, the output is 7, and the point \((3, 7)\) is on the graph
-  of \(f\).
+    \column{0.48\textwidth}
+      \textbf{One statement, three facts.} \(f(3) = 7\) says:
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item the input is \textbf{3}
+        \item the output is \textbf{7}
+        \item the point \(\mathbf{(3, 7)}\) is on the graph of \(f\)
+      \end{itemize}
+  \end{columns}
 \end{frame}
 
 % SECTION 2 — EVALUATING FROM A FORMULA
 \begin{frame}[t, plain]
   \plumheader{2. Evaluating from a Formula}
 
-  To \textbf{evaluate}: substitute the input --- \textit{always inside
-  parentheses} --- then do the arithmetic.
+  \begin{block}{The empty-slot habit}
+    The slot does not care what you put in it:
+    \[ f(x) = 5x - 8 \qquad\longrightarrow\qquad f(\square) = 5(\square) - 8 \]
+    Write the parentheses \textbf{first}, empty. Then fill them.
+  \end{block}
 
-  \medskip
+  \bigskip
   \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{\(f(x) = 2x + 5\)}
-        \(f(4) = 2(4) + 5 = 13\)\\[6pt]
-        \(f(-3) = 2(-3) + 5 = -1\)
-      \end{block}
+    \column{0.31\textwidth}
+      \textbf{Find \(f(3)\)}
+      \begin{align*}
+        f(3) &= 5(3) - 8 \\
+             &= 7
+      \end{align*}
 
-    \column{0.48\textwidth}
-      \begin{block}{\(g(x) = x^2 - 4\)}
-        \(g(-2) = (-2)^2 - 4\)\\[6pt]
-        \(\phantom{g(-2)} = 4 - 4 = 0\)
-      \end{block}
+    \column{0.31\textwidth}
+      \textbf{Find \(f(-2)\)}
+      \begin{align*}
+        f(-2) &= 5(-2) - 8 \\
+              &= -18
+      \end{align*}
+
+    \column{0.34\textwidth}
+      \textbf{\(g(x) = x^2 + 3x\); find \(g(-4)\)}
+      \begin{align*}
+        g(-4) &= (-4)^2 + 3(-4) \\
+              &= 16 - 12 = 4
+      \end{align*}
   \end{columns}
 
   \bigskip
-  \begin{block}{Watch the trap}
-    \((-2)^2 = 4\) \quad but \quad \(-2^2 = -4\).
-    Write the parentheses \textbf{first}, empty, then fill them.
-  \end{block}
+  \textbf{The trap:} \((-4)^2 = 16\), but \(-4^2 = -16\). Evaluating never
+  changes the rule --- it just runs the machine once.
 \end{frame}
 
-% SECTION 3 — TABLES
+% SECTION 3 — TWO DIRECTIONS
 \begin{frame}[t, plain]
-  \plumheader{3. Evaluating from a Table}
+  \plumheader{3. Two Directions: Evaluate vs.\ Solve}
+  \sectionlabel[redacc]{The Hinge of This Lesson}
 
-  A table \textit{is} a function: each column is an input--output pair.
-
-  \bigskip
-  \begin{tabular}{|c|c|c|c|c|}
+  \begin{tabular}{|p{0.22\textwidth}|p{0.32\textwidth}|p{0.34\textwidth}|}
   \hline
-  \(x\) & 0 & 2 & 4 & 6 \\
+   & \textbf{Find \(f(2)\)} & \textbf{Solve \(f(x) = 2\)} \\
   \hline
-  \(g(x)\) & 3 & 7 & 11 & 15 \\
+  You are given & the \textbf{input} & the \textbf{output} \\
+  \hline
+  You are asked for & the \textbf{output} & the \textbf{input(s)} \\
+  \hline
+  How many answers & exactly one & zero, one, or many \\
   \hline
   \end{tabular}
 
   \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Find \(g(4)\): input 4, read the output \(\to\) \(g(4) = 11\)
-    \item Solve \(g(x) = 3\): output 3, find the input \(\to\) \(x = 0\)
-  \end{itemize}
+  \textbf{From a table.} Each column is one input--output pair.
 
-  \bigskip
-  \textbf{Same table, opposite directions.}
+  \medskip
+  \begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  \(x\) & 1 & 2 & 3 & 4 & 5 \\
+  \hline
+  \(s(x)\) & 12 & 9 & 9 & 6 & 3 \\
+  \hline
+  \end{tabular}
+
+  \medskip
+  \(s(4) = ?\) \quad (read \textit{down}) \qquad Solve \(s(x) = 9\)
+  \quad (read \textit{up} --- and it happens twice)
 \end{frame}
 
-% SECTION 3, CONT. — GRAPHS
+% SECTION 3, CONT. — THE GRAPH
 \begin{frame}[t, plain]
-  \plumheader{Evaluating from a Graph}
+  \plumheader{Reading Both Directions off a Graph}
 
   \begin{columns}[T]
-    \column{0.5\textwidth}
+    \column{0.44\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.55cm, y=0.5cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (9,5);
-        \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small \(f(x)\)};
-        \foreach \x in {1,2,3,4,5,6,7,8,9} \node[below] at (\x,0) {\small \x};
-        \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, plum] (0,1) -- (3,4);
-        \draw[very thick, plum] (3,4) -- (6,4);
-        \draw[very thick, plum] (6,4) -- (9,1);
-        \fill[plum] (0,1) circle (2.5pt);
-        \fill[plum] (9,1) circle (2.5pt);
+      \begin{tikzpicture}[x=0.55cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
+        \draw[very thick, plum] (0,5) -- (2,1);
+        \draw[very thick, plum] (2,1) -- (5,7);
+        \draw[very thick, plum] (5,7) -- (8,4);
+        \fill[plum] (0,5) circle (2.5pt);
+        \fill[plum] (8,4) circle (2.5pt);
       \end{tikzpicture}
       \end{center}
 
-    \column{0.46\textwidth}
-      \begin{itemize}\setlength{\itemsep}{8pt}
-        \item \(f(2)\): start at \(x = 2\), walk \textbf{up}, read across
-              \(\to\) \(f(2) = 3\)
-        \item \(f(5) = 4\)
-        \item Solve \(f(x) = 2\): start at height 2, walk \textbf{across}
-              \(\to\) \(x = 1\) and \(x = 8\)
+    \column{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item \(f(2) = ?\) --- start at \(x = 2\), walk \textbf{up} to the
+              graph, read across
+        \item \(f(6) = ?\)
+        \item Solve \(f(x) = 3\) --- start at 3 on the \textbf{output} axis and
+              walk \textbf{across}: two answers
+        \item Solve \(f(x) = 5\) --- \textbf{three} answers
       \end{itemize}
   \end{columns}
 
   \bigskip
-  \begin{block}{The direction distinction}
-    ``Find \(f(2)\)'' hands you an \textbf{input} and asks for the
-    \textbf{output}. ``Solve \(f(x) = 2\)'' hands you an \textbf{output} and
-    asks for the \textbf{input(s)} --- and two answers is fine (many-to-one!).
-  \end{block}
+  Three inputs sharing one output is \textbf{many-to-one} --- allowed, and
+  \(f\) is still a function. One \textit{input} with two outputs is what breaks
+  the rule.
 \end{frame}
 
 % SECTION 4 — DOMAIN AND RANGE
 \begin{frame}[t, plain]
   \plumheader{4. Domain and Range}
 
-  \begin{block}{Definitions}
-    The \textbf{domain} is the set of all \textbf{inputs} a function uses;
-    the \textbf{range} is the set of all \textbf{outputs} it produces.
-    A repeated output is listed \textbf{once}.
+  \begin{block}{Two words for two sets}
+    The \textbf{domain} is the set of all \textbf{inputs} the function uses. The
+    \textbf{range} is the set of all \textbf{outputs} it produces --- a repeated
+    output is listed \textbf{once}.
   \end{block}
 
   \medskip
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \textbf{From a list of points}\\[4pt]
-      \(f = \{(1,3),\ (2,5),\ (4,5),\ (6,8)\}\)
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Domain: \(\{1, 2, 4, 6\}\)
-        \item Range: \(\{3, 5, 8\}\) --- the repeated 5 is listed once
-      \end{itemize}
+      \textbf{From a list of points}
+      \[ f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\} \]
+      Domain: \(\{-2, 0, 3, 5\}\) \\[3pt]
+      Range: \(\{1, 4, 6\}\) --- the 6 is written once
+
+      \medskip
+      \textbf{From the graph on the last slide}\\[3pt]
+      Domain: \(0 \le x \le 8\) \quad Range: \(1 \le y \le 7\)
 
     \column{0.48\textwidth}
-      \textbf{From the graph} (previous slide)
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Left--right reach: domain \(0 \le x \le 9\)
-        \item Bottom--top reach: range \(1 \le y \le 4\)
-      \end{itemize}
+      \begin{block}{Notation upgrade}
+        \(0 \le x \le 8\) is also written \([\,0, 8\,]\) --- a square bracket
+        includes the endpoint, a round one does not. Both forms count as
+        correct.
+      \end{block}
+
+      \medskip
+      \textbf{From a formula:} \(k(x) = \dfrac{8}{x + 3}\)
+
+      \smallskip
+      At \(x = -3\) the denominator is 0 --- \textbf{undefined}. Domain: all
+      real numbers \textbf{except} \(-3\).
   \end{columns}
-\end{frame}
-
-% SECTION 4, CONT. — FORMULA FINE PRINT
-\begin{frame}[t, plain]
-  \plumheader{Domain from a Formula (First Look)}
-
-  \begin{block}{\(g(x) = \dfrac{10}{x - 2}\)}
-    Try \(x = 2\): the denominator becomes \(0\), and division by zero is
-    \textbf{undefined}. The machine jams --- so \(2\) is \textbf{excluded}.
-  \end{block}
-
-  \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Domain of \(g\): all real numbers \textbf{except} 2.
-    \item Context can shrink a domain too: a drone flight that lasts 8 minutes
-          only makes sense for \(0 \le t \le 8\).
-    \item That is the whole story for now --- more excluded-input detective
-          work comes with rational functions later in the course.
-  \end{itemize}
 \end{frame}
 
 % CLASS PRACTICE
@@ -229,11 +254,10 @@
 
           \smallskip
           \begin{enumerate}\setlength{\itemsep}{5pt}
-            \item Find \(p(2)\), then solve \(p(x) = 3\).
+            \item Find \(p(2)\). Then solve \(p(x) = 3\). Which one was an
+                  \textit{evaluate} question?
             \item State the domain and the range of \(p\).
           \end{enumerate}
-    \item In one sentence: what is the difference between ``find \(f(2)\)''
-          and ``solve \(f(x) = 2\)''?
   \end{enumerate}
 \end{frame}
 

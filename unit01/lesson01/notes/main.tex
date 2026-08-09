@@ -13,9 +13,10 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Read and write function \blank{2.6cm}, and explain the three facts a
+  \item Read and write function \blank{2.6cm}, and name the three facts a
         statement like $f(3) = 7$ carries.
   \item \blank{2.6cm} a function given by a formula, a table, or a graph.
+  \item Tell an \textit{evaluate} question from a \blank{1.6cm} question.
   \item State the \blank{2.2cm} and \blank{2.2cm} of a function.
 \end{enumerate}
 \end{objectivebox}
@@ -26,15 +27,17 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Function (from 1.0):}}\\[1pt]
-\writeline\\[3pt]
 \noindent\textbf{\textcolor{plum}{Function notation:}}\\[1pt]
 \writeline\\[3pt]
 \noindent\textbf{\textcolor{plum}{Evaluate:}}\\[1pt]
 \writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Solve:}}\\[1pt]
+\writeline\\[3pt]
 \noindent\textbf{\textcolor{plum}{Domain:}}\\[1pt]
 \writeline\\[3pt]
 \noindent\textbf{\textcolor{plum}{Range:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Undefined:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
@@ -42,11 +45,12 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-A ball is launched from the ground, and $h(t)$ gives its height in feet
-$t$ seconds after launch. On the board is one short equation:
-$h(2) = 61$.
+The vending machine from yesterday finally gets a name. Call it $P$, and let
+$P(b)$ be the price in dollars of the item at button $b$. On the board:
+\[ P(\text{B4}) = 1.25 \]
 
-What is that equation \textit{saying}? Write it as a full sentence.
+Say that equation out loud as an English sentence. What is the input here ---
+and does an input have to be a number?
 \writelines{2}
 \end{hookbox}
 
@@ -54,8 +58,7 @@ What is that equation \textit{saying}? Write it as a full sentence.
 
 \boxguard
 \begin{notesbox}{1. Function Notation --- Naming the Machine}
-Yesterday's trustworthy machine gets a name. The notation $f(x)$ has three
-parts:
+A function has three parts, and the notation $f(x)$ names all three at once:
 
 \begin{itemize}[itemsep=4pt]
   \item $f$ is the \blank{3cm} of the function (the machine itself),
@@ -63,17 +66,20 @@ parts:
   \item $f(x)$ is the \blank{3cm} (what comes out).
 \end{itemize}
 
-$f(x)$ is read ``$f$ \blank{1.4cm} $x$'' --- it is \textbf{not} $f$ times $x$.
+$f(x)$ is read ``$f$ \blank{1.4cm} $x$.'' It is \textbf{not} $f$ times $x$ ---
+those parentheses hold the input, they do not multiply.
 
 \medskip
-\textbf{In context.} A phone plan charges by the minute: $C(m) = 0.10m + 5$.
+\textbf{In context.} A rideshare app charges a flat fee plus a rate per mile:
+$F(m) = 2.50 + 1.75m$.
 
 \begin{itemize}[itemsep=4pt]
-  \item The function's name is \blank{1.4cm}; the input $m$ stands for
-        \blank{3.4cm}; the output $C(m)$ stands for \blank{3.4cm}.
+  \item The machine's name is \blank{1.4cm}; the input $m$ stands for
+        \blank{3.4cm}; the output $F(m)$ stands for \blank{3.6cm}.
+  \item So $F(4)$ asks: what does a \blank{1.2cm}-mile ride cost?
 \end{itemize}
 
-\textbf{One statement, three facts.} The single statement $f(3) = 7$ tells us:
+\textbf{One statement, three facts.} The single statement $f(3) = 7$ says:
 
 \begin{itemize}[itemsep=4pt]
   \item the input is \blank{1.4cm}, \quad the output is \blank{1.4cm},
@@ -85,116 +91,150 @@ $f(x)$ is read ``$f$ \blank{1.4cm} $x$'' --- it is \textbf{not} $f$ times $x$.
 
 \boxguard
 \begin{notesbox}{2. Evaluating from a Formula}
-To \textbf{evaluate} a function, substitute the input into the formula ---
-\textit{always inside parentheses} --- then do the arithmetic.
+To \textbf{evaluate} a function, drop the input into the slot ---
+\textit{always inside parentheses} --- and simplify. The slot does not care what
+you put in it:
+\[ f(x) = 5x - 8 \qquad\longrightarrow\qquad f(\square) = 5(\square) - 8 \]
+
+\textbf{Example 1.} Find $f(3)$.
+
+\begin{work}
+  f(3) &= 5(3) - 8 \\
+       &= 7
+\end{work}
+
+\textbf{Example 2.} Find $f(-2)$.
+
+\begin{work}
+  f(-2) &= 5(-2) - 8 \\
+        &= -18
+\end{work}
+
+\textbf{Example 3.} Let $g(x) = x^2 + 3x$. Find $g(-4)$.
+
+\begin{work}
+  g(-4) &= (-4)^2 + 3(-4) \\
+        &= 16 - 12 \\
+        &= 4
+\end{work}
+
+\textbf{Watch the trap:} $(-4)^2 = $ \blank{1.4cm}, but $-4^2 = $
+\blank{1.4cm}. Writing the parentheses \textit{first}, empty, is what saves you.
 
 \medskip
-\textbf{Example 1.} Let $f(x) = 2x + 5$. Find $f(4)$.
-
-\begin{work}
-  f(4) &= 2(4) + 5 \\
-       &= 13
-\end{work}
-
-\textbf{Example 2.} Same $f$. Find $f(-3)$.
-
-\begin{work}
-  f(-3) &= 2(-3) + 5 \\
-        &= -1
-\end{work}
-
-\textbf{Example 3.} Let $g(x) = x^2 - 4$. Find $g(-2)$.
-
-\begin{work}
-  g(-2) &= (-2)^2 - 4 \\
-        &= 4 - 4 \\
-        &= 0
-\end{work}
-
-\textbf{Watch the trap:} $(-2)^2 = $ \blank{1.4cm}, but $-2^2 = $ \blank{1.4cm}.
-The parentheses habit is what saves you.
+Evaluating never changes the rule --- it just runs the machine \blank{1.6cm}.
 \end{notesbox}
 
 \vspace{0.1in}
 
 \boxguard
-\begin{notesbox}{3. Evaluating from a Table and a Graph}
-A table \textit{is} a function: each column is an input--output pair.
+\begin{notesbox}{3. Two Directions: Evaluate vs.\ Solve}
+Every question in this lesson runs in one of two directions. Read the arrow
+before you compute.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|p{0.20\linewidth}|p{0.34\linewidth}|p{0.34\linewidth}|}
 \hline
-$x$ & 0 & 2 & 4 & 6 \\
+ & \textbf{Find $f(2)$} & \textbf{Solve $f(x) = 2$} \\
 \hline
-$g(x)$ & 3 & 7 & 11 & 15 \\
+You are given & the \blank{2cm} & the \blank{2cm} \\
+\hline
+You are asked for & the \blank{2cm} & the \blank{2cm} \\
+\hline
+How many answers & exactly one & \blank{3.2cm} \\
+\hline
+\end{tabular}
+\smallskip
+
+\textbf{From a table.} Each column is one input--output pair.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$s(x)$ & 12 & 9 & 9 & 6 & 3 \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{itemize}[itemsep=4pt]
-  \item $g(4) = $ \blank{1.4cm} \quad (input 4, read the output)
-  \item Solve $g(x) = 3$: \quad $x = $ \blank{1.4cm} \quad (output 3, find the
-        input)
+  \item $s(4) = $ \blank{1.4cm} \quad (input 4 --- read down)
+  \item Solve $s(x) = 9$: \quad $x = $ \blank{1.2cm} and $x = $ \blank{1.2cm}
+        \quad (output 9 --- read up, twice)
 \end{itemize}
 
-\textbf{From a graph.} The graph of $f$ is below.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{4. Reading Both Directions off a Graph}
+Nothing new happens here --- the two directions are the same. The only change is
+that the input--output pairs come off a picture instead of a row.
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (9,5);
-  \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6,7,8,9} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,1) -- (3,4);
-  \draw[very thick, plum] (3,4) -- (6,4);
-  \draw[very thick, plum] (6,4) -- (9,1);
-  \fill[plum] (0,1) circle (2.5pt);
-  \fill[plum] (9,1) circle (2.5pt);
+\begin{tikzpicture}[x=0.6cm, y=0.5cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,5) -- (2,1);
+  \draw[very thick, plum] (2,1) -- (5,7);
+  \draw[very thick, plum] (5,7) -- (8,4);
+  \fill[plum] (0,5) circle (2.5pt);
+  \fill[plum] (8,4) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \begin{itemize}[itemsep=4pt]
-  \item $f(2) = $ \blank{1.4cm} \quad (start at $x = 2$, walk up to the graph,
-        read across)
-  \item $f(5) = $ \blank{1.4cm}
-  \item Solve $f(x) = 2$: \quad $x = $ \blank{1.4cm} and $x = $ \blank{1.4cm}
-        \quad (two answers --- many-to-one is allowed!)
+  \item $f(2) = $ \blank{1.4cm} \quad (start at $x = 2$, walk \textit{up} to the
+        graph, read across)
+  \item $f(6) = $ \blank{1.4cm}
+  \item Solve $f(x) = 3$: \quad $x = $ \blank{1.2cm} and $x = $ \blank{1.2cm}
+        \quad (start at 3 on the \textit{output} axis, walk across)
+  \item Solve $f(x) = 5$: \quad $x = $ \blank{1cm}, \blank{1cm}, and
+        \blank{1cm} \quad --- three inputs share one output, and $f$ is
+        \textit{still} a function. (Many-to-one, from Lesson 1.0.)
 \end{itemize}
-
-\textbf{The direction distinction.} ``Find $f(2)$'' hands you an
-\blank{1.6cm} and asks for the \blank{1.6cm}. ``Solve $f(x) = 2$'' hands you
-an \blank{1.6cm} and asks for the \blank{1.6cm}.
 \end{notesbox}
 
 \vspace{0.1in}
 
 \boxguard
-\begin{notesbox}{4. Domain and Range}
+\begin{notesbox}{5. Domain and Range}
 The \textbf{domain} is the set of all \blank{1.8cm} a function uses; the
 \textbf{range} is the set of all \blank{1.8cm} it produces. A repeated output
 is listed \blank{1.4cm}.
 
 \medskip
-\textbf{From a list of points.} Let $f = \{(1, 3),\ (2, 5),\ (4, 5),\ (6, 8)\}$.
+\textbf{From a list of points.} Let $f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\}$.
 
 \begin{itemize}[itemsep=4pt]
-  \item Domain: \blank{3.4cm} \quad Range: \blank{3.4cm}
+  \item Domain: \blank{4cm} \quad Range: \blank{4cm}
 \end{itemize}
 
-\textbf{From a graph.} Look back at the graph in Part 3. The graph runs from
-$x = 0$ to $x = 9$ and its heights run from $1$ to $4$.
+\textbf{From a graph.} Look back at the graph in Part 4: it runs from $x = 0$ to
+$x = 8$ left to right, and its heights run from $1$ up to $7$.
 
 \begin{itemize}[itemsep=4pt]
-  \item Domain: \blank{1.4cm} $\le x \le$ \blank{1.4cm} \quad
-        Range: \blank{1.4cm} $\le y \le$ \blank{1.4cm}
+  \item Domain: \blank{1.2cm} $\le x \le$ \blank{1.2cm} \quad
+        Range: \blank{1.2cm} $\le y \le$ \blank{1.2cm}
 \end{itemize}
 
-\textbf{From a formula (first look).} Let $g(x) = \dfrac{10}{x - 2}$.
-At $x = 2$ the denominator is \blank{1.2cm}, and division by zero is
-\blank{2.4cm} --- so $2$ is excluded. The domain is all real numbers except
-\blank{1.2cm}.
+\textbf{Notation upgrade.} You will see the same two sets written with brackets:
+$0 \le x \le 8$ is also written $[\,0, 8\,]$. A square bracket means the
+endpoint \textbf{is} included; a round one means it is not. Either form is a
+correct answer this year --- learn to read both.
+
+\medskip
+\textbf{From a formula.} Let $k(x) = \dfrac{8}{x + 3}$. At $x = -3$ the
+denominator is \blank{1.2cm}, and division by zero is \blank{2.4cm} --- there
+is no output at all. So the domain is every real number \textbf{except}
+\blank{1.4cm}.
 \end{notesbox}
 
 \vspace{0.1in}
@@ -232,8 +272,8 @@ At $x = 2$ the denominator is \blank{1.2cm}, and division by zero is
         \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $p(2) = $ \blank{1.4cm}
-          \item Solve $p(x) = 3$: \quad $x = $ \blank{1.4cm}
+          \item $p(2) = $ \blank{1.4cm} \quad Solve $p(x) = 3$: \quad
+                $x = $ \blank{1.4cm}
           \item Domain of $p$: \blank{3cm} \quad Range of $p$: \blank{3cm}
         \end{enumerate}
 \end{enumerate}
