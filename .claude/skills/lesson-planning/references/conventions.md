@@ -1,8 +1,8 @@
 # Conventions
 
 Extracted from the `shared/<prefix>-*.sty` packages. The live project is always the source
-of truth — if a course's styles diverge from this, follow the course. Replace `<prefix>`
-with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
+of truth — if the styles diverge from this, follow the project. The prefix here is
+**`precalculus`**; `<prefix>` below stands for it.
 
 ## Style packages
 
@@ -31,14 +31,24 @@ with the detected prefix (`algebra2`, `apstats`, …) everywhere below.
 \usepackage{<prefix>-key}     % pulls in -boxes; do NOT also load -boxes
 ```
 
-**Lesson plan** (`main.tex` at the lesson root): loads `-boxes` (and usually `-colors`
-implicitly through it) and defines the course/unit/lesson macros it needs. Note the two
-observed styles — detect which the course uses:
-- `apstats` defines `\CourseName`, `\SchoolYear`, `\MeetingLength` in its style package, so
-  the lesson plan only sets `\UnitNumberName` and `\LessonNumberName`.
-- `algebra2` defines all of them inline in the lesson plan preamble and loads a richer set of
-  packages directly (`pdfpages`, `graphicx` with `\graphicspath{{images/}}`, `tabularx`,
-  `unicode-math`, `multicol`).
+**Lesson plan** (`main.tex` at the lesson root): loads `-boxes` (and `-colors` implicitly
+through it) and defines the course/unit/lesson macros **inline in its own preamble** — this
+course does *not* define them in the style package:
+
+```latex
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\MeetingLength}{55 minutes}
+% plus \UnitNumberName and \LessonNumberName
+```
+
+Because they are inline, `scripts/new_lesson.py` needs `--course "Precalculus"` — without it
+the generated plan reads "TODO Course".
 
 The `\TallMath` helper used for tall inline math is defined per-document where needed:
 ```latex
@@ -281,6 +291,45 @@ Two limits:
 page" verdict is valid only for the box heights it was measured against — **re-measure rather than
 trusting a prior refusal**, especially after vocabpar.
 
+## The convention gate — `make check`
+
+`make all` exits 0 on a key that runs a page longer than its blank, on a two-page exit ticket, and
+on `\ans` buried in math. `make check` is what turns those into build failures:
+
+```bash
+make -C unit02/lesson03 check     # one lesson
+make -C unit02 check              # every lesson in the unit
+make check                        # the whole curriculum
+```
+
+It builds first (the page checks read the compiled per-component PDFs), then reports **every**
+violation in one pass and exits 1 — so it works as a review gate, not just a smoke test. What it
+enforces, all defined in `shared/lesson_check.py`:
+
+| Check | Fails when |
+| --- | --- |
+| **page parity** | a keyed component's page count ≠ its `_key`'s (the work rule's observable consequence) |
+| **one-pagers** | `warmup` or `exit_ticket` is not exactly 1 page, blank **or** key |
+| **ans-in-math** | `\ans` / `\ansline` appears inside `$…$`, `\[…\]`, or `\(…\)` |
+| **teachernote** | `\begin{teachernote}` appears in a lesson component's `_key` |
+| **namestrip** | a live `\namedateperiod` / `\namepartnerperiod` appears on a worksheet component |
+
+The source checks skip LaTeX comments and understand escaped `\$`, so legitimate usage —
+`\ans{$\sqrt{n}$}`, `\ansline{$41.8$ feet}`, `\$5` — does not trip them. `vocabpar` is not checked
+because it cannot be violated; `boxguard` is not checked because it is invisible to any count.
+
+Run it standalone (source checks only, no build required) with:
+
+```bash
+python3 shared/lesson_check.py unit02/lesson03 --no-pages
+```
+
+**Unit tests are outside the gate** by design — the gate walks `unitXX/lessonMM/` only, and a test
+blank legitimately carries a name row. That is a limit of the checker, **not an exemption from the
+conventions**: a unit test key must still carry no `teachernote` (its scoring notes belong on page 2
+of `unitXX/unit_cover_key/`) and must still paginate identically to its blank, because `unit.mk`
+swaps `sample_test_key` in for `sample_test` at the tail of the key packet. Check both by hand.
+
 ## Answer-key macros (from `-key`)
 
 | Macro / env | Effect |
@@ -300,9 +349,14 @@ identical so they paginate the same way.
 
 ## Color palette (from `-colors`)
 
-Primary: `navy` (#1F3A5F), `navylight`, `sky` (pale blue bg), `skymid`, `goldacc`, `goldbg`,
-`greenbg`/`greenacc`, `redbg`/`redacc`, `charcoal`, `slate`, `linegray`, `keyred` (#CC0000).
-Lesson-plan background aliases: `goldbox`, `greenbox`, `redbox`.
+Primary: **`plum` (#4B2A6C)**, `plumlight` (#6E4699), **`lilac`** (#F4EFFA, pale background),
+`lilacmid` (#DCCCEE), `goldacc`, `goldbg`, `greenbg`/`greenacc`, `redbg`/`redacc`, `charcoal`,
+`slate`, `linegray`, `keyred` (#CC0000). Lesson-plan background aliases: `goldbox`, `greenbox`,
+`redbox`, `plumbox`.
+
+**Use `plum`/`lilac` in new material.** `navy`, `navylight`, `sky`, and `skymid` still resolve —
+they are `\colorlet` aliases onto the plum ramp, kept so older lessons keep compiling — but they
+are deprecated and name the wrong color. `royal` and `burgundy` are undefined here.
 
 ## Lesson-plan section order (canonical)
 
@@ -310,5 +364,5 @@ Primary Objective → Priority Ideas & Skills → Vocabulary, Concepts & Theorem
 Prior Knowledge & Spiral Review (text-only; no warm-up thumbnail) → Hook → Lesson (and
 "Lesson (cont.)") → Explicit Instruction (one box per technique) → Active Monitoring →
 Group Work & Differentiation (Tiers R / A / E) → Individual Work & Assessment (Exit Ticket +
-SOL/AP-style MC) → Reinforcement & Extension (Homework + Extension + Preview). For AP courses,
-tag the objective and skills with the Big Idea and AP Skill (see `ap-workflow.md`).
+standards-style MC) → Reinforcement & Extension (Homework + Extension + Preview). Tag the
+objective and skills with the standards the lesson covers (see `course-workflow.md`).

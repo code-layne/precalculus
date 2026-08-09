@@ -4,12 +4,13 @@
 Creates unitXX/lessonYY/ with a Makefile, the lesson-plan main.tex, and the
 requested component subdirectories (each with a correctly-preambled main.tex,
 and a matching _key for keyed components). Auto-detects the style-package
-prefix and whether course-level macros are already defined in shared/.
+prefix and whether course-level macros are already defined in shared/, and
+creates the root Makefile and the unit Makefile if they don't exist yet.
 
 Example:
-    python new_lesson.py --project ../statistics --unit 03 --lesson 01 \
-        --title "Sampling Methods" --components cover,warmup,notes,activity,exit_ticket,homework \
-        --prefab warmup,warmup_key
+    python new_lesson.py --project . --unit 02 --lesson 03 \
+        --title "Composition of Functions" --unit-title "Functions and Their Graphs" \
+        --components cover,warmup,notes,activity,exit_ticket,homework,slides
 """
 from __future__ import annotations
 
@@ -23,7 +24,7 @@ SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "homework"]
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "homework", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
@@ -35,8 +36,8 @@ DOC_TITLE = {
 # NAMESTRIP (references/conventions.md): worksheet components carry NO name/date/
 # period row — the student writes their name once, on the cover the packet is
 # stapled behind, and every repeat costs vertical space at the top of the page.
-# Only cover.tex keeps \namedateperiod, so newly scaffolded lessons are born
-# namestripped.
+# Only cover.tex and the unit tests (taken in a testing setting) keep
+# \namedateperiod, so newly scaffolded lessons are born namestripped.
 NAME_ROW: dict[str, str] = {}
 
 
@@ -81,6 +82,15 @@ def write(path: Path, content: str, force: bool) -> None:
     print(f"  + {path}")
 
 
+def ensure(path: Path, content: str) -> None:
+    """Create a file only if it does not already exist (never clobbers)."""
+    if path.exists():
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+    print(f"  + {path}")
+
+
 def prefab_dir(path: Path) -> None:
     """Create an empty component directory for a dropped-in prefab PDF.
 
@@ -92,6 +102,56 @@ def prefab_dir(path: Path) -> None:
     if not gitkeep.exists():
         gitkeep.write_text("", encoding="utf-8")
     print(f"  + {path}/  (drop the prefab PDF here as main.pdf)")
+
+
+def scaffold_unit_tests(project: Path, unit_dir: str, unit_int: str,
+                        unit_title: str, prefix: str) -> None:
+    """Scaffold a unit's summative-assessment components (idempotent via ensure()).
+
+    Creates four sibling dirs under the unit:
+      tests/           practice_test + actual_test (blank), thin-include Makefile
+      test_keys/       practice_test_key + actual_test_key, thin-include Makefile
+      sample_test/     drop-in for the PDF the tests/ `drop` target publishes
+      sample_test_key/ drop-in for the PDF the test_keys/ `drop` target publishes
+    The practice test/key double as the sample_test/sample_test_key that
+    shared/unit.mk merges into the student/key packets; the actual test/key stay
+    out of every packet.
+    """
+    udir = project / unit_dir
+    print(f"  unit tests for {unit_dir}/ ...")
+    ensure(udir / "tests" / "Makefile", "include ../../shared/tests.mk\n")
+    ensure(udir / "test_keys" / "Makefile", "include ../../shared/test_keys.mk\n")
+
+    practice_intro = (
+        "\n\\vspace{0.10in}\n"
+        "\\begin{remindbox}\n\\small\n"
+        f"\\textbf{{This is a practice test.}} It mirrors the real Unit {unit_int} test in "
+        "length, format,\nand the ideas it covers, but the numbers and contexts differ. Work "
+        "every problem\nwith no notes, then check your answers against the key.\n"
+        "\\end{remindbox}\n"
+    )
+    actual_intro = (
+        "\n\\vspace{0.06in}\n"
+        "\\noindent\\textbf{Instructions:} Show all work. No notes unless your teacher says so.\n"
+    )
+    tbase = {"PREFIX": prefix, "UNITINT": unit_int, "UNITTITLE": unit_title}
+
+    ensure(udir / "tests" / "practice_test" / "main.tex",
+           render("test.tex", {**tbase, "TESTKIND": "Practice Test --- Study Copy",
+                                "TESTINTRO": practice_intro}))
+    ensure(udir / "tests" / "actual_test" / "main.tex",
+           render("test.tex", {**tbase, "TESTKIND": "Unit Test", "TESTINTRO": actual_intro}))
+    ensure(udir / "test_keys" / "practice_test_key" / "main.tex",
+           render("test_key.tex", {**tbase, "TESTKIND": "Practice Test --- Study Copy"}))
+    ensure(udir / "test_keys" / "actual_test_key" / "main.tex",
+           render("test_key.tex", {**tbase, "TESTKIND": "Unit Test"}))
+
+    for d in ("sample_test", "sample_test_key"):
+        gitkeep = udir / d / ".gitkeep"
+        if not gitkeep.exists():
+            gitkeep.parent.mkdir(parents=True, exist_ok=True)
+            gitkeep.write_text("", encoding="utf-8")
+            print(f"  + {gitkeep.parent}/  (sample-test PDF published here by the tests/ drop)")
 
 
 def main() -> None:
@@ -110,6 +170,9 @@ def main() -> None:
     p.add_argument("--course", help="course name for cover/slides (default: detected or 'TODO Course')")
     p.add_argument("--meeting-length", default="55 minutes", help="meeting length (used only if not in shared/)")
     p.add_argument("--no-plan", action="store_true", help="do not scaffold the lesson-plan main.tex")
+    p.add_argument("--tests", action="store_true", help="also (re)scaffold the unit's test "
+                                                        "dirs even if the unit already exists (idempotent)")
+    p.add_argument("--no-tests", action="store_true", help="do not scaffold the unit's test dirs")
     p.add_argument("--force", action="store_true", help="overwrite existing files")
     args = p.parse_args()
 
@@ -129,6 +192,10 @@ def main() -> None:
     if bad:
         fail(f"unknown component(s): {bad}. Allowed: {ALL_COMPONENTS}")
     prefab = {c.strip() for c in args.prefab.split(",") if c.strip()}
+
+    if "slides" in components and not list(shared.glob("*-beamer.sty")):
+        fail("slides requested but no <prefix>-beamer.sty in shared/ — this course has no "
+             "beamer theme, so the slides component cannot be built. Drop 'slides'.")
 
     course_name = args.course or detect_course_name(shared) or "TODO Course"
     if shared_defines_coursename(shared):
@@ -150,6 +217,21 @@ def main() -> None:
 
     write(dest / "Makefile", "include ../../shared/lesson.mk\n", args.force)
     (dest / "images").mkdir(parents=True, exist_ok=True)
+
+    # Ensure the build hierarchy above this lesson exists. The root Makefile and the
+    # unit Makefile are thin includes of shared/*.mk; create them only if missing so
+    # re-scaffolding later lessons never clobbers them.
+    unit_makefile = project / unit_dir / "Makefile"
+    unit_is_new = not unit_makefile.exists()
+    ensure(project / "Makefile", "include shared/root.mk\n")
+    ensure(unit_makefile, "include ../shared/unit.mk\n")
+
+    # Scaffold the unit's summative-assessment components when the unit is first created
+    # (or when --tests forces it). Skipped with --no-tests. ensure() never clobbers, so
+    # authored tests survive re-scaffolding of later lessons.
+    scaffold_tests = not args.no_tests and (unit_is_new or args.tests)
+    if scaffold_tests:
+        scaffold_unit_tests(project, unit_dir, unit_int, args.unit_title, prefix)
 
     if not args.no_plan:
         # The spiral review is ALWAYS text-only. Warm-up thumbnails via
@@ -188,6 +270,10 @@ def main() -> None:
     if prefab:
         print(f"  2. Drop supplied PDFs as main.pdf in: {', '.join(sorted(prefab))}")
     print(f"  3. Build:  make -C {unit_dir}/{lesson_dir} all")
+    if scaffold_tests:
+        print(f"  4. Author the unit tests in {unit_dir}/tests/ and {unit_dir}/test_keys/,")
+        print(f"     then publish the sample test:  make -C {unit_dir}/tests all && "
+              f"make -C {unit_dir}/test_keys all")
 
 
 if __name__ == "__main__":

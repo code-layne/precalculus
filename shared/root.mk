@@ -11,12 +11,18 @@ COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
 # Auto-discover units that have a Makefile, in sorted order.
 UNITS := $(patsubst %/Makefile,%,$(sort $(wildcard unit*/Makefile)))
 
-.PHONY: all student key clean distclean $(UNITS)
+.PHONY: all student key check clean distclean $(UNITS)
 
 all: $(UNITS)
 
 $(UNITS):
 	$(MAKE) -C $@
+
+# Whole-curriculum convention gate. Builds every unit first, then checks every
+# lesson in one pass so the report covers the project rather than stopping at the
+# first violation. See shared/lesson_check.py.
+check: $(UNITS)
+	@python3 $(PROJECT_ROOT)/shared/lesson_check.py --project $(PROJECT_ROOT) --all
 
 student:
 	@for u in $(UNITS); do $(MAKE) -C $$u student || exit 1; done
