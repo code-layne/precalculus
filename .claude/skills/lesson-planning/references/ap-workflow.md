@@ -1,7 +1,11 @@
-# CED Workflow — AP Precalculus
+# CED Workflow — Precalculus
 
 Use this to turn a CED **Topic** into a lesson's objectives, skills, and learning targets.
-The College Board documents live in `spec/` (files named `ap-precalculus-*.pdf`).
+The College Board documents live in `spec/` (files named `ap-precalculus-*.pdf` on disk).
+
+**The course is called "Precalculus", never "AP Precalculus."** The CED is the content source,
+but no course-facing text carries an AP prefix on the course name. Other AP terminology stays —
+"AP-style multiple choice", "AP Skill", "AP Exam weighting" are all fine.
 
 ## Read `COURSE_PLAN.md` first — the CED is not the lesson map
 
@@ -32,8 +36,13 @@ two-column layout is ambiguous.
 
 ## The framework vocabulary
 
-AP Precalculus has **no "Big Ideas."** Its cross-cutting dimension is the three
-**Mathematical Practices**, which spiral across every topic:
+This CED has **no "Big Ideas."** Its cross-cutting dimension is the three
+**Mathematical Practices**, which spiral across every topic.
+
+**In lesson plans these are written `AP Skill x.y`** — e.g. `\textbf{AP Skill 2.B} --- Construct
+equivalent representations`. That is the label all 60 authored lessons use; match it rather than
+writing "Mathematical Practice 2.B". The course *name* drops its AP prefix; this framework term
+keeps its own.
 
 | Practice | Name | Sub-skills |
 | --- | --- | --- |
@@ -96,8 +105,8 @@ Produces, in the lesson plan:
 \end{tcolorbox}
 ...
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-  \textbf{Practice 3 --- Communication and Reasoning}
-  \begin{itemize}\item Describe the characteristics of a polynomial function from its graph (3.A).\end{itemize}
+  \textbf{AP Skill 3.A} --- Describe the characteristics of a function
+  \begin{itemize}\item Read increasing/decreasing behavior and points of inflection from a polynomial's graph.\end{itemize}
 \end{skillbox}
 ```
 and, on the cover: a learning target "I can find where a polynomial's rate of change switches
