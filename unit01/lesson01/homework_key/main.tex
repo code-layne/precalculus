@@ -1,7 +1,7 @@
-%! Function Fundamentals — Unit 1, Lesson 1.1 — Homework (Answer Key)
+%! Function Fundamentals — Unit 1, Lesson 1.1 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,41 +12,42 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item The function $p$ gives a plant's height in centimeters $t$ weeks after it
-      is planted.
+\item The function $W$ gives a puppy's weight in pounds $d$ days after it is
+      born.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Write the statement $p(3) = 14$ as a full sentence.
+  \item Write the statement $W(30) = 9$ as a full sentence.
 
-        \vspace{0.02in}
-        \ansline{Three weeks after planting, the plant is 14 centimeters tall.}
+        \vspace{0.05in}
+        \ansline{Thirty days after birth, the puppy weighs 9 pounds.}
 
-  \item Write this sentence in function notation: ``after 5 weeks, the plant is
-        20 centimeters tall.'' \quad \ans{$p(5) = 20$}
+  \item Write this sentence in function notation: ``after 60 days the puppy
+        weighs 15 pounds.'' \quad \ans{$W(60) = 15$}
 \end{enumerate}
 
-\item Let $f(x) = 2x + 5$ and $g(x) = x^2 - 1$. Evaluate each.
+\item Let $f(x) = 4x + 7$ and $g(x) = x^2 - 5x$. Evaluate each.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $f(3) = $ \ans{11}
+  \item $f(6) = $ \ans{31}
 
-  \item Find $f(-4)$.
+  \item Find $f(-3)$.
 
         \begin{work}
-          f(-4) &= 2(-4) + 5 \\
-                &= -3
+          f(-3) &= 4(-3) + 7 \\
+                &= -5
         \end{work}
 
-        $f(-4) = $ \ans{$-3$}
+        $f(-3) = $ \ans{$-5$}
 
   \item Find $g(-2)$.
 
         \begin{work}
-          g(-2) &= (-2)^2 - 1 \\
-                &= 3
+          g(-2) &= (-2)^2 - 5(-2) \\
+                &= 4 + 10 \\
+                &= 14
         \end{work}
 
-        $g(-2) = $ \ans{3}
+        $g(-2) = $ \ans{14}
 \end{enumerate}
 
 \item The table shows a function $h$.
@@ -56,48 +57,50 @@
 \hline
 $x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$h(x)$ & 6 & 4 & 2 & 0 & $-2$ \\
+$h(x)$ & 10 & 7 & 4 & 4 & 1 \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $h(3) = $ \ans{0}
-  \item Solve $h(x) = 4$: \quad $x = $ \ans{1}
-  \item Domain of $h$: \ans{$\{0, 1, 2, 3, 4\}$}
+  \item $h(3) = $ \ans{4}
+  \item Solve $h(x) = 7$: \quad $x = $ \ans{1}
+  \item Domain of $h$: \ans{$\{0,1,2,3,4\}$} \quad Range of $h$:
+        \ans{$\{1, 4, 7, 10\}$}
 \end{enumerate}
 
 \item The graph of a function $g$ is shown.
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,5);
+\begin{tikzpicture}[x=0.6cm, y=0.45cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,8);
   \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $g(x)$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $g(x)$};
   \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,0) -- (2,4);
-  \draw[very thick, plum] (2,4) -- (5,4);
-  \draw[very thick, plum] (5,4) -- (8,1);
-  \fill[plum] (0,0) circle (2.5pt);
-  \fill[plum] (8,1) circle (2.5pt);
+  \foreach \y in {2,4,6,8} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,2) -- (3,8);
+  \draw[very thick, plum] (3,8) -- (8,3);
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (8,3) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $g(2) = $ \ans{4} \qquad $g(7) = $ \ans{2}
-  \item Solve $g(x) = 2$: \quad $x = $ \ans{1} and $x = $ \ans{7}
+  \item $g(1) = $ \ans{4} \qquad $g(6) = $ \ans{5}
+  \item Solve $g(x) = 6$: \quad $x = $ \ans{2} and $x = $ \ans{5}
   \item Domain: \ans{0} $\le x \le$ \ans{8} \qquad
-        Range: \ans{0} $\le y \le$ \ans{4}
+        Range: \ans{2} $\le y \le$ \ans{8}
+  \item Rewrite the domain from part (c) in bracket notation. \quad
+        \ans{$[\,0, 8\,]$}
 \end{enumerate}
 
-\item Which of the following is the \textbf{domain} of the function
+\item Which of the following is the \textbf{range} of the function
       $\{(2, 3),\ (4, 3),\ (6, 1),\ (8, 5)\}$?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $\{2, 4, 6, 8\}$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $\{3, 1, 5\}$
-  \item $\{2, 3\}$
+  \item $\{2, 4, 6, 8\}$
+  \item $\{1, 3, 5\}$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $\{3, 3, 1, 5\}$
   \item all real numbers
 \end{enumerate}
 
@@ -107,21 +110,22 @@ $h(x)$ & 6 & 4 & 2 & 0 & $-2$ \\
 
 \boxguard
 \begin{extensionbox}
-The formula $y = \dfrac{12}{x - 5}$ refuses one input. Which $x$ is forbidden,
+The formula $y = \dfrac{6}{2x - 8}$ refuses one input. Which $x$ is forbidden,
 and why? Then write the domain in words.
 
-\vspace{0.02in}
-\ansline{$x = 5$ is forbidden: it makes the denominator 0, and division by zero is undefined. The domain is all real numbers except 5.}
+\vspace{0.05in}
+\ansline{$x = 4$: it makes the denominator $2(4) - 8 = 0$, and division by zero is undefined.}
+\ansline{The domain is every real number except 4.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
 \boxguard
 \begin{notesbox}{Preview of Lesson 1.2}
-Now that functions have names and notation, we can ask the unit's real question:
-as the input climbs, what does the output do? Lesson 1.2, \textit{Change in
-Tandem}, studies how two quantities rise and fall together --- and how a graph
-shows it.
+Now that a function has a name, an input, and an output, we can ask the unit's
+real question: as the input climbs, what does the output \textit{do}? Lesson
+1.2, \textit{Change in Tandem}, describes where a function rises, falls, or
+holds steady --- and reads all of it off the graph.
 \end{notesbox}
 
 \end{document}
