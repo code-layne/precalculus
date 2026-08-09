@@ -32,11 +32,11 @@ AP tags and list review topics):
 1. **Title block** — `\CourseName` + `\UnitNumberName \LessonNumberName`. No school year
    anywhere in the title block.
 2. **Primary Objective** — a `tcolorbox` (`lilac`/`plum`). One or two sentences restating the
-   CED Learning Objectives as student-facing aims. AP Precalculus has no "Big Idea" tag.
+   CED Learning Objectives as student-facing aims. This CED has no "Big Idea" tag.
 3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
-   skills, labelled with the Mathematical Practice and sub-skill (e.g. "Practice 2 — Multiple
-   Representations: construct equivalent representations (2.B)"). Right: "Key Understandings"
-   paraphrased from the EKs.
+   skills, labelled `\textbf{AP Skill x.y}` (e.g. "AP Skill 2.B --- Construct equivalent
+   representations"), matching every authored lesson. Right: "Key Understandings" paraphrased
+   from the EKs.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
 5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); lists the prerequisite skills the warm-up reviews, **in words**. Text-only — never embed a warm-up thumbnail.

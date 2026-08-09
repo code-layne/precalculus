@@ -6,7 +6,7 @@ description: >-
   and merges them with pdfunite). Use this whenever the user wants to create, draft, or
   build a lesson, a lesson plan, a unit, or any lesson component — warm-up, guided notes,
   activity, exit ticket, homework, cover sheet, or their answer keys. This project is the
-  **Precalculus** course: `COURSE_PLAN.md` is the authoritative unit/lesson map, and the AP
+  **Precalculus** course: `COURSE_PLAN.md` is the authoritative unit/lesson map, and the
   Precalculus CED in `spec/` drives each lesson's objectives and essential knowledge. Also
   use it to author unit-level tests and unit covers. Trigger this even when the user just
   says "make lesson 2.3" or "I need a warm-up and key for tomorrow," and even if they don't
@@ -27,11 +27,14 @@ The course at a glance:
 - **Structure is 8 units × 8 lessons = 64 lessons**, plus a sample test per unit.
   **`COURSE_PLAN.md` is authoritative** for the unit/lesson map, each lesson's status, and which
   CED topic drives it. Read it before authoring; it does not mirror the CED 1:1.
-- **Content source is the AP Precalculus CED** (`spec/ap-precalculus-*.pdf`). Lessons
-  `COURSE_PLAN.md` marks **New** have no CED topic — they exist to slow the ramp for the
-  non-honors track or to add calculus-readiness material.
-- **The course is named "Precalculus", not "AP Precalculus".** The CED is the content backbone,
-  but the course title carries no AP prefix. (Framework terms like "AP Skill" keep theirs.)
+- **Content source is the Precalculus CED** (the files in `spec/`, named `ap-precalculus-*.pdf`
+  on disk). Lessons `COURSE_PLAN.md` marks **New** have no CED topic — they exist to slow the
+  ramp for the non-honors track or to add calculus-readiness material.
+- **The course is called "Precalculus" — never "AP Precalculus".** The College Board CED is the
+  content backbone, but no course-facing text carries an AP prefix on the course name: not the
+  cover, not a page header, not a lesson plan, not these docs. Other AP terminology is fine and
+  should stay — "AP-style multiple choice", "AP Skill", "AP Exam weighting". The rule is about
+  the *course name* only. The `spec/ap-precalculus-*.pdf` filenames stay as they are on disk.
 - **Style prefix is `precalculus`** — `shared/precalculus-{colors,article,boxes,key,beamer}.sty`.
   The palette is **plum with gold accents**. A teacher **slide deck** is supported, and every
   lesson ships one.
@@ -462,7 +465,7 @@ violation the gate still reports and why.
   (vocabpar, teachernote, namestrip, work rule, boxguard). Read before authoring.
 - `references/components.md` — section-by-section spec and a skeleton for the lesson plan and
   each component + key, plus the **unit tests** and the **unit cover pair**.
-- `references/ap-workflow.md` — reading the AP Precalculus CED and mapping Big Idea / Skill /
+- `references/ap-workflow.md` — reading the Precalculus CED and mapping Mathematical Practice /
   LO / EK into the lesson. Pair it with `COURSE_PLAN.md`, which is authoritative for *which*
   CED topic drives a given lesson.
 - `references/standards-workflow.md` — the title + description + standards path, used for the

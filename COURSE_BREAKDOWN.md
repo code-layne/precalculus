@@ -7,7 +7,7 @@ last section.
 
 **Course:** Precalculus (non-honors track). 8 units × 8 lessons = **64 lessons**, plus a
 unit test per unit. Pacing target 18–22 class periods per unit (55-minute meetings).
-Content backbone: the AP Precalculus CED in `spec/`.
+Content backbone: the Precalculus CED in `spec/`.
 
 **Per-lesson deliverables (11 PDFs + deck):** cover, warm-up + key, guided notes + key,
 group activity + key, exit ticket + key, homework + key, and a Beamer `slides/` deck.

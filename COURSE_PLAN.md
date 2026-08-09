@@ -11,7 +11,7 @@ Units 1 and 2 number their eight lessons 1.0–1.7 and 2.0–2.7 (see the replan
 units 3–8 still number theirs X.1–X.8 and adopt the X.0 opener as each is reauthored.
 Pacing target: 18–22 class periods per unit (55-minute meetings).
 
-**Content source:** the AP Precalculus CED (`spec/`) remains the content backbone.
+**Content source:** the Precalculus CED (`spec/`) remains the content backbone.
 "CED n.m" below refers to the CED topic that drives the lesson's objectives and essential
 knowledge. Lessons marked **New** have no single CED topic; they exist to slow the ramp
 for the non-honors track or to add calculus-readiness material.
