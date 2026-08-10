@@ -1,7 +1,7 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Guided Notes (Answer Key)
+%! Inverse Functions — Unit 1, Lesson 1.6 — Guided Notes (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -13,12 +13,15 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Reverse the input--output pairs of a function to build $f^{-1}$, and
-        explain why the \ans{domain} and \ans{range} trade places.
-  \item Find $f^{-1}(x)$ by writing $y = f(x)$, \ans{swapping} $x$ and $y$, and
-        \ans{solving} for $y$.
-  \item Verify a pair of inverses using \ans{composition}, and restrict a domain
-        when a function is not \ans{one-to-one}.
+  \item Use $f^{-1}$ to give back the \ans{question} that produced a given
+        \ans{answer}, and explain why $f^{-1}(x)$ is not
+        \ans{$1/f(x)$}.
+  \item Reverse a table of pairs to build $f^{-1}$, and say why the
+        \ans{domain} and \ans{range} trade places.
+  \item Decide whether a function is \ans{one-to-one}, and \ans{restrict} its
+        domain when it is not.
+  \item Find $f^{-1}(x)$ by swapping and solving, and check the pair with
+        \ans{composition}.
 \end{enumerate}
 \end{objectivebox}
 
@@ -29,245 +32,173 @@ By the end of this lesson, I will be able to\ldots
 Fill in each term as we define it together.
 \par\vspace{2pt}
 \noindent\textbf{\textcolor{plum}{Inverse function:}}\\[1pt]
-\ansline{The function that reverses $f$: if $f(a) = b$, then $f^{-1}(b) = a$.}\\[3pt]
+\ansline{The function $f^{-1}$ that gives back the question: if $f(a) = b$, then $f^{-1}(b) = a$. Read ``$f$-inverse.''}\\[3pt]
 \noindent\textbf{\textcolor{plum}{One-to-one:}}\\[1pt]
-\ansline{No two different inputs give the same output --- outputs never repeat.}\\[3pt]
+\ansline{No two different questions share an answer. A function has an inverse exactly when it is one-to-one.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
-\ansline{Cutting the domain down to a piece where the function is one-to-one.}\\[3pt]
+\ansline{Throwing questions away until the function is one-to-one on what is left, so an inverse exists there.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
-\ansline{The function that returns its own input, $I(x) = x$.}\\[3pt]
+\ansline{$I(x) = x$ --- hands back its own input. A function composed with its inverse gives it, in either order.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Reflection over $y = x$:}}\\[1pt]
-\ansline{$f^{-1}$'s graph is the mirror image of $f$'s across the line $y = x$.}
+\ansline{Every point $(a,b)$ on $f$ becomes $(b,a)$ on $f^{-1}$, so the two graphs are mirror images across $y = x$.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[22]
 \begin{hookbox}
-The weather app says $68^\circ$F. Your friend in Paris wants that in Celsius.
-The only rule on the board is $F(x) = 1.8x + 32$ --- and it converts Celsius
-\textit{into} Fahrenheit, which is the wrong direction.
+You find a \textbf{\$14 parking receipt} in each of two cars. Neither receipt
+says how long the car was parked --- it only says what the driver paid.
 
 \smallskip
-What do you do to $68$ to get back to Celsius, and in what \textit{order}?
+\textbf{Garage A} charges $P(x) = 3x + 2$ dollars for $x$ hours.
+\textbf{Garage B} posts this price list:
 
-\ansline{Undo the rule backwards: subtract 32 first, then divide by 1.8.}
-\ansline{$(68 - 32) \div 1.8 = 20$, so $20^\circ$C. That undoing is itself a function.}
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+hours & 1 & 2 & 3 & 4 & 5 \\
+\hline
+Garage B charges & \$8 & \$14 & \$14 & \$20 & \$26 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+For one of these cars you can say \textit{exactly} how long it was parked. For
+the other you cannot. Which is which --- and what makes the difference?
+\ansline{Garage A: \$14 could only have come from 4 hours, since $3(4) + 2 = 14$ and no other number of hours works.}
+\ansline{Garage B charged \$14 for 2 hours \textit{and} for 3 hours, so its \$14 receipt does not say which.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{1. ``Undoing'' Is a Reversed Mapping}
-The rule $F(x) = 1.8x + 32$ takes a Celsius temperature and returns a
-Fahrenheit one. Its \textbf{inverse}, written $F^{-1}$, runs the same pairs
-backwards.
+\boxguard[28]
+\begin{notesbox}{1. Giving Back the Question}
+Every time you use a function you ask it a \textbf{question} and it hands back
+an \textbf{answer}. Today we run that trip in the other direction.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[thick, plum, fill=lilac, rounded corners=2pt]
+    (-3.4,-0.55) rectangle (-1.6,0.55);
+  \node at (-2.5,0) {\large $a$};
+  \draw[thick, plum, fill=goldbg, rounded corners=2pt]
+    (1.6,-0.55) rectangle (3.4,0.55);
+  \node at (2.5,0) {\large $b$};
+  \draw[->, very thick, plum] (-1.5,0.32) -- (1.5,0.32);
+  \node[above, font=\small] at (0,0.36) {$f$};
+  \draw[->, very thick, goldacc] (1.5,-0.32) -- (-1.5,-0.32);
+  \node[below, font=\small] at (0,-0.36) {$f^{-1}$};
+  \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62)
+    {the question};
+  \node[below, font=\small\itshape, text=slate] at (2.5,-0.62)
+    {the answer};
+\end{tikzpicture}
+\end{center}
+
+\smallskip
+\begin{center}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+\textbf{The inverse gives back the question.} If $f(a) = b$ --- question $a$,
+answer $b$ --- then $f^{-1}(b) = a$. Ask $f^{-1}$ an \textbf{answer} and it
+tells you which \textbf{question} produced it.
+\end{tcolorbox}
+\end{center}
+
+\smallskip
+Read the garage rule $P(x) = 3x + 2$ both directions.
 
 \medskip
 \begin{center}
 \renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.32\linewidth} X @{}}
+\begin{tabularx}{0.92\linewidth}{@{} >{\bfseries}p{0.34\linewidth} X @{}}
 \hline
-$F$ sends \ldots\ to \ldots & $F^{-1}$ sends it back \\
+$P$: question $\to$ answer & $P^{-1}$: answer $\to$ question \\
 \hline
-$F(20) = 68$ & $F^{-1}(68) = $ \ans{20} \\
+$P(4) = 14$ & $P^{-1}(14) = $ \ans{4} \\
 \hline
-$F(0) = 32$  & $F^{-1}(32) = $ \ans{0} \\
+$P(1) = 5$  & $P^{-1}(5) = $ \ans{1} \\
 \hline
-$F(a) = b$   & $F^{-1}($ \ans{$b$} $) = $ \ans{$a$} \\
+$P(a) = b$  & $P^{-1}($ \ans{$b$} $) = $ \ans{$a$} \\
 \hline
 \end{tabularx}
 \end{center}
 
 \medskip
-\textbf{The definition, in one line:} if $f(a) = b$, then $f^{-1}(b) = a$.
-
-\medskip
 \textbf{Warning --- the biggest mistake in this lesson.} The $-1$ in $f^{-1}$
 is a \textbf{name}, not an exponent:
+
 \begin{center}
 $f^{-1}(x) \ne \dfrac{1}{f(x)}$
 \end{center}
 
-See it in numbers. Since $F(10) = 1.8(10) + 32 = 50$, we get
-$F^{-1}(50) = $ \ans{10}. \\
-But $F(50) = 1.8(50) + 32 = $ \ans{122}, so
-$\dfrac{1}{F(50)} = $ \ans{$1/122$}.
+The reciprocal does arithmetic \textit{to the answer}. The inverse goes back to
+the \textit{question}. Those are not the same trip, and the numbers say so:
 
 \smallskip
-Those two answers are \ans{nowhere near each other}.
+$P^{-1}(14) = $ \ans{4} \qquad but \qquad $P(14) = $ \ans{44},
+so $\dfrac{1}{P(14)} = $ \ans{$1/44$}.
 \end{notesbox}
 
 \vspace{0.1in}
 
 \boxguard[26]
-\begin{notesbox}{2. Inverses from Tables --- and the Domain/Range Swap}
-\textbf{Example 1.} Complete the Fahrenheit row for $F(x) = 1.8x + 32$.
+\begin{notesbox}{2. The Answers Become the Questions}
+\textbf{Example 1.} Fill in what Garage A charges, using $P(x) = 3x + 2$.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ (degrees C) & $-10$ & 0 & 10 & 20 & 100 \\
+$x$ (hours) & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$F(x)$ (degrees F) & \ans{14} & \ans{32} & \ans{50}
-  & \ans{68} & \ans{212} \\
+$P(x)$ (dollars) & \ans{5} & \ans{8} & \ans{11}
+  & \ans{14} & \ans{17} \\
 \hline
 \end{tabular}
 \end{center}
 
 \smallskip
-Now build $F^{-1}$ by \textbf{trading the two rows}. Nothing is computed here
---- the same pairs are read backwards.
+Now build $P^{-1}$ by \textbf{trading the two rows}. Nothing is computed here.
+The answers on the bottom row become the questions on the top row.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
+$x$ (dollars) & 5 & 8 & 11 & 14 & 17 \\
 \hline
-$F^{-1}(x)$ (degrees C) & \ans{$-10$} & \ans{0} & \ans{10}
-  & \ans{20} & \ans{100} \\
+$P^{-1}(x)$ (hours) & \ans{1} & \ans{2} & \ans{3}
+  & \ans{4} & \ans{5} \\
 \hline
 \end{tabular}
 \end{center}
+
+\smallskip
+There is the \$14 receipt from Garage A: \ans{4} hours.
 
 \medskip
+Nothing here needs memorizing --- it follows from the trade. The questions you
+may ask $P^{-1}$ are exactly the answers $P$ gave.
+
+\smallskip
 \begin{itemize}[itemsep=4pt]
-  \item Domain of $F^{-1}$ $=$ the \ans{range} of $F$. \quad
-        Range of $F^{-1}$ $=$ the \ans{domain} of $F$.
-  \item \textbf{The catch.} Reversing works only when no two inputs share an
-        output. Take $g = \{(1,5), (2,5), (3,8)\}$. Reversed, the input 5 would
-        have to produce \ans{two} different outputs, so the reversal is
-        \ans{not a function}.
-  \item A function whose outputs never repeat is called \ans{one-to-one}, and
-        only such a function is \ans{invertible}.
+  \item Domain of $f^{-1}$ $=$ the \ans{range} of $f$. \quad
+        Range of $f^{-1}$ $=$ the \ans{domain} of $f$.
 \end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[26]
-\begin{notesbox}{3. The Analytic Method: Swap and Solve}
-\begin{enumerate}[itemsep=3pt]
-  \item Write $y = f(x)$.
-  \item \ans{Swap} $x$ and $y$. \quad \textit{(This is the inversion. The
-        rest is algebra.)}
-  \item \ans{Solve} for $y$.
-  \item Rename the result $f^{-1}(x)$.
-\end{enumerate}
 
 \medskip
-\textbf{Example 2.} Find $f^{-1}(x)$ for $f(x) = 4x - 1$.
-
-\begin{work}
-              y &= 4x - 1 \\
-              x &= 4y - 1 \\
-          x + 1 &= 4y \\
-  \frac{x+1}{4} &= y
-\end{work}
-
-$f^{-1}(x) = $ \ans{$(x+1)/4$}
-
-\medskip
-\textbf{Example 3.} Find $F^{-1}(x)$ for the temperature rule
-$F(x) = 1.8x + 32$.
-
-\begin{work}
-                  y &= 1.8x + 32 \\
-                  x &= 1.8y + 32 \\
-             x - 32 &= 1.8y \\
-  \frac{x - 32}{1.8} &= y
-\end{work}
-
-$F^{-1}(x) = $ \ans{$(x-32)/1.8$}
-
-\smallskip
-Check it against the table: $F^{-1}(68) = \dfrac{68 - 32}{1.8} = $
-\ans{20}, which matches the \ans{table} from Part 2.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[26]
-\begin{notesbox}{4. Verification by Composition}
-Lesson 1.5 built the tool: $(f \circ g)(x) = f(g(x))$ means run $g$ first, then
-feed its output into $f$. Here that tool becomes a \textbf{test}.
-
-\medskip
-\begin{center}
-$f$ and $f^{-1}$ are inverses exactly when \quad
-$f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x$.
-\end{center}
-
-The function that returns its own input, $I(x) = x$, is the
-\ans{identity} function. Composing a function with its inverse --- in
-\textbf{either} order --- produces it.
-
-\medskip
-\textbf{Example 4.} Verify that $f(x) = 4x - 1$ and $f^{-1}(x) = \dfrac{x+1}{4}$
-are inverses.
-
-\begin{work}
-  f\big(f^{-1}(x)\big) &= 4\left(\frac{x+1}{4}\right) - 1 \\
-                       &= (x + 1) - 1 \\
-                       &= x \\
-  f^{-1}\big(f(x)\big) &= \frac{(4x - 1) + 1}{4} \\
-                       &= \frac{4x}{4} \\
-                       &= x
-\end{work}
-
-Both compositions collapsed to \ans{$x$}, so $f$ and $f^{-1}$ really are
-\ans{inverses}.
-
-\medskip
-\textbf{You already did this.} In the warm-up you found $f(g(7)) = 7$ and
-$g(f(7)) = 7$ with these exact two functions. The algebra above does the same
-check for \ans{every input} at once, not just for 7.
-
-\smallskip
-\textbf{Why both directions, and not just one?}
-
-\ansline{Both must collapse to $x$; one direction alone is not enough.}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{5. When There Is No Inverse --- and the Mirror Line $y = x$}
-\textbf{Example 5.} $f(x) = x^2$ on all real numbers.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
-\hline
-$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
-\hline
-\end{tabular}
-\end{center}
-
-\smallskip
-The inputs \ans{$-2$} and \ans{2} both produce the output 4. Reversing
-would send 4 to two places at once, so $f$ is \textbf{not} \ans{one-to-one} on all
-real numbers --- and therefore not \ans{invertible} there.
-
-\medskip
-\textbf{The repair: restrict the domain.} Keep only $x \ge 0$. On that piece
-the outputs never repeat, and
-
-\begin{center}
-$f^{-1}(x) = $ \ans{$\sqrt{x}$} \qquad with domain \ans{$x \ge 0$}
-\end{center}
-
-\medskip
-\textbf{The graph of an inverse.} Every point $(a, b)$ on $y = f(x)$ becomes
-the point $(b, a)$ on $y = f^{-1}(x)$ --- so the two graphs are mirror images
-across the dashed line below.
+\textbf{The same swap, drawn.} On a graph the questions live on the $x$-axis
+and the answers live on the $y$-axis. Trading them turns each point $(a,b)$
+into the point $(b,a)$ --- which is exactly a reflection across the line
+$y = x$.
 
 \smallskip
 \begin{center}
@@ -291,46 +222,203 @@ across the dashed line below.
  \textcolor{goldacc}{\textbf{gold}} $= f^{-1}(x) = \dfrac{x-1}{2}$ \qquad
  \textcolor{slate}{\textbf{dashed}} $= y = x$}
 
-\medskip
+\smallskip
 \begin{itemize}[itemsep=4pt]
-  \item The point $(0, 1)$ on $f$ corresponds to the point $($ \ans{1} ,
-        \ans{0} $)$ on $f^{-1}$.
-  \item The point $(2, 5)$ on $f$ corresponds to the point $($ \ans{5} ,
+  \item $f$ answers the question $0$ with $1$, so $f^{-1}$ answers the question
+        \ans{1} with \ans{0}: the point $(0,1)$ becomes
+        $($ \ans{1} , \ans{0} $)$.
+  \item The point $(2, 5)$ on $f$ becomes $($ \ans{5} ,
         \ans{2} $)$ on $f^{-1}$.
-  \item The two graphs are reflections of each other over the line
-        \ans{$y = x$}.
 \end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[26]
+\begin{notesbox}{3. When the Answer Gives Back Nothing}
+Back to the other receipt. \textbf{Garage B} charged \$14 for a 2-hour stay
+\textit{and} \$14 for a 3-hour stay.
+
+\smallskip
+\textbf{Example 2.} Try to answer the question the receipt asks.
+
+\smallskip
+$B^{-1}(14) = $ \ans{2} \; or \; \ans{3} --- and a function is
+only allowed \ans{one} answer per question.
+
+\smallskip
+So $B$ has \textbf{no inverse}. Nothing is wrong with $B$ as a function; the
+trouble only appears when you try to run it backwards.
+
+\medskip
+\begin{center}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+A function is \textbf{one-to-one} when no two different questions share an
+answer. \textbf{A function has an inverse exactly when it is one-to-one} ---
+that is what makes ``which question produced this answer?'' have a single
+reply.
+\end{tcolorbox}
+\end{center}
+
+\smallskip
+You already met one today: on the warm-up, $q(1)$ and $q(3)$ were both 3, so
+$q$ is \ans{not one-to-one}.
+
+\medskip
+\textbf{Example 3.} $f(x) = x^2$ on all real numbers.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The answer 4 came from the questions \ans{$-2$} and \ans{2}, so $f$ is
+not one-to-one and has no inverse on all real numbers.
+
+\medskip
+\textbf{The repair: throw questions away.} Keep only $x \ge 0$. On that piece
+no answer repeats, and the inverse exists:
+
+\begin{center}
+$f^{-1}(x) = $ \ans{$\sqrt{x}$} \qquad with domain \ans{$x \ge 0$}
+\end{center}
+
+\smallskip
+Say it with the domain attached. ``$x^2$ has no inverse'' is false;
+``$x^2$ has no inverse \ans{on all real numbers}'' is true.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{4. Swap and Solve}
+A table only gives back the questions you already listed. This gets them all at
+once.
+
+\begin{enumerate}[itemsep=3pt]
+  \item Write $y = f(x)$.
+  \item \ans{Swap} $x$ and $y$. \quad \textit{(This is the whole inversion:
+        the old answer becomes the new question.)}
+  \item \ans{Solve} for $y$.
+  \item Rename the result $f^{-1}(x)$.
+\end{enumerate}
+
+\medskip
+\textbf{Example 4.} Find $P^{-1}(x)$ for the garage rule $P(x) = 3x + 2$.
+
+\begin{work}
+              y &= 3x + 2 \\
+              x &= 3y + 2 \\
+          x - 2 &= 3y \\
+  \frac{x-2}{3} &= y
+\end{work}
+
+$P^{-1}(x) = $ \ans{$\dfrac{x-2}{3}$}
+
+\smallskip
+Test it on the receipt: $P^{-1}(14) = \dfrac{14 - 2}{3} = $ \ans{4}
+hours, matching the table in Part 2.
+
+\smallskip
+Step 3 is the warm-up. There you solved $3x + 2 = 14$ and got one question
+back. Swapping and solving does it for \ans{every possible} answer at once.
+
+\medskip
+\textbf{Example 5.} Find $f^{-1}(x)$ for $f(x) = 4x - 1$.
+
+\begin{work}
+              y &= 4x - 1 \\
+              x &= 4y - 1 \\
+          x + 1 &= 4y \\
+  \frac{x+1}{4} &= y
+\end{work}
+
+$f^{-1}(x) = $ \ans{$\dfrac{x+1}{4}$}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{5. The Check: Hand the Answer Back}
+Lesson 1.5 gave you the tool. In $f\big(f^{-1}(x)\big)$ the \textbf{handoff} is
+whatever $f^{-1}$ produced --- and if $f^{-1}$ really does give back questions,
+the number that comes out the far end is the one you started with.
+
+\medskip
+\begin{center}
+$f$ and $f^{-1}$ are inverses exactly when \quad
+$f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x$.
+\end{center}
+
+The function that hands back its own input, $I(x) = x$, is the
+\ans{identity} function from Lesson 1.5. Composing a function with its inverse
+--- in \textbf{either} order --- produces it.
+
+\medskip
+\textbf{Example 6.} Verify $P(x) = 3x + 2$ against $P^{-1}(x) = \dfrac{x-2}{3}$.
+
+\begin{work}
+  P\big(P^{-1}(x)\big) &= 3\left(\frac{x-2}{3}\right) + 2 \\
+                       &= (x - 2) + 2 \\
+                       &= x \\
+  P^{-1}\big(P(x)\big) &= \frac{(3x + 2) - 2}{3} \\
+                       &= \frac{3x}{3} \\
+                       &= x
+\end{work}
+
+Both compositions collapsed to \ans{$x$}, so $P$ and $P^{-1}$ really are
+\ans{inverses}.
+
+\medskip
+\textbf{You already ran this check.} The warm-up handed you $f(x) = 3x+2$ and
+$g(x) = \dfrac{x-2}{3}$ and asked for $f(g(11))$ and $g(f(3))$. Both came back
+to the starting number, because that $g$ was \ans{$P^{-1}$} all along. The
+algebra above does the same check for \ans{every input} at once, not just for 11
+and 3.
+
+\medskip
+\textbf{Why check both directions, and not just one?}
+
+\ansline{One direction alone can pass by accident on a restricted piece; inverses have to give back the question \textit{and} take it forward again.}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[16]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item Let $f(x) = 3x + 6$. Find $f^{-1}(x)$, then verify by computing
-        $f^{-1}(f(x))$.
+  \item Let $f(x) = 5x - 3$. Find $f^{-1}(x)$, then check it by computing
+        $f^{-1}\big(f(x)\big)$.
 
         \begin{work}
-                      y &= 3x + 6 \\
-                      x &= 3y + 6 \\
-                  x - 6 &= 3y \\
-          \frac{x-6}{3} &= y \\
-          f^{-1}\big(f(x)\big) &= \frac{(3x + 6) - 6}{3} \\
-                               &= \frac{3x}{3} \\
+                      y &= 5x - 3 \\
+                      x &= 5y - 3 \\
+                  x + 3 &= 5y \\
+          \frac{x+3}{5} &= y \\
+          f^{-1}\big(f(x)\big) &= \frac{(5x - 3) + 3}{5} \\
+                               &= \frac{5x}{5} \\
                                &= x
         \end{work}
 
-        $f^{-1}(x) = $ \ans{$(x-6)/3$} \qquad
+        $f^{-1}(x) = $ \ans{$\dfrac{x+3}{5}$} \qquad
         $f^{-1}\big(f(x)\big) = $ \ans{$x$}
 
-  \item A function $f$ satisfies $f(-4) = 7$.
+  \item A function $g$ satisfies $g(-4) = 7$.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $f^{-1}(7) = $ \ans{$-4$}
-          \item In one sentence, why is $f^{-1}(7)$ not equal to
-                $\dfrac{1}{7}$?
+          \item $g^{-1}(7) = $ \ans{$-4$}
+          \item In one sentence, say why $g^{-1}(7)$ is not $\dfrac{1}{7}$.
 
-                \ansline{The $-1$ is a name, not an exponent --- no reciprocal is involved.}
+                \ansline{$g^{-1}$ gives back the question that produced 7, which was $-4$; $1/7$ is just arithmetic done to the answer.}
         \end{enumerate}
 \end{enumerate}
 \end{practicebox}

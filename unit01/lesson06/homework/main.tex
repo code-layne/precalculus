@@ -12,112 +12,118 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item Two functions are given by tables.
+\item Each table gives every value of its function.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & 0 & 1 & 2 & 3 \\
+$x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$f(x)$ & 7 & 4 & 1 & $-2$ \\
+$f(x)$ & 9 & 4 & 7 & 2 & 0 \\
 \hline
 \end{tabular}
 \qquad
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & 0 & 1 & 2 & 3 \\
+$x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$g(x)$ & 5 & 2 & 2 & 9 \\
+$g(x)$ & 6 & 1 & 6 & 8 & 3 \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Complete the table for $f^{-1}$ by trading rows.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f^{-1}(7) = $ \blank{1.6cm} \qquad $f^{-1}(0) = $ \blank{1.6cm}
+        \qquad $f^{-1}(9) = $ \blank{1.6cm}
+  \item Complete the $f^{-1}$ table by trading rows.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
-        \begin{tabular}{|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & 7 & 4 & 1 & $-2$ \\
+        $x$ & 0 & 2 & 4 & 7 & 9 \\
         \hline
-        $f^{-1}(x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
-          & \blank{1.1cm} \\
+        $f^{-1}(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm}
+          & \blank{1.2cm} & \blank{1.2cm} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item Is $g$ invertible? \blank{2cm}
+  \item $g$ has no inverse. In one sentence, name the answer that causes the
+        trouble and say what goes wrong.
 
-        Why or why not? \blank{7cm}
+        \vspace{0.05in}
+        \writeline
 \end{enumerate}
 
-\item Find the inverse of each function by swapping and solving.
+\item Find each inverse by swapping and solving.
 
 \begin{work}
-              y &= 5x + 3 \\
-              x &= 5y + 3 \\
-          x - 3 &= 5y \\
-  \frac{x-3}{5} &= y \\
-              y &= \frac{x}{2} - 7 \\
-              x &= \frac{y}{2} - 7 \\
-          x + 7 &= \frac{y}{2} \\
-       2(x + 7) &= y
+              y &= 6x + 5 \\
+              x &= 6y + 5 \\
+          x - 5 &= 6y \\
+  \frac{x-5}{6} &= y \\
+              y &= 3 - 2x \\
+              x &= 3 - 2y \\
+             2y &= 3 - x \\
+  \frac{3-x}{2} &= y
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $f(x) = 5x + 3$ \qquad $f^{-1}(x) = $ \blank{3.4cm}
-  \item $g(x) = \dfrac{x}{2} - 7$ \qquad $g^{-1}(x) = $ \blank{3.4cm}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $f(x) = 6x + 5$: \quad $f^{-1}(x) = $ \blank{3cm}
+  \item $g(x) = 3 - 2x$: \quad $g^{-1}(x) = $ \blank{3cm}
 \end{enumerate}
 
-\item Use your answer to 2(a) to verify the pair \textbf{in both directions}.
+\item Show that $f(x) = \dfrac{x}{2} + 4$ and $g(x) = 2x - 8$ are inverses by
+      checking \textbf{both} directions.
 
 \begin{work}
-  f\big(f^{-1}(x)\big) &= 5\left(\frac{x-3}{5}\right) + 3 \\
-                       &= (x - 3) + 3 \\
-                       &= x \\
-  f^{-1}\big(f(x)\big) &= \frac{(5x + 3) - 3}{5} \\
-                       &= \frac{5x}{5} \\
-                       &= x
+  f(g(x)) &= \frac{2x - 8}{2} + 4 \\
+          &= (x - 4) + 4 \\
+          &= x \\
+  g(f(x)) &= 2\left(\frac{x}{2} + 4\right) - 8 \\
+          &= (x + 8) - 8 \\
+          &= x
 \end{work}
 
-$f\big(f^{-1}(x)\big) = $ \blank{1.6cm} \qquad
-$f^{-1}\big(f(x)\big) = $ \blank{1.6cm}
+$f(g(x)) = $ \blank{1.4cm} \qquad $g(f(x)) = $ \blank{1.4cm} \qquad
+so $f$ and $g$ are \blank{2.4cm}.
 
-\boxguard[20]
-\item \textbf{Back to the thermometer.} The lab's conversion rule is
-      $F(x) = 1.8x + 32$, taking degrees Celsius to degrees Fahrenheit.
+\item A delivery app charges $D(x) = 1.5x + 4$ dollars for a $x$-mile
+      delivery.
 
 \begin{work}
-                     y &= 1.8x + 32 \\
-                     x &= 1.8y + 32 \\
-                x - 32 &= 1.8y \\
-     \frac{x - 32}{1.8} &= y \\
-           F^{-1}(212) &= \frac{212 - 32}{1.8} \\
-                       &= 100
+                  y &= 1.5x + 4 \\
+                  x &= 1.5y + 4 \\
+              x - 4 &= 1.5y \\
+  \frac{x-4}{1.5}   &= y
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $F^{-1}(x) = $ \blank{3.4cm}
-  \item $F^{-1}(212) = $ \blank{2cm}. In one sentence, what does that number
-        mean? \blank{6cm}
-  \item $F(50) = $ \blank{1.6cm}, so $\dfrac{1}{F(50)} = $ \blank{1.6cm},
-        while $F^{-1}(50) = $ \blank{1.6cm}. Circle one:
-        $F^{-1}(50)$ \textbf{is} / \textbf{is not} the same as
-        $\dfrac{1}{F(50)}$.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item A 6-mile delivery costs \$\blank{1.6cm}.
+  \item $D^{-1}(x) = $ \blank{3cm}
+  \item Your receipt says \$19 and does not say the distance. The delivery was
+        \blank{1.6cm} miles.
+  \item Compare the two: $D^{-1}(13) = $ \blank{1.4cm}, but
+        $D(13) = $ \blank{1.6cm}, so $\dfrac{1}{D(13)} = $ \blank{1.8cm}.
+        Which one is a number of miles? \blank{2.4cm}
 \end{enumerate}
 
-\item $f(x) = x^2$ has no inverse on all real numbers.
+\item Let $h(x) = (x - 2)^2$.
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Name two different inputs with the same output:
-        \blank{2cm} and \blank{2cm} both give \blank{2cm}.
-  \item Restrict the domain to \blank{2.4cm} so that $f$ becomes one-to-one.
-  \item On that restricted domain, $f^{-1}(x) = $ \blank{2.4cm}, with domain
-        \blank{2.4cm}.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $h(0) = $ \blank{1.4cm} and $h(4) = $ \blank{1.4cm}, so $h$ is not
+        \blank{2.6cm} on all real numbers.
+  \item Restrict the domain to $x \ge 2$. Then
+        $h^{-1}(x) = $ \blank{3cm}, with domain \blank{2.4cm}.
+  \item The graph of a one-to-one function $F$ passes through $(-3, 8)$.
+        Name a point that must be on the graph of $F^{-1}$:
+        $($ \blank{1.2cm} , \blank{1.2cm} $)$.
+  \item The graphs of $F$ and $F^{-1}$ are reflections of each other across the
+        line \blank{2cm}.
 \end{enumerate}
 
 \item A function $f$ satisfies $f(3) = -2$. Which statement must be true?
@@ -135,10 +141,15 @@ $f^{-1}\big(f(x)\big) = $ \blank{1.6cm}
 
 \boxguard
 \begin{extensionbox}
-Let $f(x) = x^2$ on all real numbers and let $h(x) = \sqrt{x}$. Compute
-$f\big(h(9)\big)$ and $h\big(f(-3)\big)$. One of them returns the number you
-started with and the other does not. Explain which composition fails and what
-domain restriction on $f$ repairs the claim that $f$ and $h$ are inverses.
+\textbf{Shoes and socks.} Let $f(x) = 2x$ and $g(x) = x + 5$.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Build $(f \circ g)(x)$, then find its inverse by swapping and solving.
+  \item Now compute $g^{-1}\big(f^{-1}(x)\big)$ and compare. Then compute
+        $f^{-1}\big(g^{-1}(x)\big)$ and compare again.
+  \item One of the two orders undoes the chain. Say which, and why undoing a
+        chain has to start at the \textit{last} step.
+\end{enumerate}
 
 \vspace{0.05in}
 \writelines{2}
@@ -146,14 +157,13 @@ domain restriction on $f$ repairs the claim that $f$ and $h$ are inverses.
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.7}
-Today you learned to run a function backwards. Lesson 1.7, \textit{Function
-Model Selection and Construction}, asks the prior question: which kind of
-function should model a situation in the first place? Once a model is chosen,
-inverting it is how you answer ``what input produced this output?'' Much later,
-in Unit 5, the logarithm arrives as nothing more than the inverse of the
-exponential function --- built with exactly today's method.
+Lesson 1.7 asks which \textit{kind} of function fits a situation --- and once a
+model is built, the question people actually ask it is the backwards one:
+``what input produced this output?'' Further out, in Unit 5, the logarithm
+arrives as nothing more exotic than the inverse of an exponential function,
+built by exactly today's method.
 \end{notesbox}
 
 \end{document}

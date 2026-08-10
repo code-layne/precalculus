@@ -1,7 +1,7 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Group Activity (Answer Key)
+%! Inverse Functions — Unit 1, Lesson 1.6 — Group Activity (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,26 +10,42 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[Reading the Thermometer Backwards]{plumlight}
+\begin{scenariobox}[The Charging Station]{plumlight}
 \small
-A lab thermometer reports in Celsius, but the safety manual is written in
-Fahrenheit. The conversion rule is
-\begin{center}
-$F(x) = 1.8x + 32$,
-\end{center}
-where $x$ is a temperature in degrees Celsius and $F(x)$ is the same
-temperature in degrees Fahrenheit. All day the lab needs it the \textit{other}
-way: a Fahrenheit reading comes in and somebody has to say what it is in
-Celsius. Every tier below works from this same rule and this same table.
+An electric car pulls into a fast charger with 10 miles of range left. After
+$t$ hours on the charger its range is
 
-\smallskip
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
+$R(t) = 25t + 10$ \quad miles.
+\end{center}
+
+The dashboard reports one thing only: \textbf{miles of range}. But the driver
+standing next to the car is always asking the other question ---
+\textbf{how long do I have to sit here?} Every question in this activity is
+that question.
+
+\begin{center}
+\begin{tikzpicture}[x=1.0cm, y=0.30cm]
+  \draw[linegray, very thin, xstep=1, ystep=2] (0,0) grid (4,12);
+  \draw[->, thick] (0,0) -- (4.7,0) node[below right] {\small $t$ (h)};
+  \draw[->, thick] (0,0) -- (0,13.6) node[above] {\small $R(t)$ (mi)};
+  \foreach \x in {1,2,3,4} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y/\lab in {2/20, 4/40, 6/60, 8/80, 10/100, 12/120}
+    \node[left, font=\small] at (0,\y) {\lab};
+  \draw[very thick, plum] (0,1) -- (4,11);
+  \fill[plum] (0,1) circle (2.5pt);
+  \fill[plum] (2,6) circle (2.5pt);
+  \fill[plum] (4,11) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ (degrees C) & $-10$ & 0 & 10 & 20 & 100 \\
+$t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$F(x)$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
+$R(t)$ (miles) & 10 & 35 & 60 & 85 & 110 \\
 \hline
 \end{tabular}
 \end{center}
@@ -37,169 +53,183 @@ $F(x)$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=8pt]
-  \item \textbf{Check two of the entries.} Use $F(x) = 1.8x + 32$ to confirm
-        two values in the table above.
+\begin{enumerate}[itemsep=6pt]
+  \item Read the scenario table forwards. After 3 hours the range is
+        \ans{85} miles.
 
-        \begin{work}
-          F(10) &= 1.8(10) + 32 \\
-                &= 50 \\
-          F(20) &= 1.8(20) + 32 \\
-                &= 68
-        \end{work}
+  \item Now read it \textbf{backwards} --- the way the driver reads it. The
+        dashboard says 85 miles. How long has the car been charging?
 
-        $F(10) = $ \ans{50} \qquad $F(20) = $ \ans{68}
+        \ans{3} hours
 
-  \item \textbf{Turn the table around.} Build $F^{-1}$ by trading the two rows
-        --- do not compute anything.
+  \item Build $R^{-1}$ by \textbf{trading the two rows} of the scenario table.
+        Nothing is computed --- the answers become the questions.
 
         \smallskip
-        \renewcommand{\arraystretch}{1.5}
+        \renewcommand{\arraystretch}{1.4}
         \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ (degrees F) & 14 & 32 & 50 & 68 & 212 \\
+        $x$ (miles) & 10 & 35 & 60 & 85 & 110 \\
         \hline
-        $F^{-1}(x)$ (degrees C) & \ans{$-10$} & \ans{0} & \ans{10}
-          & \ans{20} & \ans{100} \\
+        $R^{-1}(x)$ (hours) & \ans{0} & \ans{1} & \ans{2} & \ans{3} & \ans{4} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item \textbf{Read it off.} A reading of $68^\circ$F comes in.
+  \item Fill in the units, and watch them trade places.
 
-        $F^{-1}(68) = $ \ans{20} degrees Celsius.
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.16\linewidth} X X @{}}
+        \hline
+                 & \textbf{takes in} & \textbf{gives back} \\
+        \hline
+        $R$      & \ans{hours} & \ans{miles} \\
+        \hline
+        $R^{-1}$ & \ans{miles} & \ans{hours} \\
+        \hline
+        \end{tabularx}
+        \end{center}
 
-  \item \textbf{The swap.} Using only the two tables above:
+  \item In one sentence, say what $R^{-1}$ does for the driver.
+
+        \vspace{0.05in}
+        \ansline{It reads the number on the dashboard and gives back the question --- how long the car has been on the charger.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+The table only answers the five questions printed on it. A formula answers all
+of them.
+
+\begin{enumerate}[itemsep=8pt]
+  \item Find $R^{-1}(x)$ by swapping and solving.
+
+        \begin{work}
+                        y &= 25x + 10 \\
+                        x &= 25y + 10 \\
+                   x - 10 &= 25y \\
+          \frac{x-10}{25} &= y
+        \end{work}
+
+        $R^{-1}(x) = $ \ans{$\dfrac{x-10}{25}$}
+
+  \item Check it against the table: $R^{-1}(85) = $ \ans{3} hours.
+
+  \item The driver needs 160 miles of range before leaving.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Domain of $F$ (the top row of the first table):
-                \ans{$\{-10, 0, 10, 20, 100\}$}
-          \item Range of $F$: \ans{$\{14, 32, 50, 68, 212\}$}
-          \item So the domain of $F^{-1}$ is the \ans{range} of $F$, and the
-                range of $F^{-1}$ is the \ans{domain} of $F$.
+          \item $R^{-1}(160) = $ \ans{6} hours.
+          \item Say in one sentence why $R^{-1}$ --- and not $R$ --- is the
+                function that answers this.
+
+                \vspace{0.05in}
+                \ansline{The driver was handed an answer (160 miles) and wants the question back; $R$ only runs hours forward into miles.}
+        \end{enumerate}
+
+  \item Verify the pair in \textbf{both} directions.
+
+        \begin{work}
+          R\big(R^{-1}(x)\big) &= 25\left(\frac{x-10}{25}\right) + 10 \\
+                               &= (x - 10) + 10 \\
+                               &= x \\
+          R^{-1}\big(R(x)\big) &= \frac{(25x + 10) - 10}{25} \\
+                               &= \frac{25x}{25} \\
+                               &= x
+        \end{work}
+
+        Both came out to \ans{$x$}, which is the \ans{identity} function.
+
+  \item \textbf{The trap, in numbers.} The dashboard reads 60 miles.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $R^{-1}(60) = $ \ans{2} hours.
+          \item $R(60) = $ \ans{1510}, so $\dfrac{1}{R(60)} = $
+                \ans{$1/1510$}.
+          \item One of those two numbers is a charging time. Which one, and
+                what is the other one even measuring?
+
+                \vspace{0.05in}
+                \ansline{$R^{-1}(60) = 2$ hours is the time; $1/1510$ came from charging for 60 \textit{hours} and flipping the miles --- it measures nothing.}
         \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{tcolorbox}[colback=white, colframe=black!40,
-    title=\textbf{Tier A --- Approaching Proficiency},
-    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
-
-The lab wants a formula, not a table --- one that turns \textit{any}
-Fahrenheit reading into Celsius.
-
-\begin{enumerate}[itemsep=8pt]
-  \item \textbf{Swap and solve.} Find $F^{-1}(x)$ for $F(x) = 1.8x + 32$.
-
-        \begin{work}
-                            y &= 1.8x + 32 \\
-                            x &= 1.8y + 32 \\
-                       x - 32 &= 1.8y \\
-            \frac{x - 32}{1.8} &= y
-        \end{work}
-
-        $F^{-1}(x) = $ \ans{$(x-32)/1.8$}
-
-  \item \textbf{Verify it.} Show that running $F^{-1}$ and then $F$ returns the
-        original input.
-
-        \begin{work}
-          F\big(F^{-1}(x)\big) &= 1.8\left(\frac{x - 32}{1.8}\right) + 32 \\
-                               &= (x - 32) + 32 \\
-                               &= x
-        \end{work}
-
-        $F\big(F^{-1}(x)\big) = $ \ans{$x$}, the \ans{identity} function ---
-        so $F$ and $F^{-1}$ are inverses.
-
-  \item \textbf{Use it.} Water boils at $212^\circ$F.
-
-        \begin{work}
-          F^{-1}(212) &= \frac{212 - 32}{1.8} \\
-                      &= \frac{180}{1.8} \\
-                      &= 100
-        \end{work}
-
-        $F^{-1}(212) = $ \ans{100} degrees Celsius.
-
-  \item \textbf{Say what it does.} In one sentence, describe what the function
-        $F^{-1}$ takes in and what it gives back.
-
-        \ansline{It takes a Fahrenheit reading in and gives the Celsius temperature back.}
-\end{enumerate}
-\end{tcolorbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-A greenhouse in the same lab warms and then cools again. Its temperature
-$t$ hours after 6:00 a.m.\ is modeled by $T(t) = (t-6)^2 + 50$ for
-$0 \le t \le 12$.
-
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Why $T$ has no inverse on $[0, 12]$.} Evaluate $T$ at two
-        different times.
+  \item \textbf{The battery warms up, then cools.} During a 6-hour charge the
+        battery temperature is $T(t) = (t-3)^2 + 50$ degrees F.
 
         \begin{work}
-          T(4) &= (4-6)^2 + 50 \\
+          T(1) &= (1-3)^2 + 50 \\
                &= 54 \\
-          T(8) &= (8-6)^2 + 50 \\
+          T(5) &= (5-3)^2 + 50 \\
                &= 54
         \end{work}
 
-        $T(4) = $ \ans{54} and $T(8) = $ \ans{54}. Two different
-        inputs, one output --- so $T$ is not \ans{one-to-one} on $[0,12]$ and
-        cannot be reversed there.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $T(1) = $ \ans{54} and $T(5) = $ \ans{54}, so the
+                answer $54^\circ$ came from \ans{two} different questions.
+          \item Therefore $T$ is not \ans{one-to-one} on $0 \le t \le 6$, and a
+                thermometer reading alone \ans{cannot} tell you the time.
+          \item \textbf{Repair it.} Keep only $t \ge 3$ and invert on that
+                piece.
 
-  \item \textbf{Restrict, then invert.} Keep only $6 \le t \le 12$, where the
-        greenhouse is warming. Writing the input as $x$, find $T^{-1}(x)$ on
-        that piece.
+                \begin{work}
+                      y &= (t-3)^2 + 50 \\
+                 y - 50 &= (t-3)^2 \\
+              \sqrt{y-50} &= t - 3 \\
+              3 + \sqrt{y-50} &= t
+                \end{work}
+
+                $T^{-1}(y) = $ \ans{$3 + \sqrt{y-50}$}
+
+          \item Test it: $T^{-1}(54) = $ \ans{5}. Which of the two times
+                from part (a) did the restriction keep? \ans{$t = 5$}
+        \end{enumerate}
+
+  \item \textbf{Dollars from miles.} The station bills $C(t) = 8t + 2$ dollars
+        for $t$ hours on the charger. The driver wants cost as a function of
+        the number on the \textit{dashboard} --- and no meter reports that.
 
         \begin{work}
-                        y &= (x-6)^2 + 50 \\
-                        x &= (y-6)^2 + 50 \\
-                   x - 50 &= (y-6)^2 \\
-            \sqrt{x - 50} &= y - 6 \\
-          6 + \sqrt{x-50} &= y
+          C\big(R^{-1}(x)\big) &= 8\left(\frac{x-10}{25}\right) + 2 \\
+                               &= 0.32(x - 10) + 2 \\
+                               &= 0.32x - 1.2
         \end{work}
 
-        $T^{-1}(x) = $ \ans{$6 + \sqrt{x-50}$}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The chain runs $R^{-1}$ first, then $C$. The handoff between
+                them is a number of \ans{hours}.
+          \item $C\big(R^{-1}(x)\big) = $ \ans{$0.32x - 1.2$}
+          \item Check at 60 miles: the composite gives \$\ans{18}, and
+                the table says 60 miles is 2 hours, so $C(2) = $
+                \$\ans{18}.
+          \item Why can the chain not be run the other way, as
+                $R^{-1}\big(C(t)\big)$?
 
-        Why did we keep only the \textbf{positive} square root?
-
-        \ansline{On the restricted domain $t \ge 6$, so $y - 6$ is never negative.}
-
-  \item \textbf{The notation trap, in numbers.} Fill in the table for
-        $F(x) = 1.8x + 32$ and its inverse.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.6}
-        \begin{center}
-        \begin{tabular}{|c|c|c|}
-        \hline
-        & value at $x = 50$ & what it means \\
-        \hline
-        $F^{-1}(50)$ & \ans{10} & \ans{$50^\circ$F is $10^\circ$C} \\
-        \hline
-        $\dfrac{1}{F(50)}$ & \ans{$1/122$} & \ans{a reciprocal, not a temperature} \\
-        \hline
-        \end{tabular}
-        \end{center}
-
-        These two expressions are \ans{completely different}.
+                \vspace{0.05in}
+                \ansline{$C$ hands over dollars, and $R^{-1}$ only accepts miles --- the handoff has the wrong units, so there is nothing to compute.}
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
