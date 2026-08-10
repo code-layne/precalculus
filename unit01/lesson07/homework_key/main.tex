@@ -12,7 +12,8 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item Take differences until they are constant, then name each model type.
+\item In both tables the question is the \ans{$x$} row. Take differences
+      until they are constant, then name each model type.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
@@ -61,31 +62,34 @@ Left table: \ans{linear} \qquad Right table: \ans{cubic}
         function of the footing's edge length. \ans{C}
 \end{enumerate}
 
-\item \textbf{A rectangle with no wall to lean on.} A gardener has 100 feet of
-      fencing for a rectangular plot and must fence \textbf{all four sides}.
+\boxguard[24]
+\item \textbf{The same pen, the other question.} In class Ana chose the width.
+      Ben chose the \textbf{length}, and wrote the same constraint
+      $2w + \ell = 80$.
 
 \begin{work}
-   2w + 2\ell &= 100 \\
-         \ell &= 50 - w \\
-         A(w) &= w(50 - w) \\
-              &= 50w - w^2 \\
-            w &= -\frac{50}{2(-1)} \\
-              &= 25
+   2w + \ell &= 80 \\
+           w &= 40 - \frac{\ell}{2} \\
+     A(\ell) &= \ell\left(40 - \frac{\ell}{2}\right) \\
+             &= 40\ell - \frac{\ell^2}{2} \\
+       A(40) &= 1600 - 800 \\
+             &= 800
 \end{work}
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Constraint: \ans{$2w + 2\ell = 100$} \qquad so $\ell = $ \ans{$50 - w$}
-  \item $A(w) = $ \ans{$50w - w^2$} \qquad Domain: \ans{0} $< w <$ \ans{50}
-  \item The largest area occurs at $w = $ \ans{25} ft, which makes the plot
-        a \ans{square}. Explain in one sentence why this answer is a square but
-        the barn pen from class was not.
+  \item Solve the constraint for $w$: \qquad $w = $ \ans{$40 - \ell/2$}
+  \item $A(\ell) = $ \ans{$40\ell - \ell^2/2$} \qquad Domain: \ans{0} $< \ell <$
+        \ans{80}
+  \item $A(40) = $ \ans{800} ft$^2$. Ana's best pen was $w = 20$ ft. Is Ben's
+        best length describing the same pen? \ans{Yes}
+  \item Ana's domain was $0 < w < 40$; Ben's is different. In one sentence, why
+        do two correct models of one pen have different domains?
 
-        \ansline{Here all four sides cost fence, so width and length are treated alike; at the barn one side was free, so it paid to make that side longer.}
+        \ansline{A domain lists the questions you may ask, and they asked about different quantities.}
 \end{enumerate}
 
 \boxguard[24]
-\item \textbf{Back to the pen.} The garden club's model is
-      $A(w) = 80w - 2w^2$ on $0 < w < 40$.
+\item \textbf{Using Ana's model.} Hers is $A(w) = 80w - 2w^2$ on $0 < w < 40$.
 
 \begin{work}
    A(5) &= 80(5) - 2(5)^2 \\
@@ -102,11 +106,11 @@ Left table: \ans{linear} \qquad Right table: \ans{cubic}
   \item $A(5) = $ \ans{350} ft$^2$ \qquad $A(35) = $ \ans{350} ft$^2$.
         Two different widths, the same area --- why does that make sense?
 
-        \ans{Both are 15 ft from the best width $w = 20$, and a parabola is symmetric about its vertex.}
+        \ans{They sit the same distance either side of the best width $w = 20$.}
   \item Average rate of change from $w = 5$ to $w = 15$: \ans{40},
-        with units \ans{square feet per foot of width}.
+        with units \ans{ft$^2$ per foot of width}.
   \item Is $w = 45$ in the domain of this model? \ans{No} \quad Why not?
-        \ans{Two widths of 45 ft already need 90 ft of fence.}
+        \ans{$2(45) > 80$ --- no fence is left.}
 \end{enumerate}
 
 \item \textbf{An inverse-proportion model.} The force $F$ between two magnets is
@@ -123,18 +127,33 @@ Left table: \ans{linear} \qquad Right table: \ans{cubic}
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
   \item $k = $ \ans{180} \qquad so $F(d) = $ \ans{$180/d^2$}
   \item $F(6) = $ \ans{5} newtons
-  \item Domain restriction: $d$ \ans{$> 0$}, because \ans{a distance cannot be zero or negative}
+  \item Domain restriction: $d$ \ans{$> 0$}, because \ans{the magnets cannot share a spot}
 \end{enumerate}
 
-\item A table of equally spaced inputs has second differences that are all
-      equal to 4. Which statement is correct?
+\item Two AP-style multiple-choice questions.
 
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item Linear, because the differences are constant.
-  \item Quadratic, because the second differences are constant.
-        \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item Degree 5, because the table has five rows.
-  \item No polynomial model fits, because the second differences are not zero.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item A table of equally spaced inputs has second differences that are all
+        equal to 4. Which statement is correct?
+
+        \begin{enumerate}[label=\Alph*., itemsep=2pt]
+          \item Linear, because the differences are constant.
+          \item Quadratic, because the second differences are
+                constant.~\textcolor{keyred}{\textbf{$\leftarrow$}}
+          \item Degree 5, because the table has five rows.
+          \item No polynomial model fits, because the second differences are
+                not zero.
+        \end{enumerate}
+
+  \item A rectangular flag has a \textbf{fixed height of 3 feet}. Its area is
+        modeled as a function of its width. The model is
+
+        \begin{enumerate}[label=\Alph*., itemsep=2pt]
+          \item linear.~\textcolor{keyred}{\textbf{$\leftarrow$}}
+          \item quadratic, because area always is.
+          \item cubic.
+          \item piecewise.
+        \end{enumerate}
 \end{enumerate}
 
 \end{enumerate}
@@ -145,7 +164,7 @@ Left table: \ans{linear} \qquad Right table: \ans{cubic}
 \begin{extensionbox}
 The barn wall turns out to be only \textbf{30 feet long}. If the pen's length
 $\ell$ is more than 30 feet, the part beyond the barn has to be fenced too ---
-so the fencing equation changes.
+so the constraint itself changes.
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
   \item When $\ell > 30$, the fence must cover $2w + \ell + (\ell - 30) = 80$.
@@ -156,7 +175,7 @@ so the fencing equation changes.
   \item Both rules give the same area at the threshold. Check it:
         \ans{750} ft$^2$. Why must a piecewise model agree at the threshold?
 
-        \ansline{One width can only have one area --- if the rules disagreed at $w = 25$, the model would not be a function there.}
+        \ansline{One pen has one area, so the two rules must report the same number there.}
 \end{enumerate}
 \end{extensionbox}
 
@@ -164,12 +183,12 @@ so the fencing equation changes.
 
 \boxguard
 \begin{notesbox}{Preview of Lesson 2.1}
-Every model you built today came out a polynomial, and the useful one came out
-quadratic. Unit 2 opens with \textit{Quadratic Functions Revisited}, and
-$A(w) = 80w - 2w^2$ is still on the board: where the vertex formula
-$-\frac{b}{2a}$ comes from, what vertex form shows that standard form hides, and
-why a parabola is symmetric about its vertex --- which is exactly why $A(5)$ and
-$A(35)$ came out equal in problem 4.
+Unit 1 ends here. Every model you picked today came out a polynomial, and the
+one you built came out quadratic. Unit 2 opens with \textit{Quadratic Functions
+Revisited}, and $A(w) = 80w - 2w^2$ is still on the board: where the vertex
+formula $-\frac{b}{2a}$ comes from, what vertex form shows that standard form
+hides, and why a parabola is symmetric about its vertex --- which is exactly
+why $A(5)$ and $A(35)$ came out equal in problem 4.
 \end{notesbox}
 
 \end{document}
