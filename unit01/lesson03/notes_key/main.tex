@@ -1,7 +1,7 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Guided Notes (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Guided Notes (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -13,12 +13,14 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Compute the \ans{average rate of change} of a function
-        over an interval from a formula, a table, or a graph.
-  \item Interpret the \ans{sign} and \ans{units} of a rate of change in
-        context.
-  \item Use the pattern of AROCs to tell \ans{linear} functions from
-        \ans{quadratic} ones, and to name concavity.
+  \item Explain what the \ans{average rate of change} of a function over an
+        interval promises, in words.
+  \item Compute it from a \ans{formula}, a \ans{table}, or a
+        \ans{graph}, with units.
+  \item Say what the \ans{sign} of a rate of change tells me about how two
+        quantities move together.
+  \item Use a list of average rates of change to tell a \ans{linear} function
+        from a \ans{quadratic} one and to name \ans{concavity}.
 \end{enumerate}
 \end{objectivebox}
 
@@ -28,209 +30,304 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Rate of change:}}\\[1pt]
-\ansline{How fast the output changes with respect to the input --- output units per input unit.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Average rate of change (AROC):}}\\[1pt]
-\ansline{Over $[a,b]$: the ratio $(f(b)-f(a))/(b-a)$ --- the constant rate producing the same net change.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Average rate of change:}}\\[1pt]
+\ansline{Over $[a,b]$, the constant rate $\frac{f(b)-f(a)}{b-a}$ that gives the same change in output.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Secant line:}}\\[1pt]
-\ansline{The line through two points $(a, f(a))$ and $(b, f(b))$ on a graph; its slope is the AROC.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Positive / negative rate of change:}}\\[1pt]
-\ansline{Positive: the quantities move in the same direction. Negative: opposite directions.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{First differences:}}\\[1pt]
-\ansline{The AROCs over consecutive equal-length intervals --- the ``steps'' in an equally spaced table.}
+\ansline{The line through two points of a graph; its slope is the average rate of change there.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Positive rate of change:}}\\[1pt]
+\ansline{As the input increases the output increases --- the quantities move the same way.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Negative rate of change:}}\\[1pt]
+\ansline{As the input increases the output decreases --- the quantities move opposite ways.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Constant rate of change:}}\\[1pt]
+\ansline{The same average rate over every interval --- exactly what makes a function linear.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[22]
 \begin{hookbox}
-A family drives 120 miles in 3 hours, and the GPS reports:
-\textit{average speed 40 mph}. They were certainly not going exactly 40 the
-whole time --- so what does the 40 \textit{promise}?
+Ravi and Mira start at the bottom of the same 60-step stadium stairway at the
+same moment. Both reach the top exactly 30 seconds later. The tables give the
+number of steps each has climbed.
 
-\ansline{One steady speed of 40 mph would have covered the same 120 miles in the same 3 hours.}
-\ansline{The average is the one constant rate that produces the same net change.}
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Ravi}} \\
+\hline
+time (s) & 0 & 10 & 20 & 30 \\
+\hline
+steps climbed & 0 & 40 & 55 & 60 \\
+\hline
+\end{tabular}
+\hspace{0.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Mira}} \\
+\hline
+time (s) & 0 & 10 & 20 & 30 \\
+\hline
+steps climbed & 0 & 20 & 40 & 60 \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+Who climbed \textit{faster}? Commit to an answer before you compute anything.
+\ansline{Answers will vary --- most pick Ravi. Both climbed the same 60 steps in the same 30 seconds, so \emph{on average} they are identical: Ravi was faster for the first 10 seconds and slower for the last 10.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard[34]
-\begin{notesbox}{1. Average Rate of Change --- Slope, Upgraded}
-The slope formula measures steepness between two points. The
-\textbf{average rate of change} is the same fraction, written with function
-notation --- and it works on \textit{any} function, not just lines.
+\boxguard[24]
+\begin{notesbox}{1. The Stand-In}
+The \textbf{average rate of change} of a function over an interval is the one
+\textbf{steady} rate that would produce the same change in output over the
+same change in input.
 
-\begin{center}
-$\text{AROC over } [a, b] \;=\;
-\dfrac{\text{change in \ans{output}}}{\text{change in \ans{input}}}
-\;=\; \dfrac{f(b) - f(a)}{b - a}$
-\end{center}
-
-\textbf{Example 1.} Let $f(x) = x^2$. Find the AROC over $[1, 4]$.
-
-\begin{work}
-  f(1) &= 1 \\
-  f(4) &= 16 \\
-  \text{AROC} &= \frac{16 - 1}{4 - 1} \\
-              &= \frac{15}{3} \\
-              &= 5
-\end{work}
+\medskip
+\textbf{Both climbers, over the whole 30 seconds.}
 
 \begin{itemize}[itemsep=4pt]
-  \item The line through $(1, 1)$ and $(4, 16)$ is called a
-        \ans{secant} line, and the AROC is its \ans{slope}.
-  \item Meaning: 5 is the one \ans{constant} rate that would produce the same
-        net change ($+15$) over the same interval --- the GPS promise.
+  \item Ravi: change in output $= 60 - 0 = $ \ans{60} steps;
+        change in input $=$ \ans{30} seconds; average rate of change
+        $=$ \ans{2 steps/s}.
+  \item Mira: change in output $=$ \ans{60} steps; change in input
+        $=$ \ans{30} seconds; average rate of change $=$ \ans{2 steps/s}.
 \end{itemize}
+
+The two climbs look nothing alike, and the averages are \ans{identical}.
+
+\medskip
+\textbf{The formula.} For a function $f$ on the interval from $x = a$ to
+$x = b$:
+\[
+  \text{average rate of change} \;=\; \frac{f(b) - f(a)}{b - a}
+  \;=\; \frac{\text{change in output}}{\text{change in input}}
+\]
+
+\medskip
+\textbf{What the stand-in promises --- and what it costs.} A steady climber at
+2 steps per second starts at the same place, ends at the same place, and takes
+the same 30 seconds. The average is pinned only at the \ans{endpoints} of the
+interval, so everything that happened \ans{between} them is thrown away
+on purpose.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{notesbox}{2. AROC from a Table and a Graph}
-\textbf{From a table.} $T(t)$ is the temperature in $^\circ$F $t$ hours after
-sunrise.
+\boxguard[26]
+\begin{notesbox}{2. Computing It Three Ways}
+\textbf{(a) From a formula.} Let $f(x) = x^2 + 3$. Find the average rate of
+change over $[1, 4]$. (You already found $f(1)$ and $f(4)$ on the warm-up.)
+
+\begin{work}
+  \text{AROC} &= \frac{f(4) - f(1)}{4 - 1} \\
+              &= \frac{19 - 4}{3} \\
+              &= 5
+\end{work}
+
+\medskip
+\textbf{(b) From a table.} $T(t)$ is the temperature in $^\circ$F,
+$t$ hours after 6 a.m.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$t$ (hours) & 0 & 2 & 4 & 6 \\
+$t$ (hours after 6 a.m.) & 0 & 2 & 4 & 6 & 8 \\
 \hline
-$T(t)$ ($^\circ$F) & 40 & 52 & 58 & 54 \\
+$T(t)$ ($^\circ$F) & 52 & 58 & 68 & 74 & 72 \\
+\hline
+average rate of change & --- & \ans{3} & \ans{5} & \ans{3} & \ans{$-1$} \\
 \hline
 \end{tabular}
 \smallskip
 
-\begin{itemize}[itemsep=4pt]
-  \item AROC over $[0, 2]$: \ans{6} $^\circ$F per hour \quad
-        AROC over $[2, 4]$: \ans{3} $^\circ$F per hour
-  \item AROC over $[4, 6]$: \ans{$-2$} $^\circ$F per hour \quad
-        Fastest warming stretch: \ans{$[0,2]$}
-\end{itemize}
+The morning warmed fastest between $t = $ \ans{2} and $t = $
+\ans{4}, at \ans{5 degrees} per hour.
 
-\textbf{From a graph.} The graph of $f$ is below; the dashed line is the
-secant through $(0, 2)$ and $(4, 6)$.
+\medskip
+\textbf{(c) From a graph.} $g(t)$ is the height of a kite in meters, $t$
+minutes after it is let out. The two dashed lines are drawn for you.
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.5cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
-  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4,5,6,7} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0,2) (2,5) (4,6) (6,5) (8,2)};
-  \draw[dashed, thick, goldacc] (0,2) -- (4,6);
-  \fill[plum] (0,2) circle (2.5pt);
-  \fill[plum] (4,6) circle (2.5pt);
-  \fill[plum] (8,2) circle (2.5pt);
+\begin{tikzpicture}[x=0.62cm, y=0.46cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,6);
+  \draw[->, thick] (0,0) -- (8.7,0) node[below right] {\small $t$ (min)};
+  \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small $g(t)$ (m)};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {1,3,5} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[dashed, thick, goldacc] (0,1) -- (4,5);
+  \draw[dashed, thick, goldacc] (4,5) -- (8,1);
+  \draw[very thick, plum] plot[smooth] coordinates
+    {(0,1) (1,2.6) (2,3.9) (3,4.7) (4,5) (5,4.7) (6,3.9) (7,2.6) (8,1)};
+  \fill[plum] (0,1) circle (2.5pt);
+  \fill[plum] (4,5) circle (2.5pt);
+  \fill[plum] (8,1) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \begin{itemize}[itemsep=4pt]
-  \item AROC over $[0, 4]$: read both points, then
-        $\dfrac{6 - 2}{4 - 0} = $ \ans{1}
-  \item AROC over $[4, 8]$: \quad $\dfrac{2 - 6}{8 - 4} = $ \ans{$-1$}
+  \item Over $[0,4]$: the kite goes from \ans{1} m to \ans{5} m, so
+        the average rate of change is \ans{$+1$ m/min}.
+  \item Over $[4,8]$: the average rate of change is \ans{$-1$ m/min}.
+  \item Each dashed line is a \textbf{secant line} --- the straight line
+        through two points of the graph. Its \ans{slope} \textit{is} the
+        average rate of change over that interval.
 \end{itemize}
-
-\textbf{Watch the order:} output difference upstairs, input difference
-downstairs --- \textit{subtracted in the same order on both floors}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{3. What the Sign Says}
-\begin{itemize}[itemsep=4pt]
-  \item A \textbf{positive} AROC: as one quantity increases, the other
-        \ans{increases} --- the quantities move in the \ans{same} direction.
-  \item A \textbf{negative} AROC: as one quantity increases, the other
-        \ans{decreases} --- opposite directions.
-  \item Every rate carries \textbf{units}: output units per input unit. The
-        AROC over $[4,6]$ above is $-2$ \ans{degrees ($^\circ$F) per hour} , which
-        says the temperature was \ans{falling} by 2 degrees each hour.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. The Pattern of the AROCs --- Linear vs.\ Quadratic}
-Compute the AROC over each unit interval and watch the \textit{pattern}.
 
 \medskip
-\textbf{Linear:} $f(x) = 2x + 1$
+\textbf{Order matters.} Whichever input you subtract first downstairs, its
+output must be subtracted \ans{first} upstairs.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[20]
+\begin{notesbox}{3. What the Sign Says --- and What Zero Does Not Say}
+\begin{itemize}[itemsep=4pt]
+  \item A \textbf{positive} rate of change: as the input increases, the output
+        \ans{increases}. The two quantities move the \ans{same} way.
+  \item A \textbf{negative} rate of change: as the input increases, the output
+        \ans{decreases}. The two quantities move \ans{opposite} ways.
+  \item Every rate carries \textbf{units}: output units \textit{per}
+        \ans{input unit}. ``$5$'' is not an answer; ``$5$ degrees per hour'' is.
+\end{itemize}
+
+\medskip
+\textbf{Zero.} A hiker leaves the trailhead at 900 feet, climbs all afternoon,
+and comes back down to the trailhead 4 hours later.
+
+\begin{itemize}[itemsep=4pt]
+  \item Her average rate of change over the whole afternoon is
+        \ans{0} feet per hour.
+  \item Did nothing happen? \ans{No.} \; Explain what the average threw
+        away.
+
+        \vspace{0.05in}
+        \ansline{She climbed and came back down; the average compares only the start and the end, which are the same elevation.}
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[22]
+\begin{notesbox}{4. Chop It Finer}
+The average over the whole climb called Ravi and Mira identical. Compute the
+average rate of change over each \textbf{10-second split} instead.
 
 \smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+split (seconds) & 0 to 10 & 10 to 20 & 20 to 30 \\
+\hline
+Ravi's rate (steps/s) & \ans{4} & \ans{1.5} & \ans{0.5} \\
+\hline
+Mira's rate (steps/s) & \ans{2} & \ans{2} & \ans{2} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+\begin{itemize}[itemsep=4pt]
+  \item Ravi's rates are \ans{shrinking}. In Lesson 1.2's language, his climb is
+        concave \ans{down}.
+  \item Mira's rates \ans{never change}. Her climb is a straight line.
+  \item The vote is settled --- but notice \textit{how}. Nothing new was
+        measured. The same tool was used over \ans{smaller} intervals, and
+        the story the whole-climb average erased came back.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[12]
+\begin{notesbox}{5. The Pattern Names the Function}
+Take the average rate of change over each unit interval from $x = 0$ to
+$x = 4$ and read the list that comes out.
+
+\smallskip
+\begin{center}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$f(x)$ & 1 & 3 & 5 & 7 & 9 \\
+$f(x) = 2x + 1$ & 1 & 3 & 5 & 7 & 9 \\
+\hline
+AROC of $f$ & --- & \ans{2} & \ans{2} & \ans{2} & \ans{2} \\
+\hline
+$g(x) = x^2$ & 0 & 1 & 4 & 9 & 16 \\
+\hline
+AROC of $g$ & --- & \ans{1} & \ans{3} & \ans{5} & \ans{7} \\
+\hline
+change in the AROC of $g$ & --- & --- & \ans{2} & \ans{2} & \ans{2} \\
 \hline
 \end{tabular}
+\end{center}
 \smallskip
 
-AROCs over $[0,1], [1,2], [2,3], [3,4]$: \quad
-\ans{2} , \ans{2} , \ans{2} , \ans{2}
-
-For a \textbf{linear} function, the AROC is \ans{constant} over every
-interval.
-
-\medskip
-\textbf{Quadratic:} $g(x) = x^2$
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$g(x)$ & 0 & 1 & 4 & 9 & 16 \\
-\hline
-\end{tabular}
-\smallskip
-
-AROCs over the same intervals: \quad
-\ans{1} , \ans{3} , \ans{5} , \ans{7}
-\qquad each step changes by \ans{2}
-
-For a \textbf{quadratic} function, the AROCs are not constant --- they change
-at a \ans{constant} rate.
-
-\medskip
-\textbf{The concavity link (from 1.2):} when the AROCs are
-\textit{increasing}, the graph is concave \ans{up}; when the AROCs are
-\textit{decreasing}, the graph is concave \ans{down}.
+\begin{itemize}[itemsep=5pt]
+  \item \textbf{Linear.} $f$'s average rate of change is \ans{the same} over
+        every interval --- that single number is its \ans{slope}. Its rates
+        change at a rate of \ans{0}.
+  \item \textbf{Quadratic.} $g$'s rates are \textit{not} constant, but they
+        climb by exactly \ans{2} every time. A quadratic's average rates
+        of change are themselves \ans{linear}.
+  \item \textbf{Concavity, now with a computation behind it.} Rates
+        increasing $\Rightarrow$ concave \ans{up}; rates decreasing
+        $\Rightarrow$ concave \ans{down}.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[26]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item Let $h(x) = x^2 - 3x$. Find the AROC over $[2, 5]$.
+  \item A delivery van's odometer is read every hour. $D(t)$ is the distance
+        travelled, in miles, after $t$ hours.
 
-        \begin{work}
-          h(2) &= (2)^2 - 3(2) \\
-               &= -2 \\
-          h(5) &= (5)^2 - 3(5) \\
-               &= 10 \\
-          \text{AROC} &= \frac{10 - (-2)}{5 - 2} \\
-                      &= 4
-        \end{work}
-
-        AROC $= $ \ans{4}
-
-  \item A function's AROCs over consecutive equal-length intervals are
-        $10,\ 7,\ 4,\ 1$.
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $D(t)$ (miles) & 0 & 60 & 100 & 160 & 180 \\
+        \hline
+        \end{tabular}
+        \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Each AROC changes by \ans{$-3$} --- a constant step, so the
-                function is \ans{quadratic}.
-          \item The AROCs are decreasing, so the graph is concave
-                \ans{down}.
+          \item Find the average rate of change over $[0, 2]$.
+
+                \begin{work}
+                  \text{AROC} &= \frac{D(2) - D(0)}{2 - 0} \\
+                              &= \frac{100 - 0}{2} \\
+                              &= 50
+                \end{work}
+
+                Answer, with units: \ans{50 miles per hour}
+          \item Over $[2, 4]$ the average rate of change is \ans{40 miles per hour}.
+          \item Which two-hour stretch was faster, and by how much?
+
+                \vspace{0.05in}
+                \ansline{The first two hours, by 10 miles per hour.}
+        \end{enumerate}
+
+  \item One function's average rates of change over consecutive equal-length
+        intervals are $7,\ 7,\ 7,\ 7$. Another's are $2,\ 6,\ 10,\ 14$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The \ans{first} function is linear, with slope \ans{7}.
+          \item The other is concave \ans{up}, because its rates are
+                \ans{increasing}.
         \end{enumerate}
 \end{enumerate}
 \end{practicebox}

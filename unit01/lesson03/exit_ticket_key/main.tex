@@ -1,7 +1,7 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Exit Ticket (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Exit Ticket (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,47 +12,52 @@
 
 \begin{enumerate}[itemsep=12pt]
 
-\item Let $f(x) = x^2 + 1$. Find the average rate of change over $[1, 3]$.
+\item Let $f(x) = x^2 + 1$. Find the average rate of change of $f$ over
+      $[1, 3]$.
 
 \begin{work}
-  f(1) &= 2 \\
-  f(3) &= 10 \\
-  \text{AROC} &= \frac{10 - 2}{3 - 1} \\
+  \text{AROC} &= \frac{f(3) - f(1)}{3 - 1} \\
+              &= \frac{10 - 2}{2} \\
               &= 4
 \end{work}
 
-AROC $= $ \ans{4}
+Answer: \ans{4}
 
-\item $T(t)$ gives the temperature in $^\circ$F $t$ hours after midnight.
+\item A hiker's elevation $E$, in feet, $t$ hours into the afternoon.
 
 \smallskip
-\begin{tabular}{|c|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$t$ (hours) & 0 & 2 & 4 \\
+$t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$T(t)$ ($^\circ$F) & 60 & 52 & 48 \\
+$E(t)$ (ft) & 900 & 1400 & 1700 & 1300 & 900 \\
 \hline
 \end{tabular}
 \smallskip
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item AROC over $[0, 4]$: \ans{$-3$ $^\circ$F per hour}
-  \item Interpret your answer in a sentence --- include the sign and the
-        units.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Over the whole afternoon $[0,4]$, the average rate of change is
+        \ans{0} feet per hour. Over the first hour $[0,1]$ it is
+        \ans{500} feet per hour.
+  \item The hiker did not stand still. Say in one sentence what the
+        afternoon's average hides.
 
         \vspace{0.05in}
-        \ansline{On average the temperature fell 3 degrees each hour between midnight and}
-        \ansline{4 a.m. --- negative because temperature drops as time increases.}
+        \ansline{She climbed 800 feet and came back down; the average sees only that she ended where she started.}
 \end{enumerate}
 
-\item Two functions' AROCs over consecutive equal-length intervals:
+\item Two functions are sampled over consecutive equal-length intervals. Their
+      average rates of change are listed.
 
-      Function A: $5,\ 5,\ 5,\ 5$ \qquad Function B: $2,\ 5,\ 8,\ 11$
+\vspace{0.05in}
+Function A: \quad $6,\ 6,\ 6,\ 6$ \hfill Function B: \quad $1,\ 4,\ 7,\ 10$
+\hfill\phantom{.}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Which function is linear? \quad \ans{Function A}
-  \item Is the graph of the other one concave up or concave down? \quad
-        \ans{concave up}
+\vspace{0.05in}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Which function is linear? \ans{A}
+  \item Function B is concave \ans{up}.
 \end{enumerate}
 
 \end{enumerate}
