@@ -1,7 +1,7 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Group Activity (Answer Key)
+%! Composition of Functions — Unit 1, Lesson 1.5 — Group Activity (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,181 +10,237 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Checkout Counter]{plumlight}
+\begin{scenariobox}[The Summit Cable Car]{plumlight}
 \small
-A store is running a \$10-off coupon, and the state charges 6\% sales tax.
-Both are functions of a dollar amount:
+A cable car climbs from the valley station to the summit in 10 minutes. Two
+instruments are running on the mountain, and \textbf{neither one measures the
+same thing}:
 
-\smallskip
+\begin{itemize}[itemsep=2pt, topsep=2pt]
+  \item $E(t)$ --- the car's \textbf{elevation}, in feet above the valley
+        station, $t$ minutes after departure.
+  \item $T(e)$ --- the air \textbf{temperature}, in $^\circ$F, at elevation $e$
+        feet above the valley station.
+\end{itemize}
+
+Nothing on this mountain reports the temperature as a function of \textit{time}
+--- but chaining the two instruments does exactly that.
+
 \begin{center}
-\textbf{Coupon:} $c(p) = p - 10$ \qquad\qquad
-\textbf{Sales tax:} $t(x) = 1.06x$
+\begin{tikzpicture}[x=0.5cm, y=0.20cm]
+  \draw[linegray, very thin, xstep=1, ystep=4] (0,0) grid (10,20);
+  \draw[->, thick] (0,0) -- (11,0) node[below right] {\small $t$ (min)};
+  \draw[->, thick] (0,0) -- (0,22.5) node[above] {\small $E(t)$ (ft)};
+  \foreach \x in {2,4,6,8,10} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y/\lab in {4/400, 8/800, 12/1200, 16/1600, 20/2000}
+    \node[left, font=\small] at (0,\y) {\lab};
+  \draw[very thick, plum] (0,0) -- (10,20);
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (4,8) circle (2.5pt);
+  \fill[plum] (10,20) circle (2.5pt);
+\end{tikzpicture}
 \end{center}
 
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$t$ (min) & 0 & 2 & 4 & 6 & 8 & 10 \\
+\hline
+$E(t)$ (ft) & 0 & 400 & 800 & 1200 & 1600 & 2000 \\
+\hline
+\end{tabular}
+
 \smallskip
-The register has to run \textit{both} --- but a register can only do one thing
-at a time, so somebody had to choose an order. Every tier below uses these
-same two functions. Round money answers to the nearest cent.
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$e$ (ft) & 0 & 400 & 800 & 1200 & 1600 & 2000 \\
+\hline
+$T(e)$ ($^\circ$F) & 62 & 60 & 58 & 56 & 54 & 52 \\
+\hline
+\end{tabular}
+\end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The store's register applies the \textbf{coupon first}, then the tax. That is
-the composite $t(c(p))$ --- inner function $c$, outer function $t$.
+\begin{enumerate}[itemsep=6pt]
+  \item Read each one straight off its own table.
 
-\begin{enumerate}[itemsep=8pt]
-  \item \textbf{One machine at a time.} Fill the middle row first, all the way
-        across, before you touch the bottom row.
+        $E(4) = $ \ans{800} feet \qquad\qquad
+        $T(800) = $ \ans{58} $^\circ$F
+
+  \item Those two lines were really one question: \textbf{how cold is it four
+        minutes into the ride?} Put them together.
+
+        \begin{work}
+          T(E(4)) &= T(800) \\
+                  &= 58
+        \end{work}
+
+        $T(E(4)) = $ \ans{58} $^\circ$F
+
+  \item Now do the whole ride. Fill the \textbf{handoff} row all the way across
+        \textit{before} you look up a single temperature.
 
         \smallskip
-        \renewcommand{\arraystretch}{1.6}
+        \renewcommand{\arraystretch}{1.4}
         \begin{center}
-        \begin{tabular}{|l|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        Sticker price $p$ & \$30 & \$50 & \$60 & \$80 \\
+        $t$ (min) & 0 & 2 & 4 & 6 & 8 \\
         \hline
-        After the coupon: $c(p)$ & \ans{20} & \ans{40}
-          & \ans{50} & \ans{70} \\
+        handoff: $E(t)$ & \ans{0} & \ans{400} & \ans{800} & \ans{1200} & \ans{1600} \\
         \hline
-        At the register: $t(c(p))$ & \ans{21.20} & \ans{42.40}
-          & \ans{53.00} & \ans{74.20} \\
+        $T(E(t))$ ($^\circ$F) & \ans{62} & \ans{60} & \ans{58} & \ans{56} & \ans{54} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item \textbf{Which machine ran first?} \quad
-        \ans{$c$} \; / \; $t$ \; (circle one)
+  \item The handoff is not a number of minutes and it is not a number of
+        degrees. It is a number of \ans{feet}.
 
-        In $t(c(p))$, the function written \textbf{last} runs
-        \ans{first}.
+  \item Which instrument runs first, $E$ or $T$? \ans{$E$}
 
-  \item \textbf{Say what the middle row is.} The numbers you wrote in the
-        middle row are not what anyone pays. In one sentence, what do they
-        represent?
+        Say in one sentence why it has to be that one.
 
-        \ansline{The price after the coupon comes off but before tax is added --- the number the tax machine gets.}
-
-  \item A \$45 shirt goes through the same register. Work it in two steps.
-
-        \begin{work}
-          t(c(45)) &= t(45 - 10) \\
-                   &= 1.06(35) \\
-                   &= 37.10
-        \end{work}
-
-        The customer pays \$\ans{37.10}.
+        \vspace{0.05in}
+        \ansline{$T$ only accepts an elevation, and $E$ is the one that turns a time into an elevation.}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-A second store rings up the \textbf{tax first}, then takes the coupon off ---
-the composite $c(t(p))$. A \$60 jacket is on sale at both stores.
+The engineers publish formulas for both instruments:
+\[
+  E(t) = 200t \qquad\qquad T(e) = 62 - 0.005e
+\]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Compute both totals, one step at a time.
+  \item Build the composite $T(E(t))$ by handing $E(t)$ to $T$.
 
         \begin{work}
-          t(c(60)) &= t(60 - 10) \\
-                   &= 1.06(50) \\
-                   &= 53.00 \\
-          c(t(60)) &= c(1.06 \cdot 60) \\
-                   &= 63.60 - 10 \\
-                   &= 53.60
+          T(E(t)) &= T(200t) \\
+                  &= 62 - 0.005(200t) \\
+                  &= 62 - t
         \end{work}
 
-        Coupon first: \$\ans{53.00} \qquad Tax first: \$\ans{53.60}
+        $T(E(t)) = $ \ans{$62 - t$}
 
-  \item Build both composites as formulas in $p$.
+  \item That formula says something a rider can feel. Finish the sentence:
+        the temperature drops \ans{1} $^\circ$F for every
+        \ans{minute} of the ride.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The ride lasts 10 minutes, so the summit temperature is
+                \ans{52} $^\circ$F.
+          \item Check that against the tables in the scenario box. Do they
+                agree? \ans{yes}
+        \end{enumerate}
+
+  \item A rider puts a jacket on when it hits $55^\circ$F.
 
         \begin{work}
-          t(c(p)) &= 1.06(p - 10) \\
-                  &= 1.06p - 10.60 \\
-          c(t(p)) &= 1.06p - 10
+          62 - t &= 55 \\
+               t &= 7
         \end{work}
 
-        $t(c(p)) = $ \ans{$1.06p - 10.60$} \qquad $c(t(p)) = $ \ans{$1.06p - 10$}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item That happens \ans{7} minutes into the ride.
+          \item The handoff at that moment --- the elevation --- is
+                $E(7) = $ \ans{1400} feet.
+        \end{enumerate}
 
-  \item Subtract the two formulas. The gap is \$\ans{0.60}, and it is the
-        same at \textbf{every} price. Which store should the shopper use?
+  \item No instrument on this mountain reports temperature as a function of
+        time. Explain in two sentences why composing $E$ and $T$ answers a
+        question neither one can answer alone.
 
-        \ansline{The first store --- coupon first is always \$0.60 cheaper, no matter the price.}
+        \vspace{0.05in}
+        \ansline{$E$ turns a time into an elevation, and $T$ turns an elevation into a temperature.}
+        \ansline{Elevation is the handoff that links them, so the chain reports degrees from minutes.}
 
-  \item Explain where that gap comes from --- what exactly is the second store
-        charging tax on that the first store is not?
+  \item \textbf{Now reverse the order.} Someone writes $E(T(t))$ instead.
 
-        \ansline{The second store taxes the full sticker price, including the \$10 the coupon takes off.}
-        \ansline{Tax on that \$10 is $0.06(10) = \$0.60$ --- exactly the gap.}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The handoff would now be a number of \ans{degrees}.
+          \item But $E$ only accepts a number of \ans{minutes}, so
+                $E(T(t))$ is \ans{meaningless}.
+          \item This is a second reason $f(g(x))$ and $g(f(x))$ are different:
+                sometimes the reversed order does not even \ans{make sense}.
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Swap the coupon for a percentage.} The store replaces the \$10
-        coupon with 25\% off: $d(p) = 0.75p$. A \$40 item goes through.
+  \item \textbf{Three machines in a row.} The summit kiosk sells hot drinks,
+        and its sales depend on the temperature: $D(T) = 40 - 0.5T$ drinks per
+        hour when the air is $T^\circ$F.
 
         \begin{work}
-          d(t(40)) &= d(42.40) \\
-                   &= 0.75(42.40) \\
-                   &= 31.80 \\
-          t(d(40)) &= t(30) \\
-                   &= 1.06(30) \\
-                   &= 31.80
+          D(T(E(t))) &= D(62 - t) \\
+                     &= 40 - 0.5(62 - t) \\
+                     &= 40 - 31 + 0.5t \\
+                     &= 9 + 0.5t
         \end{work}
 
-        $d(t(40)) = $ \$\ans{31.80} \qquad $t(d(40)) = $ \$\ans{31.80}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $D(T(E(t))) = $ \ans{$9 + 0.5t$}
+          \item At the summit ($t = 10$) the kiosk sells \ans{14}
+                drinks per hour.
+          \item This chain has \textbf{two} handoffs. Name them, with units.
 
-        These two \textbf{are} equal. So ``order matters'' is a warning, not a
-        law --- some pairs commute. In one sentence, what is different about
-        $d$ and $t$ that lets them trade places, when $c$ and $t$ cannot?
+                \vspace{0.05in}
+                \ansline{The elevation in feet ($E$ to $T$), then the temperature in $^\circ$F ($T$ to $D$).}
+        \end{enumerate}
 
-        \ansline{$d$ and $t$ both just multiply, and multiplication can be done in any order: $0.75(1.06p) = 1.06(0.75p)$.}
-        \ansline{The coupon $c$ subtracts, and multiplying after subtracting is not the same as subtracting after multiplying.}
+  \item \textbf{The late departure.} One morning the car leaves three minutes
+        behind schedule, so its elevation is $L(t) = E(t - 3)$.
 
-  \item \textbf{Read the receipt backwards.} A register prints the rule
-        $R(p) = 1.06p - 10.60$. Which composite is it?
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Write $L$ as a composition: $L(t) = E(h(t))$ where
+                $h(t) = $ \ans{$t - 3$}, and the handoff is a number of
+                \ans{minutes}.
+          \item Simplify: $L(t) = 200($ \ans{$t-3$} $) = $ \ans{$200t - 600$}
+          \item In Lesson 1.4 language, the graph of $E$ moved \ans{3}
+                units to the \ans{right} --- and now you can say why: the
+                handoff is what $E$ gets \ans{asked}.
+        \end{enumerate}
 
-        \smallskip
-        \ans{$R = t \circ c$} \; / \; $R = c \circ t$ \quad (circle one)
+  \item \textbf{Undo the chain.} The ride's composite is $T(E(t)) = 62 - t$.
+        A control-room display reads the temperature and prints how many
+        minutes the car has been climbing --- so it applies some function $m$
+        with $m\big(T(E(t))\big) = t$.
 
-        \smallskip
-        Justify by rebuilding it: $R(p) = $ \ans{$1.06(p - 10) = 1.06p - 10.60$}
+        \begin{work}
+          m(62 - t) &= t \\
+              m(y)  &= 62 - y
+        \end{work}
 
-  \item \textbf{The do-nothing function.} A register in a tax-free state runs
-        $I(p) = p$ before the coupon.
-
-        \smallskip
-        $c(I(p)) = $ \ans{$p - 10$} \qquad $I(c(p)) = $ \ans{$p - 10$}
-
-        \smallskip
-        A function that leaves every other function alone is called the
-        \ans{identity} function.
-
-  \item \textbf{Back to Lesson 1.4.} You wrote $g(x) = f(x + 3)$ last lesson
-        and called it a horizontal shift. Write it as a composition:
-
-        \smallskip
-        $g(x) = f(h(x))$ \quad where \quad $h(x) = $ \ans{$x + 3$}
-
-        \smallskip
-        So a change made \textit{inside} $f$ is really a
-        \ans{composition} --- which is why it acts on the inputs.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $m(y) = $ \ans{$62 - y$}
+          \item Test it at $t = 4$: the handoff into $m$ is \ans{58},
+                and $m$ of that is \ans{4}.
+          \item Composing the whole chain with $m$ gives back the number you
+                started with --- the \ans{identity} function. That is exactly
+                what tomorrow's lesson is about.
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 

@@ -20,73 +20,81 @@
 % HOOK SLIDE
 \begin{frame}[t, plain]
   \plumheader{Hook: Two Registers, One Jacket}
-  \sectionlabel[goldacc]{Think About It}
+  \sectionlabel[goldacc]{Vote Before You Compute}
 
-  A \$60 jacket. A \$10 coupon. Six percent sales tax.
+  A \$60 jacket, a \$10 coupon, 6\% sales tax. Register 1 scans the coupon
+  first, then the tax. Register 2 scans the tax first, then the coupon.
 
-  \bigskip
-  \begin{columns}[T]
+  \smallskip
+  \begin{columns}[T, onlytextwidth]
     \column{0.46\textwidth}
-      \begin{block}{Register A --- coupon first}
-        Take \$10 off, \textit{then} add the tax.\\[4pt]
-        \(1.06(60 - 10) = \$53.00\)
+      \begin{block}{The question}
+        Same jacket, same coupon, same tax rate. Do the two of you pay the
+        same amount?
       \end{block}
-    \column{0.46\textwidth}
-      \begin{block}{Register B --- tax first}
-        Add the tax, \textit{then} take \$10 off.\\[4pt]
-        \(1.06(60) - 10 = \$53.60\)
+
+    \column{0.50\textwidth}
+      \begin{block}{Then compute --- and watch the middle number}
+        \begin{tabular}{@{}lcc@{}}
+          & \textbf{screen} & \textbf{total} \\
+          Register 1 & \$50 & \$53.00 \\
+          Register 2 & \$63.60 & \$53.60 \\
+        \end{tabular}
+
+        \smallskip
+        The totals differ because the \textbf{middle numbers} differ.
       \end{block}
   \end{columns}
-
-  \bigskip
-  \textit{Same jacket, same coupon, same tax rate --- sixty cents apart. Today
-  we chain functions together, and the order is part of the answer.}
 \end{frame}
 
-% SECTION 1 — TWO MACHINES IN A ROW
+% SECTION 1 — THE HANDOFF
 \begin{frame}[t, plain]
-  \plumheader{1. Two Machines in a Row}
+  \plumheader{1. The Handoff}
+  \sectionlabel[redacc]{The Whole Lesson in One Picture}
 
-  \begin{center}
-    {\Large \((f \circ g)(x) = f\big(g(x)\big)\)} \quad --- read ``\(f\) of
-    \(g\) of \(x\).''
-  \end{center}
+  \((f \circ g)(x) = f\big(g(x)\big)\), read ``\(f\) of \(g\) of \(x\).'' The
+  circle is \textbf{not} multiplication.
 
-  \bigskip
+  \medskip
   \begin{center}
   \begin{tikzpicture}[x=1cm, y=1cm]
     \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (-0.85,-0.55) rectangle (0.85,0.55);
+      (-0.8,-0.5) rectangle (0.8,0.5);
     \node at (0,0) {\large \(g\)};
     \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (4.15,-0.55) rectangle (5.85,0.55);
+      (4.2,-0.5) rectangle (5.8,0.5);
     \node at (5,0) {\large \(f\)};
-    \draw[->, very thick, plum] (-2.6,0) -- (-0.95,0);
-    \node[above, font=\small] at (-1.75,0.06) {\(x\)};
-    \draw[->, very thick, plum] (0.95,0) -- (4.05,0);
-    \node[above, font=\small] at (2.5,0.06) {\(g(x)\)};
-    \draw[->, very thick, plum] (5.95,0) -- (8.2,0);
-    \node[above, font=\small] at (7.05,0.06) {\(f(g(x))\)};
-    \node[below, font=\small\itshape, text=slate] at (0,-0.62) {runs first};
-    \node[below, font=\small\itshape, text=slate] at (5,-0.62) {runs second};
+    \draw[->, very thick, plum] (-2.4,0) -- (-0.9,0);
+    \node[above, font=\small] at (-1.65,0.08) {\(x\)};
+    \draw[->, very thick, goldacc] (0.9,0) -- (4.1,0);
+    \node[above, font=\small] at (2.5,0.10) {\(g(x)\)};
+    \draw[->, very thick, plum] (5.9,0) -- (7.9,0);
+    \node[above, font=\small] at (6.9,0.08) {\(f(g(x))\)};
+    \node[above, font=\small\itshape, text=slate] at (0,0.58) {runs first};
+    \node[above, font=\small\itshape, text=slate] at (5,0.58) {runs second};
+    \node[below, font=\small\bfseries, goldacc] at (2.5,-0.10) {THE HANDOFF};
+    \node[below, font=\small, text=slate] at (2.5,-0.55)
+      {\(g\)'s answer \textit{is} \(f\)'s question};
   \end{tikzpicture}
   \end{center}
 
-  \bigskip
-  \begin{block}{The one sentence for today}
-    Work from the \textbf{inside out}. The function written \textbf{last} is
-    the one that runs \textbf{first} --- and the circle is \textit{not}
-    multiplication.
-  \end{block}
+  \medskip
+  \begin{center}
+    \textbf{One number, two jobs --- an answer first, then a question.
+    Find it, and write it down.}
+  \end{center}
 \end{frame}
 
-% SECTION 2 — VALUES FROM A TABLE
+% SECTION 2 — FROM A TABLE
 \begin{frame}[t, plain]
-  \plumheader{2. Composite Values from a Table}
+  \plumheader{2. The Handoff from a Table}
+  \sectionlabel[goldacc]{Two Lookups, No Formula}
 
-  \begin{columns}[T]
+  \begin{columns}[T, onlytextwidth]
     \column{0.44\textwidth}
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
       \hline
       \(x\) & 0 & 1 & 2 & 3 & 4 \\
       \hline
@@ -95,136 +103,146 @@
       \(g(x)\) & 2 & 3 & 7 & 0 & 4 \\
       \hline
       \end{tabular}
+      \end{center}
 
-      \bigskip
-      \textit{Write the middle number down. Every time.}
+      \medskip
+      \(f(g(1))\): handoff \(g(1) = \mathbf{3}\), then \(f(3) = 2\).
+
+      \smallskip
+      \(g(f(1))\): handoff \(f(1) = \mathbf{4}\), then \(g(4) = 4\).
 
     \column{0.52\textwidth}
-      \begin{block}{\(f(g(1))\)}
-        \(g(1) = 3\), \quad then \(f(3) = \mathbf{2}\)
+      \begin{block}{Swap the machines, swap the handoff}
+        Same two functions, same input, a different middle number --- so a
+        different answer. Composition is \textbf{not commutative}.
       \end{block}
 
       \medskip
-      \begin{block}{\(g(f(1))\)}
-        \(f(1) = 4\), \quad then \(g(4) = \mathbf{4}\)
-      \end{block}
-
-      \medskip
-      \begin{block}{\(f(g(2))\) --- careful}
-        \(g(2) = 7\), and \(f(7)\) is not in the table.\\[3pt]
-        The inner output has to be something \(f\) accepts.
+      \begin{block}{And sometimes there is no answer at all}
+        \(f(g(2))\): the handoff is \(7\), and the table has no \(f(7)\).
+        A handoff must be a question the \textbf{outer} function accepts ---
+        that is the \textbf{domain of a composite}.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 3 — BUILDING ANALYTICALLY
+% SECTION 3 — AN EXPRESSION
 \begin{frame}[t, plain]
-  \plumheader{3. Building a Composite Analytically}
+  \plumheader{3. Handing Over a Whole Expression}
 
-  \begin{center}
+  \begin{block}{The recipe}
     To build \(f(g(x))\), substitute \(g(x)\) for \textbf{every} \(x\) in
-    \(f(x)\).
-  \end{center}
-
-  \bigskip
-  Let \(f(x) = 2x + 1\) and \(g(x) = x^2 - 3\).
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{block}{\(f(g(x))\)}
-        \(f(x^2 - 3) = 2(x^2 - 3) + 1\)\\[3pt]
-        \(= \mathbf{2x^2 - 5}\)
-      \end{block}
-    \column{0.46\textwidth}
-      \begin{block}{\(g(f(x))\)}
-        \(g(2x + 1) = (2x + 1)^2 - 3\)\\[3pt]
-        \(= \mathbf{4x^2 + 4x - 2}\)
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{Not even the same shape of expression. You already did this move in
-  the warm-up: \(f(x^2) = 2x^2 + 1\).}
-\end{frame}
-
-% SECTION 4 — ORDER MATTERS
-\begin{frame}[t, plain]
-  \plumheader{4. Order Matters --- the Checkout Counter}
-
-  \begin{center}
-    \textbf{Coupon:} \(c(p) = p - 10\) \qquad
-    \textbf{Tax:} \(t(x) = 1.06x\)
-  \end{center}
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{block}{Coupon first: \(t \circ c\)}
-        \(t(c(p)) = 1.06(p - 10)\)\\[3pt]
-        \(= 1.06p - 10.60\)\\[3pt]
-        At \(p = 60\): \(\$53.00\)
-      \end{block}
-    \column{0.46\textwidth}
-      \begin{block}{Tax first: \(c \circ t\)}
-        \(c(t(p)) = 1.06p - 10\)\\[3pt]
-        \phantom{\(= 1.06p - 10.60\)}\\[3pt]
-        At \(p = 60\): \(\$53.60\)
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \begin{block}{Why exactly sixty cents, at every price?}
-    Taxing first charges 6\% on the \$10 you never paid: \(0.06(10) = \$0.60\).
-    Neither function alone answers ``what do I pay?'' --- the \textbf{chain}
-    does.
+    \(f(x)\). The handoff is no longer a number --- it is an expression.
+    Nothing else changes.
   \end{block}
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \(f(x) = 3x - 2\), \quad \(g(x) = x^2 + 1\):
+      \begin{align*}
+        f(g(x)) &= f(x^2+1) = 3(x^2+1) - 2 \\
+                &= 3x^2 + 1 \\[4pt]
+        g(f(x)) &= g(3x-2) = (3x-2)^2 + 1 \\
+                &= 9x^2 - 12x + 5
+      \end{align*}
+
+    \column{0.48\textwidth}
+      \begin{block}{Two routes, one number}
+        \(f(g(2))\) step by step: handoff \(g(2) = 5\), so \(f(5) = 13\).
+
+        \smallskip
+        Straight from the formula: \(3(2)^2 + 1 = 13\).
+      \end{block}
+
+      \smallskip
+      Not even the same \textit{shape} of expression --- order matters.
+  \end{columns}
 \end{frame}
 
-% SECTION 5 — DECOMPOSITION, IDENTITY, LESSON 1.4
+% SECTION 4 — TWO REGISTERS
 \begin{frame}[t, plain]
-  \plumheader{5. Decomposition, Identity, and Lesson 1.4}
+  \plumheader{4. Two Registers, Two Handoffs}
+  \sectionlabel[redacc]{Why the Order Costs Sixty Cents}
 
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{block}{Decompose \(h(x) = (3x+2)^4\)}
-        With a calculator, what would you do \textbf{first}? That is the inner
-        function.\\[4pt]
-        Inner \(g(x) = 3x + 2\)\\[3pt]
-        Outer \(f(u) = u^4\)
+  Coupon \(c(p) = p - 10\), \qquad tax \(t(x) = 1.06x\). Neither one alone
+  answers ``what do I pay?''
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{At \(p = 60\)}
+        \(t(c(60)) = t(\mathbf{50}) = 53.00\)
+
+        \smallskip
+        \(c(t(60)) = c(\mathbf{63.60}) = 53.60\)
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{At every price}
+        \(t(c(p)) = 1.06p - 10.60\)
+
+        \smallskip
+        \(c(t(p)) = 1.06p - 10\)
+      \end{block}
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    Taxing first charges 6\% of the \$10 you never paid: \(0.06 \times 10 =
+    \$0.60\), at \textbf{any} price.
+  \end{center}
+\end{frame}
+
+% SECTION 5 — DECOMPOSITION, IDENTITY, 1.4
+\begin{frame}[t, plain]
+  \plumheader{5. Decomposition, the Identity, and Lesson 1.4}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Decomposition = name the handoff}
+        \(h(x) = (5x-1)^3\). What would your calculator do first?
+
+        \smallskip
+        Inner \(g(x) = 5x-1\), \quad outer \(f(u) = u^3\).
       \end{block}
 
       \medskip
-      \begin{block}{Identity: \(I(x) = x\)}
-        \(I(f(x)) = f(x)\) and \(f(I(x)) = f(x)\).\\[3pt]
-        Remember this one --- Lesson 1.6 hunts for it.
+      \begin{block}{The identity function}
+        \(I(x) = x\) makes the handoff the number itself, so
+        \(f(I(x)) = I(f(x)) = f(x)\).
       \end{block}
 
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
       \begin{block}{Lesson 1.4 was composition all along}
-        \(f(x + 3) = f(h(x))\) with \(h(x) = x + 3\)\\[4pt]
-        \(f(2x) = f(h(x))\) with \(h(x) = 2x\)\\[6pt]
-        The inner function reaches the \(x\) \textbf{before} \(f\) does ---
-        which is exactly why an ``inside'' change rewrites the
-        \textbf{inputs}.
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{@{}lll@{}}
+          \textbf{1.4 rule} & \textbf{is} & \textbf{handoff} \\
+          \(f(x+3)\) & \(f(h(x))\) & \(x+3\) \\
+          \(f(2x)\)  & \(f(h(x))\) & \(2x\) \\
+        \end{tabular}
       \end{block}
+
+      \medskip
+      The handoff is what \(f\) gets \textbf{asked} --- so an inside change can
+      only rewrite the question, never the answers.
   \end{columns}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \sectionlabel[redacc]{Name the Handoff First}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item From the table above: find \(f(g(3))\) and \(g(f(3))\). Write the
-          middle number down each time.
-    \item Let \(f(x) = x^2\) and \(g(x) = x - 5\). Build \((f \circ g)(x)\)
-          and \((g \circ f)(x)\), simplified. Are they the same function?
-    \item Decompose \(h(x) = \sqrt{4x - 7}\) into an inner and an outer
-          function --- then check by substituting back.
-    \item A \$45 shirt, the \$10 coupon, and 6\% tax. Which order is cheaper
-          for the shopper, and by how much?
+    \item Using the table from section 2, find \(f(g(3))\) and \(g(f(3))\).
+          Write both handoffs down.
+
+    \item Let \(f(x) = x^2\) and \(g(x) = x - 4\). Build \((f \circ g)(x)\) and
+          \((g \circ f)(x)\), simplified. Are they the same function?
+
+    \item Decompose \(h(x) = \sqrt{4x+1}\) into an inner and an outer function,
+          then check by substituting back.
   \end{enumerate}
 \end{frame}
 

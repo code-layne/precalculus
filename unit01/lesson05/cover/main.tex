@@ -27,12 +27,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can evaluate a composite function such as $f(g(3))$ from a table or
-        from formulas, working from the \textit{inside out}.
-  \item I can build $(f \circ g)(x)$ and $(g \circ f)(x)$ by substitution, and
-        show that changing the order usually changes the function.
-  \item I can decompose a function into an inner and an outer piece --- and
-        recognize a horizontal shift as a composition in disguise.
+  \item I can find the \textit{handoff} in a composite --- the number the inner
+        function gives to the outer one --- and use it to evaluate $f(g(3))$
+        from a table or from formulas.
+  \item I can build $(f \circ g)(x)$ by substituting $g(x)$ for every $x$ in
+        $f(x)$, and show that swapping the order usually changes the function.
+  \item I can explain why a composite has no value when the handoff is not
+        something the outer function accepts.
+  \item I can decompose a function into an inner and an outer piece, and check
+        my split by substituting back.
+  \item I can rewrite Lesson 1.4's ``inside'' changes as compositions, and say
+        why that is what makes them act on inputs.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -46,9 +51,9 @@
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
 1 & Warm-Up        & Spiral review of prerequisite skills              & \blank{1.2cm} \\
-2 & Guided Notes   & Chaining functions: evaluate, build, take apart   & \blank{1.2cm} \\
-3 & Group Activity & The checkout counter: coupon first, or tax first? & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on evaluating and building      & \blank{1.2cm} \\
+2 & Guided Notes   & The handoff: find it, hand it over, take it apart & \blank{1.2cm} \\
+3 & Group Activity & The summit cable car: minutes in, degrees out     & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on evaluating, building, decomposing & \blank{1.2cm} \\
 5 & Homework       & Practice and extension                            & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
@@ -59,11 +64,14 @@
 
 \begin{remindbox}
 \small
-Last lesson one function's graph moved. Today \textbf{two functions work in a
-row}: the output of the first becomes the input of the second, written
-$(f \circ g)(x) = f(g(x))$. Two sentences carry the lesson --- work from the
-\textit{inside out}, and the \textit{order} is part of the answer. A \$10
-coupon and a 6\% sales tax do not cost the same in both orders.
+Last lesson a rule interfered with the \textit{question} you hand a function or
+the \textit{answer} it hands back. Today two functions work in a row, and one
+number sits between them: the \textbf{handoff}. It is the inner function's
+answer and the outer function's question at the same time --- so find it first
+and write it down. Everything else follows from it. Swap the machines and you
+swap the handoff, which is why $f(g(x))$ and $g(f(x))$ are usually different
+functions. And a handoff the outer function will not accept means the composite
+has no value at all.
 \end{remindbox}
 
 \end{document}

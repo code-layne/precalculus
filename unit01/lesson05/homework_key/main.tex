@@ -1,7 +1,7 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Homework (Answer Key)
+%! Composition of Functions — Unit 1, Lesson 1.5 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,48 +12,73 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item The table gives every value of two functions $f$ and $g$. Evaluate each
-      composite by working from the inside out.
+\item The table gives every value of two functions $f$ and $g$. Name the
+      handoff before you look anything up.
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.4}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$f(x)$ & 5 & 1 & 4 & 2 & 3 \\
+$f(x)$ & 4 & 1 & 5 & 2 & 3 \\
 \hline
-$g(x)$ & 3 & 5 & 1 & 5 & 2 \\
+$g(x)$ & 3 & 5 & 1 & 4 & 9 \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $f(g(1)) = $ \ans{4} \qquad (inner value: \ans{3})
-  \item $g(f(1)) = $ \ans{2} \qquad (inner value: \ans{5})
-  \item $f(g(3)) = $ \ans{5} \qquad (inner value: \ans{1})
-  \item $g(g(4)) = $ \ans{2} \qquad (inner value: \ans{5})
+  \item $f(g(1))$: \; handoff $= $ \ans{3}, \;
+        so $f(g(1)) = $ \ans{5}
+  \item $g(f(1))$: \; handoff $= $ \ans{4}, \;
+        so $g(f(1)) = $ \ans{4}
+  \item $f(g(5))$ has no value. In one sentence, say what goes wrong with the
+        handoff.
+
+        \vspace{0.05in}
+        \ansline{The handoff is $g(5) = 9$, and 9 is not an input $f$ accepts --- the table has no $f(9)$.}
+
+  \item Complete both rows.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $x$ & 2 & 3 & 4 \\
+        \hline
+        handoff: $g(x)$ & \ans{5} & \ans{1} & \ans{4} \\
+        \hline
+        $(f \circ g)(x)$ & \ans{3} & \ans{4} & \ans{2} \\
+        \hline
+        \end{tabular}
+        \end{center}
 \end{enumerate}
 
-\item Let $f(x) = x^2 + 1$ and $g(x) = x - 4$. Build both composites and
-      simplify completely.
+\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and
+      simplify.
 
 \begin{work}
-  f(g(x)) &= f(x - 4) \\
-          &= (x - 4)^2 + 1 \\
-          &= x^2 - 8x + 16 + 1 \\
-          &= x^2 - 8x + 17 \\
-  g(f(x)) &= g(x^2 + 1) \\
-          &= (x^2 + 1) - 4 \\
-          &= x^2 - 3
+  f(g(x)) &= f(x - 3) \\
+          &= (x - 3)^2 + 2 \\
+          &= x^2 - 6x + 9 + 2 \\
+          &= x^2 - 6x + 11 \\
+  g(f(x)) &= g(x^2 + 2) \\
+          &= (x^2 + 2) - 3 \\
+          &= x^2 - 1
 \end{work}
 
-$(f \circ g)(x) = $ \ans{$x^2 - 8x + 17$} \qquad $(g \circ f)(x) = $ \ans{$x^2 - 3$}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $(f \circ g)(x) = $ \ans{$x^2 - 6x + 11$}
+  \item $(g \circ f)(x) = $ \ans{$x^2 - 1$}
+  \item One input settles whether they are the same function. At $x = 0$:
+        $f(g(0)) = $ \ans{11} and $g(f(0)) = $ \ans{$-1$}.
+\end{enumerate}
 
-\item \textbf{Back at the checkout counter.} The \$10 coupon is
-      $c(p) = p - 10$ and the 6\% sales tax is $t(x) = 1.06x$. A \$45 shirt
-      goes through two different registers.
+\item A \$45 backpack, the same \$10 coupon, and the same 6\% tax:
+      $c(p) = p - 10$ and $t(x) = 1.06x$.
 
 \begin{work}
   t(c(45)) &= t(35) \\
@@ -64,33 +89,39 @@ $(f \circ g)(x) = $ \ans{$x^2 - 8x + 17$} \qquad $(g \circ f)(x) = $ \ans{$x^2 -
            &= 37.70
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Coupon first, then tax: \$\ans{37.10}
-  \item Tax first, then coupon: \$\ans{37.70}
-  \item The shopper saves \$\ans{0.60} by having the coupon rung up
-        first.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Coupon first: handoff \$\ans{35}, total \$\ans{37.10}.
+  \item Tax first: handoff \$\ans{47.70}, total \$\ans{37.70}.
+  \item The gap is \$\ans{0.60} --- the same gap as the \$60 jacket. Say
+        in one sentence why the price does not affect it.
+
+        \vspace{0.05in}
+        \ansline{Taxing first charges 6\% of the \$10 coupon, and $0.06 \times 10 = 0.60$ no matter the price.}
 \end{enumerate}
 
-\boxguard[16]
-\item \textbf{Taking functions apart.}
+\item Take each function apart, then put one back together.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Decompose $h(x) = \sqrt{4x - 7}$. \quad
-        Inner: $g(x) = $ \ans{$4x - 7$} \quad Outer: $f(u) = $ \ans{$\sqrt{u}$}
-  \item In Lesson 1.4 you shifted a graph with $k(x) = f(x + 6)$. Write it as
-        a composition: $k(x) = f(g(x))$ where $g(x) = $ \ans{$x + 6$}
-  \item Was that change made \textbf{inside} or \textbf{outside} $f$?
-        \quad \ans{inside}
+  \item $h(x) = \sqrt{4x + 1}$: \quad inner $g(x) = $ \ans{$4x + 1$},
+        \quad outer $f(u) = $ \ans{$\sqrt{u}$}
+  \item $k(x) = 3(x - 2)^5$: \quad inner $g(x) = $ \ans{$x - 2$},
+        \quad outer $f(u) = $ \ans{$3u^5$}
+  \item In Lesson 1.4 you wrote the horizontal shift $g(x) = f(x + 6)$.
+        Write it as a composition: $g(x) = f(h(x))$ where
+        $h(x) = $ \ans{$x + 6$}, and the handoff is \ans{$x+6$}.
+
+        Because the handoff is what $f$ gets \ans{asked}, the graph moves
+        6 units to the \ans{left}.
 \end{enumerate}
 
-\item Let $f(x) = 3x - 2$ and $g(x) = x^2$. Which expression is
+\item Let $f(x) = x^2$ and $g(x) = 2x - 1$. Which of the following is
       $(f \circ g)(x)$?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $3x^2 - 2$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $(3x - 2)^2$
-  \item $9x^2 - 12x + 4$
-  \item $3x^3 - 2x^2$
+  \item $2x^2 - 1$
+  \item \ans{$4x^2 - 4x + 1$}
+  \item $4x^2 + 1$
+  \item $2x^3 - x^2$
 \end{enumerate}
 
 \end{enumerate}
@@ -99,29 +130,28 @@ $(f \circ g)(x) = $ \ans{$x^2 - 8x + 17$} \qquad $(g \circ f)(x) = $ \ans{$x^2 -
 
 \boxguard
 \begin{extensionbox}
-The \textbf{identity function} is $I(x) = x$. Let $f(x) = 5x - 2$.
+Let $f(x) = 5x - 2$ and let $I(x) = x$ be the identity function.
 
-\smallskip
-First check that $I$ really does nothing: $f(I(x)) = $ \ans{$5x - 2$} and
-$I(f(x)) = $ \ans{$5x - 2$}.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Show that $f(I(x))$ and $I(f(x))$ both come out to $f(x)$ --- with
+        $I$ in the chain, the handoff is the number itself.
+  \item Now hunt for a different function $g$ so that $f(g(x)) = x$: a partner
+        whose handoff comes back out as the number you started with.
+\end{enumerate}
 
-\smallskip
-Now the interesting question: is there a function $g$ with
-$f(g(x)) = x$ --- a function that \textit{undoes} $f$? Try to find it, and
-explain how you searched.
-
-\ansline{Yes: $g(x) = \dfrac{x+2}{5}$, since $f(g(x)) = 5 \cdot \dfrac{x+2}{5} - 2 = x$.}
-\ansline{Undo $f$'s steps backwards: $f$ multiplies by 5 then subtracts 2, so $g$ adds 2 then divides by 5.}
+\vspace{0.05in}
+\ansline{(a) $f(I(x)) = f(x) = 5x-2$ and $I(f(x)) = I(5x-2) = 5x-2$ --- $I$ changes nothing either way.}
+\ansline{(b) $g(x) = (x+2)/5$, since $f\big((x+2)/5\big) = 5 \cdot (x+2)/5 - 2 = x$. That is $f^{-1}$.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.6}
-The extension asked for a function that undoes $f$. Lesson 1.6,
-\textit{Inverse Functions}, gives that function a name and a notation:
-$f^{-1}$. The test for it is a composition --- $f(f^{-1}(x)) = x$ --- which is
-exactly the identity function you met today.
+The extension asks for a function that \textit{undoes} $f$. Lesson 1.6,
+\textit{Inverse Functions}, gives that partner a name and a notation ---
+and the test for it is a composition: $f\big(f^{-1}(x)\big) = x$, the identity
+function from Part 5.
 \end{notesbox}
 
 \end{document}
