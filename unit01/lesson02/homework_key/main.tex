@@ -1,7 +1,7 @@
-%! Change in Tandem — Unit 1, Lesson 1.2 — Homework (Answer Key)
+%! Change in Tandem — Unit 1, Lesson 1.2 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,78 +12,88 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item A pumpkin is planted at $t = 0$ and harvested at $t = 16$ weeks. Its
-      weight grows the whole time: slowly at first, then faster and faster
-      until week 10 --- after week 10 it keeps gaining, but the weekly gains
-      shrink.
+\item Each description tells you both things at once. Name which way the
+      function goes and its concavity.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Circle one: over $0 < t < 16$, the weight is \ans{increasing} /
-        \textbf{decreasing}.
-  \item The weight function is concave \textbf{up} on \ans{0}
-        $< t <$ \ans{10} and concave \textbf{down} on \ans{10}
-        $< t <$ \ans{16}.
+  \item A pumpkin gains weight through August, and it gains more each week
+        than it did the week before.
+
+        \vspace{0.05in}
+        \ans{Increasing} and concave \ans{up}
+  \item After a parachute opens, the skydiver's speed drops sharply at first
+        and then levels off toward a steady fall rate.
+
+        \vspace{0.05in}
+        \ans{Decreasing} and concave \ans{up}
 \end{enumerate}
 
-\item The graph of a function $f$ is shown.
+\item The graph of a function $g$ is shown.
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (7,4);
-  \draw[->, thick] (0,0) -- (7.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6,7} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,4) -- (4,0);
-  \draw[very thick, plum] (4,0) -- (7,3);
+\begin{tikzpicture}[x=0.62cm, y=0.42cm]
+  \draw[linegray, very thin, step=1] (0,-2) grid (8,4);
+  \draw[->, thick] (0,-2.5) -- (0,4.7) node[above] {\small $g(x)$};
+  \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small $x$};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny, fill=white, inner sep=0.6pt] at (\x,0) {\x};
+  \foreach \y in {-2,2,4} \node[left, font=\small] at (0,\y) {\y};
+  \draw[very thick, plum] (0,4) -- (3,-2);
+  \draw[very thick, plum] (3,-2) -- (6,4);
+  \draw[very thick, plum] (6,4) -- (8,2);
   \fill[plum] (0,4) circle (2.5pt);
-  \fill[plum] (7,3) circle (2.5pt);
+  \fill[plum] (8,2) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Decreasing for \ans{0} $< x <$ \ans{4} \qquad
-        Increasing for \ans{4} $< x <$ \ans{7}
-  \item The zero of $f$ is $x = $ \ans{4}.
-  \item Domain: \ans{0} $\le x \le$ \ans{7} \qquad
-        Range: \ans{0} $\le y \le$ \ans{4}
+  \item $g$ is decreasing on \ans{$0 < x < 3$} and on \ans{$6 < x < 8$}.
+  \item $g$ is increasing on \ans{$3 < x < 6$}.
+  \item The zeros of $g$ are $x = $ \ans{2} and $x = $ \ans{4}.
+  \item Domain: \ans{0} $\le x \le$ \ans{8} \qquad
+        Range: \ans{$-2$} $\le y \le$ \ans{4}
 \end{enumerate}
 
-\item A savings account balance $S(m)$, in dollars, is shown for the first
-      months of the year.
+\item A car pulls away from a stop sign. The table gives the distance $D$, in
+      feet, it has travelled after $t$ seconds.
 
 \smallskip
-\begin{tabular}{|c|c|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$m$ (months) & 0 & 1 & 2 & 3 \\
+$t$ (s) & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$S(m)$ (\$) & 400 & 440 & 490 & 550 \\
+$D(t)$ (ft) & 0 & 3 & 12 & 27 & 48 \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item The monthly gains are \ans{40} , \ans{50} ,
-        \ans{60} dollars.
-  \item Circle one: $S$ is \ans{concave up} / \textbf{concave down},
-        because the rate of change is \ans{increasing}.
+  \item The second-by-second changes are \ans{3}, \ans{9}, \ans{15},
+        and \ans{21}.
+  \item $D$ is \ans{increasing} and concave \ans{up}.
+  \item Explain the concavity using the changes.
+
+        \vspace{0.05in}
+        \ansline{Each second the car covers more ground than the second before, so its rate of change is increasing.}
 \end{enumerate}
 
-\item Can a function be \textbf{decreasing} and \textbf{concave up} at the
-      same time? If yes, describe a real context that behaves this way; if
-      no, explain why not.
+\item Can a function be \textbf{decreasing} and \textbf{concave up} at the same
+      time? Answer yes or no, give an example, and explain with rate-of-change
+      language.
 
-\vspace{0.02in}
-\ansline{Yes. Cooling cocoa: the temperature falls, but each minute it drops by less than the minute before. The outputs decrease while the rate of change is increasing (drops shrinking) --- decreasing and concave up.}
+\vspace{0.05in}
+\ansline{Yes. Hot cocoa cooling toward room temperature keeps falling, but each minute it loses fewer degrees than the last.}
+\ansline{The rate of change is negative and rising toward 0 --- rising is what makes it concave up.}
 
-\item A function is increasing and concave down on an interval. Which
-      description fits?
+\item A function's outputs change by the amounts listed below, one amount per
+      step. Which list belongs to a function that is \textbf{increasing and
+      concave down}?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item The outputs fall, dropping faster and faster.
-  \item The outputs climb, but the gains shrink as the input grows. \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item The outputs climb, and the gains grow as the input grows.
-  \item The outputs fall, but the drops shrink as the input grows.
+  \item $+2,\ +4,\ +6,\ +8$
+  \item $+8,\ +6,\ +4,\ +2$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $-2,\ -4,\ -6,\ -8$
+  \item $+5,\ +5,\ +5,\ +5$
 \end{enumerate}
 
 \end{enumerate}
@@ -92,23 +102,23 @@ $S(m)$ (\$) & 400 & 440 & 490 & 550 \\
 
 \boxguard
 \begin{extensionbox}
-A hiker climbs for 2 hours, rests on a ledge for 1 hour, then climbs the
-rest of the way. During the resting hour, her elevation function is neither
-increasing nor decreasing. Why does neither definition apply? (Hint: compare
-$E(a)$ and $E(b)$ for two moments $a < b$ during the rest.)
+A hiker climbs for two hours, sits down and rests for one hour, then climbs
+again. During the rest hour, is the elevation function increasing, decreasing,
+or neither? What is its rate of change during that hour?
 
-\vspace{0.02in}
-\ansline{During the rest, any two moments $a < b$ give the same elevation, $E(a) = E(b)$. Increasing requires $E(a) < E(b)$ and decreasing requires $E(a) > E(b)$ --- equality satisfies neither, so the function is constant there.}
+\vspace{0.05in}
+\ansline{Neither. The elevation holds steady, so larger inputs give neither larger nor smaller outputs --- the graph is flat.}
+\ansline{Its rate of change during that hour is 0.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
 \boxguard
 \begin{notesbox}{Preview of Lesson 1.3}
-Today we said a tank gains ``14, then 6, then 4 gallons'' and called the
-change slowing. Lesson 1.3, \textit{Rates of Change}, puts one number on a
-whole interval's change --- the \textit{average rate of change} --- and
-computes it exactly.
+Today you called the changes ``growing'' or ``shrinking'' by comparing them.
+Lesson 1.3, \textit{Rates of Change}, puts an actual number on them: the
+average rate of change over an interval, computed from a formula, a table, or
+a graph --- units and all.
 \end{notesbox}
 
 \end{document}

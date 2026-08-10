@@ -2,6 +2,12 @@
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
+\newcommand{\minicurve}[1]{%
+  \begin{tikzpicture}[x=0.34cm, y=0.30cm, baseline=(current bounding box.center)]
+    \draw[linegray, thin] (0,0) rectangle (4,3);
+    \draw[very thick, plum] plot[smooth] coordinates {#1};
+  \end{tikzpicture}}
+
 \begin{document}
 
 % TITLE SLIDE
@@ -19,202 +25,252 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: The Car and the Stop Sign}
-  \sectionlabel[goldacc]{Think About It}
+  \plumheader{Hook: Two Shows, Same Sales}
+  \sectionlabel[goldacc]{Take a Vote First}
 
-  A car pulls away from a stop sign. Two quantities start changing at once:
+  Two shows go on sale the same morning. Six weeks later \textbf{both} have
+  sold exactly 600 tickets.
 
-  \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Its \textbf{speed} climbs from 0 --- quickly at first, then levels
-          off near the limit.
-    \item Its \textbf{distance} from the sign grows --- slowly at first, then
-          faster and faster.
-  \end{itemize}
+  \smallskip
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
+        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
+        \draw[very thick, plum] plot[smooth] coordinates
+          {(0,0) (1,2.5) (2,4) (3,5) (4,5.6) (5,5.9) (6,6)};
+        \node[below=7pt] at (3,0) {\small\textbf{Show A}};
+      \end{tikzpicture}
+      \hspace{0.5cm}
+      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
+        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
+        \draw[very thick, plum] plot[smooth] coordinates
+          {(0,0) (1,0.1) (2,0.3) (3,0.7) (4,1.6) (5,3.4) (6,6)};
+        \node[below=7pt] at (3,0) {\small\textbf{Show B}};
+      \end{tikzpicture}
+      \end{center}
 
-  \bigskip
-  Both are increasing. \textbf{In words: what makes the two stories
-  different?}
+    \column{0.44\textwidth}
+      \begin{block}{The question}
+        If you could promote just \textbf{one} of these shows for six more
+        weeks, which would you pick?
+      \end{block}
 
-  \bigskip
-  \textit{Today we build the vocabulary that tells them apart.}
+      \medskip
+      \begin{block}{Then: why?}
+        Both graphs are \textbf{increasing}. Both end at \textbf{600}. So that
+        word cannot tell them apart --- what word are we missing?
+      \end{block}
+  \end{columns}
 \end{frame}
 
-% SECTION 1 — TWO QUANTITIES IN TANDEM
+% SECTION 1 — TANDEM
 \begin{frame}[t, plain]
   \plumheader{1. Two Quantities in Tandem}
 
-  A hose fills a tank: as time passes, the volume responds. The two
-  quantities \textbf{vary in tandem}, linked by the function rule.
+  \begin{block}{Vary in tandem}
+    Change the input and the output answers. A function is the rule that ties
+    the two together.
+  \end{block}
 
   \bigskip
-  \begin{tabular}{|c|c|c|c|c|}
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \textbf{A hose fills a tank.}
+
+      \medskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) (min) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(V(t)\) (gal) & 0 & 8 & 16 & 24 \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Every 2 minutes: \textbf{8 more gallons}, the same amount each time.
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Input quantity: \textbf{time}, in minutes
+        \item Output quantity: \textbf{volume}, in gallons
+        \item A table shows a handful of pairs. A \textbf{graph} shows them
+              \textbf{all at once} --- which is why trends become things you
+              can see.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% SECTION 2 — WHICH WAY
+\begin{frame}[t, plain]
+  \plumheader{2. Question 1 --- Which Way Are the Outputs Going?}
+
+  \begin{block}{Definitions with teeth}
+    \(f\) is \textbf{increasing} on an interval when: whenever \(a < b\),
+    \(f(a) < f(b)\). \\[3pt]
+    \(f\) is \textbf{decreasing} on an interval when: whenever \(a < b\),
+    \(f(a) > f(b)\).
+  \end{block}
+
+  \smallskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.52cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,-3) grid (8,3);
+        \draw[->, thick] (0,-3.5) -- (0,3.7) node[above] {\small \(h(x)\)};
+        \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-3,-1,1,3} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum] (0,-2) -- (2,2);
+        \draw[very thick, plum] (2,2) -- (3,3);
+        \draw[very thick, plum] (3,3) -- (5,0);
+        \draw[very thick, plum] (5,0) -- (6,-3);
+        \draw[very thick, plum] (6,-3) -- (8,-1);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Increasing on \(0 < x < 3\) and \(6 < x < 8\)
+        \item Decreasing on \(3 < x < 6\)
+      \end{itemize}
+
+      \medskip
+      \begin{block}{Two traps}
+        Intervals are named with \textbf{inputs}, never outputs. \\[3pt]
+        Decreasing \(\ne\) negative: cocoa falling from \(90^\circ\) to
+        \(40^\circ\) is decreasing the whole way.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — CONCAVITY
+\begin{frame}[t, plain]
+  \plumheader{3. Question 2 --- How Is the Change Changing?}
+  \sectionlabel[redacc]{The Missing Word}
+
+  Both tanks fill for 6 minutes. Both end at 24 gallons. They do \textbf{not}
+  fill the same way --- compute the gains.
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Tank A}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(A(t)\) & 0 & 14 & 20 & 24 \\
+      \hline
+      gain & --- & 14 & 6 & 4 \\
+      \hline
+      \end{tabular}
+
+      \smallskip
+      Gains \textbf{shrinking} \(\Rightarrow\) rate of change decreasing
+      \(\Rightarrow\) \textbf{concave down}.
+
+    \column{0.48\textwidth}
+      \textbf{Tank B}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(B(t)\) & 0 & 4 & 10 & 24 \\
+      \hline
+      gain & --- & 4 & 6 & 14 \\
+      \hline
+      \end{tabular}
+
+      \smallskip
+      Gains \textbf{growing} \(\Rightarrow\) rate of change increasing
+      \(\Rightarrow\) \textbf{concave up}.
+  \end{columns}
+
+  \bigskip
+  Both tanks are increasing the whole time. Concavity is a \textbf{second}
+  question --- and it is about the gains, not the outputs.
+\end{frame}
+
+% SECTION 4 — FOUR CORNERS
+\begin{frame}[t, plain]
+  \plumheader{4. The Four Corners}
+  \sectionlabel[redacc]{The Spine of This Lesson}
+
+  Two questions, two answers apiece --- \textbf{four} combinations, and all
+  four are real.
+
+  \medskip
+  \begin{center}
+  \small
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|c|l|c|c|l|}
   \hline
-  \(t\) (min) & 0 & 2 & 4 & 6 \\
+  \textbf{Shape} & \textbf{The situation} & \textbf{Which way?} &
+  \textbf{Concave} & \textbf{Rate of change} \\
   \hline
-  \(V\) (gal) & 0 & 8 & 16 & 24 \\
+  \minicurve{(0,0.2) (1,0.4) (2,0.9) (3,1.7) (4,2.9)} &
+  A rumor spreads at school & Increasing & up & increasing \\
+  \hline
+  \minicurve{(0,0.2) (1,1.4) (2,2.1) (3,2.6) (4,2.8)} &
+  A cold soda warms up & Increasing & down & decreasing \\
+  \hline
+  \minicurve{(0,2.8) (1,1.6) (2,0.9) (3,0.5) (4,0.3)} &
+  Hot cocoa cools down & Decreasing & up & increasing \\
+  \hline
+  \minicurve{(0,2.9) (1,2.7) (2,2.2) (3,1.4) (4,0.2)} &
+  A battery drains & Decreasing & down & decreasing \\
   \hline
   \end{tabular}
+  \end{center}
 
-  \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Input (independent): \textbf{time}. Output (dependent):
-          \textbf{volume}.
-    \item Every 2 minutes, 8 more gallons --- a perfectly steady climb.
-    \item As \(t\) increases, \(V\) \textbf{increases}: the graph rises left
-          to right.
-  \end{itemize}
+  \medskip
+  The two middle columns are \textbf{independent}. ``Concave down'' does
+  \textbf{not} mean the function is falling --- look at row 2.
 \end{frame}
 
-% SECTION 2 — INCREASING AND DECREASING
+% SECTION 5 — ZEROS
 \begin{frame}[t, plain]
-  \plumheader{2. Increasing and Decreasing}
+  \plumheader{5. Zeros --- Where the Output Is 0}
 
-  \begin{block}{The definitions, with teeth}
-    \(f\) is \textbf{increasing} on an interval: whenever \(a < b\),
-    \(f(a) < f(b)\) --- larger inputs give larger outputs.\\[4pt]
-    \(f\) is \textbf{decreasing} on an interval: whenever \(a < b\),
-    \(f(a) > f(b)\) --- larger inputs give smaller outputs.
+  \begin{block}{Definition}
+    A \textbf{zero} of a function is an input whose output is \textbf{0}. On a
+    graph, the curve meets the horizontal axis there.
   \end{block}
 
   \bigskip
   \begin{columns}[T]
-    \column{0.5\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.5cm, y=0.45cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (8,5);
-        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small \(f(x)\)};
-        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-        \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, plum] (0,1) -- (3,5);
-        \draw[very thick, plum] (3,5) -- (6,2);
-        \draw[very thick, plum] (6,2) -- (8,4);
-        \fill[plum] (0,1) circle (2.5pt);
-        \fill[plum] (8,4) circle (2.5pt);
-      \end{tikzpicture}
-      \end{center}
-
-    \column{0.46\textwidth}
-      \begin{itemize}\setlength{\itemsep}{8pt}
-        \item Increasing for \(0 < x < 3\) and \(6 < x < 8\)
-        \item Decreasing for \(3 < x < 6\)
-        \item Intervals are named by \textbf{inputs} (\(x\)-values), never
-              outputs.
-      \end{itemize}
-  \end{columns}
-
-  \bigskip
-  \textbf{Watch out:} decreasing \(\ne\) negative --- falling from 5 to 2
-  stays positive the whole way.
-\end{frame}
-
-% SECTION 3 — CONCAVITY, TABLES
-\begin{frame}[t, plain]
-  \plumheader{3. Concavity --- How the Change Changes}
-
-  \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{Tank, drain half-open}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        \(t\) & 0 & 2 & 4 & 6 \\
-        \hline
-        \(V\) & 0 & 14 & 20 & 24 \\
-        \hline
-        \end{tabular}\\[6pt]
-        Gains: 14, 6, 4 --- rate of change \textbf{decreasing}\\
-        \(\Rightarrow\) \textbf{concave down}
+      \textbf{It is a \textit{solve} question.} (From 1.1.)
+
+      \smallskip
+      Finding a zero means solving \(h(x) = 0\) --- you are given the output
+      and asked for the input(s). There can be none, one, or many.
+
+      \medskip
+      From the graph in Part 2: zeros at \(x = 1\) and \(x = 5\).
+
+    \column{0.48\textwidth}
+      \begin{block}{A zero is an event}
+        Let \(D(t)\) be a drone's height in meters, \(t\) seconds after
+        takeoff. \\[4pt]
+        \(D(48) = 0\) means: forty-eight seconds after takeoff, the drone is
+        back on the ground.
       \end{block}
 
-    \column{0.48\textwidth}
-      \begin{block}{Savings account}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        \(m\) & 0 & 1 & 2 & 3 \\
-        \hline
-        \(S\) & 100 & 120 & 145 & 175 \\
-        \hline
-        \end{tabular}\\[6pt]
-        Gains: 20, 25, 30 --- rate of change \textbf{increasing}\\
-        \(\Rightarrow\) \textbf{concave up}
-      \end{block}
+      \medskip
+      \textbf{Spiral:} that Part 2 graph has domain \(0 \le x \le 8\) and
+      range \(-3 \le y \le 3\).
   \end{columns}
-
-  \bigskip
-  The concavity call comes from the \textbf{arithmetic of the gains}, not
-  from squinting at a picture.
-\end{frame}
-
-% SECTION 3, CONT. — THE TWO BENDS
-\begin{frame}[t, plain]
-  \plumheader{The Two Bends}
-
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=1.1cm, y=0.8cm]
-        \draw[->, thick] (0,0) -- (3.4,0);
-        \draw[->, thick] (0,0) -- (0,2.8);
-        \draw[very thick, plum] (0,0.2) .. controls (1.8,0.5) .. (3,2.4);
-      \end{tikzpicture}\\[4pt]
-      slow, then fast --- \textbf{concave up} (bowl)
-      \end{center}
-
-    \column{0.48\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=1.1cm, y=0.8cm]
-        \draw[->, thick] (0,0) -- (3.4,0);
-        \draw[->, thick] (0,0) -- (0,2.8);
-        \draw[very thick, plum] (0,0.2) .. controls (1.2,2.1) .. (3,2.4);
-      \end{tikzpicture}\\[4pt]
-      fast, then slow --- \textbf{concave down} (dome)
-      \end{center}
-  \end{columns}
-
-  \bigskip
-  \begin{block}{Independent questions}
-    ``Increasing or decreasing?'' and ``concave up or down?'' are
-    \textbf{separate calls} --- the half-open-drain tank is increasing
-    \textit{and} concave down at the same time. All four combinations exist.
-  \end{block}
-\end{frame}
-
-% SECTION 4 — ZEROS
-\begin{frame}[t, plain]
-  \plumheader{4. Zeros}
-
-  \begin{columns}[T]
-    \column{0.5\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.55cm, y=0.5cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (8,4);
-        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small \(g(x)\)};
-        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-        \foreach \y in {1,2,3,4} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, plum] (0,4) -- (2,0);
-        \draw[very thick, plum] (2,0) -- (4,3);
-        \draw[very thick, plum] (4,3) -- (6,0);
-        \draw[very thick, plum] (6,0) -- (8,2);
-        \fill[plum] (0,4) circle (2.5pt);
-        \fill[plum] (8,2) circle (2.5pt);
-      \end{tikzpicture}
-      \end{center}
-
-    \column{0.46\textwidth}
-      \begin{itemize}\setlength{\itemsep}{8pt}
-        \item A \textbf{zero}: an input whose output is 0 --- the graph meets
-              the horizontal axis.
-        \item Zeros of \(g\): \(x = 2\) and \(x = 6\).
-      \end{itemize}
-  \end{columns}
-
-  \bigskip
-  \begin{block}{A zero is an event}
-    Drone: \(h(8) = 0\) --- it lands. Tank: \(w(7) = 0\) --- it's empty.
-    Translate the zero into a sentence, just like \(f(3) = 7\) in Lesson 1.1.
-  \end{block}
 \end{frame}
 
 % CLASS PRACTICE
@@ -223,25 +279,27 @@
   \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A tank is draining:
+    \item A snowbank melts. Depth \(S\), in inches, after \(d\) days:
 
           \smallskip
           \begin{tabular}{|c|c|c|c|c|}
           \hline
-          \(t\) (min) & 0 & 2 & 4 & 6 \\
+          \(d\) (days) & 0 & 1 & 2 & 3 \\
           \hline
-          \(w\) (gal) & 30 & 24 & 16 & 6 \\
+          \(S(d)\) (in.) & 24 & 18 & 14 & 12 \\
           \hline
           \end{tabular}
 
           \smallskip
           \begin{enumerate}\setlength{\itemsep}{5pt}
-            \item Increasing or decreasing?
-            \item Find the drops. Concave up or concave down?
+            \item Write the daily changes. Which way is \(S\) going? Which
+                  concavity?
+            \item Defend the concavity with the changes --- not the shape.
           \end{enumerate}
-    \item If \(w(7) = 0\), say the sentence that zero is telling us.
-    \item In one sentence: how can a function be increasing and concave down
-          at the same time?
+
+    \item Look back at the graph of \(h\). On which interval is \(h\)
+          decreasing? What are its zeros? What is \(h(2)\) --- and which of
+          those three was an \textit{evaluate} question?
   \end{enumerate}
 \end{frame}
 

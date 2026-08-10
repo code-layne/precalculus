@@ -1,8 +1,13 @@
-%! Change in Tandem — Unit 1, Lesson 1.2 — Guided Notes (Answer Key)
+%! Change in Tandem — Unit 1, Lesson 1.2 — Guided Notes (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\minicurve}[1]{%
+  \begin{tikzpicture}[x=0.30cm, y=0.26cm, baseline=(current bounding box.center)]
+    \draw[linegray, thin] (0,0) rectangle (4,3);
+    \draw[very thick, plum] plot[smooth] coordinates {#1};
+  \end{tikzpicture}}
 
 \begin{document}
 
@@ -13,12 +18,13 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Identify intervals where a function is \ans{increasing} or
+  \item Describe how two quantities change \ans{in tandem}, and read that
+        story off a graph.
+  \item Name the intervals where a function is \ans{increasing} or
         \ans{decreasing}.
-  \item Decide whether a graph is concave \ans{up} or concave
-        \ans{down} by tracking the rate of change.
-  \item Identify the \ans{zeros} of a function and explain what they mean
-        in context.
+  \item Decide whether a function is concave \ans{up} or concave down by
+        watching what its \ans{rate of change} does.
+  \item Identify a \ans{zero} of a function and say what it means in context.
 \end{enumerate}
 \end{objectivebox}
 
@@ -28,38 +34,62 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Vary in tandem:}}\\[1pt]
+\ansline{Two quantities change together --- the input's change drives the output's change.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Increasing:}}\\[1pt]
-\ansline{As inputs increase, outputs increase: whenever $a < b$, $f(a) < f(b)$. The graph rises left to right.}\\[3pt]
+\ansline{On an interval, larger inputs give larger outputs: if $a < b$, then $f(a) < f(b)$.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Decreasing:}}\\[1pt]
-\ansline{As inputs increase, outputs decrease: whenever $a < b$, $f(a) > f(b)$. The graph falls left to right.}\\[3pt]
+\ansline{On an interval, larger inputs give smaller outputs: if $a < b$, then $f(a) > f(b)$.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Concave up:}}\\[1pt]
-\ansline{The rate of change is increasing on the interval; the graph bends upward like a bowl.}\\[3pt]
+\ansline{The rate of change is increasing --- each step gains more (or loses less).}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Concave down:}}\\[1pt]
-\ansline{The rate of change is decreasing on the interval; the graph bends downward like a dome.}\\[3pt]
+\ansline{The rate of change is decreasing --- each step gains less (or loses more).}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Zero:}}\\[1pt]
-\ansline{An input where the output equals 0; the graph crosses or touches the horizontal axis there.}
+\ansline{An input whose output is 0; the graph meets the horizontal axis there.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[19]
 \begin{hookbox}
-A car pulls away from a stop sign. Two quantities start changing at once:
-its \textit{speed} climbs quickly at first, then levels off near the limit;
-its \textit{distance} from the sign grows slowly at first, then faster and
-faster.
+Two shows go on sale the same morning. Six weeks later both have sold exactly
+600 tickets.
 
-Both quantities are increasing. In words, what makes the two stories
-different?
-\ansline{How fast they change: the speed gains a lot early and then barely gains; the distance gains a little early and then gains more and more. The rate of change tells them apart.}
+\begin{center}
+\begin{tikzpicture}[x=0.52cm, y=0.40cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+  \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\small weeks};
+  \draw[->, thick] (0,0) -- (0,6.5) node[above] {\small hundreds sold};
+  \draw[very thick, plum] plot[smooth] coordinates {(0,0) (1,2.5) (2,4) (3,5) (4,5.6) (5,5.9) (6,6)};
+  \node[below=8pt] at (3,0) {\small\textbf{Show A}};
+\end{tikzpicture}
+\hspace{1.1cm}
+\begin{tikzpicture}[x=0.52cm, y=0.40cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+  \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\small weeks};
+  \draw[->, thick] (0,0) -- (0,6.5) node[above] {\small hundreds sold};
+  \draw[very thick, plum] plot[smooth] coordinates {(0,0) (1,0.1) (2,0.3) (3,0.7) (4,1.6) (5,3.4) (6,6)};
+  \node[below=8pt] at (3,0) {\small\textbf{Show B}};
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.05in}
+Both graphs are increasing. Both end at 600. If you could promote just one of
+these shows for six more weeks, which would you pick --- and what is the word
+you are missing?
+\ansline{Show B. Its weekly sales keep growing, while Show A has almost stopped selling. Both are ``increasing,'' so that word cannot tell them apart; the missing idea is how the \emph{rate} of selling is itself changing.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[20]
 \begin{notesbox}{1. Two Quantities in Tandem}
-A hose fills a tank. As time passes, the volume of water responds --- the two
-quantities \textbf{vary in tandem}, linked by the function rule.
+Every function ties two quantities together. Change the input and the output
+answers --- the two \textbf{vary in tandem}.
+
+\medskip
+\textbf{A tank fills.} A hose runs into an empty tank. As the time $t$
+(minutes) increases, the volume $V(t)$ (gallons) responds.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
@@ -67,196 +97,217 @@ quantities \textbf{vary in tandem}, linked by the function rule.
 \hline
 $t$ (min) & 0 & 2 & 4 & 6 \\
 \hline
-$V$ (gal) & 0 & 8 & 16 & 24 \\
+$V(t)$ (gal) & 0 & 8 & 16 & 24 \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{itemize}[itemsep=4pt]
-  \item The input (independent) quantity is \ans{time (minutes)}; the output
-        (dependent) quantity is \ans{volume (gallons)}.
-  \item Every 2 minutes the tank gains \ans{8} gallons --- a perfectly
-        steady climb.
-  \item As $t$ increases, $V$ \ans{increases} --- and a graph would show it
-        rising left to right.
+  \item The input quantity is \ans{time, in minutes}; the output quantity is
+        \ans{volume, in gallons}.
+  \item Read the table in tandem: every 2 minutes that pass, the tank gains
+        \ans{8} gallons --- the same amount each time.
+  \item Sentence frame: as $t$ increases, $V(t)$ \ans{increases, and it does
+        so at a steady pace}.
 \end{itemize}
+
+\medskip
+A table shows a handful of input--output pairs. A \textbf{graph} shows
+\ans{all of them at once} --- which is why the behaviors in this lesson
+(rising, falling, bending) are things you can \textit{see}.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{notesbox}{2. Increasing and Decreasing}
-$f$ is \textbf{increasing} on an interval when larger inputs give
-\ans{larger} outputs: whenever $a < b$, we get $f(a)$ \ans{$<$} $f(b)$.
+\boxguard[27]
+\begin{notesbox}{2. Question 1 --- Which Way Are the Outputs Going?}
+This is the first of the two questions we ask about every stretch of a
+function.
 
-$f$ is \textbf{decreasing} on an interval when larger inputs give
-\ans{smaller} outputs: whenever $a < b$, we get $f(a)$ \ans{$>$} $f(b)$.
-
-\smallskip
-\textbf{From a graph.} The graph of $f$ is below.
+\begin{itemize}[itemsep=4pt]
+  \item $f$ is \textbf{increasing} on an interval when larger inputs give
+        larger outputs: whenever $a < b$, then $f(a)$ \ans{$<$} $f(b)$.
+        The graph rises left to right.
+  \item $f$ is \textbf{decreasing} on an interval when larger inputs give
+        smaller outputs: whenever $a < b$, then $f(a)$ \ans{$>$} $f(b)$.
+        The graph falls left to right.
+\end{itemize}
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,5);
-  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4,5} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,1) -- (3,5);
-  \draw[very thick, plum] (3,5) -- (6,2);
-  \draw[very thick, plum] (6,2) -- (8,4);
-  \fill[plum] (0,1) circle (2.5pt);
-  \fill[plum] (8,4) circle (2.5pt);
+\begin{tikzpicture}[x=0.62cm, y=0.42cm]
+  \draw[linegray, very thin, step=1] (0,-3) grid (8,3);
+  \draw[->, thick] (0,-3.5) -- (0,3.7) node[above] {\small $h(x)$};
+  \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small $x$};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny, fill=white, inner sep=0.6pt] at (\x,0) {\x};
+  \foreach \y in {-3,-1,1,3} \node[left, font=\small] at (0,\y) {\y};
+  \draw[very thick, plum] (0,-2) -- (2,2);
+  \draw[very thick, plum] (2,2) -- (3,3);
+  \draw[very thick, plum] (3,3) -- (5,0);
+  \draw[very thick, plum] (5,0) -- (6,-3);
+  \draw[very thick, plum] (6,-3) -- (8,-1);
+  \fill[plum] (0,-2) circle (2.5pt);
+  \fill[plum] (8,-1) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \begin{itemize}[itemsep=4pt]
-  \item Increasing for \ans{0} $< x <$ \ans{3} \ and for
-        \ans{6} $< x <$ \ans{8}
-  \item Decreasing for \ans{3} $< x <$ \ans{6}
-  \item Intervals are always named by the \ans{inputs} ($x$-values) ---
-        never by the outputs.
+  \item $h$ is increasing on \ans{$0 < x < 3$} and on \ans{$6 < x < 8$}.
+  \item $h$ is decreasing on \ans{$3 < x < 6$}.
 \end{itemize}
 
-\textbf{Watch out:} decreasing does \textbf{not} mean negative. From $x = 3$
-to $x = 6$ the outputs fall from 5 to 2, yet every output stays
-\ans{positive}.
+\textbf{Two traps to avoid.}
+\begin{itemize}[itemsep=4pt]
+  \item Intervals are named with \ans{inputs} --- $x$-values, never outputs.
+  \item Decreasing does \textbf{not} mean negative. Cocoa cooling from
+        $90^\circ$ to $40^\circ$ is decreasing the whole way, and every
+        output stays \ans{positive}.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{notesbox}{3. Concavity --- How the Change Changes}
-Refill the tank, but leave a drain half-open so it fills fast at first:
+\boxguard[18]
+\begin{notesbox}{3. Question 2 --- How Is the Change Changing?}
+``Increasing'' does not finish the story. Both tanks below fill for 6 minutes
+and both end at 24 gallons --- but they do not fill the same way. Fill in the
+\textbf{gains} and compare.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{Tank A}} \\
 \hline
 $t$ (min) & 0 & 2 & 4 & 6 \\
 \hline
-$V$ (gal) & 0 & 14 & 20 & 24 \\
+$A(t)$ (gal) & 0 & 14 & 20 & 24 \\
+\hline
+gain over the last 2 min & --- & \ans{14} & \ans{6} & \ans{4} \\
 \hline
 \end{tabular}
-\smallskip
-
-\begin{itemize}[itemsep=4pt]
-  \item The gains are \ans{14} , \ans{6} , \ans{4} gallons ---
-        still increasing, but the rate of change is \ans{decreasing}.
-  \item Rate of change decreasing $\Rightarrow$ \textbf{concave}
-        \ans{down}.
-\end{itemize}
-
-A savings account grows the opposite way:
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
+\hspace{0.15cm}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$m$ (months) & 0 & 1 & 2 & 3 \\
+\multicolumn{5}{|c|}{\textbf{Tank B}} \\
 \hline
-$S$ (\$) & 100 & 120 & 145 & 175 \\
+$t$ (min) & 0 & 2 & 4 & 6 \\
+\hline
+$B(t)$ (gal) & 0 & 4 & 10 & 24 \\
+\hline
+gain over the last 2 min & --- & \ans{4} & \ans{6} & \ans{14} \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{itemize}[itemsep=4pt]
-  \item The gains are \ans{20} , \ans{25} , \ans{30} dollars ---
-        the rate of change is \ans{increasing}.
-  \item Rate of change increasing $\Rightarrow$ \textbf{concave}
-        \ans{up}.
+  \item Tank A's gains are \ans{shrinking}, so its rate of change is
+        \ans{decreasing}. We say $A$ is \textbf{concave down}.
+  \item Tank B's gains are \ans{growing}, so its rate of change is
+        \ans{increasing}. We say $B$ is \textbf{concave up}.
 \end{itemize}
 
-\textbf{The two bends.} Label each curve \textit{concave up} or
-\textit{concave down}.
-
-\begin{center}
-\begin{tikzpicture}[x=0.8cm, y=0.6cm]
-  \draw[->, thick] (0,0) -- (3.4,0);
-  \draw[->, thick] (0,0) -- (0,2.8);
-  \draw[very thick, plum] (0,0.2) .. controls (1.8,0.5) .. (3,2.4);
-  \node[below] at (1.6,-0.15) {\small slow, then fast};
-\end{tikzpicture}
-\hspace{0.6in}
-\begin{tikzpicture}[x=0.8cm, y=0.6cm]
-  \draw[->, thick] (0,0) -- (3.4,0);
-  \draw[->, thick] (0,0) -- (0,2.8);
-  \draw[very thick, plum] (0,0.2) .. controls (1.2,2.1) .. (3,2.4);
-  \node[below] at (1.6,-0.15) {\small fast, then slow};
-\end{tikzpicture}
-\end{center}
-
-Left curve: concave \ans{up} \qquad Right curve: concave \ans{down}
-
-\smallskip
-\textbf{Independent questions.} ``Increasing or decreasing?'' and ``concave
-up or down?'' are separate calls --- the half-open-drain tank is
-\ans{increasing} \textit{and} concave \ans{down} at the same time.
+Both tanks are increasing the entire six minutes. Concavity is a
+\textit{second} question, and it is about the \ans{gains}, not the outputs.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{notesbox}{4. Zeros}
-A \textbf{zero} of a function is an input where the output is \ans{0};
-the graph crosses or touches the horizontal axis there.
+\boxguard[19]
+\begin{notesbox}{4. The Four Corners}
+Two questions, two answers apiece --- so there are \ans{four} combinations,
+and every one of them happens in real life.
 
 \smallskip
-\textbf{From a graph.} The graph of $g$ is below.
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|>{\raggedright\arraybackslash}p{0.20\linewidth}|p{0.15\linewidth}|c|>{\raggedright\arraybackslash}p{0.26\linewidth}|}
+\hline
+\textbf{Shape} & \textbf{The situation} & \textbf{Which way?} &
+\textbf{Concave} & \textbf{The rate of change is\ldots} \\
+\hline
+\minicurve{(0,0.2) (1,0.4) (2,0.9) (3,1.7) (4,2.9)} &
+A rumor spreads through a school &
+\ans{Increasing} & \ans{up} & \ans{increasing --- more people each hour} \\
+\hline
+\minicurve{(0,0.2) (1,1.4) (2,2.1) (3,2.6) (4,2.8)} &
+A cold soda warms toward room temperature &
+\ans{Increasing} & \ans{down} & \ans{decreasing --- fewer degrees each minute} \\
+\hline
+\minicurve{(0,2.8) (1,1.6) (2,0.9) (3,0.5) (4,0.3)} &
+Hot cocoa cools toward room temperature &
+\ans{Decreasing} & \ans{up} & \ans{increasing --- fewer degrees lost each minute} \\
+\hline
+\minicurve{(0,2.9) (1,2.7) (2,2.2) (3,1.4) (4,0.2)} &
+A battery drains as more apps are opened &
+\ans{Decreasing} & \ans{down} & \ans{decreasing --- more percent lost each minute} \\
+\hline
+\end{tabular}
+\normalsize
+\smallskip
 
-\begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,4);
-  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small $g(x)$};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,4) -- (2,0);
-  \draw[very thick, plum] (2,0) -- (4,3);
-  \draw[very thick, plum] (4,3) -- (6,0);
-  \draw[very thick, plum] (6,0) -- (8,2);
-  \fill[plum] (0,4) circle (2.5pt);
-  \fill[plum] (8,2) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
+The two middle columns are \ans{independent}: knowing a function is increasing
+tells you nothing about its concavity, and ``concave down'' does \textbf{not}
+mean the function is falling.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[13]
+\begin{notesbox}{5. Zeros --- Where the Output Is 0}
+A \textbf{zero} of a function is an input whose output is \ans{0}. On a graph
+the curve meets the \ans{horizontal} axis there. In Lesson 1.1's language, a
+zero is an answer to ``solve $h(x) = 0$'' --- so it is a \ans{solve} question,
+not an evaluate question.
 
 \begin{itemize}[itemsep=4pt]
-  \item The zeros of $g$ are $x = $ \ans{2} and $x = $ \ans{6}.
-  \item In context a zero is an \textit{event}. If $h(8) = 0$ for the drone
-        flight from Lesson 1.1, the sentence is:
-
-        \vspace{0.02in}
-        \ansline{Eight minutes after launch, the drone's height is 0 meters --- it has landed.}
+  \item From the graph in Part 2, the zeros of $h$ are $x = $ \ans{1} and
+        $x = $ \ans{5}.
+  \item Spiral from 1.1 --- that same graph has domain \ans{0} $\le x \le$
+        \ans{8} and range \ans{$-3$} $\le y \le$ \ans{3}.
 \end{itemize}
+
+\textbf{A zero is an event.} Let $D(t)$ be a drone's height in meters $t$
+seconds after takeoff. Given $D(48) = 0$, write what happened in a sentence.
+
+\vspace{0.05in}
+\ansline{Forty-eight seconds after takeoff the drone is back on the ground --- it has landed.}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[24]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item A tank is draining. The table shows the water remaining.
+  \item A snowbank melts. The table gives its depth $S$ in inches after $d$
+        days.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{tabular}{|c|c|c|c|c|}
         \hline
-        $t$ (min) & 0 & 2 & 4 & 6 \\
+        $d$ (days) & 0 & 1 & 2 & 3 \\
         \hline
-        $w$ (gal) & 30 & 24 & 16 & 6 \\
+        $S(d)$ (in.) & 24 & 18 & 14 & 12 \\
         \hline
         \end{tabular}
         \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Is $w$ increasing or decreasing? \ans{decreasing}
-          \item The drops are 6, then \ans{8} , then \ans{10} gallons
-                --- the water is draining faster and faster, so $w$ is
-                concave \ans{down}.
-          \item If $w(7) = 0$, what does that zero mean here?
+          \item The daily changes are \ans{$-6$}, \ans{$-4$}, and
+                \ans{$-2$}.
+          \item $S$ is \ans{decreasing} and concave \ans{up}.
+          \item Justify the concavity using the changes, not the shape.
 
-                \vspace{0.02in}
-                \ansline{Seven minutes after the drain opens, the tank is empty.}
+                \vspace{0.05in}
+                \ansline{Each day the snowbank loses less than the day before, so the rate of change is rising: $-6$, then $-4$, then $-2$.}
+        \end{enumerate}
+
+  \item Look back at the graph of $h$ in Part 2.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $h$ is decreasing on \ans{$3 < x < 6$}.
+          \item The zeros of $h$ are $x = $ \ans{1} and $x = $ \ans{5}.
+          \item $h(2) = $ \ans{2} \quad (an evaluate question --- from 1.1)
         \end{enumerate}
 \end{enumerate}
 \end{practicebox}
