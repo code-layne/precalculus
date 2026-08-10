@@ -12,103 +12,127 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item Let $g(x) = x^2 - 4x$. Find the average rate of change over each
-      interval.
+\item Let $f(x) = x^2 - 4x$. Find the average rate of change over each
+      interval. Watch the signs --- they do not come out the same.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Over $[1, 4]$:
-
-        \begin{work}
-          g(1) &= (1)^2 - 4(1) \\
-               &= -3 \\
-          g(4) &= (4)^2 - 4(4) \\
-               &= 0 \\
-          \text{AROC} &= \frac{0 - (-3)}{4 - 1} \\
-                      &= 1
-        \end{work}
-
-        AROC $= $ \blank{1.8cm}
-
   \item Over $[0, 2]$:
 
         \begin{work}
-          g(0) &= 0 \\
-          g(2) &= (2)^2 - 4(2) \\
-               &= -4 \\
-          \text{AROC} &= \frac{-4 - 0}{2 - 0} \\
+          \text{AROC} &= \frac{f(2) - f(0)}{2 - 0} \\
+                      &= \frac{-4 - 0}{2} \\
                       &= -2
         \end{work}
 
-        AROC $= $ \blank{1.8cm}
+        Answer: \blank{2.4cm}
+
+  \item Over $[2, 5]$:
+
+        \begin{work}
+          \text{AROC} &= \frac{f(5) - f(2)}{5 - 2} \\
+                      &= \frac{5 - (-4)}{3} \\
+                      &= 3
+        \end{work}
+
+        Answer: \blank{2.4cm}
 \end{enumerate}
 
-\item The table gives a town's population $P(t)$.
+\item A town's population $P$, in thousands, is recorded every ten years.
 
 \smallskip
-\begin{tabular}{|c|c|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-Year & 1990 & 2000 & 2010 & 2020 \\
+year & 1980 & 1990 & 2000 & 2010 & 2020 \\
 \hline
-$P(t)$ & 12{,}000 & 15{,}000 & 21{,}000 & 23{,}000 \\
+$P$ (thousands) & 12 & 18 & 27 & 33 & 36 \\
+\hline
+AROC (thousands per year) & --- & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item AROC from 1990 to 2000: \blank{2.4cm} people per year
-  \item AROC from 2010 to 2020: \blank{2.4cm} people per year
-  \item Which decade had the fastest growth? \quad \blank{2.8cm}
+  \item Which decade grew fastest? \blank{4cm}
+  \item Interpret the last entry of the AROC row in a sentence, with units.
+
+        \vspace{0.05in}
+        \writeline
 \end{enumerate}
 
-\item A hiker's elevation $E(t)$, in feet $t$ hours into a hike, has an
-      average rate of change of $-40$ feet per hour over $[2, 5]$. Write one
-      sentence explaining what this means about the hike.
+\item $W(t)$ is the water in a rain barrel, in gallons, $t$ days after it was
+      set out. The dashed lines are drawn for you.
 
-      \vspace{0.05in}
-      \writelines{2}
+\begin{center}
+\begin{tikzpicture}[x=0.85cm, y=0.42cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,9);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $t$ (days)};
+  \draw[->, thick] (0,0) -- (0,9.7) node[above] {\small $W(t)$ (gal)};
+  \foreach \x in {1,2,3,4,5,6} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y in {2,4,6,8} \node[left, font=\small] at (0,\y) {\y};
+  \draw[dashed, thick, goldacc] (0,2) -- (3,8);
+  \draw[dashed, thick, goldacc] (3,8) -- (6,5);
+  \draw[very thick, plum] plot[smooth] coordinates
+    {(0,2) (1,4.5) (2,6.6) (3,8) (4,7.4) (5,6.2) (6,5)};
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (3,8) circle (2.5pt);
+  \fill[plum] (6,5) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
 
-\boxguard[16]
-\item A function $q$ has the table below. Fill in the AROC row, then answer.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Average rate of change over $[0,3]$: \blank{4cm}
+  \item Average rate of change over $[3,6]$: \blank{4cm}
+  \item What does the sign of your answer to (b) say about the barrel?
+
+        \vspace{0.05in}
+        \writeline
+\end{enumerate}
+
+\item Two functions are sampled at $x = 0, 1, 2, 3, 4$. Fill in the average
+      rate of change over each unit interval.
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$q(x)$ & 1 & 2 & 5 & 10 & 17 \\
+$A(x)$ & 5 & 8 & 13 & 20 & 29 \\
+\hline
+AROC of $A$ & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\hline
+$B(x)$ & 20 & 17 & 14 & 11 & 8 \\
+\hline
+AROC of $B$ & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
 \hline
 \end{tabular}
 \smallskip
 
-AROCs over $[0,1], [1,2], [2,3], [3,4]$: \quad
-\blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
-
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Each AROC changes by \blank{1.2cm} --- so $q$ is
-        \textbf{linear} / \textbf{quadratic} (circle one).
-  \item The AROCs are increasing, so the graph of $q$ is concave
-        \blank{1.6cm}.
+  \item $A$ is a \blank{2.4cm} function, and it is concave \blank{1.6cm}.
+  \item $B$ is a \blank{2.4cm} function, with slope \blank{1.6cm}.
 \end{enumerate}
 
-\item The table shows values of a function $f$. What is the average rate of
-      change of $f$ over $[3, 7]$?
+\item The table gives values of a function $g$. What is the average rate of
+      change of $g$ over the interval $[2, 6]$?
 
 \smallskip
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$x$ & 1 & 3 & 5 & 7 \\
+$x$ & 0 & 2 & 4 & 6 \\
 \hline
-$f(x)$ & 4 & 10 & 22 & 40 \\
+$g(x)$ & 10 & 16 & 30 & 52 \\
 \hline
 \end{tabular}
 \smallskip
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $7.5$
-  \item $30$
-  \item $6$
-  \item $10$
+  \item $36$
+  \item $9$
+  \item $7$
+  \item $-9$
 \end{enumerate}
 
 \end{enumerate}
@@ -117,9 +141,23 @@ $f(x)$ & 4 & 10 & 22 & 40 \\
 
 \boxguard
 \begin{extensionbox}
-For $f(x) = x^2$, use $f(3.1) = 9.61$ and $f(3.01) = 9.0601$ to compute the
-AROC over $[3, 3.1]$ and over $[3, 3.01]$. The answers creep toward one
-value --- the rate of change \textit{at} $x = 3$. What is it?
+For $f(x) = x^2$, the average rates of change over shrinking intervals
+starting at $x = 3$ are computed below.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+interval & $[3, 3.5]$ & $[3, 3.1]$ & $[3, 3.01]$ \\
+\hline
+AROC & 6.5 & 6.1 & 6.01 \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+What number are these closing in on, and what would it measure?
 
 \vspace{0.05in}
 \writelines{2}
@@ -127,11 +165,12 @@ value --- the rate of change \textit{at} $x = 3$. What is it?
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.4}
-Rates measure how a graph moves; next we ask how a whole graph can be
-\textit{moved}. Lesson 1.4, \textit{Transformations of Functions}, slides,
-flips, and stretches graphs --- and shows how the formula records each move.
+Today you measured how fast a function changes. Lesson 1.4,
+\textit{Transformations of Functions}, leaves rates behind and works on
+shapes: what happens to a graph when you shift it, flip it, or stretch it ---
+and how the formula records every one of those moves.
 \end{notesbox}
 
 \end{document}

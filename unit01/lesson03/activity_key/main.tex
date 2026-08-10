@@ -1,7 +1,7 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Group Activity (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.3 — Group Activity (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,159 +10,201 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Water Balloon Launch]{plumlight}
+\begin{scenariobox}[The Rocket Club Launch]{plumlight}
 \small
-A water balloon is launched straight up from the ground. The function $h$
-gives its height in feet $t$ seconds after launch. Every tier uses this same
-table and pre-drawn graph --- no drawing required.
+The rocket club launches a water rocket straight up from the practice field.
+The function $h$ gives the rocket's height in \textbf{feet} above the field,
+$t$ seconds after launch. Every tier uses this same table and graph; nothing
+is drawn.
 
-\smallskip
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$t$ (seconds) & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$h(t)$ (feet) & 0 & 48 & 64 & 48 & 0 \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[x=0.95cm, y=0.30cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,9);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $t$ (s)};
+  \draw[->, thick] (0,0) -- (0,9.7) node[above] {\small $h(t)$ (ft)};
+  \foreach \x in {1,2,3,4,5,6} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y/\lab in {3/48, 6/96, 9/144} \node[left, font=\small] at (0,\y) {\lab};
+  \draw[very thick, plum] plot[smooth] coordinates
+    {(0,0) (1,5) (2,8) (3,9) (4,8) (5,5) (6,0)};
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (3,9) circle (2.5pt);
+  \fill[plum] (6,0) circle (2.5pt);
+\end{tikzpicture}
 \end{center}
 
+\renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tikzpicture}[x=1.1cm, y=0.55cm]
-  \draw[linegray, very thin, xstep=1, ystep=1] (0,0) grid (4,4);
-  \draw[->, thick] (0,0) -- (4.5,0) node[below right] {\small $t$ (s)};
-  \draw[->, thick] (0,0) -- (0,4.6) node[above] {\small $h(t)$ (ft)};
-  \foreach \x in {1,2,3,4} \node[below] at (\x,0) {\small \x};
-  \node[left] at (0,1) {\small 16};
-  \node[left] at (0,2) {\small 32};
-  \node[left] at (0,3) {\small 48};
-  \node[left] at (0,4) {\small 64};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0,0) (1,3) (2,4) (3,3) (4,0)};
-  \fill[plum] (0,0) circle (2.5pt);
-  \fill[plum] (1,3) circle (2.5pt);
-  \fill[plum] (2,4) circle (2.5pt);
-  \fill[plum] (3,3) circle (2.5pt);
-  \fill[plum] (4,0) circle (2.5pt);
-\end{tikzpicture}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+$t$ (s) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+$h(t)$ (ft) & 0 & 80 & 128 & 144 & 128 & 80 & 0 \\
+\hline
+\end{tabular}
 \end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Fill in the blanks to compute the AROC over $[0, 1]$:
+  \item Read two heights straight off the table.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $h(0) = $ \ans{0} feet \quad (the launch pad)
+          \item $h(3) = $ \ans{144} feet \quad (the highest point)
+        \end{enumerate}
+
+  \item The first second of flight. Fill in each piece.
 
         \vspace{0.05in}
-        AROC $= \dfrac{h(1) - h(0)}{1 - 0} = \dfrac{{\color{keyred}\mathbf{48}} - {\color{keyred}\mathbf{0}}}{1 - 0}
-        = $ \ans{48} feet per second
-
-  \item Now the AROC over $[1, 2]$:
+        Change in height: \ans{80} $-$ \ans{0} $=$ \ans{80} feet
+        \qquad Change in time: \ans{1} second
 
         \vspace{0.05in}
-        AROC $= \dfrac{h(2) - h(1)}{2 - 1} = $ \ans{16} feet per second
+        Average rate of change over $[0,1]$ $=$ \ans{80 feet per second}
 
-  \item During which second did the balloon climb \textbf{faster} --- the
-        first ($0$ to $1$) or the second ($1$ to $2$)? \quad \ans{the first}
+  \item The fifth second of flight.
 
-  \item Between $t = 2$ and $t = 3$, is the balloon rising or falling? \quad
-        \textbf{Rising} / \ans{Falling}
+        \begin{work}
+          \text{AROC} &= \frac{h(5) - h(4)}{5 - 4} \\
+                      &= \frac{80 - 128}{1} \\
+                      &= -48
+        \end{work}
+
+        The answer is \ans{$-48$ feet per second}. Its sign is negative, so during that
+        second the rocket is \textbf{rising} / \ans{falling}. (Circle one.)
+
+  \item Which second did the rocket climb faster, $t = 0$ to $t = 1$ or
+        $t = 2$ to $t = 3$? Say how you know.
+
+        \vspace{0.05in}
+        \ansline{The first second. It gained 80 feet in that second (80 ft/s) but only 16 feet from $t=2$ to $t=3$ (16 ft/s).}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Complete the AROC table.
+  \item Fill in the average rate of change over every one-second interval.
 
         \smallskip
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|c|c|c|c|}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        \textbf{Interval} & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ \\
+        interval & $[0,1]$ & $[1,2]$ & $[2,3]$ & $[3,4]$ & $[4,5]$ & $[5,6]$ \\
         \hline
-        \textbf{AROC (ft/s)} & \ans{48} & \ans{16} & \ans{$-16$} & \ans{$-48$} \\
+        AROC (ft/s) & \ans{80} & \ans{48} & \ans{16} & \ans{$-16$} & \ans{$-48$} & \ans{$-80$} \\
         \hline
         \end{tabular}
+        \end{center}
+        \smallskip
 
-  \item Write one sentence interpreting the AROC over $[2, 3]$ --- include
-        its sign and its units.
+        Work space --- show the division for at least two of the six:
 
-        \vspace{0.05in}
-        \ansline{On average the balloon fell 16 feet each second between $t=2$ and $t=3$ ---}
-        \ansline{the negative sign says height decreases as time increases.}
+        \vspace{0.75in}
 
-  \item Look at your table: each AROC changes by the same amount from one
-        interval to the next. That step is \ans{$-32$} ft/s per second ---
-        so $h$ is a \ans{quadratic} function, and its graph is concave
-        \ans{down}.
-
-  \item Compute the AROC over the whole flight, $[0, 4]$. \quad
-        \ans{0} ft/s
-
-        The balloon clearly moved --- why is this answer technically correct
-        but misleading?
+  \item Write one sentence interpreting the $-16$ in context, with units.
 
         \vspace{0.05in}
-        \ansline{The net change is $0 - 0 = 0$: it ended at its starting height. The average}
-        \ansline{erases the whole up-and-down story in between.}
+        \ansline{Between 3 and 4 seconds the rocket falls at an average of 16 feet per second.}
+
+  \item Step from each rate to the next one. The change is always
+        \ans{$-32$} ft/s, so the average rates of change are themselves
+        \ans{linear} --- which makes $h$ a \ans{quadratic} function.
+
+  \item Now take the average over the \textbf{whole flight}.
+
+        \begin{work}
+          \text{AROC} &= \frac{h(6) - h(0)}{6 - 0} \\
+                      &= \frac{0 - 0}{6} \\
+                      &= 0
+        \end{work}
+
+        This answer is correct. Explain what it erases --- the rocket did not
+        sit on the pad for six seconds.
+
+        \vspace{0.05in}
+        \ansline{It only compares the launch height to the landing height, and both are 0 feet. The 144-foot climb and the fall back happen entirely between the endpoints, where the average never looks.}
+
+  \item The climb and the fall, taken whole.
+
+        \vspace{0.05in}
+        AROC over $[0,3]$ $=$ \ans{48 ft/s} \qquad
+        AROC over $[3,6]$ $=$ \ans{$-48$ ft/s}
+
+        \vspace{0.05in}
+        These two are exact opposites. Say why that had to happen, using the
+        heights at $t = 0$, $t = 3$, and $t = 6$.
+
+        \vspace{0.05in}
+        \ansline{The rocket climbed 144 feet in 3 seconds and fell the same 144 feet in the next 3 seconds, so the changes in output are negatives of each other over runs of equal length.}
+
+  \item Across the whole flight the rates of change are \ans{decreasing}, so the
+        graph of $h$ is concave \ans{down}.
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item How fast is the balloon moving \textit{at the instant} $t = 1$? An
-        average needs two points --- so shrink the interval. Use these extra
-        values:
+  \item Chop the interval at $t = 1$ finer and finer. These average rates of
+        change are computed for you.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{|c|c|c|}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
         \hline
-        $t$ & 1.5 & 1.1 \\
+        interval & $[1,2]$ & $[1,1.5]$ & $[1,1.1]$ & $[1,1.01]$ \\
         \hline
-        $h(t)$ & 60 & 51.04 \\
+        AROC (ft/s) & 48 & 56 & 62.4 & 63.84 \\
         \hline
         \end{tabular}
+        \end{center}
         \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item AROC over $[1, 2]$: \ans{16} ft/s
-          \item AROC over $[1, 1.5]$: \ans{24} ft/s
-          \item AROC over $[1, 1.1]$: \ans{30.4} ft/s
+          \item These are closing in on \ans{64} ft/s.
+          \item What would that number measure? (Careful --- it is not an
+                average over any interval.)
+
+                \vspace{0.05in}
+                \ansline{How fast the rocket is rising at the single instant $t = 1$ --- its rate of change at that point, not over a stretch of time.}
         \end{enumerate}
 
-  \item The AROCs in question 1 are closing in on a value. Estimate the
-        balloon's speed at the instant $t = 1$: about \ans{32} ft/s.
-        Why does a smaller interval give a better estimate?
+  \item Somewhere in this flight the rate of change passes through zero.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item It happens at $t = $ \ans{3} seconds.
+          \item Say what the rocket is doing at that instant, and why a rate
+                of change of zero there does \textit{not} mean the same thing
+                as the zero you found over $[0,6]$.
+
+                \vspace{0.05in}
+                \ansline{At the top the rocket is momentarily neither rising nor falling. That zero describes one instant; the $[0,6]$ zero is an average whose climb and fall cancelled.}
+        \end{enumerate}
+
+  \item Spiral back to 1.1. The rocket is 80 feet up at $t = 1$ and again at
+        $t = 5$. Is \textbf{time} a function of \textbf{height}?
 
         \vspace{0.05in}
-        \ansline{A smaller interval leaves less room for the speed to change inside it, so the}
-        \ansline{average over the interval stays closer to the speed at the instant itself.}
-
-  \item At what instant is the balloon's rate of change equal to zero, and
-        what is happening physically at that moment?
-
-        \vspace{0.05in}
-        \ansline{At $t = 2$ seconds --- the top of the flight. The balloon has stopped rising}
-        \ansline{and is about to fall, so for an instant its height is not changing.}
+        \ansline{No. The input 80 feet would have to give two different outputs, $t = 1$ and $t = 5$, so height does not determine time.}
 \end{enumerate}
 \end{tcolorbox}
 
