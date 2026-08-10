@@ -10,26 +10,52 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Courtyard Committee]{plumlight}
+\begin{scenariobox}[The Cardboard Bin]{plumlight}
 \small
-The school's courtyard committee has \textbf{60 feet of metal edging} for a new
-rectangular flower bed. One long side of the bed runs against the building wall,
-so that side needs no edging at all --- only the two ends and the front are
-edged. The committee wants the largest possible planting area.
+The recycling club has a stack of flat cardboard sheets, each
+\textbf{24 inches by 18 inches}. To make an open-top bin they cut a square of
+side $x$ inches out of each corner, fold the four flaps up, and tape the
+corners. They want the bin that holds the most.
 
 \smallskip
-Let $w$ be the width of the bed in feet (the two short ends) and $\ell$ the
-length along the wall. The committee measured five trial layouts before anyone
-did any algebra:
+The only thing the club can actually change is \textbf{how big a square they
+cut}. Every other measurement of the bin follows from that one decision.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.19cm, y=0.19cm]
+  \fill[lilac] (0,0) rectangle (24,18);
+  \fill[goldbg] (0,0)  rectangle (3,3);
+  \fill[goldbg] (21,0) rectangle (24,3);
+  \fill[goldbg] (0,15) rectangle (3,18);
+  \fill[goldbg] (21,15) rectangle (24,18);
+  \draw[goldacc, thick] (0,0)  rectangle (3,3);
+  \draw[goldacc, thick] (21,0) rectangle (24,3);
+  \draw[goldacc, thick] (0,15) rectangle (3,18);
+  \draw[goldacc, thick] (21,15) rectangle (24,18);
+  \draw[dashed, slate] (3,0) -- (3,18);
+  \draw[dashed, slate] (21,0) -- (21,18);
+  \draw[dashed, slate] (0,3) -- (24,3);
+  \draw[dashed, slate] (0,15) -- (24,15);
+  \draw[very thick, plum] (0,0) rectangle (24,18);
+  \node[font=\tiny] at (1.5,1.5) {$x$};
+  \node[plum, below, font=\small] at (12,0) {24 in};
+  \node[plum, left,  font=\small] at (0,9) {18 in};
+  \node[slate, font=\small\itshape] at (12,9) {the base of the bin};
+\end{tikzpicture}
+\end{center}
+
+\smallskip
+The club built six test bins and measured the volume of each.
 
 \smallskip
 \begin{center}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-$w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+$x$ (in) & 1 & 2 & 3 & 4 & 5 & 6 \\
 \hline
-$A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+$V$ (in$^3$) & 352 & 560 & 648 & 640 & 560 & 432 \\
 \hline
 \end{tabular}
 \end{center}
@@ -37,182 +63,207 @@ $A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[18]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Check the input row first.} Are the widths equally spaced?
-        \blank{2cm} \quad By how much each step? \blank{2cm}
+  \item \textbf{Name the question.} In the club's table, which quantity is the
+        question (the input) and which is the answer (the output)?
 
-  \item \textbf{Take the differences.} Fill in both rows.
+        Question: \blank{3cm} \qquad Answer: \blank{3cm}
+
+  \item \textbf{Check the question row first.} Are the cut sizes equally
+        spaced? \blank{2cm} \quad By how much each step? \blank{2cm}
+
+  \item \textbf{Take the differences.} Keep going until a row is constant.
 
         \smallskip
         \renewcommand{\arraystretch}{1.5}
         \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-        $w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+        $x$ (in) & 1 & 2 & 3 & 4 & 5 & 6 \\
         \hline
-        $A$ (ft$^2$) & 250 & 400 & 450 & 400 & 250 \\
+        $V$ (in$^3$) & 352 & 560 & 648 & 640 & 560 & 432 \\
         \hline
-        1st difference & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        1st & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
         \hline
-        2nd difference & --- & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        2nd & --- & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+        \hline
+        3rd & --- & --- & --- & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item \textbf{Name it.} The first differences are \blank{3cm}, but the second
-        differences are all \blank{1.6cm}, so this data is best modeled by a
-        \blank{2.6cm} function.
+  \item \textbf{Name it.} The \blank{1.2cm} differences are the first constant
+        row, so the volume is modeled by a \blank{2.4cm} function --- and that
+        matches the context, because a volume multiplies \blank{1.2cm}
+        lengths.
 
   \item \textbf{Match each context to its model type.} Write a letter in each
         blank: \textbf{L} linear, \textbf{Q} quadratic, \textbf{C} cubic,
         \textbf{R} rational, \textbf{P} piecewise.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The volume of a cube-shaped bin, as a function of its edge
-                length. \blank{1.2cm}
+          \item The volume of a cube-shaped storage bin, as a function of its
+                edge length. \blank{1.2cm}
           \item A phone plan costs \$30 a month plus \$5 for each extra
                 gigabyte. \blank{1.2cm}
           \item The brightness of a lamp, which is inversely proportional to
                 the square of your distance from it. \blank{1.2cm}
           \item A garage charges \$4 for the first hour and \$2 for every hour
                 after that. \blank{1.2cm}
-          \item The area of a rug whose length is always twice its width, as a
-                function of the width. \blank{1.2cm}
+          \item The area of a rug whose length is always \textbf{twice} its
+                width, as a function of the width. \blank{1.2cm}
+          \item The area of a rug whose length is \textbf{fixed at 9 feet}, as
+                a function of the width. \blank{1.2cm}
         \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The committee wants a formula, not five measurements.
+Six measurements are not a model. Build one.
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Write the constraint.} Two ends and one front use all 60 feet
-        of edging.
+  \item \textbf{Make every dimension answer to the cut.} The question is $x$,
+        the size of the corner square. Write each dimension of the finished bin
+        in terms of $x$.
 
-        \blank{1cm} $w \; + \;$ \blank{1cm} $= 60$ \qquad so \quad $\ell = $
-        \blank{3.2cm}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.30\linewidth} X @{}}
+        \hline
+        height & \blank{4cm} \\
+        \hline
+        base length & \blank{4cm} \\
+        \hline
+        base width & \blank{4cm} \\
+        \hline
+        \end{tabularx}
+        \end{center}
 
-  \item \textbf{Substitute.} Area is $A = w \cdot \ell$. Build the model.
-
-        \begin{work}
-          A(w) &= w(60 - 2w) \\
-               &= 60w - 2w^2
-        \end{work}
-
-        $A(w) = $ \blank{4cm}
-
-  \item \textbf{Restrict the domain.} The width and the length must both be
-        positive:
-
-        \blank{1.2cm} $< w <$ \blank{1.2cm}
-
-        Why that upper end? \blank{6cm}
-
-  \item \textbf{Check against the committee's table.} Evaluate the model at two
-        of the measured widths.
+  \item \textbf{Substitute into the quantity you want.} Volume is
+        height $\times$ length $\times$ width.
 
         \begin{work}
-          A(10) &= 60(10) - 2(10)^2 \\
-                &= 600 - 200 \\
-                &= 400 \\
-          A(15) &= 60(15) - 2(15)^2 \\
-                &= 900 - 450 \\
-                &= 450
+          V(x) &= x(24 - 2x)(18 - 2x) \\
+               &= x(432 - 84x + 4x^2) \\
+               &= 4x^3 - 84x^2 + 432x
         \end{work}
 
-        $A(10) = $ \blank{1.8cm} \qquad $A(15) = $ \blank{1.8cm} \qquad
-        Do these match the table? \blank{1.8cm}
+        $V(x) = $ \blank{5cm}
 
-  \item \textbf{Find the largest bed.} For $A(w) = aw^2 + bw$ the vertex is at
-        $w = -\dfrac{b}{2a}$.
+  \item \textbf{Check it against the club's table.}
 
         \begin{work}
-          w &= -\frac{60}{2(-2)} \\
-            &= 15
+          V(3) &= 3(24 - 6)(18 - 6) \\
+               &= 3(18)(12) \\
+               &= 648
         \end{work}
 
-        Best width $= $ \blank{1.6cm} ft, \quad length $= $ \blank{1.6cm} ft,
-        \quad area $= $ \blank{2cm} ft$^2$.
+        $V(3) = $ \blank{2cm} in$^3$ \qquad Does it match the table?
+        \blank{1.8cm}
+
+  \item \textbf{Which questions is the club allowed to ask?} The cut must be
+        positive, and both base dimensions must stay positive.
+
+        \blank{1.2cm} $< x <$ \blank{1.2cm}
+
+        Which of the two base dimensions set the upper end, and why?
+
+        \vspace{0.05in}
+        \writeline
+
+  \item \textbf{Find the best bin.} From the table, the largest volume is
+        somewhere between $x = $ \blank{1cm} and $x = $ \blank{1cm}. Test the
+        halfway cut.
+
+        \begin{work}
+          V(3.5) &= 3.5(24 - 7)(18 - 7) \\
+                 &= 3.5(17)(11) \\
+                 &= 654.5
+        \end{work}
+
+        $V(3.5) = $ \blank{2cm} in$^3$, which beats \textbf{both} table
+        entries. A model answers questions nobody measured.
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Two average rates of change --- with units.} Use
-        $A(w) = 60w - 2w^2$.
+  \item \textbf{Two average rates of change --- with units.} Use the club's
+        table.
 
         \begin{work}
-          \frac{A(10) - A(5)}{10 - 5} &= \frac{400 - 250}{5} \\
-                                      &= 30 \\
-          \frac{A(20) - A(15)}{20 - 15} &= \frac{400 - 450}{5} \\
-                                        &= -10
+          \frac{V(3) - V(1)}{3 - 1} &= \frac{648 - 352}{2} \\
+                                    &= 148 \\
+          \frac{V(6) - V(4)}{6 - 4} &= \frac{432 - 640}{2} \\
+                                    &= -104
         \end{work}
 
-        On $[5, 10]$: \blank{1.6cm} \qquad On $[15, 20]$: \blank{1.6cm}
+        On $[1, 3]$: \blank{1.6cm} \qquad On $[4, 6]$: \blank{1.6cm}
 
         Units: \blank{6cm}
 
-        Explain what the change of sign tells the committee.
+        What does the change of sign tell the club about the best cut?
 
         \vspace{0.05in}
         \writeline
 
-  \item \textbf{A code rule changes the answer.} The building code requires a
-        walkway, so the bed's width must be \textbf{at least 18 feet}. The new
-        domain is $18 \le w < 30$.
+  \item \textbf{Same sheet, a different answer.} The shipping company does not
+        care about volume --- it charges by the \textbf{footprint}, the area of
+        the bin's base.
 
         \begin{work}
-          A(18) &= 60(18) - 2(18)^2 \\
-                &= 1080 - 648 \\
-                &= 432
+          B(x) &= (24 - 2x)(18 - 2x) \\
+               &= 432 - 84x + 4x^2
         \end{work}
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Is the old best width $w = 15$ still allowed? \blank{2cm}
-          \item $A(18) = $ \blank{2cm} ft$^2$
-          \item On $18 \le w < 30$ the area only \blank{2.6cm} as $w$ grows, so
-                the largest legal bed is at $w = $ \blank{1.6cm}.
-          \item In one sentence: what changed the answer --- the model, or the
-                domain?
+          \item $B(x) = $ \blank{4.6cm}
+          \item $B(3) = $ \blank{2cm} in$^2$
+          \item The volume model was \blank{1.8cm} and this one is
+                \blank{2.2cm} --- from the \textbf{same} sheet of cardboard.
+                The question is still the cut $x$, so what changed?
 
                 \vspace{0.05in}
                 \writeline
         \end{enumerate}
 
-  \item \textbf{A different kind of model (a look ahead to Unit 3).} A lamp's
-        brightness $L$ is \textbf{inversely proportional to the square} of the
-        distance $d$ in meters: $L = \dfrac{k}{d^2}$. At $d = 2$ m the meter
-        reads $L = 90$.
+  \item \textbf{Now change the question (a look ahead to Unit 3).} The club
+        decides every bin must hold exactly \textbf{648 in$^3$}. The question
+        becomes the footprint $B$, and the answer is the height $h$ the bin
+        needs.
 
         \begin{work}
-          90 &= \frac{k}{2^2} \\
-           k &= 360 \\
-        L(6) &= \frac{360}{6^2} \\
-             &= 10
+          h \cdot B &= 648 \\
+                  h &= \frac{648}{B} \\
+             h(162) &= \frac{648}{162} \\
+                    &= 4
         \end{work}
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $k = $ \blank{2cm} \qquad so $L(d) = $ \blank{3cm}
-          \item $L(6) = $ \blank{2cm}
-          \item Domain restriction: $d$ \blank{2.4cm}, because
-                \blank{5cm}
+          \item $h(B) = $ \blank{2.6cm} \qquad Model type: \blank{2.4cm}
+          \item A sheet cut to give a footprint of 162 in$^2$ needs a height of
+                \blank{1.6cm} inches.
+          \item As the footprint grows, the required height \blank{2.2cm},
+                because the question sits \blank{2.4cm}.
+          \item Domain restriction: $B$ \blank{2cm}, because \blank{4cm}
         \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}

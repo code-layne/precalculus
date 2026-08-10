@@ -19,254 +19,297 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Eighty Feet of Fence and a Barn}
-  \sectionlabel[goldacc]{Vote First, Algebra Second}
+  \plumheader{Hook: Two Notebooks, One Pen}
+  \sectionlabel[goldacc]{80 Feet of Fence, One Side Along the Barn}
 
-  The garden club has exactly \textbf{80 feet of fencing} for a rectangular pen.
-  One whole side runs along the barn wall --- that side needs \textbf{no fence at
-  all}.
+  Ana and Ben walked the field and measured the \textbf{same five trial pens}.
+  Each wrote down a different thing.
 
-  \bigskip
-  \begin{columns}[T]
+  \smallskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Ana's notebook: width \(\to\) area}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          \(w\) (ft)      & 5 & 10 & 15 & 20 & 25 \\
+          \(A\) (ft\(^2\)) & 350 & 600 & 750 & \textbf{800} & 750 \\
+        \end{tabular}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Ben's notebook: length \(\to\) area}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          \(\ell\) (ft)   & 30 & 40 & 50 & 60 & 70 \\
+          \(A\) (ft\(^2\)) & 750 & \textbf{800} & 750 & 600 & 350 \\
+        \end{tabular}
+      \end{block}
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    Same five pens. Same five areas. Two tables that look nothing alike.\\
+    \textbf{Which member recorded the pen correctly?}
+  \end{center}
+\end{frame}
+
+% SECTION 1 — PICK THE QUESTION
+\begin{frame}[t, plain]
+  \plumheader{1. Pick the Question}
+  \sectionlabel[redacc]{The Whole Lesson in One Decision}
+
+  \begin{columns}[T, onlytextwidth]
     \column{0.46\textwidth}
-      \begin{block}{Question 1}
-        Should the pen be a \textbf{square}? Vote now, before anyone computes
-        anything.
-      \end{block}
-    \column{0.46\textwidth}
-      \begin{block}{Question 2}
-        What \textbf{kind} of function turns a width into an area --- and how
-        would you know before you built it?
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{Today we answer that twice: from a table of measurements, and from the
-  fencing constraint itself. The two answers had better agree.}
-\end{frame}
-
-% SECTION 1 — READING THE MODEL OFF A TABLE
-\begin{frame}[t, plain]
-  \plumheader{1. Reading the Model Off a Table}
-
-  \sectionlabel[redacc]{Check the Input Row First --- Differences Need Equal Spacing}
-
-  \begin{columns}[T]
-    \column{0.52\textwidth}
       \begin{center}
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      \(x\) & 0 & 1 & 2 & 3 & 4 \\
-      \hline
-      \(y\) & 5 & 8 & 11 & 14 & 17 \\
-      \hline
-      1st & --- & 3 & 3 & 3 & 3 \\
-      \hline
-      \end{tabular}
-
-      \medskip
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      \(w\) (ft) & 5 & 10 & 15 & 20 & 25 \\
-      \hline
-      \(A\) (ft\(^2\)) & 350 & 600 & 750 & 800 & 750 \\
-      \hline
-      1st & --- & 250 & 150 & 50 & \(-50\) \\
-      \hline
-      2nd & --- & --- & \(-100\) & \(-100\) & \(-100\) \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-    \column{0.44\textwidth}
-      \begin{block}{The decision tree}
-        1st differences constant \(\Rightarrow\) \textbf{linear} \\[3pt]
-        2nd differences constant \(\Rightarrow\) \textbf{quadratic} \\[3pt]
-        3rd differences constant \(\Rightarrow\) \textbf{cubic} \\[3pt]
-        \(n\)th constant \(\Rightarrow\) degree \(n\)
-      \end{block}
-
-      \medskip
-      \begin{block}{What it means}
-        Constant \textbf{first} differences: the \textit{amount} of change
-        repeats.\\[3pt]
-        Constant \textbf{second} differences: the \textit{rate} of change is
-        changing steadily.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 2 — READING THE MODEL OFF THE CONTEXT
-\begin{frame}[t, plain]
-  \plumheader{2. Reading the Model Off the Context}
-
-  No table? The description carries the clue.
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.54\textwidth}
-      \begin{center}
-      \begin{tabular}{|l|l|}
-      \hline
-      \textbf{What the context says} & \textbf{Model} \\
-      \hline
-      Same amount added each step & Linear \\
-      \hline
-      An \textbf{area} (two lengths) & Quadratic \\
-      \hline
-      A \textbf{volume} (three lengths) & Cubic \\
-      \hline
-      Rises, falls, rises again & Higher degree \\
-      \hline
-      \textbf{Inversely proportional} & Rational \\
-      \hline
-      Rule \textbf{changes at a threshold} & Piecewise \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-    \column{0.42\textwidth}
-      \begin{block}{Inverse proportion}
-        \(y = \frac{k}{x^n}\) --- as \(x\) grows, \(y\) shrinks. These are
-        \textbf{rational} functions; Unit 3 is about them. Today: recognize the
-        words.
-      \end{block}
-
-      \medskip
-      \begin{block}{A counting fact}
-        A degree-\(n\) polynomial fits through \(n+1\) points with distinct
-        inputs.\\[3pt]
-        So ``it fits the data'' is not by itself a reason to believe a model.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 3 — BUILDING THE MODEL FROM THE CONSTRAINT
-\begin{frame}[t, plain]
-  \plumheader{3. Building the Model from the Constraint}
-
-  \sectionlabel[goldacc]{The Four Steps}
-
-  \begin{columns}[T]
-    \column{0.36\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.8cm, y=0.8cm]
-        \fill[lilac] (0,0) rectangle (4.4,1.7);
-        \draw[very thick, slate] (-0.4,1.7) -- (4.8,1.7);
-        \node[slate, above, font=\scriptsize] at (2.2,1.75) {barn wall --- no fence};
-        \draw[very thick, plum] (0,1.7) -- (0,0) -- (4.4,0) -- (4.4,1.7);
-        \node[plum, left,  font=\small] at (0,0.85) {\(w\)};
-        \node[plum, right, font=\small] at (4.4,0.85) {\(w\)};
-        \node[plum, below, font=\small] at (2.2,0) {\(\ell\)};
+      \begin{tikzpicture}[x=1.1cm, y=1.1cm]
+        \fill[lilac] (0,0) rectangle (3.4,1.3);
+        \draw[very thick, slate] (-0.3,1.3) -- (3.7,1.3);
+        \node[slate, above, font=\scriptsize] at (1.7,1.35) {barn wall --- no fence};
+        \draw[very thick, plum] (0,1.3) -- (0,0) -- (3.4,0) -- (3.4,1.3);
+        \node[plum, left,  font=\small] at (0,0.65) {\(w\)};
+        \node[plum, right, font=\small] at (3.4,0.65) {\(w\)};
+        \node[plum, below, font=\small] at (1.7,0) {\(\ell\)};
+        \node[slate, font=\scriptsize\itshape] at (1.7,0.65) {area \(A\)};
       \end{tikzpicture}
       \end{center}
 
+      \smallskip
+      Four numbers: \(80\) (fixed), \(w\), \(\ell\), \(A\). A function accepts
+      \textbf{one} question.
+
+    \column{0.50\textwidth}
+      \begin{block}{A model starts with a decision}
+        Naming the question is the first move --- and everything follows from
+        it: which differences you may take, what the constraint has to do,
+        which inputs are allowed, what the units say.
+      \end{block}
+
+      \medskip
+      \begin{block}{The hook, answered}
+        Ana's question was the \textbf{width}. Ben's was the
+        \textbf{length}. Neither is wrong.
+
+        \smallskip
+        The 80 is neither question nor answer --- it is the
+        \textbf{constraint}: \(2w + \ell = 80\).
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 2 — THE TABLE PICKED IT
+\begin{frame}[t, plain]
+  \plumheader{2. When the Table Already Picked the Question}
+  \sectionlabel[goldacc]{Top Row Is the Question --- Check It First}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.47\textwidth}
+      \begin{block}{Why equal spacing is required}
+        A difference compares two answers across \textit{one step of the
+        question}. Fair only if every step is the same size.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{}lccc@{}}
+          \(x\)          & 1 & 2 & 4 \\
+          \(g(x)\)       & 3 & 7 & 15 \\
+          change         & --- & 4 & 8 \\
+          \textbf{per unit} & --- & \textbf{4} & \textbf{4} \\
+        \end{tabular}
+
+        \smallskip
+        \(g\) \textit{is} linear. The raw differences lied.
+      \end{block}
+
+    \column{0.49\textwidth}
+      \begin{block}{Ana's table --- widths step by 5}
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{}lccccc@{}}
+          \(w\)  & 5 & 10 & 15 & 20 & 25 \\
+          \(A\)  & 350 & 600 & 750 & 800 & 750 \\
+          1st    & --- & 250 & 150 & 50 & \(-50\) \\
+          2nd    & --- & --- & \(-100\) & \(-100\) & \(-100\) \\
+        \end{tabular}
+
+        \smallskip
+        Second differences constant \(\Rightarrow\) \textbf{quadratic}.
+      \end{block}
+
+      \medskip
+      \begin{block}{A warning about tables}
+        Any \(n+1\) points fit some degree-\(n\) polynomial. ``It fits'' is not
+        a reason --- the context gets a vote.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — READING THE CONTEXT
+\begin{frame}[t, plain]
+  \plumheader{3. When Nobody Picked It: Reading the Context}
+  \sectionlabel[redacc]{How Does the Answer Move as the Question Grows?}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.50\textwidth}
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular}{@{}p{0.68\linewidth}l@{}}
+        \hline
+        Same amount each step & linear \\
+        \hline
+        \textbf{Two} lengths multiplied & quadratic \\
+        \hline
+        \textbf{Three} lengths multiplied & cubic \\
+        \hline
+        Answer turns several times & polynomial \\
+        \hline
+        Question sits underneath & rational \\
+        \hline
+        Rule changes at a threshold & piecewise \\
+        \hline
+      \end{tabular}
+
+    \column{0.46\textwidth}
+      \begin{block}{The clue is not the noun}
+        ``Area'' does not mean quadratic by itself.
+
+        \smallskip
+        Length always \(2\times\) width: \(A(w) = 2w^2\) ---
+        \textbf{quadratic}, two lengths move.
+
+        \smallskip
+        Length fixed at 9 ft: \(A(w) = 9w\) --- \textbf{linear}, one length
+        moves.
+      \end{block}
+
+      \medskip
+      \begin{center}
+        Count the lengths that move with the question.
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — BUILD IT
+\begin{frame}[t, plain]
+  \plumheader{4. Build It: the Constraint Answers for the Rest}
+  \sectionlabel[goldacc]{Two Formulas, One Pen}
+
+  \begin{columns}[T, onlytextwidth]
     \column{0.30\textwidth}
-      \begin{block}{Steps}
-        \begin{enumerate}\setlength{\itemsep}{4pt}
-          \item Name the variables.
+      \begin{block}{The four steps}
+        \begin{enumerate}\setlength{\itemsep}{2pt}
+          \item Name the \textbf{question}.
           \item Write the \textbf{constraint}.
-          \item Solve it for one variable.
-          \item \textbf{Substitute} into what you want.
+          \item Solve it for the other quantity.
+          \item \textbf{Substitute}.
         \end{enumerate}
       \end{block}
 
-    \column{0.30\textwidth}
-      \begin{block}{The pen}
-        \(2w + \ell = 80\) \\[3pt]
-        \(\ell = 80 - 2w\) \\[3pt]
-        \(A = w\ell = w(80 - 2w)\) \\[3pt]
-        \(A(w) = 80w - 2w^2\), \ \(0 < w < 40\)
-      \end{block}
+    \column{0.33\textwidth}
+      \textbf{Ana} --- question \(w\):
+      \begin{align*}
+        \ell &= 80 - 2w \\
+        A(w) &= w(80 - 2w) \\
+             &= 80w - 2w^2
+      \end{align*}
+      \(A(20) = 800\) \checkmark
+
+    \column{0.33\textwidth}
+      \textbf{Ben} --- question \(\ell\):
+      \begin{align*}
+        w &= \frac{80 - \ell}{2} \\
+        A(\ell) &= \frac{80-\ell}{2}\cdot \ell \\
+                &= 40\ell - \frac{\ell^2}{2}
+      \end{align*}
+      \(A(40) = 800\) \checkmark
   \end{columns}
 
-  \bigskip
-  \textit{Check: \(A(20) = 1600 - 800 = 800\) --- exactly what the table said. The
-  table and the constraint produced the same function.}
+  \medskip
+  \begin{center}
+    Same constraint, solved for a different letter. Neither notebook is wrong.
+  \end{center}
 \end{frame}
 
-% SECTION 4 — USING THE MODEL
+% SECTION 5 — USE IT
 \begin{frame}[t, plain]
-  \plumheader{4. Using the Model}
+  \plumheader{5. Use the Model}
+  \sectionlabel[redacc]{The Units Name the Question You Chose}
 
-  \begin{columns}[T]
+  \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
-      \begin{block}{Average rate of change --- with units}
-        \(\frac{A(20)-A(10)}{20-10} = \frac{800-600}{10} = 20\) \\[3pt]
-        \(\frac{A(30)-A(20)}{30-20} = \frac{600-800}{10} = -20\) \\[5pt]
-        Units: \textbf{square feet per foot of width}.
+      \begin{block}{Average rate of change, with units}
+        Ana on \([10,20]\): \(+20\); on \([20,30]\): \(-20\)
+
+        \smallskip
+        \textbf{square feet per foot of width}
+
+        \smallskip
+        Ben straddling the same pen, on \([30,40]\) and \([40,50]\): \(+5\) and
+        \(-5\), in square feet per foot of \textbf{length}.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{The sign change locates the best pen}
+        \(+\) then \(-\), so the maximum sits between.
+
+        \smallskip
+        \(w = -\dfrac{b}{2a} = -\dfrac{80}{2(-2)} = \mathbf{20}\), so
+        \(\ell = 40\) and \(A = 800\) ft\(^2\).
       \end{block}
 
       \medskip
-      \begin{block}{The sign change}
-        \(+\) then \(-\) means the largest area sits \textbf{between} the two
-        intervals.
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{The vertex}
-        \(w = -\frac{b}{2a} = -\frac{80}{2(-2)} = 20\) \\[3pt]
-        \(\ell = 80 - 2(20) = 40\) \\[3pt]
-        Largest area \(= 800\) ft\(^2\).
-      \end{block}
-
-      \medskip
-      \begin{block}{Back to the vote}
-        The best pen is \(20 \times 40\) --- \textbf{not} a square.\\[3pt]
-        One side is free, so it pays to make the free side the long one.
-      \end{block}
+      \begin{center}
+        The class vote said \textit{square}. The best pen is
+        \(20 \times 40\) --- one side is free.
+      \end{center}
   \end{columns}
 \end{frame}
 
-% SECTION 5 — THE FINE PRINT
+% SECTION 6 — THE FINE PRINT
 \begin{frame}[t, plain]
-  \plumheader{5. The Fine Print: Restrictions and Assumptions}
+  \plumheader{6. The Fine Print: Which Questions Are Allowed}
+  \sectionlabel[goldacc]{A Domain Is a List of Legal Questions}
 
-  \begin{columns}[T]
+  \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
-      \begin{block}{Restrictions}
-        Domain: \(0 < w < 40\) --- widths outside this are not bad arithmetic,
-        they are \textbf{outside the domain}.\\[3pt]
-        Range: \(0 < A \le 800\) square feet.
+      \begin{block}{Different questions, different domains}
+        Ana: \(0 < w < 40\). \quad Ben: \(0 < \ell < 80\).
+
+        \smallskip
+        Same pen. The domains differ because the \textit{questions} differ.
+
+        \smallskip
+        \(A(-3) = -258\) is not bad arithmetic --- it answers a question the
+        situation does not allow.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Say the assumption out loud}
+        All 80 ft is used, the barn is at least 40 ft long, the pen is exactly
+        rectangular, no gate gap.
       \end{block}
 
       \medskip
-      \begin{block}{Assumptions}
-        All 80 ft is used \(\cdot\) the pen is exactly rectangular \(\cdot\) no
-        gate gap \(\cdot\) the barn wall is at least 40 ft long.
-      \end{block}
-
-    \column{0.48\textwidth}
       \begin{block}{When one rule is not enough}
-        Suppose the barn is only \textbf{30 ft} long.\\[3pt]
-        A pen with \(\ell > 30\) needs fence on part of the fourth side too ---
-        the rule \textbf{changes} at that threshold.\\[3pt]
-        Different rules on different intervals \(=\) a \textbf{piecewise} model.
+        If the barn is only 30 ft, the constraint changes past a threshold ---
+        the model becomes \textbf{piecewise}.
       \end{block}
-
-      \medskip
-      \textit{Naming the assumption is part of the answer. A model that fits the
-      numbers can still be wrong about the world.}
   \end{columns}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \sectionlabel[redacc]{Name the Question First, Every Time}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Take differences until they are constant, then name the model type:
-          \(y = 0,\ 1,\ 8,\ 27,\ 64\) at \(x = 0,1,2,3,4\).
-    \item A garden bed is built against a wall using 30 feet of edging on the
-          other three sides.
-          \begin{enumerate}[(a)]\setlength{\itemsep}{4pt}
-            \item Write the constraint and build \(A(w)\).
-            \item State the domain the context allows.
-          \end{enumerate}
-    \item A city charges \$0.05 per gallon for the first 5{,}000 gallons and
-          \$0.09 per gallon after that. What kind of model is the water bill, and
-          what is the threshold?
+    \item A table has \(x = 0,1,2,3,4\) and \(y = 0,1,8,27,64\). Take
+          differences until they are constant and name the model type.
+
+    \item A garden bed against a wall uses 30 ft of edging on the other three
+          sides. Take the width as your question: build \(A(w)\) and state its
+          domain.
+
+    \item Two rugs. One has length always 3 times its width; the other has a
+          fixed length of 8 feet. Both areas, as functions of the width ---
+          why is only one of them quadratic?
   \end{enumerate}
 \end{frame}
 

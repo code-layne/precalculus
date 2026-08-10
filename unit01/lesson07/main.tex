@@ -18,12 +18,13 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will choose a function type for a data set
-    or a context --- by reading first and second differences from a table and by
-    reading shape clues from the description --- will \textbf{build} the model from a
-    contextual restriction, and will state the domain restriction and the
-    assumption the model rests on.
-    \hfill\textit{\small (CED Topics 1.13 \& 1.14 --- Skills 2.A, 1.C)}
+    \textbf{Primary Objective:} Given a situation rather than a function,
+    students will \textbf{name which quantity is the question}, choose a model
+    type for it --- from differences in a table or from shape clues in the
+    context --- \textbf{build} the model by letting a constraint force the other
+    quantities to answer to that question, and state the domain, the units, and
+    the assumption the model rests on.
+    \hfill\textit{\small (CED Topics 1.13 \& 1.14 --- Skills 2.A, 3.C, 1.C, 3.B)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -33,35 +34,46 @@
 \textbf{Key Understandings} \\
 \midrule
 \textbf{2.A} --- Identify information from graphical, numerical, analytical, and
-verbal representations to answer a question. &
+verbal representations to answer a question or construct a model. \newline
+\textbf{3.C} --- Support conclusions or choices with a logical rationale. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Over \textbf{equally spaced} inputs: constant first differences
-        $\Rightarrow$ linear; constant second differences $\Rightarrow$ quadratic;
-        constant $n$th differences $\Rightarrow$ degree-$n$ polynomial.
-        (1.13.A.1--A.5)
-  \item Context carries the clue when no table does: area $\Rightarrow$ quadratic,
-        volume $\Rightarrow$ cubic, inverse proportion $\Rightarrow$ rational, a
-        rule that changes at a threshold $\Rightarrow$ piecewise. (1.13.A.3, A.7)
-  \item A degree-$n$ polynomial can be fit through $n+1$ points with distinct
-        inputs. (1.13.A.6)
+  \item \textbf{The spine.} A situation has several quantities; a function
+        accepts one question. Modeling begins by deciding which quantity is
+        the \textbf{question}.
+  \item A table has already decided --- the top row is the question. Over
+        \textbf{equally spaced} inputs: constant first differences $\Rightarrow$
+        linear; constant second $\Rightarrow$ quadratic; constant $n$th
+        $\Rightarrow$ degree $n$. (1.13.A.1--A.5)
+  \item Equal spacing is not a rule to memorize: a difference compares answers
+        across \textbf{one step of the question}, so the steps must match.
+  \item A degree-$n$ polynomial fits any $n+1$ points with distinct inputs, so
+        ``it fits the data'' is not a rationale. (1.13.A.6)
 \end{itemize} \\
 \textbf{1.C} --- Construct a new function from a context, a transformation, or a
-regression. &
+regression. \newline
+\textbf{3.B} --- Apply numerical results in a given applied context. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Building a model from a restriction: write the constraint, solve it for
-        one variable, substitute into the quantity you actually want.
-        (1.14.A.1--A.2)
-  \item A model is used, not just written: evaluate it, and compute the average
-        rate of change $\frac{f(b)-f(a)}{b-a}$ \textbf{with units} ---
-        output units per input unit. (1.14.C.1)
+  \item Building from a restriction: name the question, write the constraint,
+        solve it for the \textit{other} quantity, substitute into the one you
+        want. (1.14.A.1--A.2)
+  \item The clue in a context is how the answer \textbf{moves} as the question
+        grows --- two lengths multiplied $\Rightarrow$ quadratic, three
+        $\Rightarrow$ cubic, question underneath $\Rightarrow$ rational, rule
+        changing at a threshold $\Rightarrow$ piecewise. (1.13.A.3, A.7,
+        1.14.B.1)
+  \item A model is used, not just written: evaluate it, and compute
+        $\frac{f(b)-f(a)}{b-a}$ \textbf{with units} --- output units per input
+        unit. (1.14.C.1)
 \end{itemize} \\
-\textbf{Synthesis} --- every model comes with fine print. &
+\textbf{Synthesis} --- the choice of question is visible in every later answer. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The domain is restricted by the context, not by the algebra: negative
-        widths and negative lengths are not modeling errors, they are
-        \textbf{outside the domain}. (1.13.B.1--B.4)
-  \item Naming the assumption is part of the answer. A model that fits the numbers
-        can still be wrong about the world.
+  \item Two students modeling one pen get different formulas, different
+        domains, and different rate units --- and both are right.
+  \item The domain is the set of questions the \textbf{context} allows, not
+        what the algebra tolerates. Negative widths are not errors; they are
+        questions the situation forbids. (1.13.B.1--B.4)
+  \item Naming the assumption is part of the answer. A model that fits the
+        numbers can still be wrong about the world.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
@@ -70,115 +82,147 @@ regression. &
 \renewcommand{\arraystretch}{1.4}
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.28\linewidth} X @{}}
 Function model        & A function built to stand in for a real situation, so the situation can be predicted and measured. \\
+Question (input)      & The one quantity the model takes in. Choosing it is the first act of modeling; every other quantity must become an answer to it. \\
+Constraint            & The equation the context forces on the quantities, such as ``the fencing totals 80 feet.'' It is what lets two variables collapse into one. \\
 First differences     & The differences between consecutive outputs of \textbf{equally spaced} inputs. Constant first differences mean a linear model. \\
 Second differences    & The differences of the first differences. Constant second differences mean a quadratic model --- the rate of change is itself changing at a constant rate. \\
-Constraint            & The equation the context forces on the variables, such as ``the fencing totals 80 feet.'' It is what lets two variables collapse into one. \\
-Domain restriction    & The inputs the \textit{context} allows, which is usually narrower than what the algebra allows. \\
-Piecewise-defined function & A function given by different rules on different intervals; used when behavior changes at a threshold. \\
-Inverse proportion    & \TallMath{y = \frac{k}{x^n}} --- as one quantity grows the other shrinks. Modeled by a rational function; Unit 3 takes this up in full. \\
+Domain restriction    & The questions the \textit{context} allows, which is usually narrower than what the algebra allows. \\
+Piecewise-defined function & A function given by different rules on different intervals; used when the constraint itself changes at a threshold. \\
+Inverse proportion    & \TallMath{y = \frac{k}{x^n}} --- the question sits underneath, so as it grows the answer shrinks. Modeled by a rational function; Unit 3 takes this up in full. \\
 Model assumption      & The simplifying claim about the world that has to be true for the model to be trusted. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: computing differences down an output column and judging
-    whether a rate of change is constant (Lessons 1.2--1.3); solving a literal
-    equation such as $2w + \ell = 80$ for one variable (the algebra Part 3 runs
-    on); and computing an average rate of change from a table with correct units
-    (Lesson 1.3). Item 2 is the load-bearing one --- students solve for $\ell$ and
-    then evaluate $w(80 - 2w)$ without being told what it is. Part 3 reveals it as
-    the area of today's pen.
+    Skills reviewed: computing differences down an output column and noticing
+    when the \textit{input} row is not equally spaced (Lessons 1.2--1.3);
+    solving one literal equation, $2w + \ell = 80$, for \textbf{each} of its two
+    variables; and computing an average rate of change from a table with correct
+    units (Lesson 1.3). Item 2 is the load-bearing one --- the two solves are
+    Ana's model and Ben's model, built before either has a name. Item 1's second
+    table returns in Part 2, where the class discovers it was linear all along.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{lilac}
-    \textbf{Eighty feet of fence and a barn.} The garden club has exactly 80 feet
-    of fencing for a rectangular pen. One whole side runs along the barn wall, so
-    that side needs no fence at all.
+    \textbf{Two notebooks, one pen.} The garden club has exactly 80 feet of
+    fencing for a rectangular pen; one whole side runs along the barn wall. Two
+    members measured the \textit{same five trial pens}. Ana recorded
+    width~$\to$~area ($5 \to 350$, $10 \to 600$, $15 \to 750$, $20 \to 800$,
+    $25 \to 750$); Ben recorded length~$\to$~area ($30 \to 750$, $40 \to 800$,
+    $50 \to 750$, $60 \to 600$, $70 \to 350$).
     \begin{enumerate}[itemsep=2pt]
-        \item Take a vote before any algebra: \textit{should the pen be a square?}
-              Most classes say yes. Record the vote on the board --- it will be
+        \item Put both tables on the board and ask, plainly: \textit{which
+              member recorded the pen correctly?} Let the class argue. The
+              answer is \textbf{both}, and nobody gets there in under a minute.
+        \item Then the second vote, before any algebra: \textit{should the pen
+              be a square?} Most classes say yes. Record it --- it will be
               wrong, and that is the point.
-        \item Then ask the question the lesson answers twice: what \textit{kind}
-              of function turns a width into an area, and how would you know
-              before you built it?
     \end{enumerate}
-    \textit{Discussion prompt:} today we answer that question two ways --- from a
-    table of measurements, and from the fencing constraint itself --- and the two
-    answers had better agree.
+    \textit{Discussion prompt:} the two tables differ because the two members
+    picked different \textbf{questions}. That single decision is the lesson.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Reading the Model Off a Table} (12 min)
+\textbf{Part 1: Pick the Question} (6 min)
 
 \begin{itemize}
-  \item State the requirement first: differences only mean something when the
-        inputs are \textbf{equally spaced}. Write it on the board and leave it
-        there.
-  \item Table A ($y = 5, 8, 11, 14, 17$): first differences all 3 $\Rightarrow$
-        linear (1.13.A.1--A.2). Table B is the garden club's five trial layouts;
-        first differences $250, 150, 50, -50$ are \textit{not} constant, but the
-        second differences are all $-100$ $\Rightarrow$ quadratic (1.13.A.4).
-  \item Say the meaning, not just the rule: constant first differences mean the
-        \textit{amount} of change repeats; constant second differences mean the
-        \textit{rate} of change changes at a steady rate. Extend the pattern
-        aloud --- constant third differences would mean cubic (1.13.A.5).
+  \item Name what changed: for six lessons students were handed a function.
+        Today they are handed a \textbf{situation}, and a situation is not a
+        function.
+  \item Four numbers live in the pen: 80 (fixed), $w$, $\ell$, $A$. A function
+        takes one question and returns one answer, so two decisions come before
+        any algebra. Today the answer is settled --- the club wants area --- so
+        only the question is open.
+  \item Resolve the hook here: Ana's question was the width, Ben's the length,
+        the pens were the same. Then name the 80 for what it is --- neither
+        question nor answer, but the \textbf{constraint}. Write
+        $2w + \ell = 80$ and leave it up all period.
 \end{itemize}
 
-\textbf{Part 2: Reading the Model Off the Context} (8 min)
+\textbf{Part 2: When the Table Already Picked It} (10 min)
 
 \begin{itemize}
-  \item Fill the clue table together. Area $\Rightarrow$ quadratic and volume
-        $\Rightarrow$ cubic are the two to make automatic (1.13.A.3): they follow
-        from multiplying two lengths or three.
-  \item Inverse proportion $\Rightarrow$ rational is \textbf{exposure only}
-        today --- name it, show $y = k/x$, and say Unit 3 is where it lives.
-  \item A rule that changes at a threshold $\Rightarrow$ piecewise (1.13.A.7).
-        Close with the counting fact: $n+1$ points with distinct inputs can be fit
-        by a degree-$n$ polynomial (1.13.A.6) --- which is exactly why fitting the
-        highest degree you can is a bad habit.
+  \item The top row of a table \textit{is} the question. Table A
+        ($y = 5,8,11,14,17$): first differences all 3 $\Rightarrow$ linear
+        (1.13.A.1--A.2).
+  \item Derive the equal-spacing requirement instead of decreeing it: a
+        difference compares two answers across \textbf{one step of the
+        question}, so the steps have to match. Then run the warm-up's $g$ table
+        ($x = 1, 2, 4$): differences 4 and 8, but \textit{per unit} both are 4
+        --- $g$ was linear all along, and the raw differences lied.
+  \item Ana's table: first differences $250, 150, 50, -50$ are not constant;
+        the second differences are all $-100$ $\Rightarrow$ quadratic
+        (1.13.A.4). Say the meaning: constant first differences mean the
+        \textit{amount} of change repeats; constant second differences mean the
+        \textit{rate} changes at a steady rate. Extend aloud to cubic
+        (1.13.A.5).
+  \item Close with the counting fact --- $n+1$ points fit a degree-$n$
+        polynomial (1.13.A.6) --- and use it to motivate Part 3: a table alone
+        cannot settle the model, so the context gets a vote.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Building the Model from the Constraint} (14 min)
+\textbf{Part 3: Reading the Context} (7 min)
 
 \begin{itemize}
-  \item This is the heart of the lesson and where the time goes. Four steps, said
-        out loud each time: name the variables, write the \textbf{constraint},
-        solve the constraint for one variable, substitute into the quantity you
-        want (1.14.A.1--A.2).
-  \item $2w + \ell = 80 \Rightarrow \ell = 80 - 2w \Rightarrow
-        A(w) = w(80 - 2w) = 80w - 2w^2$. Two lengths multiplied --- quadratic, as
-        Part 2 predicted.
-  \item Then the payoff: check $A(20) = 800$ against Table B. \textbf{The table
-        and the constraint produced the same function.} Say that sentence.
-  \item Restrict the domain from the context: $0 < w < 40$. Ask why 40, not
-        ``because the graph stops.''
+  \item Fill the clue table together. Every row is phrased as \textit{what
+        happens to the answer as the question grows}, which is the only form of
+        the clue worth memorizing.
+  \item Then the sharpening, and it is the item most likely to move a test
+        score: ``area'' does not mean quadratic. Length always twice the width
+        gives $A(w) = 2w^2$; length \textbf{fixed} at 9 feet gives $A(w) = 9w$.
+        Count the lengths that move with the question (1.13.A.3).
+  \item Inverse proportion $\Rightarrow$ rational is \textbf{exposure only}:
+        the question sits underneath, show $y = k/x^n$, name Unit 3
+        (1.14.B.1). A rule that changes at a threshold $\Rightarrow$ piecewise
+        (1.13.A.7).
 \end{itemize}
 
-\textbf{Part 4: Using the Model} (10 min)
+\textbf{Part 4: Build It} (14 min)
 
 \begin{itemize}
-  \item Evaluate $A(10) = 600$ and $A(20) = 800$. Average rate of change on
-        $[10,20]$ is $+20$; on $[20,30]$ it is $-20$ (1.14.C.1).
-  \item \textbf{Units are not optional:} square feet per foot of width. Make every
-        student say the full phrase once.
-  \item Sign change from $+$ to $-$ means the maximum sits between. Vertex at
-        $w = -b/(2a) = 20$, area $800$ ft$^2$, length $\ell = 40$ ft. Return to the
-        opening vote: the best pen is $20 \times 40$, \textbf{not} a square.
+  \item The heart of the lesson. Four steps, said out loud every time: name the
+        question, write the constraint, solve the constraint for the
+        \textit{other} quantity, substitute into the one you want
+        (1.14.A.1--A.2).
+  \item Ana: $\ell = 80 - 2w \Rightarrow A(w) = w(80-2w) = 80w - 2w^2$. Check
+        $A(20) = 800$ against her table. Then tie it back: Part 3 predicted
+        quadratic because \textit{both} lengths move with $w$.
+  \item Ben, same constraint solved for the other letter:
+        $w = (80-\ell)/2 \Rightarrow A(\ell) = 40\ell - \ell^2/2$, and
+        $A(40) = 800$. \textbf{Two formulas, one pen.} Say that sentence.
 \end{itemize}
 
-\textbf{Part 5: The Fine Print} (8 min)
+\textbf{Part 5: Use the Model} (9 min)
 
 \begin{itemize}
-  \item Domain $0 < w < 40$; range $0 < A \le 800$ (1.13.B.1--B.4).
-  \item Assumptions: all 80 ft is used, the barn wall is at least 40 ft long, the
-        pen is exactly rectangular, no gate gap. If the barn is only 30 ft long
-        the rule changes for small $w$ --- \textbf{piecewise}, and a callback to
-        Part 2.
+  \item Evaluate $A(10) = A(30) = 600$. Average rate of change on $[10,20]$ is
+        $+20$, on $[20,30]$ is $-20$ (1.14.C.1).
+  \item \textbf{Units are not optional}, and here they do real work: square feet
+        per foot of \textit{width} for Ana, per foot of \textit{length} for Ben
+        (whose rates straddling the same pen, on $[30,40]$ and $[40,50]$, are
+        $+5$ and $-5$). The units name the question.
+  \item Sign change locates the maximum: $w = -b/(2a) = 20$, $\ell = 40$,
+        $A = 800$. Return to the vote --- the best pen is $20 \times 40$,
+        \textbf{not} a square. Ben lands on the same pen from the other end.
+\end{itemize}
+
+\textbf{Part 6: The Fine Print} (7 min)
+
+\begin{itemize}
+  \item Domain as a list of legal \textit{questions}: Ana $0 < w < 40$, Ben
+        $0 < \ell < 80$ --- same pen, different domains (1.13.B.3). Range
+        $0 < A \le 800$ (1.13.B.4).
+  \item $A(-3) = -258$ is not bad arithmetic; it answers a question the
+        situation forbids.
+  \item Assumptions (1.13.B.1--B.2): all 80 ft used, barn at least 40 ft, pen
+        exactly rectangular, no gate gap. If the barn is only 30 ft the
+        constraint changes past a threshold --- \textbf{piecewise}, a callback
+        to Part 3 and the homework extension.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
@@ -186,133 +230,166 @@ Model assumption      & The simplifying claim about the world that has to be tru
 \begin{skillbox}[Active Monitoring]{redbox}
 While students work on guided notes and practice, circulate and check:
 \begin{itemize}
-  \item \textbf{Common error:} taking differences when the inputs are not equally
-        spaced. This is the lesson's signature error and it is silent --- the
-        numbers still subtract. Ask ``what is the gap between your inputs?''
-        before you ask what the differences are.
-  \item \textbf{Common error:} stopping at the first differences, seeing that they
-        are not constant, and concluding ``not a polynomial.'' Prompt: ``take the
-        differences again.''
-  \item \textbf{Common error:} in Part 3, writing $A = w\ell$ and stopping.
-        A model must be a function of \textbf{one} variable. Ask: ``what does the
-        constraint let you replace?''
+  \item \textbf{Common error:} taking differences when the inputs are not
+        equally spaced. This is the lesson's signature error and it is silent
+        --- the numbers still subtract. Ask ``what is the gap between your
+        questions?'' before you ask what the differences are.
+  \item \textbf{Common error:} stopping at the first differences, seeing that
+        they are not constant, and concluding ``not a polynomial.'' Prompt:
+        ``take the differences again.''
+  \item \textbf{Common error:} in Part 4, writing $A = w\ell$ and stopping. A
+        model must be a function of the \textbf{one} quantity you named as the
+        question. Ask: ``what does the constraint let you replace?''
   \item \textbf{Common error:} $2w + \ell = 80$ becoming $\ell = 80 - w$ or
         $\ell = 40 - 2w$. Catch it early --- every later answer inherits it.
+  \item \textbf{Common error:} treating ``area'' as automatically quadratic.
+        The fixed-length rug is the counterexample; keep it on the board.
   \item \textbf{Common error:} the domain given as ``all real numbers'' or
-        ``$w > 0$'' with no upper end. Push for the sentence: at $w = 40$ there is
-        no fencing left for the length.
-  \item \textbf{Common error:} an average rate of change reported as a bare number.
-        No units, no credit --- square feet per foot.
+        ``$w > 0$'' with no upper end. Push for the sentence: at $w = 40$ there
+        is no fencing left for the length.
+  \item \textbf{Common error:} an average rate of change reported as a bare
+        number. No units, no credit --- and the units are where Ana's model and
+        Ben's model become distinguishable.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Courtyard Committee} in leveled
-tiers. Every tier uses the same courtyard scenario --- 60 feet of edging along
-the building wall --- so groups can be re-sorted mid-period without new setup.
+Students work on the \textbf{Group Activity: The Cardboard Bin} in leveled
+tiers. Every tier uses the same sheet --- 24 in by 18 in, a square of side $x$
+cut from each corner --- so groups can be re-sorted mid-period without new
+setup.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Complete a difference table for the
-        committee's trial layouts, name the model type from the second
-        differences, and match four short scenarios to their model types.
-  \item \textbf{Tier A (Apply):} Build $A(w) = 60w - 2w^2$ from the 60-foot
-        constraint, state the domain, evaluate at two widths, and find the
-        maximum.
-  \item \textbf{Tier E (Extend):} Compute two average rates of change with units
-        and interpret them; then a code rule forces $w \ge 18$, moving the maximum
-        to the endpoint --- the restriction changes the answer. Closes with one
-        inverse-proportion item as a bridge to Unit 3.
+  \item \textbf{Tier R (Remediate):} Name the question in the club's table,
+        check that the cuts are equally spaced, take differences down to the
+        constant \textit{third} row, name cubic, and match six scenarios to
+        their model types --- including the two rugs from Part 3.
+  \item \textbf{Tier A (Apply):} Write each dimension of the bin in terms of
+        the cut, build $V(x) = x(24-2x)(18-2x) = 4x^3 - 84x^2 + 432x$, check
+        $V(3) = 648$ against the table, restrict to $0 < x < 9$, and find that
+        the untested cut $x = 3.5$ beats every bin the club actually built.
+  \item \textbf{Tier E (Extend):} Two average rates of change with units; then
+        the same sheet with a \textit{different answer} --- the shipping
+        footprint $B(x) = 4x^2 - 84x + 432$, quadratic where the volume was
+        cubic; then a \textit{different question} --- fix the volume at
+        648~in$^3$ and get $h(B) = 648/B$, an inverse proportion and a bridge
+        to Unit 3.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item Complete a difference table and name the model type it points to.
-  \item Build an area model from a 40-foot fencing constraint and state its
-        domain (worked space provided).
-  \item Name the model type for a stated context and write the assumption the
-        model rests on.
+  \item Name which row is the question, complete a difference table, and name
+        the model type it points to.
+  \item Build an area model from a 40-foot fencing constraint, state its
+        domain, and write one assumption it makes.
+  \item Two rugs --- one with length always three times the width, one with a
+        fixed 8-foot length --- write each area model, name each type, and
+        explain why only one is quadratic.
 \end{enumerate}
-\textbf{Assessment note:} Item 1 checks 1.13.A (selection from a table), item 2
-checks 1.14.A (construction from a constraint), item 3 checks 1.13.B (the fine
-print). Item 2 is the diagnostic --- a student who writes $A(w) = w(40 - w)$ has
-forgotten that two widths are fenced and needs Part 3 retaught in tomorrow's
-warm-up window.
+\textbf{Assessment note:} Item 2 is the diagnostic for construction (1.14.A) ---
+a student who writes $A(w) = w(40-w)$ has forgotten that two widths are fenced
+and needs Part 4 retaught in tomorrow's warm-up window. \textbf{Item 3 is the
+spine check and the fastest scan on the page:} a student who calls both rugs
+quadratic is matching nouns, not tracking how the answer moves with the
+question, and that is the habit Unit 2 will punish.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
 \textbf{Homework:} 6 problems covering difference tables (including a cubic),
-matching contexts to model types, building a model from a perimeter constraint,
-the full pen storyline (evaluate, average rate of change with units, maximum),
-an inverse-proportion model, and one AP-style multiple-choice item on what
-constant second differences imply.
+matching contexts to model types, \textbf{building Ben's model} for the same pen
+and comparing its domain to Ana's, using Ana's model (evaluate, average rate of
+change with units, domain check), an inverse-proportion model, and two AP-style
+multiple-choice items --- one on constant second differences, one on the
+fixed-height flag whose area is linear.
 
 \textbf{Extension (optional):} The barn wall turns out to be only 30 feet long,
 so widths below 25 feet need fencing on part of the fourth side too. Students
-find the threshold, write the two rules, and explain why the model is now
-piecewise.
+find the threshold, write the two rules, check that they agree there, and
+explain why the model is now piecewise.
 
 \textbf{Preview:} Unit 1 ends here. Lesson 2.1 (Quadratic Functions Revisited)
-opens Unit 2 with the function $A(w) = 80w - 2w^2$ still on the board --- vertex
-form, the axis of symmetry, and why $-b/(2a)$ works instead of just that it does.
-Every model built today was a polynomial; Unit 2 is where polynomials get
-studied on their own terms.
+opens Unit 2 with $A(w) = 80w - 2w^2$ still on the board --- vertex form, the
+axis of symmetry, and why $-b/(2a)$ works instead of just that it does. Every
+model chosen today was a polynomial; Unit 2 is where polynomials get studied on
+their own terms.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, calculators fine. Item 1 is the only place all period
-where students see a table whose inputs are \textit{not} equally spaced --- part
-(c) is the trap, and it is worth ten seconds of ``look at the $x$ row first''
-when you review. Item 2 does the Part 3 algebra with no context attached; do not
-tell them what $w(80-2w)$ is. In Part 3, put the warm-up back on the board and
-say ``you built today's model before you knew what it was for.'' Item 3 is
-Lesson 1.3 with units, and units are what Part 4 grades on.
+Five minutes, silent start, calculators fine. Item 1's second table is the only
+place all period where students see inputs that are \textit{not} equally spaced
+--- part (b) is the trap, and it is worth ten seconds of ``look at the $x$ row
+first'' when you review. Do not resolve it here; Part 2 rehabilitates that table
+and shows $g$ was linear after all, which is a much better moment than a
+correction. Item 2 does the Part 4 algebra twice with no context attached, and
+students will ask why they are solving the same equation for both letters ---
+say ``you'll see'' and mean it. In Part 4, put the warm-up back on the board:
+they built both of today's models before either had a name. Item 3 is Lesson 1.3
+with units, and units are what Part 5 grades on.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 1's requirement --- equally spaced inputs --- must be said before the first
-subtraction, not after the first wrong answer. Part 2 is deliberately fast; the
-inverse-proportion row is a name-drop, and if a student asks what a rational
-function is, ``a fraction with a variable underneath, and Unit 3 is about them''
-is a complete answer today. Part 3 is where the period is won or lost: do all
-four steps out loud, and do not let the class skip the substitution because
-``it's obvious.'' The single most important line in the lesson is the check at
-the end of Part 3 --- the constraint and the table produced the same function. If
-time runs short, compress Part 5 to the domain and one assumption, and let the
-homework carry the range and the piecewise wrinkle.
+Part 1 is short but it is the lesson; do not let it become a vocabulary
+recitation. The moment worth protecting is the class realizing that Ana and Ben
+are \textit{both} right --- give it a full minute of argument before you
+resolve it, because every later payoff (two formulas, two domains, two sets of
+rate units) collects on that minute. Part 2's equal-spacing requirement must be
+said before the first subtraction, and derive it rather than decree it: a
+difference compares answers across one step of the question. Part 3's two rugs
+are the highest-value thirty seconds on the page --- if a student can say why
+the fixed-length rug is linear, they understand the whole selection half. Part 4
+is where the period is won or lost: do all four steps out loud, and do not let
+the class skip the substitution because ``it's obvious.'' If time runs short,
+compress Part 6 to the two domains and one assumption, and let the homework
+carry the range and the piecewise wrinkle --- but do not cut Ben's model out of
+Part 4, because the domain comparison in Part 6 and homework problem 3 both
+depend on it.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-All three tiers run on the same 60-foot courtyard, so a group that finishes
-Tier R can move to Tier A without re-reading the scenario. Tier R's matching
-question is worth more than its table --- students who can classify from context
-are ready for Unit 2. Tier A's step 1 is the one to check as you circulate: if
-the constraint is written $w + \ell = 60$, everything downstream is wrong and
-quiet about it. Tier E's code rule ($w \ge 18$) is the most valuable idea in the
-activity: the vertex is still at $w = 15$, but 15 is no longer in the domain, so
-the maximum moves to the endpoint. If the class never reaches Tier E, assign
-homework problem 4(c) as the substitute.
+All three tiers run on the same 24-by-18 sheet, so a group that finishes Tier R
+can move to Tier A without re-reading the scenario. Bring one real sheet of
+cardboard and a pair of scissors if you can --- cutting the corners once, in
+front of the class, makes ``the only thing you control is the cut'' land
+physically, and it is the whole reason $x$ is the question. Tier R's third
+difference row is the first time students carry differences past the second row
+on real data; expect arithmetic slips and let groups check each other rather
+than checking for them. Tier A's step 1 is the one to watch as you circulate: a
+group that writes the base as $24 - x$ instead of $24 - 2x$ has forgotten that
+both ends are cut, and everything downstream is wrong and quiet about it. Tier
+A step 5 is the payoff --- the untested cut $x = 3.5$ beats all six bins the
+club built, which is the cleanest argument in the lesson for why you want a
+model and not a table. In Tier E, item 2 changes the \textit{answer} and item 3
+changes the \textit{question}; that contrast is deliberate, and it is worth
+naming aloud to any group that reaches it. If the class never reaches Tier E,
+assign homework problem 3 as the substitute.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 2 first. Accept
-$A(w) = 40w - 2w^2$ or $A(w) = w(40 - 2w)$ --- both are correct and the factored
-form often signals a student who understood the substitution rather than
-memorizing a formula. A domain of $0 < w < 20$ is the target; $w > 0$ alone is
-half credit and goes in the reteach pile. On item 3, any defensible assumption
-earns the point --- the skill is that the student wrote one at all.
+Collected, completion credit only. Sort by item 3 first --- it is four seconds
+per paper and it separates ``matched the word \textit{area} to the word
+\textit{quadratic}'' from ``counted the lengths that move.'' Then sort by item 2.
+Accept $A(w) = 40w - 2w^2$ or $A(w) = w(40 - 2w)$; the factored form often
+signals a student who understood the substitution rather than memorizing a
+formula. A domain of $0 < w < 20$ is the target; $w > 0$ alone is half credit
+and goes in the reteach pile. On item 2(d), any defensible assumption earns the
+point --- the skill is that the student wrote one at all.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 4 is the storyline problem and the one to scan first --- part (b)'s units
-predict who is ready for Unit 2's modeling work. Problem 5 is the only
+Problem 3 is the flagship and the one to scan first: it is Ben's model, and part
+(d) --- why two correct models of one pen have different domains --- is the
+single best predictor of who understood the day. Problem 4(b)'s units predict
+who is ready for Unit 2's modeling work. Problem 5 is the only
 inverse-proportion practice students get before Unit 3; expect the arithmetic on
 $k = F d^2$ to be shakier than the concept, and grade the domain sentence, not
-the decimal. On problem 6, distractor A is the student who never took the second
-differences, C is the student who counted rows instead of differences, and D
-confuses ``constant second differences'' with ``second differences of zero'' ---
-each is worth thirty seconds tomorrow. The extension is genuinely hard for this
-track; assign it to students who finished Tier E, not to everyone.
+the decimal. On problem 6(a), distractor A is the student who never took the
+second differences, C is the student who counted rows instead of differences,
+and D confuses ``constant second differences'' with ``second differences of
+zero.'' Problem 6(b) is item 3 of the exit ticket in multiple-choice clothing;
+if a student misses both, reteach Part 3 rather than Part 2. The extension is
+genuinely hard for this track --- assign it to students who finished Tier E, not
+to everyone.
 \end{teachernote}
 \end{document}
