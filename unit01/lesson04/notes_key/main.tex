@@ -1,7 +1,7 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Guided Notes (Answer Key)
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Guided Notes (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -13,12 +13,14 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Tell a change made \ans{outside} a function from a change made
-        \ans{inside} it, and predict which way the graph moves.
-  \item Build a table and describe the graph of $g(x) = af(x+h)+k$ using
-        \ans{translations} (shifts) and \ans{dilations} (stretches and flips).
-  \item Find the \ans{domain} and \ans{range} of a transformed function from
-        those of its parent.
+  \item Sort a transformation rule into a change to the \ans{question} I hand
+        the parent function or a change to the \ans{answer} it hands back.
+  \item Describe a vertical translation, a vertical dilation, and a
+        \ans{reflection} from the numbers \textit{outside} the function.
+  \item Explain why a change \textit{inside} the parentheses moves the graph
+        in the \ans{opposite} direction.
+  \item Follow a \ans{landmark} point from the parent to the transformed graph,
+        and read off the new \ans{domain} and \ans{range}.
 \end{enumerate}
 \end{objectivebox}
 
@@ -29,12 +31,12 @@ By the end of this lesson, I will be able to\ldots
 Fill in each term as we define it together.
 \par\vspace{2pt}
 \noindent\textbf{\textcolor{plum}{Parent function:}}\\[1pt]
-\ansline{The plain, untransformed function a whole family of graphs is built from --- here, $f(x)=x^2$.}\\[3pt]
+\ansline{The simplest function of a family --- the one every other graph in the family is built from.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Transformation:}}\\[1pt]
-\ansline{An operation that moves, resizes, or flips a graph without changing its basic shape.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Translation (shift):}}\\[1pt]
-\ansline{A slide: $f(x)+k$ moves the graph up or down; $f(x+h)$ moves it left or right.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Dilation (stretch or compress):}}\\[1pt]
+\ansline{A rule that changes the question handed to a function, the answer it gives back, or both.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Translation:}}\\[1pt]
+\ansline{A slide with no resizing: $f(x)+k$ moves the graph vertically, $f(x+h)$ horizontally.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Dilation:}}\\[1pt]
 \ansline{A resize: $af(x)$ scales the outputs by $|a|$; $f(bx)$ scales the inputs by $1/|b|$.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Reflection:}}\\[1pt]
 \ansline{A flip: $-f(x)$ flips the graph over the $x$-axis; $f(-x)$ flips it over the $y$-axis.}
@@ -42,31 +44,45 @@ Fill in each term as we define it together.
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[20]
 \begin{hookbox}
-Here is $f(x) = x^2$, and three tables built from it. One has every output 3
-larger. One has every output doubled. And one has the \textit{exact same
-outputs} as $f$ --- just at different inputs.
+$D(t)$ is the water depth at North Harbor, in feet, $t$ hours after midnight.
+South Harbor rises and falls exactly the same way, and the harbormaster
+publishes its depth as
+\[
+  S(t) = D(t + 3).
+\]
 
 \smallskip
-What could I have done to $f$ that leaves every output untouched but still
-moves the graph?
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$t$ (hours after midnight) & 0 & 3 & 6 & 9 & 12 \\
+\hline
+$D(t)$ (feet) & 4 & 8 & 12 & 8 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
 
-\ansline{Change the inputs, not the outputs --- feed $f$ a different number than the $x$ we started with.}
-\ansline{The whole graph slides sideways: same heights, new addresses.}
+The rule \textit{adds} three hours. Does South Harbor's high tide come
+\textbf{before} or \textbf{after} North Harbor's? Commit to an answer before
+you compute anything.
+\ansline{Answers will vary --- most say ``after,'' because the rule adds 3. It is before:}
+\ansline{$S(3) = D(6) = 12$, so South Harbor peaks at 3 a.m., three hours ahead of North Harbor.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{1. The Parent Function and the Outside/Inside Rule}
-A \textbf{parent function} is the plain, untransformed function a whole family
-of graphs is built from. Today's parent is $f(x) = x^2$, and these five points
-are our reference frame:
+\boxguard[24]
+\begin{notesbox}{1. The Question and the Answer}
+Every rule today is built out of one \textbf{parent function}. Ours is
+$f(x) = x^2$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
 \begin{center}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
@@ -75,307 +91,351 @@ $f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
 \hline
 \end{tabular}
 \end{center}
+\smallskip
 
-Every rule today changes $f$ in exactly one of two places, and \textit{where}
-it changes decides everything:
+Using $f$ is a two-step transaction: you hand $f$ an input, and $f$ hands you
+back an output. So there are exactly two places a rule can interfere.
 
 \medskip
 \begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabularx}{0.94\linewidth}{@{} >{\bfseries}p{0.30\linewidth} X @{}}
-\hline
-Outside $f$ & like $f(x) + 3$ or $2f(x)$: it changes the
-  \ans{outputs}, so the graph moves \ans{vertically} --- and it does
-  \ans{exactly what} you expect. \\
-\hline
-Inside $f$ & like $f(x+3)$ or $f(2x)$: it changes the
-  \ans{inputs}, so the graph moves \ans{horizontally} --- and it does the
-  \ans{opposite} of what you expect. \\
-\hline
-\end{tabularx}
+\begin{tikzpicture}
+  \node[font=\large, anchor=west] (gq) at (0,0) {$g(x) \;=\;$};
+  \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {$a$};
+  \node[font=\large, anchor=west] (mid) at (a.east) {$\cdot\, f($};
+  \node[font=\large, plum, anchor=west] (inner) at (mid.east) {$\,x + h\,$};
+  \node[font=\large, anchor=west] (close) at (inner.east) {$)$};
+  \node[font=\large, goldacc, anchor=west] (k) at (close.east) {$\;+\;k$};
+  \node[font=\scriptsize\bfseries, plum, align=center]
+    (ql) at ([yshift=-0.75cm]inner.south) {inside: the question you hand $f$};
+  \draw[thick, plum, ->] (ql.north) -- (inner.south);
+  \node[font=\scriptsize\bfseries, goldacc, align=center]
+    (al) at ([yshift=0.62cm]mid.north) {outside: the answer $f$ hands back};
+  \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
+  \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
+\end{tikzpicture}
 \end{center}
 
 \medskip
-Before you compute anything with a new rule, say out loud: \textit{is this
-change outside $f$, or inside $f$?}
+\begin{itemize}[itemsep=4pt]
+  \item A change to the \textbf{answer} is \ans{vertical} and does exactly what
+        it says.
+  \item A change to the \textbf{question} is \ans{horizontal}, and it runs
+        \ans{opposite} to what it looks like --- because you have to work out
+        what $x$ makes the question come out right.
+\end{itemize}
+
+\medskip
+Sort each rule before computing anything.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{rule} & \textbf{question or answer?} & \textbf{horizontal or vertical?} \\
+\hline
+$g(x) = f(x) - 5$ & \ans{answer} & \ans{vertical} \\
+\hline
+$g(x) = f(x - 5)$ & \ans{question} & \ans{horizontal} \\
+\hline
+$g(x) = 4f(x)$ & \ans{answer} & \ans{vertical} \\
+\hline
+$g(x) = f(4x)$ & \ans{question} & \ans{horizontal} \\
+\hline
+\end{tabular}
+\end{center}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{notesbox}{2. Vertical Translation: $g(x) = f(x) + k$}
-The $+k$ sits \textbf{outside} $f$, so it changes every output. The graph
-slides \textbf{up} when $k > 0$ and \textbf{down} when $k < 0$, by $|k|$
-units.
-
-\medskip
-\textbf{Example 1.} $f(x) = x^2$ and $g(x) = f(x) + 3$. Complete the table.
+\boxguard[20]
+\begin{notesbox}{2. Rewriting the Answer --- Vertical Moves}
+Whatever $f$ hands back, do something to it. The input column is never
+touched.
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
 \begin{center}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$f(x)$ & 4 & 1 & 0 & 1 & 4 \\
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
 \hline
-$g(x) = f(x) + 3$ & \ans{7} & \ans{4} & \ans{3}
-  & \ans{4} & \ans{7} \\
+$f(x) + 3$ & \ans{7} & \ans{4} & \ans{3} & \ans{4} & \ans{7} \\
+\hline
+$2f(x)$ & \ans{8} & \ans{2} & \ans{0} & \ans{2} & \ans{8} \\
+\hline
+$-f(x)$ & \ans{$-4$} & \ans{$-1$} & \ans{0} & \ans{$-1$} & \ans{$-4$} \\
 \hline
 \end{tabular}
 \end{center}
-
 \smallskip
+
 \begin{center}
-\begin{tikzpicture}[x=0.52cm, y=0.34cm]
-  \draw[linegray, very thin, step=1] (-3,0) grid (3,8);
-  \draw[->, thick] (-3.3,0) -- (3.5,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $y$};
-  \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
-  \foreach \y in {2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
-  \draw[thick, linegray] plot [smooth] coordinates
-    {(-2.8,7.84) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.8,7.84)};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,7.84) (-2,7) (-1,4) (0,3) (1,4) (2,7) (2.2,7.84)};
-  \fill[plum] (0,3) circle (2pt);
-  \fill[linegray] (0,0) circle (2pt);
+\begin{tikzpicture}[x=0.72cm, y=0.28cm]
+  \draw[linegray, very thin] (-3,-5) grid (3,8);
+  \draw[->, thick] (-3.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-5.6) -- (0,8.8) node[above, font=\small] {$y$};
+  \foreach \x in {-2,-1,1,2}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \foreach \y in {-4,4,8}
+    \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
+    plot (\x, {\x*\x + 3});
+  \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
+    plot (\x, {-\x*\x});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
+    plot (\x, {\x*\x});
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-1.55,7.6) {$f(x)+3$};
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.75,7.6) {$f(x)$};
+  \node[font=\scriptsize, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {$-f(x)$};
 \end{tikzpicture}
 \end{center}
-{\small\textcolor{linegray}{\textbf{gray}} $= f(x) = x^2$ \qquad
- \textcolor{plum}{\textbf{plum}} $= g(x) = f(x)+3$}
 
-\medskip
 \begin{itemize}[itemsep=4pt]
-  \item The lowest point moved from $(0,0)$ to $($ \ans{0} ,
-        \ans{3} $)$ --- straight \ans{up} by 3.
-  \item \textbf{Domain} of $g$: \ans{all real numbers} (unchanged --- the
-        inputs never moved).
-  \item \textbf{Range} of $g$: $f$ had range $[0, \infty)$, so $g$ has range
-        \ans{$[3, \infty)$}.
+  \item $g(x) = f(x) + k$ is a \textbf{vertical translation}: every answer
+        gains $k$. If $k > 0$ the graph moves \ans{up}; if $k < 0$ it
+        moves \ans{down}.
+  \item $g(x) = af(x)$ is a \textbf{vertical dilation} by a factor of
+        \ans{$|a|$}: every answer is multiplied by $a$. If $|a| > 1$ the
+        graph is stretched away from the $x$-axis; if $0 < |a| < 1$ it is
+        \ans{compressed} toward it.
+  \item If $a < 0$ the dilation also carries a \textbf{reflection} over the
+        \ans{$x$}-axis. The case $a = -1$ is the flip on its own.
+  \item The questions were never touched, so the \ans{domain} does not change.
+        The \ans{range} does.
 \end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
-\begin{notesbox}{3. Horizontal Translation: $g(x) = f(x + h)$}
-The $+h$ sits \textbf{inside} $f$, so it changes the inputs --- and the graph
-moves the \textit{opposite} way from what the sign suggests.
+\boxguard[20]
+\begin{notesbox}{3. Rewriting the Question --- Horizontal Moves}
+Now the rule changes what you hand $f$ before $f$ ever goes to work.
 
 \medskip
-\textbf{Example 2.} $g(x) = f(x + 3)$, where $f(x) = x^2$. Complete the table.
+\textbf{(a) $g(x) = f(x + 3)$.} Fill each cell by first saying what gets handed
+to $f$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
 \begin{center}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ \\
 \hline
-$x + 3$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+handed to $f$: $x + 3$ & \ans{$-2$} & \ans{$-1$} & \ans{0} & \ans{1} & \ans{2} \\
 \hline
-$g(x) = f(x+3)$ & \ans{4} & \ans{1} & \ans{0}
-  & \ans{1} & \ans{4} \\
-\hline
-\end{tabular}
-\end{center}
-
-\smallskip
-\textbf{Look at what you wrote.} The output list is \ans{identical} to $f$'s
-list --- nothing happened to the outputs at all. What moved were the
-\ans{inputs} they happen at.
-
-\medskip
-\textbf{Why left?} Remember the warm-up. $f$ hits its lowest point when its
-input is $0$, so $g$ hits its lowest point when $x + 3 = 0$, that is, when
-$x = $ \ans{$-3$} --- which is 3 units to the \ans{left}.
-
-\smallskip
-\begin{center}
-\begin{tikzpicture}[x=0.42cm, y=0.34cm]
-  \draw[linegray, very thin, step=1] (-6,0) grid (3,6);
-  \draw[->, thick] (-6.3,0) -- (3.5,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small $y$};
-  \foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
-  \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
-  \draw[thick, linegray] plot [smooth] coordinates
-    {(-2.45,6) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.45,6)};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-5.45,6) (-5,4) (-4,1) (-3,0) (-2,1) (-1,4) (-0.55,6)};
-  \fill[plum] (-3,0) circle (2pt);
-  \fill[linegray] (0,0) circle (2pt);
-\end{tikzpicture}
-\end{center}
-{\small\textcolor{linegray}{\textbf{gray}} $= f(x) = x^2$ \qquad
- \textcolor{plum}{\textbf{plum}} $= g(x) = f(x+3)$}
-
-\medskip
-\begin{itemize}[itemsep=4pt]
-  \item $h > 0$ (as in $f(x+3)$): shift \ans{left}. \quad
-        $h < 0$ (as in $f(x-2)$): shift \ans{right}.
-  \item \textbf{Domain} shifts by the same amount; \textbf{range}
-        \ans{is unchanged} --- the outputs never changed.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Dilations and Reflections}
-\textbf{Vertical dilation: $g(x) = af(x)$.} The $a$ is \textbf{outside}, so it
-multiplies every output. $|a| > 1$ \textbf{stretches} the graph away from the
-$x$-axis; $0 < |a| < 1$ \textbf{compresses} it toward the $x$-axis. If
-$a < 0$, the graph also \textbf{flips} over the $x$-axis.
-
-\medskip
-\textbf{Example 3.} Complete both rows for $f(x) = x^2$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
-\hline
-$f(x)$ & 4 & 1 & 0 & 1 & 4 \\
-\hline
-$g(x) = 2f(x)$ & \ans{8} & \ans{2} & \ans{0}
-  & \ans{2} & \ans{8} \\
-\hline
-$p(x) = -f(x)$ & \ans{$-4$} & \ans{$-1$} & \ans{0}
-  & \ans{$-1$} & \ans{$-4$} \\
+$g(x) = f(x+3)$ & \ans{4} & \ans{1} & \ans{0} & \ans{1} & \ans{4} \\
 \hline
 \end{tabular}
 \end{center}
+\smallskip
+
+The output list is \ans{identical} to the parent's. Nothing happened to the
+answers at all --- only the \ans{addresses} where they appear.
+
+\medskip
+\textbf{Where did the vertex go?} The parent's vertex is the point where $f$
+was handed $0$. So $g$'s vertex sits at the $x$ that makes the question come
+out $0$:
+
+\begin{work}
+  x + 3 &= 0 \\
+      x &= -3
+\end{work}
+
+The graph moved \ans{left} 3 --- the direction the ``$+$'' does
+\textit{not} suggest. This is the harbor again: asking $S$ about 3 a.m.\ means
+asking $D$ about 6 a.m., so everything $D$ does, $S$ did three hours
+\ans{earlier}.
 
 \smallskip
 \begin{center}
-\begin{tikzpicture}[x=0.62cm, y=0.26cm]
-  \draw[linegray, very thin, step=1] (-2.4,-4) grid (2.4,8);
-  \draw[->, thick] (-2.7,0) -- (2.9,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-4.4) -- (0,8.6) node[above] {\small $y$};
-  \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
-  \foreach \y in {-4,-2,2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
-  \draw[thick, linegray] plot [smooth] coordinates
-    {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2,8) (-1,2) (0,0) (1,2) (2,8)};
-  \draw[very thick, goldacc] plot [smooth] coordinates
-    {(-2,-4) (-1,-1) (0,0) (1,-1) (2,-4)};
+\begin{tikzpicture}[x=0.60cm, y=0.34cm]
+  \draw[linegray, very thin] (-6,0) grid (3,7);
+  \draw[->, thick] (-6.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-0.6) -- (0,7.8) node[above, font=\small] {$y$};
+  \foreach \x in {-5,-4,-3,-2,-1,1,2}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-5.6:-0.4]
+    plot (\x, {(\x+3)*(\x+3)});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.6:2.6]
+    plot (\x, {\x*\x});
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[goldacc] (-3,0) circle (2.2pt);
+  \draw[->, thick, charcoal] (-0.25,-1.5) -- (-2.75,-1.5);
+  \node[below, font=\scriptsize, charcoal] at (-1.5,-1.6) {3 left};
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-4.6,6.4) {$f(x+3)$};
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.9,6.4) {$f(x)$};
 \end{tikzpicture}
 \end{center}
-{\small\textcolor{linegray}{\textbf{gray}} $= f(x)$ \qquad
- \textcolor{plum}{\textbf{plum}} $= 2f(x)$ \qquad
- \textcolor{goldacc}{\textbf{gold}} $= -f(x)$}
 
 \medskip
-\begin{itemize}[itemsep=4pt]
-  \item $g(x) = 2f(x)$ is a vertical \ans{stretch} by a factor of
-        \ans{2}.
-  \item $p(x) = -f(x)$ is a \ans{reflection} over the \ans{$x$}-axis.
-\end{itemize}
+\textbf{(b) The rule.} $g(x) = f(x + h)$ is a \textbf{horizontal translation}
+by $-h$ units: $h > 0$ moves the graph \ans{left}, $h < 0$ moves it
+\ans{right}. Do not read the sign in front of the number --- solve for the
+input.
 
 \medskip
-\textbf{Horizontal dilation: $g(x) = f(bx)$.} The $b$ is \textbf{inside}, so
---- opposite again --- the graph is squeezed by a factor of $\dfrac{1}{|b|}$.
+\textbf{(c) $g(x) = f(2x)$.} To hand $f$ its $2$, you supply $x = $
+\ans{1} \; (you solved $2x = 6$ on the warm-up for the same reason).
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
 \begin{center}
+\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & $-1$ & $-0.5$ & 0 & $0.5$ & 1 \\
 \hline
-$2x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+handed to $f$: $2x$ & \ans{$-2$} & \ans{$-1$} & \ans{0} & \ans{1} & \ans{2} \\
 \hline
-$g(x) = f(2x)$ & \ans{4} & \ans{1} & \ans{0}
-  & \ans{1} & \ans{4} \\
+$g(x) = f(2x)$ & \ans{4} & \ans{1} & \ans{0} & \ans{1} & \ans{4} \\
 \hline
 \end{tabular}
 \end{center}
-
 \smallskip
-$g$ reaches the same heights as $f$, but at \ans{half} the $x$-value ---
-so the graph is \ans{compressed} horizontally, by a factor of \ans{$1/2$}.
+
+Every landmark arrives at \ans{half} the $x$ it used to. That is a
+\textbf{horizontal dilation} by a factor of \ans{$1/2$} --- a squeeze, not a
+stretch, even though the number is $2$. And $g(x) = f(-x)$ reflects over the
+\ans{$y$}-axis.
+
+\medskip
+The answers were never touched, so the \ans{range} does not change. The
+\ans{domain} does.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{5. Combining Them --- and Domain \& Range}
-Every transformation today fits one template:
+\boxguard[16]
+\begin{notesbox}{4. Follow the Landmark}
+Combining moves needs no order of operations to memorize. Take any point
+$(p, q)$ on the parent and answer the two questions separately.
 
+\medskip
 \begin{center}
-$g(x) = a\,f(x + h) + k$
-\end{center}
-
-\textbf{Example 4.} Describe every move that turns $f$ into
-$g(x) = -2f(x+1) - 3$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{center}
-\begin{tabularx}{0.92\linewidth}{@{} >{\bfseries}p{0.16\linewidth} >{\itshape}p{0.20\linewidth} X @{}}
-\hline
-Parameter & Inside or out? & What it does to the graph \\
-\hline
-$h = 1$   & inside  & \ans{Shifts the graph 1 unit to the left.} \\
-\hline
-$a = -2$  & outside & \ans{Stretches it vertically by 2 and flips it over the $x$-axis.} \\
-\hline
-$k = -3$  & outside & \ans{Shifts the graph 3 units down.} \\
-\hline
-\end{tabularx}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+\textbf{For $g(x) = a\,f(x + h) + k$, the parent's point $(p,\,q)$ lands at}
+\[
+  \bigl(\,p - h,\;\; a q + k\,\bigr).
+\]
+\textbf{New input:} solve $x + h = p$. \qquad
+\textbf{New output:} do to $q$ what the outside says.
+\end{tcolorbox}
 \end{center}
 
 \medskip
-\textbf{Domain and range.} Horizontal changes move the \ans{domain};
-vertical changes move the \ans{range}.
+\textbf{Worked example.} $g(x) = -2f(x + 1) - 3$, with $f(x) = x^2$.
 
 \smallskip
-Suppose $f$ has domain $[-2, 4]$ and range $[0, 9]$. For the same
-$g(x) = -2f(x+1) - 3$:
-
-\begin{work}
-  \text{Domain: } -2 &\le x + 1 \le 4 \\
-                  -3 &\le x \le 3 \\
-  \text{Range: } 0 &\le y \le 9 \\
-              -18 &\le -2y \le 0 \\
-              -21 &\le -2y - 3 \le -3
-\end{work}
-
-Domain of $g$: \ans{$[-3, 3]$} \qquad Range of $g$: \ans{$[-21, -3]$}
-
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{parent point} $(p,q)$ & \textbf{new input} $p - 1$ & \textbf{new output} $-2q - 3$ & \textbf{lands at} \\
+\hline
+$(-2,\,4)$ & \ans{$-3$} & \ans{$-11$} & \ans{$(-3,-11)$} \\
+\hline
+$(0,\,0)$ & \ans{$-1$} & \ans{$-3$} & \ans{$(-1,-3)$} \\
+\hline
+$(2,\,4)$ & \ans{1} & \ans{$-11$} & \ans{$(1,-11)$} \\
+\hline
+\end{tabular}
+\end{center}
 \smallskip
-\textbf{Careful:} multiplying by a negative \textit{swaps} which endpoint is
-smaller --- always rewrite the interval with the smaller number first.
+
+\begin{itemize}[itemsep=4pt]
+  \item In words: left \ans{1}, stretched by \ans{2}, flipped over the
+        \ans{$x$}-axis, down \ans{3}.
+  \item The parent's vertex $(0,0)$ was its lowest point. On $g$ it is the
+        \ans{highest} point, because $a$ is \ans{negative}.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[14]
+\begin{notesbox}{5. The Two Columns Carry Domain and Range}
+The domain is a fact about the \ans{input} column; the range is a fact about
+the \ans{output} column. So a transformation moves whichever one it rewrites.
+
+\medskip
+Suppose $f$ has domain $[-2,\,4]$ and range $[0,\,9]$, and
+$g(x) = -2f(x + 1) - 3$.
+
+\medskip
+\textbf{Domain.} $g$ can only be asked about inputs whose question lands
+inside $f$'s domain:
+
+\begin{work}
+  -2 &\le x + 1 \le 4 \\
+  -3 &\le x \le 3
+\end{work}
+
+Domain of $g$: \ans{$[-3,\,3]$}
+
+\medskip
+\textbf{Range.} Every output $q$ of $f$ becomes $-2q - 3$:
+
+\begin{work}
+  -2(0) - 3 &= -3 \\
+  -2(9) - 3 &= -21
+\end{work}
+
+Range of $g$: \ans{$[-21,\,-3]$} \quad --- note the endpoints traded places, because
+multiplying by a \ans{negative} number reverses order.
+
+\medskip
+\textbf{Rule of thumb.} Changes to the \ans{question} move the domain. Changes to
+the \ans{answer} move the range.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[16]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item Describe, in words, each transformation of the graph of $f$.
+  \item A function $f$ is given by a table. Its peak is at $(2, 4)$.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $f(x)$ & 1 & 3 & 4 & 3 & 1 \\
+        \hline
+        $g(x) = f(x) + 2$ & \ans{3} & \ans{5} & \ans{6} & \ans{5} & \ans{3} \\
+        \hline
+        \end{tabular}
+        \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $g(x) = f(x) - 6$: \ans{shift down 6 units}
-          \item $g(x) = f(x + 5)$: \ans{shift left 5 units}
-          \item $g(x) = -f(x)$: \ans{reflect over the $x$-axis}
+          \item Was that a change to the question or the answer?
+                \ans{the answer}
+          \item Let $h(x) = f(x - 2)$. Then $h(5) = f($ \ans{3} $) = $
+                \ans{3}.
+          \item $h$'s peak is at ( \ans{4} , \ans{4} ).
         \end{enumerate}
 
-  \item The domain of $f$ is $[1, 7]$ and its range is $[-4, 2]$. Find the
-        domain and range of $g(x) = f(x - 3) + 5$.
+  \item The lowest point on the graph of $f$ is $(3, -1)$, and the domain of
+        $f$ is $[1, 7]$. Let $g(x) = 4f(x - 2) + 5$.
 
-        \begin{work}
-          \text{Domain: } 1 &\le x - 3 \le 7 \\
-                          4 &\le x \le 10 \\
-          \text{Range: } -4 &\le y \le 2 \\
-                          1 &\le y + 5 \le 7
-        \end{work}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Follow the landmark.
 
-        Domain: \ans{$[4, 10]$} \qquad Range: \ans{$[1, 7]$}
+                \begin{work}
+                  \text{new input} &= 3 + 2 = 5 \\
+                  \text{new output} &= 4(-1) + 5 = 1
+                \end{work}
+
+                The lowest point of $g$ is ( \ans{5} , \ans{1} ).
+          \item Domain of $g$: \ans{$[3,\,9]$}
+          \item Which of the two moves changed the domain? \ans{the $x-2$}
+        \end{enumerate}
 \end{enumerate}
 \end{practicebox}
 

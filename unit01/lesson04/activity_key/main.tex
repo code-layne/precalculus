@@ -1,7 +1,7 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Group Activity (Answer Key)
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Group Activity (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,224 +10,272 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Skate Park Ramp]{plumlight}
+\begin{scenariobox}[The Fountain Deck]{plumlight}
 \small
-A skate park's ramp has a curved cross-section modeled by the parent function
-$f(x) = x^2$, where $x$ is the horizontal distance in feet from the low point
-and $f(x)$ is the height of the ramp surface in feet. The design team keeps
-asking for changes --- but the \textit{curve} never changes, only where it
-sits and how big it is. Every tier uses this same table and pre-drawn graph.
+A city fountain is being designed. A measuring tape runs along the deck, and
+\textbf{nozzle A} stands at the $0$ mark. The function $f$ gives the height of
+nozzle A's water arc, in \textbf{feet}, above the point $x$ feet along the
+tape. Every other nozzle on the plan is written as a rule built out of $f$ ---
+that is the whole spec sheet.
 
-\smallskip
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ (feet) & $-2$ & $-1$ & 0 & 1 & 2 \\
-\hline
-$f(x)$ (feet) & 4 & 1 & 0 & 1 & 4 \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[x=0.58cm, y=0.16cm]
+  \draw[linegray, very thin, xstep=1, ystep=4] (0,0) grid (8,16);
+  \draw[->, thick] (0,0) -- (8.8,0) node[below right] {\small $x$ (ft along the deck)};
+  \draw[->, thick] (0,0) -- (0,17.8) node[above] {\small $f(x)$ (ft)};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y in {4,8,12,16} \node[left, font=\small] at (0,\y) {\y};
+  \draw[very thick, plum, smooth, samples=60, domain=0:8]
+    plot (\x, {-\x*\x + 8*\x});
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (4,16) circle (2.5pt);
+  \fill[plum] (8,0) circle (2.5pt);
+\end{tikzpicture}
 \end{center}
 
+\renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tikzpicture}[x=0.9cm, y=0.42cm]
-  \draw[linegray, very thin, step=1] (-2,0) grid (2,5);
-  \draw[->, thick] (-2.4,0) -- (2.5,0) node[below right] {\small $x$ (ft)};
-  \draw[->, thick] (0,0) -- (0,5.5) node[above] {\small $f(x)$ (ft)};
-  \foreach \x in {-2,-1,1,2} \node[below, font=\small] at (\x,0) {\x};
-  \foreach \y in {1,2,3,4,5} \node[left, font=\small] at (0,\y) {\y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
-  \fill[plum] (-2,4) circle (2.5pt);
-  \fill[plum] (-1,1) circle (2.5pt);
-  \fill[plum] (0,0) circle (2.5pt);
-  \fill[plum] (1,1) circle (2.5pt);
-  \fill[plum] (2,4) circle (2.5pt);
-\end{tikzpicture}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x$ (ft) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline
+$f(x)$ (ft) & 0 & 7 & 12 & 15 & 16 & 15 & 12 & 7 & 0 \\
+\hline
+\end{tabular}
 \end{center}
 \end{scenariobox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=8pt]
-  \item \textbf{Build it on a platform.} The crew raises the whole ramp onto a
-        3-foot platform: $g(x) = f(x) + 3$. Complete the table.
+\begin{enumerate}[itemsep=4pt]
+  \item Read straight off the table: $f(0) = $ \ans{0} feet (the water
+        leaves the nozzle) and $f(4) = $ \ans{16} feet (the top of the arc).
+
+        The high point of nozzle A's arc is at ( \ans{4} ,
+        \ans{16} ).
+
+  \item \textbf{Nozzle P} sits on a 3-foot pedestal, so its arc is
+        $P(x) = f(x) + 3$.
 
         \smallskip
-        \renewcommand{\arraystretch}{1.5}
+        \renewcommand{\arraystretch}{1.4}
         \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
         \hline
-        $f(x)$ & 4 & 1 & 0 & 1 & 4 \\
+        $f(x)$ & 0 & 12 & 16 & 12 & 0 \\
         \hline
-        $g(x) = f(x) + 3$ & \ans{7} & \ans{4} & \ans{3}
-          & \ans{4} & \ans{7} \\
+        $P(x) = f(x)+3$ & \ans{3} & \ans{15} & \ans{19} & \ans{15} & \ans{3} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        Was the pedestal a change to the \textbf{question} or the
+        \ans{answer}? (Circle one.)
+
+  \item \textbf{Nozzle Q} runs on a spec that doubles every height:
+        $Q(x) = 2f(x)$.
+
+        \begin{work}
+          Q(2) &= 2 \cdot 12 \\
+               &= 24
+        \end{work}
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
+        \hline
+        $Q(x) = 2f(x)$ & \ans{0} & \ans{24} & \ans{32} & \ans{24} & \ans{0} \\
         \hline
         \end{tabular}
         \end{center}
 
-        The whole ramp moved \ans{up} / \textbf{down} (circle one) by
-        \ans{3} feet.
+  \item High points. $P$'s is at ( \ans{4} , \ans{19} ) and $Q$'s is
+        at ( \ans{4} , \ans{32} ).
 
-  \item \textbf{Sink it in a pit.} Now the crew drops the ramp 1 foot into a
-        pit: $h(x) = f(x) - 1$. Complete the table.
+        \vspace{0.05in}
+        Both are still at the same $x$ as nozzle A's. Say why in one sentence.
 
-        \smallskip
-        \renewcommand{\arraystretch}{1.5}
-        \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
-        \hline
-        $h(x) = f(x) - 1$ & \ans{3} & \ans{0} & \ans{$-1$}
-          & \ans{0} & \ans{3} \\
-        \hline
-        \end{tabular}
-        \end{center}
-
-        The whole ramp moved \textbf{up} / \ans{down} (circle one) by
-        \ans{1} feet.
-
-  \item \textbf{The sorting question.} In both rules, the ``$+3$'' and the
-        ``$-1$'' were written \ans{outside} / \textbf{inside} (circle one)
-        the function $f$.
-
-        So they changed the \ans{output} column of the table, and the ramp
-        moved \ans{vertically}.
+        \vspace{0.05in}
+        \ansline{Neither rule changed the question handed to $f$ --- the nozzle never moved along the deck.}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The design is revised to $g(x) = 2f(x - 1)$: the ramp is moved down the park
-and made twice as steep.
-
 \begin{enumerate}[itemsep=8pt]
-  \item Complete the table \textbf{one step at a time} --- do the inside
-        change first, then the outside one.
+  \item \textbf{Nozzle B} is bolted 4 feet farther along the deck. The
+        engineer writes its arc as $B(x) = f(x - 4)$.
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $B(6) = f($ \ans{2} $) = $ \ans{12} feet.
+          \item Fill in the rest.
+
+                \smallskip
+                \renewcommand{\arraystretch}{1.4}
+                \begin{center}
+                \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                $x$ (ft) & 4 & 6 & 8 & 10 & 12 \\
+                \hline
+                handed to $f$: $x - 4$ & \ans{0} & \ans{2} & \ans{4} & \ans{6} & \ans{8} \\
+                \hline
+                $B(x)$ & \ans{0} & \ans{12} & \ans{16} & \ans{12} & \ans{0} \\
+                \hline
+                \end{tabular}
+                \end{center}
+                \smallskip
+
+          \item Compared with nozzle A, $B$'s list of heights is
+                \ans{identical}. Only the \ans{positions} changed.
+          \item $B$'s high point is at ( \ans{8} , \ans{16} ).
+        \end{enumerate}
+
+  \item The nozzle moved to the \textbf{right}, and the rule has a
+        \textbf{minus} sign. Explain the mismatch using the words
+        \textit{handed to $f$}.
+
+        \vspace{0.05in}
+        \ansline{To get nozzle A's top-of-arc height, $f$ must be handed 4. At $x = 8$ the rule hands}
+        \ansline{$f$ the value $8 - 4 = 4$, so the peak now happens 4 feet farther right.}
+
+  \item \textbf{Nozzle C} is on the 3-foot pedestal \textit{and} 4 feet down
+        the deck: $C(x) = f(x - 4) + 3$. Follow each landmark.
 
         \smallskip
         \renewcommand{\arraystretch}{1.5}
         \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|}
         \hline
-        $x$ & $-1$ & 0 & 1 & 2 & 3 \\
+        \textbf{point on A's arc} & \textbf{new input} & \textbf{new height} & \textbf{lands at} \\
         \hline
-        $x - 1$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        $(0,\,0)$ & \ans{4} & \ans{3} & \ans{$(4,3)$} \\
         \hline
-        $f(x-1)$ & \ans{4} & \ans{1} & \ans{0}
-          & \ans{1} & \ans{4} \\
+        $(4,\,16)$ & \ans{8} & \ans{19} & \ans{$(8,19)$} \\
         \hline
-        $g(x) = 2f(x-1)$ & \ans{8} & \ans{2} & \ans{0}
-          & \ans{2} & \ans{8} \\
+        $(8,\,0)$ & \ans{12} & \ans{3} & \ans{$(12,3)$} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item Describe both moves in words --- name a direction and an amount for
-        each.
-
-        \ansline{Shift the graph 1 unit to the right (the $-1$ is inside $f$).}
-        \ansline{Then stretch it vertically by a factor of 2 (the 2 is outside $f$).}
-
-  \item The low point of the original ramp is at $(0, 0)$. The low point of
-        the new ramp $g$ is at $($ \ans{1} , \ans{0} $)$.
-
-  \item On the blueprint, $f$ has domain $[-2, 2]$ and range $[0, 4]$. Find
-        the domain and range of $g$.
+  \item Nozzle A's water is in the air for $0 \le x \le 8$ and reaches heights
+        from $0$ to $16$ feet --- so $f$ has domain $[0, 8]$ and range
+        $[0, 16]$.
 
         \begin{work}
-          \text{Domain: } -2 &\le x - 1 \le 2 \\
-                          -1 &\le x \le 3 \\
-          \text{Range: } 0 &\le y \le 4 \\
-                         0 &\le 2y \le 8
+          0 &\le x - 4 \le 8 \\
+          4 &\le x \le 12
         \end{work}
 
-        Domain of $g$: \ans{$[-1, 3]$} \qquad Range of $g$: \ans{$[0, 8]$}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Domain of $C$: \ans{$[4,\,12]$} \qquad Range of $C$: \ans{$[3,\,19]$}
+          \item Which of $C$'s two moves changed where the water lands, and
+                which changed how high it goes?
+
+                \vspace{0.05in}
+                \ansline{The $x-4$ (a question change) moved the splash zone; the $+3$ (an answer change) raised it.}
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[30]
+\boxguard[26]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Reverse-engineer it.} A second ramp $k$ is a transformation of
-        $f$. Here are its values.
+  \item \textbf{Reverse-engineer the spec.} A mystery nozzle $M$ was measured
+        on site.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+        $x$ (ft) & $-3$ & $-1$ & 1 & 3 & 5 \\
         \hline
-        $k(x)$ & $-8$ & $-2$ & 0 & $-2$ & $-8$ \\
+        $M(x)$ (ft) & 0 & 12 & 16 & 12 & 0 \\
         \hline
         \end{tabular}
         \end{center}
+        \smallskip
 
-        Write $k$ in terms of $f$: \quad $k(x) = $ \ans{$-2f(x)$}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $M(x) = f(x + $ \ans{3} $)$
+          \item In plain words, the nozzle was moved \ans{3} feet
+                \ans{backward} along the deck from A.
+        \end{enumerate}
 
-        Describe the two things that happened to the graph:
-
-        \ansline{Stretched vertically by a factor of 2, then reflected over the $x$-axis.}
-
-  \item A third design $m$ has these values.
+  \item \textbf{The reflecting pool.} The deck surface is still water, and it
+        mirrors the arc below the deck: $R(x) = -f(x)$.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
         \hline
-        $m(x)$ & 5 & 2 & 1 & 2 & 5 \\
+        $R(x) = -f(x)$ & \ans{0} & \ans{$-12$} & \ans{$-16$} & \ans{$-12$} & \ans{0} \\
         \hline
         \end{tabular}
         \end{center}
+        \smallskip
 
-        The low point moved from $(0,0)$ to $($ \ans{2} , \ans{1} $)$,
-        so \quad $m(x) = $ \ans{$f(x-2) + 1$}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Question change or answer change? \ans{answer}
+          \item A second reflecting pool 4 feet down the deck shows
+                $-f(x - 4)$. Its lowest point is at ( \ans{8} ,
+                \ans{$-16$} ).
+        \end{enumerate}
 
-  \item \textbf{Inside is not the same as outside.} Use $f(x) = x^2$ and the
-        extra value $f(0.5) = 0.25$ to fill in this comparison.
+  \item \textbf{The scale model versus the double-pressure spec.} A tabletop
+        model reproduces the arc in half the deck distance: $m(x) = f(2x)$.
+        Compare it against $Q(x) = 2f(x)$ from Tier R.
 
         \smallskip
-        \renewcommand{\arraystretch}{1.5}
+        \renewcommand{\arraystretch}{1.4}
         \begin{center}
-        \begin{tabular}{|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & $f(2x)$ & $2f(x)$ \\
+        $x$ (ft) & 0 & 1 & 2 & 3 & 4 \\
         \hline
-        $0.5$ & \ans{1} & \ans{$0.5$} \\
+        $m(x) = f(2x)$ & \ans{0} & \ans{12} & \ans{16} & \ans{12} & \ans{0} \\
         \hline
-        $1$ & \ans{4} & \ans{2} \\
+        $Q(x) = 2f(x)$ & \ans{0} & \ans{14} & \ans{24} & \ans{30} & \ans{32} \\
         \hline
         \end{tabular}
         \end{center}
+        \smallskip
 
-        Multiplying \textit{inside} and multiplying \textit{outside} give
-        different graphs. Explain what each one does.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The two rules agree at exactly one input: $x = $
+                \ans{0}.
+          \item $m$'s high point is ( \ans{2} , \ans{16} );
+                $Q$'s is ( \ans{4} , \ans{32} ).
+          \item The $2$ sits in a different place in each rule. Say what each
+                one changed.
 
-        \ansline{$f(2x)$ doubles the input, so the graph is squeezed horizontally by a factor of $1/2$.}
-        \ansline{$2f(x)$ doubles the output, so the graph is stretched vertically by a factor of 2.}
+                \vspace{0.05in}
+                \ansline{$m$'s 2 is inside: it changed the question, squeezing the arc into half the deck.}
+                \ansline{$Q$'s 2 is outside: it changed the answer, doubling every height in place.}
+        \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
 
