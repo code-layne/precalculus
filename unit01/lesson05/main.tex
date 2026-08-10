@@ -18,12 +18,15 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will evaluate composite functions
-    numerically from a table and analytically from formulas, construct
-    $(f \circ g)(x)$ by substituting $g(x)$ for every $x$ in $f(x)$, show that
-    $f(g(x))$ and $g(f(x))$ are generally different, and decompose a function
-    into an inner and an outer piece --- recognizing a horizontal shift or
-    dilation as a composition in disguise.
+    \textbf{Primary Objective:} Students will read every composition
+    $f(g(x))$ through the one number that sits between the two functions ---
+    the \textit{handoff}, which is the inner function's answer and the outer
+    function's question at once; evaluate composites from a table and from
+    formulas by naming that number first; build $(f \circ g)(x)$ by
+    substituting $g(x)$ for every $x$ in $f(x)$; explain non-commutativity and
+    the domain of a composite as facts about the handoff; and decompose a
+    function --- recognizing every horizontal move from Lesson 1.4 as a
+    composition.
     \hfill\textit{\small (CED Topic 2.7 --- Skills 1.C, 2.B)}
 \end{tcolorbox}
 
@@ -33,31 +36,40 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{1.C} --- Construct new functions, using composition, that may be useful
-in modeling contexts, criteria, or data. &
+\textbf{1.C} --- Construct new functions, using compositions, that may be
+useful in modeling contexts, criteria, or data. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item $(f \circ g)(x) = f(g(x))$: the output of the inner function $g$
-        becomes the input of the outer function $f$. (2.7.A.1)
+  \item $(f \circ g)(x) = f(g(x))$: the outputs of $g$ are used as the inputs
+        of $f$. The number that changes hands --- the \textbf{handoff} --- is
+        the whole mechanism. (2.7.A.1)
+  \item Because the handoff must be an input $f$ accepts, the domain of the
+        composite is restricted to those $x$ whose $g(x)$ lands in $f$'s
+        domain. (2.7.A.1)
   \item A composite value can be found from a table, a graph, or an analytic
-        expression --- always working from the inside out. (2.7.A.2)
+        expression --- always by naming the handoff first. (2.7.A.2)
 \end{itemize} \\
 \textbf{2.B} --- Construct equivalent representations of functions and
 expressions. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Composition is \textbf{not} commutative: in general
-        $f(g(x)) \ne g(f(x))$ --- order changes the answer. (2.7.A.3)
-  \item The identity function $f(x) = x$ leaves the other function alone:
-        composing with it returns that function unchanged. (2.7.A.4)
-\end{itemize} \\
-\textbf{Synthesis} --- build, then take apart. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Composition links two quantities that no single formula connects
-        directly. (2.7.B.1)
+  \item Composition is \textbf{not} commutative: swapping the machines swaps
+        the handoff, so $f(g(x))$ and $g(f(x))$ are typically different.
+        (2.7.A.3)
+  \item The identity function $I(x) = x$ makes the handoff the number itself,
+        so composing with it changes nothing. (2.7.A.4)
   \item Build $f(g(x))$ analytically by substituting $g(x)$ for \textit{every}
-        $x$ in $f(x)$. (2.7.B.2)
-  \item Any function can be decomposed into simpler pieces; a horizontal shift
-        $f(x+k)$ or dilation $f(kx)$ \textit{is} a composition.
-        (2.7.C.1--C.3)
+        $x$ in $f(x)$ --- the handoff is now an expression, not a number.
+        (2.7.B.2)
+\end{itemize} \\
+\textbf{Synthesis} --- build a chain, then take one apart. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Composition links two quantities that no single formula connects; the
+        handoff is the quantity in the middle, and it has its own units.
+        (2.7.B.1)
+  \item Decomposition is naming the handoff: what would you compute first?
+        (2.7.C.1)
+  \item An additive or multiplicative transformation of $f$ \textit{is} a
+        composition with $g(x) = x+k$ or $g(x) = kx$ --- which is why
+        Lesson 1.4's inside changes acted on inputs. (2.7.C.2--C.3)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
@@ -65,177 +77,202 @@ expressions. &
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Composition            & Feeding one function's output into another function. Written $(f \circ g)(x) = f(g(x))$ and read ``$f$ of $g$ of $x$.'' \\
-Inner and outer function & In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result. \\
-Identity function      & $I(x) = x$ --- the do-nothing function. $f(I(x)) = f(x)$ and $I(f(x)) = f(x)$. \\
-Decomposition          & Writing a single function $h$ as $f(g(x))$ for simpler pieces $f$ and $g$ --- composition run backwards. \\
-Domain of a composite  & The inputs $x$ that $g$ accepts \textit{and} whose outputs $g(x)$ are inputs $f$ accepts. If either machine jams, there is no value. \\
+Composition            & Running two functions back to back. Written $(f \circ g)(x) = f(g(x))$ and read ``$f$ of $g$ of $x$.'' The circle is not multiplication. \\
+Inner and outer function & In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result. The letter written last runs first. \\
+Handoff value          & The number (or expression) the inner function passes over: its \textit{answer}, and immediately the outer function's \textit{question}. \\
+Domain of a composite  & The inputs $x$ that $g$ accepts \textit{and} whose handoff $g(x)$ is an input $f$ accepts. A handoff the outer function refuses gives no value. \\
+Identity function      & $I(x) = x$ --- the do-nothing function, whose handoff is the number itself. $f(I(x)) = I(f(x)) = f(x)$. \\
+Decomposition          & Writing a single function $h$ as $f(g(x))$ for simpler pieces --- composition run backwards, done by naming the handoff. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: evaluating a function at a numerical input with the
-    parentheses habit (Lesson 1.1), substituting an \textit{expression} rather
-    than a number into a rule (Lesson 1.1), reading values off a table both
-    directions (Lesson 1.1), and the inside/outside sort from Lesson 1.4.
-    Item 1(c) is the load-bearing one --- $f(x^2) = 2x^2+1$ is exactly the
-    substitution move Part 3 needs, done once before it has a name.
+    Skills reviewed: evaluating $f(x) = 3x-2$ at two numbers and at an
+    \textit{expression} with the parentheses habit from 1.1; reading a table
+    forwards and backwards (1.1); and the inside/outside sort from 1.4.
+    Item 1(c) is load-bearing --- $f(x^2) = 3x^2-2$ is exactly the substitution
+    Part 3 needs, done once before it has a name, and $f(5) = 13$ is the number
+    Part 3 lands on when it checks a value two ways. Item 2(b) rehearses the
+    backwards read Part 2 leans on when a handoff has to be looked up as an
+    input.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{lilac}
-    \textbf{Two registers, one jacket.} A \$60 jacket, a \$10 coupon, and 6\%
-    sales tax. Your clerk takes the coupon off first, then adds the tax. The
-    clerk at the next register adds the tax first, then takes the coupon off.
+    \textbf{Two registers, one jacket.} A \$60 jacket, a \$10 coupon, 6\% sales
+    tax. Register 1 scans the coupon first, then the tax; register 2 scans the
+    tax first, then the coupon.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask for a show of hands: same total, or different? Most classes
-              split, and most students argue ``same --- it's the same two
-              things.''
-        \item Work both totals on the board: \$53.00 and \$53.60. Sixty cents
-              apart, from the same two operations.
+        \item Take a vote before any computing: same total, or different? Most
+              classes split, and most students argue ``same --- it's the same
+              two things.''
+        \item Then work both on the board, and \textbf{write the middle number
+              on the board too}: register 1's screen reads \$50 before it
+              charges \$53.00; register 2's screen reads \$63.60 before it
+              charges \$53.60.
     \end{enumerate}
-    \textit{Discussion prompt:} the coupon and the tax are each a
-    \textit{function} of the price. Today we chain functions together, and the
-    order of the chain is part of the answer.
+    \textit{Discussion prompt:} the totals differ because the \textbf{middle
+    numbers} differ. That number on the little screen is today's whole idea:
+    it is what the first function answered, and it is what the second function
+    gets asked. Name it the \textbf{handoff} and keep the word all period.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Two Machines in a Row} (8 min)
+\textbf{Part 1: The Handoff} (8 min)
 
 \begin{itemize}
-  \item Draw the two-machine picture: $x$ goes into $g$, $g(x)$ comes out and
-        goes straight into $f$, and $f(g(x))$ comes out the far end.
+  \item Draw the two-machine picture with the middle arrow in gold and label it
+        twice: ``$g$'s answer'' above, ``$f$'s question'' below. That picture
+        is the lesson.
   \item Give the notation once and insist on it: $(f \circ g)(x) = f(g(x))$,
-        read ``$f$ of $g$ of $x$.'' The circle is not multiplication.
-  \item The organizing sentence, repeated all lesson: \textbf{work from the
-        inside out --- the inner function runs first.} In $f(g(x))$ the letter
-        written \textit{last} runs \textit{first}.
+        read ``$f$ of $g$ of $x$.'' The circle is not multiplication --- say
+        what it is \textit{not} out loud, because $f(x)\cdot g(x)$ is a
+        homework distractor.
+  \item The spine, repeated verbatim all period: \textbf{one number, two jobs
+        --- an answer first, then a question. Find it, and write it down.} In
+        $f(g(x))$ the letter written last runs first.
 \end{itemize}
 
-\textbf{Part 2: Composite Values from a Table} (12 min)
+\textbf{Part 2: The Handoff from a Table} (12 min)
 
 \begin{itemize}
-  \item Using the notes table, do $f(g(1))$ out loud in two recorded steps:
-        first $g(1) = 3$, then $f(3) = 2$. Insist on writing the middle number
-        down --- that habit is the whole part.
-  \item Then $g(f(1))$: $f(1) = 4$, so $g(4) = 4$. Different answer, same two
-        functions. Name it: composition is not commutative (2.7.A.3).
-  \item Domain at exposure depth: $f(g(2))$ needs $f(7)$, and 7 is not an input
-        in the table --- no value. The inner output has to be something the
-        outer function accepts.
+  \item $f(g(1))$ out loud in two recorded steps: handoff $g(1) = 3$, then
+        $f(3) = 2$. Do not let anyone skip the first blank.
+  \item Then $g(f(1))$: handoff is now $4$, and the answer is $4$. Same
+        functions, same input, different handoff --- name it, composition is
+        not commutative (2.7.A.3).
+  \item $f(g(2))$: the handoff is $7$, and $f$ has no $7$. No value. That is
+        the domain of a composite, at exposure depth (2.7.A.1).
+  \item The ``your turn'' table has a \textbf{handoff row}. Make them fill it
+        all the way across before looking up one value of $f$ --- it is the
+        same device as 1.4's ``handed to $f$'' row.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Building a Composite Analytically} (12 min)
+\textbf{Part 3: Handing Over an Expression} (12 min)
 
 \begin{itemize}
-  \item State the rule as a recipe: to build $f(g(x))$, \textbf{substitute
-        $g(x)$ for every $x$ in $f(x)$} (2.7.B.2). Say ``every.''
-  \item Work $f(g(x))$ and then $g(f(x))$ for $f(x) = 2x+1$, $g(x) = x^2-3$.
-        The results are $2x^2-5$ and $4x^2+4x-2$ --- not even the same shape.
-  \item Check a value both ways: $f(g(2)) = 3$ from the formula and from the
-        two-step evaluation. Same number, two routes (2.7.A.2).
+  \item One sentence of method: substitute $g(x)$ for \textbf{every} $x$ in
+        $f(x)$ (2.7.B.2). Say ``every,'' and have them circle each $x$ first.
+  \item The handoff is no longer a number, it is an expression --- that is the
+        only thing that changed. Point back at the warm-up: the handoff was
+        $x^2$.
+  \item Work $f(g(x))$ then $g(f(x))$ for $f(x)=3x-2$, $g(x)=x^2+1$: $3x^2+1$
+        against $9x^2-12x+5$. Not even the same shape.
+  \item Check $f(g(2))$ two routes: handoff $5$, then $f(5) = 13$; or straight
+        from $3x^2+1$. Same number (2.7.A.2), and $13$ is the warm-up's own
+        answer.
 \end{itemize}
 
-\textbf{Part 4: Order Matters --- the Checkout Counter} (10 min)
+\textbf{Part 4: Two Registers, Two Handoffs} (10 min)
 
 \begin{itemize}
-  \item Name the hook's two functions: coupon $c(p) = p - 10$, tax
-        $t(x) = 1.06x$. Neither one alone answers ``what do I pay?'' ---
-        chaining them does (2.7.B.1).
-  \item Build both orders symbolically: $t(c(p)) = 1.06p - 10.60$ and
-        $c(t(p)) = 1.06p - 10$. They differ by \$0.60 at \textit{every} price,
-        because the second one taxes the ten dollars you never paid.
+  \item Name the hook's functions: coupon $c(p) = p-10$, tax $t(x) = 1.06x$.
+        Neither alone answers ``what do I pay?'' --- chaining them does
+        (2.7.B.1).
+  \item Both orders symbolically: $1.06p - 10.60$ against $1.06p - 10$. The
+        \$0.60 gap is at every price, because taxing first taxes the ten
+        dollars you never paid.
+  \item Close the part on the spine: swap the machines, swap the handoff.
 \end{itemize}
 
-\textbf{Part 5: Decomposition, Identity, and Lesson 1.4} (8 min)
+\textbf{Part 5: Decomposition, Identity, and 1.4} (8 min)
 
 \begin{itemize}
-  \item Decompose $h(x) = (3x+2)^4$: inner $g(x) = 3x+2$, outer $f(u) = u^4$.
-        Test it by substituting back. ``What would you do first with a
-        calculator?'' finds the inner function every time.
-  \item Identity function $I(x) = x$: composing with it changes nothing
-        (2.7.A.4). Flag it --- it is the target of Lesson 1.6.
-  \item \textbf{Deliver on 1.4's promise.} Every $f(x+3)$ they wrote last
-        lesson was $f(g(x))$ with $g(x) = x+3$; every $f(2x)$ was $f(g(x))$
-        with $g(x) = 2x$. Inside changes were compositions all along ---
-        that is why they act on inputs (2.7.C.2--C.3).
+  \item Decompose $h(x) = (5x-1)^3$ by asking ``what would your calculator do
+        first?'' --- that finds the handoff, and the inner function is its
+        rule. Verify by substituting back (2.7.C.1).
+  \item Identity $I(x)=x$: the handoff is the number itself, so nothing
+        happens (2.7.A.4). Flag it as tomorrow's target.
+  \item \textbf{Deliver on 1.4's promise.} $f(x+3)$ is $f(h(x))$ with
+        $h(x)=x+3$; $f(2x)$ is $f(h(x))$ with $h(x)=2x$. The handoff is what
+        $f$ gets \textit{asked}, so an inside change can only rewrite the
+        question (2.7.C.2--C.3).
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+While students work on the guided notes and practice, circulate and check:
 \begin{itemize}
-  \item \textbf{Common error:} evaluating $f(g(1))$ as $f(1)$ times $g(1)$, or
-        as $f(1)$ then looking up $g$. Cold-call: ``Which number goes into the
-        second machine? Write it down before you use it.''
+  \item \textbf{Common error:} no handoff written down. This is the one to
+        chase hardest --- a student who does $f(g(1))$ in their head has no
+        place to be wrong out loud and no place for you to catch it. Cold-call:
+        ``What number goes into the second machine? Say it before you use it.''
   \item \textbf{Common error:} running the outer function first --- computing
         $f(1)$ when the problem says $f(g(1))$. Point at the parentheses:
-        ``Innermost parentheses first, like any arithmetic.''
-  \item \textbf{Common error:} in $f(g(x))$ with $f(x) = 2x+1$, substituting
-        into only the first $x$. Ask them to circle every $x$ in $f$ before
-        replacing anything.
-  \item \textbf{Common error:} asserting $f(g(x)) = g(f(x))$ because ``it's
-        like multiplying.'' Send them back to the checkout counter --- \$53.00
-        versus \$53.60 settles it faster than any algebra.
-  \item \textbf{Common error:} decomposing backwards, calling $f(u) = 3u+2$ the
-        outer function of $(3x+2)^4$. Have them substitute back and see they
-        built $3x^4+2$ instead.
+        innermost first, like any arithmetic.
+  \item \textbf{Common error:} reading $(f\circ g)(x)$ as $f(x)\cdot g(x)$.
+        Ask for the handoff; there isn't one in a product, and that ends it.
+  \item \textbf{Common error:} substituting into only the first $x$ of
+        $f(x) = 3x-2$. Have them circle every $x$ before replacing anything.
+  \item \textbf{Common error:} decomposing backwards --- calling $f(u) = 5u-1$
+        the outer function of $(5x-1)^3$. Make them substitute back; they
+        built $5x^3-1$ instead.
+  \item \textbf{Spine check:} when a student says ``it's just backwards,'' stop
+        and ask for the handoff by name. The slogan is what fails them in
+        Part 5 and again in 1.6.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Checkout Counter} in leveled
-tiers. Every tier uses the same two functions --- coupon $c(p) = p-10$ and tax
-$t(x) = 1.06x$ --- so groups can be regrouped mid-activity without new setup.
+Students work on the \textbf{Group Activity: The Summit Cable Car} in leveled
+tiers. Every tier uses the same two instruments --- elevation $E(t)$ from time,
+temperature $T(e)$ from elevation --- so groups can be re-formed mid-period
+with no new setup. The context carries the spine physically: the handoff is an
+\textit{elevation}, a real quantity with its own units, sitting between minutes
+and degrees.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Fill a table of $c(p)$, then a second row
-        of $t(c(p))$, one machine at a time; then answer which function ran
-        first and what the middle row physically \textit{is}.
-  \item \textbf{Tier A (Apply):} Compute $t(c(60))$ and $c(t(60))$ in recorded
-        steps, build both formulas symbolically, and state which order the
-        shopper wants and by how much.
-  \item \textbf{Tier E (Extend):} Replace the coupon with a 25\% discount
-        $d(p) = 0.75p$ and discover that $d$ and $t$ \textit{do} commute ---
-        then explain why. Finish by decomposing the register's printed rule and
-        rewriting $f(x+3)$ from Lesson 1.4 as a composition.
+  \item \textbf{Tier R (Remediate):} Read $E(4)$ and $T(800)$ off two separate
+        tables, discover they were one question, then fill a handoff row across
+        the whole ride and name the handoff's units.
+  \item \textbf{Tier A (Apply):} Build $T(E(t)) = 62-t$ from the formulas,
+        interpret it (one degree per minute), solve for the moment it hits
+        $55^\circ$, write why neither instrument alone answers the question
+        (2.7.B.1), and then reverse the order --- $E(T(t))$ hands $E$ a
+        temperature, which it does not accept.
+  \item \textbf{Tier E (Extend):} Chain a third function (kiosk drink sales
+        from temperature) and name both handoffs; rewrite a three-minute late
+        departure as $E(t-3)$, a composition, and connect it to 1.4; then find
+        $m$ with $m(T(E(t))) = t$ and meet the identity function a day early.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item For $f(x) = x+4$ and $g(x) = 3x$, evaluate $f(g(2))$ and $g(f(2))$
-        (work space provided).
-  \item For the same $f$ and $g$, write $(f \circ g)(x)$ and $(g \circ f)(x)$
+  \item For $f(x) = 2x$ and $g(x) = x-6$, evaluate $f(g(10))$ and $g(f(10))$,
+        recording the handoff for each.
+  \item For the same $f$ and $g$, write $(f\circ g)(x)$ and $(g\circ f)(x)$
         simplified, then say whether they are the same function.
-  \item Decompose $h(x) = (x-5)^3$ into an outer function and an inner
-        function.
+  \item Decompose $h(x) = (x+7)^4$, and name the handoff used to compute
+        $h(3)$.
 \end{enumerate}
-\textbf{Assessment note:} Item 1 is the diagnostic --- two matching answers
-means the student ran the same machine twice and Part 2 needs a reteach in
-tomorrow's warm-up window. Item 2 misses split two ways: $3x+12$ in both slots
-is a substitution error, while $3(x+4)$ left unsimplified is only a bookkeeping
-miss. Item 3 with $f(u) = u - 5$ on the outside is the decomposition reversal
-from Active Monitoring.
+\textbf{Assessment note:} item 1 is the diagnostic, and the \textit{handoff}
+blanks are the part to read --- two matching totals means the student ran the
+same machine twice and Part 2 needs a reteach in tomorrow's warm-up window; a
+correct total with an empty handoff blank means the habit did not land even
+though the arithmetic did. Item 2 misses split two ways: $2x-12$ in both slots
+is a substitution error, while $2(x-6)$ left unsimplified is only bookkeeping.
+Item 3(b) is the cheapest check that ``handoff'' means something to them ---
+$10$, not $7$ and not $10^4$.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering table-based composition in both orders,
-analytic construction of $f \circ g$ and $g \circ f$ for a quadratic and a
-linear function, the checkout-counter context at a new price, decomposition
-(including rewriting a Lesson 1.4 horizontal shift as a composition), and one
-AP-style multiple-choice item on $f \circ g$.
+\textbf{Homework:} 5 problems --- table-based composition in both orders with
+an explicit handoff row and one composite that has no value, analytic
+construction of both composites for a quadratic and a linear function, the
+register context at a new price, decomposition (including rewriting a
+Lesson 1.4 horizontal shift as a composition), and one AP-style multiple-choice
+item on $f\circ g$.
 
-\textbf{Extension (optional):} Verify that the identity $I(x) = x$ leaves
-$f(x) = 5x-2$ unchanged in either order, then hunt for a function $g$ with
-$f(g(x)) = x$. Students who find $g(x) = \dfrac{x+2}{5}$ have invented the
-inverse function a day early.
+\textbf{Extension (optional):} Verify that $I(x)=x$ leaves $f(x) = 5x-2$
+unchanged in either order, then hunt for a $g$ with $f(g(x)) = x$. Students who
+find $g(x) = \dfrac{x+2}{5}$ have invented the inverse function a day early.
 
 \textbf{Preview:} Next lesson (1.6, Inverse Functions) answers the question the
 extension raises: which function \textit{undoes} $f$? The test is a
@@ -243,55 +280,71 @@ composition --- $f(f^{-1}(x)) = x$, the identity function from Part 5.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 1(c) is the payoff: substituting
-$x^2$ into $f(x) = 2x+1$ is a routine algebra question here and the entire
-mechanic of Part 3 --- when you get there, say out loud that they already did
-it. Item 2's backwards table read (``which $x$ gives 0?'') is the habit Part 2
-leans on when the inner output has to be looked up as an input. Item 3 is a
-one-line callback to 1.4 so Part 5's punchline lands.
+Five minutes, silent start, no calculators. Item 1(c) is the payoff:
+substituting $x^2$ into $f(x) = 3x-2$ is a routine algebra question here and
+the entire mechanic of Part 3 --- when you get there, say out loud that they
+already did it, and that the thing they substituted was the handoff. Item 1(a)
+is not filler either: $f(5) = 13$ is the exact number Part 3 lands on when it
+checks $f(g(2))$ two ways, and students who recognize it get the ``two routes,
+one number'' point for free. Item 2(b) reads the table backwards, which is the
+habit Part 2 needs when a handoff has to be found as an \textit{input}. Item 3
+is a one-line callback to 1.4 so Part 5's punchline has something to land on.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
 The single most valuable thing you can enforce today is \textbf{writing the
-middle number down}. A student who computes $f(g(1))$ in their head and writes
-only the final answer has no place to be wrong out loud, and no place for you to
-catch it. Part 2's two-step layout is built for that; do not let them skip the
-first blank. Part 4 is the meaning of the lesson, not a detour --- if you are
-short on time, compress Part 3's second work block ($g(f(x))$) rather than
-cutting Part 4 or 5. Domain of a composite stays at exposure depth: the table
-value $f(g(2))$ that has no answer is enough, and no student needs interval
-algebra today.
+handoff down}, and the notes are built to make that unavoidable: two-step
+layouts in Part 2, a dedicated handoff row in the ``your turn'' table, handoff
+blanks in Parts 3 and 4, and a handoff column in the Lesson 1.4 table at the
+end. Do not let a student skip the first blank because they can do it in their
+head --- the habit, not the arithmetic, is what carries into 1.6 and into
+Unit 4. Take the hook vote before computing, and put both middle numbers on the
+board next to both totals; the \$50 and the \$63.60 are the reason the totals
+differ, and if you only write the totals the class hears ``order matters''
+as an unexplained rule. Domain of a composite stays at exposure depth: the
+table value $f(g(2))$ with no answer is enough, and no student needs interval
+algebra today. If time runs short, compress Part 3's second work block
+($g(f(x))$) rather than cutting Parts 4 or 5.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-All three tiers use the same coupon and tax functions, so a student who finishes
-Tier R can move straight into Tier A without re-reading a scenario. Tier R's
-middle row is the point of that tier: make groups say what the number
-\textit{is} (the price after the coupon, before tax) rather than just computing
-it. Tier A's \$0.60 gap is worth a whole-class pause --- ask why it is exactly
-sixty cents at every price, and let someone get to ``it's the tax on the ten
-dollars.'' Tier E's discovery that a percentage discount \textit{does} commute
-with tax is the best share of the day: order matters in general, not always,
-and knowing the difference is the sophisticated version of the idea.
+The cable car is chosen so the handoff is a physical quantity with units: an
+elevation in feet, sitting between minutes and degrees. Make every tier say
+``feet'' out loud --- Tier R item 4 exists only for that. Tier R's items 1 and
+2 are deliberately the same question asked twice, once as two lookups and once
+as a composition; let groups notice that themselves before you say it. Tier A
+item 4 is the best written answer of the day (2.7.B.1) and worth a whole-class
+share: nothing on that mountain measures degrees against time. Tier A item 5 is
+the one to protect if a group is running out of time --- a reversed order whose
+handoff has the \textit{wrong units} is a sharper argument for
+non-commutativity than any pair of unequal answers. Tier E item 3 is the
+on-ramp to 1.6; if any group gets there, open tomorrow with their $m(y)=62-y$.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 1: $f(g(2)) = 10$ and
-$g(f(2)) = 18$ is the target, and any pile where the two answers match is your
-reteach group. On item 2 accept $3(x+4)$ as well as $3x+12$ --- the second slot
-is testing substitution, not distribution. Item 3 has more than one defensible
-answer if a student splits it differently; the test is whether substituting back
-rebuilds $h$, so read their check, not their letters.
+Collected, completion credit only. Sort by item 1: handoffs $4$ and $20$,
+totals $8$ and $14$. Two matching totals is your reteach pile. Read the
+\textit{handoff} blanks before the totals --- a right total with a blank
+handoff is a different diagnosis (habit not formed) from a wrong total (order
+not understood), and only the second needs Part 2 retaught. On item 2 accept
+$2(x-6)$ as well as $2x-12$; that slot is testing substitution, not
+distribution. Item 3(a) has more than one defensible split if a student divides
+it differently --- the test is whether substituting back rebuilds $h$, so read
+their check rather than their letters. Item 3(b) has one answer, $10$, and it
+is the fastest scan on the page.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 4(b) --- rewriting $f(x+6)$ as a composition --- is the one that closes
-the loop with Lesson 1.4, and it is the item to scan first; a student who cannot
-do it did not hear Part 5. On problem 5, distractor B is $(g \circ f)(x)$ left
-unexpanded, C is $(g \circ f)(x)$ expanded, and D is the ``circle means
-multiply'' error, $f(x) \cdot g(x)$ --- each is worth thirty seconds of autopsy
-tomorrow. The extension is the direct on-ramp to 1.6; if the class never
-reached Tier E, assign it explicitly so someone arrives tomorrow having already
-built an inverse.
+Problem 1(c) --- why $f(g(5))$ has no value --- is the only place the domain of
+a composite is written in prose, and it is the item to scan first alongside
+4(c). Problem 4(c) is what closes the loop with Lesson 1.4; a student who
+cannot rewrite $f(x+6)$ as a composition did not hear Part 5, and the fix is
+thirty seconds at the board with the handoff column from the notes. On problem
+5, distractor A is $(g\circ f)(x)$, C is $(2x-1)^2$ squared term-by-term, and D
+is the ``circle means multiply'' error --- each is worth thirty seconds of
+autopsy, and D in particular should be answered with ``where is the handoff?''
+The extension is the direct on-ramp to 1.6; if the class never reached
+Tier E, assign it explicitly so someone arrives tomorrow having already built
+an inverse.
 \end{teachernote}
 \end{document}

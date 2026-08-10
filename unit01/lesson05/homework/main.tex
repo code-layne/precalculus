@@ -12,48 +12,73 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item The table gives every value of two functions $f$ and $g$. Evaluate each
-      composite by working from the inside out.
+\item The table gives every value of two functions $f$ and $g$. Name the
+      handoff before you look anything up.
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.4}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$f(x)$ & 5 & 1 & 4 & 2 & 3 \\
+$f(x)$ & 4 & 1 & 5 & 2 & 3 \\
 \hline
-$g(x)$ & 3 & 5 & 1 & 5 & 2 \\
+$g(x)$ & 3 & 5 & 1 & 4 & 9 \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $f(g(1)) = $ \blank{2.4cm} \qquad (inner value: \blank{1.4cm})
-  \item $g(f(1)) = $ \blank{2.4cm} \qquad (inner value: \blank{1.4cm})
-  \item $f(g(3)) = $ \blank{2.4cm} \qquad (inner value: \blank{1.4cm})
-  \item $g(g(4)) = $ \blank{2.4cm} \qquad (inner value: \blank{1.4cm})
+  \item $f(g(1))$: \; handoff $= $ \blank{1.4cm}, \;
+        so $f(g(1)) = $ \blank{1.6cm}
+  \item $g(f(1))$: \; handoff $= $ \blank{1.4cm}, \;
+        so $g(f(1)) = $ \blank{1.6cm}
+  \item $f(g(5))$ has no value. In one sentence, say what goes wrong with the
+        handoff.
+
+        \vspace{0.05in}
+        \writeline
+
+  \item Complete both rows.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        $x$ & 2 & 3 & 4 \\
+        \hline
+        handoff: $g(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        $(f \circ g)(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
 \end{enumerate}
 
-\item Let $f(x) = x^2 + 1$ and $g(x) = x - 4$. Build both composites and
-      simplify completely.
+\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and
+      simplify.
 
 \begin{work}
-  f(g(x)) &= f(x - 4) \\
-          &= (x - 4)^2 + 1 \\
-          &= x^2 - 8x + 16 + 1 \\
-          &= x^2 - 8x + 17 \\
-  g(f(x)) &= g(x^2 + 1) \\
-          &= (x^2 + 1) - 4 \\
-          &= x^2 - 3
+  f(g(x)) &= f(x - 3) \\
+          &= (x - 3)^2 + 2 \\
+          &= x^2 - 6x + 9 + 2 \\
+          &= x^2 - 6x + 11 \\
+  g(f(x)) &= g(x^2 + 2) \\
+          &= (x^2 + 2) - 3 \\
+          &= x^2 - 1
 \end{work}
 
-$(f \circ g)(x) = $ \blank{3.8cm} \qquad $(g \circ f)(x) = $ \blank{3cm}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $(f \circ g)(x) = $ \blank{4cm}
+  \item $(g \circ f)(x) = $ \blank{3cm}
+  \item One input settles whether they are the same function. At $x = 0$:
+        $f(g(0)) = $ \blank{1.6cm} and $g(f(0)) = $ \blank{1.6cm}.
+\end{enumerate}
 
-\item \textbf{Back at the checkout counter.} The \$10 coupon is
-      $c(p) = p - 10$ and the 6\% sales tax is $t(x) = 1.06x$. A \$45 shirt
-      goes through two different registers.
+\item A \$45 backpack, the same \$10 coupon, and the same 6\% tax:
+      $c(p) = p - 10$ and $t(x) = 1.06x$.
 
 \begin{work}
   t(c(45)) &= t(35) \\
@@ -64,33 +89,39 @@ $(f \circ g)(x) = $ \blank{3.8cm} \qquad $(g \circ f)(x) = $ \blank{3cm}
            &= 37.70
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Coupon first, then tax: \$\blank{2cm}
-  \item Tax first, then coupon: \$\blank{2cm}
-  \item The shopper saves \$\blank{1.6cm} by having the coupon rung up
-        first.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Coupon first: handoff \$\blank{1.4cm}, total \$\blank{1.6cm}.
+  \item Tax first: handoff \$\blank{1.6cm}, total \$\blank{1.6cm}.
+  \item The gap is \$\blank{1.4cm} --- the same gap as the \$60 jacket. Say
+        in one sentence why the price does not affect it.
+
+        \vspace{0.05in}
+        \writeline
 \end{enumerate}
 
-\boxguard[16]
-\item \textbf{Taking functions apart.}
+\item Take each function apart, then put one back together.
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Decompose $h(x) = \sqrt{4x - 7}$. \quad
-        Inner: $g(x) = $ \blank{2.6cm} \quad Outer: $f(u) = $ \blank{2.2cm}
-  \item In Lesson 1.4 you shifted a graph with $k(x) = f(x + 6)$. Write it as
-        a composition: $k(x) = f(g(x))$ where $g(x) = $ \blank{2.4cm}
-  \item Was that change made \textbf{inside} or \textbf{outside} $f$?
-        \quad \blank{2.4cm}
+  \item $h(x) = \sqrt{4x + 1}$: \quad inner $g(x) = $ \blank{2.4cm},
+        \quad outer $f(u) = $ \blank{2.4cm}
+  \item $k(x) = 3(x - 2)^5$: \quad inner $g(x) = $ \blank{2.4cm},
+        \quad outer $f(u) = $ \blank{2.4cm}
+  \item In Lesson 1.4 you wrote the horizontal shift $g(x) = f(x + 6)$.
+        Write it as a composition: $g(x) = f(h(x))$ where
+        $h(x) = $ \blank{2.4cm}, and the handoff is \blank{2cm}.
+
+        Because the handoff is what $f$ gets \blank{2.2cm}, the graph moves
+        6 units to the \blank{1.8cm}.
 \end{enumerate}
 
-\item Let $f(x) = 3x - 2$ and $g(x) = x^2$. Which expression is
+\item Let $f(x) = x^2$ and $g(x) = 2x - 1$. Which of the following is
       $(f \circ g)(x)$?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $3x^2 - 2$
-  \item $(3x - 2)^2$
-  \item $9x^2 - 12x + 4$
-  \item $3x^3 - 2x^2$
+  \item $2x^2 - 1$
+  \item $4x^2 - 4x + 1$
+  \item $4x^2 + 1$
+  \item $2x^3 - x^2$
 \end{enumerate}
 
 \end{enumerate}
@@ -99,16 +130,14 @@ $(f \circ g)(x) = $ \blank{3.8cm} \qquad $(g \circ f)(x) = $ \blank{3cm}
 
 \boxguard
 \begin{extensionbox}
-The \textbf{identity function} is $I(x) = x$. Let $f(x) = 5x - 2$.
+Let $f(x) = 5x - 2$ and let $I(x) = x$ be the identity function.
 
-\smallskip
-First check that $I$ really does nothing: $f(I(x)) = $ \blank{2.6cm} and
-$I(f(x)) = $ \blank{2.6cm}.
-
-\smallskip
-Now the interesting question: is there a function $g$ with
-$f(g(x)) = x$ --- a function that \textit{undoes} $f$? Try to find it, and
-explain how you searched.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Show that $f(I(x))$ and $I(f(x))$ both come out to $f(x)$ --- with
+        $I$ in the chain, the handoff is the number itself.
+  \item Now hunt for a different function $g$ so that $f(g(x)) = x$: a partner
+        whose handoff comes back out as the number you started with.
+\end{enumerate}
 
 \vspace{0.05in}
 \writelines{2}
@@ -116,12 +145,12 @@ explain how you searched.
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.6}
-The extension asked for a function that undoes $f$. Lesson 1.6,
-\textit{Inverse Functions}, gives that function a name and a notation:
-$f^{-1}$. The test for it is a composition --- $f(f^{-1}(x)) = x$ --- which is
-exactly the identity function you met today.
+The extension asks for a function that \textit{undoes} $f$. Lesson 1.6,
+\textit{Inverse Functions}, gives that partner a name and a notation ---
+and the test for it is a composition: $f\big(f^{-1}(x)\big) = x$, the identity
+function from Part 5.
 \end{notesbox}
 
 \end{document}

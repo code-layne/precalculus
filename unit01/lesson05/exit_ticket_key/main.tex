@@ -1,7 +1,7 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Exit Ticket (Answer Key)
+%! Composition of Functions — Unit 1, Lesson 1.5 — Exit Ticket (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,43 +10,47 @@
 
 \vspace{0.12in}
 
-\textit{Let $f(x) = x + 4$ and $g(x) = 3x$ for items 1 and 2.}
+\textit{Let $f(x) = 2x$ and $g(x) = x - 6$ for items 1 and 2.}
 
 \vspace{0.1in}
 
 \begin{enumerate}[itemsep=12pt]
 
-\item Evaluate both composites at $x = 2$. Write the middle number down.
+\item Evaluate both composites at $x = 10$. \textbf{Write the handoff down.}
 
 \begin{work}
-  f(g(2)) &= f(6) \\
-          &= 6 + 4 \\
-          &= 10 \\
-  g(f(2)) &= g(6) \\
-          &= 3(6) \\
-          &= 18
+  f(g(10)) &= f(4) \\
+           &= 8 \\
+  g(f(10)) &= g(20) \\
+           &= 14
 \end{work}
 
-$f(g(2)) = $ \ans{10} \qquad $g(f(2)) = $ \ans{18}
+handoff $= $ \ans{4}, \; so $f(g(10)) = $ \ans{8}
+
+\smallskip
+handoff $= $ \ans{20}, \; so $g(f(10)) = $ \ans{14}
 
 \item Write each composite as a simplified formula.
 
 \begin{work}
-  (f \circ g)(x) &= f(3x) \\
-                 &= 3x + 4 \\
-  (g \circ f)(x) &= g(x + 4) \\
-                 &= 3x + 12
+  (f \circ g)(x) &= f(x - 6) \\
+                 &= 2(x - 6) \\
+                 &= 2x - 12 \\
+  (g \circ f)(x) &= g(2x) \\
+                 &= 2x - 6
 \end{work}
 
-$(f \circ g)(x) = $ \ans{$3x + 4$} \qquad $(g \circ f)(x) = $ \ans{$3x + 12$}
+$(f \circ g)(x) = $ \ans{$2x - 12$} \qquad $(g \circ f)(x) = $ \ans{$2x - 6$}
 
 \smallskip
-Are they the same function? \ans{No}
+Are they the same function? \ans{no}
 
-\item Decompose $h(x) = (x - 5)^3$ into an inner and an outer function.
+\item Decompose $h(x) = (x + 7)^4$.
 
-\smallskip
-Inner: $g(x) = $ \ans{$x - 5$} \qquad Outer: $f(u) = $ \ans{$u^3$}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Inner: $g(x) = $ \ans{$x + 7$} \qquad Outer: $f(u) = $ \ans{$u^4$}
+  \item To compute $h(3)$, the handoff is the number \ans{10}.
+\end{enumerate}
 
 \end{enumerate}
 
