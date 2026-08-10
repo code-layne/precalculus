@@ -10,40 +10,36 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Hiker's Day]{plumlight}
+\begin{scenariobox}[The Reservoir Year]{plumlight}
 \small
-A hiker starts up a canyon trail at sunrise. The function $E$ gives her
-elevation in meters $t$ hours after starting. She climbs to a peak, descends
-to the river at the canyon floor (elevation 0), then climbs the far side.
-Every tier reads this same graph --- no drawing required.
+A town reservoir is measured on the first of every month. The function $L$
+gives the water level in \textbf{feet above the outlet valve} --- the pipe that
+feeds the town's canal --- in month $t$. Every tier uses this same graph and
+table; nothing is drawn.
 
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.55cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,5);
-  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $t$ (hr)};
-  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $E(t)$ (m)};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y/\lab in {1/100,2/200,3/300,4/400,5/500} \node[left] at (0,\y) {\small \lab};
-  \draw[very thick, plum] (0,1) .. controls (1,4) and (2,5) .. (3,5);
-  \draw[very thick, plum] (3,5) -- (5,0);
-  \draw[very thick, plum] (5,0) .. controls (6.6,0.3) .. (8,3);
-  \fill[plum] (0,1) circle (2.5pt);
-  \fill[plum] (8,3) circle (2.5pt);
+\begin{tikzpicture}[x=0.55cm, y=0.30cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (12,15);
+  \draw[->, thick] (0,0) -- (12.6,0) node[below right] {\small $t$ (month)};
+  \draw[->, thick] (0,0) -- (0,15.8) node[above] {\small $L(t)$ (ft above valve)};
+  \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {3,6,9,12,15} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,5) -- (1,9) -- (2,12) -- (3,14) -- (4,15) -- (5,14)
+    -- (6,12) -- (7,9) -- (8,5) -- (9,0) -- (10,1) -- (11,3) -- (12,6);
+  \fill[plum] (0,5) circle (2.5pt);
+  \fill[plum] (12,6) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
-The first hours of the climb, in a table:
-
-\begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-$t$ (hr) & 0 & 1 & 2 & 3 \\
+$t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
 \hline
-$E(t)$ (m) & 100 & 300 & 430 & 500 \\
+$L(t)$ & 5 & 9 & 12 & 14 & 15 & 14 & 12 & 9 & 5 & 0 & 1 & 3 \\
 \hline
 \end{tabular}
-\end{center}
+\quad ($L(12) = 6$)
 \end{scenariobox}
 
 \vspace{0.1in}
@@ -54,65 +50,85 @@ $E(t)$ (m) & 100 & 300 & 430 & 500 \\
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Read the graph.
+  \item Read two values off the graph.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $E(0) = $ \blank{1.6cm} meters \quad (where the trail starts)
-          \item The hiker's highest elevation is \blank{1.6cm} meters, reached
-                at $t = $ \blank{1.2cm} hours.
+          \item $L(0) = $ \blank{1.6cm} \quad (the level on January 1)
+          \item $L(4) = $ \blank{1.6cm} \quad (the highest level all year)
         \end{enumerate}
 
-  \item Circle one in each pair.
+  \item Circle the right word for each stretch of the year.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item For $0 < t < 3$, $E$ is \textbf{increasing} /
-                \textbf{decreasing}.
-          \item For $3 < t < 5$, $E$ is \textbf{increasing} /
-                \textbf{decreasing}.
+          \item From $t = 0$ to $t = 4$, the level is
+                \textbf{increasing} / \textbf{decreasing}.
+          \item From $t = 5$ to $t = 9$, the level is
+                \textbf{increasing} / \textbf{decreasing}.
         \end{enumerate}
 
-  \item The statement $E(5) = 0$ describes an event on the hike. Write it as
-        a full sentence.
+  \item The graph meets the horizontal axis once. That input is a
+        \textbf{zero} of $L$.
 
         \vspace{0.05in}
-        \writeline
+        The zero is at $t = $ \blank{1.6cm}. Write what it means for the town.
 
-  \item For this function: \quad Input quantity: \blank{2.8cm} \quad
-        Output quantity: \blank{3.2cm}
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item For this function: \quad Input quantity: \blank{3.2cm} \quad
+        Output quantity: \blank{4.4cm}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item Name every interval, using inequalities on $t$.
+  \item Name every interval, using inequalities on the \textbf{inputs}.
 
         \vspace{0.05in}
-        Increasing for \blank{1cm} $< t <$ \blank{1cm} \ and for
-        \blank{1cm} $< t <$ \blank{1cm} \qquad
-        Decreasing for \blank{1cm} $< t <$ \blank{1cm}
+        Increasing on \blank{2.8cm} and \blank{2.8cm}; \quad
+        decreasing on \blank{2.8cm}.
 
-  \item Use the table of the climb. The hourly gains are
-        \blank{1.2cm} , \blank{1.2cm} , \blank{1.2cm} meters. Is the rate of
-        change increasing or decreasing? Is the climb concave up or concave
-        down?
+  \item The spring rise, month by month. Fill in the monthly changes from the
+        table.
 
-        \vspace{0.05in}
-        \writeline
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        month & 0 to 1 & 1 to 2 & 2 to 3 & 3 to 4 \\
+        \hline
+        change in $L$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \smallskip
 
-  \item State the domain and range of $E$ as inequalities.
+        On $0 < t < 4$ the reservoir is \blank{2.4cm} and concave
+        \blank{1.4cm}, because \blank{6.4cm}.
 
-        \vspace{0.05in}
-        Domain: \blank{1.2cm} $\le t \le$ \blank{1.2cm} \quad
-        Range: \blank{1.2cm} $\le E \le$ \blank{1.2cm}
+  \item The fall refill. Fill in those changes too.
 
-  \item What is the zero of $E$, and why does a zero here \textit{not} mean
-        the hike is over?
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        month & 9 to 10 & 10 to 11 & 11 to 12 \\
+        \hline
+        change in $L$ & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \smallskip
+
+        On $9 < t < 12$ the reservoir is \blank{2.4cm} and concave
+        \blank{1.4cm}, because \blank{6.4cm}.
+
+  \item Two different stretches of this year are both \textit{increasing}, yet
+        they tell different stories. Say the difference in one sentence.
 
         \vspace{0.05in}
         \writelines{2}
@@ -121,35 +137,34 @@ $E(t)$ (m) & 100 & 300 & 430 & 500 \\
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item On $5 < t < 8$ the hiker climbs slowly at first, then faster and
-        faster. Is this stretch concave up or concave down --- and what does
-        that say about her pace?
+  \item The summer drawdown runs from $t = 4$ to $t = 9$. Compute its monthly
+        changes and name its concavity.
+
+        \vspace{0.05in}
+        Changes: \blank{1cm}, \blank{1cm}, \blank{1cm}, \blank{1cm},
+        \blank{1cm} \quad --- so $L$ is concave \blank{1.4cm} there.
 
         \vspace{0.05in}
         \writelines{2}
 
-  \item Flip the machine: is \textbf{time} a function of \textbf{elevation}
-        for this hike? Use the two moments when the hiker is 300 meters up in
-        your explanation.
+  \item One of the four corners never appeared this year: \textbf{decreasing
+        and concave up}. Describe what that stretch of the graph would look
+        like, and name something that could cause it here.
 
         \vspace{0.05in}
         \writelines{2}
 
-  \item A second hiker climbs all day, gaining \textit{less and less}
-        elevation each hour. Which pair describes his elevation function?
+  \item Spiral back to 1.1: the reservoir reaches 12 feet in month 2 and again
+        in month 6. Is \textbf{time} a function of \textbf{level}?
 
-        \begin{enumerate}[label=\Alph*., itemsep=3pt]
-          \item Increasing and concave up
-          \item Increasing and concave down
-          \item Decreasing and concave up
-          \item Decreasing and concave down
-        \end{enumerate}
+        \vspace{0.05in}
+        \writelines{2}
 \end{enumerate}
 \end{tcolorbox}
 

@@ -19,10 +19,11 @@
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
     \textbf{Primary Objective:} Students will describe how a function's output
-    changes as its input increases, identify intervals where a function is
-    increasing or decreasing, decide whether a graph is concave up or concave
-    down from rate-of-change behavior, and identify zeros in context.
-    \hfill\textit{\small (CED Topic 1.1 --- Skills 2.B, 3.A)}
+    changes as its input increases; name the intervals where a function is
+    increasing or decreasing; decide concavity from whether the rate of change
+    is growing or shrinking; treat those two as \textit{independent} questions
+    with four possible pairs of answers; and identify a zero and interpret it
+    in context. \hfill\textit{\small (CED Topic 1.1 --- Skills 2.B, 3.A)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -34,20 +35,23 @@
 \textbf{2.B} --- Construct equivalent graphical, numerical, analytical, or
 verbal representations of a function. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A function's input and output values vary in tandem according to the
-        function rule. (1.1.A.2)
-  \item A graph displays every input--output pair at once, so trends ---
-        rising, falling, bending --- become visible. (1.1.B.1)
-  \item A verbal description of covarying quantities determines the shape of
-        the graph. (1.1.B.2)
+  \item Input and output values vary in tandem according to the function
+        rule. (1.1.A.1--2)
+  \item A table shows a handful of input--output pairs; a graph shows every
+        one at once, which is what makes trends visible. (1.1.B.1)
+  \item A verbal description of two covarying quantities already determines
+        the shape of the graph. (1.1.B.2)
 \end{itemize} \\
 \textbf{3.A} --- Describe the characteristics of a function using
 mathematical language and notation. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
   \item Increasing: whenever $a < b$, $f(a) < f(b)$. Decreasing: whenever
-        $a < b$, $f(a) > f(b)$. (1.1.A.3--4)
+        $a < b$, $f(a) > f(b)$. Intervals are named with \textit{inputs}.
+        (1.1.A.3--4)
   \item Concave up: the rate of change is increasing. Concave down: the rate
         of change is decreasing. (1.1.B.3--4)
+  \item Direction and concavity are independent --- all four combinations
+        occur.
   \item A zero is an input whose output is 0; the graph meets the horizontal
         axis there. (1.1.B.5)
 \end{itemize} \\
@@ -57,222 +61,234 @@ mathematical language and notation. &
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
-Vary in tandem  & Two quantities change together: each input's change produces a change in the output, linked by the function rule. \\
+Vary in tandem  & Two quantities change together: each change in the input drives a change in the output, linked by the function rule. \\
 Increasing      & On an interval, larger inputs give larger outputs: whenever $a < b$, $f(a) < f(b)$. The graph rises left to right. \\
 Decreasing      & On an interval, larger inputs give smaller outputs: whenever $a < b$, $f(a) > f(b)$. The graph falls left to right. \\
-Concave up      & The rate of change is increasing on the interval; the graph bends upward like a bowl. \\
-Concave down    & The rate of change is decreasing on the interval; the graph bends downward like a dome. \\
-Zero            & An input where the output equals 0; the graph crosses or touches the horizontal axis there. \\
+Rate of change  & How much the output moves per step of input --- the ``gain'' (or loss) from one input to the next. Made precise in 1.3. \\
+Concave up      & The rate of change is increasing on the interval: each step gains more, or loses less, than the step before. \\
+Concave down    & The rate of change is decreasing on the interval: each step gains less, or loses more, than the step before. \\
+Zero            & An input whose output equals 0; the graph meets the horizontal axis there. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: evaluating a function at a negative input (parentheses
-    habit), reading a table in both directions --- find $p(2)$ vs.\ solve
-    $p(x) = 8$ --- and stating the domain and range of a function given as a
-    list of points. Item 2(c) plants today's seed: as the inputs climb, what
-    do the outputs do?
+    Skills reviewed: evaluating a function at a negative input (the
+    parentheses habit from 1.1), reading a table in both directions ---
+    find $p(2)$ versus solve $p(x) = 10$ --- and stating the domain and range
+    of a function given as a list of points. Item 2(b) plants today's seed:
+    students describe a falling column of outputs in plain English, with no
+    vocabulary available yet.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{lilac}
-    \textbf{The car and the stop sign.} A car pulls away from a stop sign.
-    Two quantities start changing at once.
+    \textbf{Two shows, same sales.} Project the two ticket-sales graphs from
+    the guided notes. Both shows went on sale the same morning; six weeks
+    later both have sold exactly 600 tickets.
     \begin{enumerate}[itemsep=2pt]
-        \item Its \textit{speed} climbs from 0 --- quickly at first, then
-              leveling off near the speed limit.
-        \item Its \textit{distance} from the sign grows --- slowly at first,
-              then faster and faster.
+        \item Ask only this: if you could promote one of these shows for six
+              more weeks, which one? Take a vote before any discussion.
+        \item Then push on \textit{why}. Students will reach for ``it's still
+              going up,'' ``it's flattening out,'' ``it's taking off'' ---
+              catch those phrases and keep them on the board.
     \end{enumerate}
-    \textit{Discussion prompt:} no drawing, just words --- describe how each
-    quantity changes as time passes. Both are increasing, yet the two stories
-    feel different. Today's lesson builds the vocabulary that tells them
-    apart: it is the \textit{rate} of change that differs, and
-    \textbf{concavity} is its name.
+    \textit{Discussion prompt:} both graphs are increasing and both end at
+    600, so ``increasing'' cannot tell them apart. The thing students can see
+    but cannot yet name is how the \textit{rate} of selling is changing. By
+    the end of the hour it has a name: \textbf{concavity}.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Two Quantities in Tandem} (10 min)
+\textbf{Part 1: Two Quantities in Tandem} (8 min)
 
 \begin{itemize}
   \item A hose fills a tank: as time $t$ increases, volume $V$ responds. $V$
-        is a function of $t$ --- each moment has exactly one volume (from
-        1.0/1.1).
-  \item Table: $t = 0, 2, 4, 6$ min gives $V = 0, 8, 16, 24$ gal. Read it in
-        tandem: every 2 minutes, 8 more gallons --- steady gain.
-  \item Name the roles: input/independent = time, output/dependent = volume;
-        connect to 1.1's domain language ($0 \le t \le 6$ so far).
+        is a function of $t$ --- each moment has exactly one volume (1.0/1.1).
+  \item Table: $t = 0, 2, 4, 6$ minutes gives $V = 0, 8, 16, 24$ gallons.
+        Read it \textit{in tandem} --- every 2 minutes, 8 more gallons.
+  \item Name the roles out loud: input quantity is time in minutes, output
+        quantity is volume in gallons. Then the payoff line: a table shows a
+        few pairs, a graph shows them all at once.
 \end{itemize}
 
-\textbf{Part 2: Increasing and Decreasing} (12 min)
+\textbf{Part 2: Question 1 --- Which Way?} (12 min)
 
 \begin{itemize}
   \item Definition with teeth: increasing means whenever $a < b$,
-        $f(a) < f(b)$ --- larger inputs give larger outputs. Decreasing flips
-        the output inequality. Say it in words \textit{and} symbols.
-  \item Project the pre-drawn graph from the notes (rise--fall--rise). Students
-        name the intervals with inequalities on the \textit{inputs}:
-        increasing for $0 < x < 3$ and $6 < x < 8$, decreasing for
-        $3 < x < 6$.
-  \item Hazard to front-load: intervals are named by inputs ($x$-values),
-        never outputs. And decreasing $\ne$ negative --- a function can fall
-        from 10 to 2 while every output stays positive.
+        $f(a) < f(b)$. Read it aloud as a sentence before writing symbols.
+        Decreasing flips the output inequality.
+  \item Project the pre-drawn graph of $h$ (rise, fall, rise). Students name
+        intervals with inequalities on the \textit{inputs}: increasing for
+        $0 < x < 3$ and $6 < x < 8$, decreasing for $3 < x < 6$.
+  \item Front-load two traps: intervals are named by $x$-values, never
+        outputs; and decreasing $\ne$ negative --- cocoa falling from
+        $90^\circ$ to $40^\circ$ never leaves positive territory.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Concavity --- How the Change Changes} (14 min)
+\textbf{Part 3: Question 2 --- How Is the Change Changing?} (12 min)
 
 \begin{itemize}
-  \item Refill the tank with the drain half-open: $t = 0, 2, 4, 6$ gives
-        $V = 0, 14, 20, 24$. Still increasing --- but the gains are 14, 6, 4.
-        The rate of change is shrinking: \textbf{concave down}.
-  \item Contrast table (savings account): gains 20, 25, 30 --- rate of change
-        growing: \textbf{concave up}.
-  \item Anchor to the hook: distance from the stop sign was increasing
-        \textit{and} concave up (gains growing); speed was increasing and
-        concave down (gains shrinking).
-  \item Show the two bends side by side (bowl vs.\ dome, pre-drawn in the
-        notes). Key question to drill: ``increasing or decreasing?'' and
-        ``concave up or down?'' are \textit{independent} questions --- all
-        four combinations exist.
+  \item Two tanks, both filling for 6 minutes, both ending at 24 gallons.
+        Tank A: $0, 14, 20, 24$. Tank B: $0, 4, 10, 24$. Compute the gains
+        \textit{live} in the margin --- 14, 6, 4 versus 4, 6, 14.
+  \item Name them: A's rate of change is decreasing (concave down), B's is
+        increasing (concave up). The call comes from the arithmetic, not the
+        picture.
+  \item Return to the hook: Show A was concave down, Show B concave up. That
+        is the word they were missing an hour ago.
 \end{itemize}
 
-\textbf{Part 4: Zeros} (8 min)
+\textbf{Part 4: The Four Corners} (10 min)
 
 \begin{itemize}
-  \item A zero is an input whose output is 0; the graph meets the horizontal
-        axis there. From the pre-drawn graph in the notes: zeros at $x = 2$
-        and $x = 6$.
-  \item In context, a zero is an event: the drone lands, the tank is empty,
-        the hiker reaches the river. Students translate a zero into a
-        sentence, the same way $f(3) = 7$ became a sentence in 1.1.
+  \item Fill the four-row table together. Each row is a real situation, a
+        pre-drawn curve, and the two answers: rumor (inc/up), warming soda
+        (inc/down), cooling cocoa (dec/up), draining battery (dec/down).
+  \item The point of the box, said explicitly: the two questions are
+        \textit{independent}. Concave down does not mean falling.
+\end{itemize}
+
+\textbf{Part 5: Zeros} (6 min)
+
+\begin{itemize}
+  \item A zero is an input whose output is 0 --- so it is a \textit{solve}
+        question from 1.1, not an evaluate question. Read the zeros of $h$ off
+        the Part 2 graph ($x = 1$ and $x = 5$), then its domain and range.
+  \item In context a zero is an event: the drone lands, the pond empties.
+        Students translate $D(48) = 0$ into a sentence.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+While students work on the guided notes and practice, circulate and check:
 \begin{itemize}
   \item \textbf{Common error:} naming intervals by outputs --- ``increasing
-        from 1 to 5'' while pointing at $y$-values. Push: ``Increasing on
+        from $-2$ to 3'' while pointing at $y$-values. Push: ``Increasing on
         which \textit{inputs}?''
   \item \textbf{Common error:} decreasing confused with negative. Cold-call:
-        ``Can a function be decreasing while all its outputs are positive?''
-        (Yes --- cooling cocoa: 90 to 40 degrees.)
-  \item \textbf{Common error:} concavity welded to increase/decrease ---
-        ``concave down means it's falling.'' Cold-call: ``Give me a function
-        that is increasing \textit{and} concave down.'' (The half-open-drain
-        tank.)
-  \item \textbf{Vocabulary check:} students should justify concavity with
-        rate-of-change language --- gains growing or shrinking --- not just
-        ``it looks bendy.''
+        ``Can a function be decreasing while every output is positive?''
+        (Yes --- the cooling cocoa.)
+  \item \textbf{Common error:} concavity welded to direction --- ``concave
+        down means it's falling.'' Point at row 2 of the four corners: the
+        warming soda is increasing \textit{and} concave down.
+  \item \textbf{Justification check:} a concavity claim must cite the gains
+        (``14, then 6, then 4''), not the shape (``it looks bendy'').
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Hiker's Day} in leveled
-tiers. Every tier reads the same pre-drawn elevation graph and its companion
-table --- no tier sketches anything.
+Students work on the \textbf{Group Activity: The Reservoir Year} in leveled
+tiers. Every tier reads the same pre-drawn graph and its companion table ---
+no tier draws anything.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Read outputs off the graph ($E(0)$, the
-        peak), circle increasing or decreasing on two named intervals, and
-        translate the zero at $t = 5$ into a sentence.
-  \item \textbf{Tier A (Apply):} Name every increasing and decreasing
-        interval with inequalities, use the table of climb gains (200, 130,
-        70) to justify that the climb is concave down, and interpret the
-        zero in context.
-  \item \textbf{Tier E (Extend):} Reason about the descent's concavity, decide
-        whether \textit{time} is a function of \textit{elevation} (spiral to
-        1.1's many-to-one idea), and match a verbal description of a second
-        hiker to the correct behavior list.
+  \item \textbf{Tier R (Remediate):} Read $L(0)$ and $L(4)$ off the graph,
+        circle increasing or decreasing on two named stretches, and translate
+        the zero at $t = 9$ into a sentence about the town.
+  \item \textbf{Tier A (Apply):} Name every interval with inequalities, fill
+        in the monthly changes for the spring rise ($+4, +3, +2, +1$) and the
+        fall refill ($+1, +2, +3$), and explain why two increasing stretches
+        tell opposite stories.
+  \item \textbf{Tier E (Extend):} Find the concavity of the summer drawdown
+        from its changes ($-1$ down to $-5$), describe the one corner the year
+        never visited (decreasing and concave up), and decide whether
+        \textit{time} is a function of \textit{level} --- a 1.1 spiral.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item From a table of an online game's player counts (gains 10, 8, 6),
-        circle increasing or decreasing, then concave up or down, and defend
-        the concavity call in one sentence.
-  \item Complete the definition: concave up means the rate of change is
-        \_\_\_\_.
-  \item From a draining-pond table ending at 0, identify the zero and write
-        what it means in context.
+  \item From a table of subscriber counts (gains 12, 9, 5), circle increasing
+        or decreasing and concave up or down, then defend the concavity from
+        the weekly changes.
+  \item From a verbal description of cooling cocoa, circle both answers ---
+        this is the decreasing-and-concave-up corner.
+  \item Identify the zero of a pond-draining function and say what it means.
 \end{enumerate}
-\textbf{Assessment note:} Item 1's sentence is the hinge --- credit requires
-rate-of-change language (``the gains are shrinking''), not shape talk. A
-student who circles \textit{decreasing} for item 1 has welded concave down to
-falling; reteach with the half-open-drain tank in the 1.3 warm-up window if
-more than a handful do.
+\textbf{Assessment note:} Item 1(b) is the hinge --- credit requires
+rate-of-change language (``the gains are shrinking''), not shape talk. Item 2
+is the diagnostic: a student who circles \textit{down} has welded concave down
+to falling. Sort tickets by item 2 and reteach the four corners in the 1.3
+warm-up window if more than a handful miss it.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering increasing/decreasing and concavity
-from a verbal description (growing pumpkin), a full graph read (intervals,
-zero, domain and range), a table-differences concavity call, a
-concept question (decreasing and concave up at once --- possible?), and one
-AP-style multiple-choice item on ``increasing and concave down.''
+\textbf{Homework:} 5 problems covering direction and concavity read straight
+from a verbal description, a full graph read (intervals, zeros, domain and
+range), a table-of-differences concavity call with justification, a concept
+question (decreasing and concave up at once --- possible?), and one AP-style
+multiple-choice item that identifies increasing-and-concave-down from a list
+of successive changes.
 
-\textbf{Extension (optional):} A hiker who rests mid-climb --- students name
-each interval's behavior from the description and explain why a resting
-stretch is neither increasing nor decreasing.
+\textbf{Extension (optional):} A hiker who rests mid-climb. Students decide
+that a flat stretch is \textit{neither} increasing nor decreasing and name its
+rate of change as 0 --- the constant case, which returns in 1.3.
 
-\textbf{Preview:} Next lesson (1.3, Rates of Change) puts a number on
-today's ``gains'': the average rate of change over an interval --- computed
-precisely, not just called growing or shrinking.
+\textbf{Preview:} Next lesson (1.3, Rates of Change) puts a number on today's
+``gains'': the average rate of change over an interval, computed from a
+formula, a table, or a graph, with units.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Items 1--2 are the 1.1 core ---
-watch 2(b) again for students answering the solve with an output; if the 1.1
-exit tickets flagged the direction confusion, this is the promised reteach
-window. Item 2(c) is deliberately unlabeled vocabulary: students say
-``the outputs go down'' in plain words today, and the lesson names it within
-the half hour.
+Five minutes, silent start, no calculators. Items 1 and 2(a) are the 1.1
+core --- watch 2(a) again for students answering the solve with an output; if
+the 1.1 exit tickets flagged that direction confusion, this is the promised
+reteach window. Item 2(b) is deliberately vocabulary-free: students should
+write something like ``they go down, but by less each time.'' Keep two or
+three of those sentences to quote back during Part 3, when the class names
+what they already described.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 2's definition is the first inequality-quantified statement of the
-course --- read $a < b \Rightarrow f(a) < f(b)$ aloud as a sentence
-(``whenever one input beats another\ldots'') before writing it. In Part 3,
-compute the gains in the margin next to each table \textit{live}; the
-concavity call must visibly come from the arithmetic, not the picture. The
-two bend sketches are pre-drawn --- students only label them. If time runs
-short, Part 4 compresses to five minutes: the zero translation sentence is
-the one non-negotiable; the practice box's zero item can move to homework
-review tomorrow.
+The hook is worth its five minutes --- take the vote before the discussion, or
+the argument never happens. Part 2's definition is the first
+inequality-quantified statement of the course; say ``whenever one input beats
+another\ldots'' aloud before writing $a < b$. In Part 3 compute the gains in
+the margin \textit{live} so the concavity call visibly comes from arithmetic,
+and only then show that it matches the picture. Part 4 is the spine of the
+lesson: fill all four rows, and finish by saying the independence claim out
+loud. Part 5 reuses the Part 2 graph on purpose --- do not put up a new
+figure. If time runs short, Part 5 compresses to four minutes and the practice
+box's second item moves to homework review; do not cut Part 4.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-All tiers read one graph, so regrouping mid-activity needs no new setup.
-Tier R answers should be sentences with units (``at the start the trail is
-100 meters up''). Tier A's concavity justification from the table gains is
-the target skill --- listen for ``the gains shrink'' rather than ``it flattens.''
-If a Tier E group nails the time-as-a-function-of-elevation flip, have them
-present it in the closing minutes; it re-airs 1.1's many-to-one idea and
-previews inverses in 1.6.
+All tiers read one graph and one table, so groups can be re-formed mid-period
+with no new setup. Tier R answers should be sentences with units (``in month 9
+the water is level with the outlet valve''). Tier A's items 2 and 3 are the
+target skill --- the two change rows are designed to be mirror images, so a
+group that fills both correctly has the whole idea. Listen for ``the gains
+shrink'' rather than ``it flattens.'' Tier E item 1 is the one students most
+often get backwards: the drawdown is decreasing \textit{and} concave down,
+because $-1, -2, -3, -4, -5$ is a falling rate of change. If a group nails the
+time-as-a-function-of-level flip, have them present it in the closing minutes;
+it re-airs 1.1's one-to-many idea and previews inverses in 1.6.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Scan item 1's sentence first: rate-of-change
-language earns the check, shape language gets a margin note. Item 2 is a
-straight vocabulary read --- a miss there means the word never landed and is
-worth a warm-up slot tomorrow. Item 3's zero sentence should name the event
-(``the pond is empty after 6 days''), not just restate ``the output is 0.''
+Collected, completion credit only. Scan item 2 first --- it is the fastest
+read and the sharpest diagnostic, since ``decreasing and concave up'' is the
+corner class time covers least. Then read item 1(b): rate-of-change language
+earns the check, shape language earns a margin note. Item 3's sentence should
+name the event (``the pond is empty after six days''), not restate ``the
+output is 0.''
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 5 is the AP-style multiple-choice item; distractor C (gains growing)
-is the popular wrong answer and worth a two-minute autopsy tomorrow ---
-it separates ``increasing'' from ``increasing faster.'' Problem 4 pairs with
-the cocoa example from class; students who answered the cold-call in class
-have already done it aloud. The extension's resting hiker introduces
-``neither'' as a legitimate answer --- flag a good response to read aloud
-before starting 1.3, since constant stretches return with average rate of
-change.
+Problem 5 is the AP-style multiple choice; distractor A ($+2, +4, +6, +8$) is
+the popular wrong answer and separates ``increasing'' from ``increasing
+faster'' --- worth a two-minute autopsy tomorrow. Problem 1(b), the
+parachutist, is the same corner as exit-ticket item 2, so a student who missed
+one and got the other is worth a quick conversation. Problem 4 pairs with the
+cocoa cold-call from class. The extension introduces ``neither'' as a
+legitimate answer and names a rate of change of 0; flag a good response to
+read aloud at the start of 1.3, since constant stretches come back
+immediately.
 \end{teachernote}
 \end{document}
