@@ -1,7 +1,7 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Warm-Up (Answer Key)
+%! Inverse Functions — Unit 1, Lesson 1.6 — Warm-Up (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,60 +12,63 @@
 
 \begin{enumerate}[itemsep=12pt]
 
-\item Solve each equation for $x$. (Plain algebra today, load-bearing later.)
+\item From Algebra 1: each equation gives you the \textit{answer} and asks for
+      the \textit{question}. Solve for $x$.
 
 \begin{work}
-      4x - 1 &= 11 \\
-         4x &= 12 \\
-          x &= 3 \\
-  1.8x + 32 &= 68 \\
-       1.8x &= 36 \\
-          x &= 20
+  3x + 2 &= 14 \\
+      3x &= 12 \\
+       x &= 4 \\
+  4x - 1 &= 11 \\
+      4x &= 12 \\
+       x &= 3
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $3x + 2 = 14$ \qquad $x = $ \ans{4}
   \item $4x - 1 = 11$ \qquad $x = $ \ans{3}
-  \item $1.8x + 32 = 68$ \qquad $x = $ \ans{20}
 \end{enumerate}
 
-\item From Lesson 1.5: let $f(x) = 4x - 1$ and $g(x) = \dfrac{x + 1}{4}$.
-      Evaluate each composition.
+\item From Lesson 1.5: let $f(x) = 3x + 2$ and $g(x) = \dfrac{x - 2}{3}$.
+      Name the handoff first, every time.
 
 \begin{work}
-     g(7) &= \frac{7 + 1}{4} \\
-          &= 2 \\
-  f(g(7)) &= f(2) \\
-          &= 7 \\
-     f(7) &= 4(7) - 1 \\
-          &= 27 \\
-  g(f(7)) &= g(27) \\
-          &= 7
+  f(g(11)) &= f(3) \\
+           &= 11 \\
+   g(f(3)) &= g(11) \\
+           &= 3
 \end{work}
 
-$f(g(7)) = $ \ans{7} \qquad $g(f(7)) = $ \ans{7}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $f(g(11))$: \; handoff $= $ \ans{3}, \;
+        so $f(g(11)) = $ \ans{11}
+  \item $g(f(3))$: \; handoff $= $ \ans{11}, \;
+        so $g(f(3)) = $ \ans{3}
+  \item Both times you landed back on the number you started with. Do not
+        explain it yet --- just write down that it happened.
+\end{enumerate}
 
-\item The table gives every value of a function $h$. Fill in the second table,
-      which lists the \textbf{same pairs with the inputs and outputs traded}.
+\item From Lesson 1.1: the table gives every value of a function $q$.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & 1 & 2 & 3 & 4 \\
+$x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$h(x)$ & 5 & 8 & 11 & 14 \\
-\hline
-\end{tabular}
-\qquad
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & 5 & 8 & 11 & 14 \\
-\hline
-new output & \ans{1} & \ans{2} & \ans{3} & \ans{4} \\
+$q(x)$ & 7 & 3 & 5 & 3 & 1 \\
 \hline
 \end{tabular}
-\end{center}
+\smallskip
+
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $q(2) = $ \ans{5}
+  \item Now read it backwards: for which input is $q(x) = 7$?
+        \quad $x = $ \ans{0}
+  \item Read $q(x) = 3$ backwards and something goes wrong. The output 3 came
+        from \textit{two} inputs: $x = $ \ans{1} and $x = $
+        \ans{3}.
+\end{enumerate}
 
 \end{enumerate}
 

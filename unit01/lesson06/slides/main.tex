@@ -19,206 +19,123 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Give Me Back the Celsius}
-  \sectionlabel[goldacc]{Think About It}
+  \plumheader{Hook: Two \$14 Parking Receipts}
+  \sectionlabel[goldacc]{A Receipt Only Records the Answer}
 
-  The weather app says \(68^\circ\)F. Your friend in Paris wants that in
-  Celsius. The only rule on the board is
+  Each receipt says what was paid. Neither says how long the car was parked ---
+  and that is the only thing you want to know.
+
+  \smallskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.46\textwidth}
+      \begin{block}{Garage A: \(P(x) = 3x + 2\)}
+        A \$14 receipt. How many hours?
+
+        \smallskip
+        \(3x + 2 = 14 \;\Rightarrow\; x = \mathbf{4}\) --- and no other number
+        of hours gives \$14.
+      \end{block}
+
+    \column{0.50\textwidth}
+      \begin{block}{Garage B: the posted price list}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          hours   & 1 & 2 & 3 & 4 & 5 \\
+          charges & \$8 & \textbf{\$14} & \textbf{\$14} & \$20 & \$26 \\
+        \end{tabular}
+
+        \smallskip
+        A \$14 receipt. How many hours? \textbf{The receipt does not say.}
+      \end{block}
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    One answer gives the question back. The other does not.
+  \end{center}
+\end{frame}
+
+% SECTION 1 — GIVING BACK THE QUESTION
+\begin{frame}[t, plain]
+  \plumheader{1. Giving Back the Question}
+  \sectionlabel[redacc]{The Whole Lesson in One Picture}
 
   \begin{center}
-    {\Large \(F(x) = 1.8x + 32\)}
+  \begin{tikzpicture}[x=1.2cm, y=1.2cm]
+    \draw[thick, plum, fill=lilac, rounded corners=2pt]
+      (-3.4,-0.55) rectangle (-1.6,0.55);
+    \node at (-2.5,0) {\large \(a\)};
+    \draw[thick, plum, fill=goldbg, rounded corners=2pt]
+      (1.6,-0.55) rectangle (3.4,0.55);
+    \node at (2.5,0) {\large \(b\)};
+    \draw[->, very thick, plum] (-1.5,0.32) -- (1.5,0.32);
+    \node[above, font=\small] at (0,0.36) {\(f\)};
+    \draw[->, very thick, goldacc] (1.5,-0.32) -- (-1.5,-0.32);
+    \node[below, font=\small] at (0,-0.36) {\(f^{-1}\)};
+    \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62)
+      {the question};
+    \node[below, font=\small\itshape, text=slate] at (2.5,-0.62)
+      {the answer};
+  \end{tikzpicture}
   \end{center}
 
-  \dots\ and it converts Celsius \textbf{into} Fahrenheit --- the wrong
-  direction.
+  \medskip
+  \begin{center}
+    \textbf{The inverse gives back the question.}
+    If \(f(a) = b\), then \(f^{-1}(b) = a\).
+  \end{center}
 
-  \bigskip
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{block}{Question 1}
-        What do you do to \(68\) to get back to Celsius --- and in what
-        \textbf{order}?
-      \end{block}
-    \column{0.46\textwidth}
-      \begin{block}{Question 2}
-        You just followed a rule. Write it down. Is that new rule a function
-        too?
-      \end{block}
-  \end{columns}
+  \medskip
+  \begin{block}{The signature error of this lesson}
+    \(f^{-1}(x) \ne \dfrac{1}{f(x)}\). \quad
+    \(P^{-1}(14) = \mathbf{4}\), \quad but \quad \(\dfrac{1}{P(14)} =
+    \dfrac{1}{44}\).
 
-  \bigskip
-  \textit{Every function whose outputs never repeat has a partner that runs it
-  backwards. Today we build the partner --- and check it.}
+    \smallskip
+    The reciprocal does arithmetic \textit{to the answer}. The inverse goes back
+    to the \textit{question}.
+  \end{block}
 \end{frame}
 
-% SECTION 1 — UNDOING AS A REVERSED MAPPING
+% SECTION 2 — THE SWAP
 \begin{frame}[t, plain]
-  \plumheader{1. ``Undoing'' Is a Reversed Mapping}
+  \plumheader{2. The Answers Become the Questions}
+  \sectionlabel[goldacc]{Trade the Rows --- Compute Nothing}
 
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{The definition, in one line}
-        If \(f(a) = b\), then \(f^{-1}(b) = a\).
-      \end{block}
-
-      \medskip
-      \begin{tabular}{|l|l|}
-      \hline
-      \(F\) sends & \(F^{-1}\) sends back \\
-      \hline
-      \(F(20) = 68\) & \(F^{-1}(68) = 20\) \\
-      \hline
-      \(F(0) = 32\)  & \(F^{-1}(32) = 0\) \\
-      \hline
-      \(F(a) = b\)   & \(F^{-1}(b) = a\) \\
-      \hline
-      \end{tabular}
-
-    \column{0.48\textwidth}
-      \begin{block}{Warning --- today's signature error}
-        \[ f^{-1}(x) \ne \frac{1}{f(x)} \]
-        The \(-1\) is a \textbf{name}, not an exponent.
-      \end{block}
-
-      \medskip
-      \begin{itemize}\setlength{\itemsep}{5pt}
-        \item \(F(10) = 50\), so \(F^{-1}(50) = 10\).
-        \item But \(F(50) = 122\), so \(\frac{1}{F(50)} = \frac{1}{122}\).
-        \item \(10\) and \(\tfrac{1}{122}\) are not close to the same number.
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% SECTION 2 — TABLES AND THE DOMAIN/RANGE SWAP
-\begin{frame}[t, plain]
-  \plumheader{2. Inverses from Tables --- the Domain/Range Swap}
-
-  Build \(F^{-1}\) by \textbf{trading the two rows}. Nothing is computed.
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
+  \begin{columns}[T, onlytextwidth]
+    \column{0.46\textwidth}
       \begin{center}
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular}{|l|c|c|c|c|c|}
       \hline
-      \(x\) (C) & \(-10\) & 0 & 10 & 20 & 100 \\
+      \(x\) (h) & 1 & 2 & 3 & 4 & 5 \\
       \hline
-      \(F(x)\) (F) & 14 & 32 & 50 & 68 & 212 \\
+      \(P(x)\) (\$) & 5 & 8 & 11 & 14 & 17 \\
       \hline
       \end{tabular}
 
-      \medskip
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \smallskip
+      \begin{tabular}{|l|c|c|c|c|c|}
       \hline
-      \(x\) (F) & 14 & 32 & 50 & 68 & 212 \\
+      \(x\) (\$) & 5 & 8 & 11 & 14 & 17 \\
       \hline
-      \(F^{-1}(x)\) (C) & \(-10\) & 0 & 10 & 20 & 100 \\
+      \(P^{-1}(x)\) (h) & 1 & 2 & 3 & 4 & 5 \\
       \hline
       \end{tabular}
       \end{center}
 
-    \column{0.48\textwidth}
-      \begin{block}{The swap}
-        Domain of \(f^{-1}\) \(=\) range of \(f\). \\[3pt]
-        Range of \(f^{-1}\) \(=\) domain of \(f\).
-      \end{block}
+      \smallskip
+      The questions you may ask \(P^{-1}\) are exactly the answers \(P\) gave
+      --- so \textbf{domain and range swap}.
 
-      \medskip
-      \begin{block}{The catch}
-        \(g = \{(1,5), (2,5), (3,8)\}\) reversed sends 5 to \textbf{two}
-        outputs --- not a function.\\[3pt]
-        Only a \textbf{one-to-one} function is invertible.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 3 — SWAP AND SOLVE
-\begin{frame}[t, plain]
-  \plumheader{3. The Analytic Method: Swap and Solve}
-
-  \begin{columns}[T]
-    \column{0.34\textwidth}
-      \begin{block}{Four steps}
-        \begin{enumerate}\setlength{\itemsep}{4pt}
-          \item Write \(y = f(x)\).
-          \item \textbf{Swap} \(x\) and \(y\).
-          \item Solve for \(y\).
-          \item Rename \(f^{-1}(x)\).
-        \end{enumerate}
-        \medskip
-        Step 2 is the inversion. The rest is algebra.
-      \end{block}
-
-    \column{0.30\textwidth}
-      \begin{block}{\(f(x) = 4x - 1\)}
-        \(y = 4x - 1\) \\[3pt]
-        \(x = 4y - 1\) \\[3pt]
-        \(x + 1 = 4y\) \\[3pt]
-        \(f^{-1}(x) = \frac{x+1}{4}\)
-      \end{block}
-
-    \column{0.30\textwidth}
-      \begin{block}{\(F(x) = 1.8x + 32\)}
-        \(y = 1.8x + 32\) \\[3pt]
-        \(x = 1.8y + 32\) \\[3pt]
-        \(x - 32 = 1.8y\) \\[3pt]
-        \(F^{-1}(x) = \frac{x-32}{1.8}\)
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{Check: \(F^{-1}(68) = \frac{68-32}{1.8} = 20\) --- the same answer the
-  table gave.}
-\end{frame}
-
-% SECTION 4 — VERIFICATION BY COMPOSITION
-\begin{frame}[t, plain]
-  \plumheader{4. Verification by Composition}
-
-  \sectionlabel[goldacc]{This Is What Lesson 1.5 Was For}
-
-  \begin{center}
-    {\Large \(f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x\)}
-  \end{center}
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Verify \(f(x) = 4x - 1\)}
-        \(f\big(f^{-1}(x)\big) = 4\left(\frac{x+1}{4}\right) - 1 = x\)
-        \\[5pt]
-        \(f^{-1}\big(f(x)\big) = \frac{(4x-1)+1}{4} = x\)
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{The identity function}
-        \(I(x) = x\) returns its own input. \\[3pt]
-        A function composed with its inverse --- in \textbf{either} order ---
-        gives it.
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{You already did this: in the warm-up, \(f(g(7)) = 7\) and
-  \(g(f(7)) = 7\) with these exact functions. Algebra checks every input at
-  once.}
-\end{frame}
-
-% SECTION 5 — NO INVERSE, AND THE MIRROR LINE
-\begin{frame}[t, plain]
-  \plumheader{5. No Inverse --- and the Mirror Line \(y = x\)}
-
-  \begin{columns}[T]
-    \column{0.40\textwidth}
+    \column{0.50\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.40cm, y=0.40cm]
+      \begin{tikzpicture}[x=0.33cm, y=0.33cm]
         \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
         \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small \(x\)};
         \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small \(y\)};
-        \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
         \draw[dashed, thick, slate] (-5,-5) -- (5,5);
-        \node[font=\tiny, slate, above left] at (4.6,4.6) {\(y=x\)};
+        \node[font=\tiny, slate, above left] at (4.6,4.6) {\(y = x\)};
         \draw[very thick, plum] (-3,-5) -- (2,5);
         \draw[very thick, goldacc] (-5,-3) -- (5,2);
         \fill[plum] (0,1) circle (2.2pt);
@@ -227,42 +144,147 @@
         \fill[goldacc] (5,2) circle (2.2pt);
       \end{tikzpicture}
       \end{center}
-      \centering{\scriptsize plum \(= f(x) = 2x+1\) \quad
-      gold \(= f^{-1}(x) = \frac{x-1}{2}\)}
 
-    \column{0.54\textwidth}
-      \begin{block}{When there is no inverse}
-        \(f(x) = x^2\): \(f(-2) = f(2) = 4\). \\[3pt]
-        Reversing would send 4 to two places, so \(f\) is not one-to-one on
-        all reals.\\[3pt]
-        \textbf{Restrict} to \(x \ge 0\): then \(f^{-1}(x) = \sqrt{x}\).
+      \smallskip
+      Questions live on the \(x\)-axis, answers on the \(y\)-axis. Trading them
+      sends \((a,b)\) to \((b,a)\) --- a reflection over \(y = x\).
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — NO INVERSE
+\begin{frame}[t, plain]
+  \plumheader{3. When the Answer Gives Back Nothing}
+  \sectionlabel[redacc]{Back to the Second Receipt}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Garage B has no inverse}
+        \(B^{-1}(14)\) would have to be \(2\) \textbf{and} \(3\) --- and a
+        function gets one answer per question.
+
+        \smallskip
+        Nothing is wrong with \(B\). The trouble appears only when you run it
+        backwards.
       \end{block}
 
       \medskip
-      \begin{block}{Reading the figure}
-        Every point \((a,b)\) on \(f\) becomes \((b,a)\) on \(f^{-1}\):
-        \((0,1) \to (1,0)\), \ \((2,5) \to (5,2)\).\\[3pt]
-        The graphs are reflections over \(y = x\).
+      \begin{block}{One-to-one}
+        No two different questions share an answer. \textbf{A function has an
+        inverse exactly when it is one-to-one.}
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{\(f(x) = x^2\)}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          \(x\)   & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+          \(x^2\) & \textbf{4} & 1 & 0 & 1 & \textbf{4} \\
+        \end{tabular}
+
+        \smallskip
+        The answer 4 came from two questions.
+      \end{block}
+
+      \medskip
+      \begin{block}{The repair: throw questions away}
+        Keep only \(x \ge 0\). Then \(f^{-1}(x) = \sqrt{x}\).
+
+        \smallskip
+        ``\(x^2\) has no inverse'' is \textbf{false}. Say the domain.
       \end{block}
   \end{columns}
+\end{frame}
+
+% SECTION 4 — SWAP AND SOLVE
+\begin{frame}[t, plain]
+  \plumheader{4. Swap and Solve}
+  \sectionlabel[goldacc]{Every Answer at Once}
+
+  A table only gives back the questions already printed on it.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{block}{The four steps}
+        \begin{enumerate}\setlength{\itemsep}{2pt}
+          \item Write \(y = f(x)\).
+          \item \textbf{Swap} \(x\) and \(y\).
+          \item \textbf{Solve} for \(y\).
+          \item Rename it \(f^{-1}(x)\).
+        \end{enumerate}
+
+        \smallskip
+        Step 2 is the whole inversion: the old \textit{answer} becomes the new
+        \textit{question}.
+      \end{block}
+
+    \column{0.52\textwidth}
+      \(P(x) = 3x + 2\):
+      \begin{align*}
+        y &= 3x + 2 \\
+        x &= 3y + 2 \quad \text{\small(swap)} \\
+        \frac{x-2}{3} &= y
+      \end{align*}
+
+      \smallskip
+      So \(P^{-1}(x) = \dfrac{x-2}{3}\), and \(P^{-1}(14) = \mathbf{4}\) ---
+      the receipt, answered.
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    On the warm-up you solved \(3x + 2 = 14\) and got \textit{one} question
+    back. This gets them all.
+  \end{center}
+\end{frame}
+
+% SECTION 5 — THE CHECK
+\begin{frame}[t, plain]
+  \plumheader{5. The Check: Hand the Answer Back}
+  \sectionlabel[redacc]{Where Lesson 1.5 Pays Off}
+
+  In \(f\big(f^{-1}(x)\big)\) the \textbf{handoff} is whatever \(f^{-1}\)
+  produced. If \(f^{-1}\) really gives back questions, the far end is where you
+  started.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.52\textwidth}
+      \begin{align*}
+        P\big(P^{-1}(x)\big) &= 3\!\left(\frac{x-2}{3}\right) + 2 = x \\[4pt]
+        P^{-1}\big(P(x)\big) &= \frac{(3x+2) - 2}{3} = x
+      \end{align*}
+
+    \column{0.44\textwidth}
+      \begin{block}{Both directions, every time}
+        \(f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x = I(x)\)
+
+        \smallskip
+        The \textbf{identity function} from Lesson 1.5, right on schedule.
+      \end{block}
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    Warm-up item 2 was this check: \(f(x) = 3x+2\) and \(g(x) =
+    \dfrac{x-2}{3}\) gave back 11 and 3. That \(g\) was \(P^{-1}\) all along.
+  \end{center}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \sectionlabel[redacc]{Name the Question, Not the Reciprocal}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Let \(f(x) = 3x + 6\). Find \(f^{-1}(x)\), then verify by computing
+    \item A function \(g\) satisfies \(g(-4) = 7\). Find \(g^{-1}(7)\), and say
+          in one sentence why it is not \(\tfrac{1}{7}\).
+
+    \item Find \(f^{-1}(x)\) for \(f(x) = 5x - 3\), then check it by computing
           \(f^{-1}\big(f(x)\big)\).
-    \item A function \(f\) satisfies \(f(-4) = 7\).
-          \begin{enumerate}[(a)]\setlength{\itemsep}{4pt}
-            \item What is \(f^{-1}(7)\)?
-            \item Why is \(f^{-1}(7)\) \textbf{not} equal to \(\frac{1}{7}\)?
-          \end{enumerate}
-    \item A table gives \(h(1) = 5\), \(h(2) = 8\), \(h(3) = 8\).
-          Is \(h\) invertible? If not, say exactly what goes wrong when you
-          try to reverse the pairs.
+
+    \item A table gives \(h(1) = 5\), \(h(2) = 8\), \(h(3) = 5\), \(h(4) = 12\).
+          Explain why \(h\) has no inverse.
   \end{enumerate}
 \end{frame}
 

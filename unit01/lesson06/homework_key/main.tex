@@ -1,7 +1,7 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Homework (Answer Key)
+%! Inverse Functions — Unit 1, Lesson 1.6 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,119 +12,125 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item Two functions are given by tables.
+\item Each table gives every value of its function.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & 0 & 1 & 2 & 3 \\
+$x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$f(x)$ & 7 & 4 & 1 & $-2$ \\
+$f(x)$ & 9 & 4 & 7 & 2 & 0 \\
 \hline
 \end{tabular}
 \qquad
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$x$ & 0 & 1 & 2 & 3 \\
+$x$ & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$g(x)$ & 5 & 2 & 2 & 9 \\
+$g(x)$ & 6 & 1 & 6 & 8 & 3 \\
 \hline
 \end{tabular}
 \end{center}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Complete the table for $f^{-1}$ by trading rows.
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f^{-1}(7) = $ \ans{3} \qquad $f^{-1}(0) = $ \ans{5}
+        \qquad $f^{-1}(9) = $ \ans{1}
+  \item Complete the $f^{-1}$ table by trading rows.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
-        \begin{tabular}{|c|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $x$ & 7 & 4 & 1 & $-2$ \\
+        $x$ & 0 & 2 & 4 & 7 & 9 \\
         \hline
-        $f^{-1}(x)$ & \ans{0} & \ans{1} & \ans{2}
-          & \ans{3} \\
+        $f^{-1}(x)$ & \ans{5} & \ans{4} & \ans{2}
+          & \ans{3} & \ans{1} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item Is $g$ invertible? \ans{No}
+  \item $g$ has no inverse. In one sentence, name the answer that causes the
+        trouble and say what goes wrong.
 
-        Why or why not? \ans{$g(1) = g(2) = 2$, so one output has two inputs.}
+        \vspace{0.05in}
+        \ansline{The answer 6 came from both $x = 1$ and $x = 3$, so $g^{-1}(6)$ would have to be two numbers at once.}
 \end{enumerate}
 
-\item Find the inverse of each function by swapping and solving.
+\item Find each inverse by swapping and solving.
 
 \begin{work}
-              y &= 5x + 3 \\
-              x &= 5y + 3 \\
-          x - 3 &= 5y \\
-  \frac{x-3}{5} &= y \\
-              y &= \frac{x}{2} - 7 \\
-              x &= \frac{y}{2} - 7 \\
-          x + 7 &= \frac{y}{2} \\
-       2(x + 7) &= y
+              y &= 6x + 5 \\
+              x &= 6y + 5 \\
+          x - 5 &= 6y \\
+  \frac{x-5}{6} &= y \\
+              y &= 3 - 2x \\
+              x &= 3 - 2y \\
+             2y &= 3 - x \\
+  \frac{3-x}{2} &= y
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $f(x) = 5x + 3$ \qquad $f^{-1}(x) = $ \ans{$(x-3)/5$}
-  \item $g(x) = \dfrac{x}{2} - 7$ \qquad $g^{-1}(x) = $ \ans{$2(x+7)$}
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $f(x) = 6x + 5$: \quad $f^{-1}(x) = $ \ans{$\dfrac{x-5}{6}$}
+  \item $g(x) = 3 - 2x$: \quad $g^{-1}(x) = $ \ans{$\dfrac{3-x}{2}$}
 \end{enumerate}
 
-\item Use your answer to 2(a) to verify the pair \textbf{in both directions}.
+\item Show that $f(x) = \dfrac{x}{2} + 4$ and $g(x) = 2x - 8$ are inverses by
+      checking \textbf{both} directions.
 
 \begin{work}
-  f\big(f^{-1}(x)\big) &= 5\left(\frac{x-3}{5}\right) + 3 \\
-                       &= (x - 3) + 3 \\
-                       &= x \\
-  f^{-1}\big(f(x)\big) &= \frac{(5x + 3) - 3}{5} \\
-                       &= \frac{5x}{5} \\
-                       &= x
+  f(g(x)) &= \frac{2x - 8}{2} + 4 \\
+          &= (x - 4) + 4 \\
+          &= x \\
+  g(f(x)) &= 2\left(\frac{x}{2} + 4\right) - 8 \\
+          &= (x + 8) - 8 \\
+          &= x
 \end{work}
 
-$f\big(f^{-1}(x)\big) = $ \ans{$x$} \qquad
-$f^{-1}\big(f(x)\big) = $ \ans{$x$}
+$f(g(x)) = $ \ans{$x$} \qquad $g(f(x)) = $ \ans{$x$} \qquad
+so $f$ and $g$ are \ans{inverses}.
 
-\boxguard[20]
-\item \textbf{Back to the thermometer.} The lab's conversion rule is
-      $F(x) = 1.8x + 32$, taking degrees Celsius to degrees Fahrenheit.
+\item A delivery app charges $D(x) = 1.5x + 4$ dollars for a $x$-mile
+      delivery.
 
 \begin{work}
-                     y &= 1.8x + 32 \\
-                     x &= 1.8y + 32 \\
-                x - 32 &= 1.8y \\
-     \frac{x - 32}{1.8} &= y \\
-           F^{-1}(212) &= \frac{212 - 32}{1.8} \\
-                       &= 100
+                  y &= 1.5x + 4 \\
+                  x &= 1.5y + 4 \\
+              x - 4 &= 1.5y \\
+  \frac{x-4}{1.5}   &= y
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $F^{-1}(x) = $ \ans{$(x-32)/1.8$}
-  \item $F^{-1}(212) = $ \ans{100}. In one sentence, what does that number
-        mean? \ans{Water boils at 100 degrees Celsius.}
-  \item $F(50) = $ \ans{122}, so $\dfrac{1}{F(50)} = $ \ans{$1/122$},
-        while $F^{-1}(50) = $ \ans{10}. Circle one:
-        $F^{-1}(50)$ \textbf{is} / \ans{is not} the same as
-        $\dfrac{1}{F(50)}$.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item A 6-mile delivery costs \$\ans{13}.
+  \item $D^{-1}(x) = $ \ans{$\dfrac{x-4}{1.5}$}
+  \item Your receipt says \$19 and does not say the distance. The delivery was
+        \ans{10} miles.
+  \item Compare the two: $D^{-1}(13) = $ \ans{6}, but
+        $D(13) = $ \ans{23.5}, so $\dfrac{1}{D(13)} = $ \ans{$1/23.5$}.
+        Which one is a number of miles? \ans{the 6}
 \end{enumerate}
 
-\item $f(x) = x^2$ has no inverse on all real numbers.
+\item Let $h(x) = (x - 2)^2$.
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Name two different inputs with the same output:
-        \ans{$-3$} and \ans{3} both give \ans{9}.
-  \item Restrict the domain to \ans{$x \ge 0$} so that $f$ becomes one-to-one.
-  \item On that restricted domain, $f^{-1}(x) = $ \ans{$\sqrt{x}$}, with domain
-        \ans{$x \ge 0$}.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item $h(0) = $ \ans{4} and $h(4) = $ \ans{4}, so $h$ is not
+        \ans{one-to-one} on all real numbers.
+  \item Restrict the domain to $x \ge 2$. Then
+        $h^{-1}(x) = $ \ans{$2 + \sqrt{x}$}, with domain \ans{$x \ge 0$}.
+  \item The graph of a one-to-one function $F$ passes through $(-3, 8)$.
+        Name a point that must be on the graph of $F^{-1}$:
+        $($ \ans{8} , \ans{$-3$} $)$.
+  \item The graphs of $F$ and $F^{-1}$ are reflections of each other across the
+        line \ans{$y = x$}.
 \end{enumerate}
 
 \item A function $f$ satisfies $f(3) = -2$. Which statement must be true?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
   \item $f^{-1}(3) = -2$
-  \item $f^{-1}(-2) = 3$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item \ans{$f^{-1}(-2) = 3$}
   \item $f^{-1}(3) = -\dfrac{1}{2}$
   \item $f^{-1}(-2) = -\dfrac{1}{3}$
 \end{enumerate}
@@ -135,25 +141,30 @@ $f^{-1}\big(f(x)\big) = $ \ans{$x$}
 
 \boxguard
 \begin{extensionbox}
-Let $f(x) = x^2$ on all real numbers and let $h(x) = \sqrt{x}$. Compute
-$f\big(h(9)\big)$ and $h\big(f(-3)\big)$. One of them returns the number you
-started with and the other does not. Explain which composition fails and what
-domain restriction on $f$ repairs the claim that $f$ and $h$ are inverses.
+\textbf{Shoes and socks.} Let $f(x) = 2x$ and $g(x) = x + 5$.
 
-\ansline{$f(h(9)) = (\sqrt{9})^2 = 9$, but $h(f(-3)) = \sqrt{9} = 3$, not $-3$.}
-\ansline{The second fails because $f$ is not one-to-one; restricting $f$ to $x \ge 0$ repairs it.}
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Build $(f \circ g)(x)$, then find its inverse by swapping and solving.
+  \item Now compute $g^{-1}\big(f^{-1}(x)\big)$ and compare. Then compute
+        $f^{-1}\big(g^{-1}(x)\big)$ and compare again.
+  \item One of the two orders undoes the chain. Say which, and why undoing a
+        chain has to start at the \textit{last} step.
+\end{enumerate}
+
+\vspace{0.05in}
+\ansline{(a) $(f \circ g)(x) = 2x + 10$, so its inverse is $(x-10)/2 = x/2 - 5$.}
+\ansline{(b--c) $g^{-1}(f^{-1}(x)) = x/2 - 5$ matches; $f^{-1}(g^{-1}(x)) = (x-5)/2$ does not. Undo the last step first.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.7}
-Today you learned to run a function backwards. Lesson 1.7, \textit{Function
-Model Selection and Construction}, asks the prior question: which kind of
-function should model a situation in the first place? Once a model is chosen,
-inverting it is how you answer ``what input produced this output?'' Much later,
-in Unit 5, the logarithm arrives as nothing more than the inverse of the
-exponential function --- built with exactly today's method.
+Lesson 1.7 asks which \textit{kind} of function fits a situation --- and once a
+model is built, the question people actually ask it is the backwards one:
+``what input produced this output?'' Further out, in Unit 5, the logarithm
+arrives as nothing more exotic than the inverse of an exponential function,
+built by exactly today's method.
 \end{notesbox}
 
 \end{document}
