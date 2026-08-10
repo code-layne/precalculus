@@ -1,7 +1,7 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Homework (Answer Key)
+%! Transformations of Functions — Unit 1, Lesson 1.4 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,80 +12,142 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item Describe how the graph of each function compares to the graph of $f$.
-      Name a direction and an amount (or a factor).
-
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $g(x) = f(x) - 5$: \ans{shifted down 5 units}
-  \item $g(x) = f(x - 4)$: \ans{shifted right 4 units}
-  \item $g(x) = 3f(x)$: \ans{stretched vertically by a factor of 3}
-  \item $g(x) = f(x + 1) + 6$: \ans{shifted left 1 unit and up 6 units}
-\end{enumerate}
-
-\item The table gives values of a function $f$. Complete both new rows.
+\item Sort each rule first, then describe the move it makes to the graph of
+      $f$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\textbf{rule} & \textbf{question or answer?} & \textbf{the move, in words} \\
 \hline
-$f(x)$ & 5 & 2 & 1 & 2 & 5 \\
+$g(x) = f(x) - 6$ & \ans{answer} & \ans{down 6} \\
 \hline
-$g(x) = f(x) + 4$ & \ans{9} & \ans{6} & \ans{5}
-  & \ans{6} & \ans{9} \\
+$g(x) = f(x + 2)$ & \ans{question} & \ans{left 2} \\
 \hline
-$h(x) = -f(x)$ & \ans{$-5$} & \ans{$-2$} & \ans{$-1$}
-  & \ans{$-2$} & \ans{$-5$} \\
+$g(x) = 3f(x)$ & \ans{answer} & \ans{vertical stretch by 3} \\
+\hline
+$g(x) = f(-x)$ & \ans{question} & \ans{flip over the $y$-axis} \\
 \hline
 \end{tabular}
 \end{center}
 
-\item The domain of $f$ is $[-3, 5]$ and the range of $f$ is $[-1, 7]$. Find
-      the domain and range of $g(x) = f(x + 2) + 3$.
+\item The table gives every value of a function $f$.
 
-\begin{work}
-  \text{Domain: } -3 &\le x + 2 \le 5 \\
-                  -5 &\le x \le 3 \\
-  \text{Range: } -1 &\le y \le 7 \\
-                  2 &\le y + 3 \le 10
-\end{work}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Complete the row for $g(x) = f(x) + 4$.
 
-Domain of $g$: \ans{$[-5, 3]$} \qquad Range of $g$: \ans{$[2, 10]$}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & $-2$ & 0 & 2 & 4 \\
+        \hline
+        $f(x)$ & 3 & $-1$ & 5 & 0 \\
+        \hline
+        $g(x) = f(x) + 4$ & \ans{7} & \ans{3} & \ans{9} & \ans{4} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-\boxguard[16]
-\item The tables below give a function $f$ and a transformation $p$ of it.
+  \item Complete the row for $h(x) = f(x - 2)$. Watch the inputs.
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 2 & 4 & 6 \\
+        \hline
+        $h(x) = f(x - 2)$ & \ans{3} & \ans{$-1$} & \ans{5} & \ans{0} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item One of the two new rows is a copy of $f$'s row, just relocated. Which
+        one, and why?
+
+        \vspace{0.05in}
+        \ansline{$h$ --- it changed only the question, so $f$'s answers reappear unchanged 2 units right.}
+\end{enumerate}
+
+\item The parent $f$ and a transformation $g$ are drawn on the same axes.
+
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 \\
-\hline
-$f(x)$ & 1 & 3 & 5 & 7 \\
-\hline
-$p(x)$ & 2 & 6 & 10 & 14 \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[x=0.55cm, y=0.32cm]
+  \draw[linegray, very thin] (-3,-4) grid (6,6);
+  \draw[->, thick] (-3.5,0) -- (6.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-4.6) -- (0,6.8) node[above, font=\small] {$y$};
+  \foreach \x in {-2,-1,1,2,3,4,5}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \foreach \y in {-3,3,6}
+    \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-0.9:4.9]
+    plot (\x, {(\x-2)*(\x-2) - 3});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.4:2.4]
+    plot (\x, {\x*\x});
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[goldacc] (2,-3) circle (2.2pt);
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (-1.9,5.2) {$f$};
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (4.8,4.2) {$g$};
+\end{tikzpicture}
 \end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Write $p$ in terms of $f$: \quad $p(x) = $ \ans{$2f(x)$}
-  \item Did the change happen \textbf{inside} or \textbf{outside} $f$?
-        \quad \ans{outside}
-  \item Describe the transformation in words: \ans{vertical stretch by 2}
+  \item $f$'s lowest point is ( \ans{0} , \ans{0} ) and $g$'s is
+        at ( \ans{2} , \ans{$-3$} ).
+  \item The horizontal move is \ans{right 2} and the vertical move is
+        \ans{down 3}.
+  \item Write the rule: $g(x) = f(x$ \ans{$-\,2$} $)$ \ans{$-\,3$}
 \end{enumerate}
 
-\item The range of a function $f$ is $[-2, 6]$. What is the range of
-      $g(x) = -2f(x) + 1$?
+\item The highest point on the graph of $f$ is $(2, 7)$. The domain of $f$ is
+      $[-4, 2]$ and its range is $[-1, 7]$. Let $g(x) = 2f(x + 1) - 5$.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Follow the landmark $(2, 7)$.
+
+        \begin{work}
+          \text{new input} &= 2 - 1 = 1 \\
+          \text{new output} &= 2(7) - 5 = 9
+        \end{work}
+
+        It lands at ( \ans{1} , \ans{9} ).
+
+  \item Domain of $g$:
+
+        \begin{work}
+          -4 &\le x + 1 \le 2 \\
+          -5 &\le x \le 1
+        \end{work}
+
+        Domain of $g$: \ans{$[-5,\,1]$}
+
+  \item Range of $g$:
+
+        \begin{work}
+          2(-1) - 5 &= -7 \\
+           2(7) - 5 &= 9
+        \end{work}
+
+        Range of $g$: \ans{$[-7,\,9]$}
+
+  \item Which piece of the rule moved the domain, and which moved the range?
+
+        \vspace{0.05in}
+        \ansline{The $x+1$ inside moved the domain; the $2$ and the $-5$ outside moved the range.}
+\end{enumerate}
+
+\item The range of a function $f$ is $[1, 5]$. What is the range of
+      $g(x) = -2f(x) + 3$?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $[-3, 13]$
-  \item $[-11, 5]$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $[-12, 4]$
-  \item $[5, -11]$
+  \item $[5, 13]$
+  \item \ans{$[-7, 1]$}
+  \item $[-10, -2]$
+  \item $[1, -7]$
 \end{enumerate}
 
 \end{enumerate}
@@ -94,24 +156,26 @@ $p(x)$ & 2 & 6 & 10 & 14 \\
 
 \boxguard
 \begin{extensionbox}
-For $f(x) = x^2$ you know $f(0.5) = 0.25$, $f(1) = 1$, $f(2) = 4$, and
-$f(4) = 16$. Compute $f(2x)$ and $2f(x)$ at $x = 1$ and at $x = 2$. The two
-rules agree only at the origin --- explain, in one sentence, why doubling
-\textit{inside} a function is a different move from doubling
-\textit{outside} it.
+A student writes both of these and says they are the same function:
+\[
+  g(x) = 2f(x) + 6 \qquad\qquad h(x) = 2\bigl(f(x) + 6\bigr)
+\]
+Suppose $f(3) = 5$. Compute $g(3)$ and $h(3)$, then say in one sentence what
+each rule does to the answer $f$ hands back, and in what order.
 
-\ansline{At $x=1$: $f(2)=4$ but $2f(1)=2$. At $x=2$: $f(4)=16$ but $2f(2)=8$.}
-\ansline{Inside doubles the input (squeezing the graph horizontally); outside doubles the output (stretching it vertically).}
+\vspace{0.05in}
+\ansline{$g(3) = 2(5) + 6 = 16$; $h(3) = 2(5 + 6) = 22$. They are different functions.}
+\ansline{$g$ doubles first and then adds 6; $h$ adds 6 first, so the 6 gets doubled too.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\boxguard
+\boxguard[9]
 \begin{notesbox}{Preview of Lesson 1.5}
-Every time you wrote $f(x+3)$ today, you fed one expression into another
-function --- a \textit{composition}, though we never called it that. Lesson
-1.5, \textit{Composition of Functions}, gives that move a name, a notation
-$\big(f \circ g\big)(x)$, and a domain to keep track of.
+Every horizontal move today worked by handing $f$ something other than $x$ ---
+$f(x+3)$ handed it $x+3$, and $f(2x)$ handed it $2x$. Lesson 1.5,
+\textit{Composition of Functions}, gives that move its name and its notation,
+and lets the thing you hand over be \textit{any} function, not just $x + h$.
 \end{notesbox}
 
 \end{document}

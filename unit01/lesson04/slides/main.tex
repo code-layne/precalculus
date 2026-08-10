@@ -19,210 +19,238 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: One Function, Three Disguises}
-  \sectionlabel[goldacc]{Think About It}
+  \plumheader{Hook: Two Harbors}
+  \sectionlabel[goldacc]{Vote Before You Compute}
 
-  Start with \(f(x) = x^2\). Here are three tables built from it.
+  \(D(t)\) is the water depth at North Harbor, \(t\) hours after midnight.
+  South Harbor rises and falls the same way, and its depth is published as
+  \(S(t) = D(t + 3)\).
 
-  \bigskip
-  \begin{columns}[T]
-    \column{0.31\textwidth}
-      \begin{block}{Table A}
-        \(7,\ 4,\ 3,\ 4,\ 7\)\\[3pt]
-        Every output \textbf{3 larger}.
-      \end{block}
-    \column{0.31\textwidth}
-      \begin{block}{Table B}
-        \(4,\ 1,\ 0,\ 1,\ 4\)\\[3pt]
-        The \textbf{same outputs} --- at different inputs.
-      \end{block}
-    \column{0.31\textwidth}
-      \begin{block}{Table C}
-        \(8,\ 2,\ 0,\ 2,\ 8\)\\[3pt]
-        Every output \textbf{doubled}.
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{Table B is the interesting one: nothing happened to the outputs at
-  all. So what moved?}
-\end{frame}
-
-% SECTION 1 — OUTSIDE / INSIDE
-\begin{frame}[t, plain]
-  \plumheader{1. The Parent Function and the Outside/Inside Rule}
-
-  The \textbf{parent function} is the plain curve everything else is built
-  from. Today: \(f(x) = x^2\), with reference points
-  \((-2,4)\), \((-1,1)\), \((0,0)\), \((1,1)\), \((2,4)\).
-
-  \bigskip
-  \begin{block}{The one sentence for today}
-    A change \textbf{outside} \(f\) touches the \textbf{outputs}: the graph
-    moves \textbf{vertically}, and it does what you expect.
-
-    \medskip
-    A change \textbf{inside} \(f\) touches the \textbf{inputs}: the graph
-    moves \textbf{horizontally}, and it does the \textbf{opposite} of what
-    you expect.
-  \end{block}
-
-  \bigskip
-  \textit{Before computing anything: is this change outside \(f\), or inside
-  \(f\)?}
-\end{frame}
-
-% SECTION 2 — VERTICAL TRANSLATION
-\begin{frame}[t, plain]
-  \plumheader{2. Vertical Translation: \(g(x) = f(x) + k\)}
-
-  \begin{columns}[T]
-    \column{0.46\textwidth}
+  \smallskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.54\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.5cm, y=0.3cm]
-        \draw[linegray, very thin, step=1] (-3,0) grid (3,8);
-        \draw[->, thick] (-3.3,0) -- (3.5,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small \(y\)};
-        \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
-        \draw[thick, linegray] plot [smooth] coordinates
-          {(-2.8,7.84) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.8,7.84)};
-        \draw[very thick, plum] plot [smooth] coordinates
-          {(-2.2,7.84) (-2,7) (-1,4) (0,3) (1,4) (2,7) (2.2,7.84)};
-      \end{tikzpicture}
-      \end{center}
-      \centering{\scriptsize gray \(= f(x)\) \quad plum \(= f(x)+3\)}
-
-    \column{0.5\textwidth}
-      The \(+k\) is \textbf{outside}, so every output changes.
-
-      \medskip
-      \begin{tabular}{|c|c|c|c|c|c|}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
       \hline
-      \(x\) & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+      \(t\) (hours) & 0 & 3 & 6 & 9 & 12 \\
       \hline
-      \(f(x)\) & 4 & 1 & 0 & 1 & 4 \\
-      \hline
-      \(f(x)+3\) & 7 & 4 & 3 & 4 & 7 \\
+      \(D(t)\) (feet) & 4 & 8 & 12 & 8 & 4 \\
       \hline
       \end{tabular}
+      \end{center}
 
       \medskip
-      \begin{itemize}\setlength{\itemsep}{5pt}
-        \item \(k>0\): up. \quad \(k<0\): down.
-        \item Domain unchanged; range slides by \(k\).
-      \end{itemize}
+      The rule \textbf{adds} three hours.
+
+    \column{0.42\textwidth}
+      \begin{block}{The question}
+        Does South Harbor's high tide come \textbf{before} or \textbf{after}
+        North Harbor's?
+      \end{block}
+
+      \medskip
+      \begin{block}{Then compute}
+        \(S(3) = D(6) = 12\). South peaks at 3 a.m., three hours
+        \textbf{ahead}.
+      \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 3 — HORIZONTAL TRANSLATION
+% SECTION 1 — QUESTION AND ANSWER
 \begin{frame}[t, plain]
-  \plumheader{3. Horizontal Translation: \(g(x) = f(x+h)\)}
+  \plumheader{1. The Question and the Answer}
+  \sectionlabel[redacc]{The Whole Lesson in One Idea}
 
-  \begin{columns}[T]
-    \column{0.5\textwidth}
+  Using a function is a transaction: you hand \(f\) a question, \(f\) hands
+  back an answer. A rule can interfere in exactly two places.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.38cm, y=0.3cm]
-        \draw[linegray, very thin, step=1] (-6,0) grid (3,6);
-        \draw[->, thick] (-6.3,0) -- (3.5,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small \(y\)};
-        \foreach \x in {-6,-4,-2,2} \node[below, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
-        \draw[thick, linegray] plot [smooth] coordinates
-          {(-2.45,6) (-2,4) (-1,1) (0,0) (1,1) (2,4) (2.45,6)};
-        \draw[very thick, plum] plot [smooth] coordinates
-          {(-5.45,6) (-5,4) (-4,1) (-3,0) (-2,1) (-1,4) (-0.55,6)};
+      \begin{tikzpicture}
+        \node[font=\large, anchor=west] (gq) at (0,0) {\(g(x) =\)};
+        \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {\(\;a\)};
+        \node[font=\large, anchor=west] (mid) at (a.east) {\(\cdot\, f(\)};
+        \node[font=\large, plum, anchor=west] (inner) at (mid.east) {\(\,x + h\,\)};
+        \node[font=\large, anchor=west] (close) at (inner.east) {\()\)};
+        \node[font=\large, goldacc, anchor=west] (k) at (close.east) {\(\;+\;k\)};
+        \node[font=\scriptsize\bfseries, plum, align=center]
+          (ql) at ([yshift=-0.9cm]inner.south) {inside: the question};
+        \draw[thick, plum, ->] (ql.north) -- (inner.south);
+        \node[font=\scriptsize\bfseries, goldacc, align=center]
+          (al) at ([yshift=0.8cm]mid.north) {outside: the answer};
+        \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
+        \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
       \end{tikzpicture}
       \end{center}
-      \centering{\scriptsize gray \(= f(x)\) \quad plum \(= f(x+3)\)}
+
+    \column{0.52\textwidth}
+      \begin{block}{Outside \(\Rightarrow\) the answer}
+        \textbf{Vertical}, and it does exactly what it says.
+      \end{block}
+
+      \medskip
+      \begin{block}{Inside \(\Rightarrow\) the question}
+        \textbf{Horizontal}, and it runs \textbf{opposite} to what it looks
+        like --- because you must work out which \(x\) makes the question come
+        out right.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 2 — VERTICAL
+\begin{frame}[t, plain]
+  \plumheader{2. Rewriting the Answer --- Vertical Moves}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.66cm, y=0.24cm]
+        \draw[linegray, very thin] (-3,-5) grid (3,8);
+        \draw[->, thick] (-3.4,0) -- (3.6,0);
+        \draw[->, thick] (0,-5.5) -- (0,8.7);
+        \foreach \y in {-4,4,8}
+          \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+        \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
+          plot (\x, {\x*\x + 3});
+        \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
+          plot (\x, {-\x*\x});
+        \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
+          plot (\x, {\x*\x});
+        \node[font=\tiny, goldacc, fill=white, inner sep=1pt] at (-1.6,7.4) {\(f(x)+3\)};
+        \node[font=\tiny, plum, fill=white, inner sep=1pt] at (1.8,7.4) {\(f(x)\)};
+        \node[font=\tiny, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {\(-f(x)\)};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(f(x) + k\) --- \textbf{translation}: every answer gains \(k\).
+              Up if \(k > 0\), down if \(k < 0\).
+        \item \(af(x)\) --- \textbf{dilation} by \(|a|\): stretched away from
+              the \(x\)-axis if \(|a| > 1\), compressed toward it if
+              \(0 < |a| < 1\).
+        \item \(a < 0\) also carries a \textbf{reflection} over the
+              \(x\)-axis.
+      \end{itemize}
+
+      \medskip
+      \begin{block}{The consequence}
+        The questions were never touched --- so the \textbf{domain} is
+        unchanged and the \textbf{range} moves.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — HORIZONTAL
+\begin{frame}[t, plain]
+  \plumheader{3. Rewriting the Question --- Horizontal Moves}
+  \sectionlabel[goldacc]{The One Students Get Backwards}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.50\textwidth}
+      \(g(x) = f(x + 3)\), with \(f(x) = x^2\):
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) & \(-5\) & \(-4\) & \(-3\) & \(-2\) & \(-1\) \\
+      \hline
+      handed to \(f\) & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+      \hline
+      \(g(x)\) & 4 & 1 & 0 & 1 & 4 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \medskip
+      The output list is \textbf{identical}. Only the addresses moved.
 
     \column{0.46\textwidth}
-      The \(+h\) is \textbf{inside}, so the inputs change --- and the
-      direction \textbf{reverses}.
-
-      \medskip
-      \begin{block}{Why left?}
-        \(f\) bottoms out when its input is \(0\).\\[3pt]
-        \(g\) bottoms out when \(x + 3 = 0\),\\[3pt]
-        so at \(x = -3\) --- three units \textbf{left}.
+      \begin{block}{Where did the vertex go?}
+        \(f\) was handed \(0\) at its vertex, so solve
+        \[ x + 3 = 0 \;\Longrightarrow\; x = -3. \]
+        \textbf{Left} 3 --- not the direction the ``\(+\)'' suggests.
       \end{block}
 
       \medskip
-      \(h > 0\): left. \quad \(h < 0\): right.
+      \(f(2x)\): to hand \(f\) its \(2\), supply \(x = 1\). Every landmark
+      arrives at \textbf{half} the \(x\) --- a squeeze by \(1/2\).
+
+      \smallskip
+      Questions changed, answers untouched: the \textbf{range} is unchanged
+      and the \textbf{domain} moves.
   \end{columns}
 \end{frame}
 
-% SECTION 4 — DILATIONS AND REFLECTIONS
+% SECTION 4 — FOLLOW THE LANDMARK
 \begin{frame}[t, plain]
-  \plumheader{4. Dilations and Reflections}
+  \plumheader{4. Follow the Landmark}
+  \sectionlabel[redacc]{No Order of Operations to Memorize}
 
-  \begin{columns}[T]
-    \column{0.42\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.55cm, y=0.22cm]
-        \draw[linegray, very thin, step=1] (-2.4,-4) grid (2.4,8);
-        \draw[->, thick] (-2.7,0) -- (2.9,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,-4.4) -- (0,8.6) node[above] {\small \(y\)};
-        \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {-4,4,8} \node[left, font=\tiny] at (0,\y) {\y};
-        \draw[thick, linegray] plot [smooth] coordinates
-          {(-2,4) (-1,1) (0,0) (1,1) (2,4)};
-        \draw[very thick, plum] plot [smooth] coordinates
-          {(-2,8) (-1,2) (0,0) (1,2) (2,8)};
-        \draw[very thick, goldacc] plot [smooth] coordinates
-          {(-2,-4) (-1,-1) (0,0) (1,-1) (2,-4)};
-      \end{tikzpicture}
-      \end{center}
-      \centering{\scriptsize gray \(=f(x)\) \quad plum \(=2f(x)\) \quad
-      gold \(=-f(x)\)}
+  \begin{block}{For \(g(x) = a\,f(x+h) + k\), the parent's point \((p, q)\) lands at}
+    \[
+      \bigl(\,p - h,\;\; aq + k\,\bigr)
+      \qquad\text{new input: solve } x + h = p.
+    \]
+  \end{block}
 
-    \column{0.54\textwidth}
-      \begin{block}{Vertical: \(g(x) = a f(x)\) --- outside}
-        \(|a|>1\) stretches away from the \(x\)-axis;
-        \(0<|a|<1\) compresses toward it.\\[3pt]
-        \(a<0\) also \textbf{flips} over the \(x\)-axis.
-      \end{block}
+  \medskip
+  \(g(x) = -2f(x+1) - 3\), with \(f(x) = x^2\):
 
-      \medskip
-      \begin{block}{Horizontal: \(g(x) = f(bx)\) --- inside}
-        \(f(2x)\) hits the same heights at \textbf{half} the \(x\):
-        a horizontal \textbf{compression} by \(\tfrac{1}{2}\).\\[3pt]
-        Inside, so opposite again.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 5 — COMBINING + DOMAIN/RANGE
-\begin{frame}[t, plain]
-  \plumheader{5. Combining Them --- and Domain \& Range}
-
+  \smallskip
   \begin{center}
-    {\Large \(g(x) = a\,f(x+h) + k\)}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|l|c|c|c|}
+  \hline
+  \textbf{parent point} & \textbf{new input} \(p - 1\) & \textbf{new output} \(-2q - 3\) & \textbf{lands at} \\
+  \hline
+  \((-2,\,4)\) & \(-3\) & \(-11\) & \((-3,\,-11)\) \\
+  \hline
+  \((0,\,0)\) & \(-1\) & \(-3\) & \((-1,\,-3)\) \\
+  \hline
+  \((2,\,4)\) & 1 & \(-11\) & \((1,\,-11)\) \\
+  \hline
+  \end{tabular}
   \end{center}
 
-  \bigskip
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{block}{Decode \(g(x) = -2f(x+1)-3\)}
-        \(h = 1\): shift \textbf{left} 1 \\[3pt]
-        \(a = -2\): stretch by 2, \textbf{flip} over the \(x\)-axis \\[3pt]
-        \(k = -3\): shift \textbf{down} 3
+  \medskip
+  Left 1, stretched by 2, flipped over the \(x\)-axis, down 3 --- and the
+  vertex, once the lowest point, is now the \textbf{highest}.
+\end{frame}
+
+% SECTION 5 — DOMAIN AND RANGE
+\begin{frame}[t, plain]
+  \plumheader{5. The Two Columns Carry Domain and Range}
+
+  The domain is a fact about the \textbf{input} column; the range is a fact
+  about the \textbf{output} column.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Domain --- from the question}
+        \(f\) has domain \([-2, 4]\), and \(g(x) = -2f(x+1) - 3\):
+        \[ -2 \le x + 1 \le 4 \;\Longrightarrow\; -3 \le x \le 3 \]
       \end{block}
 
-    \column{0.5\textwidth}
-      \begin{block}{Domain \(=[-2,4]\), Range \(=[0,9]\)}
-        Domain: \(-2 \le x+1 \le 4 \Rightarrow [-3, 3]\) \\[3pt]
-        Range: \(\times(-2) \Rightarrow [-18, 0]\),
-        then \(-3 \Rightarrow [-21, -3]\)
+    \column{0.48\textwidth}
+      \begin{block}{Range --- from the answer}
+        \(f\) has range \([0, 9]\), and every \(q\) becomes \(-2q - 3\):
+        \[ -2(0) - 3 = -3, \qquad -2(9) - 3 = -21 \]
+        Range \([-21, -3]\) --- the endpoints \textbf{trade places}.
       \end{block}
   \end{columns}
 
-  \bigskip
-  \begin{block}{Rule of thumb}
-    \textbf{Horizontal} changes move the \textbf{domain}.
-    \textbf{Vertical} changes move the \textbf{range}.
-    Multiplying by a negative \textbf{swaps} which endpoint is smaller.
-  \end{block}
+  \medskip
+  \begin{center}
+    \textbf{Changes to the question move the domain. Changes to the answer
+    move the range.}
+  \end{center}
 \end{frame}
 
 % CLASS PRACTICE
@@ -231,17 +259,24 @@
   \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Describe each transformation of the graph of \(f\):
-          \begin{enumerate}[(a)]\setlength{\itemsep}{4pt}
-            \item \(g(x) = f(x) - 6\)
-            \item \(g(x) = f(x + 5)\)
-            \item \(g(x) = -f(x)\)
-          \end{enumerate}
-    \item The domain of \(f\) is \([1, 7]\) and its range is \([-4, 2]\).
-          Find the domain and range of \(g(x) = f(x-3) + 5\).
-    \item A table shows \(f(0)=1, f(1)=3, f(2)=5\) and
-          \(p(0)=2, p(1)=6, p(2)=10\). Write \(p\) in terms of \(f\) ---
-          and say whether the change was inside or outside.
+    \item A function \(f\) has this table, with its peak at \((2, 4)\):
+
+          \smallskip
+          \begin{tabular}{|l|c|c|c|c|c|}
+          \hline
+          \(x\) & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \(f(x)\) & 1 & 3 & 4 & 3 & 1 \\
+          \hline
+          \end{tabular}
+
+          \smallskip
+          Fill the row for \(g(x) = f(x) + 2\). Then let \(h(x) = f(x-2)\):
+          what is \(h(5)\), and where is \(h\)'s peak?
+
+    \item The lowest point on the graph of \(f\) is \((3, -1)\) and its domain
+          is \([1, 7]\). For \(g(x) = 4f(x-2) + 5\), find the lowest point and
+          the domain --- and say which move changed the domain.
   \end{enumerate}
 \end{frame}
 

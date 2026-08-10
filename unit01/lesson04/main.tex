@@ -18,12 +18,15 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and describe additive
-    transformations (vertical and horizontal translations) and multiplicative
-    transformations (vertical and horizontal dilations, including reflections)
-    of a parent function, using the rule $g(x) = af(x+h)+k$; and will determine
-    the domain and range of a transformed function from the parent's domain and
-    range. \hfill\textit{\small (CED Topic 1.12 --- Skills 1.C, 3.A)}
+    \textbf{Primary Objective:} Students will read every transformation rule
+    $g(x) = af(x+h)+k$ as interference at one of two places --- the
+    \textit{question} handed to the parent function or the \textit{answer} it
+    hands back; construct and describe additive and multiplicative
+    transformations from that reading, explaining the horizontal reversal by
+    solving for the input rather than by slogan; follow a landmark point
+    through a combination of moves; and determine the domain and range of the
+    transformed function from the two columns.
+    \hfill\textit{\small (CED Topic 1.12 --- Skills 1.C, 3.A)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -35,28 +38,33 @@
 \textbf{1.C} --- Construct new functions, using transformations, that may be
 useful in modeling contexts, criteria, or data. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item $g(x)=f(x)+k$ is an \textbf{additive} transformation: a vertical
-        translation of the graph of $f$ by $k$ units. (1.12.A.1)
-  \item $g(x)=f(x+h)$ is an \textbf{additive} transformation: a horizontal
-        translation by $-h$ units --- the direction reverses. (1.12.A.2)
+  \item Using $f$ is a transaction: a rule can change the \textbf{question}
+        handed to $f$ or the \textbf{answer} $f$ returns, and nothing else.
+  \item $g(x)=f(x)+k$ is an \textbf{additive} transformation of the answer: a
+        vertical translation by $k$ units. (1.12.A.1)
+  \item $g(x)=f(x+h)$ is an \textbf{additive} transformation of the question:
+        a horizontal translation by $-h$ units --- the direction reverses
+        because you solve $x+h=p$ for the input. (1.12.A.2)
 \end{itemize} \\
 \textbf{3.A} --- Describe the characteristics of a function with varying levels
 of precision, depending on the representation available. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item $g(x)=af(x)$ is a \textbf{multiplicative} transformation: a vertical
-        dilation by a factor of $|a|$; if $a<0$ it also reflects over the
-        $x$-axis. (1.12.A.3)
-  \item $g(x)=f(bx)$ is a \textbf{multiplicative} transformation: a horizontal
-        dilation by a factor of $1/|b|$; if $b<0$ it also reflects over the
-        $y$-axis. (1.12.A.4)
+  \item $g(x)=af(x)$ is a \textbf{multiplicative} transformation of the
+        answer: a vertical dilation by a factor of $|a|$; if $a<0$ it also
+        reflects over the $x$-axis. (1.12.A.3)
+  \item $g(x)=f(bx)$ is a \textbf{multiplicative} transformation of the
+        question: a horizontal dilation by a factor of $1/|b|$; if $b<0$ it
+        also reflects over the $y$-axis. (1.12.A.4)
 \end{itemize} \\
 \textbf{Synthesis} --- combine transformations and read off the consequences. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Additive and multiplicative transformations combine:
-        $g(x)=af(x+h)+k$. (1.12.A.5)
-  \item The domain and range of a transformed function may differ from the
-        parent's --- the domain moves with the horizontal changes, the range
-        with the vertical ones. (1.12.A.6)
+  \item Additive and multiplicative transformations combine as
+        $g(x)=af(x+h)+k$, and the parent's point $(p,q)$ lands at
+        $(p-h,\;aq+k)$ --- two independent computations, so no order of
+        operations has to be memorized. (1.12.A.5)
+  \item The domain is a fact about the input column and the range a fact
+        about the output column, so question changes move the domain and
+        answer changes move the range. (1.12.A.6)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
@@ -64,227 +72,268 @@ of precision, depending on the representation available. &
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Parent function        & The original, untransformed function a whole family of graphs is built from --- today, $f(x)=x^2$. \\
-Transformation         & An operation that moves, resizes, or flips the graph of a function without changing its basic shape. \\
-Translation (shift)    & A slide: $f(x)+k$ moves the graph up or down; $f(x+h)$ moves it left or right. \\
-Dilation (stretch or compress) & A resize: $af(x)$ scales the outputs by $|a|$; $f(bx)$ scales the inputs by $1/|b|$. \\
-Reflection             & A flip: $-f(x)$ flips the graph over the $x$-axis; $f(-x)$ flips it over the $y$-axis. \\
-Outside vs.\ inside    & A change \textit{outside} $f$ acts on outputs --- vertical, and it does what you expect. A change \textit{inside} $f$ acts on inputs --- horizontal, and it does the opposite. \\
+Parent function & The simplest function of a family --- the one every other graph in the family is built from. Today it is $f(x)=x^2$. \\
+Transformation  & A rule that changes the question handed to a function, the answer it hands back, or both. \\
+Translation     & A slide with no resizing: $f(x)+k$ moves the graph vertically by $k$; $f(x+h)$ moves it horizontally by $-h$. \\
+Dilation        & A resize: $af(x)$ scales the outputs by $|a|$ (vertical); $f(bx)$ scales the inputs by \TallMath{\frac{1}{|b|}} (horizontal). \\
+Reflection      & A flip: $-f(x)$ over the $x$-axis (an answer change); $f(-x)$ over the $y$-axis (a question change). \\
+Landmark point  & A point of the parent worth tracking --- a vertex, an endpoint, an intercept. Under $g(x)=af(x+h)+k$ it lands at $(p-h,\;aq+k)$. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: evaluating a function at a numerical input with the
-    parentheses habit (Lesson 1.1), reading domain and range off a table of
-    values (Lesson 1.1), and solving a one-step equation for the input that
-    makes an expression zero. Item 3 is the load-bearing one --- ``for what
-    $x$ is $x+3 = 0$?'' is exactly the reasoning that explains why $f(x+3)$
-    shifts \textit{left}, and it returns verbatim in Part 3.
+    Skills reviewed: evaluating $f(x)=x^2$ at three inputs with the
+    parentheses habit from 1.1, producing the exact reference values the
+    parent table uses all period; solving three one-step equations; and
+    reading domain, range, and the location of the smallest output off a
+    table. Item 2 is load-bearing --- ``for what $x$ is $x+3=0$?'' and ``for
+    what $x$ is $2x=6$?'' are the entire explanation of the horizontal
+    reversal and of the horizontal squeeze, and both return verbatim in
+    Part 3.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{lilac}
-    \textbf{One function, three disguises.} Project the table of $f(x)=x^2$
-    beside three unlabeled tables built from it: one with every output 3
-    larger, one with the same outputs at inputs 3 smaller, and one with every
-    output doubled.
+    \textbf{Two harbors, three hours apart.} Project the North Harbor tide
+    table from the guided notes. South Harbor rises and falls exactly the same
+    way, and the harbormaster publishes its depth as $S(t) = D(t+3)$.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask: what did I \textit{do} to $f$ each time? What changed ---
-              the inputs or the outputs?
-        \item Push on the middle table: its output list is \textit{identical}
-              to $f$'s. Nothing happened to the outputs at all --- so what
-              moved?
+        \item Take a vote first: the rule \textit{adds} three hours, so does
+              South Harbor's high tide come \textbf{before} or \textbf{after}
+              North Harbor's? Do not let anyone justify it yet.
+        \item Then compute two values off the table. $S(3) = D(6) = 12$ --- so
+              South Harbor peaks at 3 a.m., three hours \textit{ahead}. The
+              plus sign moved it earlier.
     \end{enumerate}
-    \textit{Discussion prompt:} every graph today is that same parabola
-    wearing a disguise. Today's job is to read the rule and predict the
-    disguise --- and then to reverse it.
+    \textit{Discussion prompt:} the $+3$ was never done to the tide. It was
+    done to the \textbf{question}. Asking $S$ about 3 a.m.\ means asking $D$
+    about 6 a.m., so everything $D$ does, $S$ already did. That is the whole
+    lesson: a rule interferes either with the question you hand a function or
+    with the answer it hands back, and those two places behave differently.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Parent Functions and the Outside/Inside Rule} (8 min)
+\textbf{Part 1: The Question and the Answer} (7 min)
 
 \begin{itemize}
-  \item Name the \textbf{parent function} $f(x)=x^2$ and its five reference
-        points $(-2,4)$, $(-1,1)$, $(0,0)$, $(1,1)$, $(2,4)$. Everything
-        today is that parabola, relocated or resized.
-  \item Give the organizing idea once, in these words, and repeat it all
-        lesson: \textbf{outside the function $\Rightarrow$ vertical, and it
-        does what you expect; inside the function $\Rightarrow$ horizontal,
-        and it does the opposite.}
-  \item Before computing anything with a new rule, sort it aloud: is the
-        change outside $f$ or inside $f$?
+  \item Name the \textbf{parent function} $f(x)=x^2$ and put its five
+        reference points on the board: $(-2,4)$, $(-1,1)$, $(0,0)$, $(1,1)$,
+        $(2,4)$. Everything today is that parabola, relocated or resized.
+  \item Say the spine once, in these words, and repeat it verbatim all period:
+        \textbf{using $f$ is a transaction --- you hand it a question, it
+        hands back an answer. A rule can only interfere in one of those two
+        places.} Outside the function is the answer: vertical, and it does
+        what it says. Inside the parentheses is the question: horizontal, and
+        it runs opposite.
+  \item Do the four-row sorting table before computing anything. Insist on the
+        sort out loud: ``question or answer?'' then ``horizontal or
+        vertical?''
 \end{itemize}
 
-\textbf{Part 2: Vertical Translation, $g(x)=f(x)+k$} (8 min)
+\textbf{Part 2: Rewriting the Answer} (10 min)
 
 \begin{itemize}
-  \item Fill the notes table for $g(x)=f(x)+3$: every output rises by 3,
-        every input untouched. Read the pre-drawn pair of parabolas.
-  \item $k>0$ up, $k<0$ down. Domain unchanged; the range slides by $k$.
-\end{itemize}
-
-\textbf{Part 3: Horizontal Translation, $g(x)=f(x+h)$} (12 min)
-
-\begin{itemize}
-  \item The hard one --- budget the time. Fill the table for $g(x)=f(x+3)$
-        and let students discover that the output \textit{list} is unchanged;
-        only the addresses moved.
-  \item Explain the reversal with the warm-up's question, not with a slogan:
-        the parent's vertex sits where its input is $0$, so $g$'s vertex sits
-        where $x+3=0$, that is, at $x=-3$ --- \textbf{left} 3.
+  \item Fill the three rows $f(x)+3$, $2f(x)$, $-f(x)$ from the parent row.
+        The input column is never touched --- point at it.
+  \item $k>0$ up, $k<0$ down. $|a|>1$ stretches, $0<|a|<1$ compresses; say
+        ``stretched away from the $x$-axis,'' not ``bigger.'' $a<0$ carries a
+        flip over the $x$-axis.
+  \item Read the pre-drawn figure with all three curves, then close: the
+        questions were untouched, so the domain is unchanged and the range
+        moves.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 4: Dilations and Reflections} (14 min)
+\textbf{Part 3: Rewriting the Question} (14 min)
 
 \begin{itemize}
-  \item $g(x)=2f(x)$: outputs doubled --- a vertical stretch by 2. Then
-        $h(x)=-f(x)$: every output changes sign --- a flip over the
-        $x$-axis. All three curves are on the pre-drawn figure.
-  \item $|a|>1$ stretches, $0<|a|<1$ compresses. Say ``stretch away from the
-        $x$-axis,'' not ``makes it bigger.''
-  \item Horizontal dilation at exposure depth: $g(x)=f(2x)$ reaches the same
-        heights at \textit{half} the $x$ --- inside, so horizontal, and the
-        opposite of what the 2 suggests: a compression by a factor of
-        $1/2$.
+  \item The hard one --- budget the time. Fill the ``handed to $f$'' row
+        \textit{first}, every time; that row is the whole method.
+  \item For $g(x)=f(x+3)$, let students discover the output list is unchanged.
+        Then locate the vertex by solving $x+3=0$ --- the warm-up's own
+        question --- and tie it back to the harbor with the sentence
+        ``everything $D$ does, $S$ did three hours earlier.''
+  \item $f(2x)$ at exposure depth (1.12.A.4): to hand $f$ its $2$ you supply
+        $x=1$, so every landmark arrives at half the $x$ --- a squeeze by
+        $1/2$, the opposite of what the $2$ suggests. Name $f(-x)$ as the
+        $y$-axis flip and move on.
 \end{itemize}
 
-\textbf{Part 5: Combining Them --- and Domain \& Range} (8 min)
+\textbf{Part 4: Follow the Landmark} (12 min)
 
 \begin{itemize}
-  \item Decode $g(x)=-2f(x+1)-3$ one parameter at a time: left 1, stretch by
-        2, flip over the $x$-axis, down 3.
-  \item Domain and range: if $f$ has domain $[-2,4]$ and range $[0,9]$, the
-        domain shifts left 1 to $[-3,3]$; the range multiplies by $-2$ to
-        $[-18,0]$ (the endpoints swap order!) and then drops 3 to
-        $[-21,-3]$.
-  \item State the rule of thumb explicitly: \textbf{horizontal changes move
-        the domain, vertical changes move the range.}
+  \item State the tool: for $g(x)=af(x+h)+k$, the parent's $(p,q)$ lands at
+        $(p-h,\,aq+k)$. New input: solve $x+h=p$. New output: do what the
+        outside says. Two separate computations --- there is no order to
+        memorize.
+  \item Work $g(x)=-2f(x+1)-3$ across three parent points in the table, then
+        say the moves in words. Finish on the vertex: the lowest point is now
+        the highest, because $a<0$.
+\end{itemize}
+
+\textbf{Part 5: Domain and Range} (9 min)
+
+\begin{itemize}
+  \item Domain is a fact about the input column; range is a fact about the
+        output column. That single sentence is the whole part.
+  \item Same $g$: domain $[-2,4] \to [-3,3]$ by solving the inequality; range
+        $[0,9] \to [-21,-3]$, endpoints trading places because $a<0$.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+While students work on the guided notes and practice, circulate and check:
 \begin{itemize}
   \item \textbf{Common error:} shifting $f(x+3)$ to the \textit{right}.
-        Cold-call: ``At what $x$ does $g$ do what $f$ did at $0$? Solve
-        $x+3=0$.'' Do not accept ``because it's backwards.''
-  \item \textbf{Common error:} in the table for $g(x)=2f(x)$, doubling the
-        $x$ column. Ask: ``Is the 2 inside or outside $f$? So which column
-        does it touch?''
-  \item \textbf{Common error:} a range under a negative factor written in the
-        old order, e.g.\ $[0,-18]$. ``Smaller number first --- which of those
-        two \textit{is} smaller?''
-  \item \textbf{Common error:} changing the domain when the transformation
-        was vertical. Return to the rule of thumb: horizontal moves the
-        domain, vertical moves the range.
+        Cold-call: ``What does the rule hand $f$ when $x=-3$? And what did $f$
+        do when it was handed that?'' Do not accept ``because it's
+        backwards.''
+  \item \textbf{Common error:} in the table for $2f(x)$, doubling the $x$
+        column. Ask the sorting question: ``Is that 2 changing the question or
+        the answer? So which column can it touch?''
+  \item \textbf{Common error:} a range under a negative factor left in the old
+        order, e.g.\ $[-3,-21]$. ``Which of those two \textit{is} smaller?''
+  \item \textbf{Common error:} moving the domain for a vertical change, or the
+        range for a horizontal one. Send them back to the two columns.
+  \item \textbf{Spine check:} when a student explains a horizontal move by
+        saying ``you flip the sign,'' stop the group and make them solve
+        $x+h=p$ instead. The slogan is what fails them on $f(2x)$ and on
+        anything in 1.5.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Skate Park Ramp} in leveled
-tiers. Every tier uses the same table of $f$ values and the same pre-drawn
-parabola --- no tier draws anything.
+Students work on the \textbf{Group Activity: The Fountain Deck} in leveled
+tiers. Every tier uses the same arc table and the same pre-drawn parabola ---
+no tier draws anything. The physical setup carries the spine: moving a nozzle
+along the deck is a question change; raising it on a pedestal is an answer
+change.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Fill the output columns for
-        $g(x)=f(x)+3$ (the ramp raised onto a platform) and $h(x)=f(x)-1$
-        (the ramp sunk into a pit), name each direction, then answer the
-        inside/outside sorting question.
-  \item \textbf{Tier A (Apply):} Build the table for $g(x)=2f(x-1)$ in two
-        recorded steps, describe both moves in words, locate the new lowest
-        point $(1,0)$, and state the domain $[-1,3]$ and range $[0,8]$.
-  \item \textbf{Tier E (Extend):} Reverse-engineer two rules from tables
-        ($k(x)=-2f(x)$ and $m(x)=f(x-2)+1$), then compare $f(2x)$ against
-        $2f(x)$ at supplied inputs to show the two are genuinely different
-        transformations.
+  \item \textbf{Tier R (Remediate):} Read $f(0)$, $f(4)$, and the high point
+        off the table; fill the rows for the pedestal nozzle $P(x)=f(x)+3$ and
+        the doubled-height nozzle $Q(x)=2f(x)$; sort the pedestal as a
+        question or answer change; then say why both high points are still at
+        $x=4$.
+  \item \textbf{Tier A (Apply):} Build the ``handed to $f$'' row for the
+        relocated nozzle $B(x)=f(x-4)$, notice the height list is unchanged,
+        and explain why a move to the \textit{right} is written with a
+        \textit{minus}. Then follow three landmarks through
+        $C(x)=f(x-4)+3$ and state its domain $[4,12]$ and range $[3,19]$.
+  \item \textbf{Tier E (Extend):} Reverse-engineer $M(x)=f(x+3)$ from a table;
+        build the reflecting-pool row $R(x)=-f(x)$ and locate the low point of
+        $-f(x-4)$; then compare the scale model $f(2x)$ against the
+        double-pressure spec $2f(x)$ at the same inputs --- they agree only at
+        $x=0$.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item Decompose $g(x)=f(x+3)-2$ into its horizontal move (with direction)
-        and its vertical move (with direction).
-  \item Complete a table for $g(x)=-f(x)$ from given values of $f$.
-  \item Given that the domain of $f$ is $[-2,6]$, state the domain of
-        $g(x)=f(x-4)$ (worked space provided).
+  \item For $g(x) = f(x+5)-2$: name the question change with its direction,
+        the answer change with its direction, and then land the parent's
+        lowest point $(0,0)$.
+  \item Complete a table row for $g(x) = -f(x)+1$ from four given values of
+        $f$.
+  \item Given domain $[-2,6]$ and range $[0,4]$ for $f$, state the domain
+        \textit{and} the range of $g(x) = f(x-4)$, with a one-phrase reason
+        for the range.
 \end{enumerate}
-\textbf{Assessment note:} Item 1 is the diagnostic --- a ``right 3'' there is
-the lesson's signature error and means Part 3 needs a reteach in tomorrow's
-warm-up window. Item 3 misses split two ways: $[-6,2]$ is the same reversal
-as item 1, while a student who changed the \textit{range} instead confused
-which quantity a horizontal move touches.
+\textbf{Assessment note:} item 1(c) is the diagnostic --- a landing point of
+$(5,-2)$ is the lesson's signature error and means Part 3 needs a reteach in
+tomorrow's warm-up window. Item 3(b) is the second diagnostic and a different
+miss: a student who changes the range under a horizontal move has the
+direction right and the two columns confused. Item 2 is arithmetic and should
+be near-universal.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering description of four single
-transformations, completing transformation tables for $f(x)+4$ and $-f(x)$,
-domain and range under a combined transformation, reverse-engineering a rule
-from two tables, and one AP-style multiple-choice range item.
+\textbf{Homework:} 5 problems --- sorting and describing four single
+transformations, two transformation tables where the horizontal one reproduces
+$f$'s output list unchanged, reading a pre-drawn parent-and-image pair and
+writing the rule, a full landmark-plus-domain-plus-range pass through
+$g(x)=2f(x+1)-5$, and one AP-style multiple-choice range item under a negative
+dilation.
 
-\textbf{Extension (optional):} Using supplied values of $f(x)=x^2$, compare
-$2f(x)$ with $f(2x)$ at the same inputs. The two agree nowhere except the
-origin --- outside and inside are genuinely different operations, not two
-spellings of one.
+\textbf{Extension (optional):} $g(x)=2f(x)+6$ against $h(x)=2(f(x)+6)$ with
+$f(3)=5$. The two differ ($16$ versus $22$), so the order in which the outside
+operations act is part of the rule --- an idea 1.5 will formalize.
 
-\textbf{Preview:} Next lesson (1.5, Composition of Functions) keeps feeding
-one function's output into another expression. $f(x+3)$ was already a
-composition in disguise; 1.5 gives the idea a name and a notation.
+\textbf{Preview:} Next lesson (1.5, Composition of Functions) picks up exactly
+what made every horizontal move work: handing $f$ something other than $x$.
+1.5 gives that its name and notation and lets the thing handed over be any
+function, not just $x+h$.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 3 is the one that pays off:
+Five minutes, silent start, no calculators. Item 2 is the one that pays off:
 ``for what $x$ is $x+3=0$?'' is a throwaway algebra question here and the
-entire explanation of the horizontal reversal in Part 3 --- so when you get
-there, make a point of saying they already answered it. Item 1 keeps the
-parentheses habit alive for the tables all lesson; item 2's table read is the
-domain/range language Part 5 needs.
+entire explanation of the horizontal reversal in Part 3, and $2x=6$ does the
+same job for the horizontal squeeze --- so when you reach them, say out loud
+that the class already answered both. Item 1 produces the exact parent values
+($4$, $1$, $9$) the notes tables run on. Item 3(c) asks where the smallest
+output happens, not just what it is: that is landmark language, and Part 4
+needs students already used to naming a point rather than a number.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Say the outside/inside rule in Part 1 and then repeat it verbatim at every new
-rule --- it is the one sentence a struggling student should leave with.
-Part 3 is where the time goes; resist explaining the reversal with ``it's
-backwards'' and use the $x+3=0$ argument every time. Part 4's horizontal
-dilation is exposure only (CED 1.12.A.4): the table showing $f(2x)$ hitting
-the same heights at half the $x$ is enough, and no student needs to produce a
-horizontal dilation from scratch today. If time runs short, compress that
-table into a single read --- do not cut Part 5, which the exit ticket's item
-3 depends on.
+Take the hook vote before any computing --- if the class does not commit
+first, ``it moved earlier'' lands as a table fact instead of a provocation.
+Say ``question'' and ``answer'' every time you say ``inside'' and ``outside''
+for the whole period; those two words are doing all the conceptual work, and
+they are what make Part 4 need no order-of-operations rule at all. In Part 3
+fill the ``handed to $f$'' row first every single time, including on the board
+--- students who skip it are the ones who shift the wrong way. Part 3(c),
+horizontal dilation, is exposure only (CED 1.12.A.4): the table showing
+$f(2x)$ hitting the same heights at half the $x$ is enough, and no student
+needs to produce one from scratch today. If time runs short, compress 3(c)
+into a single read --- do not cut Part 4, which both the exit ticket and the
+activity's Tier A depend on.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-All three tiers read the same ramp table and the same parabola, so groups can
-be regrouped mid-activity without new setup. Tier R's last question --- did
-the rule change the input column or the output column? --- is that tier's
-whole point; make them answer it out loud before moving on. Tier A's two-step
-table (shift first, then stretch) is worth insisting on even for students who
-can do it in one jump: the recorded intermediate column is what makes their
-error visible when it comes. Tier E's $f(2x)$ versus $2f(x)$ comparison is
-the best whole-class share of the day if you have three minutes at the end.
+All three tiers read the same arc table and the same parabola, so groups can
+be re-formed mid-period with no new setup. The fountain is chosen so the
+spine is physical: sliding a nozzle along the deck changes the question,
+putting it on a pedestal changes the answer, and students can point at which
+one happened. Tier R's item 4 --- why are both high points still at $x=4$? ---
+is that tier's whole point; make them say it aloud. Tier A's item 2 is the
+hinge of the lesson: the nozzle moved \textit{right} and the rule says
+\textit{minus}. Give it a whole-class share in the closing minutes even if no
+other tier work gets aired. Tier E's $f(2x)$ versus $2f(x)$ table is the best
+second share if you have three more minutes; the two rules agree at exactly
+one input, and seeing that is worth more than any restatement of the rule.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 1: ``left 3, down 2'' is the
-target, and the ``right 3'' pile is your reteach group. Accept any wording
-that names both a direction and a number of units; do not accept ``moves 3''
-with no direction. On item 3, a student who wrote $[2,10]$ with nothing in
-the work space still gets credit --- the inequality chain is a support, not a
-requirement.
+Collected, completion credit only. Sort by item 1(c): $(-5,-2)$ is the target
+and the $(5,-2)$ pile is your reteach group --- read that one entry first, it
+is the fastest scan of the three. Accept any wording in 1(a) and 1(b) that
+names both a direction and a number of units; do not accept ``moves 5'' with
+no direction. Item 3(b) is a separate diagnostic from 1(c) and should be
+tallied separately: a student who wrote a moved range under a horizontal
+transformation did not misread the direction, they lost the two columns, and
+the fix is Part 5 rather than Part 3. A correct $[0,4]$ with an empty reason
+still gets credit, but note the name.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 4 (reverse-engineering $p$ from a table) is the one that predicts
-success in 1.7's modeling work; scan it first. On problem 5, distractor A is
-the range computed with $a=+2$ instead of $-2$, C drops the $+1$, and D
-forgets to reorder the endpoints after multiplying by a negative --- each is
-worth thirty seconds of autopsy tomorrow. The extension is the only place
-horizontal dilation is practiced outside Tier E; if the class never reached
-that tier, assign it explicitly.
+Problem 2 is deliberately paired: the vertical row changes the numbers, the
+horizontal row reproduces $f$'s output list exactly, and the follow-up
+question asks which one and why. Scan that sentence first --- it is the
+cheapest read on whether the spine landed. Problem 3 is the only
+graph-to-rule item and the best predictor of success in 1.7's modeling work.
+On problem 5, distractor A is the range computed with $a=+2$ instead of $-2$,
+C drops the $+3$, and D is the correct pair of endpoints left in the wrong
+order after multiplying by a negative --- D in particular is worth thirty
+seconds of autopsy, since it is the Part 5 warning made into a wrong answer.
+The extension is the only place the order of two outside operations is
+examined; if the class handled Part 4 quickly, assign it and open 1.5 with a
+student's answer.
 \end{teachernote}
 \end{document}
