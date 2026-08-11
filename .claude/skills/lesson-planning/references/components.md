@@ -219,6 +219,7 @@ Page 2 (key only) is teacher-only: the answer rationale and extended-response sc
 test is bound into the student packet. Keep it to one page: cover + notes is a single
 double-sided sheet.
 
-**The eight existing units predate this split** — each has a single `unit_cover/main.tex` and no
-`body.tex`. To add a key cover to one, first move the sheet's body out of `main.tex` into
+**Unit 1 is split; units 2--8 are not** — each of those still has a single `unit_cover/main.tex`
+and no `body.tex`. To add a key cover to one, first move the sheet's body out of `main.tex` into
 `unit_cover/body.tex` and leave the wrapper `\input{body.tex}`, then write the key wrapper.
+`unit01/unit_cover*` is the worked example to copy.

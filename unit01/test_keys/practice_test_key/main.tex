@@ -1,4 +1,10 @@
 %! Unit 1: Functions and Change — Summative Assessment — Practice Test --- Study Copy (KEY)
+%! Mirrors tests/practice_test/main.tex line for line: only \blank{} → \ans{},
+%! \writeline → \ansline{}, the package swap, and the title differ. Every
+%! \begin{work} block below is byte-identical to the blank's, so the two
+%! paginate the same. NO teachernote here — this key is published as
+%! sample_test_key and bound into the unit KEY packet; scoring guidance lives on
+%! page 2 of unit01/unit_cover_key/.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
@@ -14,106 +20,141 @@
 \pageheader{Unit 1: Functions and Change}{Practice Test --- Study Copy --- Answer Key}
 \namedateperiod
 
-\vspace{0.10in}
+\vspace{0.08in}
 \begin{remindbox}
 \small
-\textbf{This is a practice test.} It mirrors the real Unit 1 test in length, format,
-and the ideas it covers, but the numbers and contexts differ. Work every problem
-with no notes, then check your answers against the key.
+\textbf{This is a practice test.} It mirrors the real Unit 1 test in length,
+format, and the ideas it covers --- the numbers and the contexts are the only
+things that differ. Work every problem with no notes, then check yourself
+against the key. \textbf{80 points total.}
 \end{remindbox}
 
 % ======================================================================
-\parthead{Part A --- Vocabulary (8 pts)}
+\boxguard[6]
+\parthead{Part A --- Vocabulary (10 pts)}
 Write the letter of the best description next to each term.
 
 \vspace{4pt}
 \noindent
-\begin{minipage}[t]{0.42\textwidth}
-\begin{enumerate}[leftmargin=2.2em, itemsep=7pt, label=\arabic*.]
+\begin{minipage}[t]{0.36\textwidth}
+\begin{enumerate}[leftmargin=2.2em, itemsep=6pt, label=\arabic*.]
   \item Function \ans{C}
   \item Domain \ans{G}
   \item Range \ans{A}
-  \item Average rate of change \ans{F}
-  \item Concave up \ans{H}
-  \item Parent function \ans{B}
-  \item Composition \ans{E}
+  \item Zero of a function \ans{E}
+  \item Concave up \ans{I}
+  \item Average rate of change \ans{H}
+  \item Parent function \ans{F}
+  \item Composition \ans{B}
+  \item One-to-one \ans{J}
   \item Inverse function \ans{D}
 \end{enumerate}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.55\textwidth}
+\begin{minipage}[t]{0.61\textwidth}
 \small
-\begin{description}[leftmargin=1.4em, itemsep=3pt]
-  \item[(A)] The set of every output the function actually produces.
-  \item[(B)] The simplest form of a family, before any shift or stretch.
-  \item[(C)] A rule that sends each input to \emph{exactly one} output.
-  \item[(D)] The function that reverses the input--output pairs of $f$.
-  \item[(E)] Feeding the output of one function into another: $f(g(x))$.
-  \item[(F)] The slope of the secant line, $\dfrac{f(b)-f(a)}{b-a}$.
-  \item[(G)] The set of every input the function is allowed to take.
-  \item[(H)] Bending upward --- the rate of change is increasing.
+\begin{description}[leftmargin=1.4em, itemsep=2pt]
+  \item[(A)] The set of every output the rule actually produces.
+  \item[(B)] Feeding the output of one rule into another: $f(g(x))$.
+  \item[(C)] A rule that pairs each input with exactly one output.
+  \item[(D)] The rule that gives back the question: if $f(a) = b$, it sends $b$ to $a$.
+  \item[(E)] An input whose output is $0$.
+  \item[(F)] The simplest member of a family, before any shift or stretch.
+  \item[(G)] The set of every input the rule is allowed to take.
+  \item[(H)] The one steady rate that would give the same change in output over the same run.
+  \item[(I)] Bending upward --- the rate of change is increasing.
+  \item[(J)] No two different inputs share an output.
 \end{description}
 \end{minipage}
 
 % ======================================================================
+\boxguard[6]
 \parthead{Part B --- Multiple Choice (12 pts)}
-Circle the best answer.
+Circle the best answer, then write its letter in the blank at the right.
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=9pt]
-  \item A relation fails to be a function exactly when
-    \hfill (A) two inputs share an output \quad \textbf{(B) one input has two outputs} \ans{$\leftarrow$} \\
-    \phantom{x}\hfill (C) the graph crosses the $x$-axis \quad (D) the domain is restricted
-  \item If a function is decreasing and concave up on an interval, its output is
-    \hfill (A) falling faster and faster \quad \textbf{(B) falling, but more and more slowly} \ans{$\leftarrow$} \\
-    \phantom{x}\hfill (C) rising more and more slowly \quad (D) changing at a constant rate
-  \item A table of $f$ has equally spaced inputs and \textbf{constant second} differences.
-    The best model is
-    \hfill (A) linear \quad \textbf{(B) quadratic} \ans{$\leftarrow$} \quad (C) exponential \quad (D) none of these
-  \item The graph of $g(x) = f(x+3)$ is the graph of $f$ shifted
-    \hfill (A) $3$ right \quad \textbf{(B) $3$ left} \ans{$\leftarrow$} \quad (C) $3$ up \quad (D) $3$ down
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item The statement $f(3) = 7$ tells you that
+    \\[2pt]\hspace*{1em}
+    (A) $f(7) = 3$ \quad (B) $7$ is an input of $f$ \quad
+    (C) $(3,7)$ is on the graph of $f$ \quad (D) $f$ is increasing at $x = 3$
+    \hfill \ans{C}
+  \item On an interval where $f$ is decreasing and concave up, the outputs are
+    \\[2pt]\hspace*{1em}
+    (A) falling faster and faster \quad (B) rising more and more slowly \quad
+    (C) changing at a constant rate \quad (D) falling, but more and more slowly
+    \hfill \ans{D}
+  \item A table of $f$ has equally spaced inputs and \textbf{constant second}
+    differences. The best model is
+    \\[2pt]\hspace*{1em}
+    (A) linear \quad (B) quadratic \quad (C) exponential \quad (D) none of these
+    \hfill \ans{B}
+  \item The graph of $g(x) = f(x + 3)$ is the graph of $f$ shifted
+    \\[2pt]\hspace*{1em}
+    (A) $3$ left \quad (B) $3$ right \quad (C) $3$ up \quad (D) $3$ down
+    \hfill \ans{A}
   \item If $f(x) = x^2$ and $g(x) = x - 1$, then $(f \circ g)(4)$ equals
-    \hfill \textbf{(A) $9$} \ans{$\leftarrow$} \quad (B) $15$ \quad (C) $16$ \quad (D) $3$
-  \item A function has an inverse that is also a function exactly when the function is
-    \hfill (A) increasing somewhere \quad \textbf{(B) one-to-one} \ans{$\leftarrow$} \quad
-    (C) concave up \quad (D) defined at $0$
+    \\[2pt]\hspace*{1em}
+    (A) $15$ \quad (B) $16$ \quad (C) $9$ \quad (D) $3$
+    \hfill \ans{C}
+  \item A function has an inverse that is also a function exactly when the
+    function is
+    \\[2pt]\hspace*{1em}
+    (A) increasing somewhere \quad (B) concave up \quad
+    (C) defined at $0$ \quad (D) one-to-one
+    \hfill \ans{D}
 \end{enumerate}
 
-\boxguard[8]
-\begin{teachernote}
-Item 1: students who pick (A) are confusing the vertical line test with the horizontal
-one --- two inputs \emph{may} share an output. Item 4: the inside change $x+3$ moves the
-graph the ``wrong'' way; expect (A) as the common miss. Item 5: watch for students who
-compute $g(f(4)) = 15$ instead of $f(g(4)) = f(3) = 9$.
-\end{teachernote}
-
 % ======================================================================
-\parthead{Part C --- Short Answer \& Computation (30 pts)}
-Show your work.
+\boxguard[6]
+\parthead{Part C --- Short Answer \& Computation (40 pts, 5 each)}
+Show your work in the space provided.
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
-  \item Let $f(x) = 2x^2 - 5$. Compute \textbf{(a)} $f(3)$, \quad \textbf{(b)} $f(-2)$, \quad
-        \textbf{(c)} the value of $x$ (there are two) for which $f(x) = 3$.
-        \ans{(a) $f(3) = 2(9) - 5 = 13$. \ (b) $f(-2) = 2(4) - 5 = 3$. \ (c) $2x^2 - 5 = 3 \Rightarrow 2x^2 = 8 \Rightarrow x^2 = 4 \Rightarrow x = \pm 2$.}
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+  \item Let $f(x) = 2x^2 - 5$.
+
+\begin{work}
+     f(3) &= 2(3)^2 - 5 \\
+          &= 13 \\
+    f(-2) &= 2(-2)^2 - 5 \\
+          &= 3 \\
+ 2x^2 - 5 &= 3 \\
+      x^2 &= 4 \\
+        x &= \pm 2
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item $f(3) = $ \ans{13} \qquad \textbf{(b)} $f(-2) = $ \ans{3}
+      \setcounter{enumii}{2}
+      \item Solve $f(x) = 3$. There are two answers: \ans{$x = 2,\ -2$}
+      \item Which of (a)--(c) is a \emph{solve} question rather than an
+            \emph{evaluate} question? \ans{(c)}
+    \end{enumerate}
+
   \item The graph of $y = f(x)$ is shown below.
-        \textbf{(a)} On what interval is $f$ decreasing?
-        \textbf{(b)} Is $f$ concave up or concave down on the whole picture?
-        \textbf{(c)} List the zeros of $f$.
-        \textbf{(d)} What is $f(3)$?
 
         \vspace{2pt}
         \begin{center}
-        \begin{tikzpicture}[scale=0.68]
+        \begin{tikzpicture}[scale=0.62]
           \draw[linegray, very thin] (-0.4,-2.4) grid (6.4,3.4);
           \draw[->] (-0.4,0) -- (6.6,0) node[right]{\small $x$};
           \draw[->] (0,-2.4) -- (0,3.6) node[above]{\small $y$};
           \foreach \x in {1,...,6} \draw (\x,0.09) -- (\x,-0.09) node[below]{\scriptsize $\x$};
           \foreach \y in {-2,-1,1,2,3} \draw (0.09,\y) -- (-0.09,\y) node[left]{\scriptsize $\y$};
           \draw[plum, very thick] plot[smooth] coordinates
-            {(0,2.5) (1,0) (2,-1.5) (3,-2) (4,-1.5) (5,0) (6,2.5)};
+            {(0,3) (1,0) (2,-1.5) (3,-2) (4,-1.5) (5,0) (6,3)};
         \end{tikzpicture}
         \end{center}
-        \ans{(a) Decreasing on $0 < x < 3$ (increasing on $3 < x < 6$). \ (b) Concave up everywhere shown --- the curve bends upward and the rate of change is increasing. \ (c) Zeros at $x = 1$ and $x = 5$. \ (d) $f(3) = -2$ (the low point).}
-  \item A tank is draining. The volume $V$ (gallons) after $t$ minutes is given below.
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item On what interval is $f$ decreasing? \ans{$0 < x < 3$}
+      \item Concave up or concave down on the whole picture? \ans{Concave up}
+      \item List the zeros of $f$: \ans{$x = 1$ and $x = 5$}
+      \item $f(3) = $ \ans{$-2$} \qquad \textbf{(e)} Range on the window
+            shown: \ans{$-2 \le y \le 3$}
+    \end{enumerate}
+
+  \item A tank is draining. Its volume $V$ (gallons) after $t$ minutes:
 
         \vspace{2pt}
         \begin{center}
@@ -124,13 +165,55 @@ Show your work.
         $V$ (gal) & $180$ & $148$ & $124$ & $108$ \\ \hline
         \end{tabular}
         \end{center}
+
+\begin{work}
+  \frac{V(8) - V(0)}{8 - 0} &= \frac{124 - 180}{8} \\
+                            &= -7
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Average rate of change of $V$ from $t = 0$ to $t = 8$:
+            \ans{$-7$}, with units \ans{gallons per minute}.
+      \item In one sentence, what does that number mean for the tank?
+
+            \ansline{Over those first 8 minutes the tank lost water at an average of 7 gallons a minute.}
+      \item Is the tank draining faster or slower as time goes on?
+            \ans{Slower} \ Justify with the numbers.
+
+            \ansline{The drop over each 4-minute block shrinks: $-32$, then $-24$, then $-16$ gallons.}
+    \end{enumerate}
+
+  \item The table below has equally spaced inputs. Fill in the difference rows,
+        then name the function type.
+
+        \vspace{3pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.35}
+        \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+        $g(x)$ & $2$ & $5$ & $12$ & $23$ & $38$ \\ \hline
+        1st differences & --- & \ans{3} & \ans{7} & \ans{11} & \ans{15} \\ \hline
+        2nd differences & --- & --- & \ans{4} & \ans{4} & \ans{4} \\ \hline
+        \end{tabular}
+        \end{center}
+
         \vspace{2pt}
-        \textbf{(a)} Find the average rate of change of $V$ from $t = 0$ to $t = 8$.
-        \textbf{(b)} Give its units and say in one sentence what it means for the tank.
-        \textbf{(c)} Is the tank draining faster or slower as time goes on? Justify with the numbers.
-        \ans{(a) $\dfrac{V(8) - V(0)}{8 - 0} = \dfrac{124 - 180}{8} = \dfrac{-56}{8} = -7$. \ (b) Gallons per minute: over the first $8$ minutes the tank lost water at an average of $7$ gallons each minute (negative because the volume is falling). \ (c) Slower. The change over each $4$-minute block is $-32$, then $-24$, then $-16$ gallons --- the drops are shrinking, so the draining is slowing down.}
-  \item The table below has equally spaced inputs. Compute the first differences and the
-        second differences, then name the function type (linear, quadratic, or neither).
+        Function type: \ans{quadratic} \qquad Because \ans{the 2nd differences are constant}
+
+  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and
+        range $[0,\infty)$. Let $g(x) = -2f(x - 1) + 4$.
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Write $g$ in terms of $x$: \quad $g(x) = $ \ans{$-2\sqrt{x - 1} + 4$}
+      \item The change \emph{inside} the parentheses moves the graph
+            \ans{$1$ unit right}
+      \item The changes \emph{outside}, in order: \ans{stretch by $2$, reflect over the $x$-axis, up $4$}
+      \item Domain of $g$: \ans{$[1,\infty)$} \qquad Range of $g$: \ans{$(-\infty, 4]$}
+      \item The parent's landmark point $(0,0)$ lands at \ans{$(1,4)$} on $g$.
+    \end{enumerate}
+
+  \item Two one-to-one functions are given by the table below.
 
         \vspace{2pt}
         \begin{center}
@@ -138,58 +221,128 @@ Show your work.
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
         $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
-        $g(x)$ & $2$ & $5$ & $12$ & $23$ & $38$ \\ \hline
+        $f(x)$ & $5$ & $2$ & $7$ & $1$ & $3$ \\ \hline
+        $g(x)$ & $3$ & $0$ & $4$ & $2$ & $1$ \\ \hline
         \end{tabular}
         \end{center}
-        \ans{First differences: $3,\ 7,\ 11,\ 15$ (not constant, so not linear). Second differences: $4,\ 4,\ 4$ --- constant. The function is \emph{quadratic}.}
-  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and range
-        $[0,\infty)$. Let $g(x) = -2f(x - 1) + 4$.
-        \textbf{(a)} Describe every transformation, in order.
-        \textbf{(b)} State the domain and range of $g$.
-        \ans{(a) $g(x) = -2\sqrt{x-1} + 4$: shift right $1$, then vertical stretch by a factor of $2$, then reflect over the $x$-axis, then shift up $4$. \ (b) Domain: $x - 1 \ge 0$, so $[1, \infty)$. Range: $\sqrt{x-1} \ge 0$, so $-2\sqrt{x-1} \le 0$ and $g(x) \le 4$ --- the range is $(-\infty, 4]$.}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item The handoff in $f(g(1))$ is \ans{0}, so $f(g(1)) = $
+            \ans{5}
+      \item $g(f(3)) = $ \ans{0}
+      \item $f^{-1}(7) = $ \ans{2} \quad because $f($ \ans{2} $) = 7$.
+      \item How can you tell from the table that $f$ is one-to-one?
+
+            \ansline{No output repeats in the $f$ row, so no two inputs share an output.}
+      \item Why does $g(f(0))$ have no value from this table?
+
+            \ansline{$f(0) = 5$, and $5$ is not one of the inputs $g$ accepts here.}
+    \end{enumerate}
+
   \item Let $f(x) = 3x + 1$ and $g(x) = x^2 - 2$.
-        \textbf{(a)} Compute $f(g(2))$. \quad \textbf{(b)} Compute $g(f(2))$.
-        \textbf{(c)} Write a formula for $(f \circ g)(x)$.
-        \textbf{(d)} What do (a) and (b) show about the order of composition?
-        \ans{(a) $g(2) = 4 - 2 = 2$, so $f(g(2)) = f(2) = 7$. \ (b) $f(2) = 7$, so $g(f(2)) = 49 - 2 = 47$. \ (c) $(f \circ g)(x) = 3(x^2 - 2) + 1 = 3x^2 - 5$. \ (d) $7 \ne 47$: order matters. Composition is not commutative --- $f(g(x))$ and $g(f(x))$ are generally different functions.}
+
+\begin{work}
+            g(2) &= 4 - 2 \\
+                 &= 2 \\
+         f(g(2)) &= 3(2) + 1 \\
+                 &= 7 \\
+            f(2) &= 7 \\
+         g(f(2)) &= 7^2 - 2 \\
+                 &= 47 \\
+  (f \circ g)(x) &= 3(x^2 - 2) + 1 \\
+                 &= 3x^2 - 5
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item $f(g(2)) = $ \ans{7} \qquad \textbf{(b)} $g(f(2)) = $
+            \ans{47}
+      \setcounter{enumii}{2}
+      \item $(f \circ g)(x) = $ \ans{$3x^2 - 5$}
+      \item What do (a) and (b) show about the order of a composition?
+
+            \ansline{Order matters: $7 \ne 47$, so $f(g(x))$ and $g(f(x))$ are different functions.}
+    \end{enumerate}
+
   \item Let $f(x) = \dfrac{x - 5}{2}$.
-        \textbf{(a)} Find $f^{-1}(x)$ using the swap-and-solve method.
-        \textbf{(b)} Verify your answer by computing $f\!\left(f^{-1}(x)\right)$.
-        \ans{(a) Write $y = \dfrac{x-5}{2}$, swap: $x = \dfrac{y-5}{2}$, solve: $2x = y - 5 \Rightarrow y = 2x + 5$. So $f^{-1}(x) = 2x + 5$. \ (b) $f\!\left(f^{-1}(x)\right) = \dfrac{(2x+5) - 5}{2} = \dfrac{2x}{2} = x$. $\checkmark$}
+
+\begin{work}
+                        y &= \frac{x - 5}{2} \\
+                        x &= \frac{y - 5}{2} \\
+                       2x &= y - 5 \\
+                        y &= 2x + 5 \\
+  f\!\left(f^{-1}(x)\right) &= \frac{(2x + 5) - 5}{2} \\
+                          &= x
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Find $f^{-1}$ by swapping and solving: \quad $f^{-1}(x) = $
+            \ans{$2x + 5$}
+      \item Verify: \quad $f\!\left(f^{-1}(x)\right) = $ \ans{$x$}
+      \item $f(11) = 3$, so $f^{-1}(3) = $ \ans{11}
+    \end{enumerate}
+
 \end{enumerate}
 
 % ======================================================================
-\parthead{Part D --- Extended Response (10 pts)}
+\boxguard[6]
+\parthead{Part D --- Extended Response (18 pts, 9 each)}
 Explain your reasoning in full sentences.
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
-  \item A rectangular dog run is built against a barn wall, so only \textbf{three} sides need
-        fencing. The builder has $60$ feet of fence. Let $x$ be the length of each of the two
-        sides perpendicular to the barn.
-        \textbf{(a)} Write the area $A$ as a function of $x$.
-        \textbf{(b)} What type of function is $A$, and how do you know?
-        \textbf{(c)} State the domain restriction that the context forces, and explain why.
-        \textbf{(d)} State one assumption this model rests on.
-        \ans{(a) The two perpendicular sides use $2x$ feet, so the side parallel to the barn is $60 - 2x$. Then $A(x) = x(60 - 2x) = 60x - 2x^2$. \ (b) Quadratic --- the highest power of $x$ is $2$, and equally spaced $x$-values would give constant second differences. It opens downward, so it has a maximum. \ (c) $0 < x < 30$: a side length must be positive, and the barn side $60 - 2x$ must also be positive, which forces $x < 30$. Outside that window the ``rectangle'' has no meaning. \ (d) Any one of: no fence is used along the barn; the barn wall is at least $60 - 2x$ feet long; the run is exactly rectangular; no fence is lost to a gate or to overlap.}
-  \item Let $f(x) = x^2$ with domain all real numbers.
-        \textbf{(a)} Explain why $f$ has no inverse function on that domain.
-        \textbf{(b)} Give a domain restriction that fixes the problem, and write the resulting
-        inverse.
-        \textbf{(c)} Explain how the graph of a function and the graph of its inverse are related.
-        \ans{(a) $f$ is not one-to-one: $f(2) = f(-2) = 4$. Reversing the pairs would send the input $4$ to two different outputs, $2$ and $-2$, and that is not a function. (Equivalently, $f$ fails the horizontal line test.) \ (b) Restrict the domain to $x \ge 0$. On $[0,\infty)$ the function is one-to-one, and $f^{-1}(x) = \sqrt{x}$ with domain $[0,\infty)$. \ (c) They are reflections of each other over the line $y = x$: the point $(a,b)$ on $f$ becomes $(b,a)$ on $f^{-1}$, because the inverse swaps input and output.}
-\end{enumerate}
 
-\boxguard[8]
-\begin{teachernote}
-\textbf{Scoring Part D (5 pts each).} Award full credit only when the student both gives
-the correct result and \emph{justifies} it. D1: 2 pts (a) $A(x) = 60x - 2x^2$ with the
-$60 - 2x$ side reasoned out; 1 pt (b) quadratic \emph{with} a reason; 1 pt (c) $0 < x < 30$
-tied to the context, not just stated; 1 pt (d) any defensible assumption. A student who
-writes $2x + 2y = 60$ (all four sides) has missed the barn --- give partial credit for
-correct method on a wrong perimeter. D2: 2 pts (a) not one-to-one \emph{with} a
-counterexample pair; 2 pts (b) restriction \emph{and} $f^{-1}(x) = \sqrt{x}$; 1 pt (c)
-reflection over $y = x$. Full-credit language for the arc: \emph{one-to-one $\to$ reverse
-the pairs $\to$ restrict to make it work $\to$ reflect over $y = x$}.
-\end{teachernote}
+  \item A rectangular dog run is built against a barn wall, so only
+        \textbf{three} sides need fencing. The builder has $60$ feet of fence.
+        Let $x$ be the length of each of the two sides perpendicular to the barn.
+
+\begin{work}
+                          A(x) &= x(60 - 2x) \\
+                               &= 60x - 2x^2 \\
+                          A(5) &= 5(50) \\
+                               &= 250 \\
+                         A(10) &= 10(40) \\
+                               &= 400 \\
+  \frac{A(10) - A(5)}{10 - 5} &= \frac{400 - 250}{5} \\
+                               &= 30
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Which quantity is the \emph{question} the model answers --- its
+            input? \ans{$x$, the perpendicular side}
+      \item The side parallel to the barn has length \ans{$60 - 2x$}, so
+            $A(x) = $ \ans{$60x - 2x^2$}
+      \item What type of function is $A$, and how do you know?
+
+            \ansline{Quadratic: the highest power of $x$ is $2$, so second differences are constant.}
+      \item Domain the context forces: \ans{0} $< x <$ \ans{30}
+            \quad Why?
+
+            \ansline{A side must be positive, and the barn side $60 - 2x$ must be positive too.}
+      \item Average rate of change of $A$ from $x = 5$ to $x = 10$:
+            \ans{30}, with units \ans{ft$^2$ per foot of $x$}.
+      \item State one assumption this model rests on.
+
+            \ansline{No fence runs along the barn, and none is lost to a gate or an overlap.}
+    \end{enumerate}
+
+  \item Let $f(x) = x^2$ with domain all real numbers.
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Explain why $f$ has no inverse function on that domain. Give a
+            counterexample pair of inputs.
+
+            \ansline{Not one-to-one: $f(2) = f(-2) = 4$, so reversing sends $4$ to two outputs.}
+      \item Give a domain restriction that fixes the problem: \ans{$x \ge 0$}
+            \quad Then $f^{-1}(x) = $ \ans{$\sqrt{x}$}
+      \item Domain of that inverse: \ans{$[0,\infty)$} \qquad Range:
+            \ans{$[0,\infty)$}
+      \item Explain how the graph of a function and the graph of its inverse are
+            related, and why.
+
+            \ansline{They are reflections of each other over the line $y = x$.}
+
+            \ansline{The inverse trades input for output, so $(a,b)$ on $f$ becomes $(b,a)$ on $f^{-1}$.}
+    \end{enumerate}
+
+\end{enumerate}
 
 \end{document}
