@@ -1,0 +1,89 @@
+%! Unit 1 — Functions and Change — Unit Cover Page (KEY packet)
+%! Page 1 is the SAME sheet the student packet carries — both wrappers \input
+%! unit_cover/body.tex, so the two cannot drift. Page 2 is teacher-only: the
+%! answer rationale and extended-response scoring for BOTH Unit 1 assessments.
+%! It lives here, not at the foot of a *_test_key, because the practice test is
+%! bound into the STUDENT packet and the rationale would ride along in front of
+%! students. shared/unit.mk merges this file into the KEY packet only.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+\input{../unit_cover/body.tex}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{headlinebox}{plum}{\color{white}\bfseries Unit 1 --- Exam Scoring Notes (Teacher Copy)}\end{headlinebox}
+
+\vspace{4pt}
+\noindent\small
+Both Unit 1 assessments run the same four parts and the same $80$ points:
+Part A vocabulary ($10$), Part B multiple choice ($12$), Part C short answer
+($40$, $5$ each), Part D extended response ($18$, $9$ each). The practice test
+and the actual test are item-for-item parallel --- only the numbers and the
+contexts differ --- so a student who works the practice honestly has seen every
+question type.
+
+\vspace{2pt}
+\begin{teachernote}[Part B --- Common Misses, Both Tests]
+\textbf{Item 1} (function notation). The distractor that swaps the pair
+(\emph{practice} A, \emph{actual} B) is the one to watch: a student who reads
+$f(3) = 7$ as ``$f(7) = 3$'' has not separated input from output, and will miss
+Part C item 6 as well. \textbf{Item 2} (direction $\times$ concavity). Students
+who answer from the word ``concave'' alone pick the option with the wrong
+direction; remind them the two questions are independent and all four
+combinations exist. \textbf{Item 3} (differences). Practice asks about
+\emph{second} differences (quadratic), actual about \emph{first} (linear) ---
+do not let a student who memorized one answer coast on the other.
+\textbf{Item 4} (inside vs.\ outside). The inside change moves the graph the way
+the sign does not suggest; expect the opposite direction as the common miss.
+\textbf{Item 5} (composition order). A wrong answer here is almost always
+$g(f(x))$ computed instead of $f(g(x))$.
+\end{teachernote}
+
+\begin{teachernote}[Part C --- Partial Credit, Both Tests]
+Each item is $5$ points. Award method credit generously and arithmetic credit
+strictly. \textbf{Item 3}: the rate is worth $2$, the \emph{units} $1$, the
+sentence $1$, and the faster/slower judgment $1$ --- a correct number with no
+units earns at most $4$. \textbf{Item 4}: full credit needs both difference rows
+\emph{and} a reason naming the constant row, not just the word ``quadratic.''
+\textbf{Item 5}: describing the transformations in the wrong order is a $1$-point
+deduction; a domain or range that ignores the reflection or the shift is $2$.
+\textbf{Item 6}: part (e) is the one that separates students --- the composite has
+no value because the handoff is not an input the outer function accepts, not
+because ``the table stops.'' \textbf{Item 8}: a student who writes
+$f^{-1}(x) = 1/f(x)$ has the central misconception of Lesson 1.6; mark it zero
+for that part and reteach from the table.
+\end{teachernote}
+
+\begin{teachernote}[Part D --- Extended Response Rubric ($9$ pts each)]
+\textbf{D1 (model construction).} $1$ pt (a) names the input quantity;
+$2$ pts (b) the third side reasoned out ($60 - 2x$ practice, $100 - 2x$ actual)
+\emph{and} the product expanded; $1$ pt (c) ``quadratic'' \emph{with} a reason;
+$2$ pts (d) the domain $0 < x < 30$ (practice) or $0 < x < 50$ (actual) tied to
+the context rather than merely stated; $2$ pts (e) the rate $30$ (practice) or
+$40$ (actual) \emph{with} units of area per foot; $1$ pt (f) any defensible
+assumption. A student who writes the four-sided perimeter has missed the
+wall/river --- award full method credit on the wrong constraint.
+\smallskip
+\textbf{D2 (inverses).} $3$ pts (a) not one-to-one \emph{with} an explicit
+counterexample pair; $2$ pts (b) a restriction that works \emph{and} the
+resulting inverse; $2$ pts (c) domain and range of that inverse (note the actual
+test's inverse starts at $-4$, not $0$); $2$ pts (d) reflection over $y = x$
+with the $(a,b) \to (b,a)$ reason. The arc to listen for is: \emph{one-to-one
+$\to$ reverse the pairs $\to$ restrict to make it work $\to$ reflect over
+$y = x$}.
+\end{teachernote}
+
+\begin{teachernote}[Using the Results]
+Part C items map one-to-one onto the unit's lessons --- 1: Lesson 1.1;
+2: 1.2; 3: 1.3; 4: 1.3 and 1.7; 5: 1.4; 6: 1.5 and 1.6; 7: 1.5; 8: 1.6 --- so a
+column of scores reads directly as a reteach list. Items 6 and 8 together are
+the reliable predictor for Unit 4 and Unit 5, where inverses become logarithms.
+\end{teachernote}
+
+\end{document}

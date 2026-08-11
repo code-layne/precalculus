@@ -1,4 +1,10 @@
 %! Unit 1: Functions and Change — Summative Assessment — Unit Test (blank)
+%! The real test, given in a testing setting. Same format, parts, and difficulty
+%! as tests/practice_test — different numbers and contexts. It is NEVER merged
+%! into a packet; distribute it separately. Its key must still paginate
+%! identically to it, so every worked solution lives in a \begin{work} block
+%! authored byte-identically in both files. Scoring guidance goes on page 2 of
+%! unit01/unit_cover_key/, never here.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -15,91 +21,134 @@
 \namedateperiod
 
 \vspace{0.06in}
-\noindent\textbf{Instructions:} Show all work. No notes unless your teacher says so.
+\noindent\textbf{Instructions:} Show all work in the space provided. No notes.
+Attach units wherever a quantity has them. \textbf{80 points total.}
 
 % ======================================================================
-\parthead{Part A --- Vocabulary (8 pts)}
+\boxguard[6]
+\parthead{Part A --- Vocabulary (10 pts)}
 Write the letter of the best description next to each term.
 
 \vspace{4pt}
 \noindent
-\begin{minipage}[t]{0.42\textwidth}
-\begin{enumerate}[leftmargin=2.2em, itemsep=7pt, label=\arabic*.]
-  \item Range \blank{1.2cm}
-  \item Composition \blank{1.2cm}
-  \item Parent function \blank{1.2cm}
-  \item Function \blank{1.2cm}
-  \item Inverse function \blank{1.2cm}
-  \item Concave up \blank{1.2cm}
-  \item Domain \blank{1.2cm}
-  \item Average rate of change \blank{1.2cm}
+\begin{minipage}[t]{0.36\textwidth}
+\begin{enumerate}[leftmargin=2.2em, itemsep=6pt, label=\arabic*.]
+  \item Range \blank{1.1cm}
+  \item Composition \blank{1.1cm}
+  \item Domain \blank{1.1cm}
+  \item One-to-one \blank{1.1cm}
+  \item Function \blank{1.1cm}
+  \item Zero of a function \blank{1.1cm}
+  \item Inverse function \blank{1.1cm}
+  \item Concave up \blank{1.1cm}
+  \item Parent function \blank{1.1cm}
+  \item Average rate of change \blank{1.1cm}
 \end{enumerate}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.55\textwidth}
+\begin{minipage}[t]{0.61\textwidth}
 \small
-\begin{description}[leftmargin=1.4em, itemsep=3pt]
-  \item[(A)] The set of every input the function is allowed to take.
+\begin{description}[leftmargin=1.4em, itemsep=2pt]
+  \item[(A)] The set of every input the rule is allowed to take.
   \item[(B)] Bending upward --- the rate of change is increasing.
-  \item[(C)] The function that reverses the input--output pairs of $f$.
-  \item[(D)] The slope of the secant line, $\dfrac{f(b)-f(a)}{b-a}$.
-  \item[(E)] The simplest form of a family, before any shift or stretch.
-  \item[(F)] A rule that sends each input to \emph{exactly one} output.
-  \item[(G)] Feeding the output of one function into another: $f(g(x))$.
-  \item[(H)] The set of every output the function actually produces.
+  \item[(C)] An input whose output is $0$.
+  \item[(D)] A rule that pairs each input with exactly one output.
+  \item[(E)] The set of every output the rule actually produces.
+  \item[(F)] The one steady rate that would give the same change in output over the same run.
+  \item[(G)] No two different inputs share an output.
+  \item[(H)] The rule that gives back the question: if $f(a) = b$, it sends $b$ to $a$.
+  \item[(I)] Feeding the output of one rule into another: $f(g(x))$.
+  \item[(J)] The simplest member of a family, before any shift or stretch.
 \end{description}
 \end{minipage}
 
 % ======================================================================
+\boxguard[6]
 \parthead{Part B --- Multiple Choice (12 pts)}
-Circle the best answer.
+Circle the best answer, then write its letter in the blank at the right.
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=9pt]
-  \item A table of values represents a function exactly when
-    \hfill (A) no output repeats \quad (B) no input repeats with two different outputs \\
-    \phantom{x}\hfill (C) the outputs increase \quad (D) the inputs are equally spaced
-  \item If a function is increasing and concave down on an interval, its output is
-    \hfill (A) rising faster and faster \quad (B) rising, but more and more slowly \\
-    \phantom{x}\hfill (C) falling more and more slowly \quad (D) changing at a constant rate
-  \item A table of $f$ has equally spaced inputs and \textbf{constant first} differences.
-    The best model is
-    \hfill (A) quadratic \quad (B) linear \quad (C) exponential \quad (D) none of these
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+  \item The statement $h(-2) = 5$ tells you that
+    \\[2pt]\hspace*{1em}
+    (A) $(-2,5)$ is on the graph of $h$ \quad (B) $h(5) = -2$ \quad
+    (C) $-2$ is an output of $h$ \quad (D) $h$ is decreasing at $x = -2$
+    \hfill \blank{1.1cm}
+  \item On an interval where $f$ is increasing and concave down, the outputs are
+    \\[2pt]\hspace*{1em}
+    (A) rising faster and faster \quad (B) rising, but more and more slowly \quad
+    (C) falling more and more slowly \quad (D) changing at a constant rate
+    \hfill \blank{1.1cm}
+  \item A table of $f$ has equally spaced inputs and \textbf{constant first}
+    differences. The best model is
+    \\[2pt]\hspace*{1em}
+    (A) quadratic \quad (B) exponential \quad (C) linear \quad (D) none of these
+    \hfill \blank{1.1cm}
   \item The graph of $g(x) = f(x) - 6$ is the graph of $f$ shifted
-    \hfill (A) $6$ down \quad (B) $6$ up \quad (C) $6$ left \quad (D) $6$ right
+    \\[2pt]\hspace*{1em}
+    (A) $6$ up \quad (B) $6$ left \quad (C) $6$ right \quad (D) $6$ down
+    \hfill \blank{1.1cm}
   \item If $f(x) = x + 5$ and $g(x) = x^2$, then $(f \circ g)(3)$ equals
-    \hfill (A) $64$ \quad (B) $14$ \quad (C) $34$ \quad (D) $11$
-  \item If $f$ and $f^{-1}$ are inverses, then $f\!\left(f^{-1}(x)\right)$ equals
-    \hfill (A) $1$ \quad (B) $0$ \quad (C) $x$ \quad (D) $\dfrac{1}{f(x)}$
+    \\[2pt]\hspace*{1em}
+    (A) $64$ \quad (B) $14$ \quad (C) $34$ \quad (D) $11$
+    \hfill \blank{1.1cm}
+  \item If $f$ and $f^{-1}$ are inverses, then $f\!\left(f^{-1}(x)\right)$
+    equals
+    \\[2pt]\hspace*{1em}
+    (A) $1$ \quad (B) $0$ \quad (C) $x$ \quad (D) $\dfrac{1}{f(x)}$
+    \hfill \blank{1.1cm}
 \end{enumerate}
 
 % ======================================================================
-\parthead{Part C --- Short Answer \& Computation (30 pts)}
-Show your work.
+\boxguard[6]
+\parthead{Part C --- Short Answer \& Computation (40 pts, 5 each)}
+Show your work in the space provided.
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=13pt]
-  \item Let $f(x) = 3x^2 - 4$. Compute \textbf{(a)} $f(2)$, \quad \textbf{(b)} $f(-3)$, \quad
-        \textbf{(c)} the value of $x$ (there are two) for which $f(x) = 8$.
-        \vspace{1.6cm}
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+  \item Let $f(x) = 3x^2 - 4$.
+
+\begin{work}
+     f(2) &= 3(2)^2 - 4 \\
+          &= 8 \\
+    f(-3) &= 3(-3)^2 - 4 \\
+          &= 23 \\
+ 3x^2 - 4 &= 8 \\
+      x^2 &= 4 \\
+        x &= \pm 2
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item $f(2) = $ \blank{1.6cm} \qquad \textbf{(b)} $f(-3) = $ \blank{1.6cm}
+      \setcounter{enumii}{2}
+      \item Solve $f(x) = 8$. There are two answers: \blank{2.6cm}
+      \item Which of (a)--(c) is a \emph{solve} question rather than an
+            \emph{evaluate} question? \blank{1.6cm}
+    \end{enumerate}
+
   \item The graph of $y = f(x)$ is shown below.
-        \textbf{(a)} On what interval is $f$ increasing?
-        \textbf{(b)} Is $f$ concave up or concave down on the whole picture?
-        \textbf{(c)} List the zeros of $f$.
-        \textbf{(d)} What is $f(3)$?
 
         \vspace{2pt}
         \begin{center}
-        \begin{tikzpicture}[scale=0.68]
+        \begin{tikzpicture}[scale=0.62]
           \draw[linegray, very thin] (-0.4,-3.4) grid (6.4,2.4);
           \draw[->] (-0.4,0) -- (6.6,0) node[right]{\small $x$};
           \draw[->] (0,-3.4) -- (0,2.6) node[above]{\small $y$};
           \foreach \x in {1,...,6} \draw (\x,0.09) -- (\x,-0.09) node[below]{\scriptsize $\x$};
           \foreach \y in {-3,-2,-1,1,2} \draw (0.09,\y) -- (-0.09,\y) node[left]{\scriptsize $\y$};
           \draw[plum, very thick] plot[smooth] coordinates
-            {(0,-2.5) (1,0) (2,1.5) (3,2) (4,1.5) (5,0) (6,-2.5)};
+            {(0,-3) (1,0) (2,1.5) (3,2) (4,1.5) (5,0) (6,-3)};
         \end{tikzpicture}
         \end{center}
-        \vspace{0.9cm}
-  \item A candle is burning down. Its height $H$ (centimeters) after $t$ hours is given below.
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item On what interval is $f$ increasing? \blank{3.2cm}
+      \item Concave up or concave down on the whole picture? \blank{3.2cm}
+      \item List the zeros of $f$: \blank{3.2cm}
+      \item $f(3) = $ \blank{1.6cm} \qquad \textbf{(e)} Range on the window
+            shown: \blank{3cm}
+    \end{enumerate}
+
+  \item A candle is burning down. Its height $H$ (cm) after $t$ hours:
 
         \vspace{2pt}
         \begin{center}
@@ -110,13 +159,55 @@ Show your work.
         $H$ (cm) & $36$ & $24$ & $16$ & $12$ \\ \hline
         \end{tabular}
         \end{center}
+
+\begin{work}
+  \frac{H(4) - H(0)}{4 - 0} &= \frac{16 - 36}{4} \\
+                            &= -5
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Average rate of change of $H$ from $t = 0$ to $t = 4$:
+            \blank{2cm}, with units \blank{4cm}.
+      \item In one sentence, what does that number mean for the candle?
+
+            \writeline
+      \item Is the candle burning down faster or slower as time goes on?
+            \blank{1.8cm} \ Justify with the numbers.
+
+            \writeline
+    \end{enumerate}
+
+  \item The table below has equally spaced inputs. Fill in the difference rows,
+        then name the function type.
+
+        \vspace{3pt}
+        \begin{center}
+        \renewcommand{\arraystretch}{1.35}
+        \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
+        $h(x)$ & $1$ & $4$ & $13$ & $28$ & $49$ \\ \hline
+        1st differences & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\ \hline
+        2nd differences & --- & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} \\ \hline
+        \end{tabular}
+        \end{center}
+
         \vspace{2pt}
-        \textbf{(a)} Find the average rate of change of $H$ from $t = 0$ to $t = 4$.
-        \textbf{(b)} Give its units and say in one sentence what it means for the candle.
-        \textbf{(c)} Is the candle burning down faster or slower as time goes on? Justify with the numbers.
-        \vspace{1.8cm}
-  \item The table below has equally spaced inputs. Compute the first differences and the
-        second differences, then name the function type (linear, quadratic, or neither).
+        Function type: \blank{3cm} \qquad Because \blank{6.4cm}
+
+  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and
+        range $[0,\infty)$. Let $g(x) = 4f(x + 3) - 2$.
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Write $g$ in terms of $x$: \quad $g(x) = $ \blank{4.4cm}
+      \item The change \emph{inside} the parentheses moves the graph
+            \blank{3.4cm}
+      \item The changes \emph{outside}, in order: \blank{7cm}
+      \item Domain of $g$: \blank{2.6cm} \qquad Range of $g$: \blank{2.6cm}
+      \item The parent's landmark point $(0,0)$ lands at \blank{2.4cm} on $g$.
+    \end{enumerate}
+
+  \item Two one-to-one functions are given by the table below.
 
         \vspace{2pt}
         \begin{center}
@@ -124,45 +215,128 @@ Show your work.
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
         $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
-        $h(x)$ & $1$ & $4$ & $13$ & $28$ & $49$ \\ \hline
+        $f(x)$ & $6$ & $3$ & $8$ & $0$ & $2$ \\ \hline
+        $g(x)$ & $4$ & $2$ & $1$ & $3$ & $0$ \\ \hline
         \end{tabular}
         \end{center}
-        \vspace{1.6cm}
-  \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and range
-        $[0,\infty)$. Let $g(x) = 4f(x + 3) - 2$.
-        \textbf{(a)} Describe every transformation, in order.
-        \textbf{(b)} State the domain and range of $g$.
-        \vspace{1.8cm}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item The handoff in $f(g(2))$ is \blank{1.4cm}, so $f(g(2)) = $
+            \blank{1.4cm}
+      \item $g(f(4)) = $ \blank{1.4cm}
+      \item $f^{-1}(8) = $ \blank{1.4cm} \quad because $f($ \blank{1.1cm} $) = 8$.
+      \item How can you tell from the table that $f$ is one-to-one?
+
+            \writeline
+      \item Why does $g(f(0))$ have no value from this table?
+
+            \writeline
+    \end{enumerate}
+
   \item Let $f(x) = 2x - 3$ and $g(x) = x^2 + 1$.
-        \textbf{(a)} Compute $f(g(2))$. \quad \textbf{(b)} Compute $g(f(2))$.
-        \textbf{(c)} Write a formula for $(f \circ g)(x)$.
-        \textbf{(d)} What do (a) and (b) show about the order of composition?
-        \vspace{1.8cm}
-  \item Let $f(x) = 3x + 7$.
-        \textbf{(a)} Find $f^{-1}(x)$ using the swap-and-solve method.
-        \textbf{(b)} Verify your answer by computing $f\!\left(f^{-1}(x)\right)$.
-        \vspace{1.8cm}
+
+\begin{work}
+            g(2) &= 4 + 1 \\
+                 &= 5 \\
+         f(g(2)) &= 2(5) - 3 \\
+                 &= 7 \\
+            f(2) &= 1 \\
+         g(f(2)) &= 1^2 + 1 \\
+                 &= 2 \\
+  (f \circ g)(x) &= 2(x^2 + 1) - 3 \\
+                 &= 2x^2 - 1
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item $f(g(2)) = $ \blank{1.8cm} \qquad \textbf{(b)} $g(f(2)) = $
+            \blank{1.8cm}
+      \setcounter{enumii}{2}
+      \item $(f \circ g)(x) = $ \blank{4.4cm}
+      \item What do (a) and (b) show about the order of a composition?
+
+            \writeline
+    \end{enumerate}
+
+  \item Let $f(x) = \dfrac{x + 4}{3}$.
+
+\begin{work}
+                        y &= \frac{x + 4}{3} \\
+                        x &= \frac{y + 4}{3} \\
+                       3x &= y + 4 \\
+                        y &= 3x - 4 \\
+  f\!\left(f^{-1}(x)\right) &= \frac{(3x - 4) + 4}{3} \\
+                          &= x
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Find $f^{-1}$ by swapping and solving: \quad $f^{-1}(x) = $
+            \blank{3.4cm}
+      \item Verify: \quad $f\!\left(f^{-1}(x)\right) = $ \blank{3.4cm}
+      \item $f(11) = 5$, so $f^{-1}(5) = $ \blank{1.6cm}
+    \end{enumerate}
+
 \end{enumerate}
 
 % ======================================================================
-\parthead{Part D --- Extended Response (10 pts)}
+\boxguard[6]
+\parthead{Part D --- Extended Response (18 pts, 9 each)}
 Explain your reasoning in full sentences.
 
-\begin{enumerate}[leftmargin=1.9em, itemsep=16pt]
-  \item A rectangular plot is fenced along a straight river, so only \textbf{three} sides need
-        fencing. The farmer has $100$ feet of fence. Let $x$ be the length of each of the two
-        sides perpendicular to the river.
-        \textbf{(a)} Write the area $A$ as a function of $x$.
-        \textbf{(b)} What type of function is $A$, and how do you know?
-        \textbf{(c)} State the domain restriction that the context forces, and explain why.
-        \textbf{(d)} State one assumption this model rests on.
-        \vspace{2.6cm}
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+  \item A rectangular plot is fenced along a straight river, so only
+        \textbf{three} sides need fencing. The farmer has $100$ feet of fence.
+        Let $x$ be the length of each of the two sides perpendicular to the river.
+
+\begin{work}
+                          A(x) &= x(100 - 2x) \\
+                               &= 100x - 2x^2 \\
+                         A(10) &= 10(80) \\
+                               &= 800 \\
+                         A(20) &= 20(60) \\
+                               &= 1200 \\
+  \frac{A(20) - A(10)}{20 - 10} &= \frac{1200 - 800}{10} \\
+                               &= 40
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Which quantity is the \emph{question} the model answers --- its
+            input? \blank{4.4cm}
+      \item The side parallel to the river has length \blank{2.4cm}, so
+            $A(x) = $ \blank{4cm}
+      \item What type of function is $A$, and how do you know?
+
+            \writeline
+      \item Domain the context forces: \blank{1.4cm} $< x <$ \blank{1.4cm}
+            \quad Why?
+
+            \writeline
+      \item Average rate of change of $A$ from $x = 10$ to $x = 20$:
+            \blank{1.8cm}, with units \blank{4.4cm}.
+      \item State one assumption this model rests on.
+
+            \writeline
+    \end{enumerate}
+
   \item Let $f(x) = x^2 - 4$ with domain all real numbers.
-        \textbf{(a)} Explain why $f$ has no inverse function on that domain.
-        \textbf{(b)} Give a domain restriction that fixes the problem, and write the resulting
-        inverse.
-        \textbf{(c)} Explain how the graph of a function and the graph of its inverse are related.
-        \vspace{2.2cm}
+
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item Explain why $f$ has no inverse function on that domain. Give a
+            counterexample pair of inputs.
+
+            \writeline
+      \item Give a domain restriction that fixes the problem: \blank{3cm}
+            \quad Then $f^{-1}(x) = $ \blank{3cm}
+      \item Domain of that inverse: \blank{2.6cm} \qquad Range:
+            \blank{2.6cm}
+      \item Explain how the graph of a function and the graph of its inverse are
+            related, and why.
+
+            \writeline
+
+            \writeline
+    \end{enumerate}
+
 \end{enumerate}
 
 \end{document}
