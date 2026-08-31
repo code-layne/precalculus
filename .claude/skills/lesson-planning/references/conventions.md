@@ -16,7 +16,7 @@ of truth — if the styles diverge from this, follow the project. The prefix her
 
 ## Per-document-type preambles
 
-**Student component** (warmup, notes, activity, exit_ticket, homework, cover):
+**Student component** (warmup, notes, exit_ticket, homework, cover):
 ```latex
 \documentclass[10pt]{article}
 \usepackage{<prefix>-article}
@@ -93,9 +93,9 @@ Titled student boxes (title is fixed by the environment unless it takes an argum
 | `vocabbox` | "Vocabulary & Key Concepts" | — |
 | `hookbox` | "Hook" | — |
 | `notesbox{Title}` | generic titled notes section | title |
-| `practicebox` | "Guided Practice" | — |
+| `practicebox` | "Individual Practice" (the You Do phase) | — |
 | `spiralbox` | "Connections & Big Ideas" | — |
-| `scenariobox[Title]{color}` | activity/homework scenario | title, color |
+| `scenariobox[Title]{color}` | notes/homework scenario | title, color |
 | `headlinebox{color}` | colored callout strip | color |
 | `blurbbox[Title]{color}` | study/excerpt blurb | title, color |
 | `reflectionbox` | "Reflection" (homework) | — |
@@ -143,7 +143,7 @@ Fill in each term as we build it together.
 ```
 
 Anywhere else an `\ansline` or `\writeline` is followed by a `\noindent`-opening macro is exposed
-to the same collision — check homework and activity keys, not just the vocab box.
+to the same collision — check the notes and homework keys, not just the vocab box.
 
 Fix it per-lesson rather than patching `\termblanklong` in `shared/precalculus-article.sty`: a
 shared-package change re-flows every already-verified lesson at once.
@@ -162,7 +162,7 @@ The plan closes with one note per component, in packet order, each titled for it
 ```latex
 \begin{teachernote}[Warm-Up]        ... \end{teachernote}   % → "Teacher Note: Warm-Up"
 \begin{teachernote}[Guided Notes]   ... \end{teachernote}
-\begin{teachernote}[Group Activity] ... \end{teachernote}
+\begin{teachernote}[Debrief]        ... \end{teachernote}
 \begin{teachernote}[Exit Ticket]    ... \end{teachernote}
 \begin{teachernote}[Homework]       ... \end{teachernote}
 ```
@@ -188,8 +188,8 @@ components stapled *behind* the cover sheet. The student writes their name once;
 costs vertical space at the top of a page — space that matters most on the warm-up and exit
 ticket, which are held to one page.
 
-Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `notes`, `activity`, `exit_ticket`,
-`homework` **and from all five `_key` files**, which stay in lockstep. Two exemptions:
+Strip `\namedateperiod`/`\namepartnerperiod` from `warmup`, `notes`, `exit_ticket`,
+`homework` **and from their `_key` files**, which stay in lockstep. Two exemptions:
 
 - **`cover/`** — the one place the row belongs. Never strip it.
 - **Tests** (a unit test, sample test, or final) — taken in a testing setting, not stapled behind
@@ -360,9 +360,12 @@ are deprecated and name the wrong color. `royal` and `burgundy` are undefined he
 
 ## Lesson-plan section order (canonical)
 
-Primary Objective → Priority Ideas & Skills → Vocabulary, Concepts & Theorems → Activate
-Prior Knowledge & Spiral Review (text-only; no warm-up thumbnail) → Hook → Lesson (and
+Primary Objective → **Lesson Flow — Gradual Release (60 minutes)** → Priority Ideas &
+Skills → Vocabulary, Concepts & Theorems → Activate Prior Knowledge & Spiral Review
+(text-only; no warm-up thumbnail) → Hook → **Lesson — I Do / We Do / You Do** (and
 "Lesson (cont.)") → Explicit Instruction (one box per technique) → Active Monitoring →
-Group Work & Differentiation (Tiers R / A / E) → Individual Work & Assessment (Exit Ticket +
-standards-style MC) → Reinforcement & Extension (Homework + Extension + Preview). Tag the
-objective and skills with the standards the lesson covers (see `course-workflow.md`).
+**Differentiation — During You Do** → **Debrief** (teacher-facing only) → Individual Work &
+Assessment (Exit Ticket + standards-style MC) → Reinforcement & Extension (Homework +
+Extension + Preview) → teacher notes. There is no Group Work box and no activity component:
+the whole release runs inside the guided notes. Tag the objective and skills with the
+standards the lesson covers (see `course-workflow.md`).

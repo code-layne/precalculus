@@ -84,7 +84,7 @@ written; do not renumber them to match the 8-unit map.
 | **Vocabulary, Concepts & Theorems** | Terms named in the EKs |
 | **Learning Targets** (cover, "I can…") | One target per Learning Objective, reworded as "I can …" |
 | Standards line | The LO/EK codes addressed (e.g. `1.4.A`, `1.4.A.1`) — recorded in the lesson plan |
-| Guided notes / activity / exit ticket / homework | Practice that exercises the named Practice against the EK statements; mirror the cognitive level of the LO verbs (describe, identify, construct, determine, compare, support) |
+| Guided notes / exit ticket / homework | Practice that exercises the named Practice against the EK statements; mirror the cognitive level of the LO verbs (describe, identify, construct, determine, compare, support) |
 
 Keep wording **paraphrased**, not copied verbatim from the CED — the lesson should restate the
 framework in teaching language, with the codes as the audit trail. Scaffold for the non-honors

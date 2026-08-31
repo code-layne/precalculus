@@ -5,7 +5,7 @@ description: >-
   shared/ style package and a Makefile hierarchy that compiles components with latexmk
   and merges them with pdfunite). Use this whenever the user wants to create, draft, or
   build a lesson, a lesson plan, a unit, or any lesson component — warm-up, guided notes,
-  activity, exit ticket, homework, cover sheet, or their answer keys. This project is the
+  exit ticket, homework, cover sheet, or their answer keys. This project is the
   **Precalculus** course: `COURSE_PLAN.md` is the authoritative unit/lesson map, and the
   Precalculus CED in `spec/` drives each lesson's objectives and essential knowledge. Also
   use it to author unit-level tests and unit covers. Trigger this even when the user just
@@ -46,15 +46,17 @@ A lesson lives in `unitXX/lessonYY/` and consists of:
 - **`main.tex`** — the teacher-facing **lesson plan** (the root document of the lesson dir).
 - A set of **student components**, each its own subdirectory containing **either** a `main.tex`
   (authored, compiled to a PDF) **or** a `main.pdf` (a prefab PDF, used as-is):
-  `cover`, `warmup`, `notes`, `activity`, `exit_ticket`, optional `homework`, and optional
-  `slides`.
+  `cover`, `warmup`, `notes`, `exit_ticket`, optional `homework`, and optional `slides`.
 - An **answer key** for each keyed component, as a *separate* sibling directory:
-  `warmup_key`, `notes_key`, `activity_key`, `exit_ticket_key`, `homework_key`.
-  (`cover` has no key.)
+  `warmup_key`, `notes_key`, `exit_ticket_key`, `homework_key`. (`cover` has no key.)
 
-**`homework` is not scaffolded by default — homework is DeltaMath.** See "Homework is
-DeltaMath" below. The four in-class components are the packet; a `homework/` directory
-exists only for the lessons the user explicitly overrides.
+**Neither `activity` nor `homework` is scaffolded.** There is no formal group activity —
+gradual release runs inside the guided notes (see "The lesson shape" below) — and homework
+is DeltaMath (see "Homework is DeltaMath"). The three in-class components are the packet.
+A `homework/` directory exists only for a lesson the user explicitly overrides; an
+`activity/` directory should not be created at all. The build system still *supports* both,
+which is why the 62 lessons not yet reauthored keep building with their activity sheets
+intact — support is not a default.
 
 `shared/lesson.mk` discovers a component if it has a `main.tex` **or** a `main.pdf`, compiles
 the `main.tex` ones with `latexmk -xelatex`, and builds **five work products** into
@@ -65,7 +67,7 @@ the `main.tex` ones with `latexmk -xelatex`, and builds **five work products** i
 | `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
 | `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
 | `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
-| `lessonYY_student.pdf` | `cover warmup notes activity exit_ticket` (then `homework`, on the rare lesson that has one) — the blank versions, in that pedagogical order. |
+| `lessonYY_student.pdf` | `cover warmup notes exit_ticket` (then `homework`, on the rare lesson that has one) — the blank versions, in that pedagogical order. |
 | `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
 
 There is no combined "full" packet — the plan and the two slide products are separate teacher
@@ -76,25 +78,35 @@ in a ready-made PDF is all that's needed (Step 5).
 ## The lesson shape — gradual release
 
 **This course uses traditional gradual release, not experience-first.** A lesson is a
-55-minute period that runs, in order:
+60-minute period that runs, in order:
 
 > warm-up → hook → **I Do** (model) → **We Do** (guided) → **You Do** (independent)
-> → group activity → **debrief** → exit ticket
+> → **debrief** → exit ticket
 
-Three of those phases are teacher-facing only and live in the lesson plan; the rest map onto
-student components. Getting this wrong is the single most visible defect in a lesson, so:
+**There is no group activity.** The entire release — model, guided, independent — happens
+inside the **guided notes**: `\S`-numbered sections carry I Do and We Do, and the notes'
+practice box carries You Do. A lesson does not get a separate activity handout, and the
+tiered work that used to live on one is now *differentiation the teacher applies while
+circulating the practice box*. Do not scaffold `activity/`.
+
+Two of those phases (hook and debrief) are teacher-facing only and live in the lesson plan;
+the rest map onto student components. Getting this wrong is the single most visible defect
+in a lesson, so:
 
 ### The Lesson Flow box — every plan carries one
 
 Directly under the Primary Objective, before Priority Ideas & Skills, every lesson plan
-carries a `skillbox` titled **`Lesson Flow --- Gradual Release (55 minutes)`** holding a
+carries a `skillbox` titled **`Lesson Flow --- Gradual Release (60 minutes)`** holding a
 three-column `tabularx` (Phase / Min / what students are doing and where it lives), followed
 by a short "if the clock slips" paragraph naming what to cut *first* and what to protect.
 
-**The minutes must sum to exactly 55** — the value of `\MeetingLength`. Add them up before
-you build; a flow table that sums to 61 is the lesson-planning equivalent of a failing test.
-Model it on `unit01/lesson00/main.tex` (four lesson parts) or `unit01/lesson01/main.tex`
-(five parts, a denser lesson that buys guided time out of the group activity and says so).
+**The minutes must sum to exactly 60** — the value of `\MeetingLength`. Add them up before
+you build; a flow table that sums to 66 is the lesson-planning equivalent of a failing test.
+The table has **seven rows and no Group Activity row**: warm-up, hook, I Do, We Do, You Do,
+debrief, exit ticket. With no activity sheet competing for the period, **You Do gets real
+time** — roughly 11–14 minutes, not the 5 it used to get. Model it on
+`unit01/lesson00/main.tex` (four lesson parts) or `unit01/lesson01/main.tex` (five parts, a
+denser lesson that buys guided time out of the independent phase and says so).
 
 ### The Lesson box is tagged by release phase
 
@@ -113,17 +125,36 @@ covers **and** what the teacher is and is not doing — "nothing is cold-called 
 phase," "cold-call every blank," "circulate and say nothing a neighbor could say instead."
 A part that does not say who is holding the pen is not tagged.
 
+### Differentiation replaces the Group Work box
+
+Where a plan used to carry `Group Work & Differentiation (N min)` pointing at an activity
+sheet, it now carries a `skillbox{redbox}` titled
+**`Differentiation --- During You Do (N min)`**, whose minutes equal the You Do row of the
+flow table. It describes **moves the teacher makes while circulating the practice box**, not
+a handout:
+
+- **Support** — which practice item to sit down beside a struggling student for, and the
+  one question to ask there.
+- **On level** — what the class should get through unaided, and what to let them struggle
+  with before you intervene.
+- **Extend** — the question you hand a finisher. This is where a former Tier E prompt
+  belongs; if it is good enough to keep, make it the **last item of the notes' practice
+  box** so every student sees it, rather than a teacher-held extra.
+
+Tier R / Tier A / Tier E language belongs to the old activity sheet. Do not reintroduce it
+as a set of `tcolorbox` tiers in a component.
+
 ### The debrief is teacher-only
 
-It is a `skillbox{redbox}` titled `Debrief (N min)` sitting **between** Group Work &
-Differentiation and Individual Work & Assessment, plus a matching
+It is a `skillbox{redbox}` titled `Debrief (N min)` sitting **between** Differentiation ---
+During You Do and Individual Work & Assessment, plus a matching
 `\begin{teachernote}[Debrief]`. **There is no `debrief/` student component** — the student
 packet closes with the exit ticket, which stays the individual check.
 
 The box scripts three timed moves and closes with an explicit prohibition:
 
-1. **Share out the activity** — one answer per tier, not a full review, so students who
-   worked Tier R still hear the Tier E result.
+1. **Share out the You Do** — one answer per practice item, not a full review, so a student
+   who never reached the last item still hears its result.
 2. **Name the headline** — the day's central sentence, said by the teacher and echoed back
    by the class, immediately before the exit ticket asks for it in writing.
 3. **Point forward** (or read a read-only notes section aloud).
@@ -137,17 +168,18 @@ Homework is a DeltaMath assignment unless the user explicitly overrides a lesson
 not scaffold `homework` unless asked**. On a DeltaMath lesson:
 
 - There is no `homework/` or `homework_key/` directory.
-- The cover's `tocbox` lists the four in-class components, closes them with an
-  **In-Class Total** row, then carries a final DeltaMath row with three slots — assignment
-  name, due date, and its own score:
+- The cover's `tocbox` lists the three in-class components (Warm-Up, Guided Notes, Exit
+  Ticket — **no Group Activity row**), closes them with an **In-Class Total** row, then
+  carries a final DeltaMath row with three slots — assignment name, due date, and its own
+  score:
 
   ```latex
-  4 & Exit Ticket & ... & \blank{1.2cm} \\
+  3 & Exit Ticket & ... & \blank{1.2cm} \\
   \midrule
     & \multicolumn{2}{r}{\textbf{In-Class Total}} & \blank{1.2cm} \\
   \midrule
   \rowcolor{lilac}
-  5 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
+  4 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
   ```
 
 - Reinforcement & Extension opens with **`\textbf{Homework --- DeltaMath.}`** and states
@@ -224,9 +256,11 @@ first means subagents only need the Write tool to fill in content.
 
 Each subagent receives: (a) the extracted CED content for its single lesson,
 (b) the path of one model lesson to mirror, (c) the known-errors checklist below,
-(d) **the gradual-release lesson shape** — the Lesson Flow box summing to 55, the
-`I Do / We Do / You Do` tagging, the teacher-only Debrief box, and DeltaMath homework
-(see "The lesson shape" below), and (e) instructions to use Write tool only
+(d) **the gradual-release lesson shape** — the Lesson Flow box summing to 60, the
+`I Do / We Do / You Do` tagging with the whole release inside the guided notes, **no
+`activity/` component**, the Differentiation --- During You Do box, the teacher-only
+Debrief box, and DeltaMath homework (see "The lesson shape" below), and
+(e) instructions to use Write tool only
 (coordinator handles build/verify). The
 coordinator collects results, builds all lessons, verifies page counts, and opens one PR.
 
@@ -250,18 +284,19 @@ pdftoppm -r 72 target/unitXX/lessonYY/exit_ticket/main.pdf /tmp/et \
 If either prints > 1: cut a question, rebuild, re-check. Do not continue until both return 1.
 Same check for their keys.
 
-### 2. The Lesson Flow minutes must sum to 55
+### 2. The Lesson Flow minutes must sum to 60
 
-Every lesson plan opens with a `Lesson Flow --- Gradual Release (55 minutes)` box. Add its
+Every lesson plan opens with a `Lesson Flow --- Gradual Release (60 minutes)` box. Add its
 Min column up by hand before building — the build cannot catch this and `make check` does
-not either. If the phases will not fit in 55, do not pad the total: cut, and say in the
-box's closing paragraph what you cut and what you protected. See "The lesson shape ---
-gradual release" above.
+not either. If the phases will not fit in 60, do not pad the total: cut, and say in the
+box's closing paragraph what you cut and what you protected. The table carries **no Group
+Activity row** — those minutes belong to You Do now. See "The lesson shape --- gradual
+release" above.
 
 ### 3. No "sketch the…" questions
 
 Never ask students to draw, sketch, or construct a graph freehand anywhere (warmup,
-exit ticket, notes, activity, homework). Replace with: (a) a pre-drawn figure to
+exit ticket, notes, homework). Replace with: (a) a pre-drawn figure to
 read/interpret, (b) a table to fill in, or (c) a computation question.
 
 ### 4. `\ans{}` is a TEXT-MODE macro — two hard rules
@@ -412,7 +447,7 @@ Run the scaffold script, which creates the directory, the one-line `Makefile`
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
   --title "Composition of Functions" --unit-title "Functions and Their Graphs" --course "Precalculus" \
-  --components cover,warmup,notes,activity,exit_ticket,slides
+  --components cover,warmup,notes,exit_ticket,slides
 ```
 
 That component list is the default and it is **homework-free** — homework is DeltaMath.
@@ -451,10 +486,12 @@ structure and a worked skeleton for every component and its key. Hold to these i
   the first term (**vocabpar**); and `\boxguard` goes before any breakable box that would
   otherwise strand a stub, in the blank and the key both (**boxguard**).
 - **Author the lesson plan to the gradual-release shape** — the Lesson Flow box under the
-  objective with minutes summing to 55, the Lesson box titled
-  `Lesson --- I Do / We Do / You Do` with every part phase-tagged, the teacher-only
-  `Debrief` box between Group Work and Individual Work, and DeltaMath homework on the cover
-  and in Reinforcement & Extension. Full spec above under "The lesson shape".
+  objective with minutes summing to 60, the Lesson box titled
+  `Lesson --- I Do / We Do / You Do` with every part phase-tagged and every phase living
+  in the guided notes, the `Differentiation --- During You Do` box in place of the old
+  Group Work box, the teacher-only `Debrief` box between it and Individual Work, and
+  DeltaMath homework on the cover and in Reinforcement & Extension. Full spec above under
+  "The lesson shape".
 - Use the project's box vocabulary (`skillbox`, `objectivebox`, `learningtargetbox`,
   `vocabbox`, `hookbox`, `notesbox`, `practicebox`, `scenariobox`, `tocbox`, etc.) and
   fill-in helpers (`\blank`, `\writeline`, `\writelines{n}`, `\termblanklong`) rather than
@@ -597,9 +634,12 @@ violation the gate still reports and why.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in.
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.
 - **Multi-lesson requests → parallel subagents.** See "Multi-lesson dispatch" above.
-- **Gradual release, not experience-first.** Lesson Flow box summing to 55, `I Do / We Do /
+- **Gradual release, not experience-first.** Lesson Flow box summing to 60, `I Do / We Do /
   You Do` tagging on every lesson part, a teacher-only Debrief box, and no `debrief/`
   student component. See "The lesson shape --- gradual release" above.
+- **No group activity.** The whole release runs inside the guided notes — I Do and We Do in
+  the `\S` sections, You Do in the practice box. Do not scaffold `activity/`; tiered work
+  becomes the `Differentiation --- During You Do` box in the plan.
 - **Homework is DeltaMath.** Do not scaffold `homework/` unless the user overrides that
   lesson; put the DeltaMath row and the In-Class Total on the cover instead.
 - **One-page warmup and exit ticket** — verify with `pdftoppm` after every build. See "Hard constraints" above.

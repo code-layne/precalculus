@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 02 --lesson 03 \
         --title "Composition of Functions" --unit-title "Functions and Their Graphs" \
-        --components cover,warmup,notes,activity,exit_ticket,slides
+        --components cover,warmup,notes,exit_ticket,slides
 """
 from __future__ import annotations
 
@@ -24,9 +24,14 @@ SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
-# Homework is DeltaMath: `homework` is a valid component but NOT a default. Pass it
-# explicitly (--components ...,homework) only for a lesson the user has overridden.
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "slides"]
+# Two components are valid but NOT defaults, each for its own reason:
+#   homework — homework is DeltaMath; scaffold it only for an overridden lesson.
+#   activity — there is no formal group activity. Gradual release (I Do / We Do /
+#              You Do) runs entirely inside the guided notes, and the tiered work
+#              that used to live on an activity sheet is now differentiation the
+#              teacher applies while circulating the notes' practice box.
+# Pass either explicitly (--components ...,activity) only when the user asks.
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "exit_ticket", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
@@ -280,6 +285,9 @@ def main() -> None:
     print("\nnext:")
     for i, step in enumerate(steps, 1):
         print(f"  {i}. {step}")
+    print("\n  No activity/ was scaffolded: there is no formal group activity. Gradual")
+    print("  release runs inside notes/ — the \\S sections are I Do and We Do, the")
+    print("  practice box is You Do — and tiering is the plan's Differentiation box.")
     print("\n  Homework is DeltaMath: no homework/ was scaffolded. Add ,homework to")
     print("  --components only for a lesson the user has explicitly overridden.")
 

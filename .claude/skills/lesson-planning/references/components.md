@@ -7,7 +7,7 @@ summarize the pattern, but the live project is authoritative. For macros and box
 `references/conventions.md`.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
-[Guided notes](#guided-notes) · [Activity](#activity) · [Exit ticket](#exit-ticket) ·
+[Guided notes](#guided-notes) · [Exit ticket](#exit-ticket) ·
 [Homework](#homework) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline) ·
 [Unit cover](#unit-cover) · [Sample test & key](#sample-test--key)
 
@@ -33,12 +33,13 @@ AP tags and list review topics):
    anywhere in the title block.
 2. **Primary Objective** — a `tcolorbox` (`lilac`/`plum`). One or two sentences restating the
    CED Learning Objectives as student-facing aims. This CED has no "Big Idea" tag.
-3. **Lesson Flow — Gradual Release (55 minutes)** — `skillbox{lilac}`, a three-column
-   `tabularx` (Phase / Min / what students are doing and where it lives) over the eight
-   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Group Activity, Debrief, Exit
-   Ticket. **The Min column must sum to exactly 55.** Close with an "If the clock slips"
-   paragraph naming what to cut first and what to protect. This box sits *above* Priority
-   Ideas & Skills so the clock is the second thing the teacher reads.
+3. **Lesson Flow — Gradual Release (60 minutes)** — `skillbox{lilac}`, a three-column
+   `tabularx` (Phase / Min / what students are doing and where it lives) over the seven
+   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Debrief, Exit Ticket. **There is
+   no Group Activity row** — the whole release runs inside the guided notes, so You Do
+   gets real time (roughly 11–14 min). **The Min column must sum to exactly 60.** Close with
+   an "If the clock slips" paragraph naming what to cut first and what to protect. This box
+   sits *above* Priority Ideas & Skills so the clock is the second thing the teacher reads.
 4. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
    skills, labelled `\textbf{AP Skill x.y}` (e.g. "AP Skill 2.B --- Construct equivalent
    representations"), matching every authored lesson. Right: "Key Understandings" paraphrased
@@ -67,16 +68,20 @@ AP tags and list review topics):
 9. **Explicit Instruction: <technique>** — one `skillbox{lilac}` per technique, two columns:
    numbered steps on the left, a worked example (often with a Desmos screenshot) on the right.
 10. **Active Monitoring** — `skillbox{redbox}`: what to circulate and check; cold-call prompts.
-    Open it by naming the two unsupervised stretches — "Circulate during the **You Do**
-    phase and the group activity" — not "while students work on guided notes and
-    practice."
-11. **Group Work & Differentiation** — `skillbox{redbox}`: a `multicols{3}` with **Tier R —
-    Remediate / Tier A — Approaching Proficiency / Tier E — Extension** bullet lists that
-    mirror the activity tiers.
-12. **Debrief (N min)** — `skillbox{redbox}`, sitting **between** Group Work and Individual
-    Work. **Teacher-facing only — there is no `debrief/` student component.** Three timed
-    moves as an `enumerate`: (a) *share out the activity*, one answer per tier and not a full
-    review, so Tier R students still hear the Tier E result; (b) *name the headline* — the
+    Open it by naming the unsupervised stretch — "Circulate during the **You Do** phase" —
+    not "while students work on guided notes and practice."
+11. **Differentiation — During You Do (N min)** — `skillbox{redbox}`, its minutes equal to
+    the You Do row of the flow table. **Support / On level / Extend** — moves the teacher
+    makes while circulating the notes' practice box, not a handout: which item to sit beside
+    a struggling student for, what the class should get through unaided, and the question to
+    hand a finisher. A former Tier E prompt worth keeping becomes the **last item of the
+    practice box** so every student sees it. Tier R / A / E language belonged to the old
+    activity sheet — do not reintroduce it.
+12. **Debrief (N min)** — `skillbox{redbox}`, sitting **between** Differentiation and
+    Individual Work. **Teacher-facing only — there is no `debrief/` student component.**
+    Three timed moves as an `enumerate`: (a) *share out the You Do*, one answer per practice
+    item and not a full review, so a student who never reached the last item still hears its
+    result; (b) *name the headline* — the
     day's central sentence in italics, said by the teacher and echoed back by the class,
     immediately before the exit ticket asks for it in writing; (c) *point forward*, or read a
     read-only notes section aloud here rather than during notes. Close with a
@@ -90,7 +95,7 @@ AP tags and list review topics):
     of the next lesson. On an overridden lesson, a printed-homework overview replaces the
     DeltaMath paragraph.
 15. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
-    Warm-Up, Guided Notes, Group Activity, **Debrief**, Exit Ticket, **Homework — DeltaMath**.
+    Warm-Up, Guided Notes, **Debrief**, Exit Ticket, **Homework — DeltaMath**.
     Pacing, common errors, what to look for. This is the **only** place teacher-only prose
     goes — never in a `_key`. The Debrief note says why those minutes are worth protecting and
     what to borrow from instead; the Homework note tells the teacher to read the DeltaMath
@@ -104,20 +109,21 @@ AP tags and list review topics):
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, **one target per Learning Objective**.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score
-  blank). Keep the rows aligned with the components you actually scaffolded. The four
-  in-class components close with an **In-Class Total** row; then, below it, the DeltaMath
-  homework row with its own three slots:
+  blank). Keep the rows aligned with the components you actually scaffolded — **Warm-Up,
+  Guided Notes, Exit Ticket, and no Group Activity row.** Those three in-class components
+  close with an **In-Class Total** row; then, below it, the DeltaMath homework row with its
+  own three slots:
 
   ```latex
-  4 & Exit Ticket & ... & \blank{1.2cm} \\
+  3 & Exit Ticket & ... & \blank{1.2cm} \\
   \midrule
     & \multicolumn{2}{r}{\textbf{In-Class Total}} & \blank{1.2cm} \\
   \midrule
   \rowcolor{lilac}
-  5 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
+  4 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
   ```
 
-  On a lesson the user overrode to get printed homework, make row 5 an ordinary component
+  On a lesson the user overrode to get printed homework, make row 4 an ordinary component
   row and fold it back above a plain **Total**.
 - Optionally mirror the lesson plan's Priority Ideas & Vocabulary for student reference.
 
@@ -142,17 +148,18 @@ never embed a thumbnail of the warm-up.
 - `hookbox` — the same hook as the plan, with write-lines for student responses.
 - Direct-instruction sections in `notesbox{Title}` with blanks (`\blank`, `\writeline`) at the
   points where students record steps/definitions/results.
-- Optional `practicebox` ("Guided Practice") with 1–2 worked-with-class problems.
+- `practicebox` — **required, and it is the You Do phase.** With no activity sheet, this is
+  where independent work happens, so budget it for the 11–14 minutes the flow table gives
+  You Do: 3–4 items that escalate, ending with the one a finisher should still find hard
+  (what a Tier E prompt used to be). Students work it alone while the teacher circulates;
+  the plan's Differentiation box says what the teacher does at each item.
 
-## Activity
-
-`activity/` (+ `activity_key/`) — differentiated group practice.
-- `\pageheader{Unit X, Lesson Y.Z}{Group Activity}` — **no name row** (namestrip).
-- Three `tcolorbox`es titled **Tier R — Remediate**, **Tier A — Approaching Proficiency**,
-  **Tier E — Extension** (`colframe=black!40`), each with problems and generous `\vspace` work
-  room. Tiers escalate in difficulty and align to the same skills.
-- Key mirrors exactly, filling answers with `\ans{...}` and marking correct MC options with
-  `\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`, plus brief worked steps.
+**There is no `activity/` component.** Gradual release lives entirely in the notes — the
+`notesbox` sections carry I Do and We Do, the `practicebox` carries You Do. Do not scaffold
+an activity sheet or reintroduce Tier R / A / E `tcolorbox`es inside the notes; tiering is
+now teacher circulation, specified in the plan's Differentiation box. (The build system
+still merges an `activity/` if one exists, which is how lessons not yet reauthored keep
+building — that is backward compatibility, not a component to author.)
 
 ## Exit ticket
 
