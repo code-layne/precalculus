@@ -6,7 +6,7 @@ Generated 2026-08-06 from the repository tree (`unit0*/`), the unit cover pages,
 last section.
 
 **Course:** Precalculus (non-honors track). 8 units × 8 lessons = **64 lessons**, plus a
-unit test per unit. Pacing target 18–22 class periods per unit (55-minute meetings).
+unit test per unit. Pacing target 18–22 class periods per unit (60-minute meetings).
 Content backbone: the Precalculus CED in `spec/`.
 
 **Per-lesson deliverables (9 PDFs + deck):** cover, warm-up + key, guided notes + key,

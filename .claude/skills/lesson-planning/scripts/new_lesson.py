@@ -170,7 +170,7 @@ def main() -> None:
     p.add_argument("--prefab", default="", help="comma list of dirs that will hold a dropped-in "
                                                 "prefab PDF (placed as <dir>/main.pdf), e.g. warmup,warmup_key")
     p.add_argument("--course", help="course name for cover/slides (default: detected or 'TODO Course')")
-    p.add_argument("--meeting-length", default="55 minutes", help="meeting length (used only if not in shared/)")
+    p.add_argument("--meeting-length", default="60 minutes", help="meeting length (used only if not in shared/)")
     p.add_argument("--no-plan", action="store_true", help="do not scaffold the lesson-plan main.tex")
     p.add_argument("--tests", action="store_true", help="also (re)scaffold the unit's test "
                                                         "dirs even if the unit already exists (idempotent)")

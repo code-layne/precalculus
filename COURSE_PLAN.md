@@ -9,7 +9,7 @@ parameters-vectors-matrices material is condensed into a single closing unit.
 **Structure:** 8 units × 8 lessons = **64 lessons**, plus a sample test per unit.
 Units 1 and 2 number their eight lessons 1.0–1.7 and 2.0–2.7 (see the replan notes below);
 units 3–8 still number theirs X.1–X.8 and adopt the X.0 opener as each is reauthored.
-Pacing target: 18–22 class periods per unit (55-minute meetings).
+Pacing target: 18–22 class periods per unit (60-minute meetings).
 
 **Content source:** the Precalculus CED (`spec/`) remains the content backbone.
 "CED n.m" below refers to the CED topic that drives the lesson's objectives and essential

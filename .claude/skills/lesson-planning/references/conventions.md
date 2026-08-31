@@ -43,7 +43,7 @@ course does *not* define them in the style package:
 \graphicspath{{images/}}
 
 \newcommand{\CourseName}{Precalculus}
-\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\MeetingLength}{60 minutes}
 % plus \UnitNumberName and \LessonNumberName
 ```
 
