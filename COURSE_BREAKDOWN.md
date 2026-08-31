@@ -9,8 +9,17 @@ last section.
 unit test per unit. Pacing target 18–22 class periods per unit (55-minute meetings).
 Content backbone: the Precalculus CED in `spec/`.
 
-**Per-lesson deliverables (11 PDFs + deck):** cover, warm-up + key, guided notes + key,
-group activity + key, exit ticket + key, homework + key, and a Beamer `slides/` deck.
+**Per-lesson deliverables (9 PDFs + deck):** cover, warm-up + key, guided notes + key,
+group activity + key, exit ticket + key, and a Beamer `slides/` deck. **Homework is
+DeltaMath** — the cover carries an assignment slot, a due-date slot, and its own score slot
+below the in-class total, and no `homework/` directory exists unless a lesson is explicitly
+overridden because DeltaMath has no practice for the topic. Lessons still on the pre-August
+shape ship a printed `homework/` + `homework_key/` until they are reauthored.
+
+**Pedagogy:** traditional gradual release. Each 55-minute period runs warm-up → hook →
+**I Do** → **We Do** → **You Do** → group activity → **debrief** → exit ticket, and the
+lesson plan opens with a Lesson Flow box whose minutes sum to 55. The debrief is
+teacher-facing only; the student packet closes with the exit ticket.
 
 Status legend — **authored** = written to the current plan, convention-compliant;
 **moved** = old AP-paced body relocated but not yet reauthored; **new** = scaffolded

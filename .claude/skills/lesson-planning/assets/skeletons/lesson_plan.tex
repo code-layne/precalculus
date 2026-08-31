@@ -2,7 +2,7 @@
 \documentclass[10pt]{article}
 \usepackage{@@PREFIX@@-article}
 \usepackage{@@PREFIX@@-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for screenshots
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 @@COURSEMACROS@@\newcommand{\UnitNumberName}{Unit @@UNITINT@@: @@UNITTITLE@@ \quad}
@@ -21,50 +21,136 @@
     % this CED has Mathematical Practices instead; see references/ap-workflow.md)
 \end{tcolorbox}
 
+% ── The clock, second thing the teacher reads ─────────────────────────────────
+% GRADUAL RELEASE. The Min column MUST sum to exactly 55 (= \MeetingLength).
+% Add it up by hand before you build — neither latexmk nor `make check` will.
+% Model: unit01/lesson00/main.tex (four parts) or unit01/lesson01/main.tex (five).
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (55 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 8  & Watch and annotate while the teacher thinks aloud --- notes \S TODO. \\
+\textbf{We Do} --- guided     & 13 & Fill the notes together, every blank cold-called --- notes \S TODO. \\
+\textbf{You Do} --- independent & 6 & Work alone while the teacher circulates --- notes \S TODO and the practice box. \\
+Group Activity                & 10 & Tiered groups on the activity sheet. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Exit Ticket                   & 5  & Individual, silent, collected. \\
+\end{tabularx}
+
+\smallskip
+\textbf{If the clock slips:} TODO --- name what to cut FIRST and what to protect.
+Never pad the total to reach 55; cut, and say here what you cut.
+\end{skillbox}
+
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills, labelled \textbf{AP Skill x.y} (e.g. 2.B);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+    % TODO: left column = priority skills; right column = Key Understandings
+    %       (paraphrased from the EKs).
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
     % TODO: key terms + definitions for this lesson.
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
 @@SPIRALWARMUP@@
-        \end{minipage}
-    \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
+\begin{skillbox}[Hook (3 min)]{lilac}
     % TODO: the engaging entry question / scenario.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+% ── The lesson, tagged by release phase ───────────────────────────────────────
+% Every part opens with its phase in CAPS, the part title, and its minutes, then
+% an italic line naming the notes section it covers AND who is holding the pen.
+% A part that does not say who is holding the pen is not tagged.
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: TODO} (8 min)
+
+\textit{Guided notes \S TODO. Teacher works; students watch and annotate. Nothing
+is cold-called in this phase.}
+\begin{itemize}
+  \item % TODO
+\end{itemize}
+
+\textbf{WE DO --- Part 2: TODO} (7 min)
+
+\textit{Guided notes \S TODO. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item % TODO
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: TODO} (6 min)
+
+\textit{Guided notes \S TODO. Still together, but hand over more of each answer.}
+\begin{itemize}
+  \item % TODO
+\end{itemize}
+
+\textbf{YOU DO --- Part 4: TODO} (6 min)
+
+\textit{Guided notes \S TODO and the practice box. Students work alone; circulate
+and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item % TODO
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+Circulate during the \textbf{You Do} phase and the group activity --- the two
+stretches where students are working without you --- and check:
+    % TODO: common errors + cold-call prompts.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{skillbox}[Group Work \& Differentiation (10 min)]{redbox}
     % TODO: Tier R / Tier A / Tier E (mirror activity/).
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
+% ── Debrief — TEACHER-FACING ONLY. There is no debrief/ student component. ─────
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the activity} (2 min) --- one answer per tier, not a
+        full review, so students who worked Tier R still hear the Tier E result.
+        % TODO: name the one answer you want from each tier.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it
+        back. % TODO: the day's central sentence, verbatim, in italics.
+  \item \textbf{Point forward} (2 min) --- % TODO: next lesson, or a read-only
+        notes section read aloud here rather than during notes.
+\end{enumerate}
+\textbf{Do not} re-teach here, take new questions, or let the exit ticket start
+early. A debrief that runs long eats the only individual data collected today.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment (5 min)]{redbox}
+\textbf{Exit Ticket} (final 5 minutes, individual, silent, collected):
     % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- DeltaMath.} This lesson ships no printed homework; assign the
+DeltaMath set and have students record its name, due date, and score in the
+homework row of the packet cover. Target coverage: % TODO: the item types the set
+% should hit. Name item TYPES, not numbered problems.
+
+% If the user OVERRODE this lesson to get a printed homework, replace the
+% paragraph above with a homework overview and scaffold homework/ + homework_key/.
+
+\textbf{Extension (optional):} % TODO
+
+\textbf{Preview:} % TODO: next lesson.
 \end{skillbox}
 
 % ── Teacher notes — one per component, in packet order ────────────────────────
@@ -76,18 +162,24 @@
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+    % TODO: which phase to slow down for, and what to cut if the clock slips.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
     % TODO
 \end{teachernote}
 
+\begin{teachernote}[Debrief]
+    % TODO: why these minutes are worth protecting, and what to borrow from
+    % instead when the guided phase overruns.
+\end{teachernote}
+
 \begin{teachernote}[Exit Ticket]
     % TODO
 \end{teachernote}
 
-\begin{teachernote}[Homework]
-    % TODO
+\begin{teachernote}[Homework --- DeltaMath]
+    % TODO: tell the teacher to read the DeltaMath report BY ITEM TYPE, not by
+    % overall score, and name which item type means the lesson missed.
 \end{teachernote}
 \end{document}
