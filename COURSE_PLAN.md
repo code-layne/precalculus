@@ -18,16 +18,25 @@ for the non-honors track or to add calculus-readiness material.
 
 ## Pedagogy (August 2026)
 
-The course uses **traditional gradual release**, not experience-first. Each 55-minute
+The course uses **traditional gradual release**, not experience-first. Each 60-minute
 period runs:
 
 > warm-up → hook → **I Do** (model) → **We Do** (guided) → **You Do** (independent)
-> → group activity → **debrief** → exit ticket
+> → **debrief** → exit ticket
 
-Every lesson plan opens with a *Lesson Flow — Gradual Release (55 minutes)* box whose
-minutes sum to exactly 55, and each part of its Lesson box is tagged with the release
+Every lesson plan opens with a *Lesson Flow — Gradual Release (60 minutes)* box whose
+minutes sum to exactly 60, and each part of its Lesson box is tagged with the release
 phase and names who is holding the pen. The **debrief is teacher-facing only** — there is
 no `debrief/` component; the student packet still closes with the exit ticket.
+
+**There is no group activity** (August 2026). The whole release runs inside the guided
+notes: the `\S`-numbered sections carry I Do and We Do, and the notes' practice box carries
+You Do, which now gets real time (11–14 min) instead of the 5 it got when an activity sheet
+was competing for the period. A lesson has no `activity/` directory, and the tiered work
+that used to live on one is now **differentiation the teacher applies while circulating the
+practice box** — specified in the plan's *Differentiation — During You Do* box, which
+replaced *Group Work & Differentiation*. The in-class packet is therefore three components:
+warm-up, guided notes, exit ticket.
 
 **Homework is DeltaMath** for most lessons: no `homework/` directory, and the packet cover
 carries a DeltaMath row with an assignment slot, a due-date slot, and its own score slot
@@ -36,7 +45,9 @@ practice for its topic, and only when that override is asked for.
 
 Lessons 1.0 and 1.1 are the reference implementations. Lessons still marked **moved**, and
 1.2–1.7, remain on the older shape until they are reauthored — they still ship printed
-homework and untagged lesson parts.
+homework, untagged lesson parts, and an `activity/` group-activity sheet. The build system
+still merges an activity when one exists, so those lessons keep building unchanged; the
+activity goes away lesson-by-lesson as each is reauthored. **There is no bulk sweep.**
 
 ## How this restructure was performed (August 2026)
 

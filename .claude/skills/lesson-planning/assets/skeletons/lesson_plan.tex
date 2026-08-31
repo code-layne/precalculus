@@ -22,11 +22,12 @@
 \end{tcolorbox}
 
 % ── The clock, second thing the teacher reads ─────────────────────────────────
-% GRADUAL RELEASE. The Min column MUST sum to exactly 55 (= \MeetingLength).
+% GRADUAL RELEASE. The Min column MUST sum to exactly 60 (= \MeetingLength).
 % Add it up by hand before you build — neither latexmk nor `make check` will.
+% There is NO group-activity row: the whole release runs inside the guided notes.
 % Model: unit01/lesson00/main.tex (four parts) or unit01/lesson01/main.tex (five).
 \boxguard[22]
-\begin{skillbox}[Lesson Flow --- Gradual Release (55 minutes)]{lilac}
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
 \small
 \renewcommand{\arraystretch}{1.25}
 \begin{tabularx}{\linewidth}{@{} l c X @{}}
@@ -34,17 +35,16 @@
 \midrule
 Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
 Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
-\textbf{I Do} --- model       & 8  & Watch and annotate while the teacher thinks aloud --- notes \S TODO. \\
-\textbf{We Do} --- guided     & 13 & Fill the notes together, every blank cold-called --- notes \S TODO. \\
-\textbf{You Do} --- independent & 6 & Work alone while the teacher circulates --- notes \S TODO and the practice box. \\
-Group Activity                & 10 & Tiered groups on the activity sheet. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- notes \S TODO. \\
+\textbf{We Do} --- guided     & 18 & Fill the notes together, every blank cold-called --- notes \S TODO. \\
+\textbf{You Do} --- independent & 14 & Work alone while the teacher circulates --- notes \S TODO and the practice box. \\
 Debrief                       & 5  & Whole-class share-out and the headline. \\
 Exit Ticket                   & 5  & Individual, silent, collected. \\
 \end{tabularx}
 
 \smallskip
 \textbf{If the clock slips:} TODO --- name what to cut FIRST and what to protect.
-Never pad the total to reach 55; cut, and say here what you cut.
+Never pad the total to reach 60; cut, and say here what you cut.
 \end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -73,7 +73,7 @@ Never pad the total to reach 55; cut, and say here what you cut.
 \begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{I DO --- Part 1: TODO} (8 min)
+\textbf{I DO --- Part 1: TODO} (10 min)
 
 \textit{Guided notes \S TODO. Teacher works; students watch and annotate. Nothing
 is cold-called in this phase.}
@@ -81,7 +81,7 @@ is cold-called in this phase.}
   \item % TODO
 \end{itemize}
 
-\textbf{WE DO --- Part 2: TODO} (7 min)
+\textbf{WE DO --- Part 2: TODO} (10 min)
 
 \textit{Guided notes \S TODO. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
@@ -90,14 +90,14 @@ is cold-called in this phase.}
 
 \columnbreak
 
-\textbf{WE DO --- Part 3: TODO} (6 min)
+\textbf{WE DO --- Part 3: TODO} (8 min)
 
 \textit{Guided notes \S TODO. Still together, but hand over more of each answer.}
 \begin{itemize}
   \item % TODO
 \end{itemize}
 
-\textbf{YOU DO --- Part 4: TODO} (6 min)
+\textbf{YOU DO --- Part 4 and Practice: TODO} (14 min)
 
 \textit{Guided notes \S TODO and the practice box. Students work alone; circulate
 and say nothing a neighbor could say instead.}
@@ -108,13 +108,17 @@ and say nothing a neighbor could say instead.}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-Circulate during the \textbf{You Do} phase and the group activity --- the two
-stretches where students are working without you --- and check:
+Circulate during the \textbf{You Do} phase --- the stretch where students are
+working without you --- and check:
     % TODO: common errors + cold-call prompts.
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation (10 min)]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+% ── Differentiation — INSIDE the You Do phase. There is no activity/ component. ─
+\begin{skillbox}[Differentiation --- During You Do (14 min)]{redbox}
+    % TODO: Support / On level / Extend. These are moves the teacher makes while
+    % circulating the practice box, NOT a separate handout: which item to sit
+    % with a struggling student on, which to let the class run, and which
+    % question to hand a finisher.
 \end{skillbox}
 
 % ── Debrief — TEACHER-FACING ONLY. There is no debrief/ student component. ─────
@@ -122,9 +126,10 @@ stretches where students are working without you --- and check:
 \begin{skillbox}[Debrief (5 min)]{redbox}
 Whole class, teacher-led, packets still open. Three moves, in order:
 \begin{enumerate}[itemsep=3pt]
-  \item \textbf{Share out the activity} (2 min) --- one answer per tier, not a
-        full review, so students who worked Tier R still hear the Tier E result.
-        % TODO: name the one answer you want from each tier.
+  \item \textbf{Share out the You Do} (2 min) --- one answer per practice item,
+        not a full review, so a student who never reached the last item still
+        hears its result.
+        % TODO: name the one answer you want from each practice item.
   \item \textbf{Name the headline} (1 min) --- say it, then make the class say it
         back. % TODO: the day's central sentence, verbatim, in italics.
   \item \textbf{Point forward} (2 min) --- % TODO: next lesson, or a read-only
@@ -165,13 +170,9 @@ homework row of the packet cover. Target coverage: % TODO: the item types the se
     % TODO: which phase to slow down for, and what to cut if the clock slips.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
-\end{teachernote}
-
 \begin{teachernote}[Debrief]
     % TODO: why these minutes are worth protecting, and what to borrow from
-    % instead when the guided phase overruns.
+    % instead when the guided phase overruns (the last practice item, not this).
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]

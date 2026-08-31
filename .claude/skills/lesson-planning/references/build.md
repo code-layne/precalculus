@@ -30,7 +30,7 @@ Every lesson builds five files into `target/compiled/unitXX/`:
 | `lessonYY_plan.pdf` | The teacher-facing lesson plan — the lesson-root `main.tex`, on its own. |
 | `lessonYY_slides.pdf` | The Beamer deck **printed**: 3 slides per letter page, thumbnails down the left column and a ruled notes column beside each. |
 | `lessonYY_slides.pptx` | The same deck wrapped for PowerPoint — one full-bleed page image per slide, the **projected** form. |
-| `lessonYY_student.pdf` | `cover warmup notes activity exit_ticket homework` — the blank versions, in that pedagogical order. |
+| `lessonYY_student.pdf` | `cover warmup notes exit_ticket homework` — the blank versions, in that pedagogical order. (`activity` still merges between `notes` and `exit_ticket` on a lesson not yet reauthored.) |
 | `lessonYY_key.pdf` | The same packet with each component swapped for its `_key` (cover unchanged), in the same order. |
 
 There is **no `lessonYY_full.pdf`** — that combined plan + slides + keys packet is gone. The
@@ -114,7 +114,7 @@ pdfinfo target/compiled/unitXX/lessonYY_key.pdf | grep Pages
 ```bash
 python3 ${CLAUDE_SKILL_DIR}/scripts/new_lesson.py --project . --unit 02 --lesson 03 \
   --title "Composition of Functions" --unit-title "Functions and Their Graphs" --course "Precalculus" \
-  --components cover,warmup,notes,activity,exit_ticket,homework,slides \
+  --components cover,warmup,notes,exit_ticket,homework,slides \
   [--prefab warmup,warmup_key] [--lesson-id 2.3]
 ```
 
