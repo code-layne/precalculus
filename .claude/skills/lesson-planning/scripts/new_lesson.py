@@ -10,7 +10,7 @@ creates the root Makefile and the unit Makefile if they don't exist yet.
 Example:
     python new_lesson.py --project . --unit 02 --lesson 03 \
         --title "Composition of Functions" --unit-title "Functions and Their Graphs" \
-        --components cover,warmup,notes,activity,exit_ticket,homework,slides
+        --components cover,warmup,notes,activity,exit_ticket,slides
 """
 from __future__ import annotations
 
@@ -24,7 +24,9 @@ SKEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "skeletons"
 KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
 NO_KEY = ["cover", "slides"]
 ALL_COMPONENTS = KEYED + NO_KEY
-DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "homework", "slides"]
+# Homework is DeltaMath: `homework` is a valid component but NOT a default. Pass it
+# explicitly (--components ...,homework) only for a lesson the user has overridden.
+DEFAULT_COMPONENTS = ["cover", "warmup", "notes", "activity", "exit_ticket", "slides"]
 
 DOC_TITLE = {
     "warmup": "Warm-Up",
@@ -238,8 +240,8 @@ def main() -> None:
         # \includegraphics{warmup/main} are not used in this course or any other:
         # they couple the plan to build order, break whenever the warm-up is
         # authored rather than prefab, and add nothing a sentence doesn't say.
-        spiral = ("            % TODO: list the prerequisite skills this warm-up reviews,\n"
-                  "            % in words. Do not embed a warm-up thumbnail.")
+        spiral = ("    % TODO: list the prerequisite skills this warm-up reviews,\n"
+                  "    % in words. Do not embed a warm-up thumbnail.")
         write(dest / "main.tex",
               render("lesson_plan.tex", {**base, "UNITTITLE": args.unit_title,
                                          "COURSEMACROS": course_macros, "SPIRALWARMUP": spiral}),
@@ -265,15 +267,21 @@ def main() -> None:
                 subs = {**base, "DOCTITLE": DOC_TITLE[comp], "NAMEROW": name_row}
                 write(dest / key / "main.tex", render("worksheet_key.tex", subs), args.force)
 
-    print("\nnext:")
-    print(f"  1. Author the skeletons (see references/components.md).")
+    # Numbered at runtime so the list stays 1..n whatever was scaffolded.
+    steps = ["Author the skeletons (see references/components.md)."]
     if prefab:
-        print(f"  2. Drop supplied PDFs as main.pdf in: {', '.join(sorted(prefab))}")
-    print(f"  3. Build:  make -C {unit_dir}/{lesson_dir} all")
+        steps.append(f"Drop supplied PDFs as main.pdf in: {', '.join(sorted(prefab))}")
+    steps.append(f"Build:  make -C {unit_dir}/{lesson_dir} all")
+    steps.append(f"Gate it:  make -C {unit_dir}/{lesson_dir} check")
     if scaffold_tests:
-        print(f"  4. Author the unit tests in {unit_dir}/tests/ and {unit_dir}/test_keys/,")
-        print(f"     then publish the sample test:  make -C {unit_dir}/tests all && "
-              f"make -C {unit_dir}/test_keys all")
+        steps.append(f"Author the unit tests in {unit_dir}/tests/ and {unit_dir}/test_keys/,\n"
+                     f"     then publish the sample test:  make -C {unit_dir}/tests all && "
+                     f"make -C {unit_dir}/test_keys all")
+    print("\nnext:")
+    for i, step in enumerate(steps, 1):
+        print(f"  {i}. {step}")
+    print("\n  Homework is DeltaMath: no homework/ was scaffolded. Add ,homework to")
+    print("  --components only for a lesson the user has explicitly overridden.")
 
 
 if __name__ == "__main__":

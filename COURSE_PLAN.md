@@ -16,6 +16,28 @@ Pacing target: 18–22 class periods per unit (55-minute meetings).
 knowledge. Lessons marked **New** have no single CED topic; they exist to slow the ramp
 for the non-honors track or to add calculus-readiness material.
 
+## Pedagogy (August 2026)
+
+The course uses **traditional gradual release**, not experience-first. Each 55-minute
+period runs:
+
+> warm-up → hook → **I Do** (model) → **We Do** (guided) → **You Do** (independent)
+> → group activity → **debrief** → exit ticket
+
+Every lesson plan opens with a *Lesson Flow — Gradual Release (55 minutes)* box whose
+minutes sum to exactly 55, and each part of its Lesson box is tagged with the release
+phase and names who is holding the pen. The **debrief is teacher-facing only** — there is
+no `debrief/` component; the student packet still closes with the exit ticket.
+
+**Homework is DeltaMath** for most lessons: no `homework/` directory, and the packet cover
+carries a DeltaMath row with an assignment slot, a due-date slot, and its own score slot
+below an *In-Class Total*. A lesson gets printed homework only when DeltaMath has no
+practice for its topic, and only when that override is asked for.
+
+Lessons 1.0 and 1.1 are the reference implementations. Lessons still marked **moved**, and
+1.2–1.7, remain on the older shape until they are reauthored — they still ship printed
+homework and untagged lesson parts.
+
 ## How this restructure was performed (August 2026)
 
 The previous tree mirrored the CED directly: 4 units, 58 lessons. This restructure:

@@ -33,38 +33,92 @@ AP tags and list review topics):
    anywhere in the title block.
 2. **Primary Objective** — a `tcolorbox` (`lilac`/`plum`). One or two sentences restating the
    CED Learning Objectives as student-facing aims. This CED has no "Big Idea" tag.
-3. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
+3. **Lesson Flow — Gradual Release (55 minutes)** — `skillbox{lilac}`, a three-column
+   `tabularx` (Phase / Min / what students are doing and where it lives) over the eight
+   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Group Activity, Debrief, Exit
+   Ticket. **The Min column must sum to exactly 55.** Close with an "If the clock slips"
+   paragraph naming what to cut first and what to protect. This box sits *above* Priority
+   Ideas & Skills so the clock is the second thing the teacher reads.
+4. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
    skills, labelled `\textbf{AP Skill x.y}` (e.g. "AP Skill 2.B --- Construct equivalent
    representations"), matching every authored lesson. Right: "Key Understandings" paraphrased
    from the EKs.
-4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
+5. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); lists the prerequisite skills the warm-up reviews, **in words**. Text-only — never embed a warm-up thumbnail.
-6. **Hook** — `skillbox{sky}`: the entry question or scenario.
-7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{sky}` with `\begin{multicols}{2}`;
-   the worked instructional progression, bolding the questions you'll pose.
-8. **Explicit Instruction: <technique>** — one `skillbox{sky}` per technique, two columns:
+6. **Activate Prior Knowledge & Spiral Review** — `skillbox{lilac}` (**not** `fixedskillbox` — it is unbreakable and overflows); lists the prerequisite skills the warm-up reviews, **in words**. Text-only — never embed a warm-up thumbnail.
+7. **Hook** — `skillbox{lilac}`: the entry question or scenario.
+8. **Lesson — I Do / We Do / You Do** — `skillbox{lilac}` with `\begin{multicols}{2}`, titled
+   with the phases (**not** plain `Lesson`). Four or five parts, each opening with its phase in
+   CAPS, the part title, and its minutes, then a required italic line naming the guided-notes
+   section it covers **and who is holding the pen**:
+
+   ```latex
+   \textbf{I DO --- Part 1: Quantities That Change Together} (8 min)
+
+   \textit{Guided notes \S1. Teacher works; students watch and annotate. Nothing is
+   cold-called in this phase.}
+   ```
+
+   The three pen-holding formulas: I Do — "teacher works; students watch and annotate; nothing
+   is cold-called in this phase"; We Do — "class fills the blanks together; cold-call every
+   one"; You Do — "students work alone; circulate and say nothing a neighbor could say
+   instead." A part with no such line is not tagged. The part minutes must agree with the
+   Lesson Flow box.
+9. **Explicit Instruction: <technique>** — one `skillbox{lilac}` per technique, two columns:
    numbered steps on the left, a worked example (often with a Desmos screenshot) on the right.
-9. **Active Monitoring** — `skillbox{redbox}`: what to circulate and check; cold-call prompts.
-10. **Group Work & Differentiation** — `skillbox{redbox}`: a `multicols{3}` with **Tier R —
+10. **Active Monitoring** — `skillbox{redbox}`: what to circulate and check; cold-call prompts.
+    Open it by naming the two unsupervised stretches — "Circulate during the **You Do**
+    phase and the group activity" — not "while students work on guided notes and
+    practice."
+11. **Group Work & Differentiation** — `skillbox{redbox}`: a `multicols{3}` with **Tier R —
     Remediate / Tier A — Approaching Proficiency / Tier E — Extension** bullet lists that
     mirror the activity tiers.
-11. **Individual Work & Assessment** — `skillbox{redbox}`: exit-ticket items + an SOL/AP-style
-    MC, with a note on collecting and using results.
-12. **Reinforcement & Extension** — `skillbox{goldbox}`: homework overview, an extension, and a
-    preview of the next lesson.
-13. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order
-    (Warm-Up, Guided Notes, Group Activity, Exit Ticket, Homework): pacing, common errors, what
-    to look for. This is the **only** place teacher-only prose goes — never in a `_key`.
+12. **Debrief (N min)** — `skillbox{redbox}`, sitting **between** Group Work and Individual
+    Work. **Teacher-facing only — there is no `debrief/` student component.** Three timed
+    moves as an `enumerate`: (a) *share out the activity*, one answer per tier and not a full
+    review, so Tier R students still hear the Tier E result; (b) *name the headline* — the
+    day's central sentence in italics, said by the teacher and echoed back by the class,
+    immediately before the exit ticket asks for it in writing; (c) *point forward*, or read a
+    read-only notes section aloud here rather than during notes. Close with a
+    `\textbf{Do not}` line: no re-teaching, no new questions, no starting the exit ticket
+    early.
+13. **Individual Work & Assessment (5 min)** — `skillbox{redbox}`: exit-ticket items + an
+    SOL/AP-style MC, with a note on collecting and using results.
+14. **Reinforcement & Extension** — `skillbox{goldbox}`. Opens
+    `\textbf{Homework --- DeltaMath.}` and states **target coverage** — the item types the
+    DeltaMath set should hit — rather than numbered problems. Then an extension and a preview
+    of the next lesson. On an overridden lesson, a printed-homework overview replaces the
+    DeltaMath paragraph.
+15. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
+    Warm-Up, Guided Notes, Group Activity, **Debrief**, Exit Ticket, **Homework — DeltaMath**.
+    Pacing, common errors, what to look for. This is the **only** place teacher-only prose
+    goes — never in a `_key`. The Debrief note says why those minutes are worth protecting and
+    what to borrow from instead; the Homework note tells the teacher to read the DeltaMath
+    report **by item type, not overall score**, and names which item type means the lesson
+    missed.
 
 ## Cover
 
 `cover/main.tex` — student-facing front page of the packet. No key. Structure:
-- Full-bleed navy banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
+- Full-bleed plum banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, **one target per Learning Objective**.
-- `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score blank)
-  with a Total row. Keep the rows aligned with the components you actually scaffolded.
+- `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score
+  blank). Keep the rows aligned with the components you actually scaffolded. The four
+  in-class components close with an **In-Class Total** row; then, below it, the DeltaMath
+  homework row with its own three slots:
+
+  ```latex
+  4 & Exit Ticket & ... & \blank{1.2cm} \\
+  \midrule
+    & \multicolumn{2}{r}{\textbf{In-Class Total}} & \blank{1.2cm} \\
+  \midrule
+  \rowcolor{lilac}
+  5 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
+  ```
+
+  On a lesson the user overrode to get printed homework, make row 5 an ordinary component
+  row and fold it back above a plain **Total**.
 - Optionally mirror the lesson plan's Priority Ideas & Vocabulary for student reference.
 
 ## Warm-up
@@ -108,6 +162,12 @@ work space. Key fills with `\ans` (multi-step answers in a `work` block). Graded
 blanks don't").
 
 ## Homework
+
+**Homework is DeltaMath, and `homework/` is not scaffolded by default.** Most lessons have
+no printed homework at all: the cover carries a DeltaMath row (see [Cover](#cover)) and the
+lesson plan's Reinforcement & Extension names target item types. Author the directories
+below **only** when the user overrides a lesson because DeltaMath has no practice for the
+topic — then pass `--components ...,homework` to the scaffolder.
 
 `homework/` (+ `homework_key/`) — independent practice + stretch.
 `\pageheader{...}{Homework}` — **no name row** (namestrip); a numbered practice set, an
