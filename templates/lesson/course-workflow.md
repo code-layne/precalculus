@@ -1,11 +1,10 @@
-# CED Workflow — Precalculus
+# Course Workflow — Precalculus
 
-Use this to turn a CED **Topic** into a lesson's objectives, skills, and learning targets.
-The College Board documents live in `spec/` (files named `ap-precalculus-*.pdf` on disk).
-
-**The course is called "Precalculus", never "AP Precalculus."** The CED is the content source,
-but no course-facing text carries an AP prefix on the course name. Other AP terminology stays —
-"AP-style multiple choice", "AP Skill", "AP Exam weighting" are all fine.
+The course-specific companion to the shared skill's `references/ap-workflow.md` and
+`references/standards-workflow.md` (`~/.claude/skills/lesson-planning/`). Those two files say
+how to read a CED and how to author from a title + description + standards in general; this
+file says what is different *here*. Read `LESSON_SHAPE.md` §3 first — it is the summary; this
+is the detail.
 
 ## Read `COURSE_PLAN.md` first — the CED is not the lesson map
 
@@ -15,32 +14,46 @@ trigonometric core is reinforced and the parameters–vectors–matrices materia
 a single closing unit.
 
 `COURSE_PLAN.md` is authoritative. For the target lesson it gives the title, the focus, the
-status (**moved** = body not yet reauthored, **new** = skeleton awaiting authoring), and the
-**"CED n.m"** topic that drives it. Look the lesson up there, then open the CED at that topic.
+status (**moved** = body not yet reauthored, **new** = skeleton awaiting authoring, **authored**
+= written to the new scope), and the **"CED n.m"** topic that drives it. Look the lesson up
+there, then open the CED at that topic. **The lesson title is the one in `COURSE_PLAN.md`, not
+the CED topic title.**
 
 Lessons marked **New** have **no CED topic** — they exist to slow the ramp or to add
-calculus-readiness material. Author those through `references/standards-workflow.md` instead,
-using the prerequisite skills as the "standards."
+calculus-readiness material. Author those through the shared `references/standards-workflow.md`
+instead, using the prerequisite skills being re-activated (or the calculus-readiness idea the
+lesson exists to add) as the "standards"; `COURSE_PLAN.md`'s focus column is the starting
+point. A New lesson uses the same lesson-plan skeleton; it simply fills Priority Ideas & Skills
+with the prerequisite skills and carries no CED tags (the Primary Objective notes
+"no CED topic", as `unit01/lesson01` does).
+
+## The course is called "Precalculus", never "AP Precalculus"
+
+The College Board CED is the content backbone, but **no course-facing text carries an AP prefix
+on the course name**: not the cover, not a page header, not a lesson plan, not the deck, not
+these docs. Other AP terminology is fine and should stay — "AP-style multiple choice",
+"AP Skill 2.B", "AP Exam weighting". The rule is about the *course name* only. The
+`spec/ap-precalculus-*.pdf` filenames stay as they are on disk.
 
 ## The spec documents
 
 | File | Use |
 | --- | --- |
-| `ap-precalculus-course-at-a-glance.pdf` | Structural backbone: the four CED units, pacing + exam weighting, ordered topics, and each topic's Mathematical Practice tags. **Read this first.** |
-| `ap-precalculus-course-and-exam-description.pdf` | The full CED (large). Contains per-topic **Required Course Content**: Learning Objectives and Essential Knowledge statements. The authoring source. |
-| `ap-precalculus-ced-clarification-and-guidance.pdf` | Scope limits and notation clarifications — read the relevant pages when a topic's boundary is ambiguous. |
-| `ap-precalculus-course-overview.pdf`, `...poster.pdf` | Supplementary framing. Optional. |
+| `spec/ap-precalculus-course-at-a-glance.pdf` | Structural backbone: the four CED units, pacing + exam weighting, ordered topics, and each topic's Mathematical Practice tags. **Read this first.** |
+| `spec/ap-precalculus-course-and-exam-description.pdf` | The full CED (large). Contains per-topic **Required Course Content**: Learning Objectives and Essential Knowledge statements. The authoring source. |
+| `spec/ap-precalculus-ced-clarification-and-guidance.pdf` | Scope limits and notation clarifications — read the relevant pages when a topic's boundary is ambiguous. |
+| `spec/ap-precalculus-course-overview.pdf`, `...poster.pdf` | Supplementary framing. Optional. |
 
 For these text-layer PDFs, `pdftotext -layout` is sufficient; rasterize only if a topic's
 two-column layout is ambiguous.
 
 ## The framework vocabulary
 
-This CED has **no "Big Ideas."** Its cross-cutting dimension is the three
-**Mathematical Practices**, which spiral across every topic.
+This CED has **no "Big Ideas"** and no Enduring Understandings. Its cross-cutting dimension is
+the three **Mathematical Practices**, which spiral across every topic.
 
 **In lesson plans these are written `AP Skill x.y`** — e.g. `\textbf{AP Skill 2.B} --- Construct
-equivalent representations`. That is the label all 60 authored lessons use; match it rather than
+equivalent representations`. That is the label every authored lesson uses; match it rather than
 writing "Mathematical Practice 2.B". The course *name* drops its AP prefix; this framework term
 keeps its own.
 
@@ -66,29 +79,32 @@ written; do not renumber them to match the 8-unit map.
 3. **Pull the topic's Required Course Content from the CED.** Locate the topic page (search the
    extracted text for the topic number, e.g. `1.4`) and capture every **Learning Objective**
    (code + sentence) and every **Essential Knowledge** statement under it (code + sentence).
-4. **Normalize the text.** CED extraction injects control characters (e.g. `` for a
-   non-breaking space), hyphenates across line breaks, and interleaves the two columns — strip
+4. **Normalize the text.** CED extraction injects control characters (e.g. a bell character for
+   a non-breaking space), hyphenates across line breaks, and interleaves the two columns — strip
    control chars, rejoin wrapped lines, and separate the LO column from the EK column before
    using the text.
 5. **Confirm the mapping with the user** before authoring: show the topic, the LO/EK list, and
    the proposed lesson title. A CED topic often spans more than one lesson in this course
-   (that is the point of the 8-unit spread) — let the user decide the granularity.
+   (that is the point of the 8-unit spread), and some lessons absorb two topics — let the user
+   decide the granularity.
 
 ## Mapping CED content into the lesson
 
 | Lesson element | Source |
 | --- | --- |
 | Lesson title (`\LessonNumberName`) | The title from `COURSE_PLAN.md` — **not** the CED topic title |
-| **Primary Objective** (lesson plan) | Restate the LOs as student-facing aims |
-| **Priority Ideas & Skills** (lesson plan, gold box) | Left: the Mathematical Practice + specific sub-skill (e.g. "Practice 2 — Multiple Representations: construct equivalent graphical and analytical forms (2.B)"). Right: "Key Understandings" paraphrased from the EKs |
+| **Primary Objective** (lesson plan) | Restate the LOs as student-facing aims; no Big Idea tag exists to add |
+| **Priority Ideas & Skills** (lesson plan, gold box) | Left: `\textbf{AP Skill x.y} --- <sub-skill name>`. Right: "Key Understandings" paraphrased from the EKs, with the target misconception named |
 | **Vocabulary, Concepts & Theorems** | Terms named in the EKs |
-| **Learning Targets** (cover, "I can…") | One target per Learning Objective, reworded as "I can …" |
+| **Learning Targets** (cover, "I can…") | One target per Learning Objective, reworded as "I can …", naming the formal term in bold |
 | Standards line | The LO/EK codes addressed (e.g. `1.4.A`, `1.4.A.1`) — recorded in the lesson plan |
-| Guided notes / exit ticket / homework | Practice that exercises the named Practice against the EK statements; mirror the cognitive level of the LO verbs (describe, identify, construct, determine, compare, support) |
+| Guided notes / exit ticket | Practice that exercises the named Practice against the EK statements; mirror the cognitive level of the LO verbs (describe, identify, construct, determine, compare, support). The notes' `\S` sections carry I Do and We Do; the practice box is the You Do; the exit ticket is the individual check |
+| DeltaMath homework (plan, Reinforcement & Extension) | Target coverage stated by **item type**, drawn from the same EKs |
 
 Keep wording **paraphrased**, not copied verbatim from the CED — the lesson should restate the
-framework in teaching language, with the codes as the audit trail. Scaffold for the non-honors
-track: a context first, small numbers, one new idea at a time, worked examples.
+framework in teaching language, with the codes as the audit trail. **Scaffold for the
+non-honors track:** a context first, small numbers, one new idea at a time, worked examples, and
+a gentler ramp than the CED's pacing implies.
 
 ## Worked fragment (CED Topic 1.4)
 
@@ -112,5 +128,6 @@ Produces, in the lesson plan:
 and, on the cover: a learning target "I can find where a polynomial's rate of change switches
 direction, and say what that point means." Standards addressed: `1.4.A`, `1.4.A.5`.
 
-For the rest of the document structure, follow `references/components.md`; for macros and boxes,
-`references/conventions.md`.
+For the rest of the document structure, follow `templates/lesson/components.md`; for macros
+and boxes, the shared skill's `references/conventions.md`; for everything course-specific,
+`LESSON_SHAPE.md`.
