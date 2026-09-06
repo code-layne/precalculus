@@ -1,10 +1,10 @@
 # Components
 
-The spec for authoring each file after scaffolding. The scaffolder (`scripts/new_lesson.py`)
+The spec for authoring each file after scaffolding. The scaffolder (`~/.claude/skills/lesson-planning/scripts/new_lesson.py`)
 gives you a correctly-preambled skeleton with TODO markers; this file says what fills them.
 **Always also open a real built lesson in the same course as the gold reference** — these specs
 summarize the pattern, but the live project is authoritative. For macros and boxes see
-`references/conventions.md`.
+the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`); for what is course-specific, `LESSON_SHAPE.md` at the repository root.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [Guided notes](#guided-notes) · [Exit ticket](#exit-ticket) ·
@@ -14,7 +14,7 @@ Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) 
 General rules:
 - Student components preamble with `-article` + `-boxes`; keys with `-article` + `-key`.
 - Keep the **key structurally identical** to its blank — it is the blank with answers filled in.
-- **Author to the five conventions from the start** (full spec in `references/conventions.md`):
+- **Author to the five conventions from the start** (full spec in the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`)):
   worked solutions in byte-identical `\begin{work}` blocks (**work rule**); teacher prose in the
   lesson plan as `\begin{teachernote}[Component]`, never in a `_key` (**teachernote**); no
   name/date/period row on any component but the cover (**namestrip**); `\par\vspace{2pt}` after a
@@ -212,7 +212,7 @@ There is no key toggle — every key is a separate file under `<comp>_key/`:
 ## Unit tests (summative assessments)
 
 Unit-level, not per-lesson — scaffolded once per unit under `unitXX/tests/` and
-`unitXX/test_keys/` (see `references/build.md`). Author **two blank tests and their two keys**,
+`unitXX/test_keys/` (see the shared skill's `references/build.md` (`~/.claude/skills/lesson-planning/`)). Author **two blank tests and their two keys**,
 all with `\pageheader{Unit X: <Title>}{...}` + `\namedateperiod` — tests are taken in a testing
 setting, not stapled behind a lesson cover, so they keep the name row:
 
