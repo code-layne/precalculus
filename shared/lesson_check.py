@@ -243,7 +243,7 @@ def main() -> None:
     width = max(len(w) for w, _ in rep.failures)
     for where, msg in rep.failures:
         print(f"   {where:<{width}}  {msg}", file=sys.stderr)
-    print("\n   See .claude/skills/lesson-planning/references/conventions.md", file=sys.stderr)
+    print("\n   See ~/.claude/skills/lesson-planning/references/conventions.md (course style notes: LESSON_SHAPE.md §4)", file=sys.stderr)
     sys.exit(1)
 
 
