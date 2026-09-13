@@ -138,28 +138,45 @@ never embed a thumbnail of the warm-up.
 
 ## Guided notes
 
-`notes/` (+ `notes_key/`) — the student's fill-in notes. Structure:
-- `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}` — **no name row** (namestrip).
-- `objectivebox` — "By the end of this lesson, I will be able to…" with `\writeline`s for
-  students to fill (the key uses `\ansline{...}`, one per Learning Objective).
-- `vocabbox` — `\termblanklong{Term}` per key term (the key follows each with `\ansline{...}`).
-  If the box opens with an intro sentence, end it with `\par\vspace{2pt}` in **both** files —
-  without the `\par` the sentence and the first term collide (vocabpar).
-- `hookbox` — the same hook as the plan, with write-lines for student responses.
-- Direct-instruction sections in `notesbox{Title}` with blanks (`\blank`, `\writeline`) at the
-  points where students record steps/definitions/results.
-- `practicebox` — **required, and it is the You Do phase.** With no activity sheet, this is
-  where independent work happens, so budget it for the 11–14 minutes the flow table gives
-  You Do: 3–4 items that escalate, ending with the one a finisher should still find hard
-  (what a Tier E prompt used to be). Students work it alone while the teacher circulates;
-  the plan's Differentiation box says what the teacher does at each item.
+`notes/` (+ `notes_key/`) — **the direct-instruction centrepiece, 34 minutes**, in the **Main
+Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; density rules of
+2026-09-12). `\pageheader{...}` (no name row — Namestrip), the `vocabbox`, the `hookbox` (it stays), then **one
+`guidednotes` table** set in `\small`. Ported from AP Statistics 2026-09-12. **3–4 pages** at
+10pt, **12–19 numbered problems**. The page belongs to the student's pen.
 
-**There is no `activity/` component.** Gradual release lives entirely in the notes — the
-`notesbox` sections carry I Do and We Do, the `practicebox` carries You Do. Do not scaffold
-an activity sheet or reintroduce Tier R / A / E `tcolorbox`es inside the notes; tiering is
-now teacher circulation, specified in the plan's Differentiation box. (The build system
-still merges an `activity/` if one exists, which is how lessons not yet reauthored keep
-building — that is backward compatibility, not a component to author.)
+- `vocabbox` — `\termblanklong{Term}` per key term (the key follows each with `\ansline{...}`);
+  end an intro sentence with `\par\vspace{2pt}` in both files (vocabpar). Then the `hookbox`,
+  the same hook as the plan, with write-lines.
+- **No `objectivebox`** — the targets are on the cover. No `notesbox`, no `practicebox`.
+- `guidednotes` — the two-column table, *Main Ideas / Questions* | *Notes*, **four to five
+  rows**, each `\mainidea[small lead]{Label} & ... \\ \hline`. The label is one short word or
+  two (uppercased by the macro; a single word over ten letters overflows). The Notes cell holds,
+  in order:
+  1. **One or two complete printed sentences** — the definition, read. Never a sentence with
+     words punched out. A `\stepnum{n}` list for a procedure.
+  2. **One large pre-drawn display** (TikZ, `scale` 0.8–1.0) the student reads — or annotates
+     with `\labelbox{W}{}` ("This is a ___", an arrow's label). Where the idea deserves it, an
+     *In your own words* line with a `\writespace{1.6cm}{}`.
+  3. `\notesprompt{…}` and a **two-across `probgrid`** (`|Y|Y|`, never three across) of
+     `\pcell{n}{statement}{H}{}` cells, **H = 1.8–2.6 cm** of answer space each, 2–4 problems
+     per row.
+- **Blanks:** a `\blank{}` only where a single word or number *is* the answer — a table to fill,
+  a display to name. Budget a handful per lesson. Mid-sentence blanks are banned.
+- **The I Do / We Do split is row by row**: the teacher reads the definition, marks up the
+  display, and works the first problem of each grid; the class works the rest with the pen in
+  their hand. **The trap and the crux are problems in a grid**, in the last instruction row.
+  **The last row is the You Do — required**: `\mainidea[You do, alone]{Its Title}`, 3–4 problems
+  that escalate, ending with the one a finisher should still find hard, prompt `On your own. Show
+  your work.`; students work it alone for the 11–14 minutes the flow table gives while the teacher
+  circulates.
+- **Packing** (a table row cannot break across pages): the figure gets its own sub-row (`\\`
+  then `& …`), and **each grid row is its own sub-row** — close the `probgrid`, `\\ &`, reopen
+  as `probgrid*` (no top rule). `\\` inside a cell ends the row: break lines with `\par`.
+- **Every display is pre-drawn** and read; students construct only by filling a table.
+- **The key mirrors the blank byte for byte** except `-key` for `-boxes`, the header's
+  `--- Answer Key`, the vocabulary rows, `\blank`→`\ans`, and the answer argument of each
+  `\pcell`, `\writespace`, `\labelbox`. Keep every answer shorter than its space. Prove the
+  page counts match.
 
 ## Exit ticket
 

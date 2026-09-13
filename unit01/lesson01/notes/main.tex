@@ -1,4 +1,22 @@
 %! Function Fundamentals — Unit 1, Lesson 1.1 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% DENSITY: a \blank{} only where a word IS the answer (the direction table); no mid-sentence
+% blanks; two problems across; 2–2.6cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, while the teacher circulates.
+% The crux is row 4, TWO DIRECTIONS: problems 12 and 13 ask "find f(3)" and "solve f(x) = 3"
+% off the same graph and get DIFFERENT answers (3, then 1 and 3). Problem 16 transfers it.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
+% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -9,19 +27,6 @@
 \pageheader{Unit 1, Lesson 1.1}{Guided Notes}
 
 \vspace{0.12in}
-
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Read and write function \blank{2.6cm}, and name the three facts a
-        statement like $f(3) = 7$ carries.
-  \item \blank{2.6cm} a function given by a formula, a table, or a graph.
-  \item Tell an \textit{evaluate} question from a \blank{1.6cm} question.
-  \item State the \blank{2.2cm} and \blank{2.2cm} of a function.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
 
 \boxguard
 \begin{vocabbox}
@@ -54,247 +59,214 @@ and does an input have to be a number?
 \writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
+\small
+\begin{guidednotes}
+% ── ROW 1: function notation — naming the machine ────────────────────────────
+\mainidea[Naming the machine]{Notation} &
+A function has three parts, and the symbol $f(x)$ names all three at once: $f$ is the
+\textbf{name} of the machine, $x$ is the \textbf{input} that goes in the slot, and $f(x)$ is
+the \textbf{output} that comes out. It is read ``$f$ of $x$'' --- \textbf{never} ``$f$ times
+$x$.'' The parentheses hold the input; they do not multiply.
 
-\boxguard
-\begin{notesbox}{1. Function Notation --- Naming the Machine}
-A function has three parts, and the notation $f(x)$ names all three at once:
-
-\begin{itemize}[itemsep=4pt]
-  \item $f$ is the \blank{3cm} of the function (the machine itself),
-  \item $x$ is the \blank{3cm} (what goes in the slot),
-  \item $f(x)$ is the \blank{3cm} (what comes out).
-\end{itemize}
-
-$f(x)$ is read ``$f$ \blank{1.4cm} $x$.'' It is \textbf{not} $f$ times $x$ ---
-those parentheses hold the input, they do not multiply.
-
-\medskip
-\textbf{In context.} A rideshare app charges a flat fee plus a rate per mile:
-$F(m) = 2.50 + 1.75m$.
-
-\begin{itemize}[itemsep=4pt]
-  \item The machine's name is \blank{1.4cm}; the input $m$ stands for
-        \blank{3.4cm}; the output $F(m)$ stands for \blank{3.6cm}.
-  \item So $F(4)$ asks: what does a \blank{1.2cm}-mile ride cost?
-\end{itemize}
-
-\textbf{One statement, three facts.} The single statement $f(3) = 7$ says:
-
-\begin{itemize}[itemsep=4pt]
-  \item the input is \blank{1.4cm}, \quad the output is \blank{1.4cm},
-  \item and the point ( \blank{1.2cm} , \blank{1.2cm} ) is on the graph of $f$.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{2. Evaluating from a Formula}
-To \textbf{evaluate} a function, drop the input into the slot ---
-\textit{always inside parentheses} --- and simplify. The slot does not care what
-you put in it:
-\[ f(x) = 5x - 8 \qquad\longrightarrow\qquad f(\square) = 5(\square) - 8 \]
-
-\textbf{Example 1.} Find $f(3)$.
-
-\begin{work}
-  f(3) &= 5(3) - 8 \\
-       &= 7
-\end{work}
-
-\textbf{Example 2.} Find $f(-2)$.
-
-\begin{work}
-  f(-2) &= 5(-2) - 8 \\
-        &= -18
-\end{work}
-
-\textbf{Example 3.} Let $g(x) = x^2 + 3x$. Find $g(-4)$.
-
-\begin{work}
-  g(-4) &= (-4)^2 + 3(-4) \\
-        &= 16 - 12 \\
-        &= 4
-\end{work}
-
-\textbf{Watch the trap:} $(-4)^2 = $ \blank{1.4cm}, but $-4^2 = $
-\blank{1.4cm}. Writing the parentheses \textit{first}, empty, is what saves you.
-
-\medskip
-Evaluating never changes the rule --- it just runs the machine \blank{1.6cm}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{3. Two Directions: Evaluate vs.\ Solve}
-Every question in this lesson runs in one of two directions. Read the arrow
-before you compute.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|p{0.20\linewidth}|p{0.34\linewidth}|p{0.34\linewidth}|}
-\hline
- & \textbf{Find $f(2)$} & \textbf{Solve $f(x) = 2$} \\
-\hline
-You are given & the \blank{2cm} & the \blank{2cm} \\
-\hline
-You are asked for & the \blank{2cm} & the \blank{2cm} \\
-\hline
-How many answers & exactly one & \blank{3.2cm} \\
-\hline
-\end{tabular}
-\smallskip
-
-\textbf{From a table.} Each column is one input--output pair.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 1 & 2 & 3 & 4 & 5 \\
-\hline
-$s(x)$ & 12 & 9 & 9 & 6 & 3 \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{itemize}[itemsep=4pt]
-  \item $s(4) = $ \blank{1.4cm} \quad (input 4 --- read down)
-  \item Solve $s(x) = 9$: \quad $x = $ \blank{1.2cm} and $x = $ \blank{1.2cm}
-        \quad (output 9 --- read up, twice)
-\end{itemize}
-
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Reading Both Directions off a Graph}
-Nothing new happens here --- the two directions are the same. The only change is
-that the input--output pairs come off a picture instead of a row.
-
+\vspace{4pt}
+A rideshare app charges a flat fee plus a rate per mile: $F(m) = 2.50 + 1.75m$.
 \begin{center}
-\begin{tikzpicture}[x=0.6cm, y=0.5cm]
+\begin{tikzpicture}[scale=0.95, >=stealth]
+  \node[font=\small] (in) at (0,0) {input $m$};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=4.2cm,
+        minimum height=1.5cm, align=center, font=\small] (box) at (4.2,0)
+        {\textbf{\Large\color{plum} $F$}\\ multiply by 1.75, then add 2.50};
+  \node[font=\small] (out) at (8.6,0) {output $F(m)$};
+  \draw[->, very thick, plum] (in) -- (box);
+  \draw[->, very thick, plum] (box) -- (out);
+  \node[font=\scriptsize\itshape, above] at (1.55,0.12) {goes in};
+  \node[font=\scriptsize\itshape, above] at (7.05,0.12) {comes out};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+$m$ stands for \labelbox{2.8cm}{}\qquad $F(m)$ stands for \labelbox{3.2cm}{}
+\\
+& \notesprompt{Read each statement as a sentence: name the input, the output, and the point on the graph.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{$f(3) = 7$}{2.0cm}{} &
+\pcell{2}{$F(4)$, for the rideshare fare above. What is it asking for? Find it.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: evaluating from a formula — the empty slot ────────────────────────
+\mainidea[From a formula]{Evaluating} &
+To \textbf{evaluate} a function, drop the input into the slot --- \emph{always inside
+parentheses} --- and simplify. Evaluating never changes the rule; it just runs the machine once.
+\textbf{Write the parentheses first, empty, then fill them.} That habit is what saves you when
+the input is negative.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.95, >=stealth]
+  \node[font=\large] (rule) at (0,0) {$f(x) = 5x - 8$};
+  \node[font=\large] (slot) at (5.6,0) {$f(\square) = 5(\square) - 8$};
+  \draw[->, very thick, plum] (rule) -- node[above, font=\scriptsize\itshape] {empty the slot} (slot);
+  \node[font=\large] (fill) at (5.6,-1.5) {$f(-2) = 5(-2) - 8$};
+  \draw[->, very thick, plum] (slot) -- node[right, font=\scriptsize\itshape] {then fill it} (fill);
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\small, align=left]
+        at (0,-1.5) {\textbf{The trap:} $(-4)^2$ and $-4^2$\\ are \emph{not} the same number.};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Evaluate. Show the slot filled before you simplify.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{$f(x) = 5x - 8$. Find $f(3)$.}{2.0cm}{} &
+\pcell{4}{$f(x) = 5x - 8$. Find $f(-2)$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{$g(x) = x^2 + 3x$. Find $g(-4)$.}{2.0cm}{} &
+\pcell{6}{Compute $(-4)^2$ and $-4^2$. Which one did problem 5 need, and what made the difference?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: domain and range ──────────────────────────────────────────────────
+\mainidea[Every input,]{Domain \& Range} &
+The \textbf{domain} is the set of all inputs a function uses; the \textbf{range} is the set
+of all outputs it produces, with a repeated output listed once. From a graph, read the domain
+left to right and the range bottom to top; write either as an inequality, $0 \le x \le 8$, or
+with brackets, $[\,0, 8\,]$ --- a square bracket means the endpoint \textbf{is} included.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.4cm, >=stealth]
   \draw[linegray, very thin, step=1] (0,0) grid (8,7);
   \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
   \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
   \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
   \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,5) -- (2,1);
-  \draw[very thick, plum] (2,1) -- (5,7);
-  \draw[very thick, plum] (5,7) -- (8,4);
+  \draw[very thick, plum] (0,5) -- (2,1) -- (5,7) -- (8,4);
   \fill[plum] (0,5) circle (2.5pt);
   \fill[plum] (8,4) circle (2.5pt);
+  % domain bracket under the x-axis
+  \draw[very thick, goldacc, |-|] (0,-1.1) -- (8,-1.1);
+  \node[below, font=\scriptsize\bfseries\color{goldacc}] at (4,-1.2) {left to right: every $x$ the graph uses};
+  % range bracket left of the y-axis
+  \draw[very thick, redacc, |-|] (-1.3,1) -- (-1.3,7);
+  \node[rotate=90, above, font=\scriptsize\bfseries\color{redacc}] at (-1.5,4) {bottom to top: every height};
 \end{tikzpicture}
 \end{center}
+\vspace{2pt}
+Gold bracket: \labelbox{2.0cm}{}\qquad Red bracket: \labelbox{2.0cm}{}
+\\
+& \notesprompt{State the domain and the range.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{$f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\}$. Domain and range, as lists.}{2.0cm}{} &
+\pcell{8}{The graph above: domain and range as inequalities, then again with brackets.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{$k(x) = \dfrac{8}{x + 3}$. Which input is forbidden, and why? Write the domain in words.}{2.2cm}{} &
+\pcell{10}{In problem 7 the output 6 appears twice. How many times is it listed in the range? Is $f$ still a function?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — evaluate vs. solve, the two directions ─────────────────
+\mainidea[Evaluate vs.\ solve]{Two Directions} &
+Every question in this lesson runs in one of two directions, and the same graph answers both.
+\textbf{Read the arrow before you compute.}
 
-\begin{itemize}[itemsep=4pt]
-  \item $f(2) = $ \blank{1.4cm} \quad (start at $x = 2$, walk \textit{up} to the
-        graph, read across)
-  \item $f(6) = $ \blank{1.4cm}
-  \item Solve $f(x) = 3$: \quad $x = $ \blank{1.2cm} and $x = $ \blank{1.2cm}
-        \quad (start at 3 on the \textit{output} axis, walk across)
-  \item Solve $f(x) = 5$: \quad $x = $ \blank{1cm}, \blank{1cm}, and
-        \blank{1cm} \quad --- three inputs share one output, and $f$ is
-        \textit{still} a function. (Many-to-one, from Lesson 1.0.)
-\end{itemize}
-\end{notesbox}
+\vspace{3pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|p{0.25\linewidth}|p{0.31\linewidth}|p{0.31\linewidth}|}
+\hline
+ & \textbf{Find $f(2)$} & \textbf{Solve $f(x) = 2$} \\
+\hline
+You are given & the \blank{1.8cm} & the \blank{1.8cm} \\
+\hline
+You are asked for & the \blank{1.8cm} & the \blank{1.8cm} \\
+\hline
+How many answers & exactly one & \blank{3.0cm} \\
+\hline
+\end{tabular}
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.4cm, >=stealth]
+  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,5) -- (2,1) -- (5,7) -- (8,4);
+  \fill[plum] (0,5) circle (2.5pt);
+  \fill[plum] (8,4) circle (2.5pt);
+  % evaluate path: input 2, walk up, read across
+  \draw[->, very thick, goldacc, dashed] (2,-0.05) -- (2,1) -- (0.1,1);
+  \node[font=\scriptsize\bfseries\color{goldacc}, below] at (2,-0.95) {start here};
+  % solve path: output 3, walk across, drop down twice
+  \draw[->, very thick, redacc, dashed] (0.05,3) -- (1,3) -- (1,0.1);
+  \draw[->, very thick, redacc, dashed] (1,3) -- (3,3) -- (3,0.1);
+  \node[font=\scriptsize\bfseries\color{redacc}, above left] at (-0.2,3.4) {start here};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+\textbf{Gold path} (input 2, up, across): $f(2) = $ \labelbox{1.2cm}{}\quad
+This is \labelbox{2.3cm}{}\par\vspace{3pt}
+\textbf{Red path} (output 3, across, down): $x = $ \labelbox{1.6cm}{}\quad
+This is \labelbox{2.3cm}{}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Evaluate hands you the input and asks for the output --- exactly one answer.
+Solve hands you the output and asks for the input(s) --- possibly several, and several is
+still a function.}}}
 
-\vspace{0.1in}
+\vspace{3pt}
+\textbf{In your own words:} how do you tell an \emph{evaluate} question from a \emph{solve}
+question before you compute anything?
+\writespace{1.4cm}{}
+\\
+& \notesprompt{The same graph, both directions. Say which direction each one runs.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Find $f(6)$.}{2.0cm}{} &
+\pcell{12}{Find $f(3)$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Solve $f(x) = 3$. Compare with problem 12: is it the same question? Is it the same answer?}{2.0cm}{} &
+\pcell{14}{Solve $f(x) = 5$. Three inputs share one output --- is $f$ still a function?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (11 min) ──────────
+\mainidea[You do, alone]{Table \& Formula} &
+Two functions given only by a table, $s$ and $p$, and two given by a formula. The arrows
+show $p$ running forward: each input on the left goes to its output on the right.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=1.0, >=stealth]
+  \node[font=\normalsize, anchor=east] at (2.4,1.0) {%
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline $s(x)$ & 12 & 9 & 9 & 6 & 3 \\ \hline
+    \end{tabular}};
+  \node[font=\normalsize, anchor=east] at (2.4,-1.0) {%
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline $x$ & 1 & 2 & 3 & 4 \\ \hline $p(x)$ & 9 & 6 & 6 & 3 \\ \hline
+    \end{tabular}};
+  \begin{scope}[xshift=4.6cm]
+    \node[font=\small\bfseries\color{plum}] at (0,2.0) {$p$: inputs};
+    \node[font=\small\bfseries\color{plum}] at (3,2.0) {outputs};
+    \foreach \x/\y in {1/1.2, 2/0.4, 3/-0.4, 4/-1.2} \node[font=\small] (i\x) at (0,\y) {\x};
+    \foreach \v/\y/\n in {9/1.2/a, 6/0/b, 3/-1.2/c} \node[font=\small] (o\n) at (3,\y) {\v};
+    \foreach \a/\b in {i1/oa, i2/ob, i3/ob, i4/oc} \draw[->, thick, plum] (\a) -- (\b);
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{$f(x) = 3x - 7$. Find $f(5)$ and $f(-1)$. Fill the slot first.}{2.2cm}{} &
+\pcell{16}{From the $s$ table: find $s(4)$, then solve $s(x) = 9$. Which one was the \emph{evaluate} question?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{State the domain and range of $p$. Then run $p$ \emph{backward}: feed it the output 6 and ask for the input. Is that backward rule a function?}{2.4cm}{} &
+\pcell{18}{$m(x) = \dfrac{20}{x - 6}$. Which input is forbidden, and why? Write the domain of $m$ in words.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\boxguard
-\begin{notesbox}{5. Domain and Range}
-The \textbf{domain} is the set of all \blank{1.8cm} a function uses; the
-\textbf{range} is the set of all \blank{1.8cm} it produces. A repeated output
-is listed \blank{1.4cm}.
-
-\medskip
-\textbf{From a list of points.} Let $f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\}$.
-
-\begin{itemize}[itemsep=4pt]
-  \item Domain: \blank{4cm} \quad Range: \blank{4cm}
-\end{itemize}
-
-\textbf{From a graph.} Look back at the graph in Part 4: it runs from $x = 0$ to
-$x = 8$ left to right, and its heights run from $1$ up to $7$.
-
-\begin{itemize}[itemsep=4pt]
-  \item Domain: \blank{1.2cm} $\le x \le$ \blank{1.2cm} \quad
-        Range: \blank{1.2cm} $\le y \le$ \blank{1.2cm}
-\end{itemize}
-
-\textbf{Notation upgrade.} You will see the same two sets written with brackets:
-$0 \le x \le 8$ is also written $[\,0, 8\,]$. A square bracket means the
-endpoint \textbf{is} included; a round one means it is not. Either form is a
-correct answer this year --- learn to read both.
-
-\medskip
-\textbf{From a formula.} Let $k(x) = \dfrac{8}{x + 3}$. At $x = -3$ the
-denominator is \blank{1.2cm}, and division by zero is \blank{2.4cm} --- there
-is no output at all. So the domain is every real number \textbf{except}
-\blank{1.4cm}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $f(x) = 3x - 7$. Evaluate each.
-
-        \begin{work}
-          f(5) &= 3(5) - 7 \\
-               &= 8
-        \end{work}
-
-        $f(5) = $ \blank{1.6cm}
-
-        \begin{work}
-          f(-1) &= 3(-1) - 7 \\
-                &= -10
-        \end{work}
-
-        $f(-1) = $ \blank{1.6cm}
-
-  \item The table shows a function $p$.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        $x$ & 1 & 2 & 3 & 4 \\
-        \hline
-        $p(x)$ & 9 & 6 & 6 & 3 \\
-        \hline
-        \end{tabular}
-        \smallskip
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $p(2) = $ \blank{1.4cm} \quad Solve $p(x) = 3$: \quad
-                $x = $ \blank{1.4cm}
-          \item Domain of $p$: \blank{3cm} \quad Range of $p$: \blank{3cm}
-
-          \item Two different inputs share the output 6. Run the machine
-                \textit{backward}: feed it the output 6 and ask for the input.
-                Is that backward rule a function? Explain.
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
-
-  \item A function is given by the formula $m(x) = \dfrac{20}{x - 6}$.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Which input is forbidden? \quad $x = $ \blank{1.6cm}
-
-          \item Why is it forbidden? Write the domain of $m$ in words.
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; the exit ticket follows in the packet ────
 
 \end{document}

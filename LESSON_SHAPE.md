@@ -57,9 +57,9 @@ experience-first.** A 60-minute period runs, in order:
 | --- | --- | --- |
 | Warm-Up — silent, individual spiral review | 5 | `warmup` |
 | Hook — whole-class discussion | 2–3 | `hookbox` atop `notes`; scripted in the plan |
-| **I Do** — teacher models, students watch and annotate | ~10 | `notes` §1 (and the first example of §2) |
-| **We Do** — fill the notes together, every blank cold-called | ~18–22 | `notes` §2… |
-| **You Do** — work alone while the teacher circulates | **11–14** | the notes' `practicebox` |
+| **I Do** — teacher models, students watch and annotate | ~10 | `notes` — each row's definition, its display, its first problem |
+| **We Do** — fill the notes together, every blank cold-called | ~18–22 | `notes` — the rest of each row's grid |
+| **You Do** — work alone while the teacher circulates | **11–14** | the notes' last row |
 | Debrief — whole-class share-out and the headline | 5 | — (in the plan only) |
 | Exit Ticket — individual, silent, collected | 5 | `exit_ticket` |
 
@@ -70,16 +70,21 @@ sum is not. Never pad the total to reach 60 — cut, and say in the box what you
 protected. **You Do gets real time** — 11–14 minutes, never the 5 it got when an activity sheet
 competed for the period.
 
-**`notes` — *Guided Notes* — is the in-class centrepiece and the whole release lives inside
-it.** `\pageheader{Unit X, Lesson Y.Z}{Guided Notes}`; an `objectivebox` ("By the end of this
-lesson, I will be able to…", one blank-bearing item per Learning Objective); a `vocabbox`
-filled *as each term is defined*; a `hookbox` carrying the same hook as the plan with
-write-lines; then `\S`-numbered `notesbox{n. Title}` sections — **these are the I Do and We Do**;
-then the **`practicebox` — required, and it *is* the You Do**: 3–4 items that escalate, ending
-with the one a finisher should still find hard (what a Tier E prompt used to be). Students work
-it alone while the teacher circulates; the plan's Differentiation box says what the teacher does
-at each item. The crux — the item that surfaces the lesson's target misconception — lives in
-the practice box, and the plan names it in Key Understandings and again in Active Monitoring.
+**`notes` — *Guided Notes* — is the in-class centrepiece (2026-09-12 shape, ported
+from AP Statistics).** `\pageheader{…}` → `vocabbox` (`\termblanklong` rows, filled *as each term is
+named*) → `hookbox` (the same hook as the plan, with write-lines) → **one two-column *Main Ideas / Questions* | *Notes* table**
+(`guidednotes` in `precalculus-boxes.sty`), 3–4 pages at 10pt. **There is no `objectivebox`** — the
+cover carries the targets. Each **row** is one idea on the one worked context: a short label on
+the left (`\mainidea[lead]{Label}`); on the right one or two **complete printed sentences** (the
+definition or the general form, read — never a sentence with words punched out), **one large
+pre-drawn display** (a graph, a table, the two things students conflate side by side) the
+student reads or annotates with `\labelbox`, then a bold prompt and a **two-across grid of a few
+numbered problems** (`probgrid` + `\pcell`, **2–3 cm of work room each**, algebra in `work`
+blocks); a procedure uses `\stepnum{n}`, the sentence to land an *In your own words*
+`\writespace`. Three or four instruction rows — the last carries the **target misconception as
+problems**, the case where the two answers *disagree* — then the **You Do row — required**: `\mainidea[You do, alone]{Title}`, 3–4 problems that escalate, ending with the one a finisher should still find hard, worked alone for the 11–14 minutes the flow table gives while the teacher circulates; the plan's Differentiation box says what the teacher does at each problem, and Active Monitoring names the crux and its You Do transfer by number. **Density rules:** a `\blank{}` only where a single word or number *is* the answer (a table to fill, a display to name), never mid-sentence, a handful per lesson; 12–19 problems, two across, never three; every row a picture; the plan names, by problem number, which problems the teacher works, which is the trap, which is the crux. **The instruction rows are the I Do and We Do** — the teacher reads the definition, marks up the display and works the first problem of each grid; the class works the rest, every one cold-called.
+Lessons authored before 2026-09-12 use the boxed notes (`notesbox` sections + `practicebox`);
+convert them by the recipe in `templates/lesson/components.md` when you touch them.
 
 **`warmup`** — 3–5 quick problems of *prerequisite* spiral review, exactly one page, `work`
 blocks for anything multi-step; may be a prefab PDF. **`exit_ticket`** — 2–3 items, no notes,
@@ -251,6 +256,17 @@ snapshot (2026-08-06) of titles as compiled, kept for reference, not maintained 
   they reach keys through `-key` and the plan through `-boxes`; a bare `\begin{teachernote}`
   still compiles, which is how un-migrated keys keep building.
 - `\namedateperiod` on the cover and the unit tests only; `\namepartnerperiod` is not used.
+
+- **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid` /
+  `probgrid*`, `\pcell`, `\writespace`, `\labelbox`, `\stepnum` — is defined in
+  `precalculus-boxes.sty` (ported from AP Statistics 2026-09-12; the commentary there is the
+  reference; labels and step discs are set in `plum`). Traps: **inside a table cell `\\` ends
+  the row** and spills the rest into the label column — break lines with `\par`; **a row cannot
+  break across pages** — give the figure its own sub-row (a bare `\\`, then `& ...`) and put each
+  grid row in its own sub-row, reopening as `probgrid*` (no top rule); **`\pcell`'s height is the
+  answer space only**, below the statement, and an answer longer than it overflows silently. The
+  key differs from the blank only in `-key` for `-boxes`, the vocabulary rows, `\blank`→`\ans`,
+  and the answer argument of each `\pcell`, `\writespace`, `\labelbox`.
 
 ## 5. Lesson-plan section order
 
