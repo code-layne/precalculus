@@ -1,4 +1,6 @@
-%! Composition of Functions — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Slides (Beamer)
+% Order: hook -> I Do -> We Do -> You Do -> debrief -> homework launch (LESSON_SHAPE.md §1).
+% \CourseName is NOT defined in beamer — "Precalculus" is written literally.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +13,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Composition of Functions}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Function Composition and Decomposition}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -22,15 +24,15 @@
   \plumheader{Hook: Two Registers, One Jacket}
   \sectionlabel[goldacc]{Vote Before You Compute}
 
-  A \$60 jacket, a \$10 coupon, 6\% sales tax. Register 1 scans the coupon
-  first, then the tax. Register 2 scans the tax first, then the coupon.
+  A \$60 jacket, a \$10 coupon, 6\% sales tax. Register 1 scans the coupon first,
+  then the tax. Register 2 scans the tax first, then the coupon.
 
-  \smallskip
+  \bigskip
   \begin{columns}[T, onlytextwidth]
     \column{0.46\textwidth}
       \begin{block}{The question}
-        Same jacket, same coupon, same tax rate. Do the two of you pay the
-        same amount?
+        Same jacket, same coupon, same tax rate. Do the two of you pay the same
+        amount? Commit before anyone computes.
       \end{block}
 
     \column{0.50\textwidth}
@@ -47,48 +49,51 @@
   \end{columns}
 \end{frame}
 
-% SECTION 1 — THE HANDOFF
+% I DO — THE HANDOFF
 \begin{frame}[t, plain]
-  \plumheader{1. The Handoff}
-  \sectionlabel[redacc]{The Whole Lesson in One Picture}
+  \plumheader{The Handoff --- The Number In Between}
+  \sectionlabel[goldacc]{Notes row THE HANDOFF $\cdot$ I Do: problem 1 $\cdot$ We Do: problem 2}
 
-  \((f \circ g)(x) = f\big(g(x)\big)\), read ``\(f\) of \(g\) of \(x\).'' The
-  circle is \textbf{not} multiplication.
+  \((f \circ g)(x) = f\big(g(x)\big)\), read ``\(f\) of \(g\) of \(x\).'' The circle is
+  \textbf{not} multiplication, and the letter written \textbf{last runs first}.
 
   \medskip
   \begin{center}
-  \begin{tikzpicture}[x=1cm, y=1cm]
-    \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (-0.8,-0.5) rectangle (0.8,0.5);
-    \node at (0,0) {\large \(g\)};
-    \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (4.2,-0.5) rectangle (5.8,0.5);
-    \node at (5,0) {\large \(f\)};
-    \draw[->, very thick, plum] (-2.4,0) -- (-0.9,0);
-    \node[above, font=\small] at (-1.65,0.08) {\(x\)};
-    \draw[->, very thick, goldacc] (0.9,0) -- (4.1,0);
-    \node[above, font=\small] at (2.5,0.10) {\(g(x)\)};
-    \draw[->, very thick, plum] (5.9,0) -- (7.9,0);
-    \node[above, font=\small] at (6.9,0.08) {\(f(g(x))\)};
-    \node[above, font=\small\itshape, text=slate] at (0,0.58) {runs first};
-    \node[above, font=\small\itshape, text=slate] at (5,0.58) {runs second};
-    \node[below, font=\small\bfseries, goldacc] at (2.5,-0.10) {THE HANDOFF};
-    \node[below, font=\small, text=slate] at (2.5,-0.55)
-      {\(g\)'s answer \textit{is} \(f\)'s question};
+  \begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+    \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.2cm,
+          minimum height=0.9cm] (E) at (0,0) {\large \(E\)};
+    \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.2cm,
+          minimum height=0.9cm] (T) at (5.2,0) {\large \(T\)};
+    \node[font=\small] (in) at (-2.3,0) {\(t\) minutes};
+    \node[font=\small] (out) at (7.7,0) {\(T(E(t))\) degrees};
+    \draw[->, very thick, plum] (in) -- (E);
+    \draw[->, very thick, goldacc] (E) -- (T);
+    \draw[->, very thick, plum] (T) -- (out);
+    \node[above, font=\small] at (2.6,0.14) {\(E(t)\) feet};
+    \node[below, font=\small\bfseries, text=goldacc] at (2.6,-0.10) {THE HANDOFF};
   \end{tikzpicture}
   \end{center}
 
   \medskip
-  \begin{center}
-    \textbf{One number, two jobs --- an answer first, then a question.
-    Find it, and write it down.}
-  \end{center}
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{The cable car}
+        \(E(t) = 200t\) feet after \(t\) minutes; \(T(e) = 68 - \frac{e}{100}\) degrees at
+        elevation \(e\). \(T(E(4))\): handoff \(\mathbf{800}\) feet, then \(T(800) = 60^\circ\).
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{One number, two jobs}
+        The handoff is the inner function's \textbf{answer} and the outer function's
+        \textbf{question} at the same time. Find it, and \textbf{write it down}.
+      \end{block}
+  \end{columns}
 \end{frame}
 
-% SECTION 2 — FROM A TABLE
+% I DO / WE DO — FROM A TABLE
 \begin{frame}[t, plain]
-  \plumheader{2. The Handoff from a Table}
-  \sectionlabel[goldacc]{Two Lookups, No Formula}
+  \plumheader{Finding the Handoff in a Table}
+  \sectionlabel[goldacc]{Notes row FINDING IT $\cdot$ I Do: problem 3 $\cdot$ We Do: problems 4--6}
 
   \begin{columns}[T, onlytextwidth]
     \column{0.44\textwidth}
@@ -113,32 +118,33 @@
 
     \column{0.52\textwidth}
       \begin{block}{Swap the machines, swap the handoff}
-        Same two functions, same input, a different middle number --- so a
-        different answer. Composition is \textbf{not commutative}.
+        Same two functions, same input, a different middle number --- so a different
+        answer. Composition is \textbf{not commutative}.
       \end{block}
 
       \medskip
       \begin{block}{And sometimes there is no answer at all}
-        \(f(g(2))\): the handoff is \(7\), and the table has no \(f(7)\).
-        A handoff must be a question the \textbf{outer} function accepts ---
-        that is the \textbf{domain of a composite}.
+        \(f(g(2))\): the handoff is \(7\), and the table has no \(f(7)\). A handoff must be a
+        question the \textbf{outer} function accepts --- that is the \textbf{domain of a
+        composite}.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 3 — AN EXPRESSION
+% WE DO — BUILDING THE COMPOSITE
 \begin{frame}[t, plain]
-  \plumheader{3. Handing Over a Whole Expression}
+  \plumheader{Building the Composite from Formulas}
+  \sectionlabel[goldacc]{Notes row BUILDING IT $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
 
   \begin{block}{The recipe}
-    To build \(f(g(x))\), substitute \(g(x)\) for \textbf{every} \(x\) in
-    \(f(x)\). The handoff is no longer a number --- it is an expression.
-    Nothing else changes.
+    Write \(f\) with an empty slot, \(f(\square) = 3(\square) - 2\); put \(g(x)\) in
+    \textbf{every} slot; simplify. The handoff is no longer a number --- it is an
+    \textbf{expression}. Nothing else changes.
   \end{block}
 
   \medskip
   \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
+    \column{0.50\textwidth}
       \(f(x) = 3x - 2\), \quad \(g(x) = x^2 + 1\):
       \begin{align*}
         f(g(x)) &= f(x^2+1) = 3(x^2+1) - 2 \\
@@ -147,103 +153,168 @@
                 &= 9x^2 - 12x + 5
       \end{align*}
 
-    \column{0.48\textwidth}
+    \column{0.46\textwidth}
       \begin{block}{Two routes, one number}
         \(f(g(2))\) step by step: handoff \(g(2) = 5\), so \(f(5) = 13\).
 
         \smallskip
-        Straight from the formula: \(3(2)^2 + 1 = 13\).
+        Straight from the rule: \(3(2)^2 + 1 = 13\).
       \end{block}
 
       \smallskip
-      Not even the same \textit{shape} of expression --- order matters.
+      \textbf{Not} \(f(x) \cdot g(x)\): a product has no handoff.
   \end{columns}
 \end{frame}
 
-% SECTION 4 — TWO REGISTERS
+% WE DO — THE CRUX
 \begin{frame}[t, plain]
-  \plumheader{4. Two Registers, Two Handoffs}
-  \sectionlabel[redacc]{Why the Order Costs Sixty Cents}
+  \plumheader{Two Orders, Two Handoffs --- The Crux}
+  \sectionlabel[redacc]{Notes row TWO HANDOFFS $\cdot$ I Do: problem 11 $\cdot$ problem 12 is the crux}
 
-  Coupon \(c(p) = p - 10\), \qquad tax \(t(x) = 1.06x\). Neither one alone
-  answers ``what do I pay?''
+  Coupon \(c(p) = p - 10\), \qquad tax \(t(x) = 1.06x\).
 
   \medskip
   \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
       \begin{block}{At \(p = 60\)}
-        \(t(c(60)) = t(\mathbf{50}) = 53.00\)
+        \(t(c(60)) = t(\mathbf{50}) = \$53.00\)
 
         \smallskip
-        \(c(t(60)) = c(\mathbf{63.60}) = 53.60\)
+        \(c(t(60)) = c(\mathbf{63.60}) = \$53.60\)
+      \end{block}
+
+      \smallskip
+      \begin{block}{At every price}
+        \(t(c(p)) = 1.06p - 10.60\) \quad against \quad \(c(t(p)) = 1.06p - 10\)
       \end{block}
 
     \column{0.48\textwidth}
-      \begin{block}{At every price}
-        \(t(c(p)) = 1.06p - 10.60\)
+      \begin{block}{The crux --- problem 12}
+        \(f(x) = 2x\), \(g(x) = x - 6\), one input, both orders:
 
         \smallskip
-        \(c(t(p)) = 1.06p - 10\)
+        \(f(g(10))\): handoff \(\mathbf{4}\), answer \(\mathbf{8}\).
+
+        \smallskip
+        \(g(f(10))\): handoff \(\mathbf{20}\), answer \(\mathbf{14}\).
       \end{block}
   \end{columns}
 
-  \medskip
+  \bigskip
   \begin{center}
-    Taxing first charges 6\% of the \$10 you never paid: \(0.06 \times 10 =
-    \$0.60\), at \textbf{any} price.
+    \textbf{Swap the machines and you swap the handoff. Taxing first charges 6\% of the ten
+    dollars you never paid --- at every price.}
   \end{center}
 \end{frame}
 
-% SECTION 5 — DECOMPOSITION, IDENTITY, 1.4
+% WE DO — DECOMPOSITION
 \begin{frame}[t, plain]
-  \plumheader{5. Decomposition, the Identity, and Lesson 1.4}
+  \plumheader{Backwards: Decomposition}
+  \sectionlabel[redacc]{Notes row TWO HANDOFFS $\cdot$ We Do: problems 13--14}
 
+  \begin{block}{Decomposition = name the handoff}
+    Ask what a calculator would compute \textbf{first}. That value is the handoff, and its rule
+    is the \textbf{inner} function; whatever is done to it is the \textbf{outer} function.
+  \end{block}
+
+  \bigskip
   \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
-      \begin{block}{Decomposition = name the handoff}
-        \(h(x) = (5x-1)^3\). What would your calculator do first?
+      \(h(x) = \sqrt{x + 5}\)
 
-        \smallskip
-        Inner \(g(x) = 5x-1\), \quad outer \(f(u) = u^3\).
-      \end{block}
+      \smallskip
+      You would add 5 first, so:
 
-      \medskip
-      \begin{block}{The identity function}
-        \(I(x) = x\) makes the handoff the number itself, so
-        \(f(I(x)) = I(f(x)) = f(x)\).
-      \end{block}
+      \smallskip
+      Inner \(g(x) = x + 5\), \quad outer \(f(u) = \sqrt{u}\).
 
     \column{0.48\textwidth}
-      \begin{block}{Lesson 1.4 was composition all along}
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{@{}lll@{}}
-          \textbf{1.4 rule} & \textbf{is} & \textbf{handoff} \\
-          \(f(x+3)\) & \(f(h(x))\) & \(x+3\) \\
-          \(f(2x)\)  & \(f(h(x))\) & \(2x\) \\
-        \end{tabular}
-      \end{block}
+      \begin{block}{Always check}
+        Substitute back: \(f(g(x)) = \sqrt{x+5} = h(x)\). \checkmark
 
-      \medskip
-      The handoff is what \(f\) gets \textbf{asked} --- so an inside change can
-      only rewrite the question, never the answers.
+        \smallskip
+        A split that does not rebuild \(h\) exactly is the wrong split.
+      \end{block}
   \end{columns}
 \end{frame}
 
-% CLASS PRACTICE
+% YOU DO
 \begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Name the Handoff First}
+  \plumheader{You Do --- Table \& Formulas}
+  \sectionlabel[redacc]{Notes row TABLE \& FORMULAS $\cdot$ problems 15--18, alone, 14 minutes}
 
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Using the table from section 2, find \(f(g(3))\) and \(g(f(3))\).
-          Write both handoffs down.
+  \begin{columns}[T, onlytextwidth]
+    \column{0.40\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      \(p(x)\) & 5 & 3 & 1 & 4 & 2 \\
+      \hline
+      \(q(x)\) & 4 & 1 & 2 & 5 & 3 \\
+      \hline
+      \end{tabular}
+      \end{center}
 
-    \item Let \(f(x) = x^2\) and \(g(x) = x - 4\). Build \((f \circ g)(x)\) and
-          \((g \circ f)(x)\), simplified. Are they the same function?
+      \medskip
+      \begin{center}
+        \(f(x) = x + 3\) \qquad \(g(x) = x^2\)
+      \end{center}
 
-    \item Decompose \(h(x) = \sqrt{4x+1}\) into an inner and an outer function,
-          then check by substituting back.
-  \end{enumerate}
+    \column{0.56\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \setcounter{enumi}{14}
+        \item From the table: \(p(q(2))\) and \(q(p(2))\). Write each handoff. Equal?
+        \item Build \((f \circ g)(x)\) and \((g \circ f)(x)\), simplified. Same function?
+        \item Find \(f(g(-2))\) by naming the handoff, then check it against your rule from 16.
+        \item Decompose \(m(x) = (2x+1)^3\). Which rule runs first when you compute \(m(1)\)?
+              Find \(m(1)\).
+      \end{enumerate}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{The handoff}
+        One number sits between the two machines: the inner function's \textbf{answer} and the
+        outer function's \textbf{question}. Find it first and write it down.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{The order}
+        \textbf{Swap the machines and you swap the handoff.} That is why \(f(g(x))\) and
+        \(g(f(x))\) are usually different functions.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Next time (1.4, Inverse Functions):} we hunt for the partner that \textit{undoes} a
+  function --- and the test is a composition run in \textbf{both} directions.
+
+  \smallskip
+  \textit{And later, in 1.5, a horizontal shift will turn out to be a composition too.}
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 2} now. Write the handoff on every line
+          before you use it.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit} --- optional,
+          AP-exam style. Do the homework first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

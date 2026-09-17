@@ -1,0 +1,160 @@
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — AP Practice
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Page 1 is Section I, five multiple-choice items with four options (A)–(D); page 2 is Section
+% II, one multi-part free-response question on a pair of tables with interpret-in-context parts.
+% Its contexts (a bus's fuel, a wind farm) are used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: composing in the WRONG ORDER (1A, 2C, 3A, 4B),
+% MULTIPLYING f(x)g(x) instead of composing — the 1.2 confusion (1B, 2D, 3C, 5D), and STOPPING
+% AT THE HANDOFF and reporting it as the answer (1D, 2A, 5A).
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
+% ways. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.3}{AP Practice}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes --- one of them stops at the handoff,
+one multiplies instead of composing, one runs the machines in the wrong order --- so read all
+four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+\item The function $g$ gives the number of gallons of fuel a bus uses on a trip of $d$ miles.
+      The function $f$ gives the cost, in dollars, of $n$ gallons of fuel. Which expression
+      gives the cost of the fuel used on a trip of $d$ miles?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $g(f(d))$
+        \item[(B)] $f(d) \cdot g(d)$
+        \item[(C)] $f(g(d))$
+        \item[(D)] $g(d)$
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.52\linewidth}
+      The table gives every value of the functions $f$ and $g$. What is the value of
+      $f(g(3))$?
+
+      \smallskip
+      \textbf{(A)} $2$ \hspace{1.6em} \textbf{(B)} $5$ \hspace{1.6em}
+      \textbf{(C)} $3$ \hspace{1.6em} \textbf{(D)} $8$
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.42\linewidth}
+      \vspace{-2pt}
+      \centering
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $x$ & 1 & 2 & 3 & 4 \\
+      \hline
+      $f(x)$ & 2 & 5 & 4 & 1 \\
+      \hline
+      $g(x)$ & 4 & 1 & 2 & 3 \\
+      \hline
+      \end{tabular}
+      \end{minipage}
+
+\item Let $f(x) = x^2$ and $g(x) = 2x - 1$. Which of the following is $(f \circ g)(x)$?
+
+      \smallskip
+      \textbf{(A)} $2x^2 - 1$ \hspace{1.8em} \textbf{(B)} $4x^2 + 1$ \hspace{1.8em}
+      \textbf{(C)} $2x^3 - x^2$ \hspace{1.8em} \textbf{(D)} $4x^2 - 4x + 1$
+
+\item Let $h(x) = \sqrt{3x - 8}$. Which pair of functions satisfies $h(x) = f(g(x))$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $f(u) = \sqrt{u}$ \quad and \quad $g(x) = 3x - 8$
+        \item[(B)] $f(u) = 3u - 8$ \quad and \quad $g(x) = \sqrt{x}$
+        \item[(C)] $f(u) = \sqrt{u} - 8$ \quad and \quad $g(x) = 3x$
+        \item[(D)] $f(u) = \sqrt{3u}$ \quad and \quad $g(x) = x - 8$
+      \end{enumerate}
+
+\item Let $f(x) = \sqrt{x}$ and $g(x) = x - 9$. Which statement about $f(g(4))$ is true?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $f(g(4)) = -5$
+        \item[(B)] $f(g(4))$ has no value, because the handoff $-5$ is not an input $f$ accepts.
+        \item[(C)] $f(g(4)) = -7$, because $\sqrt{4} - 9 = -7$.
+        \item[(D)] $f(g(4)) = -10$, because $\sqrt{4} \cdot (4 - 9) = -10$.
+      \end{enumerate}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the wind farm must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item At a wind farm, $S(t)$ is the wind speed in meters per second $t$ hours after midnight,
+      and $P(s)$ is the farm's power output in kilowatts when the wind speed is $s$ meters per
+      second. Both functions are given entirely by these tables.
+
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      $t$ & 0 & 2 & 4 & 6 & 8 & 10 \\
+      \hline
+      $S(t)$ & 3 & 6 & 9 & 12 & 6 & 18 \\
+      \hline
+      \end{tabular}
+      \qquad
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $s$ & 3 & 6 & 9 & 12 \\
+      \hline
+      $P(s)$ & 40 & 150 & 500 & 1100 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} Name the handoff in $P(S(4))$, with its units. Then find $P(S(4))$ and
+      interpret it in context, with units.
+      \writespace{2.0cm}{}
+
+      \textbf{(b)} Explain why $S(P(4))$ is not a meaningful quantity at this wind farm.
+      \writespace{2.0cm}{}
+
+      \textbf{(c)} Find $P(S(2))$ and $P(S(8))$. The two values are equal even though the times
+      are different. Explain what that says about the handoffs.
+      \writespace{2.2cm}{}
+
+      \textbf{(d)} Can $P(S(10))$ be found from these tables? Answer using the handoff.
+      \writespace{2.0cm}{}
+
+      \textbf{(e)} A gearbox is installed so that the blades feel a wind speed 3 meters per
+      second higher than the air outside: $b(s) = s + 3$. Write the farm's power output $t$
+      hours after midnight as a composition of all three functions, then find its value at
+      $t = 2$, naming both handoffs.
+      \writespace{2.4cm}{}
+
+\end{enumerate}
+
+\end{document}

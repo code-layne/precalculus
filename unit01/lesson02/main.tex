@@ -1,0 +1,438 @@
+%! Function Operations — Unit 1, Lesson 1.2 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. A *New* lesson — a foundations ramp with no CED topic.
+% 1.1 taught notation, evaluating, domain/range and piecewise rules; this lesson runs two
+% functions at once. The crux is the domain of a combination read off the SIMPLIFIED formula
+% instead of off the ORIGINAL functions: (f/g) with f(x) = x^2 - 9 and g(x) = x - 3 simplifies
+% to x + 3, which looks defined everywhere, but x = 3 is still excluded. 1.3 chains the two
+% machines instead of combining them.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\MeetingLength}{60 minutes}
+\newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
+\newcommand{\LessonNumberName}{Lesson 1.2: Function Operations}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will add, subtract, multiply, and divide
+    two functions --- evaluating a combination at a point from a table and
+    building it as a formula --- and will state the \textit{domain} of the result
+    from the original functions: the overlap of both parents' domains, with every
+    input that makes the bottom function zero thrown out of a quotient.
+    \hfill\textit{\small (Foundations ramp --- no CED topic)}
+\end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the COMBINING and AT A POINT rows: definitions, the machine diagram, problems 1 and 3. \\
+\textbf{We Do} --- guided     & 21 & Fill the notes together, every problem cold-called --- problems 2, 4--6, then the THE FORMULA row (7--10) and the DOMAIN row (11--14; the teacher works 11, the class works the crux, 14). \\
+\textbf{You Do} --- independent & 13 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 5 alone; the teacher reads 5(b) over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Protect the DOMAIN row.} Three of the four instruction rows are
+procedural and will go faster than you expect; the fourth is the entire lesson.
+If the clock slips, cut \textbf{problem 10} (the product as a formula) and then
+\textbf{problem 9}, both of which the homework re-asks in Part B --- and protect
+problems \textbf{13 and 14}, the cancel case. A class that never sees the two
+answers disagree has not met the misconception at all. Never cut the Homework
+Launch to zero: with no exit ticket it is the last formative read of the period.
+\end{skillbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP Skill 1.A} --- Identify and describe a function built from other functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $(f+g)(x) = f(x) + g(x)$, and likewise for $-$, $\times$, $\div$: every
+        operation is arithmetic done to the two \textit{outputs}.
+  \item Both functions must accept the same input before anything can be
+        combined.
+\end{itemize} \\
+\textbf{AP Skill 2.B} --- Construct equivalent representations of a combination. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item At a point, two table lookups are enough --- no formula is needed.
+  \item As a formula, each function's whole rule goes in its own parentheses
+        before anything is distributed.
+  \item \textbf{Secondary trap:} $(f-g)$ and $(g-f)$ are different functions,
+        exact opposites of each other. The same is true of $f/g$ and $g/f$.
+\end{itemize} \\
+\textbf{AP Skill 3.B} --- Justify a conclusion about a domain with appropriate reasoning. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The domain of a combination is the \textbf{overlap} of the two parents'
+        domains --- both must say yes.
+  \item For a quotient, additionally solve $g(x) = 0$ and throw those inputs out.
+  \item \textbf{Target misconception:} students read the domain of a combination
+        off the \textit{simplified} formula rather than off the \textit{original}
+        functions. With $f(x) = x^2 - 9$ and $g(x) = x - 3$, the quotient
+        simplifies to $x + 3$, which looks defined everywhere --- but $g(3) = 0$,
+        so $x = 3$ is still excluded. The two readings \emph{disagree}, and that
+        disagreement is the lesson.
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Sum of two functions & \TallMath{(f+g)(x) = f(x) + g(x)} --- add the two outputs at the same input. \\
+Difference of two functions & \TallMath{(f-g)(x) = f(x) - g(x)}; order matters, and $g-f$ is its opposite. \\
+Product of two functions & \TallMath{(fg)(x) = f(x) \cdot g(x)} --- multiply the two outputs. \\
+Quotient of two functions & \TallMath{\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}}, defined only where $g(x) \ne 0$. \\
+Domain of a combination & The overlap of both parents' domains, with every input making the bottom function zero removed as well. \\
+Profit function & A difference built in context: $P = R - C$, revenue minus cost. \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: evaluating a function at a negative input,
+    subtracting a whole expression by distributing the minus sign,
+    multiplying two binomials,
+    and solving an equation of the form $x - 3 = 0$ ---
+    the exact move that finds the inputs a quotient must throw out.
+\end{skillbox}
+
+\begin{skillbox}[Hook (3 min)]{lilac}
+    \textbf{The owner wants one number.} A bakery bakes $x$ loaves in a day and
+    tracks two costs separately: flour, $F(x) = 0.80x$ dollars, and labor,
+    $L(x) = 25 + 1.20x$ dollars.
+    \begin{enumerate}[itemsep=2pt]
+        \item Put both rules on the board and say the complaint out loud: ``I do
+              not want two numbers every morning --- I want \textit{one}.'' Ask
+              what the owner should do.
+        \item Take ``add them'' and then press: add \textit{what}, exactly? The
+              rules, or the outputs? Land on
+              $T(x) = F(x) + L(x) = 25 + 2x$.
+        \item Ask the question that licenses the whole lesson: why is it legal to
+              add these two at all? Because both take the \emph{same} input,
+              $x$ loaves.
+    \end{enumerate}
+    \textit{Discussion prompt:} we have spent a lesson running one machine at a
+    time. Today two machines run on the same input and their outputs are
+    combined into a third function.
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: Two Machines, One Answer} (10 min)
+
+\textit{Notes rows COMBINING and AT A POINT: read each definition, mark up the
+display, work problems 1 and 3. Teacher works; students watch and annotate.
+Nothing is cold-called in this phase.}
+\begin{itemize}
+  \item Read the four definitions aloud, slowly, and say the same sentence after
+        each one: \textit{the operation happens to the outputs}.
+  \item Mark up the machine diagram yourself. Fill the two label boxes --- both
+        machines are fed the same \textbf{input $x$}; what meets at the combiner
+        is the two \textbf{outputs}. Trace the input arrow splitting in two with
+        your finger before you say a word about arithmetic.
+  \item Work \textbf{problem 1} aloud: writing $(f+g)(x) = f(x) + g(x)$ is the
+        answer, not a restatement of the question.
+  \item Read the AT A POINT sentences and work \textbf{problem 3} from the table:
+        $(f+g)(4) = -3 + 16 = 13$. Narrate the two lookups \textit{before} the
+        arithmetic, so the class sees there is no formula anywhere.
+\end{itemize}
+
+\textbf{WE DO --- Part 2: At a Point, and the Order Trap} (7 min)
+
+\textit{Problems 2 and 4--6. Class fills the blanks together; cold-call every
+one.}
+\begin{itemize}
+  \item \textbf{Problem 2} first: the bakery total, now written as $(F+L)(x)$.
+        The hook becomes notation.
+  \item Fill the $(f+g)$ row of the table together --- four values, cold-called,
+        no formula.
+  \item \textbf{Problems 5 and 6} are the order trap as a pair: $(f-g)(2) = -3$
+        and $(g-f)(2) = 3$. Put both on the board at once and make the class say
+        what changed. Do not let ``they are the same but backwards'' stand ---
+        push to ``opposites.''
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: Building the Rule} (6 min)
+
+\textit{Notes row THE FORMULA. Class fills the blanks together; cold-call every
+one. Teacher works problem 7; the class works 8--10.}
+\begin{itemize}
+  \item Read the three steps, then insist on the parentheses in step 2 before
+        anybody simplifies. The display's gold note is the whole risk:
+        $-(x-3)$ is $-x + 3$.
+  \item \textbf{Problem 8} is where the minus sign gets distributed; make one
+        student read the second line aloud, sign by sign.
+  \item \textbf{Problem 9} is the order trap again, now at the formula level:
+        $-x - 4$ is the exact opposite of problem 8's $x + 4$. Say it back.
+  \item \textbf{Problem 10} is the product. Cut this one first if the clock is
+        tight --- homework problem 4 asks for it again.
+\end{itemize}
+
+\textbf{WE DO --- Part 4: Who Is Allowed In} (8 min)
+
+\textit{Notes row DOMAIN --- the spine of the lesson. Class fills the blanks
+together; cold-call every one. Teacher works problem 11; the class works
+12--14.}
+\begin{itemize}
+  \item Do the number lines before any algebra: shade the two parent domains,
+        then the overlap, and fill the label box --- the overlap is the domain of
+        \textbf{$f+g$}. Both parents must say yes.
+  \item Then the quotient's extra rule: solve $g(x) = 0$ and throw those inputs
+        out. This is warm-up item 4, arriving with a job.
+  \item Mark up the cancel case on the right of the display. $g(3) = 0$, so the
+        quotient never had a value at 3 --- and the open circle is still there
+        after the cancelling. Fill the second label box: \textbf{undefined}. Give
+        one minute for the ``in your own words'' line.
+  \item Work \textbf{problem 11}. \textbf{Problem 13} does the cancelling;
+        \textbf{problem 14 is the crux} --- ask for the \textit{reason} 3 is
+        excluded, never just the answer. Say the headline here for the first
+        time.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: On Your Own} (13 min)
+
+\textit{Notes row ON YOUR OWN, problems 15--18 --- the whole independent phase.
+Students work alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} is the formula skill unassisted; \textbf{16} is the
+        order trap met alone.
+  \item \textbf{Problem 17 is the crux transferred} --- $x^2 - 25$ over $x - 5$,
+        with no display to lean on and nobody saying ``check the bottom.''
+  \item \textbf{Problem 18} is the finisher's question: build $P = R - C$ for the
+        food truck, evaluate it, and give a domain that a truck could actually
+        honor. It returns as homework problem 7.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the thirteen minutes where students
+are working problems 15--18 without you --- and check. The crux is
+\textbf{problem 14} (the domain of $f/g$ is all reals except 3, even though the
+quotient simplifies to $x+3$); its You Do transfer is \textbf{problem 17}
+($p/q$ with $q(5) = 0$, no display on the page).
+\begin{itemize}
+  \item \textbf{Common error (the crux):} at problem 17, simplifying to $x + 5$
+        and then writing ``all real numbers.'' Push: ``What is $q(5)$? Was 5 ever
+        an input you were allowed to use?'' Point back at the open circle they
+        annotated in Part 4.
+  \item \textbf{Common error:} at problem 16, giving the same answer twice, or
+        computing $(g-f)$ when $(f-g)$ was asked. Ask which function is written
+        \emph{first}, then which one is being subtracted.
+  \item \textbf{Common error:} dropping the parentheses in problem 18, so
+        $P(x) = 9x - 4x + 120$. Make them write $(4x + 120)$ inside parentheses
+        before subtracting anything.
+  \item \textbf{Common error:} an unrestricted domain on problem 18 --- a truck
+        cannot sell $-4$ or $7.5$ plates, and 60 is the cap. Ask: ``Would the
+        truck accept that number of plates?''
+  \item \textbf{Watch for:} a student who computes $(fg)(x)$ in problem 15 by
+        multiplying only the first terms and only the last. Have them say
+        ``every term times every term'' as they write.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (13 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row
+(problems 15--18) alone while you circulate. Differentiate by \textit{where you
+stand}, not by handing out different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15}
+        and make them write $(3x - 2) + (x + 7)$ with both sets of parentheses
+        before a single like term is combined. A student who cannot get through
+        15 will not get through 17, and the parentheses are the whole fix.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} are what the class should
+        clear unaided. Do not answer 17. Ask one question --- ``what is $q(5)$?''
+        --- and walk away before they answer it.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question: it asks
+        for a context domain, which no earlier problem did. For a student who
+        finishes it, hand over this one: \textit{if the truck's cost were
+        $C(x) = 4x + 120$ and its revenue were $R(x) = 9x$, what does
+        $\left(\frac{C}{R}\right)(x)$ mean, and why must $x = 0$ be thrown out of
+        its domain?} That answer presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a
+        full review. Problem 15: the sum and the product. Problem 16: both
+        differences, said aloud as opposites. \textbf{Problem 17: the simplified
+        form and the domain, in that order and as two separate facts} --- this is
+        the one every student must hear even if they never reached it. Problem
+        18: $P(x) = 5x - 120$, $P(40) = 80$, and a domain a food truck could
+        honor. If a student answered the extension question, they present it.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it
+        back: \textit{the domain of a combination comes from the original
+        functions, never from the simplified formula. Simplifying can hide a
+        forbidden input; it can never make it legal.} Point at the open circle on
+        the notes display while you say it.
+  \item \textbf{Point forward} (1 min) --- 1.3 stops feeding both machines the
+        same input. The output of one becomes the \textit{input} of the next.
+\end{enumerate}
+\textbf{Do not} re-teach the formula work here, take new questions, or let the
+homework start early. If the launch shows the domain did not land, it is the 1.3
+warm-up's job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the
+You Do, and again here. Write the due date on the board, have students copy it
+into the cover's Homework row, then start \textbf{homework problems 1 and 5}
+alone and in silence (3 minutes). Circulate straight to the students you flagged
+during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1} is the quick read: two table lookups per part. A
+        student still hunting for a formula has not heard Part 2.
+  \item \textbf{Problem 5(b) is the diagnostic}: the domain of $f/g$ for
+        $f(x) = x^2 - 16$ and $g(x) = x - 4$. The answer is all real numbers
+        except 4. A student who writes ``all real numbers'' read it off the
+        simplified $x + 4$ --- the exact misconception --- and a student who
+        writes the right domain but cannot name $g(4) = 0$ as the reason has
+        copied a pattern rather than understood it.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{domain from the
+originals} (nothing to do), \textit{simplifies first, then reads} (a 1.3 warm-up
+item on excluded inputs), and \textit{still losing the minus sign} (a one-minute
+check-in at the door of 1.3).
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the
+date the teacher sets. Every context is new. \textit{Part A} (1--3) combines at a
+point from a table, repeats the order trap at $x = 3$, and builds a print shop's
+total cost as a sum. \textit{Part B} (4--6) builds formulas and their domains:
+all four operations on one pair, then \textbf{problem 5, the diagnostic} --- the
+quotient that cancels --- then a pair whose sum and quotient have different
+domains. \textit{Part C} (7--8) is context: a lawn-care profit $P = R - C$ with a
+context domain, and a car wash's average cost per car, where $x = 0$ must go.
+\textit{Part D} (9--10) puts a classmate's wrong domain on the page to be
+corrected, and problem 10 asks for the headline in writing.
+
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in
+the packet. Section I is five AP-style multiple-choice items (four options) whose
+distractors are the lesson's errors: adding or reversing when a difference was
+asked (1), answering $(g-f)$ when $(f-g)$ was asked (2), reading the domain off
+the \emph{simplified} quotient (3 --- the crux), adding when a product was asked
+or dropping the middle term (4), and forgetting that a parent's own excluded
+input is excluded from the sum as well (5). Section II is one free-response
+question on a bike shop's revenue and cost table: interpret a difference in
+context (a), compare $R-C$ with $C-R$ (b), locate where profit turns positive
+(c), explain why a quotient dies at $x = 0$ (d), and build a profit formula with
+its context domain (e) --- the finisher's question.
+
+\textbf{Preview:} Next lesson (1.3, Function Composition and Decomposition)
+chains the two machines instead of combining them: the output of one becomes the
+\textit{input} of the next, $f(g(x))$, and a complicated rule is decomposed back
+into the two simpler machines it was built from. The homework's closing box
+points back at the print shop in problem 3 to set it up.
+\end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 2 is the one to watch: a student
+who writes $4x + 9 - x - 6$ has lost the minus sign, and will lose it again
+inside $(f-g)(x)$ within twenty minutes --- note names now. Item 4 looks like the
+easiest thing on the page and is the most important: solving $x - 3 = 0$ is
+\emph{exactly} what finding the excluded input of a quotient asks for, and part
+(b) makes the point that the answer is not always the number you see written in
+the expression. If item 4 is slow, say out loud that you will need it again in
+twenty minutes, and mean it.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do
+row; in each instruction row you read the printed definition, mark up the
+display, and work the first problem of the grid (1, 3, 7, 11), and the class
+works the rest with the pen in their hand, every problem cold-called. The first
+three rows are procedural and will move quickly --- resist the urge to let them
+expand, because the fourth row is the lesson.
+
+COMBINING and AT A POINT are one block: the point of the table in row 2 is that
+no formula exists anywhere on that page and the combination still has a value.
+Problems 5 and 6 are a deliberate pair; put both answers on the board at once,
+because ``opposites'' is not obvious to a student who has just been told the two
+expressions ``mean the same thing.'' In THE FORMULA row, the only real risk is
+the distributed minus sign, and the gold box in the display is there to be
+pointed at.
+
+DOMAIN is the spine, and it must not be rushed. Do the two number lines first ---
+overlap is a visual idea and the algebra comes easier after it. Then the cancel
+case. Do not simplify and then ask about the domain; ask about the domain
+\emph{first}, get ``all reals except 3'' from the original $g$, and only then
+cancel, so the class watches the evidence disappear from the page while the
+exclusion stays. \textbf{Problem 14 is the crux} and it asks for a reason, not a
+number: do not accept ``because there's a hole.'' Make them say $g(3) = 0$.
+
+The You Do row (15--18) is the entire independent phase and carries thirteen
+minutes. Problem 17 is the crux with the scaffolding removed; problem 18 is the
+first time anyone has been asked for a \emph{context} domain, which is genuinely
+harder than it looks. If the clock slips, cut problem 10 from row 3 rather than
+anything in row 4 or 5.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and they are at risk because the DOMAIN row will want them. Borrow
+from problem 10 instead --- the product formula is the most replaceable thing in
+the period, and homework problem 4 asks for it again. Do not borrow from the
+three-minute Homework Launch either: with no exit ticket, it is the last look you
+get before the work leaves the room. The share-out is one answer per You Do
+problem specifically so that a student who stalled on 15 still hears problem 17's
+two-part answer --- the simplified form \emph{and} the domain, stated separately.
+That pairing is the shape of homework problem 5, which they will otherwise meet
+alone at home.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you
+hand out the packet. Score it however extra credit works in your gradebook; the
+cover gives it a $+$ cell outside the total. Multiple-choice answers are
+\textbf{B, D, B, C, A}. Item 3 is the one to glance at: a student who circles (A)
+``all real numbers'' cancelled to $x + 7$ and read the domain off it --- that is
+the lesson's misconception in its purest form, and it means problem 14 of the
+notes did not land. A student who circles (D) has excluded $-7$ as well, which is
+the \emph{numerator's} zero and harmless. On item 2, (A) is $(g-f)(2)$ and is
+worth counting: if more than a few take it, spend a warm-up item on order in 1.3.
+In the free response, part (c) needs values, not a sentence --- require both
+$P(5)$ and $P(10)$ --- and part (e) is the deepest: accept any domain that
+restricts to whole bikes with $0 \le x \le 20$.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Graded, two pages, due on the date you set; students start problems 1 and 5 in
+the Homework Launch. Grade \textbf{problems 5 and 9} for accuracy and the rest
+for completion and shown work if time is short: 5(b) and 9 are the same question
+asked from two sides --- state the domain yourself, and catch somebody else
+stating it wrongly --- and together they predict 1.3 better than any of the
+formula items do. Problem 10 is the headline in writing; read it for the words
+\emph{overlap} and \emph{zero}, not for polish. On problem 6, a student who gives
+the sum and the quotient the same domain has forgotten the quotient's extra rule;
+if that is common, open 1.3 with it. Problem 7(c) is the context domain and the
+most commonly skipped item on the page --- a bare ``all real numbers'' there is
+worth one sentence of feedback, because 1.3's compositions will ask for context
+domains repeatedly.
+\end{teachernote}
+\end{document}

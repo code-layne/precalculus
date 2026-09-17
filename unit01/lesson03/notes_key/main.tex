@@ -1,4 +1,25 @@
-%! Composition of Functions — Unit 1, Lesson 1.3 — Guided Notes (ANSWER KEY)
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% DENSITY: a \blank{} only where a number IS the answer (the handoff row of the table); no
+% mid-sentence blanks; two problems across; 2–2.6cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 14 minutes while the teacher circulates.
+% The crux is row 4, TWO HANDOFFS: problem 12 runs ONE input through BOTH orders off the same
+% pair of functions and gets two different answers. Problem 15 transfers it to a table.
+% NOTE ON ORDERING: transformations are now Lesson 1.5, AFTER this lesson — nothing here may
+% treat f(x+h) as prior knowledge. Inverse functions are Lesson 1.4, the next lesson.
+%
+% PAGE LOCKSTEP with notes/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. (`\\` inside cases/tabular is safe:
+% those environments scope it.) A row cannot break across pages: the figure and EACH grid row
+% are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -10,142 +31,90 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Find the \ans{handoff} value in $f(g(x))$ --- the number the inner
-        function hands over --- and use it to evaluate the composite.
-  \item Build $(f \circ g)(x)$ by substituting $g(x)$ for \ans{every} $x$ in
-        $f(x)$, and explain why $f(g(x))$ and $g(f(x))$ are usually
-        \ans{different}.
-  \item Say why a composite has no value when the handoff is not something the
-        \ans{outer} function accepts.
-  \item \ans{Decompose} a function into an inner and an outer piece, and
-        recognize every ``inside'' change from Lesson 1.4 as a
-        \ans{composition}.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
 \noindent\textbf{\textcolor{plum}{Composition:}}\\[1pt]
-\ansline{Running two functions back to back. Written $(f \circ g)(x) = f(g(x))$, read ``$f$ of $g$ of $x$.''}\\[3pt]
+\ansline{Running two functions back to back: $(f \circ g)(x) = f(g(x))$.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Inner and outer function:}}\\[1pt]
-\ansline{In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result.}\\[3pt]
+\ansline{In $f(g(x))$, $g$ (inner) runs first; $f$ (outer) runs on its result.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Handoff value:}}\\[1pt]
-\ansline{The number (or expression) the inner function hands over --- its answer, and the outer function's question.}\\[3pt]
+\ansline{The number the inner function hands over --- its answer, the outer's question.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Domain of a composite:}}\\[1pt]
-\ansline{The inputs $x$ that $g$ accepts \textit{and} whose handoff $g(x)$ is an input $f$ accepts.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
-\ansline{$I(x) = x$ --- the do-nothing function. $f(I(x)) = f(x)$ and $I(f(x)) = f(x)$.}\\[3pt]
+\ansline{The inputs whose handoff $g(x)$ is a value the outer function accepts.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Decomposition:}}\\[1pt]
-\ansline{Writing one function $h$ as $f(g(x))$ for simpler pieces --- composition run backwards.}
+\ansline{Writing one function as $f(g(x))$ --- composition run backwards.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[18]
+\boxguard
 \begin{hookbox}
-A \$60 jacket, a \$10 coupon, and 6\% sales tax.
+A \$60 jacket, a \$10 coupon, and 6\% sales tax. At register 1 the clerk scans
+the coupon first and the tax second. At register 2 the clerk scans the tax first
+and the coupon second. Between the two scans, each register's little screen shows
+a number --- and the two screens will not agree.
 
-\smallskip
-You are at register 1, where the clerk scans the coupon first and the tax
-second. Your friend is at register 2, where the clerk scans the tax first and
-the coupon second. \textbf{Between the two scans, each register's little screen
-shows a number} --- and the two screens will not agree.
-
-\smallskip
 Same jacket, same coupon, same tax rate. Will the two \textit{totals} agree?
 Commit to an answer before you compute anything.
-\ansline{Answers will vary --- most classes split, and most say ``same, it's the same two things.''}
-\ansline{They differ: coupon first is \$53.00, tax first is \$53.60. Sixty cents, from the same two rules.}
+\ansline{No. Register 1's screen reads \$50 and it charges \$53.00; register 2's screen reads \$63.60 and it charges \$53.60. The totals differ by \$0.60 because the two middle numbers differ --- taxing first taxes the \$10 you never paid.}
 \end{hookbox}
 
-\vspace{0.1in}
+\small
+\begin{guidednotes}
+% ── ROW 1: composition and the handoff ───────────────────────────────────────
+\mainidea[The number in between]{The Handoff} &
+A \textbf{composition} runs two functions back to back: the output of the first becomes the
+input of the second. We write it $(f \circ g)(x) = f\big(g(x)\big)$ and read it ``$f$ of $g$ of
+$x$.'' The circle is \textbf{not} multiplication, and the function written \emph{last} is the one
+that runs \emph{first}. The one number sitting between the two machines is the \textbf{handoff}:
+it is the inner function's \textbf{answer} and the outer function's \textbf{question} at the same
+time, so find it first and write it down.
 
-\boxguard[26]
-\begin{notesbox}{1. The Handoff}
-A \textbf{composition} runs two functions back to back. We write it
-
-\begin{center}
-$(f \circ g)(x) = f\big(g(x)\big)$, \quad read ``$f$ of $g$ of $x$.''
-\end{center}
-
-The circle is \textit{not} multiplication. Here is the whole idea in one
-picture.
-
-\smallskip
-\begin{center}
-\begin{tikzpicture}[x=1cm, y=1cm]
-  \draw[thick, plum, fill=lilac, rounded corners=2pt]
-    (-0.8,-0.5) rectangle (0.8,0.5);
-  \node at (0,0) {\large $g$};
-  \draw[thick, plum, fill=lilac, rounded corners=2pt]
-    (4.2,-0.5) rectangle (5.8,0.5);
-  \node at (5,0) {\large $f$};
-  \draw[->, very thick, plum] (-2.4,0) -- (-0.9,0);
-  \node[above, font=\small] at (-1.65,0.08) {$x$};
-  \draw[->, very thick, goldacc] (0.9,0) -- (4.1,0);
-  \node[above, font=\small] at (2.5,0.10) {$g(x)$};
-  \draw[->, very thick, plum] (5.9,0) -- (7.9,0);
-  \node[above, font=\small] at (6.9,0.08) {$f(g(x))$};
-  \node[above, font=\small\itshape, text=slate] at (0,0.58) {runs first};
-  \node[above, font=\small\itshape, text=slate] at (5,0.58) {runs second};
-  \node[below, font=\scriptsize\bfseries, goldacc] at (2.5,-0.10) {THE HANDOFF};
-  \node[below, font=\scriptsize, text=slate, align=center]
-    at (2.5,-0.42) {$g$'s answer \textit{is} $f$'s question};
+\vspace{4pt}
+A cable car climbs 200 feet every minute, so after $t$ minutes its elevation is $E(t) = 200t$
+feet. The air cools as you rise: at elevation $e$ feet the temperature is
+$T(e) = 68 - \dfrac{e}{100}$ degrees Fahrenheit. Nothing on the mountain measures degrees against
+minutes --- but chaining the two instruments does.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.3cm,
+        minimum height=1.0cm, font=\large] (E) at (0,0) {$E$};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.3cm,
+        minimum height=1.0cm, font=\large] (T) at (5.4,0) {$T$};
+  \node[font=\small] (in) at (-2.4,0) {$t$ minutes};
+  \node[font=\small] (out) at (8.0,0) {$T(E(t))$ degrees};
+  \draw[->, very thick, plum] (in) -- (E);
+  \draw[->, very thick, goldacc] (E) -- (T);
+  \draw[->, very thick, plum] (T) -- (out);
+  \node[above, font=\small] at (2.7,0.16) {$E(t)$ feet};
+  \node[above, font=\scriptsize\itshape, text=slate] at (0,0.58) {runs first};
+  \node[above, font=\scriptsize\itshape, text=slate] at (5.4,0.58) {runs second};
+  \node[below, font=\scriptsize\bfseries, text=goldacc] at (2.7,-0.10) {THE HANDOFF};
+  \node[below, font=\scriptsize, text=slate, align=center] at (2.7,-0.44)
+       {$E$'s answer \textit{is} $T$'s question};
 \end{tikzpicture}
 \end{center}
-
-\smallskip
-\begin{center}
-\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
-\textbf{The handoff.} In $f(g(x))$, the number $g$ hands back is the very
-number $f$ gets asked about. One number doing two jobs --- an \textbf{answer}
-first, then a \textbf{question}. Find it first, and \textbf{write it down}.
-\end{tcolorbox}
-\end{center}
-
-\smallskip
-Notice which letter runs first. In $f(g(x))$ the function written
-\textit{last} is the one that goes \textit{first} --- exactly like innermost
-parentheses in arithmetic.
-
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{composite} & \textbf{runs first} & \textbf{runs second} \\
-\hline
-$(f \circ g)(x) = f(g(x))$ & \ans{$g$} & \ans{$f$} \\
-\hline
-$(g \circ f)(x) = g(f(x))$ & \ans{$f$} & \ans{$g$} \\
-\hline
-$f(f(x))$ & \ans{$f$} & \ans{$f$} \\
-\hline
-\end{tabular}
-\end{center}
-
-\smallskip
-And one thing $(f \circ g)(x)$ does \textit{not} mean: \ans{$f(x) \cdot g(x)$}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[22]
-\begin{notesbox}{2. Finding the Handoff in a Table}
-A composition never needs a formula --- it needs two lookups. So a table is
-enough.
-
-\smallskip
+\vspace{2pt}
+The handoff is measured in \labelbox{1.8cm}{feet}\qquad and $E$'s answer becomes $T$'s \labelbox{2.0cm}{question}
+\\
+& \notesprompt{Say the handoff out loud before you compute anything.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Name the handoff in $T(E(4))$, with its units. Then find $T(E(4))$.}{2.2cm}{The handoff is $E(4) = 800$ feet. Then $T(800) = 68 - 8 = 60$ degrees.} &
+\pcell{2}{In $(T \circ E)(t)$, which function runs first? Then name one thing $(T \circ E)(t)$ does \emph{not} mean.}{2.2cm}{$E$ runs first --- the letter written last goes first. It does \emph{not} mean $T(t) \cdot E(t)$; a product has no handoff.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: evaluating a composite from a table ───────────────────────────────
+\mainidea[From a table]{Finding It} &
+A composition never needs a formula --- it needs two lookups, so a table is enough. Read the
+inner function's value first, write that number down, and only then carry it to the outer
+function. If the outer function has no value at the handoff, the composite has no value there
+either: that restriction is the \textbf{domain of a composite}.
+\\
+& \begin{center}
 \renewcommand{\arraystretch}{1.4}
-\begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 0 & 1 & 2 & 3 & 4 \\
@@ -156,231 +125,170 @@ $g(x)$ & 2 & 3 & 7 & 0 & 4 \\
 \hline
 \end{tabular}
 \end{center}
-
-\medskip
-\textbf{Example 1.} Find $f(g(1))$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.4em]
-  \item The inner function runs first. The handoff is $g(1) = $ \ans{3}
-  \item Hand it over: $f($ \ans{3} $) = $ \ans{2}
-\end{enumerate}
-
-\medskip
-\textbf{Example 2.} Now swap the machines: find $g(f(1))$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.4em]
-  \item Now $f$ is inside, so the handoff is $f(1) = $ \ans{4}
-  \item Hand it over: $g($ \ans{4} $) = $ \ans{4}
-\end{enumerate}
-
-\smallskip
-Same two functions, same starting input, a different \ans{handoff} --- and so
-a different answer. Composition is \textbf{not commutative}: in general
-$f(g(x))$ \ans{$\ne$} $g(f(x))$.
-
-\medskip
-\textbf{Example 3 (a warning).} Try $f(g(2))$. The handoff is $g(2) = $
-\ans{7}. Now look for $f($ \ans{7} $)$ in the table --- it is
-\ans{not there}. A handoff only works if it is a question the \textbf{outer}
-function accepts, and that restriction is the \textbf{domain of a composite}.
-
-\medskip
-\textbf{Your turn.} Fill the handoff row all the way across \textit{before}
-you look up a single value of $f$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
+\vspace{2pt}
+\textbf{Fill the handoff row all the way across before you look up a single value of $f$.}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
 \hline
-$x$ & 0 & 1 & 3 & 4 \\
+$x$ & 0 & 3 & 4 \\
 \hline
-handoff: $g(x)$ & \ans{2} & \ans{3} & \ans{0}
-  & \ans{4} \\
+handoff: $g(x)$ & \ans{2} & \ans{0} & \ans{4} \\
 \hline
-$(f \circ g)(x) = f(g(x))$ & \ans{0} & \ans{2} & \ans{3}
-  & \ans{1} \\
+$f(g(x))$ & \ans{0} & \ans{3} & \ans{1} \\
 \hline
 \end{tabular}
 \end{center}
-\end{notesbox}
+\\
+& \notesprompt{Use the table above. Write the handoff, then the answer.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Find $f(g(1))$. Name the handoff first.}{2.0cm}{Handoff $g(1) = 3$, so $f(g(1)) = f(3) = 2$.} &
+\pcell{4}{Find $g(f(1))$. Name the handoff first.}{2.0cm}{Handoff $f(1) = 4$, so $g(f(1)) = g(4) = 4$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{Try $f(g(2))$. What is the handoff, and why does the composite have no value here?}{2.2cm}{The handoff is $g(2) = 7$, and the table gives no $f(7)$. The outer function will not accept that question, so $f(g(2))$ has no value.} &
+\pcell{6}{Find $f(g(3))$ and $g(f(3))$. Write both handoffs.}{2.2cm}{Handoff $g(3) = 0$, so $f(g(3)) = f(0) = 3$. Handoff $f(3) = 2$, so $g(f(3)) = g(2) = 7$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: building the composite from formulas ──────────────────────────────
+\mainidea[A whole expression]{Building It} &
+With formulas instead of a table the handoff stops being a number and becomes an
+\textbf{expression} --- and nothing else changes. To build $(f \circ g)(x)$, hand $f$ the whole
+rule of $g$:
 
-\vspace{0.1in}
-
-\boxguard[20]
-\begin{notesbox}{3. Handing Over a Whole Expression}
-With formulas instead of a table, the handoff is no longer a number --- it is
-an \textbf{expression}. Nothing else changes.
-
-\begin{center}
-To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
+\vspace{3pt}
+\stepnum{1}\ Write $f$ with an empty slot: $f(\square) = 3(\square) - 2$. \quad
+\stepnum{2}\ Put $g(x)$ in \emph{every} slot --- circle each $x$ first so you miss none. \quad
+\stepnum{3}\ Simplify.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=0.95, >=stealth]
+  \node[font=\large] (rule) at (0,0) {$f(\square) = 3(\square) - 2$};
+  \node[font=\large] (fill) at (6.3,0) {$f(x^2 + 1) = 3(x^2 + 1) - 2$};
+  \draw[->, very thick, plum] (2.1,0) -- node[above, font=\scriptsize\itshape] {the handoff goes in} (3.4,0);
+  \node[font=\large] at (6.3,-1.5) {$= 3x^2 + 1$};
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\small, align=left]
+        at (0,-1.5) {\textbf{The trap:} $f(g(x))$ is \emph{not} $f(x)\cdot g(x)$.\\ A product has no handoff.};
+\end{tikzpicture}
 \end{center}
-
-You already did this on the warm-up: with $f(x) = 3x - 2$, the handoff $x^2$
-turned $f(x^2)$ into $3x^2 - 2$. The only new part is the name.
-
-\medskip
-\textbf{Example 4.} Let $f(x) = 3x - 2$ and $g(x) = x^2 + 1$. Build both
-composites.
-
-\begin{work}
-  f(g(x)) &= f(x^2 + 1) \\
-          &= 3(x^2 + 1) - 2 \\
-          &= 3x^2 + 3 - 2 \\
-          &= 3x^2 + 1 \\
-  g(f(x)) &= g(3x - 2) \\
-          &= (3x - 2)^2 + 1 \\
-          &= 9x^2 - 12x + 4 + 1 \\
-          &= 9x^2 - 12x + 5
-\end{work}
-
-$(f \circ g)(x) = $ \ans{$3x^2 + 1$} \qquad $(g \circ f)(x) = $
-\ans{$9x^2 - 12x + 5$}
-
-\smallskip
-These are not even the same \textit{shape} of expression, which settles the
-question: order \ans{matters}.
-
-\medskip
-\textbf{Two routes, one number.} Check $f(g(2))$ both ways. Step by step: the
-handoff is $g(2) = $ \ans{5}, so $f($ \ans{5} $) = $
-\ans{13}. Straight from the formula: $3(2)^2 + 1 = $ \ans{13}. A
-composite value can come from a table, a graph, or an expression --- the
-number does not care which route you take.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[26]
-\begin{notesbox}{4. Two Registers, Two Handoffs}
-Back to the jacket. Two functions act on the price $p$:
-
-\begin{center}
-\textbf{Coupon:} $c(p) = p - 10$ \qquad\qquad
-\textbf{Tax:} $t(x) = 1.06x$
+\vspace{2pt}
+Throughout this row, $f(x) = 3x - 2$ and $g(x) = x^2 + 1$.
+\\
+& \notesprompt{Build each composite and simplify. Show the substitution before you expand.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Build $(f \circ g)(x)$ for $f(x) = 3x-2$ and $g(x) = x^2+1$.}{2.2cm}{$f(g(x)) = 3(x^2+1) - 2 = 3x^2 + 3 - 2 = 3x^2 + 1$} &
+\pcell{8}{Now build $(g \circ f)(x)$ for the same two functions. Is it the same expression?}{2.2cm}{$g(f(x)) = (3x-2)^2 + 1 = 9x^2 - 12x + 5$. Not the same --- not even the same shape.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Check $f(g(2))$ two ways: by naming the handoff, and from your answer to problem 7.}{2.2cm}{Handoff $g(2) = 5$, so $f(5) = 13$. From the formula, $3(2)^2 + 1 = 13$. Same number either route.} &
+\pcell{10}{Let $p(x) = x^2$ and $q(x) = x - 4$. Build $(p \circ q)(x)$ and $(q \circ p)(x)$.}{2.4cm}{$(p \circ q)(x) = (x-4)^2 = x^2 - 8x + 16$, while $(q \circ p)(x) = x^2 - 4$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — two orders, two handoffs — plus decomposition ──────────
+\mainidea[Order matters]{Two Handoffs} &
+Swap the two machines and you swap the handoff --- and a different number handed over produces a
+different answer. That is why $f(g(x))$ and $g(f(x))$ are usually \emph{different functions}, not
+two ways of writing the same one. Back at the register, the coupon is $c(p) = p - 10$ and the tax
+is $t(x) = 1.06x$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+  % register 1 — coupon, then tax
+  \node[font=\small\bfseries, text=plum, anchor=west] at (-1.5,1.85) {Register 1 --- coupon first, then tax};
+  \node[font=\small] (p1) at (-0.7,1.15) {\$60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (c1) at (1.0,1.15) {$c$};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=2pt, minimum width=1.3cm,
+        minimum height=0.62cm, font=\small\bfseries] (h1) at (2.9,1.15) {\$50};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (t1) at (4.8,1.15) {$t$};
+  \node[font=\small\bfseries] (o1) at (6.7,1.15) {\$53.00};
+  \draw[->, very thick, plum] (p1) -- (c1);
+  \draw[->, very thick, goldacc] (c1) -- (h1);
+  \draw[->, very thick, goldacc] (h1) -- (t1);
+  \draw[->, very thick, plum] (t1) -- (o1);
+  % register 2 — tax, then coupon
+  \node[font=\small\bfseries, text=plum, anchor=west] at (-1.5,0.15) {Register 2 --- tax first, then coupon};
+  \node[font=\small] (p2) at (-0.7,-0.55) {\$60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (t2) at (1.0,-0.55) {$t$};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=2pt, minimum width=1.3cm,
+        minimum height=0.62cm, font=\small\bfseries] (h2) at (2.9,-0.55) {\$63.60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (c2) at (4.8,-0.55) {$c$};
+  \node[font=\small\bfseries] (o2) at (6.7,-0.55) {\$53.60};
+  \draw[->, very thick, plum] (p2) -- (t2);
+  \draw[->, very thick, goldacc] (t2) -- (h2);
+  \draw[->, very thick, goldacc] (h2) -- (c2);
+  \draw[->, very thick, plum] (c2) -- (o2);
+  % the handoff column
+  \draw[goldacc, very thick, dashed] (2.9,1.62) -- (2.9,-1.05);
+  \node[below, font=\scriptsize\bfseries, text=goldacc] at (2.9,-1.05) {the two handoffs};
+\end{tikzpicture}
 \end{center}
+\vspace{2pt}
+The two totals differ by \labelbox{1.6cm}{\$0.60} because the two \labelbox{2.2cm}{handoffs} differ
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Swap the machines and you swap the handoff. Taxing first charges 6\% of the ten dollars
+you never paid --- at every price. Same two rules, different middle number, different answer:
+that is what ``order matters'' actually means.}}}
 
-Neither one alone answers ``what do I pay?'' --- chaining them does. That is
-what composition is \textit{for}: linking two quantities that no single
-formula connects.
-
-\medskip
-\textbf{Example 5.} The jacket costs \$60. Run both registers.
-
-\begin{work}
-  t(c(60)) &= t(50) \\
-           &= 1.06(50) \\
-           &= 53.00 \\
-  c(t(60)) &= c(63.60) \\
-           &= 63.60 - 10 \\
-           &= 53.60
-\end{work}
-
-Register 1's screen showed \$\ans{50} and it charged \$\ans{53.00}.
-Register 2's screen showed \$\ans{63.60} and it charged \$\ans{53.60}.
-
-\medskip
-\textbf{Why?} Build both rules symbolically and the gap stops being a
-coincidence.
-
-\begin{work}
-  t(c(p)) &= 1.06(p - 10) \\
-          &= 1.06p - 10.60 \\
-  c(t(p)) &= 1.06p - 10
-\end{work}
-
-The two rules differ by \$\ans{0.60} at \textit{every} price, because
-taxing first charges you 6\% of the \ans{\$10} you never actually paid.
-
-\smallskip
-Swap the machines and you swap the \ans{handoff} --- that is what ``order
-matters'' really means.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[26]
-\begin{notesbox}{5. Decomposition, the Identity, and Lesson 1.4}
-\textbf{Decomposition} is composition run backwards: given one function, name
-the handoff, and the two pieces fall out.
-
-\medskip
-\textbf{Example 6.} Decompose $h(x) = (5x - 1)^3$. Ask: with a calculator,
-what would you compute \textit{first}? That number is the handoff, so its rule
-is the inner function.
-
-\smallskip
-Inner: $g(x) = $ \ans{$5x - 1$} \qquad Outer: $f(u) = $ \ans{$u^3$}
-
-\smallskip
-Check by substituting back: $f(g(x)) = $ \ans{$(5x-1)^3$}
-
-\medskip
-\textbf{The identity function.} $I(x) = x$ hands back exactly what it is given,
-so the handoff is the number itself and nothing happens:
-
-\smallskip
-$I(f(x)) = $ \ans{$f(x)$} \qquad and \qquad $f(I(x)) = $ \ans{$f(x)$}
-
-\smallskip
-Hold on to this one --- next lesson hunts for a partner function that turns $f$
-into exactly $I$.
-
-\medskip
-\textbf{Lesson 1.4 was composition all along.} Every ``inside'' change you made
-last lesson handed $f$ something other than $x$ --- which is to say, it built
-a handoff.
-
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.96\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X c @{}}
-\hline
-From Lesson 1.4 & Written as a composition & \textbf{the handoff} \\
-\hline
-$g(x) = f(x+3)$ & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$x + 3$}
-  & \ans{$x+3$} \\
-\hline
-$g(x) = f(2x)$  & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$2x$}
-  & \ans{$2x$} \\
-\hline
-\end{tabularx}
+\vspace{3pt}
+\textbf{In your own words:} why is it not enough to say ``$f(g(x))$ and $g(f(x))$ use the same two rules''?
+\writespace{1.4cm}{Because the order decides which number gets handed over. The two orders build two different handoffs, and a different question to the outer function gives a different answer.}
+\\
+& \textbf{Backwards: decomposition.} Running the machines backwards means taking one function
+apart. Ask what a calculator would compute \emph{first}: that value is the handoff, and its rule
+is the \textbf{inner} function. Whatever is done to it is the \textbf{outer} function. Reading
+$h(x) = \sqrt{x + 5}$ this way: you would add 5 first, so the inner rule is $g(x) = x + 5$ and
+the outer rule is $f(u) = \sqrt{u}$. Check a split by substituting back --- $f(g(x))$ must
+rebuild $h$ exactly.
+\\
+& \notesprompt{Name the handoff every time. On a decomposition, check by substituting back.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Build $t(c(p))$ and $c(t(p))$ symbolically. By how much do the two rules differ at any price?}{2.4cm}{$t(c(p)) = 1.06(p - 10) = 1.06p - 10.60$, while $c(t(p)) = 1.06p - 10$. They differ by \$0.60 at every price.} &
+\pcell{12}{Let $f(x) = 2x$ and $g(x) = x - 6$. Find $f(g(10))$ and $g(f(10))$. Write both handoffs and both answers.}{2.4cm}{Handoff $g(10) = 4$, so $f(g(10)) = 8$. Handoff $f(10) = 20$, so $g(f(10)) = 14$. One input, two orders, two answers.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Decompose $h(x) = \sqrt{x+5}$: give the inner rule and the outer rule, then check by substituting back.}{2.2cm}{Inner $g(x) = x + 5$; outer $f(u) = \sqrt{u}$. Check: $f(g(x)) = \sqrt{x+5} = h(x)$.} &
+\pcell{14}{A classmate says $f(g(x))$ and $g(f(x))$ must match because they use the same two rules. Use the word \emph{handoff} to say what is wrong.}{2.2cm}{The rules are the same but the handoff is not. Each order hands a different number over, and the outer function answers whatever question it is given.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (14 min) ──────────
+\mainidea[You do, alone]{Table \& Formulas} &
+A pair of functions $p$ and $q$ given only by a table, and a pair $f$ and $g$ given only by
+formulas. Name the handoff before every answer.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \node[font=\normalsize, anchor=north] at (0,1.9) {%
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline $p(x)$ & 5 & 3 & 1 & 4 & 2 \\
+    \hline $q(x)$ & 4 & 1 & 2 & 5 & 3 \\ \hline
+    \end{tabular}};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt,
+        font=\normalsize, anchor=north] at (0,-0.55) {$f(x) = x + 3$ \qquad $g(x) = x^2$};
+\end{tikzpicture}
 \end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{From the table: find $p(q(2))$ and $q(p(2))$. Write each handoff. Are the two answers equal?}{2.2cm}{Handoff $q(2) = 1$, so $p(q(2)) = p(1) = 5$. Handoff $p(2) = 3$, so $q(p(2)) = q(3) = 2$. Not equal.} &
+\pcell{16}{Using $f$ and $g$ above, build $(f \circ g)(x)$ and $(g \circ f)(x)$, simplified. Same function or not?}{2.4cm}{$(f \circ g)(x) = x^2 + 3$, but $(g \circ f)(x) = (x+3)^2 = x^2 + 6x + 9$. Different functions.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Find $f(g(-2))$ by naming the handoff first, then check it with your formula from problem 16.}{2.2cm}{Handoff $g(-2) = (-2)^2 = 4$, so $f(4) = 7$. From $x^2 + 3$: $(-2)^2 + 3 = 7$.} &
+\pcell{18}{Decompose $m(x) = (2x+1)^3$ into an inner rule and an outer rule. Which rule runs first when you compute $m(1)$? Find $m(1)$.}{2.4cm}{Inner $g(x) = 2x + 1$, outer $f(u) = u^3$. The inner rule runs first: the handoff is $g(1) = 3$, so $m(1) = 3^3 = 27$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\smallskip
-Now the reversal has a reason instead of a slogan. The handoff is what $f$ gets
-\textit{asked}, so an inside change can only rewrite the \ans{question} ---
-never the answers $f$ hands back.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[16]
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Use the table in section 2. Name the handoff first, every time.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $f(g(3))$: \; handoff $= $ \ans{0}, \;
-                so $f(g(3)) = $ \ans{3}
-          \item $g(f(3))$: \; handoff $= $ \ans{2}, \;
-                so $g(f(3)) = $ \ans{7}
-        \end{enumerate}
-
-  \item Let $f(x) = x^2$ and $g(x) = x - 4$. Build both composites and
-        simplify.
-
-        \begin{work}
-          f(g(x)) &= f(x - 4) \\
-                  &= (x - 4)^2 \\
-                  &= x^2 - 8x + 16 \\
-          g(f(x)) &= g(x^2) \\
-                  &= x^2 - 4
-        \end{work}
-
-        $(f \circ g)(x) = $ \ans{$x^2 - 8x + 16$} \qquad
-        $(g \circ f)(x) = $ \ans{$x^2 - 4$}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

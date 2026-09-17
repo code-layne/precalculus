@@ -357,9 +357,9 @@ Recognize the shape by the component directories and the plan's boxes:
 
 | Shape | Has | Where |
 | --- | --- | --- |
-| **current** (gradual release + back-of-packet, 2026-09-16) | `notes/` + `ap_practice/` + `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has a Homework Launch box | `unit01/lesson01` |
+| **current** (gradual release + back-of-packet, 2026-09-16) | `notes/` + `ap_practice/` + `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has a Homework Launch box | `unit01/lesson01`–`03` |
 | **exit-ticket gradual release** (2026-08) | `notes/` + `exit_ticket/`, no `homework/` (DeltaMath); plan has Individual Work & Assessment | none remaining |
-| **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | `unit01/lesson02`–`07`, `unit02/lesson00`–`07` |
+| **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | `unit01/lesson04`–`08`, `unit02/lesson00`–`07` |
 | **moved / pre-restructure** | the same directories, but the body is the old AP-paced lesson: cross-references in the *old* numbering, `navy`/`sky` colours, teacher notes still in the `_key` files, name rows on every component, Tier R/A/E boxes on the activity sheet, no `work` blocks, no `\boxguard`, sometimes no deck (`COURSE_PLAN.md`: *moved* or *new*) | units 03–08 |
 
 The build accepts all of them. When asked to touch one, **ask whether to regenerate it** in the
@@ -399,8 +399,8 @@ one-page warm-up on both sides, AP Practice and Homework exactly two pages each 
 and every component's page count equals its `_key`'s on the compiled components, not the padded
 packets.
 
-**Scoreboard (2026-09-17):** 1 lesson is in the current shape (`unit01/lesson01`);
-14 are convention-compliant group-activity lessons (`unit01/lesson02`–`07`,
+**Scoreboard (2026-09-17):** 3 lessons are in the current shape (`unit01/lesson01`–`03`);
+13 are convention-compliant group-activity lessons (`unit01/lesson04`–`08`,
 `unit02/lesson00`–`07`); 48 are moved / pre-restructure (units 03–08). Across the tree: 61
 plans still carry a `Group Work \& Differentiation` box, 117 `_key` files still hold teacher
 notes and 324 component files still carry a name row (all in units 03–08), 53 activity sheets

@@ -1,0 +1,298 @@
+%! Function Operations — Unit 1, Lesson 1.2 — Slides (Beamer)
+% Follows the release order: hook -> I Do -> We Do -> You Do -> debrief -> homework launch.
+% \CourseName is not defined in beamer, so the course name is written literally.
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Function Operations}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Owner Wants One Number}
+  \sectionlabel[goldacc]{Think About It}
+
+  A bakery bakes \(x\) loaves in a day. Two costs are tracked separately:
+
+  \bigskip
+  \begin{center}
+    {\Large\bfseries\color{plum} \(F(x) = 0.80x\) \qquad \(L(x) = 25 + 1.20x\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The owner's complaint}
+        ``I do not want two numbers every morning. I want \textit{one}.''
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        What single function gives the total daily cost? How would you build it
+        out of \(F\) and \(L\)?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Both rules take the same input --- \(x\) loaves. That is what makes it
+  legal to combine them.}
+\end{frame}
+
+% I DO — SECTION 1: COMBINING
+\begin{frame}[t, plain]
+  \plumheader{Two Machines, One Answer}
+  \sectionlabel[goldacc]{Notes row COMBINING $\cdot$ I Do: problem 1 $\cdot$ We Do: problem 2}
+
+  \begin{block}{Four ways to combine, all defined on the outputs}
+    \[ (f+g)(x) = f(x) + g(x) \qquad (f-g)(x) = f(x) - g(x) \]
+    \[ (fg)(x) = f(x) \cdot g(x) \qquad \left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)} \]
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{The picture.} The same input \(x\) goes into \textbf{both}
+      machines. The two outputs meet afterward, at the combiner. Only then is
+      there one new number.
+
+    \column{0.48\textwidth}
+      \textbf{The bakery.}
+      \[ T(x) = (F + L)(x) = 0.80x + 25 + 1.20x \]
+      \[ T(x) = 25 + 2x \text{ dollars} \]
+  \end{columns}
+\end{frame}
+
+% I DO / WE DO — SECTION 2: AT A POINT
+\begin{frame}[t, plain]
+  \plumheader{Combining at a Point --- No Formula Needed}
+  \sectionlabel[goldacc]{Notes row AT A POINT $\cdot$ I Do: problem 3 $\cdot$ We Do: problems 4--6}
+
+  \begin{block}{If you know the two outputs, you are done}
+    \((f+g)(2)\) is nothing more than \(f(2) + g(2)\). Look up two numbers, do
+    the arithmetic, stop.
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \(x\) & 0 & 1 & 2 & 3 & 4 \\ \hline
+      \(f(x)\) & 5 & 3 & 1 & \(-1\) & \(-3\) \\ \hline
+      \(g(x)\) & 1 & 2 & 4 & 8 & 16 \\ \hline
+      \end{tabular}
+      \end{center}
+
+    \column{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \((f+g)(4) = -3 + 16 = 13\)
+        \item \((fg)(0) = 5 \cdot 1 = 5\)
+        \item \((f-g)(2) = 1 - 4 = -3\)
+        \item \((g-f)(2) = 4 - 1 = \phantom{-}3\)
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textbf{The trap:} \((f-g)\) and \((g-f)\) are \textbf{different functions} ---
+  opposites. Read which one the question asked for.
+\end{frame}
+
+% WE DO — SECTION 3: THE FORMULA
+\begin{frame}[t, plain]
+  \plumheader{Building the Rule}
+  \sectionlabel[goldacc]{Notes row THE FORMULA $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
+
+  \begin{block}{Three steps}
+    \textbf{1.} Write the definition. \quad \textbf{2.} Replace each name with
+    its formula, \textit{each in its own parentheses}. \quad \textbf{3.}
+    Distribute, then combine like terms.
+  \end{block}
+
+  \bigskip
+  \begin{center}
+    {\large \(f(x) = 2x + 1\) \qquad \(g(x) = x - 3\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \textbf{Sum}
+      \begin{align*}
+        (f+g)(x) &= (2x+1) + (x-3) \\
+                 &= 3x - 2
+      \end{align*}
+
+    \column{0.34\textwidth}
+      \textbf{Difference}
+      \begin{align*}
+        (f-g)(x) &= (2x+1) - (x-3) \\
+                 &= 2x + 1 - x + 3 \\
+                 &= x + 4
+      \end{align*}
+
+    \column{0.31\textwidth}
+      \textbf{Product}
+      \begin{align*}
+        (fg)(x) &= (2x+1)(x-3) \\
+                &= 2x^2 - 5x - 3
+      \end{align*}
+  \end{columns}
+
+  \bigskip
+  \textbf{Both signs flip:} \(-(x-3)\) is \(-x + 3\), never \(-x - 3\).
+\end{frame}
+
+% WE DO — SECTION 4: THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{Who Is Allowed In --- The Domain}
+  \sectionlabel[redacc]{Notes row DOMAIN --- the hinge of this lesson $\cdot$ I Do: 11 $\cdot$ We Do: 12--14}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The overlap}
+        An input is allowed only if \textbf{both} parents accept it. The domain
+        of \(f+g\), \(f-g\) and \(fg\) is the \textbf{overlap} of the two
+        domains.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{The extra rule for a quotient}
+        Also throw out every input with \(g(x) = 0\). You may never divide by
+        zero.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    {\large \(f(x) = \dfrac{1}{x-2}\), \ \(g(x) = x + 6\): \ domain of \(f+g\) is
+    all reals \textbf{except 2}}
+  \end{center}
+
+  \bigskip
+  \textit{Settle the domain from the original functions --- before you simplify
+  anything.}
+\end{frame}
+
+% WE DO — SECTION 4, CONT.: THE CASE WHERE THE TWO ANSWERS DISAGREE
+\begin{frame}[t, plain]
+  \plumheader{The Crux --- When Cancelling Lies}
+  \sectionlabel[redacc]{Notes row DOMAIN $\cdot$ problem 14 is the crux}
+
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (-1,0) grid (5,8);
+        \draw[->, thick] (-1,0) -- (5.5,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small \(y\)};
+        \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {2,4,6,8} \node[left] at (0,\y) {\small \y};
+        \draw[goldacc, very thick, dashed] (3,0) -- (3,7.6);
+        \draw[very thick, plum] (-1,2) -- (5,8);
+        \draw[very thick, plum, fill=white] (3,6) circle (2.8pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.50\textwidth}
+      \(f(x) = x^2 - 9\), \quad \(g(x) = x - 3\)
+
+      \medskip
+      \[ \frac{f(x)}{g(x)} = \frac{(x-3)(x+3)}{x-3} = x + 3 \]
+
+      \medskip
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(x + 3\) looks defined \textbf{everywhere}
+        \item but \(g(3) = 0\), so the quotient \textbf{never had a value} at
+              \(x = 3\)
+        \item domain: all reals \textbf{except 3} --- the hole stays
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textbf{The domain comes from the ORIGINAL functions, never from the
+  simplified formula.}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- On Your Own}
+  \sectionlabel[redacc]{Notes row ON YOUR OWN $\cdot$ problems 15--18, alone, 13 minutes}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \setcounter{enumi}{14}
+        \item \(f(x) = 3x - 2\), \(g(x) = x + 7\). Find \((f+g)(x)\) and \((fg)(x)\).
+        \item Same \(f\) and \(g\): find \((f-g)(1)\) and \((g-f)(1)\).
+        \item \(p(x) = x^2 - 25\), \(q(x) = x - 5\). Simplify \(\left(\frac{p}{q}\right)(x)\),
+              then state its \textbf{domain}.
+      \end{enumerate}
+
+    \column{0.44\textwidth}
+      \begin{block}{18 --- the finisher}
+        A food truck sells \(x\) lunch plates a day, at most 60.
+        \[ R(x) = 9x \qquad C(x) = 4x + 120 \]
+        Write \(P(x) = (R - C)(x)\), find \(P(40)\), and state the domain of
+        \(P\) in this context.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The operations}
+        Combining two functions is \textbf{arithmetic on the outputs}. Order
+        matters for \(-\) and \(\div\).
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{The domain}
+        The \textbf{overlap} of both parents, minus every input where the bottom
+        function is \textbf{zero}.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \textit{Simplifying can hide a forbidden input. It can never make it legal.}
+  \end{center}
+
+  \bigskip
+  \textbf{Next time (1.3):} we stop feeding both machines the same input. The
+  output of one becomes the \textbf{input} of the next --- \(f(g(x))\).
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 5} now. On problem 5,
+          write the domain \textit{before} you look at the simplified form.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

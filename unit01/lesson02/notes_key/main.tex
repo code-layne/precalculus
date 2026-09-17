@@ -1,0 +1,282 @@
+%! Function Operations — Unit 1, Lesson 1.2 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% DENSITY: a \blank{} only where a number IS the answer (the (f+g) row of the table); no
+% mid-sentence blanks; two problems across; 2–2.6cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 13 minutes while the teacher circulates.
+% The crux is row 4, DOMAIN: problem 14 asks for the domain of (f/g) when f(x) = x^2 - 9 and
+% g(x) = x - 3. The quotient SIMPLIFIES to x + 3, which is defined everywhere — but x = 3 was
+% never in the domain, because g(3) = 0. The two answers DISAGREE; that is the whole lesson.
+% Problem 17 transfers it to x^2 - 25 over x - 5. The secondary trap, (f-g) vs (g-f), is the
+% problem pair 5/6 (from the table) and echoed at the formula level by 8/9.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. (`\\` inside cases/tabular is safe:
+% those environments scope it.) A row cannot break across pages: the figure and EACH grid row
+% are separate sub-rows (`\\` then `& ...`, probgrid*).
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.2}{Guided Notes --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Sum of two functions:}}\\[1pt]
+\ansline{$(f+g)(x) = f(x) + g(x)$ --- add the two outputs at the same input.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Difference of two functions:}}\\[1pt]
+\ansline{$(f-g)(x) = f(x) - g(x)$ --- order matters; $g-f$ is the opposite.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Product of two functions:}}\\[1pt]
+\ansline{$(fg)(x) = f(x) \cdot g(x)$ --- multiply the two outputs.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Quotient of two functions:}}\\[1pt]
+\ansline{$(f/g)(x) = f(x) \div g(x)$, and only where $g(x) \ne 0$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain of a combination:}}\\[1pt]
+\ansline{The overlap of both parents' domains, minus any input where $g(x) = 0$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+A bakery tracks two costs for a day on which it bakes $x$ loaves: flour,
+$F(x) = 0.80x$ dollars, and labor, $L(x) = 25 + 1.20x$ dollars. The owner does
+not want two numbers every morning --- she wants \emph{one}.
+
+Which single function tells her the total daily cost, and how would you build it
+out of $F$ and $L$?
+\ansline{Add them: $T(x) = F(x) + L(x) = 0.80x + (25 + 1.20x) = 25 + 2x$ dollars. One input, $x$ loaves, goes into both cost rules, and the two outputs are added to make a single new function.}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: the four operations — two machines, one input ─────────────────────
+\mainidea[Two machines, one answer]{Combining} &
+Two functions with the same input can be combined into a \textbf{new} function four ways, and
+each one is defined by doing the arithmetic to the \textbf{outputs}:
+$(f+g)(x) = f(x) + g(x)$, \ $(f-g)(x) = f(x) - g(x)$, \ $(fg)(x) = f(x) \cdot g(x)$, and
+$\left(\dfrac{f}{g}\right)(x) = \dfrac{f(x)}{g(x)}$. The same input $x$ is fed to both machines,
+and the two outputs meet afterward.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.92, >=stealth]
+  \node[font=\small] (in) at (0,0) {input $x$};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.9cm,
+        minimum height=0.95cm, font=\small] (f) at (3.0,1.15) {\textbf{\large\color{plum} $f$}};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.9cm,
+        minimum height=0.95cm, font=\small] (g) at (3.0,-1.15) {\textbf{\large\color{plum} $g$}};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=3pt, minimum width=2.1cm,
+        minimum height=1.25cm, align=center, font=\small] (c) at (6.6,0)
+        {combine\\ $+\ \ -\ \ \times\ \ \div$};
+  \node[font=\small] (out) at (9.9,0) {one new output};
+  \draw[->, very thick, plum] (in) -- (f);
+  \draw[->, very thick, plum] (in) -- (g);
+  \draw[->, very thick, plum] (f) -- node[above right, font=\scriptsize] {$f(x)$} (c);
+  \draw[->, very thick, plum] (g) -- node[below right, font=\scriptsize] {$g(x)$} (c);
+  \draw[->, very thick, goldacc] (c) -- (out);
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Both machines are fed the same \labelbox{2.2cm}{input $x$}\qquad What meets at the combiner: the two \labelbox{2.4cm}{outputs}
+\\
+& \notesprompt{Write each combination out as arithmetic on the two outputs before you compute anything.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Write what $(f+g)(x)$ and $(f-g)(x)$ mean, using $f(x)$ and $g(x)$.}{2.0cm}{$(f+g)(x) = f(x) + g(x)$ and $(f-g)(x) = f(x) - g(x)$ --- arithmetic on the outputs.} &
+\pcell{2}{For the bakery hook, write the total cost $T(x)$ as a combination of $F$ and $L$, then simplify it.}{2.2cm}{$T(x) = (F+L)(x) = 0.80x + (25 + 1.20x) = 25 + 2x$ dollars.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: combining at a point, from a table (and the order trap) ───────────
+\mainidea[From a table]{At a Point} &
+You do not need a formula to combine two functions. If you know $f(2)$ and $g(2)$, you already
+know $(f+g)(2)$: it is simply $f(2) + g(2)$. Look up the two outputs, do the arithmetic, and
+stop.
+
+\vspace{3pt}
+Order matters for subtraction and division: $(f-g)$ and $(g-f)$ are different functions, and one
+is the opposite of the other.
+\\
+& \begin{center}
+{\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$        & 0 & 1 & 2 & 3   & 4    \\ \hline
+$f(x)$     & 5 & 3 & 1 & $-1$ & $-3$ \\ \hline
+$g(x)$     & 1 & 2 & 4 & 8   & 16   \\ \hline
+$(f+g)(x)$ & 6 & \ans{5} & \ans{5} & \ans{7} & \ans{13} \\ \hline
+\end{tabular}}
+\end{center}
+\\
+& \notesprompt{Use the table. Look up two outputs, then do the arithmetic.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Find $(f+g)(4)$ and $(fg)(0)$.}{2.0cm}{$(f+g)(4) = -3 + 16 = 13$; \ $(fg)(0) = 5 \cdot 1 = 5$.} &
+\pcell{4}{Find $(fg)(3)$.}{2.0cm}{$(fg)(3) = (-1)(8) = -8$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{Find $(f-g)(2)$.}{2.0cm}{$(f-g)(2) = f(2) - g(2) = 1 - 4 = -3$.} &
+\pcell{6}{Find $(g-f)(2)$. Why is this not the same answer as problem 5?}{2.2cm}{$(g-f)(2) = 4 - 1 = 3$. Subtraction is not reversible --- $g-f$ is the opposite of $f-g$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: building the combined rule symbolically ───────────────────────────
+\mainidea[Building the rule]{The Formula} &
+To build the combination as a \textbf{formula}, substitute the two rules and simplify. The one
+move students lose points on is the subtraction: $f(x) - g(x)$ subtracts \emph{all} of $g$, so
+$g$'s whole formula goes inside parentheses first.
+
+\vspace{3pt}
+\stepnum{1}\ Write the definition, $(f-g)(x) = f(x) - g(x)$. \quad \stepnum{2}\ Replace each
+name with its formula, each one in its own parentheses. \quad \stepnum{3}\ Distribute, then
+combine like terms.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=0.92, >=stealth]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt, font=\normalsize]
+       (rule) at (0,1.2) {$f(x) = 2x + 1 \qquad g(x) = x - 3$};
+  \node[font=\normalsize] (a) at (0,-0.15) {$(f-g)(x) = (2x + 1) - (x - 3)$};
+  \node[font=\normalsize] (b) at (0,-1.45) {$= 2x + 1 - x + 3 \ = \ x + 4$};
+  \draw[->, very thick, plum] (rule) -- (a);
+  \draw[->, very thick, plum] (a) -- (b);
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\scriptsize, align=left,
+        anchor=west] at (3.4,-0.8) {\textbf{Both signs flip.}\\ $-(x-3)$ is $-x + 3$,\\ never $-x - 3$.};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Use $f(x) = 2x + 1$ and $g(x) = x - 3$. Show the parentheses before you simplify.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Find $(f+g)(x)$.}{2.0cm}{$(2x+1) + (x-3) = 3x - 2$.} &
+\pcell{8}{Find $(f-g)(x)$.}{2.0cm}{$(2x+1) - (x-3) = 2x + 1 - x + 3 = x + 4$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Find $(g-f)(x)$. Compare it with your answer to problem 8.}{2.2cm}{$(x-3) - (2x+1) = -x - 4$, the exact opposite of problem 8's $x + 4$.} &
+\pcell{10}{Find $(fg)(x)$. Multiply the two formulas and simplify.}{2.2cm}{$(2x+1)(x-3) = 2x^2 - 6x + x - 3 = 2x^2 - 5x - 3$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the domain of a combination ────────────────────────────
+\mainidea[Who is allowed in]{Domain} &
+An input is allowed into a combination only if \textbf{both} parent functions accept it, so the
+domain of $f+g$, $f-g$ and $fg$ is the \textbf{overlap} of the two parents' domains. For the
+quotient $f/g$ there is one extra rule: every input with $g(x) = 0$ must also be thrown out,
+because you may never divide by zero.
+
+\vspace{3pt}
+\stepnum{1}\ Start from the two parent domains and keep the overlap. \quad \stepnum{2}\ For a
+quotient, solve $g(x) = 0$ and throw those inputs out too. \quad \stepnum{3}\ Only now are you
+allowed to simplify.
+\\
+& \begin{center}
+\begin{minipage}[t]{0.50\linewidth}
+\centering
+\begin{tikzpicture}[x=0.44cm, y=0.34cm, >=stealth]
+  \node[font=\scriptsize\bfseries\color{plum}, anchor=west] at (-1.6,7.6) {domain of $f$: $x \ge 1$};
+  \draw[thick] (-1.6,6.6) -- (8.4,6.6);
+  \draw[very thick, plum] (1,6.6) -- (8.4,6.6);
+  \fill[plum] (1,6.6) circle (2.4pt);
+  \node[below, font=\tiny] at (1,6.5) {1};
+  \node[font=\scriptsize\bfseries\color{plum}, anchor=west] at (-1.6,5.0) {domain of $g$: $x \le 6$};
+  \draw[thick] (-1.6,4.0) -- (8.4,4.0);
+  \draw[very thick, plum] (-1.6,4.0) -- (6,4.0);
+  \fill[plum] (6,4.0) circle (2.4pt);
+  \node[below, font=\tiny] at (6,3.9) {6};
+  \draw[goldacc, thick, dashed] (1,6.8) -- (1,1.4);
+  \draw[goldacc, thick, dashed] (6,4.2) -- (6,1.4);
+  \node[font=\scriptsize\bfseries\color{goldacc}, anchor=west] at (-1.6,2.4) {domain of $f+g$: the overlap};
+  \draw[thick] (-1.6,1.4) -- (8.4,1.4);
+  \draw[very thick, goldacc] (1,1.4) -- (6,1.4);
+  \fill[goldacc] (1,1.4) circle (2.4pt);
+  \fill[goldacc] (6,1.4) circle (2.4pt);
+  \node[below, font=\tiny] at (1,1.3) {1};
+  \node[below, font=\tiny] at (6,1.3) {6};
+  \node[font=\scriptsize\itshape, anchor=west] at (-1.6,0.2) {$1 \le x \le 6$ --- both parents say yes};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.46\linewidth}
+\centering
+$f(x) = x^2 - 9$, \quad $g(x) = x - 3$
+\par\vspace{2pt}
+$\dfrac{f(x)}{g(x)} = \dfrac{(x-3)(x+3)}{x-3} = x + 3$
+\par\vspace{3pt}
+\begin{tikzpicture}[x=0.36cm, y=0.22cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-1,0) grid (5,8);
+  \draw[->, thick] (-1,0) -- (5.5,0) node[below right] {\scriptsize $x$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\scriptsize $y$};
+  \foreach \x in {1,2,3,4,5} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {2,4,6,8} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum] (-1,2) -- (5,8);
+  \draw[very thick, plum, fill=white] (3,6) circle (2.6pt);
+  \draw[goldacc, very thick, dashed] (3,0) -- (3,7.4);
+  \node[font=\scriptsize\bfseries\color{goldacc}, anchor=west] at (3.2,7.9) {$x = 3$};
+\end{tikzpicture}
+\par\vspace{2pt}
+{\scriptsize $g(3) = 0$, so 3 never had a quotient --- the hole stays.}
+\end{minipage}
+\end{center}
+\vspace{2pt}
+The overlap on the left is the domain of \labelbox{2.2cm}{$f+g$}\qquad At $x = 3$ the quotient is \labelbox{2.4cm}{undefined}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The domain of a combination is decided by the ORIGINAL functions, never by the
+simplified formula. Cancelling is something you do after the domain is already settled ---
+it can hide a forbidden input, but it can never make that input legal.}}}
+
+\vspace{3pt}
+\textbf{In your own words:} why does simplifying a quotient never add an input back into the domain?
+\writespace{1.2cm}{The domain is decided by the original $f$ and $g$ before any cancelling. If $g(x) = 0$ there was never an output at that input, so no amount of simplifying can create one.}
+\\
+& \notesprompt{Find the domain \emph{before} you simplify. Say which parent excluded each input.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{$f(x) = \dfrac{1}{x-2}$ and $g(x) = x + 6$. What is the domain of $f+g$?}{2.2cm}{All real numbers except $x = 2$. $g$ accepts everything, but $f$ excludes 2 --- so the overlap does too.} &
+\pcell{12}{$f(x) = x + 1$ and $g(x) = x - 5$. What is the domain of $\dfrac{f}{g}$?}{2.2cm}{All real numbers except $x = 5$: both parents accept every input, but $g(5) = 0$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{$f(x) = x^2 - 9$ and $g(x) = x - 3$. Find $\left(\dfrac{f}{g}\right)(x)$ and simplify it.}{2.2cm}{$\dfrac{x^2-9}{x-3} = \dfrac{(x-3)(x+3)}{x-3} = x + 3$.} &
+\pcell{14}{State the domain of $\dfrac{f}{g}$ in problem 13. The simplified form is fine at $x = 3$ --- explain why 3 is still thrown out.}{2.6cm}{All real numbers except $x = 3$. The domain comes from the original $f$ and $g$: $g(3) = 0$, so the quotient never existed at 3. Cancelling hid the problem; it did not fix it. Reading $x+3$ instead gives the wrong domain.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ──────────
+\mainidea[You do, alone]{On Your Own} &
+Two functions given by formulas, one quotient that cancels, and one food truck whose profit is
+the difference of two functions you are given.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt,
+        font=\normalsize, anchor=north] at (0,1.2) {$f(x) = 3x - 2 \qquad g(x) = x + 7$};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=3pt, inner sep=6pt,
+        font=\small, align=center, anchor=north] at (0,-0.1)
+        {\textbf{Food truck:} $x$ lunch plates in a day, at most 60.\\
+         revenue $R(x) = 9x$ \qquad cost $C(x) = 4x + 120$};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Using $f$ and $g$ above, find $(f+g)(x)$ and $(fg)(x)$.}{2.2cm}{$(f+g)(x) = 4x + 5$; \ $(fg)(x) = (3x-2)(x+7) = 3x^2 + 19x - 14$.} &
+\pcell{16}{Using $f$ and $g$ above, find $(f-g)(1)$ and $(g-f)(1)$.}{2.2cm}{$f(1) = 1$ and $g(1) = 8$, so $(f-g)(1) = -7$ and $(g-f)(1) = 7$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{$p(x) = x^2 - 25$ and $q(x) = x - 5$. Simplify $\left(\dfrac{p}{q}\right)(x)$, then state its domain.}{2.0cm}{$\dfrac{(x-5)(x+5)}{x-5} = x + 5$, but the domain is all real numbers except $x = 5$, because $q(5) = 0$.} &
+\pcell{18}{Write the truck's profit $P(x) = (R - C)(x)$ and simplify it. Find $P(40)$, then state the domain of $P$ in this context.}{2.6cm}{$P(x) = 9x - (4x + 120) = 5x - 120$. $P(40) = 200 - 120 = 80$ dollars. Domain: whole numbers of plates with $0 \le x \le 60$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
+
+\end{document}

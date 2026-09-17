@@ -6,9 +6,11 @@ to cover the fundamentals of precalculus thoroughly so a student moves comfortab
 exponential/logarithmic/trigonometric core is spread out and reinforced, and the
 parameters-vectors-matrices material is condensed into a single closing unit.
 
-**Structure:** 8 units × 8 lessons = **64 lessons**, plus a sample test per unit.
-Units 1 and 2 number their eight lessons 1.0–1.7 and 2.0–2.7 (see the replan notes below);
-units 3–8 still number theirs X.1–X.8 and adopt the X.0 opener as each is reauthored.
+**Structure:** 8 units, plus a sample test per unit. Units 2–8 hold eight lessons each;
+**Unit 1 is no longer fixed at eight** — its opener was retired in the September 2026 replan
+and further lessons are expected, so it numbers its lessons 1.1 onward (see the replan notes
+below). Unit 2 numbers its eight lessons 2.0–2.7; units 3–8 still number theirs X.1–X.8 and
+adopt the X.0 opener as each is reauthored.
 Pacing target: 18–22 class periods per unit (60-minute meetings).
 
 **Content source:** the Precalculus CED (`spec/`) remains the content backbone.
@@ -40,9 +42,10 @@ packet is warm-up, guided notes, a two-page **extra-credit AP Practice**, and a 
 **graded printed homework**; the period closes with a 3-minute Homework Launch. DeltaMath is
 only a per-lesson override the user asks for.
 
-Lessons 1.0 and 1.1 are the reference implementations. Lessons still marked **moved**, and
-1.2–1.7, remain on the older shape until they are reauthored — they still ship printed
-homework, untagged lesson parts, and an `activity/` group-activity sheet. The build system
+Lesson 1.1 is the reference implementation, with 1.2 and 1.3 authored to the same shape.
+Lessons still marked **moved**, and Unit 1's 1.4–1.8, remain on the older shape until they are
+reauthored — they still ship printed homework, untagged lesson parts, and an `activity/`
+group-activity sheet. The build system
 still merges an activity when one exists, so those lessons keep building unchanged; the
 activity goes away lesson-by-lesson as each is reauthored. **There is no bulk sweep.**
 
@@ -83,19 +86,27 @@ expected, and the numbering below leaves room for them.
 | # | Lesson | Source | Status | Directory |
 |---|--------|--------|--------|-----------|
 | 1.1 | Functions and Function Notation | New (notation, evaluating, domain/range, piecewise) | authored | `unit01/lesson01` |
-| 1.2 | Function Operations | New | **to author** | — |
-| 1.3 | Function Composition and Decomposition | CED 2.7 | to reauthor | `unit01/lesson05` |
-| 1.4 | Inverse Functions | CED 2.8 | to reauthor | `unit01/lesson06` |
-| 1.5 | Transformations of Functions | CED 1.12 | to reauthor | `unit01/lesson04` |
-| 1.6 | Change in Tandem | CED 1.1 | to reauthor | `unit01/lesson02` |
-| 1.7 | Rates of Change | CED 1.2 + 1.3 | to reauthor | `unit01/lesson03` |
-| 1.8 | Function Model Selection and Construction | CED 1.13 + 1.14 | to reauthor | `unit01/lesson07` |
+| 1.2 | Function Operations | New | authored | `unit01/lesson02` |
+| 1.3 | Function Composition and Decomposition | CED 2.7 | authored | `unit01/lesson03` |
+| 1.4 | Inverse Functions | CED 2.8 | to reauthor | `unit01/lesson04` |
+| 1.5 | Transformations of Functions | CED 1.12 | to reauthor | `unit01/lesson05` |
+| 1.6 | Change in Tandem | CED 1.1 | to reauthor | `unit01/lesson06` |
+| 1.7 | Rates of Change | CED 1.2 + 1.3 | to reauthor | `unit01/lesson07` |
+| 1.8 | Function Model Selection and Construction | CED 1.13 + 1.14 | to reauthor | `unit01/lesson08` |
 
-**Directories have not been renumbered yet.** Reauthoring runs lesson by lesson, and the
-directory move for each lesson happens when that lesson is reauthored — a bulk `git mv` would
-re-flow the pagination of every verified lesson at once. The *Directory* column above is
-therefore the current on-disk location, not the final one; 1.2 has no directory until it is
-written. Lessons still marked *to reauthor* are in the group-activity shape (`activity/` +
+**Directory numbers now match lesson numbers.** The September 2026 renumbering moved every
+displaced lesson into its final slot and remapped each document's *self-identifying* number —
+its header comment, `\pageheader`, `\LessonNumberName`, cover banner and deck title slide — so
+every packet prints the number of the slot it occupies.
+
+**Prose cross-references in the lessons still marked *to reauthor* are stale**, and some are
+stale in *direction* rather than merely in number: composition now precedes transformations, so
+1.5's references to composition as a future lesson, and its "next lesson" preview, point the
+wrong way. Bare `1.N` strings were deliberately left untouched during the renumber because in
+those files they are overwhelmingly TikZ coordinates, table data and CED codes (`1.3.A.1`).
+Each lesson's cross-references are corrected when that lesson is reauthored.
+
+Lessons still marked *to reauthor* remain in the group-activity shape (`activity/` +
 `exit_ticket/`, no `ap_practice/`) and build unchanged in the meantime.
 
 Rationale: 1.1 opens the unit by naming the machine — notation, evaluating, domain and range —

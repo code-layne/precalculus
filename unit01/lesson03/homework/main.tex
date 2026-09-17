@@ -1,4 +1,16 @@
-%! Composition of Functions — Unit 1, Lesson 1.3 — Homework
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Homework
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used the Summit Cable Car; the AP Practice used a bus's fuel use and a
+% wind farm; the homework uses a step counter and a shipping desk.
+%   Page 1 — Part A (handoffs, 1–2) and Part B (building composites, 3–4).
+%   Page 2 — Part C (chains in context, 5–6) and Part D (decomposition and the headline, 7–9).
+% The diagnostic item is problem 2: one input, both orders, two different answers. Problem 9
+% asks for the lesson's headline in writing. Problem 8 is the on-ramp to 1.4.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line so
+% its \ans cannot rewrap anything. The single explicit \newpage fixes the break in both files.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,149 +20,151 @@
 
 \pageheader{Unit 1, Lesson 1.3}{Homework}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-\begin{enumerate}[itemsep=10pt]
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work, and on every composite \emph{write the handoff down}
+before you use it --- the middle number is where the credit is.
+\end{remindbox}
 
-\item The table gives every value of two functions $f$ and $g$. Name the
-      handoff before you look anything up.
+\vspace{0.1in}
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 1 & 2 & 3 & 4 & 5 \\
-\hline
-$f(x)$ & 4 & 1 & 5 & 2 & 3 \\
-\hline
-$g(x)$ & 3 & 5 & 1 & 4 & 9 \\
-\hline
-\end{tabular}
-\end{center}
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Handoffs}
+\end{headlinebox}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $f(g(1))$: \; handoff $= $ \blank{1.4cm}, \;
-        so $f(g(1)) = $ \blank{1.6cm}
-  \item $g(f(1))$: \; handoff $= $ \blank{1.4cm}, \;
-        so $g(f(1)) = $ \blank{1.6cm}
-  \item $f(g(5))$ has no value. In one sentence, say what goes wrong with the
-        handoff.
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
 
-        \vspace{0.05in}
-        \writeline
+\item \begin{minipage}[t]{0.40\linewidth}
+      \vspace{0pt}
+      The table gives every value of two functions $f$ and $g$.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.56\linewidth}
+      \vspace{0pt}
+      \centering
+      {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline
+      $f(x)$ & 4 & 1 & 5 & 2 & 3 \\ \hline
+      $g(x)$ & 3 & 5 & 1 & 4 & 9 \\ \hline
+      \end{tabular}}
+      \end{minipage}
 
-  \item Complete both rows.
+      \textbf{(a)} $f(g(1))$: \; handoff $= $ \blank{1.4cm}, \; so $f(g(1)) = $ \blank{1.6cm}
 
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{center}
-        \begin{tabular}{|c|c|c|c|}
-        \hline
-        $x$ & 2 & 3 & 4 \\
-        \hline
-        handoff: $g(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-        \hline
-        $(f \circ g)(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-        \hline
-        \end{tabular}
-        \end{center}
-\end{enumerate}
+      \textbf{(b)} $g(f(1))$: \; handoff $= $ \blank{1.4cm}, \; so $g(f(1)) = $ \blank{1.6cm}
 
-\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and
-      simplify.
+      \textbf{(c)} $f(g(5))$ has no value. In one sentence, say what goes wrong with the handoff.
+      \writespace{0.9cm}{}
+
+\item Let $f(x) = 4x$ and $g(x) = x - 5$. Run the input 8 through both orders.
 
 \begin{work}
-  f(g(x)) &= f(x - 3) \\
-          &= (x - 3)^2 + 2 \\
-          &= x^2 - 6x + 9 + 2 \\
-          &= x^2 - 6x + 11 \\
-  g(f(x)) &= g(x^2 + 2) \\
-          &= (x^2 + 2) - 3 \\
-          &= x^2 - 1
+  f(g(8)) &= f(3) = 12 \\
+  g(f(8)) &= g(32) = 27
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item $(f \circ g)(x) = $ \blank{4cm}
-  \item $(g \circ f)(x) = $ \blank{3cm}
-  \item One input settles whether they are the same function. At $x = 0$:
-        $f(g(0)) = $ \blank{1.6cm} and $g(f(0)) = $ \blank{1.6cm}.
-\end{enumerate}
+      \textbf{(a)} $f(g(8))$: \; handoff $= $ \blank{1.4cm}, \; so $f(g(8)) = $ \blank{1.6cm}
 
-\item A \$45 backpack, the same \$10 coupon, and the same 6\% tax:
-      $c(p) = p - 10$ and $t(x) = 1.06x$.
+      \textbf{(b)} $g(f(8))$: \; handoff $= $ \blank{1.4cm}, \; so $g(f(8)) = $ \blank{1.6cm}
 
-\begin{work}
-  t(c(45)) &= t(35) \\
-           &= 1.06(35) \\
-           &= 37.10 \\
-  c(t(45)) &= c(47.70) \\
-           &= 47.70 - 10 \\
-           &= 37.70
-\end{work}
-
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Coupon first: handoff \$\blank{1.4cm}, total \$\blank{1.6cm}.
-  \item Tax first: handoff \$\blank{1.6cm}, total \$\blank{1.6cm}.
-  \item The gap is \$\blank{1.4cm} --- the same gap as the \$60 jacket. Say
-        in one sentence why the price does not affect it.
-
-        \vspace{0.05in}
-        \writeline
-\end{enumerate}
-
-\item Take each function apart, then put one back together.
-
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $h(x) = \sqrt{4x + 1}$: \quad inner $g(x) = $ \blank{2.4cm},
-        \quad outer $f(u) = $ \blank{2.4cm}
-  \item $k(x) = 3(x - 2)^5$: \quad inner $g(x) = $ \blank{2.4cm},
-        \quad outer $f(u) = $ \blank{2.4cm}
-  \item In Lesson 1.4 you wrote the horizontal shift $g(x) = f(x + 6)$.
-        Write it as a composition: $g(x) = f(h(x))$ where
-        $h(x) = $ \blank{2.4cm}, and the handoff is \blank{2cm}.
-
-        Because the handoff is what $f$ gets \blank{2.2cm}, the graph moves
-        6 units to the \blank{1.8cm}.
-\end{enumerate}
-
-\item Let $f(x) = x^2$ and $g(x) = 2x - 1$. Which of the following is
-      $(f \circ g)(x)$?
-
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $2x^2 - 1$
-  \item $4x^2 - 4x + 1$
-  \item $4x^2 + 1$
-  \item $2x^3 - x^2$
-\end{enumerate}
+      \textbf{(c)} Same two rules, same input. Are the two answers equal? \blank{2.2cm}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{extensionbox}
-Let $f(x) = 5x - 2$ and let $I(x) = x$ be the identity function.
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Building the composite}
+\end{headlinebox}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Show that $f(I(x))$ and $I(f(x))$ both come out to $f(x)$ --- with
-        $I$ in the chain, the handoff is the number itself.
-  \item Now hunt for a different function $g$ so that $f(g(x)) = x$: a partner
-        whose handoff comes back out as the number you started with.
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=3]
+
+\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and simplify.
+
+\begin{work}
+  f(g(x)) &= f(x - 3) = (x-3)^2 + 2 \\
+          &= x^2 - 6x + 11
+\end{work}
+
+      \textbf{(a)} $(f \circ g)(x) = $ \blank{4.0cm} \qquad
+      \textbf{(b)} $(g \circ f)(x) = $ \blank{3.2cm}
+
+\item Let $f(x) = 5x + 1$ and $g(x) = 2x - 4$.
+
+      \textbf{(a)} $(f \circ g)(x) = $ \blank{3.2cm} \qquad
+      \textbf{(b)} $(g \circ f)(x) = $ \blank{3.0cm}
+
 \end{enumerate}
 
-\vspace{0.05in}
-\writelines{2}
-\end{extensionbox}
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Chains in context}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=5]
+
+\item A step counter converts steps to distance: $K(s) = 0.0008s$ gives the kilometers walked in
+      $s$ steps. A fitness app converts distance to energy: $C(k) = 60k$ gives the calories burned
+      walking $k$ kilometers.
+
+      Find $C(K(10{,}000))$. Name the handoff and its units on the way.
+      \writespace{1.2cm}{}
+
+\item A shipping desk converts a package's weight from ounces to pounds with
+      $P(z) = \dfrac{z}{16}$, and prices a package by weight with $C(p) = 3 + 2p$ dollars for
+      $p$ pounds. Explain why $C(P(48))$ is meaningful but $P(C(48))$ is not.
+      \writespace{1.2cm}{}
+
+\end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard[9]
-\begin{notesbox}{Preview of Lesson 1.6}
-The extension asks for a function that \textit{undoes} $f$. Lesson 1.6,
-\textit{Inverse Functions}, gives that partner a name and a notation ---
-and the test for it is a composition: $f\big(f^{-1}(x)\big) = x$, the identity
-function from Part 5.
-\end{notesbox}
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Taking it apart, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=7]
+
+\item Take each function apart into an inner rule and an outer rule.
+
+      \textbf{(a)} $h(x) = (4x - 1)^5$: \quad inner $g(x) = $ \blank{2.4cm}, \quad
+      outer $f(u) = $ \blank{2.2cm}
+
+      \textbf{(b)} $k(x) = \dfrac{5}{2x - 9}$: \quad inner $g(x) = $ \blank{2.4cm}, \quad
+      outer $f(u) = $ \blank{2.2cm}
+
+\item Let $f(x) = 3x + 6$ and $g(x) = \dfrac{x - 6}{3}$.
+
+\begin{work}
+  f(g(x)) &= 3\!\left(\frac{x-6}{3}\right) + 6 = x \\
+  g(f(x)) &= \frac{(3x+6) - 6}{3} = x
+\end{work}
+
+      $(f \circ g)(x) = $ \blank{2.0cm} \qquad $(g \circ f)(x) = $ \blank{2.0cm}
+
+      What do these two functions do to each other?
+      \writespace{0.9cm}{}
+
+\item A classmate says $f(g(x))$ and $g(f(x))$ must be the same function because they are built
+      from the same two rules. Using the word \emph{handoff}, write the sentence that settles it.
+      \writespace{1.2cm}{}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (1.4, Inverse Functions):} problem 8 found a pair of functions that undo
+each other. Next lesson names that partner $f^{-1}$, and the test for it is a composition run
+in \emph{both} directions: $f(f^{-1}(x)) = x$ \emph{and} $f^{-1}(f(x)) = x$.
+\end{spiralbox}
 
 \end{document}
