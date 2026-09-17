@@ -35,13 +35,10 @@ You Do, which now gets real time (11–14 min) instead of the 5 it got when an a
 was competing for the period. A lesson has no `activity/` directory, and the tiered work
 that used to live on one is now **differentiation the teacher applies while circulating the
 practice box** — specified in the plan's *Differentiation — During You Do* box, which
-replaced *Group Work & Differentiation*. The in-class packet is therefore three components:
-warm-up, guided notes, exit ticket.
-
-**Homework is DeltaMath** for most lessons: no `homework/` directory, and the packet cover
-carries a DeltaMath row with an assignment slot, a due-date slot, and its own score slot
-below an *In-Class Total*. A lesson gets printed homework only when DeltaMath has no
-practice for its topic, and only when that override is asked for.
+replaced *Group Work & Differentiation*. Since 2026-09-16 there is **no exit ticket**: the
+packet is warm-up, guided notes, a two-page **extra-credit AP Practice**, and a two-page
+**graded printed homework**; the period closes with a 3-minute Homework Launch. DeltaMath is
+only a per-lesson override the user asks for.
 
 Lessons 1.0 and 1.1 are the reference implementations. Lessons still marked **moved**, and
 1.2–1.7, remain on the older shape until they are reauthored — they still ship printed

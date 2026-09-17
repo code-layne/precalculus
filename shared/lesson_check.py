@@ -11,7 +11,7 @@ What it enforces, per lesson:
 
   page parity   every keyed component has the SAME page count as its _key
                 (the work rule's observable consequence)
-  one-pagers    warmup and exit_ticket are exactly 1 page, blank AND key
+  one-pagers    warmup (and a legacy exit_ticket) is exactly 1 page, blank AND key
   ans-in-math   no \\ans / \\ansline / \\vocabans inside $...$, \\[...\\] or \\(...\\)
                 — \\ans is a text-mode macro and the compile error it throws is
                 unhelpful, so catch it at the source. (\\vocabans is not defined
@@ -45,7 +45,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-KEYED = ["warmup", "notes", "activity", "exit_ticket", "homework"]
+KEYED = ["warmup", "notes", "activity", "exit_ticket", "ap_practice", "homework"]
 ONE_PAGE = ["warmup", "exit_ticket"]
 WORKSHEETS = KEYED + [f"{c}_key" for c in KEYED]
 
