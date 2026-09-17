@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Homework
+%! Transformations of Functions — Unit 1, Lesson 1.5 — Homework
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -12,116 +12,142 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item The table gives every value of two functions $f$ and $g$. Name the
-      handoff before you look anything up.
+\item Sort each rule first, then describe the move it makes to the graph of
+      $f$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
+\renewcommand{\arraystretch}{1.6}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-$x$ & 1 & 2 & 3 & 4 & 5 \\
+\textbf{rule} & \textbf{question or answer?} & \textbf{the move, in words} \\
 \hline
-$f(x)$ & 4 & 1 & 5 & 2 & 3 \\
+$g(x) = f(x) - 6$ & \blank{2.4cm} & \blank{5.4cm} \\
 \hline
-$g(x)$ & 3 & 5 & 1 & 4 & 9 \\
+$g(x) = f(x + 2)$ & \blank{2.4cm} & \blank{5.4cm} \\
+\hline
+$g(x) = 3f(x)$ & \blank{2.4cm} & \blank{5.4cm} \\
+\hline
+$g(x) = f(-x)$ & \blank{2.4cm} & \blank{5.4cm} \\
 \hline
 \end{tabular}
 \end{center}
 
+\item The table gives every value of a function $f$.
+
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $f(g(1))$: \; handoff $= $ \blank{1.4cm}, \;
-        so $f(g(1)) = $ \blank{1.6cm}
-  \item $g(f(1))$: \; handoff $= $ \blank{1.4cm}, \;
-        so $g(f(1)) = $ \blank{1.6cm}
-  \item $f(g(5))$ has no value. In one sentence, say what goes wrong with the
-        handoff.
-
-        \vspace{0.05in}
-        \writeline
-
-  \item Complete both rows.
+  \item Complete the row for $g(x) = f(x) + 4$.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
-        \begin{tabular}{|c|c|c|c|}
+        \begin{tabular}{|c|c|c|c|c|}
         \hline
-        $x$ & 2 & 3 & 4 \\
+        $x$ & $-2$ & 0 & 2 & 4 \\
         \hline
-        handoff: $g(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        $f(x)$ & 3 & $-1$ & 5 & 0 \\
         \hline
-        $(f \circ g)(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        $g(x) = f(x) + 4$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
         \hline
         \end{tabular}
         \end{center}
-\end{enumerate}
 
-\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and
-      simplify.
+  \item Complete the row for $h(x) = f(x - 2)$. Watch the inputs.
 
-\begin{work}
-  f(g(x)) &= f(x - 3) \\
-          &= (x - 3)^2 + 2 \\
-          &= x^2 - 6x + 9 + 2 \\
-          &= x^2 - 6x + 11 \\
-  g(f(x)) &= g(x^2 + 2) \\
-          &= (x^2 + 2) - 3 \\
-          &= x^2 - 1
-\end{work}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 2 & 4 & 6 \\
+        \hline
+        $h(x) = f(x - 2)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item $(f \circ g)(x) = $ \blank{4cm}
-  \item $(g \circ f)(x) = $ \blank{3cm}
-  \item One input settles whether they are the same function. At $x = 0$:
-        $f(g(0)) = $ \blank{1.6cm} and $g(f(0)) = $ \blank{1.6cm}.
-\end{enumerate}
-
-\item A \$45 backpack, the same \$10 coupon, and the same 6\% tax:
-      $c(p) = p - 10$ and $t(x) = 1.06x$.
-
-\begin{work}
-  t(c(45)) &= t(35) \\
-           &= 1.06(35) \\
-           &= 37.10 \\
-  c(t(45)) &= c(47.70) \\
-           &= 47.70 - 10 \\
-           &= 37.70
-\end{work}
-
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Coupon first: handoff \$\blank{1.4cm}, total \$\blank{1.6cm}.
-  \item Tax first: handoff \$\blank{1.6cm}, total \$\blank{1.6cm}.
-  \item The gap is \$\blank{1.4cm} --- the same gap as the \$60 jacket. Say
-        in one sentence why the price does not affect it.
+  \item One of the two new rows is a copy of $f$'s row, just relocated. Which
+        one, and why?
 
         \vspace{0.05in}
         \writeline
 \end{enumerate}
 
-\item Take each function apart, then put one back together.
+\item The parent $f$ and a transformation $g$ are drawn on the same axes.
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $h(x) = \sqrt{4x + 1}$: \quad inner $g(x) = $ \blank{2.4cm},
-        \quad outer $f(u) = $ \blank{2.4cm}
-  \item $k(x) = 3(x - 2)^5$: \quad inner $g(x) = $ \blank{2.4cm},
-        \quad outer $f(u) = $ \blank{2.4cm}
-  \item In Lesson 1.4 you wrote the horizontal shift $g(x) = f(x + 6)$.
-        Write it as a composition: $g(x) = f(h(x))$ where
-        $h(x) = $ \blank{2.4cm}, and the handoff is \blank{2cm}.
+\begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.32cm]
+  \draw[linegray, very thin] (-3,-4) grid (6,6);
+  \draw[->, thick] (-3.5,0) -- (6.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-4.6) -- (0,6.8) node[above, font=\small] {$y$};
+  \foreach \x in {-2,-1,1,2,3,4,5}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \foreach \y in {-3,3,6}
+    \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-0.9:4.9]
+    plot (\x, {(\x-2)*(\x-2) - 3});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.4:2.4]
+    plot (\x, {\x*\x});
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[goldacc] (2,-3) circle (2.2pt);
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (-1.9,5.2) {$f$};
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (4.8,4.2) {$g$};
+\end{tikzpicture}
+\end{center}
 
-        Because the handoff is what $f$ gets \blank{2.2cm}, the graph moves
-        6 units to the \blank{1.8cm}.
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item $f$'s lowest point is ( \blank{1.2cm} , \blank{1.2cm} ) and $g$'s is
+        at ( \blank{1.2cm} , \blank{1.2cm} ).
+  \item The horizontal move is \blank{3.4cm} and the vertical move is
+        \blank{3.4cm}.
+  \item Write the rule: $g(x) = f(x$ \blank{1.4cm} $)$ \blank{1.4cm}
 \end{enumerate}
 
-\item Let $f(x) = x^2$ and $g(x) = 2x - 1$. Which of the following is
-      $(f \circ g)(x)$?
+\item The highest point on the graph of $f$ is $(2, 7)$. The domain of $f$ is
+      $[-4, 2]$ and its range is $[-1, 7]$. Let $g(x) = 2f(x + 1) - 5$.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Follow the landmark $(2, 7)$.
+
+        \begin{work}
+          \text{new input} &= 2 - 1 = 1 \\
+          \text{new output} &= 2(7) - 5 = 9
+        \end{work}
+
+        It lands at ( \blank{1.4cm} , \blank{1.4cm} ).
+
+  \item Domain of $g$:
+
+        \begin{work}
+          -4 &\le x + 1 \le 2 \\
+          -5 &\le x \le 1
+        \end{work}
+
+        Domain of $g$: \blank{3cm}
+
+  \item Range of $g$:
+
+        \begin{work}
+          2(-1) - 5 &= -7 \\
+           2(7) - 5 &= 9
+        \end{work}
+
+        Range of $g$: \blank{3cm}
+
+  \item Which piece of the rule moved the domain, and which moved the range?
+
+        \vspace{0.05in}
+        \writeline
+\end{enumerate}
+
+\item The range of a function $f$ is $[1, 5]$. What is the range of
+      $g(x) = -2f(x) + 3$?
 
 \begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $2x^2 - 1$
-  \item $4x^2 - 4x + 1$
-  \item $4x^2 + 1$
-  \item $2x^3 - x^2$
+  \item $[5, 13]$
+  \item $[-7, 1]$
+  \item $[-10, -2]$
+  \item $[1, -7]$
 \end{enumerate}
 
 \end{enumerate}
@@ -130,14 +156,12 @@ $g(x)$ & 3 & 5 & 1 & 4 & 9 \\
 
 \boxguard
 \begin{extensionbox}
-Let $f(x) = 5x - 2$ and let $I(x) = x$ be the identity function.
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Show that $f(I(x))$ and $I(f(x))$ both come out to $f(x)$ --- with
-        $I$ in the chain, the handoff is the number itself.
-  \item Now hunt for a different function $g$ so that $f(g(x)) = x$: a partner
-        whose handoff comes back out as the number you started with.
-\end{enumerate}
+A student writes both of these and says they are the same function:
+\[
+  g(x) = 2f(x) + 6 \qquad\qquad h(x) = 2\bigl(f(x) + 6\bigr)
+\]
+Suppose $f(3) = 5$. Compute $g(3)$ and $h(3)$, then say in one sentence what
+each rule does to the answer $f$ hands back, and in what order.
 
 \vspace{0.05in}
 \writelines{2}
@@ -146,11 +170,11 @@ Let $f(x) = 5x - 2$ and let $I(x) = x$ be the identity function.
 \vspace{0.1in}
 
 \boxguard[9]
-\begin{notesbox}{Preview of Lesson 1.6}
-The extension asks for a function that \textit{undoes} $f$. Lesson 1.6,
-\textit{Inverse Functions}, gives that partner a name and a notation ---
-and the test for it is a composition: $f\big(f^{-1}(x)\big) = x$, the identity
-function from Part 5.
+\begin{notesbox}{Preview of Lesson 1.5}
+Every horizontal move today worked by handing $f$ something other than $x$ ---
+$f(x+3)$ handed it $x+3$, and $f(2x)$ handed it $2x$. Lesson 1.5,
+\textit{Composition of Functions}, gives that move its name and its notation,
+and lets the thing you hand over be \textit{any} function, not just $x + h$.
 \end{notesbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Slides (Beamer)
+%! Rates of Change — Unit 1, Lesson 1.7 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +11,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.7}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Function Model Selection and Construction}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Rates of Change}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -19,297 +19,291 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Two Notebooks, One Pen}
-  \sectionlabel[goldacc]{80 Feet of Fence, One Side Along the Barn}
+  \plumheader{Hook: Sixty Steps, Thirty Seconds}
+  \sectionlabel[goldacc]{Vote Before You Compute}
 
-  Ana and Ben walked the field and measured the \textbf{same five trial pens}.
-  Each wrote down a different thing.
+  Ravi and Mira start at the bottom of the same 60-step stairway at the same
+  moment. \textbf{Both} reach the top 30 seconds later.
 
   \smallskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-      \begin{block}{Ana's notebook: width \(\to\) area}
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{@{}lccccc@{}}
-          \(w\) (ft)      & 5 & 10 & 15 & 20 & 25 \\
-          \(A\) (ft\(^2\)) & 350 & 600 & 750 & \textbf{800} & 750 \\
-        \end{tabular}
+  \begin{columns}[T]
+    \column{0.54\textwidth}
+      \begin{center}
+      \textbf{Ravi}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      time (s) & 0 & 10 & 20 & 30 \\
+      \hline
+      steps & 0 & 40 & 55 & 60 \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      \textbf{Mira}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      time (s) & 0 & 10 & 20 & 30 \\
+      \hline
+      steps & 0 & 20 & 40 & 60 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+    \column{0.42\textwidth}
+      \begin{block}{The question}
+        Who climbed \textbf{faster}? Commit to an answer.
       \end{block}
 
-    \column{0.48\textwidth}
-      \begin{block}{Ben's notebook: length \(\to\) area}
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{@{}lccccc@{}}
-          \(\ell\) (ft)   & 30 & 40 & 50 & 60 & 70 \\
-          \(A\) (ft\(^2\)) & 750 & \textbf{800} & 750 & 600 & 350 \\
-        \end{tabular}
+      \medskip
+      \begin{block}{Then compute the average}
+        60 steps in 30 seconds --- for \textbf{both}. Two steps per second,
+        each. The average calls them identical.
       \end{block}
   \end{columns}
-
-  \medskip
-  \begin{center}
-    Same five pens. Same five areas. Two tables that look nothing alike.\\
-    \textbf{Which member recorded the pen correctly?}
-  \end{center}
 \end{frame}
 
-% SECTION 1 — PICK THE QUESTION
+% SECTION 1 — THE STAND-IN
 \begin{frame}[t, plain]
-  \plumheader{1. Pick the Question}
-  \sectionlabel[redacc]{The Whole Lesson in One Decision}
+  \plumheader{1. The Stand-In}
+  \sectionlabel[redacc]{The Whole Lesson in One Idea}
+
+  \begin{block}{Average rate of change}
+    The one \textbf{steady} rate that would produce the same change in output
+    over the same change in input.
+    \[
+      \frac{f(b) - f(a)}{b - a}
+      \;=\; \frac{\text{change in output}}{\text{change in input}}
+    \]
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{What it promises.} A steady 2-steps-per-second climber leaves at
+      the same time, from the same step, and arrives at the same step 30
+      seconds later.
+
+    \column{0.48\textwidth}
+      \textbf{What it costs.} The stand-in is pinned only at the
+      \textbf{endpoints}. Everything that happened between them is thrown
+      away --- on purpose.
+  \end{columns}
+\end{frame}
+
+% SECTION 2A — FORMULA AND TABLE
+\begin{frame}[t, plain]
+  \plumheader{2. Computing It --- From a Formula, From a Table}
+
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \textbf{From a formula.} \(f(x) = x^2 + 3\) on \([1,4]\):
+      \[
+        \frac{f(4) - f(1)}{4 - 1} = \frac{19 - 4}{3} = 5
+      \]
+
+      \medskip
+      \begin{block}{Order matters}
+        Whichever input you subtract first \textit{downstairs}, its output
+        must be subtracted first \textit{upstairs}.
+      \end{block}
+
+    \column{0.52\textwidth}
+      \textbf{From a table.} \(T(t)\) in \(^\circ\)F, \(t\) hours after 6 a.m.
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \(t\) & 0 & 2 & 4 & 6 & 8 \\
+      \hline
+      \(T(t)\) & 52 & 58 & 68 & 74 & 72 \\
+      \hline
+      AROC & --- & 3 & 5 & 3 & \(-1\) \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Fastest warming: between \(t = 2\) and \(t = 4\), at \textbf{5 degrees
+      per hour}. And every rate carries \textbf{units}.
+  \end{columns}
+\end{frame}
+
+% SECTION 2B — GRAPH
+\begin{frame}[t, plain]
+  \plumheader{2. Computing It --- From a Graph}
+  \sectionlabel[goldacc]{The Secant Line}
 
   \begin{columns}[T, onlytextwidth]
-    \column{0.46\textwidth}
+    \column{0.50\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=1.1cm, y=1.1cm]
-        \fill[lilac] (0,0) rectangle (3.4,1.3);
-        \draw[very thick, slate] (-0.3,1.3) -- (3.7,1.3);
-        \node[slate, above, font=\scriptsize] at (1.7,1.35) {barn wall --- no fence};
-        \draw[very thick, plum] (0,1.3) -- (0,0) -- (3.4,0) -- (3.4,1.3);
-        \node[plum, left,  font=\small] at (0,0.65) {\(w\)};
-        \node[plum, right, font=\small] at (3.4,0.65) {\(w\)};
-        \node[plum, below, font=\small] at (1.7,0) {\(\ell\)};
-        \node[slate, font=\scriptsize\itshape] at (1.7,0.65) {area \(A\)};
+      \begin{tikzpicture}[x=0.60cm, y=0.40cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (8,6);
+        \draw[->, thick] (0,0) -- (8.6,0);
+        \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small \(g(t)\) (m)};
+        \node[font=\small] at (4.3,-1.6) {\(t\) (min)};
+        \foreach \x in {2,4,6,8} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {1,3,5} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[dashed, thick, goldacc] (0,1) -- (4,5);
+        \draw[dashed, thick, goldacc] (4,5) -- (8,1);
+        \draw[very thick, plum] plot[smooth] coordinates
+          {(0,1) (1,2.6) (2,3.9) (3,4.7) (4,5) (5,4.7) (6,3.9) (7,2.6) (8,1)};
       \end{tikzpicture}
       \end{center}
 
-      \smallskip
-      Four numbers: \(80\) (fixed), \(w\), \(\ell\), \(A\). A function accepts
-      \textbf{one} question.
-
-    \column{0.50\textwidth}
-      \begin{block}{A model starts with a decision}
-        Naming the question is the first move --- and everything follows from
-        it: which differences you may take, what the constraint has to do,
-        which inputs are allowed, what the units say.
-      \end{block}
+    \column{0.42\textwidth}
+      A kite's height \(g(t)\), in meters.
 
       \medskip
-      \begin{block}{The hook, answered}
-        Ana's question was the \textbf{width}. Ben's was the
-        \textbf{length}. Neither is wrong.
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Over \([0,4]\): from 1 m to 5 m, so \(+1\) \textbf{meter per
+              minute}.
+        \item Over \([4,8]\): \(-1\) \textbf{meter per minute}.
+      \end{itemize}
 
-        \smallskip
-        The 80 is neither question nor answer --- it is the
-        \textbf{constraint}: \(2w + \ell = 80\).
+      \medskip
+      \begin{block}{The punch line}
+        Each dashed line is a \textbf{secant line}. Its \textbf{slope}
+        \textit{is} the average rate of change over that interval.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 2 — THE TABLE PICKED IT
+% SECTION 3 — SIGN AND ZERO
 \begin{frame}[t, plain]
-  \plumheader{2. When the Table Already Picked the Question}
-  \sectionlabel[goldacc]{Top Row Is the Question --- Check It First}
+  \plumheader{3. What the Sign Says --- and What Zero Does Not Say}
 
-  \begin{columns}[T, onlytextwidth]
-    \column{0.47\textwidth}
-      \begin{block}{Why equal spacing is required}
-        A difference compares two answers across \textit{one step of the
-        question}. Fair only if every step is the same size.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.15}
-        \begin{tabular}{@{}lccc@{}}
-          \(x\)          & 1 & 2 & 4 \\
-          \(g(x)\)       & 3 & 7 & 15 \\
-          change         & --- & 4 & 8 \\
-          \textbf{per unit} & --- & \textbf{4} & \textbf{4} \\
-        \end{tabular}
-
-        \smallskip
-        \(g\) \textit{is} linear. The raw differences lied.
-      \end{block}
-
-    \column{0.49\textwidth}
-      \begin{block}{Ana's table --- widths step by 5}
-        \renewcommand{\arraystretch}{1.15}
-        \begin{tabular}{@{}lccccc@{}}
-          \(w\)  & 5 & 10 & 15 & 20 & 25 \\
-          \(A\)  & 350 & 600 & 750 & 800 & 750 \\
-          1st    & --- & 250 & 150 & 50 & \(-50\) \\
-          2nd    & --- & --- & \(-100\) & \(-100\) & \(-100\) \\
-        \end{tabular}
-
-        \smallskip
-        Second differences constant \(\Rightarrow\) \textbf{quadratic}.
-      \end{block}
-
-      \medskip
-      \begin{block}{A warning about tables}
-        Any \(n+1\) points fit some degree-\(n\) polynomial. ``It fits'' is not
-        a reason --- the context gets a vote.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 3 — READING THE CONTEXT
-\begin{frame}[t, plain]
-  \plumheader{3. When Nobody Picked It: Reading the Context}
-  \sectionlabel[redacc]{How Does the Answer Move as the Question Grows?}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.50\textwidth}
-      \renewcommand{\arraystretch}{1.25}
-      \begin{tabular}{@{}p{0.68\linewidth}l@{}}
-        \hline
-        Same amount each step & linear \\
-        \hline
-        \textbf{Two} lengths multiplied & quadratic \\
-        \hline
-        \textbf{Three} lengths multiplied & cubic \\
-        \hline
-        Answer turns several times & polynomial \\
-        \hline
-        Question sits underneath & rational \\
-        \hline
-        Rule changes at a threshold & piecewise \\
-        \hline
-      \end{tabular}
-
+  \begin{columns}[T]
     \column{0.46\textwidth}
-      \begin{block}{The clue is not the noun}
-        ``Area'' does not mean quadratic by itself.
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item \textbf{Positive:} as the input increases, so does the output.
+              The quantities move the \textbf{same} way.
+        \item \textbf{Negative:} as the input increases, the output falls.
+              They move \textbf{opposite} ways.
+        \item \textbf{Units, every time:} output units \textit{per} input
+              unit. ``5'' is not an answer.
+      \end{itemize}
 
-        \smallskip
-        Length always \(2\times\) width: \(A(w) = 2w^2\) ---
-        \textbf{quadratic}, two lengths move.
-
-        \smallskip
-        Length fixed at 9 ft: \(A(w) = 9w\) --- \textbf{linear}, one length
-        moves.
+    \column{0.50\textwidth}
+      \begin{block}{Zero}
+        A hiker leaves the trailhead at 900 ft, climbs all afternoon, and is
+        back at 900 ft four hours later.
+        \[
+          \frac{900 - 900}{4 - 0} = 0 \text{ ft per hour}
+        \]
       \end{block}
 
       \medskip
-      \begin{center}
-        Count the lengths that move with the question.
-      \end{center}
+      \textbf{Did nothing happen?} No. The average compares only the start and
+      the end --- and they are the same. This is the stand-in's cost, made
+      visible.
   \end{columns}
 \end{frame}
 
-% SECTION 4 — BUILD IT
+% SECTION 4 — CHOP IT FINER
 \begin{frame}[t, plain]
-  \plumheader{4. Build It: the Constraint Answers for the Rest}
-  \sectionlabel[goldacc]{Two Formulas, One Pen}
+  \plumheader{4. Chop It Finer}
+  \sectionlabel[redacc]{Settling the Vote}
 
-  \begin{columns}[T, onlytextwidth]
-    \column{0.30\textwidth}
-      \begin{block}{The four steps}
-        \begin{enumerate}\setlength{\itemsep}{2pt}
-          \item Name the \textbf{question}.
-          \item Write the \textbf{constraint}.
-          \item Solve it for the other quantity.
-          \item \textbf{Substitute}.
-        \end{enumerate}
-      \end{block}
-
-    \column{0.33\textwidth}
-      \textbf{Ana} --- question \(w\):
-      \begin{align*}
-        \ell &= 80 - 2w \\
-        A(w) &= w(80 - 2w) \\
-             &= 80w - 2w^2
-      \end{align*}
-      \(A(20) = 800\) \checkmark
-
-    \column{0.33\textwidth}
-      \textbf{Ben} --- question \(\ell\):
-      \begin{align*}
-        w &= \frac{80 - \ell}{2} \\
-        A(\ell) &= \frac{80-\ell}{2}\cdot \ell \\
-                &= 40\ell - \frac{\ell^2}{2}
-      \end{align*}
-      \(A(40) = 800\) \checkmark
-  \end{columns}
+  Same tool, smaller intervals --- and the story the whole-climb average
+  erased comes back.
 
   \medskip
   \begin{center}
-    Same constraint, solved for a different letter. Neither notebook is wrong.
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|l|c|c|c|}
+  \hline
+  \textbf{split (seconds)} & \textbf{0 to 10} & \textbf{10 to 20} & \textbf{20 to 30} \\
+  \hline
+  Ravi's rate (steps/s) & 4 & 1.5 & 0.5 \\
+  \hline
+  Mira's rate (steps/s) & 2 & 2 & 2 \\
+  \hline
+  \end{tabular}
   \end{center}
-\end{frame}
 
-% SECTION 5 — USE IT
-\begin{frame}[t, plain]
-  \plumheader{5. Use the Model}
-  \sectionlabel[redacc]{The Units Name the Question You Chose}
-
-  \begin{columns}[T, onlytextwidth]
+  \medskip
+  \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{Average rate of change, with units}
-        Ana on \([10,20]\): \(+20\); on \([20,30]\): \(-20\)
-
-        \smallskip
-        \textbf{square feet per foot of width}
-
-        \smallskip
-        Ben straddling the same pen, on \([30,40]\) and \([40,50]\): \(+5\) and
-        \(-5\), in square feet per foot of \textbf{length}.
-      \end{block}
+      Ravi's rates are \textbf{shrinking} --- in 1.2's language, his climb is
+      \textbf{concave down}.
 
     \column{0.48\textwidth}
-      \begin{block}{The sign change locates the best pen}
-        \(+\) then \(-\), so the maximum sits between.
-
-        \smallskip
-        \(w = -\dfrac{b}{2a} = -\dfrac{80}{2(-2)} = \mathbf{20}\), so
-        \(\ell = 40\) and \(A = 800\) ft\(^2\).
-      \end{block}
-
-      \medskip
-      \begin{center}
-        The class vote said \textit{square}. The best pen is
-        \(20 \times 40\) --- one side is free.
-      \end{center}
+      Mira's rates \textbf{never change}. Her climb is a straight line, and
+      she \textit{is} her own stand-in.
   \end{columns}
 \end{frame}
 
-% SECTION 6 — THE FINE PRINT
+% SECTION 5 — THE PATTERN
 \begin{frame}[t, plain]
-  \plumheader{6. The Fine Print: Which Questions Are Allowed}
-  \sectionlabel[goldacc]{A Domain Is a List of Legal Questions}
+  \plumheader{5. The Pattern Names the Function}
+  \sectionlabel[redacc]{Topic 1.3}
 
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-      \begin{block}{Different questions, different domains}
-        Ana: \(0 < w < 40\). \quad Ben: \(0 < \ell < 80\).
+  Average rate of change over each unit interval from \(x = 0\) to \(x = 4\):
 
-        \smallskip
-        Same pen. The domains differ because the \textit{questions} differ.
+  \medskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|l|c|c|c|c|c|}
+  \hline
+  \(x\) & 0 & 1 & 2 & 3 & 4 \\
+  \hline
+  \(f(x) = 2x + 1\) & 1 & 3 & 5 & 7 & 9 \\
+  \hline
+  AROC of \(f\) & --- & 2 & 2 & 2 & 2 \\
+  \hline
+  \(g(x) = x^2\) & 0 & 1 & 4 & 9 & 16 \\
+  \hline
+  AROC of \(g\) & --- & 1 & 3 & 5 & 7 \\
+  \hline
+  change in the AROC of \(g\) & --- & --- & 2 & 2 & 2 \\
+  \hline
+  \end{tabular}
+  \end{center}
 
-        \smallskip
-        \(A(-3) = -258\) is not bad arithmetic --- it answers a question the
-        situation does not allow.
-      \end{block}
+  \medskip
+  \begin{columns}[T]
+    \column{0.32\textwidth}
+      \textbf{Linear.} Same rate over every interval --- that number is the
+      slope.
 
-    \column{0.48\textwidth}
-      \begin{block}{Say the assumption out loud}
-        All 80 ft is used, the barn is at least 40 ft long, the pen is exactly
-        rectangular, no gate gap.
-      \end{block}
+    \column{0.32\textwidth}
+      \textbf{Quadratic.} The rates march by a constant step; the rates are
+      themselves linear.
 
-      \medskip
-      \begin{block}{When one rule is not enough}
-        If the barn is only 30 ft, the constraint changes past a threshold ---
-        the model becomes \textbf{piecewise}.
-      \end{block}
+    \column{0.32\textwidth}
+      \textbf{Concavity.} Rates increasing \(\Rightarrow\) concave up;
+      decreasing \(\Rightarrow\) concave down.
   \end{columns}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Name the Question First, Every Time}
+  \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A table has \(x = 0,1,2,3,4\) and \(y = 0,1,8,27,64\). Take
-          differences until they are constant and name the model type.
+    \item A delivery van's distance \(D\), in miles, after \(t\) hours:
 
-    \item A garden bed against a wall uses 30 ft of edging on the other three
-          sides. Take the width as your question: build \(A(w)\) and state its
-          domain.
+          \smallskip
+          \begin{tabular}{|c|c|c|c|c|c|}
+          \hline
+          \(t\) (hours) & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \(D(t)\) (miles) & 0 & 60 & 100 & 160 & 180 \\
+          \hline
+          \end{tabular}
 
-    \item Two rugs. One has length always 3 times its width; the other has a
-          fixed length of 8 feet. Both areas, as functions of the width ---
-          why is only one of them quadratic?
+          \smallskip
+          Find the average rate of change over \([0,2]\) and over \([2,4]\),
+          with units. Which stretch was faster, and by how much?
+
+    \item One function's average rates of change are \(7, 7, 7, 7\).
+          Another's are \(2, 6, 10, 14\). Which one is linear, and what is its
+          slope? What is the concavity of the other --- and how do you know
+          without a graph?
   \end{enumerate}
 \end{frame}
 

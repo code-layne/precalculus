@@ -1,0 +1,574 @@
+%! Function Model Selection and Construction — Unit 1, Lesson 1.8 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.8}{Guided Notes --- Answer Key}
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to\ldots
+\begin{enumerate}[itemsep=2pt]
+  \item Decide which quantity in a situation is the \ans{question} --- the
+        model's input --- and which quantities become \ans{answers}.
+  \item Choose a model type from a table, by taking \ans{first} and
+        \ans{second} differences of \ans{equally} spaced inputs.
+  \item Choose a model type from the context alone, by asking how the
+        \ans{answer} moves as the \ans{question} grows.
+  \item Build a model by writing the \ans{constraint}, solving it for the other
+        quantities, and \ans{substituting} into the one I want.
+  \item Use the model: evaluate it, find an average rate of change with
+        \ans{units}, and state the \ans{domain} the context allows.
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Function model:}}\\[1pt]
+\ansline{A function built to stand in for a real situation, so the situation can be predicted.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Constraint:}}\\[1pt]
+\ansline{The equation the context forces on the quantities --- ``the fencing totals 80 feet.''}\\[3pt]
+\noindent\textbf{\textcolor{plum}{First differences:}}\\[1pt]
+\ansline{Differences between consecutive outputs of equally spaced inputs; constant means linear.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Second differences:}}\\[1pt]
+\ansline{The differences of the first differences; constant means quadratic.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
+\ansline{The inputs the context allows, usually narrower than what the algebra allows.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Model assumption:}}\\[1pt]
+\ansline{The simplifying claim about the world that must hold for the model to be trusted.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard[24]
+\begin{hookbox}
+The garden club has exactly \textbf{80 feet of fencing} for a rectangular pen.
+One whole side runs along the barn wall, so that side needs no fence at all.
+
+\smallskip
+Two members walked the field and measured the \textbf{same five trial pens}.
+Each one wrote down a different thing.
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Ana:} width $w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+\hline
+area $A$ (ft$^2$) & 350 & 600 & 750 & 800 & 750 \\
+\hline
+\end{tabular}
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Ben:} length $\ell$ (ft) & 30 & 40 & 50 & 60 & 70 \\
+\hline
+area $A$ (ft$^2$) & 750 & 800 & 750 & 600 & 350 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Same five pens. Same five areas. Two tables that look nothing alike. Which
+member recorded the pen correctly?
+\ansline{Both are right. Ana's question is the width; Ben's is the length.}
+\ansline{Same five pens, two different choices of input --- so two different tables.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{1. Pick the Question}
+Every lesson so far handed you a function. Today you are handed a
+\textbf{situation} --- and a situation is not a function yet.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \fill[lilac] (0,0) rectangle (5,1.8);
+  \draw[very thick, slate] (-0.5,1.8) -- (5.5,1.8);
+  \node[slate, above, font=\small] at (2.5,1.85) {barn wall --- no fencing needed};
+  \draw[very thick, plum] (0,1.8) -- (0,0) -- (5,0) -- (5,1.8);
+  \node[plum, left,  font=\small] at (0,0.9) {$w$};
+  \node[plum, right, font=\small] at (5,0.9) {$w$};
+  \node[plum, below, font=\small] at (2.5,0) {$\ell$};
+  \node[slate, font=\small\itshape] at (2.5,0.9) {area $A$};
+\end{tikzpicture}
+\end{center}
+
+\smallskip
+There are four numbers in this pen, and they are not all the same kind of
+thing:
+
+\smallskip
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabularx}{0.94\linewidth}{@{} >{\bfseries}p{0.30\linewidth} X @{}}
+\hline
+80 feet of fencing & fixed --- it never changes, no matter which pen \\
+\hline
+the width $w$      & changes from pen to pen \\
+\hline
+the length $\ell$  & changes from pen to pen \\
+\hline
+the area $A$       & changes from pen to pen \\
+\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+A function takes \textbf{one} question and hands back \textbf{one} answer. So
+before any algebra, you make two decisions.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[thick, plum, fill=lilac, rounded corners=2pt]
+    (-3.6,-0.55) rectangle (-1.4,0.55);
+  \node[font=\small] at (-2.5,0) {one quantity};
+  \draw[thick, plum, fill=goldbg, rounded corners=2pt]
+    (1.4,-0.55) rectangle (3.6,0.55);
+  \node[font=\small] at (2.5,0) {one quantity};
+  \draw[->, very thick, plum] (-1.3,0) -- (1.3,0);
+  \node[above, font=\small] at (0,0.08) {the model};
+  \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62) {the question};
+  \node[below, font=\small\itshape, text=slate] at (2.5,-0.62) {the answer};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+Today the \textbf{answer} is settled --- the club cares about area. The
+\textbf{question} is a choice, and it is yours to make.
+
+\smallskip
+\begin{center}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+\textbf{A model starts with a decision.} Naming the question is the first move
+in every modeling problem, and everything after it follows from that one
+choice: which differences you may take, what the constraint has to do, which
+inputs are allowed, and what the units say.
+\end{tcolorbox}
+\end{center}
+
+\medskip
+Back to the two notebooks.
+
+\smallskip
+\begin{itemize}[itemsep=4pt]
+  \item Ana's question was the \ans{width $w$}. \quad Ben's question was the
+        \ans{length $\ell$}.
+  \item Both were writing about the \ans{same} five pens, so neither one is
+        \ans{wrong}.
+\end{itemize}
+
+\medskip
+And the 80? It is neither a question nor an answer. It is the
+\textbf{constraint} --- the one sentence that stays true no matter which
+question you pick. Write it now:
+
+\begin{center}
+\ans{2} $w \; + \;$ \ans{$\ell$} $= 80$
+\end{center}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[30]
+\begin{notesbox}{2. When the Table Already Picked the Question}
+A table has made the choice for you. The \textbf{top row is the question} and
+the bottom row is the answer. All that is left is to ask how the answer moves.
+
+\medskip
+\textbf{Table A.} Take the first differences.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$y$ & 5 & 8 & 11 & 14 & 17 \\
+\hline
+1st difference & --- & \ans{3} & \ans{3} & \ans{3} & \ans{3} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The first differences are constant, so Table A is \ans{linear}.
+
+\medskip
+\textbf{The requirement, and the reason for it.} A difference compares two
+answers across \textit{one step of the question}. That comparison is only fair
+when every step is the \ans{same} size --- so check the question row before
+you subtract anything.
+
+\smallskip
+The warm-up's second table is the trap. Its differences were 4 and 8, which are
+not constant --- so is $g$ not linear?
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 4 \\
+\hline
+$g(x)$ & 3 & 7 & 15 \\
+\hline
+change in the question & --- & \ans{1} & \ans{2} \\
+\hline
+change in the answer & --- & 4 & 8 \\
+\hline
+answer change \textbf{per unit} & --- & \ans{4} & \ans{4} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Per unit of question the rate is the same, so $g$ \textit{is} \ans{linear}
+after all. The raw differences lied because the questions were not
+\ans{equally} spaced.
+
+\medskip
+\textbf{Ana's table} from the hook. Now the differences are fair --- her widths
+step by 5 every time.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$w$ (ft) & 5 & 10 & 15 & 20 & 25 \\
+\hline
+$A$ (ft$^2$) & 350 & 600 & 750 & 800 & 750 \\
+\hline
+1st difference & --- & \ans{250} & \ans{150} & \ans{50} & \ans{$-50$} \\
+\hline
+2nd difference & --- & --- & \ans{$-100$} & \ans{$-100$} & \ans{$-100$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+The first differences are \textbf{not} constant --- so take differences again.
+The second differences are all \ans{$-100$}, so Ana's data is
+\ans{quadratic}.
+
+\medskip
+\textbf{The decision tree.}
+\begin{itemize}[itemsep=4pt]
+  \item 1st differences constant $\Rightarrow$ \ans{linear} \quad (degree \ans{1})
+  \item 2nd differences constant $\Rightarrow$ \ans{quadratic} \quad (degree \ans{2})
+  \item 3rd differences constant $\Rightarrow$ \ans{cubic} \quad (degree \ans{3})
+  \item $n$th differences constant $\Rightarrow$ a degree-\ans{$n$} polynomial
+\end{itemize}
+
+\medskip
+\textbf{What it means.} Constant \textit{first} differences say the
+\ans{amount} of change repeats. Constant \textit{second} differences say the
+\ans{rate} of change is itself changing at a steady rate.
+
+\medskip
+\textbf{One warning about tables.} A degree-$n$ polynomial can be fit through
+\ans{$n+1$} points with distinct inputs --- so any four points can be fit by
+a cubic, and any five by a quartic. ``It fits the data'' is therefore not by
+itself a reason to believe a model. The context gets a vote too, which is
+Part 3.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[28]
+\begin{notesbox}{3. When Nobody Picked It: Reading the Context}
+No table means you pick the question yourself --- and then the clue is in
+\textbf{how the answer moves as the question grows}.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabularx}{0.94\linewidth}{@{} >{\raggedright\arraybackslash}p{0.52\linewidth} X @{}}
+\hline
+\textbf{What happens as the question grows} & \textbf{Model type} \\
+\hline
+The same amount is added each step & \ans{linear} \\
+\hline
+\textbf{Two} lengths grow with it, and get multiplied & \ans{quadratic} \\
+\hline
+\textbf{Three} lengths grow with it, and get multiplied & \ans{cubic} \\
+\hline
+The answer turns several times --- up, down, up & \ans{polynomial} \\
+\hline
+The answer \textbf{shrinks}: the question is underneath & \ans{rational} \\
+\hline
+The rule itself \textbf{changes at a threshold} & \ans{piecewise} \\
+\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\textbf{Careful --- the clue is not the noun.} ``Area'' does not mean quadratic
+all by itself. What matters is how many lengths move when the question moves.
+
+\smallskip
+\begin{itemize}[itemsep=5pt]
+  \item A rug's length is always \textbf{twice} its width. Then
+        $A(w) = w \cdot 2w = $ \ans{$2w^2$}, which is \ans{quadratic},
+        because \ans{two} lengths grow with the question.
+  \item A rug's length is \textbf{fixed at 9 feet}. Then $A(w) = $
+        \ans{$9w$}, which is \ans{linear}, because only
+        \ans{one} length grows with the question.
+\end{itemize}
+
+\medskip
+\textbf{Inverse proportion} means \TallMath{y = \frac{k}{x^n}} --- the question
+sits \textit{underneath}, so as the question grows the answer
+\ans{shrinks}. These are \textbf{rational} functions; Unit 3 is about them, and
+today you only have to recognize the words.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[20]
+\begin{notesbox}{4. Build It: the Constraint Answers for the Rest}
+You picked a question. Every other quantity now has to become an
+\textbf{answer} to it --- and the constraint is what forces them to.
+
+\begin{enumerate}[itemsep=3pt]
+  \item Name the \ans{question}, and name what you want out.
+  \item Write the \ans{constraint}.
+  \item Solve the constraint for the \textit{other} quantity.
+  \item \ans{Substitute} into the quantity you actually want.
+\end{enumerate}
+
+\medskip
+\textbf{Ana's model.} Her question is the width $w$.
+
+\smallskip
+Step 2 --- the constraint: \quad \ans{2} $w \; + \;$ \ans{$\ell$} $= 80$
+
+\smallskip
+Step 3 --- solve it for the length: \quad $\ell = $ \ans{$80 - 2w$}
+
+\smallskip
+Step 4 --- substitute into $A = w \cdot \ell$:
+
+\begin{work}
+  A(w) &= w \cdot \ell \\
+       &= w(80 - 2w) \\
+       &= 80w - 2w^2
+\end{work}
+
+\begin{center}
+$A(w) = $ \ans{$80w - 2w^2$}
+\end{center}
+
+Check it against Ana's table, where $A(20) = 800$:
+
+\begin{work}
+  A(20) &= 80(20) - 2(20)^2 \\
+        &= 1600 - 800 \\
+        &= 800
+\end{work}
+
+\smallskip
+Part 3 predicted quadratic, and here is why it was right: the area multiplies
+two lengths, and \textit{both} of them move with $w$ --- the length
+$80 - 2w$ shrinks as the width grows.
+
+\medskip
+\textbf{Ben's model.} Same pen, same constraint, \textbf{different question}.
+His question is the length $\ell$, so step 3 solves the same constraint for the
+other letter.
+
+\smallskip
+Step 3: \quad $w = $ \ans{$(80 - \ell)/2$}
+
+\begin{work}
+  A(\ell) &= w \cdot \ell \\
+          &= \frac{80 - \ell}{2} \cdot \ell \\
+          &= 40\ell - \frac{\ell^2}{2}
+\end{work}
+
+\begin{center}
+$A(\ell) = $ \ans{$40\ell - \ell^2/2$}
+\end{center}
+
+Check it against Ben's table, where $A(40) = 800$:
+
+\begin{work}
+  A(40) &= 40(40) - \frac{40^2}{2} \\
+        &= 1600 - 800 \\
+        &= 800
+\end{work}
+
+\medskip
+\textbf{Two formulas. One pen.} Neither notebook is wrong. They differ because
+the two members picked different \ans{questions}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[20]
+\begin{notesbox}{5. Use the Model}
+A model that is never used is just algebra. Ana's is $A(w) = 80w - 2w^2$.
+
+\medskip
+\textbf{(a) Evaluate.}
+
+\begin{work}
+  A(10) &= 80(10) - 2(10)^2 \\
+        &= 800 - 200 \\
+        &= 600 \\
+  A(30) &= 80(30) - 2(30)^2 \\
+        &= 2400 - 1800 \\
+        &= 600
+\end{work}
+
+$A(10) = $ \ans{600} ft$^2$ \qquad $A(30) = $ \ans{600} ft$^2$
+
+\medskip
+\textbf{(b) Average rate of change --- and the units name the question.}
+
+\begin{work}
+  \frac{A(20) - A(10)}{20 - 10} &= \frac{800 - 600}{10} \\
+                                &= 20 \\
+  \frac{A(30) - A(20)}{30 - 20} &= \frac{600 - 800}{10} \\
+                                &= -20
+\end{work}
+
+On $[10, 20]$: \ans{$+20$} \qquad On $[20, 30]$: \ans{$-20$}
+
+\smallskip
+Units: \ans{square feet per foot of width}
+
+\smallskip
+Straddle the best pen on \textbf{Ben's} model instead --- on $[30,40]$ and
+$[40,50]$ his rates come out $+5$ and $-5$, in square feet per foot of
+\ans{length}. Same pen, different numbers, because the units carry the question
+you chose.
+
+\medskip
+\textbf{(c) The sign change locates the best pen.} The rate went from
+\ans{$+$} to \ans{$-$}, so the largest area sits \textbf{between}. For
+$A(w) = aw^2 + bw$ the vertex is at $w = -\dfrac{b}{2a}$:
+
+\begin{work}
+  w &= -\frac{b}{2a} \\
+    &= -\frac{80}{2(-2)} \\
+    &= 20
+\end{work}
+
+Best width $w = $ \ans{20} ft, \quad length $\ell = 80 - 2(20) = $
+\ans{40} ft, \quad area $= $ \ans{800} ft$^2$.
+
+\smallskip
+\textbf{Back to the vote.} The best pen is \ans{20} ft by \ans{40} ft
+--- \textbf{not} a square, because one side is free. Ben reaches the same pen
+from the other end: his best is $\ell = $ \ans{40}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[20]
+\begin{notesbox}{6. The Fine Print: Which Questions Are Allowed}
+The algebra will happily answer questions the world cannot ask. The
+\textbf{domain} is the set of questions the \textit{situation} allows.
+
+\medskip
+\begin{itemize}[itemsep=5pt]
+  \item Ana's model: \ans{0} $< w <$ \ans{40}. \quad Why that upper
+        end? At that width there is \ans{no fencing left for the length}.
+  \item Ben's model: \ans{0} $< \ell <$ \ans{80}.
+  \item Same pen, \textbf{different domains} --- because the two members are
+        asking different \ans{questions}.
+  \item Range: the area satisfies \ans{0} $< A \le$ \ans{800}
+        square feet.
+\end{itemize}
+
+\smallskip
+$A(-3) = -258$ is not bad arithmetic. It is a perfectly good answer to a
+question the situation \ans{does not allow}.
+
+\medskip
+\textbf{The assumption sentence.} Fill in the frame:
+
+\smallskip
+\begin{center}
+\fbox{\begin{minipage}{0.92\linewidth}
+\medskip
+``This model assumes that \ans{all 80 ft is used} , and it is only trustworthy for
+inputs \ans{with $0 < w < 40$} .''
+\medskip
+\end{minipage}}
+\end{center}
+
+\medskip
+Name two things the pen model assumes about the real world:
+
+\ansline{The barn wall is at least 40 ft long, and the pen is exactly rectangular with no gate gap.}
+
+\medskip
+\textbf{When one rule is not enough.} Suppose the barn wall is only 30 feet
+long. Then a pen with $\ell > 30$ needs fencing on part of the fourth side too,
+and the area rule \textbf{changes} at that threshold. A function with different
+rules on different intervals is \ans{piecewise} --- the last row of the table in
+Part 3.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{practicebox}
+\begin{enumerate}[itemsep=8pt]
+  \item The question is the \ans{$x$} row. Take differences until they are
+        constant, then name the model type.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $y$ & 0 & 1 & 8 & 27 & 64 \\
+        \hline
+        1st & --- & \ans{1} & \ans{7} & \ans{19} & \ans{37} \\
+        \hline
+        2nd & --- & --- & \ans{6} & \ans{12} & \ans{18} \\
+        \hline
+        3rd & --- & --- & --- & \ans{6} & \ans{6} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        Model type: \ans{cubic}
+
+  \item A garden bed is built against a wall using 30 feet of edging on the
+        other three sides. Take the \textbf{width} as your question, then build
+        the area model and state its domain.
+
+        \begin{work}
+           2w + \ell &= 30 \\
+                \ell &= 30 - 2w \\
+                A(w) &= w(30 - 2w) \\
+                     &= 30w - 2w^2
+        \end{work}
+
+        $A(w) = $ \ans{$30w - 2w^2$} \qquad Domain: \ans{0} $< w <$ \ans{15}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

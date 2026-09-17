@@ -1,4 +1,4 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
+%! Composition of Functions — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -17,7 +17,7 @@
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
   {\color{lilacmid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.3 \quad Rates of Change}}
+  {\color{white}\textbf{\large Lesson 1.3 \quad Composition of Functions}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,18 +27,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can explain what the average rate of change over an interval
-        promises: the one steady rate that would produce the same change in
-        output over the same run.
-  \item I can compute an average rate of change from a formula, from a table,
-        and from a graph, and I always attach units.
-  \item I can read the sign of a rate of change as a statement about how two
-        quantities move together, and I know what a rate of change of zero
-        does \textit{not} say.
-  \item I can recover detail the average erased by computing it over smaller
-        intervals.
-  \item I can use a list of average rates of change to identify a linear or
-        quadratic function and to name concavity.
+  \item I can find the \textit{handoff} in a composite --- the number the inner
+        function gives to the outer one --- and use it to evaluate $f(g(3))$
+        from a table or from formulas.
+  \item I can build $(f \circ g)(x)$ by substituting $g(x)$ for every $x$ in
+        $f(x)$, and show that swapping the order usually changes the function.
+  \item I can explain why a composite has no value when the handoff is not
+        something the outer function accepts.
+  \item I can decompose a function into an inner and an outer piece, and check
+        my split by substituting back.
+  \item I can rewrite Lesson 1.4's ``inside'' changes as compositions, and say
+        why that is what makes them act on inputs.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -52,9 +51,9 @@
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
 1 & Warm-Up        & Spiral review of prerequisite skills              & \blank{1.2cm} \\
-2 & Guided Notes   & The stand-in rate: computing it, reading it, refining it & \blank{1.2cm} \\
-3 & Group Activity & The rocket club launch: rates across a whole flight & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on computing and interpreting rates & \blank{1.2cm} \\
+2 & Guided Notes   & The handoff: find it, hand it over, take it apart & \blank{1.2cm} \\
+3 & Group Activity & The summit cable car: minutes in, degrees out     & \blank{1.2cm} \\
+4 & Exit Ticket    & Independent check on evaluating, building, decomposing & \blank{1.2cm} \\
 5 & Homework       & Practice and extension                            & \blank{1.2cm} \\
 \midrule
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
@@ -65,12 +64,14 @@
 
 \begin{remindbox}
 \small
-Last lesson you said a function's changes were ``growing'' or ``shrinking'' by
-comparing them. Today you put a number on them. That number is a
-\textit{stand-in}: the one steady rate that would have done the same job over
-the same stretch. It is powerful precisely because it ignores everything
-between the endpoints --- and when you need that detail back, you compute it
-again over smaller pieces.
+Last lesson a rule interfered with the \textit{question} you hand a function or
+the \textit{answer} it hands back. Today two functions work in a row, and one
+number sits between them: the \textbf{handoff}. It is the inner function's
+answer and the outer function's question at the same time --- so find it first
+and write it down. Everything else follows from it. Swap the machines and you
+swap the handoff, which is why $f(g(x))$ and $g(f(x))$ are usually different
+functions. And a handoff the outer function will not accept means the composite
+has no value at all.
 \end{remindbox}
 
 \end{document}

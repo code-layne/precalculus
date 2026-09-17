@@ -1,4 +1,4 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Exit Ticket (ANSWER KEY)
+%! Inverse Functions — Unit 1, Lesson 1.4 — Exit Ticket (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -12,46 +12,49 @@
 
 \begin{enumerate}[itemsep=12pt]
 
-\item Let $g(x) = f(x + 5) - 2$.
+\item A function $f$ satisfies $f(6) = -2$.
 
 \begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item The change to the \textbf{question} moves the graph \ans{5}
-        units to the \ans{left}.
-  \item The change to the \textbf{answer} moves the graph \ans{2}
-        units \ans{down}.
-  \item The lowest point on the graph of $f$ is $(0, 0)$. The lowest point on
-        the graph of $g$ is ( \ans{$-5$} , \ans{$-2$} ).
+  \item $f^{-1}(-2) = $ \ans{6}
+  \item In one sentence, say why $f^{-1}(-2)$ is not $-\dfrac{1}{2}$.
+
+        \vspace{0.05in}
+        \ansline{$f^{-1}$ gives back the question that produced $-2$, which was 6; the reciprocal is just arithmetic done to the answer.}
 \end{enumerate}
 
-\item The table gives values of $f$. Complete the row for $g(x) = -f(x) + 1$.
+\item Let $f(x) = 2x - 5$. Find $f^{-1}(x)$ by swapping and solving.
+
+\begin{work}
+              y &= 2x - 5 \\
+              x &= 2y - 5 \\
+          x + 5 &= 2y \\
+  \frac{x+5}{2} &= y
+\end{work}
+
+$f^{-1}(x) = $ \ans{$\dfrac{x+5}{2}$}
 
 \smallskip
-\renewcommand{\arraystretch}{1.5}
+Now use it: $f^{-1}(9) = $ \ans{7}, and checking forwards,
+$f($ \ans{7} $) = 9$.
+
+\item The table gives every value of a function $h$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$x$ & $-1$ & 0 & 1 & 2 \\
+$x$ & 1 & 2 & 3 & 4 \\
 \hline
-$f(x)$ & 2 & 5 & $-3$ & 4 \\
-\hline
-$g(x) = -f(x) + 1$ & \ans{$-1$} & \ans{$-4$} & \ans{4}
-  & \ans{$-3$} \\
+$h(x)$ & 5 & 8 & 5 & 12 \\
 \hline
 \end{tabular}
 \end{center}
 
-\item The domain of $f$ is $[-2, 6]$ and the range of $f$ is $[0, 4]$. Let
-      $g(x) = f(x - 4)$.
-
-\begin{work}
-  -2 &\le x - 4 \le 6 \\
-   2 &\le x \le 10
-\end{work}
-
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Domain of $g$: \ans{$[2,\,10]$}
-  \item Range of $g$: \ans{$[0,\,4]$} \quad --- why? \ans{the answers never changed}
-\end{enumerate}
+\smallskip
+$h$ has no inverse. The answer \ans{5} came back from two different
+questions, $x = $ \ans{1} and $x = $ \ans{3}, so $h$ is not
+\ans{one-to-one}.
 
 \end{enumerate}
 

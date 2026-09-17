@@ -1,0 +1,72 @@
+%! Function Model Selection and Construction — Unit 1, Lesson 1.8 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.8}{Exit Ticket --- Answer Key}
+
+\vspace{0.12in}
+
+\begin{enumerate}[itemsep=10pt]
+
+\item The question is the \ans{$x$} row. Take differences until they are
+      constant, then name the model type.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$y$ & 2 & 5 & 14 & 29 & 50 \\
+\hline
+1st difference & --- & \ans{3} & \ans{9} & \ans{15} & \ans{21} \\
+\hline
+2nd difference & --- & --- & \ans{6} & \ans{6} & \ans{6} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Model type: \ans{quadratic}
+
+\item A dog run is built against the side of a garage using \textbf{40 feet} of
+      fencing on the other three sides. Take the \textbf{width} $w$ as your
+      question (the two fenced ends); $\ell$ is the length along the garage.
+
+\begin{work}
+   2w + \ell &= 40 \\
+        \ell &= 40 - 2w \\
+        A(w) &= w(40 - 2w) \\
+             &= 40w - 2w^2
+\end{work}
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Constraint: \ans{2} $w \; + \;$ \ans{$\ell$} $= 40$
+  \item $A(w) = $ \ans{$40w - 2w^2$}
+  \item Domain: \ans{0} $< w <$ \ans{20}
+  \item Write one assumption this model makes about the real world.
+
+        \ansline{All 40 ft is used, the run is exactly rectangular, and the garage is long enough.}
+\end{enumerate}
+
+\item Two rectangular rugs. In both, the question is the width $w$ and the
+      answer is the area.
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item The length is always \textbf{3 times} the width: \quad
+        $A(w) = $ \ans{$3w^2$}, \quad model type \ans{quadratic}
+  \item The length is \textbf{fixed at 8 feet}: \quad
+        $A(w) = $ \ans{$8w$}, \quad model type \ans{linear}
+  \item Both answers are areas. Why is only one of them quadratic?
+
+        \ansline{In (a) both lengths grow with the width; in (b) only one does.}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

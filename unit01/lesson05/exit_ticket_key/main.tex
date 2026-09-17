@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Exit Ticket (ANSWER KEY)
+%! Transformations of Functions — Unit 1, Lesson 1.5 — Exit Ticket (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -10,46 +10,47 @@
 
 \vspace{0.12in}
 
-\textit{Let $f(x) = 2x$ and $g(x) = x - 6$ for items 1 and 2.}
-
-\vspace{0.1in}
-
 \begin{enumerate}[itemsep=12pt]
 
-\item Evaluate both composites at $x = 10$. \textbf{Write the handoff down.}
-
-\begin{work}
-  f(g(10)) &= f(4) \\
-           &= 8 \\
-  g(f(10)) &= g(20) \\
-           &= 14
-\end{work}
-
-handoff $= $ \ans{4}, \; so $f(g(10)) = $ \ans{8}
-
-\smallskip
-handoff $= $ \ans{20}, \; so $g(f(10)) = $ \ans{14}
-
-\item Write each composite as a simplified formula.
-
-\begin{work}
-  (f \circ g)(x) &= f(x - 6) \\
-                 &= 2(x - 6) \\
-                 &= 2x - 12 \\
-  (g \circ f)(x) &= g(2x) \\
-                 &= 2x - 6
-\end{work}
-
-$(f \circ g)(x) = $ \ans{$2x - 12$} \qquad $(g \circ f)(x) = $ \ans{$2x - 6$}
-
-\smallskip
-Are they the same function? \ans{no}
-
-\item Decompose $h(x) = (x + 7)^4$.
+\item Let $g(x) = f(x + 5) - 2$.
 
 \begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item Inner: $g(x) = $ \ans{$x + 7$} \qquad Outer: $f(u) = $ \ans{$u^4$}
-  \item To compute $h(3)$, the handoff is the number \ans{10}.
+  \item The change to the \textbf{question} moves the graph \ans{5}
+        units to the \ans{left}.
+  \item The change to the \textbf{answer} moves the graph \ans{2}
+        units \ans{down}.
+  \item The lowest point on the graph of $f$ is $(0, 0)$. The lowest point on
+        the graph of $g$ is ( \ans{$-5$} , \ans{$-2$} ).
+\end{enumerate}
+
+\item The table gives values of $f$. Complete the row for $g(x) = -f(x) + 1$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x)$ & 2 & 5 & $-3$ & 4 \\
+\hline
+$g(x) = -f(x) + 1$ & \ans{$-1$} & \ans{$-4$} & \ans{4}
+  & \ans{$-3$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\item The domain of $f$ is $[-2, 6]$ and the range of $f$ is $[0, 4]$. Let
+      $g(x) = f(x - 4)$.
+
+\begin{work}
+  -2 &\le x - 4 \le 6 \\
+   2 &\le x \le 10
+\end{work}
+
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Domain of $g$: \ans{$[2,\,10]$}
+  \item Range of $g$: \ans{$[0,\,4]$} \quad --- why? \ans{the answers never changed}
 \end{enumerate}
 
 \end{enumerate}

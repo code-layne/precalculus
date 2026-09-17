@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Group Activity
+%! Transformations of Functions — Unit 1, Lesson 1.5 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,53 +10,36 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Summit Cable Car]{plumlight}
+\begin{scenariobox}[The Fountain Deck]{plumlight}
 \small
-A cable car climbs from the valley station to the summit in 10 minutes. Two
-instruments are running on the mountain, and \textbf{neither one measures the
-same thing}:
-
-\begin{itemize}[itemsep=2pt, topsep=2pt]
-  \item $E(t)$ --- the car's \textbf{elevation}, in feet above the valley
-        station, $t$ minutes after departure.
-  \item $T(e)$ --- the air \textbf{temperature}, in $^\circ$F, at elevation $e$
-        feet above the valley station.
-\end{itemize}
-
-Nothing on this mountain reports the temperature as a function of \textit{time}
---- but chaining the two instruments does exactly that.
+A city fountain is being designed. A measuring tape runs along the deck, and
+\textbf{nozzle A} stands at the $0$ mark. The function $f$ gives the height of
+nozzle A's water arc, in \textbf{feet}, above the point $x$ feet along the
+tape. Every other nozzle on the plan is written as a rule built out of $f$ ---
+that is the whole spec sheet.
 
 \begin{center}
-\begin{tikzpicture}[x=0.5cm, y=0.20cm]
-  \draw[linegray, very thin, xstep=1, ystep=4] (0,0) grid (10,20);
-  \draw[->, thick] (0,0) -- (11,0) node[below right] {\small $t$ (min)};
-  \draw[->, thick] (0,0) -- (0,22.5) node[above] {\small $E(t)$ (ft)};
-  \foreach \x in {2,4,6,8,10} \node[below, font=\small] at (\x,0) {\x};
-  \foreach \y/\lab in {4/400, 8/800, 12/1200, 16/1600, 20/2000}
-    \node[left, font=\small] at (0,\y) {\lab};
-  \draw[very thick, plum] (0,0) -- (10,20);
+\begin{tikzpicture}[x=0.58cm, y=0.16cm]
+  \draw[linegray, very thin, xstep=1, ystep=4] (0,0) grid (8,16);
+  \draw[->, thick] (0,0) -- (8.8,0) node[below right] {\small $x$ (ft along the deck)};
+  \draw[->, thick] (0,0) -- (0,17.8) node[above] {\small $f(x)$ (ft)};
+  \foreach \x in {1,2,3,4,5,6,7,8} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y in {4,8,12,16} \node[left, font=\small] at (0,\y) {\y};
+  \draw[very thick, plum, smooth, samples=60, domain=0:8]
+    plot (\x, {-\x*\x + 8*\x});
   \fill[plum] (0,0) circle (2.5pt);
-  \fill[plum] (4,8) circle (2.5pt);
-  \fill[plum] (10,20) circle (2.5pt);
+  \fill[plum] (4,16) circle (2.5pt);
+  \fill[plum] (8,0) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \renewcommand{\arraystretch}{1.3}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \hline
-$t$ (min) & 0 & 2 & 4 & 6 & 8 & 10 \\
+$x$ (ft) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
 \hline
-$E(t)$ (ft) & 0 & 400 & 800 & 1200 & 1600 & 2000 \\
-\hline
-\end{tabular}
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-$e$ (ft) & 0 & 400 & 800 & 1200 & 1600 & 2000 \\
-\hline
-$T(e)$ ($^\circ$F) & 62 & 60 & 58 & 56 & 54 & 52 \\
+$f(x)$ (ft) & 0 & 7 & 12 & 15 & 16 & 15 & 12 & 7 & 0 \\
 \hline
 \end{tabular}
 \end{center}
@@ -69,45 +52,58 @@ $T(e)$ ($^\circ$F) & 62 & 60 & 58 & 56 & 54 & 52 \\
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=6pt]
-  \item Read each one straight off its own table.
+\begin{enumerate}[itemsep=4pt]
+  \item Read straight off the table: $f(0) = $ \blank{1.4cm} feet (the water
+        leaves the nozzle) and $f(4) = $ \blank{1.4cm} feet (the top of the arc).
 
-        $E(4) = $ \blank{1.6cm} feet \qquad\qquad
-        $T(800) = $ \blank{1.6cm} $^\circ$F
+        The high point of nozzle A's arc is at ( \blank{1.2cm} ,
+        \blank{1.2cm} ).
 
-  \item Those two lines were really one question: \textbf{how cold is it four
-        minutes into the ride?} Put them together.
-
-        \begin{work}
-          T(E(4)) &= T(800) \\
-                  &= 58
-        \end{work}
-
-        $T(E(4)) = $ \blank{1.6cm} $^\circ$F
-
-  \item Now do the whole ride. Fill the \textbf{handoff} row all the way across
-        \textit{before} you look up a single temperature.
+  \item \textbf{Nozzle P} sits on a 3-foot pedestal, so its arc is
+        $P(x) = f(x) + 3$.
 
         \smallskip
         \renewcommand{\arraystretch}{1.4}
         \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        $t$ (min) & 0 & 2 & 4 & 6 & 8 \\
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
         \hline
-        handoff: $E(t)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        $f(x)$ & 0 & 12 & 16 & 12 & 0 \\
         \hline
-        $T(E(t))$ ($^\circ$F) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        $P(x) = f(x)+3$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        Was the pedestal a change to the \textbf{question} or the
+        \textbf{answer}? (Circle one.)
+
+  \item \textbf{Nozzle Q} runs on a spec that doubles every height:
+        $Q(x) = 2f(x)$.
+
+        \begin{work}
+          Q(2) &= 2 \cdot 12 \\
+               &= 24
+        \end{work}
+
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
+        \hline
+        $Q(x) = 2f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
         \hline
         \end{tabular}
         \end{center}
 
-  \item The handoff is not a number of minutes and it is not a number of
-        degrees. It is a number of \blank{2.4cm}.
+  \item High points. $P$'s is at ( \blank{1.2cm} , \blank{1.2cm} ) and $Q$'s is
+        at ( \blank{1.2cm} , \blank{1.2cm} ).
 
-  \item Which instrument runs first, $E$ or $T$? \blank{2cm}
-
-        Say in one sentence why it has to be that one.
+        \vspace{0.05in}
+        Both are still at the same $x$ as nozzle A's. Say why in one sentence.
 
         \vspace{0.05in}
         \writeline
@@ -121,61 +117,76 @@ $T(e)$ ($^\circ$F) & 62 & 60 & 58 & 56 & 54 & 52 \\
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The engineers publish formulas for both instruments:
-\[
-  E(t) = 200t \qquad\qquad T(e) = 62 - 0.005e
-\]
-
 \begin{enumerate}[itemsep=8pt]
-  \item Build the composite $T(E(t))$ by handing $E(t)$ to $T$.
-
-        \begin{work}
-          T(E(t)) &= T(200t) \\
-                  &= 62 - 0.005(200t) \\
-                  &= 62 - t
-        \end{work}
-
-        $T(E(t)) = $ \blank{3cm}
-
-  \item That formula says something a rider can feel. Finish the sentence:
-        the temperature drops \blank{1.4cm} $^\circ$F for every
-        \blank{2.4cm} of the ride.
+  \item \textbf{Nozzle B} is bolted 4 feet farther along the deck. The
+        engineer writes its arc as $B(x) = f(x - 4)$.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The ride lasts 10 minutes, so the summit temperature is
-                \blank{1.6cm} $^\circ$F.
-          \item Check that against the tables in the scenario box. Do they
-                agree? \blank{2cm}
+          \item $B(6) = f($ \blank{1.2cm} $) = $ \blank{1.2cm} feet.
+          \item Fill in the rest.
+
+                \smallskip
+                \renewcommand{\arraystretch}{1.4}
+                \begin{center}
+                \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                $x$ (ft) & 4 & 6 & 8 & 10 & 12 \\
+                \hline
+                handed to $f$: $x - 4$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+                \hline
+                $B(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+                \hline
+                \end{tabular}
+                \end{center}
+                \smallskip
+
+          \item Compared with nozzle A, $B$'s list of heights is
+                \blank{2.6cm}. Only the \blank{2.6cm} changed.
+          \item $B$'s high point is at ( \blank{1.2cm} , \blank{1.2cm} ).
         \end{enumerate}
 
-  \item A rider puts a jacket on when it hits $55^\circ$F.
-
-        \begin{work}
-          62 - t &= 55 \\
-               t &= 7
-        \end{work}
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item That happens \blank{1.4cm} minutes into the ride.
-          \item The handoff at that moment --- the elevation --- is
-                $E(7) = $ \blank{1.8cm} feet.
-        \end{enumerate}
-
-  \item No instrument on this mountain reports temperature as a function of
-        time. Explain in two sentences why composing $E$ and $T$ answers a
-        question neither one can answer alone.
+  \item The nozzle moved to the \textbf{right}, and the rule has a
+        \textbf{minus} sign. Explain the mismatch using the words
+        \textit{handed to $f$}.
 
         \vspace{0.05in}
         \writelines{2}
 
-  \item \textbf{Now reverse the order.} Someone writes $E(T(t))$ instead.
+  \item \textbf{Nozzle C} is on the 3-foot pedestal \textit{and} 4 feet down
+        the deck: $C(x) = f(x - 4) + 3$. Follow each landmark.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.5}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{point on A's arc} & \textbf{new input} & \textbf{new height} & \textbf{lands at} \\
+        \hline
+        $(0,\,0)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.2cm} \\
+        \hline
+        $(4,\,16)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.2cm} \\
+        \hline
+        $(8,\,0)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Nozzle A's water is in the air for $0 \le x \le 8$ and reaches heights
+        from $0$ to $16$ feet --- so $f$ has domain $[0, 8]$ and range
+        $[0, 16]$.
+
+        \begin{work}
+          0 &\le x - 4 \le 8 \\
+          4 &\le x \le 12
+        \end{work}
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The handoff would now be a number of \blank{2.4cm}.
-          \item But $E$ only accepts a number of \blank{2.4cm}, so
-                $E(T(t))$ is \blank{3cm}.
-          \item This is a second reason $f(g(x))$ and $g(f(x))$ are different:
-                sometimes the reversed order does not even \blank{2.6cm}.
+          \item Domain of $C$: \blank{3cm} \qquad Range of $C$: \blank{3cm}
+          \item Which of $C$'s two moves changed where the water lands, and
+                which changed how high it goes?
+
+                \vspace{0.05in}
+                \writeline
         \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}
@@ -188,57 +199,80 @@ The engineers publish formulas for both instruments:
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{Three machines in a row.} The summit kiosk sells hot drinks,
-        and its sales depend on the temperature: $D(T) = 40 - 0.5T$ drinks per
-        hour when the air is $T^\circ$F.
+  \item \textbf{Reverse-engineer the spec.} A mystery nozzle $M$ was measured
+        on site.
 
-        \begin{work}
-          D(T(E(t))) &= D(62 - t) \\
-                     &= 40 - 0.5(62 - t) \\
-                     &= 40 - 31 + 0.5t \\
-                     &= 9 + 0.5t
-        \end{work}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ (ft) & $-3$ & $-1$ & 1 & 3 & 5 \\
+        \hline
+        $M(x)$ (ft) & 0 & 12 & 16 & 12 & 0 \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $D(T(E(t))) = $ \blank{3cm}
-          \item At the summit ($t = 10$) the kiosk sells \blank{1.6cm}
-                drinks per hour.
-          \item This chain has \textbf{two} handoffs. Name them, with units.
+          \item $M(x) = f(x + $ \blank{1.2cm} $)$
+          \item In plain words, the nozzle was moved \blank{1.4cm} feet
+                \blank{2.4cm} along the deck from A.
+        \end{enumerate}
+
+  \item \textbf{The reflecting pool.} The deck surface is still water, and it
+        mirrors the arc below the deck: $R(x) = -f(x)$.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ (ft) & 0 & 2 & 4 & 6 & 8 \\
+        \hline
+        $R(x) = -f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Question change or answer change? \blank{3cm}
+          \item A second reflecting pool 4 feet down the deck shows
+                $-f(x - 4)$. Its lowest point is at ( \blank{1.4cm} ,
+                \blank{1.4cm} ).
+        \end{enumerate}
+
+  \item \textbf{The scale model versus the double-pressure spec.} A tabletop
+        model reproduces the arc in half the deck distance: $m(x) = f(2x)$.
+        Compare it against $Q(x) = 2f(x)$ from Tier R.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ (ft) & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $m(x) = f(2x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        $Q(x) = 2f(x)$ & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+        \smallskip
+
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item The two rules agree at exactly one input: $x = $
+                \blank{1.2cm}.
+          \item $m$'s high point is ( \blank{1.2cm} , \blank{1.2cm} );
+                $Q$'s is ( \blank{1.2cm} , \blank{1.2cm} ).
+          \item The $2$ sits in a different place in each rule. Say what each
+                one changed.
 
                 \vspace{0.05in}
-                \writeline
-        \end{enumerate}
-
-  \item \textbf{The late departure.} One morning the car leaves three minutes
-        behind schedule, so its elevation is $L(t) = E(t - 3)$.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Write $L$ as a composition: $L(t) = E(h(t))$ where
-                $h(t) = $ \blank{2.2cm}, and the handoff is a number of
-                \blank{2cm}.
-          \item Simplify: $L(t) = 200($ \blank{1.8cm} $) = $ \blank{2.6cm}
-          \item In Lesson 1.4 language, the graph of $E$ moved \blank{1.2cm}
-                units to the \blank{1.8cm} --- and now you can say why: the
-                handoff is what $E$ gets \blank{2.2cm}.
-        \end{enumerate}
-
-  \item \textbf{Undo the chain.} The ride's composite is $T(E(t)) = 62 - t$.
-        A control-room display reads the temperature and prints how many
-        minutes the car has been climbing --- so it applies some function $m$
-        with $m\big(T(E(t))\big) = t$.
-
-        \begin{work}
-          m(62 - t) &= t \\
-              m(y)  &= 62 - y
-        \end{work}
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $m(y) = $ \blank{2.6cm}
-          \item Test it at $t = 4$: the handoff into $m$ is \blank{1.6cm},
-                and $m$ of that is \blank{1.6cm}.
-          \item Composing the whole chain with $m$ gives back the number you
-                started with --- the \blank{2.6cm} function. That is exactly
-                what tomorrow's lesson is about.
+                \writelines{2}
         \end{enumerate}
 \end{enumerate}
 \end{tcolorbox}

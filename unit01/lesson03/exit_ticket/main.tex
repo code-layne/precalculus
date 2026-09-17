@@ -1,4 +1,4 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Exit Ticket
+%! Composition of Functions — Unit 1, Lesson 1.3 — Exit Ticket
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,54 +10,46 @@
 
 \vspace{0.12in}
 
+\textit{Let $f(x) = 2x$ and $g(x) = x - 6$ for items 1 and 2.}
+
+\vspace{0.1in}
+
 \begin{enumerate}[itemsep=12pt]
 
-\item Let $f(x) = x^2 + 1$. Find the average rate of change of $f$ over
-      $[1, 3]$.
+\item Evaluate both composites at $x = 10$. \textbf{Write the handoff down.}
 
 \begin{work}
-  \text{AROC} &= \frac{f(3) - f(1)}{3 - 1} \\
-              &= \frac{10 - 2}{2} \\
-              &= 4
+  f(g(10)) &= f(4) \\
+           &= 8 \\
+  g(f(10)) &= g(20) \\
+           &= 14
 \end{work}
 
-Answer: \blank{3cm}
-
-\item A hiker's elevation $E$, in feet, $t$ hours into the afternoon.
+handoff $= $ \blank{1.6cm}, \; so $f(g(10)) = $ \blank{1.8cm}
 
 \smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$E(t)$ (ft) & 900 & 1400 & 1700 & 1300 & 900 \\
-\hline
-\end{tabular}
+handoff $= $ \blank{1.6cm}, \; so $g(f(10)) = $ \blank{1.8cm}
+
+\item Write each composite as a simplified formula.
+
+\begin{work}
+  (f \circ g)(x) &= f(x - 6) \\
+                 &= 2(x - 6) \\
+                 &= 2x - 12 \\
+  (g \circ f)(x) &= g(2x) \\
+                 &= 2x - 6
+\end{work}
+
+$(f \circ g)(x) = $ \blank{3cm} \qquad $(g \circ f)(x) = $ \blank{3cm}
+
 \smallskip
+Are they the same function? \blank{2cm}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Over the whole afternoon $[0,4]$, the average rate of change is
-        \blank{2cm} feet per hour. Over the first hour $[0,1]$ it is
-        \blank{2cm} feet per hour.
-  \item The hiker did not stand still. Say in one sentence what the
-        afternoon's average hides.
+\item Decompose $h(x) = (x + 7)^4$.
 
-        \vspace{0.05in}
-        \writeline
-\end{enumerate}
-
-\item Two functions are sampled over consecutive equal-length intervals. Their
-      average rates of change are listed.
-
-\vspace{0.05in}
-Function A: \quad $6,\ 6,\ 6,\ 6$ \hfill Function B: \quad $1,\ 4,\ 7,\ 10$
-\hfill\phantom{.}
-
-\vspace{0.05in}
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Which function is linear? \blank{2.4cm}
-  \item Function B is concave \blank{1.6cm}.
+\begin{enumerate}[label=(\alph*), itemsep=5pt]
+  \item Inner: $g(x) = $ \blank{2.4cm} \qquad Outer: $f(u) = $ \blank{2cm}
+  \item To compute $h(3)$, the handoff is the number \blank{1.6cm}.
 \end{enumerate}
 
 \end{enumerate}

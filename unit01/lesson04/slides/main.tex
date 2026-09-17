@@ -1,4 +1,4 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Slides (Beamer)
+%! Inverse Functions — Unit 1, Lesson 1.4 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +11,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.4}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Transformations of Functions}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Inverse Functions}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -19,264 +19,272 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Two Harbors}
-  \sectionlabel[goldacc]{Vote Before You Compute}
+  \plumheader{Hook: Two \$14 Parking Receipts}
+  \sectionlabel[goldacc]{A Receipt Only Records the Answer}
 
-  \(D(t)\) is the water depth at North Harbor, \(t\) hours after midnight.
-  South Harbor rises and falls the same way, and its depth is published as
-  \(S(t) = D(t + 3)\).
+  Each receipt says what was paid. Neither says how long the car was parked ---
+  and that is the only thing you want to know.
 
   \smallskip
   \begin{columns}[T, onlytextwidth]
-    \column{0.54\textwidth}
-      \begin{center}
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}{|l|c|c|c|c|c|}
-      \hline
-      \(t\) (hours) & 0 & 3 & 6 & 9 & 12 \\
-      \hline
-      \(D(t)\) (feet) & 4 & 8 & 12 & 8 & 4 \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-      \medskip
-      The rule \textbf{adds} three hours.
-
-    \column{0.42\textwidth}
-      \begin{block}{The question}
-        Does South Harbor's high tide come \textbf{before} or \textbf{after}
-        North Harbor's?
-      \end{block}
-
-      \medskip
-      \begin{block}{Then compute}
-        \(S(3) = D(6) = 12\). South peaks at 3 a.m., three hours
-        \textbf{ahead}.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 1 — QUESTION AND ANSWER
-\begin{frame}[t, plain]
-  \plumheader{1. The Question and the Answer}
-  \sectionlabel[redacc]{The Whole Lesson in One Idea}
-
-  Using a function is a transaction: you hand \(f\) a question, \(f\) hands
-  back an answer. A rule can interfere in exactly two places.
-
-  \medskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.44\textwidth}
-      \begin{center}
-      \begin{tikzpicture}
-        \node[font=\large, anchor=west] (gq) at (0,0) {\(g(x) =\)};
-        \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {\(\;a\)};
-        \node[font=\large, anchor=west] (mid) at (a.east) {\(\cdot\, f(\)};
-        \node[font=\large, plum, anchor=west] (inner) at (mid.east) {\(\,x + h\,\)};
-        \node[font=\large, anchor=west] (close) at (inner.east) {\()\)};
-        \node[font=\large, goldacc, anchor=west] (k) at (close.east) {\(\;+\;k\)};
-        \node[font=\scriptsize\bfseries, plum, align=center]
-          (ql) at ([yshift=-0.9cm]inner.south) {inside: the question};
-        \draw[thick, plum, ->] (ql.north) -- (inner.south);
-        \node[font=\scriptsize\bfseries, goldacc, align=center]
-          (al) at ([yshift=0.8cm]mid.north) {outside: the answer};
-        \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
-        \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
-      \end{tikzpicture}
-      \end{center}
-
-    \column{0.52\textwidth}
-      \begin{block}{Outside \(\Rightarrow\) the answer}
-        \textbf{Vertical}, and it does exactly what it says.
-      \end{block}
-
-      \medskip
-      \begin{block}{Inside \(\Rightarrow\) the question}
-        \textbf{Horizontal}, and it runs \textbf{opposite} to what it looks
-        like --- because you must work out which \(x\) makes the question come
-        out right.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 2 — VERTICAL
-\begin{frame}[t, plain]
-  \plumheader{2. Rewriting the Answer --- Vertical Moves}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.44\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.66cm, y=0.24cm]
-        \draw[linegray, very thin] (-3,-5) grid (3,8);
-        \draw[->, thick] (-3.4,0) -- (3.6,0);
-        \draw[->, thick] (0,-5.5) -- (0,8.7);
-        \foreach \y in {-4,4,8}
-          \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
-        \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
-          plot (\x, {\x*\x + 3});
-        \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
-          plot (\x, {-\x*\x});
-        \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
-          plot (\x, {\x*\x});
-        \node[font=\tiny, goldacc, fill=white, inner sep=1pt] at (-1.6,7.4) {\(f(x)+3\)};
-        \node[font=\tiny, plum, fill=white, inner sep=1pt] at (1.8,7.4) {\(f(x)\)};
-        \node[font=\tiny, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {\(-f(x)\)};
-      \end{tikzpicture}
-      \end{center}
-
-    \column{0.52\textwidth}
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item \(f(x) + k\) --- \textbf{translation}: every answer gains \(k\).
-              Up if \(k > 0\), down if \(k < 0\).
-        \item \(af(x)\) --- \textbf{dilation} by \(|a|\): stretched away from
-              the \(x\)-axis if \(|a| > 1\), compressed toward it if
-              \(0 < |a| < 1\).
-        \item \(a < 0\) also carries a \textbf{reflection} over the
-              \(x\)-axis.
-      \end{itemize}
-
-      \medskip
-      \begin{block}{The consequence}
-        The questions were never touched --- so the \textbf{domain} is
-        unchanged and the \textbf{range} moves.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 3 — HORIZONTAL
-\begin{frame}[t, plain]
-  \plumheader{3. Rewriting the Question --- Horizontal Moves}
-  \sectionlabel[goldacc]{The One Students Get Backwards}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.50\textwidth}
-      \(g(x) = f(x + 3)\), with \(f(x) = x^2\):
-
-      \smallskip
-      \begin{center}
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}{|l|c|c|c|c|c|}
-      \hline
-      \(x\) & \(-5\) & \(-4\) & \(-3\) & \(-2\) & \(-1\) \\
-      \hline
-      handed to \(f\) & \(-2\) & \(-1\) & 0 & 1 & 2 \\
-      \hline
-      \(g(x)\) & 4 & 1 & 0 & 1 & 4 \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-      \medskip
-      The output list is \textbf{identical}. Only the addresses moved.
-
     \column{0.46\textwidth}
-      \begin{block}{Where did the vertex go?}
-        \(f\) was handed \(0\) at its vertex, so solve
-        \[ x + 3 = 0 \;\Longrightarrow\; x = -3. \]
-        \textbf{Left} 3 --- not the direction the ``\(+\)'' suggests.
+      \begin{block}{Garage A: \(P(x) = 3x + 2\)}
+        A \$14 receipt. How many hours?
+
+        \smallskip
+        \(3x + 2 = 14 \;\Rightarrow\; x = \mathbf{4}\) --- and no other number
+        of hours gives \$14.
       \end{block}
 
-      \medskip
-      \(f(2x)\): to hand \(f\) its \(2\), supply \(x = 1\). Every landmark
-      arrives at \textbf{half} the \(x\) --- a squeeze by \(1/2\).
+    \column{0.50\textwidth}
+      \begin{block}{Garage B: the posted price list}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          hours   & 1 & 2 & 3 & 4 & 5 \\
+          charges & \$8 & \textbf{\$14} & \textbf{\$14} & \$20 & \$26 \\
+        \end{tabular}
 
-      \smallskip
-      Questions changed, answers untouched: the \textbf{range} is unchanged
-      and the \textbf{domain} moves.
+        \smallskip
+        A \$14 receipt. How many hours? \textbf{The receipt does not say.}
+      \end{block}
   \end{columns}
-\end{frame}
-
-% SECTION 4 — FOLLOW THE LANDMARK
-\begin{frame}[t, plain]
-  \plumheader{4. Follow the Landmark}
-  \sectionlabel[redacc]{No Order of Operations to Memorize}
-
-  \begin{block}{For \(g(x) = a\,f(x+h) + k\), the parent's point \((p, q)\) lands at}
-    \[
-      \bigl(\,p - h,\;\; aq + k\,\bigr)
-      \qquad\text{new input: solve } x + h = p.
-    \]
-  \end{block}
 
   \medskip
-  \(g(x) = -2f(x+1) - 3\), with \(f(x) = x^2\):
-
-  \smallskip
   \begin{center}
-  \renewcommand{\arraystretch}{1.35}
-  \begin{tabular}{|l|c|c|c|}
-  \hline
-  \textbf{parent point} & \textbf{new input} \(p - 1\) & \textbf{new output} \(-2q - 3\) & \textbf{lands at} \\
-  \hline
-  \((-2,\,4)\) & \(-3\) & \(-11\) & \((-3,\,-11)\) \\
-  \hline
-  \((0,\,0)\) & \(-1\) & \(-3\) & \((-1,\,-3)\) \\
-  \hline
-  \((2,\,4)\) & 1 & \(-11\) & \((1,\,-11)\) \\
-  \hline
-  \end{tabular}
+    One answer gives the question back. The other does not.
+  \end{center}
+\end{frame}
+
+% SECTION 1 — GIVING BACK THE QUESTION
+\begin{frame}[t, plain]
+  \plumheader{1. Giving Back the Question}
+  \sectionlabel[redacc]{The Whole Lesson in One Picture}
+
+  \begin{center}
+  \begin{tikzpicture}[x=1.2cm, y=1.2cm]
+    \draw[thick, plum, fill=lilac, rounded corners=2pt]
+      (-3.4,-0.55) rectangle (-1.6,0.55);
+    \node at (-2.5,0) {\large \(a\)};
+    \draw[thick, plum, fill=goldbg, rounded corners=2pt]
+      (1.6,-0.55) rectangle (3.4,0.55);
+    \node at (2.5,0) {\large \(b\)};
+    \draw[->, very thick, plum] (-1.5,0.32) -- (1.5,0.32);
+    \node[above, font=\small] at (0,0.36) {\(f\)};
+    \draw[->, very thick, goldacc] (1.5,-0.32) -- (-1.5,-0.32);
+    \node[below, font=\small] at (0,-0.36) {\(f^{-1}\)};
+    \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62)
+      {the question};
+    \node[below, font=\small\itshape, text=slate] at (2.5,-0.62)
+      {the answer};
+  \end{tikzpicture}
   \end{center}
 
   \medskip
-  Left 1, stretched by 2, flipped over the \(x\)-axis, down 3 --- and the
-  vertex, once the lowest point, is now the \textbf{highest}.
-\end{frame}
-
-% SECTION 5 — DOMAIN AND RANGE
-\begin{frame}[t, plain]
-  \plumheader{5. The Two Columns Carry Domain and Range}
-
-  The domain is a fact about the \textbf{input} column; the range is a fact
-  about the \textbf{output} column.
+  \begin{center}
+    \textbf{The inverse gives back the question.}
+    If \(f(a) = b\), then \(f^{-1}(b) = a\).
+  \end{center}
 
   \medskip
+  \begin{block}{The signature error of this lesson}
+    \(f^{-1}(x) \ne \dfrac{1}{f(x)}\). \quad
+    \(P^{-1}(14) = \mathbf{4}\), \quad but \quad \(\dfrac{1}{P(14)} =
+    \dfrac{1}{44}\).
+
+    \smallskip
+    The reciprocal does arithmetic \textit{to the answer}. The inverse goes back
+    to the \textit{question}.
+  \end{block}
+\end{frame}
+
+% SECTION 2 — THE SWAP
+\begin{frame}[t, plain]
+  \plumheader{2. The Answers Become the Questions}
+  \sectionlabel[goldacc]{Trade the Rows --- Compute Nothing}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.46\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.25}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) (h) & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      \(P(x)\) (\$) & 5 & 8 & 11 & 14 & 17 \\
+      \hline
+      \end{tabular}
+
+      \smallskip
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) (\$) & 5 & 8 & 11 & 14 & 17 \\
+      \hline
+      \(P^{-1}(x)\) (h) & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \smallskip
+      The questions you may ask \(P^{-1}\) are exactly the answers \(P\) gave
+      --- so \textbf{domain and range swap}.
+
+    \column{0.50\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.33cm, y=0.33cm]
+        \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
+        \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small \(y\)};
+        \draw[dashed, thick, slate] (-5,-5) -- (5,5);
+        \node[font=\tiny, slate, above left] at (4.6,4.6) {\(y = x\)};
+        \draw[very thick, plum] (-3,-5) -- (2,5);
+        \draw[very thick, goldacc] (-5,-3) -- (5,2);
+        \fill[plum] (0,1) circle (2.2pt);
+        \fill[goldacc] (1,0) circle (2.2pt);
+        \fill[plum] (2,5) circle (2.2pt);
+        \fill[goldacc] (5,2) circle (2.2pt);
+      \end{tikzpicture}
+      \end{center}
+
+      \smallskip
+      Questions live on the \(x\)-axis, answers on the \(y\)-axis. Trading them
+      sends \((a,b)\) to \((b,a)\) --- a reflection over \(y = x\).
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — NO INVERSE
+\begin{frame}[t, plain]
+  \plumheader{3. When the Answer Gives Back Nothing}
+  \sectionlabel[redacc]{Back to the Second Receipt}
+
   \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
-      \begin{block}{Domain --- from the question}
-        \(f\) has domain \([-2, 4]\), and \(g(x) = -2f(x+1) - 3\):
-        \[ -2 \le x + 1 \le 4 \;\Longrightarrow\; -3 \le x \le 3 \]
+      \begin{block}{Garage B has no inverse}
+        \(B^{-1}(14)\) would have to be \(2\) \textbf{and} \(3\) --- and a
+        function gets one answer per question.
+
+        \smallskip
+        Nothing is wrong with \(B\). The trouble appears only when you run it
+        backwards.
+      \end{block}
+
+      \medskip
+      \begin{block}{One-to-one}
+        No two different questions share an answer. \textbf{A function has an
+        inverse exactly when it is one-to-one.}
       \end{block}
 
     \column{0.48\textwidth}
-      \begin{block}{Range --- from the answer}
-        \(f\) has range \([0, 9]\), and every \(q\) becomes \(-2q - 3\):
-        \[ -2(0) - 3 = -3, \qquad -2(9) - 3 = -21 \]
-        Range \([-21, -3]\) --- the endpoints \textbf{trade places}.
+      \begin{block}{\(f(x) = x^2\)}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{@{}lccccc@{}}
+          \(x\)   & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+          \(x^2\) & \textbf{4} & 1 & 0 & 1 & \textbf{4} \\
+        \end{tabular}
+
+        \smallskip
+        The answer 4 came from two questions.
+      \end{block}
+
+      \medskip
+      \begin{block}{The repair: throw questions away}
+        Keep only \(x \ge 0\). Then \(f^{-1}(x) = \sqrt{x}\).
+
+        \smallskip
+        ``\(x^2\) has no inverse'' is \textbf{false}. Say the domain.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — SWAP AND SOLVE
+\begin{frame}[t, plain]
+  \plumheader{4. Swap and Solve}
+  \sectionlabel[goldacc]{Every Answer at Once}
+
+  A table only gives back the questions already printed on it.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{block}{The four steps}
+        \begin{enumerate}\setlength{\itemsep}{2pt}
+          \item Write \(y = f(x)\).
+          \item \textbf{Swap} \(x\) and \(y\).
+          \item \textbf{Solve} for \(y\).
+          \item Rename it \(f^{-1}(x)\).
+        \end{enumerate}
+
+        \smallskip
+        Step 2 is the whole inversion: the old \textit{answer} becomes the new
+        \textit{question}.
+      \end{block}
+
+    \column{0.52\textwidth}
+      \(P(x) = 3x + 2\):
+      \begin{align*}
+        y &= 3x + 2 \\
+        x &= 3y + 2 \quad \text{\small(swap)} \\
+        \frac{x-2}{3} &= y
+      \end{align*}
+
+      \smallskip
+      So \(P^{-1}(x) = \dfrac{x-2}{3}\), and \(P^{-1}(14) = \mathbf{4}\) ---
+      the receipt, answered.
+  \end{columns}
+
+  \medskip
+  \begin{center}
+    On the warm-up you solved \(3x + 2 = 14\) and got \textit{one} question
+    back. This gets them all.
+  \end{center}
+\end{frame}
+
+% SECTION 5 — THE CHECK
+\begin{frame}[t, plain]
+  \plumheader{5. The Check: Hand the Answer Back}
+  \sectionlabel[redacc]{Where Lesson 1.5 Pays Off}
+
+  In \(f\big(f^{-1}(x)\big)\) the \textbf{handoff} is whatever \(f^{-1}\)
+  produced. If \(f^{-1}\) really gives back questions, the far end is where you
+  started.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.52\textwidth}
+      \begin{align*}
+        P\big(P^{-1}(x)\big) &= 3\!\left(\frac{x-2}{3}\right) + 2 = x \\[4pt]
+        P^{-1}\big(P(x)\big) &= \frac{(3x+2) - 2}{3} = x
+      \end{align*}
+
+    \column{0.44\textwidth}
+      \begin{block}{Both directions, every time}
+        \(f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x = I(x)\)
+
+        \smallskip
+        The \textbf{identity function} from Lesson 1.5, right on schedule.
       \end{block}
   \end{columns}
 
   \medskip
   \begin{center}
-    \textbf{Changes to the question move the domain. Changes to the answer
-    move the range.}
+    Warm-up item 2 was this check: \(f(x) = 3x+2\) and \(g(x) =
+    \dfrac{x-2}{3}\) gave back 11 and 3. That \(g\) was \(P^{-1}\) all along.
   \end{center}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \sectionlabel[redacc]{Name the Question, Not the Reciprocal}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A function \(f\) has this table, with its peak at \((2, 4)\):
+    \item A function \(g\) satisfies \(g(-4) = 7\). Find \(g^{-1}(7)\), and say
+          in one sentence why it is not \(\tfrac{1}{7}\).
 
-          \smallskip
-          \begin{tabular}{|l|c|c|c|c|c|}
-          \hline
-          \(x\) & 0 & 1 & 2 & 3 & 4 \\
-          \hline
-          \(f(x)\) & 1 & 3 & 4 & 3 & 1 \\
-          \hline
-          \end{tabular}
+    \item Find \(f^{-1}(x)\) for \(f(x) = 5x - 3\), then check it by computing
+          \(f^{-1}\big(f(x)\big)\).
 
-          \smallskip
-          Fill the row for \(g(x) = f(x) + 2\). Then let \(h(x) = f(x-2)\):
-          what is \(h(5)\), and where is \(h\)'s peak?
-
-    \item The lowest point on the graph of \(f\) is \((3, -1)\) and its domain
-          is \([1, 7]\). For \(g(x) = 4f(x-2) + 5\), find the lowest point and
-          the domain --- and say which move changed the domain.
+    \item A table gives \(h(1) = 5\), \(h(2) = 8\), \(h(3) = 5\), \(h(4) = 12\).
+          Explain why \(h\) has no inverse.
   \end{enumerate}
 \end{frame}
 

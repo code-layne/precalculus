@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Slides (Beamer)
+%! Transformations of Functions — Unit 1, Lesson 1.5 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +11,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.5}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Composition of Functions}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Transformations of Functions}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -19,230 +19,264 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Two Registers, One Jacket}
+  \plumheader{Hook: Two Harbors}
   \sectionlabel[goldacc]{Vote Before You Compute}
 
-  A \$60 jacket, a \$10 coupon, 6\% sales tax. Register 1 scans the coupon
-  first, then the tax. Register 2 scans the tax first, then the coupon.
+  \(D(t)\) is the water depth at North Harbor, \(t\) hours after midnight.
+  South Harbor rises and falls the same way, and its depth is published as
+  \(S(t) = D(t + 3)\).
 
   \smallskip
   \begin{columns}[T, onlytextwidth]
-    \column{0.46\textwidth}
-      \begin{block}{The question}
-        Same jacket, same coupon, same tax rate. Do the two of you pay the
-        same amount?
-      \end{block}
-
-    \column{0.50\textwidth}
-      \begin{block}{Then compute --- and watch the middle number}
-        \begin{tabular}{@{}lcc@{}}
-          & \textbf{screen} & \textbf{total} \\
-          Register 1 & \$50 & \$53.00 \\
-          Register 2 & \$63.60 & \$53.60 \\
-        \end{tabular}
-
-        \smallskip
-        The totals differ because the \textbf{middle numbers} differ.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% SECTION 1 — THE HANDOFF
-\begin{frame}[t, plain]
-  \plumheader{1. The Handoff}
-  \sectionlabel[redacc]{The Whole Lesson in One Picture}
-
-  \((f \circ g)(x) = f\big(g(x)\big)\), read ``\(f\) of \(g\) of \(x\).'' The
-  circle is \textbf{not} multiplication.
-
-  \medskip
-  \begin{center}
-  \begin{tikzpicture}[x=1cm, y=1cm]
-    \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (-0.8,-0.5) rectangle (0.8,0.5);
-    \node at (0,0) {\large \(g\)};
-    \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (4.2,-0.5) rectangle (5.8,0.5);
-    \node at (5,0) {\large \(f\)};
-    \draw[->, very thick, plum] (-2.4,0) -- (-0.9,0);
-    \node[above, font=\small] at (-1.65,0.08) {\(x\)};
-    \draw[->, very thick, goldacc] (0.9,0) -- (4.1,0);
-    \node[above, font=\small] at (2.5,0.10) {\(g(x)\)};
-    \draw[->, very thick, plum] (5.9,0) -- (7.9,0);
-    \node[above, font=\small] at (6.9,0.08) {\(f(g(x))\)};
-    \node[above, font=\small\itshape, text=slate] at (0,0.58) {runs first};
-    \node[above, font=\small\itshape, text=slate] at (5,0.58) {runs second};
-    \node[below, font=\small\bfseries, goldacc] at (2.5,-0.10) {THE HANDOFF};
-    \node[below, font=\small, text=slate] at (2.5,-0.55)
-      {\(g\)'s answer \textit{is} \(f\)'s question};
-  \end{tikzpicture}
-  \end{center}
-
-  \medskip
-  \begin{center}
-    \textbf{One number, two jobs --- an answer first, then a question.
-    Find it, and write it down.}
-  \end{center}
-\end{frame}
-
-% SECTION 2 — FROM A TABLE
-\begin{frame}[t, plain]
-  \plumheader{2. The Handoff from a Table}
-  \sectionlabel[goldacc]{Two Lookups, No Formula}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.44\textwidth}
+    \column{0.54\textwidth}
       \begin{center}
       \renewcommand{\arraystretch}{1.3}
       \begin{tabular}{|l|c|c|c|c|c|}
       \hline
-      \(x\) & 0 & 1 & 2 & 3 & 4 \\
+      \(t\) (hours) & 0 & 3 & 6 & 9 & 12 \\
       \hline
-      \(f(x)\) & 3 & 4 & 0 & 2 & 1 \\
-      \hline
-      \(g(x)\) & 2 & 3 & 7 & 0 & 4 \\
+      \(D(t)\) (feet) & 4 & 8 & 12 & 8 & 4 \\
       \hline
       \end{tabular}
       \end{center}
 
       \medskip
-      \(f(g(1))\): handoff \(g(1) = \mathbf{3}\), then \(f(3) = 2\).
+      The rule \textbf{adds} three hours.
 
-      \smallskip
-      \(g(f(1))\): handoff \(f(1) = \mathbf{4}\), then \(g(4) = 4\).
-
-    \column{0.52\textwidth}
-      \begin{block}{Swap the machines, swap the handoff}
-        Same two functions, same input, a different middle number --- so a
-        different answer. Composition is \textbf{not commutative}.
+    \column{0.42\textwidth}
+      \begin{block}{The question}
+        Does South Harbor's high tide come \textbf{before} or \textbf{after}
+        North Harbor's?
       \end{block}
 
       \medskip
-      \begin{block}{And sometimes there is no answer at all}
-        \(f(g(2))\): the handoff is \(7\), and the table has no \(f(7)\).
-        A handoff must be a question the \textbf{outer} function accepts ---
-        that is the \textbf{domain of a composite}.
+      \begin{block}{Then compute}
+        \(S(3) = D(6) = 12\). South peaks at 3 a.m., three hours
+        \textbf{ahead}.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 3 — AN EXPRESSION
+% SECTION 1 — QUESTION AND ANSWER
 \begin{frame}[t, plain]
-  \plumheader{3. Handing Over a Whole Expression}
+  \plumheader{1. The Question and the Answer}
+  \sectionlabel[redacc]{The Whole Lesson in One Idea}
 
-  \begin{block}{The recipe}
-    To build \(f(g(x))\), substitute \(g(x)\) for \textbf{every} \(x\) in
-    \(f(x)\). The handoff is no longer a number --- it is an expression.
-    Nothing else changes.
+  Using a function is a transaction: you hand \(f\) a question, \(f\) hands
+  back an answer. A rule can interfere in exactly two places.
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}
+        \node[font=\large, anchor=west] (gq) at (0,0) {\(g(x) =\)};
+        \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {\(\;a\)};
+        \node[font=\large, anchor=west] (mid) at (a.east) {\(\cdot\, f(\)};
+        \node[font=\large, plum, anchor=west] (inner) at (mid.east) {\(\,x + h\,\)};
+        \node[font=\large, anchor=west] (close) at (inner.east) {\()\)};
+        \node[font=\large, goldacc, anchor=west] (k) at (close.east) {\(\;+\;k\)};
+        \node[font=\scriptsize\bfseries, plum, align=center]
+          (ql) at ([yshift=-0.9cm]inner.south) {inside: the question};
+        \draw[thick, plum, ->] (ql.north) -- (inner.south);
+        \node[font=\scriptsize\bfseries, goldacc, align=center]
+          (al) at ([yshift=0.8cm]mid.north) {outside: the answer};
+        \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
+        \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{block}{Outside \(\Rightarrow\) the answer}
+        \textbf{Vertical}, and it does exactly what it says.
+      \end{block}
+
+      \medskip
+      \begin{block}{Inside \(\Rightarrow\) the question}
+        \textbf{Horizontal}, and it runs \textbf{opposite} to what it looks
+        like --- because you must work out which \(x\) makes the question come
+        out right.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 2 — VERTICAL
+\begin{frame}[t, plain]
+  \plumheader{2. Rewriting the Answer --- Vertical Moves}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.66cm, y=0.24cm]
+        \draw[linegray, very thin] (-3,-5) grid (3,8);
+        \draw[->, thick] (-3.4,0) -- (3.6,0);
+        \draw[->, thick] (0,-5.5) -- (0,8.7);
+        \foreach \y in {-4,4,8}
+          \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+        \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
+          plot (\x, {\x*\x + 3});
+        \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
+          plot (\x, {-\x*\x});
+        \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
+          plot (\x, {\x*\x});
+        \node[font=\tiny, goldacc, fill=white, inner sep=1pt] at (-1.6,7.4) {\(f(x)+3\)};
+        \node[font=\tiny, plum, fill=white, inner sep=1pt] at (1.8,7.4) {\(f(x)\)};
+        \node[font=\tiny, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {\(-f(x)\)};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(f(x) + k\) --- \textbf{translation}: every answer gains \(k\).
+              Up if \(k > 0\), down if \(k < 0\).
+        \item \(af(x)\) --- \textbf{dilation} by \(|a|\): stretched away from
+              the \(x\)-axis if \(|a| > 1\), compressed toward it if
+              \(0 < |a| < 1\).
+        \item \(a < 0\) also carries a \textbf{reflection} over the
+              \(x\)-axis.
+      \end{itemize}
+
+      \medskip
+      \begin{block}{The consequence}
+        The questions were never touched --- so the \textbf{domain} is
+        unchanged and the \textbf{range} moves.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — HORIZONTAL
+\begin{frame}[t, plain]
+  \plumheader{3. Rewriting the Question --- Horizontal Moves}
+  \sectionlabel[goldacc]{The One Students Get Backwards}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.50\textwidth}
+      \(g(x) = f(x + 3)\), with \(f(x) = x^2\):
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) & \(-5\) & \(-4\) & \(-3\) & \(-2\) & \(-1\) \\
+      \hline
+      handed to \(f\) & \(-2\) & \(-1\) & 0 & 1 & 2 \\
+      \hline
+      \(g(x)\) & 4 & 1 & 0 & 1 & 4 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \medskip
+      The output list is \textbf{identical}. Only the addresses moved.
+
+    \column{0.46\textwidth}
+      \begin{block}{Where did the vertex go?}
+        \(f\) was handed \(0\) at its vertex, so solve
+        \[ x + 3 = 0 \;\Longrightarrow\; x = -3. \]
+        \textbf{Left} 3 --- not the direction the ``\(+\)'' suggests.
+      \end{block}
+
+      \medskip
+      \(f(2x)\): to hand \(f\) its \(2\), supply \(x = 1\). Every landmark
+      arrives at \textbf{half} the \(x\) --- a squeeze by \(1/2\).
+
+      \smallskip
+      Questions changed, answers untouched: the \textbf{range} is unchanged
+      and the \textbf{domain} moves.
+  \end{columns}
+\end{frame}
+
+% SECTION 4 — FOLLOW THE LANDMARK
+\begin{frame}[t, plain]
+  \plumheader{4. Follow the Landmark}
+  \sectionlabel[redacc]{No Order of Operations to Memorize}
+
+  \begin{block}{For \(g(x) = a\,f(x+h) + k\), the parent's point \((p, q)\) lands at}
+    \[
+      \bigl(\,p - h,\;\; aq + k\,\bigr)
+      \qquad\text{new input: solve } x + h = p.
+    \]
   \end{block}
 
   \medskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-      \(f(x) = 3x - 2\), \quad \(g(x) = x^2 + 1\):
-      \begin{align*}
-        f(g(x)) &= f(x^2+1) = 3(x^2+1) - 2 \\
-                &= 3x^2 + 1 \\[4pt]
-        g(f(x)) &= g(3x-2) = (3x-2)^2 + 1 \\
-                &= 9x^2 - 12x + 5
-      \end{align*}
+  \(g(x) = -2f(x+1) - 3\), with \(f(x) = x^2\):
 
-    \column{0.48\textwidth}
-      \begin{block}{Two routes, one number}
-        \(f(g(2))\) step by step: handoff \(g(2) = 5\), so \(f(5) = 13\).
+  \smallskip
+  \begin{center}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{|l|c|c|c|}
+  \hline
+  \textbf{parent point} & \textbf{new input} \(p - 1\) & \textbf{new output} \(-2q - 3\) & \textbf{lands at} \\
+  \hline
+  \((-2,\,4)\) & \(-3\) & \(-11\) & \((-3,\,-11)\) \\
+  \hline
+  \((0,\,0)\) & \(-1\) & \(-3\) & \((-1,\,-3)\) \\
+  \hline
+  \((2,\,4)\) & 1 & \(-11\) & \((1,\,-11)\) \\
+  \hline
+  \end{tabular}
+  \end{center}
 
-        \smallskip
-        Straight from the formula: \(3(2)^2 + 1 = 13\).
-      \end{block}
-
-      \smallskip
-      Not even the same \textit{shape} of expression --- order matters.
-  \end{columns}
+  \medskip
+  Left 1, stretched by 2, flipped over the \(x\)-axis, down 3 --- and the
+  vertex, once the lowest point, is now the \textbf{highest}.
 \end{frame}
 
-% SECTION 4 — TWO REGISTERS
+% SECTION 5 — DOMAIN AND RANGE
 \begin{frame}[t, plain]
-  \plumheader{4. Two Registers, Two Handoffs}
-  \sectionlabel[redacc]{Why the Order Costs Sixty Cents}
+  \plumheader{5. The Two Columns Carry Domain and Range}
 
-  Coupon \(c(p) = p - 10\), \qquad tax \(t(x) = 1.06x\). Neither one alone
-  answers ``what do I pay?''
+  The domain is a fact about the \textbf{input} column; the range is a fact
+  about the \textbf{output} column.
 
   \medskip
   \begin{columns}[T, onlytextwidth]
     \column{0.48\textwidth}
-      \begin{block}{At \(p = 60\)}
-        \(t(c(60)) = t(\mathbf{50}) = 53.00\)
-
-        \smallskip
-        \(c(t(60)) = c(\mathbf{63.60}) = 53.60\)
+      \begin{block}{Domain --- from the question}
+        \(f\) has domain \([-2, 4]\), and \(g(x) = -2f(x+1) - 3\):
+        \[ -2 \le x + 1 \le 4 \;\Longrightarrow\; -3 \le x \le 3 \]
       \end{block}
 
     \column{0.48\textwidth}
-      \begin{block}{At every price}
-        \(t(c(p)) = 1.06p - 10.60\)
-
-        \smallskip
-        \(c(t(p)) = 1.06p - 10\)
+      \begin{block}{Range --- from the answer}
+        \(f\) has range \([0, 9]\), and every \(q\) becomes \(-2q - 3\):
+        \[ -2(0) - 3 = -3, \qquad -2(9) - 3 = -21 \]
+        Range \([-21, -3]\) --- the endpoints \textbf{trade places}.
       \end{block}
   \end{columns}
 
   \medskip
   \begin{center}
-    Taxing first charges 6\% of the \$10 you never paid: \(0.06 \times 10 =
-    \$0.60\), at \textbf{any} price.
+    \textbf{Changes to the question move the domain. Changes to the answer
+    move the range.}
   \end{center}
-\end{frame}
-
-% SECTION 5 — DECOMPOSITION, IDENTITY, 1.4
-\begin{frame}[t, plain]
-  \plumheader{5. Decomposition, the Identity, and Lesson 1.4}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-      \begin{block}{Decomposition = name the handoff}
-        \(h(x) = (5x-1)^3\). What would your calculator do first?
-
-        \smallskip
-        Inner \(g(x) = 5x-1\), \quad outer \(f(u) = u^3\).
-      \end{block}
-
-      \medskip
-      \begin{block}{The identity function}
-        \(I(x) = x\) makes the handoff the number itself, so
-        \(f(I(x)) = I(f(x)) = f(x)\).
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{Lesson 1.4 was composition all along}
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{@{}lll@{}}
-          \textbf{1.4 rule} & \textbf{is} & \textbf{handoff} \\
-          \(f(x+3)\) & \(f(h(x))\) & \(x+3\) \\
-          \(f(2x)\)  & \(f(h(x))\) & \(2x\) \\
-        \end{tabular}
-      \end{block}
-
-      \medskip
-      The handoff is what \(f\) gets \textbf{asked} --- so an inside change can
-      only rewrite the question, never the answers.
-  \end{columns}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Name the Handoff First}
+  \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Using the table from section 2, find \(f(g(3))\) and \(g(f(3))\).
-          Write both handoffs down.
+    \item A function \(f\) has this table, with its peak at \((2, 4)\):
 
-    \item Let \(f(x) = x^2\) and \(g(x) = x - 4\). Build \((f \circ g)(x)\) and
-          \((g \circ f)(x)\), simplified. Are they the same function?
+          \smallskip
+          \begin{tabular}{|l|c|c|c|c|c|}
+          \hline
+          \(x\) & 0 & 1 & 2 & 3 & 4 \\
+          \hline
+          \(f(x)\) & 1 & 3 & 4 & 3 & 1 \\
+          \hline
+          \end{tabular}
 
-    \item Decompose \(h(x) = \sqrt{4x+1}\) into an inner and an outer function,
-          then check by substituting back.
+          \smallskip
+          Fill the row for \(g(x) = f(x) + 2\). Then let \(h(x) = f(x-2)\):
+          what is \(h(5)\), and where is \(h\)'s peak?
+
+    \item The lowest point on the graph of \(f\) is \((3, -1)\) and its domain
+          is \([1, 7]\). For \(g(x) = 4f(x-2) + 5\), find the lowest point and
+          the domain --- and say which move changed the domain.
   \end{enumerate}
 \end{frame}
 

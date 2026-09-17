@@ -1,4 +1,4 @@
-%! Transformations of Functions — Unit 1, Lesson 1.4 — Guided Notes
+%! Inverse Functions — Unit 1, Lesson 1.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -13,14 +13,15 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Sort a transformation rule into a change to the \blank{2.4cm} I hand
-        the parent function or a change to the \blank{2.4cm} it hands back.
-  \item Describe a vertical translation, a vertical dilation, and a
-        \blank{2.4cm} from the numbers \textit{outside} the function.
-  \item Explain why a change \textit{inside} the parentheses moves the graph
-        in the \blank{2.4cm} direction.
-  \item Follow a \blank{2.4cm} point from the parent to the transformed graph,
-        and read off the new \blank{2cm} and \blank{1.6cm}.
+  \item Use $f^{-1}$ to give back the \blank{2.2cm} that produced a given
+        \blank{2.2cm}, and explain why $f^{-1}(x)$ is not
+        \blank{1.6cm}.
+  \item Reverse a table of pairs to build $f^{-1}$, and say why the
+        \blank{2cm} and \blank{1.8cm} trade places.
+  \item Decide whether a function is \blank{2.4cm}, and \blank{2.4cm} its
+        domain when it is not.
+  \item Find $f^{-1}(x)$ by swapping and solving, and check the pair with
+        \blank{2.8cm}.
 \end{enumerate}
 \end{objectivebox}
 
@@ -30,366 +31,363 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Parent function:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Inverse function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Transformation:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{One-to-one:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Translation:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Domain restriction:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Dilation:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Reflection:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Reflection over $y = x$:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[20]
+\boxguard[22]
 \begin{hookbox}
-$D(t)$ is the water depth at North Harbor, in feet, $t$ hours after midnight.
-South Harbor rises and falls exactly the same way, and the harbormaster
-publishes its depth as
-\[
-  S(t) = D(t + 3).
-\]
+You find a \textbf{\$14 parking receipt} in each of two cars. Neither receipt
+says how long the car was parked --- it only says what the driver paid.
 
 \smallskip
+\textbf{Garage A} charges $P(x) = 3x + 2$ dollars for $x$ hours.
+\textbf{Garage B} posts this price list:
+
+\smallskip
+\renewcommand{\arraystretch}{1.3}
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
-$t$ (hours after midnight) & 0 & 3 & 6 & 9 & 12 \\
+hours & 1 & 2 & 3 & 4 & 5 \\
 \hline
-$D(t)$ (feet) & 4 & 8 & 12 & 8 & 4 \\
+Garage B charges & \$8 & \$14 & \$14 & \$20 & \$26 \\
 \hline
 \end{tabular}
 \end{center}
-\smallskip
 
-The rule \textit{adds} three hours. Does South Harbor's high tide come
-\textbf{before} or \textbf{after} North Harbor's? Commit to an answer before
-you compute anything.
+\smallskip
+For one of these cars you can say \textit{exactly} how long it was parked. For
+the other you cannot. Which is which --- and what makes the difference?
 \writelines{2}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard[24]
-\begin{notesbox}{1. The Question and the Answer}
-Every rule today is built out of one \textbf{parent function}. Ours is
-$f(x) = x^2$.
+\boxguard[28]
+\begin{notesbox}{1. Giving Back the Question}
+Every time you use a function you ask it a \textbf{question} and it hands back
+an \textbf{answer}. Today we run that trip in the other direction.
 
 \smallskip
 \begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
-\hline
-$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-Using $f$ is a two-step transaction: you hand $f$ an input, and $f$ hands you
-back an output. So there are exactly two places a rule can interfere.
-
-\medskip
-\begin{center}
-\begin{tikzpicture}
-  \node[font=\large, anchor=west] (gq) at (0,0) {$g(x) \;=\;$};
-  \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {$a$};
-  \node[font=\large, anchor=west] (mid) at (a.east) {$\cdot\, f($};
-  \node[font=\large, plum, anchor=west] (inner) at (mid.east) {$\,x + h\,$};
-  \node[font=\large, anchor=west] (close) at (inner.east) {$)$};
-  \node[font=\large, goldacc, anchor=west] (k) at (close.east) {$\;+\;k$};
-  \node[font=\scriptsize\bfseries, plum, align=center]
-    (ql) at ([yshift=-0.75cm]inner.south) {inside: the question you hand $f$};
-  \draw[thick, plum, ->] (ql.north) -- (inner.south);
-  \node[font=\scriptsize\bfseries, goldacc, align=center]
-    (al) at ([yshift=0.62cm]mid.north) {outside: the answer $f$ hands back};
-  \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
-  \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[thick, plum, fill=lilac, rounded corners=2pt]
+    (-3.4,-0.55) rectangle (-1.6,0.55);
+  \node at (-2.5,0) {\large $a$};
+  \draw[thick, plum, fill=goldbg, rounded corners=2pt]
+    (1.6,-0.55) rectangle (3.4,0.55);
+  \node at (2.5,0) {\large $b$};
+  \draw[->, very thick, plum] (-1.5,0.32) -- (1.5,0.32);
+  \node[above, font=\small] at (0,0.36) {$f$};
+  \draw[->, very thick, goldacc] (1.5,-0.32) -- (-1.5,-0.32);
+  \node[below, font=\small] at (0,-0.36) {$f^{-1}$};
+  \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62)
+    {the question};
+  \node[below, font=\small\itshape, text=slate] at (2.5,-0.62)
+    {the answer};
 \end{tikzpicture}
 \end{center}
 
+\smallskip
+\begin{center}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+\textbf{The inverse gives back the question.} If $f(a) = b$ --- question $a$,
+answer $b$ --- then $f^{-1}(b) = a$. Ask $f^{-1}$ an \textbf{answer} and it
+tells you which \textbf{question} produced it.
+\end{tcolorbox}
+\end{center}
+
+\smallskip
+Read the garage rule $P(x) = 3x + 2$ both directions.
+
 \medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{0.92\linewidth}{@{} >{\bfseries}p{0.34\linewidth} X @{}}
+\hline
+$P$: question $\to$ answer & $P^{-1}$: answer $\to$ question \\
+\hline
+$P(4) = 14$ & $P^{-1}(14) = $ \blank{2cm} \\
+\hline
+$P(1) = 5$  & $P^{-1}(5) = $ \blank{2cm} \\
+\hline
+$P(a) = b$  & $P^{-1}($ \blank{1.2cm} $) = $ \blank{1.2cm} \\
+\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\textbf{Warning --- the biggest mistake in this lesson.} The $-1$ in $f^{-1}$
+is a \textbf{name}, not an exponent:
+
+\begin{center}
+$f^{-1}(x) \ne \dfrac{1}{f(x)}$
+\end{center}
+
+The reciprocal does arithmetic \textit{to the answer}. The inverse goes back to
+the \textit{question}. Those are not the same trip, and the numbers say so:
+
+\smallskip
+$P^{-1}(14) = $ \blank{1.4cm} \qquad but \qquad $P(14) = $ \blank{1.4cm},
+so $\dfrac{1}{P(14)} = $ \blank{1.6cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{2. The Answers Become the Questions}
+\textbf{Example 1.} Fill in what Garage A charges, using $P(x) = 3x + 2$.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ (hours) & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$P(x)$ (dollars) & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+Now build $P^{-1}$ by \textbf{trading the two rows}. Nothing is computed here.
+The answers on the bottom row become the questions on the top row.
+
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ (dollars) & 5 & 8 & 11 & 14 & 17 \\
+\hline
+$P^{-1}(x)$ (hours) & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm}
+  & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+There is the \$14 receipt from Garage A: \blank{1.4cm} hours.
+
+\medskip
+Nothing here needs memorizing --- it follows from the trade. The questions you
+may ask $P^{-1}$ are exactly the answers $P$ gave.
+
+\smallskip
 \begin{itemize}[itemsep=4pt]
-  \item A change to the \textbf{answer} is \blank{2.4cm} and does exactly what
-        it says.
-  \item A change to the \textbf{question} is \blank{2.4cm}, and it runs
-        \blank{2.4cm} to what it looks like --- because you have to work out
-        what $x$ makes the question come out right.
+  \item Domain of $f^{-1}$ $=$ the \blank{2cm} of $f$. \quad
+        Range of $f^{-1}$ $=$ the \blank{2cm} of $f$.
 \end{itemize}
 
 \medskip
-Sort each rule before computing anything.
+\textbf{The same swap, drawn.} On a graph the questions live on the $x$-axis
+and the answers live on the $y$-axis. Trading them turns each point $(a,b)$
+into the point $(b,a)$ --- which is exactly a reflection across the line
+$y = x$.
 
 \smallskip
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|}
-\hline
-\textbf{rule} & \textbf{question or answer?} & \textbf{horizontal or vertical?} \\
-\hline
-$g(x) = f(x) - 5$ & \blank{2.4cm} & \blank{2.4cm} \\
-\hline
-$g(x) = f(x - 5)$ & \blank{2.4cm} & \blank{2.4cm} \\
-\hline
-$g(x) = 4f(x)$ & \blank{2.4cm} & \blank{2.4cm} \\
-\hline
-$g(x) = f(4x)$ & \blank{2.4cm} & \blank{2.4cm} \\
-\hline
-\end{tabular}
-\end{center}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[20]
-\begin{notesbox}{2. Rewriting the Answer --- Vertical Moves}
-Whatever $f$ hands back, do something to it. The input column is never
-touched.
-
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
-\hline
-$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
-\hline
-$f(x) + 3$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-$2f(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-$-f(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-\begin{center}
-\begin{tikzpicture}[x=0.72cm, y=0.28cm]
-  \draw[linegray, very thin] (-3,-5) grid (3,8);
-  \draw[->, thick] (-3.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
-  \draw[->, thick] (0,-5.6) -- (0,8.8) node[above, font=\small] {$y$};
-  \foreach \x in {-2,-1,1,2}
-    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
-  \foreach \y in {-4,4,8}
-    \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
-  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
-    plot (\x, {\x*\x + 3});
-  \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
-    plot (\x, {-\x*\x});
-  \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
-    plot (\x, {\x*\x});
-  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-1.55,7.6) {$f(x)+3$};
-  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.75,7.6) {$f(x)$};
-  \node[font=\scriptsize, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {$-f(x)$};
+\begin{tikzpicture}[x=0.44cm, y=0.44cm]
+  \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
+  \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small $y$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[dashed, thick, slate] (-5,-5) -- (5,5);
+  \node[font=\tiny, slate, above left] at (4.6,4.6) {$y = x$};
+  \draw[very thick, plum] (-3,-5) -- (2,5);
+  \draw[very thick, goldacc] (-5,-3) -- (5,2);
+  \fill[plum] (0,1) circle (2.2pt);
+  \fill[goldacc] (1,0) circle (2.2pt);
+  \fill[plum] (2,5) circle (2.2pt);
+  \fill[goldacc] (5,2) circle (2.2pt);
 \end{tikzpicture}
 \end{center}
+{\small\textcolor{plum}{\textbf{plum}} $= f(x) = 2x + 1$ \qquad
+ \textcolor{goldacc}{\textbf{gold}} $= f^{-1}(x) = \dfrac{x-1}{2}$ \qquad
+ \textcolor{slate}{\textbf{dashed}} $= y = x$}
 
+\smallskip
 \begin{itemize}[itemsep=4pt]
-  \item $g(x) = f(x) + k$ is a \textbf{vertical translation}: every answer
-        gains $k$. If $k > 0$ the graph moves \blank{1.4cm}; if $k < 0$ it
-        moves \blank{1.4cm}.
-  \item $g(x) = af(x)$ is a \textbf{vertical dilation} by a factor of
-        \blank{1.4cm}: every answer is multiplied by $a$. If $|a| > 1$ the
-        graph is stretched away from the $x$-axis; if $0 < |a| < 1$ it is
-        \blank{2.4cm} toward it.
-  \item If $a < 0$ the dilation also carries a \textbf{reflection} over the
-        \blank{1.6cm}-axis. The case $a = -1$ is the flip on its own.
-  \item The questions were never touched, so the \blank{2cm} does not change.
-        The \blank{1.6cm} does.
+  \item $f$ answers the question $0$ with $1$, so $f^{-1}$ answers the question
+        \blank{0.9cm} with \blank{0.9cm}: the point $(0,1)$ becomes
+        $($ \blank{0.9cm} , \blank{0.9cm} $)$.
+  \item The point $(2, 5)$ on $f$ becomes $($ \blank{0.9cm} ,
+        \blank{0.9cm} $)$ on $f^{-1}$.
 \end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[20]
-\begin{notesbox}{3. Rewriting the Question --- Horizontal Moves}
-Now the rule changes what you hand $f$ before $f$ ever goes to work.
-
-\medskip
-\textbf{(a) $g(x) = f(x + 3)$.} Fill each cell by first saying what gets handed
-to $f$.
+\boxguard[26]
+\begin{notesbox}{3. When the Answer Gives Back Nothing}
+Back to the other receipt. \textbf{Garage B} charged \$14 for a 2-hour stay
+\textit{and} \$14 for a 3-hour stay.
 
 \smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ \\
-\hline
-handed to $f$: $x + 3$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-$g(x) = f(x+3)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-The output list is \blank{2.6cm} to the parent's. Nothing happened to the
-answers at all --- only the \blank{2.4cm} where they appear.
-
-\medskip
-\textbf{Where did the vertex go?} The parent's vertex is the point where $f$
-was handed $0$. So $g$'s vertex sits at the $x$ that makes the question come
-out $0$:
-
-\begin{work}
-  x + 3 &= 0 \\
-      x &= -3
-\end{work}
-
-The graph moved \blank{1.4cm} 3 --- the direction the ``$+$'' does
-\textit{not} suggest. This is the harbor again: asking $S$ about 3 a.m.\ means
-asking $D$ about 6 a.m., so everything $D$ does, $S$ did three hours
-\blank{2cm}.
+\textbf{Example 2.} Try to answer the question the receipt asks.
 
 \smallskip
-\begin{center}
-\begin{tikzpicture}[x=0.60cm, y=0.34cm]
-  \draw[linegray, very thin] (-6,0) grid (3,7);
-  \draw[->, thick] (-6.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
-  \draw[->, thick] (0,-0.6) -- (0,7.8) node[above, font=\small] {$y$};
-  \foreach \x in {-5,-4,-3,-2,-1,1,2}
-    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
-  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-5.6:-0.4]
-    plot (\x, {(\x+3)*(\x+3)});
-  \draw[very thick, plum, smooth, samples=60, domain=-2.6:2.6]
-    plot (\x, {\x*\x});
-  \fill[plum] (0,0) circle (2.2pt);
-  \fill[goldacc] (-3,0) circle (2.2pt);
-  \draw[->, thick, charcoal] (-0.25,-1.5) -- (-2.75,-1.5);
-  \node[below, font=\scriptsize, charcoal] at (-1.5,-1.6) {3 left};
-  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-4.6,6.4) {$f(x+3)$};
-  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.9,6.4) {$f(x)$};
-\end{tikzpicture}
-\end{center}
-
-\medskip
-\textbf{(b) The rule.} $g(x) = f(x + h)$ is a \textbf{horizontal translation}
-by $-h$ units: $h > 0$ moves the graph \blank{1.4cm}, $h < 0$ moves it
-\blank{1.4cm}. Do not read the sign in front of the number --- solve for the
-input.
-
-\medskip
-\textbf{(c) $g(x) = f(2x)$.} To hand $f$ its $2$, you supply $x = $
-\blank{1.2cm} \; (you solved $2x = 6$ on the warm-up for the same reason).
+$B^{-1}(14) = $ \blank{1.4cm} \; or \; \blank{1.4cm} --- and a function is
+only allowed \blank{2.4cm} answer per question.
 
 \smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & $-1$ & $-0.5$ & 0 & $0.5$ & 1 \\
-\hline
-handed to $f$: $2x$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-$g(x) = f(2x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-Every landmark arrives at \blank{2cm} the $x$ it used to. That is a
-\textbf{horizontal dilation} by a factor of \blank{1.4cm} --- a squeeze, not a
-stretch, even though the number is $2$. And $g(x) = f(-x)$ reflects over the
-\blank{1.6cm}-axis.
-
-\medskip
-The answers were never touched, so the \blank{1.6cm} does not change. The
-\blank{2cm} does.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[16]
-\begin{notesbox}{4. Follow the Landmark}
-Combining moves needs no order of operations to memorize. Take any point
-$(p, q)$ on the parent and answer the two questions separately.
+So $B$ has \textbf{no inverse}. Nothing is wrong with $B$ as a function; the
+trouble only appears when you try to run it backwards.
 
 \medskip
 \begin{center}
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
-\textbf{For $g(x) = a\,f(x + h) + k$, the parent's point $(p,\,q)$ lands at}
-\[
-  \bigl(\,p - h,\;\; a q + k\,\bigr).
-\]
-\textbf{New input:} solve $x + h = p$. \qquad
-\textbf{New output:} do to $q$ what the outside says.
+A function is \textbf{one-to-one} when no two different questions share an
+answer. \textbf{A function has an inverse exactly when it is one-to-one} ---
+that is what makes ``which question produced this answer?'' have a single
+reply.
 \end{tcolorbox}
 \end{center}
 
+\smallskip
+You already met one today: on the warm-up, $q(1)$ and $q(3)$ were both 3, so
+$q$ is \blank{3cm}.
+
 \medskip
-\textbf{Worked example.} $g(x) = -2f(x + 1) - 3$, with $f(x) = x^2$.
+\textbf{Example 3.} $f(x) = x^2$ on all real numbers.
 
 \smallskip
+\renewcommand{\arraystretch}{1.4}
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\textbf{parent point} $(p,q)$ & \textbf{new input} $p - 1$ & \textbf{new output} $-2q - 3$ & \textbf{lands at} \\
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
 \hline
-$(-2,\,4)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.4cm} \\
-\hline
-$(0,\,0)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.4cm} \\
-\hline
-$(2,\,4)$ & \blank{1.4cm} & \blank{1.4cm} & \blank{2.4cm} \\
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
 \hline
 \end{tabular}
 \end{center}
-\smallskip
 
-\begin{itemize}[itemsep=4pt]
-  \item In words: left \blank{1cm}, stretched by \blank{1cm}, flipped over the
-        \blank{1.6cm}-axis, down \blank{1cm}.
-  \item The parent's vertex $(0,0)$ was its lowest point. On $g$ it is the
-        \blank{2cm} point, because $a$ is \blank{2cm}.
-\end{itemize}
+\smallskip
+The answer 4 came from the questions \blank{1.2cm} and \blank{1.2cm}, so $f$ is
+not one-to-one and has no inverse on all real numbers.
+
+\medskip
+\textbf{The repair: throw questions away.} Keep only $x \ge 0$. On that piece
+no answer repeats, and the inverse exists:
+
+\begin{center}
+$f^{-1}(x) = $ \blank{2.4cm} \qquad with domain \blank{2.4cm}
+\end{center}
+
+\smallskip
+Say it with the domain attached. ``$x^2$ has no inverse'' is false;
+``$x^2$ has no inverse \blank{4cm}'' is true.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[14]
-\begin{notesbox}{5. The Two Columns Carry Domain and Range}
-The domain is a fact about the \blank{2cm} column; the range is a fact about
-the \blank{2cm} column. So a transformation moves whichever one it rewrites.
+\boxguard[26]
+\begin{notesbox}{4. Swap and Solve}
+A table only gives back the questions you already listed. This gets them all at
+once.
+
+\begin{enumerate}[itemsep=3pt]
+  \item Write $y = f(x)$.
+  \item \blank{2.4cm} $x$ and $y$. \quad \textit{(This is the whole inversion:
+        the old answer becomes the new question.)}
+  \item \blank{2.4cm} for $y$.
+  \item Rename the result $f^{-1}(x)$.
+\end{enumerate}
 
 \medskip
-Suppose $f$ has domain $[-2,\,4]$ and range $[0,\,9]$, and
-$g(x) = -2f(x + 1) - 3$.
-
-\medskip
-\textbf{Domain.} $g$ can only be asked about inputs whose question lands
-inside $f$'s domain:
+\textbf{Example 4.} Find $P^{-1}(x)$ for the garage rule $P(x) = 3x + 2$.
 
 \begin{work}
-  -2 &\le x + 1 \le 4 \\
-  -3 &\le x \le 3
+              y &= 3x + 2 \\
+              x &= 3y + 2 \\
+          x - 2 &= 3y \\
+  \frac{x-2}{3} &= y
 \end{work}
 
-Domain of $g$: \blank{3cm}
+$P^{-1}(x) = $ \blank{3cm}
+
+\smallskip
+Test it on the receipt: $P^{-1}(14) = \dfrac{14 - 2}{3} = $ \blank{1.4cm}
+hours, matching the table in Part 2.
+
+\smallskip
+Step 3 is the warm-up. There you solved $3x + 2 = 14$ and got one question
+back. Swapping and solving does it for \blank{3.4cm} answer at once.
 
 \medskip
-\textbf{Range.} Every output $q$ of $f$ becomes $-2q - 3$:
+\textbf{Example 5.} Find $f^{-1}(x)$ for $f(x) = 4x - 1$.
 
 \begin{work}
-  -2(0) - 3 &= -3 \\
-  -2(9) - 3 &= -21
+              y &= 4x - 1 \\
+              x &= 4y - 1 \\
+          x + 1 &= 4y \\
+  \frac{x+1}{4} &= y
 \end{work}
 
-Range of $g$: \blank{3cm} \quad --- note the endpoints traded places, because
-multiplying by a \blank{2cm} number reverses order.
+$f^{-1}(x) = $ \blank{3cm}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[26]
+\begin{notesbox}{5. The Check: Hand the Answer Back}
+Lesson 1.5 gave you the tool. In $f\big(f^{-1}(x)\big)$ the \textbf{handoff} is
+whatever $f^{-1}$ produced --- and if $f^{-1}$ really does give back questions,
+the number that comes out the far end is the one you started with.
 
 \medskip
-\textbf{Rule of thumb.} Changes to the \blank{2cm} move the domain. Changes to
-the \blank{2cm} move the range.
+\begin{center}
+$f$ and $f^{-1}$ are inverses exactly when \quad
+$f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x$.
+\end{center}
+
+The function that hands back its own input, $I(x) = x$, is the
+\blank{2.8cm} function from Lesson 1.5. Composing a function with its inverse
+--- in \textbf{either} order --- produces it.
+
+\medskip
+\textbf{Example 6.} Verify $P(x) = 3x + 2$ against $P^{-1}(x) = \dfrac{x-2}{3}$.
+
+\begin{work}
+  P\big(P^{-1}(x)\big) &= 3\left(\frac{x-2}{3}\right) + 2 \\
+                       &= (x - 2) + 2 \\
+                       &= x \\
+  P^{-1}\big(P(x)\big) &= \frac{(3x + 2) - 2}{3} \\
+                       &= \frac{3x}{3} \\
+                       &= x
+\end{work}
+
+Both compositions collapsed to \blank{1.2cm}, so $P$ and $P^{-1}$ really are
+\blank{2.6cm}.
+
+\medskip
+\textbf{You already ran this check.} The warm-up handed you $f(x) = 3x+2$ and
+$g(x) = \dfrac{x-2}{3}$ and asked for $f(g(11))$ and $g(f(3))$. Both came back
+to the starting number, because that $g$ was \blank{2.4cm} all along. The
+algebra above does the same check for \blank{3.6cm} at once, not just for 11
+and 3.
+
+\medskip
+\textbf{Why check both directions, and not just one?}
+
+\writeline
 \end{notesbox}
 
 \vspace{0.1in}
@@ -397,43 +395,29 @@ the \blank{2cm} move the range.
 \boxguard[16]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item A function $f$ is given by a table. Its peak is at $(2, 4)$.
+  \item Let $f(x) = 5x - 3$. Find $f^{-1}(x)$, then check it by computing
+        $f^{-1}\big(f(x)\big)$.
 
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $x$ & 0 & 1 & 2 & 3 & 4 \\
-        \hline
-        $f(x)$ & 1 & 3 & 4 & 3 & 1 \\
-        \hline
-        $g(x) = f(x) + 2$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-        \hline
-        \end{tabular}
-        \smallskip
+        \begin{work}
+                      y &= 5x - 3 \\
+                      x &= 5y - 3 \\
+                  x + 3 &= 5y \\
+          \frac{x+3}{5} &= y \\
+          f^{-1}\big(f(x)\big) &= \frac{(5x - 3) + 3}{5} \\
+                               &= \frac{5x}{5} \\
+                               &= x
+        \end{work}
 
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Was that a change to the question or the answer?
-                \blank{3cm}
-          \item Let $h(x) = f(x - 2)$. Then $h(5) = f($ \blank{1.2cm} $) = $
-                \blank{1.2cm}.
-          \item $h$'s peak is at ( \blank{1.2cm} , \blank{1.2cm} ).
-        \end{enumerate}
+        $f^{-1}(x) = $ \blank{2.8cm} \qquad
+        $f^{-1}\big(f(x)\big) = $ \blank{1.6cm}
 
-  \item The lowest point on the graph of $f$ is $(3, -1)$, and the domain of
-        $f$ is $[1, 7]$. Let $g(x) = 4f(x - 2) + 5$.
+  \item A function $g$ satisfies $g(-4) = 7$.
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Follow the landmark.
+          \item $g^{-1}(7) = $ \blank{2cm}
+          \item In one sentence, say why $g^{-1}(7)$ is not $\dfrac{1}{7}$.
 
-                \begin{work}
-                  \text{new input} &= 3 + 2 = 5 \\
-                  \text{new output} &= 4(-1) + 5 = 1
-                \end{work}
-
-                The lowest point of $g$ is ( \blank{1.4cm} , \blank{1.4cm} ).
-          \item Domain of $g$: \blank{3cm}
-          \item Which of the two moves changed the domain? \blank{4cm}
+                \writeline
         \end{enumerate}
 \end{enumerate}
 \end{practicebox}
