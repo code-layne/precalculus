@@ -7,7 +7,7 @@ summarize the pattern, but the live project is authoritative. For macros and box
 the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-planning/`); for what is course-specific, `LESSON_SHAPE.md` at the repository root.
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
-[Guided notes](#guided-notes) · [Exit ticket](#exit-ticket) ·
+[Guided notes](#guided-notes) · [AP practice](#ap-practice) ·
 [Homework](#homework) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline) ·
 [Unit cover](#unit-cover) · [Sample test & key](#sample-test--key)
 
@@ -35,7 +35,7 @@ AP tags and list review topics):
    CED Learning Objectives as student-facing aims. This CED has no "Big Idea" tag.
 3. **Lesson Flow — Gradual Release (60 minutes)** — `skillbox{lilac}`, a three-column
    `tabularx` (Phase / Min / what students are doing and where it lives) over the seven
-   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Debrief, Exit Ticket. **There is
+   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Debrief, Homework Launch (3). **There is
    no Group Activity row** — the whole release runs inside the guided notes, so You Do
    gets real time (roughly 11–14 min). **The Min column must sum to exactly 60.** Close with
    an "If the clock slips" paragraph naming what to cut first and what to protect. This box
@@ -82,25 +82,27 @@ AP tags and list review topics):
     Three timed moves as an `enumerate`: (a) *share out the You Do*, one answer per practice
     item and not a full review, so a student who never reached the last item still hears its
     result; (b) *name the headline* — the
-    day's central sentence in italics, said by the teacher and echoed back by the class,
-    immediately before the exit ticket asks for it in writing; (c) *point forward*, or read a
+    day's central sentence in italics, said by the teacher and echoed back by the class (a
+    homework item asks for it in writing); (c) *point forward*, or read a
     read-only notes section aloud here rather than during notes. Close with a
-    `\textbf{Do not}` line: no re-teaching, no new questions, no starting the exit ticket
+    `\textbf{Do not}` line: no re-teaching, no new questions, no starting the homework
     early.
-13. **Individual Work & Assessment (5 min)** — `skillbox{redbox}`: exit-ticket items + an
-    SOL/AP-style MC, with a note on collecting and using results.
-14. **Reinforcement & Extension** — `skillbox{goldbox}`. Opens
-    `\textbf{Homework --- DeltaMath.}` and states **target coverage** — the item types the
-    DeltaMath set should hit — rather than numbered problems. Then an extension and a preview
-    of the next lesson. On an overridden lesson, a printed-homework overview replaces the
-    DeltaMath paragraph.
+13. **Homework Launch (3 min)** — `skillbox{redbox}`. **There is no exit ticket.** Due date to
+    the board and the cover; the homework problems students start alone; the **diagnostic item**
+    (the day's central distinction) and what a miss looks like; three piles to sort what the
+    teacher sees into and what each means for the next warm-up.
+14. **Reinforcement & Extension** — `skillbox{goldbox}`. `\textbf{Homework --- printed, graded
+    (2 pages).}` — an overview by part and problem number; `\textbf{AP Practice --- extra credit
+    (2 pages).}` — what each MC distractor catches and what each FRQ part asks;
+    `\textbf{Preview:}` of the next lesson. (DeltaMath appears only on a lesson the user
+    overrode.)
 15. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
-    Warm-Up, Guided Notes, **Debrief**, Exit Ticket, **Homework — DeltaMath**.
+    Warm-Up, Guided Notes, **Debrief**, **AP Practice**, **Homework**.
     Pacing, common errors, what to look for. This is the **only** place teacher-only prose
     goes — never in a `_key`. The Debrief note says why those minutes are worth protecting and
-    what to borrow from instead; the Homework note tells the teacher to read the DeltaMath
-    report **by item type, not overall score**, and names which item type means the lesson
-    missed.
+    what to borrow from instead (never the Homework Launch); the AP Practice note gives the MC
+    answers and the distractor worth looking for; the Homework note says which items to grade
+    for accuracy and which predict the next lesson.
 
 ## Cover
 
@@ -109,22 +111,20 @@ AP tags and list review topics):
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, **one target per Learning Objective**.
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score
-  blank). Keep the rows aligned with the components you actually scaffolded — **Warm-Up,
-  Guided Notes, Exit Ticket, and no Group Activity row.** Those three in-class components
-  close with an **In-Class Total** row; then, below it, the DeltaMath homework row with its
-  own three slots:
+  blank): **Warm-Up, Guided Notes, AP Practice, Homework**, then a **Total** of 1, 2, and 4.
+  AP Practice is extra credit — a `goldbg` row, `\textbf{Extra credit}` in its description, a
+  `$+$\,\blank{1.0cm}` score cell outside the total. Homework carries a *Due:* slot.
 
   ```latex
-  3 & Exit Ticket & ... & \blank{1.2cm} \\
+  1 & Warm-Up      & ... & \blank{1.2cm} \\
+  2 & Guided Notes & ... & \blank{1.2cm} \\
+  \rowcolor{goldbg}
+  3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+  4 & Homework     & ... \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
   \midrule
-    & \multicolumn{2}{r}{\textbf{In-Class Total}} & \blank{1.2cm} \\
-  \midrule
-  \rowcolor{lilac}
-  4 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
+    & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
   ```
 
-  On a lesson the user overrode to get printed homework, make row 4 an ordinary component
-  row and fold it back above a plain **Total**.
 - Optionally mirror the lesson plan's Priority Ideas & Vocabulary for student reference.
 
 ## Warm-up
@@ -178,25 +178,44 @@ Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; densit
   `\pcell`, `\writespace`, `\labelbox`. Keep every answer shorter than its space. Prove the
   page counts match.
 
-## Exit ticket
+## AP practice
 
-`exit_ticket/` (+ `exit_ticket_key/`) — a short independent check (2–3 items), no notes.
-`\pageheader{...}{Exit Ticket}` — **no name row** (namestrip); a tight `enumerate` with a little
-work space. Key fills with `\ans` (multi-step answers in a `work` block). Graded for completion in the example courses ("mistakes happen,
-blanks don't").
+`ap_practice/` (+ `ap_practice_key/`) — **extra credit, optional, exactly two pages**, between
+the notes and the homework. `\pageheader{...}{AP Practice}` (no name row). Model:
+`unit01/lesson01/ap_practice`.
+
+- Open with a `remindbox`: extra credit, optional, the graded homework is last and comes first.
+  Byte-identical in blank and key.
+- **Page 1 — Section I.** A `headlinebox{goldbg}` header, then **five multiple-choice items,
+  four options (A)–(D)** as on the AP Precalculus exam, in context or on a pre-drawn display.
+  **Every distractor is one of the lesson's real errors**; the plan names which. Long options
+  are `\item[(A)]` lists; short ones run inline on one line.
+- `\newpage` — fixed in both files.
+- **Page 2 — Section II.** One multi-part free-response question on a table or graph: find and
+  interpret in context with units, solve, a claim to evaluate, and a last part that stretches a
+  finisher. Answers in `\writespace{H}{…}`.
+- **Key:** the correct option is marked **in its label** (keyred `$\checkmark$\,(B)`, or a
+  keyred `(B)` inline) — never text appended to the option line, which rewraps it.
+- Contexts appear nowhere else in the lesson.
 
 ## Homework
 
-**Homework is DeltaMath, and `homework/` is not scaffolded by default.** Most lessons have
-no printed homework at all: the cover carries a DeltaMath row (see [Cover](#cover)) and the
-lesson plan's Reinforcement & Extension names target item types. Author the directories
-below **only** when the user overrides a lesson because DeltaMath has no practice for the
-topic — then pass `--components ...,homework` to the scaffolder.
+`homework/` (+ `homework_key/`) — **printed, graded, exactly two pages, last in the packet**,
+authored for every lesson. `\pageheader{...}{Homework}` (no name row). Model:
+`unit01/lesson01/homework`.
 
-`homework/` (+ `homework_key/`) — independent practice + stretch.
-`\pageheader{...}{Homework}` — **no name row** (namestrip); a numbered practice set, an
-`extensionbox` ("Extension — optional"), and a short preview of the next lesson. Key fills with
-`\ans` and shows worked steps for the harder items — in `work` blocks, mirrored in the blank.
+- Open with a `remindbox` (graded; start in class, finish by the due date on the cover).
+- 8–12 numbered problems in titled parts, each part a `headlinebox{lilac}` header over a plain
+  `enumerate` (`start=` to keep numbering continuous). **Every context is new** — not the
+  notes', not the You Do's, not the AP Practice's.
+- Cover the lesson's skills across representations; include the **diagnostic item** the plan's
+  Homework Launch names and one item that asks for the **headline in writing**.
+- `\newpage` between page 1 and page 2, in both files. Close with a `spiralbox` previewing the
+  next lesson.
+- Lockstep: multi-step work in byte-identical `work` blocks; prose in `\writespace{H}{…}`; a
+  `\blank{W}` only at the end of a line, so its `\ans{}` cannot rewrap the paragraph.
+
+**DeltaMath** replaces this component only on a lesson the user explicitly overrides.
 
 ## Slides
 

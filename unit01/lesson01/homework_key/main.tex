@@ -1,0 +1,196 @@
+%! Function Fundamentals — Unit 1, Lesson 1.1 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used a rideshare fare, a vending machine, and an unlabeled graph; the
+% homework uses a phone plan, a temperature log, a new graph, and a new formula.
+%   Page 1 — Part A (evaluating, 1–3) and Part B (a table read both ways, 4).
+%   Page 2 — Part C (a graph read both ways, 5–7) and Part D (domain and range, 8–10).
+% The diagnostic item is 4(c): solve T(h) = 70 has NO answer — the "zero" in "zero, one, or
+% many" that the notes only named. Problem 10 asks for the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line so
+% its \ans cannot rewrap anything. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.1}{Homework --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work: fill the slot with parentheses before you simplify,
+and read every question's \emph{direction} --- evaluate or solve --- before you compute.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Evaluating from a formula}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+\item A phone plan charges a monthly fee plus a charge for each gigabyte of data:
+      $C(g) = 15 + 8g$, where $C(g)$ is the monthly cost in dollars for $g$ gigabytes.
+
+      \textbf{(a)} Write in words what $C(3)$ means --- no computing yet.
+      \writespace{1.1cm}{The monthly cost, in dollars, of a month that uses 3 gigabytes of data.}
+
+      \textbf{(b)} Find $C(3)$.
+
+\begin{work}
+  C(3) &= 15 + 8(3) \\
+       &= 15 + 24 = 39
+\end{work}
+
+      $C(3) = $ \ans{\$39}
+
+\item \begin{minipage}[t]{0.44\linewidth}
+      Let $h(x) = 2x^2 - 5x$. Find $h(-3)$.
+
+\begin{work}
+  h(-3) &= 2(-3)^2 - 5(-3) \\
+        &= 2(9) + 15 \\
+        &= 33
+\end{work}
+
+      $h(-3) = $ \ans{33}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.50\linewidth}
+      \textbf{3.}\ Let $q(t) = -t^2 + 6$. Find $q(-2)$ and $q(0)$. \textit{Careful: square
+      first, then apply the negative.}
+
+\begin{work}
+  q(-2) &= -(-2)^2 + 6 \\
+        &= -4 + 6 = 2
+\end{work}
+
+      $q(-2) = $ \ans{2} \qquad $q(0) = $ \ans{6}
+      \end{minipage}
+\setcounter{enumi}{3}
+
+\end{enumerate}
+
+\vspace{0.14in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- A table, read in both directions}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=4]
+
+\item A hiker logs the air temperature $T(h)$, in $^\circ$F, $h$ hours after sunrise.
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.35}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      $h$ (hours) & 0 & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      $T(h)$ ($^\circ$F) & 52 & 58 & 63 & 63 & 60 & 55 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} Find $T(4)$. \quad $T(4) = $ \ans{60 $^\circ$F} \hspace{3em}
+      \textbf{(b)} Solve $T(h) = 63$. \quad $h = $ \ans{2 and 3}
+
+      \textbf{(c)} Solve $T(h) = 70$. How many answers are there, and why?
+      \writespace{1.1cm}{None --- no hour in the table has an output of 70. A solve question can have zero answers.}
+
+      \textbf{(d)} Which of (a), (b), (c) was an \emph{evaluate} question? How can you tell?
+      \writespace{1.1cm}{(a) --- it gave the input, 4, and asked for the output. (b) and (c) gave an output.}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- A graph, read in both directions}
+\end{headlinebox}
+
+\begin{minipage}[t]{0.47\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[x=0.62cm, y=0.5cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-2) grid (6,6);
+  \draw[->, thick] (-4,0) -- (6.5,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-2) -- (0,6.5) node[above] {\small $g(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3,4,5} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-1,1,2,3,4,5} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] (-3,3) -- (-1,-1) -- (2,5) -- (5,2);
+  \fill[plum] (-3,3) circle (2.5pt);
+  \fill[plum] (5,2) circle (2.5pt);
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\linewidth}
+\vspace{0pt}
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=5]
+\item Find each value.
+
+      $g(2) = $ \ans{5}
+
+      $g(-1) = $ \ans{$-1$}
+
+\item Solve each equation. Some have more than one answer.
+
+      $g(x) = 3$: \quad $x = $ \ans{$-3$, 1, and 4}
+
+      $g(x) = 1$: \quad $x = $ \ans{$-2$ and 0}
+
+\item State the domain and range of $g$ as inequalities, then with brackets.
+
+      Domain: \ans{$-3 \le x \le 5$, $[-3, 5]$}
+
+      Range: \ans{$-1 \le y \le 5$, $[-1, 5]$}
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.16in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Domain, range, and the two directions}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=8]
+
+\item A function is given as a list of points: $\{(-1, 4),\ (2, 0),\ (5, 4),\ (6, -3)\}$.
+
+      Domain: \ans{$\{-1, 2, 5, 6\}$} \qquad Range: \ans{$\{-3, 0, 4\}$}
+
+      Two points share the output 4. Is this still a function? Explain.
+      \writespace{1.1cm}{Yes. Two inputs may share an output (many-to-one); no input has two outputs.}
+
+\item Let $r(x) = \dfrac{12}{x + 4}$.
+
+      \textbf{(a)} Find $r(2)$. \quad $r(2) = $ \ans{$12/6 = 2$}
+
+      \textbf{(b)} Which input is forbidden, and why? Write the domain of $r$ in words.
+      \writespace{1.4cm}{$x = -4$: the denominator would be 0, and division by zero is undefined. Domain: every real number except $-4$.}
+
+\item A classmate says: ``$f$ is a function, so the equation $f(x) = 6$ can only have one
+      answer.'' Use the words \emph{input} and \emph{output} to explain what is wrong.
+      \writespace{1.9cm}{A function gives each INPUT exactly one output. Solving $f(x) = 6$ asks for every input whose output is 6 --- and several inputs can share one output, so there can be zero, one, or many answers.}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (1.2, Change in Tandem):} instead of asking what the output \emph{is} at one
+input, we ask what the output \emph{does} as the input climbs. Look back at your temperature
+table in problem 4: when was the temperature rising, and when was it falling?
+\end{spiralbox}
+
+\end{document}

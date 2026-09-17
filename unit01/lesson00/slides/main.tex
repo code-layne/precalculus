@@ -50,110 +50,136 @@
   the vending machine to ``break the rules''?
 \end{frame}
 
-% SECTION 1 — QUANTITIES THAT CHANGE TOGETHER
+% ROW 1 — INPUT & OUTPUT
 \begin{frame}[t, plain]
-  \plumheader{1. Quantities That Change Together}
+  \plumheader{Input \& Output}
+  \sectionlabel[goldacc]{Notes row INPUT \& OUTPUT $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
 
-  This whole unit is about two quantities linked so that one \textbf{responds} to
-  the other.
-
-  \medskip
-  \begin{block}{Input and Output}
+  \begin{block}{Two quantities, one responds}
     The quantity we \textbf{choose or track} is the \textbf{input} (independent
-    variable). The quantity that \textbf{responds} is the \textbf{output}
-    (dependent variable). Ordered pairs are written (input, output).
+    variable). The quantity that \textbf{responds} is the \textbf{output} (dependent
+    variable). Ordered pairs are (input, output).
   \end{block}
 
   \medskip
-  \begin{tabular}{|p{0.45\textwidth}|c|c|}
-  \hline
-  \textbf{Situation} & \textbf{Input} & \textbf{Output} \\
-  \hline
-  Pay-per-minute phone plan & minutes talked & cost of the bill \\
-  \hline
-  A lit candle burning down & ? & ? \\
-  \hline
-  A ball dropped from a rooftop & ? & ? \\
-  \hline
-  Pumping gas into a car & ? & ? \\
-  \hline
-  \end{tabular}
+  \begin{center}
+  \begin{tikzpicture}[>=stealth]
+    \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=3.4cm,
+          minimum height=1.1cm, align=center, font=\small] (box) at (4.3,0)
+          {\textbf{pay-per-minute phone plan}};
+    \node[font=\small] (in) at (0,0) {minutes talked};
+    \node[font=\small] (out) at (8.8,0) {cost of the bill};
+    \draw[->, very thick, plum] (in) -- (box);
+    \draw[->, very thick, plum] (box) -- (out);
+    \node[font=\scriptsize\itshape, below] at (in.south) {you choose: input};
+    \node[font=\scriptsize\itshape, below] at (out.south) {it responds: output};
+  \end{tikzpicture}
+  \end{center}
 
   \medskip
-  \textbf{The ``you-control'' test:} which quantity do \textit{you} choose or
-  control? That one is the input.
+  \textbf{The ``you-control'' test:} which quantity do \textit{you} choose? That one is
+  the input.
+
+  \smallskip
+  \begin{enumerate}\setlength{\itemsep}{2pt}
+    \item A lit candle burning down
+    \item A ball dropped from a rooftop
+    \item Pumping gas into a car --- plus one ordered pair
+    \item ``The phone bill decides how many minutes you talk.'' What is backward?
+  \end{enumerate}
 \end{frame}
 
-% SECTION 2 — WHAT IS A FUNCTION
+% ROW 2 — FUNCTION
 \begin{frame}[t, plain]
-  \plumheader{2. What Is a Function? (First Look)}
+  \plumheader{The Dependable Machine: Function}
+  \sectionlabel[goldacc]{Notes row FUNCTION $\cdot$ I Do: problem 5 $\cdot$ We Do: problems 6--8}
 
   \begin{block}{Definition (informal)}
     A rule is a \textbf{function} when each input produces \textbf{exactly one}
-    output --- same input, same output, every time. \textit{(Notation arrives in
-    Lesson 1.1.)}
+    output. In an arrow diagram: \textbf{exactly one arrow leaves each input}.
   \end{block}
 
-  \bigskip
-  Function or not? Test each rule aloud:
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[>=stealth, font=\small]
+        \foreach \n/\y in {A1/1.1, B4/0.4, C2/-0.3} \node (i\n) at (0,\y) {\n};
+        \foreach \n/\y/\k in {chips/1.1/a, pretzels/0.4/b, gum/-0.3/c} \node (o\k) at (2.6,\y) {\n};
+        \draw[->, thick, plum] (iA1) -- (oa);
+        \draw[->, thick, plum] (iB4) -- (ob);
+        \draw[->, thick, plum] (iC2) -- (oc);
+        \node[font=\small\bfseries\color{plum}] at (1.3,-1.0) {vending: a function};
+      \end{tikzpicture}
+      \end{center}
+    \column{0.48\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[>=stealth, font=\small]
+        \node (d1) at (0,0.8) {drop 1};
+        \node (d2) at (0,-0.1) {drop 2};
+        \foreach \n/\y/\k in {bear/1.1/a, nothing/0.4/b, ball/-0.3/c} \node (p\k) at (2.6,\y) {\n};
+        \draw[->, thick, redacc] (d1) -- (pa);
+        \draw[->, thick, redacc] (d1) -- (pb);
+        \draw[->, thick, redacc] (d2) -- (pc);
+        \node[font=\small\bfseries\color{redacc}] at (1.3,-1.0) {claw: not a function};
+      \end{tikzpicture}
+      \end{center}
+  \end{columns}
 
-  \medskip
-  \begin{tabular}{|p{0.62\textwidth}|c|}
-  \hline
-  \textbf{Rule} & \textbf{Function?} \\
-  \hline
-  each student \(\to\) their student ID number & yes \\
-  \hline
-  each month \(\to\) the students born that month & ? \\
-  \hline
-  each number \(\to\) its double & ? \\
-  \hline
-  each shoe size \(\to\) a student who wears that size & ? \\
-  \hline
-  \end{tabular}
+  \smallskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{1pt}
+        \setcounter{enumi}{4}
+        \item Student \(\to\) their ID number
+        \item Month \(\to\) students born then
+      \end{enumerate}
+    \column{0.48\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{1pt}
+        \setcounter{enumi}{6}
+        \item Number \(\to\) its double
+        \item Shoe size \(\to\) a student who wears it
+      \end{enumerate}
+  \end{columns}
 \end{frame}
 
-% SECTION 2, CONT. — THE FINE PRINT
+% ROW 3 — MANY-TO-ONE (THE CRUX)
 \begin{frame}[t, plain]
   \plumheader{The Fine Print: Many-to-One vs.\ One-to-Many}
+  \sectionlabel[redacc]{Notes row MANY-TO-ONE $\cdot$ I Do: 9 $\cdot$ We Do: 10--12 (crux: 11, 12)}
 
   \begin{columns}[T]
     \column{0.48\textwidth}
       \begin{block}{Allowed: many-to-one}
-        \begin{itemize}\setlength{\itemsep}{6pt}
-          \item Two inputs \textbf{may share} an output
-          \item Both twins \(\to\) the same birthday
-          \item Each input still has exactly one output --- still a function
-        \end{itemize}
+        Two inputs \textbf{share} an output. Twins Ana and Ben \(\to\) May 3.
+        Still a function.
       \end{block}
-
     \column{0.48\textwidth}
       \begin{block}{Broken: one-to-many}
-        \begin{itemize}\setlength{\itemsep}{6pt}
-          \item One input with \textbf{two outputs}
-          \item Shoe size 9 \(\to\) two different students
-          \item The machine is no longer trustworthy --- not a function
-        \end{itemize}
+        One input, \textbf{two outputs}. Shoe size 9 \(\to\) Dev and Eli.
+        Not a function.
       \end{block}
   \end{columns}
 
-  \bigskip
-  \textbf{In one sentence:} two inputs may share an output, but one input may never
-  have two outputs. The rule restricts each \textbf{input} --- it says nothing
-  about how often an output may repeat.
-
   \medskip
-  \textbf{Challenge:} Give a rule from your life that IS a function. Now break it
-  so it isn't.
+  \begin{center}
+    \Large\textbf{Count the arrows \textcolor{plum}{leaving each input} ---\\
+    never the arrows arriving at an output.}
+  \end{center}
+
+  \begin{enumerate}\setlength{\itemsep}{2pt}
+    \setcounter{enumi}{8}
+    \item \((1, 5),\ (2, 5),\ (3, 7)\) \qquad 10.\ \((4, 1),\ (4, 2),\ (6, 3)\)
+    \setcounter{enumi}{10}
+    \item Two students both scored 80. Maya: ``So student \(\to\) score is not a function.''
+    \item Student \(\to\) birthday is a function. Is birthday \(\to\) student?
+  \end{enumerate}
 \end{frame}
 
-% SECTION 3 — A GRAPH TELLS A STORY
+% ROW 4 — READING GRAPHS
 \begin{frame}[t, plain]
-  \plumheader{3. A Graph Tells a Story}
+  \plumheader{A Graph Tells a Story}
+  \sectionlabel[goldacc]{Notes row READING GRAPHS $\cdot$ I Do: problem 13 $\cdot$ We Do: problems 14--15}
 
-  A cyclist rides away from home, rests, and rides back.
-
-  \medskip
   \begin{columns}[T]
     \column{0.5\textwidth}
       \begin{center}
@@ -171,109 +197,83 @@
 
     \column{0.46\textwidth}
       Read it left to right, like a story:
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item \textbf{A} (\(t=0\) to \(4\)): rising --- \textbf{increasing} --- riding away
-        \item \textbf{B} (\(t=4\) to \(6\)): flat --- \textbf{constant} --- resting
-        \item \textbf{C} (\(t=6\) to \(10\)): falling --- \textbf{decreasing} --- riding home
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \textbf{A}: rising --- \textbf{increasing} --- riding away
+        \item \textbf{B}: flat --- \textbf{constant} --- resting
+        \item \textbf{C}: falling --- \textbf{decreasing} --- riding home
       \end{itemize}
+      A flat stretch is not ``nothing happening'': time keeps moving; the
+      \textbf{output} holds steady.
   \end{columns}
 
-  \bigskip
-  \textit{No formula needed:} Where is the rider at \(t = 5\)? The graph \textit{is}
-  the information. A flat segment is not ``nothing happening'' --- time keeps
-  moving; the \textbf{output} holds steady. And each time has exactly one distance,
-  so distance \textbf{is} a function of time.
-\end{frame}
-
-% SECTION 4 — A TABLE TELLS THE SAME STORY
-\begin{frame}[t, plain]
-  \plumheader{4. A Table Tells the Same Story}
-
-  A candle is lit and measured each hour.
-
   \medskip
-  \begin{tabular}{|c|c|c|c|c|c|}
-  \hline
-  Hours burning & 0 & 1 & 2 & 3 & 4 \\
-  \hline
-  Height (cm) & 20 & 17 & 14 & 14 & 11 \\
-  \hline
-  \end{tabular}
-
-  \bigskip
-  \begin{itemize}\setlength{\itemsep}{8pt}
-    \item Input: hours burning \quad Output: candle height
-    \item Hour 0 \(\to\) 2: height \textbf{decreasing} \quad
-          Hour 2 \(\to\) 3: height \textbf{constant}
-    \item That flat stretch is this table's version of \textbf{segment B} on the
-          bike-ride graph --- same story, different representation.
-    \item Read a graph \textit{or} a table the same way: watch what the
-          \textbf{output} does as the \textbf{input} moves forward.
-    \item Each hour has exactly one height \(\to\) the height \textbf{is} a
-          function of the hours burning.
-  \end{itemize}
-\end{frame}
-
-% SECTION 5 — WHERE THIS UNIT GOES
-\begin{frame}[t, plain]
-  \plumheader{5. Where This Unit Goes}
-
-  Nothing today needed a formula --- but everything ahead builds on
-  \textbf{input}, \textbf{output}, and \textbf{exactly one}.
-
-  \medskip
-  \begin{tabular}{|c|p{0.72\textwidth}|}
-  \hline
-  \textbf{Lesson} & \textbf{What it adds} \\
-  \hline
-  1.1 & Notation --- \(f(x)\) --- plus \textit{domain} and \textit{range} \\
-  \hline
-  1.2 & Two quantities changing \textit{in tandem} \\
-  \hline
-  1.3 & \textit{How fast} the output changes --- average rate of change \\
-  \hline
-  1.4 & Transformations: shifting, stretching, reflecting a known graph \\
-  \hline
-  1.5 & Composition: one function's output into another function \\
-  \hline
-  1.6 & Inverse functions: running the machine backward \\
-  \hline
-  1.7 & Choosing and building a function to model real data \\
-  \hline
-  \end{tabular}
-
-  \medskip
-  Every one of them still answers today's question: \textit{how does one quantity
-  change with respect to another?}
-\end{frame}
-
-% CLASS PRACTICE
-\begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
-
-  \begin{enumerate}\setlength{\itemsep}{8pt}
-    \item A movie theater tracks tickets sold and money collected each night.
-          Name the input and the output. Is the money collected a function of the
-          tickets sold?
-    \item The table shows quiz scores after different amounts of studying.
-
-          \smallskip
-          \begin{tabular}{|c|c|c|c|c|}
-          \hline
-          Hours studied & 0 & 1 & 2 & 3 \\
-          \hline
-          Quiz score & 60 & 70 & 80 & 80 \\
-          \hline
-          \end{tabular}
-
-          \smallskip
-          \begin{enumerate}\setlength{\itemsep}{5pt}
-            \item Describe the score's behavior from 0 to 2 hours, then from 2 to 3 hours.
-            \item Inputs 2 and 3 share the output 80. Is the score still a function
-                  of hours studied? Explain.
-          \end{enumerate}
+  \begin{enumerate}\setlength{\itemsep}{2pt}
+    \setcounter{enumi}{12}
+    \item How far from home at \(t = 5\)? What is happening on B?
+    \item When is the distance decreasing? What is the rider doing?
+    \item Is distance from home a function of time? Explain.
   \end{enumerate}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Tables \& Flips}
+  \sectionlabel[redacc]{Notes row TABLES \& FLIPS $\cdot$ problems 16--19, alone, 14 minutes}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline Hours & 0 & 1 & 2 & 3 & 4 \\ \hline Height (cm) & 20 & 17 & 14 & 14 & 11 \\ \hline
+      \end{tabular}
+    \column{0.48\textwidth}
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline Hours studied & 0 & 1 & 2 & 3 \\ \hline Quiz score & 60 & 70 & 80 & 80 \\ \hline
+      \end{tabular}
+  \end{columns}
+
+  \medskip
+  \begin{enumerate}\setlength{\itemsep}{6pt}
+    \setcounter{enumi}{15}
+    \item The candle: when is the height decreasing, and when constant? Which bike-graph
+          segment matches?
+    \item The quiz: inputs 2 and 3 share 80. Still a function of hours studied?
+    \item A runner jogs out to a bench, rests, and jogs back --- at 0.3\,km once going out
+          and once coming back. Is distance a function of time?
+    \item Flip it: is \textit{time} a function of \textit{distance}?
+  \end{enumerate}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 16--19, one answer each $\cdot$ then say it back}
+
+  \bigskip
+  \begin{block}{A function}
+    sends each \textbf{input} to \textbf{exactly one} output.\\[4pt]
+    Two inputs \textbf{may} share an output. One input may \textbf{never} have two.
+  \end{block}
+
+  \bigskip
+  \textbf{Where this unit goes:} 1.1 gives functions their notation --- \(f(x)\).
+  Everything after it asks how one quantity changes with respect to another. See the
+  lessons table on your unit cover.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 7} now. For every function
+          question, count the arrows leaving each \textit{input}.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

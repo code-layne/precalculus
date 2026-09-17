@@ -1,0 +1,152 @@
+%! Function Fundamentals — Unit 1, Lesson 1.1 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Shaped like the AP Precalculus exam: page 1 is Section I, five multiple-choice items with four
+% options (A)–(D), each in context or on a pre-drawn display; page 2 is Section II, one
+% multi-part free-response question on a table with interpret-in-context parts. Its contexts
+% (a reservoir, a drone flight) are used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 reads f(x) as multiplication, MC 2 drops
+% the parentheses on a negative input, MC 3 stops at one solution, MC 4 swaps domain and range.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
+% ways. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.1}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+\item The function $W$ gives the water level of a reservoir, in feet, $t$ days after June 1.
+      Which of the following is the best interpretation of $W(10) = 42$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] After 42 days, the water level is 10 feet.
+        \item[\textcolor{keyred}{\textbf{$\checkmark$\,(B)}}] Ten days after June 1, the water level is 42 feet.
+        \item[(C)] The water level rose 42 feet over the first 10 days.
+        \item[(D)] $W$ multiplied by 10 is 42, so $W = 4.2$.
+      \end{enumerate}
+
+\item If $f(x) = x^2 - 4x$, what is the value of $f(-3)$?
+
+      \smallskip
+      \textbf{(A)} $-21$ \hspace{2.2em} \textbf{(B)} $-3$ \hspace{2.2em} \textbf{(C)} $3$ \hspace{2.2em} \textcolor{keyred}{\textbf{(D)}} $21$
+
+\item The table gives selected values of the function $k$. Which of the following is the set
+      of \emph{all} values of $x$ in the table for which $k(x) = 2$?
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-2$ & $-1$ & 0 & 1 & 2 & 3 \\ \hline
+      $k(x)$ & 5    & 2    & 1 & 2 & 5 & 10 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(A)} $\{-1\}$ \hspace{2.2em} \textcolor{keyred}{\textbf{(B)}} $\{-1, 1\}$ \hspace{2.2em} \textbf{(C)} $\{5\}$ \hspace{2.2em} \textbf{(D)} $\{2\}$
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The graph of the function $h$ is shown, including both endpoints. Which of the following
+      gives the domain and the range of $h$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[\textcolor{keyred}{\textbf{$\checkmark$\,(A)}}] Domain $-4 \le x \le 3$; range $-2 \le y \le 4$
+        \item[(B)] Domain $-2 \le x \le 4$; range $-4 \le y \le 3$
+        \item[(C)] Domain $-4 \le x \le 3$; range $1 \le y \le 4$
+        \item[(D)] Domain $-4 \le x \le 4$; range $-2 \le y \le 3$
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.38\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.42cm, y=0.36cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-5,-3) grid (4,5);
+        \draw[->, thick] (-5,0) -- (4.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-3) -- (0,5.5) node[above] {\scriptsize $h(x)$};
+        \foreach \x in {-4,-2,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum] (-4,1) -- (-1,-2) -- (3,4);
+        \fill[plum] (-4,1) circle (2.2pt);
+        \fill[plum] (3,4) circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\item What is the domain of $g(x) = \dfrac{5}{2x - 8}$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] All real numbers
+        \item[(B)] All real numbers except $-4$
+        \item[\textcolor{keyred}{\textbf{$\checkmark$\,(C)}}] All real numbers except $4$
+        \item[(D)] All real numbers except $8$
+      \end{enumerate}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the drone must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item A delivery drone takes off, flies a route, and lands 10 minutes later. Its altitude
+      $A(t)$, in meters, is recorded every two minutes, where $t$ is minutes after takeoff.
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.35}
+      \begin{tabular}{|c|c|c|c|c|c|c|}
+      \hline
+      $t$ (minutes)  & 0 & 2  & 4  & 6  & 8  & 10 \\ \hline
+      $A(t)$ (meters) & 0 & 30 & 45 & 45 & 20 & 0 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} Find $A(4)$, and interpret your answer in the context of the problem.
+      \writespace{2.2cm}{$A(4) = 45$. Four minutes after takeoff, the drone is 45 meters above the ground.}
+
+      \textbf{(b)} Using the table, solve $A(t) = 45$. What do your solutions tell you about the
+      flight?
+      \writespace{2.2cm}{$t = 4$ and $t = 6$. The drone was at an altitude of 45 meters both 4 minutes and 6 minutes after takeoff.}
+
+      \textbf{(c)} A student notices that $A(0) = 0$ and $A(10) = 0$ and says, ``Two inputs
+      give the same output, so $A$ is not a function.'' Is the student correct? Explain.
+      \writespace{2.6cm}{No. A function allows two inputs to share an output (many-to-one). At each single time $t$ the drone has exactly one altitude, so $A$ is a function.}
+
+      \textbf{(d)} State a reasonable domain for $A$ for this flight, as an inequality and in
+      bracket notation. Then explain whether $A(12)$ has a meaning in this context.
+      \writespace{2.6cm}{$0 \le t \le 10$, or $[0, 10]$. $A(12)$ has no meaning here: 12 is not in the domain, because the flight ended when the drone landed at $t = 10$.}
+
+      \textbf{(e)} From the table, $A(2) = 30$. The drone flies continuously. Explain why there
+      must be another time, between $t = 6$ and $t = 8$, when the altitude is also 30 meters.
+      \writespace{3.0cm}{At $t = 6$ the altitude is 45 m and at $t = 8$ it is 20 m. To come down from 45 to 20 without jumping, the drone must pass through 30 m at some time between 6 and 8 minutes --- so $A(t) = 30$ has at least two solutions.}
+
+\end{enumerate}
+
+\end{document}

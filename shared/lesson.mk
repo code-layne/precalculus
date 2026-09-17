@@ -47,8 +47,8 @@ comp-pdf     = $(if $(wildcard $1/main.tex),$(PDF_DIR)/$1/main.pdf,$1/main.pdf)
 comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
 
 # ── Component discovery (in pedagogical order) ────────────────────────────────
-STUDENT_ORDER := cover warmup notes activity exit_ticket homework
-KEYED_PAIRS   := warmup notes activity exit_ticket homework
+STUDENT_ORDER := cover warmup notes activity exit_ticket ap_practice homework
+KEYED_PAIRS   := warmup notes activity exit_ticket ap_practice homework
 
 STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
 

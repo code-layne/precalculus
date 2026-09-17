@@ -3,20 +3,22 @@ course: Precalculus
 prefix: precalculus
 meeting_length: 60
 reference_lesson: unit01/lesson01
-components: [cover, warmup, notes, exit_ticket, slides]
-keyed: [warmup, notes, exit_ticket]
-one_page: [warmup, exit_ticket]
+components: [cover, warmup, notes, ap_practice, homework, slides]
+keyed: [warmup, notes, ap_practice, homework]
+one_page: [warmup]
 doc_titles:
   warmup: Warm-Up
   notes: Guided Notes
-  exit_ticket: Exit Ticket
+  ap_practice: AP Practice
   homework: Homework
+  exit_ticket: Exit Ticket
   activity: Group Activity
 note_labels:
   warmup: Warm-Up
   notes: Guided Notes
-  exit_ticket: Exit Ticket
+  ap_practice: AP Practice
   homework: Homework
+  exit_ticket: Exit Ticket
   activity: Group Activity
 skeletons: templates/lesson
 unit_tests: true
@@ -51,7 +53,7 @@ opener as each is reauthored. **Every lesson ships a Beamer deck.**
 experience-first.** A 60-minute period runs, in order:
 
 > warm-up → hook → **I Do** (model) → **We Do** (guided) → **You Do** (independent)
-> → **debrief** → exit ticket
+> → **debrief** → homework launch
 
 | Phase | Minutes | Component |
 | --- | --- | --- |
@@ -61,14 +63,15 @@ experience-first.** A 60-minute period runs, in order:
 | **We Do** — fill the notes together, every blank cold-called | ~18–22 | `notes` — the rest of each row's grid |
 | **You Do** — work alone while the teacher circulates | **11–14** | the notes' last row |
 | Debrief — whole-class share-out and the headline | 5 | — (in the plan only) |
-| Exit Ticket — individual, silent, collected | 5 | `exit_ticket` |
+| Homework Launch — start named homework problems alone; teacher circulates | 3 | `homework` |
 
 **The minutes must sum to exactly 60** — the value of `\MeetingLength`. The split above is the
-skeleton's (5 / 3 / 10 / 18 / 14 / 5 / 5); the reference lesson runs 5 / 2 / 10 / 22 / 11 / 5 / 5
+skeleton's (5 / 3 / 10 / 20 / 14 / 5 / 3); the reference lesson runs 5 / 2 / 10 / 22 / 13 / 5 / 3
 because four ideas share one block, and it *says so*. The split is the lesson's to choose; the
 sum is not. Never pad the total to reach 60 — cut, and say in the box what you cut and what you
 protected. **You Do gets real time** — 11–14 minutes, never the 5 it got when an activity sheet
-competed for the period.
+competed for the period. **The Homework Launch is never cut to zero** — with no exit ticket it is
+the period's last formative read.
 
 **`notes` — *Guided Notes* — is the in-class centrepiece (2026-09-12 shape, ported
 from AP Statistics).** `\pageheader{…}` → `vocabbox` (`\termblanklong` rows, filled *as each term is
@@ -87,19 +90,26 @@ Lessons authored before 2026-09-12 use the boxed notes (`notesbox` sections + `p
 convert them by the recipe in `templates/lesson/components.md` when you touch them.
 
 **`warmup`** — 3–5 quick problems of *prerequisite* spiral review, exactly one page, `work`
-blocks for anything multi-step; may be a prefab PDF. **`exit_ticket`** — 2–3 items, no notes,
-exactly one page; the one item that tests the day's central distinction is the diagnostic the
-plan sorts tickets by. **`cover`** — full-bleed plum banner, `\namedateperiod` (the one place it
+blocks for anything multi-step; may be a prefab PDF. **`ap_practice`** (2026-09-16) — **extra
+credit, optional, exactly two pages**: page 1 is *Section I*, five AP Precalculus–style
+multiple-choice items with four options (A)–(D), distractors built from the lesson's real
+errors; page 2 is *Section II*, one multi-part free-response question on a table or graph with
+interpret-in-context parts, the last part the finisher's stretch. Contexts used nowhere else in
+the lesson. **`homework`** (2026-09-16) — **printed, graded, exactly two pages**, last in the
+packet: 8–12 numbered problems in titled parts (`headlinebox{lilac}`), every context new (the
+notes teach, the You Do transfers, the homework transfers again); one item is the **diagnostic**
+the plan's Homework Launch names, one asks for the day's headline in writing, and a closing
+`spiralbox` previews the next lesson. **`cover`** — full-bleed plum banner, `\namedateperiod` (the one place it
 belongs), a `learningtargetbox` with one "I can…" per Learning Objective, the `tocbox` packet
 table (§2), and optionally a `remindbox` that carries the lesson's *ideas*, never its process.
 **`slides`** — the Beamer deck: title slide, hook, then frames that follow the release order
-(I Do → We Do → You Do → debrief → exit ticket), hand-built on the bespoke `precalculus-beamer`
+(I Do → We Do → You Do → debrief → homework launch), hand-built on the bespoke `precalculus-beamer`
 theme.
 
 **Two phases are teacher-facing only.** The **hook** is scripted in the plan (and echoed by the
 notes' `hookbox`); the **debrief** exists *only* in the plan — a `Debrief (N min)` box and a
 `[Debrief]` teacher note. **There is no `debrief/` student component**; the student packet
-closes with the exit ticket.
+closes with the homework.
 
 **What this course does not have — do not re-add any of it:**
 
@@ -108,58 +118,53 @@ closes with the exit ticket.
   activity sheet — never reintroduce them inside a component. The build still merges an
   `activity/` where one exists, which is how the 62 lessons not yet reauthored keep building;
   that is backward compatibility, not a component to author.
-- **No printed homework by default.** Homework is DeltaMath (§2). `homework/` exists only on a
-  lesson the user has explicitly overridden.
+- **No exit ticket** (retired 2026-09-16). Never scaffold `exit_ticket/`. The formative read
+  comes from circulating the You Do and the Homework Launch. The build still merges an
+  `exit_ticket/` where one exists, for lessons not yet reauthored.
+- **No DeltaMath by default** (retired 2026-09-16). Homework is the printed `homework/`
+  component, authored for every lesson; DeltaMath is only a per-lesson override the user asks
+  for (§2).
 - **No `debrief/` student component**, no `reflectionbox` at the end of the notes.
 - **No tiered instruction on paper.** One document for the whole class; differentiation is
   where the teacher stands during You Do, specified in the plan.
-- **No experience-first structure** (no `experience/`), no `ap_practice/`.
+- **No experience-first structure** (no `experience/`).
 
 **`unit01/lesson01` is the reference implementation** (five lesson parts, the denser variant);
-`unit01/lesson00` is the four-part variant. Mirror their preamble, box usage, pacing, and tone.
+`unit01/lesson00` is the same 2026-09-16 shape on a no-notation opener. Mirror their preamble, box usage, pacing, and tone.
 Never model on a lesson `COURSE_PLAN.md` still marks **moved** — its body is pre-restructure
 content on the old palette. The live lesson overrides every document, this one included.
 
 ## 2. Grading and homework policy
 
-**Three in-class components are scored on the cover** — Warm-Up, Guided Notes, Exit Ticket —
-and close with an **In-Class Total** row. The exit ticket is **collected and graded for
-completion** ("mistakes happen, blanks don't"); the plan's Individual Work & Assessment box names
-the diagnostic item to sort tickets by and what to do about it in the next lesson's warm-up
-window.
+**Two in-class components are scored on the cover** — Warm-Up and Guided Notes. Then:
 
-**Homework is DeltaMath.** Do not scaffold `homework/` unless asked. On a DeltaMath lesson:
+- **`ap_practice` — extra credit.** Optional; its cover row is shaded `goldbg`, labelled
+  **Extra credit**, and its score cell is `$+$\,\blank{1.0cm}` — outside the total. The plan
+  names the multiple-choice answers and what each distractor means in its `[AP Practice]` note.
+- **`homework` — graded, printed, last in the packet.** Its cover row carries a *Due:* slot
+  (the teacher sets the date; this course prints no due-date rule) and a score blank. Students
+  start named problems in the 3-minute Homework Launch.
 
-- There is no `homework/` or `homework_key/` directory.
-- The cover's `tocbox` lists the three in-class components (no Group Activity row), closes them
-  with the In-Class Total, then carries a final DeltaMath row with three slots — assignment
-  name, due date, and its own score:
+The cover's packet table:
 
-  ```latex
-  3 & Exit Ticket & ... & \blank{1.2cm} \\
-  \midrule
-    & \multicolumn{2}{r}{\textbf{In-Class Total}} & \blank{1.2cm} \\
-  \midrule
-  \rowcolor{lilac}
-  4 & \textbf{Homework} & \textbf{DeltaMath} \quad Assignment: \blank{2.9cm} \quad Due: \blank{1.9cm} & \blank{1.2cm} \\
-  ```
+```latex
+1 & Warm-Up      & ... & \blank{1.2cm} \\
+2 & Guided Notes & ... & \blank{1.2cm} \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+4 & Homework     & ... \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
+```
 
-- The plan's Reinforcement & Extension box opens **`\textbf{Homework --- DeltaMath.}`** and
-  states **target coverage** — the item *types* the set should hit — never numbered problems.
-  Students record the assignment's name, due date, and score in the cover row.
-- The last teacher note is `\begin{teachernote}[Homework --- DeltaMath]`, and it tells the
-  teacher to read the DeltaMath report **by item type, not overall score**, naming which item
-  type means the lesson missed.
-- The due date is whatever the teacher writes in the cover's *Due* slot; this course has no
-  fixed due-date rule to print.
+**Homework Launch (3 min)** replaces the exit ticket. The plan's `Homework Launch` box names the
+problems students start, the **diagnostic item** to read over shoulders (the one that tests the
+day's central distinction), and three piles to sort what the teacher sees into. The `[Homework]`
+teacher note says which items to grade for accuracy and which predict the next lesson.
 
-**The paper-homework override.** Only when DeltaMath has no practice for the topic, and only
-when the user asks for it: scaffold with `--components cover,warmup,notes,exit_ticket,homework,slides`,
-author `homework/` + `homework_key/` per `templates/lesson/components.md` (a numbered practice
-set, an `extensionbox`, a preview of the next lesson; keys mirror with `\ans`/`work`), make cover
-row 4 an ordinary component row folded back above a plain **Total**, replace the DeltaMath
-paragraph in Reinforcement & Extension with a printed-homework overview, and title the last
-teacher note `[Homework]`.
+**The DeltaMath override.** Only when the user asks for it on a given lesson: omit `homework/`,
+give cover row 4 a DeltaMath assignment slot, and say so in Reinforcement & Extension and the
+`[Homework]` note. Never assume it.
 
 ## 3. Where structure comes from
 
@@ -298,20 +303,21 @@ hand a finisher; a former Tier E prompt worth keeping becomes the *last practice
 Tier R/A/E language) → **Debrief (N min)** (`\boxguard[20]` + `skillbox{redbox}`, **between**
 Differentiation and Individual Work; three timed moves as an `enumerate` — *share out the You Do*
 (one answer per practice item, not a full review), *name the headline* (the day's central
-sentence in italics, said by the teacher and echoed back, immediately before the exit ticket asks
-for it in writing), *point forward* (or read a read-only notes section aloud here) — then a
-`\textbf{Do not}` line: no re-teaching, no new questions, no starting the exit ticket early) →
-**Individual Work & Assessment (5 min)** (`skillbox{redbox}`; the exit-ticket items + an
-assessment note naming the diagnostic item) → **Reinforcement & Extension** (`skillbox{goldbox}`;
-`\textbf{Homework --- DeltaMath.}` + target coverage by item type; `\textbf{Extension (optional):}`;
+sentence in italics, said by the teacher and echoed back; a homework item asks for it in
+writing), *point forward* (or read a read-only notes section aloud here) — then a
+`\textbf{Do not}` line: no re-teaching, no new questions, no starting the homework early) →
+**Homework Launch (3 min)** (`skillbox{redbox}`; the problems students start, the diagnostic
+item, the three piles) → **Reinforcement & Extension** (`skillbox{goldbox}`;
+`\textbf{Homework --- printed, graded (2 pages).}` overview by part and problem;
+`\textbf{AP Practice --- extra credit (2 pages).}` overview naming what each distractor catches;
 `\textbf{Preview:}` of the next lesson) → **Teacher notes, five, in packet order:**
-`[Warm-Up]`, `[Guided Notes]`, `[Debrief]`, `[Exit Ticket]`, `[Homework --- DeltaMath]`.
+`[Warm-Up]`, `[Guided Notes]`, `[Debrief]`, `[AP Practice]`, `[Homework]`.
 
 The Debrief note says why those minutes are worth protecting and what to borrow from instead
-when the guided phase overruns; the Homework note reads the DeltaMath report by item type. The
-Debrief note has no component behind it, so `note_labels` does not list it — write it by hand.
-On a paper-homework override, and on a legacy lesson migrated with `movenotes.py`, the last note
-is titled `[Homework]`. The `Differentiation — During You Do` box **replaced** the old
+when the guided phase overruns (never the Homework Launch); the AP Practice note gives the
+multiple-choice answers and the distractor to look for; the Homework note says what to grade for
+accuracy and what predicts the next lesson. The Debrief note has no component behind it, so
+`note_labels` does not list it — write it by hand. The `Differentiation — During You Do` box **replaced** the old
 `Group Work & Differentiation` box; never write the old one.
 
 ## 6. Unit-level assessments
@@ -350,7 +356,8 @@ Recognize the shape by the component directories and the plan's boxes:
 
 | Shape | Has | Where |
 | --- | --- | --- |
-| **current** (gradual release, 2026-08) | `notes/` + `exit_ticket/`, **no** `activity/`, **no** `homework/`; plan opens with the Lesson Flow box | `unit01/lesson00`, `unit01/lesson01` |
+| **current** (gradual release + back-of-packet, 2026-09-16) | `notes/` + `ap_practice/` + `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has a Homework Launch box | `unit01/lesson00`, `unit01/lesson01` |
+| **exit-ticket gradual release** (2026-08) | `notes/` + `exit_ticket/`, no `homework/` (DeltaMath); plan has Individual Work & Assessment | none remaining |
 | **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | `unit01/lesson02`–`07`, `unit02/lesson00`–`07` |
 | **moved / pre-restructure** | the same directories, but the body is the old AP-paced lesson: cross-references in the *old* numbering, `navy`/`sky` colours, teacher notes still in the `_key` files, name rows on every component, Tier R/A/E boxes on the activity sheet, no `work` blocks, no `\boxguard`, sometimes no deck (`COURSE_PLAN.md`: *moved* or *new*) | units 03–08 |
 
@@ -367,28 +374,31 @@ pass would re-flow the pagination of every verified lesson at once.
 2. **Fold the activity into the notes.** Its scenario and crux become the later `\S` sections
    (the We Do); its items become the `practicebox` — 3–4 escalating, the former Tier E prompt
    last so every student sees it. Then `git rm -r activity activity_key`.
-3. **Homework → DeltaMath.** `git rm -r homework homework_key` (unless the user overrides for
-   this lesson); the cover's `tocbox` becomes three rows + In-Class Total + the DeltaMath row.
+3. **Exit ticket out; AP Practice and Homework in.** `git rm -r exit_ticket exit_ticket_key`;
+   author `ap_practice/` + `homework/` (and keys), two pages each, per §1 and
+   `templates/lesson/components.md` — a legacy homework is rewritten, not kept, since it is
+   neither two pages nor in a fresh context. The cover's `tocbox` becomes the §2 table.
 4. **Rewrite the plan** in the §5 order: insert the Lesson Flow box (sum 60, no activity row),
    retitle the Lesson box and tag every part with its phase and pen line, replace
    `Group Work \& Differentiation` with `Differentiation --- During You Do`, insert the Debrief
-   box between it and Individual Work, rewrite Reinforcement & Extension around DeltaMath, and
-   re-cut the teacher notes to the five (any note still in a `_key` moves first —
+   box, replace Individual Work & Assessment with the Homework Launch box, rewrite Reinforcement
+   & Extension around the homework and AP Practice, and re-cut the teacher notes to the five (any note still in a `_key` moves first —
    `movenotes.py`).
 5. **Cover**: learning targets one per LO in the formal vocabulary; packet table per §2;
    `\namedateperiod` stays here and nowhere else (`namestrip.py`).
 6. **Deck**: author one if the lesson has none (15 do not); otherwise reorder it to
-   hook → I Do → We Do → You Do → debrief → exit ticket.
+   hook → I Do → We Do → You Do → debrief → homework launch.
 7. **Apply the five conventions in the §8 order**, then delete stale stamps —
    `rm -rf .stamps/unitXX/lessonYY target/unitXX/lessonYY` — `make -C unitXX/lessonYY all`,
    `make -C unitXX/lessonYY check`, and update the lesson's `COURSE_PLAN.md` row.
 
 Finish with the evidence per lesson: `make all` exits 0, `make check` passes (page parity, the
-one-page warm-up and exit ticket on both sides, `\ans` placement, no key-side notes, namestrip),
+one-page warm-up on both sides, AP Practice and Homework exactly two pages each (checked by hand —
+`make check` proves parity, not length), `\ans` placement, no key-side notes, namestrip),
 and every component's page count equals its `_key`'s on the compiled components, not the padded
 packets.
 
-**Scoreboard (2026-09):** 2 of 64 lessons are in the current shape (`unit01/lesson00`,
+**Scoreboard (2026-09-16):** 2 of 64 lessons are in the current shape (`unit01/lesson00`,
 `lesson01`); 14 are convention-compliant group-activity lessons (`unit01/lesson02`–`07`,
 `unit02/lesson00`–`07`); 48 are moved / pre-restructure (units 03–08). Across the tree: 61
 plans still carry a `Group Work \& Differentiation` box, 117 `_key` files still hold teacher
