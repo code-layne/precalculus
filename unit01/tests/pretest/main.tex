@@ -1,0 +1,502 @@
+%! Unit 1: Functions and Change — Pretest, Version A (blank)
+%! A graded check of the prerequisite skills Unit 1 leans on (Math Medic
+%! Precalculus Unit 0, lessons 0.1 and 0.3–0.7). 20 questions: 8 multiple choice,
+%! 10 short answer, 2 free response; most carry a pre-drawn figure to read. It is
+%! compiled by `make -C unit01/tests all` and is NOT the drop source, so it never
+%! reaches a packet. Its key is test_keys/pretest_key/main.tex, which must
+%! paginate identically: every worked solution lives in a \begin{work} block
+%! authored byte-identically in both files, and every figure is identical too.
+%!
+%! Skill map (question → Unit 0 lesson):
+%!   0.1 distance & midpoint ............ 1, 2, 9, 10
+%!   0.3 solving in representations ..... 8, 11, 12
+%!   0.4 reasoning with formulas ........ 3, 13, 14, 20
+%!   0.5 linear relationships ........... 4, 15, 16, 19
+%!   0.6 reasoning with slope ........... 5, 6, 17
+%!   0.7 set & interval notation ........ 7, 18
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+% Coordinate grid: \pgrid{xmin}{xmax}{ymin}{ymax}, used inside a tikzpicture.
+\newcommand{\pgrid}[4]{%
+  \draw[linegray, very thin] (#1,#3) grid (#2,#4);
+  \draw[->] (#1-0.3,0) -- (#2+0.4,0) node[right]{\scriptsize $x$};
+  \draw[->] (0,#3-0.3) -- (0,#4+0.4) node[above]{\scriptsize $y$};}
+% A labeled dot: \pdot{x}{y}{label}{anchor}
+\newcommand{\pdot}[4]{%
+  \fill[plum] (#1,#2) circle (4pt) node[#4, font=\scriptsize, fill=white,
+    inner sep=1pt, text=charcoal]{#3};}
+
+\begin{document}
+
+\pageheader{Unit 1: Functions and Change}{Pretest (Version A) --- Skills You Bring}
+\namedateperiod
+
+\vspace{0.08in}
+\begin{remindbox}
+\small
+\textbf{This pretest is graded.} It covers the skills Unit 1 builds on: points
+and distance, solving equations, working with formulas, lines, and interval
+notation. Answer every question and show your work --- work that is shown can
+earn credit even when the final answer is off. A calculator is allowed.
+\textbf{20 questions.}
+\end{remindbox}
+
+% ======================================================================
+\boxguard[6]
+\parthead{Part A --- Multiple Choice (Questions 1--8)}
+Circle the best answer, then write its letter in the blank at the right.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    Points $A$ and $B$ are graphed. The dashed legs of the right triangle are
+    $3$ and $4$ units long. How far apart are $A$ and $B$?
+    \par\vspace{6pt}
+    (A) $5$ \quad (B) $7$ \quad (C) $12$ \quad (D) $25$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.42]
+      \pgrid{0}{6}{0}{6}
+      \draw[slate, dashed, thick] (1,1) -- (4,1) -- (4,5);
+      \draw[plum, thick] (1,1) -- (4,5);
+      \pdot{1}{1}{$A(1,1)$}{below left}
+      \pdot{4}{5}{$B(4,5)$}{above left}
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    The segment joins $(2, 1)$ and $(6, 5)$. What is its midpoint?
+    \par\vspace{6pt}
+    (A) $(8, 6)$ \quad (B) $(4, 4)$ \quad (C) $(4, 3)$ \quad (D) $(3, 4)$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.42]
+      \pgrid{0}{7}{0}{6}
+      \draw[plum, thick] (2,1) -- (6,5);
+      \pdot{2}{1}{$(2,1)$}{below right}
+      \pdot{6}{5}{$(6,5)$}{above left}
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    The volume of a box is $V = \ell w h$. What is the volume of the box shown?
+    \par\vspace{6pt}
+    (A) $10$ cm$^3$ \quad (B) $15$ cm$^3$ \quad (C) $30$ cm$^3$ \quad
+    (D) $60$ cm$^3$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.42]
+      \draw[plum, thick, fill=lilac] (0,0) rectangle (5,3);
+      \draw[plum, thick, fill=plum!30] (0,3) -- (1.2,4) -- (6.2,4) -- (5,3) -- cycle;
+      \draw[plum, thick, fill=plum!15] (5,0) -- (6.2,1) -- (6.2,4) -- (5,3) -- cycle;
+      \node[below, font=\scriptsize] at (2.5,0) {$5$ cm};
+      \node[left, font=\scriptsize] at (0,1.5) {$3$ cm};
+      \node[right, font=\scriptsize] at (5.6,0.4) {$2$ cm};
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    A pizza shop's sign is shown. The cost of a pizza is $C = 8 + 2t$, where $t$
+    is the number of toppings. What does the $8$ represent?
+    \par\vspace{6pt}
+    (A) the cost of each topping \quad (B) the cost with no toppings
+    \par\vspace{2pt}
+    (C) the number of toppings \quad (D) the total cost
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}
+      \node[draw=goldacc, very thick, fill=goldbg, rounded corners, align=center,
+            inner sep=5pt, font=\small]
+        {\textbf{Cheese Pizza \$8}\\[2pt] \$2 per topping};
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    What is the slope of the line shown?
+    \par\vspace{6pt}
+    (A) $\tfrac{1}{2}$ \quad (B) $-2$ \quad (C) $1$ \quad (D) $2$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.42]
+      \pgrid{0}{5}{0}{7}
+      \draw[plum, thick] (0,1) -- (3,7);
+      \pdot{0}{1}{$(0,1)$}{right}
+      \pdot{2}{5}{$(2,5)$}{right}
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item \begin{minipage}[t]{0.58\linewidth}
+    The line shown is horizontal. What is its slope?
+    \par\vspace{6pt}
+    (A) $0$ \quad (B) $3$ \quad (C) undefined \quad (D) $1$
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.28\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.42]
+      \pgrid{0}{6}{0}{5}
+      \draw[plum, thick] (0,3) -- (6,3) node[above left, font=\scriptsize, fill=white, inner sep=1pt]{$y = 3$};
+    \end{tikzpicture}
+    \end{minipage}\hfill \blank{1.1cm}
+
+  \item Which interval matches the number line?
+    \\[4pt]\hspace*{1em}
+    \begin{tikzpicture}[scale=0.55]
+      \draw[<->] (-4.5,0) -- (5.5,0);
+      \foreach \x in {-4,...,5} \draw (\x,0.12) -- (\x,-0.12) node[below]{\scriptsize $\x$};
+      \draw[plum, line width=2.5pt] (-1,0) -- (3,0);
+      \draw[plum, thick, fill=white] (-1,0) circle (5pt);
+      \fill[plum] (3,0) circle (5pt);
+    \end{tikzpicture}
+    \\[4pt]\hspace*{1em}
+    (A) $[-1, 3]$ \quad (B) $(-1, 3)$ \quad (C) $(-1, 3]$ \quad (D) $[-1, 3)$
+    \hfill \blank{1.1cm}
+
+  \item Use the table to find the value of $x$ that makes $2x + 1 = 7$ true.
+    \quad
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    $x$      & $1$ & $2$ & $3$ & $4$ \\ \hline
+    $2x + 1$ & $3$ & $5$ & $7$ & $9$ \\ \hline
+    \end{tabular}
+    \\[4pt]\hspace*{1em}
+    (A) $x = 7$ \quad (B) $x = 3$ \quad (C) $x = 2$ \quad (D) $x = 1$
+    \hfill \blank{1.1cm}
+
+\end{enumerate}
+
+% ======================================================================
+\boxguard[20]
+\parthead{Part B --- Short Answer (Questions 9--18)}
+Show your work in the space provided.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=9]
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    Points $P$, $Q$, and $R$ form a right triangle.
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item Count the length of $PQ$: \blank{1.6cm}
+      \item Count the length of $QR$: \blank{1.6cm}
+      \item Use $a^2 + b^2 = c^2$ to find $PR$.
+    \end{enumerate}
+
+\begin{work}
+  PR^2 &= 6^2 + 8^2 \\
+       &= 36 + 64 = 100 \\
+    PR &= 10
+\end{work}
+
+    \hspace*{1.6em}$PR = $ \blank{1.6cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.34]
+      \pgrid{-3}{5}{-1}{10}
+      \draw[plum, thick] (-2,1) -- (4,1) -- (4,9) -- cycle;
+      \draw (3.4,1) -- (3.4,1.6) -- (4,1.6);
+      \pdot{-2}{1}{$P(-2,1)$}{below}
+      \pdot{4}{1}{$Q(4,1)$}{below right}
+      \pdot{4}{9}{$R(4,9)$}{left}
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    Maya lives at $(1, 2)$ and Jon lives at $(7, 6)$. They want to meet exactly
+    halfway. Where should they meet?
+
+\begin{work}
+  \left(\frac{1 + 7}{2},\ \frac{2 + 6}{2}\right) &= (4, 4)
+\end{work}
+
+    Meeting point: \blank{2.4cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.34]
+      \pgrid{0}{8}{0}{7}
+      \draw[slate, dashed] (1,2) -- (7,6);
+      \pdot{1}{2}{Maya}{below right}
+      \pdot{7}{6}{Jon}{above left}
+    \end{tikzpicture}
+    \end{minipage}
+
+  \boxguard[12]
+  \item Solve: \quad $2x + 5 = 17$
+
+\begin{work}
+  2x &= 12 \\
+   x &= 6
+\end{work}
+
+        $x = $ \blank{2cm}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    The graphs of $y = x^2$ and $y = 4$ are shown. Use the graph to find the
+    solutions of $x^2 = 4$.
+    \par\vspace{4pt}
+    \textit{Hint: look where the two graphs cross.}
+    \par\vspace{10pt}
+    $x = $ \blank{1.6cm} \ and \ $x = $ \blank{1.6cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.34]
+      \pgrid{-4}{4}{-1}{7}
+      \foreach \x in {-2,2} \node[below, font=\scriptsize, fill=white, inner sep=1pt] at (\x,0) {$\x$};
+      \draw[plum, thick, domain=-2.6:2.6, smooth] plot (\x, {\x*\x});
+      \draw[goldacc, thick] (-4,4) -- (4,4) node[above left, font=\scriptsize, fill=white, inner sep=1pt]{$y = 4$};
+      \fill[plum] (-2,4) circle (5pt) (2,4) circle (5pt);
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    The area of a rectangle is $A = \ell w$. This rectangle has an area of
+    $24$ square feet and a length of $6$ feet. What is its width?
+
+\begin{work}
+  24 &= 6w \\
+   w &= 4
+\end{work}
+
+    $w = $ \blank{2cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.4]
+      \draw[plum, thick, fill=lilac] (0,0) rectangle (6,3);
+      \node[font=\scriptsize] at (3,1.5) {$A = 24$ ft$^2$};
+      \node[below, font=\scriptsize] at (3,0) {$6$ ft};
+      \node[right, font=\scriptsize] at (6,1.5) {$w = \ ?$};
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    The volume of a cylinder is $V = \pi r^2 h$. Find the volume of the can
+    shown. Round to the nearest tenth.
+
+\begin{work}
+  V &= \pi(2)^2(5) \\
+    &= 20\pi \approx 62.8
+\end{work}
+
+    $V \approx$ \blank{2.6cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.45]
+      \fill[lilac] (-2,0) -- (-2,5) -- (2,5) -- (2,0) -- cycle;
+      \fill[lilac] (0,0) ellipse (2 and 0.5);
+      \draw[plum, thick] (-2,0) -- (-2,5) (2,0) -- (2,5);
+      \draw[plum, thick] (2,0) arc (0:-180:2 and 0.5);
+      \draw[plum, thick, dashed] (2,0) arc (0:180:2 and 0.5);
+      \draw[plum, thick, fill=plum!30] (0,5) ellipse (2 and 0.5);
+      \draw[thick] (0,5) -- (2,5);
+      \node[above, font=\scriptsize] at (1,5.5) {$r = 2$ cm};
+      \node[right, font=\scriptsize] at (2,2.5) {$h = 5$ cm};
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    The line passes through $(0, 2)$ and $(3, 8)$.
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item Find the slope.
+    \end{enumerate}
+
+\begin{work}
+  m &= \frac{8 - 2}{3 - 0} = \frac{6}{3} = 2
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=4pt, start=2]
+      \item What is the $y$-intercept? \blank{1.6cm}
+      \item Write the equation in the form $y = mx + b$:
+            \blank{2.6cm}
+    \end{enumerate}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.34]
+      \pgrid{0}{5}{0}{10}
+      \draw[plum, thick] (0,2) -- (4,10);
+      \pdot{0}{2}{$(0,2)$}{right}
+      \pdot{3}{8}{$(3,8)$}{right}
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    A phone plan costs \$20 a month plus \$5 for each gigabyte (GB) of data.
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item Write an equation for the monthly cost $C$ when you use $g$ GB:
+            \par $C = $ \blank{2.6cm}
+      \item Find the cost of a month when you use $4$ GB.
+    \end{enumerate}
+
+\begin{work}
+  C &= 20 + 5(4) \\
+    &= 40
+\end{work}
+
+    \hspace*{1.6em}Cost: \blank{2cm}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}
+      \node[draw=greenacc, very thick, fill=greenbg, rounded corners, align=center,
+            inner sep=6pt, font=\small]
+        {\textbf{Basic Plan}\\[2pt] \$20 per month\\[1pt] $+$ \$5 per GB};
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item \begin{minipage}[t]{0.56\linewidth}
+    The graph shows the line $y = 3x + 1$.
+    \begin{enumerate}[label=(\alph*), itemsep=6pt]
+      \item What is the slope of a line \textbf{parallel} to it?
+            \blank{1.6cm}
+      \item What is the slope of a line \textbf{perpendicular} to it?
+            \blank{1.6cm}
+      \item Write the equation of the line parallel to $y = 3x + 1$ that
+            crosses the $y$-axis at $(0, -2)$. \blank{2.6cm}
+    \end{enumerate}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    \begin{tikzpicture}[scale=0.34]
+      \pgrid{-2}{4}{-3}{8}
+      \draw[plum, thick] (-1.33,-3) -- (2.33,8)
+        node[below right, font=\scriptsize, fill=white, inner sep=1pt]{$y = 3x + 1$};
+      \pdot{0}{1}{}{left}
+      \fill[goldacc] (0,-2) circle (5pt) node[below right, xshift=3pt, font=\scriptsize, fill=white, inner sep=1pt]{$(0,-2)$};
+    \end{tikzpicture}
+    \end{minipage}
+
+  \item Set and interval notation.
+
+    \begin{enumerate}[label=(\alph*), itemsep=8pt]
+      \item In set notation, list the whole numbers from $1$ to $5$:
+            \blank{3.2cm}
+      \item Write the interval shown on the number line: \blank{2.4cm}
+            \\[4pt]
+            \begin{tikzpicture}[scale=0.5]
+              \draw[<->] (-1.5,0) -- (7.5,0);
+              \foreach \x in {-1,...,7} \draw (\x,0.12) -- (\x,-0.12) node[below]{\scriptsize $\x$};
+              \draw[plum, line width=2.5pt, ->] (2,0) -- (7.5,0);
+              \fill[plum] (2,0) circle (5pt);
+            \end{tikzpicture}
+      \item A ride requires riders to be \textbf{at least} $48$ inches tall.
+            Write the heights $h$ allowed as an inequality: \blank{2.4cm}
+    \end{enumerate}
+
+\end{enumerate}
+
+% ======================================================================
+\boxguard[34]
+\parthead{Part C --- Free Response (Questions 19--20)}
+Show your work and explain your reasoning in complete sentences.
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt, start=19]
+
+  \item A candle is $12$ inches tall when it is lit. It burns down $2$ inches
+        every hour. The table and graph show its height $h$ after $t$ hours.
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{minipage}[c]{0.14\linewidth}\centering
+        \begin{tikzpicture}[scale=0.35]
+          \fill[goldacc] (1,6.6) .. controls (0.6,6) and (0.8,5.5) .. (1,5.4)
+                         .. controls (1.2,5.5) and (1.4,6) .. (1,6.6);
+          \draw[charcoal, thick] (1,5.4) -- (1,5);
+          \draw[plum, thick, fill=lilac] (0,0) rectangle (2,5);
+        \end{tikzpicture}
+        \end{minipage}
+        \begin{minipage}[c]{0.3\linewidth}\centering
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular}{|c|c|}
+        \hline
+        $t$ (hours) & $h$ (inches) \\ \hline
+        $0$ & $12$ \\ \hline
+        $1$ & $10$ \\ \hline
+        $2$ & $8$ \\ \hline
+        $3$ & $6$ \\ \hline
+        \end{tabular}
+        \end{minipage}
+        \begin{minipage}[c]{0.4\linewidth}\centering
+        \begin{tikzpicture}[scale=0.38]
+          \draw[linegray, very thin] (0,0) grid (7,12);
+          \draw[->] (0,0) -- (7.6,0) node[right]{\scriptsize $t$};
+          \draw[->] (0,0) -- (0,12.6) node[above]{\scriptsize $h$};
+          \foreach \x in {1,...,7} \node[below, font=\scriptsize] at (\x,0) {$\x$};
+          \foreach \y in {2,4,...,12} \node[left, font=\scriptsize] at (0,\y) {$\y$};
+          \draw[plum, thick] (0,12) -- (6,0);
+          \foreach \t in {0,...,3} \fill[plum] (\t,{12-2*\t}) circle (6pt);
+        \end{tikzpicture}
+        \end{minipage}
+        \end{center}
+
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item Write an equation for the height of the candle:
+            \quad $h = $ \blank{2.6cm}
+      \item In your equation, what does the $-2$ mean about the candle?
+
+            \writespace{1.2cm}{}
+      \item After how many hours will the candle be $4$ inches tall? Show your
+            work.
+
+\begin{work}
+  4 &= 12 - 2t \\
+ 2t &= 8 \\
+  t &= 4
+\end{work}
+
+            Answer: \blank{3cm}
+      \item The candle burns out when $h = 0$, at $t = 6$ hours. Use interval
+            notation to give the times $t$ that make sense for the candle:
+            \blank{2.4cm}
+    \end{enumerate}
+
+  \boxguard[40]
+  \item A company packs cereal in the small box shown. It wants a large box
+        that is \textbf{twice as long, twice as wide, and twice as tall}.
+        \quad (Volume of a box: $V = \ell w h$)
+
+        \vspace{4pt}
+        \begin{center}
+        \begin{tikzpicture}[scale=0.42]
+          % small box 3 x 1 x 2 (l x w x h)
+          \draw[plum, thick, fill=lilac] (0,0) rectangle (3,2);
+          \draw[plum, thick, fill=plum!30] (0,2) -- (0.6,2.5) -- (3.6,2.5) -- (3,2) -- cycle;
+          \draw[plum, thick, fill=plum!15] (3,0) -- (3.6,0.5) -- (3.6,2.5) -- (3,2) -- cycle;
+          \node[below, font=\scriptsize] at (1.5,0) {$3$ in};
+          \node[left, font=\scriptsize] at (0,1) {$2$ in};
+          \node[right, font=\scriptsize] at (3.3,0.2) {$1$ in};
+          \node[font=\small\bfseries] at (1.8,-1.6) {Small};
+          % large box 6 x 2 x 4
+          \begin{scope}[xshift=9cm]
+          \draw[plum, thick, fill=lilac] (0,0) rectangle (6,4);
+          \draw[plum, thick, fill=plum!30] (0,4) -- (1.2,5) -- (7.2,5) -- (6,4) -- cycle;
+          \draw[plum, thick, fill=plum!15] (6,0) -- (7.2,1) -- (7.2,5) -- (6,4) -- cycle;
+          \node[below, font=\scriptsize] at (3,0) {$6$ in};
+          \node[left, font=\scriptsize] at (0,2) {$4$ in};
+          \node[right, font=\scriptsize] at (6.6,0.4) {$2$ in};
+          \node[font=\small\bfseries] at (3.6,-1.6) {Large};
+          \end{scope}
+        \end{tikzpicture}
+        \end{center}
+
+\begin{work}
+  V_{\text{small}} &= 3 \cdot 1 \cdot 2 = 6 \\
+  V_{\text{large}} &= 6 \cdot 2 \cdot 4 = 48 \\
+         48 \div 6 &= 8
+\end{work}
+
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item Volume of the small box: \blank{2.4cm}
+            \qquad Volume of the large box: \blank{2.4cm}
+      \item How many times as much cereal does the large box hold?
+            \blank{2cm}
+      \item A coworker says, ``Doubling every side just doubles the volume.''
+            Is the coworker correct? Explain.
+
+            \writespace{2cm}{}
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
