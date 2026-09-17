@@ -1,4 +1,6 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Slides (Beamer)
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Slides (Beamer)
+% Order: hook -> I Do -> We Do -> You Do -> debrief -> homework launch (LESSON_SHAPE.md §1).
+% \CourseName is NOT defined in beamer — "Precalculus" is written literally.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +13,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.3}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Rates of Change}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Function Composition and Decomposition}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -19,292 +21,300 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Sixty Steps, Thirty Seconds}
+  \plumheader{Hook: Two Registers, One Jacket}
   \sectionlabel[goldacc]{Vote Before You Compute}
 
-  Ravi and Mira start at the bottom of the same 60-step stairway at the same
-  moment. \textbf{Both} reach the top 30 seconds later.
+  A \$60 jacket, a \$10 coupon, 6\% sales tax. Register 1 scans the coupon first,
+  then the tax. Register 2 scans the tax first, then the coupon.
 
-  \smallskip
-  \begin{columns}[T]
-    \column{0.54\textwidth}
-      \begin{center}
-      \textbf{Ravi}
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      time (s) & 0 & 10 & 20 & 30 \\
-      \hline
-      steps & 0 & 40 & 55 & 60 \\
-      \hline
-      \end{tabular}
-
-      \medskip
-      \textbf{Mira}
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      time (s) & 0 & 10 & 20 & 30 \\
-      \hline
-      steps & 0 & 20 & 40 & 60 \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-    \column{0.42\textwidth}
+  \bigskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.46\textwidth}
       \begin{block}{The question}
-        Who climbed \textbf{faster}? Commit to an answer.
+        Same jacket, same coupon, same tax rate. Do the two of you pay the same
+        amount? Commit before anyone computes.
       \end{block}
 
-      \medskip
-      \begin{block}{Then compute the average}
-        60 steps in 30 seconds --- for \textbf{both}. Two steps per second,
-        each. The average calls them identical.
+    \column{0.50\textwidth}
+      \begin{block}{Then compute --- and watch the middle number}
+        \begin{tabular}{@{}lcc@{}}
+          & \textbf{screen} & \textbf{total} \\
+          Register 1 & \$50 & \$53.00 \\
+          Register 2 & \$63.60 & \$53.60 \\
+        \end{tabular}
+
+        \smallskip
+        The totals differ because the \textbf{middle numbers} differ.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 1 — THE STAND-IN
+% I DO — THE HANDOFF
 \begin{frame}[t, plain]
-  \plumheader{1. The Stand-In}
-  \sectionlabel[redacc]{The Whole Lesson in One Idea}
+  \plumheader{The Handoff --- The Number In Between}
+  \sectionlabel[goldacc]{Notes row THE HANDOFF $\cdot$ I Do: problem 1 $\cdot$ We Do: problem 2}
 
-  \begin{block}{Average rate of change}
-    The one \textbf{steady} rate that would produce the same change in output
-    over the same change in input.
-    \[
-      \frac{f(b) - f(a)}{b - a}
-      \;=\; \frac{\text{change in output}}{\text{change in input}}
-    \]
+  \((f \circ g)(x) = f\big(g(x)\big)\), read ``\(f\) of \(g\) of \(x\).'' The circle is
+  \textbf{not} multiplication, and the letter written \textbf{last runs first}.
+
+  \medskip
+  \begin{center}
+  \begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+    \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.2cm,
+          minimum height=0.9cm] (E) at (0,0) {\large \(E\)};
+    \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.2cm,
+          minimum height=0.9cm] (T) at (5.2,0) {\large \(T\)};
+    \node[font=\small] (in) at (-2.3,0) {\(t\) minutes};
+    \node[font=\small] (out) at (7.7,0) {\(T(E(t))\) degrees};
+    \draw[->, very thick, plum] (in) -- (E);
+    \draw[->, very thick, goldacc] (E) -- (T);
+    \draw[->, very thick, plum] (T) -- (out);
+    \node[above, font=\small] at (2.6,0.14) {\(E(t)\) feet};
+    \node[below, font=\small\bfseries, text=goldacc] at (2.6,-0.10) {THE HANDOFF};
+  \end{tikzpicture}
+  \end{center}
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{The cable car}
+        \(E(t) = 200t\) feet after \(t\) minutes; \(T(e) = 68 - \frac{e}{100}\) degrees at
+        elevation \(e\). \(T(E(4))\): handoff \(\mathbf{800}\) feet, then \(T(800) = 60^\circ\).
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{One number, two jobs}
+        The handoff is the inner function's \textbf{answer} and the outer function's
+        \textbf{question} at the same time. Find it, and \textbf{write it down}.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% I DO / WE DO — FROM A TABLE
+\begin{frame}[t, plain]
+  \plumheader{Finding the Handoff in a Table}
+  \sectionlabel[goldacc]{Notes row FINDING IT $\cdot$ I Do: problem 3 $\cdot$ We Do: problems 4--6}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.44\textwidth}
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) & 0 & 1 & 2 & 3 & 4 \\
+      \hline
+      \(f(x)\) & 3 & 4 & 0 & 2 & 1 \\
+      \hline
+      \(g(x)\) & 2 & 3 & 7 & 0 & 4 \\
+      \hline
+      \end{tabular}
+      \end{center}
+
+      \medskip
+      \(f(g(1))\): handoff \(g(1) = \mathbf{3}\), then \(f(3) = 2\).
+
+      \smallskip
+      \(g(f(1))\): handoff \(f(1) = \mathbf{4}\), then \(g(4) = 4\).
+
+    \column{0.52\textwidth}
+      \begin{block}{Swap the machines, swap the handoff}
+        Same two functions, same input, a different middle number --- so a different
+        answer. Composition is \textbf{not commutative}.
+      \end{block}
+
+      \medskip
+      \begin{block}{And sometimes there is no answer at all}
+        \(f(g(2))\): the handoff is \(7\), and the table has no \(f(7)\). A handoff must be a
+        question the \textbf{outer} function accepts --- that is the \textbf{domain of a
+        composite}.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% WE DO — BUILDING THE COMPOSITE
+\begin{frame}[t, plain]
+  \plumheader{Building the Composite from Formulas}
+  \sectionlabel[goldacc]{Notes row BUILDING IT $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
+
+  \begin{block}{The recipe}
+    Write \(f\) with an empty slot, \(f(\square) = 3(\square) - 2\); put \(g(x)\) in
+    \textbf{every} slot; simplify. The handoff is no longer a number --- it is an
+    \textbf{expression}. Nothing else changes.
   \end{block}
 
   \medskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \textbf{What it promises.} A steady 2-steps-per-second climber leaves at
-      the same time, from the same step, and arrives at the same step 30
-      seconds later.
-
-    \column{0.48\textwidth}
-      \textbf{What it costs.} The stand-in is pinned only at the
-      \textbf{endpoints}. Everything that happened between them is thrown
-      away --- on purpose.
-  \end{columns}
-\end{frame}
-
-% SECTION 2A — FORMULA AND TABLE
-\begin{frame}[t, plain]
-  \plumheader{2. Computing It --- From a Formula, From a Table}
-
-  \begin{columns}[T]
-    \column{0.44\textwidth}
-      \textbf{From a formula.} \(f(x) = x^2 + 3\) on \([1,4]\):
-      \[
-        \frac{f(4) - f(1)}{4 - 1} = \frac{19 - 4}{3} = 5
-      \]
-
-      \medskip
-      \begin{block}{Order matters}
-        Whichever input you subtract first \textit{downstairs}, its output
-        must be subtracted first \textit{upstairs}.
-      \end{block}
-
-    \column{0.52\textwidth}
-      \textbf{From a table.} \(T(t)\) in \(^\circ\)F, \(t\) hours after 6 a.m.
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|c|}
-      \hline
-      \(t\) & 0 & 2 & 4 & 6 & 8 \\
-      \hline
-      \(T(t)\) & 52 & 58 & 68 & 74 & 72 \\
-      \hline
-      AROC & --- & 3 & 5 & 3 & \(-1\) \\
-      \hline
-      \end{tabular}
-
-      \medskip
-      Fastest warming: between \(t = 2\) and \(t = 4\), at \textbf{5 degrees
-      per hour}. And every rate carries \textbf{units}.
-  \end{columns}
-\end{frame}
-
-% SECTION 2B — GRAPH
-\begin{frame}[t, plain]
-  \plumheader{2. Computing It --- From a Graph}
-  \sectionlabel[goldacc]{The Secant Line}
-
   \begin{columns}[T, onlytextwidth]
     \column{0.50\textwidth}
+      \(f(x) = 3x - 2\), \quad \(g(x) = x^2 + 1\):
+      \begin{align*}
+        f(g(x)) &= f(x^2+1) = 3(x^2+1) - 2 \\
+                &= 3x^2 + 1 \\[4pt]
+        g(f(x)) &= g(3x-2) = (3x-2)^2 + 1 \\
+                &= 9x^2 - 12x + 5
+      \end{align*}
+
+    \column{0.46\textwidth}
+      \begin{block}{Two routes, one number}
+        \(f(g(2))\) step by step: handoff \(g(2) = 5\), so \(f(5) = 13\).
+
+        \smallskip
+        Straight from the rule: \(3(2)^2 + 1 = 13\).
+      \end{block}
+
+      \smallskip
+      \textbf{Not} \(f(x) \cdot g(x)\): a product has no handoff.
+  \end{columns}
+\end{frame}
+
+% WE DO — THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{Two Orders, Two Handoffs --- The Crux}
+  \sectionlabel[redacc]{Notes row TWO HANDOFFS $\cdot$ I Do: problem 11 $\cdot$ problem 12 is the crux}
+
+  Coupon \(c(p) = p - 10\), \qquad tax \(t(x) = 1.06x\).
+
+  \medskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{At \(p = 60\)}
+        \(t(c(60)) = t(\mathbf{50}) = \$53.00\)
+
+        \smallskip
+        \(c(t(60)) = c(\mathbf{63.60}) = \$53.60\)
+      \end{block}
+
+      \smallskip
+      \begin{block}{At every price}
+        \(t(c(p)) = 1.06p - 10.60\) \quad against \quad \(c(t(p)) = 1.06p - 10\)
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{The crux --- problem 12}
+        \(f(x) = 2x\), \(g(x) = x - 6\), one input, both orders:
+
+        \smallskip
+        \(f(g(10))\): handoff \(\mathbf{4}\), answer \(\mathbf{8}\).
+
+        \smallskip
+        \(g(f(10))\): handoff \(\mathbf{20}\), answer \(\mathbf{14}\).
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \textbf{Swap the machines and you swap the handoff. Taxing first charges 6\% of the ten
+    dollars you never paid --- at every price.}
+  \end{center}
+\end{frame}
+
+% WE DO — DECOMPOSITION
+\begin{frame}[t, plain]
+  \plumheader{Backwards: Decomposition}
+  \sectionlabel[redacc]{Notes row TWO HANDOFFS $\cdot$ We Do: problems 13--14}
+
+  \begin{block}{Decomposition = name the handoff}
+    Ask what a calculator would compute \textbf{first}. That value is the handoff, and its rule
+    is the \textbf{inner} function; whatever is done to it is the \textbf{outer} function.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \(h(x) = \sqrt{x + 5}\)
+
+      \smallskip
+      You would add 5 first, so:
+
+      \smallskip
+      Inner \(g(x) = x + 5\), \quad outer \(f(u) = \sqrt{u}\).
+
+    \column{0.48\textwidth}
+      \begin{block}{Always check}
+        Substitute back: \(f(g(x)) = \sqrt{x+5} = h(x)\). \checkmark
+
+        \smallskip
+        A split that does not rebuild \(h\) exactly is the wrong split.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Table \& Formulas}
+  \sectionlabel[redacc]{Notes row TABLE \& FORMULAS $\cdot$ problems 15--18, alone, 14 minutes}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.40\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.60cm, y=0.40cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (8,6);
-        \draw[->, thick] (0,0) -- (8.6,0);
-        \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small \(g(t)\) (m)};
-        \node[font=\small] at (4.3,-1.6) {\(t\) (min)};
-        \foreach \x in {2,4,6,8} \node[below, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {1,3,5} \node[left, font=\tiny] at (0,\y) {\y};
-        \draw[dashed, thick, goldacc] (0,1) -- (4,5);
-        \draw[dashed, thick, goldacc] (4,5) -- (8,1);
-        \draw[very thick, plum] plot[smooth] coordinates
-          {(0,1) (1,2.6) (2,3.9) (3,4.7) (4,5) (5,4.7) (6,3.9) (7,2.6) (8,1)};
-      \end{tikzpicture}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(x\) & 1 & 2 & 3 & 4 & 5 \\
+      \hline
+      \(p(x)\) & 5 & 3 & 1 & 4 & 2 \\
+      \hline
+      \(q(x)\) & 4 & 1 & 2 & 5 & 3 \\
+      \hline
+      \end{tabular}
       \end{center}
 
-    \column{0.42\textwidth}
-      A kite's height \(g(t)\), in meters.
-
       \medskip
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Over \([0,4]\): from 1 m to 5 m, so \(+1\) \textbf{meter per
-              minute}.
-        \item Over \([4,8]\): \(-1\) \textbf{meter per minute}.
-      \end{itemize}
+      \begin{center}
+        \(f(x) = x + 3\) \qquad \(g(x) = x^2\)
+      \end{center}
 
-      \medskip
-      \begin{block}{The punch line}
-        Each dashed line is a \textbf{secant line}. Its \textbf{slope}
-        \textit{is} the average rate of change over that interval.
+    \column{0.56\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \setcounter{enumi}{14}
+        \item From the table: \(p(q(2))\) and \(q(p(2))\). Write each handoff. Equal?
+        \item Build \((f \circ g)(x)\) and \((g \circ f)(x)\), simplified. Same function?
+        \item Find \(f(g(-2))\) by naming the handoff, then check it against your rule from 16.
+        \item Decompose \(m(x) = (2x+1)^3\). Which rule runs first when you compute \(m(1)\)?
+              Find \(m(1)\).
+      \end{enumerate}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T, onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{The handoff}
+        One number sits between the two machines: the inner function's \textbf{answer} and the
+        outer function's \textbf{question}. Find it first and write it down.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{The order}
+        \textbf{Swap the machines and you swap the handoff.} That is why \(f(g(x))\) and
+        \(g(f(x))\) are usually different functions.
       \end{block}
   \end{columns}
+
+  \bigskip
+  \textbf{Next time (1.4, Inverse Functions):} we hunt for the partner that \textit{undoes} a
+  function --- and the test is a composition run in \textbf{both} directions.
+
+  \smallskip
+  \textit{And later, in 1.5, a horizontal shift will turn out to be a composition too.}
 \end{frame}
 
-% SECTION 3 — SIGN AND ZERO
+% HOMEWORK LAUNCH
 \begin{frame}[t, plain]
-  \plumheader{3. What the Sign Says --- and What Zero Does Not Say}
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
 
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{itemize}\setlength{\itemsep}{7pt}
-        \item \textbf{Positive:} as the input increases, so does the output.
-              The quantities move the \textbf{same} way.
-        \item \textbf{Negative:} as the input increases, the output falls.
-              They move \textbf{opposite} ways.
-        \item \textbf{Units, every time:} output units \textit{per} input
-              unit. ``5'' is not an answer.
-      \end{itemize}
-
-    \column{0.50\textwidth}
-      \begin{block}{Zero}
-        A hiker leaves the trailhead at 900 ft, climbs all afternoon, and is
-        back at 900 ft four hours later.
-        \[
-          \frac{900 - 900}{4 - 0} = 0 \text{ ft per hour}
-        \]
-      \end{block}
-
-      \medskip
-      \textbf{Did nothing happen?} No. The average compares only the start and
-      the end --- and they are the same. This is the stand-in's cost, made
-      visible.
-  \end{columns}
-\end{frame}
-
-% SECTION 4 — CHOP IT FINER
-\begin{frame}[t, plain]
-  \plumheader{4. Chop It Finer}
-  \sectionlabel[redacc]{Settling the Vote}
-
-  Same tool, smaller intervals --- and the story the whole-climb average
-  erased comes back.
-
-  \medskip
-  \begin{center}
-  \renewcommand{\arraystretch}{1.4}
-  \begin{tabular}{|l|c|c|c|}
-  \hline
-  \textbf{split (seconds)} & \textbf{0 to 10} & \textbf{10 to 20} & \textbf{20 to 30} \\
-  \hline
-  Ravi's rate (steps/s) & 4 & 1.5 & 0.5 \\
-  \hline
-  Mira's rate (steps/s) & 2 & 2 & 2 \\
-  \hline
-  \end{tabular}
-  \end{center}
-
-  \medskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      Ravi's rates are \textbf{shrinking} --- in 1.2's language, his climb is
-      \textbf{concave down}.
-
-    \column{0.48\textwidth}
-      Mira's rates \textbf{never change}. Her climb is a straight line, and
-      she \textit{is} her own stand-in.
-  \end{columns}
-\end{frame}
-
-% SECTION 5 — THE PATTERN
-\begin{frame}[t, plain]
-  \plumheader{5. The Pattern Names the Function}
-  \sectionlabel[redacc]{Topic 1.3}
-
-  Average rate of change over each unit interval from \(x = 0\) to \(x = 4\):
-
-  \medskip
-  \begin{center}
-  \renewcommand{\arraystretch}{1.4}
-  \begin{tabular}{|l|c|c|c|c|c|}
-  \hline
-  \(x\) & 0 & 1 & 2 & 3 & 4 \\
-  \hline
-  \(f(x) = 2x + 1\) & 1 & 3 & 5 & 7 & 9 \\
-  \hline
-  AROC of \(f\) & --- & 2 & 2 & 2 & 2 \\
-  \hline
-  \(g(x) = x^2\) & 0 & 1 & 4 & 9 & 16 \\
-  \hline
-  AROC of \(g\) & --- & 1 & 3 & 5 & 7 \\
-  \hline
-  change in the AROC of \(g\) & --- & --- & 2 & 2 & 2 \\
-  \hline
-  \end{tabular}
-  \end{center}
-
-  \medskip
-  \begin{columns}[T]
-    \column{0.32\textwidth}
-      \textbf{Linear.} Same rate over every interval --- that number is the
-      slope.
-
-    \column{0.32\textwidth}
-      \textbf{Quadratic.} The rates march by a constant step; the rates are
-      themselves linear.
-
-    \column{0.32\textwidth}
-      \textbf{Concavity.} Rates increasing \(\Rightarrow\) concave up;
-      decreasing \(\Rightarrow\) concave down.
-  \end{columns}
-\end{frame}
-
-% CLASS PRACTICE
-\begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
-
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A delivery van's distance \(D\), in miles, after \(t\) hours:
-
-          \smallskip
-          \begin{tabular}{|c|c|c|c|c|c|}
-          \hline
-          \(t\) (hours) & 0 & 1 & 2 & 3 & 4 \\
-          \hline
-          \(D(t)\) (miles) & 0 & 60 & 100 & 160 & 180 \\
-          \hline
-          \end{tabular}
-
-          \smallskip
-          Find the average rate of change over \([0,2]\) and over \([2,4]\),
-          with units. Which stretch was faster, and by how much?
-
-    \item One function's average rates of change are \(7, 7, 7, 7\).
-          Another's are \(2, 6, 10, 14\). Which one is linear, and what is its
-          slope? What is the concavity of the other --- and how do you know
-          without a graph?
-  \end{enumerate}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 2} now. Write the handoff on every line
+          before you use it.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit} --- optional,
+          AP-exam style. Do the homework first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

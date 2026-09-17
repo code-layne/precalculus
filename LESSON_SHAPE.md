@@ -42,10 +42,11 @@ Step 0. The skeletons, the per-component spec (`components.md`), and the CED com
 **The course at a glance.** Non-honors Precalculus — an honors course runs separately. Its job is
 to cover the fundamentals thoroughly so a student moves comfortably into a *regular* college
 calculus course: **depth over breadth**, a context first, small numbers, one new idea at a time,
-worked examples, gentler ramps than the CED implies. **8 units × 8 lessons = 64 lessons**, plus
-a sample test per unit; 60-minute meetings. Units 1 and 2 number their lessons X.0–X.7 (the
-`lesson00` directory is the unit opener); units 3–8 still number X.1–X.8 and adopt the X.0
-opener as each is reauthored. **Every lesson ships a Beamer deck.**
+worked examples, gentler ramps than the CED implies. 8 units, a sample test per unit, 60-minute
+meetings. **Unit 1 numbers its lessons 1.1 onward and is no longer fixed at eight** — its
+opener was retired in the September 2026 replan and further lessons are expected; see
+`COURSE_PLAN.md`, which is authoritative for the lesson map. Unit 2 numbers its lessons 2.0–2.7
+(the `lesson00` directory is its unit opener); units 3–8 still number X.1–X.8. **Every lesson ships a Beamer deck.**
 
 ## 1. The lesson shape
 
@@ -129,8 +130,8 @@ closes with the homework.
   where the teacher stands during You Do, specified in the plan.
 - **No experience-first structure** (no `experience/`).
 
-**`unit01/lesson01` is the reference implementation** (five lesson parts, the denser variant);
-`unit01/lesson00` is the same 2026-09-16 shape on a no-notation opener. Mirror their preamble, box usage, pacing, and tone.
+**`unit01/lesson01` is the reference implementation** (five lesson parts, the denser variant).
+Mirror its preamble, box usage, pacing, and tone.
 Never model on a lesson `COURSE_PLAN.md` still marks **moved** — its body is pre-restructure
 content on the old palette. The live lesson overrides every document, this one included.
 
@@ -356,9 +357,9 @@ Recognize the shape by the component directories and the plan's boxes:
 
 | Shape | Has | Where |
 | --- | --- | --- |
-| **current** (gradual release + back-of-packet, 2026-09-16) | `notes/` + `ap_practice/` + `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has a Homework Launch box | `unit01/lesson00`, `unit01/lesson01` |
+| **current** (gradual release + back-of-packet, 2026-09-16) | `notes/` + `ap_practice/` + `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has a Homework Launch box | `unit01/lesson01`–`03` |
 | **exit-ticket gradual release** (2026-08) | `notes/` + `exit_ticket/`, no `homework/` (DeltaMath); plan has Individual Work & Assessment | none remaining |
-| **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | `unit01/lesson02`–`07`, `unit02/lesson00`–`07` |
+| **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | `unit01/lesson04`–`08`, `unit02/lesson00`–`07` |
 | **moved / pre-restructure** | the same directories, but the body is the old AP-paced lesson: cross-references in the *old* numbering, `navy`/`sky` colours, teacher notes still in the `_key` files, name rows on every component, Tier R/A/E boxes on the activity sheet, no `work` blocks, no `\boxguard`, sometimes no deck (`COURSE_PLAN.md`: *moved* or *new*) | units 03–08 |
 
 The build accepts all of them. When asked to touch one, **ask whether to regenerate it** in the
@@ -398,8 +399,8 @@ one-page warm-up on both sides, AP Practice and Homework exactly two pages each 
 and every component's page count equals its `_key`'s on the compiled components, not the padded
 packets.
 
-**Scoreboard (2026-09-16):** 2 of 64 lessons are in the current shape (`unit01/lesson00`,
-`lesson01`); 14 are convention-compliant group-activity lessons (`unit01/lesson02`–`07`,
+**Scoreboard (2026-09-17):** 3 lessons are in the current shape (`unit01/lesson01`–`03`);
+13 are convention-compliant group-activity lessons (`unit01/lesson04`–`08`,
 `unit02/lesson00`–`07`); 48 are moved / pre-restructure (units 03–08). Across the tree: 61
 plans still carry a `Group Work \& Differentiation` box, 117 `_key` files still hold teacher
 notes and 324 component files still carry a name row (all in units 03–08), 53 activity sheets

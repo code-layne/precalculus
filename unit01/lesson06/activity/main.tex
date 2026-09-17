@@ -1,4 +1,4 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Group Activity
+%! Change in Tandem — Unit 1, Lesson 1.6 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,226 +10,161 @@
 
 \vspace{0.12in}
 
-\begin{scenariobox}[The Charging Station]{plumlight}
+\begin{scenariobox}[The Reservoir Year]{plumlight}
 \small
-An electric car pulls into a fast charger with 10 miles of range left. After
-$t$ hours on the charger its range is
+A town reservoir is measured on the first of every month. The function $L$
+gives the water level in \textbf{feet above the outlet valve} --- the pipe that
+feeds the town's canal --- in month $t$. Every tier uses this same graph and
+table; nothing is drawn.
 
 \begin{center}
-$R(t) = 25t + 10$ \quad miles.
-\end{center}
-
-The dashboard reports one thing only: \textbf{miles of range}. But the driver
-standing next to the car is always asking the other question ---
-\textbf{how long do I have to sit here?} Every question in this activity is
-that question.
-
-\begin{center}
-\begin{tikzpicture}[x=1.0cm, y=0.30cm]
-  \draw[linegray, very thin, xstep=1, ystep=2] (0,0) grid (4,12);
-  \draw[->, thick] (0,0) -- (4.7,0) node[below right] {\small $t$ (h)};
-  \draw[->, thick] (0,0) -- (0,13.6) node[above] {\small $R(t)$ (mi)};
-  \foreach \x in {1,2,3,4} \node[below, font=\small] at (\x,0) {\x};
-  \foreach \y/\lab in {2/20, 4/40, 6/60, 8/80, 10/100, 12/120}
-    \node[left, font=\small] at (0,\y) {\lab};
-  \draw[very thick, plum] (0,1) -- (4,11);
-  \fill[plum] (0,1) circle (2.5pt);
-  \fill[plum] (2,6) circle (2.5pt);
-  \fill[plum] (4,11) circle (2.5pt);
+\begin{tikzpicture}[x=0.55cm, y=0.30cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (12,15);
+  \draw[->, thick] (0,0) -- (12.6,0) node[below right] {\small $t$ (month)};
+  \draw[->, thick] (0,0) -- (0,15.8) node[above] {\small $L(t)$ (ft above valve)};
+  \foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {3,6,9,12,15} \node[left] at (0,\y) {\small \y};
+  \draw[very thick, plum] (0,5) -- (1,9) -- (2,12) -- (3,14) -- (4,15) -- (5,14)
+    -- (6,12) -- (7,9) -- (8,5) -- (9,0) -- (10,1) -- (11,3) -- (12,6);
+  \fill[plum] (0,5) circle (2.5pt);
+  \fill[plum] (12,6) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
 \renewcommand{\arraystretch}{1.3}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-$t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
+$t$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
 \hline
-$R(t)$ (miles) & 10 & 35 & 60 & 85 & 110 \\
+$L(t)$ & 5 & 9 & 12 & 14 & 15 & 14 & 12 & 9 & 5 & 0 & 1 & 3 \\
 \hline
 \end{tabular}
-\end{center}
+\quad ($L(12) = 6$)
 \end{scenariobox}
 
 \vspace{0.1in}
 
-\boxguard[26]
+\boxguard
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier R --- Remediate},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-\begin{enumerate}[itemsep=6pt]
-  \item Read the scenario table forwards. After 3 hours the range is
-        \blank{1.6cm} miles.
+\begin{enumerate}[itemsep=8pt]
+  \item Read two values off the graph.
 
-  \item Now read it \textbf{backwards} --- the way the driver reads it. The
-        dashboard says 85 miles. How long has the car been charging?
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $L(0) = $ \blank{1.6cm} \quad (the level on January 1)
+          \item $L(4) = $ \blank{1.6cm} \quad (the highest level all year)
+        \end{enumerate}
 
-        \blank{1.6cm} hours
+  \item Circle the right word for each stretch of the year.
 
-  \item Build $R^{-1}$ by \textbf{trading the two rows} of the scenario table.
-        Nothing is computed --- the answers become the questions.
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item From $t = 0$ to $t = 4$, the level is
+                \textbf{increasing} / \textbf{decreasing}.
+          \item From $t = 5$ to $t = 9$, the level is
+                \textbf{increasing} / \textbf{decreasing}.
+        \end{enumerate}
 
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $x$ (miles) & 10 & 35 & 60 & 85 & 110 \\
-        \hline
-        $R^{-1}(x)$ (hours) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-        \hline
-        \end{tabular}
-        \end{center}
-
-  \item Fill in the units, and watch them trade places.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{center}
-        \begin{tabularx}{0.9\linewidth}{@{} >{\bfseries}p{0.16\linewidth} X X @{}}
-        \hline
-                 & \textbf{takes in} & \textbf{gives back} \\
-        \hline
-        $R$      & \blank{2.6cm} & \blank{2.6cm} \\
-        \hline
-        $R^{-1}$ & \blank{2.6cm} & \blank{2.6cm} \\
-        \hline
-        \end{tabularx}
-        \end{center}
-
-  \item In one sentence, say what $R^{-1}$ does for the driver.
+  \item The graph meets the horizontal axis once. That input is a
+        \textbf{zero} of $L$.
 
         \vspace{0.05in}
-        \writeline
+        The zero is at $t = $ \blank{1.6cm}. Write what it means for the town.
+
+        \vspace{0.05in}
+        \writelines{2}
+
+  \item For this function: \quad Input quantity: \blank{3.2cm} \quad
+        Output quantity: \blank{4.4cm}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier A --- Approaching Proficiency},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-The table only answers the five questions printed on it. A formula answers all
-of them.
-
 \begin{enumerate}[itemsep=8pt]
-  \item Find $R^{-1}(x)$ by swapping and solving.
+  \item Name every interval, using inequalities on the \textbf{inputs}.
 
-        \begin{work}
-                        y &= 25x + 10 \\
-                        x &= 25y + 10 \\
-                   x - 10 &= 25y \\
-          \frac{x-10}{25} &= y
-        \end{work}
+        \vspace{0.05in}
+        Increasing on \blank{2.8cm} and \blank{2.8cm}; \quad
+        decreasing on \blank{2.8cm}.
 
-        $R^{-1}(x) = $ \blank{3cm}
+  \item The spring rise, month by month. Fill in the monthly changes from the
+        table.
 
-  \item Check it against the table: $R^{-1}(85) = $ \blank{1.6cm} hours.
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        month & 0 to 1 & 1 to 2 & 2 to 3 & 3 to 4 \\
+        \hline
+        change in $L$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \smallskip
 
-  \item The driver needs 160 miles of range before leaving.
+        On $0 < t < 4$ the reservoir is \blank{2.4cm} and concave
+        \blank{1.4cm}, because \blank{6.4cm}.
 
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $R^{-1}(160) = $ \blank{1.6cm} hours.
-          \item Say in one sentence why $R^{-1}$ --- and not $R$ --- is the
-                function that answers this.
+  \item The fall refill. Fill in those changes too.
 
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        month & 9 to 10 & 10 to 11 & 11 to 12 \\
+        \hline
+        change in $L$ & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+        \hline
+        \end{tabular}
+        \smallskip
 
-  \item Verify the pair in \textbf{both} directions.
+        On $9 < t < 12$ the reservoir is \blank{2.4cm} and concave
+        \blank{1.4cm}, because \blank{6.4cm}.
 
-        \begin{work}
-          R\big(R^{-1}(x)\big) &= 25\left(\frac{x-10}{25}\right) + 10 \\
-                               &= (x - 10) + 10 \\
-                               &= x \\
-          R^{-1}\big(R(x)\big) &= \frac{(25x + 10) - 10}{25} \\
-                               &= \frac{25x}{25} \\
-                               &= x
-        \end{work}
+  \item Two different stretches of this year are both \textit{increasing}, yet
+        they tell different stories. Say the difference in one sentence.
 
-        Both came out to \blank{1.2cm}, which is the \blank{2.4cm} function.
-
-  \item \textbf{The trap, in numbers.} The dashboard reads 60 miles.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $R^{-1}(60) = $ \blank{1.6cm} hours.
-          \item $R(60) = $ \blank{1.6cm}, so $\dfrac{1}{R(60)} = $
-                \blank{1.8cm}.
-          \item One of those two numbers is a charging time. Which one, and
-                what is the other one even measuring?
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
+        \vspace{0.05in}
+        \writelines{2}
 \end{enumerate}
 \end{tcolorbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
+\boxguard[24]
 \begin{tcolorbox}[colback=white, colframe=black!40,
     title=\textbf{Tier E --- Extension},
     fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
 \begin{enumerate}[itemsep=8pt]
-  \item \textbf{The battery warms up, then cools.} During a 6-hour charge the
-        battery temperature is $T(t) = (t-3)^2 + 50$ degrees F.
+  \item The summer drawdown runs from $t = 4$ to $t = 9$. Compute its monthly
+        changes and name its concavity.
 
-        \begin{work}
-          T(1) &= (1-3)^2 + 50 \\
-               &= 54 \\
-          T(5) &= (5-3)^2 + 50 \\
-               &= 54
-        \end{work}
+        \vspace{0.05in}
+        Changes: \blank{1cm}, \blank{1cm}, \blank{1cm}, \blank{1cm},
+        \blank{1cm} \quad --- so $L$ is concave \blank{1.4cm} there.
 
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $T(1) = $ \blank{1.4cm} and $T(5) = $ \blank{1.4cm}, so the
-                answer $54^\circ$ came from \blank{1.4cm} different questions.
-          \item Therefore $T$ is not \blank{2.6cm} on $0 \le t \le 6$, and a
-                thermometer reading alone \blank{3cm} tell you the time.
-          \item \textbf{Repair it.} Keep only $t \ge 3$ and invert on that
-                piece.
+        \vspace{0.05in}
+        \writelines{2}
 
-                \begin{work}
-                      y &= (t-3)^2 + 50 \\
-                 y - 50 &= (t-3)^2 \\
-              \sqrt{y-50} &= t - 3 \\
-              3 + \sqrt{y-50} &= t
-                \end{work}
+  \item One of the four corners never appeared this year: \textbf{decreasing
+        and concave up}. Describe what that stretch of the graph would look
+        like, and name something that could cause it here.
 
-                $T^{-1}(y) = $ \blank{4cm}
+        \vspace{0.05in}
+        \writelines{2}
 
-          \item Test it: $T^{-1}(54) = $ \blank{1.4cm}. Which of the two times
-                from part (a) did the restriction keep? \blank{1.4cm}
-        \end{enumerate}
+  \item Spiral back to 1.1: the reservoir reaches 12 feet in month 2 and again
+        in month 6. Is \textbf{time} a function of \textbf{level}?
 
-  \item \textbf{Dollars from miles.} The station bills $C(t) = 8t + 2$ dollars
-        for $t$ hours on the charger. The driver wants cost as a function of
-        the number on the \textit{dashboard} --- and no meter reports that.
-
-        \begin{work}
-          C\big(R^{-1}(x)\big) &= 8\left(\frac{x-10}{25}\right) + 2 \\
-                               &= 0.32(x - 10) + 2 \\
-                               &= 0.32x - 1.2
-        \end{work}
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The chain runs $R^{-1}$ first, then $C$. The handoff between
-                them is a number of \blank{2cm}.
-          \item $C\big(R^{-1}(x)\big) = $ \blank{3.4cm}
-          \item Check at 60 miles: the composite gives \$\blank{1.6cm}, and
-                the table says 60 miles is 2 hours, so $C(2) = $
-                \$\blank{1.6cm}.
-          \item Why can the chain not be run the other way, as
-                $R^{-1}\big(C(t)\big)$?
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
+        \vspace{0.05in}
+        \writelines{2}
 \end{enumerate}
 \end{tcolorbox}
 

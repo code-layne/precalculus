@@ -1,12 +1,8 @@
-%! Change in Tandem — Unit 1, Lesson 1.2 — Slides (Beamer)
+%! Function Operations — Unit 1, Lesson 1.2 — Slides (Beamer)
+% Follows the release order: hook -> I Do -> We Do -> You Do -> debrief -> homework launch.
+% \CourseName is not defined in beamer, so the course name is written literally.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
-
-\newcommand{\minicurve}[1]{%
-  \begin{tikzpicture}[x=0.34cm, y=0.30cm, baseline=(current bounding box.center)]
-    \draw[linegray, thin] (0,0) rectangle (4,3);
-    \draw[very thick, plum] plot[smooth] coordinates {#1};
-  \end{tikzpicture}}
 
 \begin{document}
 
@@ -17,7 +13,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Change in Tandem}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Function Operations}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -25,282 +21,278 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Two Shows, Same Sales}
-  \sectionlabel[goldacc]{Take a Vote First}
+  \plumheader{Hook: The Owner Wants One Number}
+  \sectionlabel[goldacc]{Think About It}
 
-  Two shows go on sale the same morning. Six weeks later \textbf{both} have
-  sold exactly 600 tickets.
+  A bakery bakes \(x\) loaves in a day. Two costs are tracked separately:
 
-  \smallskip
+  \bigskip
+  \begin{center}
+    {\Large\bfseries\color{plum} \(F(x) = 0.80x\) \qquad \(L(x) = 25 + 1.20x\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The owner's complaint}
+        ``I do not want two numbers every morning. I want \textit{one}.''
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        What single function gives the total daily cost? How would you build it
+        out of \(F\) and \(L\)?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Both rules take the same input --- \(x\) loaves. That is what makes it
+  legal to combine them.}
+\end{frame}
+
+% I DO — SECTION 1: COMBINING
+\begin{frame}[t, plain]
+  \plumheader{Two Machines, One Answer}
+  \sectionlabel[goldacc]{Notes row COMBINING $\cdot$ I Do: problem 1 $\cdot$ We Do: problem 2}
+
+  \begin{block}{Four ways to combine, all defined on the outputs}
+    \[ (f+g)(x) = f(x) + g(x) \qquad (f-g)(x) = f(x) - g(x) \]
+    \[ (fg)(x) = f(x) \cdot g(x) \qquad \left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)} \]
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{The picture.} The same input \(x\) goes into \textbf{both}
+      machines. The two outputs meet afterward, at the combiner. Only then is
+      there one new number.
+
+    \column{0.48\textwidth}
+      \textbf{The bakery.}
+      \[ T(x) = (F + L)(x) = 0.80x + 25 + 1.20x \]
+      \[ T(x) = 25 + 2x \text{ dollars} \]
+  \end{columns}
+\end{frame}
+
+% I DO / WE DO — SECTION 2: AT A POINT
+\begin{frame}[t, plain]
+  \plumheader{Combining at a Point --- No Formula Needed}
+  \sectionlabel[goldacc]{Notes row AT A POINT $\cdot$ I Do: problem 3 $\cdot$ We Do: problems 4--6}
+
+  \begin{block}{If you know the two outputs, you are done}
+    \((f+g)(2)\) is nothing more than \(f(2) + g(2)\). Look up two numbers, do
+    the arithmetic, stop.
+  \end{block}
+
+  \medskip
   \begin{columns}[T]
     \column{0.52\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
-        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
-        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
-        \draw[very thick, plum] plot[smooth] coordinates
-          {(0,0) (1,2.5) (2,4) (3,5) (4,5.6) (5,5.9) (6,6)};
-        \node[below=7pt] at (3,0) {\small\textbf{Show A}};
-      \end{tikzpicture}
-      \hspace{0.5cm}
-      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
-        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
-        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
-        \draw[very thick, plum] plot[smooth] coordinates
-          {(0,0) (1,0.1) (2,0.3) (3,0.7) (4,1.6) (5,3.4) (6,6)};
-        \node[below=7pt] at (3,0) {\small\textbf{Show B}};
-      \end{tikzpicture}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      \(x\) & 0 & 1 & 2 & 3 & 4 \\ \hline
+      \(f(x)\) & 5 & 3 & 1 & \(-1\) & \(-3\) \\ \hline
+      \(g(x)\) & 1 & 2 & 4 & 8 & 16 \\ \hline
+      \end{tabular}
       \end{center}
 
     \column{0.44\textwidth}
-      \begin{block}{The question}
-        If you could promote just \textbf{one} of these shows for six more
-        weeks, which would you pick?
-      \end{block}
-
-      \medskip
-      \begin{block}{Then: why?}
-        Both graphs are \textbf{increasing}. Both end at \textbf{600}. So that
-        word cannot tell them apart --- what word are we missing?
-      \end{block}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \((f+g)(4) = -3 + 16 = 13\)
+        \item \((fg)(0) = 5 \cdot 1 = 5\)
+        \item \((f-g)(2) = 1 - 4 = -3\)
+        \item \((g-f)(2) = 4 - 1 = \phantom{-}3\)
+      \end{itemize}
   \end{columns}
+
+  \bigskip
+  \textbf{The trap:} \((f-g)\) and \((g-f)\) are \textbf{different functions} ---
+  opposites. Read which one the question asked for.
 \end{frame}
 
-% SECTION 1 — TANDEM
+% WE DO — SECTION 3: THE FORMULA
 \begin{frame}[t, plain]
-  \plumheader{1. Two Quantities in Tandem}
+  \plumheader{Building the Rule}
+  \sectionlabel[goldacc]{Notes row THE FORMULA $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
 
-  \begin{block}{Vary in tandem}
-    Change the input and the output answers. A function is the rule that ties
-    the two together.
+  \begin{block}{Three steps}
+    \textbf{1.} Write the definition. \quad \textbf{2.} Replace each name with
+    its formula, \textit{each in its own parentheses}. \quad \textbf{3.}
+    Distribute, then combine like terms.
   \end{block}
 
   \bigskip
+  \begin{center}
+    {\large \(f(x) = 2x + 1\) \qquad \(g(x) = x - 3\)}
+  \end{center}
+
+  \bigskip
   \begin{columns}[T]
-    \column{0.46\textwidth}
-      \textbf{A hose fills a tank.}
+    \column{0.31\textwidth}
+      \textbf{Sum}
+      \begin{align*}
+        (f+g)(x) &= (2x+1) + (x-3) \\
+                 &= 3x - 2
+      \end{align*}
 
-      \medskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      \(t\) (min) & 0 & 2 & 4 & 6 \\
-      \hline
-      \(V(t)\) (gal) & 0 & 8 & 16 & 24 \\
-      \hline
-      \end{tabular}
+    \column{0.34\textwidth}
+      \textbf{Difference}
+      \begin{align*}
+        (f-g)(x) &= (2x+1) - (x-3) \\
+                 &= 2x + 1 - x + 3 \\
+                 &= x + 4
+      \end{align*}
 
-      \medskip
-      Every 2 minutes: \textbf{8 more gallons}, the same amount each time.
-
-    \column{0.48\textwidth}
-      \begin{itemize}\setlength{\itemsep}{7pt}
-        \item Input quantity: \textbf{time}, in minutes
-        \item Output quantity: \textbf{volume}, in gallons
-        \item A table shows a handful of pairs. A \textbf{graph} shows them
-              \textbf{all at once} --- which is why trends become things you
-              can see.
-      \end{itemize}
+    \column{0.31\textwidth}
+      \textbf{Product}
+      \begin{align*}
+        (fg)(x) &= (2x+1)(x-3) \\
+                &= 2x^2 - 5x - 3
+      \end{align*}
   \end{columns}
+
+  \bigskip
+  \textbf{Both signs flip:} \(-(x-3)\) is \(-x + 3\), never \(-x - 3\).
 \end{frame}
 
-% SECTION 2 — WHICH WAY
+% WE DO — SECTION 4: THE CRUX
 \begin{frame}[t, plain]
-  \plumheader{2. Question 1 --- Which Way Are the Outputs Going?}
+  \plumheader{Who Is Allowed In --- The Domain}
+  \sectionlabel[redacc]{Notes row DOMAIN --- the hinge of this lesson $\cdot$ I Do: 11 $\cdot$ We Do: 12--14}
 
-  \begin{block}{Definitions with teeth}
-    \(f\) is \textbf{increasing} on an interval when: whenever \(a < b\),
-    \(f(a) < f(b)\). \\[3pt]
-    \(f\) is \textbf{decreasing} on an interval when: whenever \(a < b\),
-    \(f(a) > f(b)\).
-  \end{block}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The overlap}
+        An input is allowed only if \textbf{both} parents accept it. The domain
+        of \(f+g\), \(f-g\) and \(fg\) is the \textbf{overlap} of the two
+        domains.
+      \end{block}
 
-  \smallskip
+    \column{0.48\textwidth}
+      \begin{block}{The extra rule for a quotient}
+        Also throw out every input with \(g(x) = 0\). You may never divide by
+        zero.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    {\large \(f(x) = \dfrac{1}{x-2}\), \ \(g(x) = x + 6\): \ domain of \(f+g\) is
+    all reals \textbf{except 2}}
+  \end{center}
+
+  \bigskip
+  \textit{Settle the domain from the original functions --- before you simplify
+  anything.}
+\end{frame}
+
+% WE DO — SECTION 4, CONT.: THE CASE WHERE THE TWO ANSWERS DISAGREE
+\begin{frame}[t, plain]
+  \plumheader{The Crux --- When Cancelling Lies}
+  \sectionlabel[redacc]{Notes row DOMAIN $\cdot$ problem 14 is the crux}
+
   \begin{columns}[T]
     \column{0.46\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=0.52cm, y=0.34cm]
-        \draw[linegray, very thin, step=1] (0,-3) grid (8,3);
-        \draw[->, thick] (0,-3.5) -- (0,3.7) node[above] {\small \(h(x)\)};
-        \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small \(x\)};
-        \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny] at (\x,0) {\x};
-        \foreach \y in {-3,-1,1,3} \node[left, font=\tiny] at (0,\y) {\y};
-        \draw[very thick, plum] (0,-2) -- (2,2);
-        \draw[very thick, plum] (2,2) -- (3,3);
-        \draw[very thick, plum] (3,3) -- (5,0);
-        \draw[very thick, plum] (5,0) -- (6,-3);
-        \draw[very thick, plum] (6,-3) -- (8,-1);
+      \begin{tikzpicture}[x=0.55cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (-1,0) grid (5,8);
+        \draw[->, thick] (-1,0) -- (5.5,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small \(y\)};
+        \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {2,4,6,8} \node[left] at (0,\y) {\small \y};
+        \draw[goldacc, very thick, dashed] (3,0) -- (3,7.6);
+        \draw[very thick, plum] (-1,2) -- (5,8);
+        \draw[very thick, plum, fill=white] (3,6) circle (2.8pt);
       \end{tikzpicture}
       \end{center}
 
-    \column{0.48\textwidth}
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Increasing on \(0 < x < 3\) and \(6 < x < 8\)
-        \item Decreasing on \(3 < x < 6\)
-      \end{itemize}
+    \column{0.50\textwidth}
+      \(f(x) = x^2 - 9\), \quad \(g(x) = x - 3\)
 
       \medskip
-      \begin{block}{Two traps}
-        Intervals are named with \textbf{inputs}, never outputs. \\[3pt]
-        Decreasing \(\ne\) negative: cocoa falling from \(90^\circ\) to
-        \(40^\circ\) is decreasing the whole way.
+      \[ \frac{f(x)}{g(x)} = \frac{(x-3)(x+3)}{x-3} = x + 3 \]
+
+      \medskip
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(x + 3\) looks defined \textbf{everywhere}
+        \item but \(g(3) = 0\), so the quotient \textbf{never had a value} at
+              \(x = 3\)
+        \item domain: all reals \textbf{except 3} --- the hole stays
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textbf{The domain comes from the ORIGINAL functions, never from the
+  simplified formula.}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- On Your Own}
+  \sectionlabel[redacc]{Notes row ON YOUR OWN $\cdot$ problems 15--18, alone, 13 minutes}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \setcounter{enumi}{14}
+        \item \(f(x) = 3x - 2\), \(g(x) = x + 7\). Find \((f+g)(x)\) and \((fg)(x)\).
+        \item Same \(f\) and \(g\): find \((f-g)(1)\) and \((g-f)(1)\).
+        \item \(p(x) = x^2 - 25\), \(q(x) = x - 5\). Simplify \(\left(\frac{p}{q}\right)(x)\),
+              then state its \textbf{domain}.
+      \end{enumerate}
+
+    \column{0.44\textwidth}
+      \begin{block}{18 --- the finisher}
+        A food truck sells \(x\) lunch plates a day, at most 60.
+        \[ R(x) = 9x \qquad C(x) = 4x + 120 \]
+        Write \(P(x) = (R - C)(x)\), find \(P(40)\), and state the domain of
+        \(P\) in this context.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 3 — CONCAVITY
+% DEBRIEF
 \begin{frame}[t, plain]
-  \plumheader{3. Question 2 --- How Is the Change Changing?}
-  \sectionlabel[redacc]{The Missing Word}
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
 
-  Both tanks fill for 6 minutes. Both end at 24 gallons. They do \textbf{not}
-  fill the same way --- compute the gains.
-
-  \medskip
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \textbf{Tank A}
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      \(t\) & 0 & 2 & 4 & 6 \\
-      \hline
-      \(A(t)\) & 0 & 14 & 20 & 24 \\
-      \hline
-      gain & --- & 14 & 6 & 4 \\
-      \hline
-      \end{tabular}
-
-      \smallskip
-      Gains \textbf{shrinking} \(\Rightarrow\) rate of change decreasing
-      \(\Rightarrow\) \textbf{concave down}.
-
+      \begin{block}{The operations}
+        Combining two functions is \textbf{arithmetic on the outputs}. Order
+        matters for \(-\) and \(\div\).
+      \end{block}
     \column{0.48\textwidth}
-      \textbf{Tank B}
-
-      \smallskip
-      \begin{tabular}{|c|c|c|c|c|}
-      \hline
-      \(t\) & 0 & 2 & 4 & 6 \\
-      \hline
-      \(B(t)\) & 0 & 4 & 10 & 24 \\
-      \hline
-      gain & --- & 4 & 6 & 14 \\
-      \hline
-      \end{tabular}
-
-      \smallskip
-      Gains \textbf{growing} \(\Rightarrow\) rate of change increasing
-      \(\Rightarrow\) \textbf{concave up}.
+      \begin{block}{The domain}
+        The \textbf{overlap} of both parents, minus every input where the bottom
+        function is \textbf{zero}.
+      \end{block}
   \end{columns}
 
   \bigskip
-  Both tanks are increasing the whole time. Concavity is a \textbf{second}
-  question --- and it is about the gains, not the outputs.
-\end{frame}
-
-% SECTION 4 — FOUR CORNERS
-\begin{frame}[t, plain]
-  \plumheader{4. The Four Corners}
-  \sectionlabel[redacc]{The Spine of This Lesson}
-
-  Two questions, two answers apiece --- \textbf{four} combinations, and all
-  four are real.
-
-  \medskip
   \begin{center}
-  \small
-  \renewcommand{\arraystretch}{1.4}
-  \begin{tabular}{|c|l|c|c|l|}
-  \hline
-  \textbf{Shape} & \textbf{The situation} & \textbf{Which way?} &
-  \textbf{Concave} & \textbf{Rate of change} \\
-  \hline
-  \minicurve{(0,0.2) (1,0.4) (2,0.9) (3,1.7) (4,2.9)} &
-  A rumor spreads at school & Increasing & up & increasing \\
-  \hline
-  \minicurve{(0,0.2) (1,1.4) (2,2.1) (3,2.6) (4,2.8)} &
-  A cold soda warms up & Increasing & down & decreasing \\
-  \hline
-  \minicurve{(0,2.8) (1,1.6) (2,0.9) (3,0.5) (4,0.3)} &
-  Hot cocoa cools down & Decreasing & up & increasing \\
-  \hline
-  \minicurve{(0,2.9) (1,2.7) (2,2.2) (3,1.4) (4,0.2)} &
-  A battery drains & Decreasing & down & decreasing \\
-  \hline
-  \end{tabular}
+    \textit{Simplifying can hide a forbidden input. It can never make it legal.}
   \end{center}
 
-  \medskip
-  The two middle columns are \textbf{independent}. ``Concave down'' does
-  \textbf{not} mean the function is falling --- look at row 2.
-\end{frame}
-
-% SECTION 5 — ZEROS
-\begin{frame}[t, plain]
-  \plumheader{5. Zeros --- Where the Output Is 0}
-
-  \begin{block}{Definition}
-    A \textbf{zero} of a function is an input whose output is \textbf{0}. On a
-    graph, the curve meets the horizontal axis there.
-  \end{block}
-
   \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \textbf{It is a \textit{solve} question.} (From 1.1.)
-
-      \smallskip
-      Finding a zero means solving \(h(x) = 0\) --- you are given the output
-      and asked for the input(s). There can be none, one, or many.
-
-      \medskip
-      From the graph in Part 2: zeros at \(x = 1\) and \(x = 5\).
-
-    \column{0.48\textwidth}
-      \begin{block}{A zero is an event}
-        Let \(D(t)\) be a drone's height in meters, \(t\) seconds after
-        takeoff. \\[4pt]
-        \(D(48) = 0\) means: forty-eight seconds after takeoff, the drone is
-        back on the ground.
-      \end{block}
-
-      \medskip
-      \textbf{Spiral:} that Part 2 graph has domain \(0 \le x \le 8\) and
-      range \(-3 \le y \le 3\).
-  \end{columns}
+  \textbf{Next time (1.3):} we stop feeding both machines the same input. The
+  output of one becomes the \textbf{input} of the next --- \(f(g(x))\).
 \end{frame}
 
-% CLASS PRACTICE
+% HOMEWORK LAUNCH
 \begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
 
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A snowbank melts. Depth \(S\), in inches, after \(d\) days:
-
-          \smallskip
-          \begin{tabular}{|c|c|c|c|c|}
-          \hline
-          \(d\) (days) & 0 & 1 & 2 & 3 \\
-          \hline
-          \(S(d)\) (in.) & 24 & 18 & 14 & 12 \\
-          \hline
-          \end{tabular}
-
-          \smallskip
-          \begin{enumerate}\setlength{\itemsep}{5pt}
-            \item Write the daily changes. Which way is \(S\) going? Which
-                  concavity?
-            \item Defend the concavity with the changes --- not the shape.
-          \end{enumerate}
-
-    \item Look back at the graph of \(h\). On which interval is \(h\)
-          decreasing? What are its zeros? What is \(h(2)\) --- and which of
-          those three was an \textit{evaluate} question?
-  \end{enumerate}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 5} now. On problem 5,
+          write the domain \textit{before} you look at the simplified form.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

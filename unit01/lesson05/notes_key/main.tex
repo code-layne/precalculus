@@ -1,4 +1,4 @@
-%! Composition of Functions — Unit 1, Lesson 1.5 — Guided Notes (ANSWER KEY)
+%! Transformations of Functions — Unit 1, Lesson 1.5 — Guided Notes (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -13,16 +13,14 @@
 \begin{objectivebox}
 By the end of this lesson, I will be able to\ldots
 \begin{enumerate}[itemsep=2pt]
-  \item Find the \ans{handoff} value in $f(g(x))$ --- the number the inner
-        function hands over --- and use it to evaluate the composite.
-  \item Build $(f \circ g)(x)$ by substituting $g(x)$ for \ans{every} $x$ in
-        $f(x)$, and explain why $f(g(x))$ and $g(f(x))$ are usually
-        \ans{different}.
-  \item Say why a composite has no value when the handoff is not something the
-        \ans{outer} function accepts.
-  \item \ans{Decompose} a function into an inner and an outer piece, and
-        recognize every ``inside'' change from Lesson 1.4 as a
-        \ans{composition}.
+  \item Sort a transformation rule into a change to the \ans{question} I hand
+        the parent function or a change to the \ans{answer} it hands back.
+  \item Describe a vertical translation, a vertical dilation, and a
+        \ans{reflection} from the numbers \textit{outside} the function.
+  \item Explain why a change \textit{inside} the parentheses moves the graph
+        in the \ans{opposite} direction.
+  \item Follow a \ans{landmark} point from the parent to the transformed graph,
+        and read off the new \ans{domain} and \ans{range}.
 \end{enumerate}
 \end{objectivebox}
 
@@ -32,174 +30,117 @@ By the end of this lesson, I will be able to\ldots
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Composition:}}\\[1pt]
-\ansline{Running two functions back to back. Written $(f \circ g)(x) = f(g(x))$, read ``$f$ of $g$ of $x$.''}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Inner and outer function:}}\\[1pt]
-\ansline{In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Handoff value:}}\\[1pt]
-\ansline{The number (or expression) the inner function hands over --- its answer, and the outer function's question.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Domain of a composite:}}\\[1pt]
-\ansline{The inputs $x$ that $g$ accepts \textit{and} whose handoff $g(x)$ is an input $f$ accepts.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Identity function:}}\\[1pt]
-\ansline{$I(x) = x$ --- the do-nothing function. $f(I(x)) = f(x)$ and $I(f(x)) = f(x)$.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Decomposition:}}\\[1pt]
-\ansline{Writing one function $h$ as $f(g(x))$ for simpler pieces --- composition run backwards.}
+\noindent\textbf{\textcolor{plum}{Parent function:}}\\[1pt]
+\ansline{The simplest function of a family --- the one every other graph in the family is built from.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Transformation:}}\\[1pt]
+\ansline{A rule that changes the question handed to a function, the answer it gives back, or both.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Translation:}}\\[1pt]
+\ansline{A slide with no resizing: $f(x)+k$ moves the graph vertically, $f(x+h)$ horizontally.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Dilation:}}\\[1pt]
+\ansline{A resize: $af(x)$ scales the outputs by $|a|$; $f(bx)$ scales the inputs by $1/|b|$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Reflection:}}\\[1pt]
+\ansline{A flip: $-f(x)$ flips the graph over the $x$-axis; $f(-x)$ flips it over the $y$-axis.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[18]
+\boxguard[20]
 \begin{hookbox}
-A \$60 jacket, a \$10 coupon, and 6\% sales tax.
+$D(t)$ is the water depth at North Harbor, in feet, $t$ hours after midnight.
+South Harbor rises and falls exactly the same way, and the harbormaster
+publishes its depth as
+\[
+  S(t) = D(t + 3).
+\]
 
 \smallskip
-You are at register 1, where the clerk scans the coupon first and the tax
-second. Your friend is at register 2, where the clerk scans the tax first and
-the coupon second. \textbf{Between the two scans, each register's little screen
-shows a number} --- and the two screens will not agree.
-
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$t$ (hours after midnight) & 0 & 3 & 6 & 9 & 12 \\
+\hline
+$D(t)$ (feet) & 4 & 8 & 12 & 8 & 4 \\
+\hline
+\end{tabular}
+\end{center}
 \smallskip
-Same jacket, same coupon, same tax rate. Will the two \textit{totals} agree?
-Commit to an answer before you compute anything.
-\ansline{Answers will vary --- most classes split, and most say ``same, it's the same two things.''}
-\ansline{They differ: coupon first is \$53.00, tax first is \$53.60. Sixty cents, from the same two rules.}
+
+The rule \textit{adds} three hours. Does South Harbor's high tide come
+\textbf{before} or \textbf{after} North Harbor's? Commit to an answer before
+you compute anything.
+\ansline{Answers will vary --- most say ``after,'' because the rule adds 3. It is before:}
+\ansline{$S(3) = D(6) = 12$, so South Harbor peaks at 3 a.m., three hours ahead of North Harbor.}
 \end{hookbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{1. The Handoff}
-A \textbf{composition} runs two functions back to back. We write it
-
-\begin{center}
-$(f \circ g)(x) = f\big(g(x)\big)$, \quad read ``$f$ of $g$ of $x$.''
-\end{center}
-
-The circle is \textit{not} multiplication. Here is the whole idea in one
-picture.
+\boxguard[24]
+\begin{notesbox}{1. The Question and the Answer}
+Every rule today is built out of one \textbf{parent function}. Ours is
+$f(x) = x^2$.
 
 \smallskip
 \begin{center}
-\begin{tikzpicture}[x=1cm, y=1cm]
-  \draw[thick, plum, fill=lilac, rounded corners=2pt]
-    (-0.8,-0.5) rectangle (0.8,0.5);
-  \node at (0,0) {\large $g$};
-  \draw[thick, plum, fill=lilac, rounded corners=2pt]
-    (4.2,-0.5) rectangle (5.8,0.5);
-  \node at (5,0) {\large $f$};
-  \draw[->, very thick, plum] (-2.4,0) -- (-0.9,0);
-  \node[above, font=\small] at (-1.65,0.08) {$x$};
-  \draw[->, very thick, goldacc] (0.9,0) -- (4.1,0);
-  \node[above, font=\small] at (2.5,0.10) {$g(x)$};
-  \draw[->, very thick, plum] (5.9,0) -- (7.9,0);
-  \node[above, font=\small] at (6.9,0.08) {$f(g(x))$};
-  \node[above, font=\small\itshape, text=slate] at (0,0.58) {runs first};
-  \node[above, font=\small\itshape, text=slate] at (5,0.58) {runs second};
-  \node[below, font=\scriptsize\bfseries, goldacc] at (2.5,-0.10) {THE HANDOFF};
-  \node[below, font=\scriptsize, text=slate, align=center]
-    at (2.5,-0.42) {$g$'s answer \textit{is} $f$'s question};
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+Using $f$ is a two-step transaction: you hand $f$ an input, and $f$ hands you
+back an output. So there are exactly two places a rule can interfere.
+
+\medskip
+\begin{center}
+\begin{tikzpicture}
+  \node[font=\large, anchor=west] (gq) at (0,0) {$g(x) \;=\;$};
+  \node[font=\large, goldacc, anchor=west] (a) at (gq.east) {$a$};
+  \node[font=\large, anchor=west] (mid) at (a.east) {$\cdot\, f($};
+  \node[font=\large, plum, anchor=west] (inner) at (mid.east) {$\,x + h\,$};
+  \node[font=\large, anchor=west] (close) at (inner.east) {$)$};
+  \node[font=\large, goldacc, anchor=west] (k) at (close.east) {$\;+\;k$};
+  \node[font=\scriptsize\bfseries, plum, align=center]
+    (ql) at ([yshift=-0.75cm]inner.south) {inside: the question you hand $f$};
+  \draw[thick, plum, ->] (ql.north) -- (inner.south);
+  \node[font=\scriptsize\bfseries, goldacc, align=center]
+    (al) at ([yshift=0.62cm]mid.north) {outside: the answer $f$ hands back};
+  \draw[thick, goldacc, ->] (al.west) to[out=180, in=105] (a.north);
+  \draw[thick, goldacc, ->] (al.east) to[out=0, in=80] (k.north);
 \end{tikzpicture}
 \end{center}
 
-\smallskip
-\begin{center}
-\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
-\textbf{The handoff.} In $f(g(x))$, the number $g$ hands back is the very
-number $f$ gets asked about. One number doing two jobs --- an \textbf{answer}
-first, then a \textbf{question}. Find it first, and \textbf{write it down}.
-\end{tcolorbox}
-\end{center}
-
-\smallskip
-Notice which letter runs first. In $f(g(x))$ the function written
-\textit{last} is the one that goes \textit{first} --- exactly like innermost
-parentheses in arithmetic.
+\medskip
+\begin{itemize}[itemsep=4pt]
+  \item A change to the \textbf{answer} is \ans{vertical} and does exactly what
+        it says.
+  \item A change to the \textbf{question} is \ans{horizontal}, and it runs
+        \ans{opposite} to what it looks like --- because you have to work out
+        what $x$ makes the question come out right.
+\end{itemize}
 
 \medskip
+Sort each rule before computing anything.
+
+\smallskip
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|c|c|c|}
 \hline
-\textbf{composite} & \textbf{runs first} & \textbf{runs second} \\
+\textbf{rule} & \textbf{question or answer?} & \textbf{horizontal or vertical?} \\
 \hline
-$(f \circ g)(x) = f(g(x))$ & \ans{$g$} & \ans{$f$} \\
+$g(x) = f(x) - 5$ & \ans{answer} & \ans{vertical} \\
 \hline
-$(g \circ f)(x) = g(f(x))$ & \ans{$f$} & \ans{$g$} \\
+$g(x) = f(x - 5)$ & \ans{question} & \ans{horizontal} \\
 \hline
-$f(f(x))$ & \ans{$f$} & \ans{$f$} \\
+$g(x) = 4f(x)$ & \ans{answer} & \ans{vertical} \\
 \hline
-\end{tabular}
-\end{center}
-
-\smallskip
-And one thing $(f \circ g)(x)$ does \textit{not} mean: \ans{$f(x) \cdot g(x)$}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[22]
-\begin{notesbox}{2. Finding the Handoff in a Table}
-A composition never needs a formula --- it needs two lookups. So a table is
-enough.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$f(x)$ & 3 & 4 & 0 & 2 & 1 \\
-\hline
-$g(x)$ & 2 & 3 & 7 & 0 & 4 \\
-\hline
-\end{tabular}
-\end{center}
-
-\medskip
-\textbf{Example 1.} Find $f(g(1))$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.4em]
-  \item The inner function runs first. The handoff is $g(1) = $ \ans{3}
-  \item Hand it over: $f($ \ans{3} $) = $ \ans{2}
-\end{enumerate}
-
-\medskip
-\textbf{Example 2.} Now swap the machines: find $g(f(1))$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=3pt, leftmargin=4.4em]
-  \item Now $f$ is inside, so the handoff is $f(1) = $ \ans{4}
-  \item Hand it over: $g($ \ans{4} $) = $ \ans{4}
-\end{enumerate}
-
-\smallskip
-Same two functions, same starting input, a different \ans{handoff} --- and so
-a different answer. Composition is \textbf{not commutative}: in general
-$f(g(x))$ \ans{$\ne$} $g(f(x))$.
-
-\medskip
-\textbf{Example 3 (a warning).} Try $f(g(2))$. The handoff is $g(2) = $
-\ans{7}. Now look for $f($ \ans{7} $)$ in the table --- it is
-\ans{not there}. A handoff only works if it is a question the \textbf{outer}
-function accepts, and that restriction is the \textbf{domain of a composite}.
-
-\medskip
-\textbf{Your turn.} Fill the handoff row all the way across \textit{before}
-you look up a single value of $f$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 3 & 4 \\
-\hline
-handoff: $g(x)$ & \ans{2} & \ans{3} & \ans{0}
-  & \ans{4} \\
-\hline
-$(f \circ g)(x) = f(g(x))$ & \ans{0} & \ans{2} & \ans{3}
-  & \ans{1} \\
+$g(x) = f(4x)$ & \ans{question} & \ans{horizontal} \\
 \hline
 \end{tabular}
 \end{center}
@@ -208,149 +149,248 @@ $(f \circ g)(x) = f(g(x))$ & \ans{0} & \ans{2} & \ans{3}
 \vspace{0.1in}
 
 \boxguard[20]
-\begin{notesbox}{3. Handing Over a Whole Expression}
-With formulas instead of a table, the handoff is no longer a number --- it is
-an \textbf{expression}. Nothing else changes.
-
-\begin{center}
-To build $f(g(x))$, substitute $g(x)$ for \textbf{every} $x$ in $f(x)$.
-\end{center}
-
-You already did this on the warm-up: with $f(x) = 3x - 2$, the handoff $x^2$
-turned $f(x^2)$ into $3x^2 - 2$. The only new part is the name.
-
-\medskip
-\textbf{Example 4.} Let $f(x) = 3x - 2$ and $g(x) = x^2 + 1$. Build both
-composites.
-
-\begin{work}
-  f(g(x)) &= f(x^2 + 1) \\
-          &= 3(x^2 + 1) - 2 \\
-          &= 3x^2 + 3 - 2 \\
-          &= 3x^2 + 1 \\
-  g(f(x)) &= g(3x - 2) \\
-          &= (3x - 2)^2 + 1 \\
-          &= 9x^2 - 12x + 4 + 1 \\
-          &= 9x^2 - 12x + 5
-\end{work}
-
-$(f \circ g)(x) = $ \ans{$3x^2 + 1$} \qquad $(g \circ f)(x) = $
-\ans{$9x^2 - 12x + 5$}
+\begin{notesbox}{2. Rewriting the Answer --- Vertical Moves}
+Whatever $f$ hands back, do something to it. The input column is never
+touched.
 
 \smallskip
-These are not even the same \textit{shape} of expression, which settles the
-question: order \ans{matters}.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-2$ & $-1$ & 0 & 1 & 2 \\
+\hline
+$f(x) = x^2$ & 4 & 1 & 0 & 1 & 4 \\
+\hline
+$f(x) + 3$ & \ans{7} & \ans{4} & \ans{3} & \ans{4} & \ans{7} \\
+\hline
+$2f(x)$ & \ans{8} & \ans{2} & \ans{0} & \ans{2} & \ans{8} \\
+\hline
+$-f(x)$ & \ans{$-4$} & \ans{$-1$} & \ans{0} & \ans{$-1$} & \ans{$-4$} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
 
-\medskip
-\textbf{Two routes, one number.} Check $f(g(2))$ both ways. Step by step: the
-handoff is $g(2) = $ \ans{5}, so $f($ \ans{5} $) = $
-\ans{13}. Straight from the formula: $3(2)^2 + 1 = $ \ans{13}. A
-composite value can come from a table, a graph, or an expression --- the
-number does not care which route you take.
+\begin{center}
+\begin{tikzpicture}[x=0.72cm, y=0.28cm]
+  \draw[linegray, very thin] (-3,-5) grid (3,8);
+  \draw[->, thick] (-3.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-5.6) -- (0,8.8) node[above, font=\small] {$y$};
+  \foreach \x in {-2,-1,1,2}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \foreach \y in {-4,4,8}
+    \node[left, font=\tiny, fill=white, inner sep=1pt] at (0,\y) {\y};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-2.2:2.2]
+    plot (\x, {\x*\x + 3});
+  \draw[thick, slate, dashed, smooth, samples=60, domain=-2.2:2.2]
+    plot (\x, {-\x*\x});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.7:2.7]
+    plot (\x, {\x*\x});
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-1.55,7.6) {$f(x)+3$};
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.75,7.6) {$f(x)$};
+  \node[font=\scriptsize, slate, fill=white, inner sep=1pt] at (1.7,-4.3) {$-f(x)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[itemsep=4pt]
+  \item $g(x) = f(x) + k$ is a \textbf{vertical translation}: every answer
+        gains $k$. If $k > 0$ the graph moves \ans{up}; if $k < 0$ it
+        moves \ans{down}.
+  \item $g(x) = af(x)$ is a \textbf{vertical dilation} by a factor of
+        \ans{$|a|$}: every answer is multiplied by $a$. If $|a| > 1$ the
+        graph is stretched away from the $x$-axis; if $0 < |a| < 1$ it is
+        \ans{compressed} toward it.
+  \item If $a < 0$ the dilation also carries a \textbf{reflection} over the
+        \ans{$x$}-axis. The case $a = -1$ is the flip on its own.
+  \item The questions were never touched, so the \ans{domain} does not change.
+        The \ans{range} does.
+\end{itemize}
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{4. Two Registers, Two Handoffs}
-Back to the jacket. Two functions act on the price $p$:
-
-\begin{center}
-\textbf{Coupon:} $c(p) = p - 10$ \qquad\qquad
-\textbf{Tax:} $t(x) = 1.06x$
-\end{center}
-
-Neither one alone answers ``what do I pay?'' --- chaining them does. That is
-what composition is \textit{for}: linking two quantities that no single
-formula connects.
+\boxguard[20]
+\begin{notesbox}{3. Rewriting the Question --- Horizontal Moves}
+Now the rule changes what you hand $f$ before $f$ ever goes to work.
 
 \medskip
-\textbf{Example 5.} The jacket costs \$60. Run both registers.
-
-\begin{work}
-  t(c(60)) &= t(50) \\
-           &= 1.06(50) \\
-           &= 53.00 \\
-  c(t(60)) &= c(63.60) \\
-           &= 63.60 - 10 \\
-           &= 53.60
-\end{work}
-
-Register 1's screen showed \$\ans{50} and it charged \$\ans{53.00}.
-Register 2's screen showed \$\ans{63.60} and it charged \$\ans{53.60}.
-
-\medskip
-\textbf{Why?} Build both rules symbolically and the gap stops being a
-coincidence.
-
-\begin{work}
-  t(c(p)) &= 1.06(p - 10) \\
-          &= 1.06p - 10.60 \\
-  c(t(p)) &= 1.06p - 10
-\end{work}
-
-The two rules differ by \$\ans{0.60} at \textit{every} price, because
-taxing first charges you 6\% of the \ans{\$10} you never actually paid.
+\textbf{(a) $g(x) = f(x + 3)$.} Fill each cell by first saying what gets handed
+to $f$.
 
 \smallskip
-Swap the machines and you swap the \ans{handoff} --- that is what ``order
-matters'' really means.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-5$ & $-4$ & $-3$ & $-2$ & $-1$ \\
+\hline
+handed to $f$: $x + 3$ & \ans{$-2$} & \ans{$-1$} & \ans{0} & \ans{1} & \ans{2} \\
+\hline
+$g(x) = f(x+3)$ & \ans{4} & \ans{1} & \ans{0} & \ans{1} & \ans{4} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+The output list is \ans{identical} to the parent's. Nothing happened to the
+answers at all --- only the \ans{addresses} where they appear.
+
+\medskip
+\textbf{Where did the vertex go?} The parent's vertex is the point where $f$
+was handed $0$. So $g$'s vertex sits at the $x$ that makes the question come
+out $0$:
+
+\begin{work}
+  x + 3 &= 0 \\
+      x &= -3
+\end{work}
+
+The graph moved \ans{left} 3 --- the direction the ``$+$'' does
+\textit{not} suggest. This is the harbor again: asking $S$ about 3 a.m.\ means
+asking $D$ about 6 a.m., so everything $D$ does, $S$ did three hours
+\ans{earlier}.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[x=0.60cm, y=0.34cm]
+  \draw[linegray, very thin] (-6,0) grid (3,7);
+  \draw[->, thick] (-6.5,0) -- (3.7,0) node[below right, font=\small] {$x$};
+  \draw[->, thick] (0,-0.6) -- (0,7.8) node[above, font=\small] {$y$};
+  \foreach \x in {-5,-4,-3,-2,-1,1,2}
+    \node[below, font=\tiny, fill=white, inner sep=1pt] at (\x,0) {\x};
+  \draw[thick, goldacc, dashed, smooth, samples=60, domain=-5.6:-0.4]
+    plot (\x, {(\x+3)*(\x+3)});
+  \draw[very thick, plum, smooth, samples=60, domain=-2.6:2.6]
+    plot (\x, {\x*\x});
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[goldacc] (-3,0) circle (2.2pt);
+  \draw[->, thick, charcoal] (-0.25,-1.5) -- (-2.75,-1.5);
+  \node[below, font=\scriptsize, charcoal] at (-1.5,-1.6) {3 left};
+  \node[font=\scriptsize, goldacc, fill=white, inner sep=1pt] at (-4.6,6.4) {$f(x+3)$};
+  \node[font=\scriptsize, plum, fill=white, inner sep=1pt] at (1.9,6.4) {$f(x)$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\textbf{(b) The rule.} $g(x) = f(x + h)$ is a \textbf{horizontal translation}
+by $-h$ units: $h > 0$ moves the graph \ans{left}, $h < 0$ moves it
+\ans{right}. Do not read the sign in front of the number --- solve for the
+input.
+
+\medskip
+\textbf{(c) $g(x) = f(2x)$.} To hand $f$ its $2$, you supply $x = $
+\ans{1} \; (you solved $2x = 6$ on the warm-up for the same reason).
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & $-1$ & $-0.5$ & 0 & $0.5$ & 1 \\
+\hline
+handed to $f$: $2x$ & \ans{$-2$} & \ans{$-1$} & \ans{0} & \ans{1} & \ans{2} \\
+\hline
+$g(x) = f(2x)$ & \ans{4} & \ans{1} & \ans{0} & \ans{1} & \ans{4} \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
+
+Every landmark arrives at \ans{half} the $x$ it used to. That is a
+\textbf{horizontal dilation} by a factor of \ans{$1/2$} --- a squeeze, not a
+stretch, even though the number is $2$. And $g(x) = f(-x)$ reflects over the
+\ans{$y$}-axis.
+
+\medskip
+The answers were never touched, so the \ans{range} does not change. The
+\ans{domain} does.
 \end{notesbox}
 
 \vspace{0.1in}
 
-\boxguard[26]
-\begin{notesbox}{5. Decomposition, the Identity, and Lesson 1.4}
-\textbf{Decomposition} is composition run backwards: given one function, name
-the handoff, and the two pieces fall out.
+\boxguard[16]
+\begin{notesbox}{4. Follow the Landmark}
+Combining moves needs no order of operations to memorize. Take any point
+$(p, q)$ on the parent and answer the two questions separately.
 
 \medskip
-\textbf{Example 6.} Decompose $h(x) = (5x - 1)^3$. Ask: with a calculator,
-what would you compute \textit{first}? That number is the handoff, so its rule
-is the inner function.
-
-\smallskip
-Inner: $g(x) = $ \ans{$5x - 1$} \qquad Outer: $f(u) = $ \ans{$u^3$}
-
-\smallskip
-Check by substituting back: $f(g(x)) = $ \ans{$(5x-1)^3$}
-
-\medskip
-\textbf{The identity function.} $I(x) = x$ hands back exactly what it is given,
-so the handoff is the number itself and nothing happens:
-
-\smallskip
-$I(f(x)) = $ \ans{$f(x)$} \qquad and \qquad $f(I(x)) = $ \ans{$f(x)$}
-
-\smallskip
-Hold on to this one --- next lesson hunts for a partner function that turns $f$
-into exactly $I$.
+\begin{center}
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, width=0.94\linewidth]
+\textbf{For $g(x) = a\,f(x + h) + k$, the parent's point $(p,\,q)$ lands at}
+\[
+  \bigl(\,p - h,\;\; a q + k\,\bigr).
+\]
+\textbf{New input:} solve $x + h = p$. \qquad
+\textbf{New output:} do to $q$ what the outside says.
+\end{tcolorbox}
+\end{center}
 
 \medskip
-\textbf{Lesson 1.4 was composition all along.} Every ``inside'' change you made
-last lesson handed $f$ something other than $x$ --- which is to say, it built
-a handoff.
+\textbf{Worked example.} $g(x) = -2f(x + 1) - 3$, with $f(x) = x^2$.
 
 \smallskip
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{0.96\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X c @{}}
+\begin{tabular}{|c|c|c|c|}
 \hline
-From Lesson 1.4 & Written as a composition & \textbf{the handoff} \\
+\textbf{parent point} $(p,q)$ & \textbf{new input} $p - 1$ & \textbf{new output} $-2q - 3$ & \textbf{lands at} \\
 \hline
-$g(x) = f(x+3)$ & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$x + 3$}
-  & \ans{$x+3$} \\
+$(-2,\,4)$ & \ans{$-3$} & \ans{$-11$} & \ans{$(-3,-11)$} \\
 \hline
-$g(x) = f(2x)$  & $g(x) = f(h(x))$ \quad where $h(x) = $ \ans{$2x$}
-  & \ans{$2x$} \\
+$(0,\,0)$ & \ans{$-1$} & \ans{$-3$} & \ans{$(-1,-3)$} \\
 \hline
-\end{tabularx}
+$(2,\,4)$ & \ans{1} & \ans{$-11$} & \ans{$(1,-11)$} \\
+\hline
+\end{tabular}
 \end{center}
-
 \smallskip
-Now the reversal has a reason instead of a slogan. The handoff is what $f$ gets
-\textit{asked}, so an inside change can only rewrite the \ans{question} ---
-never the answers $f$ hands back.
+
+\begin{itemize}[itemsep=4pt]
+  \item In words: left \ans{1}, stretched by \ans{2}, flipped over the
+        \ans{$x$}-axis, down \ans{3}.
+  \item The parent's vertex $(0,0)$ was its lowest point. On $g$ it is the
+        \ans{highest} point, because $a$ is \ans{negative}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\boxguard[14]
+\begin{notesbox}{5. The Two Columns Carry Domain and Range}
+The domain is a fact about the \ans{input} column; the range is a fact about
+the \ans{output} column. So a transformation moves whichever one it rewrites.
+
+\medskip
+Suppose $f$ has domain $[-2,\,4]$ and range $[0,\,9]$, and
+$g(x) = -2f(x + 1) - 3$.
+
+\medskip
+\textbf{Domain.} $g$ can only be asked about inputs whose question lands
+inside $f$'s domain:
+
+\begin{work}
+  -2 &\le x + 1 \le 4 \\
+  -3 &\le x \le 3
+\end{work}
+
+Domain of $g$: \ans{$[-3,\,3]$}
+
+\medskip
+\textbf{Range.} Every output $q$ of $f$ becomes $-2q - 3$:
+
+\begin{work}
+  -2(0) - 3 &= -3 \\
+  -2(9) - 3 &= -21
+\end{work}
+
+Range of $g$: \ans{$[-21,\,-3]$} \quad --- note the endpoints traded places, because
+multiplying by a \ans{negative} number reverses order.
+
+\medskip
+\textbf{Rule of thumb.} Changes to the \ans{question} move the domain. Changes to
+the \ans{answer} move the range.
 \end{notesbox}
 
 \vspace{0.1in}
@@ -358,28 +398,44 @@ never the answers $f$ hands back.
 \boxguard[16]
 \begin{practicebox}
 \begin{enumerate}[itemsep=8pt]
-  \item Use the table in section 2. Name the handoff first, every time.
+  \item A function $f$ is given by a table. Its peak is at $(2, 4)$.
+
+        \smallskip
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $x$ & 0 & 1 & 2 & 3 & 4 \\
+        \hline
+        $f(x)$ & 1 & 3 & 4 & 3 & 1 \\
+        \hline
+        $g(x) = f(x) + 2$ & \ans{3} & \ans{5} & \ans{6} & \ans{5} & \ans{3} \\
+        \hline
+        \end{tabular}
+        \smallskip
 
         \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $f(g(3))$: \; handoff $= $ \ans{0}, \;
-                so $f(g(3)) = $ \ans{3}
-          \item $g(f(3))$: \; handoff $= $ \ans{2}, \;
-                so $g(f(3)) = $ \ans{7}
+          \item Was that a change to the question or the answer?
+                \ans{the answer}
+          \item Let $h(x) = f(x - 2)$. Then $h(5) = f($ \ans{3} $) = $
+                \ans{3}.
+          \item $h$'s peak is at ( \ans{4} , \ans{4} ).
         \end{enumerate}
 
-  \item Let $f(x) = x^2$ and $g(x) = x - 4$. Build both composites and
-        simplify.
+  \item The lowest point on the graph of $f$ is $(3, -1)$, and the domain of
+        $f$ is $[1, 7]$. Let $g(x) = 4f(x - 2) + 5$.
 
-        \begin{work}
-          f(g(x)) &= f(x - 4) \\
-                  &= (x - 4)^2 \\
-                  &= x^2 - 8x + 16 \\
-          g(f(x)) &= g(x^2) \\
-                  &= x^2 - 4
-        \end{work}
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Follow the landmark.
 
-        $(f \circ g)(x) = $ \ans{$x^2 - 8x + 16$} \qquad
-        $(g \circ f)(x) = $ \ans{$x^2 - 4$}
+                \begin{work}
+                  \text{new input} &= 3 + 2 = 5 \\
+                  \text{new output} &= 4(-1) + 5 = 1
+                \end{work}
+
+                The lowest point of $g$ is ( \ans{5} , \ans{1} ).
+          \item Domain of $g$: \ans{$[3,\,9]$}
+          \item Which of the two moves changed the domain? \ans{the $x-2$}
+        \end{enumerate}
 \end{enumerate}
 \end{practicebox}
 

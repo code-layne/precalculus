@@ -1,4 +1,8 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Lesson Plan
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. REPLAN NOTE: transformations are now Lesson 1.5, AFTER
+% this lesson, so nothing here treats f(x+h) as prior knowledge — 1.5 appears only as a forward
+% promise. Inverse functions are now Lesson 1.4 (the old plan said 1.6); every cross-reference
+% has been renumbered. 1.2 (Function Operations) is the lesson immediately before this one.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,7 +12,7 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.3: Rates of Change}
+\newcommand{\LessonNumberName}{Lesson 1.3: Function Composition and Decomposition}
 
 \begin{document}
 \begin{center}
@@ -18,59 +22,84 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will read the average rate of change
-    over an interval as the one \textit{steady} rate that would have done the
-    same job; compute it from a formula, a table, or a graph, with units;
-    interpret its sign; recognize that it erases everything between the
-    endpoints and recover that detail by computing it over smaller intervals;
-    and use the resulting list of rates to identify linear and quadratic
-    behavior and to name concavity.
-    \hfill\textit{\small (CED Topics 1.2 \& 1.3 --- Skills 2.A, 3.A, 3.B, 3.C)}
+    \textbf{Primary Objective:} Students will read every composition $f(g(x))$
+    through the one number that sits between the two functions --- the
+    \textit{handoff}, which is the inner function's answer and the outer
+    function's question at once; evaluate composites from a table and from
+    formulas by naming that number first; build $(f \circ g)(x)$ by substituting
+    $g(x)$ for every $x$ in $f(x)$; explain non-commutativity and the domain of a
+    composite as facts about the handoff; and decompose a function into an outer
+    rule and an inner rule.
+    \hfill\textit{\small (CED Topic 2.7 --- Skills 1.C, 2.B)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class vote and discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the THE HANDOFF and FINDING IT rows: definitions, displays, problems 1 and 3. \\
+\textbf{We Do} --- guided     & 21 & Fill the notes together, every problem cold-called --- problems 2, 4--6, then the BUILDING IT and TWO HANDOFFS rows (7--14; the teacher works 7 and 11). \\
+\textbf{You Do} --- independent & 14 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 2 alone; the teacher reads problem 2 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{The whole release lives in the guided notes} --- there is no activity sheet to raid when
+the clock slips. Four ideas share the block (the handoff, tables, building, and both orders plus
+decomposition), so the guided phase runs 21 minutes. If you fall behind, cut \textbf{problem 10}
+(the second pair of formulas in the BUILDING IT row) first, then problem 14, and protect the
+\textbf{TWO HANDOFFS} row: problem 12 is the lesson, and homework problem 2 cannot be done
+without it. Never cut the Homework Launch to zero --- it is the only formative read of the period
+now that there is no exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{2.A} --- Identify information from graphical, numerical, analytical,
-or verbal representations to answer a question. &
+\textbf{AP Skill 1.C} --- Construct new functions, using compositions, that may be
+useful in modeling contexts, criteria, or data. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The average rate of change over an interval is the \textit{constant}
-        rate that yields the same change in output the function actually
-        produced there. (1.2.A.1)
-  \item In symbols, $\dfrac{f(b)-f(a)}{b-a}$: change in output over change in
-        input, read off a formula, a table, or a graph.
+  \item $(f \circ g)(x) = f(g(x))$: the outputs of $g$ become the inputs of $f$.
+        The number that changes hands --- the \textbf{handoff} --- is the whole
+        mechanism. (2.7.A.1)
+  \item Composition links two quantities no single formula connects; in context
+        the handoff is a real quantity with its own units. (2.7.B.1)
+  \item Because the handoff must be a value the outer function accepts, the
+        domain of a composite is restricted to those $x$ whose $g(x)$ lands in
+        $f$'s domain. (2.7.A.1)
 \end{itemize} \\
-\textbf{3.A} --- Describe the characteristics of a function using
-mathematical language and notation. &
+\textbf{AP Skill 2.B} --- Construct equivalent representations of functions and
+expressions. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A rate of change quantifies how two quantities vary together.
-        (1.2.B.1)
-  \item Positive: the quantities move the same way. Negative: as one
-        increases, the other decreases. (1.2.B.2--3)
-  \item Geometrically the AROC is the slope of the \textbf{secant line}
-        through $(a, f(a))$ and $(b, f(b))$ --- the stand-in's own graph.
-        (1.3.A.3)
+  \item A composite value can be found from a table, a graph, or an analytic
+        expression --- always by naming the handoff first, and all three routes
+        agree. (2.7.A.2)
+  \item Build $f(g(x))$ analytically by substituting $g(x)$ for \textit{every}
+        $x$ in $f(x)$; the handoff is now an expression, not a number. (2.7.B.2)
+  \item \textbf{Decomposition} is composition read backwards: name what you
+        would compute first, and that rule is the inner function. (2.7.C.1)
 \end{itemize} \\
-\textbf{3.B} --- Apply numerical results in a given applied context. &
+\textbf{The distinction the lesson is built on.} &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Every rate carries units: output units \textit{per} input unit.
-  \item Averaging over a whole interval discards what happened inside it;
-        averaging over small intervals near a point recovers the rate
-        \textit{at} that point. (1.2.A.2--3, exposure only)
-\end{itemize} \\
-\textbf{3.C} --- Support a conclusion with a logical rationale or
-appropriate data. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Linear: the AROC is the same over every interval, so the AROCs change
-        at a rate of zero. (1.3.A.1, 1.3.B.1)
-  \item Quadratic: the AROCs over consecutive equal-length intervals march by
-        a constant step --- they are themselves linear. (1.3.A.2, 1.3.B.2)
-  \item AROCs increasing $\Rightarrow$ concave up; AROCs decreasing
-        $\Rightarrow$ concave down --- the numerical version of 1.2's bending
-        language. (1.3.B.3)
+  \item Composition is \textbf{not} commutative: swapping the machines swaps the
+        handoff, so $f(g(x))$ and $g(f(x))$ are typically different functions.
+        (2.7.A.3)
+  \item \textbf{Target misconception:} students treat $f(g(x))$ and $g(f(x))$ as
+        the same thing and compose in whichever order is easier to write ---
+        ``same two rules, so same answer.'' Problem 12 of the notes runs one
+        input through both orders off one pair of functions and gets 8 and 14.
+  \item A near neighbour worth naming out loud: $(f \circ g)(x)$ is not
+        $f(x) \cdot g(x)$. That was last lesson's operation, and a product has no
+        handoff at all.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
@@ -78,251 +107,325 @@ appropriate data. &
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Average rate of change & Over $[a,b]$: \TallMath{\frac{f(b)-f(a)}{b-a}} --- the one constant rate that would carry the function from $(a,f(a))$ to $(b,f(b))$ over the same run. \\
-Secant line      & The straight line through two points of a graph. Its slope \textit{is} the average rate of change over that interval. \\
-Positive rate of change & As the input increases the output increases too --- the two quantities move the same way. \\
-Negative rate of change & As the input increases the output decreases --- the two quantities move opposite ways. \\
-Constant rate of change & The same average rate over every interval. This is exactly what makes a function linear; that number is its slope. \\
-Rate of change at a point & What the average rates over shorter and shorter intervals around the point close in on. Exposure only in this course. \\
+Composition            & Running two functions back to back. Written $(f \circ g)(x) = f(g(x))$ and read ``$f$ of $g$ of $x$.'' The circle is not multiplication. \\
+Inner and outer function & In $f(g(x))$, the \textit{inner} function $g$ runs first; the \textit{outer} function $f$ runs on its result. The letter written last runs first. \\
+Handoff value          & The number (or expression) the inner function passes over: its \textit{answer}, and immediately the outer function's \textit{question}. \\
+Domain of a composite  & The inputs $x$ that $g$ accepts \textit{and} whose handoff $g(x)$ is a value $f$ accepts. A handoff the outer function refuses gives no value. \\
+Decomposition          & Writing a single function $h$ as $f(g(x))$ for simpler pieces --- composition run backwards, done by naming the handoff. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: slope from two points --- the exact arithmetic today's
-    definition runs on, renamed; evaluating a function at two inputs with the
-    parentheses habit from 1.1, using the same $f(x) = x^2 + 3$ and the same
-    inputs 1 and 4 that open Part 2; and a 1.2 table read for direction and
-    for whether the changes are growing or shrinking. Nothing on the warm-up
-    is new --- every item is a piece of a Part 1 or Part 2 computation, handed
-    back one step at a time.
+    Skills reviewed: evaluating $f(x) = 3x - 2$ at a value and at a negative value
+    (1.1), and at an \textit{expression}, $f(x^2)$ --- which is exactly the
+    substitution Part 3 needs, done once before it has a name;
+    evaluating a piecewise function by deciding which rule owns the input (1.1);
+    adding and subtracting two functions from a table, $(f+g)(2)$ and $(f-g)(4)$
+    (1.2) --- the operation students will confuse with composition all period;
+    and reading a table \textit{backwards}, which is the habit Part 2 needs when a
+    handoff must be found as an input.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{Sixty steps, thirty seconds.} Project the two stair-climb tables
-    from the guided notes. Ravi and Mira both start at the bottom of the same
-    60-step stadium stairway and both reach the top exactly 30 seconds later.
-    Ravi sprints, fades, and trudges (40, then 15, then 5 steps per 10-second
-    split); Mira climbs steadily (20, 20, 20).
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{Two registers, one jacket.} A \$60 jacket, a \$10 coupon, 6\% sales
+    tax. Register 1 scans the coupon first, then the tax; register 2 scans the
+    tax first, then the coupon.
     \begin{enumerate}[itemsep=2pt]
-        \item Take a vote first: who climbed \textit{faster}? Do not let anyone
-              justify it yet.
-        \item Then compute the average for each --- both come out to exactly
-              \textbf{2 steps per second}. The number the class was reaching
-              for calls them identical.
+        \item Take a vote before any computing: same total, or different? Most
+              classes split, and most students argue ``same --- it's the same two
+              things.''
+        \item Then work both on the board, and \textbf{write the middle number on
+              the board too}: register 1's screen reads \$50 before it charges
+              \$53.00; register 2's screen reads \$63.60 before it charges
+              \$53.60.
     \end{enumerate}
-    \textit{Discussion prompt:} the average is not wrong and it is not lying.
-    It answers a narrower question than the class asked: \textit{what one
-    steady rate would have gotten the same person from the bottom to the top
-    in the same 30 seconds?} It is a \textbf{stand-in}, and a stand-in has no
-    opinion about the middle. Today: how to compute the stand-in, and what to
-    do when you want the middle back.
+    \textit{Discussion prompt:} the totals differ because the \textbf{middle
+    numbers} differ. That number on the little screen is today's whole idea: it
+    is what the first function answered, and it is what the second function gets
+    asked. Name it the \textbf{handoff} and keep the word all period.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: The Stand-In} (10 min)
+\textbf{I DO --- Part 1: The Handoff, and a Table} (10 min)
 
+\textit{Notes rows THE HANDOFF and FINDING IT: read each definition, mark up the
+display, work problems 1 and 3. Teacher works; students watch and annotate.
+Nothing is cold-called in this phase.}
 \begin{itemize}
-  \item Say the definition in words before symbols: the average rate of change
-        over $[a,b]$ is the one \textit{constant} rate that produces the same
-        change in output over the same change in input.
-  \item Then the formula, built from the climb: $60$ steps over $30$ seconds,
-        so $\text{AROC} = \frac{60-0}{30-0} = 2$ steps per second --- for both
-        climbers. Write $\frac{f(b)-f(a)}{b-a}$ underneath and match the pieces.
-  \item Name what it costs: the stand-in is pinned only at the two endpoints.
-        Everything between them is deliberately thrown away.
+  \item Read the notation once and insist on it: $(f \circ g)(x) = f(g(x))$, read
+        ``$f$ of $g$ of $x$.'' Say out loud what it is \emph{not} --- the circle
+        is not multiplication, and $f(x)\cdot g(x)$ was last lesson.
+  \item Mark up the two-machine display yourself. Trace the gold arrow with a
+        finger and label it twice: ``$E$'s answer'' above, ``$T$'s question''
+        below. Fill the two label boxes --- \textit{feet}, \textit{question}.
+  \item The spine, repeated verbatim all period: \textbf{one number, two jobs ---
+        an answer first, then a question. Find it, and write it down.}
+  \item Work \textbf{problem 1} aloud on the cable car: the handoff is
+        $E(4) = 800$ \emph{feet}, and only then $T(800) = 60$ degrees. Say the
+        units; they are why the order cannot be reversed.
+  \item Read the FINDING IT sentences, then work \textbf{problem 3} in two
+        recorded steps --- handoff $g(1) = 3$, then $f(3) = 2$. Never skip the
+        first step, even though you can do it in your head.
 \end{itemize}
 
-\textbf{Part 2: Computing It Three Ways} (14 min)
+\textbf{WE DO --- Part 2: Both Orders in a Table} (6 min)
 
+\textit{Problems 2 and 4--6, and the handoff row of the small table. Class fills
+the blanks together; cold-call every one.}
 \begin{itemize}
-  \item \textbf{From a formula:} $f(x) = x^2 + 3$ on $[1,4]$. The warm-up
-        already produced $f(1)=4$ and $f(4)=19$; the AROC is $15/3 = 5$.
-  \item \textbf{From a table:} the morning-temperature table. AROCs over
-        $[0,2]$, $[2,4]$, $[6,8]$ come out $3$, $5$, $-1$ $^\circ$F per hour.
-        Ask which stretch warmed fastest and how they know.
-  \item \textbf{From a graph:} the pre-drawn graph of $g$ with its two dashed
-        secant lines. Read the endpoints, compute $+1$ and $-1$, then say the
-        punch line: the AROC \textit{is} the slope of that dashed line.
-  \item Subtraction order, out loud: outputs on top in the same order as the
-        inputs on the bottom.
+  \item Make the class fill the \textbf{handoff row} all the way across before
+        anyone looks up a single value of $f$. That row is the habit.
+  \item \textbf{Problem 4} is problem 3 with the machines swapped: handoff 4,
+        answer 4. Ask what changed --- the handoff, before anything else did.
+  \item \textbf{Problem 5} is the domain of a composite at exposure depth: the
+        handoff is 7 and the table has no $f(7)$, so there is no value. No
+        interval algebra today.
+  \item \textbf{Problem 2} lands the language: $E$ runs first, and
+        $(T \circ E)(t)$ does not mean $T(t)\cdot E(t)$.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: What the Sign Says} (7 min)
+\textbf{WE DO --- Part 3: Building the Composite} (7 min)
 
+\textit{Notes row BUILDING IT. Class fills the blanks together; cold-call every
+one. Teacher works problem 7; the class works 8--10.}
 \begin{itemize}
-  \item Positive: the two quantities move together. Negative: they move
-        opposite ways. Insist on units in every spoken answer from here on ---
-        ``three \textit{what} per \textit{what}?''
-  \item Zero is the interesting one: a hiker who ends at the elevation she
-        started at has AROC $0$ for the afternoon. The stand-in stands still;
-        the hiker did not. This is Part 1's cost made visible.
+  \item One sentence of method, then the steps: write $f$ with an empty slot, put
+        $g(x)$ in \emph{every} slot, simplify. Say ``every,'' and have students
+        circle each $x$ before replacing anything.
+  \item Point back at the warm-up: they already substituted $x^2$ into
+        $3x - 2$. The only new thing is that the substituted expression has a
+        name --- it is the handoff.
+  \item \textbf{Problem 8} produces $9x^2 - 12x + 5$ against problem 7's
+        $3x^2 + 1$: not even the same \emph{shape}. That is the algebraic form of
+        the hook.
+  \item \textbf{Problem 9} is the ``two routes, one number'' check: handoff 5,
+        then $f(5) = 13$; or straight from $3x^2+1$. Same 13 either way.
 \end{itemize}
 
-\textbf{Part 4: Chop It Finer} (10 min)
+\textbf{WE DO --- Part 4: Two Handoffs, and Taking One Apart} (8 min)
 
+\textit{Notes row TWO HANDOFFS --- the spine of the lesson. Class fills the
+blanks together; cold-call every one. Teacher works problem 11; the class works
+12--14.}
 \begin{itemize}
-  \item Return to Ravi and Mira and compute the AROC of each 10-second split:
-        Ravi $4$, $1.5$, $0.5$; Mira $2$, $2$, $2$. The vote is settled ---
-        with smaller intervals the story comes back.
-  \item Ravi's rates are \textit{shrinking}; in 1.2 language his climb is
-        concave down. Mira's never change at all. Same tool, finer grain.
+  \item Mark up the register display before any algebra: two rows, same \$60 in,
+        two boxed middle numbers, two different totals. Fill the label boxes ---
+        \$0.60, and \textit{handoffs} --- then give one minute for the ``in your
+        own words'' line.
+  \item Work \textbf{problem 11}: $1.06p - 10.60$ against $1.06p - 10$. The gap
+        is \$0.60 at \emph{every} price, because taxing first taxes the ten
+        dollars you never paid.
+  \item \textbf{Problem 12 is the crux}: one input, 10, through both orders of
+        the same pair --- handoff 4 gives 8, handoff 20 gives 14. Ask for the two
+        handoffs before either answer.
+  \item Read the decomposition paragraph, then \textbf{problem 13}: what would a
+        calculator do first in $\sqrt{x+5}$? That rule is the inner function.
+        Make them substitute back. \textbf{Problem 14} asks for the
+        misconception in prose.
 \end{itemize}
 
-\textbf{Part 5: The Pattern Names the Function} (12 min)
+\textbf{YOU DO --- Part 5: The You Do Row} (14 min)
 
+\textit{Notes row TABLE \& FORMULAS, problems 15--18 --- the whole independent
+phase. Students work alone; circulate and say nothing a neighbor could say
+instead.}
 \begin{itemize}
-  \item $f(x) = 2x+1$ over the four unit intervals from $0$ to $4$: AROCs
-        $2,2,2,2$. Constant AROC \textit{is} what linear means, and that
-        number is the slope.
-  \item $g(x) = x^2$ over the same intervals: $1, 3, 5, 7$ --- not constant,
-        but climbing by exactly $2$ every time. A quadratic's rates are
-        themselves linear.
-  \item Close the loop with 1.2: rates increasing $\Rightarrow$ concave up;
-        rates decreasing $\Rightarrow$ concave down. Yesterday's ``the gains
-        are shrinking'' now has a computation under it.
+  \item \textbf{Problem 15} is the crux transferred to a table: $p(q(2)) = 5$ but
+        $q(p(2)) = 2$, with no formula to hide behind.
+  \item \textbf{Problem 16} builds both orders for $x+3$ and $x^2$ ---
+        $x^2 + 3$ against $x^2 + 6x + 9$; \textbf{17} checks one value of it two
+        ways, at a negative input.
+  \item \textbf{Problem 18} is the finisher's question: decompose $(2x+1)^3$,
+        say which rule runs first, and evaluate at $x = 1$. Naming the order is
+        the part that is hard, and homework problem 8 asks it again.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on the guided notes and practice, circulate and check:
+Circulate during the \textbf{You Do} phase --- the fourteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 12} ($f(g(10)) = 8$ but
+$g(f(10)) = 14$); its You Do transfer is \textbf{problem 15} (the same clash, read off a table).
 \begin{itemize}
-  \item \textbf{Common error:} subtraction order flipped on one floor of the
-        fraction --- $f(a)-f(b)$ over $b-a$. Cold-call: ``Which output did you
-        write first? Then which input has to go first?''
-  \item \textbf{Common error:} reporting the net change as the rate. Ask:
-        ``Per what? Where did the dividing go?''
-  \item \textbf{Common error:} reading a negative AROC as ``slower'' or as
-        ``no change.'' Push: ``Negative reports \textit{direction}. Which
-        quantity is falling?''
-  \item \textbf{Spine check:} when a student gets AROC $=0$ on the hiker and
-        writes ``nothing happened,'' stop the group. That sentence is the
-        misconception the whole lesson is built to break.
-  \item \textbf{Units:} an answer without units is unfinished, every time.
+  \item \textbf{Common error (the crux):} composing in whichever order is easier to write, on
+        the theory that the same two rules must give the same answer. Cold-call: ``Which function
+        is inside? What number does it hand over? Now say the other one's handoff.''
+  \item \textbf{Common error:} no handoff written down at all. Chase this hardest --- a student
+        who does $p(q(2))$ in their head has no place to be wrong out loud and no place for you
+        to catch it. Ask for the middle number before the answer, every time.
+  \item \textbf{Common error:} reading $(f \circ g)(x)$ as $f(x) \cdot g(x)$ --- last lesson's
+        operation. Ask where the handoff is; there isn't one in a product, and that ends it.
+  \item \textbf{Common error:} running the outer function first --- computing $p(2)$ when the
+        problem says $p(q(2))$. Point at the parentheses: innermost first, like any arithmetic.
+  \item \textbf{Common error:} substituting into only the first $x$, so $f(x) = 3x - 2$ becomes
+        $3(x^2+1) - 2x$. Have them circle every $x$ before replacing anything.
+  \item \textbf{Common error:} decomposing backwards --- calling $f(u) = 2u + 1$ the outer
+        function of $(2x+1)^3$. Make them substitute back; they built $2x^3 + 1$ instead.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Rocket Club Launch} in
-leveled tiers. Every tier reads the same table and the same pre-drawn
-parabola --- no tier draws anything.
+\begin{skillbox}[Differentiation --- During You Do (14 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18) alone
+while you circulate. Differentiate by \textit{where you stand}, not by handing out different
+paper.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Read two heights off the table, compute
-        the AROC over $[0,1]$ and over $[4,5]$ into labeled blanks
-        ($80$ and $-48$ ft per second), and say which second of the climb was
-        faster.
-  \item \textbf{Tier A (Apply):} Fill the whole one-second AROC row
-        ($80, 48, 16, -16, -48, -80$), interpret the $-16$ in a sentence with
-        units, notice the constant $-32$ step from one rate to the next and
-        name the function type, then confront AROC $=0$ over $[0,6]$ --- true,
-        and it erases a 144-foot flight.
-  \item \textbf{Tier E (Extend):} Given AROCs over $[1,2]$, $[1,1.5]$,
-        $[1,1.1]$, $[1,1.01]$ ($48, 56, 62.4, 63.84$), say what number they
-        are closing in on and what it measures (CED 1.2.A.2, exposure only);
-        locate the instant the rate is zero; and decide whether \textit{time}
-        is a function of \textit{height} --- a 1.1 spiral.
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and make them
+        write the two handoffs in a column before either answer --- $q(2) = 1$ over $p(2) = 3$.
+        Seen side by side the two middle numbers do the arguing themselves; a student who writes
+        only the answers has nothing to compare.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} are what the class should clear unaided.
+        Do not answer 17: have them say which number the inner function handed over, then check
+        it against their own rule from 16. Two routes, one number --- then walk away.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question, and the hard half is
+        naming which rule runs \textit{first}, not producing the split. A student who finishes
+        early gets one more: ``find a function $g$ so that $f(g(x)) = x$ for $f(x) = 5x - 2$'' ---
+        anyone who produces $\dfrac{x+2}{5}$ has invented an inverse a day early and should
+        present it in the Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item Compute the AROC of $f(x) = x^2 + 1$ over $[1,3]$, with work space.
-  \item From a hiker's elevation table that ends where it started: report the
-        AROC over the whole afternoon ($0$ ft per hour), then say in one
-        sentence what that $0$ hides --- and back it up with the AROC over the
-        first hour.
-  \item From two lists of AROCs over equal steps ($6,6,6,6$ versus
-        $1,4,7,10$): name the linear one and the concavity of the other.
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: both handoffs, then both answers. Problem 16: the two rules side by side.
+        Problem 17: the value, and which route the student took. Problem 18: the split, and which
+        rule runs first. If a student found a $g$ with $f(g(x)) = x$ during the extension, they
+        present it here --- it is the on-ramp to 1.4 and the only preview the rest of the class
+        gets.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{one number sits between the two machines --- the inner function's answer and the
+        outer function's question. Swap the machines and you swap the handoff.} Point at the two
+        boxed middle numbers on the register display while you say it.
+  \item \textbf{Point forward} (1 min) --- 1.4 hunts for the function that \emph{undoes} another,
+        and the test for it is a composition run in both directions. Mention, without teaching
+        it, that in 1.5 a horizontal shift will turn out to be a composition too.
 \end{enumerate}
-\textbf{Assessment note:} item 2 is the lesson. A student who writes
-``nothing happened'' or leaves the justification blank has the arithmetic and
-not the idea, and should be first in the 1.4 warm-up window. Item 3 needs no
-arithmetic at all --- a miss there is conceptual, not a slip.
+\textbf{Do not} re-teach the substitution method here, take new questions, or let the homework
+start early. If the launch shows it did not land, it is the 1.4 warm-up's job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework row,
+then start \textbf{homework problems 1 and 2} alone and in silence (3 minutes). Circulate straight
+to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1(a) and 1(b)} are the habit: a handoff blank filled before an answer
+        blank. A student who fills only the answers has not formed it.
+  \item \textbf{Problem 2 is the diagnostic}: the same pair of rules, the single input 8, both
+        orders --- handoff 3 gives 12, handoff 32 gives 27. Two matching answers in 2(a) and 2(b)
+        means the student ran the same machine twice; a correct pair of answers with both handoff
+        blanks empty is a different diagnosis, and only the first needs the crux retaught.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{order solid} (nothing to do),
+\textit{order shaky} (a 1.4 warm-up item running one input through both orders), and \textit{still
+multiplying $f$ by $g$} (a one-minute check-in at the door of 1.4).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems --- AROC from a formula over two intervals with
-opposite signs, AROC from a population table with a fastest-decade comparison
-and units, a graph read with two pre-drawn secant lines plus a sign
-interpretation, an AROC-pattern table that classifies two functions and names
-a concavity, and one AP-style multiple-choice AROC item.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the teacher
+sets. Every context is new. \textit{Part A} (1--3) works handoffs off a table, including one
+composite with no value (1c) and the \textbf{diagnostic}, problem 2. \textit{Part B} (4--5) builds
+both composites for two pairs of formulas and checks one value two ways. \textit{Part C} (6--7) is
+composition in context: a step counter chained to a calorie rule, and an ounces-to-pounds
+conversion chained to a price, where the reversed order has the wrong \emph{units}. \textit{Part
+D} (8--10) decomposes two functions and checks by substituting back, meets a pair that undoes
+itself (9 --- the on-ramp to 1.4), and problem 10 asks for the headline in writing.
 
-\textbf{Extension (optional):} For $f(x) = x^2$, the AROCs over $[3, 3.5]$,
-$[3, 3.1]$, and $[3, 3.01]$ (values supplied) run $6.5$, $6.1$, $6.01$.
-Students name what they are closing in on and what it would measure --- the
-first informal look at the quantity calculus makes exact.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items (four options) whose distractors are the lesson's
+errors: composing in the wrong order (1A, 2C, 3A, 5C), multiplying $f(x)g(x)$ instead of composing
+(1B, 2D, 3C, 5D), stopping at the handoff and reporting it as the answer (1D, 2A, 5A), and
+decomposing backwards (4B). Section II is one free-response question on a wind farm given by two
+tables: the handoff with units and an interpretation (a), why the reversed order is meaningless
+(b), two inputs sharing one handoff (c), a handoff the outer function will not accept (d), and a
+three-function chain (e) --- the finisher's question.
 
-\textbf{Preview:} Next lesson (1.4, Transformations of Functions) leaves rates
-for shapes: what shifting, flipping, and stretching a graph does, and how the
-formula records each move.
+\textbf{Preview:} Next lesson (1.4, Inverse Functions) answers the question the You Do extension
+raises: which function \emph{undoes} $f$? The test is a composition run in both directions,
+$f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$, so today's habit of naming the handoff is exactly the
+tool. Later, 1.5 will reveal a horizontal shift to be a composition as well --- do not mention
+that as something already taught.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 1 is load-bearing: its slope
-computation returns twenty minutes later renamed as the average rate of
-change, so a student who fumbles the subtraction order here will fumble it all
-period --- note names as you circulate. Item 2 hands back $f(1)$ and $f(4)$
-for $f(x)=x^2+3$; Part 2 picks those two values up untouched, so students see
-the AROC assembled from work they already did. Item 3 is the 1.2 read
-(decreasing, changes shrinking in size, concave up) that Part 4 converts from
-words into numbers.
+Five minutes, silent start, no calculators. Item 1(b) is the payoff: substituting $x^2$ into
+$f(x) = 3x - 2$ is a routine algebra question here and the entire mechanic of Part 3 --- when you
+get there, say out loud that they already did it, and that the thing they substituted was the
+handoff. Item 1(a) is not filler either: $f(5) = 13$ is the exact number Part 3 lands on when it
+checks a value two ways, and students who recognize it get the ``two routes, one number'' point
+for free. Item 2 keeps 1.1's piecewise decision warm. Item 3(a) is the one to watch: $(f+g)(2)$ is
+last lesson's operation, and it is the thing students will confuse with composition within twenty
+minutes --- do it here so the contrast is available later. Item 3(b) reads the table backwards,
+which is the habit Part 2 needs when a handoff has to be found as an \textit{input}.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Take the hook vote before any computing --- if the class does not commit to an
-answer first, the average coming out equal for both climbers lands as an
-arithmetic fact instead of a provocation. Say ``stand-in'' every time you say
-``average rate of change'' for the first twenty minutes; the phrase is doing
-the conceptual work all period, and it is what makes Part 3's zero and the
-activity's hinge feel inevitable rather than paradoxical. In Part 2 do the
-three representations in the printed order and stop at the graph long enough
-to point at the dashed line and say it \textit{is} the answer. Part 5 is the
-absorbed Topic 1.3 material at exposure depth: the target is the pattern
-($2,2,2,2$ against $1,3,5,7$) and the concavity link, not second-difference
-drill. If time runs short, fold Part 3 into the Part 2 table discussion --- do
-not cut Part 4, which is what makes Part 5 make sense.
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first problem
+of the grid (1, 3, 7, 11), and the class works the rest with the pen in their hand, every problem
+cold-called.
+
+The single most valuable thing you can enforce today is \textbf{writing the handoff down}, and the
+notes are built to make that unavoidable: the two-step wording in the FINDING IT row, the
+handoff row of the small table that must be filled all the way across before a single value of $f$
+is looked up, and the two boxed middle numbers in the register display. Do not let a student skip
+the first step because they can do it in their head --- the habit, not the arithmetic, is what
+carries into 1.4 and into Unit 4.
+
+TWO HANDOFFS is the spine. Do the display before the algebra: the same \$60 entering two rows and
+leaving as two different totals, with the two handoffs boxed on the dashed line, is the
+misconception drawn. Then problem 12 asks for the two handoffs before either answer: 4 and 20,
+which is \emph{why} 8 and 14. Do not accept ``order matters'' as a slogan; make them name the
+middle numbers. Problem 13 turns the same idea around into decomposition, and problem 14 asks for
+it in prose.
+
+Domain of a composite stays at exposure depth --- the table value $f(g(2))$ with no answer is
+enough, and no student needs interval algebra today. The You Do row (15--18) is the entire
+independent phase and carries fourteen minutes, so treat it as the lesson's third act. If the
+clock slips, cut problem 10 and let the Debrief carry it.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-All three tiers read the same table and parabola, so groups can be re-formed
-mid-period with no new setup. Require Tier R to say answers aloud with units
-(``eighty feet per second''); the negative in item 3 is the first signed rate
-most of them will have interpreted. Tier A item 4 is the hinge of the whole
-lesson --- the rocket climbed 144 feet and came back, and the average over the
-full flight reports zero. Give it a whole-class share in the closing minutes
-even if no other tier work gets aired. Tier E's shrinking-interval table
-previews the rate at a point: keep it informal (``these are closing in on
-64''), and do not introduce the word \textit{limit} unless a student says it
-first.
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are genuinely at risk --- the guided phase runs 21 minutes
+and will try to borrow them. Borrow from problem 10 instead; it is the one piece of the period
+that is a second example rather than a new idea. Do not borrow from the three-minute Homework
+Launch either: with no exit ticket, it is the last look you get before the work leaves the room.
+The share-out is one answer per You Do problem so that a student who stalled on 15 still hears the
+decomposition result in 18 --- the exact shape of homework problem 8, which they will otherwise
+meet alone at home. Say the headline yourself first and make the class say it back; the sentence
+they need is about the middle number, not about order.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Read item 2 first --- it is the fastest
-scan and the sharpest diagnostic. A correct $0$ with an empty or hand-waving
-sentence is the miss that matters; the sentence has to name what the average
-threw away and cite the $+500$ ft per hour first-hour rate as evidence. Item 1
-is arithmetic and should be near-universal; if it is not, the subtraction
-order is the culprit, not the concept. On item 3 accept ``bends upward'' for
-``concave up'' --- the point is that they classified from a list of rates with
-no graph in front of them.
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Score it however extra credit works in your gradebook; the cover gives it a $+$ cell
+outside the total. Multiple-choice answers are \textbf{C, B, D, A, B}. Item 2 is the most useful
+one to glance at: (C) is the wrong order, (A) is the handoff reported as the answer, and (D) is
+$f(3) \cdot g(3)$ --- three different diagnoses on one line, and any of them means the crux did not
+land. In the free response, part (b) is the units argument and part (d) is the domain of a
+composite; both should be written in context. Part (c) is the subtle one --- two different times
+produce the same handoff, so they must produce the same power; credit any answer that says so.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 1 is deliberately two intervals of opposite sign on the same function,
-so a student cannot pattern-match one answer onto the other. Problem 5 is the
-AP-style item: distractor A is the net change with the dividing dropped,
-distractor C uses the table's outer endpoints instead of the named interval,
-and distractor D is the subtraction order reversed --- all three are worth two
-minutes of autopsy tomorrow, since each names a specific error from Active
-Monitoring. The extension is the only rate-at-a-point item outside Tier E; if
-the class never reached that discussion, assign it explicitly and open the 1.4
-warm-up window with a student's answer.
+Graded, two pages, due on the date you set; students start problems 1 and 2 in the Homework Launch.
+Grade problems 2 and 10 for accuracy and the rest for completion and shown work if time is short:
+2 (both orders off one input) and 10 (the headline in writing) are the two items that say whether
+the crux landed, and together they predict 1.4 better than the building items do. Problem 1(c) is
+the only place the domain of a composite is written in prose --- scan it alongside 7(b), which asks
+the same question with units instead of a table. Problem 9 is the on-ramp to 1.4: a student who
+notices that both composites come out to $x$ has met the inverse relationship before it has a name,
+and their answer is the best possible opening for tomorrow. On problem 8, a student who writes
+inner $u^5$ and outer $4x-1$ has decomposed backwards; have them substitute back and watch it
+rebuild the wrong function.
 \end{teachernote}
 \end{document}

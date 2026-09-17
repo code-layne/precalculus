@@ -1,4 +1,4 @@
-%! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Lesson Plan
+%! Rates of Change — Unit 1, Lesson 1.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,7 +8,7 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.7: Function Model Selection and Construction}
+\newcommand{\LessonNumberName}{Lesson 1.7: Rates of Change}
 
 \begin{document}
 \begin{center}
@@ -18,13 +18,14 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Given a situation rather than a function,
-    students will \textbf{name which quantity is the question}, choose a model
-    type for it --- from differences in a table or from shape clues in the
-    context --- \textbf{build} the model by letting a constraint force the other
-    quantities to answer to that question, and state the domain, the units, and
-    the assumption the model rests on.
-    \hfill\textit{\small (CED Topics 1.13 \& 1.14 --- Skills 2.A, 3.C, 1.C, 3.B)}
+    \textbf{Primary Objective:} Students will read the average rate of change
+    over an interval as the one \textit{steady} rate that would have done the
+    same job; compute it from a formula, a table, or a graph, with units;
+    interpret its sign; recognize that it erases everything between the
+    endpoints and recover that detail by computing it over smaller intervals;
+    and use the resulting list of rates to identify linear and quadratic
+    behavior and to name concavity.
+    \hfill\textit{\small (CED Topics 1.2 \& 1.3 --- Skills 2.A, 3.A, 3.B, 3.C)}
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -33,363 +34,295 @@
 \textbf{AP Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{2.A} --- Identify information from graphical, numerical, analytical, and
-verbal representations to answer a question or construct a model. \newline
-\textbf{3.C} --- Support conclusions or choices with a logical rationale. &
+\textbf{2.A} --- Identify information from graphical, numerical, analytical,
+or verbal representations to answer a question. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{The spine.} A situation has several quantities; a function
-        accepts one question. Modeling begins by deciding which quantity is
-        the \textbf{question}.
-  \item A table has already decided --- the top row is the question. Over
-        \textbf{equally spaced} inputs: constant first differences $\Rightarrow$
-        linear; constant second $\Rightarrow$ quadratic; constant $n$th
-        $\Rightarrow$ degree $n$. (1.13.A.1--A.5)
-  \item Equal spacing is not a rule to memorize: a difference compares answers
-        across \textbf{one step of the question}, so the steps must match.
-  \item A degree-$n$ polynomial fits any $n+1$ points with distinct inputs, so
-        ``it fits the data'' is not a rationale. (1.13.A.6)
+  \item The average rate of change over an interval is the \textit{constant}
+        rate that yields the same change in output the function actually
+        produced there. (1.2.A.1)
+  \item In symbols, $\dfrac{f(b)-f(a)}{b-a}$: change in output over change in
+        input, read off a formula, a table, or a graph.
 \end{itemize} \\
-\textbf{1.C} --- Construct a new function from a context, a transformation, or a
-regression. \newline
+\textbf{3.A} --- Describe the characteristics of a function using
+mathematical language and notation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A rate of change quantifies how two quantities vary together.
+        (1.2.B.1)
+  \item Positive: the quantities move the same way. Negative: as one
+        increases, the other decreases. (1.2.B.2--3)
+  \item Geometrically the AROC is the slope of the \textbf{secant line}
+        through $(a, f(a))$ and $(b, f(b))$ --- the stand-in's own graph.
+        (1.3.A.3)
+\end{itemize} \\
 \textbf{3.B} --- Apply numerical results in a given applied context. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Building from a restriction: name the question, write the constraint,
-        solve it for the \textit{other} quantity, substitute into the one you
-        want. (1.14.A.1--A.2)
-  \item The clue in a context is how the answer \textbf{moves} as the question
-        grows --- two lengths multiplied $\Rightarrow$ quadratic, three
-        $\Rightarrow$ cubic, question underneath $\Rightarrow$ rational, rule
-        changing at a threshold $\Rightarrow$ piecewise. (1.13.A.3, A.7,
-        1.14.B.1)
-  \item A model is used, not just written: evaluate it, and compute
-        $\frac{f(b)-f(a)}{b-a}$ \textbf{with units} --- output units per input
-        unit. (1.14.C.1)
+  \item Every rate carries units: output units \textit{per} input unit.
+  \item Averaging over a whole interval discards what happened inside it;
+        averaging over small intervals near a point recovers the rate
+        \textit{at} that point. (1.2.A.2--3, exposure only)
 \end{itemize} \\
-\textbf{Synthesis} --- the choice of question is visible in every later answer. &
+\textbf{3.C} --- Support a conclusion with a logical rationale or
+appropriate data. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Two students modeling one pen get different formulas, different
-        domains, and different rate units --- and both are right.
-  \item The domain is the set of questions the \textbf{context} allows, not
-        what the algebra tolerates. Negative widths are not errors; they are
-        questions the situation forbids. (1.13.B.1--B.4)
-  \item Naming the assumption is part of the answer. A model that fits the
-        numbers can still be wrong about the world.
+  \item Linear: the AROC is the same over every interval, so the AROCs change
+        at a rate of zero. (1.3.A.1, 1.3.B.1)
+  \item Quadratic: the AROCs over consecutive equal-length intervals march by
+        a constant step --- they are themselves linear. (1.3.A.2, 1.3.B.2)
+  \item AROCs increasing $\Rightarrow$ concave up; AROCs decreasing
+        $\Rightarrow$ concave down --- the numerical version of 1.2's bending
+        language. (1.3.B.3)
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.28\linewidth} X @{}}
-Function model        & A function built to stand in for a real situation, so the situation can be predicted and measured. \\
-Question (input)      & The one quantity the model takes in. Choosing it is the first act of modeling; every other quantity must become an answer to it. \\
-Constraint            & The equation the context forces on the quantities, such as ``the fencing totals 80 feet.'' It is what lets two variables collapse into one. \\
-First differences     & The differences between consecutive outputs of \textbf{equally spaced} inputs. Constant first differences mean a linear model. \\
-Second differences    & The differences of the first differences. Constant second differences mean a quadratic model --- the rate of change is itself changing at a constant rate. \\
-Domain restriction    & The questions the \textit{context} allows, which is usually narrower than what the algebra allows. \\
-Piecewise-defined function & A function given by different rules on different intervals; used when the constraint itself changes at a threshold. \\
-Inverse proportion    & \TallMath{y = \frac{k}{x^n}} --- the question sits underneath, so as it grows the answer shrinks. Modeled by a rational function; Unit 3 takes this up in full. \\
-Model assumption      & The simplifying claim about the world that has to be true for the model to be trusted. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Average rate of change & Over $[a,b]$: \TallMath{\frac{f(b)-f(a)}{b-a}} --- the one constant rate that would carry the function from $(a,f(a))$ to $(b,f(b))$ over the same run. \\
+Secant line      & The straight line through two points of a graph. Its slope \textit{is} the average rate of change over that interval. \\
+Positive rate of change & As the input increases the output increases too --- the two quantities move the same way. \\
+Negative rate of change & As the input increases the output decreases --- the two quantities move opposite ways. \\
+Constant rate of change & The same average rate over every interval. This is exactly what makes a function linear; that number is its slope. \\
+Rate of change at a point & What the average rates over shorter and shorter intervals around the point close in on. Exposure only in this course. \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: computing differences down an output column and noticing
-    when the \textit{input} row is not equally spaced (Lessons 1.2--1.3);
-    solving one literal equation, $2w + \ell = 80$, for \textbf{each} of its two
-    variables; and computing an average rate of change from a table with correct
-    units (Lesson 1.3). Item 2 is the load-bearing one --- the two solves are
-    Ana's model and Ben's model, built before either has a name. Item 1's second
-    table returns in Part 2, where the class discovers it was linear all along.
+    Skills reviewed: slope from two points --- the exact arithmetic today's
+    definition runs on, renamed; evaluating a function at two inputs with the
+    parentheses habit from 1.1, using the same $f(x) = x^2 + 3$ and the same
+    inputs 1 and 4 that open Part 2; and a 1.2 table read for direction and
+    for whether the changes are growing or shrinking. Nothing on the warm-up
+    is new --- every item is a piece of a Part 1 or Part 2 computation, handed
+    back one step at a time.
 \end{skillbox}
 
 \begin{skillbox}[Hook]{lilac}
-    \textbf{Two notebooks, one pen.} The garden club has exactly 80 feet of
-    fencing for a rectangular pen; one whole side runs along the barn wall. Two
-    members measured the \textit{same five trial pens}. Ana recorded
-    width~$\to$~area ($5 \to 350$, $10 \to 600$, $15 \to 750$, $20 \to 800$,
-    $25 \to 750$); Ben recorded length~$\to$~area ($30 \to 750$, $40 \to 800$,
-    $50 \to 750$, $60 \to 600$, $70 \to 350$).
+    \textbf{Sixty steps, thirty seconds.} Project the two stair-climb tables
+    from the guided notes. Ravi and Mira both start at the bottom of the same
+    60-step stadium stairway and both reach the top exactly 30 seconds later.
+    Ravi sprints, fades, and trudges (40, then 15, then 5 steps per 10-second
+    split); Mira climbs steadily (20, 20, 20).
     \begin{enumerate}[itemsep=2pt]
-        \item Put both tables on the board and ask, plainly: \textit{which
-              member recorded the pen correctly?} Let the class argue. The
-              answer is \textbf{both}, and nobody gets there in under a minute.
-        \item Then the second vote, before any algebra: \textit{should the pen
-              be a square?} Most classes say yes. Record it --- it will be
-              wrong, and that is the point.
+        \item Take a vote first: who climbed \textit{faster}? Do not let anyone
+              justify it yet.
+        \item Then compute the average for each --- both come out to exactly
+              \textbf{2 steps per second}. The number the class was reaching
+              for calls them identical.
     \end{enumerate}
-    \textit{Discussion prompt:} the two tables differ because the two members
-    picked different \textbf{questions}. That single decision is the lesson.
+    \textit{Discussion prompt:} the average is not wrong and it is not lying.
+    It answers a narrower question than the class asked: \textit{what one
+    steady rate would have gotten the same person from the bottom to the top
+    in the same 30 seconds?} It is a \textbf{stand-in}, and a stand-in has no
+    opinion about the middle. Today: how to compute the stand-in, and what to
+    do when you want the middle back.
 \end{skillbox}
 
 \begin{skillbox}[Lesson]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Pick the Question} (6 min)
+\textbf{Part 1: The Stand-In} (10 min)
 
 \begin{itemize}
-  \item Name what changed: for six lessons students were handed a function.
-        Today they are handed a \textbf{situation}, and a situation is not a
-        function.
-  \item Four numbers live in the pen: 80 (fixed), $w$, $\ell$, $A$. A function
-        takes one question and returns one answer, so two decisions come before
-        any algebra. Today the answer is settled --- the club wants area --- so
-        only the question is open.
-  \item Resolve the hook here: Ana's question was the width, Ben's the length,
-        the pens were the same. Then name the 80 for what it is --- neither
-        question nor answer, but the \textbf{constraint}. Write
-        $2w + \ell = 80$ and leave it up all period.
+  \item Say the definition in words before symbols: the average rate of change
+        over $[a,b]$ is the one \textit{constant} rate that produces the same
+        change in output over the same change in input.
+  \item Then the formula, built from the climb: $60$ steps over $30$ seconds,
+        so $\text{AROC} = \frac{60-0}{30-0} = 2$ steps per second --- for both
+        climbers. Write $\frac{f(b)-f(a)}{b-a}$ underneath and match the pieces.
+  \item Name what it costs: the stand-in is pinned only at the two endpoints.
+        Everything between them is deliberately thrown away.
 \end{itemize}
 
-\textbf{Part 2: When the Table Already Picked It} (10 min)
+\textbf{Part 2: Computing It Three Ways} (14 min)
 
 \begin{itemize}
-  \item The top row of a table \textit{is} the question. Table A
-        ($y = 5,8,11,14,17$): first differences all 3 $\Rightarrow$ linear
-        (1.13.A.1--A.2).
-  \item Derive the equal-spacing requirement instead of decreeing it: a
-        difference compares two answers across \textbf{one step of the
-        question}, so the steps have to match. Then run the warm-up's $g$ table
-        ($x = 1, 2, 4$): differences 4 and 8, but \textit{per unit} both are 4
-        --- $g$ was linear all along, and the raw differences lied.
-  \item Ana's table: first differences $250, 150, 50, -50$ are not constant;
-        the second differences are all $-100$ $\Rightarrow$ quadratic
-        (1.13.A.4). Say the meaning: constant first differences mean the
-        \textit{amount} of change repeats; constant second differences mean the
-        \textit{rate} changes at a steady rate. Extend aloud to cubic
-        (1.13.A.5).
-  \item Close with the counting fact --- $n+1$ points fit a degree-$n$
-        polynomial (1.13.A.6) --- and use it to motivate Part 3: a table alone
-        cannot settle the model, so the context gets a vote.
+  \item \textbf{From a formula:} $f(x) = x^2 + 3$ on $[1,4]$. The warm-up
+        already produced $f(1)=4$ and $f(4)=19$; the AROC is $15/3 = 5$.
+  \item \textbf{From a table:} the morning-temperature table. AROCs over
+        $[0,2]$, $[2,4]$, $[6,8]$ come out $3$, $5$, $-1$ $^\circ$F per hour.
+        Ask which stretch warmed fastest and how they know.
+  \item \textbf{From a graph:} the pre-drawn graph of $g$ with its two dashed
+        secant lines. Read the endpoints, compute $+1$ and $-1$, then say the
+        punch line: the AROC \textit{is} the slope of that dashed line.
+  \item Subtraction order, out loud: outputs on top in the same order as the
+        inputs on the bottom.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Reading the Context} (7 min)
+\textbf{Part 3: What the Sign Says} (7 min)
 
 \begin{itemize}
-  \item Fill the clue table together. Every row is phrased as \textit{what
-        happens to the answer as the question grows}, which is the only form of
-        the clue worth memorizing.
-  \item Then the sharpening, and it is the item most likely to move a test
-        score: ``area'' does not mean quadratic. Length always twice the width
-        gives $A(w) = 2w^2$; length \textbf{fixed} at 9 feet gives $A(w) = 9w$.
-        Count the lengths that move with the question (1.13.A.3).
-  \item Inverse proportion $\Rightarrow$ rational is \textbf{exposure only}:
-        the question sits underneath, show $y = k/x^n$, name Unit 3
-        (1.14.B.1). A rule that changes at a threshold $\Rightarrow$ piecewise
-        (1.13.A.7).
+  \item Positive: the two quantities move together. Negative: they move
+        opposite ways. Insist on units in every spoken answer from here on ---
+        ``three \textit{what} per \textit{what}?''
+  \item Zero is the interesting one: a hiker who ends at the elevation she
+        started at has AROC $0$ for the afternoon. The stand-in stands still;
+        the hiker did not. This is Part 1's cost made visible.
 \end{itemize}
 
-\textbf{Part 4: Build It} (14 min)
+\textbf{Part 4: Chop It Finer} (10 min)
 
 \begin{itemize}
-  \item The heart of the lesson. Four steps, said out loud every time: name the
-        question, write the constraint, solve the constraint for the
-        \textit{other} quantity, substitute into the one you want
-        (1.14.A.1--A.2).
-  \item Ana: $\ell = 80 - 2w \Rightarrow A(w) = w(80-2w) = 80w - 2w^2$. Check
-        $A(20) = 800$ against her table. Then tie it back: Part 3 predicted
-        quadratic because \textit{both} lengths move with $w$.
-  \item Ben, same constraint solved for the other letter:
-        $w = (80-\ell)/2 \Rightarrow A(\ell) = 40\ell - \ell^2/2$, and
-        $A(40) = 800$. \textbf{Two formulas, one pen.} Say that sentence.
+  \item Return to Ravi and Mira and compute the AROC of each 10-second split:
+        Ravi $4$, $1.5$, $0.5$; Mira $2$, $2$, $2$. The vote is settled ---
+        with smaller intervals the story comes back.
+  \item Ravi's rates are \textit{shrinking}; in 1.2 language his climb is
+        concave down. Mira's never change at all. Same tool, finer grain.
 \end{itemize}
 
-\textbf{Part 5: Use the Model} (9 min)
+\textbf{Part 5: The Pattern Names the Function} (12 min)
 
 \begin{itemize}
-  \item Evaluate $A(10) = A(30) = 600$. Average rate of change on $[10,20]$ is
-        $+20$, on $[20,30]$ is $-20$ (1.14.C.1).
-  \item \textbf{Units are not optional}, and here they do real work: square feet
-        per foot of \textit{width} for Ana, per foot of \textit{length} for Ben
-        (whose rates straddling the same pen, on $[30,40]$ and $[40,50]$, are
-        $+5$ and $-5$). The units name the question.
-  \item Sign change locates the maximum: $w = -b/(2a) = 20$, $\ell = 40$,
-        $A = 800$. Return to the vote --- the best pen is $20 \times 40$,
-        \textbf{not} a square. Ben lands on the same pen from the other end.
-\end{itemize}
-
-\textbf{Part 6: The Fine Print} (7 min)
-
-\begin{itemize}
-  \item Domain as a list of legal \textit{questions}: Ana $0 < w < 40$, Ben
-        $0 < \ell < 80$ --- same pen, different domains (1.13.B.3). Range
-        $0 < A \le 800$ (1.13.B.4).
-  \item $A(-3) = -258$ is not bad arithmetic; it answers a question the
-        situation forbids.
-  \item Assumptions (1.13.B.1--B.2): all 80 ft used, barn at least 40 ft, pen
-        exactly rectangular, no gate gap. If the barn is only 30 ft the
-        constraint changes past a threshold --- \textbf{piecewise}, a callback
-        to Part 3 and the homework extension.
+  \item $f(x) = 2x+1$ over the four unit intervals from $0$ to $4$: AROCs
+        $2,2,2,2$. Constant AROC \textit{is} what linear means, and that
+        number is the slope.
+  \item $g(x) = x^2$ over the same intervals: $1, 3, 5, 7$ --- not constant,
+        but climbing by exactly $2$ every time. A quadratic's rates are
+        themselves linear.
+  \item Close the loop with 1.2: rates increasing $\Rightarrow$ concave up;
+        rates decreasing $\Rightarrow$ concave down. Yesterday's ``the gains
+        are shrinking'' now has a computation under it.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+While students work on the guided notes and practice, circulate and check:
 \begin{itemize}
-  \item \textbf{Common error:} taking differences when the inputs are not
-        equally spaced. This is the lesson's signature error and it is silent
-        --- the numbers still subtract. Ask ``what is the gap between your
-        questions?'' before you ask what the differences are.
-  \item \textbf{Common error:} stopping at the first differences, seeing that
-        they are not constant, and concluding ``not a polynomial.'' Prompt:
-        ``take the differences again.''
-  \item \textbf{Common error:} in Part 4, writing $A = w\ell$ and stopping. A
-        model must be a function of the \textbf{one} quantity you named as the
-        question. Ask: ``what does the constraint let you replace?''
-  \item \textbf{Common error:} $2w + \ell = 80$ becoming $\ell = 80 - w$ or
-        $\ell = 40 - 2w$. Catch it early --- every later answer inherits it.
-  \item \textbf{Common error:} treating ``area'' as automatically quadratic.
-        The fixed-length rug is the counterexample; keep it on the board.
-  \item \textbf{Common error:} the domain given as ``all real numbers'' or
-        ``$w > 0$'' with no upper end. Push for the sentence: at $w = 40$ there
-        is no fencing left for the length.
-  \item \textbf{Common error:} an average rate of change reported as a bare
-        number. No units, no credit --- and the units are where Ana's model and
-        Ben's model become distinguishable.
+  \item \textbf{Common error:} subtraction order flipped on one floor of the
+        fraction --- $f(a)-f(b)$ over $b-a$. Cold-call: ``Which output did you
+        write first? Then which input has to go first?''
+  \item \textbf{Common error:} reporting the net change as the rate. Ask:
+        ``Per what? Where did the dividing go?''
+  \item \textbf{Common error:} reading a negative AROC as ``slower'' or as
+        ``no change.'' Push: ``Negative reports \textit{direction}. Which
+        quantity is falling?''
+  \item \textbf{Spine check:} when a student gets AROC $=0$ on the hiker and
+        writes ``nothing happened,'' stop the group. That sentence is the
+        misconception the whole lesson is built to break.
+  \item \textbf{Units:} an answer without units is unfinished, every time.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Cardboard Bin} in leveled
-tiers. Every tier uses the same sheet --- 24 in by 18 in, a square of side $x$
-cut from each corner --- so groups can be re-sorted mid-period without new
-setup.
+Students work on the \textbf{Group Activity: The Rocket Club Launch} in
+leveled tiers. Every tier reads the same table and the same pre-drawn
+parabola --- no tier draws anything.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Name the question in the club's table,
-        check that the cuts are equally spaced, take differences down to the
-        constant \textit{third} row, name cubic, and match six scenarios to
-        their model types --- including the two rugs from Part 3.
-  \item \textbf{Tier A (Apply):} Write each dimension of the bin in terms of
-        the cut, build $V(x) = x(24-2x)(18-2x) = 4x^3 - 84x^2 + 432x$, check
-        $V(3) = 648$ against the table, restrict to $0 < x < 9$, and find that
-        the untested cut $x = 3.5$ beats every bin the club actually built.
-  \item \textbf{Tier E (Extend):} Two average rates of change with units; then
-        the same sheet with a \textit{different answer} --- the shipping
-        footprint $B(x) = 4x^2 - 84x + 432$, quadratic where the volume was
-        cubic; then a \textit{different question} --- fix the volume at
-        648~in$^3$ and get $h(B) = 648/B$, an inverse proportion and a bridge
-        to Unit 3.
+  \item \textbf{Tier R (Remediate):} Read two heights off the table, compute
+        the AROC over $[0,1]$ and over $[4,5]$ into labeled blanks
+        ($80$ and $-48$ ft per second), and say which second of the climb was
+        faster.
+  \item \textbf{Tier A (Apply):} Fill the whole one-second AROC row
+        ($80, 48, 16, -16, -48, -80$), interpret the $-16$ in a sentence with
+        units, notice the constant $-32$ step from one rate to the next and
+        name the function type, then confront AROC $=0$ over $[0,6]$ --- true,
+        and it erases a 144-foot flight.
+  \item \textbf{Tier E (Extend):} Given AROCs over $[1,2]$, $[1,1.5]$,
+        $[1,1.1]$, $[1,1.01]$ ($48, 56, 62.4, 63.84$), say what number they
+        are closing in on and what it measures (CED 1.2.A.2, exposure only);
+        locate the instant the rate is zero; and decide whether \textit{time}
+        is a function of \textit{height} --- a 1.1 spiral.
 \end{itemize}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
 \begin{enumerate}
-  \item Name which row is the question, complete a difference table, and name
-        the model type it points to.
-  \item Build an area model from a 40-foot fencing constraint, state its
-        domain, and write one assumption it makes.
-  \item Two rugs --- one with length always three times the width, one with a
-        fixed 8-foot length --- write each area model, name each type, and
-        explain why only one is quadratic.
+  \item Compute the AROC of $f(x) = x^2 + 1$ over $[1,3]$, with work space.
+  \item From a hiker's elevation table that ends where it started: report the
+        AROC over the whole afternoon ($0$ ft per hour), then say in one
+        sentence what that $0$ hides --- and back it up with the AROC over the
+        first hour.
+  \item From two lists of AROCs over equal steps ($6,6,6,6$ versus
+        $1,4,7,10$): name the linear one and the concavity of the other.
 \end{enumerate}
-\textbf{Assessment note:} Item 2 is the diagnostic for construction (1.14.A) ---
-a student who writes $A(w) = w(40-w)$ has forgotten that two widths are fenced
-and needs Part 4 retaught in tomorrow's warm-up window. \textbf{Item 3 is the
-spine check and the fastest scan on the page:} a student who calls both rugs
-quadratic is matching nouns, not tracking how the answer moves with the
-question, and that is the habit Unit 2 will punish.
+\textbf{Assessment note:} item 2 is the lesson. A student who writes
+``nothing happened'' or leaves the justification blank has the arithmetic and
+not the idea, and should be first in the 1.4 warm-up window. Item 3 needs no
+arithmetic at all --- a miss there is conceptual, not a slip.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 6 problems covering difference tables (including a cubic),
-matching contexts to model types, \textbf{building Ben's model} for the same pen
-and comparing its domain to Ana's, using Ana's model (evaluate, average rate of
-change with units, domain check), an inverse-proportion model, and two AP-style
-multiple-choice items --- one on constant second differences, one on the
-fixed-height flag whose area is linear.
+\textbf{Homework:} 5 problems --- AROC from a formula over two intervals with
+opposite signs, AROC from a population table with a fastest-decade comparison
+and units, a graph read with two pre-drawn secant lines plus a sign
+interpretation, an AROC-pattern table that classifies two functions and names
+a concavity, and one AP-style multiple-choice AROC item.
 
-\textbf{Extension (optional):} The barn wall turns out to be only 30 feet long,
-so widths below 25 feet need fencing on part of the fourth side too. Students
-find the threshold, write the two rules, check that they agree there, and
-explain why the model is now piecewise.
+\textbf{Extension (optional):} For $f(x) = x^2$, the AROCs over $[3, 3.5]$,
+$[3, 3.1]$, and $[3, 3.01]$ (values supplied) run $6.5$, $6.1$, $6.01$.
+Students name what they are closing in on and what it would measure --- the
+first informal look at the quantity calculus makes exact.
 
-\textbf{Preview:} Unit 1 ends here. Lesson 2.1 (Quadratic Functions Revisited)
-opens Unit 2 with $A(w) = 80w - 2w^2$ still on the board --- vertex form, the
-axis of symmetry, and why $-b/(2a)$ works instead of just that it does. Every
-model chosen today was a polynomial; Unit 2 is where polynomials get studied on
-their own terms.
+\textbf{Preview:} Next lesson (1.4, Transformations of Functions) leaves rates
+for shapes: what shifting, flipping, and stretching a graph does, and how the
+formula records each move.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, calculators fine. Item 1's second table is the only
-place all period where students see inputs that are \textit{not} equally spaced
---- part (b) is the trap, and it is worth ten seconds of ``look at the $x$ row
-first'' when you review. Do not resolve it here; Part 2 rehabilitates that table
-and shows $g$ was linear after all, which is a much better moment than a
-correction. Item 2 does the Part 4 algebra twice with no context attached, and
-students will ask why they are solving the same equation for both letters ---
-say ``you'll see'' and mean it. In Part 4, put the warm-up back on the board:
-they built both of today's models before either had a name. Item 3 is Lesson 1.3
-with units, and units are what Part 5 grades on.
+Five minutes, silent start, no calculators. Item 1 is load-bearing: its slope
+computation returns twenty minutes later renamed as the average rate of
+change, so a student who fumbles the subtraction order here will fumble it all
+period --- note names as you circulate. Item 2 hands back $f(1)$ and $f(4)$
+for $f(x)=x^2+3$; Part 2 picks those two values up untouched, so students see
+the AROC assembled from work they already did. Item 3 is the 1.2 read
+(decreasing, changes shrinking in size, concave up) that Part 4 converts from
+words into numbers.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 1 is short but it is the lesson; do not let it become a vocabulary
-recitation. The moment worth protecting is the class realizing that Ana and Ben
-are \textit{both} right --- give it a full minute of argument before you
-resolve it, because every later payoff (two formulas, two domains, two sets of
-rate units) collects on that minute. Part 2's equal-spacing requirement must be
-said before the first subtraction, and derive it rather than decree it: a
-difference compares answers across one step of the question. Part 3's two rugs
-are the highest-value thirty seconds on the page --- if a student can say why
-the fixed-length rug is linear, they understand the whole selection half. Part 4
-is where the period is won or lost: do all four steps out loud, and do not let
-the class skip the substitution because ``it's obvious.'' If time runs short,
-compress Part 6 to the two domains and one assumption, and let the homework
-carry the range and the piecewise wrinkle --- but do not cut Ben's model out of
-Part 4, because the domain comparison in Part 6 and homework problem 3 both
-depend on it.
+Take the hook vote before any computing --- if the class does not commit to an
+answer first, the average coming out equal for both climbers lands as an
+arithmetic fact instead of a provocation. Say ``stand-in'' every time you say
+``average rate of change'' for the first twenty minutes; the phrase is doing
+the conceptual work all period, and it is what makes Part 3's zero and the
+activity's hinge feel inevitable rather than paradoxical. In Part 2 do the
+three representations in the printed order and stop at the graph long enough
+to point at the dashed line and say it \textit{is} the answer. Part 5 is the
+absorbed Topic 1.3 material at exposure depth: the target is the pattern
+($2,2,2,2$ against $1,3,5,7$) and the concavity link, not second-difference
+drill. If time runs short, fold Part 3 into the Part 2 table discussion --- do
+not cut Part 4, which is what makes Part 5 make sense.
 \end{teachernote}
 
 \begin{teachernote}[Group Activity]
-All three tiers run on the same 24-by-18 sheet, so a group that finishes Tier R
-can move to Tier A without re-reading the scenario. Bring one real sheet of
-cardboard and a pair of scissors if you can --- cutting the corners once, in
-front of the class, makes ``the only thing you control is the cut'' land
-physically, and it is the whole reason $x$ is the question. Tier R's third
-difference row is the first time students carry differences past the second row
-on real data; expect arithmetic slips and let groups check each other rather
-than checking for them. Tier A's step 1 is the one to watch as you circulate: a
-group that writes the base as $24 - x$ instead of $24 - 2x$ has forgotten that
-both ends are cut, and everything downstream is wrong and quiet about it. Tier
-A step 5 is the payoff --- the untested cut $x = 3.5$ beats all six bins the
-club built, which is the cleanest argument in the lesson for why you want a
-model and not a table. In Tier E, item 2 changes the \textit{answer} and item 3
-changes the \textit{question}; that contrast is deliberate, and it is worth
-naming aloud to any group that reaches it. If the class never reaches Tier E,
-assign homework problem 3 as the substitute.
+All three tiers read the same table and parabola, so groups can be re-formed
+mid-period with no new setup. Require Tier R to say answers aloud with units
+(``eighty feet per second''); the negative in item 3 is the first signed rate
+most of them will have interpreted. Tier A item 4 is the hinge of the whole
+lesson --- the rocket climbed 144 feet and came back, and the average over the
+full flight reports zero. Give it a whole-class share in the closing minutes
+even if no other tier work gets aired. Tier E's shrinking-interval table
+previews the rate at a point: keep it informal (``these are closing in on
+64''), and do not introduce the word \textit{limit} unless a student says it
+first.
 \end{teachernote}
 
 \begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 3 first --- it is four seconds
-per paper and it separates ``matched the word \textit{area} to the word
-\textit{quadratic}'' from ``counted the lengths that move.'' Then sort by item 2.
-Accept $A(w) = 40w - 2w^2$ or $A(w) = w(40 - 2w)$; the factored form often
-signals a student who understood the substitution rather than memorizing a
-formula. A domain of $0 < w < 20$ is the target; $w > 0$ alone is half credit
-and goes in the reteach pile. On item 2(d), any defensible assumption earns the
-point --- the skill is that the student wrote one at all.
+Collected, completion credit only. Read item 2 first --- it is the fastest
+scan and the sharpest diagnostic. A correct $0$ with an empty or hand-waving
+sentence is the miss that matters; the sentence has to name what the average
+threw away and cite the $+500$ ft per hour first-hour rate as evidence. Item 1
+is arithmetic and should be near-universal; if it is not, the subtraction
+order is the culprit, not the concept. On item 3 accept ``bends upward'' for
+``concave up'' --- the point is that they classified from a list of rates with
+no graph in front of them.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 3 is the flagship and the one to scan first: it is Ben's model, and part
-(d) --- why two correct models of one pen have different domains --- is the
-single best predictor of who understood the day. Problem 4(b)'s units predict
-who is ready for Unit 2's modeling work. Problem 5 is the only
-inverse-proportion practice students get before Unit 3; expect the arithmetic on
-$k = F d^2$ to be shakier than the concept, and grade the domain sentence, not
-the decimal. On problem 6(a), distractor A is the student who never took the
-second differences, C is the student who counted rows instead of differences,
-and D confuses ``constant second differences'' with ``second differences of
-zero.'' Problem 6(b) is item 3 of the exit ticket in multiple-choice clothing;
-if a student misses both, reteach Part 3 rather than Part 2. The extension is
-genuinely hard for this track --- assign it to students who finished Tier E, not
-to everyone.
+Problem 1 is deliberately two intervals of opposite sign on the same function,
+so a student cannot pattern-match one answer onto the other. Problem 5 is the
+AP-style item: distractor A is the net change with the dividing dropped,
+distractor C uses the table's outer endpoints instead of the named interval,
+and distractor D is the subtraction order reversed --- all three are worth two
+minutes of autopsy tomorrow, since each names a specific error from Active
+Monitoring. The extension is the only rate-at-a-point item outside Tier E; if
+the class never reached that discussion, assign it explicitly and open the 1.4
+warm-up window with a student's answer.
 \end{teachernote}
 \end{document}

@@ -1,4 +1,16 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Homework (ANSWER KEY)
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used the Summit Cable Car; the AP Practice used a bus's fuel use and a
+% wind farm; the homework uses a step counter and a shipping desk.
+%   Page 1 — Part A (handoffs, 1–2) and Part B (building composites, 3–4).
+%   Page 2 — Part C (chains in context, 5–6) and Part D (decomposition and the headline, 7–9).
+% The diagnostic item is problem 2: one input, both orders, two different answers. Problem 9
+% asks for the lesson's headline in writing. Problem 8 is the on-ramp to 1.4.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line so
+% its \ans cannot rewrap anything. The single explicit \newpage fixes the break in both files.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -8,169 +20,151 @@
 
 \pageheader{Unit 1, Lesson 1.3}{Homework --- Answer Key}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-\begin{enumerate}[itemsep=10pt]
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work, and on every composite \emph{write the handoff down}
+before you use it --- the middle number is where the credit is.
+\end{remindbox}
 
-\item Let $f(x) = x^2 - 4x$. Find the average rate of change over each
-      interval. Watch the signs --- they do not come out the same.
+\vspace{0.1in}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Over $[0, 2]$:
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Handoffs}
+\end{headlinebox}
 
-        \begin{work}
-          \text{AROC} &= \frac{f(2) - f(0)}{2 - 0} \\
-                      &= \frac{-4 - 0}{2} \\
-                      &= -2
-        \end{work}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
 
-        Answer: \ans{$-2$}
+\item \begin{minipage}[t]{0.40\linewidth}
+      \vspace{0pt}
+      The table gives every value of two functions $f$ and $g$.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.56\linewidth}
+      \vspace{0pt}
+      \centering
+      {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline
+      $f(x)$ & 4 & 1 & 5 & 2 & 3 \\ \hline
+      $g(x)$ & 3 & 5 & 1 & 4 & 9 \\ \hline
+      \end{tabular}}
+      \end{minipage}
 
-  \item Over $[2, 5]$:
+      \textbf{(a)} $f(g(1))$: \; handoff $= $ \ans{$3$}, \; so $f(g(1)) = $ \ans{$5$}
 
-        \begin{work}
-          \text{AROC} &= \frac{f(5) - f(2)}{5 - 2} \\
-                      &= \frac{5 - (-4)}{3} \\
-                      &= 3
-        \end{work}
+      \textbf{(b)} $g(f(1))$: \; handoff $= $ \ans{$4$}, \; so $g(f(1)) = $ \ans{$4$}
 
-        Answer: \ans{3}
-\end{enumerate}
+      \textbf{(c)} $f(g(5))$ has no value. In one sentence, say what goes wrong with the handoff.
+      \writespace{0.9cm}{$g(5) = 9$, and 9 is not one of $f$'s inputs in the table. The handoff lands outside $f$'s domain, so $f(9)$ has no value.}
 
-\item A town's population $P$, in thousands, is recorded every ten years.
+\item Let $f(x) = 4x$ and $g(x) = x - 5$. Run the input 8 through both orders.
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-year & 1980 & 1990 & 2000 & 2010 & 2020 \\
-\hline
-$P$ (thousands) & 12 & 18 & 27 & 33 & 36 \\
-\hline
-AROC (thousands per year) & --- & \ans{0.6} & \ans{0.9} & \ans{0.6} & \ans{0.3} \\
-\hline
-\end{tabular}
-\smallskip
+\begin{work}
+  f(g(8)) &= f(3) = 12 \\
+  g(f(8)) &= g(32) = 27
+\end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Which decade grew fastest? \ans{1990 to 2000}
-  \item Interpret the last entry of the AROC row in a sentence, with units.
+      \textbf{(a)} $f(g(8))$: \; handoff $= $ \ans{$3$}, \; so $f(g(8)) = $ \ans{$12$}
 
-        \vspace{0.05in}
-        \ansline{From 2010 to 2020 the town grew by an average of 0.3 thousand people --- 300 people --- per year.}
-\end{enumerate}
+      \textbf{(b)} $g(f(8))$: \; handoff $= $ \ans{$32$}, \; so $g(f(8)) = $ \ans{$27$}
 
-\item $W(t)$ is the water in a rain barrel, in gallons, $t$ days after it was
-      set out. The dashed lines are drawn for you.
-
-\begin{center}
-\begin{tikzpicture}[x=0.85cm, y=0.42cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (6,9);
-  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $t$ (days)};
-  \draw[->, thick] (0,0) -- (0,9.7) node[above] {\small $W(t)$ (gal)};
-  \foreach \x in {1,2,3,4,5,6} \node[below, font=\small] at (\x,0) {\x};
-  \foreach \y in {2,4,6,8} \node[left, font=\small] at (0,\y) {\y};
-  \draw[dashed, thick, goldacc] (0,2) -- (3,8);
-  \draw[dashed, thick, goldacc] (3,8) -- (6,5);
-  \draw[very thick, plum] plot[smooth] coordinates
-    {(0,2) (1,4.5) (2,6.6) (3,8) (4,7.4) (5,6.2) (6,5)};
-  \fill[plum] (0,2) circle (2.5pt);
-  \fill[plum] (3,8) circle (2.5pt);
-  \fill[plum] (6,5) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Average rate of change over $[0,3]$: \ans{$+2$ gallons per day}
-  \item Average rate of change over $[3,6]$: \ans{$-1$ gallon per day}
-  \item What does the sign of your answer to (b) say about the barrel?
-
-        \vspace{0.05in}
-        \ansline{It is negative, so the barrel is losing water --- about one gallon a day on average.}
-\end{enumerate}
-
-\item Two functions are sampled at $x = 0, 1, 2, 3, 4$. Fill in the average
-      rate of change over each unit interval.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$A(x)$ & 5 & 8 & 13 & 20 & 29 \\
-\hline
-AROC of $A$ & --- & \ans{3} & \ans{5} & \ans{7} & \ans{9} \\
-\hline
-$B(x)$ & 20 & 17 & 14 & 11 & 8 \\
-\hline
-AROC of $B$ & --- & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $A$ is a \ans{quadratic} function, and it is concave \ans{up}.
-  \item $B$ is a \ans{linear} function, with slope \ans{$-3$}.
-\end{enumerate}
-
-\item The table gives values of a function $g$. What is the average rate of
-      change of $g$ over the interval $[2, 6]$?
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-$x$ & 0 & 2 & 4 & 6 \\
-\hline
-$g(x)$ & 10 & 16 & 30 & 52 \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $36$
-  \item $9$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $7$
-  \item $-9$
-\end{enumerate}
+      \textbf{(c)} Same two rules, same input. Are the two answers equal? \ans{No}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{extensionbox}
-For $f(x) = x^2$, the average rates of change over shrinking intervals
-starting at $x = 3$ are computed below.
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Building the composite}
+\end{headlinebox}
 
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|}
-\hline
-interval & $[3, 3.5]$ & $[3, 3.1]$ & $[3, 3.01]$ \\
-\hline
-AROC & 6.5 & 6.1 & 6.01 \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=3]
 
-What number are these closing in on, and what would it measure?
+\item Let $f(x) = x^2 + 2$ and $g(x) = x - 3$. Build both composites and simplify.
 
-\vspace{0.05in}
-\ansline{They are closing in on 6. That would be the rate of change of $f$ at the single point $x = 3$, not an average over any interval.}
-\end{extensionbox}
+\begin{work}
+  f(g(x)) &= f(x - 3) = (x-3)^2 + 2 \\
+          &= x^2 - 6x + 11
+\end{work}
+
+      \textbf{(a)} $(f \circ g)(x) = $ \ans{$x^2 - 6x + 11$} \qquad
+      \textbf{(b)} $(g \circ f)(x) = $ \ans{$x^2 - 1$}
+
+\item Let $f(x) = 5x + 1$ and $g(x) = 2x - 4$.
+
+      \textbf{(a)} $(f \circ g)(x) = $ \ans{$10x - 19$} \qquad
+      \textbf{(b)} $(g \circ f)(x) = $ \ans{$10x - 2$}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Chains in context}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=5]
+
+\item A step counter converts steps to distance: $K(s) = 0.0008s$ gives the kilometers walked in
+      $s$ steps. A fitness app converts distance to energy: $C(k) = 60k$ gives the calories burned
+      walking $k$ kilometers.
+
+      Find $C(K(10{,}000))$. Name the handoff and its units on the way.
+      \writespace{1.2cm}{Handoff: $K(10{,}000) = 8$ kilometers. Then $C(8) = 480$, so walking 10,000 steps burns about 480 calories.}
+
+\item A shipping desk converts a package's weight from ounces to pounds with
+      $P(z) = \dfrac{z}{16}$, and prices a package by weight with $C(p) = 3 + 2p$ dollars for
+      $p$ pounds. Explain why $C(P(48))$ is meaningful but $P(C(48))$ is not.
+      \writespace{1.2cm}{$C$ expects pounds, and $P(48) = 3$ pounds, so $C(3) = \$9$ is a real price. $P$ expects ounces, but $C(48) = \$99$ is a price --- the handoff has the wrong units.}
+
+\end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard[9]
-\begin{notesbox}{Preview of Lesson 1.4}
-Today you measured how fast a function changes. Lesson 1.4,
-\textit{Transformations of Functions}, leaves rates behind and works on
-shapes: what happens to a graph when you shift it, flip it, or stretch it ---
-and how the formula records every one of those moves.
-\end{notesbox}
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Taking it apart, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=7]
+
+\item Take each function apart into an inner rule and an outer rule.
+
+      \textbf{(a)} $h(x) = (4x - 1)^5$: \quad inner $g(x) = $ \ans{$4x - 1$}, \quad
+      outer $f(u) = $ \ans{$u^5$}
+
+      \textbf{(b)} $k(x) = \dfrac{5}{2x - 9}$: \quad inner $g(x) = $ \ans{$2x - 9$}, \quad
+      outer $f(u) = $ \ans{$5/u$}
+
+\item Let $f(x) = 3x + 6$ and $g(x) = \dfrac{x - 6}{3}$.
+
+\begin{work}
+  f(g(x)) &= 3\!\left(\frac{x-6}{3}\right) + 6 = x \\
+  g(f(x)) &= \frac{(3x+6) - 6}{3} = x
+\end{work}
+
+      $(f \circ g)(x) = $ \ans{$x$} \qquad $(g \circ f)(x) = $ \ans{$x$}
+
+      What do these two functions do to each other?
+      \writespace{0.9cm}{They undo each other: each sends a number straight back out unchanged.}
+
+\item A classmate says $f(g(x))$ and $g(f(x))$ must be the same function because they are built
+      from the same two rules. Using the word \emph{handoff}, write the sentence that settles it.
+      \writespace{1.2cm}{They are different functions because the handoff is different: $g$'s output goes into $f$ in one order, $f$'s output goes into $g$ in the other.}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (1.4, Inverse Functions):} problem 8 found a pair of functions that undo
+each other. Next lesson names that partner $f^{-1}$, and the test for it is a composition run
+in \emph{both} directions: $f(f^{-1}(x)) = x$ \emph{and} $f^{-1}(f(x)) = x$.
+\end{spiralbox}
 
 \end{document}

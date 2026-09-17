@@ -1,25 +1,23 @@
-%! Function Fundamentals — Unit 1, Lesson 1.1 — Guided Notes (ANSWER KEY)
-% MIRROR of ../notes/main.tex: -key in place of -boxes, the vocabulary and hook write lines
-% -> \ansline, \blank -> \ans, and the answer argument of every \pcell, \writespace and
-% \labelbox filled. Nothing else differs.
+%! Functions and Function Notation — Unit 1, Lesson 1.1 — Guided Notes (ANSWER KEY)
 % THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
 % box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
 % left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
 % two-across grid of numbered problems with real writing room. Problems run 1..18.
-% DENSITY: a \blank{} only where a word IS the answer (the direction table); no mid-sentence
-% blanks; two problems across; 2–2.6cm of answer space each.
+% DENSITY: a \blank{} only where a word IS the answer; no mid-sentence blanks; two problems
+% across; 2–2.6cm of answer space each.
 %   I DO   : the teacher reads the definition, marks up the display, works the first problem
 %            of each grid (1, 3, 7, 11).
 %   WE DO  : the class works the rest of each grid, students holding the pen, every one
 %            cold-called.
-%   YOU DO : the last row — problems 15–18, alone, while the teacher circulates.
-% The crux is row 4, TWO DIRECTIONS: problems 12 and 13 ask "find f(3)" and "solve f(x) = 3"
-% off the same graph and get DIFFERENT answers (3, then 1 and 3). Problem 16 transfers it.
+%   YOU DO : the last row — problems 15–18, alone, for 13 minutes while the teacher circulates.
+% The crux is row 4, PIECEWISE: problem 13 asks for f(3) where the top rule REACHES x = 3 but
+% does not OWN it — the open circle. Problem 16 transfers it to a formula with no graph.
 %
 % PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
 % the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
-% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
-% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. (`\\` inside cases/tabular is safe:
+% those environments scope it.) A row cannot break across pages: the figure and EACH grid row
+% are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -39,12 +37,12 @@ Fill in each term as we define it together.
 \ansline{The symbol $f(x)$: $f$ is the rule's name, $x$ the input, $f(x)$ the output.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Evaluate:}}\\[1pt]
 \ansline{Find the output a function produces for a given input.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Solve:}}\\[1pt]
-\ansline{Find the input(s) that produce a given output.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Domain:}}\\[1pt]
 \ansline{The set of all inputs a function uses.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Range:}}\\[1pt]
 \ansline{The set of all outputs a function produces; a repeat is listed once.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Piecewise function:}}\\[1pt]
+\ansline{One function built from several rules, each owning its own stretch of inputs.}\\[3pt]
 \noindent\textbf{\textcolor{plum}{Undefined:}}\\[1pt]
 \ansline{An expression with no value, such as division by zero --- that input is excluded.}
 \end{vocabbox}
@@ -53,8 +51,9 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-The vending machine from yesterday finally gets a name. Call it $P$, and let
-$P(b)$ be the price in dollars of the item at button $b$. On the board:
+A vending machine you can trust: press the same button, get the same item, every
+time. Give the machine a name --- call it $P$ --- and let $P(b)$ be the price in
+dollars of the item at button $b$. On the board:
 \[ P(\text{B4}) = 1.25 \]
 
 Say that equation out loud as an English sentence. What is the input here ---
@@ -87,7 +86,7 @@ A rideshare app charges a flat fee plus a rate per mile: $F(m) = 2.50 + 1.75m$.
 \end{tikzpicture}
 \end{center}
 \vspace{2pt}
-$m$ stands for \labelbox{2.8cm}{miles driven}\qquad $F(m)$ stands for \labelbox{3.2cm}{fare in dollars}
+$m$ stands for \labelbox{2.8cm}{miles driven}\qquad $F(m)$ stands for \labelbox{3.2cm}{the fare, in \$}
 \\
 & \notesprompt{Read each statement as a sentence: name the input, the output, and the point on the graph.}
 \begin{probgrid}{|Y|Y|}
@@ -156,116 +155,99 @@ Gold bracket: \labelbox{2.0cm}{domain}\qquad Red bracket: \labelbox{2.0cm}{range
 \\
 & \notesprompt{State the domain and the range.}
 \begin{probgrid}{|Y|Y|}
-\pcell{7}{$f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\}$. Domain and range, as lists.}{2.0cm}{Domain $\{-2, 0, 3, 5\}$; range $\{1, 4, 6\}$ --- the 6 listed once.} &
-\pcell{8}{The graph above: domain and range as inequalities, then again with brackets.}{2.0cm}{Domain $0 \le x \le 8$, range $1 \le y \le 7$; that is $[\,0, 8\,]$ and $[\,1, 7\,]$.} \\ \hline
+\pcell{7}{$f = \{(-2, 6),\ (0, 4),\ (3, 6),\ (5, 1)\}$. Domain and range, as lists.}{2.0cm}{Domain $\{-2, 0, 3, 5\}$; range $\{1, 4, 6\}$ --- the 6 is listed once.} &
+\pcell{8}{The graph above: domain and range as inequalities, then again with brackets.}{2.0cm}{$0 \le x \le 8$ and $1 \le f(x) \le 7$; in brackets, $[\,0,8\,]$ and $[\,1,7\,]$.} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{9}{$k(x) = \dfrac{8}{x + 3}$. Which input is forbidden, and why? Write the domain in words.}{2.2cm}{$x = -3$: the denominator is 0, and division by zero is undefined. Domain: every real number except $-3$.} &
-\pcell{10}{In problem 7 the output 6 appears twice. How many times is it listed in the range? Is $f$ still a function?}{2.2cm}{Once: $\{1, 4, 6\}$. Yes --- two inputs sharing one output is allowed (many-to-one).} \\ \hline
+\pcell{9}{$k(x) = \dfrac{8}{x + 3}$. Which input is forbidden, and why? Write the domain in words.}{2.2cm}{$x = -3$: it makes the denominator 0, which is undefined. The domain is every real number except $-3$.} &
+\pcell{10}{In problem 7 the output 6 appears twice. How many times is it listed in the range? Is $f$ still a function?}{2.2cm}{Once. Yes --- two inputs may share an output; only one input with two outputs is forbidden.} \\ \hline
 \end{probgrid}
 \\ \hline
-% ── ROW 4: THE CRUX — evaluate vs. solve, the two directions ─────────────────
-\mainidea[Evaluate vs.\ solve]{Two Directions} &
-Every question in this lesson runs in one of two directions, and the same graph answers both.
-\textbf{Read the arrow before you compute.}
+% ── ROW 4: THE CRUX — piecewise functions and the boundary ───────────────────
+\mainidea[One function, several rules]{Piecewise} &
+A \textbf{piecewise function} is one function built from two or more rules, each rule owning
+its own stretch of inputs. The condition written beside a rule is its \textbf{address} --- it
+says exactly which inputs that rule is responsible for, and no input belongs to two rules.
 
 \vspace{3pt}
-\renewcommand{\arraystretch}{1.35}
-\begin{tabular}{|p{0.25\linewidth}|p{0.31\linewidth}|p{0.31\linewidth}|}
-\hline
- & \textbf{Find $f(2)$} & \textbf{Solve $f(x) = 2$} \\
-\hline
-You are given & the \ans{input} & the \ans{output} \\
-\hline
-You are asked for & the \ans{output} & the \ans{input(s)} \\
-\hline
-How many answers & exactly one & \ans{zero, one, or many} \\
-\hline
-\end{tabular}
+\stepnum{1}\ Find the stretch the input falls in. \quad \stepnum{2}\ Use \emph{only} that
+rule. \quad \stepnum{3}\ Evaluate it the usual way. Never run both rules and pick the answer
+you prefer --- the condition has already picked for you.
 \\
 & \begin{center}
 \begin{tikzpicture}[x=0.55cm, y=0.4cm, >=stealth]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,7);
-  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $x$};
+  \draw[linegray, very thin, step=1] (0,0) grid (7,7);
+  \draw[->, thick] (0,0) -- (7.6,0) node[below right] {\small $x$};
   \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] (0,5) -- (2,1) -- (5,7) -- (8,4);
-  \fill[plum] (0,5) circle (2.5pt);
-  \fill[plum] (8,4) circle (2.5pt);
-  % evaluate path: input 2, walk up, read across
-  \draw[->, very thick, goldacc, dashed] (2,-0.05) -- (2,1) -- (0.1,1);
-  \node[font=\scriptsize\bfseries\color{goldacc}, below] at (2,-0.95) {start here};
-  % solve path: output 3, walk across, drop down twice
-  \draw[->, very thick, redacc, dashed] (0.05,3) -- (1,3) -- (1,0.1);
-  \draw[->, very thick, redacc, dashed] (1,3) -- (3,3) -- (3,0.1);
-  \node[font=\scriptsize\bfseries\color{redacc}, above left] at (-0.2,3.4) {start here};
+  \foreach \x in {1,2,3,4,5,6,7} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {2,4,6} \node[left] at (0,\y) {\small \y};
+  % the boundary
+  \draw[goldacc, very thick, dashed] (3,0) -- (3,7.2);
+  \node[font=\scriptsize\bfseries\color{goldacc}, above right] at (2.35,7.2) {the boundary $x = 3$};
+  % piece 1: 2x on [0,3)
+  \draw[very thick, plum] (0,0) -- (3,6);
+  \fill[plum] (0,0) circle (2.5pt);
+  \draw[very thick, plum, fill=white] (3,6) circle (2.5pt);
+  % piece 2: constant 2 on [3,7]
+  \draw[very thick, plum] (3,2) -- (7,2);
+  \fill[plum] (3,2) circle (2.5pt);
+  \node[font=\scriptsize\itshape, right] at (3.25,6.6) {reaches $x=3$ but does not own it};
 \end{tikzpicture}
 \end{center}
 \vspace{2pt}
-\textbf{Gold path} (input 2, up, across): $f(2) = $ \labelbox{1.2cm}{1}\quad
-This is \labelbox{2.3cm}{evaluating}\par\vspace{3pt}
-\textbf{Red path} (output 3, across, down): $x = $ \labelbox{1.6cm}{1 and 3}\quad
-This is \labelbox{2.3cm}{solving}
+\[ f(x) = \begin{cases} 2x & 0 \le x < 3 \\[2pt] 2 & x \ge 3 \end{cases} \]
+\vspace{-4pt}
+
+At $x = 3$ the rule that owns the input is the \labelbox{2.0cm}{bottom} one, so $f(3) = $ \labelbox{1.2cm}{$2$}
 \\
 & \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
-\textbf{Evaluate hands you the input and asks for the output --- exactly one answer.
-Solve hands you the output and asks for the input(s) --- possibly several, and several is
-still a function.}}}
+\textbf{An open circle marks a value the rule gets close to but never reaches. A filled dot
+marks the one output the function actually has there. Every input gets exactly one output ---
+so at a boundary, exactly one rule wins.}}}
 
 \vspace{3pt}
-\textbf{In your own words:} how do you tell an \emph{evaluate} question from a \emph{solve}
-question before you compute anything?
-\writespace{1.4cm}{Evaluate hands me the input and wants the output --- one answer. Solve hands me the output and wants every input that produces it --- maybe several.}
+\textbf{In your own words:} how do you decide which rule to use before you evaluate anything?
+\writespace{1.4cm}{Read the conditions first and find which stretch the input falls in. That rule is the only one that applies --- evaluate it and stop.}
 \\
-& \notesprompt{The same graph, both directions. Say which direction each one runs.}
+& \notesprompt{Decide the rule first, then evaluate. Name the rule you used.}
 \begin{probgrid}{|Y|Y|}
-\pcell{11}{Find $f(6)$.}{2.0cm}{$f(6) = 6$: up from 6, across to 6. Evaluate --- one answer.} &
-\pcell{12}{Find $f(3)$.}{2.0cm}{$f(3) = 3$: up from 3, across to 3. Evaluate --- one answer.} \\ \hline
+\pcell{11}{Using $f$ above, find $f(1)$. Which rule owns $x = 1$?}{2.0cm}{$x = 1$ lies in $0 \le x < 3$, so the top rule owns it: $f(1) = 2(1) = 2$.} &
+\pcell{12}{Using $f$ above, find $f(5)$.}{2.0cm}{$x = 5$ satisfies $x \ge 3$, so the bottom rule: $f(5) = 2$.} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{13}{Solve $f(x) = 3$. Compare with problem 12: is it the same question? Is it the same answer?}{2.0cm}{$x = 1$ and $x = 3$ (across from 3, down twice). No: 12 wanted one output; 13 wants every input that lands on 3.} &
-\pcell{14}{Solve $f(x) = 5$. Three inputs share one output --- is $f$ still a function?}{2.0cm}{$x = 0$, $4$, and $7$. Yes --- many-to-one is still a function; no input has two outputs.} \\ \hline
+\pcell{13}{Find $f(3)$. The top rule reaches $x = 3$ --- explain why 6 is still the wrong answer.}{2.2cm}{$f(3) = 2$. The top rule's address stops at $x < 3$, so 3 is not one of its inputs --- that is the open circle. $x = 3$ belongs to the bottom rule.} &
+\pcell{14}{$g(x) = x^2$ when $x \le -1$, and $g(x) = 4 - x$ when $x > -1$. Find $g(-3)$ and $g(-1)$.}{2.2cm}{$-3 \le -1$, so $g(-3) = (-3)^2 = 9$. And $-1 \le -1$, so $g(-1) = (-1)^2 = 1$.} \\ \hline
 \end{probgrid}
 \\ \hline
 % ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ──────────
 \mainidea[You do, alone]{Table \& Formula} &
-Two functions given only by a table, $s$ and $p$, and two given by a formula. The arrows
-show $p$ running forward: each input on the left goes to its output on the right.
+A function $s$ given only by a table, a piecewise function $h$ given only by its rules, and
+two functions given by a formula.
 \\
 & \begin{center}
-\begin{tikzpicture}[scale=1.0, >=stealth]
-  \node[font=\normalsize, anchor=east] at (2.4,1.0) {%
+\begin{tikzpicture}[scale=1.0]
+  \node[font=\normalsize, anchor=north] at (0,1.5) {%
     \renewcommand{\arraystretch}{1.3}%
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline $s(x)$ & 12 & 9 & 9 & 6 & 3 \\ \hline
     \end{tabular}};
-  \node[font=\normalsize, anchor=east] at (2.4,-1.0) {%
-    \renewcommand{\arraystretch}{1.3}%
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline $x$ & 1 & 2 & 3 & 4 \\ \hline $p(x)$ & 9 & 6 & 6 & 3 \\ \hline
-    \end{tabular}};
-  \begin{scope}[xshift=4.6cm]
-    \node[font=\small\bfseries\color{plum}] at (0,2.0) {$p$: inputs};
-    \node[font=\small\bfseries\color{plum}] at (3,2.0) {outputs};
-    \foreach \x/\y in {1/1.2, 2/0.4, 3/-0.4, 4/-1.2} \node[font=\small] (i\x) at (0,\y) {\x};
-    \foreach \v/\y/\n in {9/1.2/a, 6/0/b, 3/-1.2/c} \node[font=\small] (o\n) at (3,\y) {\v};
-    \foreach \a/\b in {i1/oa, i2/ob, i3/ob, i4/oc} \draw[->, thick, plum] (\a) -- (\b);
-  \end{scope}
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt,
+        font=\normalsize, anchor=north] at (0,-0.35) {%
+    $h(x) = \begin{cases} 5 - x & x < 2 \\[2pt] 2x & x \ge 2 \end{cases}$};
 \end{tikzpicture}
 \end{center}
 \\
 & \notesprompt{On your own. Show your work.}
 \begin{probgrid}{|Y|Y|}
-\pcell{15}{$f(x) = 3x - 7$. Find $f(5)$ and $f(-1)$. Fill the slot first.}{2.2cm}{$f(5) = 3(5) - 7 = 8$; $f(-1) = 3(-1) - 7 = -10$} &
-\pcell{16}{From the $s$ table: find $s(4)$, then solve $s(x) = 9$. Which one was the \emph{evaluate} question?}{2.2cm}{$s(4) = 6$ --- the evaluate question. $s(x) = 9$: $x = 2$ and $x = 3$ (solve, two answers).} \\ \hline
+\pcell{15}{$f(x) = 3x - 7$. Find $f(5)$ and $f(-1)$. Fill the slot first.}{2.2cm}{$f(5) = 3(5) - 7 = 8$; \ $f(-1) = 3(-1) - 7 = -10$.} &
+\pcell{16}{Using $h$ above, find $h(-1)$, $h(2)$, and $h(6)$. Name the rule you used each time.}{2.2cm}{$h(-1) = 5 - (-1) = 6$ (top rule); $h(2) = 2(2) = 4$ (bottom, since $x \ge 2$); $h(6) = 2(6) = 12$ (bottom).} \\ \hline
 \end{probgrid}
 \\
 & \begin{probgrid}*{|Y|Y|}
-\pcell{17}{State the domain and range of $p$. Then run $p$ \emph{backward}: feed it the output 6 and ask for the input. Is that backward rule a function?}{2.4cm}{Domain $\{1, 2, 3, 4\}$; range $\{3, 6, 9\}$. Backward, the input 6 would have two outputs, 2 and 3 --- not a function.} &
-\pcell{18}{$m(x) = \dfrac{20}{x - 6}$. Which input is forbidden, and why? Write the domain of $m$ in words.}{2.4cm}{$x = 6$: the denominator is 0, and dividing by 0 has no output. Domain: every real number except 6.} \\ \hline
+\pcell{17}{From the $s$ table: find $s(4)$, then state the domain and the range of $s$.}{2.2cm}{$s(4) = 6$. Domain $\{1, 2, 3, 4, 5\}$; range $\{3, 6, 9, 12\}$.} &
+\pcell{18}{A garage charges \$3 per hour for the first 2 hours, then a flat \$6 for any longer stay, up to 12 hours. Write $C(h)$ as a piecewise function with both conditions.}{2.4cm}{$C(h) = 3h$ for $0 \le h \le 2$, and $C(h) = 6$ for $2 < h \le 12$.} \\ \hline
 \end{probgrid}
 \\ \hline
 \end{guidednotes}

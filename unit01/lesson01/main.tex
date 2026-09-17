@@ -1,4 +1,8 @@
-%! Function Fundamentals — Unit 1, Lesson 1.1 — Lesson Plan
+%! Functions and Function Notation — Unit 1, Lesson 1.1 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 1.1 now OPENS Unit 1 (the old 1.0 was retired), so no
+% box here refers back to a previous lesson. The evaluate-vs-solve "two directions" material
+% that used to be this lesson's crux has moved to 1.4 (Inverse Functions), where f(a)=b <=>
+% f^{-1}(b)=a is the same idea in its natural home; the crux here is the piecewise boundary.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -8,7 +12,7 @@
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
 \newcommand{\UnitNumberName}{Unit 1: Functions and Change \quad}
-\newcommand{\LessonNumberName}{Lesson 1.1: Function Fundamentals}
+\newcommand{\LessonNumberName}{Lesson 1.1: Functions and Function Notation}
 
 \begin{document}
 \begin{center}
@@ -20,9 +24,10 @@
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
     \textbf{Primary Objective:} Students will read and write function notation
     --- $f(x)$ --- evaluate a function given by a formula, a table, or a graph,
-    distinguish an \textit{evaluate} question from a \textit{solve} question, and
     state the domain and range of a function presented as a list of points or a
-    graph. \hfill\textit{\small (Foundations ramp --- no CED topic)}
+    graph, and evaluate a \textit{piecewise} function by deciding which rule owns
+    the input --- including when the input sits exactly on a boundary.
+    \hfill\textit{\small (Foundations ramp --- no CED topic)}
 \end{tcolorbox}
 
 \boxguard[22]
@@ -35,21 +40,21 @@
 Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
 Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
 \textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the NOTATION and EVALUATING rows: definitions, displays, problems 1 and 3. \\
-\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2, 4--6, then the DOMAIN \& RANGE and TWO DIRECTIONS rows (7--14; the teacher works 7 and 11). \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2, 4--6, then the DOMAIN \& RANGE and PIECEWISE rows (7--14; the teacher works 7 and 11). \\
 \textbf{You Do} --- independent & 13 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
 Debrief                       & 5  & Whole-class share-out and the headline. \\
-Homework Launch               & 3  & Start homework problems 1 and 4 alone; the teacher reads 4(c) over shoulders. \\
+Homework Launch               & 3  & Start homework problems 1 and 4 alone; the teacher reads 4(b) over shoulders. \\
 \end{tabularx}
 
 \smallskip
 \textbf{This is the tightest period in the unit.} Four ideas --- notation,
-evaluating, the two directions, and domain/range --- share one block, so the guided
+evaluating, domain/range, and piecewise rules --- share one block, so the guided
 phase runs 22 minutes. The whole release lives in the guided notes; there is no
 activity sheet to raid when it overruns. If the clock slips, cut \textbf{problem 18}
-(the formula domain) first, then problem 17, and protect the \textbf{We Do}
-direction table in the TWO DIRECTIONS row: homework problems 4 and 10 cannot be done
-without it. Never cut the Homework Launch to zero --- it is the only formative read
-of the period now that there is no exit ticket.
+(writing a tariff as a piecewise rule) first, then problem 17, and protect the
+\textbf{We Do} boundary work in the PIECEWISE row: homework problems 4 and 8 cannot
+be done without it. Never cut the Homework Launch to zero --- it is the only
+formative read of the period now that there is no exit ticket.
 \end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
@@ -72,19 +77,22 @@ Evaluate a function from a formula, a table, or a graph. &
         parentheses first, then fill them.
   \item Negative inputs are the error magnet: $(-4)^2 \ne -4^2$.
 \end{itemize} \\
-Tell an \textit{evaluate} question from a \textit{solve} question. &
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item ``Find $f(2)$'' gives an input, asks for the output --- exactly one
-        answer.
-  \item ``Solve $f(x) = 2$'' gives an output, asks for the input(s) --- zero,
-        one, or many answers, and many is still a function.
-\end{itemize} \\
 State the domain and range of a function. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
   \item Domain = every input the function uses; range = every output it
         produces (a repeat listed once).
   \item From a graph, both are read as inequalities --- $0 \le x \le 8$ --- or
         with brackets, $[\,0, 8\,]$.
+\end{itemize} \\
+Evaluate a piecewise function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The condition beside a rule is its \textit{address}: it says which
+        inputs that rule is responsible for.
+  \item Decide the rule \textit{first}, then evaluate only that one. Running
+        both rules and choosing is the error.
+  \item \textbf{Target misconception:} at a boundary, students use the rule
+        whose graph \textit{reaches} the input rather than the rule whose
+        condition \textit{owns} it --- the open circle versus the filled dot.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
@@ -94,9 +102,9 @@ State the domain and range of a function. &
 \begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
 Function notation & The symbol $f(x)$: $f$ names the rule, $x$ is the input, $f(x)$ is the output at $x$. Read ``$f$ of $x$.'' \\
 Evaluate          & Find the output a function produces for a given input. \\
-Solve             & Find the input(s) that produce a given output --- the opposite direction. \\
 Domain            & The set of all inputs a function uses. \\
 Range             & The set of all outputs a function produces; a repeated output is listed once. \\
+Piecewise function & One function built from two or more rules, each rule owning its own stretch of inputs. \\
 Undefined         & What we call an expression with no value, such as a division by zero --- inputs causing it are excluded from the domain. \\
 \end{tabularx}
 \end{skillbox}
@@ -106,13 +114,14 @@ Undefined         & What we call an expression with no value, such as a division
     Skills reviewed: evaluating a linear expression at a negative value,
     order of operations with a squared negative,
     solving a two-step linear equation,
-    and the function decision from Lesson 1.0 (many-to-one vs.\ one-to-many).
+    and deciding whether a number satisfies an inequality such as $x \ge 2$ ---
+    the test every piecewise condition is made of.
 \end{skillbox}
 
 \begin{skillbox}[Hook (2 min)]{lilac}
-    \textbf{The machine gets a name.} Yesterday's trustworthy vending machine
-    comes back, this time labeled. Let $P(b)$ be the price in dollars of the
-    item at button $b$.
+    \textbf{The machine gets a name.} A vending machine you can trust: press the
+    same button, get the same item, every time. Let $P(b)$ be the price in dollars
+    of the item at button $b$.
     \begin{enumerate}[itemsep=2pt]
         \item On the board, write only: $P(\text{B4}) = 1.25$. Ask what the
               equation is \textit{saying}. Push for a full sentence --- ``the
@@ -152,7 +161,7 @@ Nothing is cold-called in this phase.}
 
 \textbf{WE DO --- Part 2: Evaluating, Negatives Included} (6 min)
 
-\textit{Problems 2 and 4--6. Cold-call every one.}
+\textit{Problems 2 and 4--6. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
   \item \textbf{Problem 2} first --- back to the NOTATION grid: say what $F(4)$
         is asking for before anyone computes 9.50.
@@ -166,9 +175,8 @@ Nothing is cold-called in this phase.}
 
 \textbf{WE DO --- Part 3: Domain and Range} (7 min)
 
-\textit{Notes row DOMAIN \& RANGE. Teacher reads the definition, marks up the
-graph, works problem 7; the class works 8--10, every one cold-called. This is new
-vocabulary, not practice.}
+\textit{Notes row DOMAIN \& RANGE. Class fills the blanks together; cold-call
+every one. This is new vocabulary, not practice.}
 \begin{itemize}
   \item Definitions first: domain = all inputs, range = all outputs. Then the
         display: label the gold bracket \textit{domain} and the red bracket
@@ -183,23 +191,23 @@ vocabulary, not practice.}
         many-to-one alive.
 \end{itemize}
 
-\textbf{WE DO --- Part 4: Two Directions} (9 min)
+\textbf{WE DO --- Part 4: Piecewise Functions} (9 min)
 
-\textit{Notes row TWO DIRECTIONS --- the spine of the lesson. Teacher fills the
-direction table with the class, marks up the two paths on the graph, works
-problem 11; the class works 12--14, every one cold-called.}
+\textit{Notes row PIECEWISE --- the spine of the lesson. Class fills the blanks
+together; cold-call every one. Teacher works problem 11; the class works 12--14.}
 \begin{itemize}
-  \item Fill the direction table \textit{before} any reading: given the input
-        vs.\ given the output; asked for the output vs.\ asked for the input(s);
-        one answer vs.\ possibly many.
-  \item Mark up the graph: the gold path is $f(2) = 1$, \textit{evaluating}; the
-        red path is $f(x) = 3$, $x = 1$ and $3$, \textit{solving}. Read the boxed
-        headline aloud, then give one minute for the ``in your own words'' line.
-  \item Work \textbf{problem 11}, $f(6)$, by walking \textit{up}. Then
-        \textbf{12 and 13 are the crux}: $f(3) = 3$, but solving $f(x) = 3$ gives
-        $x = 1$ and $3$ --- same graph, same number 3, different question,
-        different answer. \textbf{Problem 14}, $f(x) = 5$, has \textbf{three}
-        answers --- many-to-one from 1.0, alive again.
+  \item Read the three steps aloud and make the class say the key word:
+        the condition is the rule's \textbf{address}. No input belongs to two
+        rules.
+  \item Mark up the graph before any computing. The open circle at $(3,6)$ is the
+        whole lesson in one dot: the top rule \textit{reaches} $x = 3$ but its
+        address stops at $x < 3$. The filled dot at $(3,2)$ is the output the
+        function actually has. Fill the two label boxes yourself --- ``bottom''
+        and ``2'' --- then give one minute for the ``in your own words'' line.
+  \item Work \textbf{problem 11}, $f(1)$, naming the condition out loud before
+        computing. \textbf{Problem 13 is the crux}: $f(3) = 2$, not 6. Ask for the
+        \textit{reason}, not the number. \textbf{Problem 14} moves the same
+        decision to a formula with no graph and a negative boundary, $x \le -1$.
 \end{itemize}
 
 \textbf{YOU DO --- Part 5: The You Do Row} (13 min)
@@ -209,14 +217,14 @@ phase. Students work alone; circulate and say nothing a neighbor could say
 instead.}
 \begin{itemize}
   \item \textbf{Problem 15} evaluates $f(x) = 3x - 7$ at a positive and a negative
-        input; \textbf{16} reads the $s$ table in \textit{both} directions and
-        names which was the evaluate question --- the crux, transferred.
-  \item \textbf{Problem 17} states $p$'s domain and range, then flips the machine:
-        two inputs share the output 6, so running $p$ backward is not a function.
-        Many-to-one from 1.0, and the first quiet hint of 1.6.
-  \item \textbf{Problem 18} is the finisher's question --- a formula domain,
-        $m(x) = 20/(x - 6)$, where the excluded input has to be found rather
-        than read off.
+        input; \textbf{16} is the crux transferred --- $h$ has no graph, so the
+        boundary $x = 2$ must be settled from the condition alone.
+  \item \textbf{Problem 17} returns to a table: one lookup, then domain and range
+        with the repeated 9 listed once.
+  \item \textbf{Problem 18} is the finisher's question --- a garage tariff in
+        words, to be \textit{written} as a piecewise rule. Constructing the
+        conditions is harder than reading them, and it is what homework problem 8
+        asks again.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
@@ -224,8 +232,8 @@ instead.}
 \begin{skillbox}[Active Monitoring]{redbox}
 Circulate during the \textbf{You Do} phase --- the thirteen minutes where students
 are working problems 15--18 without you --- and check. The crux is
-\textbf{problem 13} (solve $f(x) = 3$ against problem 12's $f(3)$); its You Do
-transfer is \textbf{problem 16}.
+\textbf{problem 13} ($f(3) = 2$, not 6); its You Do transfer is \textbf{problem
+16} ($h(2)$, with no graph to look at).
 \begin{itemize}
   \item \textbf{Common error:} reading $f(x)$ as multiplication --- watch for
         students ``solving for $f$'' or dividing both sides by $f$. Cold-call:
@@ -233,10 +241,12 @@ transfer is \textbf{problem 16}.
   \item \textbf{Common error:} dropping parentheses on negative inputs, so
         $g(-4) = -4^2 + 3(-4)$. Ask the student to say the substitution aloud
         using the word ``quantity.''
-  \item \textbf{Common error:} answering ``solve $s(x) = 9$'' in problem 16
-        with an output, or with only one of the two inputs. Push: ``Is the 9
-        going \textit{into} the machine or coming \textit{out}?'' Point at the
-        direction table they filled in.
+  \item \textbf{Common error (the crux):} at $h(2)$, using the rule whose formula
+        comes first, or the one whose graph reaches the boundary. Push: ``Read me
+        the condition. Does 2 pass that test?'' Point at the open circle they
+        annotated in Part 4.
+  \item \textbf{Common error:} evaluating \emph{both} rules and picking the
+        friendlier answer. Ask: ``How many outputs may one input have?''
   \item \textbf{Domain/range:} students listing a repeated output twice, or
         swapping the two sets. Cold-call: ``Domain --- inputs or outputs?''
 \end{itemize}
@@ -253,17 +263,15 @@ stand}, not by handing out different paper.
         The empty-slot habit from Part 1 is the whole fix for $f(-1)$; if they
         write the substitution straight down with no parentheses, the sign error
         is already in.
-  \item \textbf{On level.} \textbf{Problem 16} is the direction check ---
-        $s(4)$ is a lookup, ``solve $s(x) = 9$'' is the reverse, with two
-        answers. Do not answer it; point at the direction table they filled in
-        during Part 4 and walk away.
+  \item \textbf{On level.} \textbf{Problem 16} is the boundary check. Do not
+        answer it; have them read the two conditions aloud, decide which test
+        $x = 2$ passes, and then walk away.
   \item \textbf{Extend.} \textbf{Problems 17 and 18} are the finisher's
-        questions. 17 is many-to-one from 1.0 seen backward --- a student who
-        says ``two inputs share 6, so running it backward gives one input two
-        outputs'' has previewed 1.6 without being told. 18 asks for an excluded
-        input that must be \textit{found}; a student who solves $x - 6 = 0$
-        rather than pattern-matching has the idea. Either answer presents in the
-        Debrief.
+        questions. 17 rewards a student who lists the repeated output 9 only
+        once. 18 asks them to \textit{write} the conditions rather than read
+        them --- a student who notices the second rule must start \emph{above}
+        2 hours, not at it, has understood the boundary from the other side.
+        Either answer presents in the Debrief.
 \end{itemize}
 \end{skillbox}
 
@@ -273,19 +281,17 @@ Whole class, teacher-led, packets still open. Three moves, in order:
 \begin{enumerate}[itemsep=3pt]
   \item \textbf{Share out the You Do} (3 min) --- one answer per problem,
         not a full review. Problem 15: $f(-1)$, said aloud with the parentheses.
-        Problem 16: both directions, the lookup and the solve. Problem 17:
-        whether running $p$ backward is a function. Problem 18: the excluded
-        input and why. If a student settled 17 cleanly, they present it --- it
-        previews inverse functions in 1.6, and it is the only exposure the rest
-        of the class gets to it before AP Practice problem 6(c) asks for it.
+        Problem 16: the three values, each with the condition that chose the rule.
+        Problem 17: the range with 9 listed once. Problem 18: the two conditions.
+        If a student wrote 18's conditions cleanly, they present it --- writing a
+        boundary is the hardest thing in the lesson, and it is the only exposure
+        the rest of the class gets before homework problem 8 asks for it.
   \item \textbf{Name the headline} (1 min) --- say it, then make the class say it
-        back: \textit{evaluate hands you the input and asks for the output ---
-        exactly one answer. Solve hands you the output and asks for the
-        input(s) --- possibly several, and several is still a function.} Point at
-        the direction table while you say it.
-  \item \textbf{Point forward} (1 min) --- 1.2 stops asking what the output
-        \textit{is} at a given input and starts asking what it \textit{does} as
-        the input climbs.
+        back: \textit{the condition beside a rule is its address. Decide which rule
+        owns the input first; then evaluate only that one.} Point at the open
+        circle on the notes graph while you say it.
+  \item \textbf{Point forward} (1 min) --- 1.2 stops running one machine at a
+        time and starts combining two of them into a third.
 \end{enumerate}
 \textbf{Do not} re-teach domain and range here, take new questions, or let the
 homework start early. If the launch shows it did not land, it is the 1.2 warm-up's
@@ -301,13 +307,14 @@ silence (3 minutes). Circulate straight to the students you flagged during You D
   \item \textbf{Problem 1(a)} asks what $C(3)$ \textit{means} before anyone
         computes --- a student who writes ``$C$ times 3'' is still reading the
         parentheses as multiplication.
-  \item \textbf{Problem 4(c)} is the diagnostic: solve $T(h) = 70$ has
-        \textbf{no} answer. A student who writes an output, or forces an input,
-        has missed the lesson's central distinction.
+  \item \textbf{Problem 4(b)} is the diagnostic: $D(3)$ sits exactly on the
+        boundary, and $D(3) = 4$. A student who writes 4 but cannot name the
+        condition has guessed; a student who writes 13 used the rule that reaches
+        rather than the rule that owns.
 \end{itemize}
-\textbf{Sort what you see into three piles} as you walk: \textit{direction solid}
-(nothing to do), \textit{direction shaky} (a 1.2 warm-up item on ``into the machine
-vs.\ out of it''), and \textit{still multiplying $f$ by $x$} (a one-minute check-in at
+\textbf{Sort what you see into three piles} as you walk: \textit{boundary solid}
+(nothing to do), \textit{boundary shaky} (a 1.2 warm-up item on reading a
+condition), and \textit{still multiplying $f$ by $x$} (a one-minute check-in at
 the door of 1.2).
 \end{skillbox}
 
@@ -315,33 +322,37 @@ the door of 1.2).
 \textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date
 the teacher sets. Every context is new. \textit{Part A} (1--3) evaluates from a
 formula --- a phone plan in context, a squared negative, and $-t^2$ at a negative
-input, the $-4^2$ trap in a new costume. \textit{Part B} (4) reads a temperature
-table both ways, including a solve with \textbf{zero} answers. \textit{Part C} (5--7)
-reads a new graph both ways, a three-answer solve, and domain and range in both
-notations. \textit{Part D} (8--10) states domain and range from points and from a
-formula, and problem 10 asks for the headline in writing.
+input, the $-4^2$ trap in a new costume. \textit{Part B} (4--5) is piecewise: a
+courier tariff evaluated on both sides of its boundary and \emph{on} it, then a
+formula-only piecewise with a negative boundary. \textit{Part C} (6--7) reads a new
+graph and states domain and range in both notations. \textit{Part D} (8--10) builds
+a piecewise rule from a pool tariff, finds a forbidden input, and problem 10 asks
+for the headline in writing.
 
 \textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the
 packet. Section I is five AP-style multiple-choice items (four options) whose
 distractors are the lesson's errors: $f(x)$ as multiplication (1), dropped
-parentheses (2), stopping at one solution (3), domain and range swapped (4), and the
-formula domain with a coefficient on $x$ (5). Section II is one free-response
-question on a drone's altitude table: interpret in context (a), solve (b), the
-many-to-one objection (c), a context domain (d), and a continuity argument for a
-second solution (e) --- the finisher's question.
+parentheses on a negative input (2), the rule that reaches the boundary instead of
+the rule that owns it (3), domain and range swapped (4), and the coefficient missed
+when clearing a denominator (5). Section II is one free-response question on a
+shipping tariff: evaluate and interpret in context (a), why a boundary value is not
+ambiguous (b), what breaks if no rule owns the boundary (c), a context domain (d),
+and writing a third rule with its condition (e) --- the finisher's question.
 
-\textbf{Preview:} Next lesson (1.2, Change in Tandem) asks what the output
-\textit{does} as the input climbs --- increasing, decreasing, or holding
-steady --- and how a graph shows it. The homework's closing box points back at the
-temperature table to set it up.
+\textbf{Preview:} Next lesson (1.2, Function Operations) stops running one machine
+at a time: two functions are added, subtracted, multiplied, and divided to build a
+third, and the domain of the result is decided by both parents at once. The
+homework's closing box points back at the phone plan in problem 1 to set it up.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
 Five minutes, silent start, no calculators. Items 1--3 are the exact algebra
 today's evaluating runs on --- a student who misses item 1 or 2 will make the
-same sign error inside $f(-2)$ within the hour, so note names. Item 4 is the
-promised revisit of the 1.0 function decision and should be quick; the ZIP-code
-rule is the one-to-many case.
+same sign error inside $f(-2)$ within the hour, so note names. Item 4 looks
+trivial and is not: it is the only rehearsal students get for reading a piecewise
+condition as a pass/fail test, and the boundary value 2 appears in both parts on
+purpose. A student who circles 2 in \emph{both} (a) and (b) has the exact
+misconception Part 4 is built to break --- flag them before the notes start.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
@@ -353,54 +364,58 @@ NOTATION row lives or dies on the language: make students \textit{say} ``$f$ of
 $x$'' aloud several times, and translate $f(3) = 7$ (problem 1) into a sentence
 before anyone computes. In the EVALUATING row the $\square$ display is the whole
 point --- write the empty parentheses first, every time, and let problem 6 catch
-the $-4^2$ trap in the open. The DOMAIN \& RANGE row comes \textit{before} the
-directions on purpose, so that the graph is familiar by the time it is read both
-ways; label its two brackets yourself. TWO DIRECTIONS is the spine: fill the
-direction table \textit{before} touching the graph, and treat problems 12 and 13
---- $f(3) = 3$ but $f(x) = 3$ at $x = 1$ and $3$ --- as the crux, with the
-three-answer problem 14 as the payoff, not a curiosity. If time runs short, read
-the bracket sentence aloud without stopping for questions --- homework problem 7
-practices it again; do not cut the direction table.
+the $-4^2$ trap in the open. The DOMAIN \& RANGE row comes \textit{before}
+piecewise on purpose: students need ``which inputs does this function use'' as a
+habit before a rule starts owning only some of them.
+
+PIECEWISE is the spine. Do the graph before the algebra --- the open circle at
+$(3,6)$ and the filled dot at $(3,2)$ are the misconception drawn, and a student
+who annotates those two dots has the lesson. Then problem 13 asks for the
+\emph{reason}, not the number: the top rule reaches $x = 3$ but its address stops
+at $x < 3$. Do not accept ``because it says so''; make them read the condition
+aloud. Problem 14 is the same decision with no picture and a negative boundary,
+which is where it gets hard.
 
 The You Do row (15--18) is the entire independent phase and carries thirteen
-minutes, so treat it as the lesson's third act. Problem 16 is the crux
-transferred to a table; problem 17 is the hinge: two inputs share the output 6,
-so running $p$ backward is not a function --- many-to-one from 1.0, seen from
-the other side, and the first quiet hint of 1.6. If the clock slips, cut
-problem 18 (the formula domain) and let the Debrief carry it; it returns as
-homework problem 9 and AP Practice item 5 either way.
+minutes, so treat it as the lesson's third act. Problem 16 is the crux with the
+graph taken away; problem 18 is the crux inverted --- writing conditions rather
+than reading them. If the clock slips, cut problem 18 and let the Debrief carry
+it; it returns as homework problem 8 and AP Practice item 6(e) either way.
 \end{teachernote}
 
 \begin{teachernote}[Debrief]
 Five minutes, and on this lesson they are genuinely at risk --- the guided phase
 runs 22 minutes and will try to borrow them. Borrow from problem 18 instead;
-it is the one piece of the period that returns in the homework (problem 9). Do
+it is the one piece of the period that returns in the homework (problem 8). Do
 not borrow from the three-minute Homework Launch either: with no exit ticket, it
 is the last look you get before the work leaves the room. The share-out is one
 answer per You Do problem so that a student who stalled on 15 still hears the
-two-direction result in 16 --- the exact shape of homework problem 4, which they
-will otherwise meet alone at home.
+boundary result in 16 --- the exact shape of homework problem 4, which they will
+otherwise meet alone at home.
 \end{teachernote}
 
 \begin{teachernote}[AP Practice]
 Extra credit, optional, and not a substitute for the homework --- say so when you
 hand out the packet. Score it however extra credit works in your gradebook; the
-cover gives it a $+$ cell outside the total. Multiple-choice answers are B, D, B, A,
-C. Item 3 is the most useful one to glance at: a student who circles $\{-1\}$ stopped
-at the first solution, which is problem 13's error surviving the lesson. In the free
-response, accept any correct inequality or bracket form in (d); part (e) is a
-preview of the Intermediate Value Theorem, so credit any argument that says the
-altitude cannot skip from 45 to 20 without passing 30.
+cover gives it a $+$ cell outside the total. Multiple-choice answers are B, D, A, A,
+C. Item 3 is the most useful one to glance at: a student who circles (B) 13 used
+$3x + 1$ because it is written first, and a student who circles (D) thinks both
+rules apply --- those are the two halves of the lesson's misconception, and either
+one means problem 13 of the notes did not land. In the free response, accept any
+correct inequality or bracket form in (d); part (c) is the deepest question on the
+page --- credit any answer saying that no rule would own $w = 2$, so $C(2)$ would be
+undefined and 2 would fall out of the domain.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
 Graded, two pages, due on the date you set; students start problems 1 and 4 in the
 Homework Launch. Grade problems 4 and 10 for accuracy and the rest for completion
-and shown work if time is short: 4(c) (no solution) and 10 (why a function can have
-several solutions) are the two items that say whether the direction distinction
+and shown work if time is short: 4(d) (naming the condition that owns $m = 3$) and
+10 (why exactly one rule applies) are the two items that say whether the boundary
 landed, and together they predict 1.2 better than the evaluating items do. On
 problem 3, $q(-2) = 10$ is the $-(-2)^2 = +4$ slip --- mark it, and if it is common,
-reuse problem 6 of the notes in the 1.2 warm-up. On problem 7, accept either notation;
-swapping domain and range is the error worth a comment.
+reuse problem 6 of the notes in the 1.2 warm-up. Problem 8 is the one worth reading
+closely: a student who writes the second condition as $12 \le a \le 80$ has given
+age 12 two prices, which is the boundary error committed from the writing side.
 \end{teachernote}
 \end{document}

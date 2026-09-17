@@ -6,9 +6,11 @@ to cover the fundamentals of precalculus thoroughly so a student moves comfortab
 exponential/logarithmic/trigonometric core is spread out and reinforced, and the
 parameters-vectors-matrices material is condensed into a single closing unit.
 
-**Structure:** 8 units × 8 lessons = **64 lessons**, plus a sample test per unit.
-Units 1 and 2 number their eight lessons 1.0–1.7 and 2.0–2.7 (see the replan notes below);
-units 3–8 still number theirs X.1–X.8 and adopt the X.0 opener as each is reauthored.
+**Structure:** 8 units, plus a sample test per unit. Units 2–8 hold eight lessons each;
+**Unit 1 is no longer fixed at eight** — its opener was retired in the September 2026 replan
+and further lessons are expected, so it numbers its lessons 1.1 onward (see the replan notes
+below). Unit 2 numbers its eight lessons 2.0–2.7; units 3–8 still number theirs X.1–X.8 and
+adopt the X.0 opener as each is reauthored.
 Pacing target: 18–22 class periods per unit (60-minute meetings).
 
 **Content source:** the Precalculus CED (`spec/`) remains the content backbone.
@@ -40,9 +42,10 @@ packet is warm-up, guided notes, a two-page **extra-credit AP Practice**, and a 
 **graded printed homework**; the period closes with a 3-minute Homework Launch. DeltaMath is
 only a per-lesson override the user asks for.
 
-Lessons 1.0 and 1.1 are the reference implementations. Lessons still marked **moved**, and
-1.2–1.7, remain on the older shape until they are reauthored — they still ship printed
-homework, untagged lesson parts, and an `activity/` group-activity sheet. The build system
+Lesson 1.1 is the reference implementation, with 1.2 and 1.3 authored to the same shape.
+Lessons still marked **moved**, and Unit 1's 1.4–1.8, remain on the older shape until they are
+reauthored — they still ship printed homework, untagged lesson parts, and an `activity/`
+group-activity sheet. The build system
 still merges an activity when one exists, so those lessons keep building unchanged; the
 activity goes away lesson-by-lesson as each is reauthored. **There is no bulk sweep.**
 
@@ -72,27 +75,52 @@ Status legend: **moved** = old lesson relocated, body not yet reauthored;
 
 ### Unit 1: Functions and Change
 
-Replanned August 2026: Unit 1 numbers its eight lessons **1.0–1.7** (the unit opens with
-an introduction lesson). Two pairs from the original 8-unit map were merged (old 1.2+1.3
-→ 1.3; old 1.7+1.8 → 1.7), and two new lessons were added at the front.
+**Replanned September 2026.** The unit opener (old 1.0, *Introduction to Functions and Change*)
+was retired and its directory removed; Unit 1 now numbers its lessons **1.1 onward**, unlike
+Unit 2, which keeps the 2.0–2.7 opener numbering. The front of the unit was rebuilt around the
+algebra of functions: notation (with piecewise) → operations → composition → inverses, so every
+later unit can lean on the whole toolkit. Lessons displaced by that change keep their content
+and move to later slots. **The unit is no longer fixed at eight** — three further lessons are
+expected, and the numbering below leaves room for them.
 
-| # | Lesson | Source | Status |
-|---|--------|--------|--------|
-| 1.0 | Introduction to Functions and Change | New (unit introduction) | authored |
-| 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | authored |
-| 1.2 | Change in Tandem | CED 1.1 (was 1.1) | authored |
-| 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | authored |
-| 1.4 | Transformations of Functions | CED 1.12 (was 1.12) | authored |
-| 1.5 | Composition of Functions | CED 2.7 (was 2.7) | authored |
-| 1.6 | Inverse Functions | CED 2.8 (was 2.8) | authored |
-| 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | authored |
+| # | Lesson | Source | Status | Directory |
+|---|--------|--------|--------|-----------|
+| 1.1 | Functions and Function Notation | New (notation, evaluating, domain/range, piecewise) | authored | `unit01/lesson01` |
+| 1.2 | Function Operations | New | authored | `unit01/lesson02` |
+| 1.3 | Function Composition and Decomposition | CED 2.7 | authored | `unit01/lesson03` |
+| 1.4 | Inverse Functions | CED 2.8 | to reauthor | `unit01/lesson04` |
+| 1.5 | Transformations of Functions | CED 1.12 | to reauthor | `unit01/lesson05` |
+| 1.6 | Change in Tandem | CED 1.1 | to reauthor | `unit01/lesson06` |
+| 1.7 | Rates of Change | CED 1.2 + 1.3 | to reauthor | `unit01/lesson07` |
+| 1.8 | Function Model Selection and Construction | CED 1.13 + 1.14 | to reauthor | `unit01/lesson08` |
 
-Rationale: the unit opens with an orientation lesson (1.0) and an explicit
-function-fundamentals ramp (1.1) for the non-honors track, then the function toolkit
-(transformations, composition, inverses) is pulled forward so every later unit can use
-it. Composition and inverses land here — before exponentials need them — instead of
-mid-Unit-2 as in the CED. Average rate of change and its linear/quadratic application
-travel together (1.3), and the two modeling lessons merge into a single closer (1.7).
+**Directory numbers now match lesson numbers.** The September 2026 renumbering moved every
+displaced lesson into its final slot and remapped each document's *self-identifying* number —
+its header comment, `\pageheader`, `\LessonNumberName`, cover banner and deck title slide — so
+every packet prints the number of the slot it occupies.
+
+**Prose cross-references in the lessons still marked *to reauthor* are stale**, and some are
+stale in *direction* rather than merely in number: composition now precedes transformations, so
+1.5's references to composition as a future lesson, and its "next lesson" preview, point the
+wrong way. Bare `1.N` strings were deliberately left untouched during the renumber because in
+those files they are overwhelmingly TikZ coordinates, table data and CED codes (`1.3.A.1`).
+Each lesson's cross-references are corrected when that lesson is reauthored.
+
+Lessons still marked *to reauthor* remain in the group-activity shape (`activity/` +
+`exit_ticket/`, no `ap_practice/`) and build unchanged in the meantime.
+
+Rationale: 1.1 opens the unit by naming the machine — notation, evaluating, domain and range —
+and adds **piecewise functions**, whose boundary case is the lesson's target misconception.
+1.2–1.4 then build the algebra of functions in dependency order: you must be able to combine
+functions before composing them, and composing them is how an inverse pair is verified.
+Transformations follow composition (1.5) rather than preceding it, so a horizontal shift can be
+introduced *as* a composition instead of as a slogan about reversed signs. The behaviour
+lessons — change in tandem and rates of change — then land on functions students can already
+manipulate, and modeling closes the unit.
+
+**The evaluate-vs-solve distinction moved to 1.4 (Inverse Functions).** It was the crux of the
+old 1.1 and was displaced by piecewise; `f(a) = b \iff f^{-1}(b) = a` is the same idea in its
+natural home, so 1.4 must open with it rather than assume it.
 
 ### Unit 2: Polynomial Functions
 
@@ -233,8 +261,15 @@ before the replan):
 
 | Old lesson | Title | Absorbed into |
 |-----------|-------|---------------|
-| 1.3 | Rates of Change in Linear and Quadratic Functions | 1.3 (Rates of Change) |
-| 1.8 | Function Model Construction and Application | 1.7 (Function Model Selection and Construction) |
+| 1.3 | Rates of Change in Linear and Quadratic Functions | Rates of Change (1.3 then; **1.7** after the September 2026 replan) |
+| 1.8 | Function Model Construction and Application | Function Model Selection and Construction (1.7 then; **1.8** after the September 2026 replan) |
+
+From the September 2026 replan:
+
+| Old lesson | Title | Disposition |
+|-----------|-------|-------------|
+| 1.0 | Introduction to Functions and Change | **Retired.** Directory `unit01/lesson00` removed; content not folded forward. Recoverable from git history. |
+| 1.1 | Function Fundamentals | Rewritten in place as *Functions and Function Notation*: piecewise added, and the evaluate-vs-solve crux moved out to 1.4 (Inverse Functions). |
 
 The dropped directories' full content is in git history (tree at tag/commit prior to the
 restructure, under `unit04/lessonNN`). When reauthoring an absorbing lesson, pull the

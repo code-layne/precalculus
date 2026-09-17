@@ -1,6 +1,12 @@
-%! Inverse Functions — Unit 1, Lesson 1.6 — Slides (Beamer)
+%! Change in Tandem — Unit 1, Lesson 1.6 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\newcommand{\minicurve}[1]{%
+  \begin{tikzpicture}[x=0.34cm, y=0.30cm, baseline=(current bounding box.center)]
+    \draw[linegray, thin] (0,0) rectangle (4,3);
+    \draw[very thick, plum] plot[smooth] coordinates {#1};
+  \end{tikzpicture}}
 
 \begin{document}
 
@@ -11,7 +17,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.6}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Inverse Functions}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Change in Tandem}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -19,272 +25,281 @@
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \plumheader{Hook: Two \$14 Parking Receipts}
-  \sectionlabel[goldacc]{A Receipt Only Records the Answer}
+  \plumheader{Hook: Two Shows, Same Sales}
+  \sectionlabel[goldacc]{Take a Vote First}
 
-  Each receipt says what was paid. Neither says how long the car was parked ---
-  and that is the only thing you want to know.
+  Two shows go on sale the same morning. Six weeks later \textbf{both} have
+  sold exactly 600 tickets.
 
   \smallskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.46\textwidth}
-      \begin{block}{Garage A: \(P(x) = 3x + 2\)}
-        A \$14 receipt. How many hours?
-
-        \smallskip
-        \(3x + 2 = 14 \;\Rightarrow\; x = \mathbf{4}\) --- and no other number
-        of hours gives \$14.
-      \end{block}
-
-    \column{0.50\textwidth}
-      \begin{block}{Garage B: the posted price list}
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{@{}lccccc@{}}
-          hours   & 1 & 2 & 3 & 4 & 5 \\
-          charges & \$8 & \textbf{\$14} & \textbf{\$14} & \$20 & \$26 \\
-        \end{tabular}
-
-        \smallskip
-        A \$14 receipt. How many hours? \textbf{The receipt does not say.}
-      \end{block}
-  \end{columns}
-
-  \medskip
-  \begin{center}
-    One answer gives the question back. The other does not.
-  \end{center}
-\end{frame}
-
-% SECTION 1 — GIVING BACK THE QUESTION
-\begin{frame}[t, plain]
-  \plumheader{1. Giving Back the Question}
-  \sectionlabel[redacc]{The Whole Lesson in One Picture}
-
-  \begin{center}
-  \begin{tikzpicture}[x=1.2cm, y=1.2cm]
-    \draw[thick, plum, fill=lilac, rounded corners=2pt]
-      (-3.4,-0.55) rectangle (-1.6,0.55);
-    \node at (-2.5,0) {\large \(a\)};
-    \draw[thick, plum, fill=goldbg, rounded corners=2pt]
-      (1.6,-0.55) rectangle (3.4,0.55);
-    \node at (2.5,0) {\large \(b\)};
-    \draw[->, very thick, plum] (-1.5,0.32) -- (1.5,0.32);
-    \node[above, font=\small] at (0,0.36) {\(f\)};
-    \draw[->, very thick, goldacc] (1.5,-0.32) -- (-1.5,-0.32);
-    \node[below, font=\small] at (0,-0.36) {\(f^{-1}\)};
-    \node[below, font=\small\itshape, text=slate] at (-2.5,-0.62)
-      {the question};
-    \node[below, font=\small\itshape, text=slate] at (2.5,-0.62)
-      {the answer};
-  \end{tikzpicture}
-  \end{center}
-
-  \medskip
-  \begin{center}
-    \textbf{The inverse gives back the question.}
-    If \(f(a) = b\), then \(f^{-1}(b) = a\).
-  \end{center}
-
-  \medskip
-  \begin{block}{The signature error of this lesson}
-    \(f^{-1}(x) \ne \dfrac{1}{f(x)}\). \quad
-    \(P^{-1}(14) = \mathbf{4}\), \quad but \quad \(\dfrac{1}{P(14)} =
-    \dfrac{1}{44}\).
-
-    \smallskip
-    The reciprocal does arithmetic \textit{to the answer}. The inverse goes back
-    to the \textit{question}.
-  \end{block}
-\end{frame}
-
-% SECTION 2 — THE SWAP
-\begin{frame}[t, plain]
-  \plumheader{2. The Answers Become the Questions}
-  \sectionlabel[goldacc]{Trade the Rows --- Compute Nothing}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.46\textwidth}
+  \begin{columns}[T]
+    \column{0.52\textwidth}
       \begin{center}
-      \renewcommand{\arraystretch}{1.25}
-      \begin{tabular}{|l|c|c|c|c|c|}
-      \hline
-      \(x\) (h) & 1 & 2 & 3 & 4 & 5 \\
-      \hline
-      \(P(x)\) (\$) & 5 & 8 & 11 & 14 & 17 \\
-      \hline
-      \end{tabular}
-
-      \smallskip
-      \begin{tabular}{|l|c|c|c|c|c|}
-      \hline
-      \(x\) (\$) & 5 & 8 & 11 & 14 & 17 \\
-      \hline
-      \(P^{-1}(x)\) (h) & 1 & 2 & 3 & 4 & 5 \\
-      \hline
-      \end{tabular}
-      \end{center}
-
-      \smallskip
-      The questions you may ask \(P^{-1}\) are exactly the answers \(P\) gave
-      --- so \textbf{domain and range swap}.
-
-    \column{0.50\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.33cm, y=0.33cm]
-        \draw[linegray, very thin, step=1] (-5,-5) grid (5,5);
-        \draw[->, thick] (-5.4,0) -- (5.7,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,-5.4) -- (0,5.7) node[above] {\small \(y\)};
-        \draw[dashed, thick, slate] (-5,-5) -- (5,5);
-        \node[font=\tiny, slate, above left] at (4.6,4.6) {\(y = x\)};
-        \draw[very thick, plum] (-3,-5) -- (2,5);
-        \draw[very thick, goldacc] (-5,-3) -- (5,2);
-        \fill[plum] (0,1) circle (2.2pt);
-        \fill[goldacc] (1,0) circle (2.2pt);
-        \fill[plum] (2,5) circle (2.2pt);
-        \fill[goldacc] (5,2) circle (2.2pt);
+      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
+        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
+        \draw[very thick, plum] plot[smooth] coordinates
+          {(0,0) (1,2.5) (2,4) (3,5) (4,5.6) (5,5.9) (6,6)};
+        \node[below=7pt] at (3,0) {\small\textbf{Show A}};
+      \end{tikzpicture}
+      \hspace{0.5cm}
+      \begin{tikzpicture}[x=0.42cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (6,6);
+        \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\tiny weeks};
+        \draw[->, thick] (0,0) -- (0,6.5) node[above] {\tiny hundreds};
+        \draw[very thick, plum] plot[smooth] coordinates
+          {(0,0) (1,0.1) (2,0.3) (3,0.7) (4,1.6) (5,3.4) (6,6)};
+        \node[below=7pt] at (3,0) {\small\textbf{Show B}};
       \end{tikzpicture}
       \end{center}
 
-      \smallskip
-      Questions live on the \(x\)-axis, answers on the \(y\)-axis. Trading them
-      sends \((a,b)\) to \((b,a)\) --- a reflection over \(y = x\).
-  \end{columns}
-\end{frame}
-
-% SECTION 3 — NO INVERSE
-\begin{frame}[t, plain]
-  \plumheader{3. When the Answer Gives Back Nothing}
-  \sectionlabel[redacc]{Back to the Second Receipt}
-
-  \begin{columns}[T, onlytextwidth]
-    \column{0.48\textwidth}
-      \begin{block}{Garage B has no inverse}
-        \(B^{-1}(14)\) would have to be \(2\) \textbf{and} \(3\) --- and a
-        function gets one answer per question.
-
-        \smallskip
-        Nothing is wrong with \(B\). The trouble appears only when you run it
-        backwards.
+    \column{0.44\textwidth}
+      \begin{block}{The question}
+        If you could promote just \textbf{one} of these shows for six more
+        weeks, which would you pick?
       \end{block}
 
       \medskip
-      \begin{block}{One-to-one}
-        No two different questions share an answer. \textbf{A function has an
-        inverse exactly when it is one-to-one.}
+      \begin{block}{Then: why?}
+        Both graphs are \textbf{increasing}. Both end at \textbf{600}. So that
+        word cannot tell them apart --- what word are we missing?
       \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 1 — TANDEM
+\begin{frame}[t, plain]
+  \plumheader{1. Two Quantities in Tandem}
+
+  \begin{block}{Vary in tandem}
+    Change the input and the output answers. A function is the rule that ties
+    the two together.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \textbf{A hose fills a tank.}
+
+      \medskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) (min) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(V(t)\) (gal) & 0 & 8 & 16 & 24 \\
+      \hline
+      \end{tabular}
+
+      \medskip
+      Every 2 minutes: \textbf{8 more gallons}, the same amount each time.
 
     \column{0.48\textwidth}
-      \begin{block}{\(f(x) = x^2\)}
-        \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{@{}lccccc@{}}
-          \(x\)   & \(-2\) & \(-1\) & 0 & 1 & 2 \\
-          \(x^2\) & \textbf{4} & 1 & 0 & 1 & \textbf{4} \\
-        \end{tabular}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Input quantity: \textbf{time}, in minutes
+        \item Output quantity: \textbf{volume}, in gallons
+        \item A table shows a handful of pairs. A \textbf{graph} shows them
+              \textbf{all at once} --- which is why trends become things you
+              can see.
+      \end{itemize}
+  \end{columns}
+\end{frame}
 
-        \smallskip
-        The answer 4 came from two questions.
+% SECTION 2 — WHICH WAY
+\begin{frame}[t, plain]
+  \plumheader{2. Question 1 --- Which Way Are the Outputs Going?}
+
+  \begin{block}{Definitions with teeth}
+    \(f\) is \textbf{increasing} on an interval when: whenever \(a < b\),
+    \(f(a) < f(b)\). \\[3pt]
+    \(f\) is \textbf{decreasing} on an interval when: whenever \(a < b\),
+    \(f(a) > f(b)\).
+  \end{block}
+
+  \smallskip
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.52cm, y=0.34cm]
+        \draw[linegray, very thin, step=1] (0,-3) grid (8,3);
+        \draw[->, thick] (0,-3.5) -- (0,3.7) node[above] {\small \(h(x)\)};
+        \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-3,-1,1,3} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum] (0,-2) -- (2,2);
+        \draw[very thick, plum] (2,2) -- (3,3);
+        \draw[very thick, plum] (3,3) -- (5,0);
+        \draw[very thick, plum] (5,0) -- (6,-3);
+        \draw[very thick, plum] (6,-3) -- (8,-1);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Increasing on \(0 < x < 3\) and \(6 < x < 8\)
+        \item Decreasing on \(3 < x < 6\)
+      \end{itemize}
+
+      \medskip
+      \begin{block}{Two traps}
+        Intervals are named with \textbf{inputs}, never outputs. \\[3pt]
+        Decreasing \(\ne\) negative: cocoa falling from \(90^\circ\) to
+        \(40^\circ\) is decreasing the whole way.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% SECTION 3 — CONCAVITY
+\begin{frame}[t, plain]
+  \plumheader{3. Question 2 --- How Is the Change Changing?}
+  \sectionlabel[redacc]{The Missing Word}
+
+  Both tanks fill for 6 minutes. Both end at 24 gallons. They do \textbf{not}
+  fill the same way --- compute the gains.
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Tank A}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(A(t)\) & 0 & 14 & 20 & 24 \\
+      \hline
+      gain & --- & 14 & 6 & 4 \\
+      \hline
+      \end{tabular}
+
+      \smallskip
+      Gains \textbf{shrinking} \(\Rightarrow\) rate of change decreasing
+      \(\Rightarrow\) \textbf{concave down}.
+
+    \column{0.48\textwidth}
+      \textbf{Tank B}
+
+      \smallskip
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \(t\) & 0 & 2 & 4 & 6 \\
+      \hline
+      \(B(t)\) & 0 & 4 & 10 & 24 \\
+      \hline
+      gain & --- & 4 & 6 & 14 \\
+      \hline
+      \end{tabular}
+
+      \smallskip
+      Gains \textbf{growing} \(\Rightarrow\) rate of change increasing
+      \(\Rightarrow\) \textbf{concave up}.
+  \end{columns}
+
+  \bigskip
+  Both tanks are increasing the whole time. Concavity is a \textbf{second}
+  question --- and it is about the gains, not the outputs.
+\end{frame}
+
+% SECTION 4 — FOUR CORNERS
+\begin{frame}[t, plain]
+  \plumheader{4. The Four Corners}
+  \sectionlabel[redacc]{The Spine of This Lesson}
+
+  Two questions, two answers apiece --- \textbf{four} combinations, and all
+  four are real.
+
+  \medskip
+  \begin{center}
+  \small
+  \renewcommand{\arraystretch}{1.4}
+  \begin{tabular}{|c|l|c|c|l|}
+  \hline
+  \textbf{Shape} & \textbf{The situation} & \textbf{Which way?} &
+  \textbf{Concave} & \textbf{Rate of change} \\
+  \hline
+  \minicurve{(0,0.2) (1,0.4) (2,0.9) (3,1.7) (4,2.9)} &
+  A rumor spreads at school & Increasing & up & increasing \\
+  \hline
+  \minicurve{(0,0.2) (1,1.4) (2,2.1) (3,2.6) (4,2.8)} &
+  A cold soda warms up & Increasing & down & decreasing \\
+  \hline
+  \minicurve{(0,2.8) (1,1.6) (2,0.9) (3,0.5) (4,0.3)} &
+  Hot cocoa cools down & Decreasing & up & increasing \\
+  \hline
+  \minicurve{(0,2.9) (1,2.7) (2,2.2) (3,1.4) (4,0.2)} &
+  A battery drains & Decreasing & down & decreasing \\
+  \hline
+  \end{tabular}
+  \end{center}
+
+  \medskip
+  The two middle columns are \textbf{independent}. ``Concave down'' does
+  \textbf{not} mean the function is falling --- look at row 2.
+\end{frame}
+
+% SECTION 5 — ZEROS
+\begin{frame}[t, plain]
+  \plumheader{5. Zeros --- Where the Output Is 0}
+
+  \begin{block}{Definition}
+    A \textbf{zero} of a function is an input whose output is \textbf{0}. On a
+    graph, the curve meets the horizontal axis there.
+  \end{block}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{It is a \textit{solve} question.} (From 1.1.)
+
+      \smallskip
+      Finding a zero means solving \(h(x) = 0\) --- you are given the output
+      and asked for the input(s). There can be none, one, or many.
+
+      \medskip
+      From the graph in Part 2: zeros at \(x = 1\) and \(x = 5\).
+
+    \column{0.48\textwidth}
+      \begin{block}{A zero is an event}
+        Let \(D(t)\) be a drone's height in meters, \(t\) seconds after
+        takeoff. \\[4pt]
+        \(D(48) = 0\) means: forty-eight seconds after takeoff, the drone is
+        back on the ground.
       \end{block}
 
       \medskip
-      \begin{block}{The repair: throw questions away}
-        Keep only \(x \ge 0\). Then \(f^{-1}(x) = \sqrt{x}\).
-
-        \smallskip
-        ``\(x^2\) has no inverse'' is \textbf{false}. Say the domain.
-      \end{block}
+      \textbf{Spiral:} that Part 2 graph has domain \(0 \le x \le 8\) and
+      range \(-3 \le y \le 3\).
   \end{columns}
-\end{frame}
-
-% SECTION 4 — SWAP AND SOLVE
-\begin{frame}[t, plain]
-  \plumheader{4. Swap and Solve}
-  \sectionlabel[goldacc]{Every Answer at Once}
-
-  A table only gives back the questions already printed on it.
-
-  \medskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.44\textwidth}
-      \begin{block}{The four steps}
-        \begin{enumerate}\setlength{\itemsep}{2pt}
-          \item Write \(y = f(x)\).
-          \item \textbf{Swap} \(x\) and \(y\).
-          \item \textbf{Solve} for \(y\).
-          \item Rename it \(f^{-1}(x)\).
-        \end{enumerate}
-
-        \smallskip
-        Step 2 is the whole inversion: the old \textit{answer} becomes the new
-        \textit{question}.
-      \end{block}
-
-    \column{0.52\textwidth}
-      \(P(x) = 3x + 2\):
-      \begin{align*}
-        y &= 3x + 2 \\
-        x &= 3y + 2 \quad \text{\small(swap)} \\
-        \frac{x-2}{3} &= y
-      \end{align*}
-
-      \smallskip
-      So \(P^{-1}(x) = \dfrac{x-2}{3}\), and \(P^{-1}(14) = \mathbf{4}\) ---
-      the receipt, answered.
-  \end{columns}
-
-  \medskip
-  \begin{center}
-    On the warm-up you solved \(3x + 2 = 14\) and got \textit{one} question
-    back. This gets them all.
-  \end{center}
-\end{frame}
-
-% SECTION 5 — THE CHECK
-\begin{frame}[t, plain]
-  \plumheader{5. The Check: Hand the Answer Back}
-  \sectionlabel[redacc]{Where Lesson 1.5 Pays Off}
-
-  In \(f\big(f^{-1}(x)\big)\) the \textbf{handoff} is whatever \(f^{-1}\)
-  produced. If \(f^{-1}\) really gives back questions, the far end is where you
-  started.
-
-  \medskip
-  \begin{columns}[T, onlytextwidth]
-    \column{0.52\textwidth}
-      \begin{align*}
-        P\big(P^{-1}(x)\big) &= 3\!\left(\frac{x-2}{3}\right) + 2 = x \\[4pt]
-        P^{-1}\big(P(x)\big) &= \frac{(3x+2) - 2}{3} = x
-      \end{align*}
-
-    \column{0.44\textwidth}
-      \begin{block}{Both directions, every time}
-        \(f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x = I(x)\)
-
-        \smallskip
-        The \textbf{identity function} from Lesson 1.5, right on schedule.
-      \end{block}
-  \end{columns}
-
-  \medskip
-  \begin{center}
-    Warm-up item 2 was this check: \(f(x) = 3x+2\) and \(g(x) =
-    \dfrac{x-2}{3}\) gave back 11 and 3. That \(g\) was \(P^{-1}\) all along.
-  \end{center}
 \end{frame}
 
 % CLASS PRACTICE
 \begin{frame}[t, plain]
   \plumheader{Class Practice}
-  \sectionlabel[redacc]{Name the Question, Not the Reciprocal}
+  \sectionlabel[redacc]{Try It}
 
   \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item A function \(g\) satisfies \(g(-4) = 7\). Find \(g^{-1}(7)\), and say
-          in one sentence why it is not \(\tfrac{1}{7}\).
+    \item A snowbank melts. Depth \(S\), in inches, after \(d\) days:
 
-    \item Find \(f^{-1}(x)\) for \(f(x) = 5x - 3\), then check it by computing
-          \(f^{-1}\big(f(x)\big)\).
+          \smallskip
+          \begin{tabular}{|c|c|c|c|c|}
+          \hline
+          \(d\) (days) & 0 & 1 & 2 & 3 \\
+          \hline
+          \(S(d)\) (in.) & 24 & 18 & 14 & 12 \\
+          \hline
+          \end{tabular}
 
-    \item A table gives \(h(1) = 5\), \(h(2) = 8\), \(h(3) = 5\), \(h(4) = 12\).
-          Explain why \(h\) has no inverse.
+          \smallskip
+          \begin{enumerate}\setlength{\itemsep}{5pt}
+            \item Write the daily changes. Which way is \(S\) going? Which
+                  concavity?
+            \item Defend the concavity with the changes --- not the shape.
+          \end{enumerate}
+
+    \item Look back at the graph of \(h\). On which interval is \(h\)
+          decreasing? What are its zeros? What is \(h(2)\) --- and which of
+          those three was an \textit{evaluate} question?
   \end{enumerate}
 \end{frame}
 

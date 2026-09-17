@@ -1,4 +1,16 @@
-%! Change in Tandem — Unit 1, Lesson 1.2 — Homework (ANSWER KEY)
+%! Function Operations — Unit 1, Lesson 1.2 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used a bakery and a food truck; the AP Practice used a school concert
+% and a bike shop; the homework uses a print shop and a lawn-care service.
+%   Page 1 — Part A (at a point, 1–2) and Part B (building the formula and its domain, 3–5).
+%   Page 2 — Part C (in context, 6–7) and Part D (the error and the headline, 8–9).
+% The diagnostic item is problem 4(b): the quotient that cancels, met alone. Problem 9 asks for
+% the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line so
+% its \ans cannot rewrap anything. The single explicit \newpage fixes the break in both files.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -8,117 +20,162 @@
 
 \pageheader{Unit 1, Lesson 1.2}{Homework --- Answer Key}
 
-\vspace{0.12in}
+\vspace{0.1in}
 
-\begin{enumerate}[itemsep=10pt]
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due date
+on your cover sheet. Show your work: put each function's whole formula in parentheses before you
+subtract, and settle the \emph{domain} from the original functions before you simplify anything.
+\end{remindbox}
 
-\item Each description tells you both things at once. Name which way the
-      function goes and its concavity.
+\vspace{0.1in}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item A pumpkin gains weight through August, and it gains more each week
-        than it did the week before.
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Combining at a point}
+\end{headlinebox}
 
-        \vspace{0.05in}
-        \ans{Increasing} and concave \ans{up}
-  \item After a parachute opens, the skydiver's speed drops sharply at first
-        and then levels off toward a steady fall rate.
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
 
-        \vspace{0.05in}
-        \ans{Decreasing} and concave \ans{up}
-\end{enumerate}
+\item \begin{minipage}[t]{0.48\linewidth}
+      \vspace{0pt}
+      Use the table of values for $r$ and $s$.
 
-\item The graph of a function $g$ is shown.
+      \smallskip
+      $(r+s)(2) = $ \ans{$7$}
 
-\begin{center}
-\begin{tikzpicture}[x=0.62cm, y=0.42cm]
-  \draw[linegray, very thin, step=1] (0,-2) grid (8,4);
-  \draw[->, thick] (0,-2.5) -- (0,4.7) node[above] {\small $g(x)$};
-  \draw[->, thick] (-0.5,0) -- (8.6,0) node[below right] {\small $x$};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below right, font=\tiny, fill=white, inner sep=0.6pt] at (\x,0) {\x};
-  \foreach \y in {-2,2,4} \node[left, font=\small] at (0,\y) {\y};
-  \draw[very thick, plum] (0,4) -- (3,-2);
-  \draw[very thick, plum] (3,-2) -- (6,4);
-  \draw[very thick, plum] (6,4) -- (8,2);
-  \fill[plum] (0,4) circle (2.5pt);
-  \fill[plum] (8,2) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
+      \smallskip
+      $(rs)(1) = $ \ans{$15$}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $g$ is decreasing on \ans{$0 < x < 3$} and on \ans{$6 < x < 8$}.
-  \item $g$ is increasing on \ans{$3 < x < 6$}.
-  \item The zeros of $g$ are $x = $ \ans{2} and $x = $ \ans{4}.
-  \item Domain: \ans{0} $\le x \le$ \ans{8} \qquad
-        Range: \ans{$-2$} $\le y \le$ \ans{4}
-\end{enumerate}
+      \smallskip
+      $(r-s)(0) = $ \ans{$3$}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.46\linewidth}
+      \vspace{0pt}
+      \centering
+      {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & $-1$ & 0 & 1 & 2 & 3 \\ \hline
+      $r(x)$ & 6    & 4 & 3 & $-2$ & $-5$ \\ \hline
+      $s(x)$ & $-3$ & 1 & 5 & 9 & 13 \\ \hline
+      \end{tabular}}
+      \end{minipage}
 
-\item A car pulls away from a stop sign. The table gives the distance $D$, in
-      feet, it has travelled after $t$ seconds.
+\item From the same table: \quad $(r-s)(3) = $ \ans{$-18$} \qquad $(s-r)(3) = $ \ans{$18$}
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$t$ (s) & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$D(t)$ (ft) & 0 & 3 & 12 & 27 & 48 \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item The second-by-second changes are \ans{3}, \ans{9}, \ans{15},
-        and \ans{21}.
-  \item $D$ is \ans{increasing} and concave \ans{up}.
-  \item Explain the concavity using the changes.
-
-        \vspace{0.05in}
-        \ansline{Each second the car covers more ground than the second before, so its rate of change is increasing.}
-\end{enumerate}
-
-\item Can a function be \textbf{decreasing} and \textbf{concave up} at the same
-      time? Answer yes or no, give an example, and explain with rate-of-change
-      language.
-
-\vspace{0.05in}
-\ansline{Yes. Hot cocoa cooling toward room temperature keeps falling, but each minute it loses fewer degrees than the last.}
-\ansline{The rate of change is negative and rising toward 0 --- rising is what makes it concave up.}
-
-\item A function's outputs change by the amounts listed below, one amount per
-      step. Which list belongs to a function that is \textbf{increasing and
-      concave down}?
-
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $+2,\ +4,\ +6,\ +8$
-  \item $+8,\ +6,\ +4,\ +2$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $-2,\ -4,\ -6,\ -8$
-  \item $+5,\ +5,\ +5,\ +5$
-\end{enumerate}
+      How are the two answers related, and why does that always happen?
+      \writespace{0.9cm}{They are opposites: $-18$ and $18$. Subtracting in the other order negates every output, so $(s-r)(x) = -(r-s)(x)$ always.}
 
 \end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{extensionbox}
-A hiker climbs for two hours, sits down and rests for one hour, then climbs
-again. During the rest hour, is the elevation function increasing, decreasing,
-or neither? What is its rate of change during that hour?
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Building the formula, and its domain}
+\end{headlinebox}
 
-\vspace{0.05in}
-\ansline{Neither. The elevation holds steady, so larger inputs give neither larger nor smaller outputs --- the graph is flat.}
-\ansline{Its rate of change during that hour is 0.}
-\end{extensionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=3]
+
+\item Let $f(x) = 3x - 4$ and $g(x) = x + 9$.
+
+      $(f+g)(x) = $ \ans{$4x + 5$} \qquad $(f-g)(x) = $ \ans{$2x - 13$}
+
+      $(g-f)(x) = $ \ans{$-2x + 13$} \qquad $(fg)(x) = $ \ans{$3x^2 + 23x - 36$}
+
+\item Let $f(x) = x^2 - 16$ and $g(x) = x - 4$.
+
+      \textbf{(a)} Write $\left(\dfrac{f}{g}\right)(x)$ and simplify it.
+
+\begin{work}
+  \frac{x^2 - 16}{x - 4} &= \frac{(x-4)(x+4)}{x-4} \\
+                         &= x + 4
+\end{work}
+
+      Simplified form: \ans{$x + 4$}
+
+      \textbf{(b)} State the domain of $\dfrac{f}{g}$, and explain why it is not ``all real
+      numbers.''
+      \writespace{1.2cm}{Every real number except $4$. The quotient was never defined at $x = 4$, because $g(4) = 0$; cancelling the $(x-4)$ afterwards cannot put that input back.}
+
+\item Let $f(x) = \dfrac{1}{x + 3}$ and $g(x) = 2x$.
+
+      Domain of $f + g$: \ans{every real number except $-3$}
+
+      Domain of $\dfrac{f}{g}$: \ans{every real number except $-3$ and $0$}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Combinations in context}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=6]
+
+\item A print shop fills an order of $x$ posters. Its ink cost is $I(x) = 0.75x$ dollars and its
+      paper-and-setup cost is $P(x) = 0.50x + 40$ dollars.
+
+      \textbf{(a)} Write the total cost $T(x) = (I + P)(x)$ in simplified form.
+
+\begin{work}
+  T(x) &= 0.75x + (0.50x + 40) \\
+       &= 1.25x + 40
+\end{work}
+
+      $T(x) = $ \ans{$1.25x + 40$}
+
+      \textbf{(b)} Find $T(200)$ and say what it means, with units. \quad $T(200) = $ \ans{$290$}
+
+\item A lawn-care service mows $x$ lawns in a day and can handle at most 12. Its revenue is
+      $R(x) = 35x$ dollars and its cost is $C(x) = 12x + 80$ dollars.
+
+      \textbf{(a)} Write the profit $P(x) = (R - C)(x)$ in simplified form.
+
+\begin{work}
+  P(x) &= 35x - (12x + 80) \\
+       &= 23x - 80
+\end{work}
+
+      $P(x) = $ \ans{$23x - 80$} \qquad \textbf{(b)} $P(6) = $ \ans{$58$}
+
+      \textbf{(c)} State the domain of $P$ in this context, and say why it is not all real numbers.
+      \writespace{1.1cm}{Whole numbers of lawns from 0 to 12: $0 \le x \le 12$. You cannot mow half a lawn or a negative one, and the service can handle at most 12 in a day.}
+
+\end{enumerate}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{notesbox}{Preview of Lesson 1.3}
-Today you called the changes ``growing'' or ``shrinking'' by comparing them.
-Lesson 1.3, \textit{Rates of Change}, puts an actual number on them: the
-average rate of change over an interval, computed from a formula, a table, or
-a graph --- units and all.
-\end{notesbox}
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Find the error, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=8]
+
+\item A classmate writes: ``$f(x) = x^2 - 1$ and $g(x) = x - 1$, so
+      $\left(\dfrac{f}{g}\right)(x) = x + 1$. That is a line, and lines are defined everywhere,
+      so the domain is all real numbers.'' Find the error and give the correct domain.
+      \writespace{1.5cm}{The quotient is undefined at $x = 1$, since $g(1) = 0$. The domain is every real number except $1$. The simplified line $x+1$ is only equal to $f/g$ where $f/g$ was defined in the first place.}
+
+\item In your own words, explain how to find the domain of a combination of two functions. Use
+      the words \emph{overlap} and \emph{zero}, and say why the simplified formula is never the
+      place to read it from.
+      \writespace{1.5cm}{Start from the two original functions, not the simplified formula: take the overlap of their domains, and if you divided, throw out every input where the bottom function is zero. Simplifying can hide a zero that was already excluded.}
+
+\end{enumerate}
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (1.3, Function Composition and Decomposition):} today two machines were fed
+the \emph{same} input and their outputs were combined afterward. Next we chain them instead ---
+the output of one function becomes the \textbf{input} of the next, written $f(g(x))$. Look back
+at problem 6: if the shop's shipping charge depended on the total cost $T$, you would feed
+$T(x)$ straight into the shipping rule rather than adding the two.
+\end{spiralbox}
 
 \end{document}

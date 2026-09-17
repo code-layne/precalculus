@@ -1,4 +1,6 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). The packet table carries no activity and no
+% exit-ticket row: this course has neither (LESSON_SHAPE.md §1, §2).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -17,7 +19,7 @@
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
   {\color{lilacmid}\large\textbf{Unit 1: Functions and Change}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 1.3 \quad Rates of Change}}
+  {\color{white}\textbf{\large Lesson 1.3 \quad Function Composition and Decomposition}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,18 +29,16 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can explain what the average rate of change over an interval
-        promises: the one steady rate that would produce the same change in
-        output over the same run.
-  \item I can compute an average rate of change from a formula, from a table,
-        and from a graph, and I always attach units.
-  \item I can read the sign of a rate of change as a statement about how two
-        quantities move together, and I know what a rate of change of zero
-        does \textit{not} say.
-  \item I can recover detail the average erased by computing it over smaller
-        intervals.
-  \item I can use a list of average rates of change to identify a linear or
-        quadratic function and to name concavity.
+  \item I can name the \textit{handoff} in a composite --- the one number the inner
+        function gives the outer one --- and use it to evaluate $f(g(3))$ from a
+        table or from formulas.
+  \item I can build $(f \circ g)(x)$ by substituting $g(x)$ for every $x$ in
+        $f(x)$, and simplify the result.
+  \item I can explain why $f(g(x))$ and $g(f(x))$ are usually different
+        functions, and why a composite has no value when the outer function will
+        not accept the handoff.
+  \item I can decompose a function into an inner rule and an outer rule, and
+        check my split by substituting back.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -51,13 +51,13 @@
 \rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review of prerequisite skills              & \blank{1.2cm} \\
-2 & Guided Notes   & The stand-in rate: computing it, reading it, refining it & \blank{1.2cm} \\
-3 & Group Activity & The rocket club launch: rates across a whole flight & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on computing and interpreting rates & \blank{1.2cm} \\
-5 & Homework       & Practice and extension                            & \blank{1.2cm} \\
+1 & Warm-Up      & Spiral review of prerequisite skills                & \blank{1.2cm} \\
+2 & Guided Notes & The handoff: find it, hand it over, take it apart   & \blank{1.2cm} \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+4 & Homework     & Graded practice in new contexts \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
 \midrule
-  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
 
@@ -65,12 +65,15 @@
 
 \begin{remindbox}
 \small
-Last lesson you said a function's changes were ``growing'' or ``shrinking'' by
-comparing them. Today you put a number on them. That number is a
-\textit{stand-in}: the one steady rate that would have done the same job over
-the same stretch. It is powerful precisely because it ignores everything
-between the endpoints --- and when you need that detail back, you compute it
-again over smaller pieces.
+Two functions can work in a row, and when they do, one number sits between them:
+the \textbf{handoff}. It is the inner function's answer and the outer function's
+question at the same time --- so find it first and write it down. Everything
+today follows from it. Swap the two machines and you swap the handoff, which is
+why $f(g(x))$ and $g(f(x))$ are usually \emph{different functions} rather than
+two spellings of the same one. A handoff the outer function will not accept
+means the composite has no value at all. And read backwards, the same idea takes
+a function apart: name what you would compute first, and you have found the
+inner rule.
 \end{remindbox}
 
 \end{document}

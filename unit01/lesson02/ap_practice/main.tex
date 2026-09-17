@@ -1,0 +1,148 @@
+%! Function Operations — Unit 1, Lesson 1.2 — AP Practice
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Page 1 is Section I, five multiple-choice items with four options (A)–(D); page 2 is
+% Section II, one multi-part free-response question on a table. Its contexts (a school concert,
+% a bike shop) appear nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 adds or reverses when a difference was
+% asked, MC 2 answers (g-f) when (f-g) was asked, MC 3 reads the domain off the SIMPLIFIED
+% quotient (the lesson's crux), MC 4 adds when a product was asked (and drops a middle term),
+% MC 5 forgets that a parent's own excluded input is excluded from the sum as well.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
+% ways. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.2}{AP Practice}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+\item A school concert sells $n$ tickets. The revenue is $T(n) = 24n$ dollars and the cost of
+      staging the concert is $C(n) = 8n + 450$ dollars. Which function gives the concert's
+      profit for $n$ tickets?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $(T + C)(n) = 32n + 450$
+        \item[(B)] $(T - C)(n) = 16n - 450$
+        \item[(C)] $(C - T)(n) = 450 - 16n$
+        \item[(D)] $(TC)(n) = 192n^2 + 10800n$
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.52\linewidth}
+      The table gives values of the functions $f$ and $g$. What is the value of $(f - g)(2)$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $-4$
+        \item[(B)] $10$
+        \item[(C)] $21$
+        \item[(D)] $4$
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.42\linewidth}
+      \vspace{-2pt}
+      \centering
+      {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      $x$    & 1 & 2 & 3 \\ \hline
+      $f(x)$ & 5 & 7 & 2 \\ \hline
+      $g(x)$ & 6 & 3 & 9 \\ \hline
+      \end{tabular}}
+      \end{minipage}
+
+\item Let $f(x) = x^2 - 49$ and $g(x) = x - 7$. What is the domain of $\dfrac{f}{g}$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] All real numbers
+        \item[(B)] All real numbers except $7$
+        \item[(C)] All real numbers except $-7$
+        \item[(D)] All real numbers except $7$ and $-7$
+      \end{enumerate}
+
+\item If $f(x) = x + 3$ and $g(x) = x - 2$, which of the following is $(fg)(x)$?
+
+      \smallskip
+      \textbf{(A)} $2x + 1$ \hspace{2.0em} \textbf{(B)} $x^2 - 6$ \hspace{2.0em} \textbf{(C)} $x^2 + x - 6$ \hspace{2.0em} \textbf{(D)} $x^2 - x - 6$
+
+\item Let $f(x) = \dfrac{1}{x - 4}$ and $g(x) = x^2$. What is the domain of $f + g$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] All real numbers except $4$
+        \item[(B)] All real numbers
+        \item[(C)] All real numbers except $0$
+        \item[(D)] All real numbers except $4$ and $0$
+      \end{enumerate}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the bike shop must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item A bike shop rents bikes by the day. For $x$ bikes rented on a given day, $R(x)$ is the
+      shop's revenue in dollars and $C(x)$ is its operating cost in dollars.
+
+      \smallskip
+      \centerline{%
+      {\renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$ (bikes) & 0 & 5 & 10 & 15 & 20 \\ \hline
+      $R(x)$ (\$) & 0 & 90 & 180 & 270 & 360 \\ \hline
+      $C(x)$ (\$) & 120 & 135 & 150 & 165 & 180 \\ \hline
+      \end{tabular}}}
+
+      \smallskip
+      \textbf{(a)} Find $(R - C)(10)$ and interpret it in the context of the problem, with units.
+      \writespace{2.0cm}{}
+
+      \textbf{(b)} Find $(C - R)(5)$. Explain how this value is related to $(R - C)(5)$, and why
+      the two are not interchangeable.
+      \writespace{2.2cm}{}
+
+      \textbf{(c)} The shop's profit function is $P = R - C$. Using the table, between which two
+      consecutive $x$-values in the table does $P$ first become positive? Justify your answer
+      with values.
+      \writespace{2.4cm}{}
+
+      \textbf{(d)} Let $d(x) = x$, so that the average revenue per bike is the quotient
+      $\left(\dfrac{R}{d}\right)(x)$. Explain why this quotient has no value at $x = 0$, and
+      state its domain for the $x$-values in the table.
+      \writespace{2.4cm}{}
+
+      \textbf{(e)} The shop's rates change so that $R(x) = 18x$ and $C(x) = 3x + 120$ for
+      $0 \le x \le 20$ bikes. Write $P(x) = (R - C)(x)$ in simplified form, find the smallest
+      whole number of bikes for which $P(x) > 0$, and state the domain of $P$ in this context.
+      \writespace{2.4cm}{}
+
+\end{enumerate}
+
+\end{document}

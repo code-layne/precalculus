@@ -1,7 +1,7 @@
-%! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Warm-Up (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.7 — Warm-Up (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,82 +10,48 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=10pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item Fill in the differences down each output row.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$f(x)$ & 5 & 8 & 11 & 14 & 17 \\
-\hline
-difference & --- & \ans{3} & \ans{3} & \ans{3} & \ans{3} \\
-\hline
-\end{tabular}
-\qquad
-\begin{tabular}{|c|c|c|c|}
-\hline
-$x$ & 1 & 2 & 4 \\
-\hline
-$g(x)$ & 3 & 7 & 15 \\
-\hline
-difference & --- & \ans{4} & \ans{8} \\
-\hline
-\end{tabular}
-\end{center}
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Is $f$'s rate of change constant? \ans{Yes --- it is 3 per step.}
-  \item Look at the \textbf{$x$ row} of the $g$ table. What is different about it?
-
-        \ansline{The inputs are not equally spaced --- they step by 1, then by 2.}
-\end{enumerate}
-
-\item One equation, solved two different ways.
+\item Find the slope of the line through $(2, 5)$ and $(6, 17)$.
 
 \begin{work}
-   2w + \ell &= 80 \\
-        \ell &= 80 - 2w \\
-          2w &= 80 - \ell \\
-           w &= \frac{80 - \ell}{2} \\
-  w(80 - 2w) &= 10\big(80 - 2(10)\big) \\
-             &= 600
+  m &= \frac{17 - 5}{6 - 2} \\
+    &= \frac{12}{4} \\
+    &= 3
 \end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Solve $2w + \ell = 80$ for $\ell$: \qquad $\ell = $ \ans{$80 - 2w$}
-  \item Solve the \textbf{same} equation for $w$: \qquad $w = $ \ans{$(80 - \ell)/2$}
-  \item Using $w = 10$: \quad $w(80 - 2w) = $ \ans{600}
-\end{enumerate}
+$m = $ \ans{3}
 
-\item A tank is filling. The table gives the volume $V$, in gallons, after
-      $t$ minutes.
+\item Let $f(x) = x^2 + 3$. Find $f(1)$ and $f(4)$.
+
+\begin{work}
+  f(1) &= (1)^2 + 3 \\
+       &= 4 \\
+  f(4) &= (4)^2 + 3 \\
+       &= 19
+\end{work}
+
+$f(1) = $ \ans{4} \qquad $f(4) = $ \ans{19}
+
+\item A snowbank melts. The table gives its depth $S$, in inches, after $d$ days.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
-\begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$t$ (minutes) & 0 & 2 & 4 & 6 \\
+$d$ (days) & 0 & 1 & 2 & 3 \\
 \hline
-$V(t)$ (gallons) & 12 & 20 & 32 & 44 \\
+$S(d)$ (in.) & 30 & 22 & 17 & 15 \\
 \hline
 \end{tabular}
-\end{center}
-
 \smallskip
-Find the average rate of change of $V$ from $t = 2$ to $t = 6$.
 
-\begin{work}
-  \frac{V(6) - V(2)}{6 - 2} &= \frac{44 - 20}{4} \\
-                            &= 6
-\end{work}
-
-Average rate of change $= $ \ans{6} \qquad Units: \ans{gallons per minute}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item The daily changes are \ans{$-8$}, \ans{$-5$}, and \ans{$-2$}.
+  \item Circle one from each pair: \quad
+        \textbf{increasing} / \ans{decreasing} \qquad
+        concave \ans{up} / \textbf{down}
+\end{enumerate}
 
 \end{enumerate}
 

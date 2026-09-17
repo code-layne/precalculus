@@ -1,4 +1,25 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Guided Notes
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% DENSITY: a \blank{} only where a number IS the answer (the handoff row of the table); no
+% mid-sentence blanks; two problems across; 2–2.6cm of answer space each.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 14 minutes while the teacher circulates.
+% The crux is row 4, TWO HANDOFFS: problem 12 runs ONE input through BOTH orders off the same
+% pair of functions and gets two different answers. Problem 15 transfers it to a table.
+% NOTE ON ORDERING: transformations are now Lesson 1.5, AFTER this lesson — nothing here may
+% treat f(x+h) as prior knowledge. Inverse functions are Lesson 1.4, the next lesson.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. (`\\` inside cases/tabular is safe:
+% those environments scope it.) A row cannot break across pages: the figure and EACH grid row
+% are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,326 +31,264 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Explain what the \blank{4.4cm} of a function over an interval
-        promises, in words.
-  \item Compute it from a \blank{2.2cm}, a \blank{2.2cm}, or a
-        \blank{2.2cm}, with units.
-  \item Say what the \blank{1.6cm} of a rate of change tells me about how two
-        quantities move together.
-  \item Use a list of average rates of change to tell a \blank{2cm} function
-        from a \blank{2.4cm} one and to name \blank{2.4cm}.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Average rate of change:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Composition:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Secant line:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Inner and outer function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Positive rate of change:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Handoff value:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Negative rate of change:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Domain of a composite:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Constant rate of change:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Decomposition:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[22]
+\boxguard
 \begin{hookbox}
-Ravi and Mira start at the bottom of the same 60-step stadium stairway at the
-same moment. Both reach the top exactly 30 seconds later. The tables give the
-number of steps each has climbed.
+A \$60 jacket, a \$10 coupon, and 6\% sales tax. At register 1 the clerk scans
+the coupon first and the tax second. At register 2 the clerk scans the tax first
+and the coupon second. Between the two scans, each register's little screen shows
+a number --- and the two screens will not agree.
 
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multicolumn{5}{|c|}{\textbf{Ravi}} \\
-\hline
-time (s) & 0 & 10 & 20 & 30 \\
-\hline
-steps climbed & 0 & 40 & 55 & 60 \\
-\hline
-\end{tabular}
-\hspace{0.5cm}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\multicolumn{5}{|c|}{\textbf{Mira}} \\
-\hline
-time (s) & 0 & 10 & 20 & 30 \\
-\hline
-steps climbed & 0 & 20 & 40 & 60 \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-Who climbed \textit{faster}? Commit to an answer before you compute anything.
+Same jacket, same coupon, same tax rate. Will the two \textit{totals} agree?
+Commit to an answer before you compute anything.
 \writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
+\small
+\begin{guidednotes}
+% ── ROW 1: composition and the handoff ───────────────────────────────────────
+\mainidea[The number in between]{The Handoff} &
+A \textbf{composition} runs two functions back to back: the output of the first becomes the
+input of the second. We write it $(f \circ g)(x) = f\big(g(x)\big)$ and read it ``$f$ of $g$ of
+$x$.'' The circle is \textbf{not} multiplication, and the function written \emph{last} is the one
+that runs \emph{first}. The one number sitting between the two machines is the \textbf{handoff}:
+it is the inner function's \textbf{answer} and the outer function's \textbf{question} at the same
+time, so find it first and write it down.
 
-\boxguard[24]
-\begin{notesbox}{1. The Stand-In}
-The \textbf{average rate of change} of a function over an interval is the one
-\textbf{steady} rate that would produce the same change in output over the
-same change in input.
-
-\medskip
-\textbf{Both climbers, over the whole 30 seconds.}
-
-\begin{itemize}[itemsep=4pt]
-  \item Ravi: change in output $= 60 - 0 = $ \blank{1.4cm} steps;
-        change in input $=$ \blank{1.4cm} seconds; average rate of change
-        $=$ \blank{2.6cm}.
-  \item Mira: change in output $=$ \blank{1.4cm} steps; change in input
-        $=$ \blank{1.4cm} seconds; average rate of change $=$ \blank{2.6cm}.
-\end{itemize}
-
-The two climbs look nothing alike, and the averages are \blank{2.2cm}.
-
-\medskip
-\textbf{The formula.} For a function $f$ on the interval from $x = a$ to
-$x = b$:
-\[
-  \text{average rate of change} \;=\; \frac{f(b) - f(a)}{b - a}
-  \;=\; \frac{\text{change in output}}{\text{change in input}}
-\]
-
-\medskip
-\textbf{What the stand-in promises --- and what it costs.} A steady climber at
-2 steps per second starts at the same place, ends at the same place, and takes
-the same 30 seconds. The average is pinned only at the \blank{2.6cm} of the
-interval, so everything that happened \blank{2.6cm} them is thrown away
-on purpose.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[26]
-\begin{notesbox}{2. Computing It Three Ways}
-\textbf{(a) From a formula.} Let $f(x) = x^2 + 3$. Find the average rate of
-change over $[1, 4]$. (You already found $f(1)$ and $f(4)$ on the warm-up.)
-
-\begin{work}
-  \text{AROC} &= \frac{f(4) - f(1)}{4 - 1} \\
-              &= \frac{19 - 4}{3} \\
-              &= 5
-\end{work}
-
-\medskip
-\textbf{(b) From a table.} $T(t)$ is the temperature in $^\circ$F,
-$t$ hours after 6 a.m.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$t$ (hours after 6 a.m.) & 0 & 2 & 4 & 6 & 8 \\
-\hline
-$T(t)$ ($^\circ$F) & 52 & 58 & 68 & 74 & 72 \\
-\hline
-average rate of change & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\smallskip
-
-The morning warmed fastest between $t = $ \blank{1cm} and $t = $
-\blank{1cm}, at \blank{3cm} per hour.
-
-\medskip
-\textbf{(c) From a graph.} $g(t)$ is the height of a kite in meters, $t$
-minutes after it is let out. The two dashed lines are drawn for you.
-
-\begin{center}
-\begin{tikzpicture}[x=0.62cm, y=0.46cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (8,6);
-  \draw[->, thick] (0,0) -- (8.7,0) node[below right] {\small $t$ (min)};
-  \draw[->, thick] (0,0) -- (0,6.6) node[above] {\small $g(t)$ (m)};
-  \foreach \x in {1,2,3,4,5,6,7,8} \node[below, font=\tiny] at (\x,0) {\x};
-  \foreach \y in {1,3,5} \node[left, font=\tiny] at (0,\y) {\y};
-  \draw[dashed, thick, goldacc] (0,1) -- (4,5);
-  \draw[dashed, thick, goldacc] (4,5) -- (8,1);
-  \draw[very thick, plum] plot[smooth] coordinates
-    {(0,1) (1,2.6) (2,3.9) (3,4.7) (4,5) (5,4.7) (6,3.9) (7,2.6) (8,1)};
-  \fill[plum] (0,1) circle (2.5pt);
-  \fill[plum] (4,5) circle (2.5pt);
-  \fill[plum] (8,1) circle (2.5pt);
+\vspace{4pt}
+A cable car climbs 200 feet every minute, so after $t$ minutes its elevation is $E(t) = 200t$
+feet. The air cools as you rise: at elevation $e$ feet the temperature is
+$T(e) = 68 - \dfrac{e}{100}$ degrees Fahrenheit. Nothing on the mountain measures degrees against
+minutes --- but chaining the two instruments does.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.3cm,
+        minimum height=1.0cm, font=\large] (E) at (0,0) {$E$};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, minimum width=1.3cm,
+        minimum height=1.0cm, font=\large] (T) at (5.4,0) {$T$};
+  \node[font=\small] (in) at (-2.4,0) {$t$ minutes};
+  \node[font=\small] (out) at (8.0,0) {$T(E(t))$ degrees};
+  \draw[->, very thick, plum] (in) -- (E);
+  \draw[->, very thick, goldacc] (E) -- (T);
+  \draw[->, very thick, plum] (T) -- (out);
+  \node[above, font=\small] at (2.7,0.16) {$E(t)$ feet};
+  \node[above, font=\scriptsize\itshape, text=slate] at (0,0.58) {runs first};
+  \node[above, font=\scriptsize\itshape, text=slate] at (5.4,0.58) {runs second};
+  \node[below, font=\scriptsize\bfseries, text=goldacc] at (2.7,-0.10) {THE HANDOFF};
+  \node[below, font=\scriptsize, text=slate, align=center] at (2.7,-0.44)
+       {$E$'s answer \textit{is} $T$'s question};
 \end{tikzpicture}
 \end{center}
-
-\begin{itemize}[itemsep=4pt]
-  \item Over $[0,4]$: the kite goes from \blank{1cm} m to \blank{1cm} m, so
-        the average rate of change is \blank{3.2cm}.
-  \item Over $[4,8]$: the average rate of change is \blank{3.2cm}.
-  \item Each dashed line is a \textbf{secant line} --- the straight line
-        through two points of the graph. Its \blank{1.6cm} \textit{is} the
-        average rate of change over that interval.
-\end{itemize}
-
-\medskip
-\textbf{Order matters.} Whichever input you subtract first downstairs, its
-output must be subtracted \blank{2.2cm} upstairs.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[20]
-\begin{notesbox}{3. What the Sign Says --- and What Zero Does Not Say}
-\begin{itemize}[itemsep=4pt]
-  \item A \textbf{positive} rate of change: as the input increases, the output
-        \blank{2.2cm}. The two quantities move the \blank{2cm} way.
-  \item A \textbf{negative} rate of change: as the input increases, the output
-        \blank{2.2cm}. The two quantities move \blank{2.4cm} ways.
-  \item Every rate carries \textbf{units}: output units \textit{per}
-        \blank{3cm}. ``$5$'' is not an answer; ``$5$ degrees per hour'' is.
-\end{itemize}
-
-\medskip
-\textbf{Zero.} A hiker leaves the trailhead at 900 feet, climbs all afternoon,
-and comes back down to the trailhead 4 hours later.
-
-\begin{itemize}[itemsep=4pt]
-  \item Her average rate of change over the whole afternoon is
-        \blank{3cm} feet per hour.
-  \item Did nothing happen? \blank{1.6cm} \; Explain what the average threw
-        away.
-
-        \vspace{0.05in}
-        \writeline
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[22]
-\begin{notesbox}{4. Chop It Finer}
-The average over the whole climb called Ravi and Mira identical. Compute the
-average rate of change over each \textbf{10-second split} instead.
-
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|}
-\hline
-split (seconds) & 0 to 10 & 10 to 20 & 20 to 30 \\
-\hline
-Ravi's rate (steps/s) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-\hline
-Mira's rate (steps/s) & \blank{1.2cm} & \blank{1.2cm} & \blank{1.2cm} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-\begin{itemize}[itemsep=4pt]
-  \item Ravi's rates are \blank{2.4cm}. In Lesson 1.2's language, his climb is
-        concave \blank{1.4cm}.
-  \item Mira's rates \blank{3cm}. Her climb is a straight line.
-  \item The vote is settled --- but notice \textit{how}. Nothing new was
-        measured. The same tool was used over \blank{2.6cm} intervals, and
-        the story the whole-climb average erased came back.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[12]
-\begin{notesbox}{5. The Pattern Names the Function}
-Take the average rate of change over each unit interval from $x = 0$ to
-$x = 4$ and read the list that comes out.
-
-\smallskip
-\begin{center}
+\vspace{2pt}
+The handoff is measured in \labelbox{1.8cm}{}\qquad and $E$'s answer becomes $T$'s \labelbox{2.0cm}{}
+\\
+& \notesprompt{Say the handoff out loud before you compute anything.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Name the handoff in $T(E(4))$, with its units. Then find $T(E(4))$.}{2.2cm}{} &
+\pcell{2}{In $(T \circ E)(t)$, which function runs first? Then name one thing $(T \circ E)(t)$ does \emph{not} mean.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: evaluating a composite from a table ───────────────────────────────
+\mainidea[From a table]{Finding It} &
+A composition never needs a formula --- it needs two lookups, so a table is enough. Read the
+inner function's value first, write that number down, and only then carry it to the outer
+function. If the outer function has no value at the handoff, the composite has no value there
+either: that restriction is the \textbf{domain of a composite}.
+\\
+& \begin{center}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline
 $x$ & 0 & 1 & 2 & 3 & 4 \\
 \hline
-$f(x) = 2x + 1$ & 1 & 3 & 5 & 7 & 9 \\
+$f(x)$ & 3 & 4 & 0 & 2 & 1 \\
 \hline
-AROC of $f$ & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-$g(x) = x^2$ & 0 & 1 & 4 & 9 & 16 \\
-\hline
-AROC of $g$ & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-change in the AROC of $g$ & --- & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+$g(x)$ & 2 & 3 & 7 & 0 & 4 \\
 \hline
 \end{tabular}
 \end{center}
-\smallskip
+\vspace{2pt}
+\textbf{Fill the handoff row all the way across before you look up a single value of $f$.}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & 0 & 3 & 4 \\
+\hline
+handoff: $g(x)$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+$f(g(x))$ & \blank{1.1cm} & \blank{1.1cm} & \blank{1.1cm} \\
+\hline
+\end{tabular}
+\end{center}
+\\
+& \notesprompt{Use the table above. Write the handoff, then the answer.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Find $f(g(1))$. Name the handoff first.}{2.0cm}{} &
+\pcell{4}{Find $g(f(1))$. Name the handoff first.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{Try $f(g(2))$. What is the handoff, and why does the composite have no value here?}{2.2cm}{} &
+\pcell{6}{Find $f(g(3))$ and $g(f(3))$. Write both handoffs.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: building the composite from formulas ──────────────────────────────
+\mainidea[A whole expression]{Building It} &
+With formulas instead of a table the handoff stops being a number and becomes an
+\textbf{expression} --- and nothing else changes. To build $(f \circ g)(x)$, hand $f$ the whole
+rule of $g$:
 
-\begin{itemize}[itemsep=5pt]
-  \item \textbf{Linear.} $f$'s average rate of change is \blank{2.6cm} over
-        every interval --- that single number is its \blank{1.8cm}. Its rates
-        change at a rate of \blank{1cm}.
-  \item \textbf{Quadratic.} $g$'s rates are \textit{not} constant, but they
-        climb by exactly \blank{1cm} every time. A quadratic's average rates
-        of change are themselves \blank{2cm}.
-  \item \textbf{Concavity, now with a computation behind it.} Rates
-        increasing $\Rightarrow$ concave \blank{1.4cm}; rates decreasing
-        $\Rightarrow$ concave \blank{1.4cm}.
-\end{itemize}
-\end{notesbox}
+\vspace{3pt}
+\stepnum{1}\ Write $f$ with an empty slot: $f(\square) = 3(\square) - 2$. \quad
+\stepnum{2}\ Put $g(x)$ in \emph{every} slot --- circle each $x$ first so you miss none. \quad
+\stepnum{3}\ Simplify.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=0.95, >=stealth]
+  \node[font=\large] (rule) at (0,0) {$f(\square) = 3(\square) - 2$};
+  \node[font=\large] (fill) at (6.3,0) {$f(x^2 + 1) = 3(x^2 + 1) - 2$};
+  \draw[->, very thick, plum] (2.1,0) -- node[above, font=\scriptsize\itshape] {the handoff goes in} (3.4,0);
+  \node[font=\large] at (6.3,-1.5) {$= 3x^2 + 1$};
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\small, align=left]
+        at (0,-1.5) {\textbf{The trap:} $f(g(x))$ is \emph{not} $f(x)\cdot g(x)$.\\ A product has no handoff.};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Throughout this row, $f(x) = 3x - 2$ and $g(x) = x^2 + 1$.
+\\
+& \notesprompt{Build each composite and simplify. Show the substitution before you expand.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Build $(f \circ g)(x)$ for $f(x) = 3x-2$ and $g(x) = x^2+1$.}{2.2cm}{} &
+\pcell{8}{Now build $(g \circ f)(x)$ for the same two functions. Is it the same expression?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Check $f(g(2))$ two ways: by naming the handoff, and from your answer to problem 7.}{2.2cm}{} &
+\pcell{10}{Let $p(x) = x^2$ and $q(x) = x - 4$. Build $(p \circ q)(x)$ and $(q \circ p)(x)$.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — two orders, two handoffs — plus decomposition ──────────
+\mainidea[Order matters]{Two Handoffs} &
+Swap the two machines and you swap the handoff --- and a different number handed over produces a
+different answer. That is why $f(g(x))$ and $g(f(x))$ are usually \emph{different functions}, not
+two ways of writing the same one. Back at the register, the coupon is $c(p) = p - 10$ and the tax
+is $t(x) = 1.06x$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+  % register 1 — coupon, then tax
+  \node[font=\small\bfseries, text=plum, anchor=west] at (-1.5,1.85) {Register 1 --- coupon first, then tax};
+  \node[font=\small] (p1) at (-0.7,1.15) {\$60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (c1) at (1.0,1.15) {$c$};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=2pt, minimum width=1.3cm,
+        minimum height=0.62cm, font=\small\bfseries] (h1) at (2.9,1.15) {\$50};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (t1) at (4.8,1.15) {$t$};
+  \node[font=\small\bfseries] (o1) at (6.7,1.15) {\$53.00};
+  \draw[->, very thick, plum] (p1) -- (c1);
+  \draw[->, very thick, goldacc] (c1) -- (h1);
+  \draw[->, very thick, goldacc] (h1) -- (t1);
+  \draw[->, very thick, plum] (t1) -- (o1);
+  % register 2 — tax, then coupon
+  \node[font=\small\bfseries, text=plum, anchor=west] at (-1.5,0.15) {Register 2 --- tax first, then coupon};
+  \node[font=\small] (p2) at (-0.7,-0.55) {\$60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (t2) at (1.0,-0.55) {$t$};
+  \node[draw=goldacc, very thick, fill=hookbg, rounded corners=2pt, minimum width=1.3cm,
+        minimum height=0.62cm, font=\small\bfseries] (h2) at (2.9,-0.55) {\$63.60};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=2pt, minimum width=0.9cm,
+        minimum height=0.62cm, font=\small] (c2) at (4.8,-0.55) {$c$};
+  \node[font=\small\bfseries] (o2) at (6.7,-0.55) {\$53.60};
+  \draw[->, very thick, plum] (p2) -- (t2);
+  \draw[->, very thick, goldacc] (t2) -- (h2);
+  \draw[->, very thick, goldacc] (h2) -- (c2);
+  \draw[->, very thick, plum] (c2) -- (o2);
+  % the handoff column
+  \draw[goldacc, very thick, dashed] (2.9,1.62) -- (2.9,-1.05);
+  \node[below, font=\scriptsize\bfseries, text=goldacc] at (2.9,-1.05) {the two handoffs};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+The two totals differ by \labelbox{1.6cm}{} because the two \labelbox{2.2cm}{} differ
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Swap the machines and you swap the handoff. Taxing first charges 6\% of the ten dollars
+you never paid --- at every price. Same two rules, different middle number, different answer:
+that is what ``order matters'' actually means.}}}
 
-\vspace{0.1in}
+\vspace{3pt}
+\textbf{In your own words:} why is it not enough to say ``$f(g(x))$ and $g(f(x))$ use the same two rules''?
+\writespace{1.4cm}{}
+\\
+& \textbf{Backwards: decomposition.} Running the machines backwards means taking one function
+apart. Ask what a calculator would compute \emph{first}: that value is the handoff, and its rule
+is the \textbf{inner} function. Whatever is done to it is the \textbf{outer} function. Reading
+$h(x) = \sqrt{x + 5}$ this way: you would add 5 first, so the inner rule is $g(x) = x + 5$ and
+the outer rule is $f(u) = \sqrt{u}$. Check a split by substituting back --- $f(g(x))$ must
+rebuild $h$ exactly.
+\\
+& \notesprompt{Name the handoff every time. On a decomposition, check by substituting back.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Build $t(c(p))$ and $c(t(p))$ symbolically. By how much do the two rules differ at any price?}{2.4cm}{} &
+\pcell{12}{Let $f(x) = 2x$ and $g(x) = x - 6$. Find $f(g(10))$ and $g(f(10))$. Write both handoffs and both answers.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Decompose $h(x) = \sqrt{x+5}$: give the inner rule and the outer rule, then check by substituting back.}{2.2cm}{} &
+\pcell{14}{A classmate says $f(g(x))$ and $g(f(x))$ must match because they use the same two rules. Use the word \emph{handoff} to say what is wrong.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (14 min) ──────────
+\mainidea[You do, alone]{Table \& Formulas} &
+A pair of functions $p$ and $q$ given only by a table, and a pair $f$ and $g$ given only by
+formulas. Name the handoff before every answer.
+\\
+& \begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \node[font=\normalsize, anchor=north] at (0,1.9) {%
+    \renewcommand{\arraystretch}{1.3}%
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline $p(x)$ & 5 & 3 & 1 & 4 & 2 \\
+    \hline $q(x)$ & 4 & 1 & 2 & 5 & 3 \\ \hline
+    \end{tabular}};
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt,
+        font=\normalsize, anchor=north] at (0,-0.55) {$f(x) = x + 3$ \qquad $g(x) = x^2$};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{From the table: find $p(q(2))$ and $q(p(2))$. Write each handoff. Are the two answers equal?}{2.2cm}{} &
+\pcell{16}{Using $f$ and $g$ above, build $(f \circ g)(x)$ and $(g \circ f)(x)$, simplified. Same function or not?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Find $f(g(-2))$ by naming the handoff first, then check it with your formula from problem 16.}{2.2cm}{} &
+\pcell{18}{Decompose $m(x) = (2x+1)^3$ into an inner rule and an outer rule. Which rule runs first when you compute $m(1)$? Find $m(1)$.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\boxguard[26]
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item A delivery van's odometer is read every hour. $D(t)$ is the distance
-        travelled, in miles, after $t$ hours.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.4}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $t$ (hours) & 0 & 1 & 2 & 3 & 4 \\
-        \hline
-        $D(t)$ (miles) & 0 & 60 & 100 & 160 & 180 \\
-        \hline
-        \end{tabular}
-        \smallskip
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Find the average rate of change over $[0, 2]$.
-
-                \begin{work}
-                  \text{AROC} &= \frac{D(2) - D(0)}{2 - 0} \\
-                              &= \frac{100 - 0}{2} \\
-                              &= 50
-                \end{work}
-
-                Answer, with units: \blank{4.6cm}
-          \item Over $[2, 4]$ the average rate of change is \blank{4cm}.
-          \item Which two-hour stretch was faster, and by how much?
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
-
-  \item One function's average rates of change over consecutive equal-length
-        intervals are $7,\ 7,\ 7,\ 7$. Another's are $2,\ 6,\ 10,\ 14$.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The \blank{2cm} function is linear, with slope \blank{1.2cm}.
-          \item The other is concave \blank{1.4cm}, because its rates are
-                \blank{2.4cm}.
-        \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

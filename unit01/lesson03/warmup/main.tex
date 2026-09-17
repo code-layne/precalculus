@@ -1,4 +1,8 @@
-%! Rates of Change — Unit 1, Lesson 1.3 — Warm-Up
+%! Function Composition and Decomposition — Unit 1, Lesson 1.3 — Warm-Up
+% Exactly ONE page, blank and keyed (LESSON_SHAPE.md, one_page). Three prerequisite items
+% spiralling 1.1 and 1.2: evaluating at a value and at a negative (and at an EXPRESSION, which
+% is the whole mechanic of the BUILDING IT row); a piecewise evaluation; and a function
+% operation plus a backwards table read, which is what a handoff lookup needs.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -12,45 +16,51 @@
 
 \begin{enumerate}[itemsep=12pt]
 
-\item Find the slope of the line through $(2, 5)$ and $(6, 17)$.
+\item From Lesson 1.1: let $f(x) = 3x - 2$. Whatever you put in the parentheses is what gets
+      tripled --- even when it is not a number.
 
 \begin{work}
-  m &= \frac{17 - 5}{6 - 2} \\
-    &= \frac{12}{4} \\
-    &= 3
+   f(5) &= 3(5) - 2 = 13 \\
+  f(-1) &= 3(-1) - 2 = -5 \\
+ f(x^2) &= 3(x^2) - 2 = 3x^2 - 2
 \end{work}
 
-$m = $ \blank{2cm}
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item $f(5) = $ \blank{2.2cm} \qquad $f(-1) = $ \blank{2.2cm}
+  \item $f(x^2) = $ \blank{3.2cm}
+\end{enumerate}
 
-\item Let $f(x) = x^2 + 3$. Find $f(1)$ and $f(4)$.
+\item From Lesson 1.1: let $v(x) = x^2$ when $x \le 1$, and $v(x) = 4 - x$ when $x > 1$. Decide
+      which rule owns the input before you evaluate.
 
 \begin{work}
-  f(1) &= (1)^2 + 3 \\
-       &= 4 \\
-  f(4) &= (4)^2 + 3 \\
-       &= 19
+  v(-2) &= (-2)^2 = 4 \\
+   v(1) &= (1)^2 = 1 \\
+   v(3) &= 4 - 3 = 1
 \end{work}
 
-$f(1) = $ \blank{2cm} \qquad $f(4) = $ \blank{2cm}
+      $v(-2) = $ \blank{1.8cm} \qquad $v(1) = $ \blank{1.8cm} \qquad $v(3) = $ \blank{1.8cm}
 
-\item A snowbank melts. The table gives its depth $S$, in inches, after $d$ days.
+\item From Lesson 1.2: the table gives every value of two functions $f$ and $g$.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-$d$ (days) & 0 & 1 & 2 & 3 \\
+$x$ & 1 & 2 & 3 & 4 \\
 \hline
-$S(d)$ (in.) & 30 & 22 & 17 & 15 \\
+$f(x)$ & 5 & 2 & 6 & 1 \\
+\hline
+$g(x)$ & 3 & 4 & 0 & 7 \\
 \hline
 \end{tabular}
-\smallskip
+\end{center}
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item The daily changes are \blank{1.4cm}, \blank{1.4cm}, and \blank{1.4cm}.
-  \item Circle one from each pair: \quad
-        \textbf{increasing} / \textbf{decreasing} \qquad
-        concave \textbf{up} / \textbf{down}
+  \item $(f+g)(2) = $ \blank{2.2cm} \qquad $(f-g)(4) = $ \blank{2.2cm}
+  \item Now read the table the other direction: for which input is $f(x) = 6$? \quad
+        $x = $ \blank{2.2cm}
 \end{enumerate}
 
 \end{enumerate}

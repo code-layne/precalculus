@@ -1,7 +1,7 @@
-%! Function Model Selection and Construction — Unit 1, Lesson 1.7 — Homework (Answer Key)
+%! Rates of Change — Unit 1, Lesson 1.7 — Homework (ANSWER KEY)
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -12,148 +12,127 @@
 
 \begin{enumerate}[itemsep=10pt]
 
-\item In both tables the question is the \ans{$x$} row. Take differences
-      until they are constant, then name each model type.
+\item Let $f(x) = x^2 - 4x$. Find the average rate of change over each
+      interval. Watch the signs --- they do not come out the same.
+
+\begin{enumerate}[label=(\alph*), itemsep=6pt]
+  \item Over $[0, 2]$:
+
+        \begin{work}
+          \text{AROC} &= \frac{f(2) - f(0)}{2 - 0} \\
+                      &= \frac{-4 - 0}{2} \\
+                      &= -2
+        \end{work}
+
+        Answer: \ans{$-2$}
+
+  \item Over $[2, 5]$:
+
+        \begin{work}
+          \text{AROC} &= \frac{f(5) - f(2)}{5 - 2} \\
+                      &= \frac{5 - (-4)}{3} \\
+                      &= 3
+        \end{work}
+
+        Answer: \ans{3}
+\end{enumerate}
+
+\item A town's population $P$, in thousands, is recorded every ten years.
 
 \smallskip
 \renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+year & 1980 & 1990 & 2000 & 2010 & 2020 \\
+\hline
+$P$ (thousands) & 12 & 18 & 27 & 33 & 36 \\
+\hline
+AROC (thousands per year) & --- & \ans{0.6} & \ans{0.9} & \ans{0.6} & \ans{0.3} \\
+\hline
+\end{tabular}
+\smallskip
+
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Which decade grew fastest? \ans{1990 to 2000}
+  \item Interpret the last entry of the AROC row in a sentence, with units.
+
+        \vspace{0.05in}
+        \ansline{From 2010 to 2020 the town grew by an average of 0.3 thousand people --- 300 people --- per year.}
+\end{enumerate}
+
+\item $W(t)$ is the water in a rain barrel, in gallons, $t$ days after it was
+      set out. The dashed lines are drawn for you.
+
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$y$ & 11 & 8 & 5 & 2 & $-1$ \\
-\hline
-1st & --- & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} \\
-\hline
-\end{tabular}
-\qquad
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$y$ & 1 & 3 & 11 & 31 & 69 \\
-\hline
-1st & --- & \ans{2} & \ans{8} & \ans{20} & \ans{38} \\
-\hline
-2nd & --- & --- & \ans{6} & \ans{12} & \ans{18} \\
-\hline
-3rd & --- & --- & --- & \ans{6} & \ans{6} \\
-\hline
-\end{tabular}
+\begin{tikzpicture}[x=0.85cm, y=0.42cm]
+  \draw[linegray, very thin, step=1] (0,0) grid (6,9);
+  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $t$ (days)};
+  \draw[->, thick] (0,0) -- (0,9.7) node[above] {\small $W(t)$ (gal)};
+  \foreach \x in {1,2,3,4,5,6} \node[below, font=\small] at (\x,0) {\x};
+  \foreach \y in {2,4,6,8} \node[left, font=\small] at (0,\y) {\y};
+  \draw[dashed, thick, goldacc] (0,2) -- (3,8);
+  \draw[dashed, thick, goldacc] (3,8) -- (6,5);
+  \draw[very thick, plum] plot[smooth] coordinates
+    {(0,2) (1,4.5) (2,6.6) (3,8) (4,7.4) (5,6.2) (6,5)};
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (3,8) circle (2.5pt);
+  \fill[plum] (6,5) circle (2.5pt);
+\end{tikzpicture}
 \end{center}
 
+\begin{enumerate}[label=(\alph*), itemsep=4pt]
+  \item Average rate of change over $[0,3]$: \ans{$+2$ gallons per day}
+  \item Average rate of change over $[3,6]$: \ans{$-1$ gallon per day}
+  \item What does the sign of your answer to (b) say about the barrel?
+
+        \vspace{0.05in}
+        \ansline{It is negative, so the barrel is losing water --- about one gallon a day on average.}
+\end{enumerate}
+
+\item Two functions are sampled at $x = 0, 1, 2, 3, 4$. Fill in the average
+      rate of change over each unit interval.
+
 \smallskip
-Left table: \ans{linear} \qquad Right table: \ans{cubic}
-
-\item Match each context to its model type. Write a letter in each blank:
-      \textbf{L} linear, \textbf{Q} quadratic, \textbf{C} cubic,
-      \textbf{R} rational, \textbf{P} piecewise.
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item A pool is filled at a steady 12 gallons per minute. \ans{L}
-  \item The amount of paint needed to cover a square wall, as a function of the
-        wall's side length. \ans{Q}
-  \item A city charges \$0.05 per gallon of water for the first 5{,}000 gallons
-        and \$0.09 per gallon after that. \ans{P}
-  \item The time to drive 300 miles, as a function of average speed
-        (time $=$ 300/speed). \ans{R}
-  \item The amount of concrete needed to fill a cube-shaped footing, as a
-        function of the footing's edge length. \ans{C}
-\end{enumerate}
-
-\boxguard[24]
-\item \textbf{The same pen, the other question.} In class Ana chose the width.
-      Ben chose the \textbf{length}, and wrote the same constraint
-      $2w + \ell = 80$.
-
-\begin{work}
-   2w + \ell &= 80 \\
-           w &= 40 - \frac{\ell}{2} \\
-     A(\ell) &= \ell\left(40 - \frac{\ell}{2}\right) \\
-             &= 40\ell - \frac{\ell^2}{2} \\
-       A(40) &= 1600 - 800 \\
-             &= 800
-\end{work}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$A(x)$ & 5 & 8 & 13 & 20 & 29 \\
+\hline
+AROC of $A$ & --- & \ans{3} & \ans{5} & \ans{7} & \ans{9} \\
+\hline
+$B(x)$ & 20 & 17 & 14 & 11 & 8 \\
+\hline
+AROC of $B$ & --- & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} & \ans{$-3$} \\
+\hline
+\end{tabular}
+\smallskip
 
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Solve the constraint for $w$: \qquad $w = $ \ans{$40 - \ell/2$}
-  \item $A(\ell) = $ \ans{$40\ell - \ell^2/2$} \qquad Domain: \ans{0} $< \ell <$
-        \ans{80}
-  \item $A(40) = $ \ans{800} ft$^2$. Ana's best pen was $w = 20$ ft. Is Ben's
-        best length describing the same pen? \ans{Yes}
-  \item Ana's domain was $0 < w < 40$; Ben's is different. In one sentence, why
-        do two correct models of one pen have different domains?
-
-        \ansline{A domain lists the questions you may ask, and they asked about different quantities.}
+  \item $A$ is a \ans{quadratic} function, and it is concave \ans{up}.
+  \item $B$ is a \ans{linear} function, with slope \ans{$-3$}.
 \end{enumerate}
 
-\boxguard[24]
-\item \textbf{Using Ana's model.} Hers is $A(w) = 80w - 2w^2$ on $0 < w < 40$.
+\item The table gives values of a function $g$. What is the average rate of
+      change of $g$ over the interval $[2, 6]$?
 
-\begin{work}
-   A(5) &= 80(5) - 2(5)^2 \\
-        &= 400 - 50 \\
-        &= 350 \\
-  A(35) &= 80(35) - 2(35)^2 \\
-        &= 2800 - 2450 \\
-        &= 350 \\
-  \frac{A(15) - A(5)}{15 - 5} &= \frac{750 - 350}{10} \\
-                              &= 40
-\end{work}
+\smallskip
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x$ & 0 & 2 & 4 & 6 \\
+\hline
+$g(x)$ & 10 & 16 & 30 & 52 \\
+\hline
+\end{tabular}
+\smallskip
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $A(5) = $ \ans{350} ft$^2$ \qquad $A(35) = $ \ans{350} ft$^2$.
-        Two different widths, the same area --- why does that make sense?
-
-        \ans{They sit the same distance either side of the best width $w = 20$.}
-  \item Average rate of change from $w = 5$ to $w = 15$: \ans{40},
-        with units \ans{ft$^2$ per foot of width}.
-  \item Is $w = 45$ in the domain of this model? \ans{No} \quad Why not?
-        \ans{$2(45) > 80$ --- no fence is left.}
-\end{enumerate}
-
-\item \textbf{An inverse-proportion model.} The force $F$ between two magnets is
-      inversely proportional to the square of the distance $d$ between them, so
-      $F = \dfrac{k}{d^2}$. At $d = 3$ cm the force measures 20 newtons.
-
-\begin{work}
-    20 &= \frac{k}{3^2} \\
-     k &= 180 \\
-  F(6) &= \frac{180}{6^2} \\
-       &= 5
-\end{work}
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item $k = $ \ans{180} \qquad so $F(d) = $ \ans{$180/d^2$}
-  \item $F(6) = $ \ans{5} newtons
-  \item Domain restriction: $d$ \ans{$> 0$}, because \ans{the magnets cannot share a spot}
-\end{enumerate}
-
-\item Two AP-style multiple-choice questions.
-
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item A table of equally spaced inputs has second differences that are all
-        equal to 4. Which statement is correct?
-
-        \begin{enumerate}[label=\Alph*., itemsep=2pt]
-          \item Linear, because the differences are constant.
-          \item Quadratic, because the second differences are
-                constant.~\textcolor{keyred}{\textbf{$\leftarrow$}}
-          \item Degree 5, because the table has five rows.
-          \item No polynomial model fits, because the second differences are
-                not zero.
-        \end{enumerate}
-
-  \item A rectangular flag has a \textbf{fixed height of 3 feet}. Its area is
-        modeled as a function of its width. The model is
-
-        \begin{enumerate}[label=\Alph*., itemsep=2pt]
-          \item linear.~\textcolor{keyred}{\textbf{$\leftarrow$}}
-          \item quadratic, because area always is.
-          \item cubic.
-          \item piecewise.
-        \end{enumerate}
+\begin{enumerate}[label=\Alph*., itemsep=3pt]
+  \item $36$
+  \item $9$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item $7$
+  \item $-9$
 \end{enumerate}
 
 \end{enumerate}
@@ -162,33 +141,36 @@ Left table: \ans{linear} \qquad Right table: \ans{cubic}
 
 \boxguard
 \begin{extensionbox}
-The barn wall turns out to be only \textbf{30 feet long}. If the pen's length
-$\ell$ is more than 30 feet, the part beyond the barn has to be fenced too ---
-so the constraint itself changes.
+For $f(x) = x^2$, the average rates of change over shrinking intervals
+starting at $x = 3$ are computed below.
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item When $\ell > 30$, the fence must cover $2w + \ell + (\ell - 30) = 80$.
-        Solve that for $\ell$: \ans{$\ell = 55 - w$}
-  \item That case applies when $w$ is \textbf{less than} \ans{25} feet.
-  \item Write the two area rules. \quad $A(w) = w(55 - w)$ for
-        \ans{$0 < w < 25$}, \quad and $A(w) = w(80 - 2w)$ for \ans{$25 \le w < 40$}.
-  \item Both rules give the same area at the threshold. Check it:
-        \ans{750} ft$^2$. Why must a piecewise model agree at the threshold?
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|}
+\hline
+interval & $[3, 3.5]$ & $[3, 3.1]$ & $[3, 3.01]$ \\
+\hline
+AROC & 6.5 & 6.1 & 6.01 \\
+\hline
+\end{tabular}
+\end{center}
+\smallskip
 
-        \ansline{One pen has one area, so the two rules must report the same number there.}
-\end{enumerate}
+What number are these closing in on, and what would it measure?
+
+\vspace{0.05in}
+\ansline{They are closing in on 6. That would be the rate of change of $f$ at the single point $x = 3$, not an average over any interval.}
 \end{extensionbox}
 
 \vspace{0.1in}
 
-\boxguard
-\begin{notesbox}{Preview of Lesson 2.1}
-Unit 1 ends here. Every model you picked today came out a polynomial, and the
-one you built came out quadratic. Unit 2 opens with \textit{Quadratic Functions
-Revisited}, and $A(w) = 80w - 2w^2$ is still on the board: where the vertex
-formula $-\frac{b}{2a}$ comes from, what vertex form shows that standard form
-hides, and why a parabola is symmetric about its vertex --- which is exactly
-why $A(5)$ and $A(35)$ came out equal in problem 4.
+\boxguard[9]
+\begin{notesbox}{Preview of Lesson 1.4}
+Today you measured how fast a function changes. Lesson 1.4,
+\textit{Transformations of Functions}, leaves rates behind and works on
+shapes: what happens to a graph when you shift it, flip it, or stretch it ---
+and how the formula records every one of those moves.
 \end{notesbox}
 
 \end{document}
