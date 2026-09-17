@@ -1,4 +1,4 @@
-%! Function Fundamentals — Unit 1, Lesson 1.1 — Slides (Beamer)
+%! Functions and Function Notation — Unit 1, Lesson 1.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -11,7 +11,7 @@
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 1.1}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Function Fundamentals}\\[1.2cm]
+    {\color{white}\bfseries\LARGE Functions and Function Notation}\\[1.2cm]
     {\color{lilacmid}\small Precalculus~$\cdot$~Unit 1: Functions and Change}
   \end{minipage}
 \end{frame}
@@ -22,8 +22,9 @@
   \plumheader{Hook: The Machine Gets a Name}
   \sectionlabel[goldacc]{Think About It}
 
-  Yesterday's trustworthy vending machine is back --- this time with a label.
-  Let \(P(b)\) be the price in dollars of the item at button \(b\).
+  A vending machine you can trust: press the same button, get the same item,
+  every time. Give it a name --- let \(P(b)\) be the price in dollars of the item
+  at button \(b\).
 
   \bigskip
   \begin{center}
@@ -167,70 +168,72 @@
 
 % SECTION 4 — TWO DIRECTIONS
 \begin{frame}[t, plain]
-  \plumheader{Two Directions: Evaluate vs.\ Solve}
-  \sectionlabel[redacc]{Notes row TWO DIRECTIONS --- the hinge of this lesson $\cdot$ the direction table}
+  \plumheader{Piecewise: One Function, Several Rules}
+  \sectionlabel[redacc]{Notes row PIECEWISE --- the hinge of this lesson}
 
-  \begin{tabular}{|p{0.22\textwidth}|p{0.32\textwidth}|p{0.34\textwidth}|}
-  \hline
-   & \textbf{Find \(f(2)\)} & \textbf{Solve \(f(x) = 2\)} \\
-  \hline
-  You are given & the \textbf{input} & the \textbf{output} \\
-  \hline
-  You are asked for & the \textbf{output} & the \textbf{input(s)} \\
-  \hline
-  How many answers & exactly one & zero, one, or many \\
-  \hline
-  \end{tabular}
+  A \textbf{piecewise function} is one function built from two or more rules,
+  each rule owning its own stretch of inputs. The condition beside a rule is its
+  \textbf{address}.
 
   \bigskip
-  \begin{block}{The headline}
-    \textbf{Evaluate} hands you the input and asks for the output --- exactly one
-    answer. \textbf{Solve} hands you the output and asks for the input(s) ---
-    possibly several, and several is still a function.
-  \end{block}
+  \begin{center}
+    {\Large \(f(x) = \begin{cases} 2x & 0 \le x < 3 \\[2pt] 2 & x \ge 3 \end{cases}\)}
+  \end{center}
 
-  \medskip
-  Fill the direction table in the notes \textit{before} touching the graph. Then
-  say, in your own words, how you tell the two questions apart before you compute.
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{To evaluate}
+        \textbf{1.} Find the stretch the input falls in.\\[3pt]
+        \textbf{2.} Use \textit{only} that rule.\\[3pt]
+        \textbf{3.} Evaluate it the usual way.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Never}
+        Run \textbf{both} rules and pick the answer you prefer. The condition
+        has already picked for you --- one input, exactly one output.
+      \end{block}
+  \end{columns}
 \end{frame}
 
-% SECTION 4, CONT. — THE GRAPH
+% SECTION 4, CONT. — THE BOUNDARY (THE CRUX)
 \begin{frame}[t, plain]
-  \plumheader{Reading Both Directions off a Graph}
-  \sectionlabel[redacc]{Notes row TWO DIRECTIONS $\cdot$ I Do: problem 11 $\cdot$ We Do: 12--14 (12 vs.\ 13 is the crux)}
+  \plumheader{The Boundary --- Reaching vs.\ Owning}
+  \sectionlabel[redacc]{Notes row PIECEWISE $\cdot$ I Do: problem 11 $\cdot$ We Do: 12--14 (13 is the crux)}
 
   \begin{columns}[T]
-    \column{0.44\textwidth}
+    \column{0.46\textwidth}
       \begin{center}
       \begin{tikzpicture}[x=0.55cm, y=0.42cm]
-        \draw[linegray, very thin, step=1] (0,0) grid (8,7);
-        \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small \(x\)};
+        \draw[linegray, very thin, step=1] (0,0) grid (7,7);
+        \draw[->, thick] (0,0) -- (7.6,0) node[below right] {\small \(x\)};
         \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small \(f(x)\)};
-        \foreach \x in {1,2,3,4,5,6,7,8} \node[below] at (\x,0) {\small \x};
-        \foreach \y in {1,3,5,7} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, plum] (0,5) -- (2,1);
-        \draw[very thick, plum] (2,1) -- (5,7);
-        \draw[very thick, plum] (5,7) -- (8,4);
-        \fill[plum] (0,5) circle (2.5pt);
-        \fill[plum] (8,4) circle (2.5pt);
+        \foreach \x in {1,2,3,4,5,6,7} \node[below] at (\x,0) {\small \x};
+        \foreach \y in {2,4,6} \node[left] at (0,\y) {\small \y};
+        \draw[goldacc, very thick, dashed] (3,0) -- (3,7.2);
+        \draw[very thick, plum] (0,0) -- (3,6);
+        \fill[plum] (0,0) circle (2.5pt);
+        \draw[very thick, plum, fill=white] (3,6) circle (2.5pt);
+        \draw[very thick, plum] (3,2) -- (7,2);
+        \fill[plum] (3,2) circle (2.5pt);
       \end{tikzpicture}
       \end{center}
 
-    \column{0.52\textwidth}
+    \column{0.50\textwidth}
       \begin{itemize}\setlength{\itemsep}{7pt}
-        \item \(f(2) = ?\) --- start at \(x = 2\), walk \textbf{up} to the
-              graph, read across
-        \item \(f(6) = ?\)
-        \item Solve \(f(x) = 3\) --- start at 3 on the \textbf{output} axis and
-              walk \textbf{across}: two answers
-        \item Solve \(f(x) = 5\) --- \textbf{three} answers
+        \item \(f(1) = ?\) --- which rule owns \(x = 1\)?
+        \item \(f(5) = ?\)
+        \item \(f(3) = ?\) --- the top rule \textbf{reaches} \(x = 3\), but its
+              address stops at \(x < 3\)
+        \item Same decision, no picture: \(g(x) = x^2\) for \(x \le -1\),
+              \(g(x) = 4 - x\) for \(x > -1\). Find \(g(-3)\), \(g(-1)\).
       \end{itemize}
   \end{columns}
 
   \bigskip
-  Three inputs sharing one output is \textbf{many-to-one} --- allowed, and
-  \(f\) is still a function. One \textit{input} with two outputs is what breaks
-  the rule.
+  An \textbf{open circle} marks a value the rule gets close to but never reaches.
+  A \textbf{filled dot} marks the one output the function actually has there.
 \end{frame}
 
 % YOU DO
@@ -241,8 +244,11 @@
   \begin{enumerate}\setlength{\itemsep}{8pt}
     \setcounter{enumi}{14}
     \item Let \(f(x) = 3x - 7\). Find \(f(5)\) and \(f(-1)\). Fill the slot first.
-    \item From the \(s\) table: find \(s(4)\), then solve \(s(x) = 9\). Which one
-          was the \textit{evaluate} question?
+    \item Using \(h\), find \(h(-1)\), \(h(2)\), \(h(6)\). Name the rule each time.
+
+          \smallskip
+          \(h(x) = \begin{cases} 5 - x & x < 2 \\[2pt] 2x & x \ge 2 \end{cases}\)
+    \item From the \(s\) table: find \(s(4)\), then state the domain and range of \(s\).
 
           \smallskip
           \begin{tabular}{|c|c|c|c|c|c|}
@@ -252,10 +258,8 @@
           \(s(x)\) & 12 & 9 & 9 & 6 & 3 \\
           \hline
           \end{tabular}
-    \item State the domain and range of \(p\) (the table with outputs 9, 6, 6, 3).
-          Then run \(p\) \textit{backward}: is that a function?
-    \item \(m(x) = \dfrac{20}{x - 6}\). Which input is forbidden, and why?
-          Write the domain of \(m\) in words.
+    \item A garage charges \$3 per hour for the first 2 hours, then a flat \$6 for
+          any longer stay, up to 12 hours. Write \(C(h)\) as a piecewise function.
   \end{enumerate}
 \end{frame}
 
@@ -266,20 +270,21 @@
 
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{Evaluate}
-        Hands you the \textbf{input}, asks for the \textbf{output}.\\[3pt]
-        Exactly \textbf{one} answer.
+      \begin{block}{The address}
+        The condition beside a rule says \textbf{which inputs it is responsible
+        for}.\\[3pt]
+        No input belongs to two rules.
       \end{block}
     \column{0.48\textwidth}
-      \begin{block}{Solve}
-        Hands you the \textbf{output}, asks for the \textbf{input(s)}.\\[3pt]
-        Zero, one, or \textbf{several} --- and several is still a function.
+      \begin{block}{The order}
+        Decide \textbf{which rule owns the input} first.\\[3pt]
+        \textit{Then} evaluate --- only that one.
       \end{block}
   \end{columns}
 
   \bigskip
-  \textbf{Next time (1.2):} not what the output \textit{is}, but what it
-  \textit{does} as the input climbs.
+  \textbf{Next time (1.2):} we stop running one machine at a time, and start
+  combining two of them into a third.
 \end{frame}
 
 % HOMEWORK LAUNCH
@@ -290,8 +295,8 @@
   \begin{itemize}\setlength{\itemsep}{8pt}
     \item Copy the due date into the \textbf{Homework} row of your cover sheet:
           \quad Due: \rule{3cm}{0.4pt}
-    \item Start \textbf{problem 1} and \textbf{problem 4} now. Read the
-          \textit{direction} of each question before you compute.
+    \item Start \textbf{problem 1} and \textbf{problem 4} now. On any piecewise
+          question, name the \textit{condition} before you compute.
     \item The \textbf{Homework} (last two pages) is graded.
     \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
           --- optional, AP-exam style. Do the homework first.

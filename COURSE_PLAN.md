@@ -72,27 +72,44 @@ Status legend: **moved** = old lesson relocated, body not yet reauthored;
 
 ### Unit 1: Functions and Change
 
-Replanned August 2026: Unit 1 numbers its eight lessons **1.0–1.7** (the unit opens with
-an introduction lesson). Two pairs from the original 8-unit map were merged (old 1.2+1.3
-→ 1.3; old 1.7+1.8 → 1.7), and two new lessons were added at the front.
+**Replanned September 2026.** The unit opener (old 1.0, *Introduction to Functions and Change*)
+was retired and its directory removed; Unit 1 now numbers its lessons **1.1 onward**, unlike
+Unit 2, which keeps the 2.0–2.7 opener numbering. The front of the unit was rebuilt around the
+algebra of functions: notation (with piecewise) → operations → composition → inverses, so every
+later unit can lean on the whole toolkit. Lessons displaced by that change keep their content
+and move to later slots. **The unit is no longer fixed at eight** — three further lessons are
+expected, and the numbering below leaves room for them.
 
-| # | Lesson | Source | Status |
-|---|--------|--------|--------|
-| 1.0 | Introduction to Functions and Change | New (unit introduction) | authored |
-| 1.1 | Function Fundamentals | New (notation, domain/range, evaluating, reading graphs) | authored |
-| 1.2 | Change in Tandem | CED 1.1 (was 1.1) | authored |
-| 1.3 | Rates of Change | CED 1.2 + 1.3 (was 1.2; absorbs 1.3) | authored |
-| 1.4 | Transformations of Functions | CED 1.12 (was 1.12) | authored |
-| 1.5 | Composition of Functions | CED 2.7 (was 2.7) | authored |
-| 1.6 | Inverse Functions | CED 2.8 (was 2.8) | authored |
-| 1.7 | Function Model Selection and Construction | CED 1.13 + 1.14 (was 1.7; absorbs 1.8) | authored |
+| # | Lesson | Source | Status | Directory |
+|---|--------|--------|--------|-----------|
+| 1.1 | Functions and Function Notation | New (notation, evaluating, domain/range, piecewise) | authored | `unit01/lesson01` |
+| 1.2 | Function Operations | New | **to author** | — |
+| 1.3 | Function Composition and Decomposition | CED 2.7 | to reauthor | `unit01/lesson05` |
+| 1.4 | Inverse Functions | CED 2.8 | to reauthor | `unit01/lesson06` |
+| 1.5 | Transformations of Functions | CED 1.12 | to reauthor | `unit01/lesson04` |
+| 1.6 | Change in Tandem | CED 1.1 | to reauthor | `unit01/lesson02` |
+| 1.7 | Rates of Change | CED 1.2 + 1.3 | to reauthor | `unit01/lesson03` |
+| 1.8 | Function Model Selection and Construction | CED 1.13 + 1.14 | to reauthor | `unit01/lesson07` |
 
-Rationale: the unit opens with an orientation lesson (1.0) and an explicit
-function-fundamentals ramp (1.1) for the non-honors track, then the function toolkit
-(transformations, composition, inverses) is pulled forward so every later unit can use
-it. Composition and inverses land here — before exponentials need them — instead of
-mid-Unit-2 as in the CED. Average rate of change and its linear/quadratic application
-travel together (1.3), and the two modeling lessons merge into a single closer (1.7).
+**Directories have not been renumbered yet.** Reauthoring runs lesson by lesson, and the
+directory move for each lesson happens when that lesson is reauthored — a bulk `git mv` would
+re-flow the pagination of every verified lesson at once. The *Directory* column above is
+therefore the current on-disk location, not the final one; 1.2 has no directory until it is
+written. Lessons still marked *to reauthor* are in the group-activity shape (`activity/` +
+`exit_ticket/`, no `ap_practice/`) and build unchanged in the meantime.
+
+Rationale: 1.1 opens the unit by naming the machine — notation, evaluating, domain and range —
+and adds **piecewise functions**, whose boundary case is the lesson's target misconception.
+1.2–1.4 then build the algebra of functions in dependency order: you must be able to combine
+functions before composing them, and composing them is how an inverse pair is verified.
+Transformations follow composition (1.5) rather than preceding it, so a horizontal shift can be
+introduced *as* a composition instead of as a slogan about reversed signs. The behaviour
+lessons — change in tandem and rates of change — then land on functions students can already
+manipulate, and modeling closes the unit.
+
+**The evaluate-vs-solve distinction moved to 1.4 (Inverse Functions).** It was the crux of the
+old 1.1 and was displaced by piecewise; `f(a) = b \iff f^{-1}(b) = a` is the same idea in its
+natural home, so 1.4 must open with it rather than assume it.
 
 ### Unit 2: Polynomial Functions
 
@@ -233,8 +250,15 @@ before the replan):
 
 | Old lesson | Title | Absorbed into |
 |-----------|-------|---------------|
-| 1.3 | Rates of Change in Linear and Quadratic Functions | 1.3 (Rates of Change) |
-| 1.8 | Function Model Construction and Application | 1.7 (Function Model Selection and Construction) |
+| 1.3 | Rates of Change in Linear and Quadratic Functions | Rates of Change (1.3 then; **1.7** after the September 2026 replan) |
+| 1.8 | Function Model Construction and Application | Function Model Selection and Construction (1.7 then; **1.8** after the September 2026 replan) |
+
+From the September 2026 replan:
+
+| Old lesson | Title | Disposition |
+|-----------|-------|-------------|
+| 1.0 | Introduction to Functions and Change | **Retired.** Directory `unit01/lesson00` removed; content not folded forward. Recoverable from git history. |
+| 1.1 | Function Fundamentals | Rewritten in place as *Functions and Function Notation*: piecewise added, and the evaluate-vs-solve crux moved out to 1.4 (Inverse Functions). |
 
 The dropped directories' full content is in git history (tree at tag/commit prior to the
 restructure, under `unit04/lessonNN`). When reauthoring an absorbing lesson, pull the

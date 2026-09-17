@@ -1,11 +1,13 @@
-%! Function Fundamentals — Unit 1, Lesson 1.1 — AP Practice
+%! Functions and Function Notation — Unit 1, Lesson 1.1 — AP Practice
 % EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
 % Shaped like the AP Precalculus exam: page 1 is Section I, five multiple-choice items with four
 % options (A)–(D), each in context or on a pre-drawn display; page 2 is Section II, one
-% multi-part free-response question on a table with interpret-in-context parts. Its contexts
-% (a reservoir, a drone flight) are used nowhere else in the lesson.
+% multi-part free-response question with interpret-in-context parts. Its contexts (a reservoir,
+% a shipping tariff) are used nowhere else in the lesson.
 % Distractors are the lesson's errors on purpose: MC 1 reads f(x) as multiplication, MC 2 drops
-% the parentheses on a negative input, MC 3 stops at one solution, MC 4 swaps domain and range.
+% the parentheses on a negative input, MC 3 uses the rule that REACHES the boundary instead of
+% the one that OWNS it (the lesson's crux), MC 4 swaps domain and range, MC 5 misses the
+% coefficient when clearing the denominator.
 %
 % PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
 % LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
@@ -54,19 +56,11 @@ answer choice below is a mistake someone really makes, so read all four before y
       \smallskip
       \textbf{(A)} $-21$ \hspace{2.2em} \textbf{(B)} $-3$ \hspace{2.2em} \textbf{(C)} $3$ \hspace{2.2em} \textbf{(D)} $21$
 
-\item The table gives selected values of the function $k$. Which of the following is the set
-      of \emph{all} values of $x$ in the table for which $k(x) = 2$?
+\item The function $p$ is defined by $p(x) = 3x + 1$ for $x < 4$, and $p(x) = x^2 - 6$ for
+      $x \ge 4$. What is the value of $p(4)$?
 
-      \begin{center}
-      \renewcommand{\arraystretch}{1.3}
-      \begin{tabular}{|c|c|c|c|c|c|c|}
-      \hline
-      $x$    & $-2$ & $-1$ & 0 & 1 & 2 & 3 \\ \hline
-      $k(x)$ & 5    & 2    & 1 & 2 & 5 & 10 \\ \hline
-      \end{tabular}
-      \end{center}
-
-      \textbf{(A)} $\{-1\}$ \hspace{2.2em} \textbf{(B)} $\{-1, 1\}$ \hspace{2.2em} \textbf{(C)} $\{5\}$ \hspace{2.2em} \textbf{(D)} $\{2\}$
+      \smallskip
+      \textbf{(A)} $10$ \hspace{2.2em} \textbf{(B)} $13$ \hspace{2.2em} \textbf{(C)} $23$ \hspace{2.2em} \textbf{(D)} Both 10 and 13
 
 \item \begin{minipage}[t]{0.56\linewidth}
       The graph of the function $h$ is shown, including both endpoints. Which of the following
@@ -107,45 +101,37 @@ answer choice below is a mistake someone really makes, so read all four before y
 
 \begin{headlinebox}{goldbg}
 \small
-\textbf{Section II --- Free Response.} Show your reasoning. Answers about the drone must be
-written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the shipping cost
+must be written \emph{in context}, with units --- that is what earns credit on the AP exam.
 \end{headlinebox}
 
 \vspace{0.08in}
 
 \begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
 
-\item A delivery drone takes off, flies a route, and lands 10 minutes later. Its altitude
-      $A(t)$, in meters, is recorded every two minutes, where $t$ is minutes after takeoff.
+\item A shipping company charges a flat rate for light packages and a per-pound rate above
+      that. For a package weighing $w$ pounds, the cost in dollars is
+      \[ C(w) = \begin{cases} 6 & 0 < w \le 2 \\[2pt] 6 + 2(w - 2) & 2 < w \le 10 \end{cases} \]
 
-      \smallskip
-      \begin{center}
-      \renewcommand{\arraystretch}{1.35}
-      \begin{tabular}{|c|c|c|c|c|c|c|}
-      \hline
-      $t$ (minutes)  & 0 & 2  & 4  & 6  & 8  & 10 \\ \hline
-      $A(t)$ (meters) & 0 & 30 & 45 & 45 & 20 & 0 \\ \hline
-      \end{tabular}
-      \end{center}
-
-      \textbf{(a)} Find $A(4)$, and interpret your answer in the context of the problem.
+      \textbf{(a)} Find $C(2)$ and $C(5)$. Interpret $C(5)$ in the context of the problem, with
+      units.
       \writespace{2.2cm}{}
 
-      \textbf{(b)} Using the table, solve $A(t) = 45$. What do your solutions tell you about the
-      flight?
+      \textbf{(b)} A customer claims that because $2$ appears in both conditions, $C(2)$ has two
+      possible values. Explain why the customer is wrong.
+      \writespace{2.4cm}{}
+
+      \textbf{(c)} Explain what would go wrong with the definition of $C$ if the first rule were
+      written $0 < w < 2$ and the second were left as $2 < w \le 10$.
+      \writespace{2.4cm}{}
+
+      \textbf{(d)} State the domain of $C$, as an inequality and in bracket notation. Then
+      explain whether $C(12)$ has a meaning in this context.
+      \writespace{2.4cm}{}
+
+      \textbf{(e)} The company adds a flat \$25 charge for any package over 10 pounds, up to a
+      50-pound limit. Write the third rule, with its condition, as it would appear in $C$.
       \writespace{2.2cm}{}
-
-      \textbf{(c)} A student notices that $A(0) = 0$ and $A(10) = 0$ and says, ``Two inputs
-      give the same output, so $A$ is not a function.'' Is the student correct? Explain.
-      \writespace{2.6cm}{}
-
-      \textbf{(d)} State a reasonable domain for $A$ for this flight, as an inequality and in
-      bracket notation. Then explain whether $A(12)$ has a meaning in this context.
-      \writespace{2.6cm}{}
-
-      \textbf{(e)} From the table, $A(2) = 30$. The drone flies continuously. Explain why there
-      must be another time, between $t = 6$ and $t = 8$, when the altitude is also 30 meters.
-      \writespace{3.0cm}{}
 
 \end{enumerate}
 
