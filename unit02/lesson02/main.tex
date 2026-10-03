@@ -1,12 +1,19 @@
-%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Lesson Plan
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. Source: CED 1.12 (LO 1.12.A; EK 1.12.A.1–A.6). The
+% teacher's original plan spent two days here (translations, then all transformations); this
+% lesson condenses them into one period with TRANSLATIONS as the I Do anchor. The horizontal
+% shift is taught as a composition (Lesson 1.3): the inner function adjusts the input before f
+% acts. f(-x) returns in 2.3 as the even/odd test.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.2: Polynomial Functions and Rates of Change}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.2: Transformations of Functions}
 
 \begin{document}
 \begin{center}
@@ -16,267 +23,344 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will read the increasing and
-    decreasing intervals of a polynomial function from a graph and from a
-    table; identify local (relative) and global (absolute) maxima and minima,
-    including at an included endpoint; justify why a turn must occur between
-    two distinct real zeros and why even degree forces a global extremum; and
-    locate a point of inflection as the input where the \textit{rate} of
-    change turns around. \hfill\textit{\small (CED Topic 1.4 --- Skills 2.A, 3.A)}
+    \textbf{Primary Objective:} Students will build a new function from a parent function by
+    additive and multiplicative transformations --- translations $f(x) + k$ and $f(x - h)$,
+    reflections $-f(x)$ and $f(-x)$, and dilations $a\,f(x)$ and $f(bx)$ --- describe the
+    result in words and in order, map a parent's key points with
+    $(x, y) \to \left(\tfrac{x}{b} + h,\ a\,y + k\right)$, write the equation of a pre-drawn
+    transformed graph, and explain why a change \emph{inside} the function runs backwards.
+    \hfill\textit{\small (CED 1.12 --- LO 1.12.A)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the SHIFTS and OUTSIDE rows: definitions, displays, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 23 & Fill the notes together, every problem cold-called --- problems 2--4 and 6, then the INSIDE and COMBINED rows (7--13; the teacher works 7 and the first line of the problem-9 table). \\
+\textbf{You Do} --- independent & 12 & Work alone while the teacher circulates --- the You Do row, problems 14--17. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 3 alone; the teacher reads 3 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{This lesson does two days' work in one.} The original plan gave translations a day of
+their own and every other transformation a second day; here they share one period, so the
+guided phase runs 23 minutes and the You Do is held to 12. Translations are the anchor ---
+they get the I Do, and every later row reuses their one idea: \emph{inside acts on $x$ and
+runs backwards; outside acts on $y$ and does what it says.} If the clock slips, cut
+\textbf{problem 12} (describe in order) first --- homework problem 9 asks it again --- then
+problem 6. Protect \textbf{problems 10 and 11}: they are the crux, and homework problem 3 and
+AP item 2 cannot be read without them. Never cut the Homework Launch to zero --- it is the
+period's last formative read.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{2.A} --- Identify information from graphical, numerical, analytical,
-or verbal representations to answer a question or construct a model. &
+\textbf{AP Skill 1.C} --- Construct new functions using transformations. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A nonconstant polynomial is any expression equivalent to
-        $a_n x^n + \cdots + a_0$ with $n$ a positive integer and
-        $a_n \ne 0$; a constant has degree zero. (1.4.A.1)
-  \item Where a polynomial switches between increasing and decreasing --- or
-        at an included endpoint --- it has a local maximum or minimum. The
-        greatest local max is the global max; the least local min is the
-        global min. (1.4.A.2)
+  \item $g(x) = f(x) + k$ moves the graph of $f$ vertically by $k$ (EK 1.12.A.1).
+  \item $g(x) = f(x + h)$ moves it horizontally by $-h$ units: the inner function adjusts the
+        input before $f$ acts, so $f(x + 3)$ moves \emph{left} 3 (EK 1.12.A.2).
+  \item The moves combine: $g(x) = a\,f\big(b(x - h)\big) + k$, and a key point
+        $(x, y)$ lands at $\left(\tfrac{x}{b} + h,\ a\,y + k\right)$ (EK 1.12.A.5).
 \end{itemize} \\
-\textbf{3.A} --- Describe the characteristics of a function with varying
-levels of precision, depending on the representation available. &
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Between every two distinct real zeros of a nonconstant polynomial
-        there is at least one local maximum or minimum. (1.4.A.3)
-  \item Even-degree polynomials have a global maximum or a global minimum;
-        odd-degree ones have neither. (1.4.A.4)
-  \item A point of inflection is an input where the rate of change switches
-        between increasing and decreasing --- equivalently, where concavity
-        flips. (1.4.A.5)
+  \item $a\,f(x)$ is a vertical dilation by $|a|$; $a < 0$ adds a reflection over the
+        $x$-axis (EK 1.12.A.3).
+  \item $f(bx)$ is a horizontal dilation by $\tfrac{1}{|b|}$; $b < 0$ adds a reflection over
+        the $y$-axis (EK 1.12.A.4).
+  \item A transformation can change the domain and range: $-\sqrt{x + 2} + 5$ has domain
+        $x \ge -2$ and range $y \le 5$ (EK 1.12.A.6).
+  \item \textbf{Target misconception:} reading the inside forwards --- $f(x + 3)$ as
+        ``right 3,'' and $f(2x)$ as a horizontal \emph{stretch} by 2. Both run backwards: solve
+        for the $x$ that feeds $f$ its old input.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Increasing / decreasing interval & An interval on which outputs rise as inputs rise, or fall as inputs rise. \\
-Local (relative) maximum / minimum & An output value where the function switches between increasing and decreasing, or the value at an included endpoint of a restricted domain. \\
-Global (absolute) maximum / minimum & The greatest of all local maxima; the least of all local minima --- the extreme output over the whole domain. \\
-Concavity (from 2.1) & AROCs increasing $\Rightarrow$ concave up; AROCs decreasing $\Rightarrow$ concave down. \\
-Point of inflection & An input where the rate of change switches between increasing and decreasing --- where concavity changes. \\
-Zero of a polynomial & An input where the output is 0; today, only a landmark that forces a turn between consecutive zeros. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Transformation      & A change to a function's rule that moves, flips, or resizes its graph. \\
+Translation         & A slide up, down, left, or right: $f(x) + k$ (vertical), $f(x - h)$ (horizontal). The shape does not change. \\
+Reflection          & A flip: $-f(x)$ over the $x$-axis, $f(-x)$ over the $y$-axis. \\
+Vertical dilation   & $a\,f(x)$: every output multiplied by $a$ --- a stretch when $|a| > 1$, a compression when $0 < |a| < 1$. \\
+Horizontal dilation & $f(bx)$: every input scaled by $\tfrac{1}{|b|}$ --- a compression when $|b| > 1$, a stretch when $0 < |b| < 1$. \\
+Point-mapping rule  & For $g(x) = a\,f\big(b(x - h)\big) + k$: \TallMath{(x, y) \to \left(\tfrac{x}{b} + h,\ a\,y + k\right)} \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: naming degree, leading term, and leading coefficient from
-    standard form (Lesson 2.0); computing an average rate of change over an
-    interval from a table (Lessons 1.3 and 2.1); and reading concavity off a
-    list of AROCs over consecutive equal-length intervals (Lesson 2.1). Item
-    3's ``decreasing AROCs $\Rightarrow$ concave down'' is the exact move
-    Part 4 rebuilds into the definition of a point of inflection.
+    Skills reviewed: evaluating the 2.1 parent functions ($\sqrt{x}$, $|x|$, $x^3$,
+    $\tfrac{1}{x}$) at a given input; a composition from 1.3, $f(g(x))$ with inner function
+    $x + 3$ --- the exact mechanism of today's horizontal shift; solving a one-step equation for
+    the input that makes an expression a given value; and checking whether a point satisfies
+    a function's rule.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{Two summits, one highest point.} A trail guide lists two summits
-    on the Ridge Trail: Bell Knob at 1{,}200 feet and Signal Peak at 1{,}850
-    feet.
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{The sign that goes the wrong way.} A designer has $y = x^2$ on screen and wants it
+    moved 3 units to the \emph{left}. She types $y = (x - 3)^2$, and the curve slides 3 units
+    to the \emph{right}.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask: are both of these really summits? (Yes --- each is the
-              high point of its own stretch of trail.)
-        \item Then: which one would you put on the sign at the trailhead?
-              (Signal Peak --- it is the highest point \textit{anywhere} on
-              the trail.)
+        \item Ask: which equation should she have typed? Take a show of hands for $(x - 3)^2$
+              and $(x + 3)^2$ --- do not settle it.
+        \item Ask: \emph{why} would the sign seem to go the wrong way? Leave it hanging; the
+              SHIFTS row answers it with the warm-up's composition.
     \end{enumerate}
-    \textit{Discussion prompt:} mathematics gives those two ideas different
-    names. Bell Knob is a \textbf{local} maximum; Signal Peak is a local
-    maximum \textit{and} the \textbf{global} maximum. Today every graph gets
-    read that way.
+    \textit{Discussion prompt:} by the end of today you will be able to prove which equation
+    is right with one input, not a rule of thumb.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: The Definition, Stated Precisely} (7 min)
+\textbf{I DO --- Part 1: Shifts, and the Outside} (10 min)
 
+\textit{Notes rows SHIFTS and OUTSIDE: read each definition, mark up the display, work
+problems 1 and 5. Teacher works; students watch and annotate. Nothing is cold-called in this
+phase.}
 \begin{itemize}
-  \item Restate 1.4.A.1 once, cleanly: $p(x) = a_n x^n + \cdots + a_0$, $n$ a
-        positive integer, coefficients real, $a_n \ne 0$. Degree, leading
-        term, leading coefficient. A constant is degree zero.
-  \item This is review from 2.0 --- keep it to the quick check
-        ($f(x) = 4x^3 - x^2 + 9$) and move on. The lesson is about
-        \textit{behavior}, not form.
+  \item Read the SHIFTS sentences. Outside first --- $f(x) + k$ adds to the output, easy. Then
+        say the key word for the inside: \textbf{composition}. Point back at warm-up item 2:
+        $f(g(-3))$ was 0 because the inner function $x + 3$ handed $f$ a 0.
+  \item Mark up the display: the table's middle column is ``what $f$ sees.'' The vertex of
+        $(x + 3)^2$ is where $f$ sees 0, at $x = -3$. Fill both label boxes yourself ---
+        \emph{left}, and $0$ --- and settle the hook.
+  \item Work \textbf{problem 1} aloud: $x^2 - 4$ is down 4; $(x - 4)^2$ is right 4 because the
+        inside is 0 at $x = 4$. Say the sentence ``solve for the inside'' every time.
+  \item Read the OUTSIDE row. On the display, trace $(4, 2)$ straight up to $(4, 4)$ and
+        straight down to $(4, -2)$ --- the $x$ never moves. Fill the two label boxes, then work
+        \textbf{problem 5}: $-3|x|$ multiplies $y$ by $-3$, so $(2, 2) \to (2, -6)$.
 \end{itemize}
 
-\textbf{Part 2: Increasing, Decreasing, Local Extrema} (13 min)
+\textbf{WE DO --- Part 2: Shifts and Stretches Together} (6 min)
 
+\textit{Problems 2--4 and 6. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
-  \item Project the notes' Section 2 graph on $[0,6]$ with points $A$--$D$
-        pre-marked. Students only read and label --- nothing is drawn.
-  \item Increasing on $(0,2)$ and $(4,6)$; decreasing on $(2,4)$. $B$ is a
-        local max (value 6 at $x=2$); $C$ a local min (value 2 at $x=4$).
-  \item Then the endpoint clause of 1.4.A.2: the domain is closed, so $A$ is
-        a local minimum and $D$ a local maximum \textit{because they are
-        included endpoints}. Students almost never volunteer this.
-  \item Language discipline: the max is the \textit{value}; it
-        \textit{occurs at} an input.
+  \item \textbf{Problem 2}: $|x + 2| + 1$ --- make the student say ``the inside is 0 at
+        $-2$'' before they say ``left.''
+  \item \textbf{Problem 3} follows a single point; \textbf{problem 4} runs the idea backwards,
+        from words to an equation: left 5 is $+5$ inside.
+  \item \textbf{Problem 6}: $\tfrac{1}{2}x^2$ --- the $x$ stays put, the $y$ halves.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Local vs.\ Global, and What Zeros Force} (15 min)
+\textbf{WE DO --- Part 3: The Inside} (7 min)
 
+\textit{Notes row INSIDE. Class fills the blanks together; cold-call every one. Teacher works
+problem 7; the class works 8.}
 \begin{itemize}
-  \item Same graph: list local maxima $\{6, 7\}$ and local minima
-        $\{1, 2\}$. Greatest and least give the global max 7 (at $x=6$) and
-        global min 1 (at $x=0$). $B$ is the trap --- a local max that is not
-        the global one.
-  \item Section 4's graph has zeros at $1, 3, 5$. Ask what the curve
-        \textit{had} to do between consecutive zeros; land on 1.4.A.3.
-        Generalize: $k$ distinct real zeros force at least $k-1$ turns.
-  \item Even degree $\Rightarrow$ a global max or a global min (1.4.A.4);
-        odd degree $\Rightarrow$ neither, because the two ends run opposite
-        directions. Stay verbal --- formal end behavior is Lesson 2.5.
+  \item Read the sentences, then the display: on $\sqrt{2x}$ the output 2 arrives at $x = 2$,
+        not 4. Read the table's ``what $f$ sees'' column aloud. Fill the label boxes ---
+        \emph{compression}, $\tfrac{1}{2}$ --- and say why: the 2 inside makes $x$ do half the
+        work.
+  \item Work \textbf{problem 7}: $\sqrt{-x}$ needs $-x = 9$, so $x = -9$.
+  \item \textbf{Problem 8} puts both dilations side by side: $f(3x)$ squeezes by
+        $\tfrac{1}{3}$, $f(\tfrac{1}{3}x)$ stretches by 3. Insist on solving $3x = 6$.
 \end{itemize}
 
-\textbf{Part 4: Points of Inflection} (15 min)
+\textbf{WE DO --- Part 4: Combined, and the Trap} (10 min)
 
+\textit{Notes row COMBINED --- the crux. Class fills the blanks together; cold-call every one.
+Teacher fills the first line of the problem-9 table; the class does the rest and 10--13.}
 \begin{itemize}
-  \item Return to 2.1's tool: AROCs over consecutive equal-length intervals.
-        The notes' table gives $2, 5, 9, 8, 4$ --- rising, then falling.
-  \item The \textit{rate} turns around near $x=3$: concave up before,
-        concave down after. That input is the point of inflection.
-  \item Drive the contrast: every AROC in that table is positive, so the
-        function never turns around at all --- no local extrema, yet an
-        inflection point. Extremum = AROCs change \textit{sign};
-        inflection = AROCs change \textit{direction}.
+  \item Read the general form and the two steps. Fill the $(0, 0)$ line of the
+        \textbf{problem 9} table yourself, then cold-call the other three lines.
+  \item \textbf{Problems 10 and 11 are the crux}: each states the naive reading, and the
+        answer disagrees with it. Ask for the \emph{input that settles it}, not the rule:
+        $x + 3 = 0$ at $-3$; $2x = 4$ at $2$.
+  \item \textbf{Problem 12} describes in order; \textbf{problem 13} reads Graph A ---
+        vertex first, then ``one right, two down'' gives $a = -2$.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Map \& Match} (12 min)
+
+\textit{Notes row MAP \& MATCH, problems 14--17 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 14} is a translation of $\sqrt{x}$ and one point; \textbf{15} maps three
+        points of $x^3$ through a stretch and two shifts.
+  \item \textbf{Problem 16} is the crux transferred --- $f(x + 6)$ and $f(\tfrac{1}{2}x)$, with
+        no formula for $f$ at all: only solving the inside works.
+  \item \textbf{Problem 17} is the finisher's question: write Graph B's equation, a reflected,
+        stretched, shifted $\sqrt{x}$.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+Circulate during the \textbf{You Do} phase --- the twelve minutes where students are working
+problems 14--17 without you --- and check. The crux is \textbf{problems 10 and 11} (the inside
+read forwards); its You Do transfer is \textbf{problem 16} ($(6, 5)$ on $f(x + 6)$ and on
+$f(\tfrac{1}{2}x)$, with no formula to lean on).
 \begin{itemize}
-  \item \textbf{Common error:} naming an extremum by its input instead of its
-        output (``the maximum is 2''). Ask: ``Is 2 the height or the
-        location?''
-  \item \textbf{Common error:} calling every local maximum the global
-        maximum. Point at $B$: ``Is anything on this graph higher?''
-  \item \textbf{Common error:} confusing an inflection point with a turning
-        point. Diagnostic question: ``Did the function turn around there, or
-        just the rate?''
-  \item \textbf{Common error:} placing a required extremum \textit{at} a
-        zero rather than \textit{between} two of them.
-  \item \textbf{Watch for:} students skipping the included endpoints when
-        listing local extrema on a restricted domain.
+  \item \textbf{Common error (the crux):} $f(x + 6)$ sends $(6, 5)$ to $(12, 5)$ --- the sign
+        read forwards. Ask: ``What does $f$ need to see? Which $x$ makes $x + 6$ equal 6?''
+  \item \textbf{Common error (the crux):} $f(\tfrac{1}{2}x)$ sends $(6, 5)$ to $(3, 5)$ ---
+        the $\tfrac{1}{2}$ applied to $x$ directly. Same question: ``Solve
+        $\tfrac{1}{2}x = 6$.''
+  \item \textbf{Common error:} applying an outside number to $x$ or an inside number to $y$ ---
+        in problem 15, writing $(-1, -1) \to (5, -1)$. Ask: ``Is the 2 inside or outside the
+        cube? Then which coordinate does it touch?''
+  \item \textbf{Common error:} in problem 14, ``right 4, down 2.'' Point at the SHIFTS display
+        and the label box they filled: where is the inside 0?
+  \item \textbf{Graph B (17):} reading $a$ as $+2$ because the curve is ``stretched'' --- ask
+        which way the graph goes from its start point.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Drone Survey} in leveled
-tiers. Every tier uses the same table and pre-drawn altitude graph on
-$[0,6]$ --- no tier draws anything.
+\begin{skillbox}[Differentiation --- During You Do (12 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 14--17)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Read climbing/descending intervals and
-        the four labeled points off the graph; classify $Q$ and $R$ as local
-        extrema and $P$ and $S$ as endpoint extrema; report the global max
-        (500 ft) and global min (100 ft).
-  \item \textbf{Tier A (Approaching Proficiency):} From the table alone,
-        fill the AROC row ($200, -160, -140, 110, 170, 120$), locate the
-        local max at $x=1$ and local min at $x=3$ from sign changes, then
-        find the two inflection points from where the AROCs bottom out
-        ($x \approx 2$) and top out ($x \approx 5$).
-  \item \textbf{Tier E (Extension):} At most $n-1$ local extrema for degree
-        $n$; four distinct zeros force at least three turns, so degree
-        $\ge 4$; justify 1.4.A.4 for even and odd degree; then the
-        true/false item --- exactly one local extremum does \textit{not}
-        force degree 2 ($x^4$ is the counterexample).
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 14} and make them
+        write ``$x + 4 = 0$'' before they write a direction. The one move from the I Do ---
+        solve for the inside --- is the whole fix; if they skip it, the sign error is already
+        in.
+  \item \textbf{On level.} \textbf{Problems 15 and 16} are the class's target. Do not answer
+        16; have them say what $f$ needs to see, solve the inside, and walk away.
+  \item \textbf{Extend.} \textbf{Problem 17} is the finisher's question --- writing the
+        equation means choosing $h$, $k$, and the \emph{sign} of $a$ from three dots. A student
+        who finishes early: ``Write Graph B a second way, as a reflection of $\sqrt{-x}$'' ---
+        then let them present 17 in the Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item From a pre-drawn graph on $[0,5]$: intervals of increase and
-        decrease, and the inputs of the local maximum and local minimum.
-  \item From the same graph: the global maximum and global minimum values and
-        where they occur.
-  \item From an AROC list ($3, 7, 12, 9, 5$): decide there is no local
-        extremum, and locate the point of inflection and the concavity
-        change.
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 14: left 4, down 2, $(-4, -2)$. Problem 15: the three images. Problem 16:
+        $(0, 5)$ and $(12, 5)$, each with the equation that settled it. Problem 17:
+        $y = -2\sqrt{x + 3} + 4$, from a student who reached it.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{outside the function, a change acts on the outputs and does exactly what it
+        says; inside the function, it acts on the inputs and runs backwards --- so solve for
+        the $x$ that feeds $f$ its old input.} Point at the hook's $(x - 3)^2$ while you say it.
+  \item \textbf{Point forward} (1 min) --- 2.3 brings $f(-x)$ back: when it gives the same
+        function, the graph is its own mirror image.
 \end{enumerate}
-\textbf{Assessment note:} Item 2 separates local from global --- a student
-who names 4 (the local max of item 1) as the global maximum has the exact
-misconception the hook targeted. Item 3 needs no graph at all; a miss there
-is a miss on the lesson's hardest idea, not on arithmetic.
+\textbf{Do not} re-teach dilations here, take new questions, or let the homework start early.
+If the launch shows the inside did not land, it is the 2.3 warm-up's job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 1 and 3} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1(b)}, $|x + 6|$: a student who writes ``right 6'' has the
+        misconception in its simplest form.
+  \item \textbf{Problem 3} is the diagnostic: the vertex of $(x + 5)^2 - 2$ is $(-5, -2)$. A
+        student who picks $(-5, -2)$ but cannot say ``the inside is 0 at $-5$'' has memorised a
+        sign flip; a student who sides with the friend's $(5, -2)$ read the inside forwards.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{inside solid} (nothing to do),
+\textit{right answer, no reason} (a 2.3 warm-up item that asks ``where is the inside 0?''), and
+\textit{inside read forwards} (a one-minute check-in at the door of 2.3, with the SHIFTS table).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems --- reading all four kinds of extrema off a
-pre-drawn graph with included endpoints, an AROC row from a table with an
-inflection point but no extremum, a minimum-extrema count from four distinct
-zeros, three must-be-true statements on degree and zeros, and one AP-style
-multiple-choice item on what an AROC list guarantees.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the teacher
+sets. Every function and graph is new. \textit{Part A} (1--3) is translations: three
+descriptions, a $\tfrac{1}{x}$ shift with its asymptotes, and the diagnostic vertex in problem 3.
+\textit{Part B} (4--6) follows $(3, 9)$ on $x^2$ through all four reflections and dilations,
+matches three pre-drawn graphs to $-\sqrt{x}$, $\sqrt{-x}$, $\tfrac{1}{2}\sqrt{x}$, and solves
+the inside of $f(\tfrac{1}{4}x)$. \textit{Part C} (7--9) maps points of $|x|$, writes the
+equation of a pre-drawn parabola, and states the new domain and range of
+$-\sqrt{x + 2} + 5$. \textit{Part D} (10) asks for the headline in writing.
 
-\textbf{Extension (optional):} Degree 5 with five distinct real zeros ---
-the ``at least $k-1$'' and ``at most $n-1$'' bounds both equal 4, so the
-count is pinned to exactly 4 local extrema.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors: the
+inside sign read forwards (1, A and D), $f(3x)$ read as a stretch or applied to $y$ (2, A and B),
+the asymptote moved the wrong way (3, A), the inside or outside sign flipped or $a$ inverted
+(4, B--D), and a range that forgets the reflection (5, A) or the transformation entirely (5, B).
+Section II is one free-response question on two greenhouses, $g(t) = 2f(t - 3) + 1$: map a
+table (a), evaluate and interpret in context (b), describe in order (c), refute a forwards
+reading of $f(2t)$ (d), and build a reflected function (e) --- the finisher's question.
 
-\textbf{Preview:} Next lesson (2.3, Polynomial Functions and Real Zeros)
-promotes the zeros from landmarks to the main event: finding them from a
-factored form and describing what the graph does at each one.
+\textbf{Preview:} Next lesson (2.3, Symmetry and Inverse Functions) brings $f(-x)$ back as a
+test: when $f(-x) = f(x)$ the graph is its own reflection over the $y$-axis. The homework's
+closing box points at problem 4(b), where $(3, 9)$ reflected onto $(-3, 9)$ --- already on the
+graph.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 1 is pure 2.0 recall and
-should take seconds; if it does not, the whole class needs a two-minute
-standard-form reset before Part 1. Item 2's AROC is the computation Tier A of
-the activity runs six times, so watch the subtraction order here. Item 3 is
-the load-bearing one: ``decreasing AROCs $\Rightarrow$ concave down'' is
-re-used verbatim in Part 4 to define a point of inflection --- note anyone who
-guesses.
+Five minutes, silent start, no calculators. Item 1 re-activates the 2.1 library --- every
+row of the notes reuses those five shapes. Item 2 is the one that matters: $f(g(-3)) = 0$
+because the inner function $x + 3$ handed $f$ a 0, and that is the whole explanation of the
+horizontal shift. Say so when you go over it, and keep it on the board for the SHIFTS row.
+Item 3 rehearses ``solve for the inside,'' the move the crux depends on. On item 4, a student
+who circles $(4, 2)$ evaluated $\sqrt{4}$ instead of $\sqrt{4 - 1}$ --- the inside ignored,
+which is the misconception before it has a name. Flag them.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 1 is deliberately thin --- resist re-teaching standard form. The whole
-lesson lives in Sections 2--5. The included-endpoint clause in Section 2 is
-the piece most classes skip and most AP items reward; say out loud that $A$
-and $D$ are local extrema \textit{only because the domain stops there}.
-Section 5 is the hard one: work the AROC row $2, 5, 9, 8, 4$ on the board
-before students fill it in, and keep returning to the sentence ``every one of
-these is positive, so the function never turned around.'' If time runs short,
-compress Section 3 into Section 2's discussion --- do not cut Section 5, it is
-exit ticket item 3 and homework items 2 and 5.
+The notes are one Main Ideas / Notes table: four instruction rows and a You Do row. In each
+row you read the printed sentences, mark up the display, and work the first problem (1, 5, 7,
+and the first line of the problem-9 table); the class works the rest, every problem
+cold-called. The whole lesson rests on one sentence said in the SHIFTS row and repeated in
+every row after it: \emph{inside acts on $x$ and runs backwards; outside acts on $y$ and does
+what it says.} The SHIFTS table is the proof --- its middle column, ``what $f$ sees,'' makes
+the composition visible --- so do not skip it for the graph.
+
+This is two days condensed into one. Move briskly through OUTSIDE --- students find vertical
+changes natural --- and spend the saved minutes in INSIDE and COMBINED. Problems 10 and 11 are
+written so the naive reading and the answer disagree; make the student who reads them forwards
+\emph{test} the claim with a point rather than hear the correction. If time is short, cut 12
+before anything in the crux, and never hand out the ``move opposite the sign'' trick: it fails
+on $f(2x)$ and on $f(-x)$, and solving the inside never does.
+
+The You Do (14--17) carries twelve minutes. Problem 16 is the crux with the formula taken
+away; problem 17 inverts the lesson --- writing an equation from a graph --- and returns as
+homework problem 8.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-All three tiers share the drone table and graph, so groups can be re-sorted
-mid-period without new setup. Tier A should keep the graph covered through
-question 4 --- the point is that a table alone locates extrema and inflection
-points; question 5 is the reveal. Tier A's two inflection answers
-($x \approx 2$ and $x \approx 5$) are approximate by design: accept any
-answer that names the right interval and says why. Tier E question 4 is the
-best whole-class share in the closing minutes --- ``at most $n-1$'' is a
-ceiling, not a count, and $x^4$ settles it in one line.
+\begin{teachernote}[Debrief]
+Five minutes, and in a condensed lesson they are the first thing the guided phase tries to
+borrow. Borrow from problem 12 instead; homework problem 9 asks it again. Do not borrow from
+the three-minute Homework Launch either: with no exit ticket, it is the last look you get
+before the work leaves the room. The share-out is one answer per You Do problem so that a
+student who stalled on 15 still hears problem 16's two points and the equations that settled
+them --- the exact shape of homework problems 3 and 4.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Scan item 2 first: a student who writes 4
-as the global maximum is reading ``the tallest bump'' instead of ``the
-greatest output,'' which is the endpoint idea from Section 2 --- sort those
-for a two-minute reteach. On item 3(a) accept any reason equivalent to ``all
-the AROCs are positive.'' On 3(b) accept $x = 3$ or ``between 2 and 4.''
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Multiple-choice answers are \textbf{C, D, B, A, C}. Item 2 is the one to glance at: a
+student who circles (A) $(36, -6)$ read $f(3x)$ as a stretch by 3, and one who circles (B)
+$(12, -18)$ applied the inside 3 to the output --- the two halves of the lesson's
+misconception. Item 1's (A) is the hook's error again. In the free response, accept any order
+in (c) that puts the stretch before the vertical shift; part (d) is the crux in context ---
+credit any answer that solves $2t = 4$. Part (e) is the finisher's: $j(t) = f(-t) + 4$, with
+$(4, 5) \to (-4, 9)$.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 1(c) is the included-endpoint check and problem 2 is the
-inflection-without-extremum check; those two carry the diagnostic weight.
-Problem 5 is the AP-style item: distractor A is the student who reads a
-falling AROC as a falling function, and distractor D is the same error stated
-directly --- both are worth two minutes of autopsy tomorrow. The extension is
-the only place the two counting bounds are squeezed together; if Tier E never
-got there, assign it explicitly and open 2.3's warm-up window with it.
+Graded, two pages, due on the date you set; students start problems 1 and 3 in the Homework
+Launch. Grade problems 3, 4, and 10 for accuracy and the rest for completion and shown work
+if time is short: 3 (the vertex) and 4(d) (where $(3, 9)$ lands on $f(3x)$) say whether the
+inside landed, and 10 says whether the student can explain it. On 4(b), $(-3, 9)$ is the point
+2.3's spiral box builds on --- a student who wrote $(3, -9)$ there confused the two
+reflections, and that predicts trouble with the even/odd test. If many students wrote ``right
+6'' on 1(b), reuse the SHIFTS table as the 2.3 warm-up's first item.
 \end{teachernote}
 \end{document}

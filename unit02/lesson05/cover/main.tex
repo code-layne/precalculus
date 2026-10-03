@@ -1,4 +1,6 @@
-%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Student Packet Cover Sheet
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One learning target per CED Learning
+% Objective the lesson draws on (1.1.A, 1.4.A, 1.1.B), plus the reading habit the crux is built on.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,14 +12,15 @@
 % Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
   \fill[plum] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
+    rectangle ([yshift=-1.05in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.5 \quad Polynomial Functions and End Behavior}}
+  {\color{lilacmid}\large\textbf{Unit 2: Functions and Their Graphs}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 2.5 \quad Characteristics of Functions:}}\\[2pt]
+  {\color{white}\textbf{\large Increasing, Decreasing, Extrema, and Concavity}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,17 +30,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can say in words what it means for the output values of a polynomial
-        to increase or decrease without bound, and I can write that description
-        in limit notation such as $\lim_{x \to \infty} p(x) = \infty$.
-  \item I can show with numbers that the leading term of a polynomial dominates
-        every lower-degree term once the inputs are large, and I can use that
-        fact to explain why the leading term alone decides end behavior.
-  \item I can use the degree and the sign of the leading coefficient to place a
-        polynomial in one of the four end-behavior cases and write both limit
-        statements for it.
-  \item I can find the leading term of a polynomial written in standard form or
-        in factored form, and I can read end behavior off a graph.
+  \item I can read from a graph the intervals where a function is \textbf{increasing},
+        \textbf{decreasing}, or \textbf{constant}, and write them as open intervals of
+        $x$-values.
+  \item I can find the \textbf{relative} and \textbf{absolute maximum and minimum} of a
+        function from its graph, giving each extremum's \emph{value} (a $y$-value) and
+        \emph{where} it occurs (an $x$-value).
+  \item I can read where a graph is \textbf{concave up} or \textbf{concave down}, locate its
+        \textbf{points of inflection}, and describe the four combinations --- such as
+        ``rising, but more and more slowly.''
+  \item I can tell apart two readings that disagree: a value from its location, and
+        increasing from concave up.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -50,13 +53,13 @@
 \rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review of prerequisite skills                        & \blank{1.2cm} \\
-2 & Guided Notes   & Limit notation, dominance, and the four end-behavior cases  & \blank{1.2cm} \\
-3 & Group Activity & The End Behavior Desk: predicting both far ends             & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on limit notation and leading terms       & \blank{1.2cm} \\
-5 & Homework       & Practice and extension                                      & \blank{1.2cm} \\
+1 & Warm-Up      & Spiral review of prerequisite skills            & \blank{1.2cm} \\
+2 & Guided Notes & Increasing and decreasing, maximum and minimum, concavity and inflection & \blank{1.2cm} \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+4 & Homework     & Graded practice in new contexts \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
 \midrule
-  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
 
@@ -64,11 +67,12 @@
 
 \begin{remindbox}
 \small
-Last lesson was about the middle of the graph --- the place where the zeros
-live. Today is about the two far ends, and they turn out to be decided by a
-single term. Once $|x|$ is large enough, every lower-degree term is a rounding
-error beside the leading one, so the \textbf{degree} and the \textbf{sign of the
-leading coefficient} are the only two facts you need.
+A graph answers two different questions. \textbf{Which way does it go?} Rising is
+\textbf{increasing}, falling is \textbf{decreasing} --- and the turns between them are the
+\textbf{maximum} and \textbf{minimum} points. \textbf{Which way does it bend?} Like a cup is
+\textbf{concave up}, like a cap is \textbf{concave down}, and a \textbf{point of inflection} is
+where the bend switches. Every interval and location lives on the $x$-axis; every maximum or
+minimum \emph{value} lives on the $y$-axis.
 \end{remindbox}
 
 \end{document}

@@ -1,4 +1,8 @@
-%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Warm-Up
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Warm-Up
+% Exactly ONE page, blank and keyed (LESSON_SHAPE.md, one_page). Four prerequisite items:
+% 1 evaluates the 2.1 parent library; 2 is a composition from 1.3 whose inner function is
+% x + 3 — the exact mechanism of today's horizontal shift; 3 solves for the input that makes an
+% "inside" a given value; 4 checks a point against a graph's rule.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -12,43 +16,47 @@
 
 \begin{enumerate}[itemsep=12pt]
 
-\item From Lesson 2.0: let $p(x) = -2x^4 + 5x^3 - x + 8$.
+\item Evaluate each parent function from the library at the given input.
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Degree: \blank{1.8cm}
-  \item Leading term: \blank{2.6cm}
-  \item Leading coefficient: \blank{1.8cm}
-\end{enumerate}
-
-\item From Lesson 2.1: the table gives values of a function $g$. Find the
-      average rate of change of $g$ over $[1, 3]$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|}
-\hline
-$x$ & 1 & 3 & 5 \\
-\hline
-$g(x)$ & 4 & 16 & 40 \\
-\hline
+\vspace{4pt}
+\begin{tabular}{@{}l@{\quad}l@{\quad}l@{\quad}l@{}}
+(a) $\sqrt{x}$ at $x = 9$: \blank{1.2cm} &
+(b) $|x|$ at $x = -4$: \blank{1.2cm} &
+(c) $x^3$ at $x = -2$: \blank{1.2cm} &
+(d) $\tfrac{1}{x}$ at $x = \tfrac{1}{2}$: \blank{1.2cm}
 \end{tabular}
-\smallskip
+
+\item Let $f(x) = x^2$ and $g(x) = x + 3$. Find $f(g(-3))$ and $f(g(-5))$.
 
 \begin{work}
-  \text{AROC} &= \frac{g(3) - g(1)}{3 - 1} \\
-              &= \frac{16 - 4}{2} \\
-              &= 6
+  f(g(-3)) &= f(0) \\
+           &= 0 \\
+  f(g(-5)) &= f(-2) \\
+           &= (-2)^2 = 4
 \end{work}
 
-AROC $= $ \blank{2.4cm}
+$f(g(-3)) = $ \blank{1.6cm} \qquad $f(g(-5)) = $ \blank{1.6cm}
 
-\item From Lesson 2.1: a function's average rates of change over consecutive
-      equal-length intervals are $14,\ 10,\ 6,\ 2$.
+\item Solve each equation for $x$.
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item The AROCs are \textbf{increasing} / \textbf{decreasing} (circle one).
-  \item So the graph of the function is concave \blank{1.8cm}.
-\end{enumerate}
+\vspace{4pt}
+\begin{tabular}{@{}l@{\qquad\qquad}l@{\qquad\qquad}l@{}}
+(a) $x + 3 = 0$ \qquad $x = $ \blank{1.4cm} &
+(b) $x - 5 = 2$ \qquad $x = $ \blank{1.4cm} &
+(c) $2x = 6$ \qquad $x = $ \blank{1.4cm}
+\end{tabular}
+
+\item Which of these points lie on the graph of $y = \sqrt{x - 1}$? Circle every one that does.
+
+\vspace{6pt}
+\qquad $(1, 0)$ \qquad\qquad $(4, 2)$ \qquad\qquad $(5, 2)$ \qquad\qquad $(10, 3)$ \qquad\qquad $(0, -1)$
+
+\begin{work}
+  \sqrt{1 - 1}  &= 0 \\
+  \sqrt{4 - 1}  &= \sqrt{3} \ne 2 \\
+  \sqrt{5 - 1}  &= 2 \\
+  \sqrt{10 - 1} &= 3
+\end{work}
 
 \end{enumerate}
 

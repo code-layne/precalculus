@@ -1,4 +1,22 @@
-%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Guided Notes
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..17.
+% The original plan spent two days here (translations, then everything else); this lesson
+% condenses them into one, with TRANSLATIONS as the I Do anchor.
+%   I DO   : rows TRANSLATIONS and OUTSIDE — the teacher reads, marks up, works 1 and 5.
+%   WE DO  : the rest of rows 1–2, then INSIDE (teacher works 7) and COMBINED (teacher fills
+%            the first line of the problem-9 table); every problem cold-called.
+%   YOU DO : the last row — problems 14–17, alone, for 12 minutes.
+% The crux is row 4: problems 10 (f(x+3) read as "right 3") and 11 (f(2x) read as "stretch by
+% 2") are built so the naive reading and the correct one DISAGREE. Problem 16 transfers both.
+% NO SKETCH QUESTIONS: every graph is pre-drawn; students read, label, map points, fill tables.
+%
+% PAGE LOCKSTEP with the other half of the pair: vocabulary \writeline -> \ansline, \blank ->
+% \ans, and the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else
+% differs. Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across
+% pages: the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,33 +28,19 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Read the intervals where a polynomial is \blank{2.4cm} or
-        \blank{2.4cm} from a graph or a table.
-  \item Tell a \blank{2cm} (relative) maximum or minimum from a
-        \blank{2cm} (absolute) one.
-  \item Locate a point of \blank{2.4cm} --- where the \textit{rate of change}
-        turns around.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Increasing / decreasing interval:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Transformation:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Local (relative) maximum / minimum:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Translation:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Global (absolute) maximum / minimum:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Reflection:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Concavity:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Vertical dilation:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Point of inflection:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Horizontal dilation:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
@@ -44,241 +48,261 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-A trail guide lists two summits on the Ridge Trail: Bell Knob at 1{,}200 feet
-and Signal Peak at 1{,}850 feet. Both are called ``summits'' --- but only one
-is the highest point of the whole trail. What should we call each one?
+A designer has the curve $y = x^2$ on screen and wants it moved \textbf{3 units to the left}.
+She types $y = (x - 3)^2$ --- and the curve slides 3 units to the \emph{right}.
 
+Which equation should she have typed? And why would the sign seem to go the ``wrong'' way?
 \writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
+\small
+\begin{guidednotes}
+% ── ROW 1: translations — the I Do anchor ────────────────────────────────────
+\mainidea[Translations]{Shifts} &
+A \textbf{translation} slides a graph without changing its shape. A number added
+\emph{outside}, $g(x) = f(x) + k$, changes every output by $k$: the graph moves \textbf{up} $k$
+(down when $k < 0$). A number added \emph{inside}, $g(x) = f(x - h)$, is a
+\textbf{composition}: the inner function $x - h$ adjusts the input \emph{before} $f$ acts, so
+the graph moves \textbf{right} $h$ --- and $f(x + 3)$ moves \textbf{left} 3, because $x = -3$
+is the input that feeds $f$ a 0.
+\\
+& \begin{minipage}[c]{0.52\linewidth}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.4cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-6,-1) grid (3,7);
+  \draw[->, thick] (-6,0) -- (3.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-1) -- (0,7.6) node[above] {\small $y$};
+  \foreach \x in {-5,-3,-1,1,2} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {2,4,6} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[thick, slate, dashed, domain=-2.6:2.6, samples=40] plot (\x, {\x*\x});
+  \draw[very thick, plum, domain=-5.6:-0.4, samples=40] plot (\x, {(\x+3)*(\x+3)});
+  \fill[slate] (2,4) circle (2.4pt);
+  \fill[plum] (-1,4) circle (2.4pt);
+  \draw[->, very thick, goldacc] (1.8,4) -- (-0.8,4);
+\end{tikzpicture}
 
-\boxguard
-\begin{notesbox}{1. Polynomial Functions --- The Definition, Precisely}
-A \textbf{nonconstant polynomial function} is any function that can be written
-\[p(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0,\]
-where $n$ is a positive integer, every coefficient $a_i$ is a real number, and
-$a_n \ne 0$.
+{\footnotesize dashed: $y = x^2$ \quad solid: $y = (x + 3)^2$}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.44\linewidth}
+\centering
+{\renewcommand{\arraystretch}{1.3}%
+\begin{tabular}{|c|c|c|}
+\hline
+$x$ & $x + 3$ & $f(x + 3)$ \\
+    & \scriptsize(what $f$ sees) & \\ \hline
+$-3$ & $0$ & $0$ \\
+$-1$ & $2$ & $4$ \\
+$-5$ & $-2$ & $4$ \\ \hline
+\end{tabular}}
 
-\begin{itemize}[itemsep=4pt]
-  \item The \textbf{degree} is \blank{1.6cm} --- the greatest exponent on $x$.
-  \item The \textbf{leading term} is \blank{2cm} and the
-        \textbf{leading coefficient} is \blank{1.6cm}.
-  \item A constant function such as $p(x) = 7$ is a polynomial of degree
-        \blank{1.4cm}.
-\end{itemize}
+\vspace{6pt}
+{\footnotesize $f(x) = x^2$: the inner function hands $f$ its input.}
+\end{minipage}
 
-\textbf{Quick check.} $f(x) = 4x^3 - x^2 + 9$: \quad
-degree \blank{1.2cm} , \quad leading term \blank{1.8cm} , \quad
-leading coefficient \blank{1.2cm}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[34]
-\begin{notesbox}{2. Increasing, Decreasing, and Local Extrema}
-The graph of a polynomial $f$ on the restricted domain $[0, 6]$ is below. Four
-points are marked for you.
-
-\begin{center}
-\begin{tikzpicture}[x=0.78cm, y=0.5cm]
-  \draw[linegray, very thin, step=1] (0,0) grid (6,7);
-  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,7.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {1,2,3,4,5,6,7} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0,1) (0.8,3.3) (1.5,5.2) (2,6) (2.5,5.2) (3,4.0)
-     (3.5,2.6) (4,2) (4.5,2.6) (5,3.6) (5.5,5.1) (6,7)};
-  \fill[goldacc] (0,1) circle (2.7pt); \node[below right] at (0.05,1) {\small $A$};
-  \fill[goldacc] (2,6) circle (2.7pt); \node[above] at (2,6.15) {\small $B$};
-  \fill[goldacc] (4,2) circle (2.7pt); \node[below] at (4,1.9) {\small $C$};
-  \fill[goldacc] (6,7) circle (2.7pt); \node[left] at (5.85,6.9) {\small $D$};
+\vspace{6pt}
+$f(x + 3)$ moved the graph \labelbox{1.6cm}{} 3 units: the vertex sits where the inside is \labelbox{1.0cm}{}
+\\
+& \notesprompt{Describe each translation. For a shift inside, name the input that makes the inside zero.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{$g(x) = x^2 - 4$ \quad and \quad $h(x) = (x - 4)^2$}{2.0cm}{} &
+\pcell{2}{$g(x) = |x + 2| + 1$. Describe it and give the new vertex.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{The point $(4, 2)$ is on $y = \sqrt{x}$. Where does it land on $g(x) = \sqrt{x - 1} + 3$?}{2.0cm}{} &
+\pcell{4}{Write the equation: $y = x^3$ moved left 5 and down 2.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: outside — reflection over the x-axis and vertical dilation ────────
+\mainidea[Acts on $y$]{Outside} &
+A change \emph{outside} $f$ happens after $f$ has made its output, so it acts on the
+$y$-values and does exactly what it says. In $g(x) = a\,f(x)$ every output is multiplied by
+$a$: a \textbf{vertical dilation} --- a stretch when $|a| > 1$, a compression when
+$0 < |a| < 1$. When $a < 0$ the graph also flips: $-f(x)$ is the \textbf{reflection} of $f$
+over the $x$-axis.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.62cm, y=0.42cm, >=stealth]
+  \draw[linegray, very thin, step=1] (0,-4) grid (9,7);
+  \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4) -- (0,7.6) node[above] {\small $y$};
+  \foreach \x in {1,4,9} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-3,-2,2,4,6} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[thick, slate, dashed, domain=0:9, samples=60] plot (\x, {sqrt(\x)});
+  \draw[very thick, plum, domain=0:9, samples=60] plot (\x, {2*sqrt(\x)});
+  \draw[very thick, redacc, domain=0:9, samples=60] plot (\x, {-sqrt(\x)});
+  \fill[slate] (4,2) circle (2.4pt);
+  \fill[plum] (4,4) circle (2.4pt);
+  \fill[redacc] (4,-2) circle (2.4pt);
+  \draw[->, thick, goldacc] (4.25,2.2) -- (4.25,3.75);
+  \draw[->, thick, goldacc] (4.25,1.8) -- (4.25,-1.75);
+  \node[font=\scriptsize, slate, right] at (9.05,3) {$y = \sqrt{x}$};
+  \node[font=\scriptsize, plum, right] at (9.05,6) {plum curve};
+  \node[font=\scriptsize, redacc, right] at (9.05,-3) {red curve};
 \end{tikzpicture}
 \end{center}
-
-\begin{itemize}[itemsep=4pt]
-  \item $f$ is \textbf{increasing} on \blank{1.6cm} and on \blank{1.6cm} ,
-        and \textbf{decreasing} on \blank{1.6cm} .
-  \item At $B$ the function switches from increasing to decreasing, so $B$ is
-        a local \blank{1.8cm} . Its value is \blank{1.2cm} , occurring at
-        $x = $ \blank{1.2cm} .
-  \item At $C$ the function switches from decreasing to increasing, so $C$ is
-        a local \blank{1.8cm} , with value \blank{1.2cm} at $x = $
-        \blank{1.2cm} .
-\end{itemize}
-
-\textbf{Included endpoints count too.} The domain here stops at $x = 0$ and
-$x = 6$, and both endpoints are included. Just to the right of $A$ the graph
-rises, so $A$ is a local \blank{1.8cm} ; just to the left of $D$ the graph
-rises into it, so $D$ is a local \blank{1.8cm} .
-
-\textbf{Say it carefully:} a maximum or minimum is an \textit{output value};
-it \textit{occurs at} an input value.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{notesbox}{3. Local vs.\ Global Extrema}
-Look back at the graph in Section 2 and list every local extremum you found.
-
-\begin{itemize}[itemsep=4pt]
-  \item Local maximum values: \blank{1.4cm} (at $D$) and \blank{1.4cm}
-        (at $B$). The \textbf{greatest} of them is the
-        \textbf{global (absolute) maximum}: \blank{1.4cm} , at $x = $
-        \blank{1.2cm} .
-  \item Local minimum values: \blank{1.4cm} (at $A$) and \blank{1.4cm}
-        (at $C$). The \textbf{least} of them is the
-        \textbf{global (absolute) minimum}: \blank{1.4cm} , at $x = $
-        \blank{1.2cm} .
-\end{itemize}
-
-\textbf{The trap:} $B$ is a local maximum but \textit{not} the global one ---
-the graph climbs higher later. ``Local'' means highest \textit{nearby};
-``global'' means highest \textit{anywhere on the domain}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. What the Zeros and the Degree Guarantee}
-\textbf{Between two zeros, the graph has to turn around.} Below, $p$ has zeros
-at $x = 1$, $x = 3$, and $x = 5$.
-
-\begin{center}
-\begin{tikzpicture}[x=0.78cm, y=0.42cm]
-  \draw[linegray, very thin, step=1] (0,-3) grid (6,3);
-  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-3.4) -- (0,3.6) node[above] {\small $p(x)$};
-  \foreach \x in {1,2,3,4,5,6} \node[below left] at (\x,0) {\small \x};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0.35,-2.7) (1,0) (1.5,1.5) (2,2) (2.5,1.5) (3,0)
-     (3.5,-1.5) (4,-2) (4.5,-1.5) (5,0) (5.65,2.7)};
-  \fill[plum] (1,0) circle (2.7pt);
-  \fill[plum] (3,0) circle (2.7pt);
-  \fill[plum] (5,0) circle (2.7pt);
+\vspace{2pt}
+Plum curve: $y = $ \labelbox{2.0cm}{}\qquad Red curve: $y = $ \labelbox{2.0cm}{}
+\\
+& \notesprompt{Describe the change, then follow one point.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{$g(x) = -3|x|$. Describe it. Where does $(2, 2)$ on $y = |x|$ land?}{2.0cm}{} &
+\pcell{6}{$g(x) = \tfrac{1}{2}x^2$. Describe it. Where does $(4, 16)$ on $y = x^2$ land?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: inside — reflection over the y-axis and horizontal dilation ───────
+\mainidea[Acts on $x$]{Inside} &
+A change \emph{inside} $f$ happens to $x$ before $f$ acts --- a composition again --- so it
+changes the $x$-values and runs \textbf{backwards}. $f(-x)$ is the reflection of $f$ over the
+$y$-axis. $g(x) = f(bx)$ is a \textbf{horizontal dilation} by a factor of $\tfrac{1}{|b|}$: in
+$f(2x)$, $x$ only has to be half as big to feed $f$ the same input, so the graph squeezes
+toward the $y$-axis by a factor of $\tfrac{1}{2}$.
+\\
+& \begin{minipage}[c]{0.54\linewidth}
+\centering
+\begin{tikzpicture}[x=0.6cm, y=0.6cm, >=stealth]
+  \draw[linegray, very thin, step=1] (0,0) grid (9,5);
+  \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small $y$};
+  \foreach \x in {1,2,4,8} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[thick, slate, dashed, domain=0:9, samples=60] plot (\x, {sqrt(\x)});
+  \draw[very thick, plum, domain=0:9, samples=80] plot (\x, {sqrt(2*\x)});
+  \fill[slate] (4,2) circle (2.4pt);
+  \fill[plum] (2,2) circle (2.4pt);
+  \draw[->, very thick, goldacc] (3.8,2) -- (2.25,2);
+  \node[font=\scriptsize, slate, below right] at (6.2,2.5) {$y = \sqrt{x}$};
+  \node[font=\scriptsize, plum, above left] at (7.4,4.0) {$y = \sqrt{2x}$};
 \end{tikzpicture}
-\end{center}
-
-\begin{itemize}[itemsep=4pt]
-  \item Between the zeros $x = 1$ and $x = 3$ there is a local
-        \blank{1.8cm} at $x = $ \blank{1.2cm} .
-  \item Between the zeros $x = 3$ and $x = 5$ there is a local
-        \blank{1.8cm} at $x = $ \blank{1.2cm} .
-  \item \textbf{Why it must happen:} the graph leaves the $x$-axis, so it
-        must come back to reach the next zero --- which means it has to
-        \blank{2.6cm} somewhere in between.
-\end{itemize}
-
-\textbf{The rule:} between every two distinct real zeros of a nonconstant
-polynomial there is at least \blank{1.2cm} local maximum or minimum. So $k$
-distinct real zeros force at least \blank{1.4cm} local extrema.
-
-\medskip
-\textbf{Even degree guarantees a global extremum.} Over \textit{all} real
-numbers:
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|l|c|}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.42\linewidth}
+\centering
+{\renewcommand{\arraystretch}{1.3}%
+\begin{tabular}{|c|c|c|}
 \hline
-\textbf{Degree of the polynomial} & \textbf{Global maximum or global minimum?} \\
-\hline
-Even (like $x^2$ or $x^4 - 8x^2$) & has a global \blank{2.4cm} \\
-\hline
-Odd (like $x^3$ or $x^5 - x$) & \blank{2.4cm} \\
-\hline
-\end{tabular}
-\smallskip
+$x$ & $2x$ & $\sqrt{2x}$ \\
+    & \scriptsize(what $f$ sees) & \\ \hline
+$\tfrac{1}{2}$ & $1$ & $1$ \\
+$2$ & $4$ & $2$ \\
+$8$ & $16$ & $4$ \\ \hline
+\end{tabular}}
 
-An odd-degree polynomial runs off to $+\infty$ on one side and $-\infty$ on
-the other, so no output is ever the greatest or the least.
-\end{notesbox}
+\vspace{6pt}
+{\footnotesize Output 2 used to need $x = 4$; now $x = 2$ is enough.}
+\end{minipage}
 
-\vspace{0.1in}
+\vspace{6pt}
+$f(2x)$ is a horizontal \labelbox{2.4cm}{} by a factor of \labelbox{1.0cm}{}
+\\
+& \notesprompt{Describe the change, then follow one point. Ask: which $x$ feeds $f$ the old input?}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{$g(x) = \sqrt{-x}$. Describe it. Where does $(9, 3)$ on $y = \sqrt{x}$ land?}{2.0cm}{} &
+\pcell{8}{The point $(6, 4)$ is on the graph of $f$. Find where it lands on $g(x) = f(3x)$ and on $h(x) = f(\tfrac{1}{3}x)$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — all four together, and the inside that runs backwards ──
+\mainidea[All four at once]{Combined} &
+Every move fits one form, $g(x) = a\,f\big(b(x - h)\big) + k$. The inside numbers $b$ and $h$
+act on $x$ and run backwards; the outside numbers $a$ and $k$ act on $y$ and do what they say.
+A key point $(x, y)$ of $f$ lands at $\left(\tfrac{x}{b} + h,\ a\,y + k\right)$.
 
-\boxguard[30]
-\begin{notesbox}{5. Points of Inflection --- Where the \textit{Rate} Turns Around}
-In Lesson 2.1 we watched the AROCs over consecutive equal-length intervals:
-increasing AROCs mean concave up, decreasing AROCs mean concave down. Now we
-name the place where that switches.
+\vspace{3pt}
+\stepnum{1}\ \textbf{Inside:} divide $x$ by $b$, then add $h$. \quad
+\stepnum{2}\ \textbf{Outside:} multiply $y$ by $a$, then add $k$.
 
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
-\hline
-$f(x)$ & 1 & 3 & 8 & 17 & 25 & 29 \\
-\hline
-\end{tabular}
-\smallskip
+\vspace{5pt}
+\textbf{9.} Map the key points of $y = \sqrt{x}$ onto $g(x) = 2\sqrt{x + 1} - 3$. \ ($a = 2$, $b = 1$, $h = -1$, $k = -3$.)
 
-AROCs over $[0,1], [1,2], [2,3], [3,4], [4,5]$: \quad
-\blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-\begin{itemize}[itemsep=4pt]
-  \item The AROCs increase, then start to \blank{2cm} . The turn happens
-        near $x = $ \blank{1.2cm} .
-  \item So $f$ is concave \blank{1.4cm} before that input and concave
-        \blank{1.4cm} after it. That input is a
-        \textbf{point of inflection}.
-\end{itemize}
-
+\vspace{4pt}
 \begin{center}
-\begin{tikzpicture}[x=0.95cm, y=0.14cm]
-  \draw[linegray, very thin, xstep=1, ystep=5] (0,0) grid (5,30);
-  \draw[->, thick] (0,0) -- (5.5,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,0) -- (0,32.5) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {10,20,30} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0,1) (1,3) (2,8) (3,17) (4,25) (5,29)};
-  \fill[goldacc] (3,17) circle (2.7pt);
-  \node[right] at (3.15,13) {\small point of inflection};
-\end{tikzpicture}
+{\renewcommand{\arraystretch}{1.35}%
+\begin{tabular}{|c|c|c|}
+\hline
+Point on $y = \sqrt{x}$ & new $x = x + h$ & new $y = a\,y + k$ \\ \hline
+$(0, 0)$ & \blank{1.0cm} & \blank{1.0cm} \\
+$(1, 1)$ & \blank{1.0cm} & \blank{1.0cm} \\
+$(4, 2)$ & \blank{1.0cm} & \blank{1.0cm} \\
+$(9, 3)$ & \blank{1.0cm} & \blank{1.0cm} \\ \hline
+\end{tabular}}
 \end{center}
+\\
+& \begin{minipage}[c]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[x=0.48cm, y=0.48cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-6,-3) grid (3,5);
+  \draw[->, thick] (-6,0) -- (3.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-3) -- (0,5.6) node[above] {\small $y$};
+  \foreach \x in {-4,-2,2} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,2,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[thick, slate, dashed] (-3,3) -- (0,0) -- (3,3);
+  \draw[very thick, plum] (-4.5,-2) -- (-2,3) -- (0.5,-2);
+  \fill[plum] (-2,3) circle (2.4pt);
+  \fill[plum] (-1,1) circle (2.2pt);
+  \fill[plum] (-3,1) circle (2.2pt);
+  \fill[plum] (0,-1) circle (2.2pt);
+  \fill[plum] (-4,-1) circle (2.2pt);
+\end{tikzpicture}
 
-\textbf{The contrast to keep straight:}
-\begin{itemize}[itemsep=4pt]
-  \item A local maximum or minimum is where the \textbf{function} turns
-        around --- the AROCs change \blank{1.4cm} .
-  \item A point of inflection is where the \textbf{rate of change} turns
-        around --- the AROCs stop increasing and start decreasing (or the
-        reverse), but they need not change sign at all.
-  \item In the table above, every AROC is positive, so $f$ is increasing the
-        whole way and has \blank{1.6cm} local extrema --- yet it still has a
-        point of inflection.
-\end{itemize}
-\end{notesbox}
+{\footnotesize\textbf{Graph A} --- a transformation of $y = |x|$ (dashed)}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.46\linewidth}
+\raggedright
+\textbf{The trap.} The inside looks like it says ``right 3'' in $f(x + 3)$ and
+``stretch by 2'' in $f(2x)$. Both readings are backwards. Never trust the sign or
+the number --- \emph{solve} for the $x$ that feeds $f$ its old input.
+\end{minipage}
+\\
+& \notesprompt{Settle each claim with a point, not a rule of thumb.}
+\begin{probgrid}{|Y|Y|}
+\pcell{10}{Jordan reads $y = (x + 3)^2 - 1$ as ``right 3, down 1.'' Find the $x$ that makes the inside zero. Is Jordan right? Give the vertex.}{2.3cm}{} &
+\pcell{11}{Ana says $g(x) = f(2x)$ stretches $f$ horizontally by 2. The point $(4, 2)$ is on $f$. Which $x$ gives $g$ the output 2? Is Ana right?}{2.3cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{12}{Describe in words, in order: $g(x) = -\tfrac{1}{2}(x - 4)^2 + 1$. Give the vertex.}{2.3cm}{} &
+\pcell{13}{Write the equation of Graph A. Use its vertex and one more point.}{2.3cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (12 min) ──────────
+\mainidea[You do, alone]{Map \& Match} &
+Four problems, every parent from the library, ending with a graph to name.
+\\
+& \begin{minipage}[c]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.5cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-1) grid (4,5);
+  \draw[->, thick] (-4,0) -- (4.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-1) -- (0,5.6) node[above] {\small $y$};
+  \foreach \x in {-3,-2,1,3} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {2,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[thick, slate, dashed, domain=0:4, samples=50] plot (\x, {sqrt(\x)});
+  \draw[very thick, plum, domain=-3:3.25, samples=80] plot (\x, {4 - 2*sqrt(abs(\x+3))});
+  \fill[plum] (-3,4) circle (2.4pt);
+  \fill[plum] (-2,2) circle (2.2pt);
+  \fill[plum] (1,0) circle (2.2pt);
+\end{tikzpicture}
 
-\vspace{0.1in}
+{\footnotesize\textbf{Graph B} --- a transformation of $y = \sqrt{x}$ (dashed)}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.46\linewidth}
+\raggedright
+The three dots on Graph B are the images of $(0, 0)$, $(1, 1)$, and $(4, 2)$ on
+$y = \sqrt{x}$. Read their coordinates before you write anything.
+\end{minipage}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{14}{$g(x) = \sqrt{x + 4} - 2$. Describe it in order. Where does $(0, 0)$ land?}{2.2cm}{} &
+\pcell{15}{Map $(-1, -1)$, $(0, 0)$, $(1, 1)$ on $y = x^3$ onto $g(x) = 2(x - 3)^3 - 1$.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{16}{$(6, 5)$ is on $f$. Find its image on $f(x + 6)$ and on $f(\tfrac{1}{2}x)$. Check each with the inside.}{2.4cm}{} &
+\pcell{17}{Write the equation of Graph B in the form $y = a\sqrt{x - h} + k$.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item A polynomial $g$ has exactly four distinct real zeros.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item At least how many local extrema must $g$ have?
-                \blank{1.4cm}
-          \item Explain in one sentence.
-
-                \vspace{0.05in}
-                \writeline
-        \end{enumerate}
-
-  \item A polynomial $h$ has AROCs $4,\ 9,\ 15,\ 11,\ 6$ over five
-        consecutive equal-length intervals covering $[0, 5]$.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Does $h$ have a local maximum or minimum on $[0,5]$?
-                \blank{2cm}
-          \item Near which input is there a point of inflection?
-                $x = $ \blank{1.4cm}
-        \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

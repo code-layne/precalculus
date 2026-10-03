@@ -1,7 +1,20 @@
-%! Polynomial Functions and Real Zeros — Unit 2, Lesson 2.3 — Homework (Answer Key)
+%! Symmetry and Inverse Functions — Unit 2, Lesson 2.3 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch and finished at home. Every context here is new: the notes used the
+% letters A/S/H, graphs A–C, an unnamed table, y = x^2 and the s table; the AP Practice used a
+% bakery; the homework uses graphs P/Q/R, a gym membership table, graphs M and N, and new
+% formulas.
+%   Page 1 — Part A (symmetry from graphs, 1–2) and Part B (the algebraic test, 3–4).
+%   Page 2 — Part C (inverses from a table and graphs, 5–6) and Part D (finding inverses, 7–10).
+% The diagnostic item is 5(b): G^{-1}(130) — the day's central distinction (run it backward;
+% not 1/130, not G(130)). Problem 10 asks for the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each blank is a fixed-width box at the END
+% of a line so its answer cannot rewrap anything. The explicit \newpage fixes the page break.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,128 +23,212 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=10pt]
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work: put $-x$ in parentheses before you simplify, and
+remember that $f^{-1}$ runs $f$ \emph{backward} --- it is never $1/f$.
+\end{remindbox}
 
-\item Let $p(x) = (x - 3)(x + 2)(x - 1)$.
+\vspace{0.12in}
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item The real zeros of $p$ are \ans{3} , \ans{$-2$} ,
-        \ans{1}
-  \item The degree of $p$ is \ans{3}
-  \item Written as points, the $x$-intercepts of the graph are
-        \ans{$(3,0)$} , \ans{$(-2,0)$} , \ans{$(1,0)$}
-\end{enumerate}
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Symmetry from a graph}
+\end{headlinebox}
 
-\item Write each polynomial in factored form.
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
 
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Degree 3, zeros $0$, $-4$, and $5$, leading coefficient 1:
+\item Is each function even, odd, or neither? Look for a fold over the $y$-axis or a half turn
+      about the origin.
 
-        $p(x) = $ \ans{$x(x+4)(x-5)$}
-  \item Degree 3, a zero at $x = 2$ of multiplicity 2 and a zero at
-        $x = -1$, leading coefficient 1:
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.42cm, >=stealth]
+        \begin{scope}
+          \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+          \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+          \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+          \draw[very thick, plum, domain=-2.6:2.6, samples=80, smooth]
+            plot (\x, {1.5*\x - 0.25*\x*\x*\x});
+          \node[font=\small\bfseries] at (0,-3.8) {Graph P};
+        \end{scope}
+        \begin{scope}[xshift=4.6cm]
+          \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+          \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+          \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+          \draw[very thick, plum] (-3,1) -- (0,-2) -- (3,1);
+          \node[font=\small\bfseries] at (0,-3.8) {Graph Q};
+        \end{scope}
+        \begin{scope}[xshift=9.2cm]
+          \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+          \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+          \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+          \draw[very thick, plum, domain=-1.2:3, samples=60, smooth]
+            plot (\x, {0.5*(\x-1)*(\x-1) - 2});
+          \node[font=\small\bfseries] at (0,-3.8) {Graph R};
+        \end{scope}
+      \end{tikzpicture}
+      \end{center}
 
-        $p(x) = $ \ans{$(x-2)^2(x+1)$}
-\end{enumerate}
+      P: \makebox[2.2cm][l]{\ans{odd}} \hfill Q: \makebox[2.2cm][l]{\ans{even}} \hfill R: \makebox[2.2cm][l]{\ans{neither}}
 
-\boxguard[18]
-\item Let $p(x) = (x + 1)^3(x - 2)^2(x - 5)$. Complete the table, then give
-      the degree.
+\item The graph of $f$ passes through $(3, -2)$ and $(1, 4)$. Name two more points that must
+      be on the graph if $f$ is \textbf{even}, and two if $f$ is \textbf{odd}.
 
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Zero} & \textbf{Multiplicity} & \textbf{Even or odd?} & \textbf{Crosses or tangent?} \\
-\hline
-$x = -1$ & \ans{3} & \ans{odd} & \ans{crosses} \\
-\hline
-$x = 2$  & \ans{2} & \ans{even} & \ans{tangent} \\
-\hline
-$x = 5$  & \ans{1} & \ans{odd} & \ans{crosses} \\
-\hline
-\end{tabular}
-\smallskip
-
-Degree of $p$: \ans{6}
-
-\item Let $p(x) = x^3 - x^2 - 8x + 12$.
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item Show that $x = 2$ is a zero of $p$.
-
-        \begin{work}
-          p(2) &= (2)^3 - (2)^2 - 8(2) + 12 \\
-               &= 8 - 4 - 16 + 12 \\
-               &= 0
-        \end{work}
-
-        $p(2) = $ \ans{0} , so $(x - 2)$ \ans{is} / \textbf{is not}
-        a factor of $p(x)$.
-  \item In fact $p(x) = (x - 2)^2(x + 3)$. The zero $x = 2$ has multiplicity
-        \ans{2}, so the graph is \ans{tangent} to the $x$-axis there,
-        while at $x = -3$ the graph \ans{crosses} the axis.
-\end{enumerate}
-
-\boxguard[16]
-\item A polynomial $f$ is given at equally spaced inputs. Fill in the
-      difference rows.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
-\hline
-$f(x)$ & 0 & 2 & 12 & 36 & 80 & 150 \\
-\hline
-1st differences & \multicolumn{6}{c|}{\ans{2} \ \ans{10} \ \ans{24} \ \ans{44} \ \ans{70}} \\
-\hline
-2nd differences & \multicolumn{6}{c|}{\ans{8} \ \ans{14} \ \ans{20} \ \ans{26}} \\
-\hline
-3rd differences & \multicolumn{6}{c|}{\ans{6} \ \ans{6} \ \ans{6}} \\
-\hline
-\end{tabular}
-\smallskip
-
-The degree of $f$ is \ans{3}
-
-\item The graph of a polynomial $p$ is tangent to the $x$-axis at $x = -3$
-      and crosses the $x$-axis at $x = 1$. Which of the following could be
-      $p(x)$?
-
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $(x + 3)(x - 1)$
-  \item $(x + 3)^2(x - 1)$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct: even at $-3$, odd at $1$}}
-  \item $(x + 3)(x - 1)^2$
-  \item $(x + 3)^2(x - 1)^2$
-\end{enumerate}
+      Even: \makebox[4.0cm][l]{\ans{$(-3, -2)$ and $(-1, 4)$}} \hfill
+      Odd: \makebox[4.0cm][l]{\ans{$(-3, 2)$ and $(-1, -4)$}}
 
 \end{enumerate}
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\boxguard
-\begin{extensionbox}
-A degree-4 polynomial has only two $x$-intercepts, at $x = -1$ and $x = 3$,
-and its graph is tangent to the axis at both. Write a possible formula for
-it. Then explain why \textit{no} degree-4 polynomial can be tangent to the
-$x$-axis at three different points.
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- The algebraic test}
+\end{headlinebox}
 
-\vspace{0.05in}
-\ansline{$p(x) = (x+1)^2(x-3)^2$ (any nonzero multiple works).}
-\ansline{Three tangent points would need three even multiplicities, so degree at least 6.}
-\end{extensionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=3]
 
-\vspace{0.1in}
+\item Let $r(x) = x^4 - 6x^2 + 1$. Find $r(-x)$, simplify, and decide: even, odd, or neither.
 
-\boxguard
-\begin{notesbox}{Preview of Lesson 2.4}
-Every polynomial today had exactly as many real zeros as its degree, once
-multiplicities were counted. But $p(x) = x^2 + 1$ has degree 2 and
-\textit{no} $x$-intercepts at all. Lesson 2.4,
-\textit{Polynomial Functions and Complex Zeros}, explains where the missing
-zeros went.
-\end{notesbox}
+\begin{work}
+  r(-x) &= (-x)^4 - 6(-x)^2 + 1 \\
+        &= x^4 - 6x^2 + 1 \\
+        &= r(x)
+\end{work}
+
+      $r$ is \makebox[2.2cm][l]{\ans{even}}
+
+\item Let $w(x) = x^3 - x + 2$. A classmate says $w$ must be odd, because $x^3$ and $x$ are
+      odd powers. Test it.
+
+\begin{work}
+  w(-x) &= (-x)^3 - (-x) + 2 \\
+        &= -x^3 + x + 2 \\
+  -w(x) &= -x^3 + x - 2
+\end{work}
+
+      Is the classmate right? Explain using your work.
+      \writespace{1.3cm}{No. $w(-x) = -x^3 + x + 2$ is neither $w(x)$ nor $-w(x)$ --- the $+2$ does not flip. $w$ is neither even nor odd.}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Inverses from a table and a graph}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=5]
+
+\item A gym charges $G(m)$ dollars for a membership of $m$ months.
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline $m$ (months) & 1 & 2 & 3 & 4 & 6 \\ \hline $G(m)$ (dollars) & 40 & 70 & 100 & 130 & 190 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} $G(3) = $ \makebox[1.6cm][l]{\ans{$100$}} \hfill
+      \textbf{(b)} $G^{-1}(130) = $ \makebox[1.6cm][l]{\ans{$4$}} \hfill
+      \textbf{(c)} $G^{-1}(190) = $ \makebox[1.6cm][l]{\ans{$6$}}
+
+      \textbf{(d)} Interpret $G^{-1}(130)$ in context, with units.
+      \writespace{0.7cm}{For \$130, you get a 4-month membership.}
+
+\item \begin{minipage}[t]{0.48\linewidth}
+      \vspace{0pt}
+      \centering
+      \begin{tikzpicture}[x=0.45cm, y=0.34cm, >=stealth]
+        \begin{scope}
+          \draw[linegray, very thin, step=1] (0,0) grid (4,6);
+          \draw[->, thick] (0,0) -- (4.4,0) node[right] {\scriptsize $x$};
+          \draw[->, thick] (0,0) -- (0,6.4) node[above] {\scriptsize $y$};
+          \foreach \x in {1,2,3,4} \node[below, font=\tiny] at (\x,0) {\x};
+          \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+          \draw[very thick, plum] (0,1) -- (1,4) -- (4,6);
+          \fill[plum] (0,1) circle (2.2pt);
+          \fill[plum] (1,4) circle (2.2pt);
+          \fill[plum] (4,6) circle (2.2pt);
+          \node[font=\small\bfseries] at (2,-1.6) {Graph M};
+        \end{scope}
+        \begin{scope}[xshift=3.2cm]
+          \draw[linegray, very thin, step=1] (0,0) grid (4,6);
+          \draw[->, thick] (0,0) -- (4.4,0) node[right] {\scriptsize $x$};
+          \draw[->, thick] (0,0) -- (0,6.4) node[above] {\scriptsize $y$};
+          \foreach \x in {1,2,3,4} \node[below, font=\tiny] at (\x,0) {\x};
+          \foreach \y in {2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+          \draw[very thick, plum, domain=0:4, samples=50, smooth] plot (\x, {5 - (\x-2)*(\x-2)});
+          \node[font=\small\bfseries] at (2,-1.6) {Graph N};
+        \end{scope}
+      \end{tikzpicture}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.48\linewidth}
+      \vspace{0pt}
+      \textbf{(a)} Which graph is one-to-one? Use the horizontal line test.
+      \writespace{1.0cm}{M. Every horizontal line crosses M at most once; $y = 4$ crosses N twice.}
+
+      \textbf{(b)} $M$ passes through $(1, 4)$. Name the matching point on $M^{-1}$, then
+      give the domain and range of $M^{-1}$.
+      \writespace{0.9cm}{$(4, 1)$. $M^{-1}$: domain $[\,1, 6\,]$, range $[\,0, 4\,]$.}
+      \end{minipage}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Finding an inverse, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=6pt, start=7]
+
+\item \begin{minipage}[t]{0.47\linewidth}
+      Let $f(x) = 4x + 8$. Find $f^{-1}(x)$.
+
+\begin{work}
+  x &= 4y + 8 \\
+  x - 8 &= 4y \\
+  f^{-1}(x) &= \dfrac{x - 8}{4}
+\end{work}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.49\linewidth}
+      \textbf{8.}\ Check problem 7: find $f^{-1}(f(x))$.
+
+\begin{work}
+  f^{-1}(4x + 8) &= \dfrac{(4x + 8) - 8}{4} \\
+                 &= \dfrac{4x}{4} = x
+\end{work}
+      \end{minipage}
+\setcounter{enumi}{8}
+
+\item \begin{minipage}[t]{0.47\linewidth}
+      Let $p(x) = x^2 - 4$ for $x \ge 0$ only. Find $p^{-1}(x)$ and $p^{-1}(5)$.
+
+\begin{work}
+  x &= y^2 - 4 \\
+  y^2 &= x + 4 \\
+  p^{-1}(x) &= \sqrt{x + 4}
+\end{work}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.49\linewidth}
+      $p^{-1}(5) = $ \makebox[1.6cm][l]{\ans{$3$}}
+
+      Why does $p$ need the restriction $x \ge 0$ to have an inverse?
+      \writespace{1.3cm}{Without it, $p(3) = p(-3) = 5$, so $p^{-1}(5)$ would have two answers.}
+      \end{minipage}
+
+\item A friend reads $f^{-1}(x)$ as $1/f(x)$. Explain what $f^{-1}$ really does, and
+      what happens to each point $(a, b)$ on the graph of $f$.
+      \writespace{1.3cm}{$f^{-1}$ runs $f$ backward: if $f(a) = b$, then $f^{-1}(b) = a$. Each point $(a, b)$ becomes $(b, a)$, a reflection over $y = x$. The $-1$ is a name, not an exponent.}
+
+\end{enumerate}
+
+\boxguard[5]
+\begin{spiralbox}
+\small
+\textbf{Next: a quiz on 2.1--2.3, then Lesson 2.4 (Characteristics of Functions: Domain,
+Range, Intercepts, and End Behavior).} In problem 6 the domain of $M$ became the range of
+$M^{-1}$. In 2.4 we read domain, range, intercepts, and where a graph heads at its far ends.
+\end{spiralbox}
 
 \end{document}

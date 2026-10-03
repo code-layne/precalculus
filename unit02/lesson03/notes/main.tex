@@ -1,4 +1,19 @@
-%! Polynomial Functions and Real Zeros — Unit 2, Lesson 2.3 — Guided Notes
+%! Symmetry and Inverse Functions — Unit 2, Lesson 2.3 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. One theme ties the rows together:
+% THREE SYMMETRIES — over the y-axis (even), about the origin (odd), and over the line y = x
+% (a function and its inverse). Problems run 1..18.
+%   ROW 1 SYMMETRY (graphs)  : teacher works 1; class works 2.
+%   ROW 2 EVEN/ODD TEST      : teacher works 3; class works 4-6. 6 is the trap: x^3 + 1 has an
+%                              odd power and is NEITHER.
+%   ROW 3 INVERSES (tables, graphs): teacher works 7; class works 8-10.
+%   ROW 4 FINDING THE INVERSE: teacher works 11; class works 12-14. 13 is THE CRUX: g^{-1}(10)
+%                              and 1/g(10) side by side — the two readings disagree (3 vs 1/24).
+%   YOU DO                   : 15-18 alone, 13 minutes. 16 transfers the crux to a table.
+%
+% PAGE LOCKSTEP with notes/: the vocabulary write lines -> \ansline, \blank -> \ans (inside a
+% fixed-width \makebox), and the answer argument of every \pcell, \writespace and \labelbox
+% filled. Nothing else differs. Inside a cell `\\` ENDS THE ROW — break lines with \par.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,35 +25,19 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Read the real \blank{1.6cm} of a polynomial from its factored form,
-        and write a factored form from a list of zeros.
-  \item Find the \blank{2.4cm} of each real zero and predict whether the graph
-        \blank{1.7cm} the $x$-axis there or is \blank{1.9cm} to it.
-  \item Find the \blank{1.6cm} of a polynomial from a table of values using
-        successive differences.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Zero of a function:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Even function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Root:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Odd function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{$x$-intercept:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{One-to-one function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Linear factor:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Horizontal line test:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Multiplicity:}}\\[1pt]
-\writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Tangent to the $x$-axis:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Inverse function:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
@@ -46,239 +45,248 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-Four questions, four different tests, one polynomial $p(x) = x^2 - x - 6$:
-
-\smallskip
-\textit{Solve $p(x) = 0$.} \quad \textit{Find the roots.} \quad
-\textit{Find the zeros of $p$.} \quad \textit{Find the $x$-intercepts.}
-
-\smallskip
-What do all four questions have in common --- and what is the one answer?
-
+Look at three capital letters:
+\[ \textsf{\textbf{\Large A} \qquad \textbf{\Large S} \qquad \textbf{\Large H}} \]
+Which ones look the same in a mirror held along a vertical line through the middle? Which
+look the same after a half turn --- turned upside down? Today, graphs get the same two tests,
+plus a third mirror.
 \writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{1. Four Names for One Idea}
-A number $a$ is a \textbf{zero} of the function $p$ when
-$p(a) = $ \blank{1.2cm}. That one fact wears several different names,
-depending on who is asking.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{center}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{The wording} & \textbf{What it asks for} \\
-\hline
-$a$ is a \textbf{zero} of $p$ & an input that makes the \blank{1.8cm} zero \\
-$a$ is a \textbf{root} of $p(x) = 0$ & a \blank{1.8cm} of the equation \\
-$(a, 0)$ is an \textbf{$x$-intercept} & where the \blank{1.6cm} meets the $x$-axis \\
-\hline
-\end{tabular}
-\end{center}
-
-\smallskip
-\textbf{Example 1.} Is $x = 3$ a zero of $p(x) = x^3 - 2x^2 - 5x + 6$?
-
-\begin{work}
-  p(3) &= (3)^3 - 2(3)^2 - 5(3) + 6 \\
-       &= 27 - 18 - 15 + 6 \\
-       &= 0
-\end{work}
-
-Because $p(3) = 0$: the number $3$ is a \blank{1.6cm} of $p$, the point
-\blank{1.6cm} is an $x$-intercept of the graph, and $x = 3$ is a
-\blank{1.8cm} of the equation $p(x) = 0$.
-
-\smallskip
-\textit{Looking ahead:} a polynomial can only change sign at a real zero, so
-these zeros become the \textit{endpoints} of the intervals we will use to
-solve polynomial inequalities in Lesson 2.7.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{2. The Factor/Zero Equivalence}
-This is the spine of the lesson. For a \textbf{real} number $a$:
-
-\begin{center}
-\fbox{\parbox{0.86\linewidth}{\centering
-$(x - a)$ is a factor of $p(x)$ \quad \textbf{if and only if} \quad
-$a$ is a zero of $p$.}}
-\end{center}
-
-\textbf{Reading zeros off a factored form.} Set each factor equal to zero ---
-the zero-product property from the warm-up.
-
-\smallskip
-$p(x) = (x - 2)(x + 3)(x - 5)$ \qquad zeros: \blank{1cm} , \blank{1cm} ,
-\blank{1cm}
-
-\begin{itemize}[itemsep=3pt]
-  \item Watch the sign flip: the factor $(x + 3)$ gives the zero
-        $x = $ \blank{1.2cm} , not $+3$.
-  \item This polynomial has degree \blank{1cm} and \blank{1cm} real zeros, so
-        its graph has \blank{1cm} $x$-intercepts.
-\end{itemize}
-
-\textbf{Writing a factored form from zeros.} Run the equivalence backwards:
-each zero $a$ contributes the factor \blank{2cm}.
-
-\smallskip
-Degree 3, zeros $-1$, $0$, and $4$: \quad $p(x) = $ \blank{5cm}
-
-\smallskip
-\textbf{Example 2.} Write a degree-2 polynomial with zeros $2$ and $-4$ whose
-graph passes through $(0, -16)$.
-
-\begin{work}
-  p(x) &= a(x-2)(x+4) \\
-  p(0) &= a(0-2)(0+4) \\
-       &= -8a \\
-   -8a &= -16 \\
-     a &= 2
-\end{work}
-
-$p(x) = $ \blank{5cm}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[34]
-\begin{notesbox}{3. Multiplicity --- and What the Graph Does There}
-When the linear factor $(x - a)$ is repeated $n$ times, the zero $a$ has
-\textbf{multiplicity} \blank{1cm}.
-
-\smallskip
-$p(x) = (x + 1)^2(x - 3)(x - 4)^3$ \qquad degree $= 2 + 1 + 3 = $ \blank{1cm}
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Zero} & \textbf{Multiplicity} & \textbf{Even or odd?} & \textbf{Graph at that intercept} \\
-\hline
-$x = -1$ & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
-\hline
-$x = 3$  & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
-\hline
-$x = 4$  & \blank{1cm} & \blank{1.2cm} & \blank{2.4cm} \\
-\hline
-\end{tabular}
-\end{center}
-
-\medskip
-\textbf{The rule.}
-\begin{itemize}[itemsep=4pt]
-  \item \textbf{Odd} multiplicity: the outputs on the two sides of $a$ have
-        \blank{2cm} signs, so the graph \blank{2cm} the $x$-axis.
-  \item \textbf{Even} multiplicity: the outputs on both sides of $a$ have the
-        \blank{1.6cm} sign, so the graph touches the axis and turns back ---
-        it is \blank{2cm} to the $x$-axis at $x = a$.
-\end{itemize}
-
-\medskip
-\textbf{Read the graph.} Below is $y = (x + 1)^2(x - 2)$.
-
-\begin{center}
-\begin{tikzpicture}[x=0.62cm, y=0.5cm]
-  \draw[linegray, very thin, step=1] (-2,-2) grid (3,3);
-  \draw[->, thick] (-2.3,0) -- (3.3,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-2.3) -- (0,3.3) node[above] {\small $y$};
-  \foreach \x in {-2,-1,1,2,3} \node[below] at (\x,-0.12) {\small $\x$};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2,-2) (-1.5,-0.44) (-1,0) (-0.5,-0.31) (0,-1) (0.5,-1.69)
-     (1,-2) (1.5,-1.56) (2,0) (2.4,2.31)};
-  \fill[plum] (-1,0) circle (2.5pt);
-  \fill[plum] (2,0) circle (2.5pt);
+\small
+\begin{guidednotes}
+% ── ROW 1: symmetry, read from the graph ─────────────────────────────────────
+\mainidea[Two ways to match]{Symmetry} &
+A function is \textbf{even} if its graph is a mirror image of itself over the $y$-axis: fold
+along the $y$-axis and the two halves match. A function is \textbf{odd} if its graph is
+symmetric about the origin: a half turn about $(0, 0)$ lands the graph exactly on itself. Most
+functions are \textbf{neither}.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.42cm, >=stealth]
+  % Graph A — even
+  \begin{scope}
+    \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+    \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+    \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+    \draw[very thick, plum, domain=-2.7:2.7, samples=80, smooth]
+      plot (\x, {0.25*\x*\x*\x*\x - 1.5*\x*\x});
+    \draw[goldacc, thick, dashed] (-2,-2) -- (2,-2);
+    \fill[goldacc] (-2,-2) circle (2.4pt);
+    \fill[goldacc] (2,-2) circle (2.4pt);
+    \node[font=\small\bfseries] at (0,-3.8) {Graph A};
+  \end{scope}
+  % Graph B — odd
+  \begin{scope}[xshift=4.3cm]
+    \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+    \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+    \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+    \draw[very thick, plum, domain=-2.55:2.55, samples=80, smooth]
+      plot (\x, {0.5*(\x*\x*\x - 4*\x)});
+    \draw[goldacc, thick, dashed] (-1,1.5) -- (1,-1.5);
+    \fill[goldacc] (-1,1.5) circle (2.4pt);
+    \fill[goldacc] (1,-1.5) circle (2.4pt);
+    \node[font=\small\bfseries] at (0,-3.8) {Graph B};
+  \end{scope}
+  % Graph C — neither (an odd power, shifted up)
+  \begin{scope}[xshift=8.6cm]
+    \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+    \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+    \draw[->, thick] (0,-3) -- (0,3.4) node[above] {\scriptsize $y$};
+    \draw[very thick, plum, domain=-2.4:2.0, samples=80, smooth]
+      plot (\x, {0.25*\x*\x*\x + 1});
+    \node[font=\small\bfseries] at (0,-3.8) {Graph C};
+  \end{scope}
 \end{tikzpicture}
 \end{center}
+\vspace{2pt}
+Even: $(x, y)$ pairs with \labelbox{1.7cm}{}\qquad
+Odd: $(x, y)$ pairs with \labelbox{1.7cm}{}
+\\
+& \notesprompt{Even, odd, or neither? Name the fold or the turn that matches it.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Graph A.}{1.9cm}{} &
+\pcell{2}{Graph B, then Graph C.}{1.9cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the algebraic test ────────────────────────────────────────────────
+\mainidea[By algebra]{Even or Odd Test} &
+To test with algebra, replace every $x$ with $(-x)$, simplify, and compare. If $f(-x) = f(x)$,
+the function is even; if $f(-x) = -f(x)$, it is odd; if neither holds, it is neither. In 2.2,
+$y = f(-x)$ was the reflection over the $y$-axis --- an even function is one that reflection
+does not change.
 
-\begin{itemize}[itemsep=3pt]
-  \item At $x = -1$ the graph is \blank{2cm} to the axis, matching the factor
-        $(x+1)$ appearing \blank{1.4cm} times.
-  \item At $x = 2$ the graph \blank{1.8cm} the axis, matching multiplicity
-        \blank{1cm}.
-\end{itemize}
-
-\smallskip
-\textit{Looking ahead:} here the multiplicities add up to the degree. When
-they do \textit{not}, something is missing --- that is Lesson 2.4's question.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Finding the Degree from Successive Differences}
-In Lesson 2.1 a \textbf{linear} function had constant \textit{first}
-differences and a \textbf{quadratic} had constant \textit{second}
-differences. The pattern keeps going.
-
-\begin{center}
-\fbox{\parbox{0.90\linewidth}{\centering
-Over \textbf{equally spaced} inputs, the degree of a polynomial is the
-\textit{least} $n$ for which the $n$th differences are constant.}}
+\vspace{3pt}
+\stepnum{1}\ Find $f(-x)$, with $-x$ in parentheses. \quad \stepnum{2}\ Simplify: an even
+power erases the sign; an odd power keeps it. \quad \stepnum{3}\ Compare with $f(x)$ and
+with $-f(x)$.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth, font=\small]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, align=center,
+        minimum height=1.2cm] (s) at (0,0) {$f(-x)$,\\ simplified};
+  \node[draw=greenacc, thick, fill=greenbg, rounded corners=2pt, anchor=west,
+        text width=5.4cm] (e) at (3.2,1.05) {the same as $f(x)$ \hfill $\Rightarrow$ \textbf{EVEN}};
+  \node[draw=plum, thick, fill=lilac, rounded corners=2pt, anchor=west,
+        text width=5.4cm] (o) at (3.2,0) {every sign flipped: $-f(x)$ \hfill $\Rightarrow$ \textbf{ODD}};
+  \node[draw=redacc, thick, fill=redbg, rounded corners=2pt, anchor=west,
+        text width=5.4cm] (n) at (3.2,-1.05) {neither one \hfill $\Rightarrow$ \textbf{NEITHER}};
+  \draw[->, very thick, plum] (s.east) -- (e.west);
+  \draw[->, very thick, plum] (s.east) -- (o.west);
+  \draw[->, very thick, plum] (s.east) -- (n.west);
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\small, align=center]
+        at (0,-1.75) {\textbf{The signs:} $(-x)^2 = x^2$, but $(-x)^3 = -x^3$};
+\end{tikzpicture}
 \end{center}
-
-Complete each row by subtracting neighboring entries in the row above.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
+\\
+& \notesprompt{Find the function at $-x$, simplify, and decide: even, odd, or neither.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{$f(x) = x^4 - 5x^2$}{2.1cm}{} &
+\pcell{4}{$g(x) = x^3 - 4x$}{2.1cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{$k(x) = 6 - x^2$}{2.1cm}{} &
+\pcell{6}{$h(x) = x^3 + 1$ has an odd power. Is it odd? Test it.}{2.1cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: one-to-one, and the inverse read from tables and graphs ───────────
+\mainidea[Tables and graphs]{Inverses} &
+A function is \textbf{one-to-one} if each output comes from exactly one input; on a graph, no
+horizontal line crosses it more than once --- the \textbf{horizontal line test}. A one-to-one
+function has an \textbf{inverse} $f^{-1}$ that runs it backward: if $f(a) = b$, then
+$f^{-1}(b) = a$. Each point $(a, b)$ of $f$ becomes the point $(b, a)$ of $f^{-1}$ --- a
+reflection over the line $y = x$ --- so the domain of $f$ is the range of $f^{-1}$, and the range
+of $f$ is the domain of $f^{-1}$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.5cm, y=0.5cm, >=stealth]
+  % LEFT — y = x^2 fails the horizontal line test
+  \begin{scope}
+    \draw[linegray, very thin, step=1] (-3,-1) grid (3,6);
+    \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+    \draw[->, thick] (0,-1) -- (0,6.4) node[above] {\scriptsize $y$};
+    \foreach \x in {-2,2} \node[below, font=\tiny] at (\x,0) {\x};
+    \foreach \y in {2,4} \node[left, font=\tiny] at (0,\y) {\y};
+    \draw[very thick, plum, domain=-2.4:2.4, samples=60, smooth] plot (\x, {\x*\x});
+    \draw[redacc, thick, dashed] (-3,4) -- (3,4);
+    \fill[redacc] (-2,4) circle (2.4pt);
+    \fill[redacc] (2,4) circle (2.4pt);
+    \node[font=\small] at (0,-1.8) {$y = x^2$: the line $y = 4$ crosses twice};
+  \end{scope}
+  % RIGHT — f, its inverse, and the mirror line y = x
+  \begin{scope}[xshift=5.6cm]
+    \draw[linegray, very thin, step=1] (0,0) grid (5,5);
+    \draw[->, thick] (0,0) -- (5.4,0) node[right] {\scriptsize $x$};
+    \draw[->, thick] (0,0) -- (0,5.4) node[above] {\scriptsize $y$};
+    \foreach \x in {1,2,3,4,5} \node[below, font=\tiny] at (\x,0) {\x};
+    \foreach \y in {1,2,3,4,5} \node[left, font=\tiny] at (0,\y) {\y};
+    \draw[goldacc, very thick, dashed] (-0.2,-0.2) -- (5.4,5.4);
+    \draw[very thick, plum] (0,1) -- (1,3) -- (2,4) -- (4,5);
+    \fill[plum] (0,1) circle (2.4pt);
+    \fill[plum] (4,5) circle (2.4pt);
+    \fill[plum] (1,3) circle (2.4pt);
+    \node[font=\scriptsize, left] at (0.95,3.25) {$(1, 3)$};
+    \draw[very thick, redacc] (1,0) -- (3,1) -- (4,2) -- (5,4);
+    \fill[redacc] (1,0) circle (2.4pt);
+    \fill[redacc] (5,4) circle (2.4pt);
+    \fill[redacc] (3,1) circle (2.4pt);
+    \node[font=\small\bfseries\color{plum}] at (1.9,4.6) {$f$};
+    \node[font=\small\bfseries\color{redacc}] at (4.3,1.3) {$f^{-1}$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Dashed line: \labelbox{1.5cm}{}\qquad
+$(1, 3)$ on $f$ becomes \labelbox{1.5cm}{} on $f^{-1}$
+\\
+& \textbf{A table of $f$, and the table of $f^{-1}$ to fill:}
 \begin{center}
-\begin{tabular}{|l|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 & 5 \\
-\hline
-$f(x)$ & 5 & 4 & 9 & 26 & 61 & 120 \\
-\hline
-1st differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
-\hline
-2nd differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
-\hline
-3rd differences & \multicolumn{6}{c|}{\blank{1.2cm} \ \blank{1.2cm} \ \blank{1.2cm}} \\
-\hline
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $f(x)$ & 1 & 3 & 5 & 7 & 9 \\ \hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline $x$ & 1 & 3 & 5 & 7 & 9 \\ \hline
+$f^{-1}(x)$ & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} \\ \hline
 \end{tabular}
 \end{center}
+\vspace{2pt}
+\\
+& \notesprompt{Read the inverse from the table and the graphs.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{Find $f(3)$ and $f^{-1}(3)$. Why are they different?}{2.0cm}{} &
+\pcell{8}{Solve $f(x) = 9$ from the table. Then write the same fact using $f^{-1}$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Is $y = x^2$ one-to-one? Name two inputs that share an output.}{2.0cm}{} &
+\pcell{10}{Right graph: the domain and range of $f$, then of $f^{-1}$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — finding the inverse, and what f^{-1} is NOT ────────────
+\mainidea[By algebra]{Finding the Inverse} &
+To find $f^{-1}$ from a formula, undo the machine: \stepnum{1}\ write $y = f(x)$; \stepnum{2}\
+swap $x$ and $y$; \stepnum{3}\ solve for $y$; \stepnum{4}\ rename $y$ as $f^{-1}(x)$. To check,
+compose: $f(f^{-1}(x)) = x$ and $f^{-1}(f(x)) = x$ --- each undoes the other. A function that is
+not one-to-one, like $x^2$, becomes invertible when we \textbf{restrict its domain}, keeping
+only $x \ge 0$.
+\\
+& \begin{center}
+\begin{tikzpicture}[font=\small]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, text width=5.2cm,
+        align=center] at (0,0) {\textbf{$f^{-1}(x)$ --- the INVERSE}\\[2pt]
+        Runs $f$ backward. For $f(x) = x + 3$:\\[2pt] $f^{-1}(5) = 2$, because $f(2) = 5$.};
+  \node[draw=redacc, very thick, fill=redbg, rounded corners=3pt, text width=5.2cm,
+        align=center] at (6.0,0) {\textbf{$1/f(x)$ --- the RECIPROCAL}\\[2pt]
+        One over the output. For $f(x) = x + 3$:\\[2pt] $\dfrac{1}{f(5)} = \dfrac{1}{8}$.};
+  \node[font=\small\bfseries\color{redacc}] at (3.0,0) {$\ne$};
+\end{tikzpicture}
+\end{center}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The $-1$ in $f^{-1}$ names the inverse --- it is not an exponent. $f^{-1}$ undoes $f$:
+it sends each output back to the input it came from.}}}
 
-\begin{itemize}[itemsep=3pt]
-  \item The first constant row is the \blank{1.4cm} differences, so $f$ has
-        degree \blank{1cm}.
-  \item Careful: this test only works when the inputs are \blank{3.4cm}.
-\end{itemize}
-\end{notesbox}
+\vspace{3pt}
+\textbf{In your own words:} how can you check that a function you found really is $f^{-1}$?
+\writespace{1.4cm}{}
+\\
+& \notesprompt{Find, check, and compare. Show each step.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{$f(x) = 3x - 6$. Find $f^{-1}(x)$.}{2.3cm}{} &
+\pcell{12}{Check problem 11: find $f(f^{-1}(x))$.}{2.3cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{$g(x) = 2x + 4$. Find $g^{-1}(10)$ and $\dfrac{1}{g(10)}$. Which one undoes $g$? Check each by putting it into $g$.}{2.4cm}{} &
+\pcell{14}{$f(x) = x^2$ for $x \ge 0$ only. Find $f^{-1}(x)$ and $f^{-1}(9)$. Why keep only $x \ge 0$?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ──────────
+\mainidea[You do, alone]{Mirror and Undo} &
+A function $s$ given only by a table, and four functions given by formulas.
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline $x$ & 1 & 2 & 3 & 4 & 5 \\ \hline $s(x)$ & 8 & 6 & 4 & 2 & 0 \\ \hline
+\end{tabular}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Even, odd, or neither? Show $r(-x)$ and $q(-x)$. \par $r(x) = 2x^3 - x$ \qquad $q(x) = x^3 - 2$}{2.5cm}{} &
+\pcell{16}{Find $s^{-1}(4)$. A classmate says $s^{-1}(4) = \dfrac{1}{s(4)} = \dfrac{1}{2}$. Who is right, and why?}{2.5cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{$h(x) = 4x - 3$. Find $h^{-1}(x)$, then check that $h(h^{-1}(x)) = x$.}{2.6cm}{} &
+\pcell{18}{$k(x) = (x - 2)^2$ is not one-to-one. Restrict it to $x \ge 2$, find $k^{-1}(x)$, and state the domain and range of $k^{-1}$.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $p(x) = (x - 6)(x + 2)^2$. Its degree is \blank{1cm}.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item Zero $x = 6$, multiplicity \blank{1cm}; the graph
-                \blank{2.4cm} the $x$-axis there.
-          \item Zero $x = $ \blank{1.2cm} , multiplicity \blank{1cm}; the
-                graph is \blank{2.4cm} to the $x$-axis there.
-        \end{enumerate}
-
-  \item Write a degree-3 polynomial in factored form with a zero at $x = 3$ of
-        multiplicity 2, a zero at $x = -5$, and $p(0) = 90$.
-
-        \begin{work}
-          p(x) &= a(x-3)^2(x+5) \\
-          p(0) &= a(-3)^2(5) \\
-               &= 45a \\
-           45a &= 90 \\
-             a &= 2
-        \end{work}
-
-        $p(x) = $ \blank{5cm}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

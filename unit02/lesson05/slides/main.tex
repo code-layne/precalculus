@@ -1,6 +1,18 @@
-%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Slides (Beamer)
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Slides (Beamer)
+% Release order: title, hook, I Do (rows INCREASING & DECREASING, MAXIMUM & MINIMUM), We Do
+% (CONCAVITY, WHEN READINGS DISAGREE), You Do (ONE DAY'S WEATHER), debrief, homework launch.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+% The trail profile, in (miles, hundreds of feet) — identical to the guided notes.
+\newcommand{\trailcurve}{(0,3) .. controls (0.6,4.6) and (1.2,6) .. (2,6)
+  .. controls (4,6) and (4,2) .. (6,2) .. controls (6.8,2) and (7.4,4) .. (8,7)}
+\newcommand{\trailaxes}{%
+  \draw[linegray, very thin, step=1] (0,0) grid (8,8);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $d$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $E(d)$};
+  \foreach \x in {1,...,8} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y/\l in {2/200,4/400,6/600,8/800} \node[left, font=\scriptsize] at (0,\y) {\l};}
 
 \begin{document}
 
@@ -8,248 +20,265 @@
 {
 \setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
-  \vspace{2.8cm}\hspace{0.55cm}%
+  \vspace{2.6cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.5}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Polynomial Functions and End Behavior}\\[1.2cm]
-    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+    {\color{white}\bfseries\Large Characteristics of Functions:}\\[0.2cm]
+    {\color{white}\bfseries\Large Increasing, Decreasing, Extrema, and Concavity}\\[1.0cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
   \end{minipage}
 \end{frame}
 }
 
-% HOOK SLIDE
+% HOOK
 \begin{frame}[t, plain]
-  \plumheader{Hook: The Graph That Lies}
+  \plumheader{Hook: Where Was the Top?}
   \sectionlabel[goldacc]{Think About It}
 
+  Two friends hiked the same trail and are describing the top of the first big climb.
+
+  \bigskip
   \begin{columns}[T]
-    \column{0.5\textwidth}
+    \column{0.48\textwidth}
+      \begin{block}{Ana}
+        ``The top was \textbf{at mile 2}.''
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Ben}
+        ``No --- the top was \textbf{600 feet}.''
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    {\Large\bfseries\color{plum} Can they both be right?}
+  \end{center}
+
+  \medskip
+  \textit{What is each one actually telling you about the top? One answers ``where,'' the
+  other ``how high.'' Today every answer has to say which one it is.}
+\end{frame}
+
+% ROW 1 — INCREASING & DECREASING
+\begin{frame}[t, plain]
+  \plumheader{Increasing and Decreasing --- Read Left to Right}
+  \sectionlabel[goldacc]{Notes row INCREASING \& DECREASING $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{columns}[T]
+    \column{0.50\textwidth}
       \begin{center}
-      \begin{tikzpicture}[x=1.0cm, y=1.1cm]
-        \draw[linegray, very thin, xstep=0.5, ystep=0.5] (-1,-1.5) grid (3.5,0.5);
-        \draw[->, thick] (-1.3,0) -- (3.9,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,-1.8) -- (0,0.9) node[above] {\small \(p(x)\)};
-        \foreach \x/\lab in {1/20, 2/40, 3/60} \node[above] at (\x,0.08) {\small \lab};
-        \draw[very thick, plum] plot [smooth] coordinates
-          {(-1,-0.48) (-0.5,-0.11) (0,0) (0.5,-0.09) (1,-0.32) (1.5,-0.63)
-           (2,-0.96) (2.5,-1.25) (3,-1.44) (3.33,-1.48) (3.5,-1.47)};
-        \fill[plum] (0,0) circle (2.5pt);
+      \begin{tikzpicture}[x=0.62cm, y=0.38cm]
+        \trailaxes
+        \draw[very thick, plum] \trailcurve;
+        \fill[plum] (0,3) circle (2.5pt);
+        \fill[plum] (8,7) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+      {\footnotesize $E(d)$ = elevation in feet, $d$ miles from the trailhead.}
+
+    \column{0.46\textwidth}
+      \begin{block}{Direction}
+        \textbf{Increasing:} as $x$ gets larger, the outputs get larger --- the graph
+        \textbf{rises}.\\[3pt]
+        \textbf{Decreasing:} the graph \textbf{falls}. \textbf{Constant:} it is flat.
+      \end{block}
+
+      \medskip
+      \textbf{An interval names $x$-values.}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Increasing on $(0, 2)$ and $(6, 8)$
+        \item Decreasing on $(2, 6)$
+        \item Miles, not feet --- never $(300, 600)$
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ROW 2 — MAXIMUM & MINIMUM
+\begin{frame}[t, plain]
+  \plumheader{Maximum and Minimum --- the Value, and Where}
+  \sectionlabel[goldacc]{Notes row MAXIMUM \& MINIMUM $\cdot$ I Do: problem 5 $\cdot$ We Do: problems 6--8}
+
+  \begin{columns}[T]
+    \column{0.50\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.62cm, y=0.38cm]
+        \trailaxes
+        \draw[very thick, plum] \trailcurve;
+        \fill[plum] (0,3) circle (2.5pt);
+        \fill[plum] (8,7) circle (2.5pt);
+        \draw[goldacc, very thick, dashed] (2,6) -- (0,6);
+        \draw[redacc, very thick, dashed] (2,6) -- (2,0);
+        \fill[plum] (2,6) circle (2.8pt);
+        \node[font=\scriptsize\bfseries, text=goldacc, above] at (1.0,6.1) {how high};
+        \node[font=\scriptsize\bfseries, text=redacc, right] at (2.05,1.0) {where};
       \end{tikzpicture}
       \end{center}
 
     \column{0.46\textwidth}
-      \(p(x) = x^3 - 100x^2\) on \(-20 \le x \le 70\).
+      \begin{block}{Relative and absolute}
+        \textbf{Relative max / min:} a peak / a valley, where the graph turns.\\[3pt]
+        \textbf{Absolute max / min:} the greatest / least output anywhere, endpoints included.
+      \end{block}
 
-      \bigskip
-      \begin{itemize}\setlength{\itemsep}{8pt}
-        \item It dives to about \(-150{,}000\) and flattens out.
-        \item It looks like a function that has given up.
-        \item Predict: is \(p(1000)\) big and negative?
+      \medskip
+      \textbf{The value is $y$. It occurs at $x$.}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Relative max: \textbf{600 ft}, at $d = 2$
+        \item Absolute max: \textbf{700 ft}, at $d = 8$ --- the end beats the peak
       \end{itemize}
-
-      \bigskip
-      \textit{\(p(1000) = 900{,}000{,}000\). Positive --- nearly a billion.
-      Nothing was wrong with the window. It was just too small.}
   \end{columns}
 \end{frame}
 
-% SECTION 1 — LIMIT NOTATION
+% ROW 3 — CONCAVITY
 \begin{frame}[t, plain]
-  \plumheader{1. Limit Notation --- Language for the Two Far Ends}
+  \plumheader{Concavity --- Which Way It Bends}
+  \sectionlabel[goldacc]{Notes row CONCAVITY $\cdot$ I Do: problem 9 $\cdot$ We Do: problem 10}
 
-  \begin{block}{The behavior, in words}
-    As the input values of a nonconstant polynomial increase without bound, the
-    output values either \textbf{increase without bound} or \textbf{decrease
-    without bound}. There is no third option --- a polynomial cannot level off.
-  \end{block}
-
-  \medskip
   \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Running right}
-        \[ \lim_{x \to \infty} p(x) = \infty
-           \qquad \lim_{x \to \infty} p(x) = -\infty \]
+    \column{0.52\textwidth}
+      \renewcommand{\arraystretch}{1.1}
+      \begin{tabular}{cc}
+      \begin{tikzpicture}
+        \draw[linegray] (0,0) rectangle (1.7,1.1);
+        \draw[very thick, plum] (0.05,0.05) .. controls (0.85,0.12) and (1.35,0.45) .. (1.62,1.05);
+      \end{tikzpicture} &
+      \begin{tikzpicture}
+        \draw[linegray] (0,0) rectangle (1.7,1.1);
+        \draw[very thick, plum] (0.05,0.05) .. controls (0.35,0.65) and (0.85,1.0) .. (1.62,1.05);
+      \end{tikzpicture} \\
+      {\scriptsize rising faster and faster} & {\scriptsize rising more and more slowly} \\
+      {\scriptsize\bfseries concave up} & {\scriptsize\bfseries concave down} \\[4pt]
+      \begin{tikzpicture}
+        \draw[linegray] (0,0) rectangle (1.7,1.1);
+        \draw[very thick, plum] (0.05,1.05) .. controls (0.85,1.0) and (1.35,0.65) .. (1.62,0.05);
+      \end{tikzpicture} &
+      \begin{tikzpicture}
+        \draw[linegray] (0,0) rectangle (1.7,1.1);
+        \draw[very thick, plum] (0.05,1.05) .. controls (0.35,0.45) and (0.85,0.12) .. (1.62,0.05);
+      \end{tikzpicture} \\
+      {\scriptsize falling faster and faster} & {\scriptsize falling more and more slowly} \\
+      {\scriptsize\bfseries concave down} & {\scriptsize\bfseries concave up} \\
+      \end{tabular}
+
+    \column{0.44\textwidth}
+      \begin{block}{Cup and cap}
+        \textbf{Concave up:} bends like a cup, $\cup$.\\[2pt]
+        \textbf{Concave down:} bends like a cap, $\cap$.\\[2pt]
+        \textbf{Point of inflection:} where the bend switches.
       \end{block}
 
-    \column{0.48\textwidth}
-      \begin{block}{Running left}
-        \[ \lim_{x \to -\infty} p(x) = \infty
-           \qquad \lim_{x \to -\infty} p(x) = -\infty \]
-      \end{block}
+      \medskip
+      On the trail: concave down on $(0, 4)$, concave up on $(4, 8)$; inflection point
+      $(4, 400)$ --- where the trail drops most steeply.
+  \end{columns}
+\end{frame}
+
+% ROW 4 — THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{When Readings Disagree}
+  \sectionlabel[redacc]{Notes row WHEN READINGS DISAGREE $\cdot$ I Do: 11 $\cdot$ We Do: 12--14}
+
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.4cm]
+        \draw[linegray, very thin, step=1] (-2,-3) grid (8,5);
+        \draw[->, thick] (-2,0) -- (8.6,0) node[below right] {\small $x$};
+        \draw[->, thick] (0,-3) -- (0,5.6) node[above] {\small $f(x)$};
+        \foreach \x in {-1,1,2,3,4,5,6,7} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \foreach \y in {-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+        \draw[very thick, plum] (-1,0) .. controls (-0.5,2.2) and (0.2,4) .. (1,4)
+           .. controls (3,4) and (3,-2) .. (5,-2) .. controls (5.8,-2) and (6.4,-0.5) .. (7,2);
+        \fill[plum] (-1,0) circle (2.5pt);
+        \fill[plum] (7,2) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.50\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Sam: ``$f$ is decreasing on $(-2, 4)$.'' \quad Which axis did Sam read?
+        \item Maya: ``The maximum is 1.'' \quad Tavi: ``The maximum is 4.'' \quad Who is right?
+        \item Lee: ``Where $f$ is increasing, it is concave up.'' \quad Find where $f$ rises
+              but bends like a \textbf{cap}.
+        \item Where does $f$ fall but bend like a \textbf{cup}?
+      \end{itemize}
   \end{columns}
 
-  \bigskip
-  \textit{\(\infty\) is not a number. You never substitute it and never get it
-  back --- the statement \textbf{describes} a behavior, it does not compute one.
-  Never write \(p(\infty) = \infty\).}
-\end{frame}
-
-% SECTION 2 — DOMINANCE
-\begin{frame}[t, plain]
-  \plumheader{2. Why the Leading Term Wins}
-
-  \begin{block}{The claim --- and it is a \textit{because}}
-    Degree and the sign of the leading term decide end behavior \textbf{because}
-    for inputs of large magnitude, the leading term dominates the values of
-    every lower-degree term.
-  \end{block}
-
   \medskip
-  \begin{center}
-  \begin{tabular}{|r|c|c|c|c|}
-  \hline
-  \(x\) & \textbf{leading: \(x^3\)} & \textbf{the rest: \(-100x^2\)} & \(p(x)\) & \textbf{rest \(\div\) leading} \\
-  \hline
-  \(10\)      & \(1 \times 10^{3}\)    & \(-1 \times 10^{4}\)   & \(-9 \times 10^{3}\)    & \(-10\) \\
-  \hline
-  \(50\)      & \(1.25 \times 10^{5}\) & \(-2.5 \times 10^{5}\) & \(-1.25 \times 10^{5}\) & \(-2\) \\
-  \hline
-  \(100\)     & \(1 \times 10^{6}\)    & \(-1 \times 10^{6}\)   & \(0\)                   & \(-1\) \\
-  \hline
-  \(500\)     & \(1.25 \times 10^{8}\) & \(-2.5 \times 10^{7}\) & \(1 \times 10^{8}\)     & \(-0.2\) \\
-  \hline
-  \(1{,}000\) & \(1 \times 10^{9}\)    & \(-1 \times 10^{8}\)   & \(9 \times 10^{8}\)     & \(-0.1\) \\
-  \hline
-  \end{tabular}
-  \end{center}
-
-  \bigskip
-  \textit{The last column is \(\dfrac{-100x^2}{x^3} = \dfrac{-100}{x} \to 0\).
-  The rest never gets small --- it gets small \textbf{compared with} the leading
-  term.}
+  \textbf{Intervals and locations: $x$. Values: $y$. Direction and bend: two separate questions.}
 \end{frame}
 
-% SECTION 3 — THE FOUR CASES
+% YOU DO
 \begin{frame}[t, plain]
-  \plumheader{3. The Four Cases}
+  \plumheader{You Do --- One Day's Weather}
+  \sectionlabel[redacc]{Notes row ONE DAY'S WEATHER $\cdot$ problems 15--18, alone, 13 minutes}
 
-  \begin{block}{Only two questions matter}
-    Is the degree \textbf{even or odd}? Is the leading coefficient
-    \textbf{positive or negative}? Two choices twice over --- four cases, and
-    there are no others.
-  \end{block}
+  \begin{columns}[T]
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.25cm, y=0.72cm]
+        \draw[linegray, very thin, xstep=1, ystep=0.5] (0,0) grid (20,4.5);
+        \draw[->, thick] (0,0) -- (20.8,0) node[below right] {\small $h$};
+        \draw[->, thick] (0,0) -- (0,4.9) node[above] {\small $T(h)$};
+        \foreach \x in {5,10,15,20} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \foreach \y/\l in {1/40,2/50,3/60,4/70} \node[left, font=\scriptsize] at (0,\y) {\l};
+        \draw[very thick, plum] (0,2) .. controls (2,1.2) and (3.5,1) .. (5,1)
+           .. controls (10,1) and (10,4) .. (15,4) .. controls (16.5,4) and (18.5,2.8) .. (20,1.5);
+        \fill[plum] (0,2) circle (2.5pt);
+        \fill[plum] (20,1.5) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
+      {\footnotesize $T(h)$ = temperature in $^\circ$F, $h$ hours after midnight.}
 
-  \bigskip
-  \begin{center}
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-   & \textbf{Degree} & \textbf{Leading coeff.} & \(\lim_{x \to \infty} p(x)\) & \(\lim_{x \to -\infty} p(x)\) \\
-  \hline
-  Case 1 & Even & Positive & \(\infty\)  & \(\infty\) \\
-  \hline
-  Case 2 & Even & Negative & \(-\infty\) & \(-\infty\) \\
-  \hline
-  Case 3 & Odd  & Positive & \(\infty\)  & \(-\infty\) \\
-  \hline
-  Case 4 & Odd  & Negative & \(-\infty\) & \(\infty\) \\
-  \hline
-  \end{tabular}
-  \end{center}
-
-  \bigskip
-  \textit{Even degree sends both ends the same way; odd degree sends them
-  opposite ways; a negative leading coefficient flips both.}
+    \column{0.50\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \setcounter{enumi}{14}
+        \item Intervals where $T$ is increasing; decreasing.
+        \item Relative and absolute max and min --- each value and the hour.
+        \item Concave up, concave down, and the point of inflection.
+        \item ``From 10 a.m.\ to 3 p.m.\ it is rising, so it is warming faster and
+              faster.'' Judge the claim using concavity.
+      \end{enumerate}
+  \end{columns}
 \end{frame}
 
-% SECTION 3, CONT. — THE FOUR GRAPHS
+% DEBRIEF
 \begin{frame}[t, plain]
-  \plumheader{The Four Cases, Drawn}
-
-  \begin{center}
-  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
-    \draw[->, thick] (-2.7,0) -- (2.8,0);
-    \draw[->, thick] (0,-5.0) -- (0,5.2);
-    \draw[very thick, plum] plot [smooth] coordinates
-      {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
-       (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
-    \node[below, align=center, text width=3.2cm] at (0,-5.8)
-      {\small \textbf{Case 1}\\ even, \(a_n > 0\)};
-  \end{tikzpicture}
-  \hspace{0.9cm}
-  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
-    \draw[->, thick] (-2.7,0) -- (2.8,0);
-    \draw[->, thick] (0,-5.0) -- (0,5.2);
-    \draw[very thick, plum] plot [smooth] coordinates
-      {(-2.2,-4.07) (-2,0) (-1.7,3.21) (-1.4,4.0) (-1,3) (-0.5,0.94)
-       (0,0) (0.5,0.94) (1,3) (1.4,4.0) (1.7,3.21) (2,0) (2.2,-4.07)};
-    \node[below, align=center, text width=3.2cm] at (0,-5.8)
-      {\small \textbf{Case 2}\\ even, \(a_n < 0\)};
-  \end{tikzpicture}
-  \hspace{0.9cm}
-  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
-    \draw[->, thick] (-2.7,0) -- (2.8,0);
-    \draw[->, thick] (0,-5.0) -- (0,5.2);
-    \draw[very thick, plum] plot [smooth] coordinates
-      {(-2.2,-4.05) (-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38)
-       (0,0) (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2) (2.2,4.05)};
-    \node[below, align=center, text width=3.2cm] at (0,-5.8)
-      {\small \textbf{Case 3}\\ odd, \(a_n > 0\)};
-  \end{tikzpicture}
-  \hspace{0.9cm}
-  \begin{tikzpicture}[x=0.5cm, y=0.22cm]
-    \draw[->, thick] (-2.7,0) -- (2.8,0);
-    \draw[->, thick] (0,-5.0) -- (0,5.2);
-    \draw[very thick, plum] plot [smooth] coordinates
-      {(-2.2,4.05) (-2,2) (-1.8,0.43) (-1.5,-1.13) (-1,-2) (-0.5,-1.38)
-       (0,0) (0.5,1.38) (1,2) (1.5,1.13) (1.8,-0.43) (2,-2) (2.2,-4.05)};
-    \node[below, align=center, text width=3.2cm] at (0,-5.8)
-      {\small \textbf{Case 4}\\ odd, \(a_n < 0\)};
-  \end{tikzpicture}
-  \end{center}
-
-  \bigskip
-  \textit{An odd-degree polynomial has one end up and one end down, so its graph
-  must cross the \(x\)-axis --- the same conclusion Lesson 2.4 reached by
-  counting conjugate pairs.}
-\end{frame}
-
-% SECTION 4 — READING IT OFF ANY FORM
-\begin{frame}[t, plain]
-  \plumheader{4. Reading End Behavior Off Any Form}
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
 
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{Standard form hands it to you}
-        \(p(x) = 9 + 2x^4 - x^7\)\\[4pt]
-        Read the \textbf{exponents}, not the order. Leading term \(-x^7\):
-        odd degree, negative \(a_n\).
-        \[ \lim_{x \to \infty} p(x) = -\infty \]
-        \[ \lim_{x \to -\infty} p(x) = \infty \]
+      \begin{block}{Which axis?}
+        Intervals and locations are \textbf{$x$-values}.\\[3pt]
+        A maximum or minimum \textbf{value} is a \textbf{$y$-value}.
       \end{block}
-
     \column{0.48\textwidth}
-      \begin{block}{Factored form hides it --- never expand}
-        \(q(x) = 2(x-3)^2(x+1)(x^2+4)\)\\[4pt]
-        Degree: \(2 + 1 + 2 = 5\). Leading term:
-        \(2 \cdot x^2 \cdot x \cdot x^2 = 2x^5\).
-        \[ \lim_{x \to \infty} q(x) = \infty \]
-        \[ \lim_{x \to -\infty} q(x) = -\infty \]
+      \begin{block}{Which question?}
+        Direction: does it \textbf{go} up or down?\\[3pt]
+        Concavity: does it \textbf{bend} like a cup or a cap?
       \end{block}
   \end{columns}
 
   \bigskip
-  \textit{Two forms, two jobs: factored form gave you the \textbf{zeros} in 2.4;
-  standard form gives you the \textbf{end behavior} today. Lesson 2.6 shows they
-  are the same polynomial.}
+  \textbf{Next time (2.6):} we stop asking \emph{which way} and start measuring \emph{how
+  fast} --- the average rate of change, and concavity re-read as a rate that changes.
 \end{frame}
 
-% CLASS PRACTICE
+% HOMEWORK LAUNCH
 \begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
 
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Write both limit statements for \(p(x) = -x^6 + 4x^3 - 11\).
-    \item Write both limit statements for \(r(x) = -5(x+2)^3(x-1)^2\) --- do not
-          expand.
-    \item A polynomial has \(\lim_{x \to \infty} p(x) = \infty\) and
-          \(\lim_{x \to -\infty} p(x) = -\infty\). Even or odd degree? Positive
-          or negative \(a_n\)?
-    \item For \(x^4 - 500x^3\), past what input is the leading term the larger
-          of the two in size?
-    \item Explain in one sentence why \(x^5 - 900x^4 + 12\) and \(x^5 + 7x\)
-          have identical end behavior.
-  \end{enumerate}
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 2} and \textbf{problem 4} now. For every answer, ask:
+          is this an $x$ or a $y$?
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

@@ -1,12 +1,19 @@
-%! Equivalent Representations of Polynomial Expressions — Unit 2, Lesson 2.6 — Lesson Plan
+%! Average Rate of Change, Secant Lines, and the Difference Quotient — Unit 2, Lesson 2.6 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 2.6 CLOSES Unit 2: the unit review and test come next,
+% so the Preview points there and names the next unit only as "the next unit".
+% Sources: CED 1.2 (Rates of Change) + CED 1.3 (Rates of Change in Linear and Quadratic
+% Functions) + New (the difference quotient, pitched gently: linear and simple quadratic only).
+% Previous: 2.5 Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.6: Equivalent Representations of Polynomial Expressions}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.6: Average Rate of Change, Secant Lines, and the Difference Quotient}
 
 \begin{document}
 \begin{center}
@@ -16,318 +23,386 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will decide which analytic form of a
-    polynomial --- factored or standard --- answers a given question, convert
-    between the two by multiplying out and by using the binomial theorem with
-    Pascal's Triangle, carry out polynomial long division to write
-    $f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$, and use both forms of one
-    polynomial to answer questions in an applied context.
-    \hfill\textit{\small (CED Topic 1.11, polynomial half --- Skills 1.B, 3.B)}
+    \textbf{Primary Objective:} Students will find the average rate of change of a function
+    on an interval from a table, a graph, and a formula, and state it with units in context;
+    read it as the slope of the secant line and write that line in point-slope form; use the
+    sign and the pattern of average rates over equal intervals to say whether a function is
+    increasing or decreasing, linear, concave up, or concave down; and build and simplify the
+    difference quotient for a linear and a simple quadratic function, checking it against a
+    numerical average rate of change.
+    \hfill\textit{\small (CED 1.2.A, 1.2.B, 1.3.A, 1.3.B; the difference quotient is a
+    foundations ramp --- no CED topic)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the AVERAGE RATE and SECANT LINE rows: definitions, displays, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 20 & Fill the notes together, every problem cold-called --- problems 2--4 and 6--8, then the WHAT THE RATES SAY and DIFFERENCE QUOTIENT rows (9--14; the teacher fills the first rate in the $B$ table and works 11). \\
+\textbf{You Do} --- independent & 14 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 6 alone; the teacher reads 6(a) over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Four ideas, one through-line.} Every row of the notes computes the same ratio ---
+change in output over change in input --- first from a table, then as a slope, then as a
+pattern, then in general on $[x, x + h]$. The difference quotient is the newest and the
+hardest, so it gets the last eight minutes of the guided phase and two of the four You Do
+problems. If the clock slips, cut \textbf{problem 8} (a second secant line from a formula)
+first, then \textbf{problem 10} (the linear table), and protect \textbf{problems 12--14}:
+the crux and its check are what homework problems 6, 8, and 9 cannot be done without. Never
+cut the Homework Launch to zero --- it is the only formative read left before the unit review.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{1.B} --- Express functions, equations, or expressions in analytically
-equivalent forms useful in a given context. &
+\textbf{AP Skill 2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations: compute an average rate of change from a table, a graph, and a
+formula. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The \textbf{factored} form readily provides the real zeros, so it
-        reveals the $x$-intercepts and the intervals that bound domain and
-        range questions in context. (1.11.A.1)
-  \item The \textbf{standard} form displays the leading term, so it reveals
-        end behavior --- and its constant term is the $y$-intercept.
-        (1.11.A.2)
-  \item The binomial theorem uses one row of Pascal's Triangle to expand
-        $(a+b)^n$, including $p(x) = (x+c)^n$. (1.11.C.1)
+  \item The average rate of change on $[a, b]$ is $\frac{f(b) - f(a)}{b - a}$: change in
+        output over change in input (1.2.A.1).
+  \item It is the one constant rate that would produce the same total change over the
+        interval --- 50 mph does not mean the speedometer read 50 the whole way.
+  \item Its units are output units \emph{per} input unit: dollars per month.
+  \item \textbf{Second trap:} dividing by the change in \emph{output}. The units come out
+        upside down (months per dollar), which is how to catch it.
 \end{itemize} \\
-\textbf{3.B} --- Apply numerical results in a given mathematical or applied
-context. &
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function: read increasing,
+decreasing, and concavity from average rates. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Polynomial long division mirrors numerical long division: dividing $f$
-        by $g$ gives $f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$.
-        (1.11.B.1)
-  \item Remainder $0$ is exactly the statement that $g$ is a \textit{factor}
-        of $f$ --- the factor/zero equivalence from Lesson 2.3, now with a
-        procedure attached to it.
-  \item Information pulled from different forms of the \textit{same}
-        polynomial answers different questions about one situation.
-        (1.11.A.3)
+  \item A positive rate means the two quantities rise together; a negative rate means one
+        rises as the other falls (1.2.B.2--3) --- the increasing/decreasing of 2.5, measured.
+  \item Over equal consecutive intervals, rates that grow mean concave up; rates that shrink
+        mean concave down (1.3.B.3). A linear function's rate never changes (1.3.A.1); a
+        quadratic's rates change by the same amount each step (1.3.A.2, 1.3.B.2).
+\end{itemize} \\
+\textbf{AP Skill 3.B / 3.C} --- Apply numerical results in context and support conclusions: the
+secant line and its equation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The average rate of change on $[a, b]$ is the slope of the secant line through
+        $(a, f(a))$ and $(b, f(b))$ (1.3.A.3); its equation is $y - f(a) = m(x - a)$.
+\end{itemize} \\
+\textbf{AP Skill 1.B} --- Express functions in analytically equivalent forms: build
+$f(x + h)$ and simplify the difference quotient. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item The difference quotient $\frac{f(x + h) - f(x)}{h}$ is the average rate of change on
+        $[x, x + h]$. For $3x - 2$ it is 3 (the slope, on every interval); for $x^2$ it is
+        $2x + h$.
+  \item $f(x + h)$ is a composition (1.3): replace every $x$ with $(x + h)$.
+  \item \textbf{Target misconception:} $f(x + h) = f(x) + h$, and its cousin
+        $(x + h)^2 = x^2 + h^2$. Students add $h$ to the output instead of feeding $x + h$
+        in as the input. The notes place it where the answers disagree: for $x^2$ at $x = 3$,
+        $h = 2$, the three versions give 25, 11, and 13.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Standard form     & A polynomial written as a sum of terms in descending degree, $a_nx^n + \cdots + a_1x + a_0$. The leading term is visible, and $a_0$ is the $y$-intercept. \\
-Factored form     & The same polynomial written as a product of factors. Each linear factor $(x - a)$ hands over the real zero $a$. \\
-Pascal's Triangle & The number triangle whose row $n$ lists the coefficients of $(a+b)^n$; each entry is the sum of the two directly above it. \\
-Binomial theorem  & The rule that expands $(a+b)^n$ using row $n$ of Pascal's Triangle, with the power of $a$ falling and the power of $b$ rising across the terms. \\
-Polynomial long division & The algorithm that divides one polynomial by another, one leading term at a time, exactly as numerical long division does. \\
-Quotient and remainder & In $f(x) = g(x)q(x) + r(x)$, $q$ is the quotient and $r$ is the remainder. \\
-Division algorithm & For polynomials $f$ and $g \ne 0$ there are $q$ and $r$ with $f(x) = g(x)q(x) + r(x)$ and $\deg r < \deg g$. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Average rate of change & On $[a, b]$: \TallMath{\frac{f(b) - f(a)}{b - a}}, change in output over change in input, in output units per input unit. \\
+Secant line            & A line through two points of a graph; its slope is the average rate of change between them. \\
+Point-slope form       & $y - y_1 = m(x - x_1)$: the line with slope $m$ through $(x_1, y_1)$. \\
+Difference quotient    & \TallMath{\frac{f(x + h) - f(x)}{h}}, $h \ne 0$: the average rate of change on $[x, x + h]$. \\
+Concave up / down      & (From 2.5.) Over equal intervals, average rates that grow / shrink. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: reading degree, leading coefficient, and end behavior in
-    limit notation off a polynomial in standard form (Lesson 2.5); listing the
-    real zeros with their multiplicities off a polynomial in factored form
-    (Lesson 2.3); and one Algebra 2 item multiplying two binomials. Items 1 and
-    2 are deliberately the two forms this lesson compares --- each answers a
-    question the other cannot, which is the whole lesson in ninety seconds.
+    Skills reviewed: the slope of a line through two points; writing a line in point-slope
+    form; squaring a binomial, $(x + 4)^2$ --- the exact move the difference quotient of
+    $x^2$ depends on, and the first place the $x^2 + 16$ error shows; building $f(g(x))$ by
+    replacing every $x$ (Lesson 1.3), which is how $f(x + h)$ will be built; and dividing every
+    term of a numerator by $h$.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{One function, two costumes.} Put both lines on the board at once
-    and say nothing about which is which:
+\begin{skillbox}[Hook (3 min)]{lilac}
+    \textbf{What does ``50 mph'' mean?} On the board: a car passes mile marker 30 at
+    1:00\,pm and mile marker 180 at 4:00\,pm.
     \begin{enumerate}[itemsep=2pt]
-        \item $p(x) = (x+1)(x-2)(x-3)$ \qquad and \qquad
-              $p(x) = x^3 - 4x^2 + x + 6$.
-        \item Ask groups to verify with one multiplication that these really
-              are the same function --- then ask two questions:
-              \textit{Where does the graph cross the $x$-axis?} and
-              \textit{What does the graph do as $x \to -\infty$?}
+        \item Ask for the average speed. Someone will say 50 mph; make them say where it
+              came from --- 150 miles over 3 hours.
+        \item Follow up: was the speedometer reading 50 the whole time? (No --- traffic
+              lights, a highway stretch.) Then what does 50 \emph{tell} you?
     \end{enumerate}
-    \textit{Discussion prompt:} nobody reaches for the same line twice. The
-    intercepts fall out of the product; the end behavior falls out of the
-    leading term $x^3$. Neither form is ``simplified'' and neither is
-    ``better'' --- today we learn to \textit{pick} the form the question wants,
-    and to move between them on demand.
+    \textit{Discussion prompt:} 50 is the one steady speed that would cover the same 150 miles
+    in the same 3 hours. That is exactly what an average rate of change is --- and today we
+    compute it for any function, then draw it, then write it in general.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Which Form Answers Which Question?} (12 min --- the spine)
+\textbf{I DO --- Part 1: The Ratio and Its Picture} (10 min)
 
+\textit{Notes rows AVERAGE RATE and SECANT LINE: read each definition, mark up the display,
+work problems 1 and 5. Teacher works; students watch and annotate. Nothing is cold-called in
+this phase.}
 \begin{itemize}
-  \item Build the two-column table with the class. Factored form: real zeros
-        (2.3), hence $x$-intercepts, hence the intervals that matter in
-        context. Standard form: leading term, hence end behavior (2.5), and
-        the constant term, hence the $y$-intercept.
-  \item Degree is the one thing \textit{both} forms give: add the exponents on
-        the factors, or read the highest power.
-  \item Run the hook polynomial through every row of the table so students see
-        one function answering four questions from two forms.
-  \item Say the AP language out loud: this is choosing an equivalent form
-        \textit{useful in a given context} --- Skill 1.B.
+  \item Read the AVERAGE RATE sentences and connect them to the hook: 150 miles over 3 hours.
+        Fill the three label boxes yourself --- top is change in \textit{output}, bottom is
+        change in \textit{input}, units are \textit{dollars per month}.
+  \item Work \textbf{problem 1} aloud from the $B$ table: $\frac{260 - 100}{4 - 0} = 40$
+        dollars per month, then say the sentence --- ``over the first four months the balance
+        grew \$40 a month on average.''
+  \item Read the SECANT LINE sentences. On the graph, trace the dashed line, then the red run
+        and rise; fill the boxes: run 3, rise 9, slope 3.
+  \item Work \textbf{problem 5}: the rate on $[1, 4]$ is 3, and the secant line is
+        $y - 1 = 3(x - 1)$ --- point-slope with the left endpoint.
 \end{itemize}
 
-\textbf{Part 2: Factored $\rightarrow$ Standard, and the Binomial Theorem}
-(12 min)
+\textbf{WE DO --- Part 2: Rates and Secants} (7 min)
 
+\textit{Problems 2--4 and 6--8. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
-  \item Expanding is just distributing, two factors at a time. Model
-        $(x+1)(x-2)(x-3)$: pair the first two, then multiply by the third.
-  \item Then the special case worth a tool: $(x+c)^n$. Multiplying four copies
-        of $(x+2)$ by hand is slow and error-prone.
-  \item Show Pascal's Triangle rows 0--5 already printed. Row $n$ gives the
-        coefficients of $(a+b)^n$, and each entry is the sum of the two
-        directly above it.
-  \item Expand $(x+2)^4$ with row 4 ($1, 4, 6, 4, 1$): powers of $x$ fall
-        $4,3,2,1,0$ while powers of $2$ rise $0,1,2,3,4$. Result
-        $x^4 + 8x^3 + 24x^2 + 32x + 16$. Keep this brisk --- it is a tool, not
-        a derivation.
+  \item \textbf{Problem 2}: 80 dollars per month --- twice the rate of problem 1, the first
+        hint that the rates are changing.
+  \item \textbf{Problem 3} moves to a formula: evaluate both ends first, then divide.
+  \item \textbf{Problem 4 is the second trap}: Jordan divided by the change in output. Ask for
+        the units of 0.025 --- ``months per dollar'' gives it away.
+  \item \textbf{Problems 6--7} on the graph: a negative rate (decreasing), then a zero rate on a
+        curve that is not flat --- net change, not constant. \textbf{Problem 8} is the same
+        work from a formula.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Long Division and the Division Algorithm} (19 min --- the
-core)
+\textbf{WE DO --- Part 3: What the Rates Say} (5 min)
 
+\textit{Notes row WHAT THE RATES SAY. Class fills the blanks together; cold-call every one.
+The teacher fills the first rate in the table.}
 \begin{itemize}
-  \item Open with the numerical analogue: $17 \div 5$ is $3$ with remainder
-        $2$, so $17 = 5 \cdot 3 + 2$, and the remainder is smaller than the
-        divisor.
-  \item State the polynomial version: $f(x) = g(x)q(x) + r(x)$ with
-        $\deg r < \deg g$. ``Smaller'' now means \textit{lower degree}.
-  \item Model the tableau for $2x^3 - 3x^2 - 5x + 6$ divided by $x-2$: divide
-        leading by leading, multiply, subtract, bring down. Remainder $0$,
-        quotient $2x^2 + x - 3$.
-  \item Now cash it in against Lesson 2.3: remainder $0$ $\Longleftrightarrow$
-        $(x-2)$ is a \textbf{factor} $\Longleftrightarrow$ $2$ is a zero. So
-        long division is how you \textit{test} a proposed factor and how you
-        \textit{reduce} a polynomial once one zero is known.
-  \item Second model, with a nonzero remainder: $x^3 - 4x^2 + 2x + 5$ divided
-        by $x-3$ gives $q(x) = x^2 - x - 1$ and $r = 2$. Write the
-        division-algorithm sentence and check the degree condition aloud.
+  \item Fill the $B$ table: 30, 50, 70, 90. Positive, so increasing (2.5); growing, so concave
+        up. Point out that they grow by 20 each time --- a quadratic's rates change at a
+        constant rate.
+  \item \textbf{Problem 9}: rates 8, 6, 4, 2 --- increasing but concave down.
+        \textbf{Problem 10}: $-3$ every time --- decreasing and linear.
 \end{itemize}
 
-\textbf{Part 4: Both Forms, One Context} (10 min)
+\textbf{WE DO --- Part 4: The Difference Quotient} (8 min)
 
+\textit{Notes row DIFFERENCE QUOTIENT --- the crux. Class fills the blanks together; cold-call
+every one. Teacher works problem 11; the class works 12--14.}
 \begin{itemize}
-  \item Open box cut from a $12 \times 16$ sheet:
-        $V(x) = x(12-2x)(16-2x) = 4x^3 - 56x^2 + 192x$.
-  \item Factored form answers ``for what $x$ is the volume $0$?'' and so pins
-        the physical domain $0 < x < 6$. Standard form answers ``what is the
-        leading term, and what does the model do for large $x$?''
-  \item Land Skill 3.B: the numbers mean something here. $x = 8$ is an
-        algebraic zero the box cannot have.
+  \item Read the definition and mark the display: run $h$, rise $f(x + h) - f(x)$. It is the
+        same ratio with letters for endpoints.
+  \item Work \textbf{problem 11} with the three steps: $f(x + h) = 3(x + h) - 2$, top $3h$,
+        quotient 3. Say it: a line's rate is its slope on any interval.
+  \item \textbf{Problem 12}: write $(x + h)^2 = (x + h)(x + h)$ before expanding --- the warm-up's
+        item 3 again.
+  \item \textbf{Problem 13 is the crux}: compute all three numbers aloud --- 25, 11, 13 --- and
+        ask which one is $f(5)$. \textbf{Problem 14} checks $2x + h$ against a plain average
+        rate: both are 8.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Your Turn} (14 min)
+
+\textit{Notes last row, problems 15--18 --- the whole independent phase. Students work alone;
+circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} is an oven table: a rate with units (25 degrees per minute) and a
+        concavity read from shrinking rates.
+  \item \textbf{Problem 16}: rate 6 on $[1, 3]$ and the secant line $y - 3 = 6(x - 1)$.
+  \item \textbf{Problem 17} is the difference quotient of $x^2 + 2x$: $2x + h + 2$.
+  \item \textbf{Problem 18} is the finisher's question --- the crux transferred: check 17
+        against 16 (both 6), then diagnose a classmate's $f(x + h) = x^2 + 2x + h$, whose
+        quotient is 1.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Explicit Instruction --- The Long-Division Routine]{lilac}
-Model the same four beats every single time, and name them aloud while you
-write:
-\begin{enumerate}[itemsep=2pt]
-  \item \textbf{Divide:} leading term of what is left $\div$ leading term of
-        the divisor. That is the next term of the quotient.
-  \item \textbf{Multiply:} that quotient term times the whole divisor.
-  \item \textbf{Subtract:} the leading terms must cancel. If they do not, the
-        divide step was wrong.
-  \item \textbf{Bring down:} the next term, and repeat until what is left has
-        lower degree than the divisor. What is left is $r(x)$.
-\end{enumerate}
-Insist on placeholder zeros for missing degrees --- $x^3 + 3x^2 - 2$ is
-written $x^3 + 3x^2 + 0x - 2$. A missing column is where most wrong answers
-start.
-\end{skillbox}
-
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+Circulate during the \textbf{You Do} phase --- the fourteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} ($f(x + h)$ versus
+$f(x) + h$ versus $x^2 + h^2$); its You Do transfer is \textbf{problem 17}, with
+\textbf{problem 18} naming the error outright.
 \begin{itemize}
-  \item \textbf{Common error:} reaching for the factored form to get end
-        behavior. Cold-call: ``Which term wins when $x$ is huge? Can you see
-        that term in this form?''
-  \item \textbf{Common error:} calling standard form ``simplified'' and
-        treating the conversion as one-directional. Both forms are equally
-        finished; ask ``which one does \textit{this} question want?''
-  \item \textbf{Common error:} in the subtraction step, distributing the minus
-        sign to only the first term. Require the subtracted line in
-        parentheses before subtracting.
-  \item \textbf{Common error:} dropping a placeholder $0x$ column, which
-        shifts every later term by one degree.
-  \item \textbf{Common error:} applying the Pascal row but forgetting to raise
-        $c$ to a power --- $(x+2)^4$ coming out as
-        $x^4 + 8x^3 + 12x^2 + 8x + 2$.
-  \item \textbf{Language:} ``quotient'' and ``remainder,'' not ``the answer''
-        and ``the leftover.''
+  \item \textbf{Watch for (the target misconception):} on problem 17, a student writing
+        $f(x + h) = x^2 + 2x + h$ or $x^2 + h^2 + 2x + 2h$. Do not correct it --- point to
+        their problem 13 and ask, ``What did you put into the slot? Where is the
+        $(x + h)$?''
+  \item \textbf{Watch for (the second trap):} on problem 15, $\frac{10}{250}$ instead of
+        $\frac{250}{10}$. Ask: ``Say your units out loud.''
+  \item \textbf{Common error:} forgetting to distribute the minus sign when subtracting $f(x)$
+        in problem 17, leaving $2x^2$ on top. Ask: ``Every term left on top should have an
+        $h$ in it --- does yours?''
+  \item \textbf{Common error:} a secant line written with the slope and the point mixed up,
+        $y - 1 = 3(x - 3)$. Cold-call: ``Which number is the slope, and which point is on the
+        line?''
+  \item \textbf{Concavity:} students calling the oven ``concave down because it is going up.''
+        Push: ``Increasing is the sign. Concavity is whether the rates grow or shrink.''
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Same Polynomial, Two Jobs} in
-leveled tiers. Every tier works from printed expressions --- no tier draws
-anything.
+\begin{skillbox}[Differentiation --- During You Do (14 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Label four questions ``factored'' or
-        ``standard,'' complete row 3 of Pascal's Triangle and use it on
-        $(x+1)^3$, expand one pair of binomials, and complete the
-        division-algorithm sentence.
-  \item \textbf{Tier A (Approaching Proficiency):} Take
-        $p(x) = (x+2)(x-1)(x-3)$ through both forms and pull four different
-        facts out of them, expand $(x+3)^4$ with row 4, and divide
-        $x^3 + 2x^2 - 5x - 6$ by $x+1$.
-  \item \textbf{Tier E (Extension):} Test the proposed factor $(x-2)$ against
-        $x^3 - 6x^2 + 11x - 6$ by division and factor it completely; divide by
-        a \textit{quadratic} divisor ($x^3 + 3x^2 - 2$ by $x^2 - 1$) and check
-        the degree condition on the remainder; and justify in writing why
-        ``remainder $0$'' and ``the divisor is a factor'' are the same
-        statement (AP Skill 1.B).
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 16} and make them
+        write $f(1)$ and $f(3)$ as two separate lines before any fraction. Then have them
+        write the fraction with the words ``output'' on top and ``input'' on the bottom
+        first. The secant line follows from their own two points.
+  \item \textbf{On level.} \textbf{Problem 17} is the difference quotient alone. Do not build
+        $f(x + h)$ for them; ask them to write $f(\square) = (\square)^2 + 2(\square)$, fill
+        every box with $(x + h)$, and walk away.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question: the check against 16
+        rewards a student who trusts the algebra, and the classmate's quotient of 1 is the
+        misconception seen from outside. Hand a finisher one more: ``Without computing, what
+        is the difference quotient of $5x + 9$? Why?'' Either answer presents in the Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item One function in two forms, $q(x) = (x+1)(x-5) = x^2 - 4x - 5$: name
-        which form answers each of three questions, then answer them.
-  \item Expand $(x+2)^3$ using row 3 of Pascal's Triangle (worked space
-        provided).
-  \item Divide $x^2 + 5x + 1$ by $x + 2$, then say whether $x+2$ is a factor.
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: 25 degrees per minute, concave down. Problem 16: 6, and
+        $y - 3 = 6(x - 1)$. Problem 17: $2x + h + 2$. Problem 18: 6 again --- and the
+        classmate's 1, with the reason. If a student found the classmate's error in words,
+        they present it; it is the lesson's misconception named by a student.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{an average rate of change is change in output over change in input --- the
+        slope of the secant line. The difference quotient is the same ratio on $[x, x + h]$,
+        and $f(x + h)$ means replace every $x$, never add $h$.}
+  \item \textbf{Point forward} (1 min) --- this is the last new lesson of Unit 2. The review
+        puts 2.1--2.6 side by side; then the test; then the next unit.
 \end{enumerate}
-\textbf{Assessment note:} Item 1 is the diagnostic --- a student who writes
-``factored'' for the end-behavior question has not separated the two forms,
-and that separation is the whole lesson. Item 3's remainder of $-5$ checks
-that they read ``not a factor'' off the remainder rather than off the look of
-the quotient.
+\textbf{Do not} re-teach the difference quotient here, take new questions, or let the
+homework start early. If the launch shows it did not land, it is the review day's job, not
+this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 1 and 6} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1(a)} is the warm read: a rate with units. A student who writes
+        ``$\frac{1}{3}$'' has divided by the change in output --- problem 3 will catch it again.
+  \item \textbf{Problem 6(a) is the diagnostic}: write $f(x + h)$ for $f(x) = x^2 + 5$. The
+        right answer is $x^2 + 2xh + h^2 + 5$. A student who writes $x^2 + 5 + h$ added $h$ to
+        the output; a student who writes $x^2 + h^2 + 5$ squared each piece separately.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{$f(x + h)$ solid} (nothing to
+do), \textit{$(x + h)^2 = x^2 + h^2$} (a review-day item on squaring a binomial), and
+\textit{$f(x) + h$} (a one-minute check-in at the door on review day, with problem 13 of the
+notes open).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering the form/information decision on a
-cubic given in both forms, two expansions into standard form, a Pascal's
-Triangle row plus two binomial expansions, one long division of
-$x^3 - 2x^2 - 5x + 6$ by $x - 1$ with the division-algorithm sentence and a
-complete factorization, and one AP-style multiple-choice item on a remainder.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the
+teacher sets. Every context is new. \textit{Part A} (1--3) finds average rates from a plant's
+height table (with units) and from a formula, then diagnoses a classmate who divided by the
+change in output. \textit{Part B} (4--5) reads a new pre-drawn graph for two rates and a
+secant line, and fills a cooling-soup table of rates to read decreasing and concave up.
+\textit{Part C} (6--8) is the difference quotient: $x^2 + 5$ (problem 6(a) is the
+diagnostic), $4x - 7$ with why no $h$ survives, and $x^2 + 3x$ checked against a numerical
+rate. \textit{Part D} (9--10) tests the claim $f(x + h) = f(x) + h$ on $2x^2$, and problem 10
+asks for the headline in writing.
 
-\textbf{Extension (optional):} Substitute $x = a$ into
-$f(x) = (x-a)q(x) + r$ --- every term carrying the factor $(x-a)$ dies, so
-$r = f(a)$. That is the remainder theorem, and it turns Lesson 2.3's factor
-theorem into a one-evaluation test.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors:
+the rate from a water-tank table with the fraction inverted, output over input, or no division
+at all (1); $f(x + h)$ as $f(x) + h$, as $x^2 + h^2$, or with a missed second $x$ (2); a secant
+line with the coordinates swapped, the run forgotten, or the slope inverted (3); a constant
+\emph{change in} rates mistaken for a constant rate (4); and the difference quotient of
+$x^2 + 4$ built from each form of the misconception (5). Section II is one free response on an
+app's downloads: a rate in context (a), a secant line and whether the data lie above it (b),
+the four weekly rates and concavity (c), a manager who forgot to divide (d), and the
+difference quotient of $8t - t^2$ checked against the table (e) --- the finisher's question.
 
-\textbf{Preview:} Lesson 2.7, \textit{Polynomial Equations, Inequalities, and
-Modeling}, puts these forms to work: solving $p(x) = 0$ starts by getting to
-factored form, and reading where $p(x) > 0$ starts from the zeros and the end
-behavior --- one fact from each form.
+\textbf{Preview:} This lesson closes Unit 2. Next comes the Unit 2 review, which puts 2.1--2.6
+side by side --- parent functions, transformations, symmetry and inverses, and the
+characteristics of a graph, now with rates of change to measure them --- and then the unit
+test. After the test, the next unit begins. The homework's closing box points back at the
+soup table to connect today's rates to 2.5's concavity.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Items 1 and 2 are the two halves
-of today's argument, so review them side by side rather than in order: ask
-whether item 1's form could have answered item 2's question, and the reverse.
-It cannot, and that exchange is worth more than either answer. Item 3 is the
-Algebra 2 hinge --- a class that cannot multiply two binomials cleanly will
-not survive Part 2, so if more than a few students stumble, budget five extra
-minutes there and compress Part 4 to the domain question only.
+Five minutes, silent start, no calculators. Items 1 and 2 are the slope and point-slope skills
+every secant line in the notes runs on. Item 3 is the one to watch: a student who writes
+$(x + 4)^2 = x^2 + 16$ will write $(x + h)^2 = x^2 + h^2$ in problem 12 within the half hour
+--- note names, and stand near them in Part 4. Item 4 is composition from Lesson 1.3 on
+purpose: ``replace every $x$'' is the exact sentence the difference quotient row uses to build
+$f(x + h)$. Item 5 rehearses dividing every term by $h$, so the third step of the difference
+quotient is not new when it arrives.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Parts 1 and 3 carry the lesson; Part 2 is real content but it is a tool, so
-resist the urge to derive Pascal's Triangle. State the addition rule, point at
-one entry, expand $(x+2)^4$, move on. In Part 1, fill the form/information
-table \textit{with} the class rather than handing it over --- the table is the
-lesson's one-page summary, and students who copy it passively still reach for
-the wrong form on the exit ticket. Part 3 needs the full nineteen minutes:
-write the first tableau slowly, narrating divide--multiply--subtract--bring
-down, and do the subtraction in parentheses on the board every time. The
-payoff line is the one connecting back to 2.3 --- say it explicitly, ``the
-remainder is zero exactly when the divisor is a factor,'' and write the double
-arrow. If the clock runs out, cut Part 4's second question, never the second
-division example: a class that has only ever seen a remainder of $0$ has not
-seen the division algorithm.
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first
+problem of the grid (1, 5, the first rate of the $B$ table, 11), and the class works the rest,
+every problem cold-called. The AVERAGE RATE row lives on units: make students say ``dollars
+per month'' every time, because the units are what catch the second trap in problem 4. The
+SECANT LINE row is the same number drawn: trace the run and rise before anyone computes.
+Problem 7's zero rate on a curve that is not flat is worth a full minute --- an average rate
+measures net change, not constancy. WHAT THE RATES SAY ties back to 2.5: increasing is the
+sign, concavity is the pattern.
+
+DIFFERENCE QUOTIENT is the spine and the reason the teacher reserves it for honors elsewhere ---
+pitch it gently. Keep it to the three steps on the page, and only to $3x - 2$ and $x^2$. The
+display's run $h$ and rise $f(x + h) - f(x)$ are the whole idea; the algebra only follows the
+picture. Problem 13 is built so that the three ``versions'' of $f(5)$ disagree (25, 11, 13):
+ask for the one that \emph{is} $f(5)$, not for the algebra rule. Problem 14 then shows the
+quotient doing what it claims --- $2x + h$ at $x = 3$, $h = 2$ is the plain average rate on
+$[3, 5]$.
+
+The You Do row (15--18) is the entire independent phase and carries fourteen minutes. Problem
+17 is the crux transferred to $x^2 + 2x$; problem 18 is the crux inverted --- checking it, then
+diagnosing someone else's $f(x) + h$. If the clock slips, cut problem 8 in Part 2, not anything
+in Part 4.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-Tier R's first item is deliberately not a computation --- it is the sorting
-decision, repeated four times, and a group that gets it wrong needs Part 1
-retaught before any division practice will stick. Tier A's item 3 is the
-standard-issue long division; check the subtraction lines, not the final
-answer, because a right answer reached through a wrong subtraction will not
-repeat. Tier E's quadratic divisor separates students who learned the routine
-from students who memorized ``divide by $x$ minus something,'' and its
-remainder $x + 1$ is the first time $\deg r < \deg g$ has any content, since a
-linear remainder is not a constant. Item 3 is the writing task; accept any
-version of ``if the remainder is zero then $f(x) = g(x)q(x)$, and that is what
-factor means.''
+\begin{teachernote}[Debrief]
+Five minutes, and on the last new lesson of the unit they matter more than usual: the headline
+is the sentence students will carry into the review. The guided phase runs twenty minutes with
+new algebra in its last eight, and it will try to borrow from here --- borrow from problem 8
+or problem 10 instead; both ideas return in the homework (problems 4 and 5). Do not borrow
+from the three-minute Homework Launch either: with no exit ticket, it is the last look you get
+before the review day. The share-out is one answer per You Do problem so that a student who
+stalled on 16 still hears problem 18's check --- the shape of homework problem 8.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 1's form labels first: a
-student who answers all three questions correctly but labels the forms wrong
-got there by computing rather than by choosing, and that is a Part 1 reteach
-even though the answers are right. On item 3, a remainder of $-5$ paired with
-``yes, it is a factor'' is a definition miss and worth naming to the whole
-class tomorrow. The ticket should take five minutes; if item 2 alone takes
-that long, the binomial theorem needs one more example before 2.7.
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet; the cover gives it a $+$ cell outside the total. Multiple-choice answers are B, C, D,
+C, A. Item 2 is the most useful one to glance at: (A) is $f(x) + h$ and (B) is
+$(x + h)^2 = x^2 + h^2$ --- the two halves of the lesson's misconception --- and (D) forgot
+that the second $x$ also gets $(x + h)$. Item 5 is the same misconception one step later: (B)
+1 comes from $f(x) + h$, (C) $h$ from $x^2 + h^2$, (D) $2x$ from dropping $h^2$. In item 1, (A)
+is the inverted fraction, (C) is $100 \div 5$, and (D) never divided. In the free response,
+accept any correct equivalent secant line in (b); part (e) is the stretch --- full credit needs
+$8 - 2t - h$ \emph{and} the check that both routes give 4. Credit (c) only if the explanation
+separates ``still increasing'' from ``more slowly.''
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 1 is the one to grade first --- it isolates the form/information
-decision from every procedure in the lesson. Problem 4 uses
-$x^3 - 2x^2 - 5x + 6$, the same polynomial from Lesson 2.3's warm-up and
-guided notes, so students should recognize that $x = 1$ was already confirmed
-as a zero; if nobody notices, open tomorrow with the two pages side by side.
-Problem 5 is the AP-style item --- distractor D (``$0$'') is chosen by
-students who assume every division comes out even, which is exactly what the
-second guided-notes example exists to prevent. The extension is the remainder
-theorem; if a group asked ``do we have to divide every time?'' during the
-lesson, assign it explicitly and open 2.7 with a student presenting it.
+Graded, two pages, due on the date you set; students start problems 1 and 6 in the Homework
+Launch. Grade problems 6, 9, and 10 for accuracy and the rest for completion and shown work if
+time is short: 6(a) (building $f(x + h)$ for $x^2 + 5$) and 9 (testing $f(x + h) = f(x) + h$
+on $2x^2$) are the two items that say whether the crux landed, and 10 is the headline in the
+student's own words. On problem 9, watch for $2(x + h)^2$ expanded as $2x^2 + 2h^2$ --- the
+cousin error inside a coefficient; if it is common, put $(x + h)^2$ on the review-day warm-up.
+Problem 3 and the units in problem 1 predict whether a student will divide the right way on
+the unit test. Problem 5's concave-up-but-decreasing soup is the item that ties this lesson to
+2.5; a student who calls it ``concave down because it is falling'' needs the
+sign-versus-pattern distinction again on review day.
 \end{teachernote}
 \end{document}

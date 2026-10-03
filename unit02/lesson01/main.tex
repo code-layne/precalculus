@@ -1,4 +1,10 @@
-%! Quadratic Functions Revisited — Unit 2, Lesson 2.1 — Lesson Plan
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 2.1 OPENS Unit 2 (there is no 2.0 opener). A New
+% lesson — no CED topic: complex numbers are a CED prerequisite and the groundwork for complex
+% zeros (CED 1.5, met later in the course); the parent-function library and absolute value as
+% a piecewise function are a foundations ramp into 2.2 Transformations of Functions.
+% A DENSE DAY: the teacher's own plan put both topics on Day 1. The minutes are budgeted
+% deliberately in the Lesson Flow box, which names what is cut first and what is protected.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,8 +13,8 @@
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.1: Quadratic Functions Revisited}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.1: Complex Numbers and the Library of Parent Functions}
 
 \begin{document}
 \begin{center}
@@ -18,277 +24,384 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will read the vertex, axis of
-    symmetry, and zeros of a quadratic from its standard, vertex, and factored
-    forms; compute average rates of change of linear and quadratic functions
-    over equal-length intervals; and use first and second differences to
-    classify a function and justify its concavity.
-    \hfill\textit{\small (CED Topic 1.3 --- Skills 2.B, 3.B, 3.C)}
+    \textbf{Primary Objective:} Students will use the imaginary unit $i = \sqrt{-1}$ to
+    rewrite square roots of negatives and solve equations like $x^2 + 16 = 0$; add, subtract,
+    and multiply complex numbers $a + bi$, including a number times its conjugate; name the
+    ten parent functions from an equation, a graph, or key points and read each one's domain
+    and range; and write an absolute value such as $|x - 2|$ as a piecewise function, reading
+    $-x$ as \textit{the opposite of} $x$.
+    \hfill\textit{\small (Foundations ramp --- no CED topic; groundwork for CED 1.5)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the IMAGINARY UNIT and COMPLEX NUMBERS rows: definitions, the $i$ cycle, the $7 - 2i$ labels, problems 1, 5, and 7. \\
+\textbf{We Do} --- guided     & 23 & Fill the notes together, every problem cold-called --- problems 2--4, 6, 8; the PARENT FUNCTIONS gallery and problems 9--10; the ABSOLUTE VALUE row, problems 11--14 (the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 12 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 3 and 8 alone; the teacher reads 8 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{This is the densest period in the unit, on purpose.} Two topics --- complex numbers
+and the parent-function library --- plus absolute value as a piecewise function share one
+block, so the guided phase runs 23 minutes and the You Do takes 12, the low end of its range.
+The budget inside We Do is 6 minutes of complex practice, 9 for the library, 8 for absolute
+value. \textbf{Protected:} the ABSOLUTE VALUE row (problems 11--14, the crux) and the You Do's
+12 minutes --- 2.2 transforms $|x|$ first and homework problem 8 needs the piecewise habit.
+\textbf{If the clock slips, cut in this order:} problem 10 (even vs.\ odd degree --- state
+the rule aloud; it returns as homework problem 7), then problem 3 (powers of $i$ --- work one
+power on the board), then let the class fill gallery panels F--J by themselves during the
+You Do's last minute rather than cold-calling each one. Never cut the Homework Launch to zero
+--- it is the only formative read of the period now that there is no exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{2.B} --- Identify a re-expression of mathematical information
-presented in a given representation. &
+\textbf{AP Skill 1.B} --- Express expressions in equivalent forms: rewrite $\sqrt{-n}$ with
+$i$, and simplify complex sums and products to $a + bi$. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item One quadratic, three equivalent forms: standard $ax^2+bx+c$ shows the
-        $y$-intercept, vertex form $a(x-h)^2+k$ shows the vertex, factored
-        form $a(x-r_1)(x-r_2)$ shows the zeros.
-  \item The axis of symmetry $x = -\dfrac{b}{2a}$ is the bridge from standard
-        form back to the vertex.
+  \item $i = \sqrt{-1}$, so $i^2 = -1$; $\sqrt{-n} = i\sqrt{n}$ for $n > 0$. The powers of $i$
+        cycle $i, -1, -i, 1$.
+  \item Rewrite with $i$ \textit{first}: $\sqrt{-4}\cdot\sqrt{-9} = (2i)(3i) = -6$, not
+        $\sqrt{36}$.
+  \item Multiply like binomials, then replace $i^2$ with $-1$. A number times its conjugate is
+        real: $(a + bi)(a - bi) = a^2 + b^2$.
 \end{itemize} \\
-\textbf{3.B} --- Apply numerical results in a given mathematical or applied
-context. &
+\textbf{AP Skill 2.A} --- Identify information from graphical and analytical representations:
+the ten parent functions. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item AROC over $[a,b]$ is $\dfrac{f(b)-f(a)}{b-a}$, the slope of the secant
-        line through $(a, f(a))$ and $(b, f(b))$. (1.3.A.3)
-  \item For a linear function the AROC is the same over every interval, so
-        those rates change at a rate of zero. (1.3.A.1, 1.3.B.1)
+  \item Each parent function has a name, an equation, a shape, and key points with small
+        whole-number coordinates; match any one to the other three.
+  \item Domain is read left to right, range bottom to top. $\frac{1}{x}$ and $\frac{1}{x^2}$
+        approach an axis but never reach it, so $x \ne 0$.
+  \item Even-degree powers ($x^2$, $x^4$) have both arms up; odd ($x^3$) has the left arm down.
 \end{itemize} \\
-\textbf{3.C} --- Support conclusions or choices with a logical rationale or
-appropriate data. &
+\textbf{AP Skill 2.B} --- Construct equivalent representations: absolute value as a
+piecewise function. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item For a quadratic, the AROCs over consecutive equal-length intervals
-        are themselves given by a \textit{linear} function, so they change at
-        a constant rate. (1.3.A.2, 1.3.B.2)
-  \item Constant second differences are the numerical fingerprint of a
-        quadratic; with unit steps that constant is $2a$.
-  \item AROCs increasing over small intervals $\Rightarrow$ concave up;
-        decreasing $\Rightarrow$ concave down. (1.3.B.3)
+  \item $|x| = -x$ for $x < 0$ and $x$ for $x \ge 0$; the break sits where the expression
+        inside changes sign, so $|x - 2|$ breaks at $x = 2$.
+  \item \textbf{Target misconception:} ``$|x| = -x$ for $x < 0$ can't be right, because $-x$
+        is negative.'' Students read $-x$ as \textit{a negative number}; it means \textit{the
+        opposite of} $x$, and every input that rule owns is negative, so its output is
+        positive. The two readings disagree exactly on the inputs the rule owns.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Standard form    & $f(x) = ax^2 + bx + c$ --- the $y$-intercept is $c$, and the sign of $a$ gives the direction of opening. \\
-Vertex form      & $f(x) = a(x-h)^2 + k$ --- the vertex is $(h, k)$ and the axis of symmetry is the line $x = h$. \\
-Factored form    & $f(x) = a(x-r_1)(x-r_2)$ --- the zeros (roots, $x$-intercepts) are $r_1$ and $r_2$. \\
-Axis of symmetry & The vertical line $x = -\dfrac{b}{2a}$ through the vertex; the parabola is a mirror image across it. \\
-Average rate of change (AROC) & Over $[a,b]$: $\dfrac{f(b)-f(a)}{b-a}$, the slope of the secant line joining the endpoints. \\
-Secant line      & The line through $(a, f(a))$ and $(b, f(b))$; its slope is the AROC over $[a,b]$. \\
-First differences & Successive output differences for equally spaced inputs; with a step of 1 they \textit{are} the AROCs. \\
-Second differences & The differences of the first differences --- constant exactly when the function is quadratic. \\
-Concave up / down & AROCs increasing $\Rightarrow$ concave up ($a > 0$); AROCs decreasing $\Rightarrow$ concave down ($a < 0$). \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Imaginary unit     & The number $i = \sqrt{-1}$, so $i^2 = -1$. For $n > 0$, $\sqrt{-n} = i\sqrt{n}$. \\
+Complex number     & A number $a + bi$ with $a$, $b$ real: $a$ is the \textbf{real part}, $b$ the \textbf{imaginary part}. \\
+Complex conjugate  & The partner $a - bi$ of $a + bi$; their product $a^2 + b^2$ is always real. \\
+Parent function    & The simplest function of a family, before any shift, stretch, or flip. \\
+Key points         & Points with small whole-number coordinates that pin down a parent graph's shape. \\
+Absolute value     & The distance from $x$ to 0, never negative: $|x| = -x$ for $x < 0$ and $x$ for $x \ge 0$. \\
+Even / odd degree  & The exponent of a power function: even powers have both arms up, odd powers one down and one up. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: the slope formula from two points (the algebra every AROC
-    runs on, from Lesson 1.3), evaluating a quadratic at several inputs with
-    the parentheses habit (Lesson 1.1), and subtracting consecutive outputs to
-    fill a row of first differences. Item 3 supplies the mechanic the whole
-    lesson is built on --- students fill the row today with no interpretation
-    attached, then spend the period learning what the row means.
+    Skills reviewed: solving $x^2 = 49$ with both roots and simplifying a square root such as
+    $\sqrt{50}$ (today's $\sqrt{-n} = i\sqrt{n}$ sits on top of it); multiplying two binomials
+    (complex multiplication is the same FOIL); evaluating a piecewise function from 1.1,
+    naming the rule that owns each input; and evaluating absolute values as numbers, including
+    $-|4|$, before today writes $|x|$ as a piecewise function.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{The staircase of odd numbers.} Put the perfect squares on the
-    board: $0,\ 1,\ 4,\ 9,\ 16,\ 25$.
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{The calculator says ERROR.} Have students type $\sqrt{-9}$ into a calculator.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask for the gaps between consecutive squares: $1, 3, 5, 7, 9$ ---
-              every odd number, in order. Let the surprise land.
-        \item Now ask for the gaps between \textit{those}: $2, 2, 2, 2$. Dead
-              constant.
+        \item Ask: is that because \textit{no number at all} squares to $-9$, or only no number
+              \textit{they have met yet}? Take two answers; do not resolve it.
+        \item Follow up: $3^2 = 9$ and $(-3)^2 = 9$ --- every real square is 0 or positive. So
+              a number whose square is negative would have to be a new kind of number.
     \end{enumerate}
-    \textit{Discussion prompt:} the squares are not evenly spaced, but their
-    spacings are. Every quadratic hides an arithmetic pattern one level down
-    --- today we learn to hunt for it, name it, and read the leading
-    coefficient straight out of it.
+    \textit{Discussion prompt:} mathematicians met exactly this wall in the 1500s solving
+    equations, and their answer was to \textit{name} the missing number. Today it gets its
+    name, and the rest of the course uses it.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Three Forms, Three Features} (8 min)
+\textbf{I DO --- Part 1: The Imaginary Unit and $a + bi$} (10 min)
 
+\textit{Notes rows IMAGINARY UNIT and COMPLEX NUMBERS: read each definition, mark up the
+display, work problems 1, 5, and 7. Teacher works; students watch and annotate. Nothing is
+cold-called in this phase.}
 \begin{itemize}
-  \item Brisk Algebra 2 recall --- this is activation, not the lesson. Put
-        $f(x) = x^2 - 6x + 5$ on the board in all three forms: standard,
-        $(x-3)^2 - 4$, and $(x-1)(x-5)$.
-  \item Ask what each form \textit{hands you for free}: $c = 5$ is the
-        $y$-intercept; $(3, -4)$ is the vertex; $1$ and $5$ are the zeros.
-        Same function, three different features made visible.
-  \item Axis of symmetry from standard form: $x = -\dfrac{b}{2a} = 3$, then
-        evaluate to get $k$. That is the bridge students need all unit.
+  \item Read the IMAGINARY UNIT sentences aloud and write $i^2 = -1$ large on the board ---
+        every computation today ends by using it.
+  \item Mark up the cycle: fill $i^3 = -i$ (that is $i^2 \cdot i$) and $i^4 = 1$ (that is
+        $i^2 \cdot i^2$) yourself, narrating the multiplication. Read the gold box, including
+        the trap, and leave it for problem 4.
+  \item Work \textbf{problem 1}: $\sqrt{-25} = 5i$, then $\sqrt{-12} = i\sqrt{12} = 2i\sqrt{3}$
+        --- pull out the $i$ \textit{before} touching the 12.
+  \item Read the COMPLEX NUMBERS sentences; fill the two label boxes on $7 - 2i$ (7 and $-2$
+        --- the imaginary part is $-2$, not $-2i$). Work \textbf{problem 5} (like parts) and
+        \textbf{problem 7} by the three steps, stopping visibly at $-3i^2$ to say ``$i^2$ is
+        $-1$, so this is $+3$.''
 \end{itemize}
 
-\textbf{Part 2: AROC and the Secant Line, Recalled} (10 min)
+\textbf{WE DO --- Part 2: Complex Practice} (6 min)
 
+\textit{Problems 2--4, 6, 8. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
-  \item Recall Lesson 1.3: the AROC over $[a,b]$ is
-        $\dfrac{f(b)-f(a)}{b-a}$ --- output change over input change.
-  \item Run it on the same quadratic over $[1, 4]$: $f(1) = 0$, $f(4) = -3$,
-        AROC $= -1$. Project the pre-drawn parabola from the notes with the
-        dashed secant already on it --- the $-1$ is that line's slope.
-  \item Then over $[3, 6]$: AROC $= +3$. Same function, different interval,
-        different rate. \textbf{That is the whole difference} between a line
-        and a parabola, and Part 3 makes it numerical.
+  \item \textbf{Problem 2}: two equations, two answers each --- insist on the $\pm$.
+  \item \textbf{Problem 3}: divide by 4, use the remainder. \textbf{Problem 4} is the trap:
+        let the class say why 6 is wrong before anyone computes $-6$.
+  \item \textbf{Problem 6}: the minus sign reaches both parts. \textbf{Problem 8}: the
+        conjugate product is 25 --- ask what happened to the $i$.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: The Difference Table} (14 min)
+\textbf{WE DO --- Part 3: The Library of Parent Functions} (9 min)
 
+\textit{Notes row PARENT FUNCTIONS. Class fills the blanks together; cold-call every one.
+Teacher annotates panels A--C and works problem 9; the class annotates D--J and works 10.}
 \begin{itemize}
-  \item Build the table for $L(x) = 3x - 2$ at $x = 0,1,2,3,4$: outputs
-        $-2, 1, 4, 7, 10$; first differences $3, 3, 3, 3$; second differences
-        $0, 0, 0$. Because the step is 1, each first difference \textit{is}
-        an AROC.
-  \item Build the table for $Q(x) = 2x^2 - 4x + 1$: outputs
-        $1, -1, 1, 7, 17$; first differences $-2, 2, 6, 10$; second
-        differences $4, 4, 4$.
-  \item Land the sentence: the quadratic's AROCs are not constant, but they
-        step by a constant $4$ --- \textit{the AROCs themselves follow a
-        linear pattern}. Write it on the board and leave it up.
+  \item Read the definition, then model the domain/range reading on panels A--C: domain left to
+        right, range bottom to top. Panel A's range is \textit{only} $y = 2$.
+  \item Cold-call panels D--J, one student per panel, both lines. Slow down on G ($x \ge 0$,
+        $y \ge 0$) and on I and J: the graph approaches the axis but never reaches it, so
+        $x \ne 0$ --- that sentence is all the asymptote theory today.
+  \item Work \textbf{problem 9} from the key points alone ($(8, 2)$ is the giveaway: $2^3 = 8$);
+        \textbf{problem 10} names even vs.\ odd from panels C, D, E.
 \end{itemize}
 
-\textbf{Part 4: Second Differences, $a$, and Concavity} (12 min)
+\textbf{WE DO --- Part 4: Absolute Value as a Piecewise Function} (8 min)
 
+\textit{Notes row ABSOLUTE VALUE --- the spine of the lesson. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--14.}
 \begin{itemize}
-  \item With inputs stepping by 1, the constant second difference equals
-        $2a$. Check it: $4 = 2(2)$ for $Q$. Students can now read a leading
-        coefficient out of a table with no formula in sight.
-  \item If the step is $h$ instead of 1, the constant is $2ah^2$ --- state
-        it, use it once, do not drill it.
-  \item Concavity: $Q$'s AROCs $-2, 2, 6, 10$ are increasing, so the graph is
-        concave up --- and $a = 2 > 0$ agrees. Ask for the concave-down
-        version before you supply it.
+  \item Read the definition and the cases aloud. Say the target sentence twice: \textit{$-x$
+        means the opposite of $x$.} Point at the red half of the graph: every input there is
+        negative, so every output is its opposite --- positive.
+  \item Fill the $|x - 2|$ boxes yourself: ``where is $x - 2$ negative? When $x < 2$. That is
+        where we take the opposite.'' Then work \textbf{problem 11}.
+  \item \textbf{Problem 12} is the misconception as a table: $-x$ is 5, 1, 0, $-2$ --- positive
+        exactly when $x < 0$. \textbf{Problem 13 is the crux}: test the classmate's claim at
+        $x = -6$ and ask for the \textit{reason}. \textbf{Problem 14} shows the two readings
+        disagreeing at $x = -1$: 3 versus $-3$.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: All Three} (12 min)
+
+\textit{Notes row ALL THREE, problems 15--18 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} multiplies complex numbers; \textbf{16} solves $x^2 + 36 = 0$ and
+        repeats the trap with new numbers.
+  \item \textbf{Problem 17} identifies $\frac{1}{x^2}$ from a bare graph --- name, equation,
+        domain, range.
+  \item \textbf{Problem 18} is the crux transferred: $|x + 3|$ breaks at a \textit{negative}
+        number, $x = -3$, and the rule $-(x + 3)$ must still give a positive output at
+        $x = -5$.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} differencing in the wrong direction ---
-        earlier output minus later. Cold-call: ``Which output comes second?
-        That one goes first.''
-  \item \textbf{Common error:} calling first differences AROCs when the
-        inputs do \textit{not} step by 1. Ask: ``What is your step? Then what
-        do you still have to divide by?''
-  \item \textbf{Common error:} concluding ``quadratic'' from first
-        differences that merely change. Push: ``Change is not enough --- do
-        they change by the \textit{same amount} every time?''
-  \item \textbf{Common error:} reading the vertex of $a(x-h)^2 + k$ with the
-        sign of $h$ unflipped --- $(x+1)^2$ means $h = -1$.
-  \item \textbf{Units:} every AROC in an applied context is output units per
-        input unit. ``Dollars per \textit{what}?''
-\end{itemize}
-\end{skillbox}
-
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Nova Cycles --- Pricing a
-Helmet} in leveled tiers. Every tier reads the same revenue table and the
-same pre-drawn parabola --- no tier draws anything.
-
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Two scaffolded AROC computations from
-        the table over $[0, 5]$ and $[5, 10]$ with the fraction pre-labeled,
-        a ``which stretch grew faster'' comparison, and one rising/falling
-        sign read on $[20, 25]$.
-  \item \textbf{Tier A (Approaching Proficiency):} Complete the full AROC row
-        ($50, 30, 10, -10, -30, -50$), spot the constant step of $-20$,
-        conclude quadratic and concave down, and interpret one AROC in a
-        sentence with units (dollars of revenue per dollar of price).
-  \item \textbf{Tier E (Extension):} Work backward. From the AROC step of
-        $-20$ over intervals of length $h = 5$, recover the leading
-        coefficient from $2ah = -20$, then justify the concavity and locate
-        the maximum from the sign change in the AROCs alone --- numerical
-        evidence only, no graph (Skill 3.C).
-\end{itemize}
-\end{skillbox}
-
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item Compute the AROC of $f(x) = x^2 - 2x$ over $[1, 4]$ (worked space
-        provided).
-  \item Two functions' first differences over equal-length intervals
-        ($6,6,6,6$ vs.\ $2,6,10,14$): name which is linear and which is
-        quadratic, give the second differences of the quadratic one, and
-        justify the classification in a sentence.
-  \item From $f(x) = -3(x-2)^2 + 7$: name the vertex, the axis of symmetry,
-        and the concavity.
+\begin{skillbox}[Explicit Instruction: Multiplying Complex Numbers]{lilac}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{enumerate}[itemsep=2pt]
+  \item Rewrite any $\sqrt{-n}$ as $i\sqrt{n}$ first.
+  \item Multiply like binomials (FOIL).
+  \item Replace every $i^2$ with $-1$.
+  \item Combine real parts and imaginary parts; write $a + bi$.
 \end{enumerate}
-\textbf{Assessment note:} Item 2 is the lesson's real check --- a student who
-answers ``B is quadratic'' with no second-difference evidence has the pattern
-memorized but not the reasoning (Skill 3.C). Item 3 is the Algebra 2 recall
-half; a miss there is a prerequisite gap to patch before 2.3, not a miss on
-today's new content.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Worked example} (notes problem 7):
+\begin{align*}
+(2 + 3i)(4 - i) &= 8 - 2i + 12i - 3i^2 \\
+                &= 8 + 10i - 3(-1) \\
+                &= 11 + 10i
+\end{align*}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the twelve minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} (testing ``$-x$ is
+negative'' at $x = -6$); its You Do transfer is \textbf{problem 18} ($|x + 3|$ at $x = -5$).
+\begin{itemize}
+  \item \textbf{Common error:} leaving $i^2$ in the answer or replacing it with $+1$, so
+        problem 15 comes out $5 - 2i$. Cold-call: ``What is $i^2$? Say it.''
+  \item \textbf{Common error:} $\sqrt{-9}\cdot\sqrt{-16} = \sqrt{144} = 12$ in problem 16.
+        Point at the gold trap box in row 1: ``Rewrite with $i$ first.''
+  \item \textbf{Common error:} only $x = 6i$ in problem 16. Ask: ``What else squares to $-36$?''
+  \item \textbf{Common error:} calling the problem 17 graph $\frac{1}{x}$, or giving its range
+        as all reals. Ask: ``Is any part of this graph below the $x$-axis?''
+  \item \textbf{Common error (the crux):} in problem 18, putting $x + 3$ on the left of the
+        break and $-(x + 3)$ on the right, because ``the minus sign should give the
+        negatives.'' Push: ``Pick $x = -5$. What is $x + 3$ there? What is its opposite? Which
+        one is a distance?''
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (12 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        write the four FOIL products as four separate terms before combining anything. The
+        moment they write $-3i^2$, ask what $i^2$ is; most of the day's complex errors are
+        that one step.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} should go unaided: 16 is problem 2 and
+        problem 4 with new numbers, and 17 is a lookup in the gallery they just annotated. If a
+        student asks which graph it is, point at the gallery and walk away.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question --- the break is at a
+        negative number and the rule $-(x + 3)$ must still give positive outputs. A student
+        who finishes early: ask them to write $|2x - 6|$ piecewise (break at $x = 3$) and to
+        say why the break is not at $x = 6$. Either answer presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: $11 - 2i$, with the $-3i^2 = +3$ step said aloud. Problem 16: $\pm 6i$ and
+        $-12$. Problem 17: reciprocal squared, $x \ne 0$, $y > 0$. Problem 18: the two rules
+        and $|-5 + 3| = 2$ --- if a student wrote 18 cleanly, they present it, because it is
+        exactly homework problems 8 and 9.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{Rewrite with $i$ before you compute. And $-x$ means the opposite of $x$ --- on
+        the inputs it owns, it is always positive.} Point at the red half of the $|x|$ graph
+        while you say the second sentence.
+  \item \textbf{Point forward} (1 min) --- 2.2 takes every card in the library and moves,
+        stretches, and flips it; $|x - 2|$ is already one of those moves.
+\end{enumerate}
+\textbf{Do not} re-teach the powers of $i$ or the gallery here, take new questions, or let the
+homework start early. If the launch shows absolute value did not land, it is the 2.2 warm-up's
+job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 3 and 8} alone and in silence (3 minutes).
+Circulate straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 3(b)}, $(5 + 2i)(3 - i)$: a student who writes $13 + i$ kept
+        $-2i^2$ as $-2$; one who writes $17 + i$ has the step.
+  \item \textbf{Problem 8} is the diagnostic: $|x - 4|$ written piecewise, then evaluated at
+        $x = 1$. The right answer is 3 from the rule $4 - x$. A student who writes $-3$ used
+        $x - 4$ on the wrong side of the break --- the target misconception, met alone; a
+        student who swaps the two rules has decided ``$-x$ makes things negative.''
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{absolute value solid}
+(nothing to do), \textit{rules swapped or $-3$ at $x = 1$} (a 2.2 warm-up item testing
+$-x$ at a negative input), and \textit{$i^2$ not replaced} (a one-minute check-in at the door
+of 2.2).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering features read from vertex and factored
-form, AROC from a formula over two intervals with a concavity conclusion, a
-full difference table to complete for a quadratic, a two-table classification
-with a written justification, and one AP-style multiple-choice item that
-recovers the leading coefficient from a constant second difference.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the
+teacher sets. Every context is new. \textit{Part A} (1--4) writes roots with $i$ and finds
+$i^9$, solves $x^2 + 64 = 0$ and $x^2 = -50$, simplifies a difference and a product, and
+multiplies a conjugate pair and asks why the product is real. \textit{Part B} (5--7) matches
+four bare graphs to equations, lists the parent functions with range $y \ge 0$ and those whose
+domain is not all reals, and applies even vs.\ odd degree to $x^6$ and $x^7$. \textit{Part C}
+(8--9) writes $|x - 4|$ and $|x + 1|$ piecewise and evaluates them. \textit{Part D} (10) asks
+for the headline in writing --- why $-x$ is right, and why $\sqrt{-4}\cdot\sqrt{-9} \ne 6$.
 
-\textbf{Extension (optional):} The table for $f(x) = x^3$ has second
-differences $6, 12, 18$ --- not constant, so not quadratic --- but the
-\textit{third} differences are constant at $6$. The staircase simply has one
-more step, which is exactly the door into 2.2.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors:
+$i^2$ treated as $+1$ or the $i^2$ term dropped (1), multiplying under one root (2), forgetting
+the second root or deciding there are no solutions (3), cube root confused with cube or square
+root (4), and the $-(x - 5)$ rule put on the wrong side of the break (5 --- the target
+misconception). Section II is one free-response question on a machined rod's cutting error
+$E(L) = |L - 40|$: evaluate and interpret (a), write the piecewise form (b), refute ``the minus
+sign gives a negative error'' (c), name the parent and its range (d), and find the accepted
+lengths from both rules (e) --- the finisher's question.
 
-\textbf{Preview:} Next lesson (2.2, Polynomial Functions and Rates of Change)
-takes the difference table past degree two and asks what a polynomial's rates
-of change reveal about where its graph turns.
+\textbf{Preview:} Next lesson (2.2, Transformations of Functions) moves, stretches, and flips
+every parent function in today's library, and reads the moves straight from the equation. The
+homework's closing box points at $|x - 4|$ in problem 8 --- the $|x|$ graph with its corner
+moved to $(4, 0)$ --- to set it up.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 1 is the slope formula that
-becomes today's AROC for the fourth lesson running --- if it is still shaky,
-that is the reteach. Item 2's four evaluations feed straight into the notes'
-difference tables, so insist on the parentheses habit. Item 3 asks only for
-the subtraction row, with no interpretation attached; resist students who
-want to announce ``it's quadratic'' --- tell them to hold that thought for
-fifteen minutes.
+Five minutes, silent start, no calculators. Item 1(a) is the habit today's equations need: a
+student who writes only $x = 7$ for $x^2 = 49$ will write only $3i$ for $x^2 = -9$. Item 2 is
+the FOIL that complex multiplication runs on --- a student who cannot do it will not survive
+problem 7, so note names. Item 3 is a 1.1 spiral: naming the rule that owns an input is the
+exact move the ABSOLUTE VALUE row asks for. Item 4's $-|4| = -4$ is there on purpose: the
+negative sign \textit{outside} the bars stays, which sets up the contrast with $-x$
+\textit{inside} the rule, where a negative input makes it positive.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 1 is recall and should move fast --- eight minutes, no more. The whole
-lesson lives in the two difference tables of Part 3, so protect them: build
-the linear one \textit{with} the class, then let students attempt the
-quadratic one before you reveal it. The one sentence worth writing on the
-board and leaving up is ``for a quadratic, the AROCs themselves are linear.''
-The $2ah^2$ generalization in Part 4 is stated once and used once; if the
-room is struggling, keep every example at step 1, where the constant is just
-$2a$, and move on. The practice box's second item is the Tier E skill in
-miniature --- if most students land it, push more groups toward Tier E.
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row. In each
+instruction row you read the printed definition, mark up the display, and work the first
+problem (1, 5 and 7, 9, 11); the class works the rest, every problem cold-called. On a day
+this dense the danger is the complex rows eating the clock: they are procedural and students
+like them, so hold Part 2 to six minutes and move. The IMAGINARY UNIT row lives on one habit
+--- \textit{rewrite with $i$ first} --- and problem 4 is the trap that proves why.
+
+The gallery is a reference students will reuse all of 2.2, so the printed names, equations,
+and key points stay; only the domain and range lines are theirs to fill. Do not drift into
+asymptotes beyond ``approaches but never reaches the axis.''
+
+ABSOLUTE VALUE is the spine. The misconception is a reading error, not an arithmetic one:
+students see the minus sign in $-x$ and hear ``negative.'' Problem 12 makes them compute $-x$
+for four inputs before anyone argues; problem 13 asks for the \emph{reason}, not the number;
+problem 14 puts the two readings side by side at $x = -1$ (3 versus $-3$) so the wrong one is
+visibly impossible --- a distance cannot be negative. Problem 18 in the You Do is the same
+idea with the break at a negative number, which is where it gets hard.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-All three tiers read the same revenue table, so groups can be reshuffled
-mid-period with no new setup. Tier R must say the units aloud --- ``fifty
-dollars of revenue per dollar of price'' --- because the compound unit is
-what makes the context real. Tier A's constant $-20$ is the payoff; a group
-reporting $-100$ differenced the revenues instead of the AROCs. Tier E's
-$2ah = -20$ is the first time all year students recover a coefficient from
-rates rather than points, and the sign-change argument is worth a whole-class
-share in the closing minutes: the AROC runs $+10$ then $-10$, so the turn
-happens between $p = 15$ and $p = 20$, and symmetry pins it at $p = 15$.
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are the most at risk in the unit --- the guided phase
+runs 23 minutes and will try to borrow them. Borrow from problem 10 instead (state the even/odd
+rule aloud; homework problem 7 asks it again) or from problem 3. Do not borrow from the
+three-minute Homework Launch: with no exit ticket, it is the last look you get before the work
+leaves the room. The share-out is one answer per You Do problem so a student who stalled on
+15 still hears the problem 18 result --- the exact shape of homework problem 8, which they
+will otherwise meet alone at home. The headline has two sentences because the day has two
+halves; if time forces one, keep the second.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Read item 2 first and sort by the
-\textit{justification}, not the label: ``B is quadratic because its second
-differences are a constant 4'' is proficient; ``B is quadratic'' alone is
-not. Item 3's most common miss is a vertex of $(-2, 7)$ --- the unflipped $h$
---- which is a five-minute warm-up fix tomorrow, not a reteach.
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Score it however extra credit works in your gradebook; the cover gives it a $+$ cell
+outside the total. Multiple-choice answers are C, B, D, A, B. Item 5 is the most useful one to
+glance at: a student who circles (A) put $x - 5$ on the left of the break and $-(x - 5)$ on the
+right --- the lesson's misconception exactly --- and a student who circles (C) distributed the
+negative to only the $x$. Item 2's (A) 10 is the trap from notes problem 4. In the free
+response, accept $40 - L$ or $-(L - 40)$ in (b); part (c) is the deepest question on the page
+--- credit any answer that computes $-(37 - 40) = 3$ and says the minus sign takes the
+opposite of a negative.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 5 is the AP-style item: distractor B reports the second difference
-itself as $a$, and distractor D doubles where it should halve. Both are worth
-a two-minute autopsy tomorrow. Problem 4 is the written-justification item;
-grade it against Skill 3.C wording and hand back exemplars. The extension on
-$x^3$ is the only cubic anyone sees before 2.2 --- if the class ran short
-today, assign it explicitly and open tomorrow's warm-up window with it.
+Graded, two pages, due on the date you set; students start problems 3 and 8 in the Homework
+Launch. Grade problems 8 and 10 for accuracy and the rest for completion and shown work if
+time is short: 8 (the rules of $|x - 4|$ and its value at $x = 1$) and 10(a) (why $-x$ is
+right) are the two items that say whether the crux landed, and together they predict 2.2 better
+than the complex items do --- 2.2 opens by moving the $|x|$ corner. On problem 2(b), $\pm 5i\sqrt{2}$
+is the full answer; $\pm i\sqrt{50}$ is correct but unsimplified, so mark it, do not zero it.
+Problem 9 is the one worth reading closely: a student who writes $-x + 1$ for $x < -1$ has
+distributed the opposite to only one term --- the same slip as AP Practice item 5(C).
 \end{teachernote}
 \end{document}

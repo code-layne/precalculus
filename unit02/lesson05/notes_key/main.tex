@@ -1,8 +1,35 @@
-%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Guided Notes (Answer Key)
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% Everything is READ from pre-drawn graphs — no calculus, no sketching.
+%   I DO   : the teacher reads the definitions, marks up the displays, works problems 1 and 5,
+%            then 9 and 11 at the head of their rows.
+%   WE DO  : the class works the rest of each grid, every one cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 13 minutes while the teacher circulates.
+% The worked context is a hiking trail's elevation profile E(d) (rows 1–3). The crux is row 4,
+% READINGS THAT DISAGREE: problem 12 (the maximum is 4, not the x-location 1) and problem 13
+% (increasing but concave DOWN). Problems 16 and 18 transfer them to a temperature graph.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, the hook's write
+% lines -> \ansline, and the answer argument of every \pcell, \writespace and \labelbox filled.
+% Nothing else differs. Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot
+% break across pages: the figure and EACH grid row are separate sub-rows (`\\` then `& ...`).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% The trail profile, in (miles, hundreds of feet): start (0,300), peak (2,600), inflection
+% (4,400), valley (6,200), end (8,700). Cubic Bezier pieces with level tangents at the turns.
+\newcommand{\trailcurve}{(0,3) .. controls (0.6,4.6) and (1.2,6) .. (2,6)
+  .. controls (4,6) and (4,2) .. (6,2) .. controls (6.8,2) and (7.4,4) .. (8,7)}
+\newcommand{\trailaxes}{%
+  \draw[linegray, very thin, step=1] (0,0) grid (8,8);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $d$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $E(d)$};
+  \foreach \x in {1,...,8} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y/\l in {2/200,4/400,6/600,8/800} \node[left, font=\scriptsize] at (0,\y) {\l};}
 
 \begin{document}
 
@@ -10,321 +37,244 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Say what it means for output values to increase or decrease
-        \ans{without} bound, and write that description in \ans{limit}
-        notation.
-  \item Show with numbers that the \ans{leading} term dominates every
-        lower-degree term once the inputs are large.
-  \item Use the degree and the \ans{sign} of the leading coefficient to
-        place a polynomial in one of the \ans{four} end-behavior cases.
-  \item Find the leading term from \ans{standard} form or from
-        \ans{factored} form.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{End behavior:}}\\[1pt]
-\ansline{What the outputs of $p$ do as $x$ runs off toward $\infty$ and toward $-\infty$.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Increase without bound:}}\\[1pt]
-\ansline{The outputs pass every number you can name and never turn back.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Limit notation:}}\\[1pt]
-\ansline{$\lim_{x \to \infty} p(x) = \infty$ --- shorthand for a described behavior, not a computation.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Leading term:}}\\[1pt]
-\ansline{The highest-degree term, $a_n x^n$. In factored form, multiply the leading pieces.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Leading coefficient:}}\\[1pt]
-\ansline{The number $a_n$ multiplying the leading term. Only its sign matters for end behavior.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Dominance:}}\\[1pt]
-\ansline{For large $|x|$ the rest of the polynomial is negligible beside the leading term.}
+\noindent\textbf{\textcolor{plum}{Increasing (on an interval):}}\\[1pt]
+\ansline{As the inputs increase, the outputs increase --- the graph rises left to right.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Decreasing (on an interval):}}\\[1pt]
+\ansline{As the inputs increase, the outputs decrease --- the graph falls left to right.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Relative (local) maximum / minimum:}}\\[1pt]
+\ansline{A peak / a valley: where the graph switches between increasing and decreasing.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Absolute (global) maximum / minimum:}}\\[1pt]
+\ansline{The greatest / least output anywhere on the graph, endpoints included.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Concave up / concave down:}}\\[1pt]
+\ansline{Bends upward like a cup, $\cup$ / bends downward like a cap, $\cap$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Point of inflection:}}\\[1pt]
+\ansline{A point where the concavity changes, from up to down or from down to up.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[34]
+\boxguard
 \begin{hookbox}
-Below is the graph of $p(x) = x^3 - 100x^2$ on the window
-$-20 \le x \le 70$. It dives to about $-150{,}000$ and then flattens out along
-the bottom --- it looks like a function that has given up.
+Two friends hiked the same trail and are describing the top of the first big climb. Ana says,
+``The top was at mile 2.'' Ben says, ``No --- the top was 600 feet.''
 
-\begin{center}
-\begin{tikzpicture}[x=1.1cm, y=1.2cm]
-  \draw[linegray, very thin, xstep=0.5, ystep=0.5] (-1,-1.5) grid (3.5,0.5);
-  \draw[->, thick] (-1.3,0) -- (3.9,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-1.8) -- (0,0.9) node[above] {\small $p(x)$};
-  \foreach \x/\lab in {1/20, 2/40, 3/60} \node[above] at (\x,0.08) {\small \lab};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-1,-0.48) (-0.5,-0.11) (0,0) (0.5,-0.09) (1,-0.32) (1.5,-0.63)
-     (2,-0.96) (2.5,-1.25) (3,-1.44) (3.33,-1.48) (3.5,-1.47)};
-  \fill[plum] (0,0) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
-
-And yet $p(1000) = 900{,}000{,}000$ --- positive, and nearly a billion. Nothing
-about the window was wrong; it was just too small. What happened between
-$x = 70$ and $x = 1000$?
-
-\ansline{The $x^3$ term overtook the $-100x^2$ term. At $x = 70$ the $-100x^2$ piece was still}
-\ansline{bigger; past $x = 100$ the cubic term wins, and from there it wins by more and more.}
+Can they both be right? What is each one actually telling you about the top?
+\ansline{Yes. Ana says \emph{where} the top is (mile 2, an $x$-value); Ben says \emph{how high} (600 feet, a $y$-value).}
 \end{hookbox}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{1. Limit Notation --- Language for the Two Far Ends}
-Lesson 2.4 was about the middle of the graph, where the zeros live. This lesson
-is about the two \textbf{far ends}.
-
-\begin{itemize}[itemsep=4pt]
-  \item If the input values of a nonconstant polynomial increase without bound,
-        the output values must either increase without bound or
-        \ans{decrease} without bound. There is no third option --- a polynomial
-        cannot level off.
-  \item In symbols: \quad $\lim_{x \to \infty} p(x) = \infty$ \quad or \quad
-        $\lim_{x \to \infty} p(x) = -\infty$.
-  \item Going the other way, ``as the input values \textbf{decrease} without
-        bound'' is written $x \to $ \ans{$-\infty$}.
-\end{itemize}
-
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{center}
 \small
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Notation} & \textbf{Said out loud} \\
-\hline
-$\lim_{x \to \infty} p(x) = \infty$ & As $x$ increases without bound, $p(x)$ increases without bound. \\
-\hline
-$\lim_{x \to \infty} p(x) = -\infty$ & \ans{As $x$ increases without bound, $p(x)$ decreases without bound.} \\
-\hline
-$\lim_{x \to -\infty} p(x) = \infty$ & \ans{As $x$ decreases without bound, $p(x)$ increases without bound.} \\
-\hline
-\ans{$\lim_{x \to -\infty} p(x) = -\infty$} & As $x$ decreases without bound, $p(x)$ decreases without bound. \\
-\hline
+\begin{guidednotes}
+% ── ROW 1: increasing / decreasing / constant — read left to right, report in x ──────────
+\mainidea[Which way it goes]{Increasing \& Decreasing} &
+A function is \textbf{increasing} on an interval if, as the inputs get larger, the outputs
+always get larger --- reading left to right, the graph \emph{rises}. It is
+\textbf{decreasing} if the outputs always get smaller (the graph \emph{falls}), and
+\textbf{constant} if the outputs stay the same (the graph is flat). \textbf{An interval
+always names $x$-values} --- where along the input axis the behavior happens --- written
+with parentheses, such as $(0, 2)$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.75cm, y=0.42cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.5pt);
+  \fill[plum] (8,7) circle (2.5pt);
+  \node[font=\scriptsize\itshape, align=left, anchor=west] at (8.7,4)
+       {$d$ = miles from\\the trailhead\\[2pt] $E(d)$ = elevation,\\in feet};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Reading left to right, from $d = 2$ to $d = 6$ the trail is \labelbox{2.4cm}{decreasing}
+\\
+& \notesprompt{Give each interval in miles ($x$-values), with parentheses.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Over which intervals is $E$ increasing?}{1.8cm}{$(0, 2)$ and $(6, 8)$ --- miles, not feet.} &
+\pcell{2}{Over which interval is $E$ decreasing? What is the hiker doing there?}{1.8cm}{$(2, 6)$. The hiker is walking downhill, losing elevation.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{At the peak, $d = 2$, is the trail rising or falling? Why does the interval in
+problem 1 stop \emph{at} 2 and leave 2 out?}{2.0cm}{Neither --- at the top the trail is level for an instant. It rises before 2 and falls after, so 2 belongs to neither interval.} &
+\pcell{4}{\begin{tikzpicture}[x=0.42cm, y=0.022cm, baseline=(current bounding box.north)]
+  \draw[->, thick] (0,0) -- (8.6,0) node[right] {\scriptsize $t$};
+  \draw[->, thick] (0,0) -- (0,112) node[above] {\scriptsize $B(t)$};
+  \foreach \x in {2,5,8} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {40,100} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum] (0,40) -- (2,100) -- (5,100) -- (8,40);
+\end{tikzpicture}\par
+A phone's battery, $B(t)$ percent, $t$ hours after it is plugged in. On which interval
+is $B$ constant? What is happening?}{1.4cm}{$(2, 5)$: the battery stays at 100\% --- fully charged.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: relative and absolute extrema — the VALUE is y, it occurs AT x ─────────────────
+\mainidea[The value, and where]{Maximum \& Minimum} &
+A \textbf{relative (local) maximum} is a peak, where the graph switches from increasing to
+decreasing; a \textbf{relative minimum} is a valley, where it switches from decreasing to
+increasing. The \textbf{absolute (global) maximum} is the greatest output anywhere on the
+graph, endpoints included; the \textbf{absolute minimum} is the least. \textbf{The maximum
+or minimum is a $y$-value. It occurs at an $x$-value.}
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.75cm, y=0.42cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.5pt);
+  \fill[plum] (8,7) circle (2.5pt);
+  % guide lines from the peak to both axes
+  \draw[goldacc, very thick, dashed] (2,6) -- (0,6);
+  \draw[redacc, very thick, dashed] (2,6) -- (2,0);
+  \fill[plum] (2,6) circle (2.8pt);
+  \node[font=\scriptsize\bfseries\color{goldacc}, above] at (1.0,6.1) {how high};
+  \node[font=\scriptsize\bfseries\color{redacc}, right] at (2.05,1.0) {where};
+  \node[font=\scriptsize\itshape, align=left, anchor=west] at (8.7,4)
+       {the same trail:\\$E(d)$ feet at\\mile $d$};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+The relative maximum value is \labelbox{1.6cm}{600 ft}\quad It occurs at $d =$ \labelbox{1.0cm}{2}
+\\
+& \notesprompt{Give the value (a height, in feet) \emph{and} where it occurs (a mile marker).}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{The relative maximum of $E$.}{1.8cm}{600 feet, occurring at $d = 2$ (mile 2).} &
+\pcell{6}{The relative minimum of $E$.}{1.8cm}{200 feet, occurring at $d = 6$ (mile 6).} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{The absolute maximum of $E$. Is it the peak at mile 2? Explain.}{2.0cm}{700 feet, at $d = 8$. Not the peak: the trail's end is higher than the 600-foot peak.} &
+\pcell{8}{The absolute minimum of $E$. Which point is both a relative and an absolute
+extremum?}{2.0cm}{200 feet, at $d = 6$. The valley $(6, 200)$ is both a relative and the absolute minimum.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: concavity and the point of inflection — which way it BENDS ───────────────────
+\mainidea[Which way it bends]{Concavity} &
+A graph is \textbf{concave up} on an interval where it bends upward like a cup,
+$\cup$, and \textbf{concave down} where it bends downward like a cap, $\cap$. Concavity is
+a \emph{different question} from increasing or decreasing: a rising graph can bend either
+way. A \textbf{point of inflection} is a point where the concavity changes, from up to
+down or from down to up.
+\\
+& \begin{minipage}[c]{0.47\linewidth}\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}c@{\hspace{8pt}}c@{}}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,0.05) .. controls (0.85,0.12) and (1.35,0.5) .. (1.62,1.2);
+\end{tikzpicture} &
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,0.05) .. controls (0.35,0.75) and (0.85,1.15) .. (1.62,1.2);
+\end{tikzpicture} \\
+{\scriptsize rising faster and faster} & {\scriptsize rising more and more slowly} \\
+{\scriptsize concave} \labelbox{1.1cm}{up} & {\scriptsize concave} \labelbox{1.1cm}{down} \\[4pt]
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,1.2) .. controls (0.85,1.15) and (1.35,0.75) .. (1.62,0.05);
+\end{tikzpicture} &
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,1.2) .. controls (0.35,0.5) and (0.85,0.12) .. (1.62,0.05);
+\end{tikzpicture} \\
+{\scriptsize falling faster and faster} & {\scriptsize falling more and more slowly} \\
+{\scriptsize concave} \labelbox{1.1cm}{down} & {\scriptsize concave} \labelbox{1.1cm}{up} \\
 \end{tabular}
-\end{center}
-\smallskip
-
-\textbf{Careful.} $\infty$ is not a number. You never substitute it and you
-never get it back as an output. The whole statement is a \ans{description} of a
-behavior, not the answer to a computation --- so never write
-$p(\infty) = \infty$. This is the notation calculus runs on, so it is worth
-getting exactly right now.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{2. Why the Leading Term Wins}
-\textbf{The claim.} The degree and the sign of the leading term determine end
-behavior --- \textit{because} once the inputs are large, the leading term
-dominates the values of every lower-degree term. That ``because'' needs
-evidence, so here it is.
-
-\smallskip
-Let $p(x) = x^3 - 100x^2$. The leading term is \ans{$x^3$}, and ``the rest''
-is $-100x^2$. Complete the last two columns.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-\small
-\begin{tabular}{|r|c|c|c|c|}
-\hline
-$x$ & \textbf{leading: $x^3$} & \textbf{the rest: $-100x^2$} & $p(x)$ & \textbf{rest $\div$ leading} \\
-\hline
-$10$      & $1 \times 10^{3}$    & $-1 \times 10^{4}$   & $-9 \times 10^{3}$ & $-10$ \\
-\hline
-$50$      & $1.25 \times 10^{5}$ & $-2.5 \times 10^{5}$ & \ans{$-1.25 \times 10^{5}$} & \ans{$-2$} \\
-\hline
-$100$     & $1 \times 10^{6}$    & $-1 \times 10^{6}$   & \ans{$0$} & \ans{$-1$} \\
-\hline
-$500$     & $1.25 \times 10^{8}$ & $-2.5 \times 10^{7}$ & \ans{$1 \times 10^{8}$} & \ans{$-0.2$} \\
-\hline
-$1{,}000$ & $1 \times 10^{9}$    & $-1 \times 10^{8}$   & \ans{$9 \times 10^{8}$} & \ans{$-0.1$} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-The last column is the whole argument. Algebraically it is
-$\dfrac{-100x^2}{x^3} = \dfrac{-100}{x}$, which shrinks toward \ans{$0$} as
-$x$ increases. The rest of the polynomial does not become small --- at
-$x = 1000$ it is a hundred million --- it becomes small \textit{compared with
-the leading term}.
-
-\medskip
-\textbf{Conclusion (EK 1.6.A.3).} At the far ends, $x^3 - 100x^2$ behaves
-exactly like \ans{$x^3$}. Every lower-degree term is negligible, so only the
-\ans{leading} term decides end behavior.
-
-\medskip
-\textbf{Back to the hook.} The window stopped at $x = 70$, and $-100x^2$ was
-still ahead of $x^3$ there. It loses the lead for good at $x = $
-\ans{$100$}, which the table above shows exactly.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[34]
-\begin{notesbox}{3. The Four Cases}
-Only two things about the leading term $a_n x^n$ matter: whether the degree $n$
-is \ans{even} or \ans{odd}, and whether $a_n$ is \ans{positive} or
-\ans{negative}. Two choices twice over gives four cases, and there are no
-others.
-
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
- & \textbf{Degree} & \textbf{Leading coeff.} & $\lim_{x \to \infty} p(x)$ & $\lim_{x \to -\infty} p(x)$ \\
-\hline
-Case 1 & Even & Positive & \ans{$\infty$} & \ans{$\infty$} \\
-\hline
-Case 2 & Even & Negative & \ans{$-\infty$} & \ans{$-\infty$} \\
-\hline
-Case 3 & Odd  & Positive & \ans{$\infty$} & \ans{$-\infty$} \\
-\hline
-Case 4 & Odd  & Negative & \ans{$-\infty$} & \ans{$\infty$} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-\begin{center}
-\begin{tikzpicture}[x=0.5cm, y=0.22cm]
-  \draw[->, thick] (-2.7,0) -- (2.8,0);
-  \draw[->, thick] (0,-5.0) -- (0,5.2);
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
-     (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
-  \node[below, align=center, text width=3.4cm] at (0,-5.6)
-    {\small \textbf{Case 1}\\ even degree, $a_n > 0$};
-\end{tikzpicture}
-\hspace{1.4cm}
-\begin{tikzpicture}[x=0.5cm, y=0.22cm]
-  \draw[->, thick] (-2.7,0) -- (2.8,0);
-  \draw[->, thick] (0,-5.0) -- (0,5.2);
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,-4.07) (-2,0) (-1.7,3.21) (-1.4,4.0) (-1,3) (-0.5,0.94)
-     (0,0) (0.5,0.94) (1,3) (1.4,4.0) (1.7,3.21) (2,0) (2.2,-4.07)};
-  \node[below, align=center, text width=3.4cm] at (0,-5.6)
-    {\small \textbf{Case 2}\\ even degree, $a_n < 0$};
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}\centering
+\begin{tikzpicture}[x=0.6cm, y=0.36cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.2pt);
+  \fill[plum] (8,7) circle (2.2pt);
+  \draw[goldacc, very thick] (4,4) circle (5pt);
+  \node[font=\Large\bfseries\color{goldacc}] at (2,7.2) {$\cap$};
+  \node[font=\Large\bfseries\color{goldacc}] at (6,0.9) {$\cup$};
 \end{tikzpicture}
 
-\vspace{0.22in}
-
-\begin{tikzpicture}[x=0.5cm, y=0.22cm]
-  \draw[->, thick] (-2.7,0) -- (2.8,0);
-  \draw[->, thick] (0,-5.0) -- (0,5.2);
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,-4.05) (-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38)
-     (0,0) (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2) (2.2,4.05)};
-  \node[below, align=center, text width=3.4cm] at (0,-5.6)
-    {\small \textbf{Case 3}\\ odd degree, $a_n > 0$};
-\end{tikzpicture}
-\hspace{1.4cm}
-\begin{tikzpicture}[x=0.5cm, y=0.22cm]
-  \draw[->, thick] (-2.7,0) -- (2.8,0);
-  \draw[->, thick] (0,-5.0) -- (0,5.2);
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,4.05) (-2,2) (-1.8,0.43) (-1.5,-1.13) (-1,-2) (-0.5,-1.38)
-     (0,0) (0.5,1.38) (1,2) (1.5,1.13) (1.8,-0.43) (2,-2) (2.2,-4.05)};
-  \node[below, align=center, text width=3.4cm] at (0,-5.6)
-    {\small \textbf{Case 4}\\ odd degree, $a_n < 0$};
+\vspace{2pt}
+{\footnotesize The circled point is a} \labelbox{3.4cm}{point of inflection}
+\end{minipage}
+\\
+& \notesprompt{Concavity intervals are $x$-values too. Use the trail graph.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{On which interval is $E$ concave down? Concave up?}{1.8cm}{Concave down on $(0, 4)$; concave up on $(4, 8)$.} &
+\pcell{10}{Give the point of inflection of $E$ as $(d, E)$. What is the trail doing
+there?}{1.8cm}{$(4, 400)$. The bend switches from cap to cup; the trail drops most steeply there.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — when two readings disagree ─────────────────────────────────────────
+\mainidea[x or y? direction or bend?]{When Readings Disagree} &
+Every \textbf{interval} and every \textbf{location} is read on the $x$-axis; every
+\textbf{maximum or minimum value} is read on the $y$-axis. And \textbf{increasing} is not the
+same as \textbf{concave up}: direction asks whether the graph goes up or down, concavity asks
+which way it bends. Answer each question separately.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.42cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2,-3) grid (8,5);
+  \draw[->, thick] (-2,0) -- (8.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-3) -- (0,5.6) node[above] {\small $f(x)$};
+  \foreach \x in {-1,1,2,3,4,5,6,7} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] (-1,0) .. controls (-0.5,2.2) and (0.2,4) .. (1,4)
+     .. controls (3,4) and (3,-2) .. (5,-2) .. controls (5.8,-2) and (6.4,-0.5) .. (7,2);
+  \fill[plum] (-1,0) circle (2.5pt);
+  \fill[plum] (7,2) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
+\\
+& \notesprompt{Two answers disagree. Decide which reading is right, and fix the other.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Sam writes, ``$f$ is decreasing on $(-2, 4)$.'' Which axis did Sam read? Write the
+correct interval.}{2.0cm}{The $y$-axis --- heights from the valley to the peak. Correct: decreasing on $(1, 5)$.} &
+\pcell{12}{Maya says the maximum of $f$ is 1. Tavi says it is 4. Who is right, and what
+does the other number tell you?}{2.0cm}{Tavi. The maximum value is 4; the 1 is \emph{where} it occurs, at $x = 1$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Lee says, ``Where $f$ is increasing, it is concave up.'' Find an interval where
+$f$ is increasing but concave \emph{down}. Describe it in words.}{2.0cm}{$(-1, 1)$: $f$ rises, but more and more slowly --- a cap, not a cup.} &
+\pcell{14}{Find an interval where $f$ is decreasing but concave \emph{up}. Describe it in
+words.}{2.0cm}{$(3, 5)$: $f$ falls, but more and more slowly.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ─────────────────────
+\mainidea[You do, alone]{One Day's Weather} &
+The graph shows the temperature $T(h)$, in degrees Fahrenheit, $h$ hours after midnight, for
+$0 \le h \le 20$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.36cm, y=1.0cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=0.5] (0,0) grid (20,4.5);
+  \draw[->, thick] (0,0) -- (20.8,0) node[below right] {\small $h$};
+  \draw[->, thick] (0,0) -- (0,4.9) node[above] {\small $T(h)$};
+  \foreach \x in {5,10,15,20} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y/\l in {1/40,2/50,3/60,4/70} \node[left, font=\scriptsize] at (0,\y) {\l};
+  \draw[very thick, plum] (0,2) .. controls (2,1.2) and (3.5,1) .. (5,1)
+     .. controls (10,1) and (10,4) .. (15,4) .. controls (16.5,4) and (18.5,2.8) .. (20,1.5);
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (20,1.5) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Give intervals and locations in hours, values in degrees.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Over which intervals is $T$ increasing? Decreasing?}{2.0cm}{Increasing on $(5, 15)$; decreasing on $(0, 5)$ and $(15, 20)$.} &
+\pcell{16}{Give the relative maximum and minimum, and the absolute maximum and minimum
+--- each value and the hour it occurs.}{2.0cm}{Rel.\ max $70^\circ$F at $h = 15$; rel.\ min $40^\circ$F at $h = 5$. These are also the absolute max and min --- the ends (50 and 45) lie between.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{On which interval is $T$ concave up? Concave down? Give the point of
+inflection.}{2.0cm}{Concave up on $(0, 10)$; concave down on $(10, 20)$. Inflection point $(10, 55)$.} &
+\pcell{18}{A forecaster says, ``From 10 a.m.\ to 3 p.m.\ the temperature is rising, so it is
+warming faster and faster.'' Use concavity to judge the claim.}{2.2cm}{Wrong. On $(10, 15)$, $T$ is increasing but concave down: still warming, but more and more slowly. Faster and faster was $(5, 10)$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\medskip
-\textbf{One sentence to remember.} Even degree sends both ends the
-\ans{same} way; odd degree sends them \ans{opposite} ways; and a negative
-leading coefficient \ans{flips} both ends.
-
-\medskip
-\textbf{A check on Lesson 2.4.} An odd-degree polynomial has one end up and one
-end down, so its graph must cross the $x$-axis --- it must have at least one
-\ans{real} zero. That is the same conclusion 2.4 reached by counting
-conjugate pairs, arrived at from the opposite direction.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Reading End Behavior Off Any Form}
-\textbf{Standard form} hands you the leading term --- provided you read the
-\textit{exponents} and not the left-to-right order.
-
-\medskip
-\textbf{Example 1.} $p(x) = 9 + 2x^4 - x^7$.
-
-\smallskip
-Leading term: \ans{$-x^7$} \qquad Degree: \ans{$7$}, which is
-\ans{odd} \qquad Sign of $a_n$: \ans{negative}
-
-\smallskip
-$\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad
-$\lim_{x \to -\infty} p(x) = $ \ans{$\infty$}
-
-\medskip
-\textbf{Factored form} hides the leading term --- but you never have to expand.
-Add the exponents to get the degree; multiply the leading pieces of the factors
-to get the leading term.
-
-\medskip
-\textbf{Example 2.} $q(x) = 2(x-3)^2(x+1)(x^2+4)$.
-
-\begin{work}
-  \text{degree of } q &= 2 + 1 + 2 \\
-                      &= 5 \\
-  \text{leading term} &= 2 \cdot x^{2} \cdot x \cdot x^{2} \\
-                      &= 2x^{5}
-\end{work}
-
-Odd degree, positive leading coefficient, so
-$\lim_{x \to \infty} q(x) = $ \ans{$\infty$} and
-$\lim_{x \to -\infty} q(x) = $ \ans{$-\infty$}.
-
-\medskip
-\textbf{Two forms, two jobs.} Factored form told you the \ans{zeros} back in
-Lesson 2.4; standard form tells you the \ans{end behavior} today. Lesson 2.6 puts
-them side by side and shows they are the same polynomial.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $p(x) = -x^6 + 4x^3 - 11$.
-
-        \smallskip
-        Leading term: \ans{$-x^6$} \qquad
-        $\lim_{x \to \infty} p(x) = $ \ans{$-\infty$} \qquad
-        $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
-
-  \item Let $r(x) = -5(x+2)^3(x-1)^2$. Do not expand.
-
-        \begin{work}
-          \text{degree of } r &= 3 + 2 \\
-                              &= 5 \\
-          \text{leading term} &= -5 \cdot x^{3} \cdot x^{2} \\
-                              &= -5x^{5}
-        \end{work}
-
-        Degree: \ans{$5$} \qquad Leading coefficient: \ans{$-5$}
-
-        \smallskip
-        $\lim_{x \to \infty} r(x) = $ \ans{$-\infty$} \qquad
-        $\lim_{x \to -\infty} r(x) = $ \ans{$\infty$}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

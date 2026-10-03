@@ -1,12 +1,18 @@
-%! Polynomial Functions and End Behavior — Unit 2, Lesson 2.5 — Lesson Plan
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. The second characteristics day: 2.4 read domain, range,
+% intercepts and end behavior; 2.5 reads direction, turning points and bend — all GRAPHICALLY,
+% no calculus. CED 1.1 (Change in Tandem: 1.1.A.3–4, 1.1.B.3–4) + CED 1.4 (1.4.A.2, 1.4.A.5),
+% read on general graphs rather than polynomials. 2.6 re-reads concavity through changing rates.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.5: Polynomial Functions and End Behavior}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.5: Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity}
 
 \begin{document}
 \begin{center}
@@ -16,281 +22,374 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the end behavior of a
-    polynomial function in limit notation, explain \textit{why} the leading term
-    decides that behavior --- because for large $|x|$ every lower-degree term is
-    negligible beside it --- and read end behavior off a polynomial written in
-    standard form or in factored form.
-    \hfill\textit{\small (CED Topic 1.6 --- Skill 3.A)}
+    \textbf{Primary Objective:} Students will read a function's behavior from a pre-drawn
+    graph: the intervals where it is increasing, decreasing, or constant, written as open
+    intervals of $x$-values; its relative and absolute maximum and minimum, each given as a
+    \textit{value} ($y$) and the input where it \textit{occurs} ($x$); and where it is concave
+    up or concave down, with its points of inflection --- keeping the direction a graph goes
+    separate from the way it bends.
+    \hfill\textit{\small (CED Topics 1.1 and 1.4 --- Skills 2.A, 3.A)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the INCREASING \& DECREASING and MAXIMUM \& MINIMUM rows: definitions, the trail graph, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2--4 and 6--8, then the CONCAVITY and WHEN READINGS DISAGREE rows (9--14; the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 13 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 2 and 4 alone; the teacher reads problem 4 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Four readings share one graph.} Direction, extrema, and concavity are all read off the
+same trail, so the guided phase runs 22 minutes and the first two rows share one I Do. There is
+no activity sheet to raid when it overruns. If the clock slips, cut \textbf{problem 4} (the
+battery's constant stretch) and \textbf{problem 14} first --- both have twins elsewhere --- and
+protect the \textbf{WHEN READINGS DISAGREE} row: problems 12 and 13 are the lesson, and homework
+problems 4 and 8 cannot be done without them. Never cut the Homework Launch to zero --- it is the
+only formative read of the period now that there is no exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{3.A} --- Describe the characteristics of a function with varying levels
-of precision, depending on the function representation and the mathematical
-tools available. &
+\textbf{AP Skill 2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations to answer a question. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item As the input values of a nonconstant polynomial increase without bound,
-        the output values either increase or decrease without bound:
-        $\lim_{x \to \infty} p(x) = \infty$ or $\lim_{x \to \infty} p(x) =
-        -\infty$. (1.6.A.1)
-  \item The same is true as input values decrease without bound:
-        $\lim_{x \to -\infty} p(x) = \infty$ or $= -\infty$. (1.6.A.2)
+  \item A function is \textbf{increasing} on an interval when larger inputs always give larger
+        outputs, and \textbf{decreasing} when larger inputs always give smaller outputs ---
+        read left to right, the graph rises or falls. (1.1.A.3, 1.1.A.4)
+  \item An interval of increase or decrease is a stretch of \textbf{inputs}: it is written
+        in $x$-values, as an open interval such as $(0, 2)$.
+  \item A \textbf{relative maximum or minimum} occurs where the graph switches between
+        increasing and decreasing; the greatest output anywhere (endpoints included) is the
+        \textbf{absolute maximum}, the least the \textbf{absolute minimum}. (1.4.A.2)
 \end{itemize} \\
-\textbf{LO 1.6.A} --- Describe end behaviors of polynomial functions. &
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function with varying levels of
+precision. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The \textbf{degree} and the \textbf{sign of the leading term} determine
-        end behavior, \textit{because} for inputs of large magnitude the
-        leading term dominates the values of every lower-degree term.
-        (1.6.A.3)
-  \item Even degree $\Rightarrow$ both ends run the same way; odd degree
-        $\Rightarrow$ the ends run opposite ways. A negative leading
-        coefficient flips both.
-  \item Limit notation is \textit{language for a described behavior}, not a
-        computation --- and it is the language calculus will use.
+  \item A graph is \textbf{concave up} where it bends like a cup and \textbf{concave down}
+        where it bends like a cap; read as rates, concave up means the rate of change is
+        increasing and concave down that it is decreasing --- the language 2.6 makes
+        precise. (1.1.B.3, 1.1.B.4)
+  \item A \textbf{point of inflection} is where the concavity changes, up to down or down to
+        up. (1.4.A.5)
+  \item Direction and bend combine four ways: rising faster and faster, rising more and more
+        slowly, falling faster and faster, falling more and more slowly.
+\end{itemize} \\
+\textbf{The distinction the lesson is built on.} &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item An extremum's \textbf{value} is a $y$-value; it \textbf{occurs at} an $x$-value. The
+        point $(2, 600)$ says ``a maximum of 600 feet, at mile 2.''
+  \item \textbf{Target misconception:} students report with the wrong coordinate ---
+        increasing intervals written in $y$-values (``increasing on $(300, 600)$''), or the
+        $x$-location named as ``the maximum.'' Problems 11 and 12 of the notes put the two
+        readings side by side and make students choose.
+  \item \textbf{Second trap:} ``increasing'' is treated as ``concave up.'' Problem 13 finds an
+        interval that is increasing and concave \emph{down}.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-End behavior            & What the output values of $p$ do as the input runs off toward $\infty$ and toward $-\infty$ --- the two far ends of the graph. \\
-Increase without bound  & The outputs pass every number you can name and never turn back. ``Decrease without bound'' is the same idea downward. \\
-Limit notation          & $\lim_{x \to \infty} p(x) = \infty$, read ``as $x$ increases without bound, $p(x)$ increases without bound.'' A shorthand for a description, not an arithmetic answer. \\
-Leading term            & The term of highest degree, written $a_n x^n$. In factored form it is the product of the leading pieces of all the factors. \\
-Leading coefficient     & The number $a_n$ multiplying the leading term. Only its \textit{sign} matters for end behavior. \\
-Dominance               & For large $|x|$, the leading term is so much larger than the rest that the rest is negligible: the ratio (rest)~$\div$~(leading term) shrinks toward $0$. \\
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Increasing / decreasing & On an interval: as the inputs increase, the outputs always increase / always decrease. The graph rises / falls left to right. \\
+Constant & On an interval: the outputs stay the same; the graph is flat. \\
+Relative (local) maximum / minimum & A peak / a valley: an output greater / less than every nearby output, where the graph switches between increasing and decreasing. \\
+Absolute (global) maximum / minimum & The greatest / least output anywhere on the graph, endpoints included. \\
+Concave up / concave down & The graph bends upward like a cup / downward like a cap. \\
+Point of inflection & A point where the graph's concavity changes, from up to down or from down to up. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: totaling the degree of a polynomial from its factored form
-    and separating real zeros from non-real ones (Lesson 2.4), and two Algebra 2
-    prerequisites this lesson depends on --- naming the leading term and leading
-    coefficient of a polynomial whose terms are \textit{out of degree order},
-    and evaluating a polynomial at a large input without a calculator. Item 3
-    is the numerical seed of the whole lesson: the cubic term has already
-    overtaken the quadratic one by $x = 100$.
+    Skills reviewed: writing a set of numbers in interval notation, open and closed;
+    reading a graph in both directions --- an output from an input, then the input that
+    gives an output --- and stating domain and range in interval notation (2.4);
+    finding the slope of a line through two points, and the sign of the slope of a line that
+    falls from left to right --- the straight-line version of increasing and decreasing.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{The graph that lies.} Project the pre-drawn graph of
-    $p(x) = x^3 - 100x^2$ from the notes. On the window $-20 \le x \le 70$ the
-    curve heads down and flattens out near the bottom --- it looks for all the
-    world like a function that has given up and stays negative.
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{Where was the top?} Two friends hiked the same trail and are describing the top of
+    the first big climb.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask for a prediction: what is $p(1000)$ --- big and negative, or
-              something else?
-        \item Then give it: $p(1000) = 900{,}000{,}000$. Positive, and nearly a
-              billion.
+        \item On the board: Ana says ``The top was \textit{at mile 2}.'' Ben says ``No --- the
+              top was \textit{600 feet}.'' Ask: can they both be right?
+        \item Push until someone says it: Ana told you \textbf{where} the top is, Ben told you
+              \textbf{how high}. Both are describing one point, $(2, 600)$ --- one number from
+              each axis.
     \end{enumerate}
-    \textit{Discussion prompt:} Nothing about the window was wrong; the window
-    was just too small. $-100x^2$ is winning at $x = 20$ and losing badly at
-    $x = 1000$. Today we find out which term is in charge \textit{eventually},
-    and we learn the notation for saying so.
+    \textit{Discussion prompt:} if a test asked ``what is the maximum?'', which friend gave the
+    answer? Today every answer has to say whether it is a \textit{where} ($x$) or a
+    \textit{how high} ($y$).
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Limit Notation as Vocabulary} (10 min)
+\textbf{I DO --- Part 1: Which Way It Goes, and Where It Turns} (10 min)
 
+\textit{Notes rows INCREASING \& DECREASING and MAXIMUM \& MINIMUM: read each definition, mark
+up the trail graph, work problems 1 and 5. Teacher works; students watch and annotate. Nothing
+is cold-called in this phase.}
 \begin{itemize}
-  \item Say the words first, symbols second: ``as $x$ increases without bound,
-        $p(x)$ increases without bound.'' Then write
-        $\lim_{x \to \infty} p(x) = \infty$ underneath it.
-  \item Insist on the reading: this is a \textbf{description}, not a
-        computation. $\infty$ is not a number you plugged in and not a number
-        that came out --- it is shorthand for ``and it never stops.''
-  \item Four sentences, four symbols. Drill the translation both ways: give a
-        sentence, get the notation; give the notation, get the sentence.
-  \item Flag the payoff: this is the notation calculus runs on. Getting it
-        fluent now costs one lesson and saves a semester.
+  \item Read the first row's sentences aloud, then trace the trail with a finger, left to right,
+        saying ``up\ldots\ up\ldots\ top\ldots\ down\ldots'' Fill the label box
+        (\textit{decreasing}) yourself.
+  \item Work \textbf{problem 1} aloud and narrate the axis: ``I'm asking \emph{where} it rises,
+        so I read the mile markers --- $(0, 2)$ and $(6, 8)$.'' Write a wrong
+        $(300, 600)$ beside it and cross it out.
+  \item Read the MAXIMUM \& MINIMUM sentences. On the second copy of the trail, trace the two
+        dashed guide lines: gold goes to the $y$-axis (how high), red to the $x$-axis (where).
+        Fill both label boxes: \textit{600 ft} and \textit{2}.
+  \item Work \textbf{problem 5} in a full sentence: ``a relative maximum of 600 feet, occurring
+        at mile 2.'' Value first, then location, every time.
 \end{itemize}
 
-\textbf{Part 2: Why the Leading Term Wins} (14 min)
+\textbf{WE DO --- Part 2: Intervals and Extrema on the Trail} (7 min)
 
+\textit{Problems 2--4 and 6--8. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
-  \item This is the conceptual heart --- EK 1.6.A.3 is a \textit{because}, and
-        the table is the evidence for it. Do not skip to the rules.
-  \item Build the dominance table for $p(x) = x^3 - 100x^2$ at
-        $x = 10, 50, 100, 500, 1000$: leading term, the rest, $p(x)$, and the
-        ratio (rest) $\div$ (leading term).
-  \item That last column is the whole argument. It equals $-100/x$, so it runs
-        $-10, -2, -1, -0.2, -0.1$ --- the rest becomes a rounding error beside
-        the leading term.
-  \item Land it: end behavior of $x^3 - 100x^2$ is the end behavior of $x^3$.
+  \item \textbf{Problem 2} adds the context: downhill. \textbf{Problem 3} is why the intervals
+        are open --- at the peak the trail is level for an instant, rising before and falling
+        after. \textbf{Problem 4} names \textit{constant} on the battery graph.
+  \item \textbf{Problem 7} is the surprise: the absolute maximum is 700 feet at the trail's
+        \emph{end}, not the peak. Ask the class to compare every height, endpoints included.
+        \textbf{Problem 8} names the valley as both relative and absolute.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: The Four Cases} (14 min)
+\textbf{WE DO --- Part 3: Concavity and the Point of Inflection} (6 min)
 
+\textit{Notes row CONCAVITY. Class fills the blanks together; cold-call every one. Teacher
+works problem 9; the class works the four label boxes and problem 10.}
 \begin{itemize}
-  \item Only two things about the leading term matter: is the degree
-        \textbf{even or odd}, and is the coefficient \textbf{positive or
-        negative}. Two choices twice over gives four cases and no more.
-  \item Fill the $2 \times 2$ table together, one row at a time, tying each row
-        to its pre-drawn graph on the same page.
-  \item The one-sentence summary to write down: even degree sends both ends
-        the same way, odd degree sends them opposite ways, and a negative
-        leading coefficient flips both ends.
-  \item Sanity check to teach: an odd-degree polynomial has one end up and one
-        end down, so it must cross the $x$-axis --- exactly what 2.4 proved
-        from the zero count.
+  \item Read the definition: cup is up, cap is down. Then the four small curves --- the class
+        labels each \textit{up} or \textit{down}, and you read its caption aloud so the
+        sentence and the shape arrive together.
+  \item Say plainly: \emph{two} of the four rising-or-falling curves are concave up --- one
+        rises, one falls. Concavity does not tell you the direction.
+  \item Work \textbf{problem 9} on the small trail: the cap over the peak, the cup under the
+        valley, the switch at $d = 4$. \textbf{Problem 10} names the circled point
+        $(4, 400)$ and what the trail is doing there.
 \end{itemize}
 
-\textbf{Part 4: Reading It Off Any Form} (12 min)
+\textbf{WE DO --- Part 4: When the Readings Disagree} (9 min)
 
+\textit{Notes row WHEN READINGS DISAGREE --- the crux. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--14.}
 \begin{itemize}
-  \item \textbf{Standard form} hands you the leading term for free --- as long
-        as the terms are in degree order. Scramble one on purpose
-        ($9 + 2x^4 - x^7$) so nobody grabs the first term they see.
-  \item \textbf{Factored form} hides it. Add the exponents for the degree;
-        multiply the leading pieces of the factors for the coefficient. Never
-        expand.
-  \item Work $q(x) = 2(x-3)^2(x+1)(x^2+4)$: degree $2+1+2 = 5$, leading term
-        $2x^5$, so odd and positive.
-  \item Close the arc: 2.4 counted the zeros --- the middle of the graph. 2.5
-        describes the two far ends. Both are now on the table.
+  \item Work \textbf{problem 11}: Sam read heights from the valley to the peak; the correct
+        interval is $(1, 5)$. Name the axis out loud.
+  \item \textbf{Problem 12 is the crux}: Maya says 1, Tavi says 4. Do not accept ``Tavi''
+        alone --- make the class say what 1 \emph{is} (where the maximum occurs).
+  \item \textbf{Problem 13} is the second trap: $(-1, 1)$ rises but bends like a cap.
+        \textbf{Problem 14} is its mirror, falling but bending like a cup.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: One Day's Weather} (13 min)
+
+\textit{Notes row ONE DAY'S WEATHER, problems 15--18 --- the whole independent phase. Students
+work alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} reads direction in hours; \textbf{16} is the crux transferred ---
+        four extrema, each a temperature \emph{and} an hour, and the ends (50 and 45) must be
+        checked.
+  \item \textbf{Problem 17} reads concavity and the inflection point $(10, 55)$.
+  \item \textbf{Problem 18} is the finisher's question: a forecaster mistakes ``rising'' for
+        ``rising faster and faster'' --- the second trap, in words, with no partner to catch it.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+Circulate during the \textbf{You Do} phase --- the thirteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 12} (the maximum is 4,
+not the location 1); its You Do transfer is \textbf{problem 16}. The second trap is
+\textbf{problem 13}; its transfer is \textbf{problem 18}.
 \begin{itemize}
-  \item \textbf{Common error:} taking the \textit{first} term written as the
-        leading term. Cold-call on $p(x) = 9 + 2x^4 - x^7$: ``Which exponent is
-        the biggest? Where is that term sitting?''
-  \item \textbf{Common error:} reading ``negative leading coefficient'' as
-        ``all outputs are negative.'' Push back with the hook: $x^3 - 100x^2$
-        is negative on a wide stretch and still runs to $+\infty$.
-  \item \textbf{Common error:} in factored form, calling $(x^2+4)$ degree 1, or
-        forgetting the outside constant when building the leading coefficient.
-  \item \textbf{Notation:} require $\lim_{x \to \infty} p(x) = \infty$, not
-        ``goes to infinity'' and not $p(\infty) = \infty$. The second is not
-        notation this course allows --- $\infty$ is never an input.
-  \item \textbf{Language:} ``increases without bound,'' not ``gets really
-        big.'' The phrase is the definition.
+  \item \textbf{Common error (the target misconception):} intervals written in $y$-values ---
+        ``$T$ is increasing on $(40, 70)$.'' Cold-call: ``Is 40 an hour or a temperature?
+        Which axis do intervals live on?''
+  \item \textbf{Common error (the target misconception):} the hour given as the maximum ---
+        ``the maximum is 15.'' Ask: ``Fifteen \emph{what}? Degrees or hours?'' and have the
+        student say the full sentence: value, then ``at,'' then location.
+  \item \textbf{Common error:} the highest turning point taken as the absolute maximum without
+        checking the endpoints. Point at the two end dots and ask for their heights.
+  \item \textbf{Common error (the second trap):} ``rising, so concave up.'' Ask: ``Is it a cup
+        or a cap?'' --- then point at the four small curves in the CONCAVITY row.
+  \item \textbf{Common error:} closed brackets or the endpoints of a turn included in an
+        interval of increase. Accept them without comment if the $x$-values are right; the
+        coordinate is the point of the lesson.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The End Behavior Desk} in leveled
-tiers. Tier E reads two pre-drawn graphs --- no tier draws anything.
+\begin{skillbox}[Differentiation --- During You Do (13 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} The leading term is supplied for each of
-        four polynomials; students classify degree parity and coefficient sign,
-        then read both limit statements straight off the four-case table.
-  \item \textbf{Tier A (Approaching Proficiency):} Students extract the leading
-        term themselves --- two in standard form (one scrambled), two in
-        factored form --- and write both limit statements for each.
-  \item \textbf{Tier E (Extension):} Students read end behavior off two
-        pre-drawn graphs and write it in limit notation, run the dominance
-        ratio for $x^4 - 500x^3$ to find where the leading term takes over,
-        build a polynomial to a prescribed end behavior and zero count, and
-        justify in writing why two polynomials with the same leading term must
-        share end behavior (AP Skill 3.A).
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        trace the curve left to right with a pencil, saying ``down, down, turn, up\ldots''
+        and writing the \emph{hour} under each turn before writing any interval. The hour
+        labels \emph{are} the endpoints of the intervals.
+  \item \textbf{On level.} \textbf{Problem 16} is the crux transfer. Do not answer it; ask
+        ``value or location?'' for each number they have written, check that they compared
+        the two end heights, and walk away.
+  \item \textbf{Extend.} \textbf{Problems 17 and 18} are the finisher's questions. 17 rewards a
+        student who reads the bend separately from the direction across $(5, 15)$, where the
+        curve rises the whole way but changes bend at $h = 10$. 18 asks them to overturn a
+        plausible claim in words --- a student who adds that ``faster and faster'' was true on
+        $(5, 10)$ has seen the whole picture. Either answer presents in the Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item For $p(x) = -2x^5 + 7x^3 - x + 3$: name the leading term, then write
-        both limit statements.
-  \item For $q(x) = 3(x-1)^2(x+4)^2$ in factored form (worked space provided):
-        give the degree and leading coefficient, then both limit statements.
-  \item Reverse it --- a polynomial has $\lim_{x \to \infty} p(x) = \infty$ and
-        $\lim_{x \to -\infty} p(x) = -\infty$. Is the degree even or odd? Is
-        the leading coefficient positive or negative?
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: the three intervals, in hours. Problem 16: ``a maximum of $70^\circ$ at
+        hour 15'' --- said as a sentence, value first. Problem 17: the inflection point
+        $(10, 55)$. Problem 18: ``rising, but more and more slowly.'' If a student wrote 18
+        cleanly, they present it --- it is the only exposure the rest of the class gets
+        before homework problems 7 and 8 ask for the same reading.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{intervals and locations are $x$-values; a maximum or minimum is a $y$-value.
+        Which way a graph goes and which way it bends are two different questions.} Point at
+        the two dashed guide lines on the trail while you say it.
+  \item \textbf{Point forward} (1 min) --- 2.6 stops asking \emph{which way} and starts
+        measuring \emph{how fast}: rising more and more slowly will become a rate of change
+        that is getting smaller.
 \end{enumerate}
-\textbf{Assessment note:} Item 2 is the diagnostic. A student who expands
-$3(x-1)^2(x+4)^2$ before answering has the right answer and the wrong method,
-and will run out of time on a real assessment; a student who writes degree 2 has
-not seen that the exponents add. Item 3 tests whether the four-case table was
-memorized as a table or understood as two independent yes/no questions.
+\textbf{Do not} re-teach concavity here, take new questions, or let the homework start early.
+If the launch shows it did not land, it is the 2.6 warm-up's job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 2 and 4} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 2} is the interval half of the misconception: a classmate wrote the
+        drone's heights $(0, 12)$ as the interval. A student who agrees with the classmate is
+        still reading the $y$-axis.
+  \item \textbf{Problem 4} is the diagnostic: value and location for both turns, then an
+        absolute minimum at the \emph{left endpoint}, $-3$ at $x = -3$, lower than the valley.
+        A student who writes ``the relative max is $-1$'' has swapped the coordinates; one who
+        gives $-2$ as the absolute minimum never checked the ends.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{coordinates solid} (nothing to
+do), \textit{value and location swapped} (a 2.6 warm-up item that asks for a sentence ``\ldots
+of \_\_ at \_\_''), and \textit{endpoints ignored} (a one-minute check-in at the door of 2.6
+with the trail graph's 700-foot end).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering end behavior from standard form (one
-deliberately scrambled), end behavior from factored form with a worked degree
-and leading coefficient, a dominance-ratio table for $x^4 - 1000x^3$, reading
-end behavior off two pre-drawn graphs, and one AP-style multiple-choice item.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the teacher
+sets. Every context is new. \textit{Part A} (1--2) reads a drone's altitude: increasing,
+constant, and decreasing intervals in seconds, then a classmate's $y$-value interval to fix.
+\textit{Part B} (3--4) reads a new graph $p$: intervals, both turning points as value and
+location, and an absolute minimum that sits at an endpoint. \textit{Part C} (5--7) is
+concavity: matching four curve shapes to their descriptions, $p$'s concavity and inflection
+point, and app downloads that are increasing and concave down, in words. \textit{Part D} (8--9)
+refutes ``concave up, so increasing'' on $p$, and problem 9 asks for the headline in writing.
 
-\textbf{Extension (optional):} Factor the leading term out of
-$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_0$ to get
-$p(x) = a_n x^n\!\left(1 + \frac{a_{n-1}}{a_n x} + \dots +
-\frac{a_0}{a_n x^n}\right)$. Every fraction in the bracket has an $x$ in the
-denominator, so the bracket closes on $1$ --- which is the dominance table of
-Part 2, written once and for all.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items (four options) whose distractors are the
+lesson's errors: the value and its location swapped (1C), concave down read as decreasing or
+increasing read as concave up (2A, 2B, 2D), an interval read in $y$-values (3B), a turning point
+called an inflection point (4A, 4B), and the $x$-location or the relative maximum given as the
+absolute maximum value (5A, 5B, 5C). Section II is one free-response question on a harbor's tide
+graph: increasing and decreasing intervals (a), the absolute maximum in context (b), a worker who
+gives the hour as ``the low tide'' (c), direction and concavity together on $(3, 6)$ (d), and when
+the water falls fastest (e) --- the finisher's question, and a preview of 2.6.
 
-\textbf{Preview:} Next lesson (2.6, Equivalent Representations of Polynomial
-Expressions) puts the two halves side by side: the \textit{standard} form is
-the one that hands you the end behavior, the \textit{factored} form is the one
-that hands you the zeros, and they are the same polynomial.
+\textbf{Preview:} Next lesson (2.6, Average Rate of Change, Secant Lines, and the Difference
+Quotient) measures \emph{how fast} a function changes over an interval. The homework's closing
+box asks how many meters per second the drone climbs; 2.6 calls that the average rate of change,
+and re-reads today's concavity as a rate of change that is itself increasing or decreasing.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Item 2 is the one to watch --- the
-terms are out of degree order on purpose, and a student who answers ``$7$'' or
-``$x^2$'' has revealed exactly the habit Part 4 has to break. Do not correct it
-at the desk; collect the wrong answers and open Part 4 with them. Item 3 is
-arithmetic students can do on paper: $100^3 = 1{,}000{,}000$ and
-$50 \cdot 100^2 = 500{,}000$. If more than a third of the room stalls there, the
-dominance table in Part 2 needs to be worked column by column at the board
-rather than in pairs.
+Five minutes, silent start, no calculators. Item 1 matters more than it looks: every answer in
+today's notes is an open interval, and a student who cannot write $(2, 5)$ for $2 < x < 5$ will
+spend the I Do on notation instead of on the graph. Item 2 reads one graph in both directions on
+purpose --- (a) goes from $x$ to $y$, (b) from $y$ back to $x$ --- which is the exact move the
+lesson's misconception gets wrong; a student who answers (b) with a $y$-value is a student to
+watch at problem 12. Items 3--4 are slope and its sign, the straight-line version of rising and
+falling, and 2.6 builds directly on them.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 2 is the centerpiece; protect its fourteen minutes. The temptation is to
-state the four cases early and let the table become decoration --- resist it,
-because the four cases are memorizable in ninety seconds and the reason behind
-them is the only part that survives to calculus. Work the $x = 10$ row aloud,
-let pairs do $x = 50$ and $x = 100$, then work $x = 500$ and $x = 1000$ together
-and make somebody say out loud what the last column is doing. Part 1 can be
-brisk but must not be skipped: the notation is assessed on every item today. If
-time is short, compress Part 3 --- the graphs carry it --- never Parts 1 or 2.
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first problem
+of the grid (1, 5, 9, 11), and the class works the rest with the pen in their hand, every problem
+cold-called. The trail is the spine of the first three rows and is drawn three times on purpose
+--- once plain, once with the two guide lines, once small beside the concavity shapes --- so no
+student flips pages to read it. Narrate the axis every time you read a number: ``where'' is the
+mile marker, ``how high'' is the feet. That habit is what problems 11--12 test.
+
+Problem 7 is worth slowing down for: the absolute maximum is the trail's end, 700 feet, not the
+600-foot peak. Students who learned ``the top of the hill is the maximum'' will resist; make them
+compare every height on the graph, endpoints included. Relative extrema are read at the turning
+points only --- if a student asks whether the end at mile 8 is a relative maximum too, say that
+in this course a relative extremum is a turn, and the endpoints compete only for absolute.
+
+WHEN READINGS DISAGREE is the lesson. Problem 12 asks for the reason, not the name: ``Tavi'' is
+half an answer; ``the maximum is 4, and it occurs at $x = 1$'' is the whole one. Problems 13--14
+break ``increasing means concave up'' by finding the other two combinations on one graph. The
+You Do (15--18) is the entire independent phase and carries thirteen minutes; problem 16 is the
+crux with a new context and four extrema to report, and problem 18 is the second trap in a
+forecaster's words. If the clock slips, cut problem 14 and let the Debrief carry it.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-Tier R exists to make the four-case lookup automatic; if a group finishes it in
-four minutes, that is the design working, and they move to Tier A. Tier A's
-item 1(b) is the scrambled polynomial and item 2 is factored form --- those two
-are the whole point of the tier, so check them before checking anything else.
-In Tier E, question 2 asks where the leading term overtakes the rest for
-$x^4 - 500x^3$; the answer is $x = 500$, and students who find it by testing
-values rather than by solving are doing exactly the right thing. Question 4 is
-the writing task; accept any version of ``the lower-degree terms stop mattering,
-so only the leading term is left to decide the ends.''
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are at risk --- four readings share the guided phase and it
+will try to borrow them. Borrow from problem 4 (the battery) or problem 14 instead; both have
+twins in the homework (problems 1 and 8). Do not borrow from the three-minute Homework Launch
+either: with no exit ticket, it is the last look you get before the work leaves the room. The
+share-out is one answer per You Do problem, said as a sentence, so that a student who stalled on
+15 still hears ``a maximum of $70^\circ$ at hour 15'' --- the exact shape of homework problem 4,
+which they will otherwise meet alone at home.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 2 first: degree 4 and leading
-coefficient 3 is the target; ``degree 2'' is the reteach pile and needs sixty
-seconds on adding exponents at the start of 2.6. Item 3 is the fastest read on
-conceptual understanding --- a student who has to reconstruct the whole table to
-answer it has memorized rather than understood, which is fine for today and
-worth a revisit before the unit test. Accept ``odd'' and ``positive'' without
-justification.
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Score it however extra credit works in your gradebook; the cover gives it a $+$ cell
+outside the total. Multiple-choice answers are B, C, A, C, D. Item 5 is the most useful one to
+glance at: a student who circles (B) 6 or (C) 0 gave an $x$-location as the maximum value --- the
+lesson's misconception exactly --- and one who circles (A) 3 stopped at the peak and never checked
+the endpoint. On item 2, (A) is the second trap (concave down read as ``faster''). In the free
+response, accept $(3, 9)$ or $[3, 9]$ in (a); part (c) earns credit only if it names 9 as a
+\emph{time} and gives the low tide as 2 feet. Part (e) is the deepest question on the page ---
+credit any answer that places the fastest fall at $t = 6$ because the bend switches there.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 3's ratio table is the one to grade first; it isolates dominance from
-every other skill and a wrong final row means Part 2 did not land. Problem 5 is
-the AP-style item --- distractor B ($-2x^4 + x$) is chosen by students who see
-the negative sign, stop, and never check the degree's parity, and it is worth
-two minutes tomorrow because Unit 2's test will ask it again. The extension is
-the algebra behind Part 2; if anyone asked ``but does it \textit{always} win?''
-during the lesson, assign it by name and open 2.6 with that student at the
-board.
+Graded, two pages, due on the date you set; students start problems 2 and 4 in the Homework
+Launch. Grade problems 4 and 8 for accuracy and the rest for completion and shown work if time is
+short: 4 (value vs.\ location, and an endpoint that beats the valley) and 8 (concave up but
+decreasing) are the two items that say whether the crux and the second trap landed. On problem 1,
+$(0, 12)$ for the increasing interval is the misconception again --- if it is common, reuse
+problem 11 of the notes in the 2.6 warm-up. Problem 7 is the one that predicts 2.6: a student who
+can say ``still growing, but more slowly'' is ready to read concavity as a rate of change that is
+getting smaller; one who writes ``downloads are going down'' has merged the two questions.
 \end{teachernote}
 \end{document}

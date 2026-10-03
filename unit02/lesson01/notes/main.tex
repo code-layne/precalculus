@@ -1,8 +1,45 @@
-%! Quadratic Functions Revisited — Unit 2, Lesson 2.1 — Guided Notes
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% A DENSE DAY: two topics (complex numbers; the parent-function library) plus absolute value
+% as a piecewise function, the bridge back to 1.1.
+%   I DO   : rows IMAGINARY UNIT and COMPLEX NUMBERS — the teacher works 1, 5 and 7.
+%   WE DO  : the rest of those grids (2–4, 6, 8); the PARENT FUNCTIONS gallery (the teacher
+%            annotates panels A–C and works 9; the class annotates D–J and works 10); the
+%            ABSOLUTE VALUE row (the teacher works 11; the class works 12–14).
+%   YOU DO : the last row — problems 15–18, alone, for 12 minutes while the teacher circulates.
+% The crux is row 4, ABSOLUTE VALUE: problem 13 tests the claim "-x is negative" at x = -6,
+% and problem 14 shows the two readings of |x - 2| disagreeing at x = -1. Problem 18 transfers
+% it to |x + 3|, with a negative break point.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
+% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% One library card: #1 letter and name, #2 equation, #3 the plot (clipped to the window),
+% #4 the domain/range lines. Identical in notes_key/ except for the blanks in #4.
+\newcommand{\pfpanel}[4]{%
+  \begin{minipage}[t]{0.195\linewidth}\centering
+  {\scriptsize\bfseries\color{plum}#1}\par
+  {\scriptsize #2}\par\vspace{2pt}
+  \begin{tikzpicture}[x=0.25cm, y=0.25cm]
+    \draw[linegray, very thin, step=1] (-4,-4) grid (4,4);
+    \draw[->, thin] (-4.3,0) -- (4.5,0);
+    \draw[->, thin] (0,-4.3) -- (0,4.5);
+    \begin{scope}
+      \clip (-4,-4) rectangle (4,4);
+      #3
+    \end{scope}
+  \end{tikzpicture}\par\vspace{2pt}
+  {\scriptsize #4}
+  \end{minipage}}
+\newcommand{\kp}[2]{\fill[plum] (#1,#2) circle (1.5pt);}
 
 \begin{document}
 
@@ -10,35 +47,19 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Read the vertex, axis of symmetry, and zeros of a quadratic from its
-        \blank{2cm}, \blank{1.8cm}, and \blank{2cm} forms.
-  \item Compute the \blank{4.2cm} of a quadratic over an interval and
-        recognize it as the slope of a \blank{2cm} line.
-  \item Use \blank{1.8cm} and \blank{2cm} differences to tell a linear
-        function from a quadratic one and to justify \blank{2.2cm}.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Vertex form:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Imaginary unit:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Average rate of change (AROC):}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Complex number:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Secant line:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Complex conjugate:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{First differences:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Parent function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Second differences:}}\\[1pt]
-\writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Concave up / concave down:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Absolute value:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
@@ -46,248 +67,234 @@ Fill in each term as we define it together.
 
 \boxguard
 \begin{hookbox}
-Here are the perfect squares: $0,\ 1,\ 4,\ 9,\ 16,\ 25$. The gaps between
-them are $1,\ 3,\ 5,\ 7,\ 9$ --- every odd number, in order. Now find the
-gaps between \textit{those} numbers. What do you get, and why is that
-surprising?
-
+Type $\sqrt{-9}$ into a calculator and it answers \textsf{ERROR}. Is that because
+\emph{no number at all} squares to $-9$ --- or only no number \emph{you have met yet}? What
+would a number whose square is negative have to be like?
 \writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{1. Three Forms, Three Features}
-A quadratic can be written three different ways. They are the same function
---- but each one hands you a different feature for free.
-
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|l|c|l|}
-\hline
-\textbf{Form} & \textbf{Looks like} & \textbf{Shows you at a glance} \\
-\hline
-Standard & $ax^2 + bx + c$ & the $y$-intercept, which is \blank{1.4cm} \\
-\hline
-Vertex   & $a(x-h)^2 + k$  & the vertex, the point ( \blank{1cm} , \blank{1cm} ) \\
-\hline
-Factored & $a(x-r_1)(x-r_2)$ & the \blank{1.8cm} : $r_1$ and $r_2$ \\
-\hline
-\end{tabular}
-\smallskip
-
-From standard form, the \textbf{axis of symmetry} is the vertical line
-$x = -\dfrac{b}{2a}$, and the vertex sits on it.
-
-\smallskip
-\textbf{Example 1.} Let $f(x) = x^2 - 6x + 5$. Find the vertex.
-
-\begin{work}
-  x &= -\frac{b}{2a} \\
-    &= -\frac{-6}{2(1)} \\
-    &= 3 \\
-  f(3) &= (3)^2 - 6(3) + 5 \\
-       &= -4
-\end{work}
-
-\begin{itemize}[itemsep=4pt]
-  \item Vertex: ( \blank{1cm} , \blank{1cm} ) \qquad Axis of symmetry:
-        $x = $ \blank{1.2cm}
-  \item Vertex form: $f(x) = $ \blank{4cm}
-  \item Factored form: $f(x) = (x-1)(x-5)$, so the zeros are \blank{1cm} and
-        \blank{1cm}
-  \item Here $a = 1 > 0$, so the parabola opens \blank{1.4cm} and the graph
-        is concave \blank{1.4cm}.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{2. Average Rate of Change --- The Secant Line Returns}
-From Lesson 1.3: the \textbf{average rate of change} of $f$ over $[a, b]$ is
-
-\begin{center}
-$\text{AROC over } [a,b] \;=\;
-\dfrac{\text{change in \blank{1.6cm}}}{\text{change in \blank{1.6cm}}}
-\;=\; \dfrac{f(b) - f(a)}{b - a}$
-\end{center}
-
-and it is the \blank{1.6cm} of the \textbf{secant line} through $(a, f(a))$
-and $(b, f(b))$.
-
-\smallskip
-\textbf{Example 2.} For the same $f(x) = x^2 - 6x + 5$, find the AROC over
-$[1, 4]$.
-
-\begin{work}
-  f(1) &= (1)^2 - 6(1) + 5 \\
-       &= 0 \\
-  f(4) &= (4)^2 - 6(4) + 5 \\
-       &= -3 \\
-  \text{AROC} &= \frac{-3 - 0}{4 - 1} \\
-              &= -1
-\end{work}
-
-The dashed line below is that secant. Its slope is the AROC.
-
-\begin{center}
-\begin{tikzpicture}[x=0.72cm, y=0.32cm]
-  \draw[linegray, very thin, step=1] (0,-5) grid (6,5);
-  \draw[->, thick] (0,0) -- (6.6,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\small $f(x)$};
-  \foreach \x in {1,2,3,4,5,6} \node[below] at (\x,0) {\small \x};
-  \foreach \y in {-4,-2,2,4} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(0,5) (1,0) (2,-3) (3,-4) (4,-3) (5,0) (6,5)};
-  \draw[dashed, thick, goldacc] (1,0) -- (4,-3);
-  \fill[plum] (1,0) circle (2.5pt);
-  \fill[plum] (3,-4) circle (2.5pt);
-  \fill[plum] (4,-3) circle (2.5pt);
+\small
+\begin{guidednotes}
+% ── ROW 1: the imaginary unit ────────────────────────────────────────────────
+\mainidea[A new number]{Imaginary unit} &
+No real number squares to a negative, so mathematicians named one that does. The
+\textbf{imaginary unit} is $i = \sqrt{-1}$, which means $i^2 = -1$. For any positive number
+$n$, $\sqrt{-n} = i\sqrt{n}$: pull the $i$ out \textbf{first}, then simplify the radical the
+usual way.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth]
+  \node[font=\normalsize] (a) at (0,1.25) {$i^1 = i$};
+  \node[font=\normalsize] (b) at (2.3,0) {$i^2 = -1$};
+  \node[font=\normalsize] (c) at (0,-1.25) {$i^3 = $ \labelbox{1.1cm}{}};
+  \node[font=\normalsize] (d) at (-2.4,0) {$i^4 = $ \labelbox{1.1cm}{}};
+  \draw[->, very thick, plum] (a) to[bend left=25] node[above right, font=\scriptsize\itshape] {$\times\, i$} (b);
+  \draw[->, very thick, plum] (b) to[bend left=25] node[below right, font=\scriptsize\itshape] {$\times\, i$} (c);
+  \draw[->, very thick, plum] (c) to[bend left=25] node[below left, font=\scriptsize\itshape] {$\times\, i$} (d);
+  \draw[->, very thick, plum] (d) to[bend left=25] node[above left, font=\scriptsize\itshape] {$\times\, i$} (a);
+  \node[draw=goldacc, thick, fill=hookbg, rounded corners=2pt, font=\small, align=left,
+        text width=4.3cm] at (6.3,0) {\textbf{The cycle:} after $i^4$ the powers repeat. Divide
+        the exponent by 4 --- the remainder says where you land.\par\vspace{3pt}
+        \textbf{The trap:} $\sqrt{a}\cdot\sqrt{b} = \sqrt{ab}$ only when $a, b \ge 0$.
+        Rewrite with $i$ first.};
 \end{tikzpicture}
 \end{center}
+\\
+& \notesprompt{Rewrite with $i$ first, then simplify.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Write $\sqrt{-25}$ and $\sqrt{-12}$ using $i$.}{2.0cm}{} &
+\pcell{2}{Solve $x^2 = -9$. Then solve $x^2 + 16 = 0$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Find $i^6$ and $i^{11}$. Use the cycle.}{2.0cm}{} &
+\pcell{4}{A classmate writes $\sqrt{-4}\cdot\sqrt{-9} = \sqrt{36} = 6$. Rewrite each root with $i$ first and find the right answer.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: complex numbers and their arithmetic ──────────────────────────────
+\mainidea[The form $a + bi$]{Complex numbers} &
+A \textbf{complex number} has the form $a + bi$, where $a$ and $b$ are real: $a$ is the
+\textbf{real part} and $b$ is the \textbf{imaginary part}. Add or subtract by combining real
+parts with real parts and imaginary parts with imaginary parts. To multiply:
 
-\begin{itemize}[itemsep=4pt]
-  \item AROC over $[3, 6]$: \quad $\dfrac{5 - (-4)}{6 - 3} = $ \blank{1.4cm}
-  \item Same function, different interval, \blank{2.6cm} rate. A line could
-        never do that --- and that difference is the rest of the lesson.
-\end{itemize}
-\end{notesbox}
+\vspace{3pt}
+\stepnum{1}\ Multiply like binomials (FOIL). \quad \stepnum{2}\ Replace $i^2$ with $-1$.
+\quad \stepnum{3}\ Combine like parts; write the answer as $a + bi$.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth]
+  \node[font=\Large] (z) at (0,0) {$7 \;-\; 2i$};
+  \node (re) at (-1.9,-1.35) {real part: \labelbox{1.0cm}{}};
+  \node (im) at (2.1,-1.35) {imaginary part: \labelbox{1.0cm}{}};
+  \draw[->, very thick, plum] (-0.45,-0.3) -- (re.north);
+  \draw[->, very thick, plum] (0.55,-0.3) -- (im.north);
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, font=\small, align=left,
+        text width=4.6cm] at (6.6,-0.6) {The \textbf{complex conjugate} of $a + bi$ is
+        $a - bi$ --- flip the sign of the imaginary part. Their product is always real:
+        \[ (a + bi)(a - bi) = a^2 + b^2 \]};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Simplify. Write each answer in the form $a + bi$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{$(3 + 2i) + (5 - 4i)$}{2.0cm}{} &
+\pcell{6}{$(7 - i) - (2 - 3i)$. The minus sign reaches both parts.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{$(2 + 3i)(4 - i)$}{2.4cm}{} &
+\pcell{8}{Write the conjugate of $3 + 4i$, then multiply the two. What kind of number is the product?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: the library of parent functions ───────────────────────────────────
+\mainidea[The library of]{Parent functions} &
+A \textbf{parent function} is the simplest function of its family. Every graph in the next
+lesson is one of these ten, moved, stretched, or flipped --- so learn each by its
+\textbf{shape} and its \textbf{key points} (the dots). Read the domain left to right and the
+range bottom to top. Two of them, $\frac{1}{x}$ and $\frac{1}{x^2}$, approach an axis but
+never reach it.
+\\
+& \begin{center}
+\pfpanel{A. Constant}{$y = 2$}{%
+  \draw[very thick, plum] (-4,2) -- (4,2); \kp{0}{2}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{B. Linear}{$y = x$}{%
+  \draw[very thick, plum] (-4,-4) -- (4,4); \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{C. Quadratic}{$y = x^2$}{%
+  \draw[very thick, plum] plot[domain=-2.05:2.05, samples=50, smooth] (\x,{\x*\x});
+  \kp{-1}{1}\kp{0}{0}\kp{1}{1}\kp{-2}{4}\kp{2}{4}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{D. Cubic}{$y = x^3$}{%
+  \draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] (\x,{\x*\x*\x});
+  \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{E. Quartic}{$y = x^4$}{%
+  \draw[very thick, plum] plot[domain=-1.43:1.43, samples=50, smooth] (\x,{\x*\x*\x*\x});
+  \kp{-1}{1}\kp{0}{0}\kp{1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}
+\end{center}
+\vspace{2pt}
+\\
+& \begin{center}
+\pfpanel{F. Absolute value}{$y = |x|$}{%
+  \draw[very thick, plum] (-4,4) -- (0,0) -- (4,4); \kp{-1}{1}\kp{0}{0}\kp{1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{G. Square root}{$y = \sqrt{x}$}{%
+  \draw[very thick, plum] plot[domain=0:4, samples=60, smooth] (\x,{sqrt(\x)});
+  \kp{0}{0}\kp{1}{1}\kp{4}{2}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{H. Cube root}{$y = \sqrt[3]{x}$}{%
+  \draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] ({\x*\x*\x},\x);
+  \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{I. Reciprocal}{$y = \frac{1}{x}$}{%
+  \draw[very thick, plum] plot[domain=0.25:4, samples=50, smooth] (\x,{1/\x});
+  \draw[very thick, plum] plot[domain=-4:-0.25, samples=50, smooth] (\x,{1/\x});
+  \kp{1}{1}\kp{-1}{-1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}\hfill
+\pfpanel{J. Reciprocal sq.}{$y = \frac{1}{x^2}$}{%
+  \draw[very thick, plum] plot[domain=0.5:4, samples=50, smooth] (\x,{1/(\x*\x)});
+  \draw[very thick, plum] plot[domain=-4:-0.5, samples=50, smooth] (\x,{1/(\x*\x)});
+  \kp{1}{1}\kp{-1}{1}}%
+  {D: \blank{1.4cm}\par R: \blank{1.4cm}}
+\end{center}
+\vspace{2pt}
+\\
+& \notesprompt{Match the description to the library.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{A parent graph passes through $(-8,-2)$, $(-1,-1)$, $(0,0)$, $(1,1)$, and $(8,2)$. Name it and write its equation.}{2.2cm}{} &
+\pcell{10}{$y = x^2$ and $y = x^4$ have \emph{even} degree; $y = x^3$ has \emph{odd} degree. Where do the left and right arms of each go? Which would $y = x^5$ look like?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — absolute value as a piecewise function ─────────────────
+\mainidea[A piecewise function]{Absolute value} &
+The \textbf{absolute value} $|x|$ is the distance from $x$ to 0, so it is never negative.
+Written as a piecewise function,
+\[ |x| = \begin{cases} -x & x < 0 \\[2pt] x & x \ge 0 \end{cases} \]
+Read $-x$ as \textbf{the opposite of $x$}, not as ``a negative number.'' The rule $-x$ only
+ever receives negative inputs, and the opposite of a negative number is positive:
+$-(-3) = 3$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.38cm, y=0.38cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-5,0) grid (5,5);
+  \draw[->, thick] (-5.4,0) -- (5.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-0.4) -- (0,5.6) node[above] {\small $|x|$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \draw[very thick, redacc] (-5,5) -- (0,0);
+  \draw[very thick, plum] (0,0) -- (5,5);
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[redacc] (-3,3) circle (2.2pt);
+  \node[font=\scriptsize\bfseries\color{redacc}, align=center, left] at (-5.2,2.5) {$-x$ owns\\ $x < 0$};
+  \node[font=\scriptsize\bfseries\color{plum}, align=center, right] at (5.4,2.5) {$x$ owns\\ $x \ge 0$};
+  \node[font=\scriptsize, right] at (-2.8,3.7) {$(-3,\,3)$};
+\end{tikzpicture}
+\hspace{0.3cm}
+\begin{tikzpicture}[x=0.38cm, y=0.38cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,0) grid (7,5);
+  \draw[->, thick] (-3.4,0) -- (7.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-0.4) -- (0,5.6) node[above] {\small $|x - 2|$};
+  \foreach \x in {-2,2,4,6} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \draw[goldacc, very thick, dashed] (2,0) -- (2,5.3);
+  \node[font=\scriptsize\bfseries\color{goldacc}, above right] at (2,5.0) {break at $x = 2$};
+  \draw[very thick, redacc] (-3,5) -- (2,0);
+  \draw[very thick, plum] (2,0) -- (7,5);
+  \fill[plum] (2,0) circle (2.2pt);
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+$x - 2$ is negative exactly when $x < 2$, so that is where the rule takes the opposite:
+\[ |x - 2| = \begin{cases} \text{\labelbox{2.9cm}{}} & x < 2 \\[4pt] \text{\labelbox{2.9cm}{}} & x \ge 2 \end{cases} \]
+\\
+& \notesprompt{Decide the rule first, then evaluate. Name the rule you used.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Use the piecewise rule for $|x|$ to find $|-4|$ and $|3|$.}{2.0cm}{} &
+\pcell{12}{Find $-x$ for $x = -5$, $-1$, $0$, and $2$. For which inputs is $-x$ positive?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{A classmate says: ``$|x| = -x$ for $x < 0$ can't be right, because $-x$ is negative.'' Test the claim at $x = -6$. Who is right, and why?}{2.8cm}{} &
+\pcell{14}{Using the $|x - 2|$ rules above, find $|x - 2|$ at $x = -1$ and at $x = 5$. What would $x - 2$ alone give at $x = -1$, and why can't that be right?}{2.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (12 min) ──────────
+\mainidea[You do, alone]{All three} &
+Complex arithmetic, one graph from the library, and an absolute value written as a piecewise
+function. The graph for problem 17:
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.45cm, y=0.45cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-1) grid (4,5);
+  \draw[->, thick] (-4.4,0) -- (4.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-1.4) -- (0,5.6) node[above] {\small $y$};
+  \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \begin{scope}
+    \clip (-4,-1) rectangle (4,5);
+    \draw[very thick, plum] plot[domain=0.45:4, samples=60, smooth] (\x,{1/(\x*\x)});
+    \draw[very thick, plum] plot[domain=-4:-0.45, samples=60, smooth] (\x,{1/(\x*\x)});
+  \end{scope}
+  \fill[plum] (1,1) circle (2.2pt);
+  \fill[plum] (-1,1) circle (2.2pt);
+  \fill[plum] (0.5,4) circle (2.2pt);
+  \fill[plum] (-0.5,4) circle (2.2pt);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Simplify $(4 - 3i)(2 + i)$. Write the answer as $a + bi$.}{3.2cm}{} &
+\pcell{16}{Solve $x^2 + 36 = 0$. Then find $\sqrt{-9}\cdot\sqrt{-16}$.}{3.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{The graph above is a parent function. Name it, write its equation, and state its domain and range.}{3.2cm}{} &
+\pcell{18}{Write $|x + 3|$ as a piecewise function. (Where does $x + 3$ change sign?) Then find its value at $x = -5$ and $x = 1$, naming the rule each time.}{3.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{3. Difference Tables --- Linear vs.\ Quadratic}
-When the inputs are equally spaced, a \textbf{first difference} is one output
-minus the one before it, and a \textbf{second difference} is one first
-difference minus the one before it. With a step of $1$, each first difference
-\textit{is} an AROC.
-
-\medskip
-\textbf{Linear:} $L(x) = 3x - 2$
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$L(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\smallskip
-
-First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-For a \textbf{linear} function the AROC is \blank{2.2cm} over every interval,
-so the second differences are all \blank{1cm}.
-
-\medskip
-\textbf{Quadratic:} $Q(x) = 2x^2 - 4x + 1$
-
-\smallskip
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$Q(x)$ & 1 & $-1$ & 1 & 7 & 17 \\
-\hline
-\end{tabular}
-\smallskip
-
-First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-The first differences are \textbf{not} constant --- but look at how they
-change: each one is \blank{1cm} more than the one before. The AROCs of a
-quadratic form a \blank{2cm} pattern of their own.
-
-\medskip
-\textbf{The headline:} for a quadratic, the average rates of change over
-consecutive equal-length intervals change at a \blank{2.4cm} rate.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Second Differences, the Leading Coefficient, and Concavity}
-\textbf{The fingerprint.} If the inputs step by $h$, then a quadratic
-$f(x) = ax^2 + bx + c$ has constant second differences equal to $2ah^2$.
-When the step is $h = 1$, that constant is simply $2a$.
-
-\begin{itemize}[itemsep=4pt]
-  \item Check it on $Q(x) = 2x^2 - 4x + 1$: the second difference was
-        \blank{1cm} , and $2a = 2(2) = $ \blank{1cm} --- they match.
-  \item So a table alone gives you $a$: if the second differences are a
-        constant $10$ with unit steps, then $a = $ \blank{1.2cm} .
-\end{itemize}
-
-\textbf{Concavity, from the numbers alone.} When the AROCs (first
-differences) are \textit{increasing}, the graph is concave \blank{1.2cm};
-when they are \textit{decreasing}, the graph is concave \blank{1.4cm}.
-
-\smallskip
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Function} & \textbf{First differences} & \textbf{Second differences} \\
-\hline
-Linear    & constant                        & all \blank{1.2cm} \\
-\hline
-Quadratic & change by a \blank{1.6cm} step  & constant and \blank{1.8cm} \\
-\hline
-\end{tabular}
-\smallskip
-
-Since $Q$'s first differences $-2, 2, 6, 10$ are increasing, $Q$ is concave
-\blank{1.2cm} --- and $a = 2$ is \blank{1.6cm} , which agrees.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[24]
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $p(x) = -x^2 + 6x$. Complete the table and the difference rows.
-
-        \smallskip
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|c|c|c|c|c|}
-        \hline
-        $x$ & 0 & 1 & 2 & 3 & 4 \\
-        \hline
-        $p(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-        \hline
-        \end{tabular}
-        \smallskip
-
-        First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} ,
-        \blank{1cm}
-
-        Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-        The graph is concave \blank{1.4cm} , and $a = $ \blank{1.2cm} .
-
-  \item A quadratic's AROCs over $[0,1]$, $[1,2]$, and $[2,3]$ are
-        $1,\ 7,\ 13$.
-
-        \begin{work}
-          \text{step} &= 7 - 1 \\
-                      &= 6 \\
-          2a &= 6 \\
-           a &= 3
-        \end{work}
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item The AROCs step by \blank{1.2cm} each time, so the leading
-                coefficient is $a = $ \blank{1.2cm} .
-          \item The AROCs are increasing, so the graph is concave
-                \blank{1.4cm} .
-        \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

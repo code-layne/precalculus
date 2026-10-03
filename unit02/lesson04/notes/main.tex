@@ -1,4 +1,23 @@
-%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Guided Notes
+%! Characteristics of Functions: Domain, Range, Intercepts, and End Behavior — Unit 2, Lesson 2.4 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..19.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 9, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called (2–4, 6–8, 10, 12–16).
+%   YOU DO : the last row — problems 17–19, alone, for 13 minutes while the teacher circulates.
+% The crux is row 4, END BEHAVIOR: problems 15–16 are built so the input reading and the
+% output reading DISAGREE — lim_{x->oo} r(x) = 2 while x = 1 is the input the graph skips, and
+% r(2) = 3. Problem 19 transfers it to a new graph with no formula.
+% No sketching anywhere: every graph is pre-drawn in TikZ and read.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, the hook's write
+% lines -> \ansline, and the answer argument of every \pcell, \writespace and \labelbox
+% filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
+% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -10,281 +29,275 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Explain why a polynomial can have zeros that never show up as
-        \blank{2.8cm} on its graph.
-  \item Use the Fundamental Theorem of Algebra to count the \blank{1.4cm}
-        complex zeros of a polynomial of degree $n$.
-  \item Use \blank{2.4cm} pairs to name a missing zero and to build a
-        polynomial from a list of zeros.
-  \item Decide whether a polynomial function is \blank{1.4cm},
-        \blank{1.2cm}, or neither.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Imaginary unit:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Interval notation:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Complex number:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Radicand:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Non-real zero:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{$y$-intercept:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Complex conjugate:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Zero of a function:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Fundamental Theorem of Algebra:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{End behavior:}}\\[1pt]
 \writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Even function:}}\\[1pt]
-\writeline\\[3pt]
-\noindent\textbf{\textcolor{plum}{Odd function:}}\\[1pt]
+\noindent\textbf{\textcolor{plum}{Horizontal asymptote:}}\\[1pt]
 \writeline
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[34]
+\boxguard
 \begin{hookbox}
-Below is the graph of $p(x) = x^4 - 3x^2 - 4$, a polynomial of degree 4. It
-crosses the $x$-axis exactly twice.
+A cup of coffee at $180^\circ$F is set down on a desk in a $70^\circ$F room. Let $T(t)$ be its
+temperature, in $^\circ$F, $t$ minutes later.
 
-\begin{center}
-\begin{tikzpicture}[x=1.0cm, y=0.28cm]
-  \draw[linegray, very thin, xstep=1, ystep=2] (-2.4,-7) grid (2.4,5);
-  \draw[->, thick] (-2.7,0) -- (2.8,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-7.6) -- (0,5.8) node[above] {\small $p(x)$};
-  \foreach \x in {-2,-1,1,2} \node[below] at (\x,-0.3) {\small \x};
-  \foreach \y in {-6,-4,-2,2,4} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,4.9) (-2,0) (-1.6,-5.13) (-1.2,-6.25) (-0.8,-5.51)
-     (-0.4,-4.45) (0,-4) (0.4,-4.45) (0.8,-5.51) (1.2,-6.25)
-     (1.6,-5.13) (2,0) (2.2,4.9)};
-  \fill[plum] (-2,0) circle (2.5pt);
-  \fill[plum] (2,0) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
-
-Lesson 2.3 tied every zero to a factor. A degree-4 polynomial has four factors'
-worth of zeros --- but the graph shows only two. Where are the other two?
-
-\writelines{2}
+If you leave it on the desk all day, about what temperature will it read? As the minutes go
+by, which quantity keeps growing without stopping --- and which one settles down?
+\par\writelines{2}
 \end{hookbox}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{1. A Complex-Number Refresher}
-From Algebra 2: the \textbf{imaginary unit} $i$ is the number with
-$i^2 = $ \blank{1.2cm}. A \textbf{complex number} has the form $a + bi$, where
-$a$ and $b$ are real numbers.
-
-\begin{itemize}[itemsep=4pt]
-  \item $a$ is the \blank{1.8cm} part and $b$ is the \blank{2.4cm} part.
-  \item Every real number is already complex: $7 = 7 + 0i$. A number is
-        \textbf{non-real} exactly when $b$ \blank{1.6cm} $0$.
-  \item The \textbf{complex conjugate} of $a + bi$ is \blank{2cm}. Only the
-        sign in front of the $i$ changes.
-\end{itemize}
-
-\textbf{Example 1.} Show that $i$ is a zero of $p(x) = x^2 + 1$. Nothing new
-here --- a zero is still an input that makes the output $0$.
-
-\begin{work}
-  p(i) &= (i)^2 + 1 \\
-       &= -1 + 1 \\
-       &= 0
-\end{work}
-
-\textbf{Example 2.} Multiply the conjugate pair $3 + 2i$ and $3 - 2i$.
-
-\begin{work}
-  (3+2i)(3-2i) &= 9 - 6i + 6i - 4i^2 \\
-               &= 9 - 4(-1) \\
-               &= 13
-\end{work}
-
-The $i$ terms cancelled and the answer came out \blank{1.6cm}. Remember this
---- it is the reason for Section 3.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{2. The Fundamental Theorem of Algebra --- Exactly $n$ Zeros}
-\textbf{Fundamental Theorem of Algebra.} A polynomial function of degree $n$
-has \textbf{exactly} \blank{1.2cm} complex zeros, counting multiplicities.
-
-\begin{itemize}[itemsep=4pt]
-  \item ``Exactly,'' not ``at most.'' The count is guaranteed once we allow
-        non-real numbers as inputs.
-  \item \textbf{Real} zeros are the ones you can see: they are the
-        \blank{2.8cm} of the graph.
-  \item \textbf{Non-real} zeros are not on the graph \textit{at all}. A graph
-        can never show them, so they must be found from the factors.
-\end{itemize}
-
-\textbf{The hook, resolved.} $p(x) = x^4 - 3x^2 - 4 = (x-2)(x+2)(x^2+1)$.
-Setting $x^2 + 1 = 0$ gives $x^2 = -1$, so $x = $ \blank{1.6cm}. All four
-zeros: $2$, $-2$, and the pair \blank{2.4cm}.
-
-\medskip
-\textbf{Zero census.} Complete the table. Count real zeros \textit{with
-multiplicity}, then subtract from the degree.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{center}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Factored form} & \textbf{Degree} & \textbf{\# real} & \textbf{\# non-real} & \textbf{Total} \\
-\hline
-$(x-2)(x+2)(x^2+1)$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} \\
-\hline
-$(x+1)^3(x^2+4)$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} \\
-\hline
-$x(x^2+9)$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} \\
-\hline
-$(x-1)^2(x^2+1)^2$ & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} & \blank{0.9cm} \\
-\hline
-\end{tabular}
-\end{center}
-\smallskip
-
-\textbf{The move to memorize:} degree $-$ (real zeros with multiplicity) $=$
-number of \blank{2.4cm} zeros.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{3. Non-Real Zeros Come in Pairs}
-\textbf{The conjugate pair rule.} If $a + bi$ is a zero of a polynomial with
-real coefficients, then \blank{2cm} is also a zero.
-
-\begin{itemize}[itemsep=4pt]
-  \item Consequence 1: the number of non-real zeros of such a polynomial is
-        always \blank{1.6cm} --- they cannot arrive one at a time.
-  \item Consequence 2: a polynomial of \textbf{odd} degree has an odd total
-        number of zeros, so they cannot all be non-real. It must have at least
-        one \blank{1.8cm} zero --- its graph \textit{has} to cross the
-        $x$-axis.
-  \item Look back at Section 1: a conjugate pair multiplies out to a factor
-        with real coefficients, which is why the pair is forced.
-\end{itemize}
-
-\textbf{Example 3.} A polynomial $p$ has real coefficients, degree 3, leading
-coefficient 1, and zeros $x = 2$ and $x = 1 + 3i$. Name the third zero, then
-write $p(x)$.
-
-Third zero: \blank{2.4cm}
-
-\begin{work}
-  p(x) &= (x-2)\big(x - (1+3i)\big)\big(x - (1-3i)\big) \\
-       &= (x-2)\big((x-1) - 3i\big)\big((x-1) + 3i\big) \\
-       &= (x-2)\big((x-1)^2 - 9i^2\big) \\
-       &= (x-2)\big(x^2 - 2x + 1 + 9\big) \\
-       &= (x-2)(x^2 - 2x + 10) \\
-       &= x^3 - 4x^2 + 14x - 20
-\end{work}
-
-Every coefficient came out \blank{1.6cm} --- exactly what the conjugate pair
-guarantees.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[34]
-\begin{notesbox}{4. Even and Odd Polynomial Functions}
-\begin{itemize}[itemsep=4pt]
-  \item $f$ is \textbf{even} when $f(-x) = $ \blank{1.4cm} for every $x$. Its
-        graph is symmetric over the line \blank{1.4cm}.
-  \item $f$ is \textbf{odd} when $f(-x) = $ \blank{1.6cm} for every $x$. Its
-        graph is symmetric about the point \blank{1.6cm}.
-  \item Most functions are \textbf{neither}. ``Odd'' is not the same as ``not
-        even.''
-\end{itemize}
-
-\textbf{Example 4.} Test $g(x) = x^3 - 4x$ by substituting $-x$.
-
-\begin{work}
-  g(-x) &= (-x)^3 - 4(-x) \\
-        &= -x^3 + 4x \\
-        &= -(x^3 - 4x) \\
-        &= -g(x)
-\end{work}
-
-So $g$ is \blank{1.4cm}.
-
-\medskip
-\textbf{The polynomial shortcut.} Look only at the exponents:
-
-\begin{itemize}[itemsep=4pt]
-  \item Every exponent \textbf{even} $\Rightarrow$ the function is
-        \blank{1.4cm}. \quad (Careful: a constant term is $x^0$, an
-        \textit{even} power.)
-  \item Every exponent \textbf{odd} $\Rightarrow$ the function is
-        \blank{1.4cm}.
-  \item A \textbf{mix} of even and odd exponents $\Rightarrow$ \blank{1.8cm}.
-\end{itemize}
-
-\textbf{Reading the symmetry.} Graph A is $y = x^4 - 4x^2$; graph B is
-$y = x^3 - 3x$.
-
-\begin{center}
-\begin{tikzpicture}[x=0.55cm, y=0.25cm]
-  \draw[->, thick] (-2.6,0) -- (2.7,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-4.8) -- (0,5.0) node[above] {\small $y$};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2.2,4.07) (-2,0) (-1.7,-3.21) (-1.4,-4.0) (-1,-3) (-0.5,-0.94)
-     (0,0) (0.5,-0.94) (1,-3) (1.4,-4.0) (1.7,-3.21) (2,0) (2.2,4.07)};
-  \node[below] at (0,-5.4) {\small \textbf{Graph A}};
+\small
+\begin{guidednotes}
+% ── ROW 1: domain and range read off a graph, in interval notation ──────────
+\mainidea[Reading a graph]{Domain \& Range} &
+Read the \textbf{domain} left to right along the $x$-axis: every input the graph uses. Read the
+\textbf{range} bottom to top along the $y$-axis: every output it reaches. Write both in
+\textbf{interval notation}: a square bracket $[\ ]$ includes an endpoint, a round parenthesis
+$(\ )$ leaves it out, and $\infty$ or $-\infty$ always gets a round parenthesis --- no graph
+ever reaches it.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.42cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-5,-3) grid (5,4);
+  \draw[->, thick] (-5,0) -- (5.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-3) -- (0,4.5) node[above] {\scriptsize $f(x)$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-2,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum] (-4,2) -- (-1,-2) -- (4,3);
+  \fill[plum] (-4,2) circle (2.6pt);
+  \draw[very thick, plum, fill=white] (4,3) circle (2.6pt);
+  \node[font=\scriptsize\bfseries] at (0,-4.1) {Graph of $f$};
 \end{tikzpicture}
-\hspace{1.1cm}
-\begin{tikzpicture}[x=0.55cm, y=0.25cm]
-  \draw[->, thick] (-2.6,0) -- (2.7,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-4.8) -- (0,5.0) node[above] {\small $y$};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-2,-2) (-1.8,-0.43) (-1.5,1.13) (-1,2) (-0.5,1.38) (0,0)
-     (0.5,-1.38) (1,-2) (1.5,-1.13) (1.8,0.43) (2,2)};
-  \node[below] at (0,-5.4) {\small \textbf{Graph B}};
+\hspace{0.8cm}
+\begin{tikzpicture}[x=0.42cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-3) grid (7,4);
+  \draw[->, thick] (-3,0) -- (7.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-3) -- (0,4.5) node[above] {\scriptsize $g(x)$};
+  \foreach \x in {-2,2,4,6} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-2,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, ->, samples=80, domain=-2:6.8] plot (\x, {sqrt(\x+2)-1});
+  \fill[plum] (-2,-1) circle (2.6pt);
+  \node[font=\scriptsize\bfseries] at (2,-4.1) {Graph of $g$};
 \end{tikzpicture}
 \end{center}
+\vspace{2pt}
+Filled dot: \labelbox{2.0cm}{}\quad Open circle: \labelbox{2.0cm}{}\quad Arrow: \labelbox{2.4cm}{}
+\\
+& \notesprompt{Write each answer in interval notation.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{The domain of $f$. Read left to right.}{2.0cm}{} &
+\pcell{2}{The range of $f$. Read bottom to top.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{The domain and the range of $g$.}{2.0cm}{} &
+\pcell{4}{(a) $1 \le x < 6$ \quad (b) $x < -3$ \quad (c) all real numbers}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: domain from a formula — the two forbidden moves ──────────────────
+\mainidea[From a formula]{Domain} &
+Unless the formula forbids it, every real number is in the domain. Two things forbid an input:
+a \textbf{denominator} equal to 0 (division by zero is undefined), and a negative
+\textbf{radicand} under an even root such as $\sqrt{\ }$ (not a real number).
 
-Graph A is \blank{1.4cm} (mirror over the $y$-axis); graph B is
-\blank{1.4cm} (half-turn about the origin).
-\end{notesbox}
+\vspace{3pt}
+\stepnum{1}\ Denominator? Set it $\ne 0$ and cross out those inputs. \quad \stepnum{2}\ Even
+root? Set the radicand $\ge 0$ and solve. \quad \stepnum{3}\ Keep only the inputs that pass
+\emph{both} tests. The symbol $\cup$ (``union'') joins two intervals.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.95cm, y=1cm, >=stealth]
+  \node[font=\normalsize, anchor=west] at (-0.4,1.35) {$k(x) = \dfrac{\sqrt{x-3}}{x-5}$};
+  \node[font=\scriptsize, anchor=west, align=left] at (3.2,1.55) {radicand: $x - 3 \ge 0$, so $x \ge 3$};
+  \node[font=\scriptsize, anchor=west, align=left] at (3.2,1.05) {denominator: $x - 5 \ne 0$, so $x \ne 5$};
+  \draw[<->, thick] (-0.3,0) -- (9.3,0);
+  \foreach \x in {0,...,9} {\draw (\x,0.1) -- (\x,-0.1); \node[below, font=\scriptsize] at (\x,-0.1) {\x};}
+  \draw[line width=3pt, plum] (3,0) -- (4.88,0);
+  \draw[line width=3pt, plum, ->] (5.12,0) -- (9.25,0);
+  \fill[plum] (3,0) circle (3.5pt);
+  \draw[very thick, plum, fill=white] (5,0) circle (3.5pt);
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Domain of $k$: \labelbox{3.4cm}{}
+\\
+& \notesprompt{Find the domain. Write it in interval notation.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{$f(x) = \sqrt{x - 2}$}{2.0cm}{} &
+\pcell{6}{$g(x) = \dfrac{4}{x + 2}$}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{$h(x) = \sqrt{6 - 2x}$ \quad \textit{Careful when you divide by a negative.}}{2.2cm}{} &
+\pcell{8}{$m(x) = \dfrac{\sqrt{x + 1}}{x - 4}$ \quad Both tests at once.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: intercepts — input 0 versus output 0 ─────────────────────────────
+\mainidea[Where the graph meets an axis]{Intercepts} &
+The \textbf{$y$-intercept} is where the graph crosses the $y$-axis. There the input is 0, so
+the point is $(0, f(0))$ --- and a function has at most one. An \textbf{$x$-intercept} is where
+the graph meets the $x$-axis. There the output is 0, so solve $f(x) = 0$; each solution $a$ is
+a \textbf{zero} of $f$, and the point is $(a, 0)$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.24cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (5,6);
+  \draw[->, thick] (-3,0) -- (5.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-5) -- (0,6.5) node[above] {\scriptsize $f(x)$};
+  \foreach \x in {-2,-1,1,2,3,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, <->, samples=60, domain=-1.85:3.85] plot (\x, {\x*\x-2*\x-3});
+  \fill[goldacc] (-1,0) circle (3pt);
+  \fill[goldacc] (3,0) circle (3pt);
+  \fill[redacc] (0,-3) circle (3pt);
+  \node[font=\scriptsize, above left] at (-1,0) {$(-1, 0)$};
+  \node[font=\scriptsize, above right] at (3,0) {$(3, 0)$};
+  \node[font=\scriptsize, left] at (-0.1,-3) {$(0, -3)$};
+  \node[font=\scriptsize\bfseries, anchor=west] at (5.6,4) {$f(x) = x^2 - 2x - 3$};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+At an $x$-intercept the \labelbox{1.8cm}{} is 0. \qquad At the $y$-intercept the \labelbox{1.8cm}{} is 0.
+\\
+& \notesprompt{Find the $y$-intercept by computing $f(0)$; find the zeros by solving $f(x) = 0$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{$f(x) = x^2 - 2x - 3$, the graph above. Check your points against the picture.}{2.2cm}{} &
+\pcell{10}{$g(x) = x^2 - 16$. Write both intercepts as points.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — end behavior in limit notation ────────────────────────
+\mainidea[Off the edges]{End Behavior} &
+\textbf{End behavior} describes what the \emph{outputs} do as the \emph{inputs} run off the
+edges of the graph: to the right ($x \to \infty$) and to the left ($x \to -\infty$). We write
+$\displaystyle\lim_{x \to \infty} f(x) = \infty$ and read it ``as $x$ increases without bound,
+$f(x)$ increases without bound.'' The value after the equals sign is $\infty$, $-\infty$, or a
+number $b$ --- and then the graph levels off along the \textbf{horizontal asymptote} $y = b$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.36cm, y=0.24cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,6);
+  \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\tiny $x$};
+  \draw[->, thick] (0,-5) -- (0,6.4);
+  \draw[very thick, plum, <->, samples=40, domain=-2.75:2.75] plot (\x, {\x*\x-3});
+  \node[font=\scriptsize\bfseries] at (0,-6.6) {A: $p(x) = x^2 - 3$};
+\end{tikzpicture}
+\hspace{0.35cm}
+\begin{tikzpicture}[x=0.36cm, y=0.24cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,6);
+  \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\tiny $x$};
+  \draw[->, thick] (0,-5) -- (0,6.4);
+  \draw[very thick, plum, <->, samples=40, domain=-1.68:1.8] plot (\x, {1-\x*\x*\x});
+  \node[font=\scriptsize\bfseries] at (0,-6.6) {B: $q(x) = 1 - x^3$};
+\end{tikzpicture}
+\hspace{0.35cm}
+\begin{tikzpicture}[x=0.36cm, y=0.24cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-6,-5) grid (7,6);
+  \draw[->, thick] (-6,0) -- (7.4,0) node[right] {\tiny $x$};
+  \draw[->, thick] (0,-5) -- (0,6.4);
+  \foreach \x in {-4,1,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \node[left, font=\tiny] at (0,2) {2};
+  \draw[goldacc, thick, dashed] (1,-5) -- (1,6);
+  \draw[goldacc, thick, dashed] (-6,2) -- (7,2);
+  \draw[very thick, plum, <->, samples=50, domain=-5.9:0.86] plot (\x, {1/(\x-1)+2});
+  \draw[very thick, plum, <->, samples=50, domain=1.25:6.9] plot (\x, {1/(\x-1)+2});
+  \node[font=\scriptsize\bfseries] at (0.5,-7.2) {C: $r(x) = \dfrac{1}{x-1} + 2$};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+For graph C: \quad $\displaystyle\lim_{x \to \infty} r(x) = $ \labelbox{1.0cm}{} \qquad
+$\displaystyle\lim_{x \to -\infty} r(x) = $ \labelbox{1.0cm}{}
+\\
+& For a \textbf{polynomial}, the \textbf{leading term} --- the term with the highest power ---
+decides both ends, because far from 0 it outgrows every other term. In $4x^2 - 2x^3$ at
+$x = 100$, the term $-2x^3$ is $-2{,}000{,}000$ while $4x^2$ is only $40{,}000$.
+\\
+& \begin{center}
+\begin{tikzpicture}
+\node[font=\small] at (0,0) {%
+\begin{tabular}{|l|c|c|}
+\hline
+\rule{0pt}{2.6ex}\textbf{Leading term $ax^n$} & \textbf{$n$ even} & \textbf{$n$ odd} \\ \hline
+\rule{0pt}{2.6ex}$a > 0$ & left $\to \infty$, \ right $\to \infty$ & left $\to -\infty$, \ right $\to \infty$ \\ \hline
+\rule{0pt}{2.6ex}$a < 0$ & left $\to -\infty$, \ right $\to -\infty$ & left $\to \infty$, \ right $\to -\infty$ \\ \hline
+\end{tabular}};
+\end{tikzpicture}
+\end{center}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Under ``lim,'' $x \to$ says what the INPUT does. After the equals sign is what the
+OUTPUT does. Read them separately.}}}
+\\
+& \notesprompt{Write the end behavior at both ends in limit notation.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Graph A, $p(x) = x^2 - 3$.}{2.0cm}{} &
+\pcell{12}{Graph B, $q(x) = 1 - x^3$.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{$u(x) = 3x^4 - 5x + 1$. Name the leading term first.}{2.0cm}{} &
+\pcell{14}{$v(x) = 4x^2 - 2x^3$. Is the leading term the one written first?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \notesprompt{Input or output? Graph C, $r(x) = \dfrac{1}{x-1} + 2$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Sam reads $\displaystyle\lim_{x \to \infty} r(x) = 2$ as ``$x$ goes to 2.'' What is $x$ really doing, and what gets close to 2? Then find $r(2)$ --- is it 2?}{2.4cm}{} &
+\pcell{16}{State the domain and the range of $r$. Which number is missing from each, and which dashed line shows it?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ──────────
+\mainidea[You do, alone]{All Four} &
+Two new graphs and one new formula. Read the graphs; do the algebra on the formula.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.4cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-3) grid (6,4);
+  \draw[->, thick] (-4,0) -- (6.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-3) -- (0,4.5) node[above] {\scriptsize $d(x)$};
+  \foreach \x in {-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-2,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, <->] (-3.9,-2.9) -- (1,3) -- (5.9,-1.9);
+  \node[font=\scriptsize\bfseries] at (1,-4.1) {D: the graph of $d$};
+\end{tikzpicture}
+\hspace{0.8cm}
+\begin{tikzpicture}[x=0.4cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-7,-5) grid (4,4);
+  \draw[->, thick] (-7,0) -- (4.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-5) -- (0,4.5) node[above] {\scriptsize $k(x)$};
+  \foreach \x in {-6,-4,-2,2} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-1,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[goldacc, thick, dashed] (-2,-5) -- (-2,4);
+  \draw[goldacc, thick, dashed] (-7,-1) -- (4,-1);
+  \draw[very thick, plum, <->, samples=50, domain=-6.9:-2.5] plot (\x, {2/(\x+2)-1});
+  \draw[very thick, plum, <->, samples=50, domain=-1.6:3.9] plot (\x, {2/(\x+2)-1});
+  \node[font=\scriptsize\bfseries] at (-1.5,-6.1) {E: the graph of $k$};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{17}{Graph D: the domain and range of $d$ in interval notation, every $x$-intercept, and the $y$-intercept.}{2.4cm}{} &
+\pcell{18}{$g(x) = \dfrac{x^2 - 4}{x - 1}$. Find the domain in interval notation, the zeros, and the $y$-intercept.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|}
+\pcell{19}{Graph E. (a) Write the end behavior at both ends in limit notation. (b) State the domain and range of $k$ in interval notation. (c) A classmate writes ``range: all real numbers except $-2$.'' What did they describe instead?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $p(x) = (x-6)(x^2 + 2x + 5)$. Give the degree, then list all
-        complex zeros.
-
-        \begin{work}
-          x^2 + 2x + 5 &= 0 \\
-                     x &= \frac{-2 \pm \sqrt{4 - 20}}{2} \\
-                       &= \frac{-2 \pm 4i}{2} \\
-                       &= -1 \pm 2i
-        \end{work}
-
-        Degree $= $ \blank{1.2cm} \qquad Zeros: \blank{6cm}
-
-  \item Classify each polynomial as \textbf{even}, \textbf{odd}, or
-        \textbf{neither}.
-
-        \begin{enumerate}[label=(\alph*), itemsep=4pt]
-          \item $f(x) = x^4 - 7x^2 + 1$ \quad \blank{2.2cm}
-          \item $g(x) = x^5 - x$ \quad \blank{2.2cm}
-          \item $h(x) = x^4 + x$ \quad \blank{2.2cm}
-        \end{enumerate}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

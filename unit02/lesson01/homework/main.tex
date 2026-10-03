@@ -1,8 +1,36 @@
-%! Quadratic Functions Revisited — Unit 2, Lesson 2.1 — Homework
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — Homework
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used 7 - 2i, (2 + 3i)(4 - i), a ten-panel gallery, |x - 2| and
+% |x + 3|; the AP Practice used (2 - i)(3 + 4i) and a machined rod; the homework uses new
+% numbers, four new unlabeled graphs, |x - 4| and |x + 1|.
+%   Page 1 — Part A (imaginary and complex numbers, 1–4) and Part B (the library, 5).
+%   Page 2 — Part B continued (6–7), Part C (absolute value as a piecewise function, 8–9) and Part D (the headline, 10).
+% The diagnostic item is 8: |x - 4| at x = 1 — does the student put -(x - 4) on the side
+% where x - 4 is negative, and get +3? Problem 10 asks for the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line or
+% before a \qquad so its \ans cannot rewrap anything. The explicit \newpage fixes the page
+% break in both files.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% One small unlabeled graph for problem 5: #1 letter, #2 the plot (clipped to the window).
+\newcommand{\hwgraph}[2]{%
+  \begin{minipage}[t]{0.23\linewidth}\centering
+  {\small\bfseries\color{plum}#1}\par\vspace{2pt}
+  \begin{tikzpicture}[x=0.3cm, y=0.3cm]
+    \draw[linegray, very thin, step=1] (-4,-4) grid (4,4);
+    \draw[->, thin] (-4.3,0) -- (4.5,0);
+    \draw[->, thin] (0,-4.3) -- (0,4.5);
+    \begin{scope}
+      \clip (-4,-4) rectangle (4,4);
+      #2
+    \end{scope}
+  \end{tikzpicture}
+  \end{minipage}}
 
 \begin{document}
 
@@ -10,137 +38,162 @@
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=10pt]
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work: rewrite every square root of a negative with $i$
+\emph{before} you compute, and on any absolute value decide \emph{which rule owns the input}
+first.
+\end{remindbox}
 
-\item Read each feature straight off the form given.
+\vspace{0.12in}
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item $g(x) = (x+1)^2 - 9$.
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Imaginary and complex numbers}
+\end{headlinebox}
 
-        Vertex: ( \blank{1.2cm} , \blank{1.2cm} ) \quad Axis of symmetry:
-        $x = $ \blank{1.4cm} \quad Concave \blank{1.6cm} .
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt]
 
-  \item $k(x) = -2(x-4)(x+2)$. \quad Zeros: \blank{1.2cm} and \blank{1.2cm}
+\item Write each using $i$, and simplify.
 
-        Since $a = -2$, the parabola opens \blank{1.8cm} .
-\end{enumerate}
+      $\sqrt{-49} = $ \blank{2.0cm} \qquad $\sqrt{-20} = $ \blank{2.0cm} \qquad
+      $i^{9} = $ \blank{2.0cm}
 
-\item Let $f(x) = x^2 + 2x$. Find the average rate of change over each
-      interval.
+\item Solve each equation.
 
-\begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item Over $[0, 3]$:
+      \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(a)} $x^2 + 64 = 0$
+\begin{work}
+  x^2 &= -64 \\
+    x &= \pm\sqrt{-64} = \pm 8i
+\end{work}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(b)} $x^2 = -50$
+\begin{work}
+  x &= \pm\sqrt{-50} \\
+    &= \pm i\sqrt{50} = \pm 5i\sqrt{2}
+\end{work}
+      \end{minipage}
 
-        \begin{work}
-          f(0) &= 0 \\
-          f(3) &= (3)^2 + 2(3) \\
-               &= 15 \\
-          \text{AROC} &= \frac{15 - 0}{3 - 0} \\
-                      &= 5
-        \end{work}
+\item Simplify. Write each answer in the form $a + bi$.
 
-        AROC $= $ \blank{1.8cm}
+      \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(a)} $(6 - 2i) - (1 + 5i)$
+\begin{work}
+  (6 - 2i) - (1 + 5i) &= 6 - 2i - 1 - 5i \\
+                      &= 5 - 7i
+\end{work}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.47\linewidth}
+      \textbf{(b)} $(5 + 2i)(3 - i)$
+\begin{work}
+  (5 + 2i)(3 - i) &= 15 - 5i + 6i - 2i^2 \\
+                  &= 15 + i + 2 \\
+                  &= 17 + i
+\end{work}
+      \end{minipage}
 
-  \item Over $[3, 5]$:
-
-        \begin{work}
-          f(5) &= (5)^2 + 2(5) \\
-               &= 35 \\
-          \text{AROC} &= \frac{35 - 15}{5 - 3} \\
-                      &= 10
-        \end{work}
-
-        AROC $= $ \blank{1.8cm}
-
-  \item The AROC grew from (a) to (b), so the graph of $f$ is concave
-        \blank{1.6cm} .
-\end{enumerate}
-
-\boxguard[18]
-\item Let $q(x) = x^2 + x$. Complete the table and both difference rows.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 1 & 2 & 3 & 4 \\
-\hline
-$q(x)$ & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
-\hline
-\end{tabular}
-\smallskip
-
-First differences: \blank{1cm} , \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-Second differences: \blank{1cm} , \blank{1cm} , \blank{1cm}
-
-The inputs step by $1$, so the second difference equals $2a$. That gives
-$a = $ \blank{1.2cm} , which matches the formula.
-
-\boxguard[18]
-\item Two functions are recorded at inputs that step by $2$.
-
-\smallskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-$x$ & 0 & 2 & 4 & 6 & 8 \\
-\hline
-$f(x)$ & 3 & 11 & 19 & 27 & 35 \\
-\hline
-$g(x)$ & 1 & 5 & 17 & 37 & 65 \\
-\hline
-\end{tabular}
-\smallskip
-
-\begin{enumerate}[label=(\alph*), itemsep=4pt]
-  \item First differences of $f$: \blank{1cm} , \blank{1cm} , \blank{1cm} ,
-        \blank{1cm}
-  \item First differences of $g$: \blank{1cm} , \blank{1cm} , \blank{1cm} ,
-        \blank{1cm}
-
-        Second differences of $g$: \blank{1cm} , \blank{1cm} , \blank{1cm}
-  \item One of these is linear and the other is quadratic. Say which is
-        which, and justify each choice with the numbers you just computed.
-
-        \vspace{0.05in}
-        \writelines{3}
-\end{enumerate}
-
-\item A quadratic function is recorded at inputs that step by $1$, and its
-      second differences are constantly $6$. What is its leading
-      coefficient $a$?
-
-\begin{enumerate}[label=\Alph*., itemsep=3pt]
-  \item $3$
-  \item $6$
-  \item $1.5$
-  \item $12$
-\end{enumerate}
+\item Write the complex conjugate of $1 + 3i$, then multiply the pair. What kind of number is
+      the product, and why did that happen?
+      \writespace{1.3cm}{}
 
 \end{enumerate}
 
-\vspace{0.1in}
+\vspace{0.06in}
 
-\boxguard
-\begin{extensionbox}
-Let $c(x) = x^3$, with outputs $0,\ 1,\ 8,\ 27,\ 64$ at $x = 0,1,2,3,4$. Its
-first differences are $1, 7, 19, 37$ and its second differences are
-$6, 12, 18$. Are the second differences constant --- and is $c$ quadratic?
-Now take one more level of differences. What do you find?
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- The library of parent functions}
+\end{headlinebox}
 
-\vspace{0.05in}
-\writelines{2}
-\end{extensionbox}
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt, start=5]
 
-\vspace{0.1in}
+\item Each graph below is a parent function. Write the letter of the matching graph.
 
-\boxguard
-\begin{notesbox}{Preview of Lesson 2.2}
-Today the difference table stopped at level two, and level two was enough to
-identify a quadratic. Lesson 2.2, \textit{Polynomial Functions and Rates of
-Change}, keeps going: what a polynomial's rates of change say about where its
-graph turns, and how far down the table you have to dig to name its degree.
-\end{notesbox}
+      \smallskip
+      \hwgraph{A}{%
+        \draw[very thick, plum] plot[domain=0:4, samples=60, smooth] (\x,{sqrt(\x)});}\hfill
+      \hwgraph{B}{%
+        \draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] (\x,{\x*\x*\x});}\hfill
+      \hwgraph{C}{%
+        \draw[very thick, plum] plot[domain=0.25:4, samples=50, smooth] (\x,{1/\x});
+        \draw[very thick, plum] plot[domain=-4:-0.25, samples=50, smooth] (\x,{1/\x});}\hfill
+      \hwgraph{D}{%
+        \draw[very thick, plum] (-4,4) -- (0,0) -- (4,4);}
+
+      \smallskip
+      $y = |x|$: \blank{1.0cm} \qquad $y = x^3$: \blank{1.0cm} \qquad
+      $y = \dfrac{1}{x}$: \blank{1.0cm} \qquad $y = \sqrt{x}$: \blank{1.0cm}
+
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt, start=6]
+
+\item \begin{minipage}[t]{0.48\linewidth}
+      \textbf{(a)} Name every parent function in the library whose range is $y \ge 0$.
+      \writespace{1.0cm}{}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.48\linewidth}
+      \textbf{(b)} Name every parent function whose domain is \emph{not} all real numbers.
+      \writespace{1.0cm}{}
+      \end{minipage}
+
+\item Use even and odd degree. Which parent graph does $y = x^6$ look like, and which does
+      $y = x^7$ look like? Describe where the arms of each go.
+      \writespace{1.1cm}{}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Absolute value as a piecewise function}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt, start=8]
+
+\item \textbf{(a)} Write $|x - 4|$ as a piecewise function. Where is the break, and why
+      there?
+      \writespace{1.4cm}{}
+
+      \textbf{(b)} Use your rules to find $|x - 4|$ at $x = 1$ and at $x = 7$. Name the rule
+      you used each time.
+      \writespace{1.2cm}{}
+
+\item Let $g(x) = |x + 1|$. Write $g$ as a piecewise function (where does $x + 1$ change
+      sign?), then find $g(-4)$ using the rule that owns $x = -4$.
+      \writespace{2.0cm}{}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- The headline, in writing}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=7pt, start=10]
+
+\item \textbf{(a)} A classmate says the rule $|x| = -x$ for $x < 0$ must be a typo, because
+      ``$-x$ is negative.'' Use the words \emph{opposite} and \emph{input} to explain why the
+      rule is right. Test one value to back it up.
+      \writespace{1.6cm}{}
+
+      \textbf{(b)} The same classmate writes $\sqrt{-4}\cdot\sqrt{-9} = \sqrt{36} = 6$. Explain
+      the mistake and give the right value.
+      \writespace{1.2cm}{}
+
+\end{enumerate}
+
+\boxguard[5]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (2.2, Transformations of Functions):} every graph in today's library can
+be moved, stretched, and flipped. In problem 8, the corner of $|x|$ moved from $(0, 0)$ to
+$(4, 0)$ --- next time we read moves like that straight from the equation.
+\end{spiralbox}
 
 \end{document}

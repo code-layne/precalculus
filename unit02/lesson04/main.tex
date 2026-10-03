@@ -1,12 +1,20 @@
-%! Polynomial Functions and Complex Zeros — Unit 2, Lesson 2.4 — Lesson Plan
+%! Characteristics of Functions: Domain, Range, Intercepts, and End Behavior — Unit 2, Lesson 2.4 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. The first of two characteristics days: 2.4 reads a
+% graph's EDGES (domain, range, intercepts, end behavior); 2.5 reads its MIDDLE (increasing,
+% decreasing, extrema, concavity). 2.4 follows the quiz on 2.1–2.3.
+% Sources: CED 1.1.A.1 (domain/range), 1.5.A.3 (real zeros <-> x-intercepts), 1.6.A.1–1.6.A.3
+% (polynomial end behavior in limit notation, leading term), 1.7.A.6 (horizontal asymptote as
+% lim r(x) = b); the algebraic domain (radicand >= 0, denominator != 0) is New.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 2: Polynomial Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 2.4: Polynomial Functions and Complex Zeros}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.4: Characteristics of Functions: Domain, Range, Intercepts, and End Behavior}
 
 \begin{document}
 \begin{center}
@@ -16,279 +24,375 @@
 
 \begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will use the Fundamental Theorem of
-    Algebra to count the complex zeros of a polynomial of degree $n$, reconcile
-    that count with the $x$-intercepts visible on a graph, use conjugate pairs
-    to name a missing non-real zero and to build a polynomial from a zero list,
-    and classify a polynomial function as even, odd, or neither.
-    \hfill\textit{\small (CED Topic 1.5 --- Skills 1.B, 2.B)}
+    \textbf{Primary Objective:} Students will read the domain and range of a function from a
+    pre-drawn graph and write them in interval notation; find the domain of a function from its
+    formula by keeping denominators nonzero and even-root radicands nonnegative; find the
+    $y$-intercept as $f(0)$ and the zeros by solving $f(x) = 0$; and describe end behavior in
+    limit notation --- $\infty$, $-\infty$, or a horizontal asymptote $y = b$ --- from a graph
+    or from a polynomial's leading term, keeping straight which part of every statement is about
+    the \textit{input} and which is about the \textit{output}.
+    \hfill\textit{\small (CED 1.1.A, 1.5.A, 1.6.A, 1.7.A; the algebraic domain is a
+    foundations ramp --- no CED topic)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- the coffee cup, hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the DOMAIN \& RANGE and DOMAIN rows: definitions, displays, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2--4 and 6--8, then the INTERCEPTS and END BEHAVIOR rows (9--16; the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 13 & Work alone while the teacher circulates --- the You Do row, problems 17--19. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 8 alone; the teacher reads 8(b) over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Four characteristics share one period}, so the guided phase runs 22 minutes and the
+I Do covers two rows. The two domain rows move fast because 1.1 met domain and range and the
+warm-up rehearsed the algebra; the minutes are saved for END BEHAVIOR, which is new notation and
+carries the crux. If the clock slips, cut \textbf{problem 4} (interval-notation drill --- it
+returns as homework problem 2) first, then \textbf{problem 10}, and protect
+\textbf{problems 15 and 16}: homework problems 8 and 10 cannot be done without them. Never cut
+the Homework Launch to zero --- it is the only formative read of the period now that there is no
+exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{1.B} --- Express functions, equations, or expressions in analytically
-equivalent forms useful in a given context. &
+\textbf{AP Skill 2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations: read domain, range, intercepts, and end behavior off a pre-drawn graph. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item If $a$ is a complex number and $p(a) = 0$, then $a$ is a zero of $p$
-        and a root of $p(x) = 0$. Zeros need not be real. (1.5.A.1)
-  \item A polynomial function of degree $n$ has \textbf{exactly $n$ complex
-        zeros}, counting multiplicities --- the Fundamental Theorem of
-        Algebra. (1.5.A.2)
+  \item Domain is read left to right (inputs); range is read bottom to top (outputs). A filled
+        dot is included, an open circle is not, an arrow keeps going (1.1.A.1).
+  \item Interval notation: $[\ ]$ includes, $(\ )$ excludes, $\infty$ always gets $(\ )$;
+        $\cup$ joins two pieces.
 \end{itemize} \\
-\textbf{2.B} --- Construct equivalent graphical, numerical, analytical, and
-verbal representations of functions. &
+\textbf{AP Skill 1.A} --- Solve equations and inequalities: radicand $\ge 0$, denominator
+$\ne 0$, and $f(x) = 0$. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Real zeros are the $x$-intercepts you can see; non-real zeros are
-        nowhere on the graph. Degree $-$ (real zeros with multiplicity)
-        $=$ number of non-real zeros. (1.5.A.2)
-  \item If $a + bi$ is a zero of a polynomial with real coefficients, so is
-        $a - bi$. Non-real zeros arrive two at a time, so their count is even
-        and an odd-degree polynomial always has a real zero. (1.5.A.4)
+  \item Every real number is in the domain unless a denominator would be 0 or an even root
+        would take a negative. Both tests can apply to one formula.
+  \item The $y$-intercept is $(0, f(0))$ --- input 0. A zero $a$ solves $f(a) = 0$ and gives
+        the $x$-intercept $(a, 0)$ --- output 0 (1.5.A.3).
 \end{itemize} \\
-\textbf{LO 1.5.B} --- Determine whether a polynomial function is even or odd. &
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function: end behavior in limit
+notation. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Even: $f(-x) = f(x)$, symmetric over the line $x = 0$. Odd:
-        $f(-x) = -f(x)$, symmetric about the point $(0,0)$. (1.5.B.1--2)
-  \item Shortcut for polynomials: all-even exponents $\Rightarrow$ even;
-        all-odd exponents $\Rightarrow$ odd; a mix $\Rightarrow$ neither. A
-        constant term counts as $x^0$, an even power.
+  \item As the inputs increase or decrease without bound, a nonconstant polynomial's outputs
+        increase or decrease without bound; the leading term's degree and sign decide which
+        (1.6.A.1--1.6.A.3).
+  \item $\lim_{x \to \infty} r(x) = b$ means the outputs get and stay close to $b$: a
+        horizontal asymptote $y = b$ (1.7.A.6).
+  \item \textbf{Target misconception:} mixing up input and output --- writing a range with
+        $x$-values (the vertical asymptote's $x = 1$ instead of the horizontal asymptote's
+        $y = 2$), or reading $\lim_{x \to \infty} f(x) = 2$ as ``$x$ goes to 2.'' The $x \to$
+        under ``lim'' is the input's trip; the value after the equals sign is the output's
+        destination.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
-Imaginary unit    & The number $i$, defined by $i^2 = -1$. \\
-Complex number    & Any number $a + bi$ with $a$ and $b$ real; $a$ is the real part and $b$ the imaginary part. Every real number is complex (with $b = 0$). \\
-Non-real zero     & A zero $a + bi$ with $b \ne 0$. It is not an $x$-intercept and does not appear on the graph at all. \\
-Complex conjugate & The partner $a - bi$ of $a + bi$. Their product $(a+bi)(a-bi) = a^2 + b^2$ is real. \\
-Fundamental Theorem of Algebra & A polynomial function of degree $n$ has exactly $n$ complex zeros, counting multiplicities. \\
-Even function     & $f(-x) = f(x)$ for every $x$ in the domain; the graph is symmetric over the line $x = 0$. \\
-Odd function      & $f(-x) = -f(x)$ for every $x$ in the domain; the graph is symmetric about the point $(0,0)$. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Interval notation & A set of numbers written by its endpoints: $[\ ]$ includes an endpoint, $(\ )$ leaves it out, $\infty$ always gets $(\ )$; $\cup$ joins two intervals. \\
+Radicand          & The expression under a root sign; under an even root it must be $\ge 0$. \\
+$y$-intercept     & The point where the graph crosses the $y$-axis: $(0, f(0))$. A function has at most one. \\
+Zero of a function & An input $a$ with $f(a) = 0$; the graph has an $x$-intercept at $(a, 0)$. \\
+End behavior      & What the outputs do as the inputs increase without bound ($x \to \infty$) or decrease without bound ($x \to -\infty$). \\
+Limit notation    & \TallMath{\lim_{x \to \infty} f(x) = L}: as $x$ increases without bound, $f(x)$ approaches $L$ --- where $L$ is $\infty$, $-\infty$, or a number. \\
+Horizontal asymptote & A line $y = b$ the graph levels off toward: $\lim_{x \to \infty} f(x) = b$ or $\lim_{x \to -\infty} f(x) = b$. \\
+Leading term      & The term of a polynomial with the highest power; it decides the end behavior. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{lilac}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
     Please see attached warm-up (spiral review).
-    Skills reviewed: reading real zeros and their multiplicities off a factored
-    polynomial and totaling the degree from the exponents on its factors
-    (Lesson 2.3), and one item of Algebra 2 complex arithmetic --- $i^2 = -1$
-    and the product of a conjugate pair. Item 2's factor $x^2 + 1$ is the one
-    students cannot break apart over the real numbers; that dead end is the
-    door into today's lesson.
+    Skills reviewed: solving a quadratic equal to 0 by factoring and by square roots (today's
+    zeros), solving a linear inequality such as $3x - 12 \ge 0$ (today's radicand test),
+    writing an inequality in interval notation (met lightly in 1.1, used in every row today),
+    and the sign of $-x^2$ at a large positive and a large negative input --- the first look at
+    end behavior.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{lilac}
-    \textbf{The missing zeros.} Project the pre-drawn graph of
-    $p(x) = x^4 - 3x^2 - 4$ from the notes. It is a degree-4 polynomial, and
-    its graph crosses the $x$-axis exactly twice, at $x = -2$ and $x = 2$.
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{The coffee on the desk.} A cup of coffee at $180^\circ$F is set down in a
+    $70^\circ$F room; $T(t)$ is its temperature $t$ minutes later.
     \begin{enumerate}[itemsep=2pt]
-        \item Ask: Lesson 2.3 tied zeros to factors, and a degree-4 polynomial
-              has four factors' worth of zeros. We can see two. Are the other
-              two missing, or are we not looking in the right place?
-        \item Factor on the board: $p(x) = (x-2)(x+2)(x^2+1)$. The first two
-              factors give the intercepts. Ask what $x^2 + 1 = 0$ gives.
+        \item Ask: if you leave it on the desk all day, about what temperature will it read?
+              Take two or three guesses; land on ``about 70, room temperature.''
+        \item Follow up: which quantity keeps growing without stopping, and which one settles
+              down? Make a student say both halves --- \textit{time} keeps growing; the
+              \textit{temperature} settles near 70.
     \end{enumerate}
-    \textit{Discussion prompt:} $x^2 = -1$ has no \textit{real} solution ---
-    but it has two solutions the moment we allow $i$. Today the count comes out
-    exactly right, every time, provided we are willing to look off the graph.
+    \textit{Discussion prompt:} the input runs off forever while the output settles. By the end
+    of the period that sentence is written $\lim_{t \to \infty} T(t) = 70$ --- and the 70 is a
+    temperature, not a time. Leave the symbol unwritten for now; it arrives in Part 4.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{lilac}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: A Complex-Number Refresher} (10 min)
+\textbf{I DO --- Part 1: Reading the Edges of a Graph} (10 min)
 
+\textit{Notes rows DOMAIN \& RANGE and DOMAIN (from a formula): read each definition, mark up
+the display, work problems 1 and 5. Teacher works; students watch and annotate. Nothing is
+cold-called in this phase.}
 \begin{itemize}
-  \item Recall from Algebra 2: $i^2 = -1$. A \textbf{complex number} is
-        $a + bi$ with $a$ and $b$ real --- real part $a$, imaginary part $b$.
-  \item Every real number is already complex ($b = 0$). ``Non-real'' means
-        $b \ne 0$; that is the new territory.
-  \item Evaluate at a complex input exactly as always: for $p(x) = x^2 + 1$,
-        $p(i) = i^2 + 1 = -1 + 1 = 0$. So $i$ \textit{is} a zero, by the same
-        definition used in 2.3.
-  \item Conjugates: $(3+2i)(3-2i) = 9 + 4 = 13$. The $i$ terms cancel and the
-        product is real --- hold on to that; it explains Part 3.
+  \item Read the DOMAIN \& RANGE sentences aloud. Trace the graph of $f$ with a finger left to
+        right for the domain, then bottom to top for the range --- two different directions
+        for two different questions.
+  \item Fill the three label boxes yourself: filled dot \textit{included}, open circle
+        \textit{left out}, arrow \textit{keeps going}. Work \textbf{problem 1}, $[-4, 4)$,
+        saying which bracket each end gets and why.
+  \item Read the DOMAIN row and its three steps. Mark up the number line for
+        $k(x) = \sqrt{x - 3}/(x - 5)$: the filled dot at 3 is the radicand's test, the open
+        circle at 5 is the denominator's. Write $[\,3, 5) \cup (5, \infty)$ in the label box
+        and name $\cup$ out loud.
+  \item Work \textbf{problem 5}, $\sqrt{x - 2}$: set the radicand $\ge 0$ and solve.
 \end{itemize}
 
-\textbf{Part 2: Exactly $n$ Zeros} (13 min)
+\textbf{WE DO --- Part 2: Graph and Formula Practice} (8 min)
 
+\textit{Problems 2--4 and 6--8. Class fills the blanks together; cold-call every one.}
 \begin{itemize}
-  \item State it plainly: a polynomial function of degree $n$ has
-        \textbf{exactly $n$ complex zeros, counting multiplicities}. Not ``at
-        most'' --- exactly.
-  \item Return to the hook: degree 4, zeros $2, -2, i, -i$. Four of them. The
-        graph showed two because only real zeros can be $x$-intercepts.
-  \item Fill the zero-census table together. The subtraction to rehearse:
-        degree $-$ (real zeros counted with multiplicity) $=$ non-real zeros.
+  \item \textbf{Problem 2}, the range of $f$: the lowest point $(-1, -2)$ is on the graph; 3 is
+        reached only at the open circle, so $[-2, 3)$.
+  \item \textbf{Problem 3} reads the arrow on $g$; \textbf{problem 4} drills the notation ---
+        all real numbers is $(-\infty, \infty)$.
+  \item \textbf{Problem 7}, $\sqrt{6 - 2x}$, flips the inequality on division by $-2$; make the
+        error visible once, on purpose. \textbf{Problem 8} runs both tests at once.
 \end{itemize}
 
 \columnbreak
 
-\textbf{Part 3: Non-Real Zeros Come in Pairs} (12 min)
+\textbf{WE DO --- Part 3: Intercepts} (5 min)
 
+\textit{Notes row INTERCEPTS. Class fills the blanks together; cold-call every one. Teacher
+works problem 9; the class works 10.}
 \begin{itemize}
-  \item If $a + bi$ is a zero of a polynomial with real coefficients, then
-        $a - bi$ is a zero too. Point back to Part 1: the conjugate pair is
-        what multiplies out to a \textit{real} quadratic factor.
-  \item Two consequences worth writing down: the number of non-real zeros is
-        always \textbf{even}, and an \textbf{odd-degree} polynomial must have
-        at least one real zero --- so its graph must cross the $x$-axis.
-  \item Build from a zero list: zeros $2$ and $1 + 3i$ force $1 - 3i$, giving
-        $(x-2)(x^2 - 2x + 10) = x^3 - 4x^2 + 14x - 20$. Point out that the
-        coefficients came out real.
+  \item Read the sentences, then fill the two label boxes on the parabola: at an $x$-intercept
+        the \textit{output} is 0; at the $y$-intercept the \textit{input} is 0. This is the
+        lesson's distinction in its simplest form --- name it.
+  \item Work \textbf{problem 9} aloud and check each point against the picture.
+        \textbf{Problem 10}, $x^2 - 16$, uses square roots and must produce two points.
 \end{itemize}
 
-\textbf{Part 4: Even and Odd Polynomials} (12 min)
+\textbf{WE DO --- Part 4: End Behavior} (9 min)
 
+\textit{Notes row END BEHAVIOR --- the spine of the lesson. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--16.}
 \begin{itemize}
-  \item Definitions first: $f(-x) = f(x)$ is \textbf{even} (mirror over the
-        line $x = 0$); $f(-x) = -f(x)$ is \textbf{odd} (half-turn about the
-        origin).
-  \item Verify by substitution, not by eye: for $g(x) = x^3 - 4x$,
-        $g(-x) = -x^3 + 4x = -g(x)$.
-  \item Then the polynomial shortcut: all-even exponents $\Rightarrow$ even,
-        all-odd $\Rightarrow$ odd, a mix $\Rightarrow$ neither. Flag the trap:
-        a constant is $x^0$, an even power, so $x^3 + 5$ is neither.
-  \item Close the loop --- the hook polynomial $x^4 - 3x^2 - 4$ is even, and
-        the pre-drawn graph shows the mirror.
+  \item Read the definition and write the hook's sentence on the board in symbols:
+        $\lim_{t \to \infty} T(t) = 70$. Underline the $t \to \infty$ in one colour
+        (\textit{input}) and the 70 in another (\textit{output}).
+  \item Graph C: fill both label boxes with 2 and say the sentence both ways.
+        Work \textbf{problem 11} on graph A. \textbf{Problem 12} is graph B.
+  \item Read the leading-term sentence and table. \textbf{Problem 13} is direct;
+        \textbf{problem 14}, $4x^2 - 2x^3$, is the order trap --- the leading term is not the
+        one written first.
+  \item Read the boxed rule aloud. \textbf{Problems 15 and 16 are the crux}: $x$ is going to
+        $\infty$, the outputs to 2, and $r(2) = 3$; the domain is missing the input 1 and the
+        range the output 2. Ask for the \textit{reason}, not the number.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: All Four} (13 min)
+
+\textit{Notes row ALL FOUR, problems 17--19 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 17} reads graph D --- arrows on both ends, so the domain is
+        $(-\infty, \infty)$ and the range stops at the peak, $(-\infty, 3\,]$.
+  \item \textbf{Problem 18} is the algebra: a denominator for the domain, a numerator for the
+        zeros, $g(0)$ for the $y$-intercept.
+  \item \textbf{Problem 19} is the finisher's question and the crux transferred: graph E with
+        no formula, and a classmate's range that is really a domain fact.
 \end{itemize}
 \end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and practice, circulate and check:
+Circulate during the \textbf{You Do} phase --- the thirteen minutes where students are working
+problems 17--19 without you --- and check. The crux is \textbf{problems 15 and 16} (the limit 2
+is an output; $x = 1$ is the input the domain skips); its You Do transfer is \textbf{problem
+19} (graph E, asymptotes $x = -2$ and $y = -1$, no formula).
 \begin{itemize}
-  \item \textbf{Common error:} reading ``4 zeros'' off a graph with 2
-        intercepts. Cold-call: ``How many of those four does the graph get to
-        show you? Where are the other two hiding?''
-  \item \textbf{Common error:} dropping multiplicity in the census ---
-        counting $(x+1)^3$ as one real zero instead of three. Ask: ``Counting
-        \textit{multiplicities}. How many times does that factor appear?''
-  \item \textbf{Common error:} giving the conjugate of $3 - 5i$ as $-3 + 5i$.
-        Only the \textit{imaginary} part flips sign; the real part stays put.
-  \item \textbf{Common error:} calling $x^3 + 5$ odd because of the $x^3$.
-        Push: ``What power of $x$ is the 5 sitting on? Is that even or odd?''
-  \item \textbf{Language:} require ``non-real zero,'' not ``imaginary zero''
-        or ``fake zero.'' The zeros are perfectly real objects; they are just
-        not real \textit{numbers}.
+  \item \textbf{Watch for (the target misconception):} input and output mixed up --- a range
+        written with the vertical asymptote's $x$-value, or a limit read as ``$x$ goes to
+        $-1$.'' Cold-call: ``Point to the $x$ in that statement. What is it doing? Now point to
+        the output.''
+  \item \textbf{Common error:} the range of $d$ in problem 17 written as $(-\infty, \infty)$
+        because both arrows point away. Ask: ``Bottom to top --- does the graph ever get above
+        3?''
+  \item \textbf{Common error:} brackets on infinity, $[-2, \infty]$, or a round parenthesis on a
+        filled dot. Ask: ``Does the graph include that endpoint?''
+  \item \textbf{Common error:} in problem 18, setting the denominator equal to 0 and calling
+        $x = 1$ a zero. Ask: ``A zero makes which part equal 0 --- the input or the output?''
+  \item \textbf{Common error:} the $y$-intercept written as a single number or as $(4, 0)$.
+        Ask: ``At the $y$-intercept, which coordinate is 0?''
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: The Missing Zeros Bureau} in
-leveled tiers. Every tier reads the same pre-drawn cubic graph --- no tier
-draws anything.
+\begin{skillbox}[Differentiation --- During You Do (13 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 17--19)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
 
 \begin{itemize}
-  \item \textbf{Tier R (Remediate):} Total the zeros from the degree alone,
-        subtract the real ones to get the non-real count, and name conjugate
-        partners for four given non-real numbers.
-  \item \textbf{Tier A (Approaching Proficiency):} Build a degree-3
-        polynomial from the zeros $-1$ and $2i$ (supplying $-2i$), then
-        classify four functions as even, odd, or neither and verify one by
-        substitution.
-  \item \textbf{Tier E (Extension):} Reconcile the pre-drawn graph of
-        $p(x) = x^3 - 3x^2 + 4x - 2$ with the algebraic count --- one visible
-        intercept, degree 3, so two non-real zeros --- confirm $x = 1$ by
-        evaluation, find $1 \pm i$ from the remaining quadratic, and justify
-        in writing why every odd-degree polynomial with real coefficients must
-        cross the $x$-axis (AP Skill 2.B).
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 17} and have them
+        trace graph D with a finger: left to right for the domain, bottom to top for the range,
+        saying ``input'' or ``output'' each time. Then point at each axis crossing and ask which
+        coordinate is 0 there.
+  \item \textbf{On level.} \textbf{Problem 18} is the algebra the class should clear unaided.
+        If a student stalls, ask only which piece of the formula each question uses --- the
+        denominator, the numerator, or $g(0)$ --- and walk away.
+  \item \textbf{Extend.} \textbf{Problem 19} is the finisher's question. Push a student who
+        finishes it: ``Write the coffee's end behavior in symbols, and say which number in your
+        statement is a temperature.'' A student who can explain part (c) presents it in the
+        Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item For $p(x) = (x-4)(x^2+25)$: give the degree, list all complex zeros
-        (worked space provided), and state how many $x$-intercepts the graph
-        has.
-  \item A degree-4 polynomial with real coefficients has $2 - i$ as a zero.
-        Name another zero, then say how many real zeros it has, counting
-        multiplicity.
-  \item Classify three polynomials as even, odd, or neither.
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 17: the range $(-\infty, 3\,]$ and the three intercepts. Problem 18: $x \ne 1$,
+        zeros $\pm 2$, $(0, 4)$. Problem 19: both limits $-1$, and part (c) --- $-2$ is the input
+        the graph skips. If a student wrote 19(c) cleanly, they present it; it is the only
+        exposure the rest of the class gets before homework problem 8 asks for it in context.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{every characteristic is a question about inputs or about outputs. Under
+        ``lim,'' $x \to$ is the input's trip; the number after the equals sign is where the
+        output goes.} Point at graph C's two dashed lines while you say it.
+  \item \textbf{Point forward} (1 min) --- today was the edges of a graph; 2.5 reads its
+        middle: where it rises and falls, its highest and lowest points, and which way it
+        bends.
 \end{enumerate}
-\textbf{Assessment note:} Item 1(c) is the diagnostic --- a student who writes
-``3 intercepts'' because they found three zeros has not separated the
-algebraic count from the graph, and that separation is the whole lesson. Item
-3(c), $x^3 + x^2$, is the mixed-exponent check; a miss there is a definition
-miss, not an arithmetic slip.
+\textbf{Do not} re-teach interval notation here, take new questions, or let the homework start
+early. If the launch shows the brackets did not land, that is the 2.5 warm-up's job, not this
+minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 1 and 8} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1} reads domain and range from graph $w$, with a filled dot, an open
+        circle, and a peak inside --- a student who builds the range from the two endpoints
+        alone is not reading bottom to top; the low point $-2$ and the peak 4 set it.
+  \item \textbf{Problem 8(b)} is the diagnostic: $\lim_{t \to \infty} P(t) = 400$ read as
+        ``$t$ goes to 400.'' A student who writes that the \textit{number of fish} gets close
+        to 400 while the \textit{years} keep going has the lesson; a student who writes ``after
+        400 years'' has the misconception in context.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{input/output solid} (nothing to
+do), \textit{brackets shaky} (a 2.5 warm-up item on interval notation), and \textit{still
+reading the limit as $x$} (a one-minute check-in at the door of 2.5, using graph C).
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering degree and complete zero lists from
-factored forms, a zero-census table completed by subtraction, building a
-degree-3 polynomial from the zeros $5$ and $1 - 2i$, an even/odd/neither
-classification set with one substitution verification, and one AP-style
-multiple-choice item on counting non-real zeros.
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the teacher
+sets. Every context is new. \textit{Part A} (1--2) reads domain and range from a new graph $w$
+and drills interval notation. \textit{Part B} (3--5) finds domains from formulas: a radicand, a
+denominator, then both at once. \textit{Part C} (6--7) finds intercepts by factoring and by
+square roots. \textit{Part D} (8--10) is end behavior: a fish pond levelling off near 400 (8,
+the diagnostic, with the range $[50, 400)$ in context), two polynomials by leading term (9), and
+problem 10 asks for the headline in writing.
 
-\textbf{Extension (optional):} Multiply out
-$\big(x - (a+bi)\big)\big(x - (a-bi)\big)$ to get $x^2 - 2ax + (a^2+b^2)$ ---
-a quadratic with \textit{real} coefficients. That is why conjugate pairs are
-forced, and why every real-coefficient polynomial factors into real linear and
-real quadratic pieces.
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors: a
+domain that drops the denominator, the radicand, or the radicand's bracket (1); the vertical
+asymptote reported as the limit, and ``$x$ approaches $-2$'' (2, the crux); the term written
+first taken as the leading term (3); the $y$-intercept or swapped coordinates given as zeros
+(4); domain and range swapped, or an open circle ignored (5). Section II is one free-response
+question on an online game's player count: the $y$-intercept in context (a), domain and range
+(b), the limit interpreted (c), a reporter's input/output error (d), and whether the asymptote's
+value is ever reached (e) --- the finisher's question.
 
-\textbf{Preview:} Next lesson (2.5, Polynomial Functions and End Behavior)
-leaves the zeros behind and looks at the two far ends of the graph: what the
-degree and the leading coefficient together predict as $x$ runs off toward
-$\infty$ and toward $-\infty$.
+\textbf{Preview:} Next lesson (2.5, Characteristics of Functions: Increasing, Decreasing,
+Extrema, and Concavity) turns from the edges of a graph to its middle --- where the outputs rise
+and fall, the highest and lowest points, and which way the graph bends. The homework's closing
+box sends students back to graph $w$ to find where it rises.
 \end{skillbox}
 
 \begin{teachernote}[Warm-Up]
-Five minutes, silent start, no calculators. Items 1 and 2 are pure 2.3 recall
-and should be quick; do not reteach multiplicity here, just confirm it. Item
-2's $x^2 + 1$ factor is deliberately un-factorable over the reals --- if a
-student announces ``that one has no zeros,'' write the claim on the board and
-save it for the hook rather than correcting it now. Item 3 is the Algebra 2
-hinge: a class that cannot produce $i^2 = -1$ on demand needs Part 1 stretched
-to a full 15 minutes.
+Five minutes, silent start, no calculators. Each item is the algebra one notes row runs on:
+items 1--2 are the zeros of row 3, item 3 is the radicand test of row 2, item 4 is the
+interval notation every row uses, and item 5 is the first look at end behavior. Item 4 is the
+one to read over shoulders: 1.1 met interval notation only lightly, and a student who writes
+$[4, \infty]$ will carry the bracket on infinity into every answer today --- flag them before
+the notes start. Item 5 matters more than it looks: a student who writes $f(-10) = 100$ has
+read $-x^2$ as $(-x)^2$, and that same student will read the end
+behavior of $-x^2$ wrongly at the left end.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-Part 2 is the centerpiece and deserves the most air time --- ``exactly $n$,''
-with the word \textit{exactly} circled. The census table is the backbone: work
-row 1 aloud, let pairs do rows 2--4, then share. Row 1 is the hook polynomial,
-so the graph on the previous page is the answer key for it. Part 3's
-conjugate-pair result is stated, not proved; the proof is the homework
-extension. Keep Part 1 tight --- it is a refresher, and the only two moves the
-lesson needs from it are evaluating $p$ at a complex input and recognizing a
-conjugate pair. If time runs short, compress Part 1, never Part 4: even/odd is
-its own learning objective and appears on the exit ticket.
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first
+problem of the grid (1, 5, 9, 11), and the class works the rest with the pen in their hand,
+every problem cold-called. The two domain rows are fast on purpose --- 1.1 introduced domain and
+range from a graph, and the warm-up rehearsed the inequality --- so spend the saved minutes in
+END BEHAVIOR. Insist on interval notation from the first problem; inequalities are no longer the
+answer form.
+
+INTERCEPTS is the lesson's distinction in miniature: the two label boxes (\textit{output} is 0
+at an $x$-intercept, \textit{input} is 0 at the $y$-intercept) set up exactly the language the
+crux needs. END BEHAVIOR is the spine. Write the hook's coffee statement in symbols before
+problem 11 so the first limit students see has a temperature in it, then colour-code the input
+and the output every time. Problems 15 and 16 are built so the two readings disagree: a
+student who reads ``$x$ goes to 2'' finds $r(2) = 3$ on the same graph, and the domain and range
+are missing different numbers. Do not accept ``because the line is there''; make them say
+\textit{input} or \textit{output}.
+
+The You Do row (17--19) is the entire independent phase and carries thirteen minutes. Problem
+19 is the crux with the formula taken away. If the clock slips, cut problem 4 and let homework
+problem 2 carry the notation drill.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-All three tiers reference the same cubic graph, so groups can be regrouped
-mid-activity without new setup. Tier R is deliberately arithmetic-light: the
-entire task is ``degree minus real equals non-real,'' repeated until it is
-automatic. Tier A's build-a-polynomial item is the one to check for real
-coefficients at the end --- if a student's expanded answer still contains an
-$i$, they multiplied the conjugate factors wrong, and that is worth the whole
-group's attention. Tier E's question 3 is the writing task; accept any version
-of ``non-real zeros come in pairs, so an odd total cannot be all non-real.''
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are at risk --- four characteristics in one guided phase
+will try to borrow them. Borrow from problem 4 or problem 10 instead; both have a twin in the
+homework. Do not borrow from the three-minute Homework Launch either: with no exit ticket, it is
+the last look you get before the work leaves the room. The share-out is one answer per You Do
+problem so that a student who stalled on 17 still hears 19(c) --- the exact shape of homework
+problem 8(b), which they will otherwise meet alone at home.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-Collected, completion credit only. Sort by item 1(c) first: ``1 intercept'' is
-the target, ``3 intercepts'' is the reteach pile. On item 2(b), accept ``2''
-with or without reasoning; the reasoning surfaces in tomorrow's warm-up either
-way. Item 3 should take under a minute for a student who internalized the
-exponent shortcut --- if it took much longer, Part 4 needs a five-minute
-revisit before 2.5.
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Score it however extra credit works in your gradebook; the cover gives it a $+$ cell
+outside the total. Multiple-choice answers are C, A, B, A, A. Item 2 is the most useful one to
+glance at: a student who circles (B) reported the vertical asymptote's $x = 3$ as the limit,
+and a student who circles (C) read the $-2$ as an input --- those are the two halves of the
+lesson's misconception, and either one means problems 15--16 of the notes did not land. Item 3's
+(A) is the order trap from problem 14. In the free response, accept $[0, \infty)$ with or without
+a stated upper limit on the game's life in (b); part (e) is the deepest question on the page ---
+credit any answer that reaches $8/(t + 1) = 0$ and says it has no solution, so 9 is not in the
+range.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-Problem 2's census table is the one to grade first; it isolates the counting
-idea from every other skill in the lesson. Problem 5 is the AP-style item ---
-distractor D (``3'') is chosen by students who subtract without remembering
-that non-real zeros come in pairs, and it is worth two minutes of autopsy
-tomorrow because it is exactly the misconception 2.7 will punish. The
-extension is the proof behind Part 3; if the class produced the ``why do they
-have to come in pairs?'' question during the lesson, assign it explicitly and
-open tomorrow with a student presenting it.
+Graded, two pages, due on the date you set; students start problems 1 and 8 in the Homework
+Launch. Grade problems 1, 5, 8, and 10 for accuracy and the rest for completion and shown work
+if time is short: 1 (range from a graph with a peak inside) and 8 (the limit and the range in
+context) are the two items that say whether the input/output distinction landed, and 10 says
+whether a student can state it --- together they predict 2.5, where every answer is again an
+interval of inputs or a value of an output. On problem 5, $[2, 7) \cup (7, \infty)$ is the
+both-tests item; a student who writes $(2, 7) \cup (7, \infty)$ has the bracket error, not the
+domain error. Problem 9(b), $6x^2 - x^4$, is the order trap again; mark it and, if it is common,
+reuse notes problem 14 in the 2.5 warm-up.
 \end{teachernote}
 \end{document}

@@ -1,0 +1,154 @@
+%! Average Rate of Change, Secant Lines, and the Difference Quotient — Unit 2, Lesson 2.6 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Page 1 is Section I, five multiple-choice items with four options (A)–(D); page 2 is Section
+% II, one multi-part free-response question on a table. Contexts (a water tank, app downloads)
+% are used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 divides by the change in output, divides
+% the output by the input, or forgets to divide at all; MC 2 is f(x) + h, (x + h)^2 = x^2 + h^2,
+% and a forgotten second x; MC 3 swaps the point's coordinates, forgets the run, or inverts the
+% slope; MC 4 confuses "the rates change by a constant amount" with "the rates are constant";
+% MC 5 is the difference quotient built from f(x) + h, from x^2 + h^2, and with the h^2 term
+% dropped from (x + h)^2.
+% Answers: B, C, D, C, A.
+%
+% PAGE LOCKSTEP: the key marks the correct option in its LABEL and prose answers are
+% \writespace{H}{…}, fixed height both ways. The explicit \newpage fixes the page break.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.6}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+\item The table gives the amount of water $W(t)$, in gallons, in a tank $t$ hours after noon.
+      What is the average rate of change of $W$ over the interval $2 \le t \le 5$?
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{|l|c|c|c|}
+      \hline
+      $t$ (hours)     & 0  & 2  & 5   \\ \hline
+      $W(t)$ (gallons) & 40 & 70 & 100 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(A)} $0.1$ hour per gallon \hspace{1.2em} {\color{keyred}\textbf{$\checkmark$\,(B)}} $10$ gallons per hour \hspace{1.2em}
+      \textbf{(C)} $20$ gallons per hour \hspace{1.2em} \textbf{(D)} $30$ gallons per hour
+
+\item If $f(x) = x^2 - 3x$, which of the following is $f(x + h)$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $x^2 - 3x + h$
+        \item[(B)] $x^2 + h^2 - 3x - 3h$
+        \item[{\color{keyred}$\checkmark$\,(C)}] $x^2 + 2xh + h^2 - 3x - 3h$
+        \item[(D)] $x^2 + 2xh + h^2 - 3x$
+      \end{enumerate}
+
+\item Let $g(x) = x^2 + 1$. Which of the following is an equation of the secant line to the
+      graph of $g$ through the points where $x = 1$ and $x = 3$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $y - 1 = 4(x - 2)$
+        \item[(B)] $y - 2 = 8(x - 1)$
+        \item[(C)] $y - 2 = \tfrac{1}{4}(x - 1)$
+        \item[{\color{keyred}$\checkmark$\,(D)}] $y - 2 = 4(x - 1)$
+      \end{enumerate}
+
+\item The table gives values of the function $k$ at equally spaced inputs. Which of the
+      following is true about $k$ on the interval $0 \le x \le 4$?
+
+      \smallskip
+      \begin{center}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & 0 & 1 & 2 & 3  & 4  \\ \hline
+      $k(x)$ & 5 & 6 & 9 & 14 & 21 \\ \hline
+      \end{tabular}
+      \end{center}
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $k$ is increasing, and its graph is concave down.
+        \item[(B)] $k$ is decreasing, and its graph is concave up.
+        \item[{\color{keyred}$\checkmark$\,(C)}] $k$ is increasing, and its graph is concave up.
+        \item[(D)] $k$ is linear, because its average rates of change go up by the same amount each time.
+      \end{enumerate}
+
+\item If $f(x) = x^2 + 4$, which of the following is the difference quotient
+      $\dfrac{f(x + h) - f(x)}{h}$, for $h \ne 0$?
+
+      \smallskip
+      {\color{keyred}\textbf{$\checkmark$\,(A)}} $2x + h$ \hspace{3em} \textbf{(B)} $1$ \hspace{3em} \textbf{(C)} $h$ \hspace{3em} \textbf{(D)} $2x$
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the app must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item A new phone app is released. The table gives the total number of downloads $D(t)$, in
+      thousands, $t$ weeks after release.
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      $t$ (weeks)                   & 0 & 1 & 2  & 3  & 4  \\ \hline
+      $D(t)$ (thousands of downloads) & 0 & 7 & 12 & 15 & 16 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} Find the average rate of change of $D$ over $0 \le t \le 4$. Interpret your
+      answer in the context of the problem, with units.
+      \writespace{2.0cm}{$\frac{D(4) - D(0)}{4 - 0} = \frac{16 - 0}{4} = 4$. Over the first four weeks, downloads grew by an average of 4 thousand downloads per week.}
+
+      \textbf{(b)} Write an equation of the secant line through $(0, D(0))$ and $(4, D(4))$. Use it
+      to estimate $D(2)$, then say whether the true value $D(2)$ lies above or below the line.
+      \writespace{2.0cm}{$y - 0 = 4(t - 0)$, so $y = 4t$. The line gives $4(2) = 8$ thousand, but the true $D(2) = 12$ thousand lies \emph{above} the line.}
+
+      \textbf{(c)} Find the average rate of change over each of the intervals $[0, 1]$, $[1, 2]$,
+      $[2, 3]$, and $[3, 4]$. Is the graph of $D$ concave up or concave down on $[0, 4]$? Explain
+      what this means about downloads.
+      \writespace{2.2cm}{The rates are 7, 5, 3, and 1 thousand downloads per week. They are positive but shrinking, so $D$ is increasing and concave down: the app is still gaining downloads, but more slowly each week.}
+
+      \textbf{(d)} A manager says, ``Downloads went from 0 to 16 thousand, so the average rate of
+      change over the four weeks is 16.'' Explain the manager's mistake.
+      \writespace{1.8cm}{16 thousand is the change in downloads, not a rate. The manager never divided by the change in time: $16 \div 4 = 4$ thousand downloads per week.}
+
+      \textbf{(e)} For these four weeks, $D(t) = 8t - t^2$. Find and simplify the difference
+      quotient $\dfrac{D(t + h) - D(t)}{h}$. Then use it to find the average rate of change of $D$
+      from $t = 1$ to $t = 3$, and check your answer against the table.
+      \writespace{2.6cm}{$D(t + h) = 8(t + h) - (t + h)^2 = 8t + 8h - t^2 - 2th - h^2$. Subtract $D(t)$: $8h - 2th - h^2$. Divide by $h$: $8 - 2t - h$. \\[2pt] At $t = 1$, $h = 2$: $8 - 2 - 2 = 4$. Table: $\frac{D(3) - D(1)}{2} = \frac{15 - 7}{2} = 4$. They match.}
+
+\end{enumerate}
+
+\end{document}

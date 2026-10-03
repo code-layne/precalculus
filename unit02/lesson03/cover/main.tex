@@ -1,4 +1,7 @@
-%! Polynomial Functions and Real Zeros — Unit 2, Lesson 2.3 — Student Packet Cover Sheet
+%! Symmetry and Inverse Functions — Unit 2, Lesson 2.3 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One learning target per Learning
+% Objective: CED 1.5.B (even/odd), 2.8.A (input-output pairs of the inverse), 2.8.B (finding the
+% inverse on an invertible domain).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -16,8 +19,8 @@
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.3 \quad Polynomial Functions and Real Zeros}}
+  {\color{lilacmid}\large\textbf{Unit 2: Functions and Their Graphs}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 2.3 \quad Symmetry and Inverse Functions}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,17 +30,14 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can explain why \textit{zero}, \textit{root}, \textit{solution},
-        and \textit{$x$-intercept} all point at the same numbers, and check
-        whether a given value is a zero of a polynomial.
-  \item I can use the factor/zero equivalence in both directions: read the
-        real zeros off a factored polynomial, and write a factored polynomial
-        from a list of zeros and a point on its graph.
-  \item I can find the multiplicity of each real zero and predict whether the
-        graph crosses the $x$-axis there or is tangent to it --- and match a
-        pre-drawn graph to its factored form using that reasoning.
-  \item I can find the degree of a polynomial from a table of equally spaced
-        values by taking successive differences.
+  \item I can decide whether a function is \textbf{even}, \textbf{odd}, or \textbf{neither} ---
+        from its graph, by its symmetry over the $y$-axis or about the origin, and with algebra,
+        by comparing $f(-x)$ with $f(x)$ and with $-f(x)$.
+  \item I can decide whether a function is \textbf{one-to-one}, and read its \textbf{inverse}
+        from a table or a graph: if $f(a) = b$, then $f^{-1}(b) = a$, and every point $(a, b)$
+        becomes $(b, a)$ --- a reflection over the line $y = x$.
+  \item I can find the inverse of a function from its formula, check it with composition, and
+        restrict the domain of a function like $x^2$ so that it has an inverse.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -50,13 +50,13 @@
 \rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review of prerequisite skills                  & \blank{1.2cm} \\
-2 & Guided Notes   & Zeros, factors, multiplicity, degree from differences & \blank{1.2cm} \\
-3 & Group Activity & Four polynomials, two zeros: matching graphs to forms & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on multiplicity and degree          & \blank{1.2cm} \\
-5 & Homework       & Practice and extension                                & \blank{1.2cm} \\
+1 & Warm-Up      & Spiral review of prerequisite skills            & \blank{1.2cm} \\
+2 & Guided Notes & Even and odd functions, one-to-one functions, inverse functions & \blank{1.2cm} \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+4 & Homework     & Graded practice in new contexts \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
 \midrule
-  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
 
@@ -64,11 +64,11 @@
 
 \begin{remindbox}
 \small
-Lesson 2.2 asked where a polynomial turns; today we ask where it \textbf{hits
-zero}. One equivalence carries the whole lesson: $(x-a)$ is a factor exactly
-when $a$ is a zero. Count how many times a factor repeats --- its
-multiplicity --- and you can say, without graphing, whether the curve cuts
-through the $x$-axis or just kisses it and turns back.
+Today is about three kinds of symmetry. An \textbf{even} function's graph is a mirror image of
+itself over the $y$-axis. An \textbf{odd} function's graph lands on itself after a half turn
+about the origin. And a function and its \textbf{inverse} are mirror images of each other over
+the line $y = x$: the inverse swaps every input with its output, so it runs the function
+backward. The $-1$ in $f^{-1}$ is a name, not an exponent --- $f^{-1}$ is never $1/f$.
 \end{remindbox}
 
 \end{document}

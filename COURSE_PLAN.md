@@ -6,11 +6,10 @@ to cover the fundamentals of precalculus thoroughly so a student moves comfortab
 exponential/logarithmic/trigonometric core is spread out and reinforced, and the
 parameters-vectors-matrices material is condensed into a single closing unit.
 
-**Structure:** 8 units, plus a sample test per unit. Units 2–8 hold eight lessons each;
-**Unit 1 is no longer fixed at eight** — its opener was retired in the September 2026 replan
-and further lessons are expected, so it numbers its lessons 1.1 onward (see the replan notes
-below). Unit 2 numbers its eight lessons 2.0–2.7; units 3–8 still number theirs X.1–X.8 and
-adopt the X.0 opener as each is reauthored.
+**Structure:** 8 units, plus a sample test per unit. **Units 1 and 2 are not fixed at eight**
+— after the September–October 2026 replans, Unit 1 holds three lessons (1.1–1.3) and Unit 2
+six (2.1–2.6), each numbered from X.1 with no X.0 opener. Units 3–8 still hold eight lessons
+each, numbered X.1–X.8.
 Pacing target: 18–22 class periods per unit (60-minute meetings).
 
 **Content source:** the Precalculus CED (`spec/`) remains the content backbone.
@@ -75,83 +74,65 @@ Status legend: **moved** = old lesson relocated, body not yet reauthored;
 
 ### Unit 1: Functions and Change
 
-**Replanned September 2026.** The unit opener (old 1.0, *Introduction to Functions and Change*)
-was retired and its directory removed; Unit 1 now numbers its lessons **1.1 onward**, unlike
-Unit 2, which keeps the 2.0–2.7 opener numbering. The front of the unit was rebuilt around the
-algebra of functions: notation (with piecewise) → operations → composition → inverses, so every
-later unit can lean on the whole toolkit. Lessons displaced by that change keep their content
-and move to later slots. **The unit is no longer fixed at eight** — three further lessons are
-expected, and the numbering below leaves room for them.
+**Replanned September 2026, cut to three lessons October 2026.** The unit opener (old 1.0) was
+retired in September; in October the Unit 2 replan took over every graph-facing idea, and the
+lessons that had carried them in Unit 1 — Inverse Functions, Transformations of Functions,
+Change in Tandem, Rates of Change, and Function Model Selection and Construction (old
+`unit01/lesson04`–`08`) — were **retired**, their directories removed (recoverable from git
+history before the October 2026 replan). Unit 1 is now the algebra of functions alone.
 
 | # | Lesson | Source | Status | Directory |
 |---|--------|--------|--------|-----------|
 | 1.1 | Functions and Function Notation | New (notation, evaluating, domain/range, piecewise) | authored | `unit01/lesson01` |
 | 1.2 | Function Operations | New | authored | `unit01/lesson02` |
 | 1.3 | Function Composition and Decomposition | CED 2.7 | authored | `unit01/lesson03` |
-| 1.4 | Inverse Functions | CED 2.8 | to reauthor | `unit01/lesson04` |
-| 1.5 | Transformations of Functions | CED 1.12 | to reauthor | `unit01/lesson05` |
-| 1.6 | Change in Tandem | CED 1.1 | to reauthor | `unit01/lesson06` |
-| 1.7 | Rates of Change | CED 1.2 + 1.3 | to reauthor | `unit01/lesson07` |
-| 1.8 | Function Model Selection and Construction | CED 1.13 + 1.14 | to reauthor | `unit01/lesson08` |
-
-**Directory numbers now match lesson numbers.** The September 2026 renumbering moved every
-displaced lesson into its final slot and remapped each document's *self-identifying* number —
-its header comment, `\pageheader`, `\LessonNumberName`, cover banner and deck title slide — so
-every packet prints the number of the slot it occupies.
-
-**Prose cross-references in the lessons still marked *to reauthor* are stale**, and some are
-stale in *direction* rather than merely in number: composition now precedes transformations, so
-1.5's references to composition as a future lesson, and its "next lesson" preview, point the
-wrong way. Bare `1.N` strings were deliberately left untouched during the renumber because in
-those files they are overwhelmingly TikZ coordinates, table data and CED codes (`1.3.A.1`).
-Each lesson's cross-references are corrected when that lesson is reauthored.
-
-Lessons still marked *to reauthor* remain in the group-activity shape (`activity/` +
-`exit_ticket/`, no `ap_practice/`) and build unchanged in the meantime.
 
 Rationale: 1.1 opens the unit by naming the machine — notation, evaluating, domain and range —
 and adds **piecewise functions**, whose boundary case is the lesson's target misconception.
-1.2–1.4 then build the algebra of functions in dependency order: you must be able to combine
-functions before composing them, and composing them is how an inverse pair is verified.
-Transformations follow composition (1.5) rather than preceding it, so a horizontal shift can be
-introduced *as* a composition instead of as a slogan about reversed signs. The behaviour
-lessons — change in tandem and rates of change — then land on functions students can already
-manipulate, and modeling closes the unit.
+1.2–1.3 then build the algebra of functions in dependency order: you must be able to combine
+functions before composing them. 1.3's previews point into Unit 2: a horizontal shift is a
+composition (2.2), and an inverse pair is verified by composition (2.3).
 
-**The evaluate-vs-solve distinction moved to 1.4 (Inverse Functions).** It was the crux of the
-old 1.1 and was displaced by piecewise; `f(a) = b \iff f^{-1}(b) = a` is the same idea in its
-natural home, so 1.4 must open with it rather than assume it.
+**The evaluate-vs-solve distinction lives in 2.3 (Symmetry and Inverse Functions).** It was the
+crux of the old 1.1 and was displaced by piecewise; `f(a) = b \iff f^{-1}(b) = a` is the same
+idea in its natural home.
 
-### Unit 2: Polynomial Functions
+**Known gap:** the Unit 1 practice and actual tests (`unit01/tests`, `unit01/test_keys`) and the
+scoring notes on page 2 of `unit01/unit_cover_key` were written for the eight-lesson unit and
+still assess inverses, transformations, and rates of change. They need rewriting to 1.1–1.3.
+Modeling (old 1.8, CED 1.13 + 1.14) currently has no home in the course.
 
-Replanned August 2026: Unit 2 numbers its eight lessons **2.0–2.7**, matching Unit 1. The
-unit opens with an introduction lesson (2.0), and to stay at eight the old 2.8 (Modeling)
-folds into the equations/inequalities lesson, now 2.7. Lessons 2.1–2.6 keep their titles
-and their directories — no lesson was renumbered.
+### Unit 2: Functions and Their Graphs
 
-| # | Lesson | Source | Status |
-|---|--------|--------|--------|
-| 2.0 | Introduction to Polynomial Functions | New (unit introduction) | authored |
-| 2.1 | Quadratic Functions Revisited | New (extends CED 1.3) | authored |
-| 2.2 | Polynomial Functions and Rates of Change | CED 1.4 (was 1.4) | authored |
-| 2.3 | Polynomial Functions and Real Zeros | New (split of CED 1.5) | authored |
-| 2.4 | Polynomial Functions and Complex Zeros | CED 1.5 (was 1.5) | authored |
-| 2.5 | Polynomial Functions and End Behavior | CED 1.6 (was 1.6) | authored |
-| 2.6 | Equivalent Representations of Polynomial Expressions | New (split of CED 1.11) | authored |
-| 2.7 | Polynomial Equations, Inequalities, and Modeling | New (absorbs CED 1.14 modeling) | authored |
+**Replanned October 2026.** The eight polynomial lessons (old 2.0–2.7, `unit02/lesson00`–`07`)
+were **retired** and their directories removed (recoverable from git history before the October
+2026 replan). Unit 2 now builds the graph toolkit every later unit uses, condensed from an
+eleven-day teacher plan (with two optional lessons) into six lessons:
 
-Rationale: the CED covers polynomials in three dense lessons; the non-honors track gets
-eight. The unit opens with an orientation lesson (2.0) that names the polynomial family
-before any analysis of it. Real zeros stay separated from complex zeros — the split is the
-unit's main concession to the non-honors pace, so it is the one protected when a merge is
-needed. Equation and inequality solving (a calculus prerequisite) closes the unit together
-with the modeling work it motivates.
+| # | Lesson | Source | Status | Directory |
+|---|--------|--------|--------|-----------|
+| 2.1 | Complex Numbers and the Library of Parent Functions | New (absorbs absolute value as a piecewise function) | authored | `unit02/lesson01` |
+| 2.2 | Transformations of Functions | CED 1.12 (translations, reflections, dilations in one day) | authored | `unit02/lesson02` |
+| 2.3 | Symmetry and Inverse Functions | CED 1.5.B (even/odd) + CED 2.8 | authored | `unit02/lesson03` |
+| 2.4 | Characteristics of Functions: Domain, Range, Intercepts, and End Behavior | CED 1.1 + 1.5.A + 1.6.A + 1.7.A (end behavior as limits) + New (algebraic domain) | authored | `unit02/lesson04` |
+| 2.5 | Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity | CED 1.1 + 1.4 | authored | `unit02/lesson05` |
+| 2.6 | Average Rate of Change, Secant Lines, and the Difference Quotient | CED 1.2 + 1.3 + New (difference quotient) | authored | `unit02/lesson06` |
 
-**Unit 2 is fully reauthored.** The old standalone Modeling lesson at `unit02/lesson08` has
-been retired: its material folded into 2.7 (the open-box model, the domain restriction drawn
-from context, and regression as the technology route), and the directory was removed. Unit 2
-is the first unit whose eight lessons are all written to the new plan and born
-convention-compliant.
+**Calendar (9 periods):** 2.1 → 2.2 → 2.3 → **quiz** (2.1–2.3) → 2.4 → 2.5 → 2.6 → **review** →
+**unit test**. The quiz, the review, and the unit tests are not yet authored.
+
+Rationale: complex numbers and the parent library share a day because both are vocabulary the
+rest of the unit spends. All transformations share one lesson (translations as the I Do anchor,
+the horizontal shift introduced as a composition). Even/odd symmetry joins inverses as the
+three symmetries — y-axis, origin, and the line y = x — so f(−x) is met right after the
+reflection that defines it. The characteristics split into what a graph *occupies* (2.4) and how
+it *moves* (2.5), and 2.6 re-reads 2.5's increasing and concavity through rates of change before
+generalizing the average rate of change to the difference quotient, which the non-honors
+track meets on linear and simple quadratic functions only.
+
+**Downstream:** Unit 3 (Rational Functions) and later units were written assuming the old
+polynomial unit; their prerequisite references to polynomial zeros, end behavior, and division
+need a home when they are reauthored.
 
 ### Unit 3: Rational Functions
 
@@ -270,6 +251,17 @@ From the September 2026 replan:
 |-----------|-------|-------------|
 | 1.0 | Introduction to Functions and Change | **Retired.** Directory `unit01/lesson00` removed; content not folded forward. Recoverable from git history. |
 | 1.1 | Function Fundamentals | Rewritten in place as *Functions and Function Notation*: piecewise added, and the evaluate-vs-solve crux moved out to 1.4 (Inverse Functions). |
+
+From the October 2026 replans (retired, directories removed; recoverable from git history):
+
+| Old lesson | Title | Disposition |
+|-----------|-------|-------------|
+| 1.4 | Inverse Functions | Covered by 2.3 Symmetry and Inverse Functions |
+| 1.5 | Transformations of Functions | Covered by 2.2 Transformations of Functions |
+| 1.6 | Change in Tandem | Covered by 2.5 (increasing/decreasing, extrema, concavity) |
+| 1.7 | Rates of Change | Covered by 2.6 Average Rate of Change, Secant Lines, and the Difference Quotient |
+| 1.8 | Function Model Selection and Construction | Retired; no current home |
+| 2.0–2.7 | The eight polynomial lessons | Retired with the Unit 2 replan; no current home |
 
 The dropped directories' full content is in git history (tree at tag/commit prior to the
 restructure, under `unit04/lessonNN`). When reauthoring an absorbing lesson, pull the

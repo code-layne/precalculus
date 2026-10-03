@@ -1,7 +1,25 @@
-%! Equivalent Representations of Polynomial Expressions — Unit 2, Lesson 2.6 — Guided Notes (Answer Key)
+%! Average Rate of Change, Secant Lines, and the Difference Quotient — Unit 2, Lesson 2.6 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 9, 11).
+%   WE DO  : the class works the rest of each grid, every one cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 14 minutes while the teacher circulates.
+% Second trap (row 1, problem 4): dividing by the change in OUTPUT instead of the change in input.
+% THE CRUX (row 4, problem 13): f(x + h) is not f(x) + h, and (x + h)^2 is not x^2 + h^2 — three
+% "versions" of f(5) for f(x) = x^2 computed side by side, where they disagree. Its You Do
+% transfer is problem 18 (a classmate's f(x + h) = x^2 + 2x + h, tested against problem 16).
+% No sketching anywhere: every graph is pre-drawn; students read, label, and compute.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages: the
+% figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -10,322 +28,203 @@
 
 \vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Decide which form of a polynomial --- \ans{factored} or
-        \ans{standard} --- answers a given question.
-  \item Rewrite a polynomial in factored form as a polynomial in standard form
-        by \ans{multiplying} it out.
-  \item Use one row of \ans{Pascal's} Triangle to expand $(x+c)^n$.
-  \item Divide one polynomial by another and write
-        $f(x) = g(x)q(x) + r(x)$, where the \ans{remainder} has lower degree
-        than the divisor.
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
 \boxguard
 \begin{vocabbox}
 Fill in each term as we define it together.
 \par\vspace{2pt}
-\noindent\textbf{\textcolor{plum}{Standard form:}}\\[1pt]
-\ansline{A sum of terms in descending degree, $a_nx^n + \cdots + a_1x + a_0$.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Factored form:}}\\[1pt]
-\ansline{The same polynomial written as a product of factors.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Pascal's Triangle:}}\\[1pt]
-\ansline{The number triangle whose row $n$ gives the coefficients of $(a+b)^n$.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Binomial theorem:}}\\[1pt]
-\ansline{Expand $(a+b)^n$ with row $n$: powers of $a$ fall, powers of $b$ rise.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Polynomial long division:}}\\[1pt]
-\ansline{Dividing one polynomial by another, one leading term at a time.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Quotient and remainder:}}\\[1pt]
-\ansline{In $f(x) = g(x)q(x) + r(x)$, $q$ is the quotient and $r$ is the remainder.}\\[3pt]
-\noindent\textbf{\textcolor{plum}{Division algorithm:}}\\[1pt]
-\ansline{$f(x) = g(x)q(x) + r(x)$ with $\deg r < \deg g$.}
+\noindent\textbf{\textcolor{plum}{Average rate of change:}}\\[1pt]
+\ansline{Change in output divided by change in input over an interval: $\frac{f(b)-f(a)}{b-a}$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Secant line:}}\\[1pt]
+\ansline{A line through two points on a graph; its slope is the average rate of change.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Point-slope form:}}\\[1pt]
+\ansline{$y - y_1 = m(x - x_1)$: the line with slope $m$ through the point $(x_1, y_1)$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Difference quotient:}}\\[1pt]
+\ansline{$\frac{f(x+h)-f(x)}{h}$: the average rate of change over $[x, x+h]$, with $h \ne 0$.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
-\boxguard[34]
+\boxguard
 \begin{hookbox}
-These two lines describe the \textit{same} function:
-\[
-  p(x) = (x+1)(x-2)(x-3) \qquad\text{and}\qquad p(x) = x^3 - 4x^2 + x + 6 .
-\]
-
-\begin{center}
-\begin{tikzpicture}[x=0.9cm, y=0.22cm]
-  \draw[linegray, very thin, xstep=1, ystep=2] (-1.6,-8) grid (3.6,6);
-  \draw[->, thick] (-1.9,0) -- (3.9,0) node[below right] {\small $x$};
-  \draw[->, thick] (0,-8.6) -- (0,6.8) node[above] {\small $p(x)$};
-  \foreach \x in {-1,1,2,3} \node[below] at (\x,-0.4) {\small \x};
-  \foreach \y in {-8,-6,-4,-2,2,4,6} \node[left] at (0,\y) {\small \y};
-  \draw[very thick, plum] plot [smooth] coordinates
-    {(-1.5,-7.88) (-1.3,-4.26) (-1.1,-1.27) (-1,0) (-0.8,2.13)
-     (-0.5,4.38) (0,6) (0.5,5.63) (1,4) (1.5,1.88) (2,0)
-     (2.5,-0.88) (2.8,-0.61) (3,0) (3.3,1.68) (3.5,3.38)};
-  \fill[plum] (-1,0) circle (2.5pt);
-  \fill[plum] (2,0) circle (2.5pt);
-  \fill[plum] (3,0) circle (2.5pt);
-\end{tikzpicture}
-\end{center}
-
-Two questions: \textit{Where does the graph cross the $x$-axis?} and
-\textit{What is $\lim_{x \to -\infty} p(x)$?} Which line would you use for
-each --- and why is it not the same line twice?
-
-\ansline{Factored form for the intercepts: $x = -1$, $2$, $3$, one from each factor.}
-\ansline{Standard form for the end behavior: the leading term is $x^3$, so $p(x) \to -\infty$.}
+A car passes mile marker 30 at 1:00\,pm and mile marker 180 at 4:00\,pm. Its average speed
+was 50 miles per hour. Was the speedometer reading 50 the whole time? If not, what does the
+number 50 actually tell you about the trip?
+\ansline{No --- the car sped up and slowed down. 50 mph is the one steady speed that covers the same 150 miles in the same 3 hours: the change in distance divided by the change in time.}
 \end{hookbox}
 
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{1. Which Form Answers Which Question?}
-Neither form is ``more simplified'' than the other. They are the same
-function, and each one puts different information on the surface.
-
-\smallskip
-\renewcommand{\arraystretch}{1.5}
+\small
+\begin{guidednotes}
+% ── ROW 1: average rate of change — table and formula ────────────────────────
+\mainidea[Change over an interval]{Average Rate} &
+The \textbf{average rate of change} of $f$ on the interval $[a, b]$ is the change in output
+divided by the change in input. It is the one constant rate that would produce the same total
+change over that interval, and its units are \emph{output units per input unit}.
+\[ \text{average rate of change on } [a, b] \;=\; \frac{f(b) - f(a)}{b - a} \]
+\vspace{-4pt}
 \begin{center}
-\begin{tabular}{|p{0.30\linewidth}|C{2.4cm}|p{0.36\linewidth}|}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|c|c|c|c|}
 \hline
-\textbf{The question} & \textbf{Which form?} & \textbf{What that form shows} \\
+$t$ (months)          & 0   & 2   & 4   & 6   & 8   \\ \hline
+$B(t)$ (dollars)      & 100 & 160 & 260 & 400 & 580 \\ \hline
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize\itshape $B(t)$ is the balance of a savings account $t$ months after it opened.}
+\end{center}
+\vspace{2pt}
+Top: change in \labelbox{1.6cm}{output}\quad Bottom: change in \labelbox{1.6cm}{input}\par\vspace{3pt}Units of the average rate of $B$: \labelbox{3.0cm}{dollars per month}
+\\
+& \notesprompt{Find each average rate of change. Give units in a context.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{The average rate of change of $B$ on $[0, 4]$, with units. Say it as a sentence.}{2.2cm}{$\frac{260 - 100}{4 - 0} = \frac{160}{4} = 40$ dollars per month. Over the first 4 months the balance grew by \$40 per month on average.} &
+\pcell{2}{The average rate of change of $B$ on $[4, 8]$, with units. Did the balance grow at the same rate?}{2.2cm}{$\frac{580 - 260}{8 - 4} = \frac{320}{4} = 80$ dollars per month. No --- twice as fast as on $[0, 4]$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{$f(x) = x^2 + 1$. Find the average rate of change of $f$ on $[1, 3]$.}{2.2cm}{$f(1) = 2$, $f(3) = 10$. \ $\frac{10 - 2}{3 - 1} = \frac{8}{2} = 4$.} &
+\pcell{4}{For problem 1, Jordan wrote $\dfrac{4 - 0}{260 - 100} = 0.025$. What did Jordan divide by? What units would that answer have?}{2.2cm}{By the change in output (dollars), so the units are months per dollar --- upside down. Input change goes on the bottom: 40 dollars per month.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: the secant line — the picture of the average rate ─────────────────
+\mainidea[The picture of it]{Secant Line} &
+A \textbf{secant line} is a line through two points on a graph. The secant line through
+$(a, f(a))$ and $(b, f(b))$ has slope equal to the average rate of change on $[a, b]$, so its
+equation in point-slope form is $y - f(a) = m(x - a)$, where $m$ is that average rate.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.95cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=1] (-0.5,0) grid (5,11);
+  \draw[->, thick] (-0.5,0) -- (5.4,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,0) -- (0,11.6) node[above] {\small $f(x)$};
+  \foreach \x in {1,2,3,4,5} \node[below] at (\x,0) {\small \x};
+  \foreach \y in {2,4,6,8,10} \node[left] at (0,\y) {\small \y};
+  % f(x) = x^2 - 2x + 2
+  \draw[very thick, plum, domain=-0.45:4.1, samples=60] plot (\x, {\x*\x - 2*\x + 2});
+  \foreach \p in {(0,2),(1,1),(2,2),(3,5),(4,10)} \fill[plum] \p circle (2.4pt);
+  % the secant through (1,1) and (4,10), extended a little
+  \draw[very thick, goldacc, dashed] (0.6,-0.2) -- (4.4,11.2);
+  % rise / run triangle
+  \draw[thick, redacc] (1,1) -- (4,1) -- (4,10);
+  \node[below, font=\scriptsize\bfseries\color{redacc}] at (2.5,1) {run};
+  \node[right, font=\scriptsize\bfseries\color{redacc}] at (4,5.5) {rise};
+  \node[font=\scriptsize\itshape\color{goldacc}, right] at (4.45,9.2) {secant line};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Run: \labelbox{1.2cm}{$3$}\qquad Rise: \labelbox{1.2cm}{$9$}\qquad Slope of the secant line: \labelbox{1.2cm}{$3$}
+\\
+& \notesprompt{Use the graph of $f$ above. Find the average rate, then the secant line.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{The average rate of change of $f$ on $[1, 4]$, then the equation of the dashed secant line in point-slope form.}{2.2cm}{$\frac{f(4) - f(1)}{4 - 1} = \frac{10 - 1}{3} = 3$. \ Secant line: $y - 1 = 3(x - 1)$.} &
+\pcell{6}{The average rate of change of $f$ on $[0, 1]$, and the secant line through $(0, 2)$ and $(1, 1)$. What does the sign say?}{2.2cm}{$\frac{1 - 2}{1 - 0} = -1$. \ Secant line: $y - 2 = -1(x - 0)$. Negative: $f$ is decreasing on $[0, 1]$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{The average rate of change of $f$ on $[0, 2]$. The graph is not flat there --- so what does this number say?}{2.2cm}{$\frac{2 - 2}{2 - 0} = 0$. The output ends where it started: it fell and rose by the same amount, so the net change is 0.} &
+\pcell{8}{$g(x) = x^2 - 3$. Find the average rate of change on $[1, 3]$ and the equation of that secant line.}{2.2cm}{$g(1) = -2$, $g(3) = 6$. \ $\frac{6 - (-2)}{2} = 4$. \ Secant line: $y + 2 = 4(x - 1)$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: what the rates say — sign, concavity, linear ──────────────────────
+\mainidea[Sign and pattern]{What the Rates Say} &
+Over equal-width intervals placed side by side: a \textbf{positive} average rate means the
+function is increasing there, a \textbf{negative} one that it is decreasing. If the average
+rates \textbf{grow} from one interval to the next, the graph is \textbf{concave up}; if they
+\textbf{shrink}, it is \textbf{concave down}; if they \textbf{stay the same}, the function is
+\textbf{linear}.
+\\
+& \begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-Where does the graph cross the $x$-axis? & \ans{factored} &
-Each linear factor $(x-a)$ hands over the real zero $a$. \\
-\hline
-What is $\lim_{x \to \pm\infty} p(x)$? & \ans{standard} &
-The leading term $a_nx^n$ decides both ends. \\
-\hline
-What is the $y$-intercept? & \ans{standard} &
-The constant term $a_0$ \textit{is} $p(0)$. \\
-\hline
-What is the degree? & \ans{either} &
-Add the exponents on the factors, or read the highest power. \\
-\hline
+Interval (months)                & $[0, 2]$ & $[2, 4]$ & $[4, 6]$ & $[6, 8]$ \\ \hline
+Average rate of $B$ (\$/month)   & \ans{30} & \ans{50} & \ans{70} & \ans{90} \\ \hline
 \end{tabular}
 \end{center}
-\smallskip
+\vspace{2pt}
+All positive, so $B$ is \labelbox{2.2cm}{increasing}\quad They grow, so $B$ is concave \labelbox{1.2cm}{up}
+\\
+& \notesprompt{Find the average rate over each interval, then describe the function.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $g(x)$ & 1 & 9 & 15 & 19 & 21 \\ \hline\end{tabular}\par Increasing or decreasing? Concave up or down?}{2.2cm}{Rates 8, 6, 4, 2. All positive, so $g$ is increasing. They shrink, so $g$ is concave down.} &
+\pcell{10}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $L(x)$ & 20 & 17 & 14 & 11 & 8 \\ \hline\end{tabular}\par Increasing or decreasing? What kind of function is $L$?}{2.2cm}{Rates $-3, -3, -3, -3$. Negative, so $L$ is decreasing. The rate never changes, so $L$ is linear.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the difference quotient and f(x + h) ───────────────────
+\mainidea[The rate on any interval]{Difference Quotient} &
+Shrink the interval to $[x, x + h]$: it starts at $x$ and is $h$ wide. The average rate of
+change over it is the \textbf{difference quotient},
+$\dfrac{f(x + h) - f(x)}{h}$, with $h \ne 0$.
+To build $f(x + h)$, compose as in Lesson 1.3: replace \emph{every} $x$ in the rule with
+$(x + h)$. \textbf{$f(x + h)$ runs the rule on the input $x + h$; $f(x) + h$ runs it on $x$ and
+then adds $h$ --- they are different numbers.}
 
-\textbf{The hook, answered.} Use $p(x) = (x+1)(x-2)(x-3) = x^3-4x^2+x+6$.
-
-\begin{itemize}[itemsep=4pt]
-  \item $x$-intercepts: \ans{$-1$, $2$, $3$} \quad (from the \ans{factored} form)
-  \item $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$} \quad (from the
-        \ans{standard} form --- leading term $x^3$)
-  \item $y$-intercept: \ans{$6$} \quad Check it the other way:
-        $p(0) = (1)(-2)(-3) = $ \ans{$6$}
-\end{itemize}
-
-\textbf{The habit to build:} read the question first, \textit{then} choose the
-form. Changing forms is work --- do it on purpose.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{2. Factored $\rightarrow$ Standard, and the Binomial Theorem}
-Going from factored to standard form is just distributing, two factors at a
-time.
-
-\textbf{Example 1.} Expand $p(x) = (x+1)(x-2)(x-3)$.
-
-\begin{work}
-  p(x) &= (x+1)(x-2)(x-3) \\
-       &= \big(x^2 - x - 2\big)(x-3) \\
-       &= x^3 - 3x^2 - x^2 + 3x - 2x + 6 \\
-       &= x^3 - 4x^2 + x + 6
-\end{work}
-
-\medskip
-\textbf{The shortcut for $(x+c)^n$.} Multiplying four copies of $(x+2)$ by
-hand is slow. \textbf{Pascal's Triangle} gives the coefficients directly ---
-each entry is the sum of the two directly above it.
-
-\smallskip
-\begin{center}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{r c}
-row $0$: & $1$ \\
-row $1$: & $1 \quad 1$ \\
-row $2$: & $1 \quad 2 \quad 1$ \\
-row $3$: & $1 \quad 3 \quad 3 \quad 1$ \\
-row $4$: & $1 \quad 4 \quad 6 \quad 4 \quad 1$ \\
-row $5$: & $1 \quad 5 \quad 10 \quad 10 \quad 5 \quad 1$ \\
-\end{tabular}
+\vspace{3pt}
+\stepnum{1}\ Build $f(x + h)$ and simplify. \quad \stepnum{2}\ Subtract $f(x)$. \quad
+\stepnum{3}\ Divide by $h$ --- every term left on top has a factor of $h$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=1.0cm, y=0.55cm, >=stealth]
+  \draw[->, thick] (-0.3,0) -- (6.2,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-0.3) -- (0,6.4) node[above] {\small $y$};
+  \draw[very thick, plum, domain=0.2:5.6, samples=60] plot (\x, {0.17*\x*\x + 0.6});
+  % P = (1.5, f(1.5)) ; Q = (4.5, f(4.5))
+  \coordinate (P) at (1.5, 0.9825);
+  \coordinate (Q) at (4.5, 4.0425);
+  \draw[very thick, goldacc, dashed] (0.9,0.3705) -- (5.1,4.6545);
+  \fill[plum] (P) circle (2.4pt) node[above left, font=\scriptsize] {$(x,\, f(x))$};
+  \fill[plum] (Q) circle (2.4pt) node[above left, font=\scriptsize] {$(x + h,\, f(x + h))$};
+  \draw[thin, dotted] (P) -- (1.5,0) node[below, font=\small] {$x$};
+  \draw[thin, dotted] (Q) -- (4.5,0) node[below, font=\small] {$x + h$};
+  \draw[thick, redacc] (P) -- (4.5,0.9825) -- (Q);
+  \node[below, font=\scriptsize\bfseries\color{redacc}] at (3,0.9825) {run};
+  \node[right, font=\scriptsize\bfseries\color{redacc}] at (4.5,2.5) {rise};
+\end{tikzpicture}
 \end{center}
-\smallskip
+\vspace{2pt}
+Run: \labelbox{1.2cm}{$h$}\qquad Rise: \labelbox{3.0cm}{$f(x + h) - f(x)$}
+\\
+& \notesprompt{Build $f(x + h)$ first. Then subtract, divide, and simplify.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{$f(x) = 3x - 2$. Find $f(x + h)$, then the difference quotient.}{2.4cm}{$f(x + h) = 3(x + h) - 2 = 3x + 3h - 2$. \par Top: $3x + 3h - 2 - (3x - 2) = 3h$. \ Quotient: $\frac{3h}{h} = 3$ --- the slope, on any interval.} &
+\pcell{12}{$f(x) = x^2$. Find $f(x + h)$ expanded, then the difference quotient.}{2.4cm}{$f(x + h) = (x + h)^2 = x^2 + 2xh + h^2$. \par Top: $2xh + h^2$. \ Quotient: $\frac{2xh + h^2}{h} = 2x + h$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{$f(x) = x^2$ with $x = 3$ and $h = 2$. Compute $f(x + h)$, then $f(x) + h$, then $x^2 + h^2$. Which one is $f(5)$?}{2.4cm}{$f(x + h) = f(5) = 25$. \ $f(x) + h = 9 + 2 = 11$. \ $x^2 + h^2 = 9 + 4 = 13$. Only the first is $f(5)$: the input is $x + h$, so the whole $(x + h)$ is squared.} &
+\pcell{14}{Evaluate your answer to problem 12 at $x = 3$, $h = 2$. Check it against the average rate of change of $x^2$ on $[3, 5]$.}{2.4cm}{$2x + h = 2(3) + 2 = 8$. \ Directly: $\frac{25 - 9}{5 - 3} = \frac{16}{2} = 8$. They match --- the quotient is the average rate.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (14 min) ──────────
+\mainidea[You do, alone]{Your Turn} &
+An oven's temperature $T(m)$, in degrees Fahrenheit, $m$ minutes after it is switched on, and
+a function given by a formula.
+\\
+& \begin{minipage}{\linewidth}\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+$m$ (minutes)         & 0  & 5   & 10  & 15  \\ \hline
+$T(m)$ ($^\circ$F)    & 70 & 220 & 320 & 370 \\ \hline
+\end{tabular}
+\qquad
+\fcolorbox{plum}{lilac}{\large $f(x) = x^2 + 2x$}
+\vspace{4pt}
+\end{minipage}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{The average rate of change of $T$ on $[0, 10]$, with units. Then the three 5-minute rates: is $T$ concave up or down?}{2.4cm}{$\frac{320 - 70}{10} = 25$ degrees per minute. 5-minute rates: 30, 20, 10 $^\circ$F/min --- shrinking, so $T$ is concave down.} &
+\pcell{16}{The average rate of change of $f$ on $[1, 3]$, and the equation of that secant line in point-slope form.}{2.4cm}{$f(1) = 3$, $f(3) = 15$. \ $\frac{15 - 3}{3 - 1} = 6$. \ Secant line: $y - 3 = 6(x - 1)$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Find $f(x + h)$ and simplify the difference quotient of $f$.}{2.6cm}{$f(x + h) = (x + h)^2 + 2(x + h) = x^2 + 2xh + h^2 + 2x + 2h$. \par Top: $2xh + h^2 + 2h$. \ Quotient: $2x + h + 2$.} &
+\pcell{18}{Evaluate problem 17 at $x = 1$, $h = 2$; compare with 16. A classmate wrote $f(x + h) = x^2 + 2x + h$. What would their quotient be, and why is it wrong?}{2.6cm}{$2(1) + 2 + 2 = 6$, matching 16. Theirs: top $= h$, quotient 1 --- not 6. They added $h$ to $f(x)$ instead of replacing every $x$ with $(x + h)$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\textbf{Binomial theorem.} To expand $(a+b)^n$, use row \ans{$n$} of the
-triangle. Across the terms, the power of $a$ \ans{falls} from $n$ down to
-$0$ while the power of $b$ \ans{rises} from $0$ up to $n$.
-
-\textbf{Example 2.} Expand $(x+2)^4$. Row 4 is $1, 4, 6, 4, 1$.
-
-\begin{work}
-  (x+2)^4 &= x^4 + 4x^3(2) + 6x^2(2)^2 + 4x(2)^3 + (2)^4 \\
-          &= x^4 + 8x^3 + 24x^2 + 32x + 16
-\end{work}
-
-Sanity check against Lesson 2.3: $(x+2)^4$ has exactly one real zero,
-$x = $ \ans{$-2$}, with multiplicity \ans{4} --- and the expanded
-form has leading term \ans{$x^4$} and constant term \ans{$16$}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{3. Long Division and the Division Algorithm}
-Numbers first: $17 \div 5$ is $3$ with remainder $2$, so
-$17 = 5 \cdot 3 + 2$ --- and the remainder is \textit{smaller} than the
-divisor. Polynomials work the same way, with ``smaller'' meaning
-\textbf{lower degree}.
-
-\medskip
-\textbf{The division algorithm.} If $f$ is divided by $g$, then
-\[
-  f(x) = g(x)\,q(x) + r(x), \qquad \deg r < \deg g,
-\]
-where $q$ is the \ans{quotient} and $r$ is the \ans{remainder}.
-
-\medskip
-\textbf{The routine:} divide $\rightarrow$ multiply $\rightarrow$ subtract
-$\rightarrow$ bring down. Repeat until what is left has lower degree than the
-divisor.
-
-\textbf{Example 3.} Divide $2x^3 - 3x^2 - 5x + 6$ by $x - 2$.
-
-\begin{work}
-  &\begin{array}{r@{\;}rrrr}
-              &  2x^2 &   +x  &  -3  &     \\ \cline{2-5}
-   x-2\,\big) &  2x^3 & -3x^2 & -5x  & +6  \\
-   -          &  2x^3 & -4x^2 &      &     \\ \cline{2-5}
-              &       &   x^2 & -5x  & +6  \\
-   -          &       &   x^2 & -2x  &     \\ \cline{2-5}
-              &       &       & -3x  & +6  \\
-   -          &       &       & -3x  & +6  \\ \cline{2-5}
-              &       &       &      &  0
-  \end{array}
-\end{work}
-
-Quotient: \ans{$2x^2 + x - 3$} \qquad Remainder: \ans{$0$}
-
-\medskip
-\textbf{Cash it in against Lesson 2.3.} The remainder is $0$, so
-$2x^3 - 3x^2 - 5x + 6 = (x-2)(2x^2 + x - 3)$ --- which says $(x-2)$ is a
-\ans{factor} of $f$, which says $x = 2$ is a \ans{zero} of $f$. All three
-statements are the same statement:
-\[
-  r = 0 \iff (x-a) \text{ is a factor of } f \iff f(a) = 0 .
-\]
-So long division is how you \textbf{test} a proposed factor, and how you
-\textbf{reduce} a polynomial once one zero is known.
-
-\medskip
-\textbf{Example 4.} Divide $x^3 - 4x^2 + 2x + 5$ by $x - 3$. This one does
-\textit{not} come out even.
-
-\begin{work}
-  &\begin{array}{r@{\;}rrrr}
-              &   x^2 &   -x  &  -1  &     \\ \cline{2-5}
-   x-3\,\big) &   x^3 & -4x^2 & +2x  & +5  \\
-   -          &   x^3 & -3x^2 &      &     \\ \cline{2-5}
-              &       &  -x^2 & +2x  & +5  \\
-   -          &       &  -x^2 & +3x  &     \\ \cline{2-5}
-              &       &       &  -x  & +5  \\
-   -          &       &       &  -x  & +3  \\ \cline{2-5}
-              &       &       &      &  2
-  \end{array}
-\end{work}
-
-Write the result in division-algorithm form:
-
-\smallskip
-$f(x) = (x-3)\,\cdot$ \ans{$(x^2 - x - 1)$} $+$ \ans{$2$}
-
-\smallskip
-Degree check: $\deg r = $ \ans{0} and $\deg g = $ \ans{1}, so
-$\deg r < \deg g$. \quad Is $x-3$ a factor of $f$? \ans{No}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard[30]
-\begin{notesbox}{4. Both Forms, One Context}
-An open-top box is made from a $12$ in.\ by $16$ in.\ sheet of cardboard by
-cutting a square of side $x$ from each corner and folding up the sides. The
-volume is
-\[
-  V(x) = x(12-2x)(16-2x).
-\]
-
-\textbf{Expand it into standard form.}
-
-\begin{work}
-  V(x) &= x(12-2x)(16-2x) \\
-       &= x\big(192 - 24x - 32x + 4x^2\big) \\
-       &= x\big(4x^2 - 56x + 192\big) \\
-       &= 4x^3 - 56x^2 + 192x
-\end{work}
-
-Now let each form do its own job.
-
-\begin{itemize}[itemsep=4pt]
-  \item \textbf{Factored form.} $V(x) = 0$ when $x = $ \ans{$0$, $6$, $8$}.
-  \item A real box needs $x > 0$ \textit{and} both side lengths positive, so
-        the domain in context is $0 < x < $ \ans{6}. The zero
-        $x = $ \ans{8} is algebraically correct and physically
-        impossible.
-  \item \textbf{Standard form.} Leading term: \ans{$4x^3$}, so
-        $\lim_{x \to \infty} V(x) = $ \ans{$\infty$}.
-  \item In context that limit is \ans{meaningless} --- the model only describes
-        the box for $0 < x < 6$.
-\end{itemize}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\boxguard
-\begin{practicebox}
-\begin{enumerate}[itemsep=8pt]
-  \item Let $p(x) = (x+4)(x-1)(x-2)$. Write $p$ in standard form, then read
-        off the $y$-intercept and the end behavior.
-
-        \begin{work}
-          p(x) &= (x+4)(x-1)(x-2) \\
-               &= \big(x^2 + 3x - 4\big)(x-2) \\
-               &= x^3 - 2x^2 + 3x^2 - 6x - 4x + 8 \\
-               &= x^3 + x^2 - 10x + 8
-        \end{work}
-
-        Standard form: \ans{$x^3 + x^2 - 10x + 8$}
-
-        $y$-intercept: \ans{$8$} \qquad
-        $\lim_{x \to -\infty} p(x) = $ \ans{$-\infty$}
-
-  \item Divide $x^3 - 5x + 3$ by $x - 2$. Watch the missing $x^2$ term ---
-        write it as $0x^2$.
-
-        \begin{work}
-          &\begin{array}{r@{\;}rrrr}
-                      &   x^2 &  +2x  &  -1  &     \\ \cline{2-5}
-           x-2\,\big) &   x^3 & +0x^2 & -5x  & +3  \\
-           -          &   x^3 & -2x^2 &      &     \\ \cline{2-5}
-                      &       &  2x^2 & -5x  & +3  \\
-           -          &       &  2x^2 & -4x  &     \\ \cline{2-5}
-                      &       &       &  -x  & +3  \\
-           -          &       &       &  -x  & +2  \\ \cline{2-5}
-                      &       &       &      &  1
-          \end{array}
-        \end{work}
-
-        Quotient: \ans{$x^2 + 2x - 1$} \qquad Remainder: \ans{$1$}
-
-        Is $x-2$ a factor of $x^3 - 5x + 3$? \quad \ans{No}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
 
 \end{document}

@@ -1,4 +1,6 @@
-%! Polynomial Functions and Rates of Change — Unit 2, Lesson 2.2 — Student Packet Cover Sheet
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One learning target per CED 1.12 thread:
+% translations, reflections, dilations, and the combined form with its point-mapping rule.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -16,8 +18,8 @@
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{lilacmid}\large\textbf{Unit 2: Polynomial Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 2.2 \quad Polynomial Functions and Rates of Change}}
+  {\color{lilacmid}\large\textbf{Unit 2: Functions and Their Graphs}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 2.2 \quad Transformations of Functions}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,18 +29,17 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can read the intervals where a polynomial function is increasing or
-        decreasing from a pre-drawn graph or from a table of values.
-  \item I can identify local (relative) maxima and minima --- including at an
-        included endpoint of a restricted domain --- and decide which of them
-        are the global (absolute) maximum and minimum.
-  \item I can explain why there must be a local maximum or minimum between
-        two distinct real zeros, and why an even-degree polynomial has a
-        global maximum or a global minimum while an odd-degree one has
-        neither.
-  \item I can locate a point of inflection as the input where the
-        \textit{rate of change} turns around, and tell that apart from where
-        the function itself turns around.
+  \item I can describe a \textit{translation}: $f(x) + k$ moves a graph up or down, and
+        $f(x - h)$ moves it right or left --- and I can explain why $f(x + 3)$ moves it
+        \textbf{left}.
+  \item I can describe a \textit{reflection}: $-f(x)$ flips a graph over the $x$-axis and
+        $f(-x)$ flips it over the $y$-axis.
+  \item I can describe a \textit{dilation}: $a\,f(x)$ stretches or compresses a graph
+        vertically by $|a|$, and $f(bx)$ stretches or compresses it horizontally by
+        $\tfrac{1}{|b|}$.
+  \item I can combine all of them in $g(x) = a\,f\big(b(x - h)\big) + k$: map key points from
+        a parent graph, describe the moves in order, and write the equation of a transformed
+        graph.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -51,13 +52,13 @@
 \rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
 \midrule
-1 & Warm-Up        & Spiral review of prerequisite skills                  & \blank{1.2cm} \\
-2 & Guided Notes   & Extrema, the zero rule, and points of inflection      & \blank{1.2cm} \\
-3 & Group Activity & The drone survey: reading a flight for its turns      & \blank{1.2cm} \\
-4 & Exit Ticket    & Independent check on local vs.\ global and inflection & \blank{1.2cm} \\
-5 & Homework       & Practice and extension                                & \blank{1.2cm} \\
+1 & Warm-Up      & Spiral review of prerequisite skills            & \blank{1.2cm} \\
+2 & Guided Notes & Translations, reflections, dilations, and all of them together & \blank{1.2cm} \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
+4 & Homework     & Graded practice in new contexts \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
 \midrule
-  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
 
@@ -65,10 +66,11 @@
 
 \begin{remindbox}
 \small
-Lesson 2.1 gave quadratics a rate-of-change fingerprint. Today that reading
-scales up to polynomials of any degree: where the graph turns around, which
-turn is the highest one, and --- the new idea --- where the \textit{rate} of
-change turns around, even though the function does not.
+Every parent function from 2.1 can be moved, flipped, and resized without learning a new
+graph. A change \textbf{outside} the function acts on the outputs, so it moves the graph up
+and down and does exactly what it says. A change \textbf{inside} the function acts on the
+inputs before the function ever sees them --- a composition --- so it moves the graph left
+and right and seems to run \textbf{backwards}.
 \end{remindbox}
 
 \end{document}

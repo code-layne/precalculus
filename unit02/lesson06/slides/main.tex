@@ -1,4 +1,5 @@
-%! Equivalent Representations of Polynomial Expressions — Unit 2, Lesson 2.6 — Slides (Beamer)
+%! Average Rate of Change, Secant Lines, and the Difference Quotient — Unit 2, Lesson 2.6 — Slides (Beamer)
+% Release order: title -> hook -> I Do / We Do frames per notes row -> You Do -> Debrief -> Homework Launch.
 \documentclass[aspectratio=169, 11pt]{beamer}
 \usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
@@ -8,302 +9,258 @@
 {
 \setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
-  \vspace{2.8cm}\hspace{0.55cm}%
+  \vspace{2.6cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     {\color{goldacc}\bfseries\small LESSON 2.6}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Equivalent Representations of Polynomial Expressions}\\[1.2cm]
-    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Polynomial Functions}
+    {\color{white}\bfseries\LARGE Average Rate of Change, Secant Lines,\\[4pt] and the Difference Quotient}\\[1.0cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
   \end{minipage}
 \end{frame}
 }
 
-% HOOK SLIDE
+% HOOK
 \begin{frame}[t, plain]
-  \plumheader{Hook: One Function, Two Costumes}
+  \plumheader{Hook: What Does ``50 mph'' Mean?}
   \sectionlabel[goldacc]{Think About It}
 
-  \begin{columns}[T]
-    \column{0.46\textwidth}
-      \begin{center}
-      \begin{tikzpicture}[x=0.72cm, y=0.20cm]
-        \draw[linegray, very thin, xstep=1, ystep=2] (-1.6,-8) grid (3.6,6);
-        \draw[->, thick] (-1.9,0) -- (3.9,0) node[below right] {\small \(x\)};
-        \draw[->, thick] (0,-8.6) -- (0,6.8) node[above] {\small \(p(x)\)};
-        \foreach \x in {-1,1,2,3} \node[below] at (\x,-0.4) {\small \x};
-        \foreach \y in {-8,-4,4} \node[left] at (0,\y) {\small \y};
-        \draw[very thick, plum] plot [smooth] coordinates
-          {(-1.5,-7.88) (-1.3,-4.26) (-1.1,-1.27) (-1,0) (-0.8,2.13)
-           (-0.5,4.38) (0,6) (0.5,5.63) (1,4) (1.5,1.88) (2,0)
-           (2.5,-0.88) (2.8,-0.61) (3,0) (3.3,1.68) (3.5,3.38)};
-        \fill[plum] (-1,0) circle (2.5pt);
-        \fill[plum] (2,0) circle (2.5pt);
-        \fill[plum] (3,0) circle (2.5pt);
-      \end{tikzpicture}
-      \end{center}
+  A car passes \textbf{mile marker 30 at 1:00\,pm} and \textbf{mile marker 180 at 4:00\,pm}.
 
-    \column{0.5\textwidth}
-      These are the \textbf{same} function:
-      \[ p(x) = (x+1)(x-2)(x-3) \]
-      \[ p(x) = x^3 - 4x^2 + x + 6 \]
-
-      \bigskip
-      \begin{itemize}\setlength{\itemsep}{8pt}
-        \item Where does the graph cross the \(x\)-axis?
-        \item What is \(\lim_{x \to -\infty} p(x)\)?
-      \end{itemize}
-
-      \bigskip
-      \textit{Which line did you use for each --- and why was it not the same
-      line twice?}
-  \end{columns}
-\end{frame}
-
-% SECTION 1 — WHICH FORM ANSWERS WHICH QUESTION
-\begin{frame}[t, plain]
-  \plumheader{1. Which Form Answers Which Question?}
-
-  \begin{block}{Neither form is ``more simplified''}
-    They are the same function. Each one puts different information on the
-    surface --- so read the question first, \textit{then} choose the form.
-  \end{block}
-
-  \medskip
+  \bigskip
   \begin{center}
-  \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{|l|c|l|}
-  \hline
-  \textbf{The question} & \textbf{Which form?} & \textbf{Why} \\
-  \hline
-  Where are the \(x\)-intercepts? & factored & each factor \((x-a)\) gives the zero \(a\) \\
-  \hline
-  What is \(\lim_{x \to \pm\infty} p(x)\)? & standard & the leading term \(a_nx^n\) decides both ends \\
-  \hline
-  What is the \(y\)-intercept? & standard & the constant term \(a_0\) \textit{is} \(p(0)\) \\
-  \hline
-  What is the degree? & either & add the exponents, or read the highest power \\
-  \hline
-  \end{tabular}
+    {\Large\bfseries\color{plum} \(\dfrac{180 - 30}{4 - 1} = \dfrac{150 \text{ miles}}{3 \text{ hours}} = 50 \text{ mph}\)}
   \end{center}
 
   \bigskip
-  \textit{AP Skill 1.B: express an expression in an equivalent form
-  \textbf{useful in a given context}.}
-\end{frame}
-
-% SECTION 1, CONT. — THE HOOK, ANSWERED
-\begin{frame}[t, plain]
-  \plumheader{The Hook, Answered}
-
-  \[ p(x) = (x+1)(x-2)(x-3) = x^3 - 4x^2 + x + 6 \]
-
-  \bigskip
   \begin{columns}[T]
     \column{0.48\textwidth}
-      \begin{block}{From the factored form}
-        \(x\)-intercepts at \(x = -1,\ 2,\ 3\) --- one from each factor, and
-        the graph confirms all three.
+      \begin{block}{Ask}
+        Was the speedometer reading 50 the \textbf{whole} time?
       \end{block}
-
     \column{0.48\textwidth}
-      \begin{block}{From the standard form}
-        Leading term \(x^3\): odd degree, positive coefficient, so
-        \(\lim_{x \to -\infty} p(x) = -\infty\).\\[4pt]
-        Constant term \(6\): the \(y\)-intercept.
+      \begin{block}{Then ask}
+        If not, what does the number 50 actually tell you about the trip?
       \end{block}
   \end{columns}
 
   \bigskip
-  Check the \(y\)-intercept the other way:
-  \(p(0) = (1)(-2)(-3) = 6\). Same number, both forms --- because it is the
-  same function.
+  \textit{50 is the one steady speed that covers the same distance in the same time.}
 \end{frame}
 
-% SECTION 2 — EXPANDING AND PASCAL'S TRIANGLE
+% ROW 1 — AVERAGE RATE OF CHANGE
 \begin{frame}[t, plain]
-  \plumheader{2. Factored \(\rightarrow\) Standard}
+  \plumheader{Average Rate of Change}
+  \sectionlabel[goldacc]{Notes row AVERAGE RATE $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{block}{Change in output over change in input}
+    \[ \text{average rate of change on } [a, b] = \frac{f(b) - f(a)}{b - a} \]
+    Units: \textbf{output units per input unit}.
+  \end{block}
 
   \begin{columns}[T]
     \column{0.52\textwidth}
-      \begin{block}{Just distribute, two factors at a time}
-        \begin{align*}
-          p(x) &= (x+1)(x-2)(x-3) \\
-               &= \big(x^2 - x - 2\big)(x-3) \\
-               &= x^3 - 4x^2 + x + 6
-        \end{align*}
-      \end{block}
+      \begin{tabular}{|l|c|c|c|c|c|}
+      \hline
+      \(t\) (months) & 0 & 2 & 4 & 6 & 8 \\ \hline
+      \(B(t)\) (\$)  & 100 & 160 & 260 & 400 & 580 \\ \hline
+      \end{tabular}
 
       \medskip
-      \textbf{But \((x+2)^4\)?} Four binomials by hand is slow and
-      error-prone. There is a better tool.
+      On \([0, 4]\): \(\dfrac{260 - 100}{4 - 0} = 40\) \textbf{dollars per month}.
 
     \column{0.44\textwidth}
-      \begin{block}{Pascal's Triangle}
-        \begin{center}
-        \renewcommand{\arraystretch}{1.15}
-        \begin{tabular}{r c}
-        row \(0\): & \(1\) \\
-        row \(1\): & \(1 \quad 1\) \\
-        row \(2\): & \(1 \quad 2 \quad 1\) \\
-        row \(3\): & \(1 \quad 3 \quad 3 \quad 1\) \\
-        row \(4\): & \(1 \quad 4 \quad 6 \quad 4 \quad 1\) \\
-        row \(5\): & \(1 \quad 5 \quad 10 \quad 10 \quad 5 \quad 1\) \\
-        \end{tabular}
-        \end{center}
-        Each entry is the sum of the two directly above it.
+      \begin{block}{The trap}
+        \(\dfrac{4 - 0}{260 - 100}\) divides by the change in \textbf{output}. Its units
+        would be months per dollar --- upside down.
       \end{block}
   \end{columns}
 \end{frame}
 
-% SECTION 2, CONT. — THE BINOMIAL THEOREM
+% ROW 2 — SECANT LINE
 \begin{frame}[t, plain]
-  \plumheader{The Binomial Theorem}
-
-  \begin{block}{The rule}
-    To expand \((a+b)^n\), use row \(n\) of the triangle. Across the terms the
-    power of \(a\) \textbf{falls} from \(n\) to \(0\) while the power of \(b\)
-    \textbf{rises} from \(0\) to \(n\).
-  \end{block}
-
-  \bigskip
-  \begin{block}{Expand \((x+2)^4\) --- row 4 is \(1, 4, 6, 4, 1\)}
-    \begin{align*}
-      (x+2)^4 &= x^4 + 4x^3(2) + 6x^2(2)^2 + 4x(2)^3 + (2)^4 \\
-              &= x^4 + 8x^3 + 24x^2 + 32x + 16
-    \end{align*}
-  \end{block}
-
-  \bigskip
-  \textit{The trap: the coefficients from the row are not the whole story ---
-  \(c\) gets raised to a power too.}
-\end{frame}
-
-% SECTION 3 — THE DIVISION ALGORITHM
-\begin{frame}[t, plain]
-  \plumheader{3. Long Division and the Division Algorithm}
-
-  \begin{block}{Numbers first}
-    \(17 \div 5\) is \(3\) with remainder \(2\), so \(17 = 5 \cdot 3 + 2\) ---
-    and the remainder is \textbf{smaller} than the divisor.
-  \end{block}
-
-  \bigskip
-  \begin{block}{Polynomials, with ``smaller'' meaning lower degree}
-    \[ f(x) = g(x)\,q(x) + r(x), \qquad \deg r < \deg g \]
-    \(q\) is the \textbf{quotient}, \(r\) is the \textbf{remainder}.
-  \end{block}
-
-  \bigskip
-  \textbf{The routine:} divide \(\rightarrow\) multiply \(\rightarrow\)
-  subtract \(\rightarrow\) bring down. Repeat until what is left has lower
-  degree than the divisor.
-\end{frame}
-
-% SECTION 3, CONT. — WORKED DIVISION
-\begin{frame}[t, plain]
-  \plumheader{Divide \(2x^3 - 3x^2 - 5x + 6\) by \(x - 2\)}
+  \plumheader{The Secant Line}
+  \sectionlabel[goldacc]{Notes row SECANT LINE $\cdot$ I Do: problem 5 $\cdot$ We Do: problems 6--8}
 
   \begin{columns}[T]
-    \column{0.52\textwidth}
-      \[
-        \begin{array}{r@{\;}rrrr}
-                    &  2x^2 &   +x  &  -3  &     \\ \cline{2-5}
-         x-2\,\big) &  2x^3 & -3x^2 & -5x  & +6  \\
-         -          &  2x^3 & -4x^2 &      &     \\ \cline{2-5}
-                    &       &   x^2 & -5x  & +6  \\
-         -          &       &   x^2 & -2x  &     \\ \cline{2-5}
-                    &       &       & -3x  & +6  \\
-         -          &       &       & -3x  & +6  \\ \cline{2-5}
-                    &       &       &      &  0
-        \end{array}
-      \]
-
     \column{0.44\textwidth}
-      \begin{block}{Result}
-        \(q(x) = 2x^2 + x - 3\), \quad \(r = 0\), so
-        \[ 2x^3 - 3x^2 - 5x + 6 = (x-2)\big(2x^2 + x - 3\big) \]
+      \begin{center}
+      \begin{tikzpicture}[x=0.85cm, y=0.27cm]
+        \draw[linegray, very thin, step=1] (-0.5,0) grid (5,11);
+        \draw[->, thick] (-0.5,0) -- (5.4,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,11.6) node[above] {\small \(f(x)\)};
+        \foreach \x in {1,2,3,4} \node[below] at (\x,0) {\scriptsize \x};
+        \foreach \y in {2,4,6,8,10} \node[left] at (0,\y) {\scriptsize \y};
+        \draw[very thick, plum, domain=-0.45:4.1, samples=60] plot (\x, {\x*\x - 2*\x + 2});
+        \foreach \p in {(0,2),(1,1),(2,2),(3,5),(4,10)} \fill[plum] \p circle (2.2pt);
+        \draw[very thick, goldacc, dashed] (0.6,-0.2) -- (4.4,11.2);
+        \draw[thick, redacc] (1,1) -- (4,1) -- (4,10);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{block}{Same number, two names}
+        The secant line through \((a, f(a))\) and \((b, f(b))\) has slope equal to the
+        average rate of change on \([a, b]\).
       \end{block}
 
       \medskip
-      \begin{itemize}\setlength{\itemsep}{6pt}
-        \item Every subtraction must kill the leading term. If it does not,
-              the divide step was wrong.
-        \item Missing degree? Write the placeholder: \(0x^2\).
-      \end{itemize}
+      On \([1, 4]\): \quad \(\dfrac{10 - 1}{4 - 1} = \dfrac{9}{3} = 3\)
+
+      \medskip
+      Point-slope form: \quad \(y - 1 = 3(x - 1)\)
   \end{columns}
 \end{frame}
 
-% SECTION 3, CONT. — REMAINDER ZERO MEANS FACTOR
+% ROW 3 — WHAT THE RATES SAY
 \begin{frame}[t, plain]
-  \plumheader{Remainder \(0\) Means ``Factor''}
+  \plumheader{What the Rates Say}
+  \sectionlabel[goldacc]{Notes row WHAT THE RATES SAY $\cdot$ I Do: the \(B\) table $\cdot$ We Do: problems 9--10}
 
-  \begin{block}{One statement, three ways (Lesson 2.3, with a procedure attached)}
-    \[ r = 0 \iff (x-a) \text{ is a factor of } f \iff f(a) = 0 \]
+  \begin{center}
+  \begin{tabular}{|l|c|c|c|c|}
+  \hline
+  Interval & \([0, 2]\) & \([2, 4]\) & \([4, 6]\) & \([6, 8]\) \\ \hline
+  Average rate of \(B\) (\$/month) & 30 & 50 & 70 & 90 \\ \hline
+  \end{tabular}
+  \end{center}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{block}{Sign}
+        Positive: increasing.\\ Negative: decreasing.
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Pattern}
+        Rates grow: concave up.\\ Rates shrink: concave down.
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Constant}
+        Rates never change: the function is \textbf{linear}.
+      \end{block}
+  \end{columns}
+
+  \medskip
+  The \(B\) rates go up by 20 every time --- a quadratic's rates change at a constant rate.
+\end{frame}
+
+% ROW 4 — DIFFERENCE QUOTIENT
+\begin{frame}[t, plain]
+  \plumheader{The Difference Quotient}
+  \sectionlabel[redacc]{Notes row DIFFERENCE QUOTIENT $\cdot$ I Do: problem 11 $\cdot$ We Do: 12--14}
+
+  \begin{block}{The average rate on \([x, x + h]\)}
+    \[ \frac{f(x + h) - f(x)}{h}, \qquad h \ne 0 \]
+    Build \(f(x + h)\) as in 1.3: replace \textbf{every} \(x\) with \((x + h)\).
   \end{block}
 
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{\(f(x) = 3x - 2\)}
+      \begin{align*}
+        f(x + h) &= 3x + 3h - 2 \\
+        \text{top} &= 3h \\
+        \text{quotient} &= 3
+      \end{align*}
+    \column{0.48\textwidth}
+      \textbf{\(f(x) = x^2\)}
+      \begin{align*}
+        f(x + h) &= x^2 + 2xh + h^2 \\
+        \text{top} &= 2xh + h^2 \\
+        \text{quotient} &= 2x + h
+      \end{align*}
+  \end{columns}
+\end{frame}
+
+% THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{The Crux: \(f(x + h)\) Is Not \(f(x) + h\)}
+  \sectionlabel[redacc]{Problem 13 $\cdot$ \(f(x) = x^2\), \(x = 3\), \(h = 2\)}
+
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{block}{\(f(x + h)\)}
+        \(f(5) = 25\)
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{\(f(x) + h\)}
+        \(9 + 2 = 11\)
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{\(x^2 + h^2\)}
+        \(9 + 4 = 13\)
+      \end{block}
+  \end{columns}
+
   \bigskip
+  Only one of these is \(f(5)\). The input is \(x + h\), so the \textbf{whole} \((x + h)\) is
+  squared: \((x + h)^2 = x^2 + 2xh + h^2\).
+
+  \bigskip
+  \textbf{Check (problem 14):} \(2x + h = 2(3) + 2 = 8\), and
+  \(\dfrac{25 - 9}{5 - 3} = 8\). The quotient \emph{is} the average rate.
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Your Turn}
+  \sectionlabel[redacc]{Notes last row $\cdot$ problems 15--18, alone, 14 minutes}
+
+  \begin{columns}[T]
+    \column{0.40\textwidth}
+      \begin{tabular}{|l|c|c|c|c|}
+      \hline
+      \(m\) (min) & 0 & 5 & 10 & 15 \\ \hline
+      \(T(m)\) (\(^\circ\)F) & 70 & 220 & 320 & 370 \\ \hline
+      \end{tabular}
+
+      \bigskip
+      {\Large \(f(x) = x^2 + 2x\)}
+    \column{0.56\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \setcounter{enumi}{14}
+        \item Rate of \(T\) on \([0, 10]\), with units; concave up or down?
+        \item Rate of \(f\) on \([1, 3]\) and that secant line.
+        \item Build \(f(x + h)\); simplify the difference quotient.
+        \item Check 17 at \(x = 1\), \(h = 2\). What goes wrong with \(f(x + h) = x^2 + 2x + h\)?
+      \end{enumerate}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Average rate}
+        Change in output over change in input ---\\ the slope of the secant line.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Difference quotient}
+        The same ratio on \([x, x + h]\). Replace \textbf{every} \(x\) with \((x + h)\) ---
+        never just add \(h\).
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Next time:} the Unit 2 review, then the test.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
   \begin{itemize}\setlength{\itemsep}{8pt}
-    \item So long division is how you \textbf{test} a proposed factor \dots
-    \item \dots and how you \textbf{reduce} a polynomial once one zero is
-          known: divide it out and work on the smaller quotient.
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 6} now. On 6(a), write the
+          parentheses \((x + h)\) before you expand anything.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
   \end{itemize}
-
-  \bigskip
-  \begin{block}{Not every division comes out even}
-    \(x^3 - 4x^2 + 2x + 5\) divided by \(x - 3\) gives
-    \(q(x) = x^2 - x - 1\) and \(r = 2\):
-    \[ x^3 - 4x^2 + 2x + 5 = (x-3)\big(x^2 - x - 1\big) + 2 \]
-    Here \(\deg r = 0 < 1 = \deg g\), and \(x-3\) is \textbf{not} a factor.
-  \end{block}
-\end{frame}
-
-% SECTION 4 — BOTH FORMS IN CONTEXT
-\begin{frame}[t, plain]
-  \plumheader{4. Both Forms, One Context}
-
-  An open-top box is cut from a \(12 \times 16\) sheet by removing a square of
-  side \(x\) from each corner:
-  \[ V(x) = x(12-2x)(16-2x) = 4x^3 - 56x^2 + 192x \]
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \begin{block}{Factored form}
-        \(V(x) = 0\) at \(x = 0,\ 6,\ 8\).\\[4pt]
-        A real box needs \(0 < x < 6\). The zero \(x = 8\) is algebraically
-        correct and physically impossible.
-      \end{block}
-
-    \column{0.48\textwidth}
-      \begin{block}{Standard form}
-        Leading term \(4x^3\), so
-        \(\lim_{x \to \infty} V(x) = \infty\).\\[4pt]
-        In context that limit is meaningless --- the model only describes the
-        box on its restricted domain.
-      \end{block}
-  \end{columns}
-
-  \bigskip
-  \textit{AP Skill 3.B: the numbers have to mean something in the situation,
-  not just in the algebra.}
-\end{frame}
-
-% CLASS PRACTICE
-\begin{frame}[t, plain]
-  \plumheader{Class Practice}
-  \sectionlabel[redacc]{Try It}
-
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item Write \(p(x) = (x+4)(x-1)(x-2)\) in standard form, then give the
-          \(y\)-intercept and \(\lim_{x \to -\infty} p(x)\).
-    \item Which form would you use to find the \(x\)-intercepts of a
-          polynomial? To find its end behavior? Why?
-    \item Use row 3 of Pascal's Triangle to expand \((x+1)^3\).
-    \item Divide \(x^3 - 5x + 3\) by \(x - 2\). What is the remainder --- and
-          is \(x-2\) a factor?
-    \item A division gives \(f(x) = (x^2-1)(x+3) + (x+1)\). Explain why the
-          remainder \(x+1\) is allowed here but would not be allowed if the
-          divisor were \(x - 1\).
-  \end{enumerate}
 \end{frame}
 
 \end{document}
