@@ -1,0 +1,182 @@
+%! Characteristics of Functions: Domain, Range, Intercepts, and End Behavior — Unit 2, Lesson 2.4 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Shaped like the AP Precalculus exam: page 1 is Section I, five multiple-choice items with four
+% options (A)–(D); page 2 is Section II, one multi-part free-response question on a pre-drawn
+% graph with interpret-in-context parts. Its context (an online game's player count) is used
+% nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose:
+%   MC 1 (domain, both tests): A drops the denominator, B gives the radicand endpoint a round
+%        parenthesis, D drops the radicand. Answer C.
+%   MC 2 (the crux): B reports the vertical asymptote as the limit, C reads lim = -2 as "x goes
+%        to -2", D reads "the graph goes right forever" as the output growing. Answer A.
+%   MC 3 (leading term): A uses the term written first, C keeps the sign but treats x^5 as even,
+%        D drops the negative. Answer B.
+%   MC 4 (zeros): B flips the signs from the factors, C gives the y-intercept, D swaps the
+%        coordinates — input and output exchanged. Answer A.
+%   MC 5 (domain/range from a graph): B swaps domain and range, C ignores the open circle,
+%        D reads the range from the endpoints only. Answer A.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
+% ways. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.4}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=11pt]
+
+\item What is the domain of $f(x) = \dfrac{\sqrt{x - 4}}{x - 6}$?
+
+      \smallskip
+      \textbf{(A)} $[\,4, \infty)$ \hspace{1.6em} \textbf{(B)} $(4, 6) \cup (6, \infty)$
+      \hspace{1.6em} {\color{keyred}\textbf{$\checkmark$\,(C)}} $[\,4, 6) \cup (6, \infty)$ \hspace{1.6em}
+      \textbf{(D)} $(-\infty, 6) \cup (6, \infty)$
+
+\item \begin{minipage}[t]{0.58\linewidth}
+      The graph of $f(x) = \dfrac{1}{x - 3} - 2$ is shown with its asymptotes dashed. Which
+      statement is true?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[{\color{keyred}$\checkmark$\,(A)}] $\displaystyle\lim_{x \to \infty} f(x) = -2$
+        \item[(B)] $\displaystyle\lim_{x \to \infty} f(x) = 3$
+        \item[(C)] As $x$ approaches $-2$, $f(x)$ increases without bound.
+        \item[(D)] $\displaystyle\lim_{x \to \infty} f(x) = \infty$: the graph runs right forever.
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.36\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.34cm, y=0.3cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-3,-6) grid (9,3);
+        \draw[->, thick] (-3,0) -- (9.4,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-6) -- (0,3.4) node[above] {\scriptsize $f(x)$};
+        \foreach \x in {-2,3,6} \node[below, font=\tiny] at (\x,0) {\x};
+        \node[left, font=\tiny] at (0,-2) {$-2$};
+        \draw[goldacc, thick, dashed] (3,-6) -- (3,3);
+        \draw[goldacc, thick, dashed] (-3,-2) -- (9,-2);
+        \draw[very thick, plum, <->, samples=50, domain=-2.9:2.75] plot (\x, {1/(\x-3)-2});
+        \draw[very thick, plum, <->, samples=50, domain=3.2:8.9] plot (\x, {1/(\x-3)-2});
+      \end{tikzpicture}
+      \end{minipage}
+
+\item Which of the following describes the end behavior of $p(x) = 3x^2 - x^5 + 7$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $\lim_{x \to \infty} p(x) = \infty$ \ and \ $\lim_{x \to -\infty} p(x) = \infty$
+        \item[{\color{keyred}$\checkmark$\,(B)}] $\lim_{x \to \infty} p(x) = -\infty$ \ and \ $\lim_{x \to -\infty} p(x) = \infty$
+        \item[(C)] $\lim_{x \to \infty} p(x) = -\infty$ \ and \ $\lim_{x \to -\infty} p(x) = -\infty$
+        \item[(D)] $\lim_{x \to \infty} p(x) = \infty$ \ and \ $\lim_{x \to -\infty} p(x) = -\infty$
+      \end{enumerate}
+
+\item What are the $x$-intercepts of the graph of $f(x) = x^2 - 5x - 14$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[{\color{keyred}$\checkmark$\,(A)}] $(7, 0)$ and $(-2, 0)$
+        \item[(B)] $(-7, 0)$ and $(2, 0)$
+        \item[(C)] $(0, -14)$
+        \item[(D)] $(0, 7)$ and $(0, -2)$
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.58\linewidth}
+      The graph of the function $h$ is shown, including its endpoints. Which of the following
+      gives the domain and the range of $h$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[{\color{keyred}$\checkmark$\,(A)}] Domain $[-4, 3)$; range $[-1, 3\,]$
+        \item[(B)] Domain $[-1, 3\,]$; range $[-4, 3)$
+        \item[(C)] Domain $[-4, 3\,]$; range $[-1, 3\,]$
+        \item[(D)] Domain $[-4, 3)$; range $[\,2, 3\,]$
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.36\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.42cm, y=0.36cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-5,-2) grid (4,4);
+        \draw[->, thick] (-5,0) -- (4.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-2) -- (0,4.5) node[above] {\scriptsize $h(x)$};
+        \foreach \x in {-4,-2,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-1,2,3} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum] (-4,3) -- (0,-1) -- (3,2);
+        \fill[plum] (-4,3) circle (2.2pt);
+        \draw[very thick, plum, fill=white] (3,2) circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the game must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item \begin{minipage}[t]{0.52\linewidth}
+      A new online game launches. The number of active players, in thousands, $t$ months
+      after launch is modeled by
+      \[ P(t) = 9 - \frac{8}{t + 1}, \qquad t \ge 0. \]
+      The graph of $P$ is shown, with the line $y = 9$ dashed.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.42\linewidth}
+      \vspace{0pt}
+      \centering
+      \begin{tikzpicture}[x=0.42cm, y=0.32cm, >=stealth]
+        \draw[linegray, very thin, step=1] (0,0) grid (12,10);
+        \draw[->, thick] (0,0) -- (12.5,0) node[right] {\scriptsize $t$};
+        \draw[->, thick] (0,0) -- (0,10.5) node[above] {\scriptsize $P(t)$};
+        \foreach \x in {2,4,6,8,10,12} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {1,3,5,7,9} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[goldacc, thick, dashed] (0,9) -- (12,9);
+        \draw[very thick, plum, ->, samples=60, domain=0:12] plot (\x, {9-8/(\x+1)});
+        \fill[plum] (0,1) circle (2.4pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+      \textbf{(a)} Find $P(0)$. Interpret your answer in the context of the problem, with units.
+      \writespace{1.8cm}{$P(0) = 9 - \frac{8}{1} = 1$. At launch, the game had 1 thousand (1{,}000) active players.}
+
+      \textbf{(b)} State the domain of $P$ in this context and the range of $P$, both in interval
+      notation.
+      \writespace{1.6cm}{Domain $[\,0, \infty)$ --- months since launch. Range $[\,1, 9)$ --- thousands of active players.}
+
+      \textbf{(c)} Find $\displaystyle\lim_{t \to \infty} P(t)$. Interpret it in the context of
+      the problem, with units.
+      \writespace{2.0cm}{$\displaystyle\lim_{t \to \infty} P(t) = 9$. As the months go on without end, the number of active players levels off near 9 thousand (9{,}000) players.}
+
+      \textbf{(d)} A reporter writes: ``The limit is 9, so the game will be 9 months old.''
+      Explain the reporter's error.
+      \writespace{2.0cm}{The 9 is an OUTPUT --- thousands of players --- not an input. The limit says that as the game's age $t$ increases without bound, $P(t)$ gets close to 9 thousand players. $t$ goes to $\infty$, not to 9.}
+
+      \textbf{(e)} Will the game ever have exactly 9{,}000 active players? Use the equation
+      $9 - \dfrac{8}{t + 1} = 9$ to justify your answer.
+      \writespace{2.2cm}{No. \ $9 - \frac{8}{t+1} = 9$ gives $\frac{8}{t+1} = 0$, and a fraction with numerator 8 is never 0. So $P(t)$ gets close to 9 thousand but never reaches it --- 9 is not in the range.}
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,314 @@
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — Slides (Beamer)
+% Release order: hook -> I Do (imaginary unit, complex numbers) -> We Do (library, absolute
+% value, the crux) -> You Do -> debrief -> homework launch.
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+% One small library card for the gallery slides: #1 name, #2 equation, #3 plot.
+\newcommand{\slidepanel}[3]{%
+  \begin{minipage}[t]{0.185\textwidth}\centering
+  {\scriptsize\bfseries\color{plum}#1}\\[-1pt]
+  {\scriptsize #2}\\[2pt]
+  \begin{tikzpicture}[x=0.23cm, y=0.23cm]
+    \draw[linegray, very thin, step=1] (-4,-4) grid (4,4);
+    \draw[->, thin] (-4.3,0) -- (4.5,0);
+    \draw[->, thin] (0,-4.3) -- (0,4.5);
+    \begin{scope}
+      \clip (-4,-4) rectangle (4,4);
+      #3
+    \end{scope}
+  \end{tikzpicture}
+  \end{minipage}}
+\newcommand{\kp}[2]{\fill[plum] (#1,#2) circle (1.6pt);}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.1}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Complex Numbers and the\\[4pt] Library of Parent Functions}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Calculator Says ERROR}
+  \sectionlabel[goldacc]{Think About It}
+
+  \begin{center}
+    {\Huge\bfseries\color{plum} \(\sqrt{-9} = \;?\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Ask}
+        Is it that \textbf{no number at all} squares to \(-9\) --- or only no number
+        \textbf{you have met yet}?
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        \(3^2 = 9\) and \((-3)^2 = 9\). What would a number whose square is
+        \textbf{negative} have to be like?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Every real square is 0 or positive. So we need a new kind of number --- and today
+  it gets a name.}
+\end{frame}
+
+% I DO — THE IMAGINARY UNIT
+\begin{frame}[t, plain]
+  \plumheader{The Imaginary Unit \(i\)}
+  \sectionlabel[goldacc]{Notes row IMAGINARY UNIT $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{The definition}
+        \(i = \sqrt{-1}\), so \(i^2 = -1\).\\[3pt]
+        For \(n > 0\): \(\sqrt{-n} = i\sqrt{n}\). Pull the \(i\) out \textbf{first}.
+      \end{block}
+      \medskip
+      \textbf{Examples}
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item \(\sqrt{-25} = 5i\) \qquad \(\sqrt{-12} = i\sqrt{12} = 2i\sqrt{3}\)
+        \item \(x^2 = -9\): \quad \(x = \pm 3i\)
+      \end{itemize}
+      \medskip
+      \textbf{The trap:} \(\sqrt{-4}\cdot\sqrt{-9} \ne \sqrt{36}\).\\
+      Rewrite first: \((2i)(3i) = 6i^2 = -6\).
+
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[>=stealth]
+        \node (a) at (0,1.3) {\(i^1 = i\)};
+        \node (b) at (2.1,0) {\(i^2 = -1\)};
+        \node (c) at (0,-1.3) {\(i^3 = -i\)};
+        \node (d) at (-2.1,0) {\(i^4 = 1\)};
+        \draw[->, very thick, plum] (a) to[bend left=25] (b);
+        \draw[->, very thick, plum] (b) to[bend left=25] (c);
+        \draw[->, very thick, plum] (c) to[bend left=25] (d);
+        \draw[->, very thick, plum] (d) to[bend left=25] (a);
+        \node[font=\scriptsize\itshape] at (0,0) {\(\times\, i\) each step};
+      \end{tikzpicture}
+      \end{center}
+      \smallskip
+      {\small The powers cycle every 4. Divide the exponent by 4; the remainder says where
+      you land.}
+  \end{columns}
+\end{frame}
+
+% I DO — COMPLEX ARITHMETIC
+\begin{frame}[t, plain]
+  \plumheader{Complex Numbers \(a + bi\)}
+  \sectionlabel[goldacc]{Notes row COMPLEX NUMBERS $\cdot$ I Do: problems 5 and 7 $\cdot$ We Do: 6 and 8}
+
+  \begin{block}{The form}
+    \(a + bi\): \(a\) is the \textbf{real part}, \(b\) is the \textbf{imaginary part}. In
+    \(7 - 2i\), the real part is 7 and the imaginary part is \(-2\).
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.27\textwidth}
+      \textbf{Add: combine like parts}
+      \[ (3 + 2i) + (5 - 4i) = 8 - 2i \]
+    \column{0.40\textwidth}
+      \textbf{Multiply: FOIL, then \(i^2 = -1\)}
+      \small
+      \begin{align*}
+        (2 + 3i)(4 - i) &= 8 - 2i + 12i - 3i^2 \\
+                        &= 8 + 10i + 3 \\
+                        &= 11 + 10i
+      \end{align*}
+    \column{0.28\textwidth}
+      \textbf{Conjugates}\\[3pt]
+      \(a + bi\) and \(a - bi\):
+      \[ (a + bi)(a - bi) = a^2 + b^2 \]
+      always a \textbf{real} number.
+  \end{columns}
+\end{frame}
+
+% WE DO — THE LIBRARY
+\begin{frame}[t, plain]
+  \plumheader{The Library of Parent Functions}
+  \sectionlabel[goldacc]{Notes row PARENT FUNCTIONS $\cdot$ I Do: A--C, 9 $\cdot$ We Do: D--J, 10}
+
+  \centering
+  \slidepanel{A. Constant}{\(y = 2\)}{\draw[very thick, plum] (-4,2) -- (4,2); \kp{0}{2}}\hfill
+  \slidepanel{B. Linear}{\(y = x\)}{\draw[very thick, plum] (-4,-4) -- (4,4); \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}\hfill
+  \slidepanel{C. Quadratic}{\(y = x^2\)}{\draw[very thick, plum] plot[domain=-2.05:2.05, samples=50, smooth] (\x,{\x*\x}); \kp{-1}{1}\kp{0}{0}\kp{1}{1}}\hfill
+  \slidepanel{D. Cubic}{\(y = x^3\)}{\draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] (\x,{\x*\x*\x}); \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}\hfill
+  \slidepanel{E. Quartic}{\(y = x^4\)}{\draw[very thick, plum] plot[domain=-1.43:1.43, samples=50, smooth] (\x,{\x*\x*\x*\x}); \kp{-1}{1}\kp{0}{0}\kp{1}{1}}
+
+  \medskip
+  \slidepanel{F. Absolute value}{\(y = |x|\)}{\draw[very thick, plum] (-4,4) -- (0,0) -- (4,4); \kp{-1}{1}\kp{0}{0}\kp{1}{1}}\hfill
+  \slidepanel{G. Square root}{\(y = \sqrt{x}\)}{\draw[very thick, plum] plot[domain=0:4, samples=60, smooth] (\x,{sqrt(\x)}); \kp{0}{0}\kp{1}{1}\kp{4}{2}}\hfill
+  \slidepanel{H. Cube root}{\(y = \sqrt[3]{x}\)}{\draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] ({\x*\x*\x},\x); \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}\hfill
+  \slidepanel{I. Reciprocal}{\(y = \frac{1}{x}\)}{\draw[very thick, plum] plot[domain=0.25:4, samples=50, smooth] (\x,{1/\x}); \draw[very thick, plum] plot[domain=-4:-0.25, samples=50, smooth] (\x,{1/\x}); \kp{1}{1}\kp{-1}{-1}}\hfill
+  \slidepanel{J. Reciprocal sq.}{\(y = \frac{1}{x^2}\)}{\draw[very thick, plum] plot[domain=0.5:4, samples=50, smooth] (\x,{1/(\x*\x)}); \draw[very thick, plum] plot[domain=-4:-0.5, samples=50, smooth] (\x,{1/(\x*\x)}); \kp{1}{1}\kp{-1}{1}}
+\end{frame}
+
+% WE DO — READING DOMAIN AND RANGE
+\begin{frame}[t, plain]
+  \plumheader{Reading the Library: Domain, Range, Degree}
+  \sectionlabel[goldacc]{Domain left to right $\cdot$ range bottom to top}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Three to model}
+        Constant \(y = 2\): domain all reals; range only \(y = 2\).\\[3pt]
+        Linear \(y = x\): domain and range all reals.\\[3pt]
+        Quadratic \(y = x^2\): domain all reals; range \(y \ge 0\).
+      \end{block}
+      \medskip
+      \textbf{Never reaches the axis:} \(\frac{1}{x}\) and \(\frac{1}{x^2}\) get closer and
+      closer to an axis but never touch it --- so \(x \ne 0\).
+    \column{0.48\textwidth}
+      \begin{block}{Even vs.\ odd degree}
+        \textbf{Even} (\(x^2, x^4, x^6, \dots\)): both arms point \textbf{up}.\\[3pt]
+        \textbf{Odd} (\(x^3, x^5, \dots\)): left arm \textbf{down}, right arm \textbf{up}.
+      \end{block}
+      \medskip
+      \textbf{Problem 9:} through \((-8,-2), (-1,-1), (0,0), (1,1), (8,2)\) --- which card?
+  \end{columns}
+\end{frame}
+
+% WE DO — ABSOLUTE VALUE AS PIECEWISE
+\begin{frame}[t, plain]
+  \plumheader{Absolute Value Is a Piecewise Function}
+  \sectionlabel[redacc]{Notes row ABSOLUTE VALUE --- the hinge of this lesson $\cdot$ I Do: problem 11}
+
+  \begin{columns}[T]
+    \column{0.50\textwidth}
+      \[ |x| = \begin{cases} -x & x < 0 \\[2pt] x & x \ge 0 \end{cases} \]
+      \begin{block}{Read \(-x\) as ``the opposite of \(x\)''}
+        The rule \(-x\) only ever gets \textbf{negative} inputs --- and the opposite of a
+        negative is \textbf{positive}: \(-(-3) = 3\).
+      \end{block}
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.32cm, y=0.32cm]
+        \draw[linegray, very thin, step=1] (-5,0) grid (5,5);
+        \draw[->, thick] (-5.4,0) -- (5.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-0.4) -- (0,5.6) node[above] {\small \(|x|\)};
+        \draw[very thick, redacc] (-5,5) -- (0,0);
+        \draw[very thick, plum] (0,0) -- (5,5);
+        \fill[redacc] (-3,3) circle (2.2pt);
+        \node[font=\scriptsize\bfseries\color{redacc}, align=center, left] at (-5.2,2.5) {\(-x\) owns\\ \(x < 0\)};
+        \node[font=\scriptsize\bfseries\color{plum}, align=center, right] at (5.4,2.5) {\(x\) owns\\ \(x \ge 0\)};
+      \end{tikzpicture}
+      \end{center}
+  \end{columns}
+
+  \medskip
+  \textbf{Move the break:} \(x - 2\) is negative when \(x < 2\), so \quad
+  \( |x - 2| = \begin{cases} 2 - x & x < 2 \\ x - 2 & x \ge 2 \end{cases} \)
+\end{frame}
+
+% WE DO — THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{``But \(-x\) Is Negative'' --- Test It}
+  \sectionlabel[redacc]{We Do: problems 12--14 $\cdot$ 13 is the crux}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{7pt}
+        \item Find \(-x\) for \(x = -5, -1, 0, 2\). When is \(-x\) positive?
+        \item A classmate: ``\(|x| = -x\) for \(x < 0\) can't be right, because \(-x\) is
+              negative.'' Test it at \(x = -6\).
+        \item \(|x - 2|\) at \(x = -1\) and \(x = 5\). What would \(x - 2\) alone give at
+              \(x = -1\)?
+      \end{itemize}
+    \column{0.48\textwidth}
+      \begin{block}{Two readings, one input}
+        At \(x = -1\):\\[3pt]
+        the rule that owns it: \(2 - (-1) = 3\)\\[3pt]
+        the wrong rule: \(-1 - 2 = -3\)\\[3pt]
+        An absolute value is a distance --- it is \textbf{never} negative.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- All Three}
+  \sectionlabel[redacc]{Notes row ALL THREE $\cdot$ problems 15--18, alone, 12 minutes}
+
+  \begin{columns}[T]
+    \column{0.62\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{8pt}
+        \setcounter{enumi}{14}
+        \item Simplify \((4 - 3i)(2 + i)\). Write it as \(a + bi\).
+        \item Solve \(x^2 + 36 = 0\). Then find \(\sqrt{-9}\cdot\sqrt{-16}\).
+        \item The graph is a parent function. Name it, write its equation, and state its
+              domain and range.
+        \item Write \(|x + 3|\) as a piecewise function. Find its value at \(x = -5\) and
+              \(x = 1\), naming the rule each time.
+      \end{enumerate}
+    \column{0.34\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.42cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (-4,-1) grid (4,5);
+        \draw[->, thick] (-4.4,0) -- (4.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-1.4) -- (0,5.6) node[above] {\small \(y\)};
+        \begin{scope}
+          \clip (-4,-1) rectangle (4,5);
+          \draw[very thick, plum] plot[domain=0.45:4, samples=60, smooth] (\x,{1/(\x*\x)});
+          \draw[very thick, plum] plot[domain=-4:-0.45, samples=60, smooth] (\x,{1/(\x*\x)});
+        \end{scope}
+        \fill[plum] (1,1) circle (2.2pt);
+        \fill[plum] (-1,1) circle (2.2pt);
+      \end{tikzpicture}
+      \end{center}
+      {\scriptsize Graph for problem 17}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Rewrite with \(i\) first}
+        \(\sqrt{-n} = i\sqrt{n}\) --- \textbf{before} you multiply, add, or simplify.
+        Then every \(i^2\) becomes \(-1\).
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{\(-x\) means ``the opposite of \(x\)''}
+        On the inputs it owns, \(x < 0\), the opposite is \textbf{positive}. That is why
+        \(|x|\) is never negative.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Next time (2.2):} every card in the library gets moved, stretched, and flipped ---
+  and we read the moves straight from the equation.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 3} and \textbf{problem 8} now. On \(|x - 4|\), find where
+          \(x - 4\) is negative \textit{before} you write the rules.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

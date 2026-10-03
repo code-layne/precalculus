@@ -1,0 +1,280 @@
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% Everything is READ from pre-drawn graphs — no calculus, no sketching.
+%   I DO   : the teacher reads the definitions, marks up the displays, works problems 1 and 5,
+%            then 9 and 11 at the head of their rows.
+%   WE DO  : the class works the rest of each grid, every one cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 13 minutes while the teacher circulates.
+% The worked context is a hiking trail's elevation profile E(d) (rows 1–3). The crux is row 4,
+% READINGS THAT DISAGREE: problem 12 (the maximum is 4, not the x-location 1) and problem 13
+% (increasing but concave DOWN). Problems 16 and 18 transfer them to a temperature graph.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, the hook's write
+% lines -> \ansline, and the answer argument of every \pcell, \writespace and \labelbox filled.
+% Nothing else differs. Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot
+% break across pages: the figure and EACH grid row are separate sub-rows (`\\` then `& ...`).
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% The trail profile, in (miles, hundreds of feet): start (0,300), peak (2,600), inflection
+% (4,400), valley (6,200), end (8,700). Cubic Bezier pieces with level tangents at the turns.
+\newcommand{\trailcurve}{(0,3) .. controls (0.6,4.6) and (1.2,6) .. (2,6)
+  .. controls (4,6) and (4,2) .. (6,2) .. controls (6.8,2) and (7.4,4) .. (8,7)}
+\newcommand{\trailaxes}{%
+  \draw[linegray, very thin, step=1] (0,0) grid (8,8);
+  \draw[->, thick] (0,0) -- (8.6,0) node[below right] {\small $d$};
+  \draw[->, thick] (0,0) -- (0,8.6) node[above] {\small $E(d)$};
+  \foreach \x in {1,...,8} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y/\l in {2/200,4/400,6/600,8/800} \node[left, font=\scriptsize] at (0,\y) {\l};}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.5}{Guided Notes --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard
+\begin{vocabbox}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Increasing (on an interval):}}\\[1pt]
+\ansline{As the inputs increase, the outputs increase --- the graph rises left to right.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Decreasing (on an interval):}}\\[1pt]
+\ansline{As the inputs increase, the outputs decrease --- the graph falls left to right.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Relative (local) maximum / minimum:}}\\[1pt]
+\ansline{A peak / a valley: where the graph switches between increasing and decreasing.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Absolute (global) maximum / minimum:}}\\[1pt]
+\ansline{The greatest / least output anywhere on the graph, endpoints included.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Concave up / concave down:}}\\[1pt]
+\ansline{Bends upward like a cup, $\cup$ / bends downward like a cap, $\cap$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Point of inflection:}}\\[1pt]
+\ansline{A point where the concavity changes, from up to down or from down to up.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+Two friends hiked the same trail and are describing the top of the first big climb. Ana says,
+``The top was at mile 2.'' Ben says, ``No --- the top was 600 feet.''
+
+Can they both be right? What is each one actually telling you about the top?
+\ansline{Yes. Ana says \emph{where} the top is (mile 2, an $x$-value); Ben says \emph{how high} (600 feet, a $y$-value).}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: increasing / decreasing / constant — read left to right, report in x ──────────
+\mainidea[Which way it goes]{Increasing \& Decreasing} &
+A function is \textbf{increasing} on an interval if, as the inputs get larger, the outputs
+always get larger --- reading left to right, the graph \emph{rises}. It is
+\textbf{decreasing} if the outputs always get smaller (the graph \emph{falls}), and
+\textbf{constant} if the outputs stay the same (the graph is flat). \textbf{An interval
+always names $x$-values} --- where along the input axis the behavior happens --- written
+with parentheses, such as $(0, 2)$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.75cm, y=0.42cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.5pt);
+  \fill[plum] (8,7) circle (2.5pt);
+  \node[font=\scriptsize\itshape, align=left, anchor=west] at (8.7,4)
+       {$d$ = miles from\\the trailhead\\[2pt] $E(d)$ = elevation,\\in feet};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+Reading left to right, from $d = 2$ to $d = 6$ the trail is \labelbox{2.4cm}{decreasing}
+\\
+& \notesprompt{Give each interval in miles ($x$-values), with parentheses.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Over which intervals is $E$ increasing?}{1.8cm}{$(0, 2)$ and $(6, 8)$ --- miles, not feet.} &
+\pcell{2}{Over which interval is $E$ decreasing? What is the hiker doing there?}{1.8cm}{$(2, 6)$. The hiker is walking downhill, losing elevation.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{At the peak, $d = 2$, is the trail rising or falling? Why does the interval in
+problem 1 stop \emph{at} 2 and leave 2 out?}{2.0cm}{Neither --- at the top the trail is level for an instant. It rises before 2 and falls after, so 2 belongs to neither interval.} &
+\pcell{4}{\begin{tikzpicture}[x=0.42cm, y=0.022cm, baseline=(current bounding box.north)]
+  \draw[->, thick] (0,0) -- (8.6,0) node[right] {\scriptsize $t$};
+  \draw[->, thick] (0,0) -- (0,112) node[above] {\scriptsize $B(t)$};
+  \foreach \x in {2,5,8} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {40,100} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum] (0,40) -- (2,100) -- (5,100) -- (8,40);
+\end{tikzpicture}\par
+A phone's battery, $B(t)$ percent, $t$ hours after it is plugged in. On which interval
+is $B$ constant? What is happening?}{1.4cm}{$(2, 5)$: the battery stays at 100\% --- fully charged.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: relative and absolute extrema — the VALUE is y, it occurs AT x ─────────────────
+\mainidea[The value, and where]{Maximum \& Minimum} &
+A \textbf{relative (local) maximum} is a peak, where the graph switches from increasing to
+decreasing; a \textbf{relative minimum} is a valley, where it switches from decreasing to
+increasing. The \textbf{absolute (global) maximum} is the greatest output anywhere on the
+graph, endpoints included; the \textbf{absolute minimum} is the least. \textbf{The maximum
+or minimum is a $y$-value. It occurs at an $x$-value.}
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.75cm, y=0.42cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.5pt);
+  \fill[plum] (8,7) circle (2.5pt);
+  % guide lines from the peak to both axes
+  \draw[goldacc, very thick, dashed] (2,6) -- (0,6);
+  \draw[redacc, very thick, dashed] (2,6) -- (2,0);
+  \fill[plum] (2,6) circle (2.8pt);
+  \node[font=\scriptsize\bfseries\color{goldacc}, above] at (1.0,6.1) {how high};
+  \node[font=\scriptsize\bfseries\color{redacc}, right] at (2.05,1.0) {where};
+  \node[font=\scriptsize\itshape, align=left, anchor=west] at (8.7,4)
+       {the same trail:\\$E(d)$ feet at\\mile $d$};
+\end{tikzpicture}
+\end{center}
+\vspace{2pt}
+The relative maximum value is \labelbox{1.6cm}{600 ft}\quad It occurs at $d =$ \labelbox{1.0cm}{2}
+\\
+& \notesprompt{Give the value (a height, in feet) \emph{and} where it occurs (a mile marker).}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{The relative maximum of $E$.}{1.8cm}{600 feet, occurring at $d = 2$ (mile 2).} &
+\pcell{6}{The relative minimum of $E$.}{1.8cm}{200 feet, occurring at $d = 6$ (mile 6).} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{The absolute maximum of $E$. Is it the peak at mile 2? Explain.}{2.0cm}{700 feet, at $d = 8$. Not the peak: the trail's end is higher than the 600-foot peak.} &
+\pcell{8}{The absolute minimum of $E$. Which point is both a relative and an absolute
+extremum?}{2.0cm}{200 feet, at $d = 6$. The valley $(6, 200)$ is both a relative and the absolute minimum.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: concavity and the point of inflection — which way it BENDS ───────────────────
+\mainidea[Which way it bends]{Concavity} &
+A graph is \textbf{concave up} on an interval where it bends upward like a cup,
+$\cup$, and \textbf{concave down} where it bends downward like a cap, $\cap$. Concavity is
+a \emph{different question} from increasing or decreasing: a rising graph can bend either
+way. A \textbf{point of inflection} is a point where the concavity changes, from up to
+down or from down to up.
+\\
+& \begin{minipage}[c]{0.47\linewidth}\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}c@{\hspace{8pt}}c@{}}
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,0.05) .. controls (0.85,0.12) and (1.35,0.5) .. (1.62,1.2);
+\end{tikzpicture} &
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,0.05) .. controls (0.35,0.75) and (0.85,1.15) .. (1.62,1.2);
+\end{tikzpicture} \\
+{\scriptsize rising faster and faster} & {\scriptsize rising more and more slowly} \\
+{\scriptsize concave} \labelbox{1.1cm}{up} & {\scriptsize concave} \labelbox{1.1cm}{down} \\[4pt]
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,1.2) .. controls (0.85,1.15) and (1.35,0.75) .. (1.62,0.05);
+\end{tikzpicture} &
+\begin{tikzpicture}[x=1cm, y=1cm]
+  \draw[linegray] (0,0) rectangle (1.7,1.25);
+  \draw[very thick, plum] (0.05,1.2) .. controls (0.35,0.5) and (0.85,0.12) .. (1.62,0.05);
+\end{tikzpicture} \\
+{\scriptsize falling faster and faster} & {\scriptsize falling more and more slowly} \\
+{\scriptsize concave} \labelbox{1.1cm}{down} & {\scriptsize concave} \labelbox{1.1cm}{up} \\
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}\centering
+\begin{tikzpicture}[x=0.6cm, y=0.36cm, >=stealth]
+  \trailaxes
+  \draw[very thick, plum] \trailcurve;
+  \fill[plum] (0,3) circle (2.2pt);
+  \fill[plum] (8,7) circle (2.2pt);
+  \draw[goldacc, very thick] (4,4) circle (5pt);
+  \node[font=\Large\bfseries\color{goldacc}] at (2,7.2) {$\cap$};
+  \node[font=\Large\bfseries\color{goldacc}] at (6,0.9) {$\cup$};
+\end{tikzpicture}
+
+\vspace{2pt}
+{\footnotesize The circled point is a} \labelbox{3.4cm}{point of inflection}
+\end{minipage}
+\\
+& \notesprompt{Concavity intervals are $x$-values too. Use the trail graph.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{On which interval is $E$ concave down? Concave up?}{1.8cm}{Concave down on $(0, 4)$; concave up on $(4, 8)$.} &
+\pcell{10}{Give the point of inflection of $E$ as $(d, E)$. What is the trail doing
+there?}{1.8cm}{$(4, 400)$. The bend switches from cap to cup; the trail drops most steeply there.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — when two readings disagree ─────────────────────────────────────────
+\mainidea[x or y? direction or bend?]{When Readings Disagree} &
+Every \textbf{interval} and every \textbf{location} is read on the $x$-axis; every
+\textbf{maximum or minimum value} is read on the $y$-axis. And \textbf{increasing} is not the
+same as \textbf{concave up}: direction asks whether the graph goes up or down, concavity asks
+which way it bends. Answer each question separately.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.6cm, y=0.42cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2,-3) grid (8,5);
+  \draw[->, thick] (-2,0) -- (8.6,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-3) -- (0,5.6) node[above] {\small $f(x)$};
+  \foreach \x in {-1,1,2,3,4,5,6,7} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] (-1,0) .. controls (-0.5,2.2) and (0.2,4) .. (1,4)
+     .. controls (3,4) and (3,-2) .. (5,-2) .. controls (5.8,-2) and (6.4,-0.5) .. (7,2);
+  \fill[plum] (-1,0) circle (2.5pt);
+  \fill[plum] (7,2) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Two answers disagree. Decide which reading is right, and fix the other.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Sam writes, ``$f$ is decreasing on $(-2, 4)$.'' Which axis did Sam read? Write the
+correct interval.}{2.0cm}{The $y$-axis --- heights from the valley to the peak. Correct: decreasing on $(1, 5)$.} &
+\pcell{12}{Maya says the maximum of $f$ is 1. Tavi says it is 4. Who is right, and what
+does the other number tell you?}{2.0cm}{Tavi. The maximum value is 4; the 1 is \emph{where} it occurs, at $x = 1$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Lee says, ``Where $f$ is increasing, it is concave up.'' Find an interval where
+$f$ is increasing but concave \emph{down}. Describe it in words.}{2.0cm}{$(-1, 1)$: $f$ rises, but more and more slowly --- a cap, not a cup.} &
+\pcell{14}{Find an interval where $f$ is decreasing but concave \emph{up}. Describe it in
+words.}{2.0cm}{$(3, 5)$: $f$ falls, but more and more slowly.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (13 min) ─────────────────────
+\mainidea[You do, alone]{One Day's Weather} &
+The graph shows the temperature $T(h)$, in degrees Fahrenheit, $h$ hours after midnight, for
+$0 \le h \le 20$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.36cm, y=1.0cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=0.5] (0,0) grid (20,4.5);
+  \draw[->, thick] (0,0) -- (20.8,0) node[below right] {\small $h$};
+  \draw[->, thick] (0,0) -- (0,4.9) node[above] {\small $T(h)$};
+  \foreach \x in {5,10,15,20} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y/\l in {1/40,2/50,3/60,4/70} \node[left, font=\scriptsize] at (0,\y) {\l};
+  \draw[very thick, plum] (0,2) .. controls (2,1.2) and (3.5,1) .. (5,1)
+     .. controls (10,1) and (10,4) .. (15,4) .. controls (16.5,4) and (18.5,2.8) .. (20,1.5);
+  \fill[plum] (0,2) circle (2.5pt);
+  \fill[plum] (20,1.5) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Give intervals and locations in hours, values in degrees.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Over which intervals is $T$ increasing? Decreasing?}{2.0cm}{Increasing on $(5, 15)$; decreasing on $(0, 5)$ and $(15, 20)$.} &
+\pcell{16}{Give the relative maximum and minimum, and the absolute maximum and minimum
+--- each value and the hour it occurs.}{2.0cm}{Rel.\ max $70^\circ$F at $h = 15$; rel.\ min $40^\circ$F at $h = 5$. These are also the absolute max and min --- the ends (50 and 45) lie between.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{On which interval is $T$ concave up? Concave down? Give the point of
+inflection.}{2.0cm}{Concave up on $(0, 10)$; concave down on $(10, 20)$. Inflection point $(10, 55)$.} &
+\pcell{18}{A forecaster says, ``From 10 a.m.\ to 3 p.m.\ the temperature is rising, so it is
+warming faster and faster.'' Use concavity to judge the claim.}{2.2cm}{Wrong. On $(10, 15)$, $T$ is increasing but concave down: still warming, but more and more slowly. Faster and faster was $(5, 10)$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice and the Homework follow ──────
+
+\end{document}

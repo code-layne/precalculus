@@ -1,0 +1,298 @@
+%! Characteristics of Functions: Domain, Range, Intercepts, and End Behavior — Unit 2, Lesson 2.4 — Slides (Beamer)
+% Release order: title → hook → I Do / We Do frames by notes row → You Do → debrief → homework
+% launch. Every graph is pre-drawn; nothing asks students to sketch.
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.6cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.4}\\[0.5cm]
+    {\color{white}\bfseries\Large Characteristics of Functions:\\[2pt]
+     Domain, Range, Intercepts, and End Behavior}\\[1.1cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Coffee on the Desk}
+  \sectionlabel[goldacc]{Think About It}
+
+  A cup of coffee at \(180^\circ\)F is set on a desk in a \(70^\circ\)F room. Let
+  \(T(t)\) be its temperature \(t\) minutes later.
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Ask}
+        If you leave it on the desk all day, about what temperature will it read?
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        As the minutes go by, which quantity keeps \textbf{growing} --- and which one
+        \textbf{settles down}?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{The input (time) runs off forever. The output (temperature) settles near 70.
+  Today that sentence gets a symbol.}
+\end{frame}
+
+% ROW 1 — DOMAIN AND RANGE FROM A GRAPH
+\begin{frame}[t, plain]
+  \plumheader{Domain and Range --- Reading a Graph}
+  \sectionlabel[goldacc]{Notes row DOMAIN \& RANGE $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.5cm, y=0.45cm]
+        \draw[linegray, very thin, step=1] (-5,-3) grid (5,4);
+        \draw[->, thick] (-5,0) -- (5.5,0) node[right] {\small \(x\)};
+        \draw[->, thick] (0,-3) -- (0,4.5) node[above] {\small \(f(x)\)};
+        \foreach \x in {-4,-2,2,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \foreach \y in {-2,2} \node[left, font=\scriptsize] at (0,\y) {\y};
+        \draw[very thick, plum] (-4,2) -- (-1,-2) -- (4,3);
+        \fill[plum] (-4,2) circle (2.6pt);
+        \draw[very thick, plum, fill=white] (4,3) circle (2.6pt);
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{block}{Two directions}
+        \textbf{Domain}: read \textbf{left to right} --- inputs.\\[3pt]
+        \textbf{Range}: read \textbf{bottom to top} --- outputs.
+      \end{block}
+      \smallskip
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Filled dot: included \(\to\) \([\ ]\)
+        \item Open circle: left out \(\to\) \((\ )\)
+        \item Arrow: keeps going \(\to\) \(\infty\), always with \((\ )\)
+      \end{itemize}
+      \smallskip
+      Domain \([-4, 4)\) \quad Range \([-2, 3)\)
+  \end{columns}
+\end{frame}
+
+% ROW 2 — DOMAIN FROM A FORMULA
+\begin{frame}[t, plain]
+  \plumheader{Domain --- From a Formula}
+  \sectionlabel[goldacc]{Notes row DOMAIN $\cdot$ I Do: problem 5 $\cdot$ We Do: problems 6--8}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Two forbidden moves}
+        \textbf{1.} Denominator \(= 0\)? Cross those inputs out.\\[3pt]
+        \textbf{2.} Even root of a negative? Set the radicand \(\ge 0\).\\[3pt]
+        \textbf{3.} Keep the inputs that pass \textit{both}.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \[ k(x) = \frac{\sqrt{x - 3}}{x - 5} \]
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item radicand: \(x - 3 \ge 0\), so \(x \ge 3\)
+        \item denominator: \(x - 5 \ne 0\), so \(x \ne 5\)
+      \end{itemize}
+  \end{columns}
+
+  \medskip
+  \begin{center}
+  \begin{tikzpicture}[x=0.9cm]
+    \draw[<->, thick] (-0.3,0) -- (9.3,0);
+    \foreach \x in {0,...,9} {\draw (\x,0.1) -- (\x,-0.1); \node[below, font=\scriptsize] at (\x,-0.1) {\x};}
+    \draw[line width=3pt, plum] (3,0) -- (4.88,0);
+    \draw[line width=3pt, plum, ->] (5.12,0) -- (9.25,0);
+    \fill[plum] (3,0) circle (3.5pt);
+    \draw[very thick, plum, fill=white] (5,0) circle (3.5pt);
+  \end{tikzpicture}
+
+  \smallskip
+  Domain: \([\,3, 5) \cup (5, \infty)\) \quad --- \(\cup\) joins two intervals
+  \end{center}
+\end{frame}
+
+% ROW 3 — INTERCEPTS
+\begin{frame}[t, plain]
+  \plumheader{Intercepts --- Input 0 or Output 0}
+  \sectionlabel[goldacc]{Notes row INTERCEPTS $\cdot$ I Do: problem 9 $\cdot$ We Do: problem 10}
+
+  \begin{columns}[T]
+    \column{0.42\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.3cm]
+        \draw[linegray, very thin, step=1] (-3,-5) grid (5,6);
+        \draw[->, thick] (-3,0) -- (5.5,0) node[right] {\small \(x\)};
+        \draw[->, thick] (0,-5) -- (0,6.5);
+        \draw[very thick, plum, <->, samples=60, domain=-1.85:3.85] plot (\x, {\x*\x-2*\x-3});
+        \fill[goldacc] (-1,0) circle (3pt);
+        \fill[goldacc] (3,0) circle (3pt);
+        \fill[redacc] (0,-3) circle (3pt);
+      \end{tikzpicture}
+
+      \(f(x) = x^2 - 2x - 3\)
+      \end{center}
+
+    \column{0.54\textwidth}
+      \begin{block}{\(y\)-intercept: the INPUT is 0}
+        Compute \(f(0) = -3\). \quad Point \((0, -3)\).
+      \end{block}
+      \smallskip
+      \begin{block}{\(x\)-intercepts (zeros): the OUTPUT is 0}
+        Solve \(x^2 - 2x - 3 = 0\):\\
+        \((x - 3)(x + 1) = 0\), so \(x = 3\) or \(x = -1\).\\
+        Points \((3, 0)\) and \((-1, 0)\).
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% ROW 4 — END BEHAVIOR
+\begin{frame}[t, plain]
+  \plumheader{End Behavior --- Off the Edges}
+  \sectionlabel[redacc]{Notes row END BEHAVIOR $\cdot$ I Do: problem 11 $\cdot$ We Do: 12--14}
+
+  \begin{block}{Limit notation}
+    \(\displaystyle\lim_{x \to \infty} f(x) = \infty\) \quad reads \quad ``as \(x\) increases
+    without bound, \(f(x)\) increases without bound.''
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      The answer after the equals sign is one of three things:
+      \begin{itemize}\setlength{\itemsep}{4pt}
+        \item \(\infty\) --- the outputs climb forever
+        \item \(-\infty\) --- the outputs fall forever
+        \item a number \(b\) --- the outputs level off at the \textbf{horizontal asymptote}
+              \(y = b\)
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \textbf{Polynomials: the leading term decides.}
+
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|}
+        \hline
+        & \(n\) even & \(n\) odd \\ \hline
+        \(a > 0\) & \(\infty\), \(\infty\) & \(-\infty\), \(\infty\) \\ \hline
+        \(a < 0\) & \(-\infty\), \(-\infty\) & \(\infty\), \(-\infty\) \\ \hline
+      \end{tabular}
+
+      \smallskip
+      {\small (left end, right end) for \(ax^n\)}
+  \end{columns}
+\end{frame}
+
+% ROW 4, CONT. — THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{Input or Output? --- The Crux}
+  \sectionlabel[redacc]{Notes row END BEHAVIOR $\cdot$ We Do: problems 15--16, the crux}
+
+  \begin{columns}[T]
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.38cm, y=0.32cm]
+        \draw[linegray, very thin, step=1] (-6,-5) grid (7,6);
+        \draw[->, thick] (-6,0) -- (7.4,0) node[right] {\scriptsize \(x\)};
+        \draw[->, thick] (0,-5) -- (0,6.4);
+        \foreach \x in {-4,1,4} \node[below, font=\tiny] at (\x,0) {\x};
+        \node[left, font=\tiny] at (0,2) {2};
+        \draw[redacc, very thick, dashed] (1,-5) -- (1,6);
+        \draw[redacc, very thick, dashed] (-6,2) -- (7,2);
+        \draw[very thick, plum, <->, samples=50, domain=-5.9:0.86] plot (\x, {1/(\x-1)+2});
+        \draw[very thick, plum, <->, samples=50, domain=1.25:6.9] plot (\x, {1/(\x-1)+2});
+      \end{tikzpicture}
+
+      \(r(x) = \dfrac{1}{x - 1} + 2\)
+      \end{center}
+
+    \column{0.52\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Sam reads \(\lim_{x \to \infty} r(x) = 2\) as ``\(x\) goes to 2.''
+              What is \(x\) really doing? What gets close to 2?
+        \item Find \(r(2)\). Is it 2?
+        \item Domain and range of \(r\): which number is missing from each?
+      \end{itemize}
+
+      \medskip
+      \begin{block}{Read them separately}
+        Under ``lim,'' \(x \to\) is the \textbf{input}. After the \(=\) is the
+        \textbf{output}.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- All Four}
+  \sectionlabel[redacc]{Notes row ALL FOUR $\cdot$ problems 17--19, alone, 13 minutes}
+
+  \begin{enumerate}\setlength{\itemsep}{10pt}
+    \setcounter{enumi}{16}
+    \item Graph D: the domain and range of \(d\) in interval notation, every
+          \(x\)-intercept, and the \(y\)-intercept.
+    \item \(g(x) = \dfrac{x^2 - 4}{x - 1}\): the domain in interval notation, the zeros, and
+          the \(y\)-intercept.
+    \item Graph E: (a) end behavior at both ends in limit notation; (b) domain and range of
+          \(k\); (c) a classmate writes ``range: all real numbers except \(-2\).'' What did
+          they describe instead?
+  \end{enumerate}
+
+  \bigskip
+  \textit{Graphs D and E are in your notes. Show your work.}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 17--19, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Inputs}
+        Domain $\cdot$ the \(x \to\) under ``lim'' $\cdot$ the input 0 that gives the
+        \(y\)-intercept
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Outputs}
+        Range $\cdot$ the number a limit equals $\cdot$ the output 0 that marks a zero
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \large\textit{Every characteristic is a question about inputs or about outputs. Ask which
+    one before you answer.}
+  \end{center}
+
+  \bigskip
+  \textbf{Next time (2.5):} the middle of the graph --- where it rises, falls, peaks, and
+  bends.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 8} now. On every limit, say what the
+          \textit{input} is doing and what the \textit{output} is doing.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

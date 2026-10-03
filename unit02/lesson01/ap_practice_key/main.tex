@@ -1,0 +1,155 @@
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Shaped like the AP Precalculus exam: page 1 is Section I, five multiple-choice items with four
+% options (A)–(D); page 2 is Section II, one multi-part free-response question on a pre-drawn
+% graph. Its context (a machined part's length error) is used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 treats i^2 as +1 or drops the i^2 term,
+% MC 2 multiplies under one root (sqrt(-4)sqrt(-25) = sqrt(100)), MC 3 forgets the second root
+% or decides "no solutions", MC 4 confuses cube root with cube or square root, MC 5 puts the
+% -(x - 5) rule on the wrong side of the break (the lesson's target misconception).
+% Answers: C, B, D, A, B.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line) and prose answers are \writespace{H}{…}, fixed height both
+% ways. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.1}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=14pt]
+
+\item Which of the following is equivalent to $(2 - i)(3 + 4i)$?
+
+      \smallskip
+      \textbf{(A)} $2 + 5i$ \hspace{2.2em} \textbf{(B)} $6 + 5i$ \hspace{2.2em} {\color{keyred}\textbf{$\checkmark$\,(C)}} $10 + 5i$ \hspace{2.2em} \textbf{(D)} $6 - 4i$
+
+\item What is the value of $\sqrt{-4}\cdot\sqrt{-25}$?
+
+      \smallskip
+      \textbf{(A)} $10$ \hspace{2.2em} {\color{keyred}\textbf{$\checkmark$\,(B)}} $-10$ \hspace{2.2em} \textbf{(C)} $10i$ \hspace{2.2em} \textbf{(D)} $-10i$
+
+\item Which of the following gives all solutions of $x^2 + 81 = 0$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $x = 9$ and $x = -9$
+        \item[(B)] $x = 9i$ only
+        \item[(C)] There are no solutions of any kind.
+        \item[{\color{keyred}$\checkmark$\,(D)}] $x = 9i$ and $x = -9i$
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The graph of a parent function is shown. The marked points are $(-1,-1)$, $(0,0)$,
+      $(1,1)$, and $(8,2)$. Which of the following is its equation?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[{\color{keyred}$\checkmark$\,(A)}] $y = \sqrt[3]{x}$
+        \item[(B)] $y = x^3$
+        \item[(C)] $y = \sqrt{x}$
+        \item[(D)] $y = \dfrac{1}{x}$
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.38\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.3cm, y=0.55cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-9,-3) grid (9,3);
+        \draw[->, thick] (-9,0) -- (9.6,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-3) -- (0,3.5) node[above] {\scriptsize $y$};
+        \foreach \x in {-8,-4,4,8} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-2,-1,1,2} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum] plot[domain=-2.08:2.08, samples=60, smooth] ({\x*\x*\x},\x);
+        \foreach \p in {(-1,-1),(0,0),(1,1),(8,2)} \fill[plum] \p circle (2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\item Which piecewise function is equal to $|x - 5|$ for every real number $x$?
+
+      \smallskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabularx}{\linewidth}{@{}XX@{}}
+      \textbf{(A)} $\begin{cases} x - 5 & x < 5 \\ -(x - 5) & x \ge 5 \end{cases}$ &
+      {\color{keyred}\textbf{$\checkmark$\,(B)}} $\begin{cases} 5 - x & x < 5 \\ x - 5 & x \ge 5 \end{cases}$ \\[14pt]
+      \textbf{(C)} $\begin{cases} -x - 5 & x < 5 \\ x - 5 & x \ge 5 \end{cases}$ &
+      \textbf{(D)} $\begin{cases} -(x - 5) & x < -5 \\ x - 5 & x \ge -5 \end{cases}$ \\
+      \end{tabularx}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the part must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item \begin{minipage}[t]{0.53\linewidth}
+      A machine cuts metal rods that are supposed to be 40 millimeters long. For a rod that is
+      actually $L$ millimeters long, the size of the cutting error, in millimeters, is
+      \[ E(L) = |L - 40|. \]
+      The graph of $E$ for rods from 36 to 44 millimeters is shown.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.40\linewidth}
+      \vspace{-2pt}
+      \centering
+      \begin{tikzpicture}[x=0.52cm, y=0.6cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (36,0) grid (44,4);
+        \draw[->, thick] (36,0) -- (44.6,0) node[right] {\scriptsize $L$ (mm)};
+        \draw[->, thick] (36,0) -- (36,4.6) node[above] {\scriptsize $E(L)$ (mm)};
+        \foreach \x in {36,38,40,42,44} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {1,2,3,4} \node[left, font=\tiny] at (36,\y) {\y};
+        \draw[very thick, plum] (36,4) -- (40,0) -- (44,4);
+        \fill[plum] (40,0) circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+      \textbf{(a)} Find $E(37)$ and $E(42)$. Interpret $E(37)$ in the context of the problem,
+      with units.
+      \writespace{2.4cm}{$E(37) = |37 - 40| = 3$ and $E(42) = |42 - 40| = 2$. A rod that is 37 mm long is cut 3 mm away from the 40 mm target length.}
+
+      \textbf{(b)} Write $E$ as a piecewise function with two rules. State where the break
+      between the rules is, and why it is there.
+      \writespace{2.4cm}{$E(L) = 40 - L$ for $L < 40$, and $E(L) = L - 40$ for $L \ge 40$. The break is at $L = 40$, where $L - 40$ changes from negative to positive.}
+
+      \textbf{(c)} A technician says the rule for rods shorter than 40 mm must be wrong,
+      ``because it has a minus sign in front, so it gives a negative error.'' Use $L = 37$ to
+      explain why the technician is wrong.
+      \writespace{2.4cm}{For $L = 37$ the first rule gives $-(37 - 40) = -(-3) = 3$, which is positive. When $L < 40$, $L - 40$ is negative, and the minus sign takes its \emph{opposite} --- a positive number.}
+
+      \textbf{(d)} The graph of $E$ is the graph of a parent function, moved. Name the parent
+      function and state its range. Then explain, in context, why $E(L)$ can never be negative.
+      \writespace{2.2cm}{The absolute value function $y = |x|$, range $y \ge 0$. $E(L)$ is a distance from 40 mm, and a distance cannot be negative.}
+
+      \textbf{(e)} A rod is accepted when its error is at most 1.5 mm. Use each rule from
+      part (b) to find the shortest and the longest rod that is accepted.
+      \writespace{2.8cm}{Short side: $40 - L \le 1.5$ gives $L \ge 38.5$. Long side: $L - 40 \le 1.5$ gives $L \le 41.5$. Accepted rods run from 38.5 mm to 41.5 mm.}
+
+\end{enumerate}
+
+\end{document}

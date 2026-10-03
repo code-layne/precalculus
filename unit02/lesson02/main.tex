@@ -1,0 +1,366 @@
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. Source: CED 1.12 (LO 1.12.A; EK 1.12.A.1–A.6). The
+% teacher's original plan spent two days here (translations, then all transformations); this
+% lesson condenses them into one period with TRANSLATIONS as the I Do anchor. The horizontal
+% shift is taught as a composition (Lesson 1.3): the inner function adjusts the input before f
+% acts. f(-x) returns in 2.3 as the even/odd test.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\MeetingLength}{60 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.2: Transformations of Functions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will build a new function from a parent function by
+    additive and multiplicative transformations --- translations $f(x) + k$ and $f(x - h)$,
+    reflections $-f(x)$ and $f(-x)$, and dilations $a\,f(x)$ and $f(bx)$ --- describe the
+    result in words and in order, map a parent's key points with
+    $(x, y) \to \left(\tfrac{x}{b} + h,\ a\,y + k\right)$, write the equation of a pre-drawn
+    transformed graph, and explain why a change \emph{inside} the function runs backwards.
+    \hfill\textit{\small (CED 1.12 --- LO 1.12.A)}
+\end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the SHIFTS and OUTSIDE rows: definitions, displays, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 23 & Fill the notes together, every problem cold-called --- problems 2--4 and 6, then the INSIDE and COMBINED rows (7--13; the teacher works 7 and the first line of the problem-9 table). \\
+\textbf{You Do} --- independent & 12 & Work alone while the teacher circulates --- the You Do row, problems 14--17. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 1 and 3 alone; the teacher reads 3 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{This lesson does two days' work in one.} The original plan gave translations a day of
+their own and every other transformation a second day; here they share one period, so the
+guided phase runs 23 minutes and the You Do is held to 12. Translations are the anchor ---
+they get the I Do, and every later row reuses their one idea: \emph{inside acts on $x$ and
+runs backwards; outside acts on $y$ and does what it says.} If the clock slips, cut
+\textbf{problem 12} (describe in order) first --- homework problem 9 asks it again --- then
+problem 6. Protect \textbf{problems 10 and 11}: they are the crux, and homework problem 3 and
+AP item 2 cannot be read without them. Never cut the Homework Launch to zero --- it is the
+period's last formative read.
+\end{skillbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP Skill 1.C} --- Construct new functions using transformations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $g(x) = f(x) + k$ moves the graph of $f$ vertically by $k$ (EK 1.12.A.1).
+  \item $g(x) = f(x + h)$ moves it horizontally by $-h$ units: the inner function adjusts the
+        input before $f$ acts, so $f(x + 3)$ moves \emph{left} 3 (EK 1.12.A.2).
+  \item The moves combine: $g(x) = a\,f\big(b(x - h)\big) + k$, and a key point
+        $(x, y)$ lands at $\left(\tfrac{x}{b} + h,\ a\,y + k\right)$ (EK 1.12.A.5).
+\end{itemize} \\
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $a\,f(x)$ is a vertical dilation by $|a|$; $a < 0$ adds a reflection over the
+        $x$-axis (EK 1.12.A.3).
+  \item $f(bx)$ is a horizontal dilation by $\tfrac{1}{|b|}$; $b < 0$ adds a reflection over
+        the $y$-axis (EK 1.12.A.4).
+  \item A transformation can change the domain and range: $-\sqrt{x + 2} + 5$ has domain
+        $x \ge -2$ and range $y \le 5$ (EK 1.12.A.6).
+  \item \textbf{Target misconception:} reading the inside forwards --- $f(x + 3)$ as
+        ``right 3,'' and $f(2x)$ as a horizontal \emph{stretch} by 2. Both run backwards: solve
+        for the $x$ that feeds $f$ its old input.
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Transformation      & A change to a function's rule that moves, flips, or resizes its graph. \\
+Translation         & A slide up, down, left, or right: $f(x) + k$ (vertical), $f(x - h)$ (horizontal). The shape does not change. \\
+Reflection          & A flip: $-f(x)$ over the $x$-axis, $f(-x)$ over the $y$-axis. \\
+Vertical dilation   & $a\,f(x)$: every output multiplied by $a$ --- a stretch when $|a| > 1$, a compression when $0 < |a| < 1$. \\
+Horizontal dilation & $f(bx)$: every input scaled by $\tfrac{1}{|b|}$ --- a compression when $|b| > 1$, a stretch when $0 < |b| < 1$. \\
+Point-mapping rule  & For $g(x) = a\,f\big(b(x - h)\big) + k$: \TallMath{(x, y) \to \left(\tfrac{x}{b} + h,\ a\,y + k\right)} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: evaluating the 2.1 parent functions ($\sqrt{x}$, $|x|$, $x^3$,
+    $\tfrac{1}{x}$) at a given input; a composition from 1.3, $f(g(x))$ with inner function
+    $x + 3$ --- the exact mechanism of today's horizontal shift; solving a one-step equation for
+    the input that makes an expression a given value; and checking whether a point satisfies
+    a function's rule.
+\end{skillbox}
+
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{The sign that goes the wrong way.} A designer has $y = x^2$ on screen and wants it
+    moved 3 units to the \emph{left}. She types $y = (x - 3)^2$, and the curve slides 3 units
+    to the \emph{right}.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: which equation should she have typed? Take a show of hands for $(x - 3)^2$
+              and $(x + 3)^2$ --- do not settle it.
+        \item Ask: \emph{why} would the sign seem to go the wrong way? Leave it hanging; the
+              SHIFTS row answers it with the warm-up's composition.
+    \end{enumerate}
+    \textit{Discussion prompt:} by the end of today you will be able to prove which equation
+    is right with one input, not a rule of thumb.
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: Shifts, and the Outside} (10 min)
+
+\textit{Notes rows SHIFTS and OUTSIDE: read each definition, mark up the display, work
+problems 1 and 5. Teacher works; students watch and annotate. Nothing is cold-called in this
+phase.}
+\begin{itemize}
+  \item Read the SHIFTS sentences. Outside first --- $f(x) + k$ adds to the output, easy. Then
+        say the key word for the inside: \textbf{composition}. Point back at warm-up item 2:
+        $f(g(-3))$ was 0 because the inner function $x + 3$ handed $f$ a 0.
+  \item Mark up the display: the table's middle column is ``what $f$ sees.'' The vertex of
+        $(x + 3)^2$ is where $f$ sees 0, at $x = -3$. Fill both label boxes yourself ---
+        \emph{left}, and $0$ --- and settle the hook.
+  \item Work \textbf{problem 1} aloud: $x^2 - 4$ is down 4; $(x - 4)^2$ is right 4 because the
+        inside is 0 at $x = 4$. Say the sentence ``solve for the inside'' every time.
+  \item Read the OUTSIDE row. On the display, trace $(4, 2)$ straight up to $(4, 4)$ and
+        straight down to $(4, -2)$ --- the $x$ never moves. Fill the two label boxes, then work
+        \textbf{problem 5}: $-3|x|$ multiplies $y$ by $-3$, so $(2, 2) \to (2, -6)$.
+\end{itemize}
+
+\textbf{WE DO --- Part 2: Shifts and Stretches Together} (6 min)
+
+\textit{Problems 2--4 and 6. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2}: $|x + 2| + 1$ --- make the student say ``the inside is 0 at
+        $-2$'' before they say ``left.''
+  \item \textbf{Problem 3} follows a single point; \textbf{problem 4} runs the idea backwards,
+        from words to an equation: left 5 is $+5$ inside.
+  \item \textbf{Problem 6}: $\tfrac{1}{2}x^2$ --- the $x$ stays put, the $y$ halves.
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: The Inside} (7 min)
+
+\textit{Notes row INSIDE. Class fills the blanks together; cold-call every one. Teacher works
+problem 7; the class works 8.}
+\begin{itemize}
+  \item Read the sentences, then the display: on $\sqrt{2x}$ the output 2 arrives at $x = 2$,
+        not 4. Read the table's ``what $f$ sees'' column aloud. Fill the label boxes ---
+        \emph{compression}, $\tfrac{1}{2}$ --- and say why: the 2 inside makes $x$ do half the
+        work.
+  \item Work \textbf{problem 7}: $\sqrt{-x}$ needs $-x = 9$, so $x = -9$.
+  \item \textbf{Problem 8} puts both dilations side by side: $f(3x)$ squeezes by
+        $\tfrac{1}{3}$, $f(\tfrac{1}{3}x)$ stretches by 3. Insist on solving $3x = 6$.
+\end{itemize}
+
+\textbf{WE DO --- Part 4: Combined, and the Trap} (10 min)
+
+\textit{Notes row COMBINED --- the crux. Class fills the blanks together; cold-call every one.
+Teacher fills the first line of the problem-9 table; the class does the rest and 10--13.}
+\begin{itemize}
+  \item Read the general form and the two steps. Fill the $(0, 0)$ line of the
+        \textbf{problem 9} table yourself, then cold-call the other three lines.
+  \item \textbf{Problems 10 and 11 are the crux}: each states the naive reading, and the
+        answer disagrees with it. Ask for the \emph{input that settles it}, not the rule:
+        $x + 3 = 0$ at $-3$; $2x = 4$ at $2$.
+  \item \textbf{Problem 12} describes in order; \textbf{problem 13} reads Graph A ---
+        vertex first, then ``one right, two down'' gives $a = -2$.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Map \& Match} (12 min)
+
+\textit{Notes row MAP \& MATCH, problems 14--17 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 14} is a translation of $\sqrt{x}$ and one point; \textbf{15} maps three
+        points of $x^3$ through a stretch and two shifts.
+  \item \textbf{Problem 16} is the crux transferred --- $f(x + 6)$ and $f(\tfrac{1}{2}x)$, with
+        no formula for $f$ at all: only solving the inside works.
+  \item \textbf{Problem 17} is the finisher's question: write Graph B's equation, a reflected,
+        stretched, shifted $\sqrt{x}$.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the twelve minutes where students are working
+problems 14--17 without you --- and check. The crux is \textbf{problems 10 and 11} (the inside
+read forwards); its You Do transfer is \textbf{problem 16} ($(6, 5)$ on $f(x + 6)$ and on
+$f(\tfrac{1}{2}x)$, with no formula to lean on).
+\begin{itemize}
+  \item \textbf{Common error (the crux):} $f(x + 6)$ sends $(6, 5)$ to $(12, 5)$ --- the sign
+        read forwards. Ask: ``What does $f$ need to see? Which $x$ makes $x + 6$ equal 6?''
+  \item \textbf{Common error (the crux):} $f(\tfrac{1}{2}x)$ sends $(6, 5)$ to $(3, 5)$ ---
+        the $\tfrac{1}{2}$ applied to $x$ directly. Same question: ``Solve
+        $\tfrac{1}{2}x = 6$.''
+  \item \textbf{Common error:} applying an outside number to $x$ or an inside number to $y$ ---
+        in problem 15, writing $(-1, -1) \to (5, -1)$. Ask: ``Is the 2 inside or outside the
+        cube? Then which coordinate does it touch?''
+  \item \textbf{Common error:} in problem 14, ``right 4, down 2.'' Point at the SHIFTS display
+        and the label box they filled: where is the inside 0?
+  \item \textbf{Graph B (17):} reading $a$ as $+2$ because the curve is ``stretched'' --- ask
+        which way the graph goes from its start point.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (12 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 14--17)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 14} and make them
+        write ``$x + 4 = 0$'' before they write a direction. The one move from the I Do ---
+        solve for the inside --- is the whole fix; if they skip it, the sign error is already
+        in.
+  \item \textbf{On level.} \textbf{Problems 15 and 16} are the class's target. Do not answer
+        16; have them say what $f$ needs to see, solve the inside, and walk away.
+  \item \textbf{Extend.} \textbf{Problem 17} is the finisher's question --- writing the
+        equation means choosing $h$, $k$, and the \emph{sign} of $a$ from three dots. A student
+        who finishes early: ``Write Graph B a second way, as a reflection of $\sqrt{-x}$'' ---
+        then let them present 17 in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 14: left 4, down 2, $(-4, -2)$. Problem 15: the three images. Problem 16:
+        $(0, 5)$ and $(12, 5)$, each with the equation that settled it. Problem 17:
+        $y = -2\sqrt{x + 3} + 4$, from a student who reached it.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{outside the function, a change acts on the outputs and does exactly what it
+        says; inside the function, it acts on the inputs and runs backwards --- so solve for
+        the $x$ that feeds $f$ its old input.} Point at the hook's $(x - 3)^2$ while you say it.
+  \item \textbf{Point forward} (1 min) --- 2.3 brings $f(-x)$ back: when it gives the same
+        function, the graph is its own mirror image.
+\end{enumerate}
+\textbf{Do not} re-teach dilations here, take new questions, or let the homework start early.
+If the launch shows the inside did not land, it is the 2.3 warm-up's job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 1 and 3} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 1(b)}, $|x + 6|$: a student who writes ``right 6'' has the
+        misconception in its simplest form.
+  \item \textbf{Problem 3} is the diagnostic: the vertex of $(x + 5)^2 - 2$ is $(-5, -2)$. A
+        student who picks $(-5, -2)$ but cannot say ``the inside is 0 at $-5$'' has memorised a
+        sign flip; a student who sides with the friend's $(5, -2)$ read the inside forwards.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{inside solid} (nothing to do),
+\textit{right answer, no reason} (a 2.3 warm-up item that asks ``where is the inside 0?''), and
+\textit{inside read forwards} (a one-minute check-in at the door of 2.3, with the SHIFTS table).
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the teacher
+sets. Every function and graph is new. \textit{Part A} (1--3) is translations: three
+descriptions, a $\tfrac{1}{x}$ shift with its asymptotes, and the diagnostic vertex in problem 3.
+\textit{Part B} (4--6) follows $(3, 9)$ on $x^2$ through all four reflections and dilations,
+matches three pre-drawn graphs to $-\sqrt{x}$, $\sqrt{-x}$, $\tfrac{1}{2}\sqrt{x}$, and solves
+the inside of $f(\tfrac{1}{4}x)$. \textit{Part C} (7--9) maps points of $|x|$, writes the
+equation of a pre-drawn parabola, and states the new domain and range of
+$-\sqrt{x + 2} + 5$. \textit{Part D} (10) asks for the headline in writing.
+
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors: the
+inside sign read forwards (1, A and D), $f(3x)$ read as a stretch or applied to $y$ (2, A and B),
+the asymptote moved the wrong way (3, A), the inside or outside sign flipped or $a$ inverted
+(4, B--D), and a range that forgets the reflection (5, A) or the transformation entirely (5, B).
+Section II is one free-response question on two greenhouses, $g(t) = 2f(t - 3) + 1$: map a
+table (a), evaluate and interpret in context (b), describe in order (c), refute a forwards
+reading of $f(2t)$ (d), and build a reflected function (e) --- the finisher's question.
+
+\textbf{Preview:} Next lesson (2.3, Symmetry and Inverse Functions) brings $f(-x)$ back as a
+test: when $f(-x) = f(x)$ the graph is its own reflection over the $y$-axis. The homework's
+closing box points at problem 4(b), where $(3, 9)$ reflected onto $(-3, 9)$ --- already on the
+graph.
+\end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1 re-activates the 2.1 library --- every
+row of the notes reuses those five shapes. Item 2 is the one that matters: $f(g(-3)) = 0$
+because the inner function $x + 3$ handed $f$ a 0, and that is the whole explanation of the
+horizontal shift. Say so when you go over it, and keep it on the board for the SHIFTS row.
+Item 3 rehearses ``solve for the inside,'' the move the crux depends on. On item 4, a student
+who circles $(4, 2)$ evaluated $\sqrt{4}$ instead of $\sqrt{4 - 1}$ --- the inside ignored,
+which is the misconception before it has a name. Flag them.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table: four instruction rows and a You Do row. In each
+row you read the printed sentences, mark up the display, and work the first problem (1, 5, 7,
+and the first line of the problem-9 table); the class works the rest, every problem
+cold-called. The whole lesson rests on one sentence said in the SHIFTS row and repeated in
+every row after it: \emph{inside acts on $x$ and runs backwards; outside acts on $y$ and does
+what it says.} The SHIFTS table is the proof --- its middle column, ``what $f$ sees,'' makes
+the composition visible --- so do not skip it for the graph.
+
+This is two days condensed into one. Move briskly through OUTSIDE --- students find vertical
+changes natural --- and spend the saved minutes in INSIDE and COMBINED. Problems 10 and 11 are
+written so the naive reading and the answer disagree; make the student who reads them forwards
+\emph{test} the claim with a point rather than hear the correction. If time is short, cut 12
+before anything in the crux, and never hand out the ``move opposite the sign'' trick: it fails
+on $f(2x)$ and on $f(-x)$, and solving the inside never does.
+
+The You Do (14--17) carries twelve minutes. Problem 16 is the crux with the formula taken
+away; problem 17 inverts the lesson --- writing an equation from a graph --- and returns as
+homework problem 8.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and in a condensed lesson they are the first thing the guided phase tries to
+borrow. Borrow from problem 12 instead; homework problem 9 asks it again. Do not borrow from
+the three-minute Homework Launch either: with no exit ticket, it is the last look you get
+before the work leaves the room. The share-out is one answer per You Do problem so that a
+student who stalled on 15 still hears problem 16's two points and the equations that settled
+them --- the exact shape of homework problems 3 and 4.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Multiple-choice answers are \textbf{C, D, B, A, C}. Item 2 is the one to glance at: a
+student who circles (A) $(36, -6)$ read $f(3x)$ as a stretch by 3, and one who circles (B)
+$(12, -18)$ applied the inside 3 to the output --- the two halves of the lesson's
+misconception. Item 1's (A) is the hook's error again. In the free response, accept any order
+in (c) that puts the stretch before the vertical shift; part (d) is the crux in context ---
+credit any answer that solves $2t = 4$. Part (e) is the finisher's: $j(t) = f(-t) + 4$, with
+$(4, 5) \to (-4, 9)$.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Graded, two pages, due on the date you set; students start problems 1 and 3 in the Homework
+Launch. Grade problems 3, 4, and 10 for accuracy and the rest for completion and shown work
+if time is short: 3 (the vertex) and 4(d) (where $(3, 9)$ lands on $f(3x)$) say whether the
+inside landed, and 10 says whether the student can explain it. On 4(b), $(-3, 9)$ is the point
+2.3's spiral box builds on --- a student who wrote $(3, -9)$ there confused the two
+reflections, and that predicts trouble with the even/odd test. If many students wrote ``right
+6'' on 1(b), reuse the SHIFTS table as the 2.3 warm-up's first item.
+\end{teachernote}
+\end{document}

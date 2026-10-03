@@ -1,0 +1,271 @@
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Slides (Beamer)
+% Release order: hook -> I Do (SHIFTS, OUTSIDE) -> We Do (INSIDE, COMBINED + the trap)
+% -> You Do -> debrief -> homework launch. Every graph is pre-drawn; nothing asks for a sketch.
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.2}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Transformations of Functions}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: The Sign That Goes the Wrong Way}
+  \sectionlabel[goldacc]{Think About It}
+
+  A designer has \(y = x^2\) on screen and wants it moved \textbf{3 units to the left}.
+  She types:
+
+  \bigskip
+  \begin{center}
+    {\Huge\bfseries\color{plum} \(y = (x - 3)^2\)}
+  \end{center}
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{What happens}
+        The curve slides 3 units to the \textbf{right}. Not what she wanted.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        Which equation should she have typed? Why would the sign seem to go the
+        \textbf{wrong} way?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Commit to an answer. By the end of the period you will be able to prove it.}
+\end{frame}
+
+% ROW 1 — TRANSLATIONS (I DO)
+\begin{frame}[t, plain]
+  \plumheader{Translations --- Slide It}
+  \sectionlabel[goldacc]{Notes row SHIFTS $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{columns}[T]
+    \column{0.50\textwidth}
+      \begin{block}{Outside: \(f(x) + k\)}
+        Acts on the output, after \(f\). Up \(k\) (down if \(k < 0\)).
+      \end{block}
+      \smallskip
+      \begin{block}{Inside: \(f(x - h)\) --- a composition}
+        The inner function \(x - h\) adjusts the input \textbf{before} \(f\) acts.
+        Right \(h\). So \(f(x + 3)\) moves \textbf{left} 3.
+      \end{block}
+      \smallskip
+      \begin{tabular}{|c|c|c|}
+        \hline
+        \(x\) & \(x + 3\) & \((x + 3)^2\) \\ \hline
+        \(-3\) & 0 & 0 \\
+        \(-1\) & 2 & 4 \\ \hline
+      \end{tabular}
+
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.48cm, y=0.38cm, >=stealth]
+        \draw[linegray, very thin, step=1] (-6,-1) grid (3,7);
+        \draw[->, thick] (-6,0) -- (3.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-1) -- (0,7.6) node[above] {\small \(y\)};
+        \foreach \x in {-5,-3,-1,1} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \draw[thick, slate, dashed, domain=-2.6:2.6, samples=40] plot (\x, {\x*\x});
+        \draw[very thick, plum, domain=-5.6:-0.4, samples=40] plot (\x, {(\x+3)*(\x+3)});
+        \draw[->, very thick, goldacc] (1.8,4) -- (-0.8,4);
+      \end{tikzpicture}
+
+      {\footnotesize dashed \(y = x^2\) \quad solid \(y = (x + 3)^2\)}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% ROW 2 — OUTSIDE (I DO)
+\begin{frame}[t, plain]
+  \plumheader{Outside the Function --- Acts on \(y\)}
+  \sectionlabel[goldacc]{Notes row OUTSIDE $\cdot$ I Do: problem 5 $\cdot$ We Do: problem 6}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{\(g(x) = a\,f(x)\): multiply every output by \(a\)}
+        \(|a| > 1\): vertical \textbf{stretch}.\\[2pt]
+        \(0 < |a| < 1\): vertical \textbf{compression}.\\[2pt]
+        \(a < 0\): also a \textbf{reflection} over the \(x\)-axis.
+      \end{block}
+
+      \medskip
+      Outside changes do \textbf{exactly what they say}. The \(x\)-values never move.
+
+      \medskip
+      \(y = -3|x|\): \((2, 2) \to (2, -6)\)
+
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.36cm]
+        \draw[linegray, very thin, step=1] (0,-4) grid (9,7);
+        \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-4) -- (0,7.6) node[above] {\small \(y\)};
+        \draw[thick, slate, dashed, domain=0:9, samples=60] plot (\x, {sqrt(\x)});
+        \draw[very thick, plum, domain=0:9, samples=60] plot (\x, {2*sqrt(\x)});
+        \draw[very thick, redacc, domain=0:9, samples=60] plot (\x, {-sqrt(\x)});
+        \node[font=\scriptsize, plum, left] at (8.8,6.6) {\(2\sqrt{x}\)};
+        \node[font=\scriptsize, redacc, left] at (8.8,-3.6) {\(-\sqrt{x}\)};
+      \end{tikzpicture}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% ROW 3 — INSIDE (WE DO)
+\begin{frame}[t, plain]
+  \plumheader{Inside the Function --- Acts on \(x\), Runs Backwards}
+  \sectionlabel[goldacc]{Notes row INSIDE $\cdot$ teacher works problem 7 $\cdot$ We Do: problem 8}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{\(f(-x)\)}
+        Reflection over the \(y\)-axis.
+      \end{block}
+      \smallskip
+      \begin{block}{\(f(bx)\): horizontal dilation by \(\frac{1}{|b|}\)}
+        In \(f(2x)\), \(x\) only has to be \textbf{half} as big to feed \(f\) the same
+        input. The graph squeezes toward the \(y\)-axis by \(\tfrac{1}{2}\).
+      \end{block}
+
+      \medskip
+      \textbf{The question to ask:} which \(x\) feeds \(f\) its old input?
+
+    \column{0.44\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.55cm, y=0.6cm, >=stealth]
+        \draw[linegray, very thin, step=1] (0,0) grid (9,5);
+        \draw[->, thick] (0,0) -- (9.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,0) -- (0,5.6) node[above] {\small \(y\)};
+        \foreach \x in {2,4,8} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \draw[thick, slate, dashed, domain=0:9, samples=60] plot (\x, {sqrt(\x)});
+        \draw[very thick, plum, domain=0:9, samples=80] plot (\x, {sqrt(2*\x)});
+        \fill[slate] (4,2) circle (2.4pt);
+        \fill[plum] (2,2) circle (2.4pt);
+        \draw[->, very thick, goldacc] (3.8,2) -- (2.25,2);
+      \end{tikzpicture}
+
+      {\footnotesize dashed \(\sqrt{x}\) \quad solid \(\sqrt{2x}\)}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% ROW 4 — COMBINED AND THE TRAP (WE DO)
+\begin{frame}[t, plain]
+  \plumheader{All Four at Once --- and the Trap}
+  \sectionlabel[redacc]{Notes row COMBINED $\cdot$ We Do: 9--13 (10 and 11 are the crux)}
+
+  \begin{center}
+    {\Large \(g(x) = a\,f\big(b(x - h)\big) + k \qquad (x, y) \;\longrightarrow\; \left(\tfrac{x}{b} + h,\ a\,y + k\right)\)}
+  \end{center}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Inside: \(b\), \(h\) act on \(x\)}
+        Divide by \(b\), then add \(h\). Runs backwards.
+      \end{block}
+      \smallskip
+      \begin{block}{Outside: \(a\), \(k\) act on \(y\)}
+        Multiply by \(a\), then add \(k\). Does what it says.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item Jordan: \((x + 3)^2 - 1\) is ``right 3, down 1.'' Where is the inside zero?
+        \item Ana: \(f(2x)\) ``stretches by 2.'' \((4, 2)\) is on \(f\) --- which \(x\) gives
+              \(g\) the output 2?
+        \item Describe in order: \(-\tfrac{1}{2}(x - 4)^2 + 1\).
+        \item Write the equation of Graph A.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Map \& Match}
+  \sectionlabel[redacc]{Notes row MAP \& MATCH $\cdot$ problems 14--17, alone, 12 minutes}
+
+  \begin{columns}[T]
+    \column{0.60\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{7pt}
+        \setcounter{enumi}{13}
+        \item \(g(x) = \sqrt{x + 4} - 2\). Describe it in order. Where does \((0, 0)\) land?
+        \item Map \((-1, -1)\), \((0, 0)\), \((1, 1)\) on \(y = x^3\) onto
+              \(g(x) = 2(x - 3)^3 - 1\).
+        \item \((6, 5)\) is on \(f\). Find its image on \(f(x + 6)\) and on
+              \(f(\tfrac{1}{2}x)\).
+        \item Write the equation of Graph B, \(y = a\sqrt{x - h} + k\).
+      \end{enumerate}
+
+    \column{0.36\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.45cm, y=0.45cm]
+        \draw[linegray, very thin, step=1] (-4,-1) grid (4,5);
+        \draw[->, thick] (-4,0) -- (4.6,0) node[below right] {\small \(x\)};
+        \draw[->, thick] (0,-1) -- (0,5.6) node[above] {\small \(y\)};
+        \draw[thick, slate, dashed, domain=0:4, samples=50] plot (\x, {sqrt(\x)});
+        \draw[very thick, plum, domain=-3:3.25, samples=80] plot (\x, {4 - 2*sqrt(abs(\x+3))});
+        \fill[plum] (-3,4) circle (2.4pt);
+        \fill[plum] (-2,2) circle (2.2pt);
+        \fill[plum] (1,0) circle (2.2pt);
+      \end{tikzpicture}
+
+      {\footnotesize\textbf{Graph B}}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 14--17, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Outside \(f\)}
+        Acts on the \textbf{outputs}.\\[3pt]
+        Does exactly what it says.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Inside \(f\)}
+        Acts on the \textbf{inputs}, before \(f\) sees them.\\[3pt]
+        Runs backwards: ask which \(x\) feeds \(f\) its old input.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Next time (2.3):} \(f(-x)\) comes back --- as a test for symmetry --- and then we
+  run a function backwards on purpose.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 1} and \textbf{problem 3} now. For any change inside
+          \(f\), find the \(x\) that makes the inside what \(f\) needs.
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

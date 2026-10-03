@@ -1,0 +1,382 @@
+%! Symmetry and Inverse Functions — Unit 2, Lesson 2.3 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. Sources: CED 1.5.B (even and odd functions — LO 1.5.B,
+% EK 1.5.B.1–2) and CED 2.8 (Inverse Functions — LO 2.8.A–B, EK 2.8.A.1–2, 2.8.B.1–5). One
+% theme ties the day together: THREE SYMMETRIES — over the y-axis (even), about the origin (odd),
+% and over the line y = x (a function and its inverse). The evaluate-vs-solve distinction,
+% f(a) = b <=> f^{-1}(b) = a, lives here. Previous: 2.2 Transformations. Next: a quiz on
+% 2.1–2.3, then 2.4.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\MeetingLength}{60 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.3: Symmetry and Inverse Functions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will decide whether a function is even, odd, or
+    neither --- from its graph and by comparing $f(-x)$ with $f(x)$ and $-f(x)$; decide whether
+    a function is one-to-one and read the input-output pairs of its inverse from a table or a
+    graph ($f(a) = b$ exactly when $f^{-1}(b) = a$); and find the inverse of a function on an
+    invertible domain, verifying it by composition.
+    \hfill\textit{\small (CED 1.5.B and 2.8)}
+\end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- the letters A, S, H in the hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the SYMMETRY and EVEN OR ODD TEST rows: definitions, displays, problems 1 and 3. \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2 and 4--6, then the INVERSES and FINDING THE INVERSE rows (7--14; the teacher works 7 and 11). \\
+\textbf{You Do} --- independent & 13 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 3 and 5 alone; the teacher reads 5(b) over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Two topics share one block.} Even/odd symmetry and inverse functions are joined by
+one idea --- three symmetries --- but they are still two halves, so the guided phase runs 22
+minutes and the even/odd half must not overrun its 16 (I Do plus Part 2). If the clock slips,
+cut \textbf{problem 18} (restricting $(x - 2)^2$) first, then problem 10, and protect the
+\textbf{crux, problem 13} ($g^{-1}(10)$ against $1/g(10)$): homework problems 5 and 10 cannot be
+done without it. Never cut the Homework Launch to zero --- it is the period's last formative
+read.
+\end{skillbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP Skill 2.B} --- Construct equivalent graphical, numerical, and analytical
+representations: decide even, odd, or neither from a graph and from a formula. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Even: symmetric over the $y$-axis, and $f(-x) = f(x)$. Odd: symmetric about the
+        origin, and $f(-x) = -f(x)$. Most functions are neither. (EK 1.5.B.1--2)
+  \item $f(-x)$ is the $y$-axis reflection from 2.2: an even function is one that reflection
+        leaves unchanged.
+  \item \textbf{Second trap:} ``it has an odd power, so it is odd.'' $x^3 + 1$ is neither ---
+        the constant never flips sign.
+\end{itemize} \\
+\textbf{AP Skill 2.B} --- Read the input-output pairs of an inverse from a table or a graph. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A function is invertible on a domain where each output comes from exactly one input ---
+        the horizontal line test. (EK 2.8.A.1)
+  \item If $f(a) = b$, then $f^{-1}(b) = a$: the pair $(a, b)$ becomes $(b, a)$, a reflection
+        over $y = x$. Evaluating $f^{-1}$ at $b$ is solving $f(x) = b$. (EK 2.8.A.2, 2.8.B.3)
+  \item The domain of $f$ is the range of $f^{-1}$, and the range of $f$ is the domain of
+        $f^{-1}$. (EK 2.8.B.2)
+\end{itemize} \\
+\textbf{AP Skill 1.A} --- Solve equations: find $f^{-1}$ by swapping $x$ and $y$ and solving. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Swap and solve; then verify by composition: $f(f^{-1}(x)) = f^{-1}(f(x)) = x$, the
+        1.3 idea of one machine undoing another. (EK 2.8.B.1, 2.8.B.4)
+  \item Restricting the domain makes a function invertible: $x^2$ on $x \ge 0$ has inverse
+        $\sqrt{x}$; a context can restrict an inverse further. (EK 2.8.A.1, 2.8.B.5)
+  \item \textbf{Target misconception:} $f^{-1}(x)$ means $\dfrac{1}{f(x)}$. The $-1$ names
+        the inverse --- it is not an exponent. $g^{-1}(10) = 3$ for $g(x) = 2x + 4$, while
+        $1/g(10) = 1/24$.
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Even function        & $f(-x) = f(x)$ for every $x$ in the domain; the graph is symmetric over the $y$-axis. \\
+Odd function         & $f(-x) = -f(x)$ for every $x$ in the domain; the graph is symmetric about the origin. \\
+One-to-one function  & A function in which each output comes from exactly one input. \\
+Horizontal line test & A graph is one-to-one exactly when no horizontal line crosses it more than once. \\
+Inverse function     & $f^{-1}$, the function that runs $f$ backward: $f(a) = b$ means $f^{-1}(b) = a$. Its graph is the reflection of $f$'s over $y = x$. \\
+Restricted domain    & A smaller domain chosen so a function becomes one-to-one, such as $x^2$ on $x \ge 0$. \\
+Identity check       & \TallMath{f\big(f^{-1}(x)\big) = f^{-1}\big(f(x)\big) = x} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: simplifying $(-x)^2$, $(-x)^3$ and the negative of an expression --- the
+    sign work every even/odd test runs on; solving $y = 2x + 5$ for $x$ --- the move that finds
+    an inverse; evaluating a composition $f(g(5))$ from 1.3 --- which, for this pair, comes back
+    to 5 and previews the inverse check; and moving a point under the 2.2 reflections
+    $y = f(-x)$ and $y = -f(x)$.
+\end{skillbox}
+
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{Three letters.} On the board, large: \textsf{\textbf{A \quad S \quad H}}.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask which letters look the same in a mirror held along a vertical line through
+              the middle. A and H. Then which look the same after a half turn --- upside down.
+              S and H.
+        \item Name the two tests out loud: the \textit{fold} and the \textit{half turn}. Graphs
+              get the same two tests today, and they have names --- \textbf{even} and
+              \textbf{odd}.
+    \end{enumerate}
+    \textit{Discussion prompt:} then add a third mirror, tilted: the diagonal line $y = x$.
+    A function and its inverse are mirror images across it. That is the second half of the
+    period.
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: The Fold and the Half Turn} (10 min)
+
+\textit{Notes rows SYMMETRY and EVEN OR ODD TEST: read each definition, mark up the display,
+work problems 1 and 3. Teacher works; students watch and annotate. Nothing is cold-called in
+this phase.}
+\begin{itemize}
+  \item Read the SYMMETRY sentences. On Graph A, fold along the $y$-axis with your hand and
+        point to the gold pair $(2, -2)$ and $(-2, -2)$; on Graph B, spin the page a half
+        turn. Fill both label boxes yourself: $(-x, y)$ and $(-x, -y)$.
+  \item Work \textbf{problem 1} aloud: A is even, and say \textit{why} --- the fold matches.
+  \item Read the EVEN OR ODD TEST sentences and the three steps. Tie $f(-x)$ to 2.2 in one
+        sentence: it is the $y$-axis reflection, and an even function is one it leaves alone.
+  \item Work \textbf{problem 3}, $f(x) = x^4 - 5x^2$: write $(-x)$ in parentheses
+        \textit{first}, narrate ``an even power erases the sign,'' then compare to $f(x)$.
+\end{itemize}
+
+\textbf{WE DO --- Part 2: Even, Odd, or Neither} (6 min)
+
+\textit{Problems 2 and 4--6. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2}: B is odd, C is neither. Push on C: it \textit{looks} like B moved
+        up, and that is exactly why it fails.
+  \item \textbf{Problems 4 and 5}: one odd, one even. On 4, make the class factor out the
+        $-1$ to \textit{see} $-g(x)$.
+  \item \textbf{Problem 6 is the second trap}: ``$x^3 + 1$ has an odd power, so it is odd.''
+        Write $h(-x) = -x^3 + 1$ and $-h(x) = -x^3 - 1$ side by side and let the class find
+        the sign that disagrees. Graph C was this function's cousin.
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: Inverses from Tables and Graphs} (8 min)
+
+\textit{Notes row INVERSES. Class fills the blanks together; cold-call every one. Teacher
+works problem 7; the class works 8--10.}
+\begin{itemize}
+  \item Read the definitions; on the left graph, draw nothing --- just point at the dashed
+        line $y = 4$ crossing twice. That is ``not one-to-one.''
+  \item On the right graph, fill the two label boxes: the line $y = x$, and $(1, 3) \to
+        (3, 1)$. Then fill the $f^{-1}$ table as a class, one cold-call per cell.
+  \item Work \textbf{problem 7}: $f(3) = 7$ but $f^{-1}(3) = 1$. Say it as a sentence: ``3
+        came \textit{out} of $f$ when 1 went in.'' The two readings disagree on purpose.
+  \item \textbf{Problem 8} is the evaluate-versus-solve distinction: solving $f(x) = 9$
+        \textit{is} evaluating $f^{-1}(9)$. \textbf{Problem 10} swaps domain and range.
+\end{itemize}
+
+\textbf{WE DO --- Part 4: Finding the Inverse} (8 min)
+
+\textit{Notes row FINDING THE INVERSE --- the crux. Class fills the blanks together; cold-call
+every one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Read the four steps, then the display: the INVERSE box against the RECIPROCAL box.
+        Read the plum sentence aloud --- the $-1$ is a name, not an exponent.
+  \item Work \textbf{problem 11}, $f(x) = 3x - 6$, swap then solve. \textbf{Problem 12}
+        checks it by composition --- the 1.3 move, and the ``in your own words'' line.
+  \item \textbf{Problem 13 is the crux}: $g^{-1}(10) = 3$ against $1/g(10) = 1/24$. Make the
+        class put \textit{both} into $g$; only one comes back to 10.
+  \item \textbf{Problem 14} restricts $x^2$ to $x \ge 0$: without it, $f^{-1}(9)$ would need
+        two answers --- the left graph again.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Mirror and Undo} (13 min)
+
+\textit{Notes row MIRROR AND UNDO, problems 15--18 --- the whole independent phase. Students
+work alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} tests $r(x) = 2x^3 - x$ (odd) and $q(x) = x^3 - 2$ (neither): the
+        second trap transferred. \textbf{16} is the crux transferred to a table.
+  \item \textbf{Problem 17} finds and checks $h^{-1}$ for $h(x) = 4x - 3$.
+  \item \textbf{Problem 18} is the finisher's question: restrict $(x - 2)^2$ to $x \ge 2$, find
+        $k^{-1}(x) = \sqrt{x} + 2$, and swap domain and range.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the thirteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} ($g^{-1}(10) = 3$,
+not $1/24$); its You Do transfer is \textbf{problem 16} ($s^{-1}(4) = 3$, not $1/2$).
+\begin{itemize}
+  \item \textbf{Common error (the target misconception):} reading $f^{-1}$ as $1/f$. On
+        problem 16 a student writes $\tfrac{1}{2}$. Push: ``Put your answer into $s$. Do you
+        get 4 back?'' Point at the INVERSE and RECIPROCAL boxes from Part 4.
+  \item \textbf{Common error (the second trap):} calling $q(x) = x^3 - 2$ odd because of the
+        cube. Ask: ``What is $-q(x)$? Write it next to $q(-x)$. Do they match?''
+  \item \textbf{Common error:} dropping the parentheses, so $(-x)^3$ becomes $x^3$ or
+        $-x^2$ becomes $x^2$. Cold-call: ``Is the power even or odd? So does the sign stay?''
+  \item \textbf{Common error:} solving for $x$ without swapping, then naming the result
+        $h^{-1}(y)$ --- or swapping and never solving. Ask: ``Which letter is the input of
+        $h^{-1}$? Is $y$ alone yet?''
+  \item \textbf{Evaluate versus solve:} on a table, reading $s(4)$ when asked for $s^{-1}(4)$.
+        Ask: ``Is 4 going in, or did 4 come out?''
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (13 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        write $r(-x) = 2(-x)^3 - (-x)$ with every parenthesis before simplifying. Then make
+        them write $-r(x)$ on the line below and compare term by term. The comparison, not
+        the simplifying, is where they are lost.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} are the inverse in two representations.
+        On 16 do not answer; ask ``which row is 4 in?'' and walk away. On 17, make them check
+        with composition rather than asking you.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question --- the swap gives
+        $x = (y - 2)^2$, and choosing $+\sqrt{x}$ rather than $\pm\sqrt{x}$ is exactly what the
+        restriction $x \ge 2$ buys. A finisher who says \textit{why} the domain of $k^{-1}$ is
+        $x \ge 0$ (it is the range of $k$) presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: $r$ odd, $q$ neither --- name the $-2$ that refuses to flip. Problem 16:
+        $s^{-1}(4) = 3$, with the check $s(3) = 4$. Problem 17: $h^{-1}(x) = \frac{x + 3}{4}$.
+        Problem 18: $k^{-1}(x) = \sqrt{x} + 2$, domain $x \ge 0$ --- a finisher presents why.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{an inverse swaps every input with its output, so $f^{-1}$ runs $f$ backward ---
+        it undoes $f$; it is not $1/f$.} Point at the dashed line $y = x$ while you say it,
+        then at the three symmetries on the slide: the fold, the half turn, the diagonal
+        mirror.
+  \item \textbf{Point forward} (1 min) --- next class is a quiz on 2.1--2.3; then 2.4 reads
+        domain, range, intercepts, and end behavior from any graph --- and problem 10's
+        swap of domain and range is the first of those.
+\end{enumerate}
+\textbf{Do not} re-teach the algebraic test here, take new questions, or let the homework
+start early. If the launch shows it did not land, it is the quiz-review warm-up's job, not
+this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 3 and 5} alone and in silence (3 minutes). Circulate
+straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 3} is the algebraic test with three terms --- a student who writes
+        $r(-x) = -x^4 + 6x^2 + 1$ has made every power odd.
+  \item \textbf{Problem 5(b) is the diagnostic}: $G^{-1}(130) = 4$ months. A student who
+        writes $\frac{1}{130}$ is reading $f^{-1}$ as a reciprocal; a student who hunts for
+        130 in the $m$ row is evaluating instead of solving.
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{inverse solid} (nothing to do),
+\textit{evaluates instead of solves} (one table item in the quiz-review warm-up), and
+\textit{still reading $f^{-1}$ as $1/f$} (a one-minute check-in at the door before the quiz).
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the
+teacher sets. Every context is new. \textit{Part A} (1--2) classifies three new graphs P, Q, R
+and names the partner points of $(3, -2)$ and $(1, 4)$ under each symmetry. \textit{Part B}
+(3--4) is the algebraic test: an even quartic with a constant term, then $x^3 - x + 2$ --- the
+odd-power trap, with a classmate's claim to answer. \textit{Part C} (5--6) reads an inverse
+from a gym-membership table (5(b) is the diagnostic) and applies the horizontal line test to
+two new graphs, M and N, swapping domain and range. \textit{Part D} (7--10) finds and checks
+the inverse of $4x + 8$, restricts $x^2 - 4$ to $x \ge 0$, and problem 10 asks for the
+headline in writing.
+
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items (four options) whose distractors are the
+lesson's errors: the odd-power trap and an even function offered as odd (1); evaluating
+$f(6)$ or taking $1/f(6)$ instead of $f^{-1}(6)$ (2); the reciprocal $1/(5x - 2)$ and undoing
+the steps in the wrong order (3); reflecting $(2, 7)$ over an axis, or taking a reciprocal,
+instead of swapping to $(7, 2)$ (4); applying the even rule to an odd function (5). Section II
+is one free-response question on a bakery's cost: evaluate and interpret (a), find the inverse
+(b), evaluate and interpret it (c), name a classmate's $1/C(50)$ error (d), and verify by
+composition plus explain why $C^{-1}(52)$ is meaningless in context (e) --- the finisher's
+question.
+
+\textbf{Preview:} Next class is a quiz on 2.1--2.3. Then Lesson 2.4 (Characteristics of
+Functions: Domain, Range, Intercepts, and End Behavior) reads those features from any graph or
+formula --- the homework's closing box points back at problem 6, where the domain of $M$
+became the range of $M^{-1}$.
+\end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1 is the only rehearsal of the sign work in
+$(-x)^n$ --- a student who writes $(-x)^2 = -x^2$ will call every even function odd within the
+hour, so note names before the notes start. Item 2 is the swap-and-solve move without the swap;
+item 3 is a composition that comes back to 5 on purpose --- if anyone notices, tell them to
+hold the thought until Part 4. Item 4 sets up the even/odd point pairs: $(-2, -4)$ is the
+$y$-axis partner an even function would need.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first
+problem of the grid (1, 3, 7, 11), and the class works the rest with the pen in their hand,
+every problem cold-called. Keep the theme audible: \textit{three symmetries} --- the fold
+(even), the half turn (odd), the diagonal mirror (inverse). The SYMMETRY row is read from
+pictures only; resist doing algebra there. In EVEN OR ODD TEST, the parentheses around $-x$
+are the whole technique, and problem 6 ($x^3 + 1$) is a planned trap --- let a student say
+``odd'' before anyone tests it.
+
+INVERSES is where the evaluate-versus-solve distinction now lives: $f(3) = 7$ but
+$f^{-1}(3) = 1$ (problem 7), and solving $f(x) = 9$ is evaluating $f^{-1}(9)$ (problem 8).
+FINDING THE INVERSE carries the crux. Problem 13 puts $g^{-1}(10)$ and $1/g(10)$ side by side
+so the two readings \emph{disagree} --- 3 against $\frac{1}{24}$ --- and the check (put each into
+$g$) settles it without your authority. Do not accept ``the inverse is the flip''; make the
+class say ``runs $g$ backward.''
+
+The You Do row (15--18) is the entire independent phase and carries thirteen minutes. Problem
+16 is the crux with a table instead of a formula; problem 18 is the finisher's question. If the
+clock slips, cut 18 and let the Debrief carry its answer; restriction returns as homework
+problem 9 and AP Practice 6(e).
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and they are at risk: the guided phase runs 22 minutes across two topics and will
+try to borrow them. Borrow from problem 18 instead --- restriction reappears in homework
+problem 9. Do not borrow from the three-minute Homework Launch either: with no exit ticket it
+is the last look before the quiz. The share-out is one answer per You Do problem so that a
+student who stalled on 15 still hears $s^{-1}(4) = 3$ with its check --- the exact shape of
+the diagnostic, homework 5(b), which they will otherwise meet alone at home.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet; the cover gives it a $+$ cell outside the total. Multiple-choice answers are B, C, A, D,
+B. Item 2 is the most useful one to glance at: (B) $-\frac{1}{4}$ is $1/f(6)$ --- the target
+misconception --- and (A) $-4$ is $f(6)$, evaluating instead of solving. Item 1's (A),
+$x^3 + 1$, is the second trap. In the free response, credit (d) for any answer saying that
+$1/C(50)$ is a reciprocal of a cost while $C^{-1}$ turns a cost back into a number of
+cupcakes; (e) is the deepest part --- credit any answer saying half a cupcake cannot be
+ordered, so only certain costs are valid inputs of $C^{-1}$.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Graded, two pages, due on the date you set; students start problems 3 and 5 in the Homework
+Launch. Grade problems 4, 5, and 10 for accuracy and the rest for completion and shown work if
+time is short: 4 (the odd-power trap), 5(b) (the diagnostic) and 10 (the headline) are the
+three items that say whether the day landed, and they predict the quiz better than the
+algebra items do. On problem 8, a student who checks $f(f^{-1}(x))$ instead of
+$f^{-1}(f(x))$ is still right --- accept either order. Problem 6(b) is the bridge to 2.4: a
+student who swaps domain and range correctly there is ready to read them from any graph.
+\end{teachernote}
+\end{document}

@@ -1,0 +1,208 @@
+%! Characteristics of Functions: Domain, Range, Intercepts, and End Behavior — Unit 2, Lesson 2.4 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used a cooling coffee cup and the graphs f, g, k, p, q, r, d; the AP
+% Practice uses an online game's player count; the homework uses a new graph w, new formulas,
+% and a stocked fish pond.
+%   Page 1 — Part A (reading a graph, 1–2) and Part B (domain from a formula, 3–5).
+%   Page 2 — Part C (intercepts, 6–7) and Part D (end behavior, 8–10).
+% The diagnostic item is 8(b): lim_{t->oo} P(t) = 400 read as "t goes to 400" — the lesson's
+% input/output crux, met alone and in context. Problem 10 asks for the headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line so
+% its \ans cannot rewrap anything. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.4}{Homework --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Write every domain and range in interval notation, and on every
+limit ask two questions: what is the \emph{input} doing, and what is the \emph{output} doing?
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Reading a graph}
+\end{headlinebox}
+
+\begin{minipage}[t]{0.44\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.42cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-3) grid (6,5);
+  \draw[->, thick] (-4,0) -- (6.5,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-3) -- (0,5.5) node[above] {\small $w(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3,4,5} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] (-3,1) -- (-1,-2) -- (2,4) -- (5,1);
+  \fill[plum] (-3,1) circle (2.6pt);
+  \draw[very thick, plum, fill=white] (5,1) circle (2.6pt);
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.53\linewidth}
+\vspace{0pt}
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+\item The graph of $w$ is shown, including its endpoints. Write each in interval notation.
+
+      Domain of $w$: \ans{$[-3,\ 5)$}
+
+      Range of $w$: \ans{$[-2,\ 4\,]$}
+
+\item Write each set of numbers in interval notation.
+
+      (a) $-1 \le x \le 7$ \quad \ans{$[-1,\ 7\,]$}
+
+      (b) $x > 0$ \quad \ans{$(0,\ \infty)$}
+
+      (c) $x \le 2$ \quad \ans{$(-\infty,\ 2\,]$}
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.16in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Domain from a formula}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=3]
+
+\item $f(x) = \sqrt{x + 5}$
+
+\begin{work}
+  x + 5 &\ge 0 \\
+      x &\ge -5
+\end{work}
+
+      Domain: \ans{$[-5,\ \infty)$}
+
+\item $g(x) = \dfrac{7}{x - 6}$
+
+\begin{work}
+  x - 6 &\ne 0 \\
+      x &\ne 6
+\end{work}
+
+      Domain: \ans{$(-\infty, 6) \cup (6, \infty)$}
+
+\item $h(x) = \dfrac{\sqrt{x - 2}}{x - 7}$. Check the radicand \emph{and} the denominator.
+
+\begin{work}
+  \text{radicand: } x - 2 &\ge 0, \quad\text{so } x \ge 2 \\
+  \text{denominator: } x - 7 &\ne 0, \quad\text{so } x \ne 7
+\end{work}
+
+      Domain: \ans{$[\,2, 7) \cup (7, \infty)$}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Intercepts}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=6]
+
+\item \begin{minipage}[t]{0.45\linewidth}
+      $f(x) = x^2 + x - 12$. Find the $y$-intercept and the zeros.
+
+\begin{work}
+  f(0) &= -12 \\
+  (x + 4)(x - 3) &= 0 \\
+  x = -4 \quad\text{or}\quad x &= 3
+\end{work}
+
+      $y$-intercept: \ans{$(0, -12)$}
+
+      $x$-intercepts: \ans{$(-4, 0)$ and $(3, 0)$}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.47\linewidth}
+      \textbf{7.}\ $g(x) = 2x^2 - 18$. Find the $y$-intercept and the zeros.
+
+\begin{work}
+  g(0) &= -18 \\
+  2x^2 &= 18 \\
+   x &= \pm 3
+\end{work}
+
+      $y$-intercept: \ans{$(0, -18)$}
+
+      $x$-intercepts: \ans{$(-3, 0)$ and $(3, 0)$}
+      \end{minipage}
+\setcounter{enumi}{7}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- End behavior, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=8]
+
+\item \begin{minipage}[t]{0.5\linewidth}
+      A pond is stocked with fish. The graph shows $P(t)$, the number of fish $t$ years
+      after stocking.
+
+      \medskip
+      \textbf{(a)} $\displaystyle\lim_{t \to \infty} P(t) = $ \ans{$400$}
+
+      \medskip
+      \textbf{(c)} Range of $P$: \ans{$[\,50,\ 400)$}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.45\linewidth}
+      \vspace{0pt}
+      \centering
+      \begin{tikzpicture}[x=0.5cm, y=0.75cm, >=stealth]
+        \draw[linegray, very thin, xstep=1, ystep=1] (0,0) grid (11,4.5);
+        \draw[->, thick] (0,0) -- (11.5,0) node[right] {\scriptsize $t$};
+        \draw[->, thick] (0,0) -- (0,4.9) node[above] {\scriptsize $P(t)$};
+        \foreach \x in {2,4,6,8,10} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {1,2,3,4} \node[left, font=\tiny] at (0,\y) {\y00};
+        \draw[goldacc, thick, dashed] (0,4) -- (11,4);
+        \draw[very thick, plum, ->, samples=60, domain=0:11] plot (\x, {4-3.5/(\x+1)});
+        \fill[plum] (0,0.5) circle (2.4pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+      \textbf{(b)} A classmate reads part (a) as ``$t$ goes to 400.'' What is going to 400, and
+      what is $t$ doing? Answer in the context of the fish.
+      \writespace{1.5cm}{The number of fish $P(t)$ --- the output --- gets close to 400. The time $t$ keeps increasing without bound: as the years go on, the pond levels off near 400 fish.}
+
+\item Use the leading term to write the end behavior at both ends in limit notation.
+
+      \textbf{(a)} $p(x) = 5 - 3x + 2x^3$ \quad \ans{$\lim_{x \to \infty} p(x) = \infty$; \ $\lim_{x \to -\infty} p(x) = -\infty$}
+
+      \textbf{(b)} $q(x) = 6x^2 - x^4$ \quad \ans{$\lim_{x \to \infty} q(x) = -\infty$; \ $\lim_{x \to -\infty} q(x) = -\infty$}
+
+\item Explain the difference between $\displaystyle\lim_{x \to \infty} f(x) = 5$ and
+      ``$x$ goes to 5.'' Use the words \emph{input} and \emph{output}.
+      \writespace{1.6cm}{The limit says that as the input $x$ increases without bound, the output $f(x)$ gets close to 5. The 5 is an output value, not an input; $x$ is going to $\infty$, not to 5.}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (2.5, Characteristics of Functions: Increasing, Decreasing, Extrema, and
+Concavity):} today we read a graph's edges --- its domain, range, intercepts, and ends. Next we
+read its middle: where it rises, where it falls, its highest and lowest points, and which way it
+bends. Look back at problem 1: on which stretch of inputs does the graph of $w$ go up?
+\end{spiralbox}
+
+\end{document}

@@ -1,0 +1,282 @@
+%! Symmetry and Inverse Functions — Unit 2, Lesson 2.3 — Slides (Beamer)
+% Release order: title -> hook -> I Do / We Do (one frame per notes row) -> You Do -> debrief
+% -> homework launch. The theme of the day is THREE SYMMETRIES: over the y-axis (even), about
+% the origin (odd), over the line y = x (a function and its inverse).
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.3}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Symmetry and Inverse Functions}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 2: Functions and Their Graphs}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: Three Letters}
+  \sectionlabel[goldacc]{Think About It}
+
+  \begin{center}
+    {\fontsize{60}{64}\selectfont\sffamily\bfseries\color{plum} A \qquad S \qquad H}
+  \end{center}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{The mirror}
+        Which letters look the same in a mirror held along a \textbf{vertical line} through
+        the middle?
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{The half turn}
+        Which letters look the same after a \textbf{half turn} --- turned upside down?
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textit{Today graphs get the same two tests --- and then a third mirror, the line
+  \(y = x\).}
+\end{frame}
+
+% ROW 1 — SYMMETRY FROM A GRAPH
+\begin{frame}[t, plain]
+  \plumheader{Even and Odd --- Read from the Graph}
+  \sectionlabel[goldacc]{Notes row SYMMETRY $\cdot$ I Do: problem 1 $\cdot$ We Do: problem 2}
+
+  \begin{columns}[T]
+    \column{0.32\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.45cm, y=0.38cm]
+        \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+        \draw[->, thick] (-3,0) -- (3.4,0);
+        \draw[->, thick] (0,-3) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.7:2.7, samples=80, smooth]
+          plot (\x, {0.25*\x*\x*\x*\x - 1.5*\x*\x});
+        \draw[goldacc, thick, dashed] (-2,-2) -- (2,-2);
+        \fill[goldacc] (-2,-2) circle (2.4pt);
+        \fill[goldacc] (2,-2) circle (2.4pt);
+      \end{tikzpicture}
+
+      \textbf{A --- even}\\ \small fold over the \(y\)-axis
+    \column{0.32\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.45cm, y=0.38cm]
+        \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+        \draw[->, thick] (-3,0) -- (3.4,0);
+        \draw[->, thick] (0,-3) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.55:2.55, samples=80, smooth]
+          plot (\x, {0.5*(\x*\x*\x - 4*\x)});
+        \draw[goldacc, thick, dashed] (-1,1.5) -- (1,-1.5);
+        \fill[goldacc] (-1,1.5) circle (2.4pt);
+        \fill[goldacc] (1,-1.5) circle (2.4pt);
+      \end{tikzpicture}
+
+      \textbf{B --- odd}\\ \small half turn about the origin
+    \column{0.32\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.45cm, y=0.38cm]
+        \draw[linegray, very thin, step=1] (-3,-3) grid (3,3);
+        \draw[->, thick] (-3,0) -- (3.4,0);
+        \draw[->, thick] (0,-3) -- (0,3.4);
+        \draw[very thick, plum, domain=-2.4:2.0, samples=80, smooth]
+          plot (\x, {0.25*\x*\x*\x + 1});
+      \end{tikzpicture}
+
+      \textbf{C --- neither}\\ \small no fold, no half turn
+  \end{columns}
+
+  \bigskip
+  \begin{block}{Points come in pairs}
+    \textbf{Even:} \((x, y)\) pairs with \((-x, y)\). \qquad
+    \textbf{Odd:} \((x, y)\) pairs with \((-x, -y)\).
+  \end{block}
+\end{frame}
+
+% ROW 2 — THE ALGEBRAIC TEST
+\begin{frame}[t, plain]
+  \plumheader{Even or Odd --- The Algebraic Test}
+  \sectionlabel[goldacc]{Notes row EVEN OR ODD TEST $\cdot$ I Do: problem 3 $\cdot$ We Do: 4--6 (6 is the trap)}
+
+  \begin{block}{Replace \(x\) with \((-x)\), simplify, compare}
+    \(f(-x) = f(x)\) \(\Rightarrow\) \textbf{even} \qquad
+    \(f(-x) = -f(x)\) \(\Rightarrow\) \textbf{odd} \qquad
+    neither \(\Rightarrow\) \textbf{neither}
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Work it: \(f(x) = x^4 - 5x^2\)}
+      \begin{align*}
+        f(-x) &= (-x)^4 - 5(-x)^2 \\
+              &= x^4 - 5x^2 = f(x)
+      \end{align*}
+      Even. An even power erases the sign.
+
+    \column{0.48\textwidth}
+      \textbf{Your turn}
+      \begin{itemize}\setlength{\itemsep}{5pt}
+        \item \(g(x) = x^3 - 4x\)
+        \item \(k(x) = 6 - x^2\)
+        \item \(h(x) = x^3 + 1\) --- it has an odd power. \textbf{Is it odd?}
+      \end{itemize}
+  \end{columns}
+
+  \bigskip
+  \textbf{The signs:} \((-x)^2 = x^2\), but \((-x)^3 = -x^3\).
+\end{frame}
+
+% ROW 3 — INVERSES FROM TABLES AND GRAPHS
+\begin{frame}[t, plain]
+  \plumheader{One-to-One, and the Inverse}
+  \sectionlabel[goldacc]{Notes row INVERSES $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{Runs \(f\) backward}
+        If \(f(a) = b\), then \(f^{-1}(b) = a\).\\[3pt]
+        Each point \((a, b)\) becomes \((b, a)\): a reflection over \(y = x\).\\[3pt]
+        Domain of \(f\) = range of \(f^{-1}\), and the reverse.
+      \end{block}
+
+      \medskip
+      \textbf{Only a one-to-one function has one.} Horizontal line test: no horizontal
+      line crosses the graph twice. \(y = x^2\) fails --- \(-2\) and \(2\) both give 4.
+
+      \medskip
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline \(x\) & 0 & 1 & 2 & 3 & 4 \\ \hline \(f(x)\) & 1 & 3 & 5 & 7 & 9 \\ \hline
+      \end{tabular}
+
+      \smallskip
+      \(f(3) = 7\), \quad but \(f^{-1}(3) = 1\).
+
+    \column{0.44\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.75cm, y=0.75cm]
+        \draw[linegray, very thin, step=1] (0,0) grid (5,5);
+        \draw[->, thick] (0,0) -- (5.4,0) node[right] {\scriptsize \(x\)};
+        \draw[->, thick] (0,0) -- (0,5.4) node[above] {\scriptsize \(y\)};
+        \foreach \x in {1,2,3,4,5} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {1,2,3,4,5} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[goldacc, very thick, dashed] (-0.2,-0.2) -- (5.4,5.4);
+        \draw[very thick, plum] (0,1) -- (1,3) -- (2,4) -- (4,5);
+        \draw[very thick, redacc] (1,0) -- (3,1) -- (4,2) -- (5,4);
+        \fill[plum] (1,3) circle (2.4pt);
+        \fill[redacc] (3,1) circle (2.4pt);
+        \node[font=\small\bfseries\color{plum}] at (1.9,4.6) {\(f\)};
+        \node[font=\small\bfseries\color{redacc}] at (4.4,1.3) {\(f^{-1}\)};
+        \node[font=\scriptsize\color{goldacc}, rotate=45] at (4.6,5.0) {\(y = x\)};
+      \end{tikzpicture}
+  \end{columns}
+\end{frame}
+
+% ROW 4 — FINDING THE INVERSE, AND THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{Finding \(f^{-1}\) --- and What It Is Not}
+  \sectionlabel[redacc]{Notes row FINDING THE INVERSE $\cdot$ I Do: 11 $\cdot$ We Do: 12--14 (13 is the crux)}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Swap and solve}
+        \textbf{1.} Write \(y = f(x)\).\quad \textbf{2.} Swap \(x\) and \(y\).\\[2pt]
+        \textbf{3.} Solve for \(y\).\quad \textbf{4.} Rename it \(f^{-1}(x)\).
+      \end{block}
+      \textbf{\(f(x) = 3x - 6\)}
+      \begin{align*}
+        x &= 3y - 6 \\
+        f^{-1}(x) &= \frac{x + 6}{3}
+      \end{align*}
+      \textbf{Check:} \(f(f^{-1}(x)) = x\) and \(f^{-1}(f(x)) = x\).
+
+    \column{0.48\textwidth}
+      \begin{block}{\(f^{-1}(x)\) is NOT \(\dfrac{1}{f(x)}\)}
+        \(g(x) = 2x + 4\). Find \(g^{-1}(10)\) and \(\dfrac{1}{g(10)}\).\\[3pt]
+        Which one undoes \(g\)? Put each into \(g\) and see.
+      \end{block}
+      The \(-1\) names the inverse --- it is \textbf{not} an exponent.
+
+      \medskip
+      \textbf{Not one-to-one?} Restrict the domain: \(x^2\) on \(x \ge 0\) has
+      inverse \(\sqrt{x}\).
+  \end{columns}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Mirror and Undo}
+  \sectionlabel[redacc]{Notes row MIRROR AND UNDO $\cdot$ problems 15--18, alone, 13 minutes}
+
+  \begin{enumerate}\setlength{\itemsep}{7pt}
+    \setcounter{enumi}{14}
+    \item Even, odd, or neither? \(r(x) = 2x^3 - x\) \quad and \quad \(q(x) = x^3 - 2\)
+    \item From the \(s\) table, find \(s^{-1}(4)\). A classmate says
+          \(s^{-1}(4) = \dfrac{1}{s(4)} = \dfrac{1}{2}\). Who is right?
+
+          \smallskip
+          \begin{tabular}{|c|c|c|c|c|c|}
+          \hline \(x\) & 1 & 2 & 3 & 4 & 5 \\ \hline \(s(x)\) & 8 & 6 & 4 & 2 & 0 \\ \hline
+          \end{tabular}
+    \item \(h(x) = 4x - 3\). Find \(h^{-1}(x)\); check that \(h(h^{-1}(x)) = x\).
+    \item \(k(x) = (x - 2)^2\) on \(x \ge 2\). Find \(k^{-1}(x)\) and its domain and range.
+  \end{enumerate}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{block}{Over the \(y\)-axis}
+        \textbf{Even:} \(f(-x) = f(x)\)
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{About the origin}
+        \textbf{Odd:} \(f(-x) = -f(x)\)
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Over \(y = x\)}
+        \textbf{Inverse:} \((a, b) \to (b, a)\)
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    \large\textit{An inverse swaps every input with its output, so \(f^{-1}\) runs \(f\)
+    backward. It undoes \(f\) --- it is not \(1/f\).}
+  \end{center}
+
+  \bigskip
+  \textbf{Next time:} a quiz on 2.1--2.3, then 2.4 --- domain, range, intercepts, and end
+  behavior.
+\end{frame}
+
+% HOMEWORK LAUNCH
+\begin{frame}[t, plain]
+  \plumheader{Start Your Homework}
+  \sectionlabel[redacc]{Homework Launch $\cdot$ 3 minutes, alone, silent}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item Start \textbf{problem 3} and \textbf{problem 5} now. On 5, ask: does \(G^{-1}\)
+          take a number of months, or a number of dollars?
+    \item The \textbf{Homework} (last two pages) is graded.
+    \item \textbf{AP Practice} (the two pages before it) is \textbf{extra credit}
+          --- optional, AP-exam style. Do the homework first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

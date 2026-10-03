@@ -1,0 +1,230 @@
+%! Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity — Unit 2, Lesson 2.5 — Homework (ANSWER KEY)
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every context
+% here is new: the notes used a hiking trail, a phone battery, an unlabeled f and a day's
+% temperature; the AP Practice used fish in a lake, an unlabeled h and a harbor's tide; the
+% homework uses a drone's altitude, an unlabeled p, four bare curve shapes and app downloads.
+%   Page 1 — Part A (rising, falling, flat: 1–2) and Part B (maximum and minimum: 3–4).
+%   Page 2 — Part C (concavity: 5–7) and Part D (putting it together, the headline: 8–9).
+% The diagnostic item is 4: value vs. location, and an endpoint lower than the valley.
+% Problem 9 asks for the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: prose answers are \writespace{H}{…} (fixed
+% height both ways) and each \blank sits at the END of a line so its \ans cannot rewrap
+% anything. The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% p on [-3, 5]: start (-3,-3), peak (-1,4), inflection (1,1), valley (3,-2), end (5,3).
+\newcommand{\pcurve}{(-3,-3) .. controls (-2.6,0) and (-1.9,4) .. (-1,4)
+  .. controls (1,4) and (1,-2) .. (3,-2) .. controls (3.8,-2) and (4.4,0) .. (5,3)}
+\newcommand{\paxes}{%
+  \draw[linegray, very thin, step=1] (-4,-4) grid (6,5);
+  \draw[->, thick] (-4,0) -- (6.5,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-4) -- (0,5.5) node[above] {\small $p(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3,4,5} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-3,-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.5}{Homework --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Every interval and every location is an $x$-value; every maximum or
+minimum \emph{value} is a $y$-value. Direction and concavity are two separate questions.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Rising, falling, and flat}
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\noindent\begin{minipage}[t]{0.40\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.26cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=2] (0,0) grid (10,14);
+  \draw[->, thick] (0,0) -- (10.6,0) node[below right] {\small $t$};
+  \draw[->, thick] (0,0) -- (0,14.8) node[above] {\small $A(t)$};
+  \foreach \x in {2,4,6,8,10} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {4,8,12} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] (0,0) -- (3,12) -- (6,12) -- (10,0);
+  \fill[plum] (0,0) circle (2.5pt);
+  \fill[plum] (10,0) circle (2.5pt);
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.57\linewidth}
+\vspace{0pt}
+A drone's altitude is $A(t)$ meters, $t$ seconds after takeoff.
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+\item Give each interval in seconds.
+
+      \textbf{(a)} $A$ is increasing on \hfill \ans{$(0, 3)$}
+
+      \textbf{(b)} $A$ is constant on \hfill \ans{$(3, 6)$}
+
+      \textbf{(c)} $A$ is decreasing on \hfill \ans{$(6, 10)$}
+
+\item A classmate writes, ``$A$ is increasing on $(0, 12)$.'' What did the classmate read,
+      and what is the correct interval?
+      \writespace{1.3cm}{The heights (meters, $y$-values) instead of the times. Correct: $A$ is increasing on $(0, 3)$ seconds.}
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.14in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Maximum and minimum: the value, and where}
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\noindent\begin{minipage}[t]{0.40\linewidth}
+\vspace{0pt}
+\centering
+\begin{tikzpicture}[x=0.48cm, y=0.42cm, >=stealth]
+  \paxes
+  \draw[very thick, plum] \pcurve;
+  \fill[plum] (-3,-3) circle (2.5pt);
+  \fill[plum] (5,3) circle (2.5pt);
+\end{tikzpicture}
+
+{\footnotesize The graph of $p$, for $-3 \le x \le 5$, endpoints included.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.57\linewidth}
+\vspace{0pt}
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=3]
+\item On which intervals is $p$ increasing? \hfill \ans{$(-3, -1)$ and $(3, 5)$}
+
+      On which interval is $p$ decreasing? \hfill \ans{$(-1, 3)$}
+
+\item \textbf{(a)} The relative maximum of $p$ is \ans{$4$}, at $x = $ \ans{$-1$}
+
+      \textbf{(b)} The relative minimum of $p$ is \ans{$-2$}, at $x = $ \ans{$3$}
+
+      \textbf{(c)} Give the absolute minimum of $p$ and where it occurs. Is it the valley?
+      Explain.
+      \writespace{1.6cm}{$-3$, at $x = -3$ (the left endpoint). Not the valley: the valley's height, $-2$, is higher than the endpoint's.}
+\end{enumerate}
+\end{minipage}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- Concavity: which way it bends}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=5]
+
+\item Match each description to the curve it describes. Write the letter.
+
+      \smallskip
+      \begin{center}
+      \begin{tabular}{cccc}
+      \begin{tikzpicture}[x=1cm, y=1cm]
+        \draw[linegray] (0,0) rectangle (1.8,1.2);
+        \draw[very thick, plum] (0.05,1.15) .. controls (0.35,0.45) and (0.9,0.1) .. (1.72,0.06);
+      \end{tikzpicture} &
+      \begin{tikzpicture}[x=1cm, y=1cm]
+        \draw[linegray] (0,0) rectangle (1.8,1.2);
+        \draw[very thick, plum] (0.05,0.06) .. controls (0.9,0.1) and (1.45,0.45) .. (1.72,1.15);
+      \end{tikzpicture} &
+      \begin{tikzpicture}[x=1cm, y=1cm]
+        \draw[linegray] (0,0) rectangle (1.8,1.2);
+        \draw[very thick, plum] (0.05,1.15) .. controls (0.9,1.1) and (1.45,0.75) .. (1.72,0.06);
+      \end{tikzpicture} &
+      \begin{tikzpicture}[x=1cm, y=1cm]
+        \draw[linegray] (0,0) rectangle (1.8,1.2);
+        \draw[very thick, plum] (0.05,0.06) .. controls (0.35,0.75) and (0.9,1.1) .. (1.72,1.15);
+      \end{tikzpicture} \\
+      \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+      \end{tabular}
+      \end{center}
+
+      \begin{minipage}[t]{0.47\linewidth}
+      (i) Rising faster and faster \hfill \ans{B}
+
+      \smallskip
+      (ii) Rising more and more slowly \hfill \ans{D}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.47\linewidth}
+      (iii) Falling faster and faster \hfill \ans{C}
+
+      \smallskip
+      (iv) Falling more and more slowly \hfill \ans{A}
+      \end{minipage}
+
+\item[] \noindent\begin{minipage}[t]{0.34\linewidth}
+      \vspace{0pt}
+      \centering
+      \begin{tikzpicture}[x=0.38cm, y=0.32cm, >=stealth]
+        \paxes
+        \draw[very thick, plum] \pcurve;
+        \fill[plum] (-3,-3) circle (2.2pt);
+        \fill[plum] (5,3) circle (2.2pt);
+      \end{tikzpicture}
+
+      {\footnotesize $p$ again, from Part B.}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.62\linewidth}
+      \vspace{0pt}
+      \begin{enumerate}[label=\arabic*., leftmargin=1.9em, itemsep=8pt, start=6]
+      \item Use the graph of $p$.
+
+            $p$ is concave down on \hfill \ans{$(-3, 1)$}
+
+            $p$ is concave up on \hfill \ans{$(1, 5)$}
+
+            The point of inflection is \hfill \ans{$(1, 1)$}
+
+      \item Weekly downloads of a new app, $D(w)$, are increasing and concave down for
+            $0 < w < 10$ weeks. Describe in one sentence how downloads are changing. Does
+            ``increasing'' mean downloads are speeding up?
+            \writespace{1.7cm}{Downloads keep growing every week, but more and more slowly. No --- increasing means going up; concave down means the growth is slowing.}
+      \end{enumerate}
+      \end{minipage}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- Putting it together, and the headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=8]
+
+\item Jae says, ``$p$ is concave up on $(1, 5)$, so $p$ is increasing on $(1, 5)$.'' Use the
+      graph of $p$ to show that Jae is wrong.
+      \writespace{1.6cm}{On $(1, 3)$, $p$ is concave up but \emph{decreasing} --- it falls from 1 to $-2$, more and more slowly. It only increases on $(3, 5)$. Bend and direction are separate questions.}
+
+\item In your own words: what is the difference between a function's \emph{maximum value} and
+      \emph{where} the maximum occurs? Which axis do you read each one on --- and which axis
+      gives every increasing or decreasing interval?
+      \writespace{2.0cm}{The maximum value is the greatest output --- a height, read on the $y$-axis. Where it occurs is the input that produces it, read on the $x$-axis. Every increasing or decreasing interval is a stretch of $x$-values, so it is read on the $x$-axis too.}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (2.6, Average Rate of Change, Secant Lines, and the Difference
+Quotient):} today we read \emph{which way} a graph goes and \emph{which way} it bends. Next we
+measure \emph{how fast} it goes. Look back at problem 1: the drone climbs 12 meters in its first
+3 seconds. How many meters per second is that? Next lesson calls that number the
+\textbf{average rate of change} --- and concavity turns out to be a statement about how that
+rate itself changes.
+\end{spiralbox}
+
+\end{document}

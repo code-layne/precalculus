@@ -1,0 +1,407 @@
+%! Complex Numbers and the Library of Parent Functions — Unit 2, Lesson 2.1 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 2.1 OPENS Unit 2 (there is no 2.0 opener). A New
+% lesson — no CED topic: complex numbers are a CED prerequisite and the groundwork for complex
+% zeros (CED 1.5, met later in the course); the parent-function library and absolute value as
+% a piecewise function are a foundations ramp into 2.2 Transformations of Functions.
+% A DENSE DAY: the teacher's own plan put both topics on Day 1. The minutes are budgeted
+% deliberately in the Lesson Flow box, which names what is cut first and what is protected.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\CourseName}{Precalculus}
+\newcommand{\MeetingLength}{60 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Functions and Their Graphs \quad}
+\newcommand{\LessonNumberName}{Lesson 2.1: Complex Numbers and the Library of Parent Functions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will use the imaginary unit $i = \sqrt{-1}$ to
+    rewrite square roots of negatives and solve equations like $x^2 + 16 = 0$; add, subtract,
+    and multiply complex numbers $a + bi$, including a number times its conjugate; name the
+    ten parent functions from an equation, a graph, or key points and read each one's domain
+    and range; and write an absolute value such as $|x - 2|$ as a piecewise function, reading
+    $-x$ as \textit{the opposite of} $x$.
+    \hfill\textit{\small (Foundations ramp --- no CED topic; groundwork for CED 1.5)}
+\end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the IMAGINARY UNIT and COMPLEX NUMBERS rows: definitions, the $i$ cycle, the $7 - 2i$ labels, problems 1, 5, and 7. \\
+\textbf{We Do} --- guided     & 23 & Fill the notes together, every problem cold-called --- problems 2--4, 6, 8; the PARENT FUNCTIONS gallery and problems 9--10; the ABSOLUTE VALUE row, problems 11--14 (the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 12 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out and the headline. \\
+Homework Launch               & 3  & Start homework problems 3 and 8 alone; the teacher reads 8 over shoulders. \\
+\end{tabularx}
+
+\smallskip
+\textbf{This is the densest period in the unit, on purpose.} Two topics --- complex numbers
+and the parent-function library --- plus absolute value as a piecewise function share one
+block, so the guided phase runs 23 minutes and the You Do takes 12, the low end of its range.
+The budget inside We Do is 6 minutes of complex practice, 9 for the library, 8 for absolute
+value. \textbf{Protected:} the ABSOLUTE VALUE row (problems 11--14, the crux) and the You Do's
+12 minutes --- 2.2 transforms $|x|$ first and homework problem 8 needs the piecewise habit.
+\textbf{If the clock slips, cut in this order:} problem 10 (even vs.\ odd degree --- state
+the rule aloud; it returns as homework problem 7), then problem 3 (powers of $i$ --- work one
+power on the board), then let the class fill gallery panels F--J by themselves during the
+You Do's last minute rather than cold-calling each one. Never cut the Homework Launch to zero
+--- it is the only formative read of the period now that there is no exit ticket.
+\end{skillbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP Skill 1.B} --- Express expressions in equivalent forms: rewrite $\sqrt{-n}$ with
+$i$, and simplify complex sums and products to $a + bi$. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $i = \sqrt{-1}$, so $i^2 = -1$; $\sqrt{-n} = i\sqrt{n}$ for $n > 0$. The powers of $i$
+        cycle $i, -1, -i, 1$.
+  \item Rewrite with $i$ \textit{first}: $\sqrt{-4}\cdot\sqrt{-9} = (2i)(3i) = -6$, not
+        $\sqrt{36}$.
+  \item Multiply like binomials, then replace $i^2$ with $-1$. A number times its conjugate is
+        real: $(a + bi)(a - bi) = a^2 + b^2$.
+\end{itemize} \\
+\textbf{AP Skill 2.A} --- Identify information from graphical and analytical representations:
+the ten parent functions. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Each parent function has a name, an equation, a shape, and key points with small
+        whole-number coordinates; match any one to the other three.
+  \item Domain is read left to right, range bottom to top. $\frac{1}{x}$ and $\frac{1}{x^2}$
+        approach an axis but never reach it, so $x \ne 0$.
+  \item Even-degree powers ($x^2$, $x^4$) have both arms up; odd ($x^3$) has the left arm down.
+\end{itemize} \\
+\textbf{AP Skill 2.B} --- Construct equivalent representations: absolute value as a
+piecewise function. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item $|x| = -x$ for $x < 0$ and $x$ for $x \ge 0$; the break sits where the expression
+        inside changes sign, so $|x - 2|$ breaks at $x = 2$.
+  \item \textbf{Target misconception:} ``$|x| = -x$ for $x < 0$ can't be right, because $-x$
+        is negative.'' Students read $-x$ as \textit{a negative number}; it means \textit{the
+        opposite of} $x$, and every input that rule owns is negative, so its output is
+        positive. The two readings disagree exactly on the inputs the rule owns.
+\end{itemize} \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Imaginary unit     & The number $i = \sqrt{-1}$, so $i^2 = -1$. For $n > 0$, $\sqrt{-n} = i\sqrt{n}$. \\
+Complex number     & A number $a + bi$ with $a$, $b$ real: $a$ is the \textbf{real part}, $b$ the \textbf{imaginary part}. \\
+Complex conjugate  & The partner $a - bi$ of $a + bi$; their product $a^2 + b^2$ is always real. \\
+Parent function    & The simplest function of a family, before any shift, stretch, or flip. \\
+Key points         & Points with small whole-number coordinates that pin down a parent graph's shape. \\
+Absolute value     & The distance from $x$ to 0, never negative: $|x| = -x$ for $x < 0$ and $x$ for $x \ge 0$. \\
+Even / odd degree  & The exponent of a power function: even powers have both arms up, odd powers one down and one up. \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: solving $x^2 = 49$ with both roots and simplifying a square root such as
+    $\sqrt{50}$ (today's $\sqrt{-n} = i\sqrt{n}$ sits on top of it); multiplying two binomials
+    (complex multiplication is the same FOIL); evaluating a piecewise function from 1.1,
+    naming the rule that owns each input; and evaluating absolute values as numbers, including
+    $-|4|$, before today writes $|x|$ as a piecewise function.
+\end{skillbox}
+
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{The calculator says ERROR.} Have students type $\sqrt{-9}$ into a calculator.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask: is that because \textit{no number at all} squares to $-9$, or only no number
+              \textit{they have met yet}? Take two answers; do not resolve it.
+        \item Follow up: $3^2 = 9$ and $(-3)^2 = 9$ --- every real square is 0 or positive. So
+              a number whose square is negative would have to be a new kind of number.
+    \end{enumerate}
+    \textit{Discussion prompt:} mathematicians met exactly this wall in the 1500s solving
+    equations, and their answer was to \textit{name} the missing number. Today it gets its
+    name, and the rest of the course uses it.
+\end{skillbox}
+
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: The Imaginary Unit and $a + bi$} (10 min)
+
+\textit{Notes rows IMAGINARY UNIT and COMPLEX NUMBERS: read each definition, mark up the
+display, work problems 1, 5, and 7. Teacher works; students watch and annotate. Nothing is
+cold-called in this phase.}
+\begin{itemize}
+  \item Read the IMAGINARY UNIT sentences aloud and write $i^2 = -1$ large on the board ---
+        every computation today ends by using it.
+  \item Mark up the cycle: fill $i^3 = -i$ (that is $i^2 \cdot i$) and $i^4 = 1$ (that is
+        $i^2 \cdot i^2$) yourself, narrating the multiplication. Read the gold box, including
+        the trap, and leave it for problem 4.
+  \item Work \textbf{problem 1}: $\sqrt{-25} = 5i$, then $\sqrt{-12} = i\sqrt{12} = 2i\sqrt{3}$
+        --- pull out the $i$ \textit{before} touching the 12.
+  \item Read the COMPLEX NUMBERS sentences; fill the two label boxes on $7 - 2i$ (7 and $-2$
+        --- the imaginary part is $-2$, not $-2i$). Work \textbf{problem 5} (like parts) and
+        \textbf{problem 7} by the three steps, stopping visibly at $-3i^2$ to say ``$i^2$ is
+        $-1$, so this is $+3$.''
+\end{itemize}
+
+\textbf{WE DO --- Part 2: Complex Practice} (6 min)
+
+\textit{Problems 2--4, 6, 8. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2}: two equations, two answers each --- insist on the $\pm$.
+  \item \textbf{Problem 3}: divide by 4, use the remainder. \textbf{Problem 4} is the trap:
+        let the class say why 6 is wrong before anyone computes $-6$.
+  \item \textbf{Problem 6}: the minus sign reaches both parts. \textbf{Problem 8}: the
+        conjugate product is 25 --- ask what happened to the $i$.
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: The Library of Parent Functions} (9 min)
+
+\textit{Notes row PARENT FUNCTIONS. Class fills the blanks together; cold-call every one.
+Teacher annotates panels A--C and works problem 9; the class annotates D--J and works 10.}
+\begin{itemize}
+  \item Read the definition, then model the domain/range reading on panels A--C: domain left to
+        right, range bottom to top. Panel A's range is \textit{only} $y = 2$.
+  \item Cold-call panels D--J, one student per panel, both lines. Slow down on G ($x \ge 0$,
+        $y \ge 0$) and on I and J: the graph approaches the axis but never reaches it, so
+        $x \ne 0$ --- that sentence is all the asymptote theory today.
+  \item Work \textbf{problem 9} from the key points alone ($(8, 2)$ is the giveaway: $2^3 = 8$);
+        \textbf{problem 10} names even vs.\ odd from panels C, D, E.
+\end{itemize}
+
+\textbf{WE DO --- Part 4: Absolute Value as a Piecewise Function} (8 min)
+
+\textit{Notes row ABSOLUTE VALUE --- the spine of the lesson. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Read the definition and the cases aloud. Say the target sentence twice: \textit{$-x$
+        means the opposite of $x$.} Point at the red half of the graph: every input there is
+        negative, so every output is its opposite --- positive.
+  \item Fill the $|x - 2|$ boxes yourself: ``where is $x - 2$ negative? When $x < 2$. That is
+        where we take the opposite.'' Then work \textbf{problem 11}.
+  \item \textbf{Problem 12} is the misconception as a table: $-x$ is 5, 1, 0, $-2$ --- positive
+        exactly when $x < 0$. \textbf{Problem 13 is the crux}: test the classmate's claim at
+        $x = -6$ and ask for the \textit{reason}. \textbf{Problem 14} shows the two readings
+        disagreeing at $x = -1$: 3 versus $-3$.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: All Three} (12 min)
+
+\textit{Notes row ALL THREE, problems 15--18 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} multiplies complex numbers; \textbf{16} solves $x^2 + 36 = 0$ and
+        repeats the trap with new numbers.
+  \item \textbf{Problem 17} identifies $\frac{1}{x^2}$ from a bare graph --- name, equation,
+        domain, range.
+  \item \textbf{Problem 18} is the crux transferred: $|x + 3|$ breaks at a \textit{negative}
+        number, $x = -3$, and the rule $-(x + 3)$ must still give a positive output at
+        $x = -5$.
+\end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: Multiplying Complex Numbers]{lilac}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{enumerate}[itemsep=2pt]
+  \item Rewrite any $\sqrt{-n}$ as $i\sqrt{n}$ first.
+  \item Multiply like binomials (FOIL).
+  \item Replace every $i^2$ with $-1$.
+  \item Combine real parts and imaginary parts; write $a + bi$.
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Worked example} (notes problem 7):
+\begin{align*}
+(2 + 3i)(4 - i) &= 8 - 2i + 12i - 3i^2 \\
+                &= 8 + 10i - 3(-1) \\
+                &= 11 + 10i
+\end{align*}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the twelve minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} (testing ``$-x$ is
+negative'' at $x = -6$); its You Do transfer is \textbf{problem 18} ($|x + 3|$ at $x = -5$).
+\begin{itemize}
+  \item \textbf{Common error:} leaving $i^2$ in the answer or replacing it with $+1$, so
+        problem 15 comes out $5 - 2i$. Cold-call: ``What is $i^2$? Say it.''
+  \item \textbf{Common error:} $\sqrt{-9}\cdot\sqrt{-16} = \sqrt{144} = 12$ in problem 16.
+        Point at the gold trap box in row 1: ``Rewrite with $i$ first.''
+  \item \textbf{Common error:} only $x = 6i$ in problem 16. Ask: ``What else squares to $-36$?''
+  \item \textbf{Common error:} calling the problem 17 graph $\frac{1}{x}$, or giving its range
+        as all reals. Ask: ``Is any part of this graph below the $x$-axis?''
+  \item \textbf{Common error (the crux):} in problem 18, putting $x + 3$ on the left of the
+        break and $-(x + 3)$ on the right, because ``the minus sign should give the
+        negatives.'' Push: ``Pick $x = -5$. What is $x + 3$ there? What is its opposite? Which
+        one is a distance?''
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (12 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        write the four FOIL products as four separate terms before combining anything. The
+        moment they write $-3i^2$, ask what $i^2$ is; most of the day's complex errors are
+        that one step.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} should go unaided: 16 is problem 2 and
+        problem 4 with new numbers, and 17 is a lookup in the gallery they just annotated. If a
+        student asks which graph it is, point at the gallery and walk away.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question --- the break is at a
+        negative number and the rule $-(x + 3)$ must still give positive outputs. A student
+        who finishes early: ask them to write $|2x - 6|$ piecewise (break at $x = 3$) and to
+        say why the break is not at $x = 6$. Either answer presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: $11 - 2i$, with the $-3i^2 = +3$ step said aloud. Problem 16: $\pm 6i$ and
+        $-12$. Problem 17: reciprocal squared, $x \ne 0$, $y > 0$. Problem 18: the two rules
+        and $|-5 + 3| = 2$ --- if a student wrote 18 cleanly, they present it, because it is
+        exactly homework problems 8 and 9.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{Rewrite with $i$ before you compute. And $-x$ means the opposite of $x$ --- on
+        the inputs it owns, it is always positive.} Point at the red half of the $|x|$ graph
+        while you say the second sentence.
+  \item \textbf{Point forward} (1 min) --- 2.2 takes every card in the library and moves,
+        stretches, and flips it; $|x - 2|$ is already one of those moves.
+\end{enumerate}
+\textbf{Do not} re-teach the powers of $i$ or the gallery here, take new questions, or let the
+homework start early. If the launch shows absolute value did not land, it is the 2.2 warm-up's
+job, not this minute's.
+\end{skillbox}
+
+\begin{skillbox}[Homework Launch (3 min)]{redbox}
+\textbf{There is no exit ticket.} The formative read comes twice: circulating the You Do, and
+again here. Write the due date on the board, have students copy it into the cover's Homework
+row, then start \textbf{homework problems 3 and 8} alone and in silence (3 minutes).
+Circulate straight to the students you flagged during You Do.
+\begin{itemize}[itemsep=2pt]
+  \item \textbf{Problem 3(b)}, $(5 + 2i)(3 - i)$: a student who writes $13 + i$ kept
+        $-2i^2$ as $-2$; one who writes $17 + i$ has the step.
+  \item \textbf{Problem 8} is the diagnostic: $|x - 4|$ written piecewise, then evaluated at
+        $x = 1$. The right answer is 3 from the rule $4 - x$. A student who writes $-3$ used
+        $x - 4$ on the wrong side of the break --- the target misconception, met alone; a
+        student who swaps the two rules has decided ``$-x$ makes things negative.''
+\end{itemize}
+\textbf{Sort what you see into three piles} as you walk: \textit{absolute value solid}
+(nothing to do), \textit{rules swapped or $-3$ at $x = 1$} (a 2.2 warm-up item testing
+$-x$ at a negative input), and \textit{$i^2$ not replaced} (a one-minute check-in at the door
+of 2.2).
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\textbf{Homework --- printed, graded (2 pages).} Last in the packet; due on the date the
+teacher sets. Every context is new. \textit{Part A} (1--4) writes roots with $i$ and finds
+$i^9$, solves $x^2 + 64 = 0$ and $x^2 = -50$, simplifies a difference and a product, and
+multiplies a conjugate pair and asks why the product is real. \textit{Part B} (5--7) matches
+four bare graphs to equations, lists the parent functions with range $y \ge 0$ and those whose
+domain is not all reals, and applies even vs.\ odd degree to $x^6$ and $x^7$. \textit{Part C}
+(8--9) writes $|x - 4|$ and $|x + 1|$ piecewise and evaluates them. \textit{Part D} (10) asks
+for the headline in writing --- why $-x$ is right, and why $\sqrt{-4}\cdot\sqrt{-9} \ne 6$.
+
+\textbf{AP Practice --- extra credit (2 pages).} Optional, before the homework in the packet.
+Section I is five AP-style multiple-choice items whose distractors are the lesson's errors:
+$i^2$ treated as $+1$ or the $i^2$ term dropped (1), multiplying under one root (2), forgetting
+the second root or deciding there are no solutions (3), cube root confused with cube or square
+root (4), and the $-(x - 5)$ rule put on the wrong side of the break (5 --- the target
+misconception). Section II is one free-response question on a machined rod's cutting error
+$E(L) = |L - 40|$: evaluate and interpret (a), write the piecewise form (b), refute ``the minus
+sign gives a negative error'' (c), name the parent and its range (d), and find the accepted
+lengths from both rules (e) --- the finisher's question.
+
+\textbf{Preview:} Next lesson (2.2, Transformations of Functions) moves, stretches, and flips
+every parent function in today's library, and reads the moves straight from the equation. The
+homework's closing box points at $|x - 4|$ in problem 8 --- the $|x|$ graph with its corner
+moved to $(4, 0)$ --- to set it up.
+\end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1(a) is the habit today's equations need: a
+student who writes only $x = 7$ for $x^2 = 49$ will write only $3i$ for $x^2 = -9$. Item 2 is
+the FOIL that complex multiplication runs on --- a student who cannot do it will not survive
+problem 7, so note names. Item 3 is a 1.1 spiral: naming the rule that owns an input is the
+exact move the ABSOLUTE VALUE row asks for. Item 4's $-|4| = -4$ is there on purpose: the
+negative sign \textit{outside} the bars stays, which sets up the contrast with $-x$
+\textit{inside} the rule, where a negative input makes it positive.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row. In each
+instruction row you read the printed definition, mark up the display, and work the first
+problem (1, 5 and 7, 9, 11); the class works the rest, every problem cold-called. On a day
+this dense the danger is the complex rows eating the clock: they are procedural and students
+like them, so hold Part 2 to six minutes and move. The IMAGINARY UNIT row lives on one habit
+--- \textit{rewrite with $i$ first} --- and problem 4 is the trap that proves why.
+
+The gallery is a reference students will reuse all of 2.2, so the printed names, equations,
+and key points stay; only the domain and range lines are theirs to fill. Do not drift into
+asymptotes beyond ``approaches but never reaches the axis.''
+
+ABSOLUTE VALUE is the spine. The misconception is a reading error, not an arithmetic one:
+students see the minus sign in $-x$ and hear ``negative.'' Problem 12 makes them compute $-x$
+for four inputs before anyone argues; problem 13 asks for the \emph{reason}, not the number;
+problem 14 puts the two readings side by side at $x = -1$ (3 versus $-3$) so the wrong one is
+visibly impossible --- a distance cannot be negative. Problem 18 in the You Do is the same
+idea with the break at a negative number, which is where it gets hard.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are the most at risk in the unit --- the guided phase
+runs 23 minutes and will try to borrow them. Borrow from problem 10 instead (state the even/odd
+rule aloud; homework problem 7 asks it again) or from problem 3. Do not borrow from the
+three-minute Homework Launch: with no exit ticket, it is the last look you get before the work
+leaves the room. The share-out is one answer per You Do problem so a student who stalled on
+15 still hears the problem 18 result --- the exact shape of homework problem 8, which they
+will otherwise meet alone at home. The headline has two sentences because the day has two
+halves; if time forces one, keep the second.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, and not a substitute for the homework --- say so when you hand out the
+packet. Score it however extra credit works in your gradebook; the cover gives it a $+$ cell
+outside the total. Multiple-choice answers are C, B, D, A, B. Item 5 is the most useful one to
+glance at: a student who circles (A) put $x - 5$ on the left of the break and $-(x - 5)$ on the
+right --- the lesson's misconception exactly --- and a student who circles (C) distributed the
+negative to only the $x$. Item 2's (A) 10 is the trap from notes problem 4. In the free
+response, accept $40 - L$ or $-(L - 40)$ in (b); part (c) is the deepest question on the page
+--- credit any answer that computes $-(37 - 40) = 3$ and says the minus sign takes the
+opposite of a negative.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+Graded, two pages, due on the date you set; students start problems 3 and 8 in the Homework
+Launch. Grade problems 8 and 10 for accuracy and the rest for completion and shown work if
+time is short: 8 (the rules of $|x - 4|$ and its value at $x = 1$) and 10(a) (why $-x$ is
+right) are the two items that say whether the crux landed, and together they predict 2.2 better
+than the complex items do --- 2.2 opens by moving the $|x|$ corner. On problem 2(b), $\pm 5i\sqrt{2}$
+is the full answer; $\pm i\sqrt{50}$ is correct but unsimplified, so mark it, do not zero it.
+Problem 9 is the one worth reading closely: a student who writes $-x + 1$ for $x < -1$ has
+distributed the opposite to only one term --- the same slip as AP Practice item 5(C).
+\end{teachernote}
+\end{document}

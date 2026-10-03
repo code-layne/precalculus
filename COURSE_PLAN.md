@@ -113,8 +113,8 @@ eleven-day teacher plan (with two optional lessons) into six lessons:
 |---|--------|--------|--------|-----------|
 | 2.1 | Complex Numbers and the Library of Parent Functions | New (absorbs absolute value as a piecewise function) | authored | `unit02/lesson01` |
 | 2.2 | Transformations of Functions | CED 1.12 (translations, reflections, dilations in one day) | authored | `unit02/lesson02` |
-| 2.3 | Symmetry and Inverse Functions | CED 1.6 (even/odd) + CED 2.8 | authored | `unit02/lesson03` |
-| 2.4 | Characteristics of Functions: Domain, Range, Intercepts, and End Behavior | CED 1.1 + 1.6 + New | authored | `unit02/lesson04` |
+| 2.3 | Symmetry and Inverse Functions | CED 1.5.B (even/odd) + CED 2.8 | authored | `unit02/lesson03` |
+| 2.4 | Characteristics of Functions: Domain, Range, Intercepts, and End Behavior | CED 1.1 + 1.5.A + 1.6.A + 1.7.A (end behavior as limits) + New (algebraic domain) | authored | `unit02/lesson04` |
 | 2.5 | Characteristics of Functions: Increasing, Decreasing, Extrema, and Concavity | CED 1.1 + 1.4 | authored | `unit02/lesson05` |
 | 2.6 | Average Rate of Change, Secant Lines, and the Difference Quotient | CED 1.2 + 1.3 + New (difference quotient) | authored | `unit02/lesson06` |
 

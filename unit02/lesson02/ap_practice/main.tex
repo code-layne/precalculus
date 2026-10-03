@@ -1,0 +1,159 @@
+%! Transformations of Functions — Unit 2, Lesson 2.2 — AP Practice
+% EXTRA CREDIT — optional, exactly TWO pages, placed between the notes and the graded homework.
+% Page 1 is Section I, five multiple-choice items with four options (A)–(D); page 2 is Section
+% II, one multi-part free-response question on a table, in context. The greenhouse context is
+% used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 reads the inside sign forwards; MC 2
+% reads f(3x) as a stretch by 3 (and applies the 3 to y); MC 3 moves the asymptote the wrong
+% way; MC 4 flips the inside sign or the outside one, or inverts a; MC 5 forgets that a
+% reflection flips the range (EK 1.12.A.6). Answers: C, D, B, A, C.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line), the table blanks become \ans, and prose answers are
+% \writespace{H}{…}, fixed height both ways. The explicit \newpage fixes the page break.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{AP Practice}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit --- optional.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is the last section of this packet; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Circle the letter of the single best answer. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
+
+\item Which function's graph is the graph of $y = \sqrt{x}$ translated 2 units to the
+      \textbf{left} and 5 units \textbf{down}?
+
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $y = \sqrt{x - 2} - 5$
+        \item[(B)] $y = \sqrt{x - 5} + 2$
+        \item[(C)] $y = \sqrt{x + 2} - 5$
+        \item[(D)] $y = \sqrt{x + 5} - 2$
+      \end{enumerate}
+
+\item The point $(12, -6)$ lies on the graph of the function $f$. Let $g(x) = f(3x)$. Which
+      point must lie on the graph of $g$?
+
+      \smallskip
+      \textbf{(A)} $(36, -6)$ \hspace{2.2em} \textbf{(B)} $(12, -18)$ \hspace{2.2em} \textbf{(C)} $(4, -2)$ \hspace{2.2em} \textbf{(D)} $(4, -6)$
+
+\item Let $g(x) = \dfrac{1}{x - 2} + 3$, a transformation of $y = \dfrac{1}{x}$. Which gives the
+      vertical and horizontal asymptotes of the graph of $g$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $x = -2$ and $y = 3$
+        \item[(B)] $x = 2$ and $y = 3$
+        \item[(C)] $x = 3$ and $y = 2$
+        \item[(D)] $x = 2$ and $y = -3$
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The graph of a transformation of $y = x^2$ is shown. Its vertex is $(1, -2)$, and it
+      passes through $(0, -4)$ and $(2, -4)$. Which is an equation for the graph?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[(A)] $y = -2(x - 1)^2 - 2$
+        \item[(B)] $y = -2(x + 1)^2 - 2$
+        \item[(C)] $y = 2(x - 1)^2 - 2$
+        \item[(D)] $y = -\tfrac{1}{2}(x - 1)^2 - 2$
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.38\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.5cm, y=0.3cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-2,-9) grid (4,2);
+        \draw[->, thick] (-2,0) -- (4.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-9) -- (0,2.5) node[above] {\scriptsize $y$};
+        \foreach \x in {-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-8,-6,-4,-2} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, domain=-1:3, samples=50] plot (\x, {-2*(\x-1)*(\x-1) - 2});
+        \fill[plum] (1,-2) circle (2.2pt);
+        \fill[plum] (0,-4) circle (2.0pt);
+        \fill[plum] (2,-4) circle (2.0pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\item The range of $f(x) = \sqrt{x}$ is $y \ge 0$. What is the range of
+      $g(x) = -3\sqrt{x} + 4$?
+
+      \smallskip
+      \textbf{(A)} $y \ge 4$ \hspace{2.2em} \textbf{(B)} $y \ge 0$ \hspace{2.2em} \textbf{(C)} $y \le 4$ \hspace{2.2em} \textbf{(D)} $y \le -3$
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the greenhouses
+must be written \emph{in context}, with units --- that is what earns credit on the AP exam.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=6]
+
+\item The temperature in Greenhouse A, in degrees Celsius, is $f(t)$, where $t$ is hours after
+      noon (a negative $t$ is before noon). A few values are given. Greenhouse B runs on a
+      different timer and heater, and its temperature is $g(t) = 2f(t - 3) + 1$.
+
+      \begin{center}
+      {\renewcommand{\arraystretch}{1.3}%
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $t$ (hours) & $-2$ & $0$ & $2$ & $4$ \\ \hline
+      $f(t)$ ($^\circ$C) & $3$ & $-1$ & $1$ & $5$ \\ \hline
+      \end{tabular}}
+      \end{center}
+
+      \textbf{(a)} Each point $(t, f(t))$ in the table becomes a point of $g$. Complete the
+      table.
+
+      \begin{center}
+      {\renewcommand{\arraystretch}{1.35}%
+      \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      Point of $f$ & $(-2, 3)$ & $(0, -1)$ & $(2, 1)$ & $(4, 5)$ \\ \hline
+      Point of $g$ & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} & \blank{1.4cm} \\ \hline
+      \end{tabular}}
+      \end{center}
+
+      \textbf{(b)} Find $g(5)$, and name the value of $f$ it used. Interpret $g(5)$ in the
+      context of the problem, with units.
+      \writespace{2.0cm}{}
+
+      \textbf{(c)} Describe, in order, the transformations that turn the graph of $f$ into the
+      graph of $g$.
+      \writespace{2.0cm}{}
+
+      \textbf{(d)} A third greenhouse runs on a faster cycle, $h(t) = f(2t)$. Kai claims the
+      graph of $h$ passes through $(8, 5)$, because $f(4) = 5$. Is Kai right? Find the correct
+      point and explain.
+      \writespace{2.4cm}{}
+
+      \textbf{(e)} Write a function $j$, in terms of $f$, whose graph is the graph of $f$ reflected
+      over the $y$-axis and then moved up 4. Which point of $j$ comes from $(4, 5)$?
+      \writespace{2.2cm}{}
+
+\end{enumerate}
+
+\end{document}

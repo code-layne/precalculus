@@ -1,0 +1,203 @@
+%! Transformations of Functions — Unit 2, Lesson 2.2 — Homework
+% THE LESSON'S GRADED PRACTICE and the last component in the packet — exactly TWO pages, started
+% in the Homework Launch (the last 3 minutes of the period) and finished at home. Every function
+% and graph here is new: the notes used x^2 -> (x+3)^2, sqrt(x) -> 2sqrt(x), sqrt(2x), Graph A
+% and Graph B; the AP Practice used greenhouses and a 1/x asymptote item.
+%   Page 1 — Part A (translations, 1–3) and Part B (reflections and dilations, 4–6).
+%   Page 2 — Part C (all together, 7–9) and Part D (the headline, 10).
+% The diagnostic item is 3: the vertex of (x+5)^2 - 2, against a friend's (5, -2).
+% Problem 10 asks for the lesson's headline in writing.
+%
+% PAGE LOCKSTEP with the other half of the pair: work blocks are byte-identical, prose answers
+% are \writespace{H}{…} (fixed height both ways), and each \blank sits at the END of a line or
+% in a table cell so its \ans cannot rewrap anything. The explicit \newpage fixes the break.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.2}{Homework}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{This is your graded homework.} Start it in class; finish it on your own by the due
+date on your cover sheet. Show your work. For any change \emph{inside} $f$, find the $x$ that
+feeds $f$ its old input --- never trust the sign or the number by eye.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part A --- Translations}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+\item Describe each translation of the parent function in words.
+
+      \textbf{(a)} $y = |x| + 6$ \qquad \blank{3.6cm}
+
+      \textbf{(b)} $y = |x + 6|$ \qquad \blank{3.6cm}
+
+      \textbf{(c)} $y = \sqrt{x - 2} - 7$ \qquad \blank{3.6cm}
+
+\item Write the equation of $y = \dfrac{1}{x}$ moved right 3 and up 1. Then state its vertical
+      and horizontal asymptotes.
+
+      Equation: \blank{3.0cm} \qquad Asymptotes: \blank{3.4cm}
+
+\item A friend says the vertex of $y = (x + 5)^2 - 2$ is $(5, -2)$. Who is right --- your
+      friend, or someone who says $(-5, -2)$? Explain how the \emph{inside} tells you.
+      \writespace{1.8cm}{}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part B --- Reflections and dilations}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=9pt, start=4]
+
+\item Let $f(x) = x^2$. The point $(3, 9)$ is on its graph. Where does it land on each graph?
+
+      \textbf{(a)} $-f(x)$: \ \blank{1.6cm} \hfill
+      \textbf{(b)} $f(-x)$: \ \blank{1.6cm} \hfill
+      \textbf{(c)} $3f(x)$: \ \blank{1.6cm} \hfill
+      \textbf{(d)} $f(3x)$: \ \blank{1.6cm}
+
+\item Each graph is a transformation of $y = \sqrt{x}$ (dashed).\par Match each graph to one equation:
+      \qquad $y = -\sqrt{x}$ \qquad $y = \sqrt{-x}$ \qquad $y = \tfrac{1}{2}\sqrt{x}$
+
+      \smallskip
+      \begin{center}
+      \begin{tikzpicture}[x=0.32cm, y=0.32cm]
+        \begin{scope}
+          \draw[linegray, very thin, step=1] (-5,-3) grid (5,3);
+          \draw[->, thick] (-5,0) -- (5.4,0);
+          \draw[->, thick] (0,-3) -- (0,3.4);
+          \draw[thick, slate, dashed, domain=0:5, samples=40] plot (\x, {sqrt(\x)});
+          \draw[very thick, plum, domain=-5:0, samples=40] plot (\x, {sqrt(abs(\x))});
+          \node[font=\small\bfseries] at (0,-4.1) {Graph A};
+        \end{scope}
+        \begin{scope}[xshift=4.2cm]
+          \draw[linegray, very thin, step=1] (-5,-3) grid (5,3);
+          \draw[->, thick] (-5,0) -- (5.4,0);
+          \draw[->, thick] (0,-3) -- (0,3.4);
+          \draw[thick, slate, dashed, domain=0:5, samples=40] plot (\x, {sqrt(\x)});
+          \draw[very thick, plum, domain=0:5, samples=40] plot (\x, {0.5*sqrt(\x)});
+          \node[font=\small\bfseries] at (0,-4.1) {Graph B};
+        \end{scope}
+        \begin{scope}[xshift=8.4cm]
+          \draw[linegray, very thin, step=1] (-5,-3) grid (5,3);
+          \draw[->, thick] (-5,0) -- (5.4,0);
+          \draw[->, thick] (0,-3) -- (0,3.4);
+          \draw[thick, slate, dashed, domain=0:5, samples=40] plot (\x, {sqrt(\x)});
+          \draw[very thick, plum, domain=0:5, samples=40] plot (\x, {-sqrt(\x)});
+          \node[font=\small\bfseries] at (0,-4.1) {Graph C};
+        \end{scope}
+      \end{tikzpicture}
+      \end{center}
+
+      Graph A: \blank{1.8cm} \hfill
+      Graph B: \blank{1.8cm} \hfill
+      Graph C: \blank{1.8cm}
+
+\item Let $f(x) = x^3$ and $g(x) = f\!\left(\tfrac{1}{4}x\right)$. Describe the change, and find
+      where the point $(2, 8)$ of $f$ lands on $g$.
+
+\begin{work}
+  \tfrac{1}{4}x &= 2 \\
+              x &= 8
+\end{work}
+
+      \blank{6.4cm}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part C --- All the moves together}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=7]
+
+\item Map the key points of $y = |x|$ onto $g(x) = -3|x - 1| + 4$.
+
+      \begin{center}
+      {\renewcommand{\arraystretch}{1.35}%
+      \begin{tabular}{|c|c|c|c|}
+      \hline
+      Point on $y = |x|$ & $(-2, 2)$ & $(0, 0)$ & $(2, 2)$ \\ \hline
+      Point on $g$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\ \hline
+      \end{tabular}}
+      \end{center}
+
+\item \begin{minipage}[t]{0.52\linewidth}
+      The graph shown is a transformation of $y = x^2$. Write its equation. Use the vertex and
+      one more point.
+
+\begin{work}
+  \text{vertex} &= (-1, 4) \\
+  2 &= a(1 + 1)^2 + 4 \\
+  -2 &= 4a \\
+  a &= -\tfrac{1}{2}
+\end{work}
+
+      $y = $ \blank{3.4cm}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.42\linewidth}
+      \vspace{0pt}
+      \centering
+      \begin{tikzpicture}[x=0.42cm, y=0.42cm]
+        \draw[linegray, very thin, step=1] (-5,-1) grid (3,5);
+        \draw[->, thick] (-5,0) -- (3.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-1) -- (0,5.5) node[above] {\scriptsize $y$};
+        \foreach \x in {-3,-1,1} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {2,4} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, domain=-4.1:2.1, samples=60] plot (\x, {4 - 0.5*(\x+1)*(\x+1)});
+        \fill[plum] (-1,4) circle (2.4pt);
+        \fill[plum] (1,2) circle (2.2pt);
+        \fill[plum] (-3,2) circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\item Let $g(x) = -\sqrt{x + 2} + 5$. Describe the transformations of $y = \sqrt{x}$ in order,
+      then state the domain and range of $g$. (The parent has domain $x \ge 0$, range $y \ge 0$.)
+      \writespace{1.6cm}{}
+
+\end{enumerate}
+
+\vspace{0.06in}
+
+\begin{headlinebox}{lilac}
+\textbf{\color{plum}Part D --- The headline}
+\end{headlinebox}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt, start=10]
+
+\item Compare $f(x) + 3$ with $f(x + 3)$. Explain why a change \emph{outside} $f$ does exactly
+      what it says, but a change \emph{inside} $f$ seems to run backwards.
+      \writespace{2.2cm}{}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\boxguard[8]
+\begin{spiralbox}
+\small
+\textbf{Next lesson (2.3, Symmetry and Inverse Functions):} look back at problem 4(b).
+Reflecting $y = x^2$ over the $y$-axis sent $(3, 9)$ to $(-3, 9)$ --- a point that was already
+on the graph. When $f(-x)$ gives back the very same function, the graph is its own mirror
+image. Next lesson turns that into a test, then asks what it means to run a function backwards.
+\end{spiralbox}
+
+\end{document}
