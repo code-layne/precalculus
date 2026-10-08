@@ -8,7 +8,7 @@ the shared skill's `references/conventions.md` (`~/.claude/skills/lesson-plannin
 
 Contents: [Lesson plan](#lesson-plan) · [Cover](#cover) · [Warm-up](#warm-up) ·
 [Guided notes](#guided-notes) · [AP practice](#ap-practice) ·
-[Homework](#homework) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline) ·
+[Homework (DeltaMath)](#homework-deltamath) · [Slides](#slides) · [Answer-key discipline](#answer-key-discipline) ·
 [Unit cover](#unit-cover) · [Sample test & key](#sample-test--key)
 
 General rules:
@@ -35,9 +35,9 @@ AP tags and list review topics):
    CED Learning Objectives as student-facing aims. This CED has no "Big Idea" tag.
 3. **Lesson Flow — Gradual Release (60 minutes)** — `skillbox{lilac}`, a three-column
    `tabularx` (Phase / Min / what students are doing and where it lives) over the seven
-   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Debrief, Homework Launch (3). **There is
-   no Group Activity row** — the whole release runs inside the guided notes, so You Do
-   gets real time (roughly 11–14 min). **The Min column must sum to exactly 60.** Close with
+   phases: Warm-Up, Hook, **I Do**, **We Do**, **You Do**, Debrief. **There is no Group
+   Activity row and no Homework Launch row** — the whole release runs inside the guided notes,
+   and homework is DeltaMath, so You Do gets real time (roughly 14–17 min). **The Min column must sum to exactly 60.** Close with
    an "If the clock slips" paragraph naming what to cut first and what to protect. This box
    sits *above* Priority Ideas & Skills so the clock is the second thing the teacher reads.
 4. **Priority Ideas & Skills** — `skillbox{goldbox}`, two `minipage`s. Left: the priority
@@ -78,31 +78,30 @@ AP tags and list review topics):
     practice box** so every student sees it. Tier R / A / E language belonged to the old
     activity sheet — do not reintroduce it.
 12. **Debrief (N min)** — `skillbox{redbox}`, sitting **between** Differentiation and
-    Individual Work. **Teacher-facing only — there is no `debrief/` student component.**
+    Reinforcement & Extension — the last phase of the period. **Teacher-facing only — there is no `debrief/` student component.**
     Three timed moves as an `enumerate`: (a) *share out the You Do*, one answer per practice
     item and not a full review, so a student who never reached the last item still hears its
     result; (b) *name the headline* — the
-    day's central sentence in italics, said by the teacher and echoed back by the class (a
-    homework item asks for it in writing); (c) *point forward*, or read a
-    read-only notes section aloud here rather than during notes. Close with a
-    `\textbf{Do not}` line: no re-teaching, no new questions, no starting the homework
-    early.
-13. **Homework Launch (3 min)** — `skillbox{redbox}`. **There is no exit ticket.** Due date to
-    the board and the cover; the homework problems students start alone; the **diagnostic item**
-    (the day's central distinction) and what a miss looks like; three piles to sort what the
-    teacher sees into and what each means for the next warm-up.
-14. **Reinforcement & Extension** — `skillbox{goldbox}`. `\textbf{Homework --- printed, graded
-    (2 pages).}` — an overview by part and problem number; `\textbf{AP Practice --- extra credit
-    (2 pages).}` — what each MC distractor catches and what each FRQ part asks;
-    `\textbf{Preview:}` of the next lesson. (DeltaMath appears only on a lesson the user
-    overrode.)
-15. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
+    day's central sentence in italics, said by the teacher and echoed back by the class; (c)
+    *point forward* — the DeltaMath assignment and its due date (board and cover row 4), then
+    the next lesson, or read a read-only notes section aloud here rather than during notes.
+    Close with a `\textbf{Do not}` line: no re-teaching, no new questions.
+    **There is no Homework Launch box** (retired 2026-10-06) and no exit ticket.
+13. **Reinforcement & Extension** — `skillbox{goldbox}`. `\textbf{Homework --- DeltaMath,
+    graded.}` — an `enumerate` of 4–8 DeltaMath topics in teaching order, each
+    `\textbf{Topic name} (n problems) --- matches notes problems ...`, one marked
+    `\textit{(diagnostic)}`, then a `\textit{Leave out:}` line naming the neighbouring topics
+    that test what was not taught; `\textbf{AP Practice --- extra credit (2 pages).}` — what
+    each MC distractor catches and what each FRQ part asks; `\textbf{Preview:}` of the next
+    lesson. (A printed homework appears only on a lesson the user overrode.)
+14. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
     Warm-Up, Guided Notes, **Debrief**, **AP Practice**, **Homework**.
     Pacing, common errors, what to look for. This is the **only** place teacher-only prose
     goes — never in a `_key`. The Debrief note says why those minutes are worth protecting and
-    what to borrow from instead (never the Homework Launch); the AP Practice note gives the MC
-    answers and the distractor worth looking for; the Homework note says which items to grade
-    for accuracy and which predict the next lesson.
+    what to borrow from instead (never the You Do); the AP Practice note gives the MC
+    answers and the distractor worth looking for; the Homework note names the diagnostic
+    DeltaMath topic and what a miss on it means, what DeltaMath cannot test (and which You Do
+    problem carries it instead), and which topics predict the next lesson.
 
 ## Cover
 
@@ -113,14 +112,15 @@ AP tags and list review topics):
 - `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score
   blank): **Warm-Up, Guided Notes, AP Practice, Homework**, then a **Total** of 1, 2, and 4.
   AP Practice is extra credit — a `goldbg` row, `\textbf{Extra credit}` in its description, a
-  `$+$\,\blank{1.0cm}` score cell outside the total. Homework carries a *Due:* slot.
+  `$+$\,\blank{1.0cm}` score cell outside the total. Homework is the DeltaMath assignment,
+  with a *Due:* slot and a blank for the DeltaMath score.
 
   ```latex
   1 & Warm-Up      & ... & \blank{1.2cm} \\
   2 & Guided Notes & ... & \blank{1.2cm} \\
   \rowcolor{goldbg}
   3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
-  4 & Homework     & ... \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
+  4 & Homework     & DeltaMath: \textit{Lesson X.Y} \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
   \midrule
     & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
   ```
@@ -181,10 +181,10 @@ Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; densit
 ## AP practice
 
 `ap_practice/` (+ `ap_practice_key/`) — **extra credit, optional, exactly two pages**, between
-the notes and the homework. `\pageheader{...}{AP Practice}` (no name row). Model:
+the notes and the end of the packet. `\pageheader{...}{AP Practice}` (no name row). Model:
 `unit01/lesson01/ap_practice`.
 
-- Open with a `remindbox`: extra credit, optional, the graded homework is last and comes first.
+- Open with a `remindbox`: extra credit, optional, the graded DeltaMath homework comes first.
   Byte-identical in blank and key.
 - **Page 1 — Section I.** A `headlinebox{goldbg}` header, then **five multiple-choice items,
   four options (A)–(D)** as on the AP Precalculus exam, in context or on a pre-drawn display.
@@ -198,24 +198,22 @@ the notes and the homework. `\pageheader{...}{AP Practice}` (no name row). Model
   keyred `(B)` inline) — never text appended to the option line, which rewraps it.
 - Contexts appear nowhere else in the lesson.
 
-## Homework
+## Homework (DeltaMath)
 
-`homework/` (+ `homework_key/`) — **printed, graded, exactly two pages, last in the packet**,
-authored for every lesson. `\pageheader{...}{Homework}` (no name row). Model:
-`unit01/lesson01/homework`.
+**There is no `homework/` component** (retired 2026-10-06). Homework is a graded DeltaMath
+assignment, authored as the topic list in the plan's Reinforcement & Extension (section 13
+above; `LESSON_SHAPE.md` §2) and named on cover row 4. Pick topics that drill what the notes
+taught, at the level they taught it — no division of complex numbers on a lesson that only
+multiplied — and leave the next lesson's skills to the next lesson.
 
-- Open with a `remindbox` (graded; start in class, finish by the due date on the cover).
-- 8–12 numbered problems in titled parts, each part a `headlinebox{lilac}` header over a plain
-  `enumerate` (`start=` to keep numbering continuous). **Every context is new** — not the
-  notes', not the You Do's, not the AP Practice's.
-- Cover the lesson's skills across representations; include the **diagnostic item** the plan's
-  Homework Launch names and one item that asks for the **headline in writing**.
-- `\newpage` between page 1 and page 2, in both files. Close with a `spiralbox` previewing the
-  next lesson.
-- Lockstep: multi-step work in byte-identical `work` blocks; prose in `\writespace{H}{…}`; a
-  `\blank{W}` only at the end of a line, so its `\ans{}` cannot rewrap the paragraph.
-
-**DeltaMath** replaces this component only on a lesson the user explicitly overrides.
+**Printed-homework override** — only on a lesson the user names: `homework/` (+
+`homework_key/`), **printed, graded, exactly two pages, last in the packet**,
+`\pageheader{...}{Homework}` (no name row); a `remindbox` (graded; due date on the cover);
+8–12 numbered problems in titled parts, each a `headlinebox{lilac}` over a plain `enumerate`
+(`start=` keeps numbering continuous); every context new; one diagnostic item and one item that
+asks for the headline in writing; `\newpage` between the pages in both files; a closing
+`spiralbox` previewing the next lesson. Lockstep as everywhere: `work` blocks,
+`\writespace{H}{…}`, a `\blank{W}` only at the end of a line.
 
 ## Slides
 
