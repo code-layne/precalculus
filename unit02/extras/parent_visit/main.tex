@@ -1,0 +1,130 @@
+%! Parent Visit — Unit 2 — "Name That Parent Function" — one-page Kahoot reference
+% STANDALONE handout for the parent-visit class. Merged into no packet — see ../Makefile.
+% ONE PAGE. No name row: it goes home with the parent. No key: it IS the reference — parents
+% keep it face up during the Kahoot, students play from memory (sheet face down).
+% The library is Lesson 2.1's ten parent functions, same cards and key points as the notes.
+% The run (about 10 min):
+%   0-2  Parents read the "Spot It" box with their student; students point out one card each.
+%   2-8  Kahoot, parent-and-student teams (or students vs. parents). Each question shows ONE
+%        graph and four names. Suggested 12: x^2, sqrt x, |x|, 1/x, x^3, cbrt x, 1/x^2, x,
+%        x^4 (vs. x^2 as a distractor), constant, then two transformed graphs (|x| shifted
+%        right 2; sqrt x reflected over the x-axis) — "the family survives the move".
+%   8-10 The crux: replay the x^2 vs. x^4 question. Ask a parent how to tell them apart; a
+%        student answers with key points: both pass (1,1), but x^4 is flatter near 0 and
+%        steeper past 1.
+\documentclass[12pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+
+% One library card: #1 name, #2 equation, #3 the plot (clipped to the window), #4 the tell.
+\newcommand{\pfcard}[4]{%
+  \begin{minipage}[t]{0.19\linewidth}\centering
+  {\footnotesize\bfseries\color{plum}#1}\par
+  {\small #2}\par\vspace{2pt}
+  \begin{tikzpicture}[x=0.25cm, y=0.25cm]
+    \draw[linegray, very thin, step=1] (-4,-4) grid (4,4);
+    \draw[->, thin] (-4.3,0) -- (4.5,0);
+    \draw[->, thin] (0,-4.3) -- (0,4.5);
+    \begin{scope}
+      \clip (-4,-4) rectangle (4,4);
+      #3
+    \end{scope}
+  \end{tikzpicture}\par\vspace{2pt}
+  {\scriptsize\raggedright #4\par}
+  \end{minipage}}
+\newcommand{\kp}[2]{\fill[plum] (#1,#2) circle (1.6pt);}
+
+\begin{document}
+\thispagestyle{empty}
+
+\pageheader{Unit 2: Functions and Their Graphs}{Parent Visit --- Name That Parent Function}
+
+\vspace{-0.1in}
+
+\boxguard
+\begin{scenariobox}[Tonight: A Kahoot]{goldacc}
+\small
+A \textbf{parent function} is the simplest member of a family of graphs. Every graph your
+student meets this year is one of these ten, \textbf{moved, stretched, or flipped}. Each
+Kahoot question shows \textbf{one graph}: pick its parent. \textbf{Parents keep this sheet
+face up; students play from memory.}
+\end{scenariobox}
+
+\vspace{0.04in}
+\boxguard[30]
+\begin{scenariobox}[The Library of Parent Functions]{plum}
+\centering
+\pfcard{Constant}{$y = 2$}{%
+  \draw[very thick, plum] (-4,2) -- (4,2); \kp{0}{2}}%
+  {Flat. Never rises or falls.}\hfill
+\pfcard{Linear}{$y = x$}{%
+  \draw[very thick, plum] (-4,-4) -- (4,4); \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {A straight line through the origin.}\hfill
+\pfcard{Quadratic}{$y = x^2$}{%
+  \draw[very thick, plum] plot[domain=-2.05:2.05, samples=50, smooth] (\x,{\x*\x});
+  \kp{-2}{4}\kp{-1}{1}\kp{0}{0}\kp{1}{1}\kp{2}{4}}%
+  {A \textbf{U}: both ends up.}\hfill
+\pfcard{Cubic}{$y = x^3$}{%
+  \draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] (\x,{\x*\x*\x});
+  \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {Ends go opposite ways; flattens at 0.}\hfill
+\pfcard{Quartic}{$y = x^4$}{%
+  \draw[very thick, plum] plot[domain=-1.43:1.43, samples=50, smooth] (\x,{\x*\x*\x*\x});
+  \kp{-1}{1}\kp{0}{0}\kp{1}{1}}%
+  {A flat-bottomed \textbf{U}, steeper walls.}
+
+\vspace{6pt}
+\pfcard{Absolute value}{$y = |x|$}{%
+  \draw[very thick, plum] (-4,4) -- (0,0) -- (4,4); \kp{-1}{1}\kp{0}{0}\kp{1}{1}}%
+  {A \textbf{V}: a sharp corner.}\hfill
+\pfcard{Square root}{$y = \sqrt{x}$}{%
+  \draw[very thick, plum] plot[domain=0:4, samples=60, smooth] (\x,{sqrt(\x)});
+  \kp{0}{0}\kp{1}{1}\kp{4}{2}}%
+  {Starts at a point; half a sideways U.}\hfill
+\pfcard{Cube root}{$y = \sqrt[3]{x}$}{%
+  \draw[very thick, plum] plot[domain=-1.62:1.62, samples=50, smooth] ({\x*\x*\x},\x);
+  \kp{-1}{-1}\kp{0}{0}\kp{1}{1}}%
+  {The cubic on its side; steep at 0.}\hfill
+\pfcard{Reciprocal}{$y = \tfrac{1}{x}$}{%
+  \draw[very thick, plum] plot[domain=0.25:4, samples=50, smooth] (\x,{1/\x});
+  \draw[very thick, plum] plot[domain=-4:-0.25, samples=50, smooth] (\x,{1/\x});
+  \kp{1}{1}\kp{-1}{-1}}%
+  {Two pieces in \textbf{opposite} corners.}\hfill
+\pfcard{Recip.\ squared}{$y = \tfrac{1}{x^2}$}{%
+  \draw[very thick, plum] plot[domain=0.5:4, samples=50, smooth] (\x,{1/(\x*\x)});
+  \draw[very thick, plum] plot[domain=-4:-0.5, samples=50, smooth] (\x,{1/(\x*\x)});
+  \kp{1}{1}\kp{-1}{1}}%
+  {Two pieces, \textbf{both} above the axis.}
+\end{scenariobox}
+
+\vspace{0.04in}
+\noindent
+\begin{minipage}[t]{0.56\linewidth}\vspace{0pt}
+\begin{scenariobox}[Spot It in Three Questions]{greenacc}
+\small\raggedright
+\textbf{1. Two pieces?} Reciprocal. Opposite corners $\to \frac{1}{x}$; both on top
+$\to \frac{1}{x^2}$.\par\vspace{3pt}
+\textbf{2. Starts at a point?} Square root --- it lives on one side only.\par\vspace{3pt}
+\textbf{3. Mirror image across the $y$-axis?} \emph{Even}: $x^2$, $x^4$, $|x|$ (U, flat U,
+V). If instead it spins onto itself about the origin, \emph{odd}: $x$, $x^3$, $\sqrt[3]{x}$.
+\end{scenariobox}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.42\linewidth}\vspace{0pt}
+\begin{scenariobox}[The Hard One: $x^2$ or $x^4$?]{plumlight}
+\small\raggedright
+Both are U's through $(-1,1)$, $(0,0)$, $(1,1)$. Check \textbf{between} the dots: at
+$x=\frac{1}{2}$, $x^2=\frac{1}{4}$ but $x^4=\frac{1}{16}$, so $x^4$ hugs the axis longer.
+Past $1$ it climbs faster: $2^4=16$ vs.\ $2^2=4$.
+\end{scenariobox}
+\end{minipage}
+
+\vspace{0.04in}
+\begin{remindbox}
+\small
+\textbf{For parents.} Unit~2 is the toolkit for the whole course: this library, then
+sliding, stretching, and flipping it, then reading domain, range, and rates of change.
+Homework is on DeltaMath. \textbf{Ask your student:} \emph{``What is the parent of
+$y = |x - 2|$, and where did it move?''}
+\end{remindbox}
+
+\end{document}
