@@ -1,0 +1,178 @@
+%! Reference — Unit 2 — Transformations of Functions — one-page info sheet
+% STANDALONE handout. Merged into no packet — see ../Makefile.
+% ONE PAGE. No name row, no key: it IS the reference. Pairs with Lesson 2.2's notes: same form,
+% g(x) = a f(b(x - h)) + k, same point rule (x/b + h, ay + k), same "inside runs backwards" slogan.
+% Each constant gets one card in its own colour (a plum, b gold, h green, k red) with a family
+% plot showing what happens AS THAT CONSTANT CHANGES — dashed slate is always the parent.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+
+\newcommand{\ca}{{\color{plum}a}}
+\newcommand{\cb}{{\color{goldacc}b}}
+\newcommand{\ch}{{\color{greenacc}h}}
+\newcommand{\ck}{{\color{redacc}k}}
+
+% A family plot: axes on the window [-4,4] x [-3,5] with the body clipped to it.
+\newcommand{\famplot}[1]{%
+  \begin{tikzpicture}[x=0.24cm, y=0.24cm]
+    \draw[linegray, very thin, step=1] (-4,-3) grid (4,5);
+    \draw[->, thin] (-4.3,0) -- (4.5,0) node[right, font=\scriptsize] {$x$};
+    \draw[->, thin] (0,-3.3) -- (0,5.5) node[above, font=\scriptsize] {$y$};
+    \begin{scope}
+      \clip (-4,-3) rectangle (4,5);
+      #1
+    \end{scope}
+  \end{tikzpicture}}
+
+% One constant's card: [#1 text width] #2 colour, #3 title, #4 the cases, #5 the family plot,
+% #6 the caption. The full-width cards (a, b) take the default; the half-width h and k cards
+% sit side by side and pass a narrower text column.
+\newcommand{\constcard}[6][0.72]{%
+  \begin{scenariobox}[#3]{#2}
+  \begin{minipage}[c]{#1\linewidth}\small\raggedright
+  #4
+  \end{minipage}\hfill
+  \begin{minipage}[c]{\dimexpr0.98\linewidth-#1\linewidth\relax}\centering
+  #5\par\vspace{1pt}
+  {\scriptsize #6\par}
+  \end{minipage}
+  \end{scenariobox}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\pageheader{Unit 2: Functions and Their Graphs}{Reference --- Transformations of Functions}
+
+\vspace{-0.12in}
+
+\begin{headlinebox}{lilac}
+\centering
+{\Large $g(x) \;=\; \ca\,f\big(\cb\,(x - \ch)\big) + \ck$}\par\vspace{3pt}
+\small
+\begin{tabular}{@{}c@{\qquad}c@{}}
+\textbf{Inside} $f$: \cb\ and \ch\ act on $x$ and run \textbf{backwards}. &
+\textbf{Outside} $f$: \ca\ and \ck\ act on $y$ and do \textbf{what they say}.
+\end{tabular}\par\vspace{2pt}
+A point $(x, y)$ on $f$ lands at
+$\left(\dfrac{x}{\cb} + \ch,\ \ \ca\,y + \ck\right)$ on $g$.
+\quad Dashed graph below $=$ the parent.
+\end{headlinebox}
+
+\vspace{0.03in}
+\constcard{plum}{$a$ --- vertical stretch, compression, flip over the $x$-axis}{%
+\textbf{Multiplies every output by $a$:} \ $(x, y) \to (x,\ a\,y)$.\par\vspace{2pt}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+$|a| > 1$ & \textbf{vertical stretch} by $|a|$ --- taller, steeper \\
+$0 < |a| < 1$ & \textbf{vertical compression} by $|a|$ --- flatter \\
+$a < 0$ & also \textbf{reflects over the $x$-axis} (opens the other way) \\
+$a = 1$ & no change
+\end{tabular}\par\vspace{2pt}
+\textbf{As $|a|$ grows} the graph climbs faster; \textbf{as $a \to 0$} it flattens onto the
+$x$-axis; \textbf{crossing 0} flips it. Points on the $x$-axis ($y = 0$) never move.}%
+{\famplot{%
+  \draw[thick, slate, dashed, domain=-2.3:2.3, samples=40] plot (\x,{\x*\x});
+  \draw[very thick, plum, domain=-1.6:1.6, samples=40] plot (\x,{2*\x*\x});
+  \draw[very thick, plumlight!60, domain=-3.2:3.2, samples=40] plot (\x,{0.5*\x*\x});
+  \draw[very thick, redacc, domain=-1.8:1.8, samples=40] plot (\x,{-\x*\x});
+  \node[font=\tiny, plum, left] at (-1.3,3.4) {$2$};
+  \node[font=\tiny, slate, right] at (1.85,3.4) {$1$};
+  \node[font=\tiny, plumlight, right] at (2.6,3.4) {$\tfrac12$};
+  \node[font=\tiny, redacc, right] at (1.6,-2.6) {$-1$};}}%
+{$y = a\,x^2$ for $a = 2,\ 1,\ \tfrac12,\ -1$}
+
+\constcard{goldacc}{$b$ --- horizontal compression, stretch, flip over the $y$-axis}{%
+\textbf{Divides every input by $b$:} \ $(x, y) \to \left(\tfrac{x}{b},\ y\right)$.
+\textbf{Backwards:} big $b$ squeezes.\par\vspace{2pt}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+$|b| > 1$ & \textbf{horizontal compression} by $\tfrac{1}{|b|}$ --- toward the $y$-axis \\
+$0 < |b| < 1$ & \textbf{horizontal stretch} by $\tfrac{1}{|b|}$ --- away from the $y$-axis \\
+$b < 0$ & also \textbf{reflects over the $y$-axis} (left $\leftrightarrow$ right) \\
+$b = 1$ & no change
+\end{tabular}\par\vspace{2pt}
+\textbf{As $|b|$ grows} the graph squeezes toward the $y$-axis; \textbf{as $b \to 0$} it
+spreads out wide. Points on the $y$-axis ($x = 0$) never move.}%
+{\famplot{%
+  \draw[thick, slate, dashed, domain=0:4, samples=60] plot (\x,{sqrt(\x)});
+  \draw[very thick, goldacc, domain=0:4, samples=60] plot (\x,{sqrt(4*\x)});
+  \draw[very thick, goldacc!45, domain=0:4, samples=60] plot (\x,{sqrt(\x/4)});
+  \draw[very thick, redacc, domain=-4:0, samples=60] plot (\x,{sqrt(-\x)});
+  \fill[goldacc] (1,2) circle (1.5pt); \fill[slate] (4,2) circle (1.5pt);
+  \node[font=\tiny, goldacc, above] at (2.6,3.2) {$4$};
+  \node[font=\tiny, slate, above] at (3.4,1.85) {$1$};
+  \node[font=\tiny, goldacc!80!black, below] at (3.3,0.95) {$\tfrac14$};
+  \node[font=\tiny, redacc, above] at (-3.2,1.8) {$-1$};}}%
+{$y = \sqrt{b\,x}$ for $b = 4,\ 1,\ \tfrac14,\ -1$}
+
+\noindent
+\begin{minipage}[t]{0.495\linewidth}\vspace{0pt}
+\constcard[0.6]{greenacc}{$h$ --- horizontal shift}{%
+\textbf{Adds $h$ to every input:}\\ $(x, y) \to (x + h,\ y)$. \textbf{Backwards.}\par\vspace{2pt}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+$h > 0$ & \textbf{right} $h$: \ $f(x - 2)$ \\
+$h < 0$ & \textbf{left} $|h|$: \ $f(x + 2)$ \\
+$h = 0$ & no change
+\end{tabular}\par\vspace{2pt}
+\textbf{As $h$ increases} the graph slides right. The vertex lands where the inside is $0$.}%
+{\famplot{%
+  \draw[thick, slate, dashed, domain=-2.3:2.3, samples=40] plot (\x,{\x*\x});
+  \draw[very thick, greenacc, domain=-0.3:4, samples=40] plot (\x,{(\x-2)*(\x-2)});
+  \draw[very thick, greenacc!45, domain=-4:0.3, samples=40] plot (\x,{(\x+2)*(\x+2)});
+  \fill[greenacc] (2,0) circle (1.5pt); \fill[greenacc!45] (-2,0) circle (1.5pt);
+  \node[font=\tiny, greenacc, below] at (2,-0.1) {$2$};
+  \node[font=\tiny, greenacc!80!black, below] at (-2,-0.1) {$-2$};}}%
+{$y = (x - h)^2$,\\ $h = -2,\ 0,\ 2$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.495\linewidth}\vspace{0pt}
+\constcard[0.6]{redacc}{$k$ --- vertical shift}{%
+\textbf{Adds $k$ to every output:}\\ $(x, y) \to (x,\ y + k)$. \textbf{Does what it says.}\par\vspace{2pt}
+\begin{tabular}{@{}l@{\ \ }l@{}}
+$k > 0$ & \textbf{up} $k$: \ $f(x) + 3$ \\
+$k < 0$ & \textbf{down} $|k|$: \ $f(x) - 3$ \\
+$k = 0$ & no change
+\end{tabular}\par\vspace{2pt}
+\textbf{As $k$ increases} the graph slides up. The vertex, asymptote, and range move by $k$.}%
+{\famplot{%
+  \draw[thick, slate, dashed, domain=-2.3:2.3, samples=40] plot (\x,{\x*\x});
+  \draw[very thick, redacc, domain=-1.8:1.8, samples=40] plot (\x,{\x*\x+2});
+  \draw[very thick, redacc!45, domain=-2.7:2.7, samples=40] plot (\x,{\x*\x-2});
+  \fill[redacc] (0,2) circle (1.5pt); \fill[redacc!45] (0,-2) circle (1.5pt);
+  \node[font=\tiny, redacc, left] at (0,2) {$2$};
+  \node[font=\tiny, redacc!80!black, left] at (0,-2) {$-2$};}}%
+{$y = x^2 + k$,\\ $k = -2,\ 0,\ 2$}
+\end{minipage}
+
+\vspace{0.04in}
+\noindent
+\begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
+\begin{scenariobox}[All Four at Once]{plumlight}
+\small\raggedright
+\stepnum{1}\ \textbf{Inside:} divide $x$ by \cb, then add \ch. \quad
+\stepnum{2}\ \textbf{Outside:} multiply $y$ by \ca, then add \ck.\par\vspace{3pt}
+$g(x) = 3\sqrt{\tfrac12(x + 4)} - 1$: \ $\ca = 3$, $\cb = \tfrac12$, $\ch = -4$, $\ck = -1$.
+Left 4, horizontal stretch by 2, vertical stretch by 3, down 1.\par\vspace{2pt}
+\centering
+{\renewcommand{\arraystretch}{1.15}\footnotesize
+\begin{tabular}{|c|c|c|}
+\hline
+on $y = \sqrt{x}$ & $\tfrac{x}{b} + h$ & $a\,y + k$ \\ \hline
+$(0, 0)$ & $0 \div \tfrac12 - 4 = -4$ & $3(0) - 1 = -1$ \\
+$(1, 1)$ & $1 \div \tfrac12 - 4 = -2$ & $3(1) - 1 = 2$ \\
+$(4, 2)$ & $4 \div \tfrac12 - 4 = 4$ & $3(2) - 1 = 5$ \\ \hline
+\end{tabular}}
+\end{scenariobox}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.40\linewidth}\vspace{0pt}
+\begin{scenariobox}[Watch Out]{goldacc}
+\small\raggedright
+\textbf{Factor out $b$ first.} \ $f(2x - 6) = f\big(2(x - 3)\big)$, so $h = 3$, not $6$.
+\par\vspace{3pt}
+\textbf{Minus means right.} \ $(x - 5)^2$ moves \emph{right} 5; $(x + 5)^2$ moves \emph{left}.
+\par\vspace{3pt}
+\textbf{Big $b$ squeezes.} \ $f(3x)$ is a compression by $\tfrac13$, not a stretch by 3.
+\par\vspace{3pt}
+\textbf{Negative $a$ flips up/down; negative $b$ flips left/right.}
+\end{scenariobox}
+\end{minipage}
+
+\end{document}
