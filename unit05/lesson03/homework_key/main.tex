@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l03-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,17 +22,17 @@
   \item $f(x) = \log_5 x$
 
   \vspace{4pt}
-  Domain: \ans{$(0,\infty)$} \quad Range: \ans{$(-\infty,\infty)$} \quad Asymptote: $x = $ \ans{$0$}
+  Domain: \smash{\gradedblank[id=hw1a1, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3.5cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1a2, type=short, check=text, points=1, answer={(-\infty, \infty)}, display={$(-\infty,\infty)$}]{3.5cm}{13pt}} \quad Asymptote: $x = $ \smash{\gradedblank[id=hw1a3, type=short, points=1, answer={0}]{1.5cm}{13pt}}
 
   \item $g(x) = -2\log_3 x$
 
   \vspace{4pt}
-  Domain: \ans{$(0,\infty)$} \quad Range: \ans{$(-\infty,\infty)$} \quad Asymptote: $x = $ \ans{$0$}
+  Domain: \smash{\gradedblank[id=hw1b1, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3.5cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1b2, type=short, check=text, points=1, answer={(-\infty, \infty)}, display={$(-\infty,\infty)$}]{3.5cm}{13pt}} \quad Asymptote: $x = $ \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={0}]{1.5cm}{13pt}}
 
   \item $h(x) = \tfrac{1}{2}\log_{10} x$
 
   \vspace{4pt}
-  Domain: \ans{$(0,\infty)$} \quad Range: \ans{$(-\infty,\infty)$} \quad Asymptote: $x = $ \ans{$0$}
+  Domain: \smash{\gradedblank[id=hw1c1, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3.5cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1c2, type=short, check=text, points=1, answer={(-\infty, \infty)}, display={$(-\infty,\infty)$}]{3.5cm}{13pt}} \quad Asymptote: $x = $ \smash{\gradedblank[id=hw1c3, type=short, points=1, answer={0}]{1.5cm}{13pt}}
 \end{enumerate}
 
 \begin{teachernote}
@@ -44,13 +47,14 @@ regardless of $a$ (as long as $a \ne 0$). The value of $a$ only stretches/compre
   \item Fill in the end behavior.
 
   \vspace{4pt}
-  $\displaystyle\lim_{x \to 0^+} (-\log_2 x) = $ \ans{$+\infty$} \qquad
-  $\displaystyle\lim_{x \to \infty} (-\log_2 x) = $ \ans{$-\infty$}
+  $\displaystyle\lim_{x \to 0^+} (-\log_2 x) = $ \smash{\gradedblank[id=hw2a1, type=short, points=1, answer={\infty}]{3cm}{13pt}} \qquad
+  $\displaystyle\lim_{x \to \infty} (-\log_2 x) = $ \smash{\gradedblank[id=hw2a2, type=short, points=1, answer={-\infty}]{3cm}{13pt}}
 
   \item Is $g$ increasing or decreasing? Use the inverse relationship to explain.
 
-  \ansline{$g$ is decreasing. The base $b = 2 > 1$ makes $\log_2 x$ increasing, but the}
-  \ansline{factor $a = -1$ reflects outputs, reversing the direction to always decreasing.}
+  \writegap\\
+  \writebox{\gradedblank[id=hw2b, type=rubric, points=2,
+  display={Decreasing. $\log_2 x$ is increasing because $b = 2 > 1$, but the factor $a = -1$ reflects the outputs, so $g$ is always decreasing.}]{\linewidth}{24pt}}\\
 \end{enumerate}
 
 \item A function $h$ has the table below, and $h(x) = f(x + 2)$ for some function $f$.
@@ -81,10 +85,10 @@ $79$ & $4$ & $81$ \\
 Are the inputs of $f$ (column 3) proportional over equal output intervals?
 
 \vspace{4pt}
-Ratios: \ans{$3/1 = 3$;\quad $9/3 = 3$;\quad $27/9 = 3$;\quad $81/27 = 3$}
+Ratios: \smash{\gradedblank[id=hw3a, type=short, points=1, answer={3}, display={$3/1 = 9/3 = 27/9 = 81/27 = 3$}]{6cm}{13pt}}
 
 \vspace{4pt}
-Is $f$ logarithmic? \ans{Yes} \quad What base? $b = $ \ans{$3$}
+Is $f$ logarithmic? \smash{\gradedblank[id=hw3b, type=short, check=text, points=1, answer={yes}]{2cm}{13pt}} \quad What base? $b = $ \smash{\gradedblank[id=hw3c, type=short, points=1, answer={3}]{2cm}{13pt}}
 
 \begin{teachernote}
 The inputs to $f$ are $1, 3, 9, 27, 81$ --- powers of 3. The ratio is constant (3), confirming
@@ -94,9 +98,10 @@ that $f$ is logarithmic with base 3 (EK 2.11.A.3). $f(x) = \log_3 x$ and $h(x) =
 \item \textbf{Conceptual question.} Explain in your own words why $f(x) = a\log_b x$ has
       no local maximum or minimum on its natural domain. Reference EK 2.11.A.2.
 
-\ansline{Because $f$ is always increasing (or always decreasing), it never changes direction.}
-\ansline{A local max or min requires the function to increase then decrease (or vice versa),}
-\ansline{but logarithmic functions are strictly monotone on $(0,\infty)$, so no extrema exist (EK 2.11.A.2).}
+\writegap\\
+\writebox{\gradedblank[id=hw4, type=rubric, points=2,
+  display={A logarithmic function is always increasing (or always decreasing) on $(0,\infty)$, so it never changes direction; a local max or min needs a change of direction, so none exists (EK 2.11.A.2).}]{\linewidth}{26pt}}\\
+\writeline\\
 
 \item \textbf{AP-style multiple choice.} Which of the following is \textbf{NOT} a
       characteristic of $f(x) = \log_3 x$?
@@ -106,7 +111,7 @@ that $f$ is logarithmic with base 3 (EK 2.11.A.3). $f(x) = \log_3 x$ and $h(x) =
   \item The domain is $x > 0$.
   \item The range is all real numbers.
   \item The function has a local maximum at $x = 1$. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item The graph has a vertical asymptote at $x = 0$.
+  \item The graph has a vertical asymptote at $x = 0$. \hfill\textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.42in}{13pt}}
 \end{enumerate}
 
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=4pt]

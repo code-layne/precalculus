@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u05-l04-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -16,17 +19,17 @@
 \item Apply the product property to rewrite each expression as a sum.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $\log_6(36 \cdot 216) = \log_6(\blank{2cm}) + \log_6(\blank{2cm}) = \blank{1cm} + \blank{1cm} = \blank{1.5cm}$
+  \item $\log_6(36 \cdot 216) = \log_6(\smash{\gradedblank[id=hw1a1, type=short, points=1, answer={36}]{2cm}{13pt}}) + \log_6(\smash{\gradedblank[id=hw1a2, type=short, points=1, answer={216}]{2cm}{13pt}}) = \smash{\gradedblank[id=hw1a3, type=short, points=1, answer={2}]{1cm}{13pt}} + \smash{\gradedblank[id=hw1a4, type=short, points=1, answer={3}]{1cm}{13pt}} = \smash{\gradedblank[id=hw1a5, type=short, points=1, answer={5}]{1.5cm}{13pt}}$
 
-  \item $\log_2(x \cdot 8) = \log_2(x) + \log_2(\blank{2cm}) = \log_2(x) + \blank{1.5cm}$
+  \item $\log_2(x \cdot 8) = \log_2(x) + \log_2(\smash{\gradedblank[id=hw1b1, type=short, points=1, answer={8}]{2cm}{13pt}}) = \log_2(x) + \smash{\gradedblank[id=hw1b2, type=short, points=1, answer={3}]{1.5cm}{13pt}}$
 \end{enumerate}
 
 \item Apply the power property to rewrite each expression.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $\log_5(125^3) = \blank{1cm} \cdot \log_5(\blank{2cm}) = \blank{1cm} \cdot \blank{1cm} = \blank{1.5cm}$
+  \item $\log_5(125^3) = \smash{\gradedblank[id=hw2a1, type=short, points=1, answer={3}]{1cm}{13pt}} \cdot \log_5(\smash{\gradedblank[id=hw2a2, type=short, points=1, answer={125}]{2cm}{13pt}}) = \smash{\gradedblank[id=hw2a3, type=short, points=1, answer={3}]{1cm}{13pt}} \cdot \smash{\gradedblank[id=hw2a4, type=short, points=1, answer={3}]{1cm}{13pt}} = \smash{\gradedblank[id=hw2a5, type=short, points=1, answer={9}]{1.5cm}{13pt}}$
 
-  \item $\log_4(x^5) = \blank{1.5cm}$
+  \item $\log_4(x^5) = \smash{\gradedblank[id=hw2b, type=short, points=1, answer={5\log_4(x)}]{1.5cm}{13pt}}$
 \end{enumerate}
 
 \item Let $f(x) = \log_2(4x)$.
@@ -35,29 +38,33 @@
   \item Rewrite $f(x)$ in the form $f(x) = a + \log_2(x)$. What is $a$?
 
   \vspace{4pt}
-  $f(x) = \log_2(4x) = \log_2(\blank{2cm}) + \log_2(x) = \blank{1.5cm} + \log_2(x)$
+  $f(x) = \log_2(4x) = \log_2(\smash{\gradedblank[id=hw3a1, type=short, points=1, answer={4}]{2cm}{13pt}}) + \log_2(x) = \smash{\gradedblank[id=hw3a2, type=short, points=1, answer={2}]{1.5cm}{13pt}} + \log_2(x)$
 
   \vspace{2pt}
-  $a = $ \blank{2cm}
+  $a = $ \smash{\gradedblank[id=hw3a3, type=short, points=1, answer={2}]{2cm}{13pt}}
 
   \item What geometric transformation does this represent on the graph of $y = \log_2(x)$?
 
-  \writeline
+  \writebox{\smash{\gradedblank[id=hw3b, type=rubric, points=1,
+  display={A vertical translation up 2 units of $y = \log_2(x)$.}]{\linewidth}{13pt}}}
 \end{enumerate}
 
 \item Use the change-of-base formula to show that $\log_3(x) = \dfrac{\log_{10}(x)}{\log_{10}(3)}$.
       Explain why this means $\log_3(x)$ is a vertical dilation of $\log_{10}(x)$.
 
-\writelines{3}
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw4, type=rubric, points=2,
+  display={Change of base: $\log_3(x) = \dfrac{\log_{10}(x)}{\log_{10}(3)} = \dfrac{1}{\log_{10}(3)}\cdot\log_{10}(x)$. Multiplying every output of $\log_{10}(x)$ by the constant $1/\log_{10}(3) \approx 2.096$ is a vertical dilation.}]{\linewidth}{40pt}}\\
 
 \item Evaluate each natural logarithm. Show reasoning.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $\ln(e^5) = $ \blank{3cm}
+  \item $\ln(e^5) = $ \smash{\gradedblank[id=hw5a, type=short, points=1, answer={5}]{3cm}{13pt}}
 
-  \item $\ln(1) = $ \blank{3cm}
+  \item $\ln(1) = $ \smash{\gradedblank[id=hw5b, type=short, points=1, answer={0}]{3cm}{13pt}}
 
-  \item $\ln(e^{-2}) = $ \blank{3cm}
+  \item $\ln(e^{-2}) = $ \smash{\gradedblank[id=hw5c, type=short, points=1, answer={-2}]{3cm}{13pt}}
 \end{enumerate}
 
 \item \textbf{AP-style multiple choice.} Which of the following is equivalent to $\log_2(8x^4)$?
@@ -67,7 +74,7 @@
   \item $3 + 4\log_2(x)$
   \item $3 \cdot 4 \cdot \log_2(x)$
   \item $3 + \log_2(x^4)$
-  \item $12\log_2(x)$
+  \item $12\log_2(x)$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=A]{0.42in}{13pt}}
 \end{enumerate}
 
 \end{enumerate}

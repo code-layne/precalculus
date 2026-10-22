@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u05-l02-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,7 +22,7 @@
   \item Write the inverse function $f(x)$.
 
   \vspace{4pt}
-  $f(x) = $ \blank{4cm}
+  $f(x) = $ \smash{\gradedblank[id=hw1a, type=short, points=1, answer={\log_6 x}]{4cm}{13pt}}
 
   \item Complete the table, then write the corresponding ordered pairs for $f$.
 
@@ -31,11 +34,11 @@
   \rowcolor{sky}
   $x$ & $g(x) = 6^x$ & Point on $f$: $(g(x),\; x)$ \\
   \hline
-  $0$ & \blank{1.5cm} & \blank{3cm} \\
+  $0$ & \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={1}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b2, type=short, check=text, points=1, answer={(1, 0)}, display={$(1,\;0)$}]{3cm}{14pt}} \\
   \hline
-  $1$ & \blank{1.5cm} & \blank{3cm} \\
+  $1$ & \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={6}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b4, type=short, check=text, points=1, answer={(6, 1)}, display={$(6,\;1)$}]{3cm}{14pt}} \\
   \hline
-  $2$ & \blank{1.5cm} & \blank{3cm} \\
+  $2$ & \smash{\gradedblank[id=hw1b5, type=short, points=1, answer={36}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b6, type=short, check=text, points=1, answer={(36, 2)}, display={$(36,\;2)$}]{3cm}{14pt}} \\
   \hline
   \end{tabular}
   \end{center}
@@ -45,13 +48,14 @@
       both compositions. Show all steps.
 
 \vspace{4pt}
-$f(g(x)) = \log_5(5^x) = $ \blank{3cm}
+$f(g(x)) = \log_5(5^x) = $ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={x}]{3cm}{13pt}}
 
 \vspace{6pt}
-$g(f(x)) = 5^{\log_5 x} = $ \blank{3cm}
+$g(f(x)) = 5^{\log_5 x} = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={x}]{3cm}{13pt}}
 
 \vspace{4pt}
-Conclusion: \writeline
+Conclusion: \writebox{\smash{\gradedblank[id=hw2c, type=rubric, points=1,
+  display={Both compositions equal $x$, so $f$ and $g$ are inverses.}]{431pt}{13pt}}}
 
 \item A biologist models algae coverage with $A(t) = 10^t$ cm$^2$, where $t$ is time in days.
 
@@ -59,22 +63,26 @@ Conclusion: \writeline
   \item Write the inverse function $t(A)$ that gives the number of days from the area.
 
   \vspace{4pt}
-  $t(A) = $ \blank{4cm}
+  $t(A) = $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={\log_{10} A}]{4cm}{13pt}}
 
   \item Evaluate $t(1000)$. What does this value represent in context?
 
   \vspace{4pt}
-  $t(1000) = $ \blank{3cm}
+  $t(1000) = $ \smash{\gradedblank[id=hw3b1, type=short, points=1, answer={3}]{3cm}{13pt}}
 
   \vspace{4pt}
-  In context: \writeline
+  In context: \writebox{\smash{\gradedblank[id=hw3b2, type=rubric, points=1,
+  display={After 3 days the algae covers 1000 cm$^2$.}]{419pt}{13pt}}}
 \end{enumerate}
 
 \item \textbf{Conceptual question.} Explain in your own words why the logarithmic function's
       growth pattern (output changes additively as input changes multiplicatively) is the
       ``opposite'' of the exponential function's growth pattern.
 
-\writelines{3}
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw4, type=rubric, points=2,
+  display={Exponential: adding to the input multiplies the output by $b$. Logarithm: multiplying the input by $b$ adds 1 to the output. Inverses swap inputs and outputs, so the patterns are reversed.}]{\linewidth}{41pt}}\\
 
 \item Let $h(x) = 2\log_3 x$.
 
@@ -82,17 +90,18 @@ Conclusion: \writeline
   \item Identify the base $b$ and the value of $a$.
 
   \vspace{4pt}
-  $b = $ \blank{2cm} \qquad $a = $ \blank{2cm}
+  $b = $ \smash{\gradedblank[id=hw5a1, type=short, points=1, answer={3}]{2cm}{13pt}} \qquad $a = $ \smash{\gradedblank[id=hw5a2, type=short, points=1, answer={2}]{2cm}{13pt}}
 
   \item Evaluate $h(9)$ and $h(27)$.
 
   \vspace{4pt}
-  $h(9) = $ \blank{3cm} \qquad $h(27) = $ \blank{3cm}
+  $h(9) = $ \smash{\gradedblank[id=hw5b1, type=short, points=1, answer={4}]{3cm}{13pt}} \qquad $h(27) = $ \smash{\gradedblank[id=hw5b2, type=short, points=1, answer={6}]{3cm}{13pt}}
 
   \item How do the outputs of $h(x)$ compare to the outputs of $\log_3 x$ for the same
         inputs? Describe the effect of the vertical dilation by $a = 2$.
 
-  \writeline
+  \writebox{\smash{\gradedblank[id=hw5c, type=rubric, points=2,
+  display={Each output of $h$ is twice that of $\log_3 x$: a vertical stretch by 2.}]{\linewidth}{13pt}}}
 \end{enumerate}
 
 \item \textbf{AP-style multiple choice.} The graph of $f(x) = \log_4 x$ is a reflection of
@@ -103,7 +112,7 @@ Conclusion: \writeline
   \item $g(x) = x^4$
   \item $g(x) = 4x$
   \item $g(x) = 4^x$
-  \item $g(x) = \log x$
+  \item $g(x) = \log x$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=C]{0.42in}{13pt}}
 \end{enumerate}
 
 \end{enumerate}

@@ -1,0 +1,17 @@
+# Rubric for homework item 6 (Unit 5, Lesson 5.7). manifest.json points here
+# as rubrics/precalc-u05-l07-hw-hw6.yaml, relative to this lesson directory.
+id: hw6
+points: 2
+task: "Extension: using log_b x = ln x / ln b, explain why f(x) = a ln(x) and g(x) = a log_10(x) always produce models that are vertical dilations of each other. Write the exact dilation factor that converts one into the other."
+criteria:
+  - id: explain
+    points: 1
+    full: "Uses change of base to write a log_10(x) = (1/ln 10) * a ln(x): g is f with every output multiplied by a constant, which is a vertical dilation."
+  - id: factor
+    points: 1
+    full: "Gives the exact factor: 1/ln 10 (about 0.4343) from f to g, or equivalently ln 10 (about 2.303) from g to f."
+examples:
+  - response: "log_10 x = ln x / ln 10 so they are dilations."
+    scores: {explain: 1, factor: 0}
+  - response: "a log_10 x = (a ln x)/ln 10, so g = f times 1/ln 10; the factor is 1/ln 10."
+    scores: {explain: 1, factor: 1}

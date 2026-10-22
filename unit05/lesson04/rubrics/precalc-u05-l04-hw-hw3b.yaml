@@ -1,0 +1,14 @@
+# Rubric for homework item 3b (Unit 5, Lesson 5.4). manifest.json points here
+# as rubrics/precalc-u05-l04-hw-hw3b.yaml, relative to this lesson directory.
+id: hw3b
+points: 1
+task: "Problem 3b: f(x) = log_2(4x) = 2 + log_2(x). What geometric transformation does this represent on the graph of y = log_2(x)?"
+criteria:
+  - id: translation
+    points: 1
+    full: "Identifies a vertical translation (shift) up 2 units of the graph of y = log_2(x). (Also accept: a horizontal dilation by a factor of 1/4, if described as equivalent.)"
+examples:
+  - response: "It moves up."
+    scores: {translation: 0}
+  - response: "A vertical shift up 2 units."
+    scores: {translation: 1}

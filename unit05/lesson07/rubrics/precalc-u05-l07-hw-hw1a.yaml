@@ -1,0 +1,14 @@
+# Rubric for homework item 1a (Unit 5, Lesson 5.7). manifest.json points here
+# as rubrics/precalc-u05-l07-hw-hw1a.yaml, relative to this lesson directory.
+id: hw1a
+points: 1
+task: "Problem 1, Table A (x: 1, 3, 9, 27; y: 0, 1, 2, 3): logarithmic or exponential? Give a one-sentence justification."
+criteria:
+  - id: justification
+    points: 1
+    full: "Justifies a logarithmic model: as y increases by 1 (equal output increments), x multiplies by 3 (proportional input change)."
+examples:
+  - response: "Because it grows slowly."
+    scores: {justification: 0}
+  - response: "Each time y goes up 1, x is multiplied by 3, so it's logarithmic."
+    scores: {justification: 1}

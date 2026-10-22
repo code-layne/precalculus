@@ -1,0 +1,17 @@
+# Rubric for homework item 1 (Unit 5, Lesson 5.8). manifest.json points here
+# as rubrics/precalc-u05-l08-hw-hw1.yaml, relative to this lesson directory.
+id: hw1
+points: 2
+task: "Explain in your own words why exponential data appears linear on a semi-log plot, referencing what happens algebraically when you apply a logarithm to both sides of y = ab^x."
+criteria:
+  - id: algebra
+    points: 1
+    full: "Explains that taking the log of both sides brings the exponent down (log y = x log b + log a), so log y is a linear function of x."
+  - id: linear
+    points: 1
+    full: "Concludes that plotting log y against x gives a straight line: multiplicative growth in y becomes additive (constant-rate) growth in log y."
+examples:
+  - response: "Because logs make things straight."
+    scores: {algebra: 0, linear: 0}
+  - response: "Taking log of y = ab^x gives log y = log a + x log b, which is a line in x, so the semi-log graph is a straight line."
+    scores: {algebra: 1, linear: 1}

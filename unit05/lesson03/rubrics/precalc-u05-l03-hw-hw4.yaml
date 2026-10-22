@@ -1,0 +1,17 @@
+# Rubric for homework item 4 (Unit 5, Lesson 5.3). manifest.json points here
+# as rubrics/precalc-u05-l03-hw-hw4.yaml, relative to this lesson directory.
+id: hw4
+points: 2
+task: "Explain in your own words why f(x) = a log_b x has no local maximum or minimum on its natural domain. Reference EK 2.11.A.2."
+criteria:
+  - id: monotone
+    points: 1
+    full: "States that a logarithmic function is always increasing or always decreasing (strictly monotone) on (0, infinity)."
+  - id: extrema
+    points: 1
+    full: "Explains that a local maximum or minimum requires the function to change direction (increase then decrease or vice versa), which never happens, so there are no local extrema (EK 2.11.A.2)."
+examples:
+  - response: "Because it goes to infinity."
+    scores: {monotone: 0, extrema: 0}
+  - response: "Log functions only ever go up (or only down), so they never turn around, and you need a turn for a max or min."
+    scores: {monotone: 1, extrema: 1}

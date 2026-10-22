@@ -1,0 +1,17 @@
+# Rubric for homework item 4 (Unit 5, Lesson 5.2). manifest.json points here
+# as rubrics/precalc-u05-l02-hw-hw4.yaml, relative to this lesson directory.
+id: hw4
+points: 2
+task: "Explain in your own words why the logarithmic function's growth pattern (output changes additively as input changes multiplicatively) is the 'opposite' of the exponential function's growth pattern."
+criteria:
+  - id: patterns
+    points: 1
+    full: "Describes both patterns: for b^x, adding equal amounts to the input multiplies the output by b; for log_b x, multiplying the input by b adds 1 (a constant) to the output."
+  - id: inverse
+    points: 1
+    full: "Connects the reversal to the functions being inverses: inputs and outputs swap roles, so the additive and multiplicative changes swap."
+examples:
+  - response: "Exponentials multiply and logs add."
+    scores: {patterns: 0, inverse: 0}
+  - response: "For 2^x adding 1 to x doubles y, and for log_2 x doubling x adds 1 to y. They are inverses so the inputs and outputs trade places."
+    scores: {patterns: 1, inverse: 1}

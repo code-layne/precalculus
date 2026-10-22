@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l08-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -16,27 +19,27 @@
 \item \textbf{Conceptual.}  Explain in your own words why exponential data appears linear
       on a semi-log plot.
 
-\ansline{When you apply $\log$ to both sides of $y = ab^x$, the exponent $x$ comes out of
-the logarithm (power rule), giving $\log(y) = x\log(b) + \log(a)$. This is a linear function
-of $x$, so plotting $\log(y)$ against $x$ on a semi-log graph produces a straight line. The
-multiplicative growth of $y$ is converted to additive growth of $\log(y)$.}
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw1, type=rubric, points=2,
+  display={Taking $\log$ of both sides of $y = ab^x$ brings the exponent down: $\log y = x\log b + \log a$, a linear function of $x$. So $\log y$ vs.\ $x$ is a straight line; multiplicative growth in $y$ becomes additive growth in $\log y$.}]{\linewidth}{42pt}}\\
 
 \item Given the exponential model $y = 2 \cdot 5^x$, write the linearized form using
       $\log_{10}$.  Identify the slope and $y$-intercept.
 
 \vspace{4pt}
-Linearized form: $\log_{10}(y) = $ \ans{$(\log_{10} 5)\cdot x + \log_{10} 2 \approx 0.699x + 0.301$}
+Linearized form: $\log_{10}(y) = $ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={(\log_{10} 5) x + \log_{10} 2}, display={$(\log_{10} 5)\cdot x + \log_{10} 2 \approx 0.699x + 0.301$}]{6cm}{13pt}}
 
 \vspace{4pt}
-Slope $= $ \ans{$\log_{10}(5) \approx 0.699$} \qquad $y$-intercept $= $ \ans{$\log_{10}(2) \approx 0.301$}
+Slope $= $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={\log_{10} 5}, display={$\log_{10}(5) \approx 0.699$}]{4cm}{13pt}} \qquad $y$-intercept $= $ \smash{\gradedblank[id=hw2c, type=short, points=1, answer={\log_{10} 2}, display={$\log_{10}(2) \approx 0.301$}]{4cm}{13pt}}
 
 \item A semi-log plot with slope $0.477$ and $y$-intercept $1.0$.  Write the exponential model.
 
 \vspace{4pt}
-$b = 10^{0.477} \approx $ \ans{$3$} \qquad $a = 10^{1.0} = $ \ans{$10$}
+$b = 10^{0.477} \approx $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={3}]{2cm}{13pt}} \qquad $a = 10^{1.0} = $ \smash{\gradedblank[id=hw3b, type=short, points=1, answer={10}]{2cm}{13pt}}
 
 \vspace{4pt}
-Exponential model: $y = $ \ans{$10 \cdot 3^x$}
+Exponential model: $y = $ \smash{\gradedblank[id=hw3c, type=short, points=1, answer={10 \cdot 3^x}]{5cm}{13pt}}
 
 \item The table below gives data for a population $P$ over time $t$.
 
@@ -50,26 +53,25 @@ $t$ & $0$ & $2$ & $4$ & $6$ \\
 \hline
 $P$ & $500$ & $2000$ & $8000$ & $32000$ \\
 \hline
-$\log_{10}(P)$ & \ans{2.699} & \ans{3.301} & \ans{3.903} & \ans{4.505} \\
+$\log_{10}(P)$ & \smash{\gradedblank[id=hw4a1, type=short, check=numeric, tolerance=0.0005, points=1, answer={2.699}]{1.8cm}{15pt}} & \smash{\gradedblank[id=hw4a2, type=short, check=numeric, tolerance=0.0005, points=1, answer={3.301}]{1.8cm}{15pt}} & \smash{\gradedblank[id=hw4a3, type=short, check=numeric, tolerance=0.0005, points=1, answer={3.903}]{1.8cm}{15pt}} & \smash{\gradedblank[id=hw4a4, type=short, check=numeric, tolerance=0.0005, points=1, answer={4.505}]{1.8cm}{15pt}} \\
 \hline
 \end{tabular}
 \end{center}
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
   \item (Completed in table above.)
-  \item Slope $= $ \ans{$(3.301 - 2.699)/(2 - 0) = 0.301$ per unit of $t$}
-  \item $b = 10^{0.301} \approx $ \ans{$2$} \quad and \quad $a = 10^{2.699} \approx $ \ans{$500$}
-  \item Exponential model: $P(t) = $ \ans{$500 \cdot 2^t$}
-  \item Verify: $P(2) = $ \ans{$500 \cdot 4 = 2000$}. Does this match? \ans{Yes}
+  \item Slope $= $ \ans{$(3.301 - 2.699)/(2 - 0) =$} \smash{\gradedblank[id=hw4b, type=short, check=numeric, tolerance=0.0005, points=1, answer={0.301}]{4cm}{13pt}} \ans{per unit of $t$}
+  \item $b = 10^{0.301} \approx $ \smash{\gradedblank[id=hw4c1, type=short, points=1, answer={2}]{2.5cm}{13pt}} \quad and \quad $a = 10^{2.699} \approx $ \smash{\gradedblank[id=hw4c2, type=short, points=1, answer={500}]{2.5cm}{13pt}}
+  \item Exponential model: $P(t) = $ \smash{\gradedblank[id=hw4d, type=short, points=1, answer={500 \cdot 2^t}]{5cm}{13pt}}
+  \item Verify: $P(2) = $ \ans{$500 \cdot 4 =$} \smash{\gradedblank[id=hw4e1, type=short, points=1, answer={2000}]{4cm}{13pt}}. Does this match? \smash{\gradedblank[id=hw4e2, type=short, check=text, points=1, answer={yes}]{1.5cm}{13pt}}
 \end{enumerate}
 
 \item \textbf{Comparison.}  What advantage does Scientist B (semi-log plot) have?
 
-\ansline{Scientist B's approach is more direct and does not require guessing an appropriate
-constant to add to the $y$-values. According to EK 2.15.A.2, a constant never needs to be
-added to the dependent variable values on a semi-log plot to reveal that an exponential model
-is appropriate. If $\log(y)$ vs.\ $x$ is linear, an exponential model fits --- no constant
-required.}
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw5, type=rubric, points=2,
+  display={B needs no guessed constant: by EK 2.15.A.2 a constant never has to be added to the $y$-values on a semi-log plot to show an exponential model fits. If $\log y$ vs.\ $x$ is linear, the model is exponential.}]{\linewidth}{42pt}}\\
 
 \item \textbf{AP-style multiple choice.}  For $y = 8 \cdot 6^x$, slope of the linearized
       semi-log model:
@@ -79,7 +81,7 @@ required.}
   \item $\log_{10}(8)$
   \item \ans{$\log_{10}(6)$} \quad \textbf{(B) --- slope $= \log_{10}(b) = \log_{10}(6)$}
   \item $\log_{10}(48)$
-  \item $6$
+  \item $6$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=B]{0.42in}{13pt}}
 \end{enumerate}
 
 \end{enumerate}

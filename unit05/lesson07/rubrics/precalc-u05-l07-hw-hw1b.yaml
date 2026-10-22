@@ -1,0 +1,14 @@
+# Rubric for homework item 1b (Unit 5, Lesson 5.7). manifest.json points here
+# as rubrics/precalc-u05-l07-hw-hw1b.yaml, relative to this lesson directory.
+id: hw1b
+points: 1
+task: "Problem 1, Table B (x: 0, 1, 2, 3; y: 2, 6, 18, 54): logarithmic or exponential? Give a one-sentence justification."
+criteria:
+  - id: justification
+    points: 1
+    full: "Justifies an exponential model: over equal x-intervals (add 1), the output multiplies by 3 (proportional output change)."
+examples:
+  - response: "Because it gets big fast."
+    scores: {justification: 0}
+  - response: "When x goes up by 1 the y-value is multiplied by 3, so it is exponential."
+    scores: {justification: 1}

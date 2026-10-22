@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l07-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -52,58 +55,56 @@
 \end{center}
 
 \vspace{4pt}
-\textbf{Table A:} \quad \ans{Logarithmic} \quad because
-\ansline{as $y$ increases by 1, $x$ multiplies by 3 --- proportional input change for
-equal output increments is the logarithmic pattern.}
+\textbf{Table A:} \quad \ans{Logarithmic} \quad because \writebox{\smash{\gradedblank[id=hw1a, type=rubric, points=1,
+  display={As $y$ increases by 1, $x$ multiplies by 3: logarithmic.}]{261pt}{13pt}}}
 
 \vspace{4pt}
-\textbf{Table B:} \quad \ans{Exponential} \quad because
-\ansline{over equal $x$-intervals (add 1), the output multiplies by 3 --- proportional
-output change for equal input increments is the exponential pattern.}
+\textbf{Table B:} \quad \ans{Exponential} \quad because \writebox{\smash{\gradedblank[id=hw1b, type=rubric, points=1,
+  display={For equal $x$-steps of 1, $y$ multiplies by 3: exponential.}]{261pt}{13pt}}}
 
 \item Model from $f(1)=0$ and $f(e^3)=6$, $f(x)=a\ln(x)$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
-  \item $a\ln(e^3) = 6 \;\Rightarrow\; a \cdot $ \ans{3} $= 6 \;\Rightarrow\; a = $ \ans{2}
+  \item $a\ln(e^3) = 6 \;\Rightarrow\; a \cdot $ \smash{\gradedblank[id=hw2a1, type=short, points=1, answer={3}]{1.5cm}{13pt}} $= 6 \;\Rightarrow\; a = $ \smash{\gradedblank[id=hw2a2, type=short, points=1, answer={2}]{2cm}{13pt}}
 
-  \item $f(x) = $ \ans{$2\ln(x)$}
+  \item $f(x) = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={2\ln(x)}]{4cm}{13pt}}
 
-  \item $f(e^5) = $ \ans{$2\ln(e^5) = 2 \cdot 5 = 10$}
+  \item $f(e^5) = $ \ans{$2\ln(e^5) = 2 \cdot 5 =$} \smash{\gradedblank[id=hw2c, type=short, points=1, answer={10}]{5cm}{13pt}}
 \end{enumerate}
 
 \item Species-count model $S(A) = a\log_{10}(A)+k$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
-  \item Equation 1: \ans{$3 = a\log_{10}(1)+k = k$} \quad Equation 2: \ans{$6 = a\log_{10}(10)+k = a+k$}
+  \item Equation 1: \smash{\gradedblank[id=hw3a1, type=short, points=1, answer={3 = a\log_{10}(1) + k}, display={$3 = a\log_{10}(1)+k = k$}]{6cm}{13pt}} \quad Equation 2: \smash{\gradedblank[id=hw3a2, type=short, points=1, answer={6 = a\log_{10}(10) + k}, display={$6 = a\log_{10}(10)+k = a+k$}]{6cm}{13pt}}
 
-  \item $k = $ \ans{3} \qquad $a = $ \ans{3}
+  \item $k = $ \smash{\gradedblank[id=hw3b1, type=short, points=1, answer={3}]{2cm}{13pt}} \qquad $a = $ \smash{\gradedblank[id=hw3b2, type=short, points=1, answer={3}]{2cm}{13pt}}
 
-  \item $S(A) = $ \ans{$3\log_{10}(A)+3$} \qquad $S(10000) = $ \ans{$3(4)+3 = 15$}
+  \item $S(A) = $ \smash{\gradedblank[id=hw3c1, type=short, points=1, answer={3\log_{10}(A) + 3}]{4cm}{13pt}} \qquad $S(10000) = $ \ans{$3(4)+3 =$} \smash{\gradedblank[id=hw3c2, type=short, points=1, answer={15}]{3cm}{13pt}}
 \end{enumerate}
 
 \item $f(x) = 2\log_2(x-1)+3$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=8pt, label=\alph*.]
-  \item Domain: \ans{$x > 1$, i.e.\ $(1,\,\infty)$}
+  \item Domain: \smash{\gradedblank[id=hw4a, type=short, check=text, points=1, answer={x > 1}, display={$x > 1$, i.e.\ $(1,\,\infty)$}]{5cm}{13pt}}
 
-  \item $f(5) = 2\log_2(5-1)+3 = 2\log_2(\ans{4})+3 = 2\cdot\ans{2}+3 = $ \ans{7}
+  \item $f(5) = 2\log_2(5-1)+3 = 2\log_2(\smash{\gradedblank[id=hw4b1, type=short, points=1, answer={4}]{1cm}{13pt}})+3 = 2\cdot\smash{\gradedblank[id=hw4b2, type=short, points=1, answer={2}]{1cm}{13pt}}+3 = $ \smash{\gradedblank[id=hw4b3, type=short, points=1, answer={7}]{2cm}{13pt}}
 
   \item Solve $f(x)=7$:
   \ansline{$2\log_2(x-1)+3 = 7 \;\Rightarrow\; 2\log_2(x-1) = 4 \;\Rightarrow\;
   \log_2(x-1) = 2 \;\Rightarrow\; x-1 = 4 \;\Rightarrow\; x = 5$}
-  $x = $ \ans{5}
+  $x = $ \smash{\gradedblank[id=hw4c, type=short, points=1, answer={5}]{3cm}{13pt}}
 \end{enumerate}
 
-\item AP-style MC: \ans{(B)} --- A child's height grows rapidly then slows, which is
+\item AP-style MC: \textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.42in}{13pt}} --- A child's height grows rapidly then slows, which is
       best modeled by a logarithmic function (increasing but concave down, decelerating
       growth). Choice (A) and (D) are exponential; (C) is linear.
 
 \item Extension:
-\ansline{By change-of-base, $\log_{10}(x) = \dfrac{\ln x}{\ln 10}$, so
-$a\log_{10}(x) = \dfrac{a}{\ln 10}\cdot\ln x$. This means $g(x) = a\log_{10}(x)$
-is a vertical dilation of $f(x) = a\ln(x)$ by the factor $\dfrac{1}{\ln 10} \approx 0.4343$.
-Equivalently, $f(x) = \ln(10)\cdot g(x)$, so $f$ is a vertical stretch of $g$ by
-$\ln 10 \approx 2.303$.}
+
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw6, type=rubric, points=2,
+  display={Change of base: $\log_{10}(x) = \dfrac{\ln x}{\ln 10}$, so $a\log_{10}(x) = \dfrac{1}{\ln 10}\cdot a\ln(x)$: $g$ is a vertical dilation of $f$ by $\dfrac{1}{\ln 10} \approx 0.4343$ (equivalently $f$ is $g$ stretched by $\ln 10 \approx 2.303$).}]{\linewidth}{42pt}}\\
 
 \end{enumerate}
 
