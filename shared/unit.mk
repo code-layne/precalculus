@@ -9,6 +9,9 @@
 PROJECT_ROOT := $(abspath ..)
 UNIT         := $(notdir $(CURDIR))
 COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
+# The course packages (recursive), then the math-shared submodule for grading.sty
+# (NON-recursive: math-shared/examples holds main.tex files; see shared/lesson.mk).
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 
 # Auto-discover lessons that have a Makefile, in sorted order.
 LESSONS := $(patsubst %/Makefile,%,$(sort $(wildcard lesson*/Makefile)))
@@ -31,7 +34,7 @@ UNIT_COVER_KEY_PDF  := $(if $(HAS_UNIT_COVER_KEY),$(COMPILED_DIR)/$(UNIT)/unit_c
 SAMPLE_TEST_PDF     := $(if $(HAS_SAMPLE_TEST),$(COMPILED_DIR)/$(UNIT)/sample_test.pdf)
 SAMPLE_TEST_KEY_PDF := $(if $(HAS_SAMPLE_TEST_KEY),$(COMPILED_DIR)/$(UNIT)/sample_test_key.pdf)
 
-.PHONY: all student key check clean $(LESSONS) _unit_cover _unit_cover_key _sample_test _sample_test_key
+.PHONY: all student key check clean manifest roster-packets $(LESSONS) _unit_cover _unit_cover_key _sample_test _sample_test_key
 
 all: $(LESSONS)
 
@@ -49,7 +52,7 @@ check: $(LESSONS)
 _unit_cover:
 ifdef HAS_UNIT_COVER
 	@mkdir -p $(COMPILED_DIR)/$(UNIT)
-	cd unit_cover && TEXINPUTS="$(PROJECT_ROOT)/shared//:" \
+	cd unit_cover && TEXINPUTS="$(TEXINPUTS)" \
 	    latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
 	    -outdir="$(PROJECT_ROOT)/target/$(UNIT)/unit_cover" main.tex
 	cp $(PROJECT_ROOT)/target/$(UNIT)/unit_cover/main.pdf $(UNIT_COVER_PDF)
@@ -59,7 +62,7 @@ endif
 _unit_cover_key:
 ifdef HAS_UNIT_COVER_KEY
 	@mkdir -p $(COMPILED_DIR)/$(UNIT)
-	cd unit_cover_key && TEXINPUTS="$(PROJECT_ROOT)/shared//:" \
+	cd unit_cover_key && TEXINPUTS="$(TEXINPUTS)" \
 	    latexmk -xelatex -interaction=nonstopmode -halt-on-error -file-line-error \
 	    -outdir="$(PROJECT_ROOT)/target/$(UNIT)/unit_cover_key" main.tex
 	cp $(PROJECT_ROOT)/target/$(UNIT)/unit_cover_key/main.pdf $(UNIT_COVER_KEY_PDF)
@@ -121,3 +124,20 @@ clean:
 	rm -f $(UNIT_COVER_PDF) $(UNIT_COVER_KEY_PDF) $(SAMPLE_TEST_PDF) $(SAMPLE_TEST_KEY_PDF)
 	rm -f $(COMPILED_DIR)/$(UNIT)_student.pdf $(COMPILED_DIR)/$(UNIT)_key.pdf \
 	      $(COMPILED_DIR)/$(UNIT)_full.pdf
+
+# ── Grading (math-shared) ─────────────────────────────────────────────────────
+# Unit-level entry points for ONE graded component, COMP, given relative to the
+# unit directory. A bare name is a unit test (tests/<COMP>). Each delegates to
+# the Makefile that builds that component — shared/tests.mk for a test,
+# shared/lesson.mk for a lesson component — so the outputs land where that
+# directory's own `make manifest` / `make roster-packets` puts them:
+#
+#   make manifest COMP=practice_test            (= tests/practice_test)
+#   make manifest COMP=lesson03/homework
+#   make roster-packets COMP=actual_test ROSTER=~/Rosters/precalculus/roster-map.csv [SECTION=…]
+GR_COMP_PATH := $(if $(findstring /,$(COMP)),$(COMP),tests/$(COMP))
+
+manifest roster-packets:
+	@test -n "$(COMP)" || { echo "!  set COMP=<test name or lessonYY/component>, e.g. COMP=practice_test"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(dir $(GR_COMP_PATH)) $@ COMP=$(notdir $(GR_COMP_PATH)) \
+	    $(if $(ROSTER),ROSTER="$(abspath $(ROSTER))") $(if $(SECTION),SECTION="$(SECTION)")
