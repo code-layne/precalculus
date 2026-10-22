@@ -1,0 +1,17 @@
+# Rubric for homework item 2 (Unit 6, Lesson 6.5). manifest.json points here
+# as rubrics/precalc-u06-l05-hw-hw2.yaml, relative to this lesson directory.
+id: hw2
+points: 2
+task: "True or False? The range of f(theta) = cos(theta) is [0, 1]. Circle your answer, then explain."
+criteria:
+  - id: verdict
+    points: 1
+    full: "Answers False (circled or written)."
+  - id: range
+    points: 1
+    full: "Explains that the range is [-1, 1]: cosine takes negative values, e.g. cos(pi) = -1, which is not in [0, 1]."
+examples:
+  - response: "FALSE circled. Cosine can be negative."
+    scores: {verdict: 1, range: 1}
+  - response: "TRUE circled. The unit circle has radius 1."
+    scores: {verdict: 0, range: 0}

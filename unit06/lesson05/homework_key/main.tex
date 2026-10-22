@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
+\usepackage{grading}
+\gradingassignment{precalc-u06-l05-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -17,14 +20,14 @@
 
         \begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
             \item How many complete cycles does $f(\theta) = \sin\theta$ complete on
-                  $[0, 6\pi]$? \ans{3 complete cycles}
+                  $[0, 6\pi]$? \smash{\gradedblank[id=hw1a, type=short, points=1, answer={3}]{3cm}{13pt}}
 
             \item How many zeros does $f(\theta) = \sin\theta$ have on $[0, 4\pi]$?
-                  (Count $\theta=0$ and $\theta=4\pi$.) \ans{5 zeros ($0, \pi, 2\pi, 3\pi, 4\pi$)}
+                  (Count $\theta=0$ and $\theta=4\pi$.) \smash{\gradedblank[id=hw1b, type=short, points=1, answer={5}]{3cm}{13pt}} ($0, \pi, 2\pi, 3\pi, 4\pi$)
 
             \item On which interval(s) within $[0, 2\pi]$ is $\sin\theta > 0$?
 
-                  \ans{$(0,\,\pi)$}
+                  \smash{\gradedblank[id=hw1c, type=short, check=text, points=1, answer={(0, \pi)}, display={$(0,\pi)$}]{8cm}{13pt}}
         \end{enumerate}
 
   \item \textbf{True or False?} The range of $f(\theta) = \cos\theta$ is $[0, 1]$.
@@ -34,16 +37,18 @@
         \textbf{TRUE} \quad / \quad \textbf{\textcolor{keyred}{FALSE}}
 
         \vspace{6pt}
-        \ansline{False. The range is $[-1,\,1]$. The cosine function takes negative values,}
-        \ansline{for example $\cos\pi = -1$, which is not in $[0,1]$.}
+        \writegap\\
+        \writebox{\gradedblank[id=hw2, type=rubric, points=2,
+  display={False. The range of $\cos\theta$ is $[-1,1]$: it takes negative values, e.g.\ $\cos\pi = -1$.}]{\linewidth}{31.5pt}}\\
 
   \item Without computing, explain why $\sin(\theta + 2\pi) = \sin\theta$ for any angle
         $\theta$. Your explanation should reference the unit circle.
 
         \vspace{4pt}
-        \ansline{Adding $2\pi$ to an angle completes one full revolution on the unit circle,}
-        \ansline{returning the terminal ray to the same position. The $y$-coordinate of the}
-        \ansline{unit-circle point is therefore the same, so $\sin(\theta+2\pi)=\sin\theta$.}
+        \writegap\\
+        \writegap\\
+        \writebox{\gradedblank[id=hw3, type=rubric, points=2,
+  display={Adding $2\pi$ is one full revolution, so the terminal ray returns to the same position and the unit-circle point (and its $y$-coordinate) is the same: $\sin(\theta+2\pi)=\sin\theta$.}]{\linewidth}{45.5pt}}\\
 
   \item \textbf{AP-Style Multiple Choice.} Which of the following intervals contains a
         zero of $f(\theta) = \cos\theta$?
@@ -53,7 +58,7 @@
             \item $\left(0,\;\dfrac{\pi}{4}\right)$
             \item $\left(\dfrac{\pi}{4},\;\dfrac{\pi}{2}\right)$
             \item $\left(\dfrac{\pi}{2},\;\pi\right)$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-            \item $\left(\pi,\;\dfrac{3\pi}{2}\right)$
+            \item $\left(\pi,\;\dfrac{3\pi}{2}\right)$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw4, type=choice, points=1, answer=C]{0.42in}{13pt}}
         \end{enumerate}
 
         \begin{itemize}[leftmargin=1.5em, itemsep=3pt]
@@ -63,13 +68,13 @@
                    inside the open interval.)
         \end{itemize}
 
-  \item The maximum value of $f(\theta) = \sin\theta$ is \ans{$1$} and it first occurs
-        at $\theta = $ \ans{$\dfrac{\pi}{2}$}. The next time the function reaches that same
-        maximum is at $\theta = $ \ans{$\dfrac{5\pi}{2}$}.
+  \item The maximum value of $f(\theta) = \sin\theta$ is \smash{\gradedblank[id=hw5a, type=short, points=1, answer={1}]{2cm}{13pt}} and it first occurs
+        at $\theta = $ \smash{\gradedblank[id=hw5b, type=short, points=1, answer={\frac{\pi}{2}}, display={$\pi/2$}]{2cm}{13pt}}. The next time the function reaches that same
+        maximum is at $\theta = $ \smash{\gradedblank[id=hw5c, type=short, points=1, answer={\frac{5\pi}{2}}, display={$5\pi/2$}]{2cm}{13pt}}.
 
   \item On the interval $[0, 2\pi]$, the function $f(\theta) = \cos\theta$ is
-        \textbf{decreasing} on the interval \ans{$[0,\,\pi]$} and \textbf{increasing} on
-        the interval \ans{$[\pi,\,2\pi]$}.
+        \textbf{decreasing} on the interval \smash{\gradedblank[id=hw6a, type=short, check=text, points=1, answer={[0, \pi]}, display={$[0,\pi]$}]{5cm}{13pt}} and \textbf{increasing} on
+        the interval \smash{\gradedblank[id=hw6b, type=short, check=text, points=1, answer={[\pi, 2\pi]}, display={$[\pi,2\pi]$}]{5cm}{13pt}}.
 
 \end{enumerate}
 
