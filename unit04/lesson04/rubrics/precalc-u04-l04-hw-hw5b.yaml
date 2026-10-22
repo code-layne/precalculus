@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (reasoning) (Unit 4, Lesson 4.4). manifest.json points here
+# as rubrics/precalc-u04-l04-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "Which expression is equivalent to 16^(x/4)? (A) 4x, (B) 2^x, (C) 4^(x/2), (D) 64^x. Show your reasoning."
+criteria:
+  - id: power-property
+    points: 1
+    full: "Uses the power property to rewrite 16^(x/4) as (16^(1/4))^x."
+  - id: evaluate
+    points: 1
+    full: "Evaluates 16^(1/4) = 2 (because 2^4 = 16) and concludes 16^(x/4) = 2^x. (Showing 4^(x/2) = 2^x for choice C with full justification also earns this point.)"
+examples:
+  - response: "16^(x/4) = 2^x because 16 is 2 to the 4th."
+    scores: {power-property: 0, evaluate: 1}
+  - response: "16^(x/4) = (16^(1/4))^x = 2^x"
+    scores: {power-property: 1, evaluate: 1}

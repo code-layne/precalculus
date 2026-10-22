@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (explanation) (Unit 4, Lesson 4.1). manifest.json points here
+# as rubrics/precalc-u04-l01-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "A sequence is defined by a_n = 4 + 3n. Explain your choice of description (arithmetic with common difference 3 and initial value 4)."
+criteria:
+  - id: form
+    points: 1
+    full: "Matches a_n = 4 + 3n to the arithmetic form a_n = a_0 + dn, identifying a_0 = 4 and d = 3."
+  - id: not-geometric
+    points: 1
+    full: "Says consecutive terms differ by a constant 3 (a constant difference, not a constant ratio), so the sequence is arithmetic, not geometric."
+examples:
+  - response: "It goes up by 3 each time."
+    scores: {form: 0, not-geometric: 1}
+  - response: "a_n = a_0 + dn with a_0 = 4 and d = 3, so terms go up by 3 each time; there is no common ratio, so it isn't geometric."
+    scores: {form: 1, not-geometric: 1}

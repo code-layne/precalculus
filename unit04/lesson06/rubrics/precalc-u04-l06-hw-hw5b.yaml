@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (reasoning) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "A population is modeled by f(t) = 500e^(0.04t), t in years. Which best describes the approximate annual growth rate: (A) 0.04%, (B) 4%, (C) 4.08%, (D) 40%? Give your reasoning."
+criteria:
+  - id: factor
+    points: 1
+    full: "Finds the annual growth factor e^0.04 (about 1.0408), e.g. by rewriting f(t) = 500(e^0.04)^t."
+  - id: rate
+    points: 1
+    full: "Converts the growth factor to a rate: 1.0408 - 1 = 0.0408, about 4.08% per year."
+examples:
+  - response: "The exponent is 0.04 so it's 4%."
+    scores: {factor: 0, rate: 0}
+  - response: "e^0.04 = 1.0408, so it grows 4.08% a year."
+    scores: {factor: 1, rate: 1}

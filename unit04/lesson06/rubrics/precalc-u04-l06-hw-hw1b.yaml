@@ -1,0 +1,17 @@
+# Rubric for homework item 1(b) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw1b.yaml, relative to this lesson directory.
+id: hw1b
+points: 2
+task: "A substance decays at a rate of 8% per year from 300 grams, modeled by f(t) = ab^t. Is this growth or decay? How do you know from the value of b?"
+criteria:
+  - id: decay
+    points: 1
+    full: "Identifies the model as decay."
+  - id: base
+    points: 1
+    full: "Justifies it from the base: b = 0.92 (1 - 0.08) is between 0 and 1, i.e. b < 1."
+examples:
+  - response: "Decay, because it says decays."
+    scores: {decay: 1, base: 0}
+  - response: "Decay since b = 0.92 < 1."
+    scores: {decay: 1, base: 1}

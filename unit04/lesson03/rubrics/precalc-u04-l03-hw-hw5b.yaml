@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (justification) (Unit 4, Lesson 4.3). manifest.json points here
+# as rubrics/precalc-u04-l03-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "Which function has a horizontal asymptote at y = 0 and is always decreasing on its entire domain? (A) 3*2^x, (B) -4*(0.5)^x, (C) 5*(0.8)^x, (D) 2*1^x. Justify your choice in one sentence."
+criteria:
+  - id: parameters
+    points: 1
+    full: "Uses the parameters of h(x) = 5*(0.8)^x: a = 5 > 0 and 0 < b = 0.8 < 1, so h is exponential decay (always decreasing)."
+  - id: asymptote
+    points: 1
+    full: "States that the outputs approach 0, so the horizontal asymptote is y = 0."
+examples:
+  - response: "C because 0.8 is less than 1 so it decays."
+    scores: {parameters: 1, asymptote: 0}
+  - response: "C: a = 5 is positive and b = 0.8 is between 0 and 1, so it keeps decreasing toward y = 0."
+    scores: {parameters: 1, asymptote: 1}

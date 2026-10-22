@@ -1,0 +1,14 @@
+# Rubric for homework item 6(b), model for T(t) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw6b2.yaml, relative to this lesson directory.
+id: hw6b2
+points: 1
+task: "Cooling data approach room temperature 25 C, with y = T - 25. Write the model for T(t)."
+criteria:
+  - id: shift
+    points: 1
+    full: "Adds the room temperature back to the y-model: T(t) = y(t) + 25, e.g. 55*(0.55)^(t/5) + 25 (base near 0.55-0.6 per 5 minutes accepted)."
+examples:
+  - response: "T(t) = 55(0.55)^(t/5)"
+    scores: {shift: 0}
+  - response: "T(t) = 55(0.55)^(t/5) + 25"
+    scores: {shift: 1}

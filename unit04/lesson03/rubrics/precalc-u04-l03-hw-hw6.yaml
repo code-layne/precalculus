@@ -1,0 +1,17 @@
+# Rubric for homework item 6 (Unit 4, Lesson 4.3). manifest.json points here
+# as rubrics/precalc-u04-l03-hw-hw6.yaml, relative to this lesson directory.
+id: hw6
+points: 2
+task: "The definition of an exponential function requires b != 1. Explain in two or more sentences why f(x) = a*1^x is excluded. What kind of function is it, and what property of exponential functions does it fail to satisfy?"
+criteria:
+  - id: constant
+    points: 1
+    full: "Shows that a*1^x = a for every x, so f is a constant function."
+  - id: property
+    points: 1
+    full: "Names a property it fails: its outputs never change, so it is neither increasing nor decreasing (no proportional growth or decay), or its end behavior is just a in both directions instead of tending to infinity or 0."
+examples:
+  - response: "Because 1 to any power is 1, so f(x) is just a. That's a constant function."
+    scores: {constant: 1, property: 0}
+  - response: "1^x is always 1, so f(x) = a, a horizontal line. It never grows or decays, so it isn't increasing or decreasing like an exponential."
+    scores: {constant: 1, property: 1}

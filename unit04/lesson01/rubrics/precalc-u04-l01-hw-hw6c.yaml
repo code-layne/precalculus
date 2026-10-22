@@ -1,0 +1,17 @@
+# Rubric for homework item 6(c) (Unit 4, Lesson 4.1). manifest.json points here
+# as rubrics/precalc-u04-l01-hw-hw6c.yaml, relative to this lesson directory.
+id: hw6c
+points: 2
+task: "Consider the sequence 1, 1, 2, 3, 5, 8, 13, ... What rule does this sequence follow? (Hint: look at pairs of consecutive terms.)"
+criteria:
+  - id: rule
+    points: 1
+    full: "States that each term is the sum of the two preceding terms (e.g. 2 = 1 + 1, 13 = 5 + 8)."
+  - id: notation
+    points: 1
+    full: "Writes the rule recursively, a_n = a_(n-1) + a_(n-2), or names it as the Fibonacci sequence and notes it is neither arithmetic nor geometric."
+examples:
+  - response: "You add the last two numbers to get the next one."
+    scores: {rule: 1, notation: 0}
+  - response: "a_n = a_(n-1) + a_(n-2), the Fibonacci sequence."
+    scores: {rule: 1, notation: 1}

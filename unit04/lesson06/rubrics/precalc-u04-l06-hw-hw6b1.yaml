@@ -1,0 +1,14 @@
+# Rubric for homework item 6(b), model for y(t) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw6b1.yaml, relative to this lesson directory.
+id: hw6b1
+points: 1
+task: "Cooling data: y = T - 25 is 55, 30, 17.5, 11.25 at t = 0, 5, 10, 15 minutes. Write an exponential model for y(t)."
+criteria:
+  - id: model
+    points: 1
+    full: "Writes y(t) = 55*b^(t/5) with initial value 55 and a base per 5-minute period near 0.55-0.6 (key: 55*(0.55)^(t/5)); an equivalent per-minute base is also accepted."
+examples:
+  - response: "y = 55(0.6)^t"
+    scores: {model: 0}
+  - response: "y(t) = 55(0.55)^(t/5)"
+    scores: {model: 1}

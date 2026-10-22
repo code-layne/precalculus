@@ -1,0 +1,14 @@
+# Rubric for homework item 6(a) (Unit 4, Lesson 4.1). manifest.json points here
+# as rubrics/precalc-u04-l01-hw-hw6a.yaml, relative to this lesson directory.
+id: hw6a
+points: 1
+task: "Consider the sequence 1, 1, 2, 3, 5, 8, 13, ... Is this sequence arithmetic? Explain."
+criteria:
+  - id: differences
+    points: 1
+    full: "Answers no, because the differences between consecutive terms (0, 1, 1, 2, 3, 5, ...) are not constant."
+examples:
+  - response: "No."
+    scores: {differences: 0}
+  - response: "No, the differences 0, 1, 1, 2, 3 keep changing."
+    scores: {differences: 1}

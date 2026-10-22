@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (explanation) (Unit 4, Lesson 4.2). manifest.json points here
+# as rubrics/precalc-u04-l02-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "Which of the tables could represent an exponential function? Explain. (A: 5, 8, 11, 14; B: 3, 6, 12, 24; C: 1, 4, 9, 16; D: 0, 2, 4, 8 for x = 0, 1, 2, 3.)"
+criteria:
+  - id: ratios
+    points: 1
+    full: "Shows that in table B the ratios of consecutive outputs are constant: 6/3 = 12/6 = 24/12 = 2."
+  - id: proportional
+    points: 1
+    full: "Connects the constant ratio over equal-length input intervals to exponential change (outputs change proportionally), or rules out the other tables (A linear, C quadratic, D has y = 0 at x = 0, impossible for ab^x)."
+examples:
+  - response: "B because it doubles."
+    scores: {ratios: 1, proportional: 0}
+  - response: "B. Each output is 2 times the one before (6/3 = 12/6 = 24/12 = 2), and a constant ratio over equal steps in x means exponential."
+    scores: {ratios: 1, proportional: 1}

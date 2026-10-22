@@ -1,0 +1,17 @@
+# Rubric for homework item 6(b) (Unit 4, Lesson 4.7). manifest.json points here
+# as rubrics/precalc-u04-l07-hw-hw6b.yaml, relative to this lesson directory.
+id: hw6b
+points: 2
+task: "SSR (Linear) = 303 and SSR (Exponential) = 0.55. Which model has a smaller SSR? What does a smaller SSR tell you about model fit?"
+criteria:
+  - id: smaller
+    points: 1
+    full: "Identifies the exponential model as having the smaller SSR (0.55 vs. 303)."
+  - id: meaning
+    points: 1
+    full: "Explains that a smaller SSR means the predictions are closer to the actual values overall, i.e. a better fit."
+examples:
+  - response: "Exponential."
+    scores: {smaller: 1, meaning: 0}
+  - response: "The exponential one, 0.55 < 303, so its predictions are much closer to the data and it fits better."
+    scores: {smaller: 1, meaning: 1}

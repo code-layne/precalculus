@@ -1,0 +1,14 @@
+# Rubric for homework item 4(b) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw4b.yaml, relative to this lesson directory.
+id: hw4b
+points: 1
+task: "f(d) = 5*3^d grows daily; rewritten in weeks it is g(w) = 5*2187^w. What does the base of g(w) tell you about the weekly growth of the quantity?"
+criteria:
+  - id: weekly-factor
+    points: 1
+    full: "States that the quantity is multiplied by 2187 (= 3^7) every week."
+examples:
+  - response: "It grows a lot each week."
+    scores: {weekly-factor: 0}
+  - response: "Each week the amount gets multiplied by 2187."
+    scores: {weekly-factor: 1}

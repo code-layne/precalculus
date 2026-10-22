@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u04-l03-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,18 +22,18 @@
       \begin{enumerate}[label=(\alph*), itemsep=10pt]
         \item $f(x) = 6 \cdot 2^x$
 
-              $a = $ \ans{6} \quad $b = $ \ans{2} \quad
-              Growth or decay: \ans{Growth} \quad Range: \ans{$(0,\infty)$}
+              $a = $ \smash{\gradedblank[id=hw1a1, type=short, points=1, answer={6}]{2cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw1a2, type=short, points=1, answer={2}]{2cm}{13pt}} \quad
+              Growth or decay: \smash{\gradedblank[id=hw1a3, type=short, check=text, points=1, answer={growth}]{3cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1a4, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3cm}{13pt}}
 
         \item $g(x) = 12 \cdot (0.25)^x$
 
-              $a = $ \ans{12} \quad $b = $ \ans{0.25} \quad
-              Growth or decay: \ans{Decay} \quad Range: \ans{$(0,\infty)$}
+              $a = $ \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={12}]{2cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw1b2, type=short, points=1, answer={0.25}]{2cm}{13pt}} \quad
+              Growth or decay: \smash{\gradedblank[id=hw1b3, type=short, check=text, points=1, answer={decay}]{3cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1b4, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3cm}{13pt}}
 
         \item $h(x) = 0.5 \cdot 4^x$
 
-              $a = $ \ans{0.5} \quad $b = $ \ans{4} \quad
-              Growth or decay: \ans{Growth} \quad Range: \ans{$(0,\infty)$}
+              $a = $ \smash{\gradedblank[id=hw1c1, type=short, points=1, answer={0.5}]{2cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw1c2, type=short, points=1, answer={4}]{2cm}{13pt}} \quad
+              Growth or decay: \smash{\gradedblank[id=hw1c3, type=short, check=text, points=1, answer={growth}]{3cm}{13pt}} \quad Range: \smash{\gradedblank[id=hw1c4, type=short, check=text, points=1, answer={(0, \infty)}, display={$(0,\infty)$}]{3cm}{13pt}}
       \end{enumerate}
 
 \item Determine whether each table represents exponential, linear, or neither.
@@ -38,49 +41,51 @@
       \begin{enumerate}[label=(\alph*), itemsep=12pt]
         \item Ratios: $6/2=3$, $18/6=3$, $54/18=3$ --- constant.
 
-              Work: \ans{Constant ratio of 3} \quad Type: \ans{Exponential}
+              Work: \ans{Constant ratio of 3} \quad Type: \smash{\gradedblank[id=hw2a, type=short, check=text, points=1, answer={exponential}]{3cm}{13pt}}
 
         \item Differences: $9-5=4$, $13-9=4$, $17-13=4$ --- constant.
 
-              Work: \ans{Constant difference of 4} \quad Type: \ans{Linear}
+              Work: \ans{Constant difference of 4} \quad Type: \smash{\gradedblank[id=hw2b, type=short, check=text, points=1, answer={linear}]{3cm}{13pt}}
 
         \item Ratios: $3/1=3$, $8/3\approx2.67$, $16/8=2$ --- not constant.
               Differences: $2$, $5$, $8$ --- not constant.
 
-              Work: \ans{Neither constant ratios nor constant differences} \quad Type: \ans{Neither}
+              Work: \ans{Neither constant ratios nor constant differences} \quad Type: \smash{\gradedblank[id=hw2c, type=short, check=text, points=1, answer={neither}]{3cm}{13pt}}
       \end{enumerate}
 
 \item $q$ outputs 4, 20, 100, 500 for inputs 0, 1, 2, 3. Ratios: $20/4=5$, $100/20=5$, $500/100=5$.
 
-      $a = $ \ans{4} \quad $b = $ \ans{5} \quad $q(x) = $ \ans{$4 \cdot 5^x$}
+      $a = $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={4}]{2cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw3b, type=short, points=1, answer={5}]{2cm}{13pt}} \quad $q(x) = $ \smash{\gradedblank[id=hw3c, type=short, points=1, answer={4 \cdot 5^x}]{5cm}{13pt}}
 
 \item End behavior:
 
       \begin{enumerate}[label=(\alph*), itemsep=8pt]
         \item $f(x) = 7 \cdot 3^x$ (growth, $b=3>1$):
 
-              $\displaystyle\lim_{x\to\infty} f(x) = $ \ans{$\infty$} \qquad
-              $\displaystyle\lim_{x\to-\infty} f(x) = $ \ans{$0$}
+              $\displaystyle\lim_{x\to\infty} f(x) = $ \smash{\gradedblank[id=hw4a1, type=short, points=1, answer={\infty}]{2.5cm}{13pt}} \qquad
+              $\displaystyle\lim_{x\to-\infty} f(x) = $ \smash{\gradedblank[id=hw4a2, type=short, points=1, answer={0}]{2.5cm}{13pt}}
 
         \item $g(x) = 8 \cdot (0.6)^x$ (decay, $0<b<1$):
 
-              $\displaystyle\lim_{x\to\infty} g(x) = $ \ans{$0$} \qquad
-              $\displaystyle\lim_{x\to-\infty} g(x) = $ \ans{$\infty$}
+              $\displaystyle\lim_{x\to\infty} g(x) = $ \smash{\gradedblank[id=hw4b1, type=short, points=1, answer={0}]{2.5cm}{13pt}} \qquad
+              $\displaystyle\lim_{x\to-\infty} g(x) = $ \smash{\gradedblank[id=hw4b2, type=short, points=1, answer={\infty}]{2.5cm}{13pt}}
       \end{enumerate}
 
-\item \textbf{(AP-Style Multiple Choice)} Answer: \ans{C}
+\item \textbf{(AP-Style Multiple Choice)} \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5a, type=choice, points=1, answer=C]{1.5cm}{13pt}} \quad Justify your choice in one sentence:
 
-      Justification: \ans{$h(x) = 5\cdot(0.8)^x$ has $a=5>0$ and $0 < b=0.8 < 1$, so it is always
-      decreasing and has horizontal asymptote $y=0$; option (B) has $a<0$ so the asymptote is still
-      $y=0$ but the range is $(-\infty,0)$ and it is always increasing; option (D) is a constant
-      function, not exponential.}
+      \vspace{0.04in}
+      \writebox{\raisebox{-0.75pt}[0pt][0pt]{\gradedblank[id=hw5b, type=rubric, points=2,
+  display={$h(x) = 5\cdot(0.8)^x$: $a = 5 > 0$ and $0 < b = 0.8 < 1$, so it always decreases toward its asymptote $y = 0$.}]{\linewidth}{15.5pt}}}
 
-\item \textbf{(Extension)} \ans{If $b=1$, then $f(x) = a\cdot 1^x = a$ for all $x$, which is a
-      constant function. It fails the defining property of exponential functions in two ways:
-      (1) its outputs are not proportional over equal-length input intervals (they are all equal,
-      so every ratio is 1 trivially, but the function neither increases nor decreases), and
-      (2) it has no end behavior tending to $\infty$ or $0$; the limit in both directions is
-      simply $a$. Excluding $b=1$ ensures the function is strictly monotone.}
+      \textit{Option (B) has $a<0$: the asymptote is still $y=0$ but the range is $(-\infty,0)$ and it is always increasing; option (D) is a constant function, not exponential.}
+
+\item \textbf{(Extension)} 
+
+      \vspace{0.04in}
+      \writegap\\
+      \writegap\\
+      \writebox{\gradedblank[id=hw6, type=rubric, points=2,
+  display={$f(x) = a\cdot 1^x = a$ for all $x$: a constant function. Its outputs never change, so it is neither increasing nor decreasing (no proportional growth or decay) and its limit in both directions is simply $a$.}]{\linewidth}{40pt}}\\
 
 \end{enumerate}
 
