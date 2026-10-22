@@ -1,0 +1,14 @@
+# Rubric for actual_test item C7(d) (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-c7d.yaml, relative to unit01/tests/.
+id: c7d
+points: 1
+task: "What do (a) f(g(2)) = 7 and (b) g(f(2)) = 2 show about the order of a composition?"
+criteria:
+  - id: order
+    points: 1
+    full: "Order matters: 7 is not 2, so f(g(x)) and g(f(x)) are different functions (composition is not commutative)."
+examples:
+  - response: "They're different, so the order you compose in changes the answer."
+    scores: {order: 1}
+  - response: "You plug in 2 both times."
+    scores: {order: 0}

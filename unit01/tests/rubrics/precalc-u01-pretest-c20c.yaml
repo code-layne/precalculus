@@ -1,0 +1,19 @@
+# Rubric for pretest (Version A) item 20(c) (Unit 1 Pretest). manifest.json points here
+# as rubrics/precalc-u01-pretest-c20c.yaml, relative to the tests directory.
+id: c20c
+points: 2
+task: "A small box is 3 in by 1 in by 2 in; the large box is twice as long, twice as wide and twice as tall. A coworker says, 'Doubling every side just doubles the volume.' Is the coworker correct? Explain."
+criteria:
+  - id: verdict
+    points: 1
+    full: "States that the coworker is NOT correct, supported by the volumes: the large box holds 48 in^3, 8 times the small box's 6 in^3, not 2 times."
+  - id: reason
+    points: 1
+    full: "Explains why: each of the three dimensions doubles, so the volume is multiplied by 2 * 2 * 2 = 8."
+examples:
+  - response: "No. 48 is 8 times 6, not 2 times. Each side doubles so it's 2 x 2 x 2 = 8."
+    scores: {verdict: 1, reason: 1}
+  - response: "No, the large box holds 8 times as much."
+    scores: {verdict: 1, reason: 0}
+  - response: "Yes, because every side is 2 times bigger."
+    scores: {verdict: 0, reason: 0}

@@ -1,0 +1,14 @@
+# Rubric for practice_test item D1(d) 'Why?' (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-d1d3.yaml, relative to unit01/tests/.
+id: d1d3
+points: 1
+task: "Domain the context forces: 0 < x < 30. Why?"
+criteria:
+  - id: both-sides
+    points: 1
+    full: "Both lengths must be positive: x > 0, and the barn side 60 - 2x > 0, which gives x < 30."
+examples:
+  - response: "x has to be positive and 60 - 2x has to be positive too, so x < 30."
+    scores: {both-sides: 1}
+  - response: "Lengths can't be negative."
+    scores: {both-sides: 0}

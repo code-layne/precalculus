@@ -6,6 +6,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u01-pretest-b}
+\gradingcourse{precalculus}
 
 % Part-divider strip
 \newcommand{\parthead}[1]{%
@@ -59,7 +62,7 @@ Circle the best answer, then write its letter in the blank at the right.
       \pdot{1}{1}{$A(1,1)$}{above left}
       \pdot{7}{9}{$B(7,9)$}{left}
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{B}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a1, type=choice, points=1, answer=B]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.58\linewidth}
     The segment joins $(1, 2)$ and $(5, 6)$. What is its midpoint?
@@ -73,7 +76,7 @@ Circle the best answer, then write its letter in the blank at the right.
       \pdot{1}{2}{$(1,2)$}{below right}
       \pdot{5}{6}{$(5,6)$}{above left}
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{D}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a2, type=choice, points=1, answer=D]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.58\linewidth}
     The volume of a box is $V = \ell w h$. What is the volume of the box shown?
@@ -90,7 +93,7 @@ Circle the best answer, then write its letter in the blank at the right.
       \node[left, font=\scriptsize] at (0,1.5) {$3$ cm};
       \node[right, font=\scriptsize] at (6.6,0.4) {$2$ cm};
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{A}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a3, type=choice, points=1, answer=A]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.58\linewidth}
     A bowling alley's sign is shown. A visit costs \mbox{$C = 4 + 5g$}
@@ -106,7 +109,7 @@ Circle the best answer, then write its letter in the blank at the right.
             inner sep=5pt, font=\small]
         {\textbf{Shoe Rental \$4}\\[2pt] \$5 per game};
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{C}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a4, type=choice, points=1, answer=C]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.58\linewidth}
     What is the slope of the line shown?
@@ -120,7 +123,7 @@ Circle the best answer, then write its letter in the blank at the right.
       \pdot{0}{5}{$(0,5)$}{right}
       \pdot{2}{1}{$(2,1)$}{right}
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{A}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a5, type=choice, points=1, answer=A]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.58\linewidth}
     The line shown is vertical. What is its slope?
@@ -132,7 +135,7 @@ Circle the best answer, then write its letter in the blank at the right.
       \pgrid{0}{6}{0}{5}
       \draw[plum, thick] (2,0) -- (2,5) node[below right, font=\scriptsize, fill=white, inner sep=1pt]{$x = 2$};
     \end{tikzpicture}
-    \end{minipage}\hfill \ans{B}
+    \end{minipage}\hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a6, type=choice, points=1, answer=D]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item Which interval matches the number line?
     \\[4pt]\hspace*{1em}
@@ -145,7 +148,7 @@ Circle the best answer, then write its letter in the blank at the right.
     \end{tikzpicture}
     \\[4pt]\hspace*{1em}
     (A) $(-3, 2)$ \quad (B) $[-3, 2]$ \quad (C) $(-3, 2]$ \quad (D) $[-3, 2)$
-    \hfill \ans{D}
+    \hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a7, type=choice, points=1, answer=D]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item Use the table to find the value of $x$ that makes $3x - 2 = 10$ true.
     \quad
@@ -157,7 +160,7 @@ Circle the best answer, then write its letter in the blank at the right.
     \end{tabular}
     \\[4pt]\hspace*{1em}
     (A) $x = 10$ \quad (B) $x = 3$ \quad (C) $x = 4$ \quad (D) $x = 5$
-    \hfill \ans{C}
+    \hfill \llap{\textit{Letter:}~}\smash{\gradedblank[id=a8, type=choice, points=1, answer=C]{1.1cm}{13pt}}\vphantom{\blank{0pt}}
 
 \end{enumerate}
 
@@ -171,8 +174,8 @@ Show your work in the space provided.
   \item \begin{minipage}[t]{0.56\linewidth}
     Points $P$, $Q$, and $R$ form a right triangle.
     \begin{enumerate}[label=(\alph*), itemsep=4pt]
-      \item Count the length of $PQ$: \ans{3}
-      \item Count the length of $QR$: \ans{4}
+      \item Count the length of $PQ$: \smash{\gradedblank[id=b9a, type=short, points=1, answer={3}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
+      \item Count the length of $QR$: \smash{\gradedblank[id=b9b, type=short, points=1, answer={4}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item Use $a^2 + b^2 = c^2$ to find $PR$.
     \end{enumerate}
 
@@ -182,7 +185,7 @@ Show your work in the space provided.
     PR &= 5
 \end{work}
 
-    \hspace*{1.6em}$PR = $ \ans{5}
+    \hspace*{1.6em}$PR = $ \smash{\gradedblank[id=b9c, type=short, points=2, answer={5}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}[scale=0.42]
@@ -203,7 +206,7 @@ Show your work in the space provided.
   \left(\frac{2 + 8}{2},\ \frac{1 + 5}{2}\right) &= (5, 3)
 \end{work}
 
-    Meeting point: \ans{$(5, 3)$}
+    Meeting point: \smash{\gradedblank[id=b10, type=short, check=text, points=1, answer={(5, 3)}, display={$(5, 3)$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}[scale=0.34]
@@ -222,7 +225,7 @@ Show your work in the space provided.
    x &= 5
 \end{work}
 
-        $x = $ \ans{5}
+        $x = $ \smash{\gradedblank[id=b11, type=short, points=2, answer={5}]{2cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item \begin{minipage}[t]{0.56\linewidth}
     The graphs of $y = x^2$ and $y = 9$ are shown. Use the graph to find the
@@ -230,7 +233,7 @@ Show your work in the space provided.
     \par\vspace{4pt}
     \textit{Hint: look where the two graphs cross.}
     \par\vspace{10pt}
-    $x = $ \ans{$-3$} \ and \ $x = $ \ans{$3$}
+    $x = $ \smash{\gradedblank[id=b12a, type=short, points=1, answer={-3}]{1.6cm}{13pt}}\vphantom{\blank{0pt}} \ and \ $x = $ \smash{\gradedblank[id=b12b, type=short, points=1, answer={3}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}[scale=0.3]
@@ -251,7 +254,7 @@ Show your work in the space provided.
    w &= 5
 \end{work}
 
-    $w = $ \ans{5 m}
+    $w = $ \smash{\gradedblank[id=b13, type=short, points=1, answer={5}, display={5 m}]{2cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}[scale=0.4]
@@ -271,7 +274,7 @@ Show your work in the space provided.
     &= 36\pi \approx 113.1
 \end{work}
 
-    $V \approx$ \ans{113.1 cm$^3$}
+    $V \approx$ \smash{\gradedblank[id=b14, type=short, check=numeric, points=2, answer={113.1}, tolerance=0.05, display={113.1 cm$^3$}]{2.6cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}[scale=0.45]
@@ -298,9 +301,9 @@ Show your work in the space provided.
 \end{work}
 
     \begin{enumerate}[label=(\alph*), itemsep=4pt, start=2]
-      \item What is the $y$-intercept? \ans{1}
+      \item What is the $y$-intercept? \smash{\gradedblank[id=b15b, type=short, points=1, answer={1}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item Write the equation in the form $y = mx + b$:
-            \ans{$y = 3x + 1$}
+            \smash{\gradedblank[id=b15c, type=short, points=1, answer={y = 3x + 1}]{2.6cm}{13pt}}\vphantom{\blank{0pt}}
     \end{enumerate}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
@@ -317,7 +320,7 @@ Show your work in the space provided.
     \begin{enumerate}[label=(\alph*), itemsep=4pt]
       \item Write an equation for the monthly cost $C$ when you rent $m$
             movies:
-            \par $C = $ \ans{$12 + 3m$}
+            \par $C = $ \smash{\gradedblank[id=b16a, type=short, points=1, answer={12 + 3m}]{2.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item Find the cost of a month when you rent $5$ movies.
     \end{enumerate}
 
@@ -326,7 +329,7 @@ Show your work in the space provided.
     &= 27
 \end{work}
 
-    \hspace*{1.6em}Cost: \ans{\$27}
+    \hspace*{1.6em}Cost: \smash{\gradedblank[id=b16b, type=short, points=1, answer={27}, display={\$27}]{2cm}{13pt}}\vphantom{\blank{0pt}}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
     \begin{tikzpicture}
@@ -340,11 +343,11 @@ Show your work in the space provided.
     The graph shows the line $y = -2x + 3$.
     \begin{enumerate}[label=(\alph*), itemsep=6pt]
       \item What is the slope of a line \textbf{parallel} to it?
-            \ans{$-2$}
+            \smash{\gradedblank[id=b17a, type=short, points=1, answer={-2}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item What is the slope of a line \textbf{perpendicular} to it?
-            \ans{$\tfrac{1}{2}$}
+            \smash{\gradedblank[id=b17b, type=short, points=1, answer={\tfrac{1}{2}}]{1.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item Write the equation of the line parallel to $y = -2x + 3$ that
-            crosses the $y$-axis at $(0, 1)$. \ans{$y = -2x + 1$}
+            crosses the $y$-axis at $(0, 1)$. \smash{\gradedblank[id=b17c, type=short, points=1, answer={y = -2x + 1}]{2.6cm}{13pt}}\vphantom{\blank{0pt}}
     \end{enumerate}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
@@ -361,8 +364,8 @@ Show your work in the space provided.
 
     \begin{enumerate}[label=(\alph*), itemsep=8pt]
       \item In set notation, list the odd numbers from $1$ to $9$:
-            \ans{$\{1, 3, 5, 7, 9\}$}
-      \item Write the interval shown on the number line: \ans{$(-\infty, 4)$}
+            \smash{\gradedblank[id=b18a, type=short, check=set, points=1, answer={1, 3, 5, 7, 9}, display={$\{1, 3, 5, 7, 9\}$}]{3.2cm}{13pt}}\vphantom{\blank{0pt}}
+      \item Write the interval shown on the number line: \smash{\gradedblank[id=b18b, type=short, check=text, points=1, answer={(-\infty, 4)}, display={$(-\infty, 4)$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
             \\[4pt]
             \begin{tikzpicture}[scale=0.5]
               \draw[<->] (-1.5,0) -- (7.5,0);
@@ -371,7 +374,7 @@ Show your work in the space provided.
               \draw[plum, thick, fill=white] (4,0) circle (5pt);
             \end{tikzpicture}
       \item An elevator can carry \textbf{no more than} $12$ people. Write the
-            number of people $p$ allowed as an inequality: \ans{$p \le 12$}
+            number of people $p$ allowed as an inequality: \smash{\gradedblank[id=b18c, type=short, check=text, points=1, answer={p \le 12}, display={$p \le 12$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
     \end{enumerate}
 
 \end{enumerate}
@@ -422,10 +425,11 @@ Show your work and explain your reasoning in complete sentences.
 
     \begin{enumerate}[label=(\alph*), itemsep=4pt]
       \item Write an equation for the water left in the bucket:
-            \quad $W = $ \ans{$15 - 3t$}
+            \quad $W = $ \smash{\gradedblank[id=c19a, type=short, points=1, answer={15 - 3t}]{2.6cm}{13pt}}\vphantom{\blank{0pt}}
       \item In your equation, what does the $-3$ mean about the bucket?
 
-            \writespace{1.2cm}{The bucket loses 3 liters of water every hour.}
+            \writespace{1.2cm}{\gradedblank[id=c19b, type=rubric, points=2,
+  display={The bucket loses 3 liters of water every hour.}]{\linewidth}{\dimexpr 1.2cm-4pt\relax}}
       \item After how many hours will the bucket hold $3$ liters? Show your
             work.
 
@@ -435,10 +439,10 @@ Show your work and explain your reasoning in complete sentences.
   t &= 4
 \end{work}
 
-            Answer: \ans{4 hours}
+            Answer: \smash{\gradedblank[id=c19c, type=short, points=2, answer={4}, display={4 hours}]{3cm}{13pt}}\vphantom{\blank{0pt}}
       \item The bucket is empty when $W = 0$, at $t = 5$ hours. Use interval
             notation to give the times $t$ that make sense for the bucket:
-            \ans{$[0, 5]$}
+            \smash{\gradedblank[id=c19d, type=short, check=text, points=1, answer={[0, 5]}, display={$[0, 5]$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
     \end{enumerate}
 
   \boxguard[40]
@@ -477,14 +481,15 @@ Show your work and explain your reasoning in complete sentences.
 \end{work}
 
     \begin{enumerate}[label=(\alph*), itemsep=4pt]
-      \item Volume of the small box: \ans{12 in$^3$}
-            \qquad Volume of the large box: \ans{96 in$^3$}
+      \item Volume of the small box: \smash{\gradedblank[id=c20a1, type=short, points=1, answer={12}, display={12 in$^3$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
+            \qquad Volume of the large box: \smash{\gradedblank[id=c20a2, type=short, points=1, answer={96}, display={96 in$^3$}]{2.4cm}{13pt}}\vphantom{\blank{0pt}}
       \item How many times as much does the large box hold?
-            \ans{8 times}
+            \smash{\gradedblank[id=c20b, type=short, points=1, answer={8}, display={8 times}]{2cm}{13pt}}\vphantom{\blank{0pt}}
       \item A coworker says, ``Three sides each doubled, so the volume is
             $6$ times as big.'' Is the coworker correct? Explain.
 
-            \writespace{2cm}{No. The large box holds 96 in$^3$, which is 8 times the small box, not 6 times. The doublings multiply: $2 \cdot 2 \cdot 2 = 8$, not $2 + 2 + 2 = 6$.}
+            \writespace{2cm}{\gradedblank[id=c20c, type=rubric, points=2,
+  display={No. The large box holds 96 in$^3$, which is 8 times the small box, not 6 times. The doublings multiply: $2 \cdot 2 \cdot 2 = 8$, not $2 + 2 + 2 = 6$.}]{\linewidth}{\dimexpr 2cm-4pt\relax}}
     \end{enumerate}
 
 \end{enumerate}

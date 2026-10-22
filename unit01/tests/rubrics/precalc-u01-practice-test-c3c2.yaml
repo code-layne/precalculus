@@ -1,0 +1,14 @@
+# Rubric for practice_test item C3(c) justification (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-c3c2.yaml, relative to unit01/tests/.
+id: c3c2
+points: 1
+task: "Is the tank draining faster or slower as time goes on? Justify with the numbers."
+criteria:
+  - id: numbers
+    points: 1
+    full: "Justifies 'slower' with the table: the drop over each 4-minute block shrinks, -32, then -24, then -16 gallons (or equivalent rates -8, -6, -4 gal/min)."
+examples:
+  - response: "It loses 32, then 24, then 16 gallons, so it drains less each time."
+    scores: {numbers: 1}
+  - response: "Because the volume keeps getting smaller."
+    scores: {numbers: 0}

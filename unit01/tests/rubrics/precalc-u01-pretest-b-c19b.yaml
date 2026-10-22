@@ -1,0 +1,19 @@
+# Rubric for pretest (Version B) item 19(b) (Unit 1 Pretest). manifest.json points here
+# as rubrics/precalc-u01-pretest-b-c19b.yaml, relative to the tests directory.
+id: c19b
+points: 2
+task: "A bucket holds 15 liters of water and loses 3 liters every hour through a leak; the water left is W = 15 - 3t. In your equation, what does the -3 mean about the bucket?"
+criteria:
+  - id: rate
+    points: 1
+    full: "Says the water in the bucket goes DOWN (is lost, decreases) by 3 liters; a bare 'it is the slope' or 'it changes by 3' with no direction does not earn this point."
+  - id: per-hour
+    points: 1
+    full: "Ties the change to time with units: 3 liters every (per) hour."
+examples:
+  - response: "The bucket loses 3 liters of water every hour."
+    scores: {rate: 1, per-hour: 1}
+  - response: "It loses 3 liters."
+    scores: {rate: 1, per-hour: 0}
+  - response: "-3 is the slope."
+    scores: {rate: 0, per-hour: 0}

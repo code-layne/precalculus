@@ -1,0 +1,17 @@
+# Rubric for ap_practice item 6(d) (Unit 1, Lesson 1.1). manifest.json points here
+# as rubrics/precalc-u01-l01-ap-ap6d.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6d
+points: 2
+task: "State the domain of C, as an inequality and in bracket notation. Then explain whether C(12) has a meaning in this context."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Gives the domain as 0 < w <= 10 AND as (0, 10], and states that C(12) has no meaning because 12 is outside the domain (no cost is defined above 10 pounds)."
+    partial: "Partially correct (1): Exactly two of the three components correct (inequality, bracket notation, C(12) explanation); a wrong endpoint type in one form counts that form as incorrect."
+examples:
+  - response: "0 < w <= 10, (0, 10]. C(12) doesn't exist because 12 is not in the domain."
+    scores: {part: 2}
+  - response: "[0, 10]; C(12) = 26"
+    scores: {part: 0}

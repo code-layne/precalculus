@@ -1,0 +1,17 @@
+# Rubric for practice_test item D2(a) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-d2a.yaml, relative to unit01/tests/.
+id: d2a
+points: 2
+task: "Let f(x) = x^2 with domain all real numbers. Explain why f has no inverse function on that domain. Give a counterexample pair of inputs."
+criteria:
+  - id: not-one-to-one
+    points: 1
+    full: "Explains that f is not one-to-one, so reversing it would send one input to two outputs (the inverse would not be a function)."
+  - id: counterexample
+    points: 1
+    full: "Gives a valid pair of different inputs with the same output, e.g. f(2) = f(-2) = 4."
+examples:
+  - response: "f(2) = 4 and f(-2) = 4, so the inverse would send 4 to both 2 and -2."
+    scores: {not-one-to-one: 1, counterexample: 1}
+  - response: "It fails the horizontal line test."
+    scores: {not-one-to-one: 1, counterexample: 0}

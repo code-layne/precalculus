@@ -29,6 +29,15 @@
 \newcommand{\blank}[1]{\underline{\hspace{#1}}}
 \newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
 \newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
+% Graded answer lines (math-shared grading.sty). A run of \writeline rules that a
+% \gradedblank box replaces keeps its exact vertical footprint, so nothing after
+% it moves: each rule but the last becomes \writegap (the same line, no rule),
+% and the last becomes \writebox{\gradedblank[...]{\linewidth}{H}}, which stands
+% the box on that line's baseline and reaches H up over the gaps above it. The
+% box takes no space of its own; choose H to fill the area the rules filled.
+\newcommand{\writegap}{\vspace{1pt}\noindent\hfill\vspace{3pt}}
+\newcommand{\writebox}[1]{\vspace{1pt}\noindent
+  \sbox0{#1}\smash{\raisebox{\dp0}{\usebox0}}\hfill\vspace{3pt}}
 \newcommand{\termblank}[1]{%
   \noindent\textbf{\textcolor{plum}{#1:}}\quad\blank{6.5cm}\\[1pt]%
   \writeline\\[2pt]}

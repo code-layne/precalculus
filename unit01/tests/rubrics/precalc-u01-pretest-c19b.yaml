@@ -1,0 +1,19 @@
+# Rubric for pretest (Version A) item 19(b) (Unit 1 Pretest). manifest.json points here
+# as rubrics/precalc-u01-pretest-c19b.yaml, relative to the tests directory.
+id: c19b
+points: 2
+task: "A candle is 12 inches tall when it is lit and burns down 2 inches every hour; its height is h = 12 - 2t. In your equation, what does the -2 mean about the candle?"
+criteria:
+  - id: rate
+    points: 1
+    full: "Says the candle's height goes DOWN (gets shorter, decreases) by 2 inches; a bare 'it is the slope' or 'it changes by 2' with no direction does not earn this point."
+  - id: per-hour
+    points: 1
+    full: "Ties the change to time with units: 2 inches every (per) hour."
+examples:
+  - response: "The candle gets 2 inches shorter every hour."
+    scores: {rate: 1, per-hour: 1}
+  - response: "It goes down by 2."
+    scores: {rate: 1, per-hour: 0}
+  - response: "-2 is the slope."
+    scores: {rate: 0, per-hour: 0}

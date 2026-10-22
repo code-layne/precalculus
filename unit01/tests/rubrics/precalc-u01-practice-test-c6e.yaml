@@ -1,0 +1,14 @@
+# Rubric for practice_test item C6(e) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-c6e.yaml, relative to unit01/tests/.
+id: c6e
+points: 1
+task: "Why does g(f(0)) have no value from this table?"
+criteria:
+  - id: handoff
+    points: 1
+    full: "The handoff is f(0) = 5, and 5 is not an input of g in the table (g accepts only 0-4), so g(5) is not available."
+examples:
+  - response: "f(0) = 5 and there's no g(5) in the table."
+    scores: {handoff: 1}
+  - response: "Because g(0) = 3."
+    scores: {handoff: 0}

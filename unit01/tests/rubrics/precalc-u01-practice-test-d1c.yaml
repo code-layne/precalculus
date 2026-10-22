@@ -1,0 +1,14 @@
+# Rubric for practice_test item D1(c) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-d1c.yaml, relative to unit01/tests/.
+id: d1c
+points: 1
+task: "What type of function is A (A(x) = x(60 - 2x)), and how do you know?"
+criteria:
+  - id: type-reason
+    points: 1
+    full: "Quadratic, with a reason: the highest power of x is 2 (A(x) = 60x - 2x^2), or its second differences are constant."
+examples:
+  - response: "Quadratic because there's an x squared."
+    scores: {type-reason: 1}
+  - response: "Quadratic."
+    scores: {type-reason: 0}

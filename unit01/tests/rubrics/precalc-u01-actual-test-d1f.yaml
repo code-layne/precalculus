@@ -1,0 +1,14 @@
+# Rubric for actual_test item D1(f) (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-d1f.yaml, relative to unit01/tests/.
+id: d1f
+points: 1
+task: "State one assumption this model rests on."
+criteria:
+  - id: assumption
+    points: 1
+    full: "States a reasonable modeling assumption, e.g. no fence runs along the river; all 100 feet are used; none is lost to a gate or an overlap; the river side is straight."
+examples:
+  - response: "All 100 feet of fence get used, with no gate."
+    scores: {assumption: 1}
+  - response: "The area is a rectangle."
+    scores: {assumption: 0}

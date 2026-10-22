@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 1, Lesson 1.1). manifest.json points here
+# as rubrics/precalc-u01-l01-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Find C(2) and C(5). Interpret C(5) in the context of the problem, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): C(2) = 6 and C(5) = 12, and C(5) is interpreted in context with units: a package weighing 5 pounds costs $12 to ship."
+    partial: "Partially correct (1): Both values correct with no or an incomplete interpretation (no units, or no mention of weight/cost); OR a correct interpretation of an incorrect C(5) value that follows from one arithmetic error."
+examples:
+  - response: "C(2) = 6 and C(5) = 12. A 5-pound package costs $12 to ship."
+    scores: {part: 2}
+  - response: "C(2) = 6 or 8, C(5) = 12"
+    scores: {part: 0}
+  - response: "C(2) = 6, C(5) = 12. It costs 12."
+    scores: {part: 1}

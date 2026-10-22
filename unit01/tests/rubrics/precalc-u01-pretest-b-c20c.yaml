@@ -1,0 +1,19 @@
+# Rubric for pretest (Version B) item 20(c) (Unit 1 Pretest). manifest.json points here
+# as rubrics/precalc-u01-pretest-b-c20c.yaml, relative to the tests directory.
+id: c20c
+points: 2
+task: "A small box is 4 in by 1 in by 3 in; the large box is twice as long, twice as wide and twice as tall. A coworker says, 'Three sides each doubled, so the volume is 6 times as big.' Is the coworker correct? Explain."
+criteria:
+  - id: verdict
+    points: 1
+    full: "States that the coworker is NOT correct, supported by the volumes: the large box holds 96 in^3, 8 times the small box's 12 in^3, not 6 times."
+  - id: reason
+    points: 1
+    full: "Explains why: the three doublings multiply, 2 * 2 * 2 = 8; they do not add (2 + 2 + 2 = 6)."
+examples:
+  - response: "No. 96 / 12 = 8. The doublings multiply, 2 x 2 x 2 = 8, they don't add to 6."
+    scores: {verdict: 1, reason: 1}
+  - response: "No, it is 8 times as big because 96 is 8 times 12."
+    scores: {verdict: 1, reason: 0}
+  - response: "Yes, 2 + 2 + 2 = 6."
+    scores: {verdict: 0, reason: 0}
