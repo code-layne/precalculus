@@ -1,0 +1,17 @@
+# Rubric for homework item 2b (Unit 5, Lesson 5.3). manifest.json points here
+# as rubrics/precalc-u05-l03-hw-hw2b.yaml, relative to this lesson directory.
+id: hw2b
+points: 2
+task: "Problem 2b: for g(x) = -log_2 x, is g increasing or decreasing? Use the inverse relationship to explain."
+criteria:
+  - id: decreasing
+    points: 1
+    full: "States that g is decreasing (on its whole domain)."
+  - id: reason
+    points: 1
+    full: "Explains why: log_2 x (the inverse of the increasing 2^x, base 2 > 1) is increasing, and the factor a = -1 reflects the outputs over the x-axis, which reverses the direction."
+examples:
+  - response: "Decreasing."
+    scores: {decreasing: 1, reason: 0}
+  - response: "It is decreasing because log_2 x increases since 2^x increases, and the negative sign flips it."
+    scores: {decreasing: 1, reason: 1}

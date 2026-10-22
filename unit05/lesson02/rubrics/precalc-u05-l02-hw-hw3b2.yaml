@@ -1,0 +1,14 @@
+# Rubric for homework item 3b2 (Unit 5, Lesson 5.2). manifest.json points here
+# as rubrics/precalc-u05-l02-hw-hw3b2.yaml, relative to this lesson directory.
+id: hw3b2
+points: 1
+task: "Problem 3b: t(1000) = 3 for the algae model A(t) = 10^t (t in days, A in cm^2). What does this value represent in context?"
+criteria:
+  - id: context
+    points: 1
+    full: "Interprets t(1000) = 3 in context: it takes 3 days for the algae to cover 1000 cm^2 (after 3 days the area is 1000 cm^2), with the units days and cm^2."
+examples:
+  - response: "3 days"
+    scores: {context: 0}
+  - response: "After 3 days the algae covers 1000 square cm."
+    scores: {context: 1}

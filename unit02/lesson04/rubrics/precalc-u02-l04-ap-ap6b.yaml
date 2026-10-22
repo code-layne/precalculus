@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(b) (Unit 2, Lesson 2.4). manifest.json points here
+# as rubrics/precalc-u02-l04-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6b
+points: 2
+task: "State the domain of P in this context and the range of P, both in interval notation."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Domain [0, infinity) (months since launch) AND range [1, 9) (thousands of active players), both in interval notation with correct bracket/parenthesis choices."
+    partial: "Partially correct (1): One of the two correct; OR both correct in value but with one endpoint/bracket error (e.g. range [1, 9]) or not in interval notation."
+examples:
+  - response: "Domain [0, inf), range [1, 9)"
+    scores: {part: 2}
+  - response: "Domain [0, inf), range [1, 9]"
+    scores: {part: 1}
+  - response: "Domain all reals except -1, range all reals except 9"
+    scores: {part: 0}

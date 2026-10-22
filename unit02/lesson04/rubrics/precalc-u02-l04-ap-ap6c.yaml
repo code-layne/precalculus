@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 2, Lesson 2.4). manifest.json points here
+# as rubrics/precalc-u02-l04-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "Find the limit of P(t) as t goes to infinity. Interpret it in the context of the problem, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): The limit is 9, AND interprets in context with units: as the months go on without end, the number of active players levels off near (approaches) 9 thousand (9,000)."
+    partial: "Partially correct (1): Limit 9 with no or an incomplete interpretation (no units, or says the game reaches/has 9,000 players); OR a correct interpretation attached to an incorrect limit value from one error."
+examples:
+  - response: "The limit is 9. Over a long time the number of active players gets close to 9,000."
+    scores: {part: 2}
+  - response: "lim = 9. Eventually the game will have 9,000 players."
+    scores: {part: 1}
+  - response: "lim = infinity, players keep growing"
+    scores: {part: 0}

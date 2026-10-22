@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l04-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -21,42 +24,49 @@
 
               Shared zero $x=3$, $m=n=1$ so \ans{Hole}. Simplified: $x-2$. $L = 3-2 = 1$.
 
-              Holes: \ans{$(3,\ 1)$} \qquad VAs: \ans{none}
+              Factor: \smash{\gradedblank[id=hw1a1, type=short, points=1, answer={\frac{(x-3)(x-2)}{x-3}}, display={$(x-3)(x-2)/(x-3)$}]{6cm}{11pt}}
+
+              Holes: \smash{\gradedblank[id=hw1a2, type=short, check=text, points=2, answer={(3, 1)}, display={$(3,\ 1)$}]{4cm}{11pt}} \qquad VAs: \smash{\gradedblank[id=hw1a3, type=short, check=text, points=1, answer={none}]{4cm}{11pt}}\vphantom{\blank{1pt}}
 
         \item $\displaystyle r(x) = \dfrac{x^2 - x - 12}{(x-4)(x+1)} = \dfrac{(x-4)(x+3)}{(x-4)(x+1)}$
 
               Shared zero $x=4$, $m=n=1$ so \ans{Hole}. Simplified: $\dfrac{x+3}{x+1}$. $L = \dfrac{7}{5}$.
 
-              Holes: \ans{$\!\left(4,\ \dfrac{7}{5}\right)$} \qquad VAs: \ans{$x = -1$}
+              Factor: \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={\frac{(x-4)(x+3)}{(x-4)(x+1)}}, display={$(x-4)(x+3)/((x-4)(x+1))$}]{6cm}{11pt}}
+
+              Holes: \smash{\gradedblank[id=hw1b2, type=short, check=text, points=2, answer={(4, 7/5)}, display={$(4,\ 7/5)$}]{4cm}{11pt}} \qquad VAs: \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={x = -1}]{4cm}{11pt}}\vphantom{\blank{1pt}}
 
         \item $\displaystyle r(x) = \dfrac{x^2 + 3x}{x^2 + 3x + 2} = \dfrac{x(x+3)}{(x+1)(x+2)}$
 
               No shared zeros (numerator zeros: $0, -3$; denominator zeros: $-1, -2$).
 
-              Holes: \ans{none} \qquad VAs: \ans{$x = -1$ and $x = -2$}
+              Factor: \smash{\gradedblank[id=hw1c1, type=short, points=1, answer={\frac{x(x+3)}{(x+1)(x+2)}}, display={$x(x+3)/((x+1)(x+2))$}]{6cm}{11pt}}
+
+              Holes: \smash{\gradedblank[id=hw1c2, type=short, check=text, points=1, answer={none}]{4cm}{11pt}} \qquad VAs: \smash{\gradedblank[id=hw1c3, type=short, check=set, points=1, answer={-1, -2}, display={$x = -1$ and $x = -2$}]{4cm}{11pt}}
 
       \end{enumerate}
 
-\item \textbf{Explanation (sample):} \ans{A hole occurs at a shared zero $x = a$ when the
-      numerator's multiplicity $m$ is greater than or equal to the denominator's multiplicity $n$
-      ($m \geq n$). After canceling the shared factor, the function still has a finite value at
-      that input. A vertical asymptote occurs when $m < n$ or when the zero appears only in the
-      denominator --- the denominator approaches 0 faster than the numerator, causing the outputs
-      to grow without bound.}
+\item \textbf{Explanation (sample):}
+
+      \vspace{0.08in}
+      \writegap\\
+      \writegap\\
+      \writebox{\gradedblank[id=hw2, type=rubric, points=2,
+  display={At a shared zero $x = a$: if $m \ge n$ the factor cancels completely, the function has a finite limit there, and the graph has a hole. If $m < n$ (or $a$ is a zero of the denominator only), a factor stays in the denominator, the outputs grow without bound, and there is a vertical asymptote.}]{\linewidth}{51pt}}\\
 
 \item
 
       \begin{enumerate}[label=(\alph*), itemsep=6pt]
-        \item $\displaystyle \lim_{x \to 3} r(x) = $ \ans{$5$}
-        \item \ans{As the input $x$ gets arbitrarily close to 3 (from either side), the output $r(x)$
-              gets arbitrarily close to 5, even though the point $(3, 5)$ is missing from the graph.}
-        \item Is $r(3)$ defined? \ans{No} --- \ans{The hole means the function is undefined at $x=3$; it is a removable discontinuity.}
+        \item \smash{\gradedblank[id=hw3a, type=short, check=text, points=1, answer={\lim_{x \to 3} r(x) = 5}, display={$\lim_{x\to 3} r(x) = 5$}]{5cm}{13pt}}
+        \item Explain in a complete sentence what this limit statement means.
+              \writebox{\gradedblank[id=hw3b, type=rubric, points=2, display={$r(x)\to 5$}]{46pt}{14pt}}
+        \item Is $r(3)$ defined? \ans{No} --- Explain briefly: \smash{\gradedblank[id=hw3c, type=rubric, points=2, display={No: hole at $x = 3$}]{5cm}{13pt}}
       \end{enumerate}
 
 \item $\displaystyle r(x) = \dfrac{x^3 - x^2}{x^2 - x}$
 
       \begin{enumerate}[label=(\alph*), itemsep=6pt]
-        \item Numerator: \ans{$x^2(x-1)$} \qquad Denominator: \ans{$x(x-1)$}
+        \item Numerator: \smash{\gradedblank[id=hw4a1, type=short, points=1, answer={x^2(x-1)}]{5cm}{13pt}} \qquad Denominator: \smash{\gradedblank[id=hw4a2, type=short, points=1, answer={x(x-1)}]{5cm}{13pt}}
 
         \item
               \renewcommand{\arraystretch}{1.6}
@@ -64,15 +74,15 @@
               \hline
               Zero & $m$ & $n$ & Hole or VA? \\
               \hline
-              \ans{$x=0$} & \ans{2} & \ans{1} & \ans{Hole ($m > n$)} \\
+              \smash{\gradedblank[id=hw4b1, type=short, points=1, answer={x = 0}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw4b2, type=short, points=1, answer={2}]{1cm}{14pt}} & \smash{\gradedblank[id=hw4b3, type=short, points=1, answer={1}]{1cm}{14pt}} & \smash{\gradedblank[id=hw4b4, type=short, check=text, points=1, answer={hole}, display={Hole ($m > n$)}]{3cm}{14pt}} \\
               \hline
-              \ans{$x=1$} & \ans{1} & \ans{1} & \ans{Hole ($m = n$)} \\
+              \smash{\gradedblank[id=hw4b5, type=short, points=1, answer={x = 1}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw4b6, type=short, points=1, answer={1}]{1cm}{14pt}} & \smash{\gradedblank[id=hw4b7, type=short, points=1, answer={1}]{1cm}{14pt}} & \smash{\gradedblank[id=hw4b8, type=short, check=text, points=1, answer={hole}, display={Hole ($m = n$)}]{3cm}{14pt}} \\
               \hline
               \end{tabular}
 
-        \item Simplified: \ans{$x$} \quad (cancel $x(x-1)$ from both)
+        \item Simplified: \smash{\gradedblank[id=hw4c1, type=short, points=1, answer={x}]{4cm}{13pt}} \quad (cancel $x(x-1)$ from both)
 
-              Holes: \ans{$(0,\ 0)$} and \ans{$(1,\ 1)$}
+              Holes: \smash{\gradedblank[id=hw4c2, type=short, check=set, points=2, answer={(0, 0), (1, 1)}, display={$(0,\ 0)$ and $(1,\ 1)$}]{5cm}{13pt}}\vphantom{\blank{1pt}}
 
               \textit{(Substitute into simplified form $x$: at $x=0$, $L=0$; at $x=1$, $L=1$.)}
       \end{enumerate}
@@ -83,7 +93,7 @@
 
       Denominator zero $x=-1$ (not shared) $\Rightarrow$ VA at $x=-1$.
 
-      Answer: \ans{A} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5, type=choice, points=1, answer=A]{1.5cm}{13pt}} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
 
 \end{enumerate}
 

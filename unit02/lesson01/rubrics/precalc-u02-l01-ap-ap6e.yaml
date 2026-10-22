@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(e) (Unit 2, Lesson 2.1). manifest.json points here
+# as rubrics/precalc-u02-l01-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "A rod is accepted when its error is at most 1.5 mm. Use each rule from part (b) to find the shortest and the longest rod that is accepted."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Uses the short-side rule 40 - L <= 1.5 to get L >= 38.5 and the long-side rule L - 40 <= 1.5 to get L <= 41.5, and concludes that the shortest accepted rod is 38.5 mm and the longest is 41.5 mm."
+    partial: "Partially correct (1): One side correct (38.5 mm or 41.5 mm, with its rule) and the other missing or wrong; OR both values correct with no work from the rules, or with no units."
+examples:
+  - response: "40 - L <= 1.5 gives L >= 38.5; L - 40 <= 1.5 gives L <= 41.5. Shortest 38.5 mm, longest 41.5 mm."
+    scores: {part: 2}
+  - response: "L - 40 <= 1.5 so L <= 41.5. Longest rod is 41.5 mm."
+    scores: {part: 1}
+  - response: "Accepted rods are between 38 and 42 mm."
+    scores: {part: 0}

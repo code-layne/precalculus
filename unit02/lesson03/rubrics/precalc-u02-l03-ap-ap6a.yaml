@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 2, Lesson 2.3). manifest.json points here
+# as rubrics/precalc-u02-l03-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Find C(5). Interpret C(5) in the context of the problem, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): C(5) = 4(5) + 10 = 30, AND interprets in context with units: an order of 5 cupcakes costs $30."
+    partial: "Partially correct (1): C(5) = 30 with no or an incomplete interpretation (no units, or no mention of cupcakes/cost); OR a correct interpretation of an incorrect value that follows from one arithmetic error."
+examples:
+  - response: "C(5) = 30. Five cupcakes cost $30."
+    scores: {part: 2}
+  - response: "C(5) = 4(5) + 10 = 30"
+    scores: {part: 1}
+  - response: "C(5) = 4(5 + 10) = 60 cupcakes"
+    scores: {part: 0}

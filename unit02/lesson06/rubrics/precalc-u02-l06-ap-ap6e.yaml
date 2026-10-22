@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(e) (Unit 2, Lesson 2.6). manifest.json points here
+# as rubrics/precalc-u02-l06-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "For these four weeks, D(t) = 8t - t^2. Find and simplify the difference quotient (D(t + h) - D(t))/h. Then use it to find the average rate of change of D from t = 1 to t = 3, and check your answer against the table."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Expands D(t + h) = 8t + 8h - t^2 - 2th - h^2, subtracts D(t) and divides by h to get 8 - 2t - h; AND evaluates at t = 1, h = 2 to get 4, matching the table (D(3) - D(1))/2 = (15 - 7)/2 = 4."
+    partial: "Partially correct (1): Correct simplified quotient 8 - 2t - h with the evaluation or table check missing or wrong (e.g. using h = 3); OR one algebra error in the quotient, with a correct evaluation of the student's expression and a table check."
+examples:
+  - response: "D(t+h) = 8t + 8h - t^2 - 2th - h^2. Minus D(t): 8h - 2th - h^2. Divide by h: 8 - 2t - h. t = 1, h = 2: 4. Table: (15 - 7)/2 = 4. Matches."
+    scores: {part: 2}
+  - response: "8 - 2t - h"
+    scores: {part: 1}
+  - response: "(8(t + h) - t^2 + h^2 - 8t + t^2)/h = 8 + h"
+    scores: {part: 0}

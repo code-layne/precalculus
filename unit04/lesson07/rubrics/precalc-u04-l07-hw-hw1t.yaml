@@ -1,0 +1,14 @@
+# Rubric for homework item 1 (explanation of model type) (Unit 4, Lesson 4.7). manifest.json points here
+# as rubrics/precalc-u04-l07-hw-hw1t.yaml, relative to this lesson directory.
+id: hw1t
+points: 1
+task: "Data (x, y): (0, 2), (1, 5), (2, 10), (3, 17), (4, 26). After computing first differences, second differences and ratios: the data is best modeled by a quadratic function. Explain."
+criteria:
+  - id: second-differences
+    points: 1
+    full: "Cites the constant second differences (all equal to 2) as the reason the model is quadratic (first differences 3, 5, 7, 9 and ratios 2.5, 2, 1.7, 1.53 are not constant)."
+examples:
+  - response: "Because it curves up."
+    scores: {second-differences: 0}
+  - response: "The second differences are all 2."
+    scores: {second-differences: 1}

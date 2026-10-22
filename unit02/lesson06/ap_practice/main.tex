@@ -16,6 +16,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u02-l06-ap}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -44,7 +47,7 @@ answer choice below is a mistake someone really makes, so read all four before y
 \begin{enumerate}[leftmargin=1.9em, itemsep=12pt]
 
 \item The table gives the amount of water $W(t)$, in gallons, in a tank $t$ hours after noon.
-      What is the average rate of change of $W$ over the interval $2 \le t \le 5$?
+      What is the average rate of change of $W$ over the interval $2 \le t \le 5$? \hfill\textit{Letter:}~\smash{\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.42in}{13pt}}
 
       \smallskip
       \begin{center}
@@ -64,7 +67,7 @@ answer choice below is a mistake someone really makes, so read all four before y
         \item[(A)] $x^2 - 3x + h$
         \item[(B)] $x^2 + h^2 - 3x - 3h$
         \item[(C)] $x^2 + 2xh + h^2 - 3x - 3h$
-        \item[(D)] $x^2 + 2xh + h^2 - 3x$
+        \item[(D)] $x^2 + 2xh + h^2 - 3x$ \hfill\textit{Letter:}~\smash{\gradedblank[id=ap2, type=choice, points=1, answer=C]{0.42in}{13pt}}
       \end{enumerate}
 
 \item Let $g(x) = x^2 + 1$. Which of the following is an equation of the secant line to the
@@ -73,7 +76,7 @@ answer choice below is a mistake someone really makes, so read all four before y
         \item[(A)] $y - 1 = 4(x - 2)$
         \item[(B)] $y - 2 = 8(x - 1)$
         \item[(C)] $y - 2 = \tfrac{1}{4}(x - 1)$
-        \item[(D)] $y - 2 = 4(x - 1)$
+        \item[(D)] $y - 2 = 4(x - 1)$ \hfill\textit{Letter:}~\smash{\gradedblank[id=ap3, type=choice, points=1, answer=D]{0.42in}{13pt}}
       \end{enumerate}
 
 \item The table gives values of the function $k$ at equally spaced inputs. Which of the
@@ -92,14 +95,14 @@ answer choice below is a mistake someone really makes, so read all four before y
         \item[(A)] $k$ is increasing, and its graph is concave down.
         \item[(B)] $k$ is decreasing, and its graph is concave up.
         \item[(C)] $k$ is increasing, and its graph is concave up.
-        \item[(D)] $k$ is linear, because its average rates of change go up by the same amount each time.
+        \item[(D)] $k$ is linear, because its average rates of change go up by the same amount each time. \hfill\textit{Letter:}~\smash{\gradedblank[id=ap4, type=choice, points=1, answer=C]{0.42in}{13pt}}
       \end{enumerate}
 
 \item If $f(x) = x^2 + 4$, which of the following is the difference quotient
       $\dfrac{f(x + h) - f(x)}{h}$, for $h \ne 0$?
 
       \smallskip
-      \textbf{(A)} $2x + h$ \hspace{3em} \textbf{(B)} $1$ \hspace{3em} \textbf{(C)} $h$ \hspace{3em} \textbf{(D)} $2x$
+      \textbf{(A)} $2x + h$ \hspace{3em} \textbf{(B)} $1$ \hspace{3em} \textbf{(C)} $h$ \hspace{3em} \textbf{(D)} $2x$ \hfill\textit{Letter:}~\smash{\gradedblank[id=ap5, type=choice, points=1, answer=A]{0.42in}{13pt}}
 
 \end{enumerate}
 
@@ -129,25 +132,30 @@ written \emph{in context}, with units --- that is what earns credit on the AP ex
 
       \textbf{(a)} Find the average rate of change of $D$ over $0 \le t \le 4$. Interpret your
       answer in the context of the problem, with units.
-      \writespace{2.0cm}{}
+      \writespace{2.0cm}{\gradedblank[id=ap6a, type=rubric, points=2,
+        display={$\frac{D(4) - D(0)}{4 - 0} = \frac{16 - 0}{4} = 4$. Over the first four weeks, downloads grew by an average of 4 thousand downloads per week.}]{\linewidth}{\dimexpr 2.0cm-4pt\relax}}
 
       \textbf{(b)} Write an equation of the secant line through $(0, D(0))$ and $(4, D(4))$. Use it
       to estimate $D(2)$, then say whether the true value $D(2)$ lies above or below the line.
-      \writespace{2.0cm}{}
+      \writespace{2.0cm}{\gradedblank[id=ap6b, type=rubric, points=2,
+        display={$y - 0 = 4(t - 0)$, so $y = 4t$. The line gives $4(2) = 8$ thousand, but the true $D(2) = 12$ thousand lies \emph{above} the line.}]{\linewidth}{\dimexpr 2.0cm-4pt\relax}}
 
       \textbf{(c)} Find the average rate of change over each of the intervals $[0, 1]$, $[1, 2]$,
       $[2, 3]$, and $[3, 4]$. Is the graph of $D$ concave up or concave down on $[0, 4]$? Explain
       what this means about downloads.
-      \writespace{2.2cm}{}
+      \writespace{2.2cm}{\gradedblank[id=ap6c, type=rubric, points=2,
+        display={The rates are 7, 5, 3, and 1 thousand downloads per week. They are positive but shrinking, so $D$ is increasing and concave down: the app is still gaining downloads, but more slowly each week.}]{\linewidth}{\dimexpr 2.2cm-4pt\relax}}
 
       \textbf{(d)} A manager says, ``Downloads went from 0 to 16 thousand, so the average rate of
       change over the four weeks is 16.'' Explain the manager's mistake.
-      \writespace{1.8cm}{}
+      \writespace{1.8cm}{\gradedblank[id=ap6d, type=rubric, points=2,
+        display={16 thousand is the change in downloads, not a rate. The manager never divided by the change in time: $16 \div 4 = 4$ thousand downloads per week.}]{\linewidth}{\dimexpr 1.8cm-4pt\relax}}
 
       \textbf{(e)} For these four weeks, $D(t) = 8t - t^2$. Find and simplify the difference
       quotient $\dfrac{D(t + h) - D(t)}{h}$. Then use it to find the average rate of change of $D$
       from $t = 1$ to $t = 3$, and check your answer against the table.
-      \writespace{2.6cm}{}
+      \writespace{2.6cm}{\gradedblank[id=ap6e, type=rubric, points=2,
+        display={$D(t + h) = 8(t + h) - (t + h)^2 = 8t + 8h - t^2 - 2th - h^2$. Subtract $D(t)$: $8h - 2th - h^2$. Divide by $h$: $8 - 2t - h$. \\[2pt] At $t = 1$, $h = 2$: $8 - 2 - 2 = 4$. Table: $\frac{D(3) - D(1)}{2} = \frac{15 - 7}{2} = 4$. They match.}]{\linewidth}{\dimexpr 2.6cm-4pt\relax}}
 
 \end{enumerate}
 

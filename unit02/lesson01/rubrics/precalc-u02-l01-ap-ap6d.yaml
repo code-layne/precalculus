@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(d) (Unit 2, Lesson 2.1). manifest.json points here
+# as rubrics/precalc-u02-l01-ap-ap6d.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6d
+points: 2
+task: "The graph of E is the graph of a parent function, moved. Name the parent function and state its range. Then explain, in context, why E(L) can never be negative."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Names the absolute value function y = |x|, states its range y >= 0 (or [0, infinity)), AND explains in context that E(L) is a distance (size of the error) from the 40 mm target, and a distance cannot be negative."
+    partial: "Partially correct (1): Correct parent function and range with no or an out-of-context explanation (e.g. 'absolute value is never negative'); OR a correct in-context explanation with the parent function or its range missing or wrong."
+examples:
+  - response: "Absolute value, y = |x|, range y >= 0. E(L) is how far the rod is from 40 mm, and a distance can't be negative."
+    scores: {part: 2}
+  - response: "y = |x|, range y >= 0. Absolute values are always positive."
+    scores: {part: 1}
+  - response: "Parent function y = x, range all real numbers."
+    scores: {part: 0}

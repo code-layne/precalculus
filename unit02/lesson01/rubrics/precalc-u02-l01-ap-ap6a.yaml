@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 2, Lesson 2.1). manifest.json points here
+# as rubrics/precalc-u02-l01-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Find E(37) and E(42). Interpret E(37) in the context of the problem, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): E(37) = 3 and E(42) = 2, and E(37) is interpreted in context with units: a rod 37 mm long is cut 3 mm away from the 40 mm target length."
+    partial: "Partially correct (1): Both values correct with no or an incomplete interpretation (no units, or no mention of the rod's length or the 40 mm target); OR a correct interpretation of an incorrect E(37) that follows from one arithmetic or sign error (e.g. E(37) = -3)."
+examples:
+  - response: "E(37) = 3, E(42) = 2. A 37 mm rod is 3 mm off from the 40 mm it should be."
+    scores: {part: 2}
+  - response: "E(37) = 3 and E(42) = 2. The error is 3."
+    scores: {part: 1}
+  - response: "E(37) = -3, E(42) = 2"
+    scores: {part: 0}

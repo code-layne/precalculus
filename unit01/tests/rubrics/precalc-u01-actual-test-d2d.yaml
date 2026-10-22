@@ -1,0 +1,20 @@
+# Rubric for actual_test item D2(d) (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-d2d.yaml, relative to unit01/tests/.
+id: d2d
+points: 3
+task: "Explain how the graph of a function and the graph of its inverse are related, and why."
+criteria:
+  - id: reflection
+    points: 1
+    full: "The graphs are reflections of each other over the line y = x."
+  - id: swap
+    points: 1
+    full: "The inverse trades input for output: a point (a, b) on f becomes (b, a) on the inverse."
+  - id: connection
+    points: 1
+    full: "Connects the two: swapping the coordinates of every point is exactly what reflecting over y = x does."
+examples:
+  - response: "They are mirror images over y = x because (a, b) turns into (b, a)."
+    scores: {reflection: 1, swap: 1, connection: 1}
+  - response: "They are reflections over y = x."
+    scores: {reflection: 1, swap: 0, connection: 0}

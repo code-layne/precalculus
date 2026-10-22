@@ -1,0 +1,17 @@
+# Rubric for homework item 5, reasoning (Unit 3, Lesson 3.5). manifest.json points here
+# as rubrics/precalc-u03-l05-hw-hw5b.yaml, relative to this lesson directory.
+id: hw5b
+points: 2
+task: "Which statement about p(x) = (x^3 - 8)/(x - 2) is correct? Show your reasoning."
+criteria:
+  - id: factor
+    points: 1
+    full: "Factors x^3 - 8 = (x - 2)(x^2 + 2x + 4) and identifies the shared factor (x - 2) with equal multiplicity, so x = 2 is a hole (not a vertical asymptote)."
+  - id: y-coordinate
+    points: 1
+    full: "Evaluates the simplified form x^2 + 2x + 4 at x = 2 to get 12, so the hole is at (2, 12)."
+examples:
+  - response: "x^3 - 8 = (x-2)(x^2+2x+4), cancel the x - 2, so hole at x = 2. Plug in 2: 4 + 4 + 4 = 12."
+    scores: {factor: 1, y-coordinate: 1}
+  - response: "The bottom is zero at 2 so there's a hole there."
+    scores: {factor: 0, y-coordinate: 0}

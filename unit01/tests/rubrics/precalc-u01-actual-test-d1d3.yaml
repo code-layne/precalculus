@@ -1,0 +1,14 @@
+# Rubric for actual_test item D1(d) 'Why?' (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-d1d3.yaml, relative to unit01/tests/.
+id: d1d3
+points: 1
+task: "Domain the context forces: 0 < x < 50. Why?"
+criteria:
+  - id: both-sides
+    points: 1
+    full: "Both lengths must be positive: x > 0, and the river side 100 - 2x > 0, which gives x < 50."
+examples:
+  - response: "x has to be positive and 100 - 2x has to be positive too, so x < 50."
+    scores: {both-sides: 1}
+  - response: "Lengths can't be negative."
+    scores: {both-sides: 0}

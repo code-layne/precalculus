@@ -1,0 +1,17 @@
+# Rubric for homework item 3 (Unit 6, Lesson 6.5). manifest.json points here
+# as rubrics/precalc-u06-l05-hw-hw3.yaml, relative to this lesson directory.
+id: hw3
+points: 2
+task: "Without computing, explain why sin(theta + 2pi) = sin(theta) for any angle theta. Reference the unit circle."
+criteria:
+  - id: revolution
+    points: 1
+    full: "Says that adding 2pi is one full revolution, so the terminal ray returns to the same position."
+  - id: y-coordinate
+    points: 1
+    full: "Connects to sine: the unit-circle point is the same, so its y-coordinate (sine) is the same."
+examples:
+  - response: "2pi is all the way around the circle so you end up in the same spot."
+    scores: {revolution: 1, y-coordinate: 0}
+  - response: "Going 2pi more brings you back to the same point on the unit circle, and sin is the y-value of that point, so it is equal."
+    scores: {revolution: 1, y-coordinate: 1}

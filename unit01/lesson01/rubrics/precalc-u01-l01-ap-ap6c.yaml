@@ -1,0 +1,17 @@
+# Rubric for ap_practice item 6(c) (Unit 1, Lesson 1.1). manifest.json points here
+# as rubrics/precalc-u01-l01-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "Explain what would go wrong with the definition of C if the first rule were written 0 < w < 2 and the second were left as 2 < w <= 10."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): States that no rule would include w = 2, so C(2) would be undefined (2 drops out of the domain; a 2-pound package would have no price)."
+    partial: "Partially correct (1): Says something is missing or there is a gap at 2 without stating the consequence that C(2) is undefined, or states C(2) is undefined without connecting it to neither condition including 2."
+examples:
+  - response: "Neither rule includes 2, so C(2) has no value."
+    scores: {part: 2}
+  - response: "There would be a gap."
+    scores: {part: 1}

@@ -1,0 +1,17 @@
+# Rubric for homework item 5 (Unit 5, Lesson 5.8). manifest.json points here
+# as rubrics/precalc-u05-l08-hw-hw5.yaml, relative to this lesson directory.
+id: hw5
+points: 2
+task: "Scientist A adds a constant to all y-values before plotting on a regular graph; Scientist B uses a semi-log plot. What advantage does Scientist B's approach have? Reference EK 2.15.A.2."
+criteria:
+  - id: no-constant
+    points: 1
+    full: "States that B does not have to guess a constant to add: by EK 2.15.A.2, a constant never needs to be added to the y-values on a semi-log plot to reveal that an exponential model is appropriate."
+  - id: linear-test
+    points: 1
+    full: "Explains the direct test: if log y vs. x is linear, an exponential model fits."
+examples:
+  - response: "B's way is easier."
+    scores: {no-constant: 0, linear-test: 0}
+  - response: "B doesn't need to add a constant (EK 2.15.A.2); if the semi-log plot is a line the data is exponential."
+    scores: {no-constant: 1, linear-test: 1}

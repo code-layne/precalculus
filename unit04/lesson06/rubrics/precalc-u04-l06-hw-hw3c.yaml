@@ -1,0 +1,17 @@
+# Rubric for homework item 3(c) (Unit 4, Lesson 4.6). manifest.json points here
+# as rubrics/precalc-u04-l06-hw-hw3c.yaml, relative to this lesson directory.
+id: hw3c
+points: 2
+task: "A radioactive sample has a half-life of 10 years and initial mass 80 grams, modeled by M(t). Is t = -5 a meaningful input in this context? Explain."
+criteria:
+  - id: answer
+    points: 1
+    full: "Answers no (t = -5 is not a meaningful input for this model)."
+  - id: reason
+    points: 1
+    full: "Explains that t is the time elapsed since the start (when the mass was 80 g), so a negative time lies outside the context the model describes."
+examples:
+  - response: "No."
+    scores: {answer: 1, reason: 0}
+  - response: "No, t is years since we started measuring, so it can't be negative."
+    scores: {answer: 1, reason: 1}

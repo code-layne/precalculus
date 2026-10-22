@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(e) (Unit 1, Lesson 1.2). manifest.json points here
+# as rubrics/precalc-u01-l02-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "The shop's rates change so that R(x) = 18x and C(x) = 3x + 120 for 0 <= x <= 20 bikes. Write P(x) = (R - C)(x) in simplified form, find the smallest whole number of bikes for which P(x) > 0, and state the domain of P in this context."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): P(x) = 15x - 120; the smallest whole number with P(x) > 0 is 9 bikes (15x > 120 gives x > 8); domain: whole numbers of bikes with 0 <= x <= 20."
+    partial: "Partially correct (1): Two of the three pieces are correct (for example P(x) = 15x - 120 and 9 bikes, with no or a wrong domain; or the sign error P(x) = 15x + 120 carried through consistently with a correct domain)."
+examples:
+  - response: "P(x) = 18x - 3x - 120 = 15x - 120. 15x > 120 so x > 8, so 9 bikes. Domain is whole numbers 0 to 20."
+    scores: {part: 2}
+  - response: "P(x) = 15x - 120, x = 8"
+    scores: {part: 1}
+  - response: "P(x) = 21x + 120"
+    scores: {part: 0}

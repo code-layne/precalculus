@@ -1,0 +1,17 @@
+# Rubric for homework item 3(b) (Unit 4, Lesson 4.7). manifest.json points here
+# as rubrics/precalc-u04-l07-hw-hw3b.yaml, relative to this lesson directory.
+id: hw3b
+points: 2
+task: "A bacteria population doubles every hour. Explain using the vocabulary from this lesson why doubling every hour signals an exponential model. Use the word ratio in your answer."
+criteria:
+  - id: multiply
+    points: 1
+    full: "Says the output is multiplied by 2 for each 1-hour (equal-length) increase in the input."
+  - id: ratio
+    points: 1
+    full: "Uses the word ratio: the successive ratio of outputs is constant (2), which is the defining feature of an exponential model."
+examples:
+  - response: "It goes up by the same amount every hour."
+    scores: {multiply: 0, ratio: 0}
+  - response: "Every hour the population is multiplied by 2, so the ratio between consecutive hours is always 2, which means exponential."
+    scores: {multiply: 1, ratio: 1}

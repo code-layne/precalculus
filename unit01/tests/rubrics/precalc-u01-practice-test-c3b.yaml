@@ -1,0 +1,14 @@
+# Rubric for practice_test item C3(b) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-c3b.yaml, relative to unit01/tests/.
+id: c3b
+points: 1
+task: "In one sentence, what does that number (the average rate of change of V from t = 0 to t = 8, -7 gallons per minute) mean for the tank?"
+criteria:
+  - id: meaning
+    points: 1
+    full: "Interprets -7 in context: over the first 8 minutes the tank lost water at an average of 7 gallons per minute (mentions the time interval or 'on average', the amount 7, and gallons per minute / draining)."
+examples:
+  - response: "Over the first 8 minutes the tank loses about 7 gallons every minute on average."
+    scores: {meaning: 1}
+  - response: "The tank has -7 gallons."
+    scores: {meaning: 0}

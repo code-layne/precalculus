@@ -1,0 +1,14 @@
+# Rubric for homework item 4(a) (Unit 3, Lesson 3.1). manifest.json points here
+# as rubrics/precalc-u03-l01-hw-hw4a.yaml, relative to this lesson directory.
+id: hw4a
+points: 1
+task: "A rational function has a slant asymptote. What must be true about the degrees of the numerator and denominator?"
+criteria:
+  - id: degrees
+    points: 1
+    full: "The degree of the numerator is exactly one more than the degree of the denominator."
+examples:
+  - response: "The top degree is bigger."
+    scores: {degrees: 0}
+  - response: "numerator degree = denominator degree + 1"
+    scores: {degrees: 1}

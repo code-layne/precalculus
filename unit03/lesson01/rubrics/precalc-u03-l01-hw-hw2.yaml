@@ -1,0 +1,17 @@
+# Rubric for homework item 2 (Unit 3, Lesson 3.1). manifest.json points here
+# as rubrics/precalc-u03-l01-hw-hw2.yaml, relative to this lesson directory.
+id: hw2
+points: 2
+task: "Explain why the limit as x -> infinity of (7x^3 + 2)/(x^3 - 1) is 7, referencing the quotient of leading terms and why the other terms become negligible."
+criteria:
+  - id: negligible
+    points: 1
+    full: "Says that for large x the leading terms 7x^3 and x^3 dominate, so the +2 and -1 become negligible."
+  - id: quotient
+    points: 1
+    full: "Forms the quotient of leading terms 7x^3/x^3 = 7 and concludes the outputs approach 7."
+examples:
+  - response: "The degrees are the same so you divide 7 by 1 and get 7."
+    scores: {negligible: 0, quotient: 1}
+  - response: "When x is huge the 2 and the -1 don't matter, so it's like 7x^3/x^3 which is 7."
+    scores: {negligible: 1, quotient: 1}

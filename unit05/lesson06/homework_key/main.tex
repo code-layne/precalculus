@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l06-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -20,17 +23,17 @@
   \item $3^x = 243$
 
   \vspace{4pt}
-  $x = $ \ans{5} \quad (since $3^5 = 243$)
+  $x = $ \smash{\gradedblank[id=hw1a, type=short, points=1, answer={5}]{4cm}{13pt}} \quad (since $3^5 = 243$)
 
   \item $2^x = 50$
 
   \vspace{4pt}
-  Exact: $x = $ \ans{$\log 50 / \log 2$} \qquad Decimal: $x \approx $ \ans{5.644}
+  Exact: $x = $ \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={\log 50 / \log 2}]{4cm}{13pt}} \qquad Decimal: $x \approx $ \smash{\gradedblank[id=hw1b2, type=short, check=numeric, tolerance=0.0005, points=1, answer={5.644}]{2.5cm}{13pt}}\vphantom{\blank{0pt}}
 
   \item $7^x = \dfrac{1}{49}$
 
   \vspace{4pt}
-  $x = $ \ans{$-2$} \quad (since $7^{-2} = 1/49$)
+  $x = $ \smash{\gradedblank[id=hw1c, type=short, points=1, answer={-2}]{4cm}{13pt}} \quad (since $7^{-2} = 1/49$)
 \end{enumerate}
 
 \item Solve each logarithmic equation. Show all steps and check for extraneous solutions.
@@ -42,7 +45,7 @@
   Work: \ansline{$x + 3 = 2^5 = 32 \Rightarrow x = 29$. Check: $\log_2(32) = 5$. Valid.}
 
   \vspace{4pt}
-  Solution: $x = $ \ans{29} \qquad Valid? \ans{Yes}
+  Solution: $x = $ \smash{\gradedblank[id=hw2a1, type=short, points=1, answer={29}]{2.5cm}{13pt}} \qquad Valid? \smash{\gradedblank[id=hw2a2, type=short, check=text, points=1, answer={yes}]{2cm}{13pt}}
 
   \item $\log_3 x + \log_3(x-8) = 2$
 
@@ -56,13 +59,13 @@
   Step 3 (solve quadratic): \ansline{$x^2 - 8x - 9 = 0 \Rightarrow (x-9)(x+1) = 0$}
 
   \vspace{4pt}
-  Possible solutions: $x = $ \ans{9} or $x = $ \ans{$-1$}
+  Possible solutions: $x = $ \smash{\gradedblank[id=hw2b1, type=short, points=1, answer={9}]{2cm}{13pt}} or $x = $ \smash{\gradedblank[id=hw2b2, type=short, points=1, answer={-1}]{2cm}{13pt}}
 
   \vspace{4pt}
   Check for extraneous solutions: \ansline{$x=-1$: $\log_3(-1)$ undefined. Extraneous. $x=9$: $\log_3 9 + \log_3 1 = 2 + 0 = 2$. Valid.}
 
   \vspace{4pt}
-  Final answer: $x = $ \ans{9}
+  Final answer: $x = $ \smash{\gradedblank[id=hw2b3, type=short, points=1, answer={9}]{2.5cm}{13pt}}
 \end{enumerate}
 
 \item A population model is $P(t) = 1200 \cdot (1.04)^t$, where $t$ is in years.
@@ -78,14 +81,14 @@ Step 2: \ansline{$\log(1.04^t) = \log(5/3) \Rightarrow t\log 1.04 = \log(5/3)$}
 Step 3: \ansline{$t = \log(5/3)/\log(1.04)$}
 
 \vspace{4pt}
-$t = $ \ans{$\log(5/3)/\log(1.04)$} (exact) $\approx $ \ans{12.98} years
+$t = $ \smash{\gradedblank[id=hw3a, type=short, points=2, answer={\log(5/3)/\log(1.04)}]{5cm}{13pt}} (exact) $\approx $ \smash{\gradedblank[id=hw3b, type=short, check=numeric, tolerance=0.005, points=1, answer={13.02}]{2.5cm}{13pt}} years
 
 \item Rewrite each expression using the natural base identity $b^x = e^{(\ln b)\cdot x}$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $5^x = e^{({\color{keyred}\mathbf{\ln 5}})\cdot x} \approx e^{1.609x}$
+  \item $5^x = e^{(\;\smash{\gradedblank[id=hw4a, type=short, points=1, answer={\ln 5}]{3cm}{13pt}}\;)\cdot x}$ \quad \textcolor{keyred}{$\approx e^{1.609x}$}
 
-  \item $(0.7)^t = e^{({\color{keyred}\mathbf{\ln 0.7}})\cdot t} \approx e^{-0.357t}$
+  \item $(0.7)^t = e^{(\;\smash{\gradedblank[id=hw4b, type=short, points=1, answer={\ln 0.7}]{3cm}{13pt}}\;)\cdot t}$ \quad \textcolor{keyred}{$\approx e^{-0.357t}$}
 \end{enumerate}
 
 \item Find the inverse of $f(x) = 2 \cdot 5^{x+3} - 1$. Show each step. Then state the
@@ -96,13 +99,13 @@ $t = $ \ans{$\log(5/3)/\log(1.04)$} (exact) $\approx $ \ans{12.98} years
 Apply $\log_5$: $\log_5\tfrac{x+1}{2}=y+3$. Subtract 3: $y=\log_5\tfrac{x+1}{2}-3$.}
 
 \vspace{4pt}
-$f^{-1}(x) = $ \ans{$\log_5\!\dfrac{x+1}{2} - 3$}
+$f^{-1}(x) = $ \smash{\gradedblank[id=hw5a, type=short, points=2, answer={\log_5\frac{x+1}{2} - 3}, display={$\log_5((x+1)/2) - 3$}]{6cm}{13pt}}
 
 \vspace{6pt}
-Domain of $f$: \ans{all reals} \qquad Range of $f$: \ans{$(-1, \infty)$}
+Domain of $f$: \smash{\gradedblank[id=hw5b, type=short, check=text, points=1, answer={all reals}]{3.5cm}{13pt}} \qquad Range of $f$: \smash{\gradedblank[id=hw5c, type=short, check=text, points=1, answer={(-1, \infty)}, display={$(-1,\infty)$}]{3.5cm}{13pt}}
 
 \vspace{4pt}
-Domain of $f^{-1}$: \ans{$(-1, \infty)$} \qquad Range of $f^{-1}$: \ans{all reals}
+Domain of $f^{-1}$: \smash{\gradedblank[id=hw5d, type=short, check=text, points=1, answer={(-1, \infty)}, display={$(-1,\infty)$}]{3.5cm}{13pt}} \qquad Range of $f^{-1}$: \smash{\gradedblank[id=hw5e, type=short, check=text, points=1, answer={all reals}]{3.5cm}{13pt}}
 
 \item \textbf{AP-style multiple choice.} Which value of $x$ satisfies
       $\log_2(x+4) + \log_2 x = 5$?
@@ -112,7 +115,7 @@ Domain of $f^{-1}$: \ans{$(-1, \infty)$} \qquad Range of $f^{-1}$: \ans{all real
   \item $x = -8$
   \item $x = 4$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
   \item $x = 2$
-  \item $x = 8$
+  \item $x = 8$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=B]{0.42in}{13pt}}
 \end{enumerate}
 
 \begin{teachernote}

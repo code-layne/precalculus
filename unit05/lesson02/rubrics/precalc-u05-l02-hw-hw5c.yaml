@@ -1,0 +1,17 @@
+# Rubric for homework item 5c (Unit 5, Lesson 5.2). manifest.json points here
+# as rubrics/precalc-u05-l02-hw-hw5c.yaml, relative to this lesson directory.
+id: hw5c
+points: 2
+task: "Problem 5c: for h(x) = 2 log_3 x, how do the outputs of h(x) compare to the outputs of log_3 x for the same inputs? Describe the effect of the vertical dilation by a = 2."
+criteria:
+  - id: double
+    points: 1
+    full: "States that every output of h is twice the output of log_3 x for the same input (e.g. h(9) = 4 vs log_3 9 = 2)."
+  - id: dilation
+    points: 1
+    full: "Describes the effect as a vertical stretch by a factor of 2: the graph is stretched away from the x-axis, so h increases by 2 (instead of 1) each time x triples."
+examples:
+  - response: "The outputs are bigger."
+    scores: {double: 0, dilation: 0}
+  - response: "h gives double the output of log_3 x, so the graph is stretched vertically by 2."
+    scores: {double: 1, dilation: 1}

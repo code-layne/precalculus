@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 2, Lesson 2.1). manifest.json points here
+# as rubrics/precalc-u02-l01-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "A technician says the rule for rods shorter than 40 mm must be wrong, \"because it has a minus sign in front, so it gives a negative error.\" Use L = 37 to explain why the technician is wrong."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Evaluates the first rule at L = 37: -(37 - 40) = -(-3) = 3, a positive error; AND explains that for L < 40 the quantity L - 40 is negative, so the minus sign takes its opposite and the result is positive."
+    partial: "Partially correct (1): Shows the computation at L = 37 giving 3 with no general explanation of why the minus sign makes the result positive; OR gives the general explanation (L - 40 is negative, so its opposite is positive) without using L = 37."
+examples:
+  - response: "-(37 - 40) = -(-3) = 3, positive. When L is less than 40, L - 40 is negative, and the minus sign flips it to positive."
+    scores: {part: 2}
+  - response: "For 37 you get 3, so it is not negative."
+    scores: {part: 1}
+  - response: "The technician is right; that rule should be L - 40."
+    scores: {part: 0}

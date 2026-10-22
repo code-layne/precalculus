@@ -1,0 +1,17 @@
+# Rubric for ap_practice item 6(b) (Unit 1, Lesson 1.1). manifest.json points here
+# as rubrics/precalc-u01-l01-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6b
+points: 2
+task: "A customer claims that because 2 appears in both conditions, C(2) has two possible values. Explain why the customer is wrong."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): States that only the first condition (0 < w <= 2) includes 2, because the second requires w > 2 (strict), so exactly one rule applies and C(2) = 6."
+    partial: "Partially correct (1): Says only one rule applies at w = 2, or that the second condition excludes 2, without naming which inequality includes or excludes it."
+examples:
+  - response: "The second rule is 2 < w so 2 doesn't count there. Only the first rule has 2, so C(2) = 6."
+    scores: {part: 2}
+  - response: "A function can only have one output."
+    scores: {part: 1}

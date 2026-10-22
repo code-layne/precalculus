@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u04-l04-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -20,12 +23,12 @@
         \item $f(x) = 2^{x+5}$
 
               \vspace{0.06in}
-              $2^{x+5} = 2^x \cdot 2^{{\color{keyred}\mathbf{5}}} = $ \ans{32} $\cdot\; 2^x$
+              $2^{x+5} = 2^x \cdot 2^{{\color{keyred}\mathbf{5}}} = $ \smash{\gradedblank[id=hw1a, type=short, points=1, answer={32}]{2cm}{13pt}} $\cdot\; 2^x$
 
         \item $g(x) = 7^{x-2}$
 
               \vspace{0.06in}
-              $7^{x-2} = 7^x \cdot 7^{{\color{keyred}\mathbf{-2}}} = $ \ans{$\dfrac{1}{49}$} $\cdot\; 7^x$
+              $7^{x-2} = 7^x \cdot 7^{{\color{keyred}\mathbf{-2}}} = $ \smash{\gradedblank[id=hw1b, type=short, points=1, answer={\frac{1}{49}}, display={$1/49$}]{3.5cm}{13pt}} $\cdot\; 7^x$
       \end{enumerate}
 
 \item \textbf{Power Property: Horizontal Dilation $\to$ Base Change.}
@@ -35,32 +38,32 @@
         \item $f(x) = 3^{4x}$
 
               \vspace{0.06in}
-              $3^{4x} = (3^{{\color{keyred}\mathbf{4}}})^x = $ \ans{$81^x$}
+              $3^{4x} = (3^{{\color{keyred}\mathbf{4}}})^x = $ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={81^x}]{3cm}{13pt}}
 
         \item $g(x) = 25^{x/2}$
 
               \vspace{0.06in}
-              $25^{x/2} = (25^{{\color{keyred}\mathbf{1/2}}})^x = $ \ans{$5^x$}
+              $25^{x/2} = (25^{{\color{keyred}\mathbf{1/2}}})^x = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={5^x}]{3cm}{13pt}}
       \end{enumerate}
 
 \item \textbf{Negative and Fractional Exponents.}
       Simplify each expression. Write without negative or fractional exponents where possible.
 
       \begin{enumerate}[label=(\alph*), itemsep=8pt]
-        \item $5^{-2} = $ \ans{$\dfrac{1}{25}$}
-        \item $27^{1/3} = $ \ans{3}
-        \item $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = $ \ans{8}
+        \item $5^{-2} = $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={\frac{1}{25}}, display={$1/25$}]{3cm}{13pt}}
+        \item $27^{1/3} = $ \smash{\gradedblank[id=hw3b, type=short, points=1, answer={3}]{3cm}{13pt}}
+        \item $16^{3/4} = (\sqrt[4]{16})^3 = 2^3 = $ \smash{\gradedblank[id=hw3c, type=short, points=1, answer={8}]{3cm}{13pt}}
       \end{enumerate}
 
 \item \textbf{Show Two Functions Are Equivalent.}
 
       \vspace{0.06in}
-      $f(x) = 4^{x+3/2} = 4^x \cdot 4^{{\color{keyred}\mathbf{3/2}}} = $ \ans{8} $\cdot\; 4^x$
+      $f(x) = 4^{x+3/2} = 4^x \cdot 4^{{\color{keyred}\mathbf{3/2}}} = $ \smash{\gradedblank[id=hw4a, type=short, points=2, answer={8}]{3cm}{13pt}} $\cdot\; 4^x$
 
       \quad ($4^{3/2} = (\sqrt{4})^3 = 2^3 = 8$)
 
       \vspace{0.06in}
-      $g(x) = 8 \cdot 4^x \cdot \sqrt{4}^{\,-1} = 8 \cdot 4^x \cdot 2^{-1} = $ \ans{4} $\cdot\; 4^x$
+      $g(x) = 8 \cdot 4^x \cdot \sqrt{4}^{\,-1} = 8 \cdot 4^x \cdot 2^{-1} = $ \smash{\gradedblank[id=hw4b, type=short, points=2, answer={4}]{3cm}{13pt}} $\cdot\; 4^x$
 
       \begin{teachernote}
         Note: $f(x) = 8 \cdot 4^x$ and $g(x) = 4 \cdot 4^x$ are NOT equal --- check the problem
@@ -70,11 +73,16 @@
         algebraic work over blind assumption.
       \end{teachernote}
 
-      Are they equivalent? \ans{No --- $f(x) = 8 \cdot 4^x \ne 4 \cdot 4^x = g(x)$}
+      Are they equivalent? \smash{\gradedblank[id=hw4c, type=short, check=text, points=1, answer={no}]{2cm}{13pt}} \quad \ans{$f(x) = 8 \cdot 4^x \ne 4 \cdot 4^x = g(x)$}
 
 \item \textbf{(AP-Style Multiple Choice)} Which expression is equivalent to $16^{x/4}$?
 
-      Answer: \ans{(B)} \quad Reasoning: $16^{x/4} = (16^{1/4})^x = 2^x$.
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5a, type=choice, points=1, answer=B]{1.5cm}{13pt}} \quad Show your reasoning:
+
+      \vspace{0.04in}
+      \writebox{\raisebox{0pt}[0pt][0pt]{\gradedblank[id=hw5b, type=rubric, points=2,
+  display={$16^{x/4} = (16^{1/4})^x = 2^x$, since $2^4 = 16$.}]{\linewidth}{14pt}}}\\
+      \writegap\\
 
       \begin{teachernote}
         $16^{1/4} = \sqrt[4]{16} = 2$ since $2^4 = 16$. Answer (C): $4^{x/2} = (4^{1/2})^x = 2^x$ is
@@ -95,7 +103,7 @@
       The functions can be equal only if $9 = 1$, which is impossible --- \textbf{there is no value of $b$}
       that makes $b^{2x}$ (form: $(b^2)^x$, no coefficient) equal to $9 \cdot 3^x$ (form: $a \cdot 3^x$ with $a \ne 1$).
 
-      \ans{No solution.} \quad ($b^{2x}$ has $a = 1$; $g$ has $a = 9 \ne 1$.)
+      $b = $ \smash{\gradedblank[id=hw6, type=short, check=text, points=2, answer={no solution}]{2.5cm}{13pt}} \quad ($b^{2x}$ has $a = 1$; $g$ has $a = 9 \ne 1$.)
 
       \begin{teachernote}
         This problem tests whether students recognize that $b^{2x} = (b^2)^x$ always has $a = 1$

@@ -1,0 +1,14 @@
+# Rubric for practice_test item C4 'Because' (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-c4c.yaml, relative to unit01/tests/.
+id: c4c
+points: 1
+task: "The table has equally spaced inputs (g values 2, 5, 12, 23, 38). Name the function type, because ..."
+criteria:
+  - id: reason
+    points: 1
+    full: "Gives the reason: the 2nd differences are constant (all equal), which is the signature of a quadratic."
+examples:
+  - response: "the second differences are all the same"
+    scores: {reason: 1}
+  - response: "it curves"
+    scores: {reason: 0}

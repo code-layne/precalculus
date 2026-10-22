@@ -1,0 +1,14 @@
+# Rubric for homework item 4(b) (Unit 4, Lesson 4.7). manifest.json points here
+# as rubrics/precalc-u04-l07-hw-hw4b.yaml, relative to this lesson directory.
+id: hw4b
+points: 1
+task: "Plot A's residuals form a smooth U-shape (positive, then negative, then positive as x increases). What does Plot A's pattern tell you about the model that was used?"
+criteria:
+  - id: wrong-type
+    points: 1
+    full: "Says the model is the wrong function type (it systematically over- and under-predicts in a pattern), so a different function family should be used."
+examples:
+  - response: "The residuals are big."
+    scores: {wrong-type: 0}
+  - response: "There's a pattern, so the model is the wrong kind of function; a curved model would fit better."
+    scores: {wrong-type: 1}

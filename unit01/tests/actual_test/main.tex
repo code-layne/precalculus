@@ -8,6 +8,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u01-actual-test}
+\gradingcourse{precalculus}
 
 % Part-divider strip
 \newcommand{\parthead}[1]{%
@@ -33,16 +36,16 @@ Write the letter of the best description next to each term.
 \noindent
 \begin{minipage}[t]{0.36\textwidth}
 \begin{enumerate}[leftmargin=2.2em, itemsep=6pt, label=\arabic*.]
-  \item Range \blank{1.1cm}
-  \item Composition \blank{1.1cm}
-  \item Domain \blank{1.1cm}
-  \item One-to-one \blank{1.1cm}
-  \item Function \blank{1.1cm}
-  \item Zero of a function \blank{1.1cm}
-  \item Inverse function \blank{1.1cm}
-  \item Concave up \blank{1.1cm}
-  \item Parent function \blank{1.1cm}
-  \item Average rate of change \blank{1.1cm}
+  \item Range \smash{\gradedblank[id=a1, type=choice, points=1, answer=E]{1.1cm}{13pt}}
+  \item Composition \smash{\gradedblank[id=a2, type=choice, points=1, answer=I]{1.1cm}{13pt}}
+  \item Domain \smash{\gradedblank[id=a3, type=choice, points=1, answer=A]{1.1cm}{13pt}}
+  \item One-to-one \smash{\gradedblank[id=a4, type=choice, points=1, answer=G]{1.1cm}{13pt}}
+  \item Function \smash{\gradedblank[id=a5, type=choice, points=1, answer=D]{1.1cm}{13pt}}
+  \item Zero of a function \smash{\gradedblank[id=a6, type=choice, points=1, answer=C]{1.1cm}{13pt}}
+  \item Inverse function \smash{\gradedblank[id=a7, type=choice, points=1, answer=H]{1.1cm}{13pt}}
+  \item Concave up \smash{\gradedblank[id=a8, type=choice, points=1, answer=B]{1.1cm}{13pt}}
+  \item Parent function \smash{\gradedblank[id=a9, type=choice, points=1, answer=J]{1.1cm}{13pt}}
+  \item Average rate of change \smash{\gradedblank[id=a10, type=choice, points=1, answer=F]{1.1cm}{13pt}}
 \end{enumerate}
 \end{minipage}%
 \hfill
@@ -72,30 +75,30 @@ Circle the best answer, then write its letter in the blank at the right.
     \\[2pt]\hspace*{1em}
     (A) $(-2,5)$ is on the graph of $h$ \quad (B) $h(5) = -2$ \quad
     (C) $-2$ is an output of $h$ \quad (D) $h$ is decreasing at $x = -2$
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b1, type=choice, points=2, answer=A]{1.1cm}{13pt}}
   \item On an interval where $f$ is increasing and concave down, the outputs are
     \\[2pt]\hspace*{1em}
     (A) rising faster and faster \quad (B) rising, but more and more slowly \quad
     (C) falling more and more slowly \quad (D) changing at a constant rate
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b2, type=choice, points=2, answer=B]{1.1cm}{13pt}}
   \item A table of $f$ has equally spaced inputs and \textbf{constant first}
     differences. The best model is
     \\[2pt]\hspace*{1em}
     (A) quadratic \quad (B) exponential \quad (C) linear \quad (D) none of these
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b3, type=choice, points=2, answer=C]{1.1cm}{13pt}}
   \item The graph of $g(x) = f(x) - 6$ is the graph of $f$ shifted
     \\[2pt]\hspace*{1em}
     (A) $6$ up \quad (B) $6$ left \quad (C) $6$ right \quad (D) $6$ down
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b4, type=choice, points=2, answer=D]{1.1cm}{13pt}}
   \item If $f(x) = x + 5$ and $g(x) = x^2$, then $(f \circ g)(3)$ equals
     \\[2pt]\hspace*{1em}
     (A) $64$ \quad (B) $14$ \quad (C) $34$ \quad (D) $11$
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b5, type=choice, points=2, answer=B]{1.1cm}{13pt}}
   \item If $f$ and $f^{-1}$ are inverses, then $f\!\left(f^{-1}(x)\right)$
     equals
     \\[2pt]\hspace*{1em}
     (A) $1$ \quad (B) $0$ \quad (C) $x$ \quad (D) $\dfrac{1}{f(x)}$
-    \hfill \blank{1.1cm}
+    \hfill \textit{Letter:}~\smash{\gradedblank[id=b6, type=choice, points=2, answer=C]{1.1cm}{13pt}}
 \end{enumerate}
 
 % ======================================================================
@@ -118,11 +121,11 @@ Show your work in the space provided.
 \end{work}
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
-      \item $f(2) = $ \blank{1.6cm} \qquad \textbf{(b)} $f(-3) = $ \blank{1.6cm}
+      \item $f(2) = $ \smash{\gradedblank[id=c1a, type=short, points=1, answer=8]{1.6cm}{13pt}} \qquad \textbf{(b)} $f(-3) = $ \smash{\gradedblank[id=c1b, type=short, points=1, answer=23]{1.6cm}{13pt}}
       \setcounter{enumii}{2}
-      \item Solve $f(x) = 8$. There are two answers: \blank{2.6cm}
+      \item Solve $f(x) = 8$. There are two answers: \smash{\gradedblank[id=c1c, type=short, points=2, answer={2, -2}, check=set, display={$x = 2,\ -2$}]{2.6cm}{13pt}}
       \item Which of (a)--(c) is a \emph{solve} question rather than an
-            \emph{evaluate} question? \blank{1.6cm}
+            \emph{evaluate} question? \smash{\gradedblank[id=c1d, type=choice, points=1, answer=c, display={(c)}]{1.6cm}{13pt}}
     \end{enumerate}
 
   \item The graph of $y = f(x)$ is shown below.
@@ -141,11 +144,11 @@ Show your work in the space provided.
         \end{center}
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
-      \item On what interval is $f$ increasing? \blank{3.2cm}
-      \item Concave up or concave down on the whole picture? \blank{3.2cm}
-      \item List the zeros of $f$: \blank{3.2cm}
-      \item $f(3) = $ \blank{1.6cm} \qquad \textbf{(e)} Range on the window
-            shown: \blank{3cm}
+      \item On what interval is $f$ increasing? \smash{\gradedblank[id=c2a, type=short, points=1, answer={0 < x < 3}, check=text, display={$0 < x < 3$}]{3.2cm}{13pt}}
+      \item Concave up or concave down on the whole picture? \smash{\gradedblank[id=c2b, type=short, points=1, answer={concave down}, check=text, display={Concave down}]{3.2cm}{13pt}}
+      \item List the zeros of $f$: \smash{\gradedblank[id=c2c, type=short, points=1, answer={1, 5}, check=set, display={$x = 1$ and $x = 5$}]{3.2cm}{13pt}}
+      \item $f(3) = $ \smash{\gradedblank[id=c2d, type=short, points=1, answer=2]{1.6cm}{13pt}} \qquad \textbf{(e)} Range on the window
+            shown: \smash{\gradedblank[id=c2e, type=short, points=1, answer={-3 \le y \le 2}, check=text, display={$-3 \le y \le 2$}]{3cm}{13pt}}
     \end{enumerate}
 
   \item A candle is burning down. Its height $H$ (cm) after $t$ hours:
@@ -167,14 +170,14 @@ Show your work in the space provided.
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
       \item Average rate of change of $H$ from $t = 0$ to $t = 4$:
-            \blank{2cm}, with units \blank{4cm}.
+            \smash{\gradedblank[id=c3a1, type=short, points=1, answer=-5]{2cm}{13pt}}, with units \smash{\gradedblank[id=c3a2, type=short, points=1, answer={centimeters per hour}, check=text]{4cm}{13pt}}.
       \item In one sentence, what does that number mean for the candle?
 
-            \writeline
+            \writebox{\gradedblank[id=c3b, type=rubric, points=1, display={Over those first 4 hours the candle lost height at an average of 5 cm an hour.}]{\linewidth}{10pt}}
       \item Is the candle burning down faster or slower as time goes on?
-            \blank{1.8cm} \ Justify with the numbers.
+            \smash{\gradedblank[id=c3c1, type=short, points=1, answer=slower, check=text, display={Slower}]{1.8cm}{13pt}} \ Justify with the numbers.
 
-            \writeline
+            \writebox{\gradedblank[id=c3c2, type=rubric, points=1, display={The drop over each 2-hour block shrinks: $-12$, then $-8$, then $-4$ centimeters.}]{\linewidth}{10pt}}
     \end{enumerate}
 
   \item The table below has equally spaced inputs. Fill in the difference rows,
@@ -187,24 +190,24 @@ Show your work in the space provided.
         \hline
         $x$    & $0$ & $1$ & $2$ & $3$ & $4$ \\ \hline
         $h(x)$ & $1$ & $4$ & $13$ & $28$ & $49$ \\ \hline
-        1st differences & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\ \hline
-        2nd differences & --- & --- & \blank{1cm} & \blank{1cm} & \blank{1cm} \\ \hline
+        1st differences & --- & \smash{\gradedblank[id=c4a1, type=short, points=0.5, answer=3]{1cm}{13pt}} & \smash{\gradedblank[id=c4a2, type=short, points=0.5, answer=9]{1cm}{13pt}} & \smash{\gradedblank[id=c4a3, type=short, points=0.5, answer=15]{1cm}{13pt}} & \smash{\gradedblank[id=c4a4, type=short, points=0.5, answer=21]{1cm}{13pt}} \\ \hline
+        2nd differences & --- & --- & \smash{\gradedblank[id=c4a5, type=short, points=0.5, answer=6]{1cm}{13pt}} & \smash{\gradedblank[id=c4a6, type=short, points=0.5, answer=6]{1cm}{13pt}} & \smash{\gradedblank[id=c4a7, type=short, points=0.5, answer=6]{1cm}{13pt}} \\ \hline
         \end{tabular}
         \end{center}
 
         \vspace{2pt}
-        Function type: \blank{3cm} \qquad Because \blank{6.4cm}
+        Function type: \smash{\gradedblank[id=c4b, type=short, points=0.5, answer=quadratic, check=text]{3cm}{13pt}} \qquad Because \smash{\gradedblank[id=c4c, type=rubric, points=1, display={the 2nd differences are constant}]{6.4cm}{13pt}}
 
   \item The parent function is $f(x) = \sqrt{x}$, with domain $[0,\infty)$ and
         range $[0,\infty)$. Let $g(x) = 4f(x + 3) - 2$.
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
-      \item Write $g$ in terms of $x$: \quad $g(x) = $ \blank{4.4cm}
+      \item Write $g$ in terms of $x$: \quad $g(x) = $ \smash{\gradedblank[id=c5a, type=short, points=1, answer={4\sqrt{x+3}-2}]{4.4cm}{13pt}}
       \item The change \emph{inside} the parentheses moves the graph
-            \blank{3.4cm}
-      \item The changes \emph{outside}, in order: \blank{7cm}
-      \item Domain of $g$: \blank{2.6cm} \qquad Range of $g$: \blank{2.6cm}
-      \item The parent's landmark point $(0,0)$ lands at \blank{2.4cm} on $g$.
+            \smash{\gradedblank[id=c5b, type=short, points=1, answer={3 units left}, check=text, display={$3$ units left}]{3.4cm}{13pt}}
+      \item The changes \emph{outside}, in order: \smash{\gradedblank[id=c5c, type=short, points=1, answer={stretch by 4, then down 2}, check=text, display={stretch by $4$, then down $2$}]{7cm}{13pt}}
+      \item Domain of $g$: \smash{\gradedblank[id=c5d1, type=short, points=0.5, answer={[-3, \infty)}, check=text, display={$[-3,\infty)$}]{2.6cm}{13pt}} \qquad Range of $g$: \smash{\gradedblank[id=c5d2, type=short, points=0.5, answer={[-2, \infty)}, check=text, display={$[-2,\infty)$}]{2.6cm}{13pt}}
+      \item The parent's landmark point $(0,0)$ lands at \smash{\gradedblank[id=c5e, type=short, points=1, answer={(-3, -2)}, check=text, display={$(-3,-2)$}]{2.4cm}{13pt}} on $g$.
     \end{enumerate}
 
   \item Two one-to-one functions are given by the table below.
@@ -221,16 +224,16 @@ Show your work in the space provided.
         \end{center}
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
-      \item The handoff in $f(g(2))$ is \blank{1.4cm}, so $f(g(2)) = $
-            \blank{1.4cm}
-      \item $g(f(4)) = $ \blank{1.4cm}
-      \item $f^{-1}(8) = $ \blank{1.4cm} \quad because $f($ \blank{1.1cm} $) = 8$.
+      \item The handoff in $f(g(2))$ is \smash{\gradedblank[id=c6a1, type=short, points=0.5, answer=1]{1.4cm}{13pt}}, so $f(g(2)) = $
+            \smash{\gradedblank[id=c6a2, type=short, points=0.5, answer=3]{1.4cm}{13pt}}
+      \item $g(f(4)) = $ \smash{\gradedblank[id=c6b, type=short, points=1, answer=1]{1.4cm}{13pt}}
+      \item $f^{-1}(8) = $ \smash{\gradedblank[id=c6c1, type=short, points=0.5, answer=2]{1.4cm}{13pt}} \quad because $f($ \smash{\gradedblank[id=c6c2, type=short, points=0.5, answer=2]{1.1cm}{13pt}} $) = 8$.
       \item How can you tell from the table that $f$ is one-to-one?
 
-            \writeline
+            \writebox{\gradedblank[id=c6d, type=rubric, points=1, display={No output repeats in the $f$ row, so no two inputs share an output.}]{\linewidth}{10pt}}
       \item Why does $g(f(0))$ have no value from this table?
 
-            \writeline
+            \writebox{\gradedblank[id=c6e, type=rubric, points=1, display={$f(0) = 6$, and $6$ is not one of the inputs $g$ accepts here.}]{\linewidth}{10pt}}
     \end{enumerate}
 
   \item Let $f(x) = 2x - 3$ and $g(x) = x^2 + 1$.
@@ -248,13 +251,13 @@ Show your work in the space provided.
 \end{work}
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
-      \item $f(g(2)) = $ \blank{1.8cm} \qquad \textbf{(b)} $g(f(2)) = $
-            \blank{1.8cm}
+      \item $f(g(2)) = $ \smash{\gradedblank[id=c7a, type=short, points=1, answer=7]{1.8cm}{13pt}} \qquad \textbf{(b)} $g(f(2)) = $
+            \smash{\gradedblank[id=c7b, type=short, points=1, answer=2]{1.8cm}{13pt}}
       \setcounter{enumii}{2}
-      \item $(f \circ g)(x) = $ \blank{4.4cm}
+      \item $(f \circ g)(x) = $ \smash{\gradedblank[id=c7c, type=short, points=2, answer=2x^2-1]{4.4cm}{13pt}}
       \item What do (a) and (b) show about the order of a composition?
 
-            \writeline
+            \writebox{\gradedblank[id=c7d, type=rubric, points=1, display={Order matters: $7 \ne 2$, so $f(g(x))$ and $g(f(x))$ are different functions.}]{\linewidth}{10pt}}
     \end{enumerate}
 
   \item Let $f(x) = \dfrac{x + 4}{3}$.
@@ -270,9 +273,9 @@ Show your work in the space provided.
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
       \item Find $f^{-1}$ by swapping and solving: \quad $f^{-1}(x) = $
-            \blank{3.4cm}
-      \item Verify: \quad $f\!\left(f^{-1}(x)\right) = $ \blank{3.4cm}
-      \item $f(11) = 5$, so $f^{-1}(5) = $ \blank{1.6cm}
+            \smash{\gradedblank[id=c8a, type=short, points=2, answer=3x-4]{3.4cm}{13pt}}
+      \item Verify: \quad $f\!\left(f^{-1}(x)\right) = $ \smash{\gradedblank[id=c8b, type=short, points=2, answer=x]{3.4cm}{13pt}}
+      \item $f(11) = 5$, so $f^{-1}(5) = $ \smash{\gradedblank[id=c8c, type=short, points=1, answer=11]{1.6cm}{13pt}}
     \end{enumerate}
 
 \end{enumerate}
@@ -301,21 +304,21 @@ Explain your reasoning in full sentences.
 
     \begin{enumerate}[label=(\alph*), itemsep=3pt]
       \item Which quantity is the \emph{question} the model answers --- its
-            input? \blank{4.4cm}
-      \item The side parallel to the river has length \blank{2.4cm}, so
-            $A(x) = $ \blank{4cm}
+            input? \smash{\gradedblank[id=d1a, type=short, points=1, answer={x, the perpendicular side}, check=text, display={$x$, the perpendicular side}]{4.4cm}{13pt}}
+      \item The side parallel to the river has length \smash{\gradedblank[id=d1b1, type=short, points=1, answer=100-2x]{2.4cm}{13pt}}, so
+            $A(x) = $ \smash{\gradedblank[id=d1b2, type=short, points=1, answer=100x-2x^2]{4cm}{13pt}}
       \item What type of function is $A$, and how do you know?
 
-            \writeline
-      \item Domain the context forces: \blank{1.4cm} $< x <$ \blank{1.4cm}
+            \writebox{\gradedblank[id=d1c, type=rubric, points=1, display={Quadratic: the highest power of $x$ is $2$, so second differences are constant.}]{\linewidth}{10pt}}
+      \item Domain the context forces: \smash{\gradedblank[id=d1d1, type=short, points=0.5, answer=0]{1.4cm}{13pt}} $< x <$ \smash{\gradedblank[id=d1d2, type=short, points=0.5, answer=50]{1.4cm}{13pt}}
             \quad Why?
 
-            \writeline
+            \writebox{\gradedblank[id=d1d3, type=rubric, points=1, display={A side must be positive, and the river side $100 - 2x$ must be positive too.}]{\linewidth}{10pt}}
       \item Average rate of change of $A$ from $x = 10$ to $x = 20$:
-            \blank{1.8cm}, with units \blank{4.4cm}.
+            \smash{\gradedblank[id=d1e1, type=short, points=1, answer=40]{1.8cm}{13pt}}, with units \smash{\gradedblank[id=d1e2, type=short, points=1, answer={ft^2 per foot of x}, check=text, display={ft$^2$ per foot of $x$}]{4.4cm}{13pt}}.
       \item State one assumption this model rests on.
 
-            \writeline
+            \writebox{\gradedblank[id=d1f, type=rubric, points=1, display={No fence runs along the river, and none is lost to a gate or an overlap.}]{\linewidth}{10pt}}
     \end{enumerate}
 
   \item Let $f(x) = x^2 - 4$ with domain all real numbers.
@@ -324,17 +327,17 @@ Explain your reasoning in full sentences.
       \item Explain why $f$ has no inverse function on that domain. Give a
             counterexample pair of inputs.
 
-            \writeline
-      \item Give a domain restriction that fixes the problem: \blank{3cm}
-            \quad Then $f^{-1}(x) = $ \blank{3cm}
-      \item Domain of that inverse: \blank{2.6cm} \qquad Range:
-            \blank{2.6cm}
+            \writebox{\gradedblank[id=d2a, type=rubric, points=2, display={Not one-to-one: $f(3) = f(-3) = 5$, so reversing sends $5$ to two outputs.}]{\linewidth}{10pt}}
+      \item Give a domain restriction that fixes the problem: \smash{\gradedblank[id=d2b1, type=short, points=1, answer={x \ge 0}, check=text, display={$x \ge 0$}]{3cm}{13pt}}
+            \quad Then $f^{-1}(x) = $ \smash{\gradedblank[id=d2b2, type=short, points=1, answer={\sqrt{x+4}}]{3cm}{13pt}}
+      \item Domain of that inverse: \smash{\gradedblank[id=d2c1, type=short, points=1, answer={[-4, \infty)}, check=text, display={$[-4,\infty)$}]{2.6cm}{13pt}} \qquad Range:
+            \smash{\gradedblank[id=d2c2, type=short, points=1, answer={[0, \infty)}, check=text, display={$[0,\infty)$}]{2.6cm}{13pt}}
       \item Explain how the graph of a function and the graph of its inverse are
             related, and why.
 
-            \writeline
+            \writegap
 
-            \writeline
+            \writebox{\gradedblank[id=d2d, type=rubric, points=3, display={They are reflections of each other over the line $y = x$. The inverse trades input for output, so $(a,b)$ on $f$ becomes $(b,a)$ on $f^{-1}$.}]{\linewidth}{25pt}}
     \end{enumerate}
 
 \end{enumerate}

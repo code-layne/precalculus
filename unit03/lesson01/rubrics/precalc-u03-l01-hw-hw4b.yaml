@@ -1,0 +1,17 @@
+# Rubric for homework item 4(b) (Unit 3, Lesson 3.1). manifest.json points here
+# as rubrics/precalc-u03-l01-hw-hw4b.yaml, relative to this lesson directory.
+id: hw4b
+points: 2
+task: "Can you write the end behavior of a rational function with a slant asymptote as a single limit value lim r(x) = k for some constant k? Explain."
+criteria:
+  - id: answer
+    points: 1
+    full: "Answers no."
+  - id: reason
+    points: 1
+    full: "Explains that the quotient of leading terms is a non-constant linear expression, so the outputs grow without bound (the limit is plus or minus infinity), not toward a constant."
+examples:
+  - response: "No, because it keeps going up along the slant line forever."
+    scores: {answer: 1, reason: 1}
+  - response: "Yes, k is the slope."
+    scores: {answer: 0, reason: 0}

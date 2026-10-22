@@ -1,0 +1,14 @@
+# Rubric for homework item 6(b) (Unit 4, Lesson 4.1). manifest.json points here
+# as rubrics/precalc-u04-l01-hw-hw6b.yaml, relative to this lesson directory.
+id: hw6b
+points: 1
+task: "Consider the sequence 1, 1, 2, 3, 5, 8, 13, ... Is this sequence geometric? Explain."
+criteria:
+  - id: ratios
+    points: 1
+    full: "Answers no, because the ratios between consecutive terms (1, 2, 1.5, 1.67, 1.6, ...) are not constant."
+examples:
+  - response: "No, because it is not arithmetic."
+    scores: {ratios: 0}
+  - response: "No. 1/1 = 1 but 2/1 = 2, so there is no common ratio."
+    scores: {ratios: 1}

@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u04-l06-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,9 +22,9 @@
         \item Write a model $f(t) = ab^t$ for the amount remaining after $t$ years.
 
               \vspace{0.06in}
-              $a = $ \blank{3cm} \quad $b = $ \blank{3cm} \quad $f(t) = $ \blank{5cm}
+              $a = $ \smash{\gradedblank[id=hw1a1, type=short, points=1, answer={300}]{3cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw1a2, type=short, points=1, answer={0.92}]{3cm}{13pt}} \quad $f(t) = $ \smash{\gradedblank[id=hw1a3, type=short, points=1, answer={300 \cdot (0.92)^t}]{5cm}{13pt}}
 
-        \item Is this growth or decay? How do you know from the value of $b$? \blank{6cm}
+        \item Is this growth or decay? How do you know from the value of $b$? \smash{\gradedblank[id=hw1b, type=rubric, points=2, display={Decay; $b = 0.92 < 1$.}]{6cm}{13pt}}
       \end{enumerate}
 
 \item An exponential function passes through $(2,\,20)$ and $(5,\,540)$. Find $a$ and $b$.
@@ -34,10 +37,10 @@
       Divide to eliminate $a$: \blank{9cm}
 
       \vspace{0.06in}
-      $b = $ \blank{3cm} \quad then $a = $ \blank{4cm}
+      $b = $ \smash{\gradedblank[id=hw2a, type=short, points=2, answer={3}]{3cm}{13pt}} \quad then $a = $ \smash{\gradedblank[id=hw2b, type=short, points=2, answer={\frac{20}{9}}, display={$20/9$}]{4cm}{13pt}}
 
       \vspace{0.04in}
-      Model: $f(x) = $ \blank{7cm}
+      Model: $f(x) = $ \smash{\gradedblank[id=hw2c, type=short, points=1, answer={\frac{20}{9} \cdot 3^x}, display={$(20/9) \cdot 3^x$}]{7cm}{13pt}}
 
 \item A radioactive sample has a half-life of 10 years. Its initial mass is 80 grams.
 
@@ -45,17 +48,18 @@
         \item Write the exponential model $M(t)$ for the mass remaining after $t$ years.
 
               \vspace{0.06in}
-              $M(t) = $ \blank{7cm}
+              $M(t) = $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={80 \cdot (0.5)^{t/10}}]{7cm}{13pt}}
 
         \item Predict the mass after 25 years. Show your work.
 
               \vspace{0.06in}
-              $M(25) = $ \blank{8cm} $\approx$ \blank{2cm} grams
+              $M(25) = $ \blank{8cm} $\approx$ \smash{\gradedblank[id=hw3b, type=short, check=numeric, tolerance=0.05, points=2, answer={14.1}]{2cm}{13pt}} grams
 
         \item Is $t = -5$ a meaningful input in this context? Explain.
 
               \vspace{0.06in}
-              \writeline
+              \writebox{\gradedblank[id=hw3c, type=rubric, points=2,
+  display={No: $t$ is the time elapsed since the start; a negative time has no meaning here.}]{\linewidth}{17pt}}
       \end{enumerate}
 
 \item The function $f(d) = 5 \cdot 3^d$ models a quantity that grows daily, where $d$ is the
@@ -65,17 +69,18 @@
         \item Rewrite $f$ as a function of weeks $w$ (where $d = 7w$).
 
               \vspace{0.06in}
-              $g(w) = $ \blank{8cm}
+              $g(w) = $ \smash{\gradedblank[id=hw4a, type=short, points=2, answer={5 \cdot 2187^w}]{8cm}{13pt}}
 
         \item What does the base of $g(w)$ tell you about the weekly growth of the quantity?
 
               \vspace{0.04in}
-              \writeline
+              \writebox{\gradedblank[id=hw4b, type=rubric, points=1,
+  display={The quantity multiplies by 2187 every week.}]{\linewidth}{15.5pt}}
 
         \item Rewrite $f$ as a function of 2-day periods $n$ (where $d = 2n$).
 
               \vspace{0.06in}
-              $h(n) = $ \blank{8cm} \quad Base: \blank{2cm}
+              $h(n) = $ \smash{\gradedblank[id=hw4c1, type=short, points=1, answer={5 \cdot 9^n}]{8cm}{13pt}} \quad Base: \smash{\gradedblank[id=hw4c2, type=short, points=1, answer={9}]{2cm}{13pt}}
       \end{enumerate}
 
 \item \textbf{(AP-Style Multiple Choice)} A population is modeled by $f(t) = 500 e^{0.04t}$,
@@ -90,7 +95,8 @@
       \end{enumerate}
 
       \vspace{0.06in}
-      Answer: \blank{1.5cm} \quad Reasoning: \writeline
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5a, type=choice, points=1, answer=C]{1.5cm}{13pt}} \quad Reasoning: \vspace{1pt}\smash{\gradedblank[id=hw5b, type=rubric, points=2,
+  display={$e^{0.04} \approx 1.0408$, a growth factor of 1.0408: about $4.08\%$ per year.}]{342pt}{13pt}}\vspace{3pt}
 
 \item \textbf{(Extension)} The table below shows temperature readings (in ${}^\circ$C) at time
       $t$ minutes in a cooling experiment.
@@ -117,16 +123,16 @@
               \renewcommand{\arraystretch}{1.6}
               \begin{tabular}{c|c|c}
               $t$ & $y = T - 25$ & Ratio (successive) \\ \hline
-              0  & \blank{2.5cm} & --- \\
-              5  & \blank{2.5cm} & \blank{2.5cm} \\
-              10 & \blank{2.5cm} & \blank{2.5cm} \\
-              15 & \blank{2.5cm} & \blank{2.5cm} \\
+              0  & \smash{\gradedblank[id=hw6a1, type=short, points=1, answer={55}]{2.5cm}{14pt}} & --- \\
+              5  & \smash{\gradedblank[id=hw6a2, type=short, points=1, answer={30}]{2.5cm}{14pt}} & \smash{\gradedblank[id=hw6r2, type=short, check=numeric, tolerance=0.005, points=1, answer={0.545}, display={$30/55 \approx 0.545$}]{2.5cm}{14pt}} \\
+              10 & \smash{\gradedblank[id=hw6a3, type=short, points=1, answer={17.5}]{2.5cm}{14pt}} & \smash{\gradedblank[id=hw6r3, type=short, check=numeric, tolerance=0.005, points=1, answer={0.583}, display={$17.5/30 \approx 0.583$}]{2.5cm}{14pt}} \\
+              15 & \smash{\gradedblank[id=hw6a4, type=short, points=1, answer={11.25}]{2.5cm}{14pt}} & \smash{\gradedblank[id=hw6r4, type=short, check=numeric, tolerance=0.005, points=1, answer={0.643}, display={$11.25/17.5 \approx 0.643$}]{2.5cm}{14pt}} \\
               \end{tabular}
 
         \item Write an exponential model for $y(t)$, then write the model for $T(t)$.
 
               \vspace{0.06in}
-              $y(t) = $ \blank{5cm} \quad $T(t) = $ \blank{7cm}
+              $y(t) = $ \smash{\gradedblank[id=hw6b1, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5}$}]{5cm}{13pt}} \quad $T(t) = $ \smash{\gradedblank[id=hw6b2, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5} + 25$}]{7cm}{13pt}}
       \end{enumerate}
 
 \end{enumerate}

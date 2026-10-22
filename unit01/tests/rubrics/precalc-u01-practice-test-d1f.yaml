@@ -1,0 +1,14 @@
+# Rubric for practice_test item D1(f) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-d1f.yaml, relative to unit01/tests/.
+id: d1f
+points: 1
+task: "State one assumption this model rests on."
+criteria:
+  - id: assumption
+    points: 1
+    full: "States a reasonable modeling assumption, e.g. no fence runs along the barn; all 60 feet are used; none is lost to a gate or an overlap; the barn side is straight."
+examples:
+  - response: "All 60 feet of fence get used, with no gate."
+    scores: {assumption: 1}
+  - response: "The area is a rectangle."
+    scores: {assumption: 0}

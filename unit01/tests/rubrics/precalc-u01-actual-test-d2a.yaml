@@ -1,0 +1,17 @@
+# Rubric for actual_test item D2(a) (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-d2a.yaml, relative to unit01/tests/.
+id: d2a
+points: 2
+task: "Let f(x) = x^2 - 4 with domain all real numbers. Explain why f has no inverse function on that domain. Give a counterexample pair of inputs."
+criteria:
+  - id: not-one-to-one
+    points: 1
+    full: "Explains that f is not one-to-one, so reversing it would send one input to two outputs (the inverse would not be a function)."
+  - id: counterexample
+    points: 1
+    full: "Gives a valid pair of different inputs with the same output, e.g. f(3) = f(-3) = 5."
+examples:
+  - response: "f(3) = 5 and f(-3) = 5, so the inverse would send 5 to both 3 and -3."
+    scores: {not-one-to-one: 1, counterexample: 1}
+  - response: "It fails the horizontal line test."
+    scores: {not-one-to-one: 1, counterexample: 0}

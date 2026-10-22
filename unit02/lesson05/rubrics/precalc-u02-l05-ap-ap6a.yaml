@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 2, Lesson 2.5). manifest.json points here
+# as rubrics/precalc-u02-l05-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "On which intervals is W increasing? On which is it decreasing?"
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Increasing on (0, 3) and (9, 12); decreasing on (3, 9) (open or closed endpoints accepted), in hours."
+    partial: "Partially correct (1): Decreasing interval correct with one increasing interval missing or wrong; OR all intervals correct in shape but given as depth (y) values instead of times, or with one endpoint misread."
+examples:
+  - response: "Increasing (0, 3) and (9, 12); decreasing (3, 9)."
+    scores: {part: 2}
+  - response: "Increasing (0, 3), decreasing (3, 9)."
+    scores: {part: 1}
+  - response: "Increasing (2, 8), decreasing (8, 2)."
+    scores: {part: 0}

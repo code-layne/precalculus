@@ -1,0 +1,14 @@
+# Rubric for homework item 2c (Unit 5, Lesson 5.2). manifest.json points here
+# as rubrics/precalc-u05-l02-hw-hw2c.yaml, relative to this lesson directory.
+id: hw2c
+points: 1
+task: "Conclusion of problem 2: verify that f(x) = log_5 x and g(x) = 5^x are inverse functions by computing both compositions."
+criteria:
+  - id: conclusion
+    points: 1
+    full: "States that because both compositions f(g(x)) and g(f(x)) equal x, f and g are inverses of each other."
+examples:
+  - response: "They are inverses."
+    scores: {conclusion: 0}
+  - response: "Both compositions give x, so f and g are inverses."
+    scores: {conclusion: 1}

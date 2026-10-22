@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 2, Lesson 2.6). manifest.json points here
+# as rubrics/precalc-u02-l06-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "Find the average rate of change over each of the intervals [0, 1], [1, 2], [2, 3], and [3, 4]. Is the graph of D concave up or concave down on [0, 4]? Explain what this means about downloads."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Rates 7, 5, 3, 1 (thousand downloads per week); concave down because the rates are decreasing; AND explains that downloads are still increasing but more slowly each week."
+    partial: "Partially correct (1): All four rates correct and 'concave down' with no or an incorrect explanation about downloads; OR one rate wrong, with a concavity conclusion and explanation that are correct and consistent."
+examples:
+  - response: "7, 5, 3, 1. Concave down since the rates go down. The app still gains downloads, but slower each week."
+    scores: {part: 2}
+  - response: "7, 5, 3, 1, concave down."
+    scores: {part: 1}
+  - response: "7, 12, 15, 16, concave up because it keeps increasing."
+    scores: {part: 0}

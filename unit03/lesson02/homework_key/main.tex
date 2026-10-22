@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u03-l02-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -20,27 +23,27 @@
               Numerator: $(x-3)(x+3)$.
 
               \vspace{0.06in}
-              Domain restriction(s): \ans{$x = -5$} \qquad Zeros: \ans{$x = 3$ and $x = -3$}
+              Domain restriction(s): \smash{\gradedblank[id=hw1a1, type=short, points=1, answer={x = -5}]{3.5cm}{13pt}} \qquad Zeros: \smash{\gradedblank[id=hw1a2, type=short, check=set, points=1, answer={3, -3}, display={$x = 3$ and $x = -3$}]{4cm}{13pt}}
 
         \item $\displaystyle g(x) = \dfrac{x^2 - 2x - 8}{x^2 - 4} = \dfrac{(x-4)(x+2)}{(x-2)(x+2)}$.
               Domain restrictions: $x = 2$ and $x = -2$.
               Numerator zero $x = 4$ is in the domain; $x = -2$ is a domain restriction (not a zero).
 
               \vspace{0.06in}
-              Domain restriction(s): \ans{$x = 2$ and $x = -2$} \qquad Zeros: \ans{$x = 4$ only}
+              Domain restriction(s): \smash{\gradedblank[id=hw1b1, type=short, check=set, points=1, answer={2, -2}, display={$x = 2$ and $x = -2$}]{3.5cm}{13pt}} \qquad Zeros: \smash{\gradedblank[id=hw1b2, type=short, points=1, answer={x = 4}, display={$x = 4$ only}]{4cm}{13pt}}
 
         \item $\displaystyle h(x) = \dfrac{3x + 6}{x^2 + 1} = \dfrac{3(x+2)}{x^2+1}$.
               $x^2 + 1 > 0$ for all real $x$, so domain is all reals.
 
               \vspace{0.06in}
-              Domain restriction(s): \ans{None} \qquad Zeros: \ans{$x = -2$}
+              Domain restriction(s): \smash{\gradedblank[id=hw1c1, type=short, check=text, points=1, answer={none}, display={None}]{3.5cm}{13pt}} \qquad Zeros: \smash{\gradedblank[id=hw1c2, type=short, points=1, answer={x = -2}]{4cm}{13pt}}
       \end{enumerate}
 
 \item Solve $\displaystyle\frac{x^2 - 1}{x - 3} \geq 0$.
       Numerator: $(x-1)(x+1)$. Critical values: $x = -1, 1, 3$.
 
       \medskip
-      Critical values: \ans{$x = -1$, $x = 1$, $x = 3$}
+      Critical values: \smash{\gradedblank[id=hw2a, type=short, check=set, points=1, answer={-1, 1, 3}, display={$x = -1$, $x = 1$, $x = 3$}]{5cm}{13pt}}\vphantom{\blank{1pt}}
 
       \medskip
       \begin{center}
@@ -49,19 +52,24 @@
       \hline
       \textbf{Interval} & $(-\infty,\,-1)$ & $(-1,\,1)$ & $(1,\,3)$ & $(3,\,\infty)$ \\
       \hline
-      Test value & \ans{$-2$} & \ans{$0$} & \ans{$2$} & \ans{$4$} \\
+      Test value & \smash{\gradedblank[id=hw2b1, type=rubric, points=1, display={$-2$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2b2, type=rubric, points=1, display={$0$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2b3, type=rubric, points=1, display={$2$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2b4, type=rubric, points=1, display={$4$}]{1.5cm}{14pt}} \\
       \hline
-      Sign of $r$ & \ans{$(-)$} & \ans{$(+)$} & \ans{$(-)$} & \ans{$(+)$} \\
+      Sign of $r$ & \smash{\gradedblank[id=hw2c1, type=short, check=text, points=1, answer={(-)}, display={$(-)$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2c2, type=short, check=text, points=1, answer={(+)}, display={$(+)$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2c3, type=short, check=text, points=1, answer={(-)}, display={$(-)$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw2c4, type=short, check=text, points=1, answer={(+)}, display={$(+)$}]{1.5cm}{14pt}} \\
       \hline
       \end{tabular}
       \end{center}
 
       \vspace{0.06in}
-      Solution: \ans{$[-1,\,1]\cup(3,\,\infty)$}
+      Solution: \smash{\gradedblank[id=hw2d, type=short, check=text, points=2, answer={[-1, 1] \cup (3, \infty)}, display={$[-1,\,1]\cup(3,\,\infty)$}]{8cm}{13pt}}
 
       \textit{(Include $x = -1$ and $x = 1$ since $r = 0$ there; exclude $x = 3$ since undefined.)}
 
-\item \ansline{Denominator zeros are NOT zeros of the function because $r$ is undefined there --- the function has no output value. However, the sign of $r(x)$ can change sign as $x$ passes through a denominator zero (the function jumps from one side to the other without ever equaling zero), so these values must still appear as boundaries in the sign chart when solving inequalities.}
+\item
+      \vspace{0.06in}
+      \writegap\\
+      \writegap\\
+      \writebox{\gradedblank[id=hw3, type=rubric, points=2,
+  display={Denominator zeros are not zeros of $r$: $r$ is undefined there, so it has no output. But $r$ can change sign across a denominator zero, so those values are still boundaries on the sign chart.}]{\linewidth}{46pt}}\\
 
 \item Sign chart:
 
@@ -71,19 +79,19 @@
       \hline
       \textbf{Interval} & $(-\infty,\,-3)$ & $(-3,\,1)$ & $(1,\,2)$ & $(2,\,\infty)$ \\
       \hline
-      Sign of $r$ & $(+)$ & \ans{$(-)$} & \ans{$(+)$} & $(+)$ \\
+      Sign of $r$ & $(+)$ & \smash{\gradedblank[id=hw4a, type=short, check=text, points=1, answer={(-)}, display={$(-)$}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw4b, type=short, check=text, points=1, answer={(+)}, display={$(+)$}]{1.5cm}{14pt}} & $(+)$ \\
       \hline
       \end{tabular}
       \end{center}
 
       \vspace{0.06in}
-      Solution of $r(x) < 0$: \ans{$(-3,\,1)$}
+      Solution of $r(x) < 0$: \smash{\gradedblank[id=hw4c, type=short, check=text, points=2, answer={(-3, 1)}, display={$(-3,\,1)$}]{6cm}{13pt}}
 
 \item $r(x) = \dfrac{2x^2 + x - 3}{x - 5} = \dfrac{(2x + 3)(x - 1)}{x - 5}$.
       Numerator zeros: $x = 1$ and $x = -\tfrac{3}{2}$. Domain restriction: $x = 5$.
       Both $x = 1$ and $x = -\tfrac{3}{2}$ are in the domain.
 
-      \ans{(A) and (B)} are both zeros, but since only one answer is expected, the intended answer is \ans{\textbf{(B) $x = 1$}}.
+      \textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.42in}{13pt}} (B) $x = 1$. (A) is also a zero; (B) is the intended answer.
 
       \textit{Note to teacher: $2(1)^2 + 1 - 3 = 0$ and $1 \ne 5$, so $x = 1$ is a zero.
       Also $x = -3/2$ satisfies $2(9/4) - 3/2 - 3 = 9/2 - 3/2 - 6/2 = 0$, so (A) is also a zero.

@@ -1,0 +1,17 @@
+# Rubric for homework item 3(c) (Unit 3, Lesson 3.4). manifest.json points here
+# as rubrics/precalc-u03-l04-hw-hw3c.yaml, relative to this lesson directory.
+id: hw3c
+points: 2
+task: "r has a hole at x = 3 with lim r(x) = 5 as x -> 3. Is r(3) defined? Circle Yes / No and explain briefly."
+criteria:
+  - id: answer
+    points: 1
+    full: "Answers No (a circled No on the page, or 'no'/'undefined' written in the box)."
+  - id: reason
+    points: 1
+    full: "Explains that a hole means x = 3 is not in the domain (the function is undefined there; a removable discontinuity), even though the limit exists."
+examples:
+  - response: "No, because there's a hole at x = 3."
+    scores: {answer: 1, reason: 1}
+  - response: "Yes, it equals 5."
+    scores: {answer: 0, reason: 0}

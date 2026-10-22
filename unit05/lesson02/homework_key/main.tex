@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l02-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,7 +22,7 @@
   \item Write the inverse function $f(x)$.
 
   \vspace{4pt}
-  $f(x) = $ \ans{$\log_6 x$}
+  $f(x) = $ \smash{\gradedblank[id=hw1a, type=short, points=1, answer={\log_6 x}]{4cm}{13pt}}
 
   \item Complete the table and inverse pairs.
 
@@ -31,11 +34,11 @@
   \rowcolor{sky}
   $x$ & $g(x) = 6^x$ & Point on $f$: $(g(x),\; x)$ \\
   \hline
-  $0$ & \ans{1}  & \ans{$(1,\;0)$} \\
+  $0$ & \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={1}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b2, type=short, check=text, points=1, answer={(1, 0)}, display={$(1,\;0)$}]{3cm}{14pt}} \\
   \hline
-  $1$ & \ans{6}  & \ans{$(6,\;1)$} \\
+  $1$ & \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={6}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b4, type=short, check=text, points=1, answer={(6, 1)}, display={$(6,\;1)$}]{3cm}{14pt}} \\
   \hline
-  $2$ & \ans{36} & \ans{$(36,\;2)$} \\
+  $2$ & \smash{\gradedblank[id=hw1b5, type=short, points=1, answer={36}]{1.5cm}{14pt}} & \smash{\gradedblank[id=hw1b6, type=short, check=text, points=1, answer={(36, 2)}, display={$(36,\;2)$}]{3cm}{14pt}} \\
   \hline
   \end{tabular}
   \end{center}
@@ -44,46 +47,46 @@
 \item Verify $f(x) = \log_5 x$ and $g(x) = 5^x$ are inverses.
 
 \vspace{4pt}
-$f(g(x)) = \log_5(5^x) = $ \ans{$x$}
+$f(g(x)) = \log_5(5^x) = $ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={x}]{3cm}{13pt}}
 
 \vspace{6pt}
-$g(f(x)) = 5^{\log_5 x} = $ \ans{$x$}
+$g(f(x)) = 5^{\log_5 x} = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={x}]{3cm}{13pt}}
 
 \vspace{4pt}
-Conclusion: \ansline{Since both compositions equal $x$, the functions $f$ and $g$ are inverses
-of each other.}
+Conclusion: \writebox{\smash{\gradedblank[id=hw2c, type=rubric, points=1,
+  display={Both compositions equal $x$, so $f$ and $g$ are inverses.}]{431pt}{13pt}}}
 
 \item Algae model $A(t) = 10^t$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $t(A) = $ \ans{$\log_{10} A$}
+  \item $t(A) = $ \smash{\gradedblank[id=hw3a, type=short, points=1, answer={\log_{10} A}]{4cm}{13pt}}
 
-  \item $t(1000) = \log_{10} 1000 = $ \ans{3}
+  \item $t(1000) = \log_{10} 1000 = $ \smash{\gradedblank[id=hw3b1, type=short, points=1, answer={3}]{3cm}{13pt}}
 
   \vspace{4pt}
-  In context: \ansline{After 3 days, the algae covers 1000 cm$^2$; equivalently, it takes 3
-  days to reach an area of 1000 cm$^2$.}
+  In context: \writebox{\smash{\gradedblank[id=hw3b2, type=rubric, points=1,
+  display={After 3 days the algae covers 1000 cm$^2$.}]{419pt}{13pt}}}
 \end{enumerate}
 
 \item \textbf{Conceptual.}
 
-\ansline{For $g(x) = b^x$: as $x$ increases additively (by equal amounts), the output
-multiplies by $b$ each time (multiplicative growth). For $f(x) = \log_b x$: as $x$
-multiplies by $b$ (multiplicative input change), the output increases by 1 (additive growth).
-The two patterns are exact ``reverses'' of each other because $f$ and $g$ are inverse
-functions --- the roles of input and output are swapped.}
+\writegap\\
+\writegap\\
+\writebox{\gradedblank[id=hw4, type=rubric, points=2,
+  display={Exponential: adding to the input multiplies the output by $b$. Logarithm: multiplying the input by $b$ adds 1 to the output. Inverses swap inputs and outputs, so the patterns are reversed.}]{\linewidth}{41pt}}\\
 
 \item Let $h(x) = 2\log_3 x$.
 
 \begin{enumerate}[leftmargin=1.5em, itemsep=6pt, label=\alph*.]
-  \item $b = $ \ans{3} \qquad $a = $ \ans{2}
+  \item $b = $ \smash{\gradedblank[id=hw5a1, type=short, points=1, answer={3}]{2cm}{13pt}} \qquad $a = $ \smash{\gradedblank[id=hw5a2, type=short, points=1, answer={2}]{2cm}{13pt}}
 
-  \item $h(9) = 2\log_3 9 = 2 \cdot 2 = $ \ans{4} \qquad
-        $h(27) = 2\log_3 27 = 2 \cdot 3 = $ \ans{6}
+  \item $h(9) = 2\log_3 9 = 2 \cdot 2 = $ \smash{\gradedblank[id=hw5b1, type=short, points=1, answer={4}]{3cm}{13pt}} \qquad
+        $h(27) = 2\log_3 27 = 2 \cdot 3 = $ \smash{\gradedblank[id=hw5b2, type=short, points=1, answer={6}]{3cm}{13pt}}
 
-  \item \ansline{Every output of $h(x)$ is exactly twice the output of $\log_3 x$ for the
-        same input. The vertical dilation by 2 stretches the outputs; the additive growth
-        rate doubles (increases by 2 each time $x$ triples).}
+  \item Compare the outputs of $h(x)$ and $\log_3 x$; describe the dilation.
+
+  \writebox{\smash{\gradedblank[id=hw5c, type=rubric, points=2,
+  display={Each output of $h$ is twice that of $\log_3 x$: a vertical stretch by 2.}]{\linewidth}{13pt}}}
 \end{enumerate}
 
 \item \textbf{AP-style MC.}
@@ -92,7 +95,7 @@ functions --- the roles of input and output are swapped.}
   \item $g(x) = x^4$
   \item $g(x) = 4x$
   \item $g(x) = 4^x$ \quad \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
-  \item $g(x) = \log x$
+  \item $g(x) = \log x$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=C]{0.42in}{13pt}}
 \end{enumerate}
 
 \begin{teachernote}

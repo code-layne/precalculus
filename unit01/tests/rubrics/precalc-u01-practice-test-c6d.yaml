@@ -1,0 +1,14 @@
+# Rubric for practice_test item C6(d) (Unit 1, Practice Test). manifest.json points here
+# as rubrics/precalc-u01-practice-test-c6d.yaml, relative to unit01/tests/.
+id: c6d
+points: 1
+task: "How can you tell from the table that f is one-to-one?"
+criteria:
+  - id: no-repeat
+    points: 1
+    full: "No output repeats in the f row (5, 2, 7, 1, 3 are all different), so no two inputs share an output."
+examples:
+  - response: "All the f(x) values are different."
+    scores: {no-repeat: 1}
+  - response: "Each x has one f(x)."
+    scores: {no-repeat: 0}

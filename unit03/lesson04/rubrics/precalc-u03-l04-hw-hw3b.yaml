@@ -1,0 +1,17 @@
+# Rubric for homework item 3(b) (Unit 3, Lesson 3.4). manifest.json points here
+# as rubrics/precalc-u03-l04-hw-hw3b.yaml, relative to this lesson directory.
+id: hw3b
+points: 2
+task: "r has a hole at x = 3 with lim r(x) = 5 as x -> 3. Explain in a complete sentence what this limit statement means in the context of the graph of r."
+criteria:
+  - id: approach
+    points: 1
+    full: "Says that as x gets close to 3 (from either side), the outputs r(x) get close to 5."
+  - id: missing-point
+    points: 1
+    full: "Connects it to the graph: the graph heads toward the point (3, 5), but that point is missing (an open circle / hole)."
+examples:
+  - response: "As x approaches 3 the y-values approach 5, but there is an open circle at (3, 5)."
+    scores: {approach: 1, missing-point: 1}
+  - response: "r(3) = 5"
+    scores: {approach: 0, missing-point: 0}

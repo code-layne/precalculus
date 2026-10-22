@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 2, Lesson 2.6). manifest.json points here
+# as rubrics/precalc-u02-l06-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Find the average rate of change of D over 0 <= t <= 4. Interpret your answer in the context of the problem, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): (D(4) - D(0))/(4 - 0) = (16 - 0)/4 = 4, AND interprets in context with units: over the first four weeks, downloads grew by an average of 4 thousand downloads per week."
+    partial: "Partially correct (1): The value 4 with no or an incomplete interpretation (missing 'thousand', 'per week', or 'on average'); OR a correct interpretation of an incorrect value that follows from one arithmetic error."
+examples:
+  - response: "(16 - 0)/(4 - 0) = 4. Downloads increased by 4 thousand per week on average over the first 4 weeks."
+    scores: {part: 2}
+  - response: "4 downloads per week"
+    scores: {part: 1}
+  - response: "16"
+    scores: {part: 0}

@@ -1,0 +1,14 @@
+# Rubric for actual_test item C3(c) justification (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-c3c2.yaml, relative to unit01/tests/.
+id: c3c2
+points: 1
+task: "Is the candle burning down faster or slower as time goes on? Justify with the numbers."
+criteria:
+  - id: numbers
+    points: 1
+    full: "Justifies 'slower' with the table: the drop over each 2-hour block shrinks, -12, then -8, then -4 centimeters (or equivalent rates -6, -4, -2 cm/hr)."
+examples:
+  - response: "It drops 12, then 8, then 4 cm, so it burns down less each time."
+    scores: {numbers: 1}
+  - response: "Because the height keeps going down."
+    scores: {numbers: 0}

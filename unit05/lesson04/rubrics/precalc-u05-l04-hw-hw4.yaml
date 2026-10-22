@@ -1,0 +1,17 @@
+# Rubric for homework item 4 (Unit 5, Lesson 5.4). manifest.json points here
+# as rubrics/precalc-u05-l04-hw-hw4.yaml, relative to this lesson directory.
+id: hw4
+points: 2
+task: "Use the change-of-base formula to show that log_3(x) = log_10(x)/log_10(3). Explain why this means log_3(x) is a vertical dilation of log_10(x)."
+criteria:
+  - id: change-of-base
+    points: 1
+    full: "Applies change of base to write log_3(x) = log_10(x)/log_10(3) = (1/log_10(3)) * log_10(x)."
+  - id: dilation
+    points: 1
+    full: "Explains that this multiplies every output of log_10(x) by the constant 1/log_10(3) (about 2.096), which is a vertical dilation."
+examples:
+  - response: "log_3 x = log x / log 3 by change of base."
+    scores: {change-of-base: 1, dilation: 0}
+  - response: "log_3 x = log x / log 3 = (1/log 3) log x, so all outputs of log x are multiplied by about 2.1, which is a vertical stretch."
+    scores: {change-of-base: 1, dilation: 1}

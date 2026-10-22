@@ -1,0 +1,14 @@
+# Rubric for homework item 1(c), numerator check (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-hw-hw1c2.yaml, relative to this lesson directory.
+id: hw1c2
+points: 1
+task: "For h(x) = 5/((x - 1)(x + 4)), check the numerator at each zero of the denominator (x = 1 and x = -4)."
+criteria:
+  - id: nonzero
+    points: 1
+    full: "States that the numerator is the constant 5, which is nonzero at both x = 1 and x = -4."
+examples:
+  - response: "5 ≠ 0 at both"
+    scores: {nonzero: 1}
+  - response: "0"
+    scores: {nonzero: 0}

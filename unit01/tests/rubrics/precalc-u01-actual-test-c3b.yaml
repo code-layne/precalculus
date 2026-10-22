@@ -1,0 +1,14 @@
+# Rubric for actual_test item C3(b) (Unit 1, Unit Test). manifest.json points here
+# as rubrics/precalc-u01-actual-test-c3b.yaml, relative to unit01/tests/.
+id: c3b
+points: 1
+task: "In one sentence, what does that number (the average rate of change of H from t = 0 to t = 4, -5 centimeters per hour) mean for the candle?"
+criteria:
+  - id: meaning
+    points: 1
+    full: "Interprets -5 in context: over the first 4 hours the candle lost height at an average of 5 cm per hour (mentions the time interval or 'on average', the amount 5, and centimeters per hour / burning down)."
+examples:
+  - response: "On average the candle got 5 cm shorter each hour during the first 4 hours."
+    scores: {meaning: 1}
+  - response: "The candle is 5 cm tall."
+    scores: {meaning: 0}

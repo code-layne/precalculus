@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 1, Lesson 1.2). manifest.json points here
+# as rubrics/precalc-u01-l02-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "The shop's profit function is P = R - C. Using the table, between which two consecutive x-values in the table does P first become positive? Justify your answer with values."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Between x = 5 and x = 10, justified with values: P(5) = -45 (still negative) and P(10) = 30 (positive)."
+    partial: "Partially correct (1): Names the interval between 5 and 10 without supporting values, or with only one of P(5), P(10); OR computes the P values correctly but names the wrong interval."
+examples:
+  - response: "P(5) = 90 - 135 = -45 and P(10) = 180 - 150 = 30, so between 5 and 10 bikes."
+    scores: {part: 2}
+  - response: "Between 5 and 10."
+    scores: {part: 1}
+  - response: "Between 0 and 5, because R starts going up."
+    scores: {part: 0}

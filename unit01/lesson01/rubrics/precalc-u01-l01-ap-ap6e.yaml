@@ -1,0 +1,17 @@
+# Rubric for ap_practice item 6(e) (Unit 1, Lesson 1.1). manifest.json points here
+# as rubrics/precalc-u01-l01-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "The company adds a flat $25 charge for any package over 10 pounds, up to a 50-pound limit. Write the third rule, with its condition, as it would appear in C."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Writes the rule 25 with the condition 10 < w <= 50."
+    partial: "Partially correct (1): Correct rule with one endpoint error in the condition (e.g. 10 <= w <= 50 or 10 < w < 50), or the correct condition with the rule written as 6 + 25 or 25w."
+examples:
+  - response: "25, 10 < w <= 50"
+    scores: {part: 2}
+  - response: "25 for w > 10"
+    scores: {part: 1}

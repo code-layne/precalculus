@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(d) (Unit 2, Lesson 2.6). manifest.json points here
+# as rubrics/precalc-u02-l06-ap-ap6d.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6d
+points: 2
+task: "A manager says, \"Downloads went from 0 to 16 thousand, so the average rate of change over the four weeks is 16.\" Explain the manager's mistake."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Explains that 16 thousand is the total change in downloads, not a rate: the manager did not divide by the change in time (4 weeks); the average rate is 16/4 = 4 thousand downloads per week."
+    partial: "Partially correct (1): Says the manager forgot to divide by the time with no correct rate given; OR gives the correct rate (4 thousand per week) without identifying the mistake."
+examples:
+  - response: "16 thousand is how much downloads changed, not a rate. You have to divide by 4 weeks: 4 thousand per week."
+    scores: {part: 2}
+  - response: "The average rate is 4."
+    scores: {part: 1}
+  - response: "The manager is right."
+    scores: {part: 0}

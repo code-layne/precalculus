@@ -1,0 +1,17 @@
+# Rubric for homework item 3 (Unit 3, Lesson 3.1). manifest.json points here
+# as rubrics/precalc-u03-l01-hw-hw3.yaml, relative to this lesson directory.
+id: hw3
+points: 2
+task: "A rational function r satisfies lim r(x) = 0 as x -> infinity. What can you conclude about the degrees of the numerator and denominator? Explain your reasoning."
+criteria:
+  - id: degrees
+    points: 1
+    full: "Concludes the degree of the numerator is strictly less than the degree of the denominator."
+  - id: reason
+    points: 1
+    full: "Explains that the denominator dominates for large x, so the quotient of leading terms approaches 0 (a horizontal asymptote at y = 0)."
+examples:
+  - response: "The bottom has a bigger degree."
+    scores: {degrees: 1, reason: 0}
+  - response: "The degrees are equal so it goes to 0."
+    scores: {degrees: 0, reason: 0}

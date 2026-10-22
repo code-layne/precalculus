@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l01-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -22,10 +25,10 @@ HA at $y = k$, slant asymptote, or polynomial end behavior) and write both limit
 \textbf{Function} & \textbf{End Behavior Type} &
 $\displaystyle\lim_{x\to\infty}$ & $\displaystyle\lim_{x\to -\infty}$ \\
 \hline
-$\dfrac{4x - 1}{2x + 3}$           & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{x^2 + 1}{x^3 - 8}$         & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{-6x^3}{2x^3 + x}$          & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
-$\dfrac{x^4 - x}{x^2 + 1}$         & \blank{2.8cm} & \blank{2.5cm} & \blank{2.5cm} \\
+$\dfrac{4x - 1}{2x + 3}$           & \smash{\gradedblank[id=hw1a1, type=short, check=text, points=1, answer={HA at y = 2}]{2.8cm}{16pt}} & \smash{\gradedblank[id=hw1a2, type=short, points=1, answer={2}]{2.5cm}{16pt}} & \smash{\gradedblank[id=hw1a3, type=short, points=1, answer={2}]{2.5cm}{16pt}} \\
+$\dfrac{x^2 + 1}{x^3 - 8}$         & \smash{\gradedblank[id=hw1b1, type=short, check=text, points=1, answer={HA at y = 0}]{2.8cm}{16pt}} & \smash{\gradedblank[id=hw1b2, type=short, points=1, answer={0}]{2.5cm}{16pt}} & \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={0}]{2.5cm}{16pt}} \\
+$\dfrac{-6x^3}{2x^3 + x}$          & \smash{\gradedblank[id=hw1c1, type=short, check=text, points=1, answer={HA at y = -3}]{2.8cm}{16pt}} & \smash{\gradedblank[id=hw1c2, type=short, points=1, answer={-3}]{2.5cm}{16pt}} & \smash{\gradedblank[id=hw1c3, type=short, points=1, answer={-3}]{2.5cm}{16pt}} \\
+$\dfrac{x^4 - x}{x^2 + 1}$         & \smash{\gradedblank[id=hw1d1, type=short, check=text, points=1, answer={polynomial end behavior}]{2.8cm}{16pt}} & \smash{\gradedblank[id=hw1d2, type=short, points=1, answer={\infty}]{2.5cm}{16pt}} & \smash{\gradedblank[id=hw1d3, type=short, points=1, answer={\infty}]{2.5cm}{16pt}} \\
 \end{tabular}
 
 \item Explain why $\displaystyle\lim_{x \to \infty} \frac{7x^3 + 2}{x^3 - 1} = 7$.
@@ -33,17 +36,19 @@ Your explanation should reference the idea of the quotient of leading terms and
 why the other terms become negligible.
 
 \vspace{0.28in}
-\writeline\\[4pt]
-\writeline\\[4pt]
-\writeline
+\writegap\\[4pt]
+\writegap\\[4pt]
+\writebox{\gradedblank[id=hw2, type=rubric, points=2,
+  display={For large $x$, $7x^3$ dominates the numerator and $x^3$ the denominator; the other terms are negligible. The quotient of leading terms is $7x^3/x^3 = 7$, so the outputs approach 7.}]{\linewidth}{56pt}}
 
 \item A rational function $r$ satisfies $\displaystyle\lim_{x \to \infty} r(x) = 0$.
 What can you conclude about the degrees of the numerator and denominator?
 Explain your reasoning.
 
 \vspace{0.28in}
-\writeline\\[4pt]
-\writeline
+\writegap\\[4pt]
+\writebox{\gradedblank[id=hw3, type=rubric, points=2,
+  display={The numerator's degree is strictly less than the denominator's: the denominator dominates, so the quotient of leading terms approaches 0.}]{\linewidth}{38pt}}
 
 \item A rational function has a slant asymptote.
 
@@ -51,15 +56,17 @@ Explain your reasoning.
   \item What must be true about the degrees of the numerator and denominator?
 
         \vspace{0.1in}
-        \writeline
+        \writebox{\gradedblank[id=hw4a, type=rubric, points=1,
+  display={deg numerator $=$ deg denominator $+ 1$.}]{\linewidth}{16pt}}
 
   \item Can you write the end behavior of a rational function with a slant asymptote
         as a single limit value (e.g., $\lim_{x\to\infty} r(x) = k$ for some constant $k$)?
         Explain.
 
         \vspace{0.1in}
-        \writeline\\[4pt]
-        \writeline
+        \writegap\\[4pt]
+        \writebox{\gradedblank[id=hw4b, type=rubric, points=2,
+  display={No. The quotient of leading terms is a non-constant linear expression, so the outputs grow without bound: $\lim_{x\to\infty} r(x) = \pm\infty$.}]{\linewidth}{34pt}}
 \end{enumerate}
 
 \item \textbf{AP-Style Multiple Choice.} Which of the following rational functions has a
@@ -69,7 +76,7 @@ horizontal asymptote at $y = \dfrac{3}{2}$?
   \item $\dfrac{3x + 1}{2x^2 - 5}$
   \item $\dfrac{3x^2 - 1}{2x^2 + 7}$
   \item $\dfrac{2x^2 + 1}{3x^2 - 4}$
-  \item $\dfrac{3x^3}{2x^2 + 1}$
+  \item $\dfrac{3x^3}{2x^2 + 1}$ \hfill\textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=B]{0.42in}{13pt}}
 \end{enumerate}
 
 \end{enumerate}

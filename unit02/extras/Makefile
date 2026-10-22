@@ -5,7 +5,9 @@
 
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
-TEXINPUTS    := $(PROJECT_ROOT)/shared//:
+# The course packages (recursive), then the math-shared submodule for grading.sty
+# (NON-recursive: math-shared/examples holds main.tex files; see shared/lesson.mk).
+TEXINPUTS    := $(PROJECT_ROOT)/shared//:$(PROJECT_ROOT)/math-shared:
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/extras
 LATEXFLAGS   := -xelatex -interaction=nonstopmode -halt-on-error -file-line-error
 

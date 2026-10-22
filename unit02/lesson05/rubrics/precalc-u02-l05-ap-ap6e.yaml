@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(e) (Unit 2, Lesson 2.5). manifest.json points here
+# as rubrics/precalc-u02-l05-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "At what time is the water level falling fastest? Use concavity and the point of inflection to explain."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): At t = 6 (6 a.m.), AND explains with concavity: on (3, 6) the fall speeds up (concave down), on (6, 9) it slows down (concave up), so the fall is fastest at the inflection point (6, 5) where concavity switches."
+    partial: "Partially correct (1): t = 6 with an explanation that names the inflection point but not the change in concavity (or vice versa); OR a correct concavity argument with the time misread (e.g. gives the point (6, 5) as '5 a.m.')."
+examples:
+  - response: "At 6 a.m. The graph is concave down on (3, 6) so it is falling faster and faster, and concave up on (6, 9) so the fall slows. The inflection point (6, 5) is where it falls fastest."
+    scores: {part: 2}
+  - response: "At t = 6, the inflection point."
+    scores: {part: 1}
+  - response: "At t = 9, the low tide."
+    scores: {part: 0}

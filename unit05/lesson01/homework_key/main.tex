@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u05-l01-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -17,52 +20,52 @@
 
       \renewcommand{\arraystretch}{1.8}
       \begin{tabular}{@{} l l @{\hspace{2cm}} l l @{}}
-        (a) & $7^2 = 49$ $\;\Rightarrow$ \ans{$\log_7 49 = 2$}    &
-        (b) & $2^{-3} = 1/8$ $\;\Rightarrow$ \ans{$\log_2 (1/8) = -3$} \\
-        (c) & $e^1 = e$ $\;\Rightarrow$ \ans{$\ln e = 1$}    &
-        (d) & $\log_4 64 = 3$ $\;\Rightarrow$ \ans{$4^3 = 64$} \\
-        (e) & $\log_{10} 0.01 = -2$ $\;\Rightarrow$ \ans{$10^{-2} = 0.01$} &
-        (f) & $\ln 1 = 0$ $\;\Rightarrow$ \ans{$e^0 = 1$} \\
+        (a) & $7^2 = 49$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1a, type=short, points=1, answer={\log_7 49 = 2}]{4cm}{13pt}}    &
+        (b) & $2^{-3} = 1/8$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1b, type=short, points=1, answer={\log_2 (1/8) = -3}]{2.2cm}{13pt}} \\
+        (c) & $e^1 = e$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1c, type=short, points=1, answer={\ln e = 1}]{4cm}{13pt}}    &
+        (d) & $\log_4 64 = 3$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1d, type=short, points=1, answer={4^3 = 64}]{2.2cm}{13pt}} \\
+        (e) & $\log_{10} 0.01 = -2$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1e, type=short, points=1, answer={10^{-2} = 0.01}]{4cm}{13pt}} &
+        (f) & $\ln 1 = 0$ $\;\Rightarrow$ \smash{\gradedblank[id=hw1f, type=short, points=1, answer={e^0 = 1}]{2.2cm}{13pt}} \\
       \end{tabular}
 
 \item Evaluate each logarithm exactly. No calculator.
 
       \renewcommand{\arraystretch}{1.6}
       \begin{tabular}{@{} l l @{\hspace{1.5cm}} l l @{\hspace{1.5cm}} l l @{}}
-        (a) & $\log_2 64 = $ \ans{6} &
-        (b) & $\log_5 125 = $ \ans{3} &
-        (c) & $\log_9 3 = $ \ans{$1/2$} \\
-        (d) & $\log_b b^7 = $ \ans{7} &
-        (e) & $\log_{10} 0.001 = $ \ans{$-3$} & & \\
+        (a) & $\log_2 64 = $ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={6}]{2cm}{13pt}} &
+        (b) & $\log_5 125 = $ \smash{\gradedblank[id=hw2b, type=short, points=1, answer={3}]{2cm}{13pt}} &
+        (c) & $\log_9 3 = $ \smash{\gradedblank[id=hw2c, type=short, points=1, answer={1/2}]{2cm}{13pt}} \\
+        (d) & $\log_b b^7 = $ \smash{\gradedblank[id=hw2d, type=short, points=1, answer={7}]{2cm}{13pt}} &
+        (e) & $\log_{10} 0.001 = $ \smash{\gradedblank[id=hw2e, type=short, points=1, answer={-3}]{2cm}{13pt}} & & \\
       \end{tabular}
 
 \item Use a calculator to estimate to 3 decimal places.
 
       \vspace{0.04in}
-      (a) $\log_3 20 \approx $ \ans{2.727} \qquad
-      (b) $\ln 15 \approx $ \ans{2.708} \qquad
-      (c) $\log_7 100 \approx $ \ans{2.366}
+      (a) $\log_3 20 \approx $ \smash{\gradedblank[id=hw3a, type=short, check=numeric, tolerance=0.0005, points=1, answer={2.727}]{3cm}{13pt}} \qquad
+      (b) $\ln 15 \approx $ \smash{\gradedblank[id=hw3b, type=short, check=numeric, tolerance=0.0005, points=1, answer={2.708}]{3cm}{13pt}} \qquad
+      (c) $\log_7 100 \approx $ \smash{\gradedblank[id=hw3c, type=short, check=numeric, tolerance=0.0005, points=1, answer={2.367}]{3cm}{13pt}}
 
 \item Without a calculator, determine between which two consecutive integers each logarithm falls.
 
       \vspace{0.04in}
-      (a) $\log_2 11$: between \ans{3} and \ans{4}
-            \hspace{0.5em} because $2^{\ans{3}} < 11 < 2^{\ans{4}}$
+      (a) $\log_2 11$: between \smash{\gradedblank[id=hw4a1, type=short, points=1, answer={3}]{1cm}{13pt}} and \smash{\gradedblank[id=hw4a2, type=short, points=1, answer={4}]{1cm}{13pt}}
+            \hspace{0.5em} because $2^{\smash{\gradedblank[id=hw4a3, type=short, points=1, answer={3}]{1cm}{13pt}}} < 11 < 2^{\smash{\gradedblank[id=hw4a4, type=short, points=1, answer={4}]{1cm}{13pt}}}$
 
       \vspace{0.06in}
-      (b) $\log_3 50$: between \ans{3} and \ans{4}
-            \hspace{0.5em} because $3^{\ans{3}} < 50 < 3^{\ans{4}}$
+      (b) $\log_3 50$: between \smash{\gradedblank[id=hw4b1, type=short, points=1, answer={3}]{1cm}{13pt}} and \smash{\gradedblank[id=hw4b2, type=short, points=1, answer={4}]{1cm}{13pt}}
+            \hspace{0.5em} because $3^{\smash{\gradedblank[id=hw4b3, type=short, points=1, answer={3}]{1cm}{13pt}}} < 50 < 3^{\smash{\gradedblank[id=hw4b4, type=short, points=1, answer={4}]{1cm}{13pt}}}$
 
       \vspace{0.06in}
-      (c) $\log_{10} 500$: between \ans{2} and \ans{3}
-            \hspace{0.5em} because $10^{\ans{2}} < 500 < 10^{\ans{3}}$
+      (c) $\log_{10} 500$: between \smash{\gradedblank[id=hw4c1, type=short, points=1, answer={2}]{1cm}{13pt}} and \smash{\gradedblank[id=hw4c2, type=short, points=1, answer={3}]{1cm}{13pt}}
+            \hspace{0.5em} because $10^{\smash{\gradedblank[id=hw4c3, type=short, points=1, answer={2}]{1cm}{13pt}}} < 500 < 10^{\smash{\gradedblank[id=hw4c4, type=short, points=1, answer={3}]{1cm}{13pt}}}$
 
 \item The decibel level of a sound is $L = 10\log_{10}(I / I_0)$.
 
       \vspace{0.06in}
-      $I / I_0 = $ \ans{$10^{-5}/10^{-12} = 10^{7}$} \qquad
-      $\log_{10}(I / I_0) = $ \ans{7} \qquad
-      $L = $ \ans{70 dB}
+      $I / I_0 = $ \ans{$10^{-5}/10^{-12} =$} \smash{\gradedblank[id=hw5a, type=short, points=1, answer={10^{7}}]{3cm}{13pt}} \qquad
+      $\log_{10}(I / I_0) = $ \smash{\gradedblank[id=hw5b, type=short, points=1, answer={7}]{3cm}{13pt}} \qquad
+      $L = $ \smash{\gradedblank[id=hw5c, type=short, points=1, display={70 dB}, answer={70}]{3cm}{13pt}}
 
 \item \textbf{(AP-Style Multiple Choice)} Which of the following is equivalent to $\log_b c = 5$?
 
@@ -75,7 +78,7 @@
       \end{enumerate}
 
       \vspace{0.04in}
-      Answer: \ans{(C)} \quad By the definition $\log_b c = 5 \Leftrightarrow b^5 = c$.
+      Answer: \textit{Letter:}~\smash{\gradedblank[id=hw6, type=choice, points=1, answer=C]{1.5cm}{13pt}} \quad By the definition $\log_b c = 5 \Leftrightarrow b^5 = c$.
 
 \end{enumerate}
 
