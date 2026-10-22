@@ -172,6 +172,36 @@ topic is diagnostic, what a wrong answer on it means, and which topics predict t
 context new — `templates/lesson/components.md`), drop the DeltaMath name from cover row 4, and
 say so in Reinforcement & Extension and the `[Homework]` note. Never assume it.
 
+### Graded components
+
+Graded work is scanned and machine-read through math-shared's grading package (the
+`math-shared/` submodule; see its README). **These components carry `\gradedblank` boxes:**
+`ap_practice`, every printed `homework` (not DeltaMath homework, which has no page), and every
+unit test and quiz (`unitNN/tests/*` with its `test_keys/*_key`). Warm-ups, notes, activities,
+exit tickets, slides, covers and unit covers never do. A new component of a graded kind is
+authored graded from the start.
+
+- Load `\usepackage{grading}`, `\gradingassignment{<id>}` and `\gradingcourse{precalculus}` in
+  the blank AND the key; `precalculus-key` switches key mode on by itself. Every `\gradedblank`
+  line is written identically in both, with the key's answer in `answer=` (or `display=`).
+- **Assignment ids:** `precalc-u<NN>-l<NN>-<code>` for a lesson component — `hw` (homework),
+  `ap` (AP Practice), e.g. `precalc-u03-l02-hw`, `precalc-u01-l01-ap`; `precalc-u<NN>-<test name>`
+  for a unit-level test or quiz, the test's own name with dashes, e.g.
+  `precalc-u01-practice-test`, `precalc-u01-pretest-b`. Ids are unique across the course. Item
+  ids follow the problem numbers (`hw2b`, `ap6c`, `c3a`).
+- Box per answer: multiple choice → a `Letter:` box (`type=choice`, 1 pt); a final value or
+  expression → `type=short` (`check=expression`, `numeric` with a tolerance, `set`, or `text`);
+  explain / justify / interpret and AP free response → `type=rubric` with
+  `rubrics/<assignment>-<id>.yaml` in the lesson (unit tests: `unitNN/tests/rubrics/`). AP
+  free-response rubrics score each part essentially / partially correct (2 / 1 / 0).
+- Boxes never move a line: inline blanks become `\smash{\gradedblank…}` of the blank's width; a
+  run of `\writeline` rules becomes `\writegap`s plus a final `\writebox{\gradedblank…}`
+  (`precalculus-article.sty`); a `\writespace{H}{}` holds its box. Work space stays outside the
+  boxes.
+- `make manifest COMP=<dir>` (in the lesson, or `unitNN/tests`) builds both copies and checks
+  that blank and key agree; `make roster-packets COMP=<dir> ROSTER=<roster-map.csv>` prints one
+  personalized copy per student.
+
 ## 3. Where structure comes from
 
 `structure_source` is **`ced`** — the College Board Precalculus CED in `spec/`
