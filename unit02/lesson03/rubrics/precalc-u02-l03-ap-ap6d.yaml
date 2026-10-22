@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(d) (Unit 2, Lesson 2.3). manifest.json points here
+# as rubrics/precalc-u02-l03-ap-ap6d.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6d
+points: 2
+task: "A classmate writes C^-1(50) = 1/C(50) = 1/210. Explain the classmate's mistake."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Explains that the -1 in C^-1 is not an exponent: 1/C(50) is the reciprocal of the cost of 50 cupcakes, while C^-1 undoes C, taking a cost back to a number of cupcakes (C^-1(50) = 10)."
+    partial: "Partially correct (1): Says the -1 is not an exponent / not a reciprocal with no statement of what C^-1 does; OR says C^-1 runs C backward (cost to cupcakes) without identifying the reciprocal error."
+examples:
+  - response: "The classmate treated -1 like an exponent and took a reciprocal. C^-1 goes from a cost back to the number of cupcakes, so C^-1(50) = 10."
+    scores: {part: 2}
+  - response: "The inverse isn't 1 over the function."
+    scores: {part: 1}
+  - response: "They plugged in wrong; C(50) is 204."
+    scores: {part: 0}

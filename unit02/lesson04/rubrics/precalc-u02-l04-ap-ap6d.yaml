@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(d) (Unit 2, Lesson 2.4). manifest.json points here
+# as rubrics/precalc-u02-l04-ap-ap6d.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6d
+points: 2
+task: "A reporter writes: \"The limit is 9, so the game will be 9 months old.\" Explain the reporter's error."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Explains that 9 is an output (thousands of players), not an input (months): the limit describes P(t) approaching 9 thousand players as t (the game's age) increases without bound; t goes to infinity, not to 9."
+    partial: "Partially correct (1): Identifies that 9 is a number of players / an output and not a time, with no statement of what the limit does describe; OR describes the limit correctly without identifying the input/output confusion."
+examples:
+  - response: "9 is the number of players in thousands, not months. As t goes to infinity, P(t) gets close to 9 thousand players."
+    scores: {part: 2}
+  - response: "The 9 is players, not months."
+    scores: {part: 1}
+  - response: "The game will be 9 months old when it reaches 9,000 players."
+    scores: {part: 0}

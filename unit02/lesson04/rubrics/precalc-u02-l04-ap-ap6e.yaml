@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(e) (Unit 2, Lesson 2.4). manifest.json points here
+# as rubrics/precalc-u02-l04-ap-ap6e.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6e
+points: 2
+task: "Will the game ever have exactly 9,000 active players? Use the equation 9 - 8/(t + 1) = 9 to justify your answer."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Answers no, AND justifies with the equation: it reduces to 8/(t + 1) = 0, which has no solution because a fraction with numerator 8 is never 0; so P(t) approaches 9 thousand but never reaches it (9 is not in the range)."
+    partial: "Partially correct (1): Answers no with a justification that only cites the limit or the asymptote, without solving the equation; OR solves to 8/(t + 1) = 0 correctly but draws no or an unclear conclusion."
+examples:
+  - response: "No. 9 - 8/(t+1) = 9 means 8/(t+1) = 0, but 8 divided by anything is never 0. So it never reaches 9,000."
+    scores: {part: 2}
+  - response: "No, because 9 is a horizontal asymptote."
+    scores: {part: 1}
+  - response: "Yes, when t = 9."
+    scores: {part: 0}

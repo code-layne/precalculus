@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(b) (Unit 2, Lesson 2.5). manifest.json points here
+# as rubrics/precalc-u02-l05-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6b
+points: 2
+task: "Give the absolute maximum of W and when it occurs. Interpret it in context, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Absolute maximum 8 feet at t = 3, AND interprets in context: at 3 a.m. the water at the dock reaches its greatest depth, 8 feet."
+    partial: "Partially correct (1): Maximum 8 at t = 3 with no or an incomplete interpretation (no units or no time of day); OR value and time swapped/one of them wrong with a correct in-context sentence for the values given."
+examples:
+  - response: "Max is 8 ft at t = 3. At 3 a.m. the water is deepest, 8 feet."
+    scores: {part: 2}
+  - response: "8 at t = 3"
+    scores: {part: 1}
+  - response: "The maximum is 3."
+    scores: {part: 0}

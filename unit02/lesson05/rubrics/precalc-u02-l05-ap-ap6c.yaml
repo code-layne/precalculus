@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 2, Lesson 2.5). manifest.json points here
+# as rubrics/precalc-u02-l05-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "A dock worker says, \"The low tide is 9.\" Explain what the worker has confused, and state the low tide correctly in context."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Explains that 9 is when the low tide happens (the input, t = 9 hours after midnight), not how low it is, AND states the low tide correctly: 2 feet deep, at 9 a.m."
+    partial: "Partially correct (1): Identifies the input/output confusion but states the low tide incorrectly or without units/time; OR states the low tide correctly (2 feet at 9 a.m.) without explaining the confusion."
+examples:
+  - response: "9 is the time, not the depth. Low tide is 2 feet at 9 a.m."
+    scores: {part: 2}
+  - response: "The worker mixed up the time and the depth."
+    scores: {part: 1}
+  - response: "The low tide is 9 feet at t = 2."
+    scores: {part: 0}
