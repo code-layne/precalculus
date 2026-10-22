@@ -1,0 +1,14 @@
+# Rubric for homework item 1(a), numerator check (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-hw-hw1a2.yaml, relative to this lesson directory.
+id: hw1a2
+points: 1
+task: "For f(x) = (x + 3)/(x^2 - 1), check the numerator at each zero of the denominator (x = 1 and x = -1)."
+criteria:
+  - id: both-nonzero
+    points: 1
+    full: "Evaluates the numerator x + 3 at both denominator zeros and finds it nonzero at each: 4 at x = 1 and 2 at x = -1 (stating 'nonzero at both' with the values, or the values alone, earns the point)."
+examples:
+  - response: "4 ≠ 0, 2 ≠ 0"
+    scores: {both-nonzero: 1}
+  - response: "x = -3"
+    scores: {both-nonzero: 0}

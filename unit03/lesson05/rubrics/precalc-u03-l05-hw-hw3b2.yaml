@@ -1,0 +1,14 @@
+# Rubric for homework item 3(b), explanation (Unit 3, Lesson 3.5). manifest.json points here
+# as rubrics/precalc-u03-l05-hw-hw3b2.yaml, relative to this lesson directory.
+id: hw3b2
+points: 1
+task: "R(x) = (x^2 + x - 6)/(x - 1). Explain in one sentence why y = x + 2 is the slant asymptote."
+criteria:
+  - id: remainder-vanishes
+    points: 1
+    full: "Explains that R(x) = x + 2 + (-4)/(x - 1) and the remainder term -4/(x - 1) approaches 0 as x -> plus or minus infinity, so R(x) approaches the line y = x + 2."
+examples:
+  - response: "Because the remainder part -4/(x-1) goes to 0 when x gets really big, so the graph gets close to x + 2."
+    scores: {remainder-vanishes: 1}
+  - response: "Because the top degree is one more than the bottom."
+    scores: {remainder-vanishes: 0}

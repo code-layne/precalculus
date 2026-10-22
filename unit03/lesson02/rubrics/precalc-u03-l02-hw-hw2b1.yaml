@@ -1,0 +1,14 @@
+# Rubric for homework item 2, sign-chart test value 1 (Unit 3, Lesson 3.2). manifest.json points here
+# as rubrics/precalc-u03-l02-hw-hw2b1.yaml, relative to this lesson directory.
+id: hw2b1
+points: 1
+task: "Solve (x^2 - 1)/(x - 3) >= 0 using a sign chart: choose a test value in the interval (-infinity, -1)."
+criteria:
+  - id: in-interval
+    points: 1
+    full: "Any number strictly inside (-infinity, -1) (the key uses -2). An endpoint or a value outside the interval earns 0."
+examples:
+  - response: "-2"
+    scores: {in-interval: 1}
+  - response: "0"
+    scores: {in-interval: 0}

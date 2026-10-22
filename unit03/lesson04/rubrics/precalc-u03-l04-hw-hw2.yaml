@@ -1,0 +1,17 @@
+# Rubric for homework item 2 (Unit 3, Lesson 3.4). manifest.json points here
+# as rubrics/precalc-u03-l04-hw-hw2.yaml, relative to this lesson directory.
+id: hw2
+points: 2
+task: "In your own words, explain the difference between a hole and a vertical asymptote in terms of the multiplicities m (numerator) and n (denominator) of a shared zero."
+criteria:
+  - id: hole
+    points: 1
+    full: "Says a shared zero gives a hole when m >= n: the factor cancels completely and the function approaches a finite value there."
+  - id: asymptote
+    points: 1
+    full: "Says a shared zero gives a vertical asymptote when m < n: a factor remains in the denominator and the outputs grow without bound."
+examples:
+  - response: "If the top and bottom have the same factor it's a hole, otherwise it's an asymptote."
+    scores: {hole: 0, asymptote: 0}
+  - response: "Hole when m is at least n because it cancels. VA when n is bigger because there's still a zero left on the bottom so it blows up."
+    scores: {hole: 1, asymptote: 1}

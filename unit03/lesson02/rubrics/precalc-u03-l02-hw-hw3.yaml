@@ -1,0 +1,17 @@
+# Rubric for homework item 3 (Unit 3, Lesson 3.2). manifest.json points here
+# as rubrics/precalc-u03-l02-hw-hw3.yaml, relative to this lesson directory.
+id: hw3
+points: 2
+task: "In your own words, explain why the zeros of the denominator of a rational function are not zeros of the function, but they still matter when solving a rational inequality."
+criteria:
+  - id: undefined
+    points: 1
+    full: "Says a denominator zero is not a zero of r because r is undefined there (division by zero, no output value), so r cannot equal 0 there."
+  - id: sign-change
+    points: 1
+    full: "Says r can change sign across a denominator zero, so those x-values must still be boundaries (critical values) on the sign chart, and are always excluded from the solution."
+examples:
+  - response: "You can't divide by zero so the function doesn't exist there."
+    scores: {undefined: 1, sign-change: 0}
+  - response: "They aren't zeros because the bottom is zero, not the top. But the graph can switch from positive to negative there so you still put them on the sign chart."
+    scores: {undefined: 1, sign-change: 1}

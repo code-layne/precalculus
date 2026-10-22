@@ -1,0 +1,17 @@
+# Rubric for homework item 3 (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-hw-hw3.yaml, relative to this lesson directory.
+id: hw3
+points: 2
+task: "Can a rational function have more vertical asymptotes than the degree of its denominator? Explain your reasoning in one or two sentences."
+criteria:
+  - id: answer
+    points: 1
+    full: "Answers no."
+  - id: reason
+    points: 1
+    full: "Explains that each vertical asymptote needs a distinct real zero of the denominator, and a polynomial of degree n has at most n distinct real zeros."
+examples:
+  - response: "No, because the denominator can only have as many zeros as its degree and every asymptote comes from a zero of the denominator."
+    scores: {answer: 1, reason: 1}
+  - response: "No, it can't."
+    scores: {answer: 1, reason: 0}

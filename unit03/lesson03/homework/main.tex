@@ -2,6 +2,9 @@
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l03-hw}
+\gradingcourse{precalculus}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -19,43 +22,44 @@
 \begin{enumerate}[label=(\alph*), itemsep=12pt]
   \item $f(x) = \dfrac{x + 3}{x^2 - 1}$
 
-        Denominator zeros: \blank{4cm} \quad Numerator check: \blank{4cm}
+        Denominator zeros: \smash{\gradedblank[id=hw1a1, type=short, check=set, points=1, answer={1, -1}, display={$x = 1$ and $x = -1$}]{4cm}{11pt}} \quad Numerator check: \smash{\gradedblank[id=hw1a2, type=rubric, points=1, display={$4 \ne 0$, $2 \ne 0$}]{4cm}{11pt}}
 
-        Vertical asymptote(s): \blank{4cm}
+        Vertical asymptote(s): \smash{\gradedblank[id=hw1a3, type=short, check=set, points=1, answer={1, -1}, display={$x = 1$ and $x = -1$}]{4cm}{11pt}}
 
   \item $g(x) = \dfrac{x^2 - 9}{x - 3}$
 
-        Factor the numerator: \blank{4cm}
+        Factor the numerator: \smash{\gradedblank[id=hw1b1, type=short, points=1, answer={(x-3)(x+3)}]{4cm}{11pt}}
 
-        Denominator zero: \blank{2cm} \quad Numerator at that point: \blank{3cm}
+        Denominator zero: \smash{\gradedblank[id=hw1b2, type=short, points=1, answer={x = 3}]{2cm}{11pt}} \quad Numerator at that point: \smash{\gradedblank[id=hw1b3, type=short, points=1, answer={0}, display={$0$ (numerator also zero)}]{3cm}{11pt}}
 
-        Vertical asymptote(s) (if any): \blank{4cm}
+        Vertical asymptote(s) (if any): \smash{\gradedblank[id=hw1b4, type=short, check=text, points=1, answer={none}, display={None (hole at $x=3$)}]{4cm}{11pt}}
 
   \item $h(x) = \dfrac{5}{(x - 1)(x + 4)}$
 
-        Denominator zeros: \blank{3.5cm} \quad Numerator check: \blank{3.5cm}
+        Denominator zeros: \smash{\gradedblank[id=hw1c1, type=short, check=set, points=1, answer={1, -4}, display={$x = 1$ and $x = -4$}]{3.5cm}{11pt}} \quad Numerator check: \smash{\gradedblank[id=hw1c2, type=rubric, points=1, display={$5 \ne 0$ at both}]{3.5cm}{11pt}}
 
-        Vertical asymptote(s): \blank{4cm}
+        Vertical asymptote(s): \smash{\gradedblank[id=hw1c3, type=short, check=set, points=1, answer={1, -4}, display={$x = 1$ and $x = -4$}]{4cm}{11pt}}
 \end{enumerate}
 
 \item \textbf{One-sided limits via sign analysis.} For $r(x) = \dfrac{2}{x + 1}$:
 
 \begin{enumerate}[label=(\alph*), itemsep=6pt]
-  \item The vertical asymptote is at $x =$ \blank{1.5cm}.
+  \item The vertical asymptote is at $x =$ \smash{\gradedblank[id=hw2a, type=short, points=1, answer={-1}]{1.5cm}{13pt}}.
 
-  \item When $x$ is slightly greater than $-1$, $(x + 1)$ is \blank{2cm} (positive/negative),
-        so $r(x)$ is \blank{2cm}. Therefore $\displaystyle\lim_{x \to -1^+} r(x) =$ \blank{2cm}.
+  \item When $x$ is slightly greater than $-1$, $(x + 1)$ is \smash{\gradedblank[id=hw2b1, type=short, check=text, points=1, answer={positive}]{2cm}{13pt}} (positive/negative),
+        so $r(x)$ is \smash{\gradedblank[id=hw2b2, type=short, check=text, points=1, answer={positive}]{2cm}{13pt}}. Therefore $\displaystyle\lim_{x \to -1^+} r(x) =$ \smash{\gradedblank[id=hw2b3, type=short, points=1, answer={\infty}, display={$+\infty$}]{2cm}{13pt}}.
 
-  \item When $x$ is slightly less than $-1$, $(x + 1)$ is \blank{2cm} (positive/negative),
-        so $r(x)$ is \blank{2cm}. Therefore $\displaystyle\lim_{x \to -1^-} r(x) =$ \blank{2cm}.
+  \item When $x$ is slightly less than $-1$, $(x + 1)$ is \smash{\gradedblank[id=hw2c1, type=short, check=text, points=1, answer={negative}]{2cm}{13pt}} (positive/negative),
+        so $r(x)$ is \smash{\gradedblank[id=hw2c2, type=short, check=text, points=1, answer={negative}]{2cm}{13pt}}. Therefore $\displaystyle\lim_{x \to -1^-} r(x) =$ \smash{\gradedblank[id=hw2c3, type=short, points=1, answer={-\infty}]{2cm}{13pt}}.
 \end{enumerate}
 
 \item \textbf{Conceptual question.} Can a rational function have more vertical asymptotes than
       the degree of its denominator? Explain your reasoning in one or two sentences.
 
 \vspace{0.3in}
-\writeline\\[4pt]
-\writeline
+\writegap\\[4pt]
+\writebox{\gradedblank[id=hw3, type=rubric, points=2,
+  display={No. Each vertical asymptote needs a distinct real zero of the denominator, and a polynomial has at most as many distinct real zeros as its degree.}]{\linewidth}{49pt}}
 
 \item \textbf{Interpreting limit notation.} Suppose $\displaystyle\lim_{x \to 2^+} r(x) = +\infty$
       and $\displaystyle\lim_{x \to 2^-} r(x) = +\infty$.
@@ -64,8 +68,9 @@
       asymptote? Describe how the graph looks on both sides of $x = 2$.
 
 \vspace{0.3in}
-\writeline\\[4pt]
-\writeline
+\writegap\\[4pt]
+\writebox{\gradedblank[id=hw4, type=rubric, points=3,
+  display={Yes, $x = 2$ is a vertical asymptote: $r(x)$ grows without bound on both sides. The graph rises steeply toward the asymptote from the left and from the right.}]{\linewidth}{50pt}}
 
 \item \textbf{AP-Style Multiple Choice.} For the rational function
 $r(x) = \dfrac{x^2 - 9}{x^2 - 6x + 9}$, which of the following correctly identifies all
@@ -75,7 +80,7 @@ vertical asymptotes?
   \item $x = 3$ and $x = -3$
   \item $x = -3$ only
   \item $x = 3$ only
-  \item There are no vertical asymptotes.
+  \item There are no vertical asymptotes. \hfill\textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.42in}{13pt}}
 \end{enumerate}
 
 \end{enumerate}

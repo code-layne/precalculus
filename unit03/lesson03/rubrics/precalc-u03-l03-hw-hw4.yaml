@@ -1,0 +1,20 @@
+# Rubric for homework item 4 (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-hw-hw4.yaml, relative to this lesson directory.
+id: hw4
+points: 3
+task: "Suppose the limit of r(x) as x -> 2+ is +infinity and the limit as x -> 2- is +infinity. What can you conclude about the behavior of r near x = 2? Is x = 2 a vertical asymptote? Describe how the graph looks on both sides of x = 2."
+criteria:
+  - id: behavior
+    points: 1
+    full: "Concludes that r(x) increases without bound as x approaches 2 from either side."
+  - id: asymptote
+    points: 1
+    full: "States that x = 2 is a vertical asymptote."
+  - id: graph
+    points: 1
+    full: "Describes the graph rising steeply toward the line x = 2 on both the left and the right side (both branches go up)."
+examples:
+  - response: "Yes it's a vertical asymptote. The graph goes up on both sides."
+    scores: {behavior: 1, asymptote: 1, graph: 1}
+  - response: "x = 2 is a vertical asymptote, the graph goes up on the right and down on the left."
+    scores: {behavior: 0, asymptote: 1, graph: 0}
