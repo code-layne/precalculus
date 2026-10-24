@@ -64,11 +64,15 @@
     \vspace{1.5em}\par\noindent}
 
 % ── Student name rows ─────────────────────────────────────────────────────────
-% NAMESTRIP: these belong on the COVER (and on unit tests) only. The packet is
-% stapled behind its cover, so a name row on every component costs vertical space
-% at the top of each page for something the student already wrote on page 1 —
-% space that matters most on the warm-up and exit ticket, held to one page.
-% Strip them from components with scripts/namestrip.py, blank and key together.
+% NAMESTRIP: these belong on the COVER (and on ungraded unit tests) only. The
+% packet is stapled behind its cover, so a name row on every component costs
+% vertical space at the top of each page for something the student already wrote
+% on page 1 — space that matters most on the warm-up and exit ticket, held to one
+% page. A GRADED component (one that loads grading.sty: ap_practice, printed
+% homework, every graded test and quiz) never carries one: its pages are scanned
+% and sent to an outside API, so they hold only the tracking id, and the name goes
+% on math-shared's roster cover sheet. Strip them from components with
+% scripts/namestrip.py, blank and key together.
 \newcommand{\namedateperiod}{%
     \begin{tabularx}{\linewidth}{X X X}
     Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}

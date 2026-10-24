@@ -22,7 +22,10 @@ What it enforces, per lesson:
                 scoring notes go on page 2 of unitXX/unit_cover_key/, which is
                 merged into the key packet only and is checked by hand.
   namestrip     no live \\namedateperiod / \\namepartnerperiod on a worksheet
-                component — the cover carries it, and tests keep it
+                component — the cover carries it — nor on a graded unit test
+                (unitXX/tests/*, unitXX/test_keys/*: graded pages are scanned and
+                sent out, so they carry only the tracking id). Unit and --all runs
+                only; an ungraded test may keep its row.
 
 vocabpar is NOT checked: it is enforced structurally by \\termblanklong, which
 opens with its own \\par (see precalculus-article.sty).
@@ -52,6 +55,7 @@ WORKSHEETS = KEYED + [f"{c}_key" for c in KEYED]
 ANS_MACROS = re.compile(r"\\(?:ansline|ans|vocabans)\b")
 NAME_ROW = re.compile(r"\\name(?:dateperiod|partnerperiod)\b")
 TEACHERNOTE = re.compile(r"\\begin\{teachernote\}")
+GRADING = re.compile(r"\\usepackage(?:\[[^]]*\])?\{grading\}")
 
 
 class Report:
@@ -168,6 +172,18 @@ def check_source(lesson: Path, rel: str, rep: Report) -> None:
                                 f"component — the name row belongs on the cover only")
 
 
+def check_graded_tests(unit: Path, root: Path, rep: Report) -> None:
+    """namestrip on a unit's graded tests and their keys (outside any lesson)."""
+    for tex in sorted(unit.glob("tests/*/main.tex")) + sorted(unit.glob("test_keys/*/main.tex")):
+        body = strip_comments(tex.read_text(encoding="utf-8", errors="ignore"))
+        if not GRADING.search(body):
+            continue
+        for m in NAME_ROW.finditer(body):
+            rep.fail(tex.parent.relative_to(root).as_posix(),
+                     f"line {line_of(body, m.start())}: {m.group(0)} on a graded test — graded "
+                     f"pages carry only the tracking id; the name goes on the roster cover sheet")
+
+
 def check_pages(lesson: Path, rel: str, target: Path, rep: Report) -> None:
     """Page-count checks against the compiled per-component PDFs."""
     for comp in KEYED:
@@ -233,6 +249,9 @@ def main() -> None:
         check_source(lesson, rel, rep)
         if not args.no_pages:
             check_pages(lesson, rel, root / "target" / lesson.parent.name / lesson.name, rep)
+    if args.all or (args.path and not Path(args.path).name.startswith("lesson")):
+        for unit in sorted({lesson.parent for lesson in targets}):
+            check_graded_tests(unit, root, rep)
 
     scope = f"{len(targets)} lesson{'s' if len(targets) != 1 else ''}"
     if rep.ok:
