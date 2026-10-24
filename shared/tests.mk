@@ -18,7 +18,7 @@ TESTS := $(patsubst %/main.tex,%,$(wildcard */main.tex))
 DROP_SRC := practice_test
 DROP_DST := ../sample_test/main.pdf
 
-.PHONY: all clean drop manifest roster-packets grading-need-comp $(TESTS)
+.PHONY: all clean drop manifest roster-packets grading-need-comp roster-need-ids $(TESTS)
 
 all: $(TESTS) drop
 
@@ -44,12 +44,15 @@ clean:
 #       blank + key builds, target/<unit>/tests/grading/<COMP>/manifest.json,
 #       and the check that the blank and key agree on every graded item.
 #   make roster-packets COMP=actual_test ROSTER=~/Rosters/precalculus/roster-map.csv [SECTION=…]
-#       one personalized copy of the test per student (QR codes carry the
-#       tracking id, the name strip the student's name), each padded to an even
-#       page count so every copy starts on a fresh sheet, joined in roster order
-#       into target/compiled/<unit>/<COMP>_roster.pdf to print as one job.
+#       math-shared's grading-personalized: per student, in roster order, the
+#       name cover sheet, its blank back, then the personalized test (QR codes
+#       and the id strip carry only the tracking id) padded to an even page
+#       count, copied to target/compiled/<unit>/<COMP>_roster.pdf to print as
+#       one job.
 #
-# The personalized builds carry student names: they stay under target/.
+# Graded pages carry no names; only the cover sheets do, and grading-personalized
+# ends with math-shared's name check on the graded builds. Everything stays
+# under target/.
 GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP          ?=
 COMPONENT     := $(COMP)
@@ -67,33 +70,17 @@ manifest: grading-need-comp
 	@echo "OK  Manifest -> target/$(UNIT)/tests/grading/$(COMP)/manifest.json"
 
 ROSTER_IDS     := $(if $(ROSTER),$(shell $(GRADING_PYTHON) $(GRADING_SCRIPTS)/roster_tex.py \
-                    "$(ROSTER)" --ids-only $(if $(SECTION),--section "$(SECTION)")))
-ROSTER_PKT_DIR := $(GR_OUT)/packets
+                    "$(ROSTER)" --ids-only $(GR_SELECT)))
 ROSTER_OUT     := $(PROJECT_ROOT)/target/compiled/$(UNIT)/$(COMP)_roster.pdf
 
-# An odd-length copy gets one blank verso through shared/paginate.tex, the same
-# pass lesson.mk uses, which reprints each page number in its own place.
-roster-packets: grading-need-comp grading-need-roster grading-personalized
-	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)"; exit 1; }
-	@mkdir -p "$(ROSTER_PKT_DIR)/.paginate" "$(dir $(ROSTER_OUT))"
-	@set -e; pdfs=; \
-	for id in $(ROSTER_IDS); do \
-	  src="$(GR_STUDENTS)/$$id.pdf"; dst="$(ROSTER_PKT_DIR)/$$id.pdf"; \
-	  n=$$(pdfinfo "$$src" | awk '/^Pages/{print $$2}'); \
-	  if [ $$((n % 2)) -eq 0 ]; then cp "$$src" "$$dst"; else \
-	    TEXINPUTS="$(TEXINPUTS)" xelatex -interaction=nonstopmode -halt-on-error \
-	        -output-directory="$(ROSTER_PKT_DIR)/.paginate" -jobname=paginated \
-	        '\def\PacketSource{'"$$src"'}\def\PacketPages{1-'"$$n"',{}}\input{paginate}' \
-	        > "$(ROSTER_PKT_DIR)/.paginate/paginate.log" 2>&1 \
-	      || { echo "!  pagination pass failed — see $(ROSTER_PKT_DIR)/.paginate/paginate.log"; exit 1; }; \
-	    mv "$(ROSTER_PKT_DIR)/.paginate/paginated.pdf" "$$dst"; \
-	  fi; \
-	  pdfs="$$pdfs $$dst"; \
-	done; \
-	set -- $$pdfs; \
-	if [ $$# -eq 1 ]; then cp "$$1" "$(ROSTER_OUT)"; else pdfunite "$$@" "$(ROSTER_OUT)"; fi
+roster-need-ids: grading-need-roster
+	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)$(if $(SECTION), for section $(SECTION))"; exit 1; }
+
+roster-packets: grading-need-comp roster-need-ids grading-personalized
+	@mkdir -p "$(dir $(ROSTER_OUT))"
+	@cp "$(GR_OUT)/personalized.pdf" "$(ROSTER_OUT)"
 	@echo "OK  Roster copies -> target/compiled/$(UNIT)/$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
 else
-manifest roster-packets grading-need-comp:
+manifest roster-packets grading-need-comp roster-need-ids:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1
 endif
