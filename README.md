@@ -21,7 +21,10 @@ targets below need it.
 ## Graded components
 
 A component that loads `grading` (from `math-shared/grading.sty`) marks its graded answers with
-`\gradedblank`. Each page then carries corner registration marks, a QR code, and a name strip.
+`\gradedblank`. Each page then carries corner registration marks, a QR code, and an id strip
+(`ID: <tracking id>`). Graded pages never carry a student name: `make roster-packets` puts each
+student's name on a math-shared cover sheet in front of their copy, which is removed before the
+packet is turned in and never scanned.
 Each `\gradedblank` line is written identically in the blank and the key; the key prints the
 answer inside the box (`precalculus-key` turns this on whenever a document loads `grading`). See
 `math-shared/README.md` for the macros and `math-shared/grading-system-design.md` for the plan,

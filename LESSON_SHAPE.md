@@ -199,8 +199,10 @@ authored graded from the start.
   (`precalculus-article.sty`); a `\writespace{H}{}` holds its box. Work space stays outside the
   boxes.
 - `make manifest COMP=<dir>` (in the lesson, or `unitNN/tests`) builds both copies and checks
-  that blank and key agree; `make roster-packets COMP=<dir> ROSTER=<roster-map.csv>` prints one
-  personalized copy per student.
+  that blank and key agree; `make roster-packets COMP=<dir> ROSTER=<roster-map.csv> [SECTION=…]`
+  prints, per student in roster order, math-shared's name cover sheet, its blank back, then the
+  personalized packet (or test) padded to an even page count. Graded pages carry only the
+  tracking id (`ID: <id>` strip, QR codes); the name is on the cover alone.
 
 ## 3. Where structure comes from
 
