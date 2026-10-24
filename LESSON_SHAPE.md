@@ -194,6 +194,10 @@ authored graded from the start.
   explain / justify / interpret and AP free response → `type=rubric` with
   `rubrics/<assignment>-<id>.yaml` in the lesson (unit tests: `unitNN/tests/rubrics/`). AP
   free-response rubrics score each part essentially / partially correct (2 / 1 / 0).
+- **No name row.** Graded pages are scanned and sent to an outside API, so they carry no
+  personal information except the tracking id in math-shared's `ID:` strip; the name goes on
+  the roster cover sheet, removed before the packet is turned in. No `\namedateperiod` on a
+  graded blank or key — a lesson component or a unit test.
 - Boxes never move a line: inline blanks become `\smash{\gradedblank…}` of the blank's width; a
   run of `\writeline` rules becomes `\writegap`s plus a final `\writebox{\gradedblank…}`
   (`precalculus-article.sty`); a `\writespace{H}{}` holds its box. Work space stays outside the
@@ -298,7 +302,8 @@ snapshot (2026-08-06) of titles as compiled, kept for reference, not maintained 
 - `\boxguard` (default 16 lines) and `teachernote` (optional title argument) are in `-boxes`, so
   they reach keys through `-key` and the plan through `-boxes`; a bare `\begin{teachernote}`
   still compiles, which is how un-migrated keys keep building.
-- `\namedateperiod` on the cover and the unit tests only; `\namepartnerperiod` is not used.
+- `\namedateperiod` on the cover (and an ungraded unit test) only, never on a graded component
+  (§2 *Graded components*); `\namepartnerperiod` is not used.
 
 - **The Main Ideas / Notes table** — `guidednotes`, `\mainidea`, `\notesprompt`, `probgrid` /
   `probgrid*`, `\pcell`, `\writespace`, `\labelbox`, `\stepnum` — is defined in
@@ -367,7 +372,10 @@ packets), and **`unit_cover/`** at the front. The scaffolder creates all of this
 a unit is created; **today only `unit01` carries the test directories** — units 2–8 have a
 `unit_cover/` and nothing else, and get their tests via `new_lesson.py --tests` when authored.
 
-- **Tests keep `\namedateperiod`** — taken in a testing setting, not stapled behind a cover.
+- **A graded test has no name row** — its pages are scanned and sent out, so they carry only
+  the tracking id; the name goes on math-shared's roster cover sheet (`make roster-packets`).
+  Every unit01 test is graded. An ungraded test, taken in a testing setting and not stapled
+  behind a cover, may keep `\namedateperiod`.
   `\pageheader{Unit X: <Title>}{...}`, `\parthead{Part …}` sections (vocabulary, multiple
   choice, short answer/computation, extended response). Practice and actual versions are
   **parallel** — same format, parts, and difficulty, different numbers and contexts. The
@@ -375,7 +383,8 @@ a unit is created; **today only `unit01` carries the test directories** — unit
 - **A test key carries no `teachernote`.** Answer rationale and extended-response scoring go on
   **page 2 of `unitXX/unit_cover_key/main.tex`**, which reaches the key packet only. The
   practice test and its key must be the same number of pages — check by hand, because
-  **`make check` does not walk `unitXX/tests/`** (a test blank legitimately keeps its name row).
+  **`make check` does not compare test pages** (a unit-level or `--all` run checks only that a
+  graded test has no name row).
 - **`unit_cover/` + `unit_cover_key/`**: the sheet lives in `unit_cover/body.tex`; both wrappers
   `\input` it, so page 1 cannot drift. Page 1 is student-facing (plum banner, unit overview
   box, lessons table in a `skillbox{goldbox}`, standards table in a `skillbox{greenbox}`);
