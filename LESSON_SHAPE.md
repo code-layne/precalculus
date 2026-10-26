@@ -198,10 +198,18 @@ authored graded from the start.
   personal information except the tracking id in math-shared's `ID:` strip; the name goes on
   the roster cover sheet, removed before the packet is turned in. No `\namedateperiod` on a
   graded blank or key — a lesson component or a unit test.
-- Boxes never move a line: inline blanks become `\smash{\gradedblank…}` of the blank's width; a
-  run of `\writeline` rules becomes `\writegap`s plus a final `\writebox{\gradedblank…}`
-  (`precalculus-article.sty`); a `\writespace{H}{}` holds its box. Work space stays outside the
-  boxes.
+- Box sizes come from math-shared: a `type=choice` box is drawn square (as tall as it is
+  wide) and a `type=rubric` box at least 2in tall, whatever height is written; `type=short`
+  boxes are drawn as written. So only short boxes stay inline as `\smash{\gradedblank…}` of the
+  blank's width. A choice box sits unsmashed after `\textit{Letter:}~` and its line grows to
+  hold it. A rubric box goes on its own line under its prompt as
+  `\rubricbox[gap]{\gradedblank[…]{\linewidth}{H}}` (`precalculus-article.sty`), never inline in
+  a sentence or shared by two parts (a rubric box in a table cell is drawn unsmashed, so the row
+  grows to its height); `\rubricbox` keeps the box
+  on the page of its prompt's last line, and graded pages allow no widow or club lines, so a
+  question is not split from its box. Never shrink a box below these sizes: when one no longer
+  fits, move the page break (`\newpage` or `\boxguard[n]` before the item, the same in blank and
+  key). Work space stays outside the boxes.
 - `make manifest COMP=<dir>` (in the lesson, or `unitNN/tests`) builds both copies and checks
   that blank and key agree; `make roster-packets COMP=<dir> ROSTER=<roster-map.csv> [SECTION=…]`
   prints, per student in roster order, math-shared's name cover sheet, its blank back, then the

@@ -23,7 +23,8 @@
               \vspace{0.06in}
               $a = $ \smash{\gradedblank[id=hw1a1, type=short, points=1, answer={300}]{3cm}{13pt}} \quad $b = $ \smash{\gradedblank[id=hw1a2, type=short, points=1, answer={0.92}]{3cm}{13pt}} \quad $f(t) = $ \smash{\gradedblank[id=hw1a3, type=short, points=1, answer={300 \cdot (0.92)^t}]{5cm}{13pt}}
 
-        \item Is this growth or decay? How do you know from the value of $b$? \smash{\gradedblank[id=hw1b, type=rubric, points=2, display={Decay; $b = 0.92 < 1$.}]{6cm}{13pt}}
+        \item Is this growth or decay? How do you know from the value of $b$?
+              \rubricbox{\gradedblank[id=hw1b, type=rubric, points=2, display={Decay; $b = 0.92 < 1$.}]{\linewidth}{13pt}}
       \end{enumerate}
 
 \item An exponential function passes through $(2,\,20)$ and $(5,\,540)$. Find $a$ and $b$.
@@ -56,8 +57,7 @@
 
         \item Is $t = -5$ a meaningful input in this context? Explain.
 
-              \vspace{0.06in}
-              \writebox{\gradedblank[id=hw3c, type=rubric, points=2,
+              \rubricbox[0.06in]{\gradedblank[id=hw3c, type=rubric, points=2,
   display={No: $t$ is the time elapsed since the start; a negative time has no meaning here.}]{\linewidth}{17pt}}
       \end{enumerate}
 
@@ -72,8 +72,7 @@
 
         \item What does the base of $g(w)$ tell you about the weekly growth of the quantity?
 
-              \vspace{0.04in}
-              \writebox{\gradedblank[id=hw4b, type=rubric, points=1,
+              \rubricbox[0.04in]{\gradedblank[id=hw4b, type=rubric, points=1,
   display={The quantity multiplies by 2187 every week.}]{\linewidth}{15.5pt}}
 
         \item Rewrite $f$ as a function of 2-day periods $n$ (where $d = 2n$).
@@ -94,9 +93,11 @@
       \end{enumerate}
 
       \vspace{0.06in}
-      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5a, type=choice, points=1, answer=C]{1.5cm}{13pt}} \quad Reasoning: \vspace{1pt}\smash{\gradedblank[id=hw5b, type=rubric, points=2,
-  display={$e^{0.04} \approx 1.0408$, a growth factor of 1.0408: about $4.08\%$ per year.}]{342pt}{13pt}}\vspace{3pt}
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \gradedblank[id=hw5a, type=choice, points=1, answer=C]{1.5cm}{13pt} \quad Reasoning:
+      \rubricbox[1pt]{\gradedblank[id=hw5b, type=rubric, points=2,
+  display={$e^{0.04} \approx 1.0408$, a growth factor of 1.0408: about $4.08\%$ per year.}]{\linewidth}{13pt}}
 
+\newpage
 \item \textbf{(Extension)} The table below shows temperature readings (in ${}^\circ$C) at time
       $t$ minutes in a cooling experiment.
 
@@ -131,7 +132,10 @@
         \item Write an exponential model for $y(t)$, then write the model for $T(t)$.
 
               \vspace{0.06in}
-              $y(t) = $ \smash{\gradedblank[id=hw6b1, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5}$}]{5cm}{13pt}} \quad $T(t) = $ \smash{\gradedblank[id=hw6b2, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5} + 25$}]{7cm}{13pt}}
+              $y(t) = $
+              \rubricbox{\gradedblank[id=hw6b1, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5}$}]{\linewidth}{13pt}}
+              $T(t) = $
+              \rubricbox{\gradedblank[id=hw6b2, type=rubric, points=1, display={$55 \cdot (0.55)^{t/5} + 25$}]{\linewidth}{13pt}}
       \end{enumerate}
 
 \end{enumerate}

@@ -47,11 +47,8 @@
       vertical asymptote in terms of the multiplicities $m$ (numerator) and $n$ (denominator)
       of a shared zero.
 
-      \vspace{0.08in}
-      \writegap\\
-      \writegap\\
-      \writebox{\gradedblank[id=hw2, type=rubric, points=2,
-  display={At a shared zero $x = a$: if $m \ge n$ the factor cancels completely, the function has a finite limit there, and the graph has a hole. If $m < n$ (or $a$ is a zero of the denominator only), a factor stays in the denominator, the outputs grow without bound, and there is a vertical asymptote.}]{\linewidth}{51pt}}\\
+      \rubricbox[0.08in]{\gradedblank[id=hw2, type=rubric, points=2,
+  display={At a shared zero $x = a$: if $m \ge n$ the factor cancels completely, the function has a finite limit there, and the graph has a hole. If $m < n$ (or $a$ is a zero of the denominator only), a factor stays in the denominator, the outputs grow without bound, and there is a vertical asymptote.}]{\linewidth}{51pt}}
 
 \item A rational function $r(x)$ has a hole at $x = 3$ with $\displaystyle\lim_{x \to 3} r(x) = 5$.
 
@@ -59,9 +56,10 @@
         \item Write the limit statement using proper notation. \smash{\gradedblank[id=hw3a, type=short, check=text, points=1, answer={\lim_{x \to 3} r(x) = 5}, display={$\lim_{x\to 3} r(x) = 5$}]{5cm}{13pt}}
         \item Explain in a complete sentence what this limit statement means in the context
               of the graph of $r$.
-              \writebox{\gradedblank[id=hw3b, type=rubric, points=2, display={$r(x)\to 5$}]{46pt}{14pt}}
+              \rubricbox{\gradedblank[id=hw3b, type=rubric, points=2, display={$r(x)\to 5$}]{\linewidth}{14pt}}
         \item Is $r(3)$ defined? Circle: \quad \textbf{Yes} \quad / \quad \textbf{No} \quad
-              Explain briefly: \smash{\gradedblank[id=hw3c, type=rubric, points=2, display={No: hole at $x = 3$}]{5cm}{13pt}}
+              Explain briefly:
+              \rubricbox{\gradedblank[id=hw3c, type=rubric, points=2, display={No: hole at $x = 3$}]{\linewidth}{13pt}}
       \end{enumerate}
 
 \item Consider $\displaystyle r(x) = \dfrac{x^3 - x^2}{x^2 - x}$.
@@ -92,6 +90,7 @@
               Simplified: \smash{\gradedblank[id=hw4c1, type=short, points=1, answer={x}]{4cm}{13pt}} \qquad Holes: \smash{\gradedblank[id=hw4c2, type=short, check=set, points=2, answer={(0, 0), (1, 1)}, display={$(0,\ 0)$ and $(1,\ 1)$}]{5cm}{13pt}}\vphantom{\blank{1pt}}
       \end{enumerate}
 
+\newpage
 \item \textbf{(AP-Style Multiple Choice)} For the function
       $\displaystyle r(x) = \dfrac{x^2 - 4}{x^2 - x - 2}$, which of the following
       correctly identifies all holes and vertical asymptotes?
@@ -105,7 +104,7 @@
       \end{enumerate}
 
       \vspace{0.06in}
-      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5, type=choice, points=1, answer=A]{1.5cm}{13pt}} \quad Show your work:
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \gradedblank[id=hw5, type=choice, points=1, answer=A]{1.5cm}{13pt} \quad Show your work:
 
       \vspace{0.08in}
       \writelines{3}

@@ -29,7 +29,9 @@
 \newcommand{\blank}[1]{\underline{\hspace{#1}}}
 \newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
 \newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
-% Graded answer lines (math-shared grading.sty). A run of \writeline rules that a
+% Graded answer lines (math-shared grading.sty), for a box drawn as written (a
+% short box; choice and rubric boxes are resized, so they use \rubricbox below
+% or sit unsmashed). A run of \writeline rules that a
 % \gradedblank box replaces keeps its exact vertical footprint, so nothing after
 % it moves: each rule but the last becomes \writegap (the same line, no rule),
 % and the last becomes \writebox{\gradedblank[...]{\linewidth}{H}}, which stands
@@ -38,6 +40,25 @@
 \newcommand{\writegap}{\vspace{1pt}\noindent\hfill\vspace{3pt}}
 \newcommand{\writebox}[1]{\vspace{1pt}\noindent
   \sbox0{#1}\smash{\raisebox{\dp0}{\usebox0}}\hfill\vspace{3pt}}
+% A graded box that takes its full drawn size (math-shared draws a choice box
+% square and a rubric box at least 2in tall, whatever height is written, so a
+% box that size can no longer be smashed onto a line or laid over write-lines).
+% \rubricbox[gap]{\gradedblank[type=rubric,...]{\linewidth}{H}} puts the box on
+% its own line under its prompt, gap (default 3pt) below the prompt's last line,
+% and never lets a page break fall between the two. The box stands on the
+% line's baseline (no depth), so all of it counts toward the page and none of
+% it can hang into the bottom margin. A choice box sits unsmashed after
+% "Letter:", so its line grows to hold it.
+\newcommand{\rubricbox}[2][3pt]{\par\nopagebreak\vspace{#1}\nopagebreak
+  \noindent\sbox0{#2}\raisebox{\dp0}{\usebox0}\par}
+% On a graded page (one that loads grading.sty) no paragraph leaves its first
+% or last line alone at a page break. \rubricbox keeps a box with the last
+% line of its prompt; this keeps that line with the rest of a two- or
+% three-line prompt, so a question is never split from its box.
+\newcommand{\gradedpagepenalties}{\clubpenalty=10000 \widowpenalty=10000
+  \displaywidowpenalty=10000 \csname @clubpenalty\endcsname=10000 }
+\@ifpackageloaded{grading}{\gradedpagepenalties}
+  {\AddToHook{package/grading/after}{\gradedpagepenalties}}
 \newcommand{\termblank}[1]{%
   \noindent\textbf{\textcolor{plum}{#1:}}\quad\blank{6.5cm}\\[1pt]%
   \writeline\\[2pt]}

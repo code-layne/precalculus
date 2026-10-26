@@ -47,19 +47,17 @@
 
 \item \textbf{Explanation (sample):}
 
-      \vspace{0.08in}
-      \writegap\\
-      \writegap\\
-      \writebox{\gradedblank[id=hw2, type=rubric, points=2,
-  display={At a shared zero $x = a$: if $m \ge n$ the factor cancels completely, the function has a finite limit there, and the graph has a hole. If $m < n$ (or $a$ is a zero of the denominator only), a factor stays in the denominator, the outputs grow without bound, and there is a vertical asymptote.}]{\linewidth}{51pt}}\\
+      \rubricbox[0.08in]{\gradedblank[id=hw2, type=rubric, points=2,
+  display={At a shared zero $x = a$: if $m \ge n$ the factor cancels completely, the function has a finite limit there, and the graph has a hole. If $m < n$ (or $a$ is a zero of the denominator only), a factor stays in the denominator, the outputs grow without bound, and there is a vertical asymptote.}]{\linewidth}{51pt}}
 
 \item
 
       \begin{enumerate}[label=(\alph*), itemsep=6pt]
         \item \smash{\gradedblank[id=hw3a, type=short, check=text, points=1, answer={\lim_{x \to 3} r(x) = 5}, display={$\lim_{x\to 3} r(x) = 5$}]{5cm}{13pt}}
         \item Explain in a complete sentence what this limit statement means.
-              \writebox{\gradedblank[id=hw3b, type=rubric, points=2, display={$r(x)\to 5$}]{46pt}{14pt}}
-        \item Is $r(3)$ defined? \ans{No} --- Explain briefly: \smash{\gradedblank[id=hw3c, type=rubric, points=2, display={No: hole at $x = 3$}]{5cm}{13pt}}
+              \rubricbox{\gradedblank[id=hw3b, type=rubric, points=2, display={$r(x)\to 5$}]{\linewidth}{14pt}}
+        \item Is $r(3)$ defined? \ans{No} --- Explain briefly:
+              \rubricbox{\gradedblank[id=hw3c, type=rubric, points=2, display={No: hole at $x = 3$}]{\linewidth}{13pt}}
       \end{enumerate}
 
 \item $\displaystyle r(x) = \dfrac{x^3 - x^2}{x^2 - x}$
@@ -86,13 +84,14 @@
               \textit{(Substitute into simplified form $x$: at $x=0$, $L=0$; at $x=1$, $L=1$.)}
       \end{enumerate}
 
+\newpage
 \item \textbf{(AP-Style)} $r(x) = \dfrac{x^2-4}{x^2-x-2} = \dfrac{(x-2)(x+2)}{(x-2)(x+1)}$
 
       Shared zero $x=2$, $m=n=1 \Rightarrow$ \ans{Hole}. Simplified: $\dfrac{x+2}{x+1}$. $L = \dfrac{4}{3}$.
 
       Denominator zero $x=-1$ (not shared) $\Rightarrow$ VA at $x=-1$.
 
-      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \smash{\gradedblank[id=hw5, type=choice, points=1, answer=A]{1.5cm}{13pt}} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
+      \leavevmode\rlap{\textit{Letter:}}\phantom{Answer:}\spacefactor2000{} \gradedblank[id=hw5, type=choice, points=1, answer=A]{1.5cm}{13pt} \quad (Hole at $x=2$ with $L = \dfrac{4}{3}$; VA at $x=-1$.)
 
 \end{enumerate}
 

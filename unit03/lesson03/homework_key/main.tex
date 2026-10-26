@@ -22,7 +22,8 @@
 
         Denominator zeros: \smash{\gradedblank[id=hw1a1, type=short, check=set, points=1, answer={1, -1}, display={$x = 1$ and $x = -1$}]{4cm}{11pt}}
 
-        Numerator check: \smash{\gradedblank[id=hw1a2, type=rubric, points=1, display={$4 \ne 0$, $2 \ne 0$}]{4cm}{11pt}}
+        Numerator check (its value at each zero):
+        \rubricbox{\gradedblank[id=hw1a2, type=rubric, points=1, display={$4 \ne 0$, $2 \ne 0$}]{\linewidth}{11pt}}
 
         Vertical asymptote(s): \smash{\gradedblank[id=hw1a3, type=short, check=set, points=1, answer={1, -1}, display={$x = 1$ and $x = -1$}]{4cm}{11pt}}
 
@@ -38,7 +39,8 @@
 
         Denominator zeros: \smash{\gradedblank[id=hw1c1, type=short, check=set, points=1, answer={1, -4}, display={$x = 1$ and $x = -4$}]{3.5cm}{11pt}}
 
-        Numerator check: \smash{\gradedblank[id=hw1c2, type=rubric, points=1, display={$5 \ne 0$ at both}]{3.5cm}{11pt}}
+        Numerator check (its value at each zero):
+        \rubricbox{\gradedblank[id=hw1c2, type=rubric, points=1, display={$5 \ne 0$ at both}]{\linewidth}{11pt}}
 
         Vertical asymptote(s): \smash{\gradedblank[id=hw1c3, type=short, check=set, points=1, answer={1, -4}, display={$x = 1$ and $x = -4$}]{4cm}{11pt}}
 \end{enumerate}
@@ -59,21 +61,17 @@
 
 \item Conceptual question.
 
-\vspace{0.3in}
-\writegap\\[4pt]
-\writebox{\gradedblank[id=hw3, type=rubric, points=2,
+      \rubricbox[0.3in]{\gradedblank[id=hw3, type=rubric, points=2,
   display={No. Each vertical asymptote needs a distinct real zero of the denominator, and a polynomial has at most as many distinct real zeros as its degree.}]{\linewidth}{49pt}}
 
 \item Interpreting limit notation.
 
-\vspace{0.3in}
-\writegap\\[4pt]
-\writebox{\gradedblank[id=hw4, type=rubric, points=3,
+      \rubricbox[0.3in]{\gradedblank[id=hw4, type=rubric, points=3,
   display={Yes, $x = 2$ is a vertical asymptote: $r(x)$ grows without bound on both sides. The graph rises steeply toward the asymptote from the left and from the right.}]{\linewidth}{50pt}}
 
 \textit{(This occurs when the denominator factor at $x=2$ is raised to an even power.)}
 
-\item AP-Style Multiple Choice. \textit{Letter:}~\smash{\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.42in}{13pt}} $x = 3$ only.
+\item AP-Style Multiple Choice. \textit{Letter:}~\gradedblank[id=hw5, type=choice, points=1, answer=C]{0.42in}{13pt} $x = 3$ only.
 
 \textit{Work:} $r(x) = \dfrac{x^2-9}{x^2-6x+9} = \dfrac{(x-3)(x+3)}{(x-3)^2}$.
 Numerator zero at $x = 3$ with multiplicity 1; denominator zero at $x = 3$ with multiplicity 2.
@@ -85,6 +83,7 @@ of the denominator).
 
 \vspace{0.1in}
 
+\newpage
 \begin{extensionbox}
 \textbf{Extension answers.}
 \begin{enumerate}[label=(\alph*), itemsep=4pt]
