@@ -126,18 +126,37 @@ clean:
 	      $(COMPILED_DIR)/$(UNIT)_full.pdf
 
 # ── Grading (math-shared) ─────────────────────────────────────────────────────
-# Unit-level entry points for ONE graded component, COMP, given relative to the
-# unit directory. A bare name is a unit test (tests/<COMP>). Each delegates to
-# the Makefile that builds that component — shared/tests.mk for a test,
-# shared/lesson.mk for a lesson component — so the outputs land where that
-# directory's own `make manifest` / `make roster-packets` puts them:
+# Unit-level entry points, given relative to the unit directory. Each hands the
+# call to the Makefile that builds it — shared/lesson.mk for a lesson,
+# shared/tests.mk for a test — so the outputs land where that directory's own
+# `make manifest` / `make roster-packets` puts them:
 #
-#   make manifest COMP=practice_test            (= tests/practice_test)
+#   make roster-packets LESSON=lesson03 ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
+#       (COMP=lesson03 works the same) the lesson packet with each student's
+#       name on the lesson cover and her copy of every graded component.
 #   make manifest COMP=lesson03/homework
-#   make roster-packets COMP=actual_test ROSTER=~/Rosters/precalculus/roster-map.csv [SECTION=…]
-GR_COMP_PATH := $(if $(findstring /,$(COMP)),$(COMP),tests/$(COMP))
+#   make manifest COMP=tests/practice_test      (or the bare name, COMP=practice_test)
+#   make roster-packets COMP=tests/actual_test ROSTER=… [SECTION=…]   (or COMP=actual_test)
+#       math-shared's tear-off name sheet in front of each student's copy.
+# ROSTER may start with ~/ and may be relative to this directory.
+UNIT_GR_PATH   = $(patsubst %/,%,$(or $(LESSON),$(COMP)))
+# The lesson named: LESSON=lessonYY, COMP=lessonYY, or COMP=lessonYY/<component>.
+UNIT_GR_LESSON = $(filter $(firstword $(subst /, ,$(UNIT_GR_PATH))),$(LESSONS))
+UNIT_GR_COMP   = $(patsubst $(UNIT_GR_LESSON)/%,%,$(filter $(UNIT_GR_LESSON)/%,$(UNIT_GR_PATH)))
+# Anything else: a bare name is a unit test (tests/<COMP>).
+UNIT_GR_OTHER  = $(if $(findstring /,$(UNIT_GR_PATH)),$(UNIT_GR_PATH),tests/$(UNIT_GR_PATH))
+UNIT_GR_ROSTER = $(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))
 
 manifest roster-packets:
-	@test -n "$(COMP)" || { echo "!  set COMP=<test name or lessonYY/component>, e.g. COMP=practice_test"; exit 1; }
-	@$(MAKE) --no-print-directory -C $(dir $(GR_COMP_PATH)) $@ COMP=$(notdir $(GR_COMP_PATH)) \
-	    $(if $(ROSTER),ROSTER="$(abspath $(ROSTER))") $(if $(SECTION),SECTION="$(SECTION)")
+	@test -n "$(UNIT_GR_PATH)" || { echo "!  set LESSON=lessonYY (roster-packets) or COMP=<dir>/<component>, e.g. COMP=lesson03/homework or COMP=tests/actual_test"; exit 1; }
+ifneq ($(UNIT_GR_LESSON),)
+	@test "$@" = roster-packets -o -n "$(UNIT_GR_COMP)" || { echo "!  manifest works on one component: COMP=$(UNIT_GR_LESSON)/homework"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(UNIT_GR_LESSON) $@ LESSON= COMP=$(UNIT_GR_COMP) \
+	    $(if $(ROSTER),ROSTER="$(UNIT_GR_ROSTER)") $(if $(SECTION),SECTION="$(SECTION)")
+else ifneq ($(LESSON),)
+	@echo "!  $(UNIT)/$(LESSON) is not a lesson with a Makefile"; exit 1
+else
+	@test -f "$(dir $(UNIT_GR_OTHER))Makefile" || { echo "!  no Makefile in $(UNIT)/$(dir $(UNIT_GR_OTHER))"; exit 1; }
+	@$(MAKE) --no-print-directory -C $(dir $(UNIT_GR_OTHER)) $@ COMP=$(notdir $(UNIT_GR_OTHER)) \
+	    $(if $(ROSTER),ROSTER="$(UNIT_GR_ROSTER)") $(if $(SECTION),SECTION="$(SECTION)")
+endif

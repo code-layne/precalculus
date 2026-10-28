@@ -92,7 +92,7 @@ convert them by the recipe in `templates/lesson/components.md` when you touch th
 
 **`warmup`** — 3–5 quick problems of *prerequisite* spiral review, exactly one page, `work`
 blocks for anything multi-step; may be a prefab PDF. **`ap_practice`** (2026-09-16) — **extra
-credit, optional, exactly two pages**: page 1 is *Section I*, five AP Precalculus–style
+credit, scored 1 to 5, optional, exactly two pages**: page 1 is *Section I*, five AP Precalculus–style
 multiple-choice items with four options (A)–(D), distractors built from the lesson's real
 errors; page 2 is *Section II*, one multi-part free-response question on a table or graph with
 interpret-in-context parts, the last part the finisher's stretch. Contexts used nowhere else in
@@ -136,25 +136,27 @@ content on the old palette. The live lesson overrides every document, this one i
 
 ## 2. Grading and homework policy
 
-**Two in-class components are scored on the cover** — Warm-Up and Guided Notes. Then:
+**The cover is a contents list** (2026-10-28, as in every course): no Score column, no Total
+row. How a component is scored is said in its description.
 
-- **`ap_practice` — extra credit.** Optional; its cover row is shaded `goldbg`, labelled
-  **Extra credit**, and its score cell is `$+$\,\blank{1.0cm}` — outside the total. The plan
-  names the multiple-choice answers and what each distractor means in its `[AP Practice]` note.
+- **`ap_practice` — extra credit, scored 1 to 5** (2026-10-28): 5 × earned / possible, rounded
+  half up, never below 1 for work turned in, and the score is added as extra-credit points.
+  Optional; its cover row is shaded `goldbg` and says **Extra credit, scored 1 to 5.** So do its
+  `remindbox` (blank and key), the plan's Reinforcement & Extension line and `[AP Practice]`
+  note, and the deck's closing frame. The plan names the multiple-choice answers and what each
+  distractor means in its `[AP Practice]` note.
 - **Homework — DeltaMath, graded, outside the packet** (2026-10-06). Cover row 4 names the
   DeltaMath assignment and carries a *Due:* slot (the teacher sets the date; this course prints
-  no due-date rule) and a score blank for the DeltaMath score.
+  no due-date rule).
 
-The cover's packet table:
+The cover's packet table (`tabularx` `{@{} c l X @{}}`: every row needs three cells):
 
 ```latex
-1 & Warm-Up      & ... & \blank{1.2cm} \\
-2 & Guided Notes & ... & \blank{1.2cm} \\
+1 & Warm-Up      & ... \\
+2 & Guided Notes & ... \\
 \rowcolor{goldbg}
-3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
-4 & Homework     & DeltaMath: \textit{Lesson X.Y} --- ... \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
-\midrule
-  & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & DeltaMath: \textit{Lesson X.Y} --- ... \quad Due: \blank{2.2cm} \\
 ```
 
 **The DeltaMath assignment is authored in the plan.** Reinforcement & Extension lists it as
@@ -170,7 +172,9 @@ topic is diagnostic, what a wrong answer on it means, and which topics predict t
 **The printed-homework override.** Only when the user asks for it on a given lesson: author
 `homework/` + `homework_key/` (printed, graded, exactly two pages, last in the packet, every
 context new — `templates/lesson/components.md`), drop the DeltaMath name from cover row 4, and
-say so in Reinforcement & Extension and the `[Homework]` note. Never assume it.
+say so in Reinforcement & Extension and the `[Homework]` note. Never assume it. A printed
+homework is **scored 1 to 5** like the AP Practice: its cover row ends `\textbf{Scored 1 to 5.}`
+and its page header reads `Homework, scored 1 to 5` (the key's `Homework Key, scored 1 to 5`).
 
 ### Graded components
 
@@ -196,8 +200,8 @@ authored graded from the start.
   free-response rubrics score each part essentially / partially correct (2 / 1 / 0).
 - **No name row.** Graded pages are scanned and sent to an outside API, so they carry no
   personal information except the tracking id in math-shared's `ID:` strip; the name goes on
-  the roster cover sheet, removed before the packet is turned in. No `\namedateperiod` on a
-  graded blank or key — a lesson component or a unit test.
+  the lesson cover (a lesson packet) or math-shared's tear-off name sheet (a test). No
+  `\namedateperiod` on a graded blank or key — a lesson component or a unit test.
 - Box sizes come from math-shared: a `type=choice` box is drawn square (as tall as it is
   wide) and a `type=rubric` box at least 2in tall, whatever height is written; `type=short`
   boxes are drawn as written. So only short boxes stay inline as `\smash{\gradedblank…}` of the
@@ -210,11 +214,22 @@ authored graded from the start.
   question is not split from its box. Never shrink a box below these sizes: when one no longer
   fits, move the page break (`\newpage` or `\boxguard[n]` before the item, the same in blank and
   key). Work space stays outside the boxes.
+- **Points** are what the grader adds up; the grading report turns a homework's or AP
+  Practice's points into its 1-to-5 score. Tests stay in points.
 - `make manifest COMP=<dir>` (in the lesson, or `unitNN/tests`) builds both copies and checks
-  that blank and key agree; `make roster-packets COMP=<dir> ROSTER=<roster-map.csv> [SECTION=…]`
-  prints, per student in roster order, math-shared's name cover sheet, its blank back, then the
-  personalized packet (or test) padded to an even page count. Graded pages carry only the
-  tracking id (`ID: <id>` strip, QR codes); the name is on the cover alone.
+  that blank and key agree.
+- **Names and printing.** A graded page carries only the tracking id (QR codes, and the strip
+  "ID: <id>"), never a student name: scans go to an outside API. For a lesson packet the name is
+  printed on the Name line of the lesson cover, which `make -C unitNN/lessonYY roster-packets
+  ROSTER=… [SECTION=…]` preprints; there is no separate name sheet (2026-10-28). Every graded
+  component in the packet (AP Practice, a printed homework) is her personalized copy and starts
+  on a fresh sheet, so she tears the graded sheets out and turns them in without her name; the
+  output is `target/compiled/unitNN/lessonYY_roster.pdf`. For a test, `make -C unitNN/tests
+  roster-packets COMP=actual_test` puts math-shared's tear-off name sheet and its blank back in
+  front of her copy. Both build each graded component's manifest first, and fail if any roster
+  name reaches a graded page. From the root: `make roster-packets LESSON=unitNN/lessonYY
+  ROSTER=…`, `COMP=unitNN/tests/<name>`, and `make manifest COMP=unitNN/lessonYY/homework`.
+  See `README.md`.
 
 ## 3. Where structure comes from
 
@@ -358,7 +373,7 @@ sentence in italics, said by the teacher and echoed back), *point forward* (the 
 assignment and its due date, then the next lesson) — then a `\textbf{Do not}` line: no
 re-teaching, no new questions) → **Reinforcement & Extension** (`skillbox{goldbox}`;
 `\textbf{Homework --- DeltaMath, graded.}` the topic list per §2;
-`\textbf{AP Practice --- extra credit (2 pages).}` overview naming what each distractor catches;
+`\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).}` overview naming what each distractor catches;
 `\textbf{Preview:}` of the next lesson) → **Teacher notes, five, in packet order:**
 `[Warm-Up]`, `[Guided Notes]`, `[Debrief]`, `[AP Practice]`, `[Homework]`.
 
@@ -381,7 +396,7 @@ a unit is created; **today only `unit01` carries the test directories** — unit
 `unit_cover/` and nothing else, and get their tests via `new_lesson.py --tests` when authored.
 
 - **A graded test has no name row** — its pages are scanned and sent out, so they carry only
-  the tracking id; the name goes on math-shared's roster cover sheet (`make roster-packets`).
+  the tracking id; the name goes on math-shared's tear-off name sheet (`make roster-packets`).
   Every unit01 test is graded. An ungraded test, taken in a testing setting and not stapled
   behind a cover, may keep `\namedateperiod`.
   `\pageheader{Unit X: <Title>}{...}`, `\parthead{Part …}` sections (vocabulary, multiple

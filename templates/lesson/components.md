@@ -91,7 +91,7 @@ AP tags and list review topics):
     graded.}` — an `enumerate` of 4–8 DeltaMath topics in teaching order, each
     `\textbf{Topic name} (n problems) --- matches notes problems ...`, one marked
     `\textit{(diagnostic)}`, then a `\textit{Leave out:}` line naming the neighbouring topics
-    that test what was not taught; `\textbf{AP Practice --- extra credit (2 pages).}` — what
+    that test what was not taught; `\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).}` — what
     each MC distractor catches and what each FRQ part asks; `\textbf{Preview:}` of the next
     lesson. (A printed homework appears only on a lesson the user overrode.)
 14. **Teacher notes** — one `\begin{teachernote}[Component]` per component, in packet order:
@@ -109,20 +109,20 @@ AP tags and list review topics):
 - Full-bleed plum banner (tikz) with `\LARGE` course name, unit, and `Lesson <id>  <title>`.
 - `\namedateperiod` — the cover is the **one** component that carries it (namestrip).
 - `learningtargetbox` — an "I can…" list, **one target per Learning Objective**.
-- `tocbox` — a `tabularx` listing each packet component (#, Component, Description, Score
-  blank): **Warm-Up, Guided Notes, AP Practice, Homework**, then a **Total** of 1, 2, and 4.
-  AP Practice is extra credit — a `goldbg` row, `\textbf{Extra credit}` in its description, a
-  `$+$\,\blank{1.0cm}` score cell outside the total. Homework is the DeltaMath assignment,
-  with a *Due:* slot and a blank for the DeltaMath score.
+- `tocbox` — a `tabularx` listing each packet component (#, Component, Description):
+  **Warm-Up, Guided Notes, AP Practice, Homework**. It is a **contents list only**
+  (2026-10-28): no Score column and no Total row. Three columns (`c l X`): **every row needs
+  three cells** or the widths collapse. AP Practice is extra credit — a `goldbg` row whose
+  description opens `\textbf{Extra credit, scored 1 to 5.}`. Homework is the DeltaMath
+  assignment, with a *Due:* slot. (A printed, graded homework's row ends
+  `\textbf{Scored 1 to 5.}`.)
 
   ```latex
-  1 & Warm-Up      & ... & \blank{1.2cm} \\
-  2 & Guided Notes & ... & \blank{1.2cm} \\
+  1 & Warm-Up      & ... \\
+  2 & Guided Notes & ... \\
   \rowcolor{goldbg}
-  3 & AP Practice  & \textbf{Extra credit} --- AP-style multiple choice and free response & $+$\,\blank{1.0cm} \\
-  4 & Homework     & DeltaMath: \textit{Lesson X.Y} \quad Due: \blank{2.2cm} & \blank{1.2cm} \\
-  \midrule
-    & \multicolumn{2}{r}{\textbf{Total} \quad {\footnotesize (1, 2, and 4, plus any extra credit)}} & \blank{1.2cm} \\
+  3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+  4 & Homework     & DeltaMath: \textit{Lesson X.Y} \quad Due: \blank{2.2cm} \\
   ```
 
 - Optionally mirror the lesson plan's Priority Ideas & Vocabulary for student reference.
@@ -180,11 +180,12 @@ Ideas / Notes** shape (modelled on the Algebra 2 guided-notes worksheets; densit
 
 ## AP practice
 
-`ap_practice/` (+ `ap_practice_key/`) — **extra credit, optional, exactly two pages**, between
+`ap_practice/` (+ `ap_practice_key/`) — **extra credit, scored 1 to 5, optional, exactly two pages**, between
 the notes and the end of the packet. `\pageheader{...}{AP Practice}` (no name row). Model:
 `unit01/lesson01/ap_practice`.
 
-- Open with a `remindbox`: extra credit, optional, the graded DeltaMath homework comes first.
+- Open with a `remindbox`: `\textbf{Extra credit, optional, scored 1 to 5.}`, the graded
+  DeltaMath homework comes first.
   Byte-identical in blank and key.
 - **Page 1 — Section I.** A `headlinebox{goldbg}` header, then **five multiple-choice items,
   four options (A)–(D)** as on the AP Precalculus exam, in context or on a pre-drawn display.
@@ -208,7 +209,9 @@ multiplied — and leave the next lesson's skills to the next lesson.
 
 **Printed-homework override** — only on a lesson the user names: `homework/` (+
 `homework_key/`), **printed, graded, exactly two pages, last in the packet**,
-`\pageheader{...}{Homework}` (no name row); a `remindbox` (graded; due date on the cover);
+`\pageheader{...}{Homework, scored 1 to 5}` (no name row; the key's `Homework Key, scored 1 to 5`);
+a `remindbox` (graded, scored 1 to 5; due date on the cover); the cover row ends
+`\textbf{Scored 1 to 5.}`;
 8–12 numbered problems in titled parts, each a `headlinebox{lilac}` over a plain `enumerate`
 (`start=` keeps numbering continuous); every context new; one diagnostic item and one item that
 asks for the headline in writing; `\newpage` between the pages in both files; a closing

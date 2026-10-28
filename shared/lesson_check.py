@@ -181,7 +181,7 @@ def check_graded_tests(unit: Path, root: Path, rep: Report) -> None:
         for m in NAME_ROW.finditer(body):
             rep.fail(tex.parent.relative_to(root).as_posix(),
                      f"line {line_of(body, m.start())}: {m.group(0)} on a graded test — graded "
-                     f"pages carry only the tracking id; the name goes on the roster cover sheet")
+                     f"pages carry only the tracking id; the name goes on math-shared's tear-off name sheet")
 
 
 def check_pages(lesson: Path, rel: str, target: Path, rep: Report) -> None:

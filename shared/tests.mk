@@ -43,27 +43,34 @@ clean:
 #   make manifest COMP=practice_test
 #       blank + key builds, target/<unit>/tests/grading/<COMP>/manifest.json,
 #       and the check that the blank and key agree on every graded item.
-#   make roster-packets COMP=actual_test ROSTER=~/Rosters/precalculus/roster-map.csv [SECTION=…]
-#       math-shared's grading-personalized: per student, in roster order, the
-#       name cover sheet, its blank back, then the personalized test (QR codes
-#       and the id strip carry only the tracking id) padded to an even page
-#       count, copied to target/compiled/<unit>/<COMP>_roster.pdf to print as
-#       one job.
+#   make roster-packets COMP=actual_test ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
+#       the manifest first (as `make manifest` does, which `grading ingest`
+#       reads), then math-shared's grading-personalized: per student, in roster
+#       order, the tear-off name sheet, its blank back, then the personalized
+#       test (QR codes and the id strip carry only the tracking id) padded to an
+#       even page count, copied to target/compiled/<unit>/<COMP>_roster.pdf to
+#       print as one job.
 #
-# Graded pages carry no names; only the cover sheets do, and grading-personalized
+# Graded pages carry no names; only the name sheets do, and grading-personalized
 # ends with math-shared's name check on the graded builds. Everything stays
-# under target/.
+# under target/. ROSTER may start with ~/ and may be relative to this directory.
 GRADING_MK    := $(PROJECT_ROOT)/math-shared/grading.mk
 COMP          ?=
 COMPONENT     := $(COMP)
 KEY_COMPONENT := ../test_keys/$(COMP)_key
 GRADING_OUT   := $(PDF_DIR)/grading/$(COMP)
 
+# ROSTER may start with ~/ (make does not expand it) and may be relative.
+ifneq ($(ROSTER),)
+override ROSTER := $(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))
+endif
+
 ifneq ($(wildcard $(GRADING_MK)),)
 include $(GRADING_MK)
 
 grading-need-comp:
 	@test -n "$(COMP)" || { echo "!  set COMP=<test directory>, e.g. COMP=practice_test"; exit 1; }
+	@test -f "$(COMP)/main.tex" || { echo "!  no $(UNIT)/tests/$(COMP)/main.tex"; exit 1; }
 
 manifest: grading-need-comp
 	@$(MAKE) --no-print-directory grading-manifest
@@ -76,10 +83,11 @@ ROSTER_OUT     := $(PROJECT_ROOT)/target/compiled/$(UNIT)/$(COMP)_roster.pdf
 roster-need-ids: grading-need-roster
 	@test -n "$(strip $(ROSTER_IDS))" || { echo "!  no students in $(ROSTER)$(if $(SECTION), for section $(SECTION))"; exit 1; }
 
-roster-packets: grading-need-comp roster-need-ids grading-personalized
+roster-packets: grading-need-comp roster-need-ids manifest
+	@$(MAKE) --no-print-directory grading-personalized
 	@mkdir -p "$(dir $(ROSTER_OUT))"
 	@cp "$(GR_OUT)/personalized.pdf" "$(ROSTER_OUT)"
-	@echo "OK  Roster copies -> target/compiled/$(UNIT)/$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order)"
+	@echo "OK  Roster copies -> target/compiled/$(UNIT)/$(COMP)_roster.pdf ($(words $(ROSTER_IDS)) students, roster order, name sheets)"
 else
 manifest roster-packets grading-need-comp roster-need-ids:
 	@echo "!  math-shared is empty — run: git submodule update --init"; exit 1

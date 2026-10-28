@@ -35,3 +35,12 @@ drop: $(DROP_SRC)
 
 clean:
 	rm -rf $(PDF_DIR)
+
+# `make manifest COMP=<name>` and `make roster-packets COMP=<name> ROSTER=<path>`
+# run shared/tests.mk's grading targets for ../tests/<name> (a trailing _key is
+# dropped, so the key directory's own name works too). See shared/tests.mk.
+# ROSTER may start with ~/ and may be relative to this directory.
+.PHONY: manifest roster-packets
+manifest roster-packets:
+	@$(MAKE) --no-print-directory -C ../tests $@ COMP=$(patsubst %_key,%,$(COMP)) \
+	    $(if $(ROSTER),ROSTER="$(abspath $(patsubst ~/%,$(HOME)/%,$(ROSTER)))") $(if $(SECTION),SECTION="$(SECTION)")
