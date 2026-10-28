@@ -33,7 +33,7 @@ are graded and how their assignment ids are formed.
 # a lesson component: manifest.json, and the check that blank and key agree
 make -C unit03/lesson01 manifest COMP=homework
 # per student: the lesson packet with her name on the cover and her copy of every graded component
-make -C unit03/lesson01 roster-packets ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="<class>"
+make -C unit03/lesson01 roster-packets ROSTER=~/Mathematics/rosters/roster-map.csv SECTION="Precalculus"
 
 # a unit test (also runnable from tests/ or test_keys/ with the bare name)
 make -C unit01 manifest COMP=tests/practice_test
