@@ -204,8 +204,14 @@ authored graded from the start.
   `\namedateperiod` on a graded blank or key — a lesson component or a unit test.
 - Box sizes come from math-shared: a `type=choice` box is drawn square (as tall as it is
   wide) and a `type=rubric` box at least 2in tall, whatever height is written; `type=short`
-  boxes are drawn as written. So only short boxes stay inline as `\smash{\gradedblank…}` of the
-  blank's width. A choice box sits unsmashed after `\textit{Letter:}~` and its line grows to
+  boxes are drawn as written. **Every `type=short` box is as tall as the Letter boxes on the
+  same component** (2026-11-12): write its height as the component's Letter-box width
+  (`1.1cm` for a new component, which is also the Letter-box width to use; `0.42in` on the
+  AP Practice pages), and leave it **unsmashed** — never `\smash{\gradedblank…}` — so its line
+  grows to hold it, exactly as a choice box's line does. A short box keeps the width of its
+  answer. Applied to every unit test and AP Practice on that date; the printed homeworks still
+  in the moved lessons of units 3–6 keep their smashed boxes (the taller boxes overflow their
+  two pages), and those homeworks are deleted when their lesson is reauthored (§7, step 3). A choice box sits unsmashed after `\textit{Letter:}~` and its line grows to
   hold it. A rubric box goes on its own line under its prompt as
   `\rubricbox[gap]{\gradedblank[…]{\linewidth}{H}}` (`precalculus-article.sty`), never inline in
   a sentence or shared by two parts (a rubric box in a table cell is drawn unsmashed, so the row

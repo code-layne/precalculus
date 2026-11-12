@@ -1,0 +1,22 @@
+# Rubric for actual_test item 21 (Unit 2, Unit Test: Absolute Value & Radical Functions).
+# manifest.json points here as rubrics/precalc-u02-actual-test-p21.yaml, relative to unit02/tests/.
+id: p21
+points: 3
+task: "Describe the transformations that take y = |x| to g(x) = 3|x - 1| - 6."
+criteria:
+  - id: horizontal
+    points: 1
+    full: "Names a horizontal shift (translation) of 1 unit to the RIGHT."
+  - id: stretch
+    points: 1
+    full: "Names a vertical stretch (dilation) by a factor of 3."
+  - id: vertical
+    points: 1
+    full: "Names a vertical shift (translation) of 6 units DOWN."
+examples:
+  - response: "Right 1, vertical stretch by 3, down 6."
+    scores: {horizontal: 1, stretch: 1, vertical: 1}
+  - response: "Left 1, stretched by 3, down 6."
+    scores: {horizontal: 0, stretch: 1, vertical: 1}
+  - response: "Moves right 1 and down 6."
+    scores: {horizontal: 1, stretch: 0, vertical: 1}

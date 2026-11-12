@@ -1,0 +1,491 @@
+%! Unit 2: Functions and Their Graphs — Summative Assessment — Unit Test (blank)
+%! Absolute Value & Radical Functions. A printed parallel of the teacher's
+%! DeltaMath "Absolute Value & Radicals Test" (27 items): the same problem type
+%! in the same order, with new functions and numbers. The DeltaMath items that
+%! ask a student to drag a graph into place are given here as a table of
+%! landmark points to fill (no freehand graphing on paper).
+%! It is NEVER merged into a packet; distribute it separately. Its key must
+%! paginate identically to it, so every worked solution lives in a
+%! \begin{work} block authored byte-identically in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u02-actual-test}
+\gradingcourse{precalculus}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+% Question number
+\newcommand{\qn}[1]{\par\noindent\textbf{#1.}\ }
+
+% Coordinate grid: \gridaxes{xmin}{xmax}{ymin}{ymax}; even ticks labelled
+\newcommand{\gridaxes}[4]{%
+  \draw[linegray, very thin] (#1,#3) grid (#2,#4);
+  \draw[->] (#1,0) -- (#2+0.6,0) node[right]{\scriptsize $x$};
+  \draw[->] (0,#3) -- (0,#4+0.6) node[above]{\scriptsize $y$};
+  \foreach \t in {#1,...,#2}{\ifodd\t\else\ifnum\t=0\else
+    \draw (\t,0.12) -- (\t,-0.12) node[below, inner sep=1pt]{\tiny $\t$};\fi\fi}
+  \foreach \t in {#3,...,#4}{\ifodd\t\else\ifnum\t=0\else
+    \draw (0.12,\t) -- (-0.12,\t) node[left, inner sep=1pt]{\tiny $\t$};\fi\fi}}
+
+\begin{document}
+
+\pageheader{Unit 2: Functions \& Their Graphs}{Unit Test: Absolute Value \& Radical Functions}
+
+\vspace{0.06in}
+\noindent\textbf{Instructions:} Show all work in the space provided. Write each final answer
+in its box. Only what is inside a box is graded. Write the letter of the single best answer
+in its Letter box. Write intervals in interval notation. No notes. \textbf{70 points total.}
+
+% ======================================================================
+\boxguard[6]
+\parthead{Part A --- Transformations (12 pts)}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\qn{1} The solid graph is $f(x) = \sqrt{x}$. The dashed graph is a transformation of $f$.
+Fill in the boxes so the equation matches the dashed graph.
+
+\vspace{6pt}
+\noindent\hspace*{1em}$g(x) = $ \gradedblank[id=p1a, type=short, points=1, answer=1, check=numeric]{0.9cm}{1.1cm}
+$f\big($\gradedblank[id=p1b, type=short, points=1, answer=-1, check=numeric]{0.9cm}{1.1cm}$\,x\ +$
+\gradedblank[id=p1c, type=short, points=1, answer=2, check=numeric]{0.9cm}{1.1cm}$\big)\ +$
+\gradedblank[id=p1d, type=short, points=1, answer=-3, check=numeric]{0.9cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.27cm, y=0.27cm]
+  \gridaxes{-9}{9}{-5}{5}
+  \draw[plum, very thick, domain=0:9, samples=60, smooth] plot (\x, {sqrt(\x)});
+  \draw[redacc, very thick, dashed, domain=-8:2, samples=200, smooth] plot (\x, {sqrt(2-\x)-3});
+  \fill[redacc] (2,-3) circle (3pt);
+  \fill[plum] (0,0) circle (3pt);
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{8pt}
+\boxguard[14]
+\qn{2} The graph of $y = 2\sqrt{x + 3}$ is the graph of the parent $y = \sqrt{x}$ after
+transformations. Complete the table: where does each landmark point of the parent land?
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Parent point on $y = \sqrt{x}$ & $(0,\,0)$ & $(1,\,1)$ & $(4,\,2)$ \\ \hline
+Lands at on $y = 2\sqrt{x+3}$ &
+  \gradedblank[id=p2a, type=short, points=1, answer={(-3, 0)}, check=text, display={$(-3,\,0)$}]{2cm}{1.1cm} &
+  \gradedblank[id=p2b, type=short, points=1, answer={(-2, 2)}, check=text, display={$(-2,\,2)$}]{2cm}{1.1cm} &
+  \gradedblank[id=p2c, type=short, points=1, answer={(1, 4)}, check=text, display={$(1,\,4)$}]{2cm}{1.1cm} \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\qn{3} The graph of $y = \left|\tfrac{1}{3}x\right| - 4$ is the graph of the parent
+$y = |x|$ after transformations. Complete the table.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Parent point on $y = |x|$ & $(-1,\,1)$ & $(0,\,0)$ & $(1,\,1)$ \\ \hline
+Lands at on $y = \left|\tfrac{1}{3}x\right| - 4$ &
+  \gradedblank[id=p3a, type=short, points=1, answer={(-3, -3)}, check=text, display={$(-3,\,-3)$}]{2cm}{1.1cm} &
+  \gradedblank[id=p3b, type=short, points=1, answer={(0, -4)}, check=text, display={$(0,\,-4)$}]{2cm}{1.1cm} &
+  \gradedblank[id=p3c, type=short, points=1, answer={(3, -3)}, check=text, display={$(3,\,-3)$}]{2cm}{1.1cm} \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{6pt}
+\boxguard[16]
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\qn{4} The solid graph is $y = |x|$. Which function is the dashed graph?
+
+\vspace{6pt}
+\hspace*{1em}(A) $y = -|x - 2| + 1$\par
+\hspace*{1em}(B) $y = -|x + 2| + 1$\par
+\hspace*{1em}(C) $y = |x - 2| + 1$\par
+\hspace*{1em}(D) $y = -|x - 1| + 2$\par
+\vspace{6pt}
+\hspace*{1em}\textit{Letter:}~\gradedblank[id=p4, type=choice, points=2, answer=A]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.27cm, y=0.27cm]
+  \gridaxes{-8}{8}{-6}{7}
+  \draw[plum, very thick, <->] (-6.5,6.5) -- (0,0) -- (6.5,6.5);
+  \draw[redacc, very thick, dashed, <->] (-4.5,-5.5) -- (2,1) -- (8.5,-5.5);
+\end{tikzpicture}
+\end{minipage}
+
+% ======================================================================
+\boxguard[30]
+\parthead{Part B --- Symmetry, One-to-One, and Inverses (14 pts)}
+
+\qn{5} Fill in each table of values. Then write whether the function is \emph{even},
+\emph{odd}, or \emph{neither}.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\centering $f(x) = 2x^3 - x$\par\vspace{3pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline
+$-2$ & \gradedblank[id=p5a1, type=short, points=0.2, answer=-14, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$-1$ & \gradedblank[id=p5a2, type=short, points=0.2, answer=-1, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$0$  & \gradedblank[id=p5a3, type=short, points=0.2, answer=0, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$1$  & \gradedblank[id=p5a4, type=short, points=0.2, answer=1, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$2$  & \gradedblank[id=p5a5, type=short, points=0.2, answer=14, check=numeric]{1.1cm}{1.1cm} \\ \hline
+\end{tabular}\par\vspace{11pt}
+\gradedblank[id=p5a, type=short, points=1, answer=odd, check=text, display={Odd}]{2cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering $g(x) = |x| + 3$\par\vspace{3pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline
+$-2$ & \gradedblank[id=p5b1, type=short, points=0.2, answer=5, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$-1$ & \gradedblank[id=p5b2, type=short, points=0.2, answer=4, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$0$  & \gradedblank[id=p5b3, type=short, points=0.2, answer=3, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$1$  & \gradedblank[id=p5b4, type=short, points=0.2, answer=4, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$2$  & \gradedblank[id=p5b5, type=short, points=0.2, answer=5, check=numeric]{1.1cm}{1.1cm} \\ \hline
+\end{tabular}\par\vspace{11pt}
+\gradedblank[id=p5b, type=short, points=1, answer=even, check=text, display={Even}]{2cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering $h(x) = |x + 1|$\par\vspace{3pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|c|c|}
+\hline $x$ & $y$ \\ \hline
+$-2$ & \gradedblank[id=p5c1, type=short, points=0.2, answer=1, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$-1$ & \gradedblank[id=p5c2, type=short, points=0.2, answer=0, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$0$  & \gradedblank[id=p5c3, type=short, points=0.2, answer=1, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$1$  & \gradedblank[id=p5c4, type=short, points=0.2, answer=2, check=numeric]{1.1cm}{1.1cm} \\ \hline
+$2$  & \gradedblank[id=p5c5, type=short, points=0.2, answer=3, check=numeric]{1.1cm}{1.1cm} \\ \hline
+\end{tabular}\par\vspace{11pt}
+\gradedblank[id=p5c, type=short, points=1, answer=neither, check=text, display={Neither}]{2cm}{1.1cm}
+\end{minipage}
+
+\vspace{12pt}
+\boxguard[18]
+\noindent For 6--8, choose from the answers under each graph.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\qn{6} Is the function even, odd, or neither?\par
+\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-4}{4}{-3}{3}
+  \draw[plum, very thick, domain=-3.3:3.3, samples=80, smooth, <->] plot (\x, {0.1*(\x)^4 - (\x)^2 + 1});
+\end{tikzpicture}\par
+\raggedright\small
+(A) even \quad (B) odd \quad (C) neither\par\vspace{4pt}
+\textit{Letter:}~\gradedblank[id=p6, type=choice, points=2, answer=A]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\qn{7} Use the vertical and horizontal line tests. The graph shows
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-4}{5}{-4}{4}
+  \draw[plum, very thick, domain=-2.6:4.6, samples=80, smooth, <->] plot (\x, {0.5*(\x-1)^2 - 3});
+\end{tikzpicture}\par
+\raggedright\small
+(A) a one-to-one function\par
+(B) a function, not one-to-one\par
+(C) not a function\par\vspace{4pt}
+\textit{Letter:}~\gradedblank[id=p7, type=choice, points=2, answer=B]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\qn{8} Use the vertical and horizontal line tests. The graph shows
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-4}{4}{-4}{4}
+  \draw[plum, very thick, domain=-3.2:3.2, samples=80, smooth, <->] plot ({0.5*(\x)^2 - 3}, \x);
+\end{tikzpicture}\par
+\raggedright\small
+(A) a one-to-one function\par
+(B) a function, not one-to-one\par
+(C) not a function\par\vspace{4pt}
+\textit{Letter:}~\gradedblank[id=p8, type=choice, points=2, answer=C]{1.1cm}{13pt}
+\end{minipage}
+
+\vspace{12pt}
+\boxguard[12]
+\qn{9} Let $f(x) = \sqrt[3]{2x - 5}$. Which function is $f^{-1}(x)$?
+
+\begin{work}
+          y &= \sqrt[3]{2x - 5} \\
+          x &= \sqrt[3]{2y - 5} \\
+        x^3 &= 2y - 5 \\
+          y &= \frac{x^3 + 5}{2}
+\end{work}
+
+\hspace*{1em}(A) $\dfrac{x^3 + 5}{2}$ \qquad (B) $\dfrac{x^3 - 5}{2}$ \qquad
+(C) $\dfrac{x^3}{2} + 5$ \qquad (D) $\dfrac{1}{\sqrt[3]{2x - 5}}$
+\hfill \textit{Letter:}~\gradedblank[id=p9, type=choice, points=2, answer=A]{1.1cm}{13pt}
+
+% ======================================================================
+\boxguard[14]
+\parthead{Part C --- Reading Characteristics (21 pts)}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\qn{10} The graph of $f$ continues in the direction of its arrows. Its turning points are
+marked.
+
+\vspace{8pt}
+Increasing on:\par\vspace{2pt}
+\gradedblank[id=p10a, type=short, points=1, answer={(-inf, -3) U (2, inf)}, check=text, display={$(-\infty,-3)\cup(2,\infty)$}]{4.6cm}{1.1cm}\par
+\vspace{14pt}
+Decreasing on:\par\vspace{2pt}
+\gradedblank[id=p10b, type=short, points=1, answer={(-3, 2)}, check=text, display={$(-3,\,2)$}]{4.6cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-6}{5}{-4}{4}
+  \draw[plum, very thick, domain=-5.3:4.2, samples=80, smooth, <->]
+    plot (\x, {0.24*((\x)^3/3 + (\x)^2/2 - 6*\x) - 0.24});
+  \fill[plum] (-3,3) circle (4pt) node[above, font=\tiny]{$(-3,\,3)$};
+  \fill[plum] (2,-2) circle (4pt) node[below, font=\tiny]{$(2,\,-2)$};
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{12pt}
+\boxguard[18]
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\qn{11} State the domain of the function graphed.
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-2}{9}{-2}{4}
+  \draw[plum, very thick, domain=1:9, samples=60, smooth, ->] plot (\x, {3 - sqrt(\x-1)});
+  \fill[plum] (1,3) circle (4pt);
+\end{tikzpicture}\par\vspace{4pt}
+\raggedright Domain: \gradedblank[id=p11, type=short, points=2, answer={[1, inf)}, check=text, display={$[1,\infty)$}]{3cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\qn{12} State the range of the function graphed.
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-8}{4}{-2}{4}
+  \draw[plum, very thick, domain=-8:3, samples=60, smooth, <-] plot (\x, {sqrt(3-\x) - 1});
+  \fill[plum] (3,-1) circle (4pt);
+\end{tikzpicture}\par\vspace{4pt}
+\raggedright Range: \gradedblank[id=p12, type=short, points=2, answer={[-1, inf)}, check=text, display={$[-1,\infty)$}]{3cm}{1.1cm}
+\end{minipage}
+
+\vspace{12pt}
+\qn{13} Find the domain of $f(x) = \sqrt{10 - 2x} + 1$ algebraically.
+
+\begin{work}
+  10 - 2x &\ge 0 \\
+      -2x &\ge -10 \\
+        x &\le 5
+\end{work}
+
+\hspace*{1em}Domain: \gradedblank[id=p13, type=short, points=2, answer={(-inf, 5]}, check=text, display={$(-\infty,\,5]$}]{3cm}{1.1cm}
+
+\vspace{12pt}
+\boxguard[18]
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+\qn{14} Is the graph concave up or concave down?
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.34cm, y=0.34cm]
+  \gridaxes{-6}{5}{-4}{4}
+  \draw[plum, very thick, domain=-5:5, samples=60, smooth, ->] plot (\x, {2*sqrt(\x+5) - 3});
+  \fill[plum] (-5,-3) circle (4pt);
+\end{tikzpicture}\par
+\raggedright\small
+(A) concave up \quad (B) concave down\par\vspace{4pt}
+\textit{Letter:}~\gradedblank[id=p14, type=choice, points=2, answer=B]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\qn{15} Is the graph concave up or concave down?
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.34cm, y=0.34cm]
+  \gridaxes{-2}{5}{-4}{4}
+  \draw[plum, very thick, domain=-1:4, samples=60, smooth, ->] plot (\x, {0.25*(\x+1)^2 - 3});
+  \fill[plum] (-1,-3) circle (4pt);
+\end{tikzpicture}\par
+\raggedright\small
+(A) concave up \quad (B) concave down\par\vspace{4pt}
+\textit{Letter:}~\gradedblank[id=p15, type=choice, points=2, answer=A]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\qn{16} Find the point(s) of inflection.
+\par\vspace{3pt}\centering
+\begin{tikzpicture}[x=0.34cm, y=0.34cm]
+  \gridaxes{-4}{6}{-2}{6}
+  \draw[plum, very thick, domain=-3.4:5.4, samples=80, smooth, <->] plot (\x, {0.1*(\x-1)^3 - 1.2*(\x-1) + 2});
+\end{tikzpicture}\par
+\raggedright\small
+How many? \gradedblank[id=p16a, type=short, points=1, answer=1, check=numeric]{1.1cm}{1.1cm}\par\vspace{6pt}
+At: \gradedblank[id=p16b, type=short, points=1, answer={(1, 2)}, check=text, display={$(1,\,2)$}]{2cm}{1.1cm}
+\end{minipage}
+
+\vspace{12pt}
+\boxguard[22]
+\noindent
+\begin{minipage}[t]{0.56\textwidth}
+\qn{17} The function $f$ is graphed at the right.
+
+\vspace{4pt}
+\begin{enumerate}[label=(\alph*), leftmargin=1.6em, itemsep=6pt]
+  \item Domain of $f$: \gradedblank[id=p17a, type=short, points=1, answer={[-3, inf)}, check=text, display={$[-3,\infty)$}]{2.6cm}{1.1cm}
+  \item Range of $f$: \gradedblank[id=p17b, type=short, points=1, answer={(-inf, 4]}, check=text, display={$(-\infty,\,4]$}]{2.6cm}{1.1cm}
+  \item Which sentence is true?\par
+    (A) $f$ is invertible because it passes the horizontal line test.\par
+    (B) $f$ is invertible because it passes the vertical line test.\par
+    (C) $f$ is not invertible because it is not one-to-one.\par
+    \vspace{3pt}\textit{Letter:}~\gradedblank[id=p17c, type=choice, points=1, answer=A]{1.1cm}{13pt}
+  \item Domain of $f^{-1}$: \gradedblank[id=p17d, type=short, points=1, answer={(-inf, 4]}, check=text, display={$(-\infty,\,4]$}]{2.6cm}{1.1cm}
+  \item Range of $f^{-1}$: \gradedblank[id=p17e, type=short, points=1, answer={[-3, inf)}, check=text, display={$[-3,\infty)$}]{2.6cm}{1.1cm}
+\end{enumerate}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+  \gridaxes{-4}{9}{-2}{5}
+  \draw[plum, very thick, domain=-3:9, samples=60, smooth, ->] plot (\x, {4 - sqrt(\x+3)});
+  \fill[plum] (-3,4) circle (4pt);
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{12pt}
+\boxguard[18]
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+\qn{18} Which type of function is graphed?
+
+\vspace{6pt}
+\hspace*{1em}(A) exponential \qquad (D) square root\par
+\hspace*{1em}(B) absolute value \quad\ (E) linear\par
+\hspace*{1em}(C) cube root\par
+\vspace{6pt}
+\hspace*{1em}\textit{Letter:}~\gradedblank[id=p18, type=choice, points=2, answer=C]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.46\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.3cm, y=0.3cm]
+  \gridaxes{-8}{8}{-5}{5}
+  \draw[plum, very thick, domain=-7.5:7.5, samples=120, smooth, <->]
+    plot (\x, {2*sign(\x)*pow(abs(\x),1/3)});
+\end{tikzpicture}
+\end{minipage}
+
+% ======================================================================
+\boxguard[16]
+\parthead{Part D --- Average Rate of Change and Secant Lines (6 pts)}
+
+Let $h(x) = \sqrt[3]{x - 3} - 1$.
+
+\begin{work}
+                      h(2) &= \sqrt[3]{-1} - 1 \\
+                           &= -2 \\
+                     h(11) &= \sqrt[3]{8} - 1 \\
+                           &= 1 \\
+  \frac{h(11) - h(2)}{11 - 2} &= \frac{1 - (-2)}{9} \\
+                           &= \frac{1}{3} \\
+                    y - (-2) &= \tfrac{1}{3}(x - 2) \\
+                           y &= \tfrac{1}{3}x - \tfrac{8}{3}
+\end{work}
+
+\qn{19} Find the average rate of change of $h$ from $x = 2$ to $x = 11$. Write your answer
+as a simplified fraction. \hfill
+\gradedblank[id=p19, type=short, points=3, answer=1/3]{2cm}{1.1cm}
+
+\vspace{10pt}
+\qn{20} Find the secant line of $h$ from $x = 2$ to $x = 11$, in slope-intercept form.
+\hfill $y = $ \gradedblank[id=p20, type=short, points=3, answer={x/3-8/3}, display={$\tfrac{1}{3}x - \tfrac{8}{3}$}]{3.4cm}{1.1cm}
+
+% ======================================================================
+\boxguard[16]
+\parthead{Part E --- One Function, Every Characteristic (17 pts)}
+
+Problems 21--27 are all about the function
+\[
+  g(x) = 3\,|x - 1| - 6 .
+\]
+
+\qn{21} Describe the transformations that take $y = |x|$ to $g$.
+
+\rubricbox{\gradedblank[id=p21, type=rubric, points=3, display={Shift right $1$, stretch vertically by a factor of $3$, then shift down $6$.}]{\linewidth}{10pt}}
+
+\vspace{8pt}
+\qn{22} The domain of $g$ is
+\gradedblank[id=p22a, type=short, points=1, answer={(-inf, inf)}, check=text, display={$(-\infty,\infty)$}]{2.8cm}{1.1cm},
+and the range is
+\gradedblank[id=p22b, type=short, points=1, answer={[-6, inf)}, check=text, display={$[-6,\infty)$}]{2.8cm}{1.1cm}.
+
+\vspace{10pt}
+\qn{23} $g$ is increasing on
+\gradedblank[id=p23a, type=short, points=1, answer={(1, inf)}, check=text, display={$(1,\infty)$}]{2.8cm}{1.1cm}
+and decreasing on
+\gradedblank[id=p23b, type=short, points=1, answer={(-inf, 1)}, check=text, display={$(-\infty,\,1)$}]{2.8cm}{1.1cm}.
+
+\vspace{6pt}
+\boxguard[12]
+\qn{24} Find every intercept of $g$.
+
+\begin{work}
+  3|x - 1| - 6 &= 0 \\
+      |x - 1| &= 2 \\
+        x - 1 &= 2 \ \text{or}\ x - 1 = -2 \\
+            x &= 3 \ \text{or}\ x = -1 \\
+         g(0) &= 3|0 - 1| - 6 \\
+              &= -3
+\end{work}
+
+\hspace*{1em}$x$-intercept(s): $x = $
+\gradedblank[id=p24a, type=short, points=2, answer={-1, 3}, check=set, display={$-1,\ 3$}]{2.6cm}{1.1cm}
+\qquad $y$-intercept:
+\gradedblank[id=p24b, type=short, points=1, answer={(0, -3)}, check=text, display={$(0,\,-3)$}]{2.6cm}{1.1cm}
+
+\vspace{12pt}
+\boxguard[12]
+\noindent For 25 and 26, choose from these four statements.
+
+\vspace{3pt}
+\hspace*{1em}(A) $\displaystyle\lim_{x\to\infty} g(x) = \infty$ \qquad
+(B) $\displaystyle\lim_{x\to-\infty} g(x) = \infty$ \qquad
+(C) $\displaystyle\lim_{x\to\infty} g(x) = -\infty$ \qquad
+(D) $\displaystyle\lim_{x\to-\infty} g(x) = -\infty$
+
+\vspace{6pt}
+\qn{25} The left end behavior of $g$: \quad \textit{Letter:}~\gradedblank[id=p25, type=choice, points=2, answer=B]{1.1cm}{13pt}
+\hfill
+\textbf{26.}\ The right end behavior of $g$: \quad \textit{Letter:}~\gradedblank[id=p26, type=choice, points=2, answer=A]{1.1cm}{13pt}
+
+\vspace{10pt}
+\qn{27} Complete the sentence: the
+\gradedblank[id=p27a, type=short, points=1, answer=minimum, check=text, display={minimum}]{2.4cm}{1.1cm}
+(\emph{maximum} or \emph{minimum}) value of $g$ is
+\gradedblank[id=p27b, type=short, points=1, answer=-6, check=numeric]{1.4cm}{1.1cm},
+and it occurs at $x = $
+\gradedblank[id=p27c, type=short, points=1, answer=1, check=numeric]{1.4cm}{1.1cm}.
+
+\end{document}
