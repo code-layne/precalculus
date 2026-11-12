@@ -154,7 +154,9 @@ the day counts set aside:
 | 3.6 | Roots and Polynomials | CED 1.5.A + 1.11.A (zeros → factored form → standard form) | authored | `unit03/lesson06` |
 
 **Calendar:** 3.1 → 3.2 end the first semester; 3.3–3.6 run in January, then review and the
-unit test. The unit tests (`unit03/tests`, `unit03/test_keys`) are not yet authored.
+unit test. The unit tests are authored (`unit03/tests/practice_test`, `actual_test`, keys in
+`unit03/test_keys`; 70 points, 5 pages, parallel), with a two-up half-page reference card in
+`unit03/tests/cheat_sheet`; `make drop` publishes the practice test as the unit's sample test.
 
 Rationale: 3.1 re-reads Unit 2's rates of change and characteristics (2.5, 2.6) on polynomials
 and adds successive differences; 3.2 reads the global shape from the leading term. After the

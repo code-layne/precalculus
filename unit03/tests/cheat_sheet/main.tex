@@ -1,0 +1,126 @@
+%! Unit 3: Polynomial Functions — Unit Test Cheat Sheet (half page, printed two-up)
+%! A REFERENCE card for the actual test: the rules a student may look at during the test,
+%! nothing to fill in, so no key sibling. It uses no function or number from the actual or
+%! practice test. One Letter page holds two identical copies, top and bottom; cut on the
+%! dashed line.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\newgeometry{margin=0.4in}
+\pagestyle{empty}
+
+% Section strip inside a column
+\newcommand{\cshead}[1]{%
+  \par\vspace{3pt}\noindent
+  {\setlength{\fboxsep}{2pt}\colorbox{plum}{\parbox{\dimexpr\linewidth-4pt}{%
+    \color{white}\bfseries\footnotesize #1}}}\par\vspace{2pt}}
+
+\newcommand{\sheet}{%
+\noindent
+\begin{minipage}[t][4.95in][t]{\linewidth}
+\begin{headlinebox}{plum}{\color{white}\bfseries\small Unit 3 Test Cheat Sheet
+  \hfill Polynomial Functions}\end{headlinebox}
+\vspace{2pt}
+\small\raggedright
+\setlength{\parskip}{1.5pt}
+\setlist[itemize]{leftmargin=0.9em, itemsep=0pt, topsep=1pt, parsep=0pt}
+\noindent
+% ---------------- Column 1 ----------------
+\begin{minipage}[t]{0.325\linewidth}\raggedright
+\cshead{Rates of Change}
+\[ \text{ARC on } [a,b] = \frac{f(b) - f(a)}{b - a} \]
+= slope of the secant line.\par
+\textbf{Difference quotient:} $\dfrac{f(x+h) - f(x)}{h}$: expand $f(x+h)$, subtract,
+factor out $h$, cancel.
+
+\cshead{Successive Differences}
+Inputs must be \textbf{equally spaced}. Subtract outputs again and again:
+the degree is the \textbf{first} level of differences that is constant.
+\begin{itemize}
+  \item 1st differences constant: linear
+  \item 2nd constant: quadratic;\quad 3rd: cubic
+\end{itemize}
+
+\cshead{Reading a Graph}
+\begin{itemize}
+  \item $y$-intercept: $p(0)$ = the constant term.
+  \item Increasing / decreasing: read left to right; give \emph{$x$-intervals} in $(\ )$.
+  \item \textbf{Relative} max/min: a peak/valley among nearby points.
+        \textbf{Absolute}: highest/lowest of the whole graph --- may not exist
+        if an end goes to $\pm\infty$.
+  \item Concave up $\cup$, down $\cap$. \textbf{Inflection point}: concavity changes.
+\end{itemize}
+
+\end{minipage}%
+\hfill\vrule\hfill
+% ---------------- Column 2 ----------------
+\begin{minipage}[t]{0.315\linewidth}\raggedright
+\cshead{Degree \& End Behavior}
+\textbf{Leading term}: highest power, wherever it is written.
+In factored form, multiply the leading parts:
+degree = sum of the exponents.\par
+\begin{center}\renewcommand{\arraystretch}{1.25}\footnotesize
+\begin{tabular}{@{}l|c|c@{}}
+ & $a_n>0$ & $a_n<0$ \\ \hline
+even $n$ & $\nwarrow\ \nearrow$ & $\swarrow\ \searrow$ \\
+odd $n$  & $\swarrow\ \nearrow$ & $\nwarrow\ \searrow$ \\
+\end{tabular}\end{center}\vspace{-4pt}
+Write $\lim_{x\to\pm\infty} p(x) = \infty$ or $-\infty$.
+
+\cshead{Counting (degree $n$)}
+\begin{itemize}
+  \item At most $n-1$ turning points; at most $n$ real zeros.
+  \item Exactly $n$ complex zeros, counting multiplicity.
+  \item Least degree from a graph: turning points $+1$.
+\end{itemize}
+
+\cshead{Zeros \& Multiplicity}
+$a$ is a zero $\iff p(a) = 0 \iff (x - a)$ is a factor $\iff$ $x$-intercept $(a, 0)$.
+\begin{itemize}
+  \item \textbf{Odd} multiplicity: graph \textbf{crosses}; sign changes.
+  \item \textbf{Even} multiplicity: graph \textbf{touches} and turns; sign stays.
+  \item Real coefficients: $a+bi$ is a zero $\Rightarrow$ so is $a-bi$.
+\end{itemize}
+\end{minipage}%
+\hfill\vrule\hfill
+% ---------------- Column 3 ----------------
+\begin{minipage}[t]{0.315\linewidth}\raggedright
+\cshead{Factoring Checklist}
+\begin{enumerate}[leftmargin=1.1em, itemsep=0pt, topsep=1pt, parsep=0pt]
+  \item GCF first, always.
+  \item 2 terms: $a^2 - b^2 = (a-b)(a+b)$\par
+        $a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)$
+  \item 3 terms: trinomial or quadratic form.
+  \item 4 terms: grouping.
+  \item Factor completely, then check.
+\end{enumerate}
+\textbf{Solve:} all on one side, factor, each factor $=0$.
+\textbf{Never divide by $x$}: you lose $x=0$. $x^2=-k \Rightarrow x=\pm i\sqrt{k}$.
+
+\cshead{Division}
+$\text{dividend} = \text{divisor}\cdot\text{quotient} + \text{remainder}$
+\begin{itemize}
+  \item Write a \textbf{0} for every missing power.
+  \item Synthetic: divisor $x - c$ only; $x + 2$ means $c = -2$.
+  \item \textbf{Remainder Th.:} remainder of $p(x) \div (x - c)$ is $p(c)$.
+  \item \textbf{Factor Th.:} $p(c) = 0 \iff (x - c)$ is a factor.
+\end{itemize}
+
+\cshead{Writing a Polynomial}
+\begin{enumerate}[leftmargin=1.1em, itemsep=0pt, topsep=1pt, parsep=0pt]
+  \item Zero $r$ $\to$ factor $(x - r)$; repeat for multiplicity; add conjugates.
+  \item $p(x) = a(\ldots)(\ldots)$; plug in a given point to find $a$.
+  \item Conjugates: $(x-(a+bi))(x-(a-bi))$\par $= x^2 - 2ax + a^2 + b^2$; then multiply out.
+\end{enumerate}
+\end{minipage}
+\end{minipage}}
+
+\begin{document}
+\sheet
+
+\vfill
+\noindent\makebox[\linewidth]{\color{slate}\tiny\ \dotfill\ cut here\ \dotfill\ }
+\vfill
+
+\sheet
+\end{document}

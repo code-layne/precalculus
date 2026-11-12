@@ -1,0 +1,414 @@
+%! Unit 3: Polynomial Functions — Summative Assessment — Actual Test (KEY)
+%! Mirrors tests/actual_test/main.tex line for line: only the package swap and
+%! the title differ; every \gradedblank line and every \begin{work} block is
+%! byte-identical to the blank's. NO teachernote here.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{grading}
+\gradingassignment{precalc-u03-actual-test}
+\gradingcourse{precalculus}
+
+% Part-divider strip
+\newcommand{\parthead}[1]{%
+  \vspace{6pt}\noindent
+  \begin{headlinebox}{plum}{\color{white}\bfseries #1}\end{headlinebox}%
+  \vspace{4pt}}
+
+% Question number
+\newcommand{\qn}[1]{\par\noindent\textbf{#1.}\ }
+
+% Coordinate grid: \gridaxes{xmin}{xmax}{ymin}{ymax}; even ticks labelled
+\newcommand{\gridaxes}[4]{%
+  \draw[linegray, very thin] (#1,#3) grid (#2,#4);
+  \draw[->] (#1,0) -- (#2+0.6,0) node[right]{\scriptsize $x$};
+  \draw[->] (0,#3) -- (0,#4+0.6) node[above]{\scriptsize $y$};
+  \foreach \t in {#1,...,#2}{\ifodd\t\else\ifnum\t=0\else
+    \draw (\t,0.12) -- (\t,-0.12) node[below, inner sep=1pt]{\tiny $\t$};\fi\fi}
+  \foreach \t in {#3,...,#4}{\ifodd\t\else\ifnum\t=0\else
+    \draw (0.12,\t) -- (-0.12,\t) node[left, inner sep=1pt]{\tiny $\t$};\fi\fi}}
+
+\begin{document}
+
+\pageheader{Unit 3: Polynomial Functions}{Unit Test: Polynomial Functions --- Answer Key}
+
+\vspace{0.06in}
+\noindent\textbf{Instructions:} Show all work in the space provided. Write each final answer
+in its box. Only what is inside a box is graded. Write the letter of the single best answer
+in its Letter box. Write intervals in interval notation. No notes. \textbf{70 points total.}
+
+% ======================================================================
+\boxguard[14]
+\parthead{Part A --- Rates of Change and Characteristics (14 pts)}
+
+\noindent
+\begin{minipage}[t]{0.46\textwidth}
+Problems 1 and 2 use this table of values for a polynomial $f$.\par
+\vspace{4pt}
+{\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$x$    & $0$ & $1$    & $2$ & $3$  & $4$  \\ \hline
+$f(x)$ & $3$ & $2$    & $7$ & $24$ & $59$ \\ \hline
+\end{tabular}\par}
+\vspace{6pt}
+
+\qn{1} Use successive differences to find the degree of the polynomial that fits $f$.
+
+\begin{work}
+  \text{1st differences} &: -1,\ 5,\ 17,\ 35 \\
+  \text{2nd differences} &: 6,\ 12,\ 18 \\
+  \text{3rd differences} &: 6,\ 6
+\end{work}
+
+\hspace*{1em}Degree: \gradedblank[id=p1, type=short, points=2, answer=3, check=numeric]{1.4cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.5\textwidth}
+\qn{2} Find the average rate of change of $f$ on the interval $[0, 3]$.
+
+\begin{work}
+  \frac{f(3) - f(0)}{3 - 0} &= \frac{24 - 3}{3} \\
+                            &= 7
+\end{work}
+
+\hspace*{1em}\gradedblank[id=p2, type=short, points=2, answer=7, check=numeric]{1.8cm}{1.1cm}
+
+\vspace{8pt}
+\qn{3} Let $g(x) = x^2 + 5x$. Find and simplify the difference quotient
+$\dfrac{g(x + h) - g(x)}{h}$, \ $h \ne 0$.
+
+\begin{work}
+  g(x + h) &= (x + h)^2 + 5(x + h) \\
+           &= x^2 + 2xh + h^2 + 5x + 5h \\
+  g(x + h) - g(x) &= 2xh + h^2 + 5h \\
+  \frac{g(x + h) - g(x)}{h} &= 2x + h + 5
+\end{work}
+
+\hspace*{1em}\gradedblank[id=p3, type=short, points=3, answer={2x + h + 5}, display={$2x + h + 5$}]{3.4cm}{1.1cm}
+\end{minipage}
+
+\vspace{8pt}
+\boxguard[16]
+\noindent\begin{minipage}{\textwidth}
+\qn{4} The graph of the polynomial $f$ continues in the direction of its arrows. Its
+turning points are marked.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.56\textwidth}
+(a) The $y$-intercept: \gradedblank[id=p4a, type=short, points=1, answer={(0, -1)}, check=text, display={$(0,\,-1)$}]{2cm}{1.1cm}
+
+\vspace{5pt}
+(b) The relative maximum value: \gradedblank[id=p4b, type=short, points=1, answer=3, check=numeric]{1.4cm}{1.1cm}
+
+\vspace{5pt}
+(c) Increasing on: \gradedblank[id=p4c, type=short, points=1, answer={(-inf, 1) U (3, inf)}, check=text, display={$(-\infty,1)\cup(3,\infty)$}]{3.6cm}{1.1cm}
+
+\vspace{5pt}
+(d) Decreasing on: \gradedblank[id=p4d, type=short, points=1, answer={(1, 3)}, check=text, display={$(1,\,3)$}]{3.6cm}{1.1cm}
+
+\vspace{5pt}
+(e) The point of inflection: \gradedblank[id=p4e, type=short, points=1, answer={(2, 1)}, check=text, display={$(2,\,1)$}]{2cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.6cm, y=0.3cm]
+  \gridaxes{-2}{6}{-6}{6}
+  \draw[plum, very thick, domain=-0.25:4.25, samples=100, smooth, <->]
+    plot (\x, {(\x)^3 - 6*(\x)^2 + 9*\x - 1});
+  \fill[plum] (1,3) circle (4pt) node[above, font=\tiny]{$(1,\,3)$};
+  \fill[plum] (3,-1) circle (4pt) node[below, font=\tiny]{$(3,\,-1)$};
+\end{tikzpicture}\par
+\vspace{4pt}\raggedright
+(f) Which is true?\par
+\hspace*{0.5em}(A) $f$ has no absolute maximum.\par
+\hspace*{0.5em}(B) The absolute maximum of $f$ is $3$.\par
+\hspace*{0.5em}(C) The absolute maximum of $f$ is $-1$.\par
+\vspace{3pt}\hspace*{0.5em}\textit{Letter:}~\gradedblank[id=p4f, type=choice, points=2, answer=A]{1.1cm}{13pt}
+\end{minipage}
+\end{minipage}
+
+% ======================================================================
+\newpage
+\parthead{Part B --- Polynomial Behavior (12 pts)}
+
+\qn{5} Let $f(x) = 7 + x^3 - 4x^4 + 2x$.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Degree & Leading coefficient & Most turning points & Most real zeros \\ \hline
+\gradedblank[id=p5a, type=short, points=1, answer=4, check=numeric]{1.4cm}{1.1cm} &
+\gradedblank[id=p5b, type=short, points=1, answer=-4, check=numeric]{1.4cm}{1.1cm} &
+\gradedblank[id=p5c, type=short, points=1, answer=3, check=numeric]{1.4cm}{1.1cm} &
+\gradedblank[id=p5d, type=short, points=1, answer=4, check=numeric]{1.4cm}{1.1cm} \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\qn{6} Find the leading term of $g(x) = (2x - 1)^2(4 - x)$.
+
+\begin{work}
+  (2x)^2(-x) &= -4x^3
+\end{work}
+
+\hspace*{1em}Leading term: \gradedblank[id=p6, type=short, points=2, answer={-4x^3}, display={$-4x^3$}]{2.6cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\qn{7} Give the end behavior of the same $g$ in limit notation.
+
+\vspace{6pt}
+\hspace*{1em}$\displaystyle\lim_{x\to-\infty} g(x) = $
+\gradedblank[id=p7a, type=short, points=1, answer=inf, check=text, display={$\infty$}]{1.8cm}{1.1cm}
+
+\vspace{6pt}
+\hspace*{1em}$\displaystyle\lim_{x\to\infty} g(x) = $
+\gradedblank[id=p7b, type=short, points=1, answer=-inf, check=text, display={$-\infty$}]{1.8cm}{1.1cm}
+\end{minipage}
+
+\vspace{10pt}
+\boxguard[18]
+\noindent
+\begin{minipage}[t]{0.54\textwidth}
+\qn{8} The graph of the polynomial $p$ is shown. It continues in the direction of its
+arrows.
+
+\vspace{6pt}
+(a) The least possible degree of $p$:
+\gradedblank[id=p8a, type=short, points=2, answer=5, check=numeric]{1.4cm}{1.1cm}
+
+\vspace{6pt}
+(b) Which describes the degree and the leading coefficient of $p$?\par
+\hspace*{1em}(A) even, positive \qquad (B) even, negative\par
+\hspace*{1em}(C) odd, positive \qquad\ \ (D) odd, negative\par
+\vspace{3pt}\hspace*{1em}\textit{Letter:}~\gradedblank[id=p8b, type=choice, points=2, answer=C]{1.1cm}{13pt}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.42\textwidth}
+\vspace{0pt}\centering
+\begin{tikzpicture}[x=0.5cm, y=0.36cm]
+  \gridaxes{-4}{4}{-4}{6}
+  \draw[plum, very thick, domain=-3.3:3.2, samples=100, smooth, <->]
+    plot (\x, {0.1*\x*((\x)^2 - 4)*((\x)^2 - 9) + 2});
+\end{tikzpicture}
+\end{minipage}
+
+% ======================================================================
+\boxguard[16]
+\parthead{Part C --- Zeros and Multiplicity (10 pts)}
+
+\qn{9} Let $h(x) = -(x + 4)(x + 1)^3(x - 2)^2$. Complete the table. Write \emph{crosses} or
+\emph{touches} for what the graph does at each zero.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Zero of $h$ & $-4$ & $-1$ & $2$ \\ \hline
+Multiplicity &
+  \gradedblank[id=p9a, type=short, points=1, answer=1, check=numeric]{1.4cm}{1.1cm} &
+  \gradedblank[id=p9b, type=short, points=1, answer=3, check=numeric]{1.4cm}{1.1cm} &
+  \gradedblank[id=p9c, type=short, points=1, answer=2, check=numeric]{1.4cm}{1.1cm} \\ \hline
+Crosses or touches? &
+  \gradedblank[id=p9d, type=short, points=1, answer=crosses, check=text, display={crosses}]{2.4cm}{1.1cm} &
+  \gradedblank[id=p9e, type=short, points=1, answer=crosses, check=text, display={crosses}]{2.4cm}{1.1cm} &
+  \gradedblank[id=p9f, type=short, points=1, answer=touches, check=text, display={touches}]{2.4cm}{1.1cm} \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.56\textwidth}
+\qn{10} For the same $h$, is $h(x)$ \emph{positive} or \emph{negative} just to the left of
+$x = 2$? Just to the right of $x = 2$?
+
+\begin{work}
+  x \approx 2 &\Rightarrow (x + 4) > 0,\ (x + 1)^3 > 0 \\
+         h(x) &< 0 \ \text{on both sides}
+\end{work}
+
+Just left: \gradedblank[id=p10a, type=short, points=1, answer=negative, check=text, display={negative}]{2.2cm}{1.1cm}
+\hfill Just right: \gradedblank[id=p10b, type=short, points=1, answer=negative, check=text, display={negative}]{2.2cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.38\textwidth}
+\qn{11} A polynomial of degree 3 with real coefficients has zeros $-2$ and $3 - i$. What is
+its third zero?
+
+\vspace{6pt}
+\hspace*{1em}\gradedblank[id=p11, type=short, points=2, answer={3 + i}, display={$3 + i$}]{2.6cm}{1.1cm}
+\end{minipage}
+
+% ======================================================================
+\newpage
+\parthead{Part D --- Factoring and Solving (11 pts)}
+
+\noindent For 12--14, factor completely.
+
+\vspace{4pt}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\qn{12} $3x^3 - 12x$
+\begin{work}
+  3x^3 - 12x &= 3x(x^2 - 4) \\
+             &= 3x(x - 2)(x + 2)
+\end{work}
+\hspace*{1em}\gradedblank[id=p12, type=short, points=2, answer={3x(x - 2)(x + 2)}, display={$3x(x - 2)(x + 2)$}]{4.2cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\qn{13} $x^3 - 2x^2 - 9x + 18$
+\begin{work}
+  x^3 - 2x^2 - 9x + 18 &= x^2(x - 2) - 9(x - 2) \\
+                       &= (x - 2)(x^2 - 9) \\
+                       &= (x - 2)(x - 3)(x + 3)
+\end{work}
+\hspace*{1em}\gradedblank[id=p13, type=short, points=2, answer={(x - 2)(x - 3)(x + 3)}, display={$(x - 2)(x - 3)(x + 3)$}]{4.6cm}{1.1cm}
+\end{minipage}
+
+\vspace{30pt}
+\boxguard[12]
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\qn{14} $8x^3 - 1$
+\begin{work}
+  8x^3 - 1 &= (2x)^3 - 1^3 \\
+           &= (2x - 1)(4x^2 + 2x + 1)
+\end{work}
+\hspace*{1em}\gradedblank[id=p14, type=short, points=2, answer={(2x - 1)(4x^2 + 2x + 1)}, display={$(2x - 1)(4x^2 + 2x + 1)$}]{4.6cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\qn{15} Solve $x^4 + 5x^2 - 36 = 0$. Give every solution, real and non-real.
+
+\begin{work}
+  (x^2 - 4)(x^2 + 9) &= 0 \\
+  x^2 = 4 \ \text{or}\ x^2 &= -9 \\
+  x = \pm 2 \ \text{or}\ x &= \pm 3i
+\end{work}
+
+\hspace*{1em}$x = $ \gradedblank[id=p15, type=short, points=3, answer={2, -2, 3i, -3i}, check=set, display={$2,\ -2,\ 3i,\ -3i$}]{4.2cm}{1.1cm}
+\end{minipage}
+
+\vspace{30pt}
+\boxguard[10]
+\qn{16} To solve $x^3 = 9x$, Eli divides both sides by $x$ and gets $x^2 = 9$, so
+$x = \pm 3$. Which statement is true?
+
+\vspace{4pt}
+\hspace*{1em}(A) Eli lost a solution: the solutions are $9$, $3$, and $-3$.\par
+\hspace*{1em}(B) Eli is right: the solutions are $3$ and $-3$.\par
+\hspace*{1em}(C) Eli lost a solution: the solutions are $0$, $3$, and $-3$.\par
+\hspace*{1em}(D) Eli gained a solution: the only solution is $3$.\par
+\vspace{4pt}
+\hspace*{1em}\textit{Letter:}~\gradedblank[id=p16, type=choice, points=2, answer=C]{1.1cm}{13pt}
+
+% ======================================================================
+\newpage
+\parthead{Part E --- Dividing Polynomials (14 pts)}
+
+\qn{17} Use long division to divide $3x^3 - 2x^2 + x + 1$ by $x^2 + 2$. Fill in the boxes.
+
+\begin{work}
+  3x^3 - 2x^2 + x + 1 - 3x(x^2 + 2) &= -2x^2 - 5x + 1 \\
+  -2x^2 - 5x + 1 - (-2)(x^2 + 2) &= -5x + 5
+\end{work}
+
+\vspace{24pt}
+
+\hspace*{1em}$3x^3 - 2x^2 + x + 1 = (x^2 + 2)\big($%
+\gradedblank[id=p17a, type=short, points=2, answer={3x - 2}, display={$3x - 2$}]{2.6cm}{1.1cm}%
+$\big)\ +$ \gradedblank[id=p17b, type=short, points=2, answer={-5x + 5}, display={$-5x + 5$}]{2.6cm}{1.1cm}
+
+\vspace{10pt}
+\boxguard[12]
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\qn{18} Use synthetic division to divide $3x^3 - 4x^2 + 6$ by $x + 1$.
+
+\begin{work}
+  \begin{array}{r|rrrr}
+    -1 & 3 & -4 & 0 & 6 \\
+       &   & -3 & 7 & -7 \\ \hline
+       & 3 & -7 & 7 & -1
+  \end{array}
+\end{work}
+
+Quotient: \gradedblank[id=p18a, type=short, points=2, answer={3x^2 - 7x + 7}, display={$3x^2 - 7x + 7$}]{3.4cm}{1.1cm}
+
+\vspace{6pt}
+Remainder: \gradedblank[id=p18b, type=short, points=1, answer=-1, check=numeric]{1.4cm}{1.1cm}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\qn{19} Use the Remainder Theorem to find the remainder when $p(x) = x^4 + 2x^3 - x + 4$ is
+divided by $x + 2$.
+
+\begin{work}
+  p(-2) &= 16 - 16 + 2 + 4 \\
+        &= 6
+\end{work}
+
+Remainder: \gradedblank[id=p19, type=short, points=2, answer=6, check=numeric]{1.6cm}{1.1cm}
+\end{minipage}
+
+\vspace{10pt}
+\boxguard[22]
+\qn{20} $x = -2$ is a zero of $p(x) = x^3 + 3x^2 - 4$. In the box: divide $p(x)$ by $x + 2$,
+write $p(x)$ factored completely, and list every zero of $p$ with its multiplicity.
+
+\rubricbox{\gradedblank[id=p20, type=rubric, points=5, display={Synthetic division by $-2$ on $1,\ 3,\ 0,\ -4$ gives $1,\ 1,\ -2$ with remainder $0$, so $x + 2$ is a factor. Quotient $x^2 + x - 2 = (x + 2)(x - 1)$. So $p(x) = (x + 2)^2(x - 1)$. Zeros: $-2$ (multiplicity $2$) and $1$ (multiplicity $1$).}]{\linewidth}{2.2in}}
+
+% ======================================================================
+\newpage
+\parthead{Part F --- Writing Polynomials from Zeros (9 pts)}
+
+\qn{21} Write the polynomial with zeros $-2$, $1$, and $4$ and leading coefficient $1$, in
+standard form.
+
+\begin{work}
+  (x + 2)(x - 1)(x - 4) &= (x + 2)(x^2 - 5x + 4) \\
+                        &= x^3 - 5x^2 + 4x + 2x^2 - 10x + 8 \\
+                        &= x^3 - 3x^2 - 6x + 8
+\end{work}
+
+\hspace*{1em}\gradedblank[id=p21, type=short, points=3, answer={x^3 - 3x^2 - 6x + 8}, display={$x^3 - 3x^2 - 6x + 8$}]{4.6cm}{1.1cm}
+
+\vspace{30pt}
+\boxguard[12]
+\qn{22} A polynomial $f$ of degree 3 has zero $-1$ with multiplicity 2, zero $3$, and passes
+through $(0, 6)$. Find the leading coefficient $a$, then write $f(x)$ in factored form.
+
+\begin{work}
+  f(x) &= a(x + 1)^2(x - 3) \\
+  f(0) = a(1)^2(-3) &= 6 \\
+  -3a &= 6 \\
+  a &= -2
+\end{work}
+
+\hspace*{1em}$a = $ \gradedblank[id=p22a, type=short, points=1, answer=-2, check=numeric]{1.4cm}{1.1cm}
+\qquad $f(x) = $ \gradedblank[id=p22b, type=short, points=2, answer={-2(x + 1)^2(x - 3)}, display={$-2(x + 1)^2(x - 3)$}]{4.2cm}{1.1cm}
+
+\vspace{30pt}
+\boxguard[12]
+\qn{23} Write the polynomial of least degree with real coefficients, leading coefficient
+$1$, and zeros $-1$ and $3i$, in standard form.
+
+\begin{work}
+  3i \ \text{is a zero} &\Rightarrow -3i \ \text{is a zero} \\
+  (x + 1)(x - 3i)(x + 3i) &= (x + 1)(x^2 + 9) \\
+                          &= x^3 + x^2 + 9x + 9
+\end{work}
+
+\hspace*{1em}\gradedblank[id=p23, type=short, points=3, answer={x^3 + x^2 + 9x + 9}, display={$x^3 + x^2 + 9x + 9$}]{4.6cm}{1.1cm}
+
+\end{document}
