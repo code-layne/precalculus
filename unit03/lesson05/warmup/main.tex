@@ -1,39 +1,68 @@
-%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Warm-Up
+%! Polynomial Long and Synthetic Division — Unit 3, Lesson 3.5 — Warm-Up
+% Exactly ONE page, blank and keyed (LESSON_SHAPE.md, one_page). Four prerequisite items:
+% 1 is numerical long division written as dividend = divisor x quotient + remainder (the shape
+% of today's division algorithm); 2 evaluates a cubic at a NEGATIVE input (the Remainder
+% Theorem's substitution road, and the sign of c); 3 factors a quadratic (3.4 — every quotient
+% today ends here); 4 combines like terms where one power is MISSING (the placeholder idea).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\setlength{\workrowsep}{6pt}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Warm-Up}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=10pt]
 
-\item Factor the polynomial $p(x) = x^3 - x^2 - 6x$ completely.
+\item Divide $157 \div 12$ by long division. Then write the result in the form
+      dividend $=$ divisor $\cdot$ quotient $+$ remainder.
 
-      \vspace{0.08in}
-      $p(x) = $ \blank{7cm}
+\begin{work}
+  &\begin{array}{r@{\,}ccc}
+               &     & 1      & 3      \\ \cline{2-4}
+    12\,\big)  & 1   & 5      & 7      \\
+               & -(1 & 2)     &        \\ \cline{2-3}
+               &     & 3      & 7      \\
+               &     & -(3    & 6)     \\ \cline{3-4}
+               &     &        & 1
+  \end{array}
+\end{work}
 
-      Zeros of $p$: \blank{5cm}
+$157 = 12 \cdot$ \blank{1.4cm} $+$ \blank{1.4cm}
 
-\item A rational function is given: $\displaystyle r(x) = \dfrac{x^2 - 9}{(x-3)(x+5)}$.
+\item Evaluate $p(x) = x^3 - 4x + 5$ at $x = -2$. Put the $-2$ in parentheses first.
 
-      \begin{enumerate}[label=(\alph*), itemsep=6pt]
-        \item Does $r$ have a hole, a vertical asymptote, or both at $x = 3$?
-              Circle: \quad \textbf{Hole} \quad / \quad \textbf{Vertical Asymptote} \quad / \quad \textbf{Both}
+\begin{work}
+  p(-2) &= (-2)^3 - 4(-2) + 5 \\
+        &= -8 + 8 + 5 \\
+        &= 5
+\end{work}
 
-        \item Identify any vertical asymptote(s). \blank{4cm}
-      \end{enumerate}
+$p(-2) = $ \blank{1.6cm}
 
-\item The rational function $\displaystyle h(x) = \frac{3x^4 - x + 7}{2x^2 + 1}$ is written in
-      standard form. Describe the end behavior of $h(x)$ as $x \to +\infty$.
+\item Factor $x^2 - x - 6$. Then name both zeros of $x^2 - x - 6$.
 
-      \vspace{0.06in}
-      End behavior: as $x \to +\infty$, $h(x) \to$ \blank{3cm}
+\begin{work}
+  x^2 - x - 6 &= (x - 3)(x + 2) \\
+            x &= 3 \text{ or } x = -2
+\end{work}
+
+Factored: \blank{3.4cm} \qquad Zeros: \blank{2.4cm}
+
+\item Simplify and write in standard form (highest power first):
+      \quad $(x^3 + 4x - 1) - (x^3 - 2x^2 + x)$.
+      Which power of $x$ is \textbf{missing} from $x^3 + 4x - 1$?
+
+\begin{work}
+  (x^3 + 0x^2 + 4x - 1) - (x^3 - 2x^2 + x) &= x^3 - x^3 + 0x^2 + 2x^2 + 4x - x - 1 \\
+                                            &= 2x^2 + 3x - 1
+\end{work}
+
+Result: \blank{3.2cm} \qquad Missing power: \blank{1.6cm}
 
 \end{enumerate}
 

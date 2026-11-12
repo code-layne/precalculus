@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 3, Lesson 3.2). manifest.json points here
+# as rubrics/precalc-u03-l02-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Write the end behavior of k in limit notation. Does k have an absolute maximum value? Explain."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): lim as x -> -infinity of k(x) = infinity AND lim as x -> infinity of k(x) = -infinity, in limit notation; AND says k has no absolute maximum because the left arm rises without bound (or: odd degree, the arms point opposite ways)."
+    partial: "Partially correct (1): Both limits correct with no or a wrong answer about the absolute maximum; OR the limits written in words only (rises on the left, falls on the right) with a correct absolute-maximum explanation; OR one limit correct and a correct absolute-maximum explanation."
+examples:
+  - response: "lim x->-inf k(x) = inf, lim x->inf k(x) = -inf. No absolute max, because the graph keeps going up on the left forever."
+    scores: {part: 2}
+  - response: "lim x->-inf k(x) = inf, lim x->inf k(x) = -inf. The absolute max is about 6."
+    scores: {part: 1}
+  - response: "lim x->inf k(x) = inf on both sides. Yes, 6."
+    scores: {part: 0}

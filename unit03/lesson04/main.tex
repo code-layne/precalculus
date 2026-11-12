@@ -1,4 +1,8 @@
-%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Lesson Plan
+%! Polynomial Zeros and Factoring — Unit 3, Lesson 3.4 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 3.3 READ zeros from a factored form; 3.4 PRODUCES the
+% factored form by pattern (GCF, squares, cubes, quadratic form, grouping) and solves p(x) = 0 by
+% the Zero Product Property, non-real solutions included. CED 1.11.A (1.11.A.1, 1.11.A.3) with
+% 1.5.A.1–2. 3.5 takes over when no pattern fits (division). No Rational Root Theorem.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,8 +11,8 @@
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.4: Rational Functions and Holes}
+\newcommand{\UnitNumberName}{Unit 3: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.4: Polynomial Zeros and Factoring}
 
 \begin{document}
 \begin{center}
@@ -16,128 +20,397 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify holes in rational function graphs by
-    locating shared zeros of the numerator and denominator where numerator multiplicity is
-    greater than or equal to denominator multiplicity, simplify to find the hole's coordinates,
-    and express the hole location using limit notation.
-    \hfill\textit{\small Skill: MP 3.C}
+    \textbf{Primary Objective:} Students will factor a polynomial completely by a strategy ---
+    the greatest common factor first, then a difference of squares, a sum or difference of
+    cubes, a trinomial or quadratic form, or grouping --- and solve a polynomial equation by
+    moving every term to one side, factoring, and applying the Zero Product Property, finding
+    every solution, real and non-real. They read the zeros, multiplicities, and $x$-intercepts
+    from the factored form and check that a degree-$n$ equation has $n$ solutions --- never
+    dividing both sides by $x$.
+    \hfill\textit{\small (CED Topics 1.11 and 1.5 --- Skills 1.A, 1.B)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the FACTOR FIRST and FACTORING STRATEGY rows: the Zero Product Property, the checklist, problems 1 and 3. \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2 and 4--6, then the EVERY SOLUTION and TWO PATHS rows (7--14; the teacher works 7 and 11). \\
+\textbf{You Do} --- independent & 16 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out, the headline, and the DeltaMath assignment. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Five strategies share one period.} GCF, squares, cubes, quadratic form and grouping all
+arrive on the same day, so the guided phase runs 22 minutes and the first two rows share one
+I Do. If the clock slips, cut \textbf{problem 5} (the sum of cubes --- problem 10 solves a
+difference of cubes anyway) and \textbf{problem 9} first, and protect the \textbf{TWO PATHS}
+row: problems 11--13 are the lesson, and You Do problems 16--18 cannot be done without them.
+Never cut the You Do below 14 minutes --- circulating it is the only formative read of the
+period.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 3.C} --- Support conclusions or choices with a logical rationale or appropriate data. &
+\textbf{AP Skill 1.A} --- Solve equations and inequalities represented analytically, with
+and without technology. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A hole occurs at $x = c$ when the numerator and denominator share a zero at $c$ with
-        numerator multiplicity $m \geq$ denominator multiplicity $n$. (EK 1.10.A.1)
-  \item The $y$-coordinate of the hole is $L = \lim_{x \to c} r(x)$, found by substituting
-        $x = c$ into the simplified form. (EK 1.10.A.2)
-  \item Both one-sided limits equal $L$: $\lim_{x \to c^-} r(x) = \lim_{x \to c^+} r(x) = L$.
+  \item A product is zero exactly when one of its factors is zero, so a polynomial equation
+        is solved by moving every term to one side, factoring, and setting each factor equal
+        to zero. (1.11.A.1)
+  \item $a$ is a zero of $p$ exactly when $(x - a)$ is a factor; each real zero is an
+        $x$-intercept, and the non-real zeros come in conjugate pairs. (1.5.A.1)
+  \item Counting multiplicity, a degree-$n$ polynomial equation has exactly $n$ solutions ---
+        the check that none was lost. (1.5.A.2)
+\end{itemize} \\
+\textbf{AP Skill 1.B} --- Construct equivalent analytical representations. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Factoring follows a strategy: GCF first; then count the terms --- two (squares, cubes),
+        three (trinomial, quadratic form with $u = x^2$), four (grouping); then factor
+        completely and check by multiplying.
+  \item The factored form and the standard form are the same polynomial; each answers
+        different questions --- the factored form shows the zeros, the standard form the
+        degree and leading term. (1.11.A.3)
+\end{itemize} \\
+\textbf{The distinction the lesson is built on.} &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item \textbf{Target misconception:} dividing both sides by $x$. On $x^3 = 9x$, students
+        divide by $x$, get $x = \pm 3$, and lose $x = 0$; on $2x^4 = 8x^2$ dividing by $2x^2$
+        loses the double zero at 0. Problems 11, 12 and 14 put the divide path and the factor
+        path side by side so the two answers disagree; You Do problem 16 transfers it.
+  \item \textbf{Second trap:} stopping early. $x^4 - 16 = (x^2 - 4)(x^2 + 4)$ is not complete,
+        and setting only $x^2 - 4 = 0$ gives two of the four solutions. Problem 13 fixes it;
+        You Do problem 17 transfers it, and 18 needs both.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.27\linewidth} X @{}}
-Hole in a graph         & A missing point $(c, L)$ where $r(c)$ is undefined but $\lim_{x \to c} r(x) = L$ exists. \\
-Removable discontinuity & Another name for a hole; the discontinuity is ``removable'' by redefining the function at one point. \\
-Common factor           & A polynomial factor shared by numerator and denominator; canceling it reveals a hole. \\
-Multiplicity            & The number of times a given zero appears as a factor. \\
-Limit notation          & $\lim_{x \to c} r(x) = L$: the outputs of $r$ approach $L$ as inputs approach $c$. \\
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Zero Product Property & If $ab = 0$, then $a = 0$ or $b = 0$. \\
+Greatest common factor (GCF) & The largest factor --- a number and a power of $x$ --- that divides every term. \\
+Factor by grouping & For four terms: factor each pair, then factor out the binomial the pairs share. \\
+Difference of squares & $a^2 - b^2 = (a - b)(a + b)$. A \emph{sum} of squares, $a^2 + b^2$, is prime over the reals. \\
+Sum / difference of cubes & \TallMath{a^3 + b^3 = (a + b)(a^2 - ab + b^2), \quad a^3 - b^3 = (a - b)(a^2 + ab + b^2)} \\
+Quadratic form & A polynomial shaped like $au^2 + bu + c$ for $u = x^2$, such as $x^4 - 5x^2 + 4$. \\
+Factored completely & Every factor is prime over the real numbers: none can be factored further. \\
+Multiplicity & The number of times a factor $(x - a)$ repeats; a degree-$n$ equation has $n$ solutions counting it (3.3). \\
+Conjugate pair & Non-real solutions $a + bi$ and $a - bi$; they arrive together (3.3). \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X@{}}
-        Spiral review (warm-up) covers: identifying vertical asymptotes from 1.9 (shared zero,
-        numerator nonzero or denom mult $>$ num mult); interpreting one-sided limit behavior at a
-        VA; factoring a quadratic (bridge to factoring numerators and denominators for holes).
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: factoring a quadratic trinomial (the last step of most of today's
+    problems); factoring out a greatest common factor that includes a power of $x$ --- the move
+    the crux depends on; simplifying the square root of a negative number in terms of $i$ (2.1),
+    which today's non-real solutions need; and reading each zero and its multiplicity, touch
+    or cross, and the count of zeros from a factored form (3.3) --- today runs that the other
+    way and produces the factored form.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-Suppose your GPS loses signal for exactly one moment --- at $t = 5$ seconds --- but your
-position function is still defined everywhere else. The output \textit{at} $t = 5$ is missing,
-but we can figure out where it ``should'' be by looking at what the function approaches from
-both sides. This missing-but-predictable point is exactly what a hole is in a rational function.
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{You lost one.} Write Jordan's work on the board.
+    \begin{enumerate}[itemsep=2pt]
+        \item Jordan solves $x^3 = 4x$ by dividing both sides by $x$: $x^2 = 4$, so $x = \pm 2$.
+              Riley says, ``You lost one.'' Ask: how many solutions should a degree-3
+              equation have? (3.3: three, counting multiplicity.)
+        \item Let the class hunt for 30 seconds. Push until someone tries $x = 0$:
+              $0^3 = 4(0)$ is true. Leave it there --- \emph{why} dividing lost it is problem 11.
+    \end{enumerate}
+    \textit{Discussion prompt:} Jordan's algebra had no mistake in it. So where did a solution
+    go? Today we solve by factoring, and the degree tells us when we have found them all.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
-\textbf{Part 1 (10 min): Holes vs.\ Vertical Asymptotes.}
 
-Given a shared zero $x = a$ with numerator multiplicity $m$ and denominator multiplicity $n$:
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
-  \item $m \geq n$ $\Rightarrow$ \textbf{HOLE} at $x = a$
-  \item $m < n$ $\Rightarrow$ \textbf{Vertical Asymptote} at $x = a$
-  \item Zero only in denominator $\Rightarrow$ Vertical Asymptote
+\textbf{I DO --- Part 1: Factor First, by a Checklist} (10 min)
+
+\textit{Notes rows FACTOR FIRST and FACTORING STRATEGY: read each definition, mark up the
+displays, work problems 1 and 3. Teacher works; students watch and annotate. Nothing is
+cold-called in this phase.}
+\begin{itemize}
+  \item Read the Zero Product Property. Point at $p(x) = x(x + 4)(x - 3)$: follow each arrow
+        to its factor set equal to zero, fill the three label boxes ($0$, $-4$, $3$), then
+        touch the three gold dots on the graph --- factor, zero, intercept (3.3).
+  \item Work \textbf{problem 1} aloud: ``Everything is on one side already. GCF first ---
+        $2x$, and the $x$ stays.'' $2x(x - 5) = 0$ gives $0$ and $5$.
+  \item Read the four \stepnum{1}--\stepnum{4} steps. Walk the pattern table; fill
+        \textit{prime} for the sum of squares yourself and say why: no real number squared
+        and added to 9 makes 0.
+  \item Work \textbf{problem 3} by grouping, naming each step: pair, factor each pair, pull
+        out $(x + 2)$, then \emph{step 3} --- $x^2 - 9$ is not finished.
 \end{itemize}
 
-Connect to 1.9: VAs arise when denom is zero and numerator is nonzero \textit{or} when
-$m < n$. Today's lesson is the complementary case ($m \geq n$).
+\textbf{WE DO --- Part 2: GCF and the Patterns} (6 min)
+
+\textit{Problems 2 and 4--6. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2}: the GCF is $3x^2$, so $x = 0$ is a double zero --- the first
+        multiplicity 2 of the day. \textbf{Problem 4} is GCF, then squares.
+  \item \textbf{Problem 5}: name $a = 3x$ and $b = 1$ \emph{before} writing the pattern; the
+        middle sign of the trinomial is the opposite of the binomial's.
+  \item \textbf{Problem 6}: say ``let $u = x^2$'' out loud, factor $u^2 - 5u + 4$, put $x^2$
+        back, then squares twice.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2 (15 min): Finding Hole Coordinates.}
+\textbf{WE DO --- Part 3: Every Solution, Real or Not} (8 min)
 
-Four-step procedure:
-\begin{enumerate}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
-  \item Factor numerator and denominator.
-  \item Identify shared zeros and their multiplicities.
-  \item Cancel the common factor.
-  \item Substitute $x = c$ into the simplified form to find $L$.
-\end{enumerate}
+\textit{Notes row EVERY SOLUTION. Class fills the blanks together; cold-call every one.
+Teacher works problem 7; the class works the three label boxes and problems 8--10.}
+\begin{itemize}
+  \item Work \textbf{problem 7} against the graph: two crossings, but degree 4. Fill the label
+        boxes ($2$, $4$, \textit{conjugate}); the other two are $\pm i$, real zeros of nothing
+        on this graph.
+  \item \textbf{Problem 8}: $x^2 + 9$ is at least 9, so the graph never reaches the axis.
+        \textbf{Problem 9} is grouping again, ending in $\pm 2i$.
+  \item \textbf{Problem 10} is the one quadratic-formula case: keep the numbers on the board
+        and simplify $\sqrt{-12} = 2i\sqrt{3}$ (warm-up item 3).
+\end{itemize}
 
-\textit{Example 1:} $r(x) = \frac{x^2-4}{x-2} = \frac{(x-2)(x+2)}{x-2}$.
-Cancel $(x-2)$. Simplified: $x+2$. Hole at $(2, 4)$.
+\textbf{WE DO --- Part 4: Two Paths} (8 min)
 
-\textit{Example 2:} $r(x) = \frac{x^2-1}{(x-1)(x+2)}$. Cancel $(x-1)$.
-Simplified: $\frac{x+1}{x+2}$. Hole at $\!\left(1, \frac{2}{3}\right)$. VA at $x=-2$.
+\textit{Notes row TWO PATHS --- the crux. Class fills the blanks together; cold-call every
+one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Work \textbf{problem 11}: substitute $x = 0$ into $x^3 = 9x$. True --- so Path A lost
+        a real solution. Fill the label box with $0$. The count, 3, is the alarm.
+  \item \textbf{Problem 12}: dividing by $2x^2$ loses a \emph{double} zero --- two of the four.
+        \textbf{Problem 13} is the second trap: finish $x^2 - 4$, and solve $x^2 + 4 = 0$ too.
+  \item \textbf{Problem 14} hides the divide: the $x$ is on both sides.
+\end{itemize}
 
-\textbf{Part 3 (5 min): Limit Notation.}
+\textbf{YOU DO --- Part 5: Factor and Solve} (16 min)
 
-If the hole is at $(c, L)$, then $\lim_{x \to c} r(x) = L$ with
-$\lim_{x \to c^-} r(x) = \lim_{x \to c^+} r(x) = L$.
-A hole is a \textit{removable} discontinuity: $r(c)$ undefined, but limit exists.
+\textit{Notes row FACTOR AND SOLVE, problems 15--18 --- the whole independent phase.
+Students work alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} is GCF and squares. \textbf{16} is the crux transferred ---
+        $5x^3 = 20x^2$, where dividing leaves only $x = 4$.
+  \item \textbf{Problem 17} is the second trap transferred: $x^4 - 81$ is not done at
+        $(x^2 - 9)(x^2 + 9)$.
+  \item \textbf{Problem 18} is the finisher's question: GCF $x$, quadratic form, a prime
+        $x^2 + 3$ --- five zeros, three on the graph.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
+\begin{skillbox}[Explicit Instruction: The Factoring Checklist]{lilac}
+\begin{minipage}[t]{0.46\linewidth}
+\textbf{Steps}
+\begin{enumerate}[itemsep=2pt]
+  \item Move every term to one side; the other side is 0.
+  \item Take out the GCF --- the number \emph{and} the power of $x$. Never divide it away.
+  \item Count the terms: 2 --- squares or cubes; 3 --- trinomial or quadratic form; 4 ---
+        grouping.
+  \item Factor completely: test every factor again.
+  \item Set each factor equal to zero; use the quadratic formula on a prime quadratic.
+  \item Count: the number of solutions, with multiplicity, equals the degree.
+\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.5\linewidth}
+\textbf{Worked example} --- solve $2x^4 = 2x$.
+\[\begin{aligned}
+  2x^4 - 2x &= 0 \\
+  2x(x^3 - 1) &= 0 \\
+  2x(x - 1)(x^2 + x + 1) &= 0
+\end{aligned}\]
+$x = 0$, $x = 1$, and $x^2 + x + 1 = 0$ gives
+$x = \dfrac{-1 \pm \sqrt{1 - 4}}{2} = -\dfrac{1}{2} \pm \dfrac{\sqrt{3}}{2}\,i$. Four solutions for
+degree 4. Dividing by $2x$ would have left $x^3 = 1$ and lost $x = 0$.
+\end{minipage}
+\end{skillbox}
+
 \begin{skillbox}[Active Monitoring]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item Cold-call after Part 1: ``Why does $m \geq n$ produce a hole instead of an asymptote?''
-  \item Watch for students who cancel factors but forget to check the \textit{simplified} form
-        for remaining VAs (e.g., Example 2 still has VA at $x = -2$).
-  \item Confirm students substitute into the simplified expression, not the original.
+Circulate during the \textbf{You Do} phase --- the sixteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 11} (with 12 and 14);
+its You Do transfer is \textbf{problem 16}. The second trap is \textbf{problem 13}; its transfer
+is \textbf{problem 17}, and \textbf{problem 18} needs both.
+\begin{itemize}
+  \item \textbf{Watch for (the target misconception):} a student who divides both sides of
+        $5x^3 = 20x^2$ by $5x^2$ and writes only $x = 4$. Ask: ``Is $x = 0$ a solution? Check
+        it. How many solutions should a degree-3 equation have?''
+  \item \textbf{Watch for (the second trap):} $x^4 - 81 = (x^2 - 9)(x^2 + 9)$ and the answer
+        $\pm 3$. Ask: ``Is every factor prime? Did you set \emph{every} factor equal to zero?
+        Count them against the degree.''
+  \item \textbf{Common error:} the sum-of-cubes trinomial with the wrong middle sign,
+        $9x^2 + 3x + 1$. Point at the pattern table: the binomial's sign, then the opposite.
+  \item \textbf{Common error:} quadratic form left in $u$ --- ``$u = 4$ or $u = -1$'' as the
+        answer. Ask: ``What is $u$? Put $x^2$ back.''
+  \item \textbf{Common error:} $x^2 + 9 = 0$ answered ``no solution.'' Ask: ``No \emph{real}
+        solution --- and how many does a degree-2 equation have?''
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item \textbf{Tier R (Remediate):} Numerator/denominator pre-factored; classify hole vs.\ VA; fill table.
-  \item \textbf{Tier A (Apply):} Factor independently; apply multiplicity rule; find coordinates $(c, L)$.
-  \item \textbf{Tier E (Extend):} Write limit notation; explain reasoning; construct a rational function
-        with specified holes and VAs.
+\begin{skillbox}[Differentiation --- During You Do (16 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and run the
+        checklist out loud with them: ``Step 1, GCF --- what do all three terms share?'' Have
+        them write the step number in the margin beside each line. The habit carries 16 and 17.
+  \item \textbf{On level.} \textbf{Problem 16} is the crux transfer. Do not answer it; if you
+        see $x = 4$ alone, ask ``degree?'' and ``try $x = 0$,'' and walk away.
+        \textbf{Problem 17} should clear unaided once a student counts four solutions.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question: GCF $x$, quadratic
+        form, squares, and a prime $x^2 + 3$ --- five zeros, of which the graph shows three.
+        A finisher who explains that the other two are a conjugate pair, not intercepts the
+        graph forgot, presents in the Debrief.
 \end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-Exit ticket (2 questions, 1 page): factor $r(x) = \frac{x^2-x-2}{x^2-4}$, identify shared zeros,
-classify each as hole or VA, find hole coordinates, and write the limit statement.
-Collect and sort by Tier R/A/E for formative data before Lesson 1.11.
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: $0, \pm 2$. Problem 16: $0$ twice and $4$ --- ``three, counting
+        multiplicity,'' said aloud. Problem 17: $\pm 3$ and $\pm 3i$. Problem 18: $0, \pm 2,
+        \pm i\sqrt{3}$. If a student wrote 18 cleanly, they present it --- it is the only
+        time the class hears both traps and the degree count in one problem.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{move everything to one side and factor --- never divide by $x$. Factor
+        completely, set every factor to zero, and count: degree $n$ means $n$ solutions.}
+        Point at the two paths in the TWO PATHS row while you say it.
+  \item \textbf{Point forward} (1 min) --- the DeltaMath assignment \textit{Lesson 3.4} and its
+        due date: write the date on the board and have students copy it into cover row 4.
+        Then: 3.5 handles the polynomial no pattern fits, such as $x^3 - 2x^2 - 5x + 6$ ---
+        division finds its factors.
+\end{enumerate}
+\textbf{Do not} re-teach the cubes patterns here or take new questions. If the You Do showed
+they did not land, it is the 3.5 warm-up's job, not this minute's.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-Homework: 5 problems covering identification of holes and VAs, multiplicity reasoning,
-writing limit notation in words, a higher-multiplicity case ($x^3 - x^2$ over $x^2 - x$),
-and an AP-style MC problem.
-Preview of Lesson 1.11: equivalent representations of rational functions --- connecting
-factored, standard, and graphical forms.
+\textbf{Homework --- DeltaMath, graded.} Assign as \textit{Lesson 3.4}, in this order:
+\begin{enumerate}[itemsep=1pt,topsep=2pt]
+  \item \textbf{Factor out GCF (Multivariable)} (3 problems) --- matches notes problems 1--2
+        and 4.
+  \item \textbf{Factor By Grouping (Equation)} (3 problems) --- matches notes problems 3 and 9.
+  \item \textbf{Factoring Diff / Sum of Cubes (Level 1)} (3 problems) --- matches notes
+        problems 5 and 10.
+  \item \textbf{Factoring Quartic Trinomial (Level 1)} (3 problems) --- matches notes problems
+        6--7.
+  \item \textbf{Mixed Multistep Factoring (Equation)} (4 problems) \textit{(diagnostic)} ---
+        matches notes problems 11--16: GCF with a power of $x$, then a pattern, every solution
+        kept.
+  \item \textbf{Solving Quartic Equations} (3 problems) --- matches notes problems 7, 13 and
+        17: real and non-real solutions.
+  \item \textbf{Finding x-Intercepts in Unfactored Form} (2 problems) --- matches notes
+        problem 18: only the real zeros are intercepts.
+\end{enumerate}
+\textit{Leave out:} the Polynomial Division topics --- \textit{Polynomial Long Division},
+\textit{Synthetic Division}, \textit{Remainder Theorem}, \textit{Factor Theorem} (3.5);
+\textit{Rational Root Theorem}, \textit{Integer Root Theorem} and \textit{Find All Roots
+(Integer Root Theorem)} (not taught); \textit{Factor By Grouping (Equation Real Only)} (it
+drops the non-real solutions the lesson insists on); the Level 2 cubes and quartic-trinomial
+topics (leading coefficients beyond today's); \textit{Polynomial Inequalities L1/L2} (not
+taught). DeltaMath grades the solution set, not the reasoning, so explaining \emph{why}
+dividing by $x$ loses a solution is still You Do problem 16's and the hook's.
+
+\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).} Optional, last in the packet;
+DeltaMath first. Section I is five AP-style multiple-choice items (four options) whose
+distractors are the lesson's errors: dividing by $x$ and losing 0 (1A, 1D, 5A), stopping early
+at $(x^2 - 1)(x^2 + 1)$ (2A), the sum-of-cubes signs (3B, 3D) or $(a + b)^3$ for $a^3 + b^3$
+(3C), dropping the non-real pair (4A) or its $i$ (4B), stopping at $u = x^2$ (4C, 5D), and
+ignoring multiplicity (5B). Section II is one free-response question on a table: an open box
+folded from a 10-by-8 sheet, $V(x) = x(10 - 2x)(8 - 2x)$ --- the zeros read from the factored
+form and rejected in context (a), a student who divides by $4x$ and loses $x = 0$ (b), and
+$V(x) = 48$ checked by multiplying, with the third solution $x = 6$ rejected in context (c)
+--- the finisher's question.
+
+\textbf{Preview:} Next lesson (3.5, Polynomial Long and Synthetic Division) handles the
+polynomial no pattern fits: given one zero, division by its factor $(x - a)$ leaves a
+quadratic, and today's methods finish the job.
 \end{skillbox}
 
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 2 matters more than it looks: (a) and (b) take
+out a GCF that \emph{includes a power of $x$}, which is exactly the factor today's crux is
+about --- a student who writes $4x^3 - 10x^2 = x^2(4x - 10)$ has not taken the whole GCF, and one
+who writes $2(2x^3 - 5x^2)$ has left the $x^2$ behind. Item 2(b), $3x^2(x^2 + 4)$, quietly
+plants a sum of squares that will not factor. Item 3 is the $i$ arithmetic problem 10 needs.
+Item 4 is 3.3 read forward --- zeros, multiplicity, touch or cross, degree equals the count ---
+and today runs it in reverse, so read its (c) aloud during the hook.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed sentences, mark up the display, and work the first problem
+of the grid (1, 3, 7, 11), and the class works the rest with the pen in their hand, every problem
+cold-called. Say the checklist step out loud every time you factor --- ``step 1, GCF; step 2,
+four terms, grouping; step 3, is $x^2 - 9$ finished?'' --- because that narration is what a
+student repeats alone in the You Do.
+
+EVERY SOLUTION is where the count first matters: the graph shows two crossings and the degree
+says four. Do not let ``no solution'' stand for $x^2 + 9 = 0$; it is ``no real solution,'' and
+the conjugate pair is the rest of the count. Problem 10 is the only quadratic-formula problem
+in the notes on purpose --- keep its numbers small and on the board.
+
+TWO PATHS is the lesson. The two worked paths are printed side by side so the disagreement is
+visible before anyone argues: three solutions against two. Problem 11's substitution, $0^3 =
+9(0)$, settles it in one line --- make a student say ``dividing by $x$ assumes $x$ is not zero.''
+Problem 13 is the second trap and pairs it with the count: degree 4, so four solutions. The You
+Do (15--18) is the entire independent phase and carries sixteen minutes; problem 16 is the crux
+in a new equation, 17 the second trap, 18 both plus a graph. If the clock slips, cut problems 5
+and 9 and let DeltaMath carry them.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are at risk --- five strategies share the guided phase and
+it will try to borrow them. Borrow from problem 5 (sum of cubes; problem 10 and the DeltaMath
+cubes topic cover the pattern) or problem 9 (grouping again) instead. Never borrow from the You
+Do: with no exit ticket, circulating it is the last look you get before the work leaves the room.
+The share-out is one answer per You Do problem, said with its count --- ``three, counting
+multiplicity'' --- so a student who stalled on 16 still hears that $x = 0$ belongs in the answer,
+which the DeltaMath diagnostic will otherwise mark wrong at home without telling them why.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, scored 1 to 5, and not a substitute for the DeltaMath assignment --- say
+so when you hand out the packet. Its 1-to-5 score is added as extra-credit points.
+Multiple-choice answers are \textbf{C, B, A, D, C}. Item 1 is the most useful one to glance at:
+(A) $\pm 4$ only is the target misconception exactly --- divided by $x$ --- and (D) $4$ only
+divided and took the positive root; (B) kept 0 but never took the square root. Item 2: (A)
+stopped early; (C) and (D) misread $x^2 + 1$. Item 3: (B) and (D) are the sign errors in the
+cubes pattern; (C) treats $a^3 + b^3$ as $(a + b)^3$. Item 4: (A) dropped the factor $x^2 + 2$
+as ``no solution''; (B) lost the $i$; (C) solved for $u = x^2$ and stopped. Item 5:
+(A) divided by $2x^2$; (B) found 0 but not its multiplicity; (D) stopped at $x^2 = 9$. In the
+free response, (a) needs a context reason for each of $0$, $4$, $5$; (b) earns full credit only
+with the degree argument (three zeros); in (c) dividing both sides by 4 is fine --- dividing by a
+nonzero \emph{number} loses nothing --- and the point is rejecting $x = 6$ because the cut must be
+less than 4 inches.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+DeltaMath, graded, due on the date you set (assignment \textit{Lesson 3.4}). The diagnostic is
+\textbf{Mixed Multistep Factoring (Equation)}: its equations take out a GCF with a power of $x$
+before a pattern, so a student who divides by $x$ submits a solution set missing $x = 0$ and is
+marked wrong --- a miss there is almost always the target misconception. If it is common, open
+3.5 with a warm-up item that puts the two paths for $x^3 = 25x$ side by side. A miss on
+\textbf{Solving Quartic Equations} that lists only the real solutions is the second trap
+(stopping early, or ``no solution'' for $x^2 + k = 0$). DeltaMath cannot ask a student to
+explain \emph{why} dividing by $x$ loses a solution, so read \textbf{You Do problem 16} in the
+packets as well. \textbf{Factoring Diff / Sum of Cubes (Level 1)} and \textbf{Finding
+x-Intercepts in Unfactored Form} predict 3.5: a student who factors a cubic into a linear
+factor times a quadratic, and solves the quadratic, is ready to get that same linear-times-quadratic
+split from synthetic division when no pattern fits.
+\end{teachernote}
 \end{document}

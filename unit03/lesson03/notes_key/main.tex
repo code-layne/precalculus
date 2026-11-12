@@ -1,4 +1,24 @@
-%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Guided Notes (Answer Key)
+%! Zeros of Polynomials — Unit 3, Lesson 3.3 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems. Problems run 1..18.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 5, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 16 minutes while the teacher circulates.
+% The crux is row 4, CROSS OR TOUCH: problem 12 puts (x-2)(x+1) beside (x-2)^2(x+1) and asks
+% for the sign of each just left and right of x = 2 — the even-multiplicity zero does not
+% cross. Problem 16 transfers it to a factored form with no graph. The secondary error
+% (degree 4, two x-intercepts, "where are the other two?") is problem 14, the hook resolved,
+% and returns as problem 18.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, \blank -> \ans, and
+% the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
+% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
+% NO SKETCH QUESTIONS: every graph is pre-drawn and read.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-key}
@@ -7,136 +27,287 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.3}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.1in}
+\vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Identify the vertical asymptotes of a rational function by finding where the denominator
-        equals zero and the numerator does \ans{not}. \hfill\textit{(LO 1.9.A)}
-  \item Describe the behavior of a rational function near a vertical asymptote using
-        \ans{one-sided} limit notation. \hfill\textit{(LO 1.9.A)}
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.1in}
-
+\boxguard
 \begin{vocabbox}
-\termblanklong{Vertical asymptote}
-\termblanklong{One-sided limit ($\lim_{x \to a^+}$)}
-\termblanklong{One-sided limit ($\lim_{x \to a^-}$)}
-\termblanklong{Multiplicity condition for a VA}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Zero of a polynomial:}}\\[1pt]
+\ansline{A number $a$ with $p(a) = 0$; for a real $a$, the point $(a, 0)$ is an $x$-intercept.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Root:}}\\[1pt]
+\ansline{A solution of the equation $p(x) = 0$ --- the same number as a zero of $p$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Multiplicity:}}\\[1pt]
+\ansline{The number of times the factor $(x - a)$ appears in the factored form.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Fundamental Theorem of Algebra:}}\\[1pt]
+\ansline{A degree-$n$ polynomial has exactly $n$ complex zeros, counting multiplicity.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Conjugate pair:}}\\[1pt]
+\ansline{$a + bi$ and $a - bi$; with real coefficients, non-real zeros come in these pairs.}
 \end{vocabbox}
 
 \vspace{0.1in}
 
+\boxguard[18]
 \begin{hookbox}
-Bacterial concentration near a drain: $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance in cm.
+\begin{minipage}[c]{0.56\linewidth}
+Last semester: a polynomial of degree 4 has \emph{at most} 4 real zeros. The polynomial $H$
+graphed here has degree 4 --- but its graph meets the $x$-axis at only two points, $x = -1$
+and $x = 3$.
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-$x$    & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
-\hline
-$C(x)$ & $-10$ & $-100$ & $-1{,}000$ & $1{,}000$ & $100$ & $10$ \\
-\hline
-\end{tabular}
-\smallskip
-
-As $x \to 3$, the output \ans{grows without bound (increases or decreases without limit)}.
-We say $x = 3$ is a \ans{vertical asymptote}.
+Did $H$ lose two of its zeros? If not, where could the other two be?
+\end{minipage}\hfill
+\begin{minipage}[c]{0.4\linewidth}
+\centering
+\begin{tikzpicture}[x=0.8cm, y=0.075cm, >=stealth]
+  \draw[linegray, very thin] (-2,-18) grid[xstep=1, ystep=4] (4,12);
+  \draw[->, thick] (-2,0) -- (4.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-18) -- (0,13) node[above] {\scriptsize $H(x)$};
+  \foreach \x in {-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+  \begin{scope}
+    \clip (-2,-18) rectangle (4,12);
+    \draw[very thick, plum, domain=-1.6:3.4, samples=120, smooth]
+      plot (\x, {(\x+1)*(\x-3)*(\x*\x+1)});
+  \end{scope}
+  \fill[plum] (-1,0) circle (2pt);
+  \fill[plum] (3,0) circle (2pt);
+\end{tikzpicture}
+\end{minipage}
+\par\vspace{2pt}
+\ansline{No --- it still has exactly 4 zeros. Each crossing is one zero; the other two make no $x$-intercept, so the graph cannot show them. They are a non-real conjugate pair (problem 14).}
 \end{hookbox}
 
-\vspace{0.1in}
+\small
+\begin{guidednotes}
+% ── ROW 1: zero = root = x-intercept = linear factor ─────────────────────────
+\mainidea[One fact, four ways]{Zeros} &
+A number $a$ is a \textbf{zero} of a polynomial $p$ when $p(a) = 0$. For a real number $a$,
+four statements say exactly the same thing: $a$ is a zero of $p$; $a$ is a \textbf{root}
+(a solution) of the equation $p(x) = 0$; the point $(a, 0)$ is an \textbf{$x$-intercept} of the
+graph; and $(x - a)$ is a \textbf{linear factor} of $p(x)$. Watch the sign: the zero $-2$ goes
+with the factor $(x + 2)$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.95cm, y=0.12cm, >=stealth, baseline=(current bounding box.center)]
+  \draw[linegray, very thin] (-3,-12) grid[xstep=1, ystep=4] (5,12);
+  \draw[->, thick] (-3,0) -- (5.4,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-12) -- (0,13) node[above] {\small $p(x)$};
+  \foreach \x in {-2,-1,1,2,3,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-8,8} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \begin{scope}
+    \clip (-3,-12) rectangle (5,12);
+    \draw[very thick, plum, domain=-2.5:4.55, samples=120, smooth]
+      plot (\x, {(\x+2)*(\x-1)*(\x-4)});
+  \end{scope}
+  \foreach \x in {-2,1,4} \fill[plum] (\x,0) circle (2.5pt);
+  \node[font=\small, fill=white, inner sep=1pt] at (3.2,9.5) {$p(x) = (x + 2)(x - 1)(x - 4)$};
+\end{tikzpicture}
+\hspace{0.4cm}
+{\renewcommand{\arraystretch}{1.5}%
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Zero} $a$ & \textbf{$x$-intercept} & \textbf{Factor} \\ \hline
+$1$ & $(1, 0)$ & $(x - 1)$ \\ \hline
+$-2$ & \ans{$(-2, 0)$} & \ans{$(x + 2)$} \\ \hline
+$4$ & \ans{$(4, 0)$} & \ans{$(x - 4)$} \\ \hline
+\end{tabular}}
+\end{center}
+\\
+& \notesprompt{Use the factored form. A zero makes one factor equal 0.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Find $p(0)$ and $p(4)$. Which one shows a zero of $p$? What does the other value mark on the graph?}{2.0cm}{$p(4) = (6)(3)(0) = 0$, so 4 is a zero: the $x$-intercept $(4, 0)$. $p(0) = (2)(-1)(-4) = 8$ is the $y$-intercept $(0, 8)$, not a zero.} &
+\pcell{2}{Is $x = 2$ a zero of $p$? Find $p(2)$, then say whether $(x - 2)$ is a factor of $p(x)$.}{2.0cm}{$p(2) = (4)(1)(-2) = -8 \ne 0$. So 2 is not a zero and $(x - 2)$ is not a factor --- the graph is below the axis at $x = 2$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{List every zero of $q(x) = x(x + 5)(2x - 3)$.}{2.0cm}{Set each factor equal to 0: $x = 0$, $x = -5$, and $2x - 3 = 0$ gives $x = \tfrac{3}{2}$ (not 3).} &
+\pcell{4}{A polynomial $f$ has $f(-6) = 0$. Name the $x$-intercept, the linear factor, and an equation that $-6$ solves.}{2.0cm}{The $x$-intercept is $(-6, 0)$; the factor is $(x + 6)$; and $-6$ is a root of $f(x) = 0$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: multiplicity and the count ────────────────────────────────────────
+\mainidea[Counting zeros]{Multiplicity} &
+If the factor $(x - a)$ appears exactly $k$ times in the factored form, then $a$ is a zero of
+\textbf{multiplicity} $k$. The \textbf{Fundamental Theorem of Algebra} says a polynomial of
+degree $n$ has \emph{exactly} $n$ complex zeros, when each zero is counted as many times as its
+multiplicity. (Every real number is complex too: $3 = 3 + 0i$.) A constant factor, like the 2
+below, makes no zero.
+\\
+& \begin{center}
+{\large $f(x) = 2(x - 3)^2(x + 1)^3$}
 
-\begin{notesbox}{Vertical Asymptotes}
-A rational function $r(x) = \dfrac{p(x)}{q(x)}$ has a \textbf{vertical asymptote at $x = a$} when:
+\vspace{6pt}
+{\renewcommand{\arraystretch}{1.5}%
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Factor} & \textbf{Zero} & \textbf{Multiplicity} \\ \hline
+$(x - 3)^2$ & $3$ & $2$ \\ \hline
+$(x + 1)^3$ & \ans{$-1$} & \ans{3} \\ \hline
+\end{tabular}}
 
-\begin{itemize}
-  \item $q(a) =$ \ans{$0$} \quad (the denominator is \ans{zero} at $a$), \textbf{AND}
-  \item $p(a)$ \ans{$\ne$} $0$ \quad (the numerator is \textbf{not} zero at $a$).
-\end{itemize}
-
-\textit{Multiplicity rule (EK 1.9.A.1):} A VA also occurs at $x = a$ when the multiplicity of
-$a$ in the \ans{denominator} is \emph{greater} than its multiplicity in the \ans{numerator}.
-
-\medskip
-\textbf{Example 1.} Find any vertical asymptotes of $r(x) = \dfrac{x + 2}{x - 3}$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
-  \item Set the denominator equal to zero and solve: \ans{$x - 3 = 0 \Rightarrow x = 3$}
-
-  \item Check the numerator at each solution: at $x = 3$, numerator $=$ \ans{$5 \ne 0$}
-
-  \item Conclusion: \ans{Vertical asymptote at $x = 3$.}
-\end{enumerate}
-
-\medskip
-\textbf{Example 2.} Find any vertical asymptotes of $r(x) = \dfrac{x - 1}{(x-1)^2(x+2)}$.
-
-\begin{enumerate}[label=\textbf{Step \arabic*.}, itemsep=4pt]
-  \item Denominator zeros: \ans{$x = 1$ (mult.\ 2) and $x = -2$ (mult.\ 1)}
-
-  \item At $x = 1$: numerator multiplicity \ans{1}, denominator multiplicity \ans{2}.
-        Since \ans{2} $>$ \ans{1}: \ans{VA at $x = 1$}
-
-  \item At $x = -2$: numerator value $=$ \ans{$-3 \ne 0$}. Since it is nonzero: \ans{VA at $x = -2$}
-\end{enumerate}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{notesbox}{One-Sided Limits Near a Vertical Asymptote}
-For $r(x) = \dfrac{1}{x - 2}$, complete the table:
+\vspace{6pt}
+Zeros counted with multiplicity: \ $2 + 3 = $ \ans{5} \ $=$ the degree of $f$.
+\end{center}
+\\
+& \notesprompt{Give the degree, then each zero with its multiplicity. Check the count.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{$g(x) = (x + 4)(x - 2)^3$}{2.0cm}{Degree $1 + 3 = 4$. Zero $-4$, multiplicity 1; zero 2, multiplicity 3. Count: $1 + 3 = 4$, exactly the degree.} &
+\pcell{6}{$h(x) = -3x^2(x - 5)(x + 1)^2$}{2.0cm}{Degree $2 + 1 + 2 = 5$. Zeros: 0 (mult.\ 2), 5 (mult.\ 1), $-1$ (mult.\ 2). The $-3$ is a constant: no zero.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: complex zeros come in conjugate pairs ─────────────────────────────
+\mainidea[Complex zeros]{Conjugate Pairs} &
+Some zeros are not real. A non-real zero $a + bi$ (with $b \ne 0$) is not an $x$-intercept, so
+the graph cannot show it --- but it still counts toward the degree. When every coefficient of
+$p$ is real, \textbf{non-real zeros come in conjugate pairs}: if $a + bi$ is a zero, then
+$a - bi$ is a zero too.
+\\
+& \begin{center}
+\begin{minipage}[c]{0.4\linewidth}
+\centering
+\begin{tikzpicture}[x=0.8cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin] (-3,-1) grid[xstep=1, ystep=2] (3,9);
+  \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-1) -- (0,9.6) node[above] {\scriptsize $y$};
+  \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {4,8} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, domain=-2.2:2.2, samples=60, smooth] plot (\x, {\x*\x+4});
+  \node[font=\scriptsize, right] at (0.9,8.4) {$y = x^2 + 4$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.56\linewidth}
+The graph of $y = x^2 + 4$ never meets the $x$-axis. Its zeros:
+\[ x^2 + 4 = 0 \;\Rightarrow\; x^2 = -4 \;\Rightarrow\; x = \pm\sqrt{-4} \]
+Two zeros, and no $x$-intercepts:
 
 \smallskip
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-$x$    & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
-\hline
-$r(x)$ & \ans{$-10$} & \ans{$-100$} & \ans{$-1000$} & \ans{$1000$} & \ans{$100$} & \ans{$10$} \\
-\hline
-\end{tabular}
-\smallskip
+\labelbox{1.4cm}{$2i$} \ and \ \labelbox{1.4cm}{$-2i$} \ --- a conjugate pair.
+\end{minipage}
+\end{center}
+\\
+& \notesprompt{Every polynomial here has real coefficients.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{$2 + 3i$ is a zero of $p$. Name another zero of $p$.}{2.0cm}{$2 - 3i$, its conjugate: flip the sign of the imaginary part. Non-real zeros come in pairs.} &
+\pcell{8}{Find every zero of $m(x) = (x - 1)(x^2 + 9)$. Which ones are $x$-intercepts?}{2.0cm}{$x - 1 = 0$ gives 1. $x^2 + 9 = 0$ gives $x^2 = -9$, so $x = \pm 3i$. Zeros $1$, $3i$, $-3i$; only $(1, 0)$ is an $x$-intercept.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{A degree-4 polynomial has 3 as a zero of multiplicity 2, and $1 + i$ as a zero. List all four zeros.}{2.2cm}{$3,\ 3,\ 1 + i,\ 1 - i$. Count: $2 + 1 + 1 = 4$, the degree --- nothing is left over.} &
+\pcell{10}{Explain why a polynomial of degree 3 must have at least one real zero.}{2.2cm}{It has exactly 3 zeros. Non-real zeros come in pairs, so they use up 0 or 2 of the 3. At least one zero is left over, and it must be real.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — multiplicity on the graph: cross or touch ──────────────
+\mainidea[Multiplicity on the graph]{Cross or Touch} &
+At a real zero of \textbf{odd} multiplicity the graph \textbf{crosses} the $x$-axis and $p$
+changes sign: multiplicity 1 cuts straight through; 3, 5, \ldots\ flatten out as they cross. At
+a real zero of \textbf{even} multiplicity the graph \textbf{touches} the axis and turns back ---
+it is tangent to the $x$-axis --- and $p$ has the \emph{same} sign on both sides.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.72cm, >=stealth]
+  % P1 = (x-2)(x+1)
+  \begin{scope}[y=0.4cm]
+    \draw[linegray, very thin] (-1.8,-2.6) grid (2.9,2.6);
+    \draw[->, thick] (-1.8,0) -- (3.1,0) node[right] {\tiny $x$};
+    \draw[->, thick] (0,-2.6) -- (0,2.9);
+    \foreach \x in {-1,2} \node[below, font=\tiny] at (\x,0) {\x};
+    \begin{scope}\clip (-1.8,-2.6) rectangle (2.9,2.6);
+      \draw[very thick, plum, domain=-1.7:2.8, samples=80, smooth] plot (\x, {(\x-2)*(\x+1)});
+    \end{scope}
+    \fill[plum] (2,0) circle (2.3pt);
+    \node[font=\scriptsize] at (0.55,3.5) {$P_1(x) = (x - 2)(x + 1)$};
+    \node[anchor=north, inner sep=0pt] at (0.55,-3.1) {\labelbox{2.6cm}{crosses}};
+  \end{scope}
+  % P2 = (x-2)^2(x+1)
+  \begin{scope}[xshift=4.0cm, y=0.24cm]
+    \draw[linegray, very thin] (-1.8,-4.3) grid[xstep=1, ystep=2] (2.9,4.3);
+    \draw[->, thick] (-1.8,0) -- (3.1,0) node[right] {\tiny $x$};
+    \draw[->, thick] (0,-4.3) -- (0,4.8);
+    \foreach \x in {-1,2} \node[below, font=\tiny] at (\x,0) {\x};
+    \begin{scope}\clip (-1.8,-4.3) rectangle (2.9,4.3);
+      \draw[very thick, plum, domain=-1.5:2.85, samples=100, smooth] plot (\x, {(\x-2)*(\x-2)*(\x+1)});
+    \end{scope}
+    \fill[plum] (2,0) circle (2.3pt);
+    \node[font=\scriptsize] at (0.55,5.85) {$P_2(x) = (x - 2)^2(x + 1)$};
+    \node[anchor=north, inner sep=0pt] at (0.55,-5.15) {\labelbox{2.6cm}{touches, turns}};
+  \end{scope}
+  % P3 = (x-2)^3(x+1)
+  \begin{scope}[xshift=8.0cm, y=0.115cm]
+    \draw[linegray, very thin] (-1.8,-9) grid[xstep=1, ystep=4] (2.9,9);
+    \draw[->, thick] (-1.8,0) -- (3.1,0) node[right] {\tiny $x$};
+    \draw[->, thick] (0,-9) -- (0,10);
+    \foreach \x in {-1,2} \node[below, font=\tiny] at (\x,0) {\x};
+    \begin{scope}\clip (-1.8,-9) rectangle (2.9,9);
+      \draw[very thick, plum, domain=-1.25:2.75, samples=120, smooth] plot (\x, {(\x-2)*(\x-2)*(\x-2)*(\x+1)});
+    \end{scope}
+    \fill[plum] (2,0) circle (2.3pt);
+    \node[font=\scriptsize] at (0.55,12.2) {$P_3(x) = (x - 2)^3(x + 1)$};
+    \node[anchor=north, inner sep=0pt] at (0.55,-10.8) {\labelbox{2.6cm}{flattens, crosses}};
+  \end{scope}
+\end{tikzpicture}
 
-From the table, write the one-sided limits:
+\end{center}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Not every zero crosses. The three graphs differ only in the exponent on $(x - 2)$:
+odd crosses and the sign changes; even touches, turns back, and the sign stays the same.}}}
 
-\[
-  \lim_{x \to 2^-} r(x) = \ans{$-\infty$}
-  \qquad\qquad
-  \lim_{x \to 2^+} r(x) = \ans{$+\infty$}
-\]
+\vspace{3pt}
+\textbf{In your own words:} how can $P_2$ have a zero at $x = 2$ and still be positive on both
+sides of it?
+\writespace{1.3cm}{$(x - 2)^2$ is never negative, so near 2 the sign of $P_2$ comes from $(x + 1)$ alone, which is positive. $P_2$ reaches 0 at $x = 2$ and turns back up.}
+\\
+& \notesprompt{Test the sign just left and just right of the zero.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Is $P_1(1.9)$ positive or negative? $P_1(2.1)$? Does the graph of $P_1$ cross at $x = 2$?}{2.2cm}{$P_1(1.9) = (-0.1)(2.9) < 0$ and $P_1(2.1) = (0.1)(3.1) > 0$. The sign changes, so the graph crosses at $x = 2$.} &
+\pcell{12}{Same question for $P_2$. Then explain why ``every zero crosses the $x$-axis'' is false.}{2.2cm}{$P_2(1.9) = (0.01)(2.9) > 0$ and $P_2(2.1) = (0.01)(3.1) > 0$: positive on both sides. The square is never negative, so the sign cannot change --- $P_2$ touches and turns back.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{A graph touches the $x$-axis at $x = -1$ and turns back, and crosses straight through at $x = 4$. Which could it be? Say why.\par (A) $(x + 1)(x - 4)^2$ \quad (B) $(x + 1)^2(x - 4)$ \quad (C) $(x - 1)^2(x + 4)$}{2.2cm}{(B). A touch at $-1$ needs an even power on $(x + 1)$; a straight cross at 4 needs power 1 on $(x - 4)$. (A) swaps them; (C) flips the signs.} &
+\pcell{14}{Back to the hook: $H$ has degree 4 and crosses straight through at only $x = -1$ and $x = 3$. Where are its other two zeros?}{2.2cm}{Straight crossings have multiplicity 1, so the real zeros count $1 + 1 = 2$. The other two make no $x$-intercept: a non-real conjugate pair.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (16 min) ──────────
+\mainidea[You do, alone]{Read the Zeros} &
+A polynomial $f$ given only in factored form, and a degree-4 polynomial $w$ given only by its
+graph.
+\\
+& \begin{center}
+\begin{minipage}[c]{0.42\linewidth}
+\centering
+{\large $f(x) = x(x + 4)^2(x - 3)^3$}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.54\linewidth}
+\centering
+\begin{tikzpicture}[x=0.85cm, y=0.068cm, >=stealth]
+  \draw[linegray, very thin] (-3,-20) grid[xstep=1, ystep=5] (4,20);
+  \draw[->, thick] (-3,0) -- (4.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-20) -- (0,22) node[above] {\scriptsize $w(x)$};
+  \foreach \x in {-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-10,10} \node[left, font=\tiny] at (0,\y) {\y};
+  \begin{scope}\clip (-3,-20) rectangle (4,20);
+    \draw[very thick, plum, domain=-2.95:3.3, samples=140, smooth]
+      plot (\x, {(\x+2)*(\x+2)*(\x-1)*(\x-3)});
+  \end{scope}
+  \foreach \x in {-2,1,3} \fill[plum] (\x,0) circle (2.2pt);
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{For $f$: give the degree, each zero with its multiplicity, and whether the graph crosses, touches, or flattens and crosses there.}{2.4cm}{Degree $1 + 2 + 3 = 6$. Zero 0 (mult.\ 1): crosses. Zero $-4$ (mult.\ 2): touches and turns back. Zero 3 (mult.\ 3): flattens and crosses.} &
+\pcell{16}{Is $f$ positive or negative just left of $x = -4$? Just right? A classmate says $f$ changes sign at every zero. Is that true at $x = -4$?}{2.4cm}{Near $-4$: $x < 0$, $(x - 3)^3 < 0$, and $(x + 4)^2 > 0$, so $f > 0$ on both sides. No --- $-4$ has even multiplicity, so the sign does not change.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Which equation could be $w$? Give one reason for each choice you reject.\par (A) $(x - 2)^2(x + 1)(x + 3)$ \quad (B) $(x + 2)(x - 1)(x - 3)$\par (C) $(x + 2)^2(x - 1)(x - 3)$ \quad (D) $(x + 2)(x - 1)^2(x - 3)$}{2.6cm}{(C): touch at $-2$ (even), crosses at 1 and 3 (odd), degree 4. (A) has the signs flipped; (B) is degree 3 and crosses at $-2$; (D) would touch at 1, not $-2$.} &
+\pcell{18}{A polynomial with real coefficients has degree 5. Its graph crosses the $x$-axis only at $x = 2$, straight through, and $1 - 2i$ is a zero. How many of its zeros are non-real? Name as many as you can.}{2.6cm}{Four. 2 (mult.\ 1) is the only real zero, so $5 - 1 = 4$ are non-real: $1 - 2i$, $1 + 2i$, and one more conjugate pair (it could be $1 \pm 2i$ again).} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\textbf{Sign analysis.} When $x$ is slightly greater than 2, $(x - 2)$ is \ans{positive},
-so $r(x) \to$ \ans{$+\infty$}.\\
-When $x$ is slightly less than 2, $(x - 2)$ is \ans{negative},
-so $r(x) \to$ \ans{$-\infty$}.
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{practicebox}
-\begin{enumerate}[itemsep=10pt]
-  \item For $r(x) = \dfrac{2x - 1}{x^2 - 5x + 6}$, find all vertical asymptotes.
-
-        Factor the denominator: \ans{$(x-2)(x-3)$}
-
-        Denominator zeros: \ans{$x = 2,\; x = 3$} \quad
-        Check numerator at each: \ans{$2(2)-1=3\ne0$;\; $2(3)-1=5\ne0$}
-
-        Vertical asymptote(s): \ans{$x = 2$ and $x = 3$}
-
-  \item For $r(x) = \dfrac{1}{(x+3)^2}$, determine whether
-        $\lim_{x\to -3^+} r(x) = +\infty$ or $-\infty$. Explain using sign analysis.
-
-        \vspace{0.1in}
-        \ans{$(x+3)^2 > 0$ for all $x \ne -3$, so $r(x) = 1/(x+3)^2 > 0$ near $x=-3$
-        from both sides. Therefore $\lim_{x\to-3^+} r(x) = +\infty$.}
-\end{enumerate}
-\end{practicebox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice follows; homework is DeltaMath ─
 
 \end{document}

@@ -1,153 +1,295 @@
-%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Slides (Beamer)
+%! Zeros of Polynomials — Unit 3, Lesson 3.3 — Slides (Beamer)
+% Phase order: hook -> I Do -> We Do -> You Do -> debrief, closing on the DeltaMath assignment.
 \documentclass[aspectratio=169, 11pt]{beamer}
-\usepackage{precalculus-beamer}   % provides \navyheader{} and \sectionlabel[color]{}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
 
 \begin{document}
 
-% TITLE SLIDE
+% TITLE SLIDE (CourseName is not defined in beamer, so the name is literal)
 {
-\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{background canvas}{bg=plum}
 \begin{frame}[plain]
   \vspace{2.8cm}\hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    {\color{goldacc}\bfseries\small LESSON 1.9}\\[0.5cm]
-    {\color{white}\bfseries\LARGE Rational Functions and Vertical Asymptotes}\\[1.2cm]
-    {\color{skymid}\small Precalculus~$\cdot$~Unit 3: Rational Functions}
+    {\color{goldacc}\bfseries\small LESSON 3.3}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Zeros of Polynomials}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 3: Polynomial Functions}
   \end{minipage}
 \end{frame}
 }
 
 % HOOK SLIDE
 \begin{frame}[t, plain]
-  \navyheader{Hook: Bacterial Concentration Near a Drain}
+  \plumheader{Hook: Two Zeros Went Missing}
   \sectionlabel[goldacc]{Think About It}
 
-  Concentration is modeled by $C(x) = \dfrac{1}{x - 3}$, where $x$ is distance (cm) from the drain.
-
-  \bigskip
   \begin{columns}[T]
-    \column{0.52\textwidth}
-      \begin{block}{Table of Values Near $x = 3$}
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{|c|c|}
-        \hline
-        $x$    & $C(x)$ \\
-        \hline
-        2.9    & $-10$ \\
-        2.99   & $-100$ \\
-        2.999  & $-1{,}000$ \\
-        3.001  & $1{,}000$ \\
-        3.01   & $100$ \\
-        3.1    & $10$ \\
-        \hline
-        \end{tabular}
-      \end{block}
+    \column{0.5\textwidth}
+      Last semester: a polynomial of degree 4 has \textbf{at most} 4 real zeros.
 
-    \column{0.44\textwidth}
-      \begin{block}{Discussion Questions}
-        \begin{itemize}\setlength{\itemsep}{6pt}
-          \item Can we evaluate $C(3)$? Why or why not?
-          \item What happens to $C(x)$ as $x$ gets closer to 3?
-          \item Why does the sign of $C(x)$ change as we cross $x = 3$?
-        \end{itemize}
-      \end{block}
-  \end{columns}
-\end{frame}
+      \bigskip
+      The polynomial \(H\) has degree 4. Its graph meets the \(x\)-axis at only
+      \(x = -1\) and \(x = 3\).
 
-% VERTICAL ASYMPTOTES: RULE + EXAMPLE
-\begin{frame}[t, plain]
-  \navyheader{Vertical Asymptotes}
-
-  \begin{block}{Rule (EK 1.9.A.1)}
-    $r(x) = p(x)/q(x)$ has a \textbf{vertical asymptote at $x = a$} when:
-    \begin{itemize}\setlength{\itemsep}{4pt}
-      \item $q(a) = 0$ \quad (denominator is zero at $a$), \textbf{AND}
-      \item $p(a) \ne 0$ \quad (numerator is \emph{not} zero at $a$).
-    \end{itemize}
-    \textit{Multiplicity rule:} VA also occurs if the multiplicity of $a$ in the denominator
-    exceeds its multiplicity in the numerator.
-  \end{block}
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.48\textwidth}
-      \textbf{Example 1:} $r(x) = \dfrac{x+2}{x-3}$
-      \begin{itemize}\setlength{\itemsep}{5pt}
-        \item Denominator zero: $x = 3$
-        \item Numerator at $x=3$: $5 \ne 0$
-        \item \textbf{VA at $x = 3$}
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \textbf{Example 2:} $r(x) = \dfrac{x-1}{(x-1)^2(x+2)}$
-      \begin{itemize}\setlength{\itemsep}{5pt}
-        \item $x=1$: denom.\ mult.\ 2 $>$ numer.\ mult.\ 1 $\Rightarrow$ \textbf{VA}
-        \item $x=-2$: numer.\ $= -3 \ne 0$ $\Rightarrow$ \textbf{VA}
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% ONE-SIDED LIMITS
-\begin{frame}[t, plain]
-  \navyheader{One-Sided Limits Near a Vertical Asymptote}
-
-  For $r(x) = \dfrac{1}{x - 2}$:
-
-  \bigskip
-  \begin{columns}[T]
-    \column{0.50\textwidth}
-      \begin{block}{Table of Values}
-        \renewcommand{\arraystretch}{1.3}
-        \begin{tabular}{|c|c|}
-        \hline
-        $x$    & $r(x)$ \\
-        \hline
-        1.9    & $-10$ \\
-        1.99   & $-100$ \\
-        1.999  & $-1{,}000$ \\
-        2.001  & $1{,}000$ \\
-        2.01   & $100$ \\
-        2.1    & $10$ \\
-        \hline
-        \end{tabular}
+      \bigskip
+      \begin{block}{Then ask}
+        Did \(H\) \textbf{lose} two zeros? If not, where could the other two be?
       \end{block}
 
     \column{0.46\textwidth}
-      \begin{block}{Limit Notation (EK 1.9.A.2)}
-        \[
-          \lim_{x \to 2^-} r(x) = -\infty
-        \]
-        \[
-          \lim_{x \to 2^+} r(x) = +\infty
-        \]
-        \medskip
-        \textit{Sign analysis:} when $x > 2$, $(x-2) > 0$, so $r(x) > 0 \to +\infty$.\\
-        When $x < 2$, $(x-2) < 0$, so $r(x) < 0 \to -\infty$.
-      \end{block}
+      \begin{center}
+      \begin{tikzpicture}[x=0.95cm, y=0.1cm]
+        \draw[linegray, very thin] (-2,-18) grid[xstep=1, ystep=4] (4,12);
+        \draw[->, thick] (-2,0) -- (4.4,0) node[right] {\small \(x\)};
+        \draw[->, thick] (0,-18) -- (0,13) node[above] {\small \(H(x)\)};
+        \foreach \x in {-1,1,2,3} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \begin{scope}\clip (-2,-18) rectangle (4,12);
+          \draw[very thick, plum, domain=-1.6:3.4, samples=120, smooth]
+            plot (\x, {(\x+1)*(\x-3)*(\x*\x+1)});
+        \end{scope}
+        \fill[plum] (-1,0) circle (2.5pt);
+        \fill[plum] (3,0) circle (2.5pt);
+      \end{tikzpicture}
+      \end{center}
   \end{columns}
 \end{frame}
 
-% CLASS PRACTICE
+% ROW 1 — ZEROS
 \begin{frame}[t, plain]
-  \navyheader{Class Practice}
-  \sectionlabel[redacc]{Try It --- With a Partner}
+  \plumheader{One Fact, Four Ways}
+  \sectionlabel[goldacc]{Notes row ZEROS $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
 
-  \begin{enumerate}\setlength{\itemsep}{10pt}
-    \item For $r(x) = \dfrac{x + 1}{x^2 - 4}$:
-          \begin{itemize}\setlength{\itemsep}{4pt}
-            \item Factor the denominator.
-            \item Find the denominator zeros.
-            \item Check the numerator at each zero.
-            \item State all vertical asymptotes.
-          \end{itemize}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{block}{For a real number \(a\), these say the same thing}
+        \(a\) is a \textbf{zero} of \(p\): \(p(a) = 0\)\\[3pt]
+        \(a\) is a \textbf{root} of \(p(x) = 0\)\\[3pt]
+        \((a, 0)\) is an \textbf{\(x\)-intercept}\\[3pt]
+        \((x - a)\) is a \textbf{linear factor} of \(p(x)\)
+      \end{block}
 
-    \item For $r(x) = \dfrac{3}{(x - 5)^2}$:
-          \begin{itemize}\setlength{\itemsep}{4pt}
-            \item Identify the vertical asymptote.
-            \item Use sign analysis: what is the sign of $(x-5)^2$ near $x=5$?
-            \item Write $\displaystyle\lim_{x \to 5^+} r(x)$ and $\displaystyle\lim_{x \to 5^-} r(x)$.
+      \medskip
+      \textbf{Watch the sign:} the zero \(-2\) goes with the factor \((x + 2)\).
+
+    \column{0.46\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.72cm, y=0.12cm]
+        \draw[linegray, very thin] (-3,-12) grid[xstep=1, ystep=4] (5,12);
+        \draw[->, thick] (-3,0) -- (5.4,0) node[right] {\small \(x\)};
+        \draw[->, thick] (0,-12) -- (0,13) node[above] {\small \(p(x)\)};
+        \foreach \x in {-2,-1,1,2,3,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+        \begin{scope}\clip (-3,-12) rectangle (5,12);
+          \draw[very thick, plum, domain=-2.5:4.55, samples=120, smooth]
+            plot (\x, {(\x+2)*(\x-1)*(\x-4)});
+        \end{scope}
+        \foreach \x in {-2,1,4} \fill[plum] (\x,0) circle (2.5pt);
+      \end{tikzpicture}
+
+      \(p(x) = (x + 2)(x - 1)(x - 4)\)
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% ROW 2 — MULTIPLICITY
+\begin{frame}[t, plain]
+  \plumheader{Multiplicity --- Counting Every Zero}
+  \sectionlabel[goldacc]{Notes row MULTIPLICITY $\cdot$ I Do: problem 5 $\cdot$ We Do: problem 6}
+
+  \begin{block}{Two rules}
+    If \((x - a)\) appears \(k\) times, \(a\) is a zero of \textbf{multiplicity} \(k\).\\[3pt]
+    \textbf{Fundamental Theorem of Algebra:} degree \(n\) \(\Rightarrow\) exactly \(n\) complex
+    zeros, counting multiplicity.
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \begin{center}
+      {\large \(f(x) = 2(x - 3)^2(x + 1)^3\)}
+
+      \medskip
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Factor} & \textbf{Zero} & \textbf{Mult.} \\ \hline
+        \((x - 3)^2\) & 3 & 2 \\ \hline
+        \((x + 1)^3\) & \(-1\) & 3 \\ \hline
+      \end{tabular}
+
+      \medskip
+      \(2 + 3 = 5 =\) the degree. The 2 out front: no zero.
+      \end{center}
+
+    \column{0.46\textwidth}
+      \textbf{Your turn.} Degree, zeros, multiplicities:
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(g(x) = (x + 4)(x - 2)^3\)
+        \item \(h(x) = -3x^2(x - 5)(x + 1)^2\)
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ROW 3 — CONJUGATE PAIRS
+\begin{frame}[t, plain]
+  \plumheader{Complex Zeros Come in Conjugate Pairs}
+  \sectionlabel[goldacc]{Notes row CONJUGATE PAIRS $\cdot$ I Do: problem 7 $\cdot$ We Do: problems 8--10}
+
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \begin{block}{Real coefficients \(\Rightarrow\) pairs}
+        If \(a + bi\) is a zero, so is \(a - bi\).\\[3pt]
+        A non-real zero is \textbf{not} an \(x\)-intercept --- but it still counts toward the
+        degree.
+      \end{block}
+
+      \medskip
+      \(x^2 + 4 = 0\) \(\Rightarrow\) \(x^2 = -4\) \(\Rightarrow\) \(x = \pm 2i\)
+
+      \smallskip
+      Two zeros, \textbf{no} \(x\)-intercepts.
+
+    \column{0.44\textwidth}
+      \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \(2 + 3i\) is a zero. Name another.
+        \item Every zero of \((x - 1)(x^2 + 9)\)?
+        \item Degree 4: 3 (mult.\ 2) and \(1 + i\). All four?
+        \item Why must a cubic have a real zero?
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ROW 4 — THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{Cross or Touch? --- Not Every Zero Crosses}
+  \sectionlabel[redacc]{Notes row CROSS OR TOUCH $\cdot$ I Do: problem 11 $\cdot$ We Do: 12--14 (12 is the crux)}
+
+  \begin{center}
+  \begin{tikzpicture}[x=0.8cm, >=stealth]
+    \begin{scope}[y=0.42cm]
+      \draw[linegray, very thin] (-1.8,-2.6) grid (2.9,2.6);
+      \draw[->, thick] (-1.8,0) -- (3.1,0);
+      \draw[->, thick] (0,-2.6) -- (0,2.9);
+      \foreach \x in {-1,2} \node[below, font=\scriptsize] at (\x,0) {\x};
+      \begin{scope}\clip (-1.8,-2.6) rectangle (2.9,2.6);
+        \draw[very thick, plum, domain=-1.7:2.8, samples=80, smooth] plot (\x, {(\x-2)*(\x+1)});
+      \end{scope}
+      \fill[plum] (2,0) circle (2.5pt);
+      \node[font=\small] at (0.55,3.6) {\((x - 2)(x + 1)\)};
+      \node[font=\small\bfseries, text=plum] at (0.55,-3.6) {crosses};
+    \end{scope}
+    \begin{scope}[xshift=4.9cm, y=0.25cm]
+      \draw[linegray, very thin] (-1.8,-4.3) grid[xstep=1, ystep=2] (2.9,4.3);
+      \draw[->, thick] (-1.8,0) -- (3.1,0);
+      \draw[->, thick] (0,-4.3) -- (0,4.8);
+      \foreach \x in {-1,2} \node[below, font=\scriptsize] at (\x,0) {\x};
+      \begin{scope}\clip (-1.8,-4.3) rectangle (2.9,4.3);
+        \draw[very thick, plum, domain=-1.5:2.85, samples=100, smooth] plot (\x, {(\x-2)*(\x-2)*(\x+1)});
+      \end{scope}
+      \fill[plum] (2,0) circle (2.5pt);
+      \node[font=\small] at (0.55,6.0) {\((x - 2)^2(x + 1)\)};
+      \node[font=\small\bfseries, text=redacc] at (0.55,-6.0) {touches, turns back};
+    \end{scope}
+    \begin{scope}[xshift=9.8cm, y=0.12cm]
+      \draw[linegray, very thin] (-1.8,-9) grid[xstep=1, ystep=4] (2.9,9);
+      \draw[->, thick] (-1.8,0) -- (3.1,0);
+      \draw[->, thick] (0,-9) -- (0,10);
+      \foreach \x in {-1,2} \node[below, font=\scriptsize] at (\x,0) {\x};
+      \begin{scope}\clip (-1.8,-9) rectangle (2.9,9);
+        \draw[very thick, plum, domain=-1.25:2.75, samples=120, smooth] plot (\x, {(\x-2)*(\x-2)*(\x-2)*(\x+1)});
+      \end{scope}
+      \fill[plum] (2,0) circle (2.5pt);
+      \node[font=\small] at (0.55,12.5) {\((x - 2)^3(x + 1)\)};
+      \node[font=\small\bfseries, text=plum] at (0.55,-12.5) {flattens, crosses};
+    \end{scope}
+  \end{tikzpicture}
+  \end{center}
+
+  \begin{block}{Test the sign just left and right of \(x = 2\)}
+    Odd multiplicity: the sign \textbf{changes}. Even multiplicity: \((x - 2)^2\) is never
+    negative, so the sign \textbf{stays the same}.
+  \end{block}
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Read the Zeros}
+  \sectionlabel[redacc]{Notes row READ THE ZEROS $\cdot$ problems 15--18, alone, 16 minutes}
+
+  \begin{columns}[T]
+    \column{0.56\textwidth}
+      \begin{enumerate}\setlength{\itemsep}{6pt}
+        \setcounter{enumi}{14}
+        \item \(f(x) = x(x + 4)^2(x - 3)^3\): degree, zeros, multiplicities, cross or touch.
+        \item Is \(f\) positive or negative just left and just right of \(x = -4\)?
+        \item Which equation could be \(w\)? (graph at right)
+        \item Degree 5, real coefficients, crosses only at \(x = 2\) (straight through), and
+              \(1 - 2i\) is a zero. How many zeros are non-real?
+      \end{enumerate}
+
+    \column{0.38\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.62cm, y=0.08cm]
+        \draw[linegray, very thin] (-3,-20) grid[xstep=1, ystep=5] (4,20);
+        \draw[->, thick] (-3,0) -- (4.4,0) node[right] {\scriptsize \(x\)};
+        \draw[->, thick] (0,-20) -- (0,22) node[above] {\scriptsize \(w(x)\)};
+        \foreach \x in {-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \begin{scope}\clip (-3,-20) rectangle (4,20);
+          \draw[very thick, plum, domain=-2.95:3.3, samples=140, smooth]
+            plot (\x, {(\x+2)*(\x+2)*(\x-1)*(\x-3)});
+        \end{scope}
+        \foreach \x in {-2,1,3} \fill[plum] (\x,0) circle (2.2pt);
+      \end{tikzpicture}
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Count}
+        Every factor is a zero. The exponents count them --- to exactly the
+        \textbf{degree}.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Cross or touch}
+        Only an \textbf{odd} exponent crosses. An \textbf{even} one touches and turns back ---
+        no sign change.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{The hook, answered:} \(H\) never lost a zero. Its other two are a non-real conjugate
+  pair --- the graph cannot show them.
+
+  \bigskip
+  \textbf{Next time (3.4):} today every polynomial came already factored. Next time we do the
+  factoring ourselves.
+\end{frame}
+
+% HOMEWORK — DELTAMATH
+\begin{frame}[t, plain]
+  \plumheader{Homework: DeltaMath}
+  \sectionlabel[redacc]{Graded $\cdot$ online $\cdot$ assignment \textit{Lesson 3.3}}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Your graded homework is the DeltaMath assignment \textbf{Lesson 3.3}.
+          Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item The topics, in order:
+          \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Zeros from a factored equation and from a graph
+            \item Multiplicity, and the Fundamental Theorem of Algebra
+            \item The Complex Conjugate Theorem
+            \item The graphical effect of multiplicity --- cross or touch?
+            \item The nature of the roots --- real or non-real
           \end{itemize}
-  \end{enumerate}
+    \item \textbf{AP Practice} (the last two pages of the packet) is
+          \textbf{extra credit, scored 1 to 5}. Optional, AP-exam style. Do DeltaMath first.
+  \end{itemize}
 \end{frame}
 
 \end{document}

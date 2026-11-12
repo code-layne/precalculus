@@ -1,0 +1,21 @@
+# Rubric for ap_practice item 6(b) (Unit 3, Lesson 3.2). manifest.json points here
+# as rubrics/precalc-u03-l02-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6b
+points: 2
+task: "What is the least possible degree of k? Justify using the turning points, the x-intercepts, and the end behavior."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Least degree 5, justified by at least two of: 4 turning points require degree at least 4 + 1 = 5; 5 x-intercepts require degree at least 5; opposite arms mean odd degree, and 5 is odd."
+    partial: "Partially correct (1): Degree 5 with only one justification, or with no justification; OR a correct count of turning points (4) or intercepts (5) carried to an incorrect degree (for example 4, from reading n - 1 the wrong way)."
+examples:
+  - response: "5. It has 4 turning points so at least 5, and 5 x-intercepts so at least 5. The ends go opposite ways so odd, 5 works."
+    scores: {part: 2}
+  - response: "5, because there are 5 x-intercepts."
+    scores: {part: 1}
+  - response: "4, because it has 4 turning points."
+    scores: {part: 1}
+  - response: "3"
+    scores: {part: 0}

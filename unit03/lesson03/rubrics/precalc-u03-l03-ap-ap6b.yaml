@@ -1,0 +1,20 @@
+# Rubric for ap_practice item 6(b) (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+# This part is the lesson's crux in context: an even-multiplicity zero does not change sign.
+id: ap6b
+points: 2
+task: "Ana says, 'Just after t = 2 the dolphin is in the air, because h(2) = 0.' Use the multiplicity of the zero at t = 2 to explain Ana's error, in context."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): States that t = 2 is a zero of even multiplicity (the graph touches the axis and turns back), so h does not change sign there and stays negative just before and just after t = 2; AND interprets in context: the dolphin reaches the surface at 2 seconds and goes back under water, so it is not in the air."
+    partial: "Partially correct (1): Correct context conclusion (the dolphin stays under water / h is negative after t = 2) without the even-multiplicity or sign reason; OR the even-multiplicity, no-sign-change reason with no statement in context about the dolphin."
+examples:
+  - response: "2 has even multiplicity, the graph only touches and turns back, so h is still negative after 2. The dolphin touches the surface at 2 seconds and dives back under."
+    scores: {part: 2}
+  - response: "The graph goes back down after 2, so the dolphin is still under water."
+    scores: {part: 1}
+  - response: "Ana is right, h(2) = 0 means it crosses."
+    scores: {part: 0}

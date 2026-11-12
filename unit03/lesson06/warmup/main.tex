@@ -1,4 +1,7 @@
-%! Graphing Rational Functions — Unit 3, Lesson 3.6 — Warm-Up
+%! Roots and Polynomials — Unit 3, Lesson 3.6 — Warm-Up
+% Exactly ONE page, blank and keyed. Four prerequisite items: 1 multiplies a binomial by a
+% trinomial (every standard form today), 2 multiplies a conjugate pair (the crux row), 3 is the
+% Factor Theorem from 3.5 (zero <=> factor), 4 reads crossing/touching off a graph (3.3).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,15 +10,68 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.6}{Warm-Up}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See ~/.claude/skills/lesson-planning/references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\begin{enumerate}[itemsep=12pt]
 
-% TODO: author the Warm-Up. See templates/lesson/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
-\end{notesbox}
+\item Multiply, and write the result in standard form: \quad $(x - 2)(x^2 + 3x - 1)$
+
+\begin{work}
+  (x - 2)(x^2 + 3x - 1) &= x^3 + 3x^2 - x - 2x^2 - 6x + 2 \\
+                        &= x^3 + x^2 - 7x + 2
+\end{work}
+
+Standard form: \blank{4.2cm}
+
+\item Multiply: \quad $(2 + i)(2 - i)$
+
+\begin{work}
+  (2 + i)(2 - i) &= 4 - 2i + 2i - i^2 \\
+                 &= 4 - (-1) \\
+                 &= 5
+\end{work}
+
+Product: \blank{1.2cm} \qquad Is the product a real number? \blank{1.2cm}
+
+\item \textit{(Lesson 3.5)} Use the Factor Theorem: is $(x - 2)$ a factor of
+$p(x) = x^3 - 3x^2 + 4$?
+
+\begin{work}
+  p(2) &= 2^3 - 3(2)^2 + 4 \\
+       &= 8 - 12 + 4 \\
+       &= 0
+\end{work}
+
+Is $(x - 2)$ a factor? \blank{4.2cm}
+
+\item \textit{(Lesson 3.3)} The graph of a polynomial is shown. For each $x$-intercept, say
+whether the graph crosses or touches the $x$-axis there, and whether that zero's multiplicity is
+odd or even.
+
+\vspace{4pt}
+\begin{minipage}[c]{0.42\linewidth}
+\centering
+\begin{tikzpicture}[x=0.85cm, y=0.36cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2,-4) grid (4,6);
+  \draw[->, thick] (-2,0) -- (4.4,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-4) -- (0,6.6) node[above] {\small $y$};
+  \foreach \x in {-1,1,2,3} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,2,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum, domain=-1.35:3.15, samples=80, smooth]
+       plot (\x, {(\x+1)*(\x-2)*(\x-2)});
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.55\linewidth}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|c|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.3cm}|}
+\hline
+\textbf{$x$-intercept} & \textbf{Crosses or touches?} & \textbf{Multiplicity odd or even?} \\ \hline
+$x = -1$ & \blank{2.0cm} & \blank{1.5cm} \\ \hline
+$x = 2$  & \blank{2.0cm} & \blank{1.5cm} \\ \hline
+\end{tabular}
+\end{minipage}
+
+\end{enumerate}
 
 \end{document}

@@ -1,4 +1,9 @@
-%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Lesson Plan
+%! Polynomial Rates of Change and Characteristics — Unit 3, Lesson 3.1 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. Unit 3 opens by re-reading Unit 2's rate and shape
+% language (2.5: direction, extrema, concavity; 2.6: average rate, secant, difference quotient)
+% on ONE polynomial, p(x) = x^3 - 6x^2 + 9x + 2. New today: successive differences (EK 1.5.A.6)
+% and extrema specifically for polynomials (EK 1.4.A.2–1.4.A.5). CED 1.3 (1.3.A, 1.3.B) + CED 1.4
+% (1.4.A) + EK 1.5.A.6. 3.2 takes up degree, leading term and end behavior in full.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,8 +12,8 @@
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.1: Rational Functions and End Behavior}
+\newcommand{\UnitNumberName}{Unit 3: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.1: Polynomial Rates of Change and Characteristics}
 
 \begin{document}
 \begin{center}
@@ -16,194 +21,384 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will describe the end behavior of rational functions
-    by examining the quotient of leading terms, identify horizontal and slant asymptotes,
-    and express end behavior using limit notation.
-    \hfill\textit{\small Skills: MP 1.B, 3.A}
+    \textbf{Primary Objective:} Students will find the degree of a polynomial from a table with
+    equally spaced inputs by successive differences; find a polynomial's average rate of change
+    as a secant slope and simplify a modest difference quotient; read a polynomial's
+    $y$-intercept, intervals of increasing and decreasing, concavity, and points of inflection;
+    and tell a relative extremum from an absolute one --- knowing that a relative maximum is the
+    highest point only \emph{nearby}, that an odd-degree polynomial has no absolute extremum, and
+    that an even-degree one has exactly one kind.
+    \hfill\textit{\small (CED Topics 1.3, 1.4, and EK 1.5.A.6 --- Skills 2.A, 3.A, 3.B)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 2  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the SUCCESSIVE DIFFERENCES and RATES OF CHANGE rows: definitions, the difference table of $p$, the secant, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 23 & Fill the notes together, every problem cold-called --- problems 2--4 and 6--8, then the SHAPE OF $p$ and RELATIVE VS.\ ABSOLUTE rows (9--14; the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 15 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out, the headline, and the DeltaMath assignment. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Eight ideas, one polynomial.} The day's scope is wide, so every row reads the same
+$p(x) = x^3 - 6x^2 + 9x + 2$ and the guided phase runs 23 minutes; the four ideas students met in
+2.5 and 2.6 are recalled and applied, not re-taught, and the new minutes go to successive
+differences and to relative versus absolute. If the clock slips, cut \textbf{problem 3} (a twin
+of problem 1) and \textbf{problem 8} (the check of problem 7) first, and protect the
+\textbf{RELATIVE VS.\ ABSOLUTE} row: problems 12 and 13 are the lesson, and You Do problem 18
+cannot be done without them. Never cut the You Do below 14 minutes --- circulating it is the
+only formative read of the period now that there is no exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 1.B} --- Identify mathematical information from graphical, numerical,
-analytical, and verbal representations. &
+\textbf{AP Skill 2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations to answer a question. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item A rational function $r(x) = p(x)/q(x)$ measures the relative size of
-        two polynomials. (EK 1.7.A.1)
-  \item For large $|x|$, leading terms dominate; end behavior equals the quotient
-        of leading terms. (EK 1.7.A.2)
-  \item deg num $>$ deg denom $\Rightarrow$ polynomial end behavior; if the
-        difference in degrees is 1, a slant asymptote exists. (EK 1.7.A.3)
+  \item In a table whose inputs go up by \textbf{equal steps}, the least $n$ for which the
+        $n$th successive differences are constant is the degree of the polynomial that fits.
+        Unequal steps make the differences meaningless. (1.5.A.6)
+  \item A polynomial is written in standard form; its $y$-intercept is $(0, p(0))$, and $p(0)$
+        is the constant term. (1.4.A.1)
 \end{itemize} \\
-\textbf{MP 3.A} --- Describe characteristics of a function using appropriate
-mathematical language and notation. &
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function with varying levels of
+precision. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item deg num $=$ deg denom $\Rightarrow$ HA at $y = a_n / b_n$. (EK 1.7.A.4)
-  \item deg num $<$ deg denom $\Rightarrow$ HA at $y = 0$. (EK 1.7.A.5)
-  \item HAs are described with limit notation:
-        $\lim_{x\to\infty} r(x) = b$. (EK 1.7.A.6)
+  \item The average rate of change on $[a, b]$ is the slope of the secant line; for a polynomial
+        of degree 2 or more it changes from interval to interval. The difference quotient is
+        that rate on $[x, x + h]$. (1.3.A)
+  \item Where the rate of change is increasing the graph is concave up; where it is decreasing,
+        concave down; an inflection point is where it switches. (1.3.B.3, 1.4.A.5)
+\end{itemize} \\
+\textbf{AP Skill 3.B} --- Describe the assumptions and limitations of a model (here: a
+polynomial used only on a restricted domain, where the endpoints compete for the absolute
+extrema --- notes problems 14 and 18). &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A relative extremum is a turn: the highest or lowest output \emph{nearby}. Between two
+        distinct real zeros there is always one. (1.4.A.2, 1.4.A.3)
+  \item An even-degree polynomial has an absolute maximum or an absolute minimum; an odd-degree
+        one, on all real numbers, has neither. On a restricted domain the endpoints compete
+        for absolute. (1.4.A.2, 1.4.A.4)
+  \item \textbf{Target misconception:} \emph{``a relative maximum is the highest point of the
+        graph.''} Notes problem 12 sets the cubic's relative maximum 6 against $p(5) = 22$, and
+        problem 13 the quartic's two valleys, only the lower of which is the absolute minimum.
+        Its You Do transfer is problem 18.
+  \item \textbf{Second trap:} successive differences taken on a table whose input steps are not
+        equal --- notes problem 4.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.26\linewidth} X @{}}
-Rational function         & A function of the form $r(x) = p(x)/q(x)$ where $p$ and $q$ are polynomials. \\
-Quotient of leading terms & The ratio of the leading terms of numerator and denominator; governs end behavior. \\
-Horizontal asymptote      & A line $y = b$ that the graph approaches (and stays near) as $x \to \pm\infty$. \\
-Slant asymptote           & A non-horizontal line that the graph approaches when deg num $=$ deg denom $+ 1$. \\
-End behavior              & The output trend as $x \to +\infty$ or $x \to -\infty$. \\
-Limit notation            & $\lim_{x\to\infty} r(x) = b$: outputs get arbitrarily close to $b$ as $x$ grows. \\
+\begin{tabularx}{\linewidth}{@{} >{\raggedright\arraybackslash\leavevmode\bfseries\color{plum}}p{0.27\linewidth} X @{}}
+Successive differences & In a table with equally spaced inputs, the differences of consecutive outputs (first differences), then of those (second differences), and so on. \\
+Degree from a table & The least $n$ for which the $n$th differences are constant: constant first differences, linear; second, quadratic; third, cubic. \\
+Average rate of change & On $[a, b]$: \TallMath{\frac{f(b) - f(a)}{b - a}}, the slope of the secant line through $(a, f(a))$ and $(b, f(b))$. \\
+Difference quotient & \TallMath{\frac{f(x + h) - f(x)}{h}}, $h \ne 0$: the average rate of change on $[x, x + h]$. \\
+$y$-intercept of a polynomial & $(0, p(0))$; $p(0)$ is the constant term. \\
+Increasing / decreasing & As the inputs increase, the outputs increase / decrease; written as open intervals of $x$-values. \\
+Concave up / concave down & The rate of change is increasing / decreasing; the graph bends like a cup / a cap. \\
+Point of inflection & A point where the rate of change switches between increasing and decreasing --- where the concavity changes. \\
+Relative (local) maximum / minimum & An output greater / less than every nearby output; where the graph switches direction. \\
+Absolute (global) maximum / minimum & The greatest / least output on the whole domain. An odd-degree polynomial on all real numbers has neither. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review from Lesson 1.6).
-            Skills reviewed: end behavior of polynomial functions using the leading term,
-            limit notation for polynomials, and degree/leading-coefficient analysis.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textit{\small (authored warm-up compiles to target/)}
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: evaluating a polynomial at an input, including a negative one --- every row
+    today plugs into $p$; the average rate of change of a quadratic on an interval (2.6); reading
+    the intervals where a graph increases and decreases, as $x$-values, and its maximum as a
+    value and a location (2.5); and interval notation with $\infty$, because a polynomial's
+    intervals run off the ends of the graph.
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    A therapist charges \$200 per session plus a one-time \$50 intake fee.
-    The \textbf{average cost per session} after $n$ sessions is:
-    \[
-      r(n) = \frac{200n + 50}{n}
-    \]
-    \textit{Discussion prompts:}
+\begin{skillbox}[Hook (2 min)]{lilac}
+    \textbf{Is the first hill the top?} A roller coaster's first hill is 40 meters tall.
     \begin{enumerate}[itemsep=2pt]
-        \item Evaluate $r(1)$, $r(10)$, $r(100)$. What pattern do you notice?
-        \item As you attend more and more sessions, what does the average cost approach? Why?
-        \item Can the average cost ever equal exactly \$200? What does that tell us about the graph?
+        \item On the board: Jay says, ``So 40 meters is the highest the coaster ever goes.'' Ask:
+              is Jay right? What would you need to see to be sure?
+        \item Push until someone says it: the first hill is only the highest point \emph{near
+              it}. A later hill could be taller --- you would need the heights over the whole
+              ride.
     \end{enumerate}
-    \textit{Takeaway:} The \$50 intake fee is ``spread out'' over more sessions, so the average
-    approaches \$200 but never reaches it --- the graph has a \textbf{horizontal asymptote} at $y = 200$.
-    This is the quotient of leading terms: $200n/n = 200$.
+    \textit{Discussion prompt:} in 2.5 we called the first hill a \emph{relative} maximum. Today
+    we find out when a polynomial's relative maximum is also its highest point overall --- and
+    when the graph has no highest point at all.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\textbf{Part 1: Quotient of Leading Terms} (10 min)
+\textbf{I DO --- Part 1: Differences and Rates} (10 min)
 
-Key insight: for large $|x|$, lower-degree terms become negligible compared to the
-leading term of each polynomial.  So end behavior is controlled by the
-\textit{quotient of the leading terms}.
-
-\medskip
-\textbf{Worked Example.}
-\[
-  r(x) = \frac{3x^2 + 1}{x^2 - 4}
-\]
+\textit{Notes rows SUCCESSIVE DIFFERENCES and RATES OF CHANGE: read each definition, mark up the
+difference table and the secant, work problems 1 and 5. Teacher works; students watch and
+annotate. Nothing is cold-called in this phase.}
 \begin{itemize}
-  \item Leading term of numerator: $3x^2$
-  \item Leading term of denominator: $x^2$
-  \item Quotient: $\dfrac{3x^2}{x^2} = 3$
-  \item As $x \to \pm\infty$, $r(x) \to 3$.
-  \item Horizontal asymptote: $y = 3$.
+  \item Read the first row aloud. On the table of $p$, draw the little V's between neighbors and
+        say each subtraction: ``6 minus 2 is 4, 4 minus 6 is $-2$\ldots'' --- then the second row,
+        then the third. Fill the label boxes: \textit{third}, \textit{3}.
+  \item Work \textbf{problem 1} the same way, out loud. Before subtracting, \emph{point at the
+        $x$-row and say} ``steps of 1 --- equal, so differences are allowed.'' That sentence is
+        problem 4's whole lesson.
+  \item Read the RATES OF CHANGE row; on the graph, the run is 1 and the rise is 4, so the
+        secant slope is 4 --- the first difference in the table. Work \textbf{problem 5}:
+        $\frac{4 - 2}{2} = 1$.
 \end{itemize}
 
-Numerical check: $r(100) = \dfrac{30{,}001}{9{,}996} \approx 3.001$.
+\textbf{WE DO --- Part 2: Differences and Rates, Together} (8 min)
+
+\textit{Problems 2--4 and 6--8. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2} is linear at the first row; \textbf{problem 3} needs three rows.
+        \textbf{Problem 4 is the trap}: Kim's first differences 2, 4, 2, 4 come from steps of 1,
+        2, 1, 2. Divide each by its step and every rate is 2 --- $m$ \emph{is} linear.
+  \item \textbf{Problem 6}: $-2$, decreasing on average. \textbf{Problem 7} is 2.6's difference
+        quotient on a quadratic; insist on $f(x + h)$ written in full before anything is
+        subtracted. \textbf{Problem 8} checks it against an ordinary average rate.
+\end{itemize}
 
 \columnbreak
 
-\textbf{Part 2: The Three Cases} (10 min)
+\textbf{WE DO --- Part 3: The Shape of $p$} (6 min)
 
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}p{2.4cm} p{3.6cm}@{}}
-\textbf{Degree comparison} & \textbf{End behavior} \\
-\hline
-deg num $<$ deg denom & HA at $y = 0$ \\
-deg num $=$ deg denom & HA at $y = a_n/b_n$ \\
-deg num $>$ deg denom & Polynomial (slant if diff.\,$= 1$) \\
-\end{tabular}
-
-\medskip
-Quick examples:
+\textit{Notes row SHAPE OF $p$. Class fills the blanks together; cold-call every one. Teacher
+works problem 9; the class works the two label boxes and problem 10.}
 \begin{itemize}
-  \item $\dfrac{x+1}{x^2-9}$: $1 < 2$; HA at $y = 0$.
-  \item $\dfrac{3x^2}{x^2+4}$: $2 = 2$; HA at $y = 3$.
-  \item $\dfrac{x^3-2x}{x-3}$: $3 > 1$; polynomial ($\approx x^2$) end behavior.
+  \item Work \textbf{problem 9}: $p(0) = 2$, the constant term, is the red point. Then the
+        intervals, narrating the axis: ``where it rises, in $x$'' --- $(-\infty, 1)$ and
+        $(3, \infty)$; decreasing on $(1, 3)$.
+  \item \textbf{Problem 10} ties concavity to rates (EK 1.3.B.3): the first differences fall
+        from 4 to $-2$ and then rise to 4 and 16, and the switch sits at $x = 2$, the gold point.
 \end{itemize}
 
-\medskip
-\textbf{Part 3: Limit Notation for HAs} (10 min)
+\textbf{WE DO --- Part 4: Relative vs.\ Absolute} (9 min)
 
-When $r$ has a HA at $y = b$:
-\[
-  \lim_{x\to\infty} r(x) = b \qquad \lim_{x\to -\infty} r(x) = b
-\]
-Example: for $r(x) = \dfrac{3x^2+1}{x^2-4}$,
-\[
-  \lim_{x\to\infty} r(x) = 3 \quad \text{and} \quad \lim_{x\to -\infty} r(x) = 3.
-\]
-For $\dfrac{x+1}{x^2-9}$: both limits equal $0$.
+\textit{Notes row RELATIVE VS.\ ABSOLUTE --- the crux. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Work \textbf{problem 11} as sentences: ``a relative maximum of 6 at $x = 1$; a
+        relative minimum of 2 at $x = 3$.''
+  \item \textbf{Problem 12 is the crux}: compute $p(5) = 22$ on the board, next to the 6. Ask
+        where the right arrow goes. The cubic has no absolute maximum at all.
+  \item \textbf{Problem 13} is the even-degree twin: two valleys, $-2$ and $-5$; only the
+        lower one is the absolute minimum, and with both ends rising there is no absolute
+        maximum. \textbf{Problem 14} restricts $p$ to $[0, 5]$: the endpoint wins, 22 at $x = 5$.
+\end{itemize}
 
+\textbf{YOU DO --- Part 5: A New Stock} (15 min)
+
+\textit{Notes row A NEW STOCK, problems 15--18 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15}: successive differences, degree 3. \textbf{Problem 16}: two rates,
+        with units --- $+10$ and $-2$ dollars per month.
+  \item \textbf{Problem 17} reads direction, concavity, and the inflection point $(3, 23)$.
+  \item \textbf{Problem 18} is the crux transferred, and the finisher's question: the \$25 peak
+        is only relative; the six-month high is \$41 at the endpoint $t = 6$.
+\end{itemize}
 \end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-While students work on guided notes and the activity, circulate and check:
-\begin{itemize}
-  \item \textbf{Common error:} Students look at constant terms (e.g., the ``$+1$'' or ``$-4$'')
-        instead of leading terms.  Ask: ``Which term dominates for very large $x$?''
-  \item \textbf{Common error:} Confusing a horizontal asymptote with a zero of the denominator.
-        Clarify: HAs come from degree comparison, not from roots of $q(x)$.
-  \item \textbf{Notation check:} Are students writing $\lim_{x\to\infty}$ correctly?
-  \item \textbf{Cold-call:} ``If the numerator has degree 4 and the denominator degree 6,
-        what is the horizontal asymptote?'' ($y = 0$.)
-  \item \textbf{Cold-call:} ``Give me a rational function with a HA at $y = -2$.''
-\end{itemize}
-\end{skillbox}
-
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-Students work on the \textbf{Group Activity: Analyzing Concert Venue Costs} in leveled tiers.
-All tiers use the same four rational functions in context.
-
-\begin{itemize}
-  \item \textbf{Tier R (Remediate):} Leading terms are provided; students compute the quotient
-        and state whether a HA exists (and its value).
-  \item \textbf{Tier A (Apply):} Students identify degrees and leading coefficients from the
-        full expressions, compute the quotient, write both limit statements, and name the asymptote type.
-  \item \textbf{Tier E (Extend):} Students construct rational functions meeting specified HA or
-        slant asymptote conditions, then verify with graphing technology.
-\end{itemize}
-\end{skillbox}
-
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-\textbf{Exit Ticket} (last 5--7 minutes, individual, collected):
-\begin{enumerate}
-  \item For $r(x) = \dfrac{5x^2 - 3}{2x^2 + x - 1}$: state the quotient of leading terms,
-        write $\lim_{x\to\infty} r(x)$ and $\lim_{x\to -\infty} r(x)$, and identify the HA.
-  \item A rational function has numerator degree 3 and denominator degree 5.
-        State the HA and write the limit statement.
+\begin{skillbox}[Explicit Instruction: Successive Differences]{lilac}
+\begin{minipage}[t]{0.48\linewidth}
+\begin{enumerate}[itemsep=2pt]
+  \item Check the inputs: equal steps? If not, stop --- differences do not apply.
+  \item Subtract each output from the \emph{next} one (right minus left): first differences.
+  \item Repeat on the new row: second differences; again, third.
+  \item The first row that is all one number names the degree.
 \end{enumerate}
-\textbf{Assessment note:} Look for correct identification of \textit{leading} terms (not
-constants), proper limit notation, and correct application of the three degree-comparison cases.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Example} (notes problem 1): $f(x)$ = 1, 3, 9, 19, 33 at $x = 0, 1, 2, 3, 4$.
+Steps of 1 --- equal. First differences 2, 6, 10, 14; second 4, 4, 4, constant. So a polynomial
+of degree 2 fits $f$. (It is $f(x) = 2x^2 + 1$.)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the fifteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problems 12 and 13} (a relative
+maximum is not the highest point; only the lower valley is the absolute minimum); its You Do
+transfer is \textbf{problem 18}. The second trap is \textbf{problem 4} (unequal steps); its
+transfer is the step check in \textbf{problem 15}.
+\begin{itemize}
+  \item \textbf{Common error (the target misconception):} ``the stock's maximum is \$25.''
+        Point at the right end of the graph and ask: ``What was it worth in month 6?'' Then:
+        ``Is \$25 the highest \emph{nearby}, or the highest of all?''
+  \item \textbf{Common error:} the absolute minimum given as the relative minimum, \$21 at
+        $t = 4$, without checking the start. Point at the dot at $t = 0$.
+  \item \textbf{Common error:} subtracting left minus right, so every difference has the wrong
+        sign. The degree survives; the rates in problem 16 do not. Ask: ``Did the price go up
+        from month 0 to month 2?''
+  \item \textbf{Common error:} intervals written in prices --- ``increasing on $(5, 25)$.'' Ask
+        2.5's question: ``Is 25 a month or a price?''
+  \item \textbf{Common error:} a rate with no units, or ``\$20'' for $[0, 2]$ (the change, not
+        divided by 2). Ask: ``Per what?''
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (15 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        write the differences \emph{under} the table, V-shaped as in row 1, saying each
+        subtraction aloud. Then point at the graph for 17: trace it with a pencil, ``up, turn,
+        down, turn, up,'' writing the month under each turn.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} should be done unaided: two rates with
+        units, then three readings off the graph. Check only that each interval is in months.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question. A student who finishes
+        it gets: ``If the model kept going past month 6, would $S$ ever have an absolute
+        maximum? What about a degree-4 model?'' --- the odd/even distinction from row 4, said
+        in words. Either answer presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: ``third differences 6, 6 --- degree 3.'' Problem 16: ``\$10 per month, then
+        $-\$2$ per month.'' Problem 17: the inflection point $(3, 23)$. Problem 18: ``\$25 is a
+        relative maximum; the absolute maximum is \$41, at month 6.'' If a student answered the
+        Extend question, they say it now --- no DeltaMath topic asks it in words.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{a relative maximum is the highest point nearby, not the highest point of all ---
+        check the ends of the graph. Equal steps first, then the differences tell the degree.}
+        Point at the right arrow of the cubic while you say it.
+  \item \textbf{Point forward} (1 min) --- the DeltaMath assignment \textit{Lesson 3.1} and its
+        due date: write the date on the board and have students copy it into cover row 4.
+        Then: in 3.2 we read the \emph{ends} of a polynomial straight from its degree and
+        leading coefficient --- the arrows that decided today's absolute extrema.
+\end{enumerate}
+\textbf{Do not} re-teach successive differences here or take new questions. If the You Do showed
+it did not land, it is the 3.2 warm-up's job, not this minute's.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-\textbf{Homework:} 5 problems covering limit notation for four rational functions, conceptual
-explanation of why equal-degree quotients approach $a_n/b_n$, interpreting a HA at $y = 0$,
-describing end behavior with a slant asymptote, and one AP-style multiple-choice item.
+\textbf{Homework --- DeltaMath, graded.} Assign as \textit{Lesson 3.1}, in this order:
+\begin{enumerate}[itemsep=1pt,topsep=2pt]
+  \item \textbf{Successive Differences (Polynomial)} (3 problems) --- matches notes problems
+        1--4 and 15: the degree from equal-step differences.
+  \item \textbf{Find Average Rate of Change from Equation} (3 problems) --- matches notes
+        problems 5--6 and 16.
+  \item \textbf{Simplifying the Difference Quotient} (2 problems) --- matches notes problems
+        7--8; keep it to two, quadratics only, as the notes did.
+  \item \textbf{Finding y-Intercepts of Polynomials} (2 problems) --- matches notes problem 9.
+  \item \textbf{Finding Increasing or Decreasing Domains} (3 problems) --- matches notes
+        problems 9 and 17: intervals of $x$, in interval notation.
+  \item \textbf{Concavity from a Table} (3 problems) --- matches notes problem 10: rising rates,
+        concave up.
+  \item \textbf{Points of Inflection from a Graph} (3 problems) --- matches notes problems 10
+        and 17.
+  \item \textbf{Relative vs.\ Absolute Extrema} (4 problems) \textit{(diagnostic)} --- matches
+        notes problems 11--14 and 18: the crux.
+\end{enumerate}
+\textit{Leave out:} \textit{Linear/Quadratic/Exponential (Differences)} (its exponential items
+use ratios, not taught); \textit{Polynomial Terminology}, \textit{End Behavior Graphically},
+\textit{End Behavior Algebraically}, and \textit{Even and Odd Degree from a Graph} (3.2);
+\textit{Finding Roots From a Graph} and the multiplicity topics (3.3). DeltaMath has no topic
+that asks for the misconception \emph{in words} --- ``is the relative maximum the highest
+point?'' --- so that stays with You Do problem 18.
 
-\textbf{Extension (optional):} Students construct and verify their own rational functions with
-prescribed asymptotic behavior, using graphing technology to confirm predictions.
+\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).} Optional, last in the packet;
+DeltaMath first. Section I is five AP-style multiple-choice items (four options) whose
+distractors are the lesson's errors: stopping at the first differences or counting a row too
+many (1A, 1C, 1D); ``falling'' read as concave down, rising rates read as a rising function, or
+equal second differences called linear (2B, 2A, 2C); $f(x + h)$ built as $f(x) + h$, the 2 lost
+in the square, or $h$ dropped too early (3A, 3B, 3D); the crux --- the lower or later peak as
+the absolute maximum, a relative minimum as an absolute minimum, ``two peaks, so no absolute
+maximum'' (4B, 4C, 4D); and an interval in $y$-values, swapped, or peak to peak (5B, 5A, 5D).
+Section II is one free-response question on a music festival's crowd table: the degree by
+successive differences (a), an average rate in context and whether the crowd shrank the whole
+time (b), and the absolute maximum and minimum on $0 \le t \le 5$ against an organizer who
+checks only one endpoint (c) --- the crux, and the finisher's question.
 
-\textbf{Preview:} Lesson 1.8 examines \textit{zeros} of rational functions --- the input values
-where the numerator equals zero --- and how those points interact with the asymptotes from today.
+\textbf{Preview:} Next lesson (3.2, Polynomial Function Behavior) reads the degree and leading
+coefficient of a polynomial to predict its end behavior, the most turning points it can have,
+and the most zeros --- the arrows on today's cubic and quartic, explained.
 \end{skillbox}
+
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1(b) is the one to watch: $(-1)^3$ and
+$-2(-1)^2$ are both negative, and a student who gets $f(-1) = 6$ or $-6$ will stall on every
+evaluation of $p$ today --- problem 12's $p(5)$ above all. Item 2 is 2.6's average rate on a
+quadratic, which the RATES OF CHANGE row assumes cold. Item 3 reads intervals as $x$-values and
+the maximum as a value at a location --- 2.5's distinction, which problem 11 uses as a sentence.
+Item 4 adds $\infty$: polynomial intervals run off the edge of the graph, and a student who
+writes $(-3, 1)$ for ``increasing'' in item 3 has read the grid's edge as the end of the graph.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first problem
+of the grid (1, 5, 9, 11), and the class works the rest with the pen in their hand, every problem
+cold-called. One polynomial, $p(x) = x^3 - 6x^2 + 9x + 2$, carries rows 1--4 and is drawn three
+times on purpose: its table of differences, its secant, its shape, its turns --- so no student
+flips pages to find it. Rows 2 and 3 are recall from 2.5 and 2.6; move briskly there and spend
+the saved minutes on rows 1 and 4.
+
+Successive differences are new. Insist on right-minus-left, and make students say ``equal steps''
+out loud before every table: problem 4's whole point is that Kim's arithmetic is correct and her
+conclusion is wrong, because the steps were 1, 2, 1, 2. RELATIVE VS.\ ABSOLUTE is the lesson.
+Problem 12 must be computed, not argued: put $p(5) = 22$ beside the 6 and let the number end it.
+Problem 13 is the even-degree twin --- two valleys, one absolute minimum --- and the place to say
+that a degree-4 graph with both ends up \emph{must} have a lowest point. In this course a relative
+extremum is a turn; endpoints compete only for absolute (problem 14), as in 2.5. If the clock
+slips, cut problem 3 or problem 8, never 12 or 13.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are at risk --- eight ideas share one guided phase and it
+will try to borrow them. Borrow from problem 3 (a twin of problem 1) or problem 8 (a check)
+instead; DeltaMath drills both again. Never borrow from the You Do: with no exit ticket,
+circulating it is the last look you get before the work leaves the room. The share-out is one
+answer per You Do problem, said as a sentence, so that a student who stalled on 16 still hears
+``\$25 is a relative maximum; the absolute maximum is \$41, at month 6'' --- the shape the
+DeltaMath extrema topic expects, which they will otherwise meet alone at home.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, scored 1 to 5, and not a substitute for the DeltaMath assignment --- say
+so when you hand out the packet. Its 1-to-5 score is added as extra-credit points.
+Multiple-choice answers are \textbf{B, D, C, A, C}. Item 4 is the one to glance at: a student who
+writes (B) took the later peak (or the one nearer the middle) as the absolute maximum, and one who
+writes (C) called a relative minimum absolute on a graph whose ends fall forever --- the crux
+exactly. Item 1 (C) means the student counted the row of zeros as a degree. In the free response,
+accept $-1$ hundred people per hour or $-100$ people per hour in (b); part (c) earns full credit
+only if it names $t = 0$ as the minimum \emph{and} says why the organizer was wrong.
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+DeltaMath, graded, due on the date you set (assignment \textit{Lesson 3.1}). The diagnostic is
+\textbf{Relative vs.\ Absolute Extrema}: a miss there is almost always the target misconception
+--- the highest turn entered as the absolute maximum, or an absolute extremum claimed for a graph
+whose ends run off forever. If it is common, open 3.2 with a warm-up item that shows a cubic and
+asks, ``Does it have a highest point?'' --- 3.2's end behavior is the answer. A miss on
+\textbf{Successive Differences (Polynomial)} that reports one degree too high is the row of zeros
+counted; reuse notes problem 1 in that warm-up. DeltaMath cannot ask a student to explain
+\emph{why} a relative maximum is not the highest point, so read \textbf{You Do problem 18} in the
+packets as well. \textbf{Relative vs.\ Absolute Extrema} and \textbf{Points of Inflection from a
+Graph} predict 3.2: a student who reads the ends of a graph to decide whether an absolute
+extremum exists is already reasoning about end behavior.
+\end{teachernote}
 \end{document}

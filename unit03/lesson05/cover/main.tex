@@ -1,4 +1,7 @@
-%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Student Packet Cover Sheet
+%! Polynomial Long and Synthetic Division — Unit 3, Lesson 3.5 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One "I can" per idea: LO 1.11.B (long
+% division, the division algorithm), synthetic division by x - c, the Remainder Theorem, and the
+% Factor Theorem (LO 1.5.A — a zero <=> a linear factor) used to find every zero.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,17 +10,17 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Rational Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.5 \quad Equivalent Representations of Polynomial and Rational Expressions}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.5 \quad Polynomial Long and Synthetic Division}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,10 +30,15 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can rewrite a polynomial or rational expression in factored or standard form and
-        explain what each form reveals about the function (zeros, end behavior, asymptotes, holes).
-  \item I can perform polynomial long division to express $f(x) = g(x)q(x) + r(x)$, identify a
-        slant asymptote from the quotient, and use Pascal's Triangle to expand $(x+c)^n$.
+  \item I can divide one polynomial by another with long division and write the result as
+        dividend $=$ divisor $\cdot$ quotient $+$ remainder, with the remainder lower in degree
+        than the divisor.
+  \item I can divide a polynomial by $x - c$ with synthetic division, writing a $0$ for every
+        missing power and choosing the right sign for $c$.
+  \item I can use the Remainder Theorem: the remainder when $p(x)$ is divided by $x - c$ is
+        $p(c)$.
+  \item I can use the Factor Theorem --- $(x - c)$ is a factor exactly when $p(c) = 0$ --- to
+        divide out one known zero and find all the zeros of a cubic.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,15 +48,26 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up        & Spiral review: factoring, rational zeros, asymptotes, and holes \\
-2 & Guided Notes   & Factored vs.\ standard form; polynomial long division; binomial theorem \\
-3 & Group Activity & Form-switching with rational functions (tiered R / A / E) \\
-4 & Exit Ticket    & Choose a form; execute one long-division step; Pascal expansion \\
-5 & Homework       & Mixed: forms, long division, slant asymptotes, binomial theorem. \textbf{Scored 1 to 5.} \\
+1 & Warm-Up      & Spiral review of prerequisite skills \\
+2 & Guided Notes & Long division, synthetic division, the Remainder and Factor Theorems \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & DeltaMath: \textit{Lesson 3.5} \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Dividing polynomials works the way dividing numbers does: $157 = 12 \cdot 13 + 1$, and
+$x^2 + 5x + 7 = (x + 2)(x + 3) + 1$. When the divisor is $x - c$, the remainder is no
+accident --- it is the value $p(c)$. So a remainder of \textbf{zero} says three things at once:
+$x - c$ is a \textbf{factor}, $c$ is a \textbf{zero}, and $(c, 0)$ is an \textbf{$x$-intercept}.
+Every power keeps its own column, even the ones that are missing.
+\end{remindbox}
 
 \end{document}

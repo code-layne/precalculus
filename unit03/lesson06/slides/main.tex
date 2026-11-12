@@ -1,0 +1,283 @@
+%! Roots and Polynomials — Unit 3, Lesson 3.6 — Slides (Beamer)
+% Phase order: hook -> I Do -> We Do -> You Do -> debrief, closing on the DeltaMath assignment.
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{precalculus-beamer}   % provides \plumheader{} and \sectionlabel[color]{}
+
+\begin{document}
+
+% TITLE SLIDE
+{
+\setbeamercolor{background canvas}{bg=plum}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 3.6}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Roots and Polynomials}\\[1.2cm]
+    {\color{lilacmid}\small Precalculus~$\cdot$~Unit 3: Polynomial Functions}
+  \end{minipage}
+\end{frame}
+}
+
+% HOOK SLIDE
+\begin{frame}[t, plain]
+  \plumheader{Hook: Run 3.3 Backward}
+  \sectionlabel[goldacc]{Think About It}
+
+  I am thinking of a polynomial. Its only zeros are \(1\) and \(4\).
+
+  \bigskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Your turn}
+        Write a polynomial that could be mine.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Then ask}
+        Is yours the \textbf{only} one that works? Name two more.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \begin{center}
+    {\Large \((x - 1)(x - 4) \qquad 3(x - 1)(x - 4) \qquad (x - 1)^2(x - 4)\)}
+  \end{center}
+
+  \bigskip
+  \textit{The zeros give the factors --- but not the stretch, and not the multiplicities. What
+  else would pin down exactly one polynomial?}
+\end{frame}
+
+% ROW 1 — BUILD IT
+\begin{frame}[t, plain]
+  \plumheader{Build It: Zeros to Factors to Standard Form}
+  \sectionlabel[goldacc]{Notes row BUILD IT $\cdot$ I Do: problem 1 $\cdot$ We Do: problems 2--4}
+
+  \begin{block}{Each zero hands you a factor}
+    If \(a\) is a zero, then \((x - a)\) is a factor: \(x\) \textbf{minus the zero}.
+    The zero \(-2\) gives \((x + 2)\), because \(-2 + 2 = 0\). The zero \(0\) gives \(x\).
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Zeros \(-2,\ 1,\ 3\), leading coefficient 1}
+      \begin{align*}
+        &(x + 2)(x - 1)(x - 3) \\
+        &= (x^2 + x - 2)(x - 3) \\
+        &= x^3 - 2x^2 - 5x + 6
+      \end{align*}
+
+    \column{0.48\textwidth}
+      \begin{block}{The sign trap}
+        Zeros \(-4\) and \(1\) are \textbf{not} \((x - 4)(x + 1)\):\\[3pt]
+        test \(x = -4\): \((-8)(-3) = 24 \ne 0\).\\[3pt]
+        Correct: \((x + 4)(x - 1) = x^2 + 3x - 4\).
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% ROW 2 — FIT THE POINT
+\begin{frame}[t, plain]
+  \plumheader{Fit the Point: Multiplicity and the Stretch}
+  \sectionlabel[goldacc]{Notes row FIT THE POINT $\cdot$ I Do: problem 5 $\cdot$ We Do: problems 6--8}
+
+  A zero of multiplicity \(k\) puts its factor in \(k\) times. The zeros fix a
+  \textbf{family}; one more point fixes \(a\).
+
+  \medskip
+  \begin{center}
+    {\Large \(f(x) = {\color{goldacc}\mathbf{a}}\,(x - 2)^2(x + 1)(x - 3)\)} \qquad degree \(2 + 1 + 1 = 4\)
+  \end{center}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \textbf{Through \((0, 24)\):}
+      \begin{align*}
+        f(0) &= a(-2)^2(1)(-3) \\
+             &= -12a = 24 \\
+           a &= -2
+      \end{align*}
+      \(f(x) = -2(x - 2)^2(x + 1)(x - 3)\)
+
+    \column{0.48\textwidth}
+      \begin{block}{Never forget \(a\)}
+        \((x + 1)^2(x - 4)\) has the right zeros, but its \(y\)-intercept is \(-4\). If the
+        point says \(-8\), then \(a = 2\).
+      \end{block}
+  \end{columns}
+\end{frame}
+
+% ROW 3 — OFF A GRAPH
+\begin{frame}[t, plain]
+  \plumheader{Off a Graph: Cross or Touch, Then One Point}
+  \sectionlabel[goldacc]{Notes row OFF A GRAPH $\cdot$ I Do: problem 9 $\cdot$ We Do: problem 10}
+
+  \begin{columns}[T]
+    \column{0.36\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.62cm, y=0.24cm]
+        \draw[linegray, very thin, step=1] (-3,-5) grid (3,5);
+        \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize \(x\)};
+        \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\scriptsize \(y\)};
+        \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \draw[very thick, plum, domain=-2.45:2.1, samples=60, smooth]
+             plot (\x, {-(\x+2)*(\x-1)*(\x-1)});
+        \fill[goldacc] (0,-2) circle (2.4pt) node[below right, font=\tiny] {\((0, -2)\)};
+        \node[font=\small\bfseries, text=plum] at (-2.2,4.2) {A};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.36\textwidth}
+      \begin{center}
+      \begin{tikzpicture}[x=0.62cm, y=0.24cm]
+        \draw[linegray, very thin, step=1] (-1,-5) grid (5,5);
+        \draw[->, thick] (-1,0) -- (5.4,0) node[right] {\scriptsize \(x\)};
+        \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\scriptsize \(y\)};
+        \foreach \x in {1,2,3,4} \node[below, font=\tiny] at (\x,0) {\x};
+        \draw[very thick, plum, domain=-0.65:4.35, samples=60, smooth]
+             plot (\x, {0.5*\x*(\x-3)*(\x-3)});
+        \fill[goldacc] (1,2) circle (2.4pt) node[above right, font=\tiny] {\((1, 2)\)};
+        \node[font=\small\bfseries, text=plum] at (4.5,-4.2) {B};
+      \end{tikzpicture}
+      \end{center}
+
+    \column{0.26\textwidth}
+      \begin{block}{Read it}
+        \textbf{Crosses:} odd (1)\\[3pt]
+        \textbf{Touches:} even (2)\\[3pt]
+        Then a labeled point for \(a\).
+      \end{block}
+  \end{columns}
+
+  \medskip
+  A: \(-(x + 2)(x - 1)^2\) \qquad B: \(\tfrac{1}{2}x(x - 3)^2\) --- B's \(y\)-intercept is \(0\) for
+  \textbf{every} \(a\), so use \((1, 2)\).
+\end{frame}
+
+% ROW 4 — CONJUGATE PAIRS
+\begin{frame}[t, plain]
+  \plumheader{Conjugate Pairs: Zeros You Cannot See}
+  \sectionlabel[redacc]{Notes row CONJUGATE PAIRS $\cdot$ I Do: problem 11 $\cdot$ We Do: problem 12}
+
+  \begin{block}{Real coefficients \(\Rightarrow\) non-real zeros come in pairs}
+    If \(a + bi\) is a zero, so is \(a - bi\). Multiply the pair \textbf{first}: the \(i\)'s
+    cancel into one real quadratic factor.
+  \end{block}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.55\textwidth}
+      \begin{align*}
+        \bigl(x - (2 + i)\bigr)\bigl(x - (2 - i)\bigr) &= (x - 2)^2 - i^2 \\
+          &= x^2 - 4x + 4 + 1 \\
+          &= x^2 - 4x + 5
+      \end{align*}
+
+    \column{0.42\textwidth}
+      \textbf{Zeros \(1\) and \(2 + i\):}\\[3pt]
+      \((x - 1)(x^2 - 4x + 5)\)\\[3pt]
+      \(= x^3 - 5x^2 + 9x - 5\) \quad (degree 3)
+
+      \medskip
+      \textbf{Zero \(3i\):} \((x - 3i)(x + 3i) = x^2 + 9\)
+  \end{columns}
+\end{frame}
+
+% THE CRUX
+\begin{frame}[t, plain]
+  \plumheader{The Forgotten Conjugate}
+  \sectionlabel[redacc]{Notes row CONJUGATE PAIRS $\cdot$ We Do: problems 13--14 (13 is the crux)}
+
+  \textbf{Least degree, real coefficients, zeros \(3\) and \(1 + 2i\).}
+
+  \medskip
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Ana}
+        \((x - 3)\bigl(x - (1 + 2i)\bigr)\)\\[3pt]
+        \(= x^2 - (4 + 2i)x + (3 + 6i)\)\\[3pt]
+        Degree 2 --- but an \(i\) is stuck in the coefficients.
+      \end{block}
+
+    \column{0.48\textwidth}
+      \begin{block}{Ben}
+        \((x - 3)(x^2 - 2x + 5)\)\\[3pt]
+        \(= x^3 - 5x^2 + 11x - 15\)\\[3pt]
+        Degree 3, every coefficient real.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  Which promise in the problem does Ana's answer break? \quad
+  \((1 + 2i)(1 - 2i) = 1 - 4i^2 = 5\) --- where Ben's 5 comes from.
+\end{frame}
+
+% YOU DO
+\begin{frame}[t, plain]
+  \plumheader{You Do --- Build Four}
+  \sectionlabel[redacc]{Notes row BUILD FOUR $\cdot$ problems 15--18, alone, 15 minutes}
+
+  \begin{enumerate}\setlength{\itemsep}{8pt}
+    \setcounter{enumi}{14}
+    \item Zeros \(-4\), \(1\), \(2\); leading coefficient 1. Factored form, then standard form.
+    \item Degree 3: zero \(1\) with multiplicity 2, zero \(-3\), through \((0, 6)\). Factored form.
+    \item Least degree, real coefficients, leading coefficient 1, zeros \(-2\) and \(3i\). State
+          the degree, then the standard form.
+    \item A degree-4 polynomial with real coefficients and leading coefficient 1 has zeros
+          \(2\), \(-2\), and \(1 - i\). Find the fourth zero; write it in standard form.
+  \end{enumerate}
+
+  \bigskip
+  \textit{Every time: each zero \(\to\) a factor (watch the sign) $\cdot$ non-real? bring its
+  conjugate $\cdot$ a point? solve for \(a\).}
+\end{frame}
+
+% DEBRIEF
+\begin{frame}[t, plain]
+  \plumheader{Debrief --- The Headline}
+  \sectionlabel[goldacc]{Share out 15--18, one answer each $\cdot$ then say it back}
+
+  \begin{columns}[T]
+    \column{0.31\textwidth}
+      \begin{block}{Zeros}
+        Every zero gives a factor, \(x\) minus the zero.
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{A point}
+        The zeros fix a family; one point fixes \(a\).
+      \end{block}
+    \column{0.31\textwidth}
+      \begin{block}{Conjugates}
+        With real coefficients, a non-real zero never comes alone.
+      \end{block}
+  \end{columns}
+
+  \bigskip
+  \textbf{Next:} 3.6 closes Unit 3 --- the unit review and the Unit 3 test come next.
+\end{frame}
+
+% HOMEWORK — DELTAMATH
+\begin{frame}[t, plain]
+  \plumheader{Homework: DeltaMath}
+  \sectionlabel[redacc]{Graded $\cdot$ online $\cdot$ assignment \textit{Lesson 3.6}}
+
+  \begin{itemize}\setlength{\itemsep}{8pt}
+    \item Your graded homework is the DeltaMath assignment \textbf{Lesson 3.6}.
+          Copy the due date into the \textbf{Homework} row of your cover sheet:
+          \quad Due: \rule{3cm}{0.4pt}
+    \item The topics, in order:
+          \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Find the equation from roots --- watch the sign of each factor
+            \item Multiply polynomials into standard form
+            \item Zeros, multiplicities, and a point --- find \(a\)
+            \item Write the equation from a graph
+            \item Complex conjugate theorem --- bring the conjugate
+          \end{itemize}
+    \item \textbf{AP Practice} (the last two pages of the packet) is
+          \textbf{extra credit, scored 1 to 5}. Optional, AP-exam style. Do DeltaMath first.
+  \end{itemize}
+\end{frame}
+
+\end{document}

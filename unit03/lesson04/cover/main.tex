@@ -1,4 +1,6 @@
-%! Rational Functions and Holes — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
+%! Polynomial Zeros and Factoring — Unit 3, Lesson 3.4 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One learning target per Learning Objective
+% the lesson draws on (1.11.A; 1.5.A.1–2), plus the habit the crux is built on.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,30 +9,38 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
+  \fill[plum] (current page.north west)
+    rectangle ([yshift=-1.05in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Rational Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.4 \quad Rational Functions and Holes}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.4 \quad Polynomial Zeros and Factoring}}
 \end{center}
 
-\vspace{0.22in}
+\vspace{0.3in}
 \namedateperiod
 \vspace{0.18in}
 
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can determine whether a rational function has a hole or a vertical asymptote at a
-        shared zero of the numerator and denominator by comparing multiplicities.
-  \item I can find the coordinates of a hole by canceling common factors and evaluating the
-        simplified function at the shared zero, and express the result using limit notation.
+  \item I can \textbf{factor a polynomial completely} by a strategy: the \textbf{GCF} first,
+        then a \textbf{difference of squares}, a \textbf{sum or difference of cubes}, a
+        trinomial or \textbf{quadratic form}, or \textbf{grouping} --- until no factor can be
+        factored further over the real numbers.
+  \item I can \textbf{solve a polynomial equation} by moving every term to one side,
+        factoring, and using the \textbf{Zero Product Property} --- finding every solution,
+        real and non-real.
+  \item I can use a factored form to name a polynomial's \textbf{zeros}, their
+        \textbf{multiplicities}, and its \textbf{$x$-intercepts}, and check that a degree-$n$
+        equation has $n$ solutions, counting multiplicity.
+  \item I can explain why dividing both sides of an equation by $x$ loses the solution
+        $x = 0$, and solve the equation without losing it.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,14 +50,27 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up        & Spiral review: vertical asymptotes and factoring \\
-2 & Group Activity & Missing Data Points --- classifying holes and VAs \\
-3 & Exit Ticket    & Identify holes and write limit notation independently \\
-4 & Homework       & Practice with holes, VAs, and limit notation. \textbf{Scored 1 to 5.} \\
+1 & Warm-Up      & Spiral review of prerequisite skills \\
+2 & Guided Notes & Factoring strategies, the Zero Product Property, real and non-real solutions \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & DeltaMath: \textit{Lesson 3.4} --- factoring and solving polynomial equations \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+A product is zero only when one of its factors is zero --- so a factored polynomial hands you
+its zeros. \textbf{Factor first}, and \textbf{factor completely}: every factor you leave
+unfinished hides solutions. A factor of $x$ is a solution too: $x = 0$. Some solutions are
+\textbf{non-real} and come in conjugate pairs; they are zeros, but not $x$-intercepts. Counting
+multiplicity, a degree-$n$ equation always has $n$ solutions --- use that count to check you
+found them all.
+\end{remindbox}
 
 \end{document}

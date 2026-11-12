@@ -45,8 +45,9 @@ calculus course: **depth over breadth**, a context first, small numbers, one new
 worked examples, gentler ramps than the CED implies. 8 units, a sample test per unit, 60-minute
 meetings. **Units 1 and 2 are no longer fixed at eight** — after the September–October 2026
 replans Unit 1 holds 1.1–1.3 (the algebra of functions) and Unit 2 holds 2.1–2.6 (*Functions
-and Their Graphs*), both numbered from X.1 with no opener; see `COURSE_PLAN.md`, which is
-authoritative for the lesson map. Units 3–8 still number X.1–X.8. **Every lesson ships a Beamer deck.**
+and Their Graphs*), both numbered from X.1 with no opener; the November 2026 replan made Unit 3
+*Polynomial Functions*, 3.1–3.6 (the rational-function lessons retired); see `COURSE_PLAN.md`,
+which is authoritative for the lesson map. Units 4–8 still number X.1–X.8. **Every lesson ships a Beamer deck.**
 
 ## 1. The lesson shape
 
@@ -431,11 +432,11 @@ Recognize the shape by the component directories and the plan's boxes:
 
 | Shape | Has | Where |
 | --- | --- | --- |
-| **current** (gradual release + DeltaMath, 2026-10-06) | `notes/` + `ap_practice/`, **no** `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has no Homework Launch box and lists DeltaMath topics in Reinforcement & Extension | `unit01/lesson01`–`03`, `unit02/lesson01`–`06` |
+| **current** (gradual release + DeltaMath, 2026-10-06) | `notes/` + `ap_practice/`, **no** `homework/`, **no** `exit_ticket/`, **no** `activity/`; plan has no Homework Launch box and lists DeltaMath topics in Reinforcement & Extension | `unit01/lesson01`–`03`, `unit02/lesson01`–`06`, `unit03/lesson01`–`06` |
 | **printed-homework gradual release** (2026-09-16) | as current, plus `homework/` + `homework_key/`; plan has a Homework Launch box | none remaining (converted 2026-10-06) |
 | **exit-ticket gradual release** (2026-08) | `notes/` + `exit_ticket/`, no `homework/` (DeltaMath); plan has Individual Work & Assessment | none remaining |
 | **group-activity, convention-compliant** | `activity/` + `homework/` present; plan has a plain `Lesson` box and `Group Work \& Differentiation`; plum palette; the five conventions applied (`COURSE_PLAN.md`: *authored*) | none remaining (retired in the October 2026 replans) |
-| **moved / pre-restructure** | the same directories, but the body is the old AP-paced lesson: cross-references in the *old* numbering, `navy`/`sky` colours, teacher notes still in the `_key` files, name rows on every component, Tier R/A/E boxes on the activity sheet, no `work` blocks, no `\boxguard`, sometimes no deck (`COURSE_PLAN.md`: *moved* or *new*) | units 03–08 |
+| **moved / pre-restructure** | the same directories, but the body is the old AP-paced lesson: cross-references in the *old* numbering, `navy`/`sky` colours, teacher notes still in the `_key` files, name rows on every component, Tier R/A/E boxes on the activity sheet, no `work` blocks, no `\boxguard`, sometimes no deck (`COURSE_PLAN.md`: *moved* or *new*) | units 04–08 |
 
 The build accepts all of them. When asked to touch one, **ask whether to regenerate it** in the
 current shape. Reauthoring happens **lesson by lesson — there is no bulk sweep**; a project-wide
@@ -474,7 +475,10 @@ one-page warm-up on both sides, AP Practice exactly two pages (checked by hand �
 and every component's page count equals its `_key`'s on the compiled components, not the padded
 packets.
 
-**Scoreboard (2026-10-03):** 9 lessons are in the current shape (`unit01/lesson01`–`03`,
+**Scoreboard (2026-10-03; Unit 3 replaced 2026-11-12):** the November 2026 replan retired
+`unit03`'s eight moved lessons and authored six polynomial lessons in the current shape, so the
+counts below overstate units 03–08 by those eight lessons (and `unit03/lesson06`–`08` now have
+decks). 9 lessons are in the current shape (`unit01/lesson01`–`03`,
 `unit02/lesson01`–`06`); the 13 group-activity lessons were retired in the October 2026
 replans; 48 are moved / pre-restructure (units 03–08). Across units 03–08 (counts from
 2026-09-17, untouched since): 48

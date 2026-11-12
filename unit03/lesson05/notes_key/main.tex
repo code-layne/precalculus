@@ -1,156 +1,364 @@
-%! Equivalent Representations of Polynomial and Rational Expressions — Unit 3, Lesson 3.5 — Guided Notes (Answer Key)
+%! Polynomial Long and Synthetic Division — Unit 3, Lesson 3.5 — Guided Notes (ANSWER KEY)
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems. Problems run 1..18.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 9).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 17 minutes while the teacher circulates.
+% The crux is row 4, FACTOR THEOREM: problems 11 and 12 divide x^3 - 7x + 6 by x - 2 WITHOUT and
+% WITH the 0x^2 placeholder — the remainders disagree (-4 vs 0) — and problem 13 settles it with
+% p(2) = 0. You Do 16 and 17 carry the missing power again; 15 and 18 carry the sign of c.
+%
+% DIVISION FRAMES: each long or synthetic division is a pre-drawn tabular whose columns have
+% fixed widths and whose every row carries the same strut (\dstrut), so an empty cell in the
+% blank and a filled \ans cell here are the same height. The blank prints the empty frame
+% (divisor, dividend, rules); the key fills it. Nothing else in a frame differs.
+%
+% PAGE LOCKSTEP with notes/: the vocabulary write lines -> \ansline, the hook's lines -> one
+% \ansline, the frame cells -> \ans, and the answer argument of every \pcell, \writespace and
+% \labelbox filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par (`\\` inside tabular is safe).
+% A row cannot break across pages: the figure and EACH grid row are separate sub-rows.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% Division-frame columns: T = one term of a long division, K = one synthetic-division number.
+\newcolumntype{T}{>{\centering\arraybackslash}p{0.98cm}}
+\newcolumntype{K}{>{\centering\arraybackslash}p{0.62cm}}
+\newcommand{\dstrut}{\rule[-3.5pt]{0pt}{12pt}}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.5}{Guided Notes --- Answer Key}
-\namedateperiod
 
-\vspace{0.08in}
+\vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Rewrite a polynomial or rational expression in \ans{factored} form or \ans{standard} form
-        and explain what each form reveals. \hfill\textit{(LO 1.11.A)}
-  \item Perform polynomial \ans{long division} to write $f(x) = g(x)q(x) + r(x)$ and use the result
-        to find \ans{slant} asymptotes. \hfill\textit{(LO 1.11.B)}
-  \item Apply the \ans{binomial} theorem and Pascal's Triangle to expand $(a+b)^n$. \hfill\textit{(LO 1.11.C)}
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.06in}
-
+\boxguard
 \begin{vocabbox}
-\termblanklong{Factored form}
-\ansline{A polynomial or rational expression written as a product of linear and/or irreducible quadratic factors.}
-\termblanklong{Standard form}
-\ansline{A polynomial written with terms in descending order of degree; reveals degree, leading coefficient, and end behavior.}
-\termblanklong{Polynomial long division}
-\ansline{An algorithm for dividing polynomial $f$ by polynomial $g$ to find quotient $q$ and remainder $r$ such that $f = gq + r$.}
-\termblanklong{Quotient}
-\ansline{The polynomial $q(x)$ resulting from dividing $f(x)$ by $g(x)$ in long division.}
-\termblanklong{Remainder}
-\ansline{The polynomial $r(x)$ left over after long division, with $\deg(r) < \deg(g)$.}
-\termblanklong{Slant asymptote}
-\ansline{A linear asymptote $y = q(x)$ that occurs when the degree of the numerator is exactly one more than the degree of the denominator.}
-\termblanklong{Binomial theorem}
-\ansline{The formula $(a+b)^n = \sum_{k=0}^{n}\binom{n}{k}a^{n-k}b^k$, which uses Pascal's Triangle coefficients.}
-\termblanklong{Pascal's Triangle}
-\ansline{A triangular array of numbers where each entry is the sum of the two entries above it; row $n$ gives the coefficients for $(a+b)^n$.}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Division algorithm:}}\\[1pt]
+\ansline{$f(x) = g(x)\,q(x) + r(x)$: quotient $q$, remainder $r$ of lower degree than the divisor $g$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Placeholder:}}\\[1pt]
+\ansline{A $0$ coefficient written for a missing power, so every column lines up.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Synthetic division:}}\\[1pt]
+\ansline{A shortcut for dividing by $x - c$ that uses only the coefficients.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Remainder Theorem:}}\\[1pt]
+\ansline{Dividing $p(x)$ by $x - c$ leaves the remainder $p(c)$.}\\[3pt]
+\noindent\textbf{\textcolor{plum}{Factor Theorem:}}\\[1pt]
+\ansline{$(x - c)$ is a factor of $p(x)$ exactly when $p(c) = 0$.}
 \end{vocabbox}
 
-\vspace{0.06in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-Three rational functions are written on the board:
-\[
-  f(x) = \frac{2x^2 - 8}{x^2 + x - 6}
-  \qquad
-  g(x) = \frac{2(x-2)(x+2)}{(x-2)(x+3)}
-  \qquad
-  h(x) = \frac{2(x+2)}{x+3}, \quad x \ne 2
-\]
-These are the \textit{same function} in three different faces. \ans{Factored} form reveals zeros and
-holes. \ans{Standard} form reveals end behavior. The simplified form reveals the \ans{domain restriction} of the
-restricted domain.
+None of the 3.4 patterns fits $p(x) = x^3 - 7x + 6$: no common factor, no grouping, not a sum
+or difference of cubes. Maya says, ``Then there is no way to tell whether $x - 2$ is a factor.''
+Jordan says, ``Just plug in 2.''
+
+How could plugging in one number tell you anything about a factor?
+\ansline{$p(2) = 8 - 14 + 6 = 0$, so 2 is a zero --- and a zero at 2 means $x - 2$ is a factor (3.3). Today: divide it out, and see why.}
 \end{hookbox}
 
-\vspace{0.06in}
+\small
+\begin{guidednotes}
+% ── ROW 1: long division — set up like numbers ───────────────────────────────
+\mainidea[Like dividing numbers]{Long Division} &
+Dividing a polynomial $f(x)$ by $g(x)$ gives a \textbf{quotient} $q(x)$ and a
+\textbf{remainder} $r(x)$, with $f(x) = g(x)\,q(x) + r(x)$ and the degree of $r$ less than
+the degree of $g$. Write both polynomials highest power first, with a $0$ for any missing power.
 
-\begin{notesbox}{LO 1.11.A --- Factored Form vs.\ Standard Form}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X X @{}}
- & \textbf{Factored Form} & \textbf{Standard Form} \\
-\midrule
-What it reveals & \ans{zeros, holes, asymptotes, domain} & \ans{end behavior, degree, leading coefficient} \\[4pt]
-                & zeros, holes, asymptotes & end behavior, degree, leading coefficient \\[4pt]
-Example (poly)  & $(x-1)(x+3)(x-2)$ & $x^3 - 7x + 6$ (expand) \\[4pt]
-Example (rational) & $\dfrac{(x-2)(x+2)}{(x-2)(x+3)}$ & $\dfrac{x^2-4}{x^2+x-6}$ \\
-\end{tabularx}
+\vspace{3pt}
+\stepnum{1}\ Divide the leading terms. \quad \stepnum{2}\ Multiply back. \quad
+\stepnum{3}\ Subtract --- change every sign. \quad \stepnum{4}\ Bring down. Repeat until
+the remainder's degree is less than the divisor's.
+\\
+& \begin{minipage}[c]{0.36\linewidth}\centering
+{\setlength{\tabcolsep}{2.5pt}\begin{tabular}{@{}>{\dstrut}r@{\,}ccc@{}}
+            &        & \textbf{\color{plum}1} & \textbf{\color{plum}3} \\ \cline{2-4}
+ $12\,\big)$ & $1$    & $5$    & $7$    \\
+            & $-(1$  & $2)$   &        \\ \cline{2-3}
+            &        & $3$    & $7$    \\
+            &        & $-(3$  & $6)$   \\ \cline{3-4}
+            &        &        & \textbf{\color{redacc}1} \\
+\end{tabular}}
 
-\medskip
-\textbf{Key idea (EK 1.11.A.1):} Factored form reveals \ans{zeros}, \ans{asymptotes},
-\ans{holes}, and domain restrictions.
+\vspace{3pt}
+$157 = 12 \cdot 13 + 1$
+\end{minipage}\hfill
+\begin{minipage}[c]{0.6\linewidth}\centering
+{\setlength{\tabcolsep}{2.5pt}\begin{tabular}{@{}>{\dstrut}r@{\,}ccc@{}}
+              &          & \textbf{\color{plum}$x$} & \textbf{\color{plum}$+3$} \\ \cline{2-4}
+ $x+2\,\big)$ & $x^2$    & $+5x$    & $+7$    \\
+              & $-(x^2$  & $+2x)$   &         \\ \cline{2-3}
+              &          & $3x$     & $+7$    \\
+              &          & $-(3x$   & $+6)$   \\ \cline{3-4}
+              &          &          & \textbf{\color{redacc}$1$} \\
+\end{tabular}}
 
-\textbf{Key idea (EK 1.11.A.2):} Standard form reveals \ans{end behavior and degree}.
-\end{notesbox}
+\vspace{3pt}
+$x^2 + 5x + 7 = (x + 2)\,\cdot$ \labelbox{1.6cm}{$(x + 3)$} $+$ \labelbox{0.9cm}{$1$}
+\end{minipage}
+\\
+& \notesprompt{Divide in the frame. Then write dividend $=$ divisor $\cdot$ quotient $+$ remainder.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{$(2x^3 - 3x^2 - 5x + 6) \div (x - 2)$\par\smallskip
+{\setlength{\tabcolsep}{1.5pt}\begin{tabular}{@{}>{\dstrut}r@{\,}TTTT@{}}
+             &   & \ans{$2x^2$} & \ans{$+x$} & \ans{$-3$} \\ \cline{2-5}
+ $x-2\,\big)$ & $2x^3$ & $-3x^2$ & $-5x$ & $+6$ \\
+             & \ans{$-(2x^3$} & \ans{$-4x^2)$} & & \\ \cline{2-3}
+             & & \ans{$x^2$} & \ans{$-5x$} & \\
+             & & \ans{$-(x^2$} & \ans{$-2x)$} & \\ \cline{3-4}
+             & & & \ans{$-3x$} & \ans{$+6$} \\
+             & & & \ans{$-(-3x$} & \ans{$+6)$} \\ \cline{4-5}
+             & & & & \ans{$0$} \\
+\end{tabular}}}{1.1cm}{$2x^3 - 3x^2 - 5x + 6 = (x - 2)(2x^2 + x - 3) + 0$} &
+\pcell{2}{$(x^3 + 2x^2 - x + 3) \div (x^2 + 1)$. Why does it stop with an $x$ term left?\par\smallskip
+{\setlength{\tabcolsep}{1.5pt}\begin{tabular}{@{}>{\dstrut}r@{\,}TTTT@{}}
+               &   &   & \ans{$x$} & \ans{$+2$} \\ \cline{2-5}
+ $x^2+1\,\big)$ & $x^3$ & $+2x^2$ & $-x$ & $+3$ \\
+               & \ans{$-(x^3$} & & \ans{$+x)$} & \\ \cline{2-4}
+               & & \ans{$2x^2$} & \ans{$-2x$} & \ans{$+3$} \\
+               & & \ans{$-(2x^2$} & & \ans{$+2)$} \\ \cline{3-5}
+               & & & \ans{$-2x$} & \ans{$+1$} \\
+\end{tabular}}}{1.2cm}{$= (x^2 + 1)(x + 2) + (-2x + 1)$. It stops: $-2x + 1$ has degree 1, less than 2.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: synthetic division — the same numbers, faster ─────────────────────
+\mainidea[A shortcut for $x - c$]{Synthetic} &
+When the divisor is $x - c$, \textbf{synthetic division} keeps only the coefficients. Write
+$c$ in the corner and the coefficients in a row (a $0$ for any missing power). Bring down the
+first; then multiply by $c$, add down the next column, and repeat. The last number is the
+remainder; the others are the quotient's coefficients, one degree lower than the dividend.
+\\
+& \begin{minipage}[c]{0.56\linewidth}\centering
+{\setlength{\tabcolsep}{1.5pt}\begin{tabular}{@{}>{\dstrut}r@{\,}TTTT@{}}
+             &          & \textbf{\color{plum}$x^2$} & \textbf{\color{plum}$+x$} & \textbf{\color{plum}$-2$} \\ \cline{2-5}
+ $x-3\,\big)$ & $x^3$    & $-2x^2$  & $-5x$    & $+6$   \\
+             & $-(x^3$  & $-3x^2)$ &          &        \\ \cline{2-3}
+             &          & $x^2$    & $-5x$    &        \\
+             &          & $-(x^2$  & $-3x)$   &        \\ \cline{3-4}
+             &          &          & $-2x$    & $+6$   \\
+             &          &          & $-(-2x$  & $+6)$  \\ \cline{4-5}
+             &          &          &          & \textbf{\color{redacc}$0$} \\
+\end{tabular}}
 
-\vspace{0.06in}
+\vspace{2pt}
+{\footnotesize\itshape Long division of $(x^3 - 2x^2 - 5x + 6) \div (x - 3)$}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.42\linewidth}\centering
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ $3$ & $1$ & $-2$ & $-5$ & $6$ \\
+     &     & $3$  & $3$  & $-6$ \\ \cline{2-5}
+     & \textbf{\color{plum}$1$} & \textbf{\color{plum}$1$} & \textbf{\color{plum}$-2$} & \textbf{\color{redacc}$0$} \\
+\end{tabular}}
 
-\begin{notesbox}{LO 1.11.B --- Polynomial Long Division}
-\textbf{Division Algorithm:} If $f$ is divided by $g$ (with $\deg g \geq 1$), then
-\[
-  f(x) = g(x)\cdot q(x) + r(x), \quad \text{where } \deg(r) < \deg(g).
-\]
+\vspace{2pt}
+{\footnotesize\itshape The same division, synthetic}
 
-\textbf{Steps:}
-\begin{enumerate}[itemsep=3pt]
-  \item Write numerator and denominator in \ans{descending} order (fill gaps with $0$ coefficients).
-  \item Divide the \ans{leading} term of the dividend by the leading term of the divisor. Write this as the first term of $q(x)$.
-  \item Multiply that term by the \ans{entire divisor} and subtract from the dividend.
-  \item Bring down the next term and repeat until $\deg(\text{remainder}) < \deg(\text{divisor})$.
-\end{enumerate}
-
-\medskip
-\textbf{Example:} Divide $f(x) = 2x^2 + 3x - 5$ by $g(x) = x - 1$.
-
-\smallskip
-\begin{tabular}{r|l}
-\multicolumn{1}{r}{} & \ans{$2x + 5$} \\[2pt]
-\cline{2-2}
-$x - 1$ & $2x^2 + 3x - 5$ \\
-         & $- ($\ans{$2x^2 - 2x$}$)$ \\
-\cline{2-2}
-         & \ans{$5x - 5$} \\
-         & $- ($\ans{$5x - 5$}$)$ \\
-\cline{2-2}
-         & \ans{$0$} \\
-\end{tabular}
-
-\smallskip
-Result: $q(x) = $ \ans{$2x+5$}, $r(x) = $ \ans{$0$}, so $f(x) = (x-1)($\ans{$2x+5$}$) + $\ans{$0$}.
-
-\medskip
-\textbf{Slant Asymptote (EK 1.11.B.2):} When $\deg(f) = \deg(g) + 1$, the slant asymptote of
-$\dfrac{f(x)}{g(x)}$ is $y = q(x)$ (the \ans{quotient polynomial} after long division).
-\end{notesbox}
-
-\vspace{0.06in}
-
-\begin{notesbox}{LO 1.11.C --- Binomial Theorem and Pascal's Triangle}
-\textbf{Pascal's Triangle} (fill in the missing entries):
-
-\begin{center}
-\begin{tabular}{ccccccccccc}
-  &   &   &   & 1 &   &   &   &   \\
-  &   &   & 1 &   & 1 &   &   &   \\
-  &   & 1 &   & 2 &   & 1 &   &   \\
-  & 1 &   & 3 &   & 3 &   & 1 &   \\
-1 &   & \ans{4} &   & \ans{6} &   & \ans{4} &   & 1 \\
-\end{tabular}
+\vspace{6pt}
+\raggedright
+$1,\ 1,\ -2$ are the \labelbox{2.3cm}{coefficients} of the quotient $x^2 + x - 2$.\par
+\vspace{3pt}
+The last number, $0$, is the \labelbox{2.3cm}{remainder}.
+\end{minipage}
+\\
+& \notesprompt{Divide by synthetic division. Say what $c$ is first.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{Redo problem 1 the short way: $(2x^3 - 3x^2 - 5x + 6) \div (x - 2)$.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$2$} & \ans{$2$} & \ans{$-3$} & \ans{$-5$} & \ans{$6$} \\
+     &     & \ans{$4$}  & \ans{$2$}  & \ans{$-6$} \\ \cline{2-5}
+     & \ans{$2$} & \ans{$1$} & \ans{$-3$} & \ans{$0$} \\
+\end{tabular}}}{1.1cm}{Quotient $2x^2 + x - 3$, remainder $0$ --- the same numbers as problem 1.} &
+\pcell{4}{$(x^3 + 5x^2 + 2x - 4) \div (x + 2)$\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$-2$} & \ans{$1$} & \ans{$5$} & \ans{$2$} & \ans{$-4$} \\
+     &     & \ans{$-2$}  & \ans{$-6$}  & \ans{$8$} \\ \cline{2-5}
+     & \ans{$1$} & \ans{$3$} & \ans{$-4$} & \ans{$4$} \\
+\end{tabular}}}{1.1cm}{$c = -2$, since $x + 2 = x - (-2)$. Quotient $x^2 + 3x - 4$, remainder $4$.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{$(3x^3 - 4x^2 + 2x - 5) \div (x - 1)$\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$1$} & \ans{$3$} & \ans{$-4$} & \ans{$2$} & \ans{$-5$} \\
+     &     & \ans{$3$}  & \ans{$-1$}  & \ans{$1$} \\ \cline{2-5}
+     & \ans{$3$} & \ans{$-1$} & \ans{$1$} & \ans{$-4$} \\
+\end{tabular}}}{1.1cm}{Quotient $3x^2 - x + 1$, remainder $-4$.} &
+\pcell{6}{Synthetic division needs a divisor of the form $x - c$. Give $c$, or write ``long division.''\par\smallskip
+(a) $x - 4$ \qquad (b) $x + 5$ \qquad (c) $x^2 + 1$ \qquad (d) $x$}{1.4cm}{(a) $c = 4$ \quad (b) $c = -5$\par (c) long division \quad (d) $c = 0$} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: the Remainder Theorem — two roads to p(c) ─────────────────────────
+\mainidea[Two roads to $p(c)$]{Remainder Theorem} &
+\textbf{The Remainder Theorem:} when $p(x)$ is divided by $x - c$, the remainder is $p(c)$.
+The reason is the division algorithm itself: $p(x) = (x - c)\,q(x) + r$, so at $x = c$ the
+first term is worth nothing and only the remainder is left.
+\\
+& \begin{center}
+\fcolorbox{plum}{white}{\begin{minipage}[c][2.3cm][c]{0.4\linewidth}\centering
+\textbf{\color{plum}Road 1: substitute}\par\vspace{4pt}
+$p(x) = x^3 - 2x^2 + 4$\par\vspace{3pt}
+$p(3) = 3^3 - 2(3)^2 + 4$\par
+$= 27 - 18 + 4 = \textbf{\color{redacc}13}$
+\end{minipage}}
+\quad\raisebox{0.9cm}{\Large$\Longleftrightarrow$}\quad
+\fcolorbox{plum}{white}{\begin{minipage}[c][2.3cm][c]{0.4\linewidth}\centering
+\textbf{\color{plum}Road 2: divide by $x - 3$}\par\vspace{2pt}
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ $3$ & $1$ & $-2$ & $0$ & $4$ \\
+     &     & $3$  & $3$ & $9$ \\ \cline{2-5}
+     & $1$ & $1$  & $3$ & \textbf{\color{redacc}$13$} \\
+\end{tabular}}
+\end{minipage}}
 \end{center}
 
-\textbf{Rule:} Each entry equals the \ans{sum} of the two entries above it.
+\vspace{2pt}
+At $x = 3$ the factor $(x - 3)$ equals \labelbox{0.9cm}{$0$}, so $p(3)$ is exactly the
+\labelbox{2.3cm}{remainder}.
+\\
+& \notesprompt{Find each value. Two roads must land on the same number.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{$p(x) = x^3 + 3x^2 - 4x + 1$. Find $p(-2)$ by substituting, then by synthetic division.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$-2$} & \ans{$1$} & \ans{$3$} & \ans{$-4$} & \ans{$1$} \\
+     &     & \ans{$-2$}  & \ans{$-2$}  & \ans{$12$} \\ \cline{2-5}
+     & \ans{$1$} & \ans{$1$} & \ans{$-6$} & \ans{$13$} \\
+\end{tabular}}}{1.3cm}{$p(-2) = -8 + 12 + 8 + 1 = 13$; the remainder is $13$ too.} &
+\pcell{8}{Without dividing, find the remainder when $2x^3 - 5x^2 + x + 4$ is divided by $x - 3$.\par\smallskip
+Then: if a remainder is $0$, what does that say about $p(c)$?}{2.4cm}{$p(3) = 2(27) - 5(9) + 3 + 4$\par $= 54 - 45 + 7 = 16$.\par\smallskip
+A remainder of $0$ means $p(c) = 0$: $c$ is a zero of $p$.} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the Factor Theorem, and the missing power ──────────────
+\mainidea[Remainder zero]{Factor Theorem} &
+\textbf{The Factor Theorem:} $(x - c)$ is a factor of $p(x)$ exactly when $p(c) = 0$. So a
+remainder of $0$, a factor, a zero, and an $x$-intercept are four ways of saying one thing.
+Once one zero is known, divide its factor out and factor the quotient (3.4) to find the rest.
+\\
+& \begin{minipage}[c]{0.5\linewidth}\centering
+\begin{tikzpicture}[x=0.62cm, y=0.11cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=5] (-4,-15) grid (3,15);
+  \draw[->, thick] (-4,0) -- (3.5,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-15) -- (0,16.5) node[above] {\small $p(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-10,10} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum, domain=-3.55:2.95, samples=80, smooth]
+       plot (\x, {\x*\x*\x - 7*\x + 6});
+  \foreach \x in {-3,1,2} \fill[plum] (\x,0) circle (2.3pt);
+\end{tikzpicture}
 
-\medskip
-\textbf{Binomial Theorem (EK 1.11.C.1):}
-\[
-  (a + b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
-\]
-The coefficients $\binom{n}{k}$ match row $n$ of Pascal's Triangle.
+{\footnotesize\itshape $p(x) = x^3 - 7x + 6$, the hook's polynomial}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.47\linewidth}\centering
+\fcolorbox{plum}{lilac}{\begin{minipage}{0.92\linewidth}\centering\small
+remainder $0$ when $p(x) \div (x - c)$\par
+$\Updownarrow$\par
+$(x - c)$ is a factor: $p(x) = (x - c)\,q(x)$\par
+$\Updownarrow$\par
+$p(c) = 0$: \ $c$ is a zero\par
+$\Updownarrow$\par
+$(c, 0)$ is an $x$-intercept
+\end{minipage}}
 
-\medskip
-\textbf{Example:} Expand $(x + 2)^3$.
+\vspace{6pt}
+\raggedright
+From the graph, $p(2) = $ \labelbox{0.9cm}{$0$}, so $x - 2$ \labelbox{1.6cm}{is} a factor.
+\end{minipage}
+\\
+& \notesprompt{Divide out the factor you know; factor what is left.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{Problems 1 and 3 divided $2x^3 - 3x^2 - 5x + 6$ by $x - 2$: quotient $2x^2 + x - 3$, remainder $0$. Write the cubic fully factored and list all three zeros.}{1.6cm}{$(x - 2)(2x + 3)(x - 1)$\par Zeros: $2,\ 1,\ -\tfrac{3}{2}$} &
+\pcell{10}{$-3$ is a zero of $x^3 + 2x^2 - 5x - 6$. Which factor does that give? Divide it out; find all the zeros.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$-3$} & \ans{$1$} & \ans{$2$} & \ans{$-5$} & \ans{$-6$} \\
+     &     & \ans{$-3$}  & \ans{$3$}  & \ans{$6$} \\ \cline{2-5}
+     & \ans{$1$} & \ans{$-1$} & \ans{$-2$} & \ans{$0$} \\
+\end{tabular}}}{1.3cm}{Factor $x + 3$. Quotient $x^2 - x - 2 = (x - 2)(x + 1)$; zeros $-3,\ 2,\ -1$.} \\ \hline
+\end{probgrid}
+\\
+& \notesprompt{Is $x - 2$ a factor of $p(x) = x^3 - 7x + 6$? Ana and Ben each start a synthetic division.}
+\begin{probgrid}*{|Y|Y|}
+\pcell{11}{\textbf{Ana} writes the row $1 \quad -7 \quad 6$. Finish her division. What does it say?\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKK@{}}
+ $2$ & $1$ & $-7$ & $6$ \\
+     &     & \ans{$2$}  & \ans{$-10$} \\ \cline{2-4}
+     & \ans{$1$} & \ans{$-5$} & \ans{$-4$} \\
+\end{tabular}}}{1.3cm}{Quotient $x - 5$, remainder $-4$: ``$x - 2$ is \emph{not} a factor.''} &
+\pcell{12}{\textbf{Ben} writes the row $1 \quad 0 \quad -7 \quad 6$. Finish his division. What does it say?\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ $2$ & $1$ & $0$ & $-7$ & $6$ \\
+     &     & \ans{$2$}  & \ans{$4$}  & \ans{$-6$} \\ \cline{2-5}
+     & \ans{$1$} & \ans{$2$} & \ans{$-3$} & \ans{$0$} \\
+\end{tabular}}}{1.3cm}{Quotient $x^2 + 2x - 3$, remainder $0$: ``$x - 2$ \emph{is} a factor.''} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Settle it: find $p(2)$ by substituting. Whose remainder does the Remainder Theorem back? Then factor Ben's quotient and list all three zeros --- check them on the graph.}{2.2cm}{$p(2) = 8 - 14 + 6 = 0$, so Ben is right.\par
+$x^2 + 2x - 3 = (x + 3)(x - 1)$\par
+Zeros $2,\ 1,\ -3$ --- the graph's three intercepts.} &
+\pcell{14}{Multiply out Ana's answer, $(x - 2)(x - 5) - 4$. Which polynomial did she \emph{really} divide? Which column did her $-7$ land in?}{2.2cm}{$x^2 - 7x + 10 - 4 = x^2 - 7x + 6$ --- a quadratic, not the cubic. Her $-7$ landed in the $x^2$ column.} \\ \hline
+\end{probgrid}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{A missing power still gets a column. Write $0$ for it --- in long division and in
+synthetic division --- or every number after it slides one column too far left, and the
+division answers a different question.}}}
 
-Using row 3 of Pascal's Triangle ($1,\ 3,\ 3,\ 1$):
-\[
-  (x+2)^3 = 1\cdot x^3 + 3\cdot x^2(\ans{$2$}) + 3\cdot x(\ans{$4$}) + 1\cdot(\ans{$8$})
-           = \ans{$x^3 + 6x^2 + 12x + 8$}
-\]
-\end{notesbox}
+\vspace{3pt}
+\textbf{In your own words:} why did Ana's remainder disagree with $p(2)$?
+\writespace{1.2cm}{Without the $0$ she divided $x^2 - 7x + 6$, not $x^3 - 7x + 6$ --- a different polynomial has a different remainder.}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (17 min) ──────────
+\mainidea[You do, alone]{Divide \& Factor} &
+Four problems, each a step harder. Before every division, run the checklist.
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \node[draw=plum, very thick, fill=lilac, rounded corners=3pt, inner sep=6pt,
+        align=left, font=\small] at (0,0) {%
+    \stepnum{1}\ Every power, highest to lowest --- a $0$ for each missing one.\\[3pt]
+    \stepnum{2}\ Divisor $x - c$: use $c$. \ Divisor $x + c$: use $-c$.\\[3pt]
+    \stepnum{3}\ The last number is the remainder, and it equals $p(c)$.};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{$(2x^3 + 3x^2 - 4x + 5) \div (x + 2)$ by synthetic division. Write dividend $=$ divisor $\cdot$ quotient $+$ remainder.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$-2$} & \ans{$2$} & \ans{$3$} & \ans{$-4$} & \ans{$5$} \\
+     &     & \ans{$-4$}  & \ans{$2$}  & \ans{$4$} \\ \cline{2-5}
+     & \ans{$2$} & \ans{$-1$} & \ans{$-2$} & \ans{$9$} \\
+\end{tabular}}}{1.3cm}{$2x^3 + 3x^2 - 4x + 5$\par $= (x + 2)(2x^2 - x - 2) + 9$} &
+\pcell{16}{$p(x) = x^4 - 3x^2 + 5$. Find the remainder when $p(x)$ is divided by $x - 2$ by synthetic division, then by finding $p(2)$.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKKK@{}}
+ \ans{$2$} & \ans{$1$} & \ans{$0$} & \ans{$-3$} & \ans{$0$} & \ans{$5$} \\
+     &     & \ans{$2$}  & \ans{$4$}  & \ans{$2$} & \ans{$4$} \\ \cline{2-6}
+     & \ans{$1$} & \ans{$2$} & \ans{$1$} & \ans{$2$} & \ans{$9$} \\
+\end{tabular}}}{1.3cm}{Remainder $9$. $p(2) = 16 - 12 + 5 = 9$. They agree.} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Show that $x - 4$ is a factor of $x^3 - 13x - 12$. Then find all the zeros.\par\smallskip
+{\setlength{\tabcolsep}{2pt}\begin{tabular}{@{}>{\dstrut}K|KKKK@{}}
+ \ans{$4$} & \ans{$1$} & \ans{$0$} & \ans{$-13$} & \ans{$-12$} \\
+     &     & \ans{$4$}  & \ans{$16$}  & \ans{$12$} \\ \cline{2-5}
+     & \ans{$1$} & \ans{$4$} & \ans{$3$} & \ans{$0$} \\
+\end{tabular}}}{1.6cm}{Remainder $0$, so $x - 4$ is a factor.\par $x^2 + 4x + 3 = (x + 1)(x + 3)$; zeros $4,\ -1,\ -3$.} &
+\pcell{18}{Find the value of $k$ that makes $x + 2$ a factor of $x^3 + kx^2 - x - 6$. Explain using the Factor Theorem.}{2.8cm}{$x + 2$ is a factor exactly when $p(-2) = 0$:\par
+$(-2)^3 + k(-2)^2 - (-2) - 6 = 0$\par
+$-8 + 4k + 2 - 6 = 0$\par
+$4k = 12$, so $k = 3$.} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice follows; homework is DeltaMath ─
 
 \end{document}

@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 3, Lesson 3.5). manifest.json points here
+# as rubrics/precalc-u03-l05-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "An analyst divides P(x) by x - 4 and reports a remainder of 3. Use the table to decide whether the analyst is right, and interpret the correct remainder in context."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Says the analyst is wrong because the remainder equals P(4) = -3 (Remainder Theorem, read from the table), AND interprets it: four months after launch the profit is -3 thousand dollars (a $3000 loss)."
+    partial: "Partially correct (1): Correct remainder -3 via P(4) with no interpretation or no units; OR a correct interpretation of P(4) without connecting it to the remainder / the analyst's claim."
+examples:
+  - response: "Wrong. Remainder = P(4) = -3, so at 4 months the company is losing $3000."
+    scores: {part: 2}
+  - response: "The remainder should be P(4) = -3, not 3."
+    scores: {part: 1}
+  - response: "Right, because the table has a 3 in it."
+    scores: {part: 0}

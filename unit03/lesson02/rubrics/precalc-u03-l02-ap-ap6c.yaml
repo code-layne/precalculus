@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(c) (Unit 3, Lesson 3.2). manifest.json points here
+# as rubrics/precalc-u03-l02-ap-ap6c.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6c
+points: 2
+task: "A classmate proposes k(x) = (2 - x)(x + 3)(x + 2) x (3 - x). Without expanding, decide whether this formula could be k, and justify with the leading term."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Says the formula cannot be k, because its leading term is (-x)(x)(x)(x)(-x) = x^5 (positive leading coefficient, odd degree), so it would fall on the left and rise on the right, while the graph of k rises on the left and falls on the right."
+    partial: "Partially correct (1): Correct conclusion (cannot be k) with an incomplete justification, for example the leading coefficient found positive but not compared with the graph, or the end behavior compared without naming the leading term; OR a correct leading term x^5 with an incorrect conclusion."
+examples:
+  - response: "No. Leading term is (-x)(x)(x)(x)(-x) = x^5, positive, so it goes down on the left and up on the right. k goes up on the left and down on the right."
+    scores: {part: 2}
+  - response: "No, the leading coefficient is positive."
+    scores: {part: 1}
+  - response: "Yes, the zeros are -3, -2, 0, 2, 3 just like the graph."
+    scores: {part: 0}

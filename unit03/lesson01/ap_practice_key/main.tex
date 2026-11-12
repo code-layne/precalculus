@@ -1,0 +1,180 @@
+%! Polynomial Rates of Change and Characteristics — Unit 3, Lesson 3.1 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, scored 1 to 5, exactly TWO pages, last in the packet (graded homework
+% is DeltaMath). Page 1 is Section I, five multiple-choice items with four options (A)–(D);
+% page 2 is Section II, one multi-part free-response question on a table. Its contexts (an
+% unlabeled f, g, k and a music festival's crowd) are used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 stops at the first differences (A) or
+% counts one row too many (C, D); MC 2 reads "falling" as concave down (B), "rates rising" as
+% the function rising (A), or calls equal second differences linear (C); MC 3 builds
+% f(x + h) as f(x) + h (A), squares only x + h without the 2 (B), or drops h too early (D);
+% MC 4 is the crux — the later or lower peak as the absolute max (B), a relative min as an
+% absolute min of a graph whose ends fall (C), "two peaks, so no absolute max" (D); MC 5
+% reads the interval in y-values (B), swaps increasing and decreasing (A), or reads peak to
+% peak (D). Answers: B, D, C, A, C. Three FRQ parts, because a rubric box is drawn at least
+% 2in tall and three is what page 2 holds.
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line); every \gradedblank line is identical in both files.
+% The explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l01-ap}
+\gradingcourse{precalculus}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.1}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit, optional, scored 1 to 5.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is on DeltaMath; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt]
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The table gives values of a polynomial function $f$ at equally spaced inputs. What is the
+      least degree of a polynomial that fits the table?
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.4\linewidth}
+      \vspace{-2pt}\centering
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & 1 & 2 & 3  & 4  & 5  \\ \hline
+      $f(x)$ & 3 & 5 & 11 & 21 & 35 \\ \hline
+      \end{tabular}
+      \end{minipage}
+
+      \smallskip
+
+      \textbf{(A)} $1$ \hspace{3em} {\color{keyred}\textbf{$\checkmark$\,(B)}} $2$ \hspace{3em} \textbf{(C)} $3$ \hspace{3em} \textbf{(D)} $4$ \hfill\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=B]{0.42in}{13pt}
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The table gives values of a polynomial function $g$ at equally spaced inputs. Which of the
+      following is true about $g$ on the interval $0 \le x \le 4$?
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.4\linewidth}
+      \vspace{-2pt}\centering
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      $x$    & 0  & 1  & 2 & 3 & 4 \\ \hline
+      $g(x)$ & 20 & 12 & 6 & 2 & 0 \\ \hline
+      \end{tabular}
+      \end{minipage}
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $g$ is increasing, and its graph is concave up.
+        \item[(B)] $g$ is decreasing, and its graph is concave down.
+        \item[(C)] $g$ is linear, because its rates of change go up by the same amount each time.
+        \item[{\color{keyred}$\checkmark$\,(D)}] $g$ is decreasing, and its graph is concave up. \hfill\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=D]{0.42in}{13pt}
+      \end{enumerate}
+
+\item If $f(x) = 2x^2 + 1$, which of the following is the difference quotient
+      $\dfrac{f(x + h) - f(x)}{h}$, for $h \ne 0$?
+
+      \smallskip
+      \textbf{(A)} $1$ \hspace{3em} \textbf{(B)} $4x + h$ \hspace{3em} {\color{keyred}\textbf{$\checkmark$\,(C)}} $4x + 2h$ \hspace{3em} \textbf{(D)} $4x$ \hfill\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.42in}{13pt}
+
+\item[] \begin{minipage}[t]{0.58\linewidth}
+      \textbf{Questions 4--5 refer to the graph of the polynomial $k$}, of degree 4, shown at
+      right. Both ends of the graph continue downward.
+
+      \vspace{2pt}
+      \begin{enumerate}[label=\arabic*., leftmargin=1.9em, itemsep=8pt, start=4]
+      \item Which of the following is true? \hfill\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=A]{0.42in}{13pt}
+            \begin{enumerate}[leftmargin=2.4em, itemsep=2pt]
+              \item[{\color{keyred}$\checkmark$\,(A)}] $k$ has an absolute maximum of 5, at $x = -2$.
+              \item[(B)] $k$ has an absolute maximum of 3, at $x = 2$.
+              \item[(C)] $k$ has an absolute minimum of 1, at $x = 0$.
+              \item[(D)] $k$ has no absolute maximum, because it has two relative maxima.
+            \end{enumerate}
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.38\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.55cm, y=0.33cm, >=stealth, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-4,-3) grid (4,6);
+        \draw[->, thick] (-4,0) -- (4.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-3) -- (0,6.5) node[above] {\scriptsize $k(x)$};
+        \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-2,-1,1,2,3,4,5} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, <->] (-3.15,-2.9) .. controls (-2.8,2) and (-2.45,5) .. (-2,5)
+           .. controls (-1.2,5) and (-0.8,1) .. (0,1)
+           .. controls (0.8,1) and (1.3,3) .. (2,3)
+           .. controls (2.5,3) and (2.85,0.5) .. (3.15,-2.9);
+        \foreach \p in {(-2,5),(0,1),(2,3)} \fill[plum] \p circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+\setcounter{enumi}{4}
+\item On which interval or intervals is $k$ decreasing?
+
+      \smallskip
+      \textbf{(A)} $(-\infty, -2)$ and $(0, 2)$ \hspace{1.2em} \textbf{(B)} $(1, 5)$ \hspace{1.2em}
+      {\color{keyred}\textbf{$\checkmark$\,(C)}} $(-2, 0)$ and $(2, \infty)$ \hspace{1.2em} \textbf{(D)} $(-2, 2)$ \hfill\textit{Letter:}~\gradedblank[id=ap5, type=choice, points=1, answer=C]{0.42in}{13pt}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning. Answers about the festival must be
+written \emph{in context}, with units --- that is what earns credit on the AP exam. Write each final answer in its box. Only what is inside a box is graded.
+\end{headlinebox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=6]
+
+\item The table gives the number of people $V(t)$, in hundreds, at a music festival $t$ hours
+      after the gates open, for $0 \le t \le 5$. $V$ is a polynomial, and the crowd changes from
+      growing to shrinking only once, at $t = 4$.
+
+      \begin{center}
+      \renewcommand{\arraystretch}{1.3}
+      \begin{tabular}{|l|c|c|c|c|c|c|}
+      \hline
+      $t$ (hours)                 & 0 & 1 & 2  & 3  & 4  & 5  \\ \hline
+      $V(t)$ (hundreds of people) & 2 & 7 & 18 & 29 & 34 & 27 \\ \hline
+      \end{tabular}
+      \end{center}
+
+      \textbf{(a)} Use successive differences to find the degree of $V$. Show the differences and
+      say how you know.
+      \rubricbox{\gradedblank[id=ap6a, type=rubric, points=2,
+        display={First: 5, 11, 11, 5, $-7$. Second: 6, 0, $-6$, $-12$. Third: $-6$, $-6$, $-6$. The inputs are equally spaced and the third differences are the first constant ones, so $V$ has degree 3.}]{\linewidth}{2in}}
+
+      \textbf{(b)} Find the average rate of change of $V$ over $3 \le t \le 5$. Interpret it in
+      context, with units. Was the crowd shrinking for that whole time? Explain.
+      \rubricbox{\gradedblank[id=ap6b, type=rubric, points=2,
+        display={$\frac{V(5) - V(3)}{5 - 3} = \frac{27 - 29}{2} = -1$ hundred people per hour: from hour 3 to hour 5 the crowd shrank by an average of 100 people per hour. No --- it grew from 2900 to 3400 until $t = 4$, then shrank.}]{\linewidth}{2in}}
+
+      \textbf{(c)} An organizer says, ``The crowd peaked at $t = 4$, so the smallest crowd was at
+      the end, $t = 5$.'' Give the absolute maximum and absolute minimum of $V$ on
+      $0 \le t \le 5$ and when each occurs, and explain the organizer's mistake.
+      \rubricbox{\gradedblank[id=ap6c, type=rubric, points=2,
+        display={Absolute max: 3400 people, at $t = 4$ hours. Absolute min: 200 people, at $t = 0$, when the gates open. The organizer checked only one endpoint: $V(5) = 2700$ people, but $V(0) = 200$ is lower.}]{\linewidth}{2in}}
+
+\end{enumerate}
+
+\end{document}

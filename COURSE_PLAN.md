@@ -8,8 +8,9 @@ parameters-vectors-matrices material is condensed into a single closing unit.
 
 **Structure:** 8 units, plus a sample test per unit. **Units 1 and 2 are not fixed at eight**
 — after the September–October 2026 replans, Unit 1 holds three lessons (1.1–1.3) and Unit 2
-six (2.1–2.6), each numbered from X.1 with no X.0 opener. Units 3–8 still hold eight lessons
-each, numbered X.1–X.8.
+six (2.1–2.6), each numbered from X.1 with no X.0 opener; after the November 2026 replan Unit 3
+holds six (3.1–3.6, Polynomial Functions). Units 4–8 still hold eight lessons each, numbered
+X.1–X.8.
 Pacing target: 18–22 class periods per unit (60-minute meetings).
 
 **Content source:** the Precalculus CED (`spec/`) remains the content backbone.
@@ -131,26 +132,37 @@ it *moves* (2.5), and 2.6 re-reads 2.5's increasing and concavity through rates 
 generalizing the average rate of change to the difference quotient, which the non-honors
 track meets on linear and simple quadratic functions only.
 
-**Downstream:** Unit 3 (Rational Functions) and later units were written assuming the old
-polynomial unit; their prerequisite references to polynomial zeros, end behavior, and division
-need a home when they are reauthored.
+**Downstream:** Unit 3 (Polynomial Functions, replanned November 2026) re-reads 2.4–2.6 on
+polynomials. Rational functions no longer have a unit (see Unit 3).
 
-### Unit 3: Rational Functions
+### Unit 3: Polynomial Functions
 
-| # | Lesson | Source | Status |
-|---|--------|--------|--------|
-| 3.1 | Rational Functions and End Behavior | CED 1.7 (was 1.7) | moved |
-| 3.2 | Rational Functions and Zeros | CED 1.8 (was 1.8) | moved |
-| 3.3 | Rational Functions and Vertical Asymptotes | CED 1.9 (was 1.9) | moved |
-| 3.4 | Rational Functions and Holes | CED 1.10 (was 1.10) | moved |
-| 3.5 | Equivalent Representations of Rational Expressions | CED 1.11 (was 1.11) | moved |
-| 3.6 | Graphing Rational Functions | New (synthesis) | new |
-| 3.7 | Rational Equations and Inequalities | New | new |
-| 3.8 | Modeling with Rational Functions | New | new |
+**Replanned November 2026.** The eight rational-function lessons (3.1–3.8, all *moved* and never
+reauthored; `unit03/lesson01`–`08`) were **retired** and their directories removed (recoverable
+from git history before the November 2026 replan). The polynomial material retired from Unit 2
+in October returns here as six lessons, one per day, cut from the teacher's day plan (Rates of
+Change & Characteristics 3 days, Behavior 1.5, Zeros 2, Factoring 1, Division 2, Roots 1) with
+the day counts set aside:
 
-Rationale: rational-function behavior is the closest precalculus gets to limit language;
-it earns a full unit. Old 1.11 covered polynomial *and* rational equivalence — its file
-lives here (3.5); the polynomial half is reauthored separately as 2.6.
+| # | Lesson | Source | Status | Directory |
+|---|--------|--------|--------|-----------|
+| 3.1 | Polynomial Rates of Change and Characteristics | CED 1.3 + 1.4 + 1.5.A.6 (successive differences, AROC, difference quotient, extrema, concavity, inflection, y-intercept, increasing/decreasing) | authored | `unit03/lesson01` |
+| 3.2 | Polynomial Function Behavior | CED 1.4.A.1 + 1.4.A.4 + 1.6 + New (max turning points n − 1, max real zeros n) | authored | `unit03/lesson02` |
+| 3.3 | Zeros of Polynomials | CED 1.5.A (degree, multiplicity, factored form, complex conjugate pairs) | authored | `unit03/lesson03` |
+| 3.4 | Polynomial Zeros and Factoring | CED 1.11.A + 1.5.A.1 (factoring strategies, solving algebraically) | authored | `unit03/lesson04` |
+| 3.5 | Polynomial Long and Synthetic Division | CED 1.11.B + New (synthetic division, Remainder and Factor Theorems) | authored | `unit03/lesson05` |
+| 3.6 | Roots and Polynomials | CED 1.5.A + 1.11.A (zeros → factored form → standard form) | authored | `unit03/lesson06` |
+
+**Calendar:** 3.1 → 3.2 end the first semester; 3.3–3.6 run in January, then review and the
+unit test. The unit tests (`unit03/tests`, `unit03/test_keys`) are not yet authored.
+
+Rationale: 3.1 re-reads Unit 2's rates of change and characteristics (2.5, 2.6) on polynomials
+and adds successive differences; 3.2 reads the global shape from the leading term. After the
+break, 3.3 reads zeros from a factored form or a graph, 3.4 and 3.5 produce that factored form
+(by pattern, then by division), and 3.6 runs the whole chain backwards — zeros to factored form
+to standard form.
+
+**Known gap:** rational functions (old 3.1–3.8, CED 1.7–1.11.B.2) have no home after this replan.
 
 ### Unit 4: Exponential Functions
 
@@ -262,7 +274,13 @@ From the October 2026 replans (retired, directories removed; recoverable from gi
 | 1.6 | Change in Tandem | Covered by 2.5 (increasing/decreasing, extrema, concavity) |
 | 1.7 | Rates of Change | Covered by 2.6 Average Rate of Change, Secant Lines, and the Difference Quotient |
 | 1.8 | Function Model Selection and Construction | Retired; no current home |
-| 2.0–2.7 | The eight polynomial lessons | Retired with the Unit 2 replan; no current home |
+| 2.0–2.7 | The eight polynomial lessons | Retired with the Unit 2 replan; the material returns as Unit 3 (November 2026) |
+
+From the November 2026 replan (retired, directories removed; recoverable from git history):
+
+| Old lesson | Title | Disposition |
+|-----------|-------|-------------|
+| 3.1–3.8 | The eight rational-function lessons (End Behavior, Zeros, Vertical Asymptotes, Holes, Equivalent Representations, Graphing, Equations and Inequalities, Modeling) | Retired; Unit 3 is now Polynomial Functions. No current home. |
 
 The dropped directories' full content is in git history (tree at tag/commit prior to the
 restructure, under `unit04/lessonNN`). When reauthoring an absorbing lesson, pull the

@@ -1,0 +1,162 @@
+%! Polynomial Function Behavior — Unit 3, Lesson 3.2 — AP Practice (ANSWER KEY)
+% EXTRA CREDIT — optional, scored 1 to 5, exactly TWO pages, last in the packet, after the notes
+% (graded homework is DeltaMath). Page 1 is Section I, five multiple-choice items with four
+% options (A)–(D); page 2 is Section II, one multi-part free-response question on a pre-drawn
+% graph. Its contexts (p, f, an unlabeled graph, an open-top box, the graph of k) are used
+% nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 reads the first terms written (B) or
+% drops the sign (D) or treats an odd degree as even (C); MC 2 counts factors instead of adding
+% exponents (A), multiplies the exponents (D), or loses the negative (C); MC 3 has the wrong
+% sign (A), the wrong parity (B), or a degree too low for three turning points (D); MC 4 reads
+% the ceilings n − 1 and n as exact counts (A, B) or gives an odd degree an absolute extremum
+% (C); MC 5 counts one negative factor and not the other (A) or misreads the degree (C, D).
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line); every \gradedblank line is identical in both files. The
+% explicit \newpage fixes the page break in both files.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-key}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l02-ap}
+\gradingcourse{precalculus}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.2}{AP Practice --- Answer Key}
+
+\vspace{0.12in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit, optional, scored 1 to 5.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is on DeltaMath; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.12in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write each final answer in its box. Only what is inside
+a box is graded. Write the letter of the single best answer in its Letter box. No calculator.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+\item Which of the following describes the end behavior of $p(x) = 4 + 7x^2 - 3x^5$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=1pt]
+        \item[{\color{keyred}$\checkmark$\,(A)}] $\lim_{x \to -\infty} p(x) = \infty$ and $\lim_{x \to \infty} p(x) = -\infty$
+        \item[(B)] $\lim_{x \to -\infty} p(x) = \infty$ and $\lim_{x \to \infty} p(x) = \infty$
+        \item[(C)] $\lim_{x \to -\infty} p(x) = -\infty$ and $\lim_{x \to \infty} p(x) = -\infty$
+        \item[(D)] $\lim_{x \to -\infty} p(x) = -\infty$ and $\lim_{x \to \infty} p(x) = \infty$
+        \hfill\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=A]{0.42in}{13pt}
+      \end{enumerate}
+
+\item What are the degree and the leading coefficient of $f(x) = -2(x - 4)(x + 1)^3$?
+
+      \smallskip
+      \begin{tabular}{@{}p{7.4cm}p{7.4cm}@{}}
+      \textbf{(A)} Degree 2; coefficient $-2$ & \leavevmode{\color{keyred}\textbf{$\checkmark$\,(B)}} Degree 4; coefficient $-2$ \\[2pt]
+      \textbf{(C)} Degree 4; coefficient $2$ & \textbf{(D)} Degree 3; coefficient $-2$
+      \hfill\makebox[28pt][l]{\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.42in}{13pt}}
+      \end{tabular}
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The graph of a polynomial function is shown; its arrows continue forever. Which of the
+      following could be its equation?
+
+      \smallskip
+      \begin{tabular}{@{}p{4.5cm}p{4.3cm}@{}}
+      \textbf{(A)} $y = x^4 - 5x^2 + 2$ & \textbf{(B)} $y = -x^3 + 4x$ \\[4pt]
+      \leavevmode{\color{keyred}\textbf{$\checkmark$\,(C)}} $y = -x^4 + 5x^2 - 2$ & \textbf{(D)} $y = -2x^2 + 3$
+      \hfill\makebox[28pt][l]{\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.42in}{13pt}}
+      \end{tabular}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.36\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.45cm, y=0.2cm, >=stealth, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-3,-7) grid (3,5);
+        \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-7) -- (0,5.4) node[above] {\scriptsize $y$};
+        \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-6,-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, <->, samples=80, domain=-2.38:2.38] plot (\x, {-\x*\x*\x*\x+5*\x*\x-2});
+      \end{tikzpicture}
+      \end{minipage}
+
+\item The polynomial function $g$ has degree 5. Which of the following must be true?
+
+      \smallskip
+      \begin{tabular}{@{}p{7.4cm}p{7.4cm}@{}}
+      \textbf{(A)} The graph of $g$ has exactly 4 turning points. & \textbf{(B)} $g$ has exactly 5 real zeros. \\[4pt]
+      \textbf{(C)} $g$ has an absolute maximum value. & \leavevmode{\color{keyred}\textbf{$\checkmark$\,(D)}} $g$ has at least one real zero.
+      \hfill\makebox[28pt][l]{\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=D]{0.42in}{13pt}}
+      \end{tabular}
+
+\item An open-top box folded from a 12-inch by 20-inch sheet has volume $V(x) = x(20 - 2x)(12 - 2x)$
+      cubic inches. Treated as a polynomial on all real numbers, what is the end behavior of $V$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=1pt]
+        \item[(A)] $\lim_{x \to -\infty} V(x) = \infty$ and $\lim_{x \to \infty} V(x) = -\infty$
+        \item[{\color{keyred}$\checkmark$\,(B)}] $\lim_{x \to -\infty} V(x) = -\infty$ and $\lim_{x \to \infty} V(x) = \infty$
+        \item[(C)] $\lim_{x \to -\infty} V(x) = \infty$ and $\lim_{x \to \infty} V(x) = \infty$
+        \item[(D)] $\lim_{x \to -\infty} V(x) = -\infty$ and $\lim_{x \to \infty} V(x) = -\infty$
+        \hfill\textit{Letter:}~\gradedblank[id=ap5, type=choice, points=1, answer=B]{0.42in}{13pt}
+      \end{enumerate}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Show your reasoning outside the boxes. Write each final
+answer in its box. Only what is inside a box is graded.
+\end{headlinebox}
+
+\vspace{0.06in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=8pt, start=6]
+
+\item \begin{minipage}[t]{0.5\linewidth}
+      The graph of the polynomial function $k$ is shown. Its arrows continue forever, and
+      every turning point and every $x$-intercept of $k$ appears in the window.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.44\linewidth}
+      \vspace{-6pt}
+      \centering
+      \begin{tikzpicture}[x=0.6cm, y=0.24cm, >=stealth, baseline=(current bounding box.north)]
+        \draw[linegray, very thin, step=1] (-4,-7) grid (4,7);
+        \draw[->, thick] (-4,0) -- (4.4,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-7) -- (0,7.4) node[above] {\scriptsize $k(x)$};
+        \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-6,-4,-2,2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, <->, samples=120, domain=-3.2:3.2]
+             plot (\x, {-0.25*\x*(\x*\x-4)*(\x*\x-9)});
+      \end{tikzpicture}
+      \end{minipage}
+
+      \textbf{(a)} Write the end behavior of $k$ in limit notation. Does $k$ have an absolute
+      maximum value? Explain.
+      \rubricbox{\gradedblank[id=ap6a, type=rubric, points=2,
+        display={$\lim_{x \to -\infty} k(x) = \infty$ and $\lim_{x \to \infty} k(x) = -\infty$. No absolute maximum: the left arm rises without bound, so no output is the greatest.}]{\linewidth}{\dimexpr 2.2cm-4pt\relax}}
+
+      \textbf{(b)} What is the least possible degree of $k$? Justify your answer using the
+      turning points, the $x$-intercepts, and the end behavior.
+      \rubricbox{\gradedblank[id=ap6b, type=rubric, points=2,
+        display={Degree 5. Four turning points need degree at least $4 + 1 = 5$; five $x$-intercepts need degree at least 5; the arms point opposite ways, so the degree is odd, and 5 is odd.}]{\linewidth}{\dimexpr 2.2cm-4pt\relax}}
+
+      \textbf{(c)} A classmate proposes $k(x) = (2 - x)(x + 3)(x + 2)\,x\,(3 - x)$, because its
+      zeros match the graph. Without expanding, decide whether this formula could be $k$.
+      Justify your answer with the leading term.
+      \rubricbox{\gradedblank[id=ap6c, type=rubric, points=2,
+        display={It cannot. The leading pieces multiply to $(-x)(x)(x)(x)(-x) = x^5$: odd degree, positive leading coefficient, so it falls on the left and rises on the right. The graph of $k$ rises on the left and falls on the right. The zeros match; the end behavior does not.}]{\linewidth}{\dimexpr 2.2cm-4pt\relax}}
+
+\end{enumerate}
+
+\end{document}

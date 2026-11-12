@@ -1,4 +1,14 @@
-%! Graphing Rational Functions — Unit 3, Lesson 3.6 — Guided Notes
+%! Roots and Polynomials — Unit 3, Lesson 3.6 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE guidednotes table. Problems run 1..18.
+%   I DO   : the teacher works the first problem of each instruction row (1, 5, 9, 11).
+%   WE DO  : the class works 2-4, 6-8, 10, 12-14, every one cold-called.
+%   YOU DO : the last row, problems 15-18, alone, for 15 minutes.
+% The crux is row 4, CONJUGATE PAIRS: problem 13 sets Ana's degree-2 answer with non-real
+% coefficients against Ben's degree-3 answer. You Do problem 17 transfers it. Secondary traps:
+% the factor sign (4 -> 15) and the forgotten leading coefficient (8 -> 16).
+% PAGE LOCKSTEP with notes_key/: the vocabulary and hook write lines -> \ansline, \blank -> \ans,
+% and the answer argument of every \pcell, \writespace and \labelbox filled. Nothing else differs.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,15 +17,239 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.6}{Guided Notes}
-% NAMESTRIP: no \namedateperiod here. The student writes their name once, on the
-% cover this component is stapled behind. See ~/.claude/skills/lesson-planning/references/conventions.md.
 
+\vspace{0.12in}
 
-\vspace{0.15in}
+\boxguard
+\begin{vocabbox}
+Fill in each term as we use it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Zero and factor:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Multiplicity:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Factored form:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Standard form:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Conjugate pair:}}\\[1pt]
+\writeline
+\end{vocabbox}
 
-% TODO: author the Guided Notes. See templates/lesson/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
-\end{notesbox}
+\vspace{0.1in}
+
+\boxguard
+\begin{hookbox}
+I am thinking of a polynomial. Its only zeros are $1$ and $4$. Write a polynomial that could
+be mine. Is yours the only one that works? Name two more.
+\writelines{2}
+\end{hookbox}
+
+\small
+\begin{guidednotes}
+% ── ROW 1: zeros -> factors -> standard form ─────────────────────────────────
+\mainidea[Zeros to factors]{Build It} &
+If $a$ is a zero of a polynomial, then $(x - a)$ is a factor --- so each zero hands you one
+factor, written as $x$ \textbf{minus the zero}. A negative zero turns into a plus: the zero
+$-2$ gives $(x + 2)$, because $-2 + 2 = 0$. Multiply the factors together, two at a time, to
+reach \textbf{standard form}.
+
+\vspace{4pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\bfseries}l|c|c|c|c|c|}
+\hline
+Zero   & $3$         & $-2$         & $0$          & $-5$         & $a$ \\ \hline
+Factor & $(x - 3)$   & \blank{1.4cm} & \blank{1.0cm} & \blank{1.4cm} & $(x - a)$ \\ \hline
+\end{tabular}
+
+\vspace{8pt}
+\begin{tikzpicture}[>=stealth, font=\footnotesize,
+    stage/.style={draw=plum, thick, fill=lilac, rounded corners=3pt, text width=2.45cm,
+                  align=center, minimum height=1.25cm, inner sep=3pt}]
+  \node[stage] (z)  at (0,0)    {\textbf{Zeros}\\ $-2,\ 1,\ 3$};
+  \node[stage] (f)  at (3.15,0) {\textbf{One factor each}\\ $(x + 2)$, $(x - 1)$,\\ $(x - 3)$};
+  \node[stage] (ff) at (6.3,0)  {\textbf{Factored form}\\ $(x + 2)(x - 1)(x - 3)$};
+  \node[stage, fill=hookbg, draw=goldacc] (sf) at (9.45,0) {\textbf{Standard form}\\ multiply it out: problem 1};
+  \draw[->, very thick, plum] (z) -- (f);
+  \draw[->, very thick, plum] (f) -- (ff);
+  \draw[->, very thick, plum] (ff) -- (sf);
+  \node[font=\scriptsize\itshape, below] at (1.575,-0.62) {flip the sign};
+  \node[font=\scriptsize\itshape, below] at (7.875,-0.62) {two at a time};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Leading coefficient 1. Write the factored form, then the standard form.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{Zeros $-2$, $1$, and $3$.}{2.6cm}{} &
+\pcell{2}{Zeros $4$ and $-3$.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{Zeros $0$, $2$, and $-5$. What factor does the zero $0$ give?}{2.6cm}{} &
+\pcell{4}{Jordan wants zeros $-4$ and $1$ and writes $(x - 4)(x + 1)$. Test $x = -4$ in Jordan's product. Then fix it and give the standard form.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: multiplicity and the leading coefficient ──────────────────────────
+\mainidea[Repeats and the stretch]{Fit the Point} &
+A zero of \textbf{multiplicity} $k$ puts its factor in $k$ times, as $(x - a)^k$, and the
+degree is the sum of the multiplicities. The zeros fix only a \emph{family}: every nonzero
+number $a$ in front gives the same zeros and a different stretch. One more point on the graph
+fixes $a$ --- substitute the point and solve.
+
+\vspace{4pt}
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+  \node[font=\Large, anchor=east] (lhs) at (0,0) {$f(x) = $};
+  \node[font=\Large, anchor=west, text=goldacc] (a) at (0.05,0) {$\boldsymbol{a}$};
+  \node[font=\Large, anchor=west] (p1) at (1.2,0) {$(x - 2)^2$};
+  \node[font=\Large, anchor=west] (p2) at (3.6,0) {$(x + 1)$};
+  \node[font=\Large, anchor=west] (p3) at (5.8,0) {$(x - 3)$};
+  \foreach \n/\t/\c in {a/{the stretch:\\ found from a point}/goldacc,
+                        p1/{zero $2$,\\ multiplicity 2}/plum,
+                        p2/{zero $-1$,\\ multiplicity 1}/plum,
+                        p3/{zero $3$,\\ multiplicity 1}/plum}
+    \draw[->, thick, \c] (\n.south) -- ++(0,-0.6) node[below, font=\scriptsize, align=center,
+         text width=2.1cm, text=\c] {\t};
+\end{tikzpicture}
+
+\vspace{4pt}
+Degree $= 2 + 1 + 1 = $ \labelbox{1.0cm}{}
+\end{center}
+
+\stepnum{1}\ One factor per zero, with its multiplicity as the exponent.\par
+\stepnum{2}\ Put $a$ in front.\par
+\stepnum{3}\ Substitute the point and solve for $a$.
+\\
+& \notesprompt{Write each polynomial. Use the given point to find $a$.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{Degree 4: zero $2$ with multiplicity 2, zeros $-1$ and $3$, and the point $(0, 24)$. Leave it in factored form.}{2.4cm}{} &
+\pcell{6}{Degree 3: zeros $-3$, $1$, and $2$, and the point $(0, 12)$. Factored form, then standard form.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{Degree 3: zero $-1$ with multiplicity 2, zero $4$, and $y$-intercept $-8$.}{2.2cm}{} &
+\pcell{8}{Kai answers problem 7 with $(x + 1)^2(x - 4)$. Find the $y$-intercept of Kai's polynomial. What did he forget?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: reading zeros, multiplicity, and a point off a graph ──────────────
+\mainidea[Zeros you can see]{Off a Graph} &
+Every $x$-intercept is a real zero. Where the graph \textbf{crosses} the $x$-axis the
+multiplicity is odd (use 1); where it \textbf{touches} the axis and turns back --- tangent to
+it --- the multiplicity is even (use 2). Then read one more labeled point, off the $x$-axis, to
+find $a$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.78cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,5);
+  \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\scriptsize $y$};
+  \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, domain=-2.45:2.1, samples=80, smooth]
+       plot (\x, {-(\x+2)*(\x-1)*(\x-1)});
+  \fill[plum] (-2,0) circle (2.2pt);
+  \fill[plum] (1,0) circle (2.2pt);
+  \fill[goldacc] (0,-2) circle (2.4pt) node[below right, font=\scriptsize, fill=white, inner sep=1pt] {$(0, -2)$};
+  \node[font=\small\bfseries, text=plum] at (-2.1,4.3) {A};
+\end{tikzpicture}
+\hspace{0.6cm}
+\begin{tikzpicture}[x=0.78cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-1,-5) grid (5,5);
+  \draw[->, thick] (-1,0) -- (5.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-5) -- (0,5.6) node[above] {\scriptsize $y$};
+  \foreach \x in {1,2,3,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, domain=-0.65:4.35, samples=80, smooth]
+       plot (\x, {0.5*\x*(\x-3)*(\x-3)});
+  \fill[plum] (0,0) circle (2.2pt);
+  \fill[plum] (3,0) circle (2.2pt);
+  \fill[goldacc] (1,2) circle (2.4pt) node[above right, font=\scriptsize, fill=white, inner sep=1pt] {$(1, 2)$};
+  \node[font=\small\bfseries, text=plum] at (4.5,-4.2) {B};
+\end{tikzpicture}
+
+\vspace{4pt}
+Graph A at $x = 1$: \labelbox{1.8cm}{}\qquad Graph B at $x = 0$: \labelbox{1.8cm}{}
+\end{center}
+\\
+& \notesprompt{Each graph is a cubic. Write its equation in factored form.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{Graph A.}{2.4cm}{} &
+\pcell{10}{Graph B. Why is the $y$-intercept no help in finding $a$ this time?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the forgotten conjugate ────────────────────────────────
+\mainidea[Zeros you cannot see]{Conjugate Pairs} &
+A polynomial of degree $n$ has exactly $n$ complex zeros, counting multiplicity --- but the
+non-real ones never show up on a graph. If the coefficients are real and $a + bi$ is a zero,
+then its \textbf{conjugate} $a - bi$ is a zero too. Multiply the pair \emph{first}: the $i$'s
+cancel and leave one quadratic factor with real coefficients.
+\\
+& \begin{center}
+\fcolorbox{plum}{lilac}{\begin{minipage}{0.78\linewidth}\centering\vspace{3pt}
+\textbf{A conjugate pair becomes one real quadratic factor}
+\[
+\begin{aligned}
+\bigl(x - (2 + i)\bigr)\bigl(x - (2 - i)\bigr) &= \bigl((x - 2) - i\bigr)\bigl((x - 2) + i\bigr) \\
+  &= (x - 2)^2 - i^2 \\
+  &= x^2 - 4x + 4 + 1 \\
+  &= x^2 - 4x + 5
+\end{aligned}
+\]
+\vspace{-2pt}
+The $-i^2$ became $+1$ because $i^2 = $ \labelbox{1.0cm}{}
+\vspace{3pt}
+\end{minipage}}
+\end{center}
+
+\vspace{2pt}
+\textbf{Real coefficients: non-real zeros come in conjugate pairs.} Each pair is one quadratic
+factor, so it adds 2 to the degree --- never 1.
+
+\vspace{2pt}
+\textbf{In your own words:} why must $2 - i$ come along whenever $2 + i$ is a zero?
+\writespace{1.2cm}{}
+\\
+& \notesprompt{Least degree, real coefficients, leading coefficient 1.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{Zeros $1$ and $2 + i$. Use the display; give the standard form.}{2.4cm}{} &
+\pcell{12}{Zero $3i$. Which other zero must come with it? Write the quadratic factor.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Zeros $3$ and $1 + 2i$. Ana writes $(x - 3)\bigl(x - (1 + 2i)\bigr)$; Ben writes $(x - 3)(x^2 - 2x + 5)$. What is the degree of each? Which one has real coefficients?}{2.6cm}{} &
+\pcell{14}{Check that $(1 + 2i)(1 - 2i)$ gives Ben's 5. Then write Ben's polynomial in standard form.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (15 min) ──────────
+\mainidea[You do, alone]{Build Four} &
+Four polynomials to build from their zeros. Run the same three checks every time.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth, font=\footnotesize,
+    check/.style={draw=plum, thick, fill=lilac, rounded corners=3pt, text width=3.3cm,
+                  align=center, minimum height=1.0cm, inner sep=3pt}]
+  \node[check] (c1) at (0,0)   {\textbf{Each zero $\to$ a factor}\\ $x$ minus the zero: watch the sign};
+  \node[check] (c2) at (4.0,0) {\textbf{Non-real zero?}\\ bring its conjugate; multiply the pair first};
+  \node[check] (c3) at (8.0,0) {\textbf{A point given?}\\ put $a$ in front; substitute; solve};
+  \draw[->, very thick, plum] (c1) -- (c2);
+  \draw[->, very thick, plum] (c2) -- (c3);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Zeros $-4$, $1$, and $2$; leading coefficient 1. Factored form, then standard form.}{2.6cm}{} &
+\pcell{16}{Degree 3: zero $1$ with multiplicity 2, zero $-3$, and the point $(0, 6)$. Factored form.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Least degree, real coefficients, leading coefficient 1, zeros $-2$ and $3i$. State the degree, then give the standard form.}{2.8cm}{} &
+\pcell{18}{A degree-4 polynomial with real coefficients and leading coefficient 1 has zeros $2$, $-2$, and $1 - i$. Find its fourth zero, then write it in standard form.}{2.8cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice follows; homework is DeltaMath ─
 
 \end{document}

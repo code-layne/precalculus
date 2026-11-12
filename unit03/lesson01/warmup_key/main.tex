@@ -1,63 +1,76 @@
-%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Warm-Up (Answer Key)
+%! Polynomial Rates of Change and Characteristics — Unit 3, Lesson 3.1 — Warm-Up (ANSWER KEY)
+% Exactly ONE page, blank and keyed (LESSON_SHAPE.md, one_page). Four prerequisite items:
+% 1 evaluates a polynomial (every row today plugs into p); 2 is 2.6's average rate of change;
+% 3 reads 2.5's increasing / decreasing intervals and maximum off a graph, in x-values;
+% 4 is interval notation with infinity — today's intervals run off the ends of the graph.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
-\usepackage{precalculus-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{precalculus-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.1}{Warm-Up --- Answer Key}
-\namedateperiod
 
-\vspace{0.14in}
+\vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item Consider the polynomial $p(x) = -4x^3 + 2x - 9$.
+\item Let $f(x) = x^3 - 2x^2 + 3$. Find each value.
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item What is the degree of $p$? \ans{3} \quad
-        What is its leading coefficient? \ans{$-4$}
-  \item State the end behavior of $p$ using limit notation.
-
-        \medskip
-        $\displaystyle\lim_{x \to \infty} p(x) = $ \ans{$-\infty$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} p(x) = $ \ans{$+\infty$}
+\begin{enumerate}[label=(\alph*), itemsep=8pt]
+  \item $f(2)$ \hfill \ans{$3$}
+  \item $f(-1)$ \hfill \ans{$0$}
 \end{enumerate}
 
-\item For the polynomial $p(x) = 5x^4 - 3x^2 + 1$:
+\begin{work}
+  f(2)  &= 2^3 - 2(2)^2 + 3 \\
+        &= 3 \\
+  f(-1) &= (-1)^3 - 2(-1)^2 + 3 \\
+        &= 0
+\end{work}
 
-\begin{enumerate}[label=(\alph*), itemsep=5pt]
-  \item As $x \to \infty$, which term dominates? \ans{$5x^4$}
-  \item Complete using limit notation:
+\item Find the average rate of change of $g(x) = x^2 + 1$ on the interval $[1, 4]$.
 
-        \medskip
-        $\displaystyle\lim_{x \to \infty} p(x) = $ \ans{$+\infty$}
-        \qquad
-        $\displaystyle\lim_{x \to -\infty} p(x) = $ \ans{$+\infty$}
+\begin{work}
+  \frac{g(4) - g(1)}{4 - 1} &= \frac{17 - 2}{3} \\
+                            &= 5
+\end{work}
+
+Average rate of change: \ans{$5$}
+
+\item \begin{minipage}[t]{0.52\linewidth}
+The graph of $h$ is shown. Its ends keep going down.
+
+\begin{enumerate}[label=(\alph*), itemsep=10pt]
+  \item Where is $h$ increasing? \hfill \ans{$(-\infty, 1)$}
+  \item Where is $h$ decreasing? \hfill \ans{$(1, \infty)$}
+  \item What is the maximum value of $h$? \hfill \ans{$4$}
+  \item At what $x$ does it occur? \hfill \ans{$x = 1$}
 \end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+\vspace{-6pt}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.5cm, >=stealth, baseline=(current bounding box.north)]
+  \draw[linegray, very thin, step=1] (-3,-3) grid (5,5);
+  \draw[->, thick] (-3,0) -- (5.5,0) node[right] {\small $x$};
+  \draw[->, thick] (0,-3) -- (0,5.5) node[above] {\small $h(x)$};
+  \foreach \x in {-2,-1,1,2,3,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-2,-1,1,2,3,4} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum, <->] plot[domain=-1.6:3.6, samples=60, smooth]
+       (\x, {-(\x-1)*(\x-1) + 4});
+  \fill[plum] (1,4) circle (2.5pt);
+\end{tikzpicture}
+\end{minipage}
 
-\item A polynomial $q$ satisfies
-$\displaystyle\lim_{x\to\infty} q(x) = -\infty$
-and
-$\displaystyle\lim_{x\to -\infty} q(x) = -\infty$.
+\item Write each set of numbers in interval notation.
 
-What can you conclude about the degree and leading coefficient of $q$?
-Circle all that apply, then explain briefly.
-
-\medskip
-\begin{tabular}{@{}llll@{}}
-\ans{(A)} Even degree &
-\textbf{(B)} Odd degree &
-\textbf{(C)} Positive leading coefficient &
-\ans{(D)} Negative leading coefficient
-\end{tabular}
-
-\vspace{0.15in}
-\ansline{Both limits equal $-\infty$, so the end behavior is the same in both directions.
-This means the degree is \textbf{even} and the leading coefficient is \textbf{negative}
-(an even-degree poly with negative leading coeff falls on both ends).}
+\begin{enumerate}[label=(\alph*), itemsep=8pt]
+  \item All $x$ with $-2 < x < 5$. \hfill \ans{$(-2, 5)$}
+  \item All $x$ with $x < 3$. \hfill \ans{$(-\infty, 3)$}
+  \item All $x$ with $x > -1$. \hfill \ans{$(-1, \infty)$}
+\end{enumerate}
 
 \end{enumerate}
 
