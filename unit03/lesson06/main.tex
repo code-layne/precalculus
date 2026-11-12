@@ -1,14 +1,18 @@
-%! Graphing Rational Functions — Unit 3, Lesson 3.6 — Lesson Plan
+%! Roots and Polynomials — Unit 3, Lesson 3.6 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. 3.6 is the last lesson of Unit 3 and runs 3.3 in
+% reverse: 3.3 read the zeros off a given polynomial; 3.6 starts from the zeros (and their
+% multiplicities, a point, or a graph) and builds the polynomial, first in factored form and
+% then in standard form. The crux is the forgotten conjugate.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.6: Graphing Rational Functions}
+\newcommand{\UnitNumberName}{Unit 3: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.6: Roots and Polynomials}
 
 \begin{document}
 \begin{center}
@@ -16,80 +20,374 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will write a polynomial from its zeros --- one factor
+    $(x - a)$ for each zero $a$, raised to its multiplicity, with the leading coefficient fixed
+    by one more point given in words or read off a graph --- recognize that a polynomial with
+    real coefficients and a non-real zero $a + bi$ must also have the zero $a - bi$, and rewrite
+    the polynomial from factored form into standard form, saying what each form shows.
+    \hfill\textit{\small (CED 1.5.A, 1.11.A)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the BUILD IT and FIT THE POINT rows: definitions, displays, problems 1 and 5. \\
+\textbf{We Do} --- guided     & 22 & Fill the notes together, every problem cold-called --- problems 2--4 and 6--8, then the OFF A GRAPH and CONJUGATE PAIRS rows (9--14; the teacher works 9 and 11). \\
+\textbf{You Do} --- independent & 15 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out, the headline, and the DeltaMath assignment. \\
+\end{tabularx}
+
+\smallskip
+\textbf{The We Do carries four rows in 22 minutes} because the multiplying is where the
+time goes: every standard form is a binomial times a trinomial. If the clock slips, cut
+\textbf{problem 7} (problem 8 still lands the forgotten $a$ by quoting 7's answer) and then
+\textbf{problem 10}, and protect the \textbf{CONJUGATE PAIRS} row: problem 13 is the crux, and
+You Do problem 17 and the diagnostic DeltaMath topic, \textit{Complex Conjugate Theorem}, cannot
+be done without it. Never let the You Do fall below 14 minutes --- circulating it is the only
+formative read of the period.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+\textbf{Priority Skills} &
+\textbf{Key Understandings} \\
+\midrule
+\textbf{AP Skill 2.B} --- Construct equivalent representations: write the polynomial a set of
+zeros describes. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item A zero $a$ and a factor $(x - a)$ are the same fact (EK 1.5.A.1). The factor is $x$
+        \emph{minus} the zero: the zero $-4$ gives $(x + 4)$, never $(x - 4)$.
+  \item A zero of multiplicity $k$ contributes $(x - a)^k$; the degree is the sum of the
+        multiplicities, and a degree-$n$ polynomial has exactly $n$ complex zeros
+        (EK 1.5.A.2).
+\end{itemize} \\
+\textbf{AP Skill 2.B} --- Read zeros, multiplicities, and a point off a graph and write the
+equation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Crossing the $x$-axis means odd multiplicity; touching it and turning back --- tangent
+        to the axis --- means even multiplicity (EK 1.5.A.5).
+  \item The zeros fix only a family $a(x - r_1)\cdots$; one more point fixes $a$. Forgetting
+        $a$ when a point is given is the secondary trap.
+\end{itemize} \\
+\textbf{AP Skill 1.B} --- Express a polynomial in equivalent analytic forms: factored and
+standard. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item Factored form shows the zeros; standard form shows the degree, the leading term, and
+        so the end behavior. Each answers different questions (EK 1.11.A.1--3).
+  \item With real coefficients, non-real zeros come in conjugate pairs (EK 1.5.A.4); multiply
+        the pair first and the $i$'s cancel into one real quadratic factor.
+  \item \textbf{Target misconception --- the forgotten conjugate:} asked for the least-degree
+        polynomial with real coefficients and zeros $3$ and $1 + 2i$, students write
+        $(x - 3)\bigl(x - (1 + 2i)\bigr)$ --- degree 2, non-real coefficients. The answer is
+        $(x - 3)(x^2 - 2x + 5)$, degree 3. Notes problem 13; You Do problem 17.
+\end{itemize} \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Zero and factor & $a$ is a zero of $p$ exactly when $(x - a)$ is a factor of $p$ (the Factor Theorem from 3.5, read backward). \\
+Multiplicity    & The number of times a factor $(x - a)$ appears; the degree is the sum of the multiplicities. \\
+Factored form   & $a(x - r_1)(x - r_2)\cdots$, possibly with an irreducible quadratic factor; it shows the zeros and the leading coefficient. \\
+Standard form   & Terms in descending powers of $x$; it shows the degree, the leading term, and the end behavior. \\
+Conjugate pair  & $a + bi$ and $a - bi$. A polynomial with real coefficients that has one as a zero has the other. \\
+Conjugate pair theorem & \TallMath{\bigl(x - (a + bi)\bigr)\bigl(x - (a - bi)\bigr) = (x - a)^2 + b^2}, a quadratic factor with real coefficients. \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: list the prerequisite skills this warm-up reviews,
-            % in words. Do not embed a warm-up thumbnail.
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: multiplying a binomial by a trinomial and collecting like terms (every
+    standard form today), multiplying a conjugate pair $(2 + i)(2 - i)$ and using $i^2 = -1$
+    (Unit 2 --- the move behind the CONJUGATE PAIRS row), the Factor Theorem from 3.5 (a zero
+    $\Leftrightarrow$ a factor, read today in the other direction), and reading crossing versus
+    touching --- odd versus even multiplicity --- off a graph (3.3).
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook (3 min)]{lilac}
+    \textbf{Run 3.3 backward.} On the board: \textit{I am thinking of a polynomial. Its only
+    zeros are 1 and 4.}
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask for a polynomial that could be mine. Someone will offer $(x - 1)(x - 4)$; write
+              it up and check one zero aloud.
+        \item Ask whether it is the \emph{only} one. Collect $3(x - 1)(x - 4)$, $-(x - 1)(x - 4)$,
+              and, if no one offers it, give $(x - 1)^2(x - 4)$ yourself.
+    \end{enumerate}
+    \textit{Discussion prompt:} the zeros told us the factors but not the stretch and not the
+    multiplicities. Today we learn what extra information pins down exactly one polynomial ---
+    and what happens when one of the zeros is not a real number at all.
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
+\raggedcolumns
+\begin{multicols}{2}
+
+\textbf{I DO --- Part 1: Zero to Factor to Standard Form} (10 min)
+
+\textit{Notes rows BUILD IT and FIT THE POINT: read each definition, mark up the display, work
+problems 1 and 5. Teacher works; students watch and annotate. Nothing is cold-called in this
+phase.}
+\begin{itemize}
+  \item Read the BUILD IT sentences, then fill the zero-to-factor table yourself, saying the
+        check aloud each time: ``$-2 + 2 = 0$, so $(x + 2)$.'' The zero $0$ gives the bare
+        factor $x$ --- name it, because students skip it.
+  \item Work \textbf{problem 1} along the flow display: factors, then $(x + 2)(x - 1)$ first,
+        then that trinomial times $(x - 3)$. Collect like terms in a column; that layout is
+        the one students will copy.
+  \item Read the FIT THE POINT sentences and annotate the formula display: the zeros fix
+        everything but the gold $a$. Fill ``degree $= 4$.''
+  \item Work \textbf{problem 5}: write $a(x - 2)^2(x + 1)(x - 3)$ \emph{with the $a$}, substitute
+        $(0, 24)$, get $-12a = 24$, $a = -2$. Say that $a$ came out negative --- the point,
+        not the zeros, decided that.
+\end{itemize}
+
+\textbf{WE DO --- Part 2: Signs, the Zero 0, and the Missing $a$} (8 min)
+
+\textit{Problems 2--4 and 6--8. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problems 2 and 3}: a quadratic, then a cubic with the zero $0$. Cold-call the
+        factor for each zero before anyone multiplies.
+  \item \textbf{Problem 4} is the sign trap made visible: test $x = -4$ in Jordan's product,
+        get 24, and let the class say what went wrong.
+  \item \textbf{Problems 6 and 7}: find $a$ first, then (in 6) the standard form. In
+        \textbf{problem 8} Kai's answer has the right zeros and the wrong $y$-intercept: the
+        forgotten $a$, caught by one substitution.
+\end{itemize}
+
+\columnbreak
+
+\textbf{WE DO --- Part 3: Off a Graph} (5 min)
+
+\textit{Notes row OFF A GRAPH. Class fills the blanks together; cold-call every one. Teacher
+works problem 9; the class works 10.}
+\begin{itemize}
+  \item Read the crossing/touching sentence, then cold-call the two label boxes: Graph A
+        \textit{touches} at 1, Graph B \textit{crosses} at 0.
+  \item Work \textbf{problem 9}: $a(x + 2)(x - 1)^2$, then the gold point $(0, -2)$ gives
+        $a = -1$ --- and the right end falling agrees.
+  \item \textbf{Problem 10} turns the $y$-intercept useless: $0$ is a zero, so every $a$ gives
+        $(0, 0)$. The class must reach for $(1, 2)$ and gets $a = \tfrac12$.
+\end{itemize}
+
+\textbf{WE DO --- Part 4: Conjugate Pairs} (9 min)
+
+\textit{Notes row CONJUGATE PAIRS --- the hinge of the lesson. Class fills the blanks together;
+cold-call every one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Read the sentences: degree $n$ means $n$ complex zeros, but non-real ones never show on
+        a graph. Walk the pre-printed display line by line and cold-call the label box,
+        $i^2 = -1$. Give one minute for the \textit{in your own words} line.
+  \item Work \textbf{problem 11}: say ``$2 + i$ brings $2 - i$'' \emph{before} writing a
+        factor, use the display's $x^2 - 4x + 5$, and land on degree 3.
+  \item \textbf{Problem 12}: $3i$ brings $-3i$, and $(x - 3i)(x + 3i) = x^2 + 9$.
+  \item \textbf{Problem 13 is the crux}: Ana's degree-2 answer next to Ben's degree-3 one. Ask
+        for each degree and which has real coefficients; have a student expand Ana's on the
+        board until the $i$ is stuck in a coefficient. \textbf{Problem 14} checks Ben's 5 and
+        finishes his standard form.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Build Four} (15 min)
+
+\textit{Notes row BUILD FOUR, problems 15--18 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} carries the sign trap (zero $-4$) into a full standard form;
+        \textbf{16} the missing-$a$ trap with a double zero.
+  \item \textbf{Problem 17} is the crux transferred: $3i$ must bring $-3i$, so the degree is 3,
+        not 2.
+  \item \textbf{Problem 18} is the finisher's question: a quartic with two real zeros and one
+        non-real one, so the fourth zero has to be found before anything is multiplied.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+Circulate during the \textbf{You Do} phase --- the fifteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} (Ana's
+$(x - 3)\bigl(x - (1 + 2i)\bigr)$ against Ben's degree-3 answer); its You Do transfer is
+\textbf{problem 17} (zeros $-2$ and $3i$), and problem 18 tests it again with the conjugate
+to be found.
+\begin{itemize}
+  \item \textbf{Common error (the crux):} on problem 17, writing $(x + 2)(x - 3i)$ --- degree 2,
+        with $i$ in the coefficients. Ask: ``Expand it. Is every coefficient real? What does
+        the problem promise about the coefficients?'' Point at Ana in problem 13.
+  \item \textbf{Common error:} the factor sign --- $(x - 4)$ for the zero $-4$ in problem 15.
+        Ask the student to substitute the zero into the factor: ``Does it make it 0?''
+  \item \textbf{Common error:} dropping $a$ in problem 16, so $f(x) = (x - 1)^2(x + 3)$. Ask:
+        ``What is your $f(0)$? What should it be?''
+  \item \textbf{Common error:} in the expansions, losing a term when a trinomial meets a
+        binomial. Have them multiply in a column, one term of the binomial per line.
+  \item \textbf{Common error:} $(x - 3i)(x + 3i) = x^2 - 9$ from forgetting $i^2 = -1$. Ask:
+        ``What is $-9i^2$?''
+\end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{skillbox}[Differentiation --- During You Do (15 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        write a factor for each zero and check each one by substitution \emph{before}
+        multiplying. Then multiply $(x + 4)(x - 1)$ together, and let them finish
+        $(x^2 + 3x - 4)(x - 2)$ in a column.
+  \item \textbf{On level.} \textbf{Problems 16 and 17} are the two traps. On 16, ask only
+        ``where is your $a$?''; on 17, ask only ``how many zeros does it have?'' --- and walk
+        away.
+  \item \textbf{Extend.} \textbf{Problem 18} is the finisher's question: the fourth zero is not
+        given, and the cleanest route multiplies $(x - 2)(x + 2) = x^2 - 4$ and the conjugate
+        pair $x^2 - 2x + 2$ before multiplying the two quadratics. A finisher who has it can
+        be asked what the standard form says about the end behavior --- both ends up, since
+        the leading term is $x^4$.
+\end{itemize}
 \end{skillbox}
 
-\begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: $x^3 + x^2 - 10x + 8$, with the factor $(x + 4)$ said aloud. Problem 16:
+        $a = 2$. Problem 17: ``degree 3, because $3i$ brings $-3i$,'' and
+        $x^3 + 2x^2 + 9x + 18$. Problem 18: the fourth zero $1 + i$, then the standard form if
+        someone has it.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{every zero gives a factor, a point gives the stretch, and with real
+        coefficients a non-real zero never comes alone --- its conjugate comes with it.}
+  \item \textbf{Point forward} (1 min) --- the DeltaMath assignment, \textit{Lesson 3.6}, and its
+        due date: write it on the board and have students copy it into row 4 of the cover.
+        Then: this was the last new lesson of Unit 3; the unit review and the unit test come
+        next.
+\end{enumerate}
+\textbf{Do not} re-teach the expansion here or take new questions. If the share-out shows the
+conjugate did not land, it belongs in the unit review, not in this minute.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\textbf{Homework --- DeltaMath, graded.} Assign as \textit{Lesson 3.6}, in this order:
+\begin{enumerate}[itemsep=1pt,topsep=2pt]
+  \item \textbf{Find the Equation from Roots} (4 problems) --- matches notes problems 1--4 and 15.
+  \item \textbf{Multiply Polynomials (Level 2)} (3 problems) --- the standard-form expansions in
+        notes problems 1, 3, 6, 14, and 15.
+  \item \textbf{Polynomial Description/Table to Standard} (3 problems) --- matches notes problems
+        5--8 and 16: zeros, multiplicities, and a point.
+  \item \textbf{Select Equation from Graph Roots (L2)} (3 problems) --- matches the OFF A GRAPH
+        row, problems 9--10.
+  \item \textbf{Write Polynomial Function From Graph} (3 problems) --- matches notes problems 9--10.
+  \item \textbf{Complex Conjugate Theorem} (4 problems) \textit{(diagnostic)} --- matches notes
+        problems 11--14, 17, and 18.
+\end{enumerate}
+DeltaMath does not put a wrong answer like Ana's in front of a student and ask which candidate
+has real coefficients, so that comparison rides on notes problem 13 and You Do problem 17 (and
+AP Practice items 3 and 6(c)).
+\textit{Leave out:} Fundamental Theorem of Algebra, Find Multiplicity of Zeroes (Polynomials)
+and Graphical Effect Multiplicity L1--L3 (3.3 read those from a given polynomial); Synthetic
+Division to Find Zeros (Lev 1) and (Lev 2), and Factor Theorem (3.5); Rational Root Theorem and
+Find All Roots (Integer Root Theorem) (not taught); Complex Roots (Level 1) and (Level 2)
+(solving with the quadratic formula, not building); Nature of Roots (Polynomial) L1--L3 and
+Polynomial Inequalities L1 and L2 (not taught).
+
+\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).} Optional, last in the packet.
+Section I is five AP-style multiple-choice items (four options) whose distractors are the
+lesson's errors: the factor sign flipped or the factor $x$ for the zero 0 dropped (1); the
+wrong part of $4 - i$ negated, or the imaginary part dropped (2); the forgotten conjugate,
+counted as degree 3 instead of 4 (3); the sign flipped, $a$ forgotten, or the multiplicities
+swapped when reading a graph (4); $a$ inverted, sign-flipped, or taken to be the
+$y$-intercept (5). Section II is one free-response question on a table of a roller-coaster
+track's height, in three parts: why the zero at $x = 4$ has even multiplicity and the factored
+form with $a$ from a table value (a); the standard form, which form shows $H(0)$, and $H(0) = -8$
+interpreted in context (b); and a redesign with the zero $4 + i$ that forces the conjugate (c) ---
+the finisher's question.
+
+\textbf{Preview:} 3.6 closes Unit 3. Next come the unit review and the Unit 3 test, where
+reading a polynomial (3.1--3.3), factoring and dividing it (3.4--3.5), and building it from its
+zeros (3.6) meet on the same pages.
 \end{skillbox}
 
-% ── Teacher notes — one per component, in packet order ────────────────────────
-% Teacher-only prose lives HERE, never in a _key: a note is the one block in a
-% key with no counterpart in the blank, so it makes the key longer than the
-% blank. See ~/.claude/skills/lesson-planning/references/conventions.md ("teachernote").
 \begin{teachernote}[Warm-Up]
-    % TODO: pacing, common errors, what to look for.
+Five minutes, silent start, no calculators. Item 1 is the exact multiplication every standard
+form today runs on --- a student who loses a term there will lose it in problem 1 within the
+quarter hour, so note names. Item 2 is the conjugate pair from Unit 2; the second blank
+(``is the product real?'') is the whole reason it is here: it is the CONJUGATE PAIRS row in
+one line. Item 3 reads the Factor Theorem forward ($p(2) = 0$, so $(x - 2)$ is a factor);
+today runs it backward. Item 4 is 3.3's crossing/touching read; a student who calls $x = 2$
+``crosses'' will miswrite the multiplicity in problems 9--10, so flag them before the notes.
 \end{teachernote}
 
 \begin{teachernote}[Guided Notes]
-    % TODO
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed sentences, mark up the display, and work the first
+problem of the grid (1, 5, 9, 11), and the class works the rest with the pen in their hand,
+every problem cold-called. BUILD IT lives on the check ``does the zero make the factor 0?'':
+say it every time until the class says it for you, and let problem 4 catch the sign trap in
+the open. FIT THE POINT is where the hook's question is answered --- the zeros leave the gold
+$a$ free --- so point back at the hook when problem 5 comes out $a = -2$. Problem 8 is the
+secondary trap stated as someone else's mistake; keep it, even when short of time, by cutting
+problem 7 and reading 7's answer aloud.
+
+CONJUGATE PAIRS is the spine. Walk the display before the problems: the factor
+$\bigl(x - (2 + i)\bigr)$ alone would leave an $i$ in the coefficients; the pair cancels it.
+Then problem 13 asks for a \emph{judgment}, not a computation: Ana's answer has the right
+zeros, the wrong degree, and non-real coefficients. Do not accept ``she forgot one''; make the
+class say which promise in the problem --- \emph{real coefficients} --- her answer breaks. Have
+a student expand Ana's on the board, $x^2 - (4 + 2i)x + (3 + 6i)$, so the $i$ is visible.
+
+The You Do row (15--18) is the entire independent phase and carries fifteen minutes. Problem
+17 is the crux with Ana and Ben taken away; problem 18 hides the conjugate inside a quartic.
+If the clock slips, cut problem 18 and let the Debrief report its fourth zero; AP Practice
+6(c) asks for the same move.
 \end{teachernote}
 
-\begin{teachernote}[Group Activity]
-    % TODO
+\begin{teachernote}[Debrief]
+Five minutes, and they are at risk --- the We Do runs 22 minutes and the expansions will try
+to borrow them. Borrow from problem 18 instead, never from the You Do's first three problems:
+18 is a finisher's question, and the Debrief can give its fourth zero to everyone in one
+sentence. The point-forward minute is not optional --- it is the only time the DeltaMath due
+date is said aloud, and the class needs to hear that the unit review comes next. The
+share-out of problem 17 is the one to slow down for: ``degree 3, because $3i$ brings $-3i$''
+is the exact shape of the diagnostic DeltaMath topic, which students will otherwise meet alone
+at home.
 \end{teachernote}
 
-\begin{teachernote}[Exit Ticket]
-    % TODO
+\begin{teachernote}[AP Practice]
+Extra credit, optional, scored 1 to 5, and not a substitute for the DeltaMath assignment ---
+say so when you hand out the packet. Its 1-to-5 score is added as extra-credit points.
+Multiple-choice answers are \textbf{B, D, C, A, B}. Item 1: (A) and (D) flip the factor signs;
+(C) drops the factor $x$ for the zero 0. Item 2: (A) and (C) negate the wrong part of $4 - i$;
+(B) drops the imaginary part. \textbf{Item 3 is the one to glance at}: (B) 3 is the forgotten
+conjugate --- exactly Ana in notes problem 13 --- while (A) 2 counts only the real zeros and
+(D) 6 conjugates the real zeros too. Item 4: (B) flips the signs, (C) forgets $a$ (its
+$y$-intercept would be 4, not $-8$), (D) swaps the multiplicities. Item 5: (A) $\tfrac12$
+inverts $20 \div 10$; (C) $-2$ comes from the factors $(x - 1)(x + 2)(x + 5)$; (D) 20 takes the
+$y$-intercept for $a$. In the free response, accept any table value other than $(1, 0)$ and
+$(4, 0)$ for finding $a$ in (a), and any equivalent standard form in (b). Part (c) is the
+deepest on the page: credit an answer that brings in $4 - i$ and says the remaining two zeros
+are non-real, so $x = 1$ is the only place the track meets ground level.
 \end{teachernote}
 
 \begin{teachernote}[Homework]
-    % TODO
+DeltaMath, graded, assigned as \textit{Lesson 3.6} and due on the date you set.
+\textbf{Complex Conjugate Theorem} is the diagnostic: check its item-level results before the
+unit review. A miss there almost always means the conjugate was forgotten --- the student
+built a factor from the given non-real zero alone --- so the CONJUGATE PAIRS row did not land;
+misses on \textbf{Find the Equation from Roots} that are sign errors (the zero $-4$ written as
+$(x - 4)$) are the other trap, and a student missing both needs problem 15 and problem 17 sat
+with again. DeltaMath cannot ask a student to judge which of two candidate polynomials has real
+coefficients: that lives in notes problem 13 and You Do problem 17, so read those on the
+packet when you collect it. For the unit test, \textbf{Multiply Polynomials (Level 2)} and
+\textbf{Polynomial Description/Table to Standard} predict the factored-to-standard items, and
+\textbf{Write Polynomial Function From Graph} predicts any item that pairs a graph with an
+equation; reuse a missed one as a unit-review warm-up item rather than re-teaching it.
 \end{teachernote}
 \end{document}

@@ -1,4 +1,11 @@
-%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Lesson Plan
+%! Polynomial Function Behavior — Unit 3, Lesson 3.2 — Lesson Plan
+% Section order per LESSON_SHAPE.md §5. CED 1.4 (EK 1.4.A.1 vocabulary, 1.4.A.4 even degree ->
+% absolute extremum) + CED 1.6 (LO 1.6.A, EK 1.6.A.1–3: end behavior from the leading term, in
+% limit notation), plus the course's non-CED ceilings: at most n − 1 turning points and at most
+% n real zeros. 2.4 met end behavior as limits on general graphs and named the leading term
+% once; 3.1 read extrema and inflection on polynomial graphs; 3.3 (zeros, multiplicity,
+% factored form) starts in January — 3.2 is the last lesson of the first semester.
+% Crux: the leading term is NOT the first term written (notes 11–14, You Do 15–16).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,8 +14,8 @@
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 \newcommand{\CourseName}{Precalculus}
 \newcommand{\MeetingLength}{60 minutes}
-\newcommand{\UnitNumberName}{Unit 3: Rational Functions \quad}
-\newcommand{\LessonNumberName}{Lesson 3.2: Rational Functions and Zeros}
+\newcommand{\UnitNumberName}{Unit 3: Polynomial Functions \quad}
+\newcommand{\LessonNumberName}{Lesson 3.2: Polynomial Function Behavior}
 
 \begin{document}
 \begin{center}
@@ -16,177 +23,386 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+\begin{tcolorbox}[colback=lilac, colframe=plum, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} Students will identify the real zeros of a rational function
-    as the zeros of the numerator that lie in the domain, and use a sign chart to determine
-    intervals where a rational function is positive or negative in order to solve rational inequalities.
-    \hfill\textit{\small Skills: MP 1.A}
+    \textbf{Primary Objective:} Students will name the degree, leading term, leading
+    coefficient, and constant term of a polynomial function --- including one written out of
+    standard order or in factored form --- and use the degree and the sign of the leading
+    coefficient to describe its end behavior in words and in limit notation, deciding whether
+    it has an absolute maximum or minimum. They will state the most turning points ($n - 1$)
+    and the most real zeros ($n$) a degree-$n$ polynomial can have, and read a graph's turning
+    points and $x$-intercepts to find the least degree it could have.
+    \hfill\textit{\small (CED Topics 1.4 and 1.6 --- Skills 2.A, 3.A)}
 \end{tcolorbox}
+
+\boxguard[22]
+\begin{skillbox}[Lesson Flow --- Gradual Release (60 minutes)]{lilac}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{} l c X @{}}
+\textbf{Phase} & \textbf{Min} & \textbf{What students are doing, and where it lives} \\
+\midrule
+Warm-Up                       & 5  & Silent, individual spiral review --- warm-up sheet. \\
+Hook                          & 3  & Whole-class discussion --- hook box atop the guided notes. \\
+\textbf{I Do} --- model       & 10 & Watch and annotate while the teacher thinks aloud --- the ANATOMY and END BEHAVIOR rows: definitions, the labeled polynomial, the four-case display, problems 1 and 3. \\
+\textbf{We Do} --- guided     & 21 & Fill the notes together, every problem cold-called --- problems 2 and 4--6, then the COUNTING and WHICH TERM LEADS? rows (7--14; the teacher works 7 and 11). \\
+\textbf{You Do} --- independent & 16 & Work alone while the teacher circulates --- the You Do row, problems 15--18. \\
+Debrief                       & 5  & Whole-class share-out, the headline, and the DeltaMath assignment. \\
+\end{tabularx}
+
+\smallskip
+\textbf{Three ideas, one engine.} Vocabulary, end behavior, and the two ceilings all run on the
+leading term, so the I Do covers two rows and the guided phase runs 21 minutes. There is no
+activity sheet to raid when it overruns. If the clock slips, cut \textbf{problem 6} (the
+reverse question --- DeltaMath's \textit{End Behavior Graphically} drills it) and
+\textbf{problem 8} first, and protect the \textbf{WHICH TERM LEADS?} row: problems 13 and 14
+are the lesson, and You Do problems 15 and 16 cannot be done without them. Never cut the You
+Do below 14 minutes --- circulating it is the only formative read of the period now that there
+is no exit ticket.
+\end{skillbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{tabularx}{\linewidth}{@{}X X@{}}
-\textbf{AP Skills} &
+\textbf{Priority Skills} &
 \textbf{Key Understandings} \\
 \midrule
-\textbf{MP 1.A} --- Solve equations and inequalities represented analytically,
-with and without technology. &
+\textbf{AP Skill 2.A} --- Identify information from graphical, numerical, analytical, and
+verbal representations to answer a question or construct a model. &
 \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
-  \item The real zeros of a rational function are the real zeros of the numerator
-        that also lie in the domain. (EK 1.8.A.1)
-  \item Zeros of the numerator and zeros of the denominator are both critical
-        values used as endpoints for sign analysis intervals. (EK 1.8.A.2)
-  \item A sign chart organizes critical values into intervals; a test point in
-        each interval determines the sign of the function on that interval.
+  \item A polynomial function of degree $n$ can be written
+        $p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0$ with $a_n \ne 0$; $a_n x^n$
+        is the \textbf{leading term}, $a_n$ the \textbf{leading coefficient}, $a_0$ the
+        constant term, and a nonzero constant has degree 0. (1.4.A.1)
+  \item In factored form the degree is the \textbf{sum} of the factors' exponents and the
+        leading coefficient is the \textbf{product} of their leading coefficients --- found
+        without expanding.
+  \item Read backwards from a graph: $k$ turning points means degree at least $k + 1$;
+        $m$ $x$-intercepts means degree at least $m$; matching arms means even degree.
+\end{itemize} \\
+\textbf{AP Skill 3.A} --- Describe the characteristics of a function with varying levels of
+precision, depending on the function's representation. &
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=0pt]
+  \item As $x \to \pm\infty$ the leading term outgrows every other term, so it alone sets the
+        end behavior, written $\lim_{x \to \pm\infty} p(x) = \pm\infty$. (1.6.A.1--1.6.A.3)
+  \item Even degree: the arms match, so the function has an absolute minimum (arms up) or an
+        absolute maximum (arms down). Odd degree: the arms oppose --- neither. (1.4.A.4)
+  \item A degree-$n$ polynomial has \textbf{at most} $n - 1$ turning points and \textbf{at
+        most} $n$ real zeros. These are ceilings, not counts: $y = x^3$ has no turning points
+        and $y = x^2 + 1$ has no real zeros. (Course addition --- not in the CED.)
+  \item \textbf{Target misconception:} \emph{the leading term is the first term written.}
+        In $p(x) = 5 + 3x - 2x^4$ the leading term is $-2x^4$, not 5; in
+        $q(x) = -(x-1)^2(x+3)(2x+1)$ it is $-2x^4$, from $2 + 1 + 1$ and $(-1)(1)(1)(2)$.
+        The wrong leading term gives the wrong end behavior.
 \end{itemize} \\
 \end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{navy}}p{0.24\linewidth} X @{}}
-Zero of $r(x)$      & A value $x = c$ in the domain where $r(c) = 0$; the real zeros of $r$ are the real zeros of its numerator that are also in the domain. \\
-Domain restriction  & A value excluded from the domain because it makes the denominator zero; NOT a zero of the function. \\
-Critical value       & Any $x$-value where $r(x) = 0$ (numerator zero in domain) or $r(x)$ is undefined (denominator zero); used as boundaries for sign analysis. \\
-Sign chart          & A number-line diagram marking critical values and showing the sign ($+$ or $-$) of $r(x)$ on each resulting interval. \\
-Rational inequality & An inequality of the form $r(x) \geq 0$, $r(x) \leq 0$, $r(x) > 0$, or $r(x) < 0$, solved by sign analysis using all critical values. \\
+\begin{tabularx}{\linewidth}{@{} >{\leavevmode\bfseries\color{plum}}p{0.24\linewidth} X @{}}
+Polynomial function & $p(x) = a_n x^n + \dots + a_1 x + a_0$, with $n$ a whole number, real coefficients, and $a_n \ne 0$. \\
+Standard form       & The terms written from the highest power of $x$ down to the constant term. \\
+Degree              & The highest power of $x$, $n$; a nonzero constant has degree 0. \\
+Leading term        & The term with the highest power, $a_n x^n$ --- wherever it is written. \\
+Leading coefficient & The number $a_n$ multiplying the leading term, sign included. \\
+Constant term       & The term with no $x$, $a_0$; it is $p(0)$, the $y$-intercept. \\
+End behavior        & What $p(x)$ does as $x \to \infty$ and $x \to -\infty$, written in limit notation (from 2.4). \\
+Turning point       & A point where the graph switches between increasing and decreasing --- a relative extremum (from 3.1). \\
+Real zero           & An input $a$ with $p(a) = 0$: an $x$-intercept of the graph. \\
 \end{tabularx}
 \end{skillbox}
 
-\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.70\linewidth}\vspace{0pt}
-            Please see attached warm-up (spiral review).
-            Skills reviewed: finding horizontal asymptotes by comparing leading terms (LO 1.7.A),
-            interpreting a horizontal asymptote at $y = 0$, factoring a quadratic trinomial.
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.24\linewidth}\vspace{0pt}\centering
-            \textbf{LO 1.7.A}\\Horizontal asymptotes\\[4pt]
-            \textbf{LO 1.8.A}\\Zeros of rational functions
-        \end{minipage}
-    \end{tabularx}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review (5 min)]{lilac}
+    Please see attached warm-up (spiral review).
+    Skills reviewed: the sign of a power of a negative number --- even powers positive, odd
+    powers negative, the arithmetic every end-behavior case rests on; multiplying two binomials
+    and naming the highest-power term of the product (factored form, row 4);
+    writing end behavior in limit notation from a graph (Lesson 2.4);
+    and naming relative and absolute extrema on a polynomial graph whose arms both rise
+    (Lesson 3.1) --- a quiet preview of ``even degree means an absolute extremum.''
 \end{skillbox}
 
-\begin{skillbox}[Hook (3--5 min)]{redbox}
-A company models its \textbf{profit per unit} as
-\[
-  P(x) = \frac{x^2 - 9}{x - 1}, \qquad x > 0,\; x \ne 1,
-\]
-where $x$ is the number of units produced (in thousands).
-
-\medskip
-\textbf{Discussion questions:}
-\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
-  \item At what production level(s) $x$ does the company break even (profit per unit $= 0$)?
-  \item For which values of $x$ is the profit per unit \textit{positive}?
-  \item Why can we not simply evaluate $P(1)$?
-\end{itemize}
+\begin{skillbox}[Hook (3 min)]{lilac}
+    \textbf{A race between two functions.} On the board: $f(x) = x^4$ and $g(x) = 500x^3$.
+    \begin{enumerate}[itemsep=2pt]
+        \item Ask who is ahead at $x = 10$. Take a vote, then compute: $f(10) = 10{,}000$,
+              $g(10) = 500{,}000$. The 500 looks unbeatable.
+        \item Ask again at $x = 1000$: $f = 10^{12}$, $g = 5 \times 10^{11}$. The lead has
+              flipped --- and it never flips back, because each step multiplies $x^4$ by one
+              more factor of $x$ than $x^3$.
+    \end{enumerate}
+    \textit{Discussion prompt:} so what decides who wins in the long run --- the coefficient or
+    the exponent? Land on: \emph{far from zero, the highest power wins.} That term gets a name
+    today --- the leading term --- and it decides where both ends of the graph go.
 \end{skillbox}
 
-\vspace{0.1in}
-
+\begin{skillbox}[Lesson --- I Do / We Do / You Do]{lilac}
 \begin{multicols}{2}
 
-\begin{notesbox}{Part 1: Zeros of Rational Functions (10 min)}
-\textbf{Key Principle (EK 1.8.A.1).} A rational function
-$r(x) = \dfrac{p(x)}{q(x)}$ equals zero when $p(x) = 0$
-\textit{and} $q(x) \ne 0$ (i.e., $x$ is in the domain).
+\textbf{I DO --- Part 1: Anatomy and the Four Cases} (10 min)
 
-\medskip
-\textbf{Worked Example.} Find the zeros of
-$r(x) = \dfrac{x^2 - 4}{x - 3}$.
+\textit{Notes rows ANATOMY and END BEHAVIOR: read each definition, mark up each display, work
+problems 1 and 3. Teacher works; students watch and annotate. Nothing is cold-called in this
+phase.}
+\begin{itemize}
+  \item Read the ANATOMY sentences, then fill the four label boxes on
+        $p(x) = -3x^4 + 2x^3 - x + 7$ yourself: \textit{leading coefficient} on the $-3$
+        (``sign included''), \textit{degree} on the 4, \textit{leading term} under $-3x^4$,
+        \textit{constant term} on the 7. Fill the vocabulary box as each term is named.
+  \item Work \textbf{problem 1}: $f(x) = 4x^3 - x^2 + 6$ --- four answers, said as a sentence.
+  \item Read the END BEHAVIOR sentences and connect them to the hook: the leading term wins
+        far from 0. Fill the four-case display in limit notation, one graph at a time, and
+        say each in words: ``even and positive --- both arms up.'' Read the lilac box on
+        absolute extrema aloud.
+  \item Work \textbf{problem 3}, $p(x) = 2x^4 - 5x^3 + x$: name the leading term
+        \emph{before} anything else, then both limits.
+\end{itemize}
 
-\begin{enumerate}[itemsep=4pt]
-  \item \textbf{Domain:} $q(x) = x - 3 = 0 \Rightarrow x = 3$.
-        Domain is all real numbers except $x = 3$.
-  \item \textbf{Set numerator $= 0$:}
-        $x^2 - 4 = 0 \Rightarrow (x-2)(x+2) = 0$.
-        Solutions: $x = 2$ and $x = -2$.
-  \item \textbf{Check domain:} Neither $2$ nor $-2$ equals $3$,
-        so both are in the domain.
-  \item \textbf{Zeros:} $x = 2$ and $x = -2$.
-\end{enumerate}
+\textbf{WE DO --- Part 2: Naming and Reading the Ends} (6 min)
 
-\medskip
-\textit{Note:} $x = 3$ is NOT a zero of $r$; it is a domain restriction.
-(Lesson 1.9 will classify it as a vertical asymptote or hole.)
-\end{notesbox}
+\textit{Problems 2 and 4--6. Class fills the blanks together; cold-call every one.}
+\begin{itemize}
+  \item \textbf{Problem 2}: $g$ has constant term 0 (there is none written) and $h(x) = 9$ has
+        degree 0 --- both surprise someone.
+  \item \textbf{Problems 4 and 5}: odd and negative; then $-0.5x^6 + 100x^5$, where the big
+        coefficient tempts students away from the bigger exponent. Tie 5 back to the hook.
+  \item \textbf{Problem 6} reverses the reading: from the arms to the degree and the sign.
+\end{itemize}
 
 \columnbreak
 
-\begin{notesbox}{Part 2: Sign Chart Method (15 min)}
-\textbf{Key Principle (EK 1.8.A.2).} The sign of $r(x)$ can change
-only at a zero of the numerator or a zero of the denominator.
-Both types of zeros are \textbf{critical values}.
+\textbf{WE DO --- Part 3: At Most, Not Exactly} (7 min)
 
-\medskip
-\textbf{4-Step Method.} Solve $\dfrac{x - 1}{x + 2} \geq 0$.
-
-\begin{enumerate}[itemsep=4pt]
-  \item \textbf{Critical values:}
-        Numerator zero: $x = 1$. Denominator zero: $x = -2$.
-  \item \textbf{Number line:}
-        Mark $x = -2$ (open circle, excluded) and $x = 1$ (closed circle, included).
-  \item \textbf{Test each interval:}
-        \begin{itemize}[itemsep=2pt]
-          \item $x = -3$: $\frac{-4}{-1} = 4 > 0 \Rightarrow (+)$
-          \item $x = 0$: $\frac{-1}{2} < 0 \Rightarrow (-)$
-          \item $x = 2$: $\frac{1}{4} > 0 \Rightarrow (+)$
-        \end{itemize}
-  \item \textbf{Solution ($\geq 0$ means $+$ or zero):}\\
-        $(-\infty,\,-2)\cup[1,\,\infty)$
-\end{enumerate}
-\end{notesbox}
-
-\end{multicols}
-
-\begin{notesbox}{Part 3: Connecting EK 1.8.A.2 (5 min)}
-Both zeros of the \textit{numerator} and zeros of the \textit{denominator} are
-\textbf{critical values} that serve as interval endpoints in sign analysis.
-
-\medskip
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{@{} l l l @{}}
-\textbf{Critical value type} & \textbf{Include in solution?} & \textbf{Reason} \\
-\midrule
-Numerator zero in domain     & Yes, if $\geq$ or $\leq$       & $r(x) = 0$ satisfies $r \geq 0$ \\
-Denominator zero (excluded)  & \textbf{Never}                 & $r(x)$ is undefined there \\
-\end{tabular}
-\end{notesbox}
-
-\vspace{0.1in}
-
-\begin{skillbox}[Active Monitoring]{redbox}
-Circulate and look for:
-\begin{itemize}[leftmargin=1.4em,itemsep=3pt]
-  \item Students who set the \textit{denominator} equal to zero to find ``zeros'' --- redirect to the numerator.
-  \item Students who include denominator-zero values in solution sets --- remind those points are excluded.
-  \item Students who forget to check whether numerator zeros are actually in the domain.
+\textit{Notes row COUNTING. Class fills the blanks together; cold-call every one. The teacher
+works problem 7; the class works 8--10.}
+\begin{itemize}
+  \item Read the two ceilings, then fill the table for graph A yourself, counting turning points
+        and intercepts with a finger on the graph. Cold-call B and C.
+  \item \textbf{Problem 7} (teacher): degree 5 --- at most 4 and at most 5.
+        \textbf{Problem 8} reads backwards: least degree from the counts.
+  \item \textbf{Problems 9 and 10} are the secondary trap: B has degree 4 and \emph{no}
+        intercepts; C is a cubic with \emph{no} turning points. Make the class say ``at most''
+        out loud before anyone writes.
 \end{itemize}
-Cold-call: ``Is $x = 3$ a zero of $r(x) = (x-3)/(x-3)$? Why or why not?''
+
+\textbf{WE DO --- Part 4: Which Term Leads?} (8 min)
+
+\textit{Notes row WHICH TERM LEADS? --- the crux. Class fills the blanks together; cold-call
+every one. Teacher works problem 11; the class works 12--14.}
+\begin{itemize}
+  \item Fill the display: for $p$, \textit{written first} is 5 and the \textit{leading term}
+        is $-2x^4$. For $q$, write the leading piece of each factor in its box ($-1$, $x^2$,
+        $x$, $2x$) and multiply: $-2x^4$. Nobody expands.
+  \item Work \textbf{problem 11} on $p$. \textbf{Problem 12} is the misconception in a
+        student's mouth: Jordan read $3x^2$ because it came first.
+  \item \textbf{Problem 13 is the crux}: $q$'s degree from $2 + 1 + 1$ and its leading
+        coefficient from $(-1)(1)(1)(2)$. Ask what a student who used the first factor's
+        sign alone would say. \textbf{Problem 14} hides the negative inside $(4 - x)$.
+\end{itemize}
+
+\textbf{YOU DO --- Part 5: Read It All} (16 min)
+
+\textit{Notes row READ IT ALL, problems 15--18 --- the whole independent phase. Students work
+alone; circulate and say nothing a neighbor could say instead.}
+\begin{itemize}
+  \item \textbf{Problem 15} is the crux transferred to scrambled order, with both ceilings
+        added; \textbf{16} transfers it to factored form, with a cube to raise:
+        $(2x)^3 = 8x^3$, not $2x^3$.
+  \item \textbf{Problem 17} reads graph D: arms, sign, least degree --- and why 5 is
+        impossible but 6 is allowed (the ceiling trap again).
+  \item \textbf{Problem 18} is the finisher's question: every cubic crosses the $x$-axis.
+\end{itemize}
+\end{multicols}
 \end{skillbox}
 
-\begin{skillbox}[Timing \& Pacing]{goldbox}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} p{0.14\linewidth} X @{}}
-Time & Duration & Activity \\
-\midrule
-0:00--0:05  & 5 min  & Warm-up (spiral: asymptotes, factoring) \\
-0:05--0:10  & 5 min  & Hook: profit-per-unit discussion \\
-0:10--0:20  & 10 min & Part 1: Zeros of rational functions \\
-0:20--0:35  & 15 min & Part 2: Sign chart method (notes + guided practice) \\
-0:35--0:40  & 5 min  & Part 3: EK 1.8.A.2 summary table \\
-0:40--0:50  & 10 min & Tiered group activity \\
-0:50--0:55  & 5 min  & Exit ticket \\
-\end{tabularx}
+\begin{skillbox}[Active Monitoring]{redbox}
+Circulate during the \textbf{You Do} phase --- the sixteen minutes where students are working
+problems 15--18 without you --- and check. The crux is \textbf{problem 13} ($q$ in factored
+form: degree 4, leading coefficient $-2$, both arms down); its You Do transfers are
+\textbf{problem 15} (out of order) and \textbf{problem 16} (factored, with a cube).
+\begin{itemize}
+  \item \textbf{Common error (the crux):} reading the first term written as the leading term
+        --- in 15, $6x$ gives ``odd, positive,'' the opposite of the truth. Point at the
+        exponents: ``Which power is biggest? Where is it?''
+  \item \textbf{Common error (the crux, factored):} in 16, taking the first factor's 2 or
+        forgetting the cube, so the leading coefficient comes out $2$ or $-2$ instead of $-8$;
+        or dropping the negative hidden in $(5 - x)$. Ask: ``What is the leading piece of
+        $(5 - x)$? Of $(2x - 1)^3$?''
+  \item \textbf{Common error:} counting factors instead of adding exponents --- calling $q$
+        degree 3. Cold-call: ``How many $x$'s does $(x - 1)^2$ hand you?''
+  \item \textbf{Common error (secondary trap):} reading $n - 1$ and $n$ as exact counts ---
+        in 17, ``it can't be degree 6, that would need 5 turning points.'' Ask: ``Is 5 the
+        count or the most?''
+  \item \textbf{Limit notation:} writing $\lim_{x \to \infty}$ for both ends, or putting the
+        arm's direction under the lim. ``Under lim is the input; after the equals sign is the
+        output'' --- the 2.4 sentence.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Differentiation --- During You Do (16 min)]{redbox}
+There is no separate activity sheet: students work the notes' You Do row (problems 15--18)
+alone while you circulate. Differentiate by \textit{where you stand}, not by handing out
+different paper.
+
+\begin{itemize}
+  \item \textbf{Support.} Sit with a struggling student on \textbf{problem 15} and have them
+        circle the highest exponent before writing anything --- then rewrite $f$ in standard
+        form above the problem. Once $-x^3$ is first on the page, the four-case display does
+        the rest.
+  \item \textbf{On level.} \textbf{Problem 16} is the factored transfer. Do not answer it;
+        have them write the leading piece of each factor under it, as in the row-4 display,
+        and multiply. Walk away once $(2x)^3$ is on the page.
+  \item \textbf{Extend.} \textbf{Problems 17 and 18} are the finisher's questions. 17 asks
+        why an odd degree is impossible for graph D but degree 6 is fine --- the parity of the
+        arms against the ceiling of turning points. 18 asks them to \emph{prove} a cubic has a
+        real zero from its end behavior alone; a student who says ``one arm is below the
+        axis and the other above, and the graph has no gaps'' has the whole idea. Either
+        answer presents in the Debrief.
+\end{itemize}
+\end{skillbox}
+
+\boxguard[20]
+\begin{skillbox}[Debrief (5 min)]{redbox}
+Whole class, teacher-led, packets still open. Three moves, in order:
+\begin{enumerate}[itemsep=3pt]
+  \item \textbf{Share out the You Do} (3 min) --- one answer per problem, not a full review.
+        Problem 15: the leading term $-x^3$, and the limits. Problem 16: the leading
+        coefficient $-8$, with the cube shown. Problem 17: least degree 4, and why not 5.
+        Problem 18: no --- the arms force a crossing. If a student wrote 18 cleanly, they
+        present it; DeltaMath will not ask it.
+  \item \textbf{Name the headline} (1 min) --- say it, then make the class say it back:
+        \textit{the leading term is the highest power, wherever it is written --- its degree
+        and its sign decide both ends. The degree is a ceiling: at most $n - 1$ turns and at
+        most $n$ zeros.}
+  \item \textbf{Point forward} (1 min) --- the DeltaMath assignment, \textit{Lesson 3.2}, and
+        its due date: write it on the board and have students copy it into row 4 of the
+        cover. This is the last lesson of the semester; in January, 3.3 opens with the
+        zeros: where the graph crosses, why it sometimes only touches, and why a degree-$n$
+        polynomial has exactly $n$ zeros once complex numbers are counted.
+\end{enumerate}
+\textbf{Do not} re-teach end behavior here or take new questions. If the share-out shows the
+leading term did not land, it is the first warm-up after the break that carries it, not this
+minute.
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-See attached homework for 5 targeted problems (zeros, sign charts, reasoning about critical values,
-AP-style MC). Lesson 1.9 extends this to vertical asymptotes and holes --- preview by asking:
-``What happens to the graph of $r$ near a denominator zero?''
+\textbf{Homework --- DeltaMath, graded.} Assign as \textit{Lesson 3.2}, in this order:
+\begin{enumerate}[itemsep=1pt,topsep=2pt]
+  \item \textbf{Polynomial Terminology} (4 problems) --- matches notes problems 1--2 and the
+        degree and leading coefficient of 11, 13.
+  \item \textbf{End Behavior Algebraically} (5 problems) \textit{(diagnostic)} --- matches
+        notes problems 3--5 and 11--16.
+  \item \textbf{Justify End Behavior (Limit Notation)} (3 problems) --- matches the limit
+        notation in problems 3--5 and 11.
+  \item \textbf{End Behavior Graphically} (3 problems) --- matches the four-case display and
+        problem 6.
+  \item \textbf{Even and Odd Degree from a Graph} (3 problems) --- matches problems 6 and 17.
+  \item \textbf{Determine Features of Polynomial Graph} (3 problems) --- matches the
+        COUNTING row, problems 7--10, and problem 17.
+\end{enumerate}
+DeltaMath mostly gives polynomials in standard order, so it rarely tests the crux --- a
+leading term that is not written first, or one hidden in factored form. That rides on You Do
+problems 15 and 16 (and AP Practice items 1, 2, 5, and 6(c)).
+\textit{Leave out:} Determine Number of X-Intercepts, Finding Roots From a Graph, Find
+Multiplicity of Zeroes (Polynomials), and Fundamental Theorem of Algebra (actual zeros are
+3.3's job, after the break); Odd and Even Polynomial Functions (symmetry, $f(-x)$, from 2.3
+--- not even and odd \emph{degree}); Relative vs.\ Absolute Extrema and Successive Differences
+(Polynomial) (3.1); Write Polynomial Function From Graph (needs the zeros, 3.3--3.4).
+
+\textbf{AP Practice --- extra credit, scored 1 to 5 (2 pages).} Optional, last in the packet.
+Section I is five AP-style multiple-choice items (four options) whose distractors are the
+lesson's errors: the first terms written read as the leading term (1), factors counted instead
+of exponents added (2), a graph matched with the wrong sign, the wrong parity, or a degree too
+low for its turning points (3), the ceilings $n - 1$ and $n$ read as exact counts (4), and one
+hidden negative counted but not the other (5). Section II is one free-response question on a
+pre-drawn degree-5 graph: end behavior in limit notation and whether an absolute maximum exists
+(a), the least possible degree from turning points, intercepts, and arms (b), and whether a
+proposed factored formula with two hidden negatives could be the function (c) --- the
+finisher's question, the crux in reverse.
+
+\textbf{Preview:} Next lesson (3.3, Zeros of Polynomial Functions --- January) turns the
+ceiling of $n$ real zeros into a count: factored form shows each zero, its multiplicity
+decides whether the graph crosses or touches, and complex zeros come in conjugate pairs ---
+so a degree-$n$ polynomial has exactly $n$ zeros, real and complex together.
 \end{skillbox}
 
+\begin{teachernote}[Warm-Up]
+Five minutes, silent start, no calculators. Item 1 is the arithmetic under every end-behavior
+case: a student who writes $(-10)^3 = 1000$ will put the left arm of every odd polynomial on
+the wrong side of the axis. Item 2's ``term with the highest power'' is $3x^2$ --- the product
+of the two leading terms, $x \cdot 3x$; say that out loud in passing, because row 4 runs on
+it. Item 3 is 2.4's limit notation on a graph that is not a polynomial; a student who writes
+$\lim_{x \to \infty} f(x) = \infty$ because ``$x$ goes to infinity'' is reading the input as
+the output --- flag them before the END BEHAVIOR row. Item 4(b) asks for an absolute minimum
+and \emph{no} absolute maximum on a graph whose arms both rise --- the even-degree fact the
+notes will name, discovered here first.
+\end{teachernote}
+
+\begin{teachernote}[Guided Notes]
+The notes are one Main Ideas / Notes table, four instruction rows and a You Do row; in each
+instruction row you read the printed definition, mark up the display, and work the first
+problem of the grid (1, 3, 7, 11), and the class works the rest with the pen in their hand,
+every problem cold-called. ANATOMY and END BEHAVIOR share the I Do: they are one idea --- the
+leading term --- named and then used. On the four-case display, say each case in words before
+writing the limits, and make ``a positive leading coefficient sends the \emph{right} arm up''
+the sentence students repeat; it is the fastest check there is.
+
+COUNTING comes before the crux on purpose: it is calmer, and its secondary trap (problems 9
+and 10) teaches ``at most'' while students still trust the formulas. Count turning points with
+a finger moving left to right --- every change from rising to falling or back.
+
+WHICH TERM LEADS? is the lesson. Students saw one out-of-order polynomial in 2.4 (notes
+problem 14 there); today the order is scrambled harder and the factored form is new. Do the
+display before any problem: the boxes under $q$'s factors \emph{are} the method. Do not expand
+$q$, ever --- the point is that nobody has to. Problem 13 asks for the leading coefficient
+\emph{and} the absolute maximum; a student who gets $+2$ will say ``absolute minimum,'' and
+that pair of wrong answers is exactly what the AP exam rewards checking.
+
+The You Do row (15--18) is the entire independent phase and carries sixteen minutes. 15 and
+16 are the crux transferred; 17 is the ceiling trap with a parity twist; 18 is a finisher's
+proof. If the clock slips, cut problem 18 and let the Debrief carry it.
+\end{teachernote}
+
+\begin{teachernote}[Debrief]
+Five minutes, and on this lesson they are at risk --- the guided phase runs 21 minutes and the
+day before a break is never quiet. Borrow from problem 18 instead, never from the You Do's first
+three problems: 18 is a finisher's question, and the Debrief can show one student's answer to
+everyone. The point-forward minute matters more than usual: the DeltaMath due date may fall
+over the break, so say it aloud and write it down, and tell students plainly that January
+starts with zeros, so this ceiling of $n$ will become a count. The share-out is one answer per
+You Do problem so a student who stalled on 15 still hears $(2x)^3 = 8x^3$ in 16 --- the exact
+slip the diagnostic DeltaMath topic will not catch.
+\end{teachernote}
+
+\begin{teachernote}[AP Practice]
+Extra credit, optional, scored 1 to 5, and not a substitute for the DeltaMath assignment ---
+say so when you hand out the packet. Its 1-to-5 score is added as extra-credit points.
+Multiple-choice answers are \textbf{A, B, C, D, B}. Item 1 is the one to glance at: (B) means
+the student read $4 + 7x^2$ --- the first terms written --- as the leading term (the lesson's
+misconception), (C) means the right sign but an even reading of an odd degree, (D) means the
+sign was dropped. In item 2, (A) counts factors instead of adding exponents, (D) multiplies
+the exponents, (C) loses the $-2$. In item 3, (A) has the wrong sign, (B) the wrong parity,
+and (D) a degree too low for three turning points. Item 4's (A) and (B) are the ceilings read
+as exact counts; (C) gives an odd degree an absolute maximum. Item 5's (A) counts one of the
+two negatives in $(20 - 2x)(12 - 2x)$ and not the other. In the free response, accept the
+limits in (a) in either order; (b) needs at least two of the three reasons for full credit;
+(c) is the deepest question on the page --- credit any answer that finds the formula's leading
+term $+x^5$ and says its arms oppose the graph's, whatever words it uses for ``arms.''
+\end{teachernote}
+
+\begin{teachernote}[Homework]
+DeltaMath, graded, assigned as \textit{Lesson 3.2} and due on the date you set --- likely over
+or just after the break, so say which. \textbf{End Behavior Algebraically} is the diagnostic:
+check its item-level results when students return. A miss with the right parity and the wrong
+sign usually means the leading coefficient's sign was read from the wrong term; a miss with the
+wrong parity means the degree was read from the first term. Either way it is the crux, so
+re-teach it from the row-4 display, not from the four-case table. DeltaMath gives
+mostly standard-order polynomials and cannot ask \emph{why} a cubic must have a real zero:
+the scrambled and factored forms live in You Do problems 15 and 16 and the proof in 18, so
+read those on the packet when you collect it. \textbf{Determine Features of Polynomial Graph}
+and the degree reading in \textbf{Polynomial Terminology} predict 3.3, where factored form is
+read for its zeros and their multiplicities; if either is weak, put a factored leading-term
+item like problem 16 in the first warm-up of January.
+\end{teachernote}
 \end{document}

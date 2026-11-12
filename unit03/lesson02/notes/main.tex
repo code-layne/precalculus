@@ -1,4 +1,24 @@
-%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Guided Notes
+%! Polynomial Function Behavior — Unit 3, Lesson 3.2 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+%   I DO   : the teacher reads the definition, marks up the display, works the first problem
+%            of each grid (1, 3, 7, 11).
+%   WE DO  : the class works the rest of each grid, students holding the pen, every one
+%            cold-called (2, 4–6, 8–10, 12–14).
+%   YOU DO : the last row — problems 15–18, alone, for 16 minutes while the teacher circulates.
+% The crux is row 4, WHICH TERM LEADS?: the leading term is NOT the first term written.
+% Problems 11–14 give polynomials out of standard order or in factored form, where the first
+% term written gives the WRONG end behavior. You Do 15 and 16 transfer it. The secondary trap
+% (n − 1 and n are MAXIMUMS, not exact counts) is row 3, problems 9–10, and You Do 17–18.
+% No sketching anywhere: every graph is pre-drawn in TikZ and read.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, the hook's write lines ->
+% \ansline, \blank -> \ans, and the answer argument of every \pcell, \writespace and \labelbox
+% filled. Nothing else differs.
+% Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break across pages:
+% the figure and EACH grid row are separate sub-rows (`\\` then `& ...`, probgrid*).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,103 +27,265 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.2}{Guided Notes}
-\namedateperiod
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Find the real zeros of a rational function by setting the \blank{3cm} equal to zero
-        and checking that the solutions are in the \blank{2cm}. \hfill\textit{(LO 1.8.A)}
-  \item Solve a rational inequality using a \blank{2.5cm} with critical values from
-        both the numerator and the denominator. \hfill\textit{(LO 1.8.A)}
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.08in}
-
+\boxguard
 \begin{vocabbox}
-\termblanklong{Zero of a rational function}
-\termblanklong{Domain restriction}
-\termblanklong{Critical value}
-\termblanklong{Sign chart}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Standard form:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Degree:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading term:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Leading coefficient:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Constant term:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Turning point:}}\\[1pt]
+\writeline
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-A company's profit per unit is modeled by $\displaystyle P(x) = \dfrac{x^2 - 9}{x - 1}$
-where $x > 0$, $x \ne 1$.
-
-At what production level(s) is the profit per unit equal to zero? When is it positive?
-Why does $x = 1$ need to be excluded?
-
-\vspace{0.05in}
-\writelines{2}
+A race between two functions: $f(x) = x^4$ and $g(x) = 500x^3$. Which is bigger at $x = 10$?
+At $x = 1000$? Who wins in the long run --- and does the 500 decide it, or the exponent?
+\par\writelines{2}
 \end{hookbox}
 
-\vspace{0.08in}
-
-\begin{notesbox}{Zeros of Rational Functions (EK 1.8.A.1)}
-\textbf{Rule:} For $r(x) = \dfrac{p(x)}{q(x)}$, we have $r(x) = 0$ when:
-\begin{itemize}[itemsep=3pt]
-  \item $p(x) = 0$ (numerator equals \blank{2cm}), AND
-  \item $q(x) \ne 0$ ($x$ is in the \blank{2cm} of $r$).
-\end{itemize}
-
-\medskip
-\textbf{Worked Example.} Find all zeros of $r(x) = \dfrac{x^2 - 4}{x - 3}$.
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} r l @{\qquad} l @{}}
-\textbf{Step 1} & Find domain restrictions. & $q(x) = 0 \Rightarrow$ \blank{3.5cm} \\
-                &                           & Domain: all reals except $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 2} & Set numerator $= 0$.      & $x^2 - 4 = 0 \Rightarrow (x - \blank{1cm})(x + \blank{1cm}) = 0$ \\
-                &                           & Solutions: $x =$ \blank{1.5cm} and $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 3} & Check domain.             & Is $x = 2$ in the domain? \blank{1.5cm} \\
-                &                           & Is $x = -2$ in the domain? \blank{1.5cm} \\[4pt]
-\textbf{Step 4} & State zeros.              & Zeros of $r$: $x =$ \blank{3cm} \\
-\end{tabular}
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{Rational Inequalities --- Sign Chart Method (EK 1.8.A.2)}
-\textbf{Key idea:} The sign of $r(x)$ can only change at a \blank{2.5cm} or a
-\blank{3cm}. These are called \textbf{critical values}.
-
-\medskip
-\textbf{Solve:} $\dfrac{x - 1}{x + 2} \geq 0$
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{} r l @{\qquad} l @{}}
-\textbf{Step 1} & Find critical values. & Numerator zero: $x =$ \blank{1.5cm} \quad Denominator zero: $x =$ \blank{1.5cm} \\[4pt]
-\textbf{Step 2} & Mark on number line.  & Open circle at $x =$ \blank{1cm} (excluded); closed at $x =$ \blank{1cm} (zero). \\[4pt]
-\textbf{Step 3} & Test each interval.   & \\
-\end{tabular}
-
-\medskip
-\begin{center}
-\renewcommand{\arraystretch}{1.6}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Interval} & $(-\infty,\,-2)$ & $(-2,\,1)$ & $(1,\,\infty)$ \\
-\hline
-Test value $x$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
-Sign of $r(x)$    & \blank{1.5cm}    & \blank{1.5cm} & \blank{1.5cm} \\
-\hline
+\small
+\begin{guidednotes}
+% ── ROW 1: the anatomy of a polynomial in standard form ─────────────────────
+\mainidea[Standard form]{Anatomy} &
+A \textbf{polynomial function} of degree $n$ in \textbf{standard form} is
+$p(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0$, where $n$ is a whole number and
+$a_n \ne 0$: its terms run from the highest power down. The \textbf{degree} is $n$; the
+\textbf{leading term} is $a_n x^n$; the \textbf{leading coefficient} is $a_n$; the
+\textbf{constant term} is $a_0$. A nonzero constant such as $p(x) = 9$ has degree 0.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth, every node/.style={inner sep=1pt}]
+  \node[anchor=base west, font=\Large] (a) at (0,0) {$p(x) =$};
+  \node[anchor=base west, font=\Large] (lc) at ([xshift=4pt]a.base east) {$-3$};
+  \node[anchor=base west, font=\Large] (x) at (lc.base east) {$x^{4}$};
+  \node[anchor=base west, font=\Large] (r) at (x.base east) {$\;+\;2x^3 - x\;$};
+  \node[anchor=base west, font=\Large] (c) at (r.base east) {$+\;7$};
+  \node (lcl) at ([xshift=-1.7cm, yshift=1.15cm]lc.north) {\labelbox{2.8cm}{}};
+  \draw[->, thick, plum] (lcl.south east) -- (lc.north);
+  \node (dl) at ([xshift=1.9cm, yshift=1.15cm]x.north east) {\labelbox{2.0cm}{}};
+  \draw[->, thick, plum] (dl.south west) -- ([xshift=-2pt]x.north east);
+  \draw[thick, plum] ([yshift=-3pt]lc.south west) -- ([yshift=-3pt]x.south east);
+  \node (ltl) at ([xshift=-1.2cm, yshift=-1.15cm]lc.south east) {\labelbox{2.6cm}{}};
+  \draw[->, thick, plum] ([yshift=-3pt]lc.south east) -- (ltl.north);
+  \node (cl) at ([xshift=1.4cm, yshift=-1.15cm]c.south) {\labelbox{2.6cm}{}};
+  \draw[->, thick, plum] (c.south) -- (cl.north);
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{Name the degree, the leading term, the leading coefficient, and the constant term.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{$f(x) = 4x^3 - x^2 + 6$}{2.0cm}{} &
+\pcell{2}{$g(x) = \tfrac{1}{2}x^6 - x$ \quad and \quad $h(x) = 9$}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: end behavior — the four cases ────────────────────────────────────
+\mainidea[Degree and sign]{End Behavior} &
+Far from 0, the leading term outgrows every other term, so it alone decides the
+\textbf{end behavior}: its \textbf{degree} (even or odd) and the \textbf{sign} of its
+coefficient. An even degree sends both arms the same way; an odd degree sends them opposite
+ways. A positive leading coefficient always sends the \emph{right} arm up.
+\\
+& \begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}[b]{c|c|c}
+ & \textbf{degree $n$ even} & \textbf{degree $n$ odd} \\ \hline
+\textbf{$a_n > 0$} &
+\begin{tabular}{c}
+\begin{tikzpicture}[x=0.5cm, y=0.2cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2.5,-5) grid (2.5,5);
+  \draw[thick] (-2.5,0) -- (2.5,0); \draw[thick] (0,-5) -- (0,5);
+  \draw[very thick, plum, <->, samples=50, domain=-2.04:2.04] plot (\x, {\x*\x*\x*\x-3*\x*\x});
+\end{tikzpicture}\\[-1pt]
+{\scriptsize $y = x^4 - 3x^2$}\\[1pt]
+{\scriptsize $x \to -\infty$:}\,\labelbox{0.9cm}{}\ {\scriptsize $x \to \infty$:}\,\labelbox{0.9cm}{}
+\end{tabular} &
+\begin{tabular}{c}
+\begin{tikzpicture}[x=0.5cm, y=0.2cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2.5,-5) grid (2.5,5);
+  \draw[thick] (-2.5,0) -- (2.5,0); \draw[thick] (0,-5) -- (0,5);
+  \draw[very thick, plum, <->, samples=50, domain=-2.2:2.2] plot (\x, {\x*\x*\x-3*\x});
+\end{tikzpicture}\\[-1pt]
+{\scriptsize $y = x^3 - 3x$}\\[1pt]
+{\scriptsize $x \to -\infty$:}\,\labelbox{0.9cm}{}\ {\scriptsize $x \to \infty$:}\,\labelbox{0.9cm}{}
+\end{tabular} \\ \hline
+\textbf{$a_n < 0$} &
+\begin{tabular}{c}
+\begin{tikzpicture}[x=0.5cm, y=0.2cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2.5,-5) grid (2.5,5);
+  \draw[thick] (-2.5,0) -- (2.5,0); \draw[thick] (0,-5) -- (0,5);
+  \draw[very thick, plum, <->, samples=50, domain=-2.04:2.04] plot (\x, {-\x*\x*\x*\x+3*\x*\x});
+\end{tikzpicture}\\[-1pt]
+{\scriptsize $y = -x^4 + 3x^2$}\\[1pt]
+{\scriptsize $x \to -\infty$:}\,\labelbox{0.9cm}{}\ {\scriptsize $x \to \infty$:}\,\labelbox{0.9cm}{}
+\end{tabular} &
+\begin{tabular}{c}
+\begin{tikzpicture}[x=0.5cm, y=0.2cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-2.5,-5) grid (2.5,5);
+  \draw[thick] (-2.5,0) -- (2.5,0); \draw[thick] (0,-5) -- (0,5);
+  \draw[very thick, plum, <->, samples=50, domain=-2.2:2.2] plot (\x, {-\x*\x*\x+3*\x});
+\end{tikzpicture}\\[-1pt]
+{\scriptsize $y = -x^3 + 3x$}\\[1pt]
+{\scriptsize $x \to -\infty$:}\,\labelbox{0.9cm}{}\ {\scriptsize $x \to \infty$:}\,\labelbox{0.9cm}{}
+\end{tabular} \\
+\multicolumn{3}{c}{} \\
 \end{tabular}
 \end{center}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{Even degree: the arms match, so the graph has an absolute minimum (arms up) or an
+absolute maximum (arms down). Odd degree: the arms oppose, so it has neither.}}}
+\\
+& \notesprompt{Name the leading term. Then write the end behavior in limit notation and in words.}
+\begin{probgrid}{|Y|Y|}
+\pcell{3}{$p(x) = 2x^4 - 5x^3 + x$}{2.0cm}{} &
+\pcell{4}{$q(x) = -x^3 + 4x^2 - 1$}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{5}{$r(x) = -0.5x^6 + 100x^5$. Does the 100 change the ends? Does $r$ have an absolute maximum or minimum?}{2.2cm}{} &
+\pcell{6}{A polynomial's graph falls on the left and rises on the right. What must be true of its degree and its leading coefficient?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: turning points and real zeros — at most, not exactly ─────────────
+\mainidea[At most]{Counting} &
+A polynomial of degree $n$ has \textbf{at most $n - 1$ turning points} and \textbf{at most $n$
+real zeros} ($x$-intercepts). Both are ceilings, not exact counts: a graph may have fewer.
+Read backwards, a graph with $k$ turning points has degree \emph{at least} $k + 1$, and a
+graph with $m$ $x$-intercepts has degree at least $m$.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.42cm, y=0.22cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,6);
+  \draw[thick] (-3,0) -- (3,0); \draw[thick] (0,-5) -- (0,6);
+  \draw[very thick, plum, <->, samples=60, domain=-2.5:2.5] plot (\x, {0.75*(\x*\x*\x-4*\x)});
+  \node[font=\scriptsize\bfseries] at (0,-6.3) {A: degree 3};
+\end{tikzpicture}
+\hspace{0.5cm}
+\begin{tikzpicture}[x=0.42cm, y=0.22cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,6);
+  \draw[thick] (-3,0) -- (3,0); \draw[thick] (0,-5) -- (0,6);
+  \draw[very thick, plum, <->, samples=60, domain=-2.25:2.25] plot (\x, {0.5*\x*\x*\x*\x-2*\x*\x+3});
+  \node[font=\scriptsize\bfseries] at (0,-6.3) {B: degree 4};
+\end{tikzpicture}
+\hspace{0.5cm}
+\begin{tikzpicture}[x=0.42cm, y=0.22cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,6);
+  \draw[thick] (-3,0) -- (3,0); \draw[thick] (0,-5) -- (0,6);
+  \draw[very thick, plum, <->, samples=60, domain=-2.05:2.3] plot (\x, {1-0.5*\x*\x*\x});
+  \node[font=\scriptsize\bfseries] at (0,-6.3) {C: $y = 1 - \tfrac12 x^3$};
+\end{tikzpicture}
 
-\medskip
-\textbf{Step 4.} Write the solution (intervals where $r(x) \geq 0$):
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}[b]{|c|>{\centering\arraybackslash}p{2.3cm}|>{\centering\arraybackslash}p{2.3cm}|>{\centering\arraybackslash}p{2.3cm}|>{\centering\arraybackslash}p{2.3cm}|}
+\hline
+\textbf{Graph} & \textbf{Degree $n$} & \textbf{Turning points} (at most $n - 1$) & \textbf{$x$-intercepts} (at most $n$) & \textbf{Fewer than the most?} \\ \hline
+A & 3 & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} \\ \hline
+B & 4 & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} \\ \hline
+C & 3 & \blank{1.0cm} & \blank{1.0cm} & \blank{1.0cm} \\ \hline
+\end{tabular}
+\end{center}
+\\
+& \notesprompt{Use the ceilings --- and remember they are only ceilings.}
+\begin{probgrid}{|Y|Y|}
+\pcell{7}{A polynomial has degree 5. At most how many turning points can it have? At most how many real zeros?}{2.0cm}{} &
+\pcell{8}{A graph has 2 turning points and 3 $x$-intercepts, like graph A. What is the least degree it could have? Use both counts.}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{9}{Graph B has degree 4 but no $x$-intercepts at all. Does that break the rule ``at most $n$ real zeros''? Explain.}{2.2cm}{} &
+\pcell{10}{Sam says, ``Every cubic has exactly 2 turning points.'' Use graph C to explain what Sam has wrong.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — the leading term is not the first term written ─────────
+\mainidea[Not the first one written]{Which Term Leads?} &
+The leading term is the term with the \textbf{highest power}, wherever it is written. Out of
+order, find the highest power first. In \textbf{factored form}, do not expand: multiply the
+leading piece of every factor. The degree is the sum of the exponents; the leading coefficient
+is the product of the leading coefficients.
+\\
+& \begin{center}
+\begin{tikzpicture}[>=stealth, every node/.style={inner sep=1pt}]
+  % panel 1: out of order
+  \node[anchor=base west, font=\large] (p) at (0,0) {$p(x) = 5 + 3x - 2x^4$};
+  \node[anchor=east, font=\small] at (2.3,-0.95) {Written first:};
+  \node[anchor=west] at (2.4,-0.95) {\labelbox{1.3cm}{}};
+  \node[anchor=east, font=\small] at (2.3,-2.05) {Leading term:};
+  \node[anchor=west] at (2.4,-2.05) {\labelbox{1.3cm}{}};
+  % panel 2: factored form
+  \node[anchor=base west, font=\large] (q) at (4.6,0) {$q(x) =$};
+  \node[anchor=base west, font=\large] (f1) at ([xshift=8pt]q.base east) {$-$};
+  \node[anchor=base west, font=\large] (f2) at ([xshift=13pt]f1.base east) {$(x-1)^2$};
+  \node[anchor=base west, font=\large] (f3) at ([xshift=13pt]f2.base east) {$(x+3)$};
+  \node[anchor=base west, font=\large] (f4) at ([xshift=13pt]f3.base east) {$(2x+1)$};
+  \foreach \f in {f1,f2,f3,f4} \draw[->, thick, plum] (\f.south) -- ++(0,-0.35);
+  \node[anchor=north] at ([yshift=-0.4cm]f1.south) {\labelbox{0.95cm}{}};
+  \node[anchor=north] at ([yshift=-0.4cm]f2.south) {\labelbox{0.95cm}{}};
+  \node[anchor=north] at ([yshift=-0.4cm]f3.south) {\labelbox{0.95cm}{}};
+  \node[anchor=north] at ([yshift=-0.4cm]f4.south) {\labelbox{0.95cm}{}};
+  \node[anchor=east, font=\small] at (8.6,-2.05) {Multiply --- leading term:};
+  \node[anchor=west] at (8.7,-2.05) {\labelbox{1.4cm}{}};
+\end{tikzpicture}
+\end{center}
+\\
+& \fcolorbox{plum}{lilac}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering
+\textbf{The first term written is not the leading term unless the polynomial is in standard
+form. Find the highest power first; then read its sign.}}}
+\\
+& \notesprompt{Find the leading term first. Then give the end behavior in limit notation.}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{$p(x) = 5 + 3x - 2x^4$ (above). Degree, leading coefficient, end behavior.}{2.2cm}{} &
+\pcell{12}{Jordan says $f(x) = 3x^2 - x^5 + 1$ rises on both ends, ``because $3x^2$ has an even power and a positive coefficient.'' What is wrong? Fix it.}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{$q(x) = -(x-1)^2(x+3)(2x+1)$ (above). Degree, leading coefficient, end behavior. Absolute maximum or minimum?}{2.4cm}{} &
+\pcell{14}{$s(x) = (4 - x)(x + 2)^2$. Is the leading coefficient positive? Give the end behavior.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (16 min) ──────────
+\mainidea[You do, alone]{Read It All} &
+Two formulas not in standard form, one pre-drawn graph, and one question about every cubic.
+\\
+& \begin{center}
+\begin{tikzpicture}[x=0.55cm, y=0.3cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-3,-5) grid (3,3);
+  \draw[->, thick] (-3,0) -- (3.4,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-5) -- (0,3.4) node[above] {\scriptsize $y$};
+  \foreach \x in {-2,-1,1,2} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, <->, samples=80, domain=-2.3:2.3] plot (\x, {-0.8*(\x*\x-1)*(\x*\x-4)});
+  \node[font=\scriptsize\bfseries] at (0,-6.1) {D: the graph of a polynomial $d$};
+\end{tikzpicture}
+\end{center}
+\\
+& \notesprompt{On your own. Show your work.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{$f(x) = 6x - x^3 + 2x^2 - 8$. Degree, leading coefficient, end behavior in limit notation, the most turning points, and the most real zeros.}{2.4cm}{} &
+\pcell{16}{$g(x) = (2x - 1)^3(5 - x)$. Degree, leading coefficient, end behavior. Absolute maximum or minimum?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Graph D. End behavior in limit notation, the sign of the leading coefficient, and the least possible degree. Could $d$ have degree 5? Degree 6?}{2.6cm}{} &
+\pcell{18}{Can a polynomial of degree 3 have no real zeros at all? Use end behavior to explain.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
 
-\vspace{0.08in}
-Solution: \blank{7cm}
-\end{notesbox}
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice follows; homework is DeltaMath ──
 
 \end{document}

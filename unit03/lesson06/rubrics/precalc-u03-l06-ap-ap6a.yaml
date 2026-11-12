@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 3, Lesson 3.6). manifest.json points here
+# as rubrics/precalc-u03-l06-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "The zeros of H shown in the table are at x = 1 and x = 4. Use the table to explain why the zero at x = 4 has even multiplicity. Then write H(x) in factored form, using a value from the table to find the leading coefficient."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Explains from the table that H does not change sign at x = 4 (H(3) = 1 and H(5) = 2 are both positive), so the track touches ground level and turns back up, giving even multiplicity; AND writes H(x) = (1/2)(x - 1)(x - 4)^2 with a found from a table value (e.g. H(0) = -16a = -8, so a = 1/2; any other table point off the x-axis that gives a = 1/2 is accepted)."
+    partial: "Partially correct (1): Exactly one of the two tasks done correctly; OR the even-multiplicity claim made without citing table values on both sides of x = 4 but the factored form fully correct; OR the family a(x - 1)(x - 4)^2 correct with a missing or wrong and a correct sign argument."
+examples:
+  - response: "H(3) = 1 and H(5) = 2 are both positive, so H bounces at 4 -> even. H = a(x-1)(x-4)^2, H(0) = -16a = -8, a = 1/2. H(x) = 1/2 (x-1)(x-4)^2."
+    scores: {part: 2}
+  - response: "It touches at 4. H(x) = (x-1)(x-4)^2."
+    scores: {part: 1}
+  - response: "H(x) = (x+1)(x+4)"
+    scores: {part: 0}

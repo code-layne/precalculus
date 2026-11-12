@@ -1,0 +1,167 @@
+%! Zeros of Polynomials — Unit 3, Lesson 3.3 — AP Practice
+% EXTRA CREDIT — optional, scored 1 to 5, exactly TWO pages, last in the packet (graded homework is DeltaMath).
+% Page 1 is Section I, five multiple-choice items with four options (A)–(D); page 2 is Section
+% II, one multi-part free-response question on a pre-drawn graph. Its contexts (a ripple tank,
+% an unlabeled cubic, a dolphin's dive) are used nowhere else in the lesson.
+% Distractors are the lesson's errors on purpose: MC 1 flips the sign of the factor (A) or
+% confuses the zero with the y-intercept (C, D); MC 2 counts factors instead of degree (A),
+% counts repeated zeros as distinct (C), or drops the factor x (D); MC 3 has every zero cross
+% (D), swaps which zero touches (B), or flips the signs (A); MC 4 negates the real part (A, D)
+% or negates the real zero (C); MC 5 forgets that non-real zeros pair (B), stops at the real
+% zeros (A), or ignores the two real ones (D).
+%
+% PAGE LOCKSTEP with the other half of the pair: the key marks the correct option in its
+% LABEL (no text added to the line); every \gradedblank line is identical in both files.
+% The explicit \newpage fixes the page break in both files. The FRQ has three parts because
+% math-shared draws each rubric box at least 2in tall: three boxes and the graph fill page 2.
+\documentclass[10pt]{article}
+\usepackage{precalculus-article}
+\usepackage{precalculus-boxes}
+\usepackage{grading}
+\gradingassignment{precalc-u03-l03-ap}
+\gradingcourse{precalculus}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 3, Lesson 3.3}{AP Practice}
+{\small\itshape Write each final answer in its box. Only what is inside a box is graded.}\par
+
+\vspace{0.08in}
+
+\boxguard[8]
+\begin{remindbox}
+\small
+\textbf{Extra credit, optional, scored 1 to 5.} These two pages are written in the style of the AP
+Precalculus exam. Your graded homework is on DeltaMath; do it first. Every
+answer choice below is a mistake someone really makes, so read all four before you choose.
+\end{remindbox}
+
+\vspace{0.1in}
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section I --- Multiple Choice.} Write the letter of the single best answer in its Letter box. No calculator.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=10pt]
+
+\item In a ripple tank, $R(x)$ gives the height of the water surface, in millimeters, $x$
+      centimeters from a wall. $R$ is a polynomial and $R(4) = 0$. Which of the following must be
+      true?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] $(x + 4)$ is a factor of $R(x)$.
+        \item[(B)] The water surface is 4 millimeters high at the wall.
+        \item[(C)] The graph of $R$ passes through the point $(0, 4)$.
+        \item[(D)] Four centimeters from the wall, the water surface is at its resting level, height 0.
+        \hfill\textit{Letter:}~\gradedblank[id=ap1, type=choice, points=1, answer=D]{0.42in}{13pt}
+      \end{enumerate}
+
+\item The polynomial $g$ is given by $g(x) = x(x - 5)^2(x + 1)^3$. What is the degree of $g$, and
+      how many \emph{different} real zeros does $g$ have?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=2pt]
+        \item[(A)] Degree 3; 3 different real zeros
+        \item[(B)] Degree 6; 3 different real zeros
+        \item[(C)] Degree 6; 6 different real zeros
+        \item[(D)] Degree 5; 2 different real zeros \hfill\textit{Letter:}~\gradedblank[id=ap2, type=choice, points=1, answer=B]{0.42in}{13pt}
+      \end{enumerate}
+
+\item \begin{minipage}[t]{0.56\linewidth}
+      The graph of a polynomial $k$ of degree 3 is shown. Which of the following could define
+      $k(x)$?
+      \begin{enumerate}[leftmargin=2.6em, itemsep=3pt]
+        \item[(A)] $(x - 1)^2(x + 3)$
+        \item[(B)] $(x + 1)(x - 3)^2$
+        \item[(C)] $(x + 1)^2(x - 3)$
+        \item[(D)] $(x + 1)(x - 3)$ \hfill\textit{Letter:}~\gradedblank[id=ap3, type=choice, points=1, answer=C]{0.42in}{13pt}
+      \end{enumerate}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.38\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=0.55cm, y=0.1cm, baseline=(current bounding box.north)]
+        \draw[linegray, very thin] (-3,-11) grid[xstep=1, ystep=5] (4,11);
+        \draw[->, thick] (-3,0) -- (4.5,0) node[right] {\scriptsize $x$};
+        \draw[->, thick] (0,-11) -- (0,12) node[above] {\scriptsize $k(x)$};
+        \foreach \x in {-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-5,5} \node[left, font=\tiny] at (0,\y) {\y};
+        \begin{scope}\clip (-3,-11) rectangle (4,11);
+          \draw[very thick, plum, domain=-2.15:3.55, samples=120, smooth]
+            plot (\x, {(\x+1)*(\x+1)*(\x-3)});
+        \end{scope}
+      \end{tikzpicture}
+      \end{minipage}
+
+\item A polynomial $p$ with real coefficients has $5$ and $3 - 4i$ as zeros. Which of the
+      following must also be a zero of $p$?
+
+      \smallskip
+      \textbf{(A)} $3 + 4i$ \hspace{2.2em} \textbf{(B)} $-3 + 4i$ \hspace{2.2em} \textbf{(C)} $-5$ \hspace{2.2em} \textbf{(D)} $-3 - 4i$
+      \hfill\textit{Letter:}~\gradedblank[id=ap4, type=choice, points=1, answer=A]{0.42in}{13pt}
+
+\item A polynomial $q$ of degree 4 has real coefficients. Its graph crosses the $x$-axis at exactly
+      two points, and at each one it passes straight through without flattening. How many
+      non-real zeros does $q$ have?
+
+      \smallskip
+      \textbf{(A)} $0$ \hspace{2.2em} \textbf{(B)} $1$ \hspace{2.2em} \textbf{(C)} $2$ \hspace{2.2em} \textbf{(D)} $4$
+      \hfill\textit{Letter:}~\gradedblank[id=ap5, type=choice, points=1, answer=C]{0.42in}{13pt}
+
+\end{enumerate}
+
+\newpage
+
+\begin{headlinebox}{goldbg}
+\small
+\textbf{Section II --- Free Response.} Answer \emph{in context}, with units. Show your reasoning
+outside the boxes. Write each final answer in its box. Only what is inside a box is graded.
+\end{headlinebox}
+
+\vspace{0.04in}
+
+\begin{enumerate}[leftmargin=1.9em, itemsep=4pt, start=6]
+
+\item \begin{minipage}[t]{0.42\linewidth}
+      A dolphin swims near the surface of a pool. Its height above the water surface, in feet,
+      $t$ seconds after a trainer's whistle is $h(t)$, where $h$ is a polynomial of degree 4.
+      A negative height means the dolphin is under water. The graph of $h$ is shown for
+      $0 \le t \le 5.5$.
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.54\linewidth}
+      \vspace{-4pt}
+      \centering
+      \begin{tikzpicture}[x=1.3cm, y=0.27cm, >=stealth, baseline=(current bounding box.north)]
+        \draw[linegray, very thin] (0,-4) grid (5.5,7);
+        \draw[->, thick] (0,0) -- (5.8,0) node[right] {\scriptsize $t$};
+        \draw[->, thick] (0,-4) -- (0,7.6) node[above] {\scriptsize $h(t)$};
+        \foreach \x in {1,...,5} \node[below, font=\tiny] at (\x,0) {\x};
+        \foreach \y in {-4,-2,2,4,6} \node[left, font=\tiny] at (0,\y) {\y};
+        \draw[very thick, plum, domain=0:5.5, samples=140, smooth]
+          plot (\x, {0.2*\x*(\x-2)*(\x-2)*(\x-5)});
+        \fill[plum] (0,0) circle (2.2pt);
+        \fill[plum] (5.5,{0.2*5.5*3.5*3.5*0.5}) circle (2.2pt);
+      \end{tikzpicture}
+      \end{minipage}
+
+      \smallskip
+      \textbf{(a)} Name the zeros of $h$ shown on the graph. Interpret the zero at $t = 5$ in the
+      context of the problem.
+      \rubricbox{\gradedblank[id=ap6a, type=rubric, points=2,
+        display={$t = 0$, $t = 2$, and $t = 5$. At 5 seconds the dolphin is at the water surface (height 0 feet), coming up out of the water: $h$ changes from negative to positive there.}]{\linewidth}{\dimexpr 2.0cm-4pt\relax}}
+
+      \textbf{(b)} Ana says, ``Just after $t = 2$ the dolphin is in the air, because $h(2) = 0$.''
+      Use the multiplicity of the zero at $t = 2$ to explain Ana's error, in context.
+      \rubricbox{\gradedblank[id=ap6b, type=rubric, points=2,
+        display={At $t = 2$ the graph touches the axis and turns back, so 2 has even multiplicity and $h$ does not change sign: it is negative just before and just after. The dolphin reaches the surface at 2 seconds and goes back under; it is not in the air.}]{\linewidth}{\dimexpr 2.0cm-4pt\relax}}
+
+      \textbf{(c)} A second dolphin's height is $k(t)$, degree 4, real coefficients. Its graph crosses
+      the $t$-axis only at $t = 0$ and $t = 3$, straight through, and $4 + i$ is a zero. List all
+      four zeros of $k$; how many times is this dolphin at the surface?
+      \rubricbox{\gradedblank[id=ap6c, type=rubric, points=2,
+        display={$0$, $3$, $4 + i$, $4 - i$ (non-real zeros come in conjugate pairs; $1 + 1 + 2 = 4$). Only real zeros are times on the graph, so the second dolphin is at the surface twice: at 0 seconds and at 3 seconds.}]{\linewidth}{\dimexpr 2.0cm-4pt\relax}}
+
+\end{enumerate}
+
+\end{document}

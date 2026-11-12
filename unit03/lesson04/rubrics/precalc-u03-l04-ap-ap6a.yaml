@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 3, Lesson 3.4). manifest.json points here
+# as rubrics/precalc-u03-l04-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Use the factored form V(x) = x(10 - 2x)(8 - 2x) to solve V(x) = 0. For each solution, explain in context why that cut does not make a box."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): All three solutions x = 0, 4, 5, each with a reason in context: a 0-inch cut leaves the sheet flat (no sides); a 4-inch cut uses up the 8-inch side (8 - 2x = 0, no width); a 5-inch cut uses up the 10-inch side (10 - 2x = 0, and the 8-inch side is already negative)."
+    partial: "Partially correct (1): All three solutions with a context reason for only one or two of them; OR two of the three solutions (typically 4 and 5, with x = 0 lost) each explained in context."
+examples:
+  - response: "x = 0, 4, 5. At 0 nothing is cut so the sheet stays flat. At 4 the 8-inch side is 8 - 8 = 0 wide. At 5 the 10-inch side is 0 long. No box."
+    scores: {part: 2}
+  - response: "x = 0, 4, 5 because each factor is zero."
+    scores: {part: 1}
+  - response: "x = 4 and x = 5."
+    scores: {part: 0}

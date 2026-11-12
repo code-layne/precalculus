@@ -1,4 +1,7 @@
-%! Rational Functions and Vertical Asymptotes — Unit 3, Lesson 3.3 — Student Packet Cover Sheet
+%! Zeros of Polynomials — Unit 3, Lesson 3.3 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). 3.3 is the first lesson back in January;
+% the targets restate CED LO 1.5.A in the formal vocabulary (zero, root, factor, multiplicity,
+% conjugate pair).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,17 +10,17 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Rational Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.3 \quad Rational Functions and Vertical Asymptotes}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.3 \quad Zeros of Polynomials}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,11 +30,14 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can identify the vertical asymptotes of a rational function by finding where
-        the denominator equals zero and the numerator does not (or where the denominator's
-        multiplicity exceeds the numerator's multiplicity at that zero).
-  \item I can describe the behavior of a rational function near a vertical asymptote using
-        one-sided limit notation ($\lim_{x \to a^+}$ and $\lim_{x \to a^-}$).
+  \item I can explain why a zero of a polynomial, a root of $p(x) = 0$, an $x$-intercept of its
+        graph, and a linear factor $(x - a)$ all describe the same number, and read the zeros
+        from a factored form.
+  \item I can find the multiplicity of each zero and use the degree to count every zero:
+        a polynomial of degree $n$ has exactly $n$ complex zeros, counting multiplicity.
+  \item I can name the conjugate of a non-real zero of a polynomial with real coefficients.
+  \item I can tell from the multiplicity whether a graph crosses the $x$-axis or touches it and
+        turns back --- and whether the polynomial changes sign there.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -41,14 +47,27 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up        & Spiral review of rational function zeros and undefined values \\
-2 & Group Activity & Analyzing vertical asymptotes in context (tiered) \\
-3 & Exit Ticket    & Independent check on VA identification and limit notation \\
-4 & Homework       & Practice and AP-style extension. \textbf{Scored 1 to 5.} \\
+1 & Warm-Up      & Spiral review: degree and end behavior, $\sqrt{-n}$ with $i$, a conjugate pair \\
+2 & Guided Notes & Zeros and factors, multiplicity, conjugate pairs, crossing or touching \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & \textbf{Graded.} DeltaMath assignment \textit{Lesson 3.3: Zeros of Polynomials} \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+A \textbf{zero} of a polynomial is an input that makes the output 0. When the polynomial is
+written in \textbf{factored form}, every linear factor hands you a zero --- and a factor that
+repeats gives that zero a \textbf{multiplicity}. Count every zero with its multiplicity and you
+get exactly the \textbf{degree}. Some zeros are not real; with real coefficients they arrive in
+\textbf{conjugate pairs} and never show up as $x$-intercepts. And not every zero crosses the
+axis: at a zero of even multiplicity the graph touches and turns back.
+\end{remindbox}
 
 \end{document}

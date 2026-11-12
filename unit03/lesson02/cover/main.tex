@@ -1,4 +1,6 @@
-%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Student Packet Cover Sheet
+%! Polynomial Function Behavior — Unit 3, Lesson 3.2 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). 3.2 is the last lesson of the first
+% semester; 3.3 (zeros) starts in January.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,17 +9,17 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Rational Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.2 \quad Rational Functions and Zeros}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.2 \quad Polynomial Function Behavior}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,10 +29,15 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can find the real zeros of a rational function by setting the numerator equal to zero
-        and verifying that those values are in the domain (i.e., do not make the denominator zero).
-  \item I can solve a rational inequality by building a sign chart with critical values from both
-        the numerator and the denominator, and writing the solution in interval notation.
+  \item I can name the degree, the leading term, the leading coefficient, and the constant
+        term of a polynomial function --- even when it is not written in standard form or is
+        given in factored form.
+  \item I can describe the end behavior of a polynomial function from its degree and the sign
+        of its leading coefficient, in words and in limit notation, and say whether it has an
+        absolute maximum or minimum.
+  \item I can state the most turning points ($n - 1$) and the most real zeros ($n$) a
+        polynomial of degree $n$ can have, and use a graph's turning points and
+        $x$-intercepts to find the least degree it could have.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,14 +47,26 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up        & Spiral review: horizontal asymptotes and factoring \\
-2 & Group Activity & Break-even analysis using zeros and sign charts \\
-3 & Exit Ticket    & Independent check on zeros and a domain-restriction error \\
-4 & Homework       & Practice and AP-style extension. \textbf{Scored 1 to 5.} \\
+1 & Warm-Up      & Spiral review of prerequisite skills \\
+2 & Guided Notes & Degree and leading coefficient, end behavior, turning points and zeros, finding the leading term \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & \textbf{Graded.} DeltaMath assignment \textit{Lesson 3.2: Polynomial Function Behavior} \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+Far from zero, one term of a polynomial outgrows all the others: the \textbf{leading term},
+the term with the highest power. Its \textbf{degree} and the \textbf{sign} of its coefficient
+decide where both ends of the graph go. The degree also sets a ceiling --- at most $n - 1$
+\textbf{turning points} and at most $n$ \textbf{real zeros}. A ceiling, not a count: a graph
+may have fewer. And the leading term is the highest power, not the term written first.
+\end{remindbox}
 
 \end{document}

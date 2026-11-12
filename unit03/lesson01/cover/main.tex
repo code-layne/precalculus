@@ -1,4 +1,6 @@
-%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Student Packet Cover Sheet
+%! Polynomial Rates of Change and Characteristics — Unit 3, Lesson 3.1 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). One learning target per CED Learning
+% Objective the lesson draws on (1.5.A via EK 1.5.A.6, 1.3.A, 1.3.B, 1.4.A).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,17 +9,18 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.9in]current page.north east);
+  \fill[plum] (current page.north west)
+    rectangle ([yshift=-1.05in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3: Rational Functions}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.1 \quad Rational Functions and End Behavior}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.1 \quad Polynomial Rates of Change}}\\[2pt]
+  {\color{white}\textbf{\large and Characteristics}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,10 +30,15 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item I can determine the end behavior of a rational function by comparing the degrees of
-        the numerator and denominator and identifying the quotient of leading terms.
-  \item I can write the end behavior of a rational function using limit notation and identify
-        horizontal or slant asymptotes from the rational expression.
+  \item I can use \textbf{successive differences} in a table with equally spaced inputs to find
+        the \textbf{degree} of the polynomial that fits it.
+  \item I can find the \textbf{average rate of change} of a polynomial on an interval as the
+        slope of a secant line, and simplify a \textbf{difference quotient}.
+  \item I can tell from how the rate of change is changing whether a graph is \textbf{concave
+        up} or \textbf{concave down}, and locate its \textbf{points of inflection}.
+  \item I can read a polynomial's \textbf{$y$-intercept}, its intervals of \textbf{increasing}
+        and \textbf{decreasing}, and its \textbf{relative} and \textbf{absolute extrema} --- and
+        explain why a relative maximum need not be the highest point of the graph.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -40,14 +48,26 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up        & Spiral review of polynomial end behavior from Lesson 1.6 \\
-2 & Group Activity & Analyzing rational functions in a concert venue context \\
-3 & Exit Ticket    & Independent check on end behavior and limit notation \\
-4 & Homework       & Practice and AP-style extension. \textbf{Scored 1 to 5.} \\
+1 & Warm-Up      & Spiral review of prerequisite skills \\
+2 & Guided Notes & Successive differences, rates of change, the shape of a polynomial, relative and absolute extrema \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & \textbf{Graded.} DeltaMath assignment \textit{Lesson 3.1: Polynomial Rates of Change and Characteristics} \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+A table with equal steps tells you a polynomial's \textbf{degree}: keep subtracting until the
+differences are constant. The \textbf{average rate of change} is the slope of a secant line,
+and when the rate of change is \textbf{increasing} the graph is \textbf{concave up}. A
+\textbf{relative} maximum is only the highest point \emph{nearby}: the \textbf{absolute}
+maximum is the highest point of the whole graph --- and an odd-degree polynomial has none.
+\end{remindbox}
 
 \end{document}

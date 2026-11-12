@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 3, Lesson 3.5). manifest.json points here
+# as rubrics/precalc-u03-l05-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "The table shows P(1) = 0. Explain why x - 1 must be a factor of P(x), and use synthetic division to write P(x) = (x - 1) q(x)."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Cites P(1) = 0 with the Factor Theorem (or: dividing by x - 1 leaves remainder P(1) = 0) as the reason x - 1 is a factor, AND gives P(x) = (x - 1)(x^2 - 8x + 15)."
+    partial: "Partially correct (1): Correct quotient x^2 - 8x + 15 with no reason or a wrong reason; OR a correct Factor Theorem reason with a quotient carrying one arithmetic or sign error (e.g., using c = -1)."
+examples:
+  - response: "P(1) = 0 so by the Factor Theorem x - 1 is a factor. 1 | 1 -9 23 -15 -> 1 -8 15 | 0, so P(x) = (x - 1)(x^2 - 8x + 15)."
+    scores: {part: 2}
+  - response: "P(x) = (x - 1)(x^2 - 8x + 15)."
+    scores: {part: 1}
+  - response: "x - 1 is a factor because the table has 1 in it. P(x) = (x - 1)(x^2 - 10x + 33)."
+    scores: {part: 0}

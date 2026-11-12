@@ -1,4 +1,6 @@
-%! Graphing Rational Functions — Unit 3, Lesson 3.6 — Student Packet Cover Sheet
+%! Roots and Polynomials — Unit 3, Lesson 3.6 — Student Packet Cover Sheet
+% The ONE place \namedateperiod belongs (Namestrip). 3.6 is the last lesson of Unit 3: it runs
+% 3.3 in reverse, from the zeros back to the polynomial.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,17 +9,17 @@
 
 \begin{document}
 
-% Full-bleed navy banner
+% Full-bleed plum banner
 \begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
+  \fill[plum] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
 \end{tikzpicture}
 \vspace{-0.8in}
 
 \begin{center}
   {\color{white}\textbf{\LARGE Precalculus}}\\[4pt]
-  {\color{skymid}\large\textbf{Unit 3}}\\[6pt]
-  {\color{white}\textbf{\large Lesson 3.6 \quad Graphing Rational Functions}}
+  {\color{lilacmid}\large\textbf{Unit 3: Polynomial Functions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 3.6 \quad Roots and Polynomials}}
 \end{center}
 
 \vspace{0.22in}
@@ -27,8 +29,14 @@
 \begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
-  \item \ldots{} TODO: learning target 1 (restate a Learning Objective as "I can ...").
-  \item \ldots{} TODO: learning target 2.
+  \item I can write a polynomial in factored form from its zeros: each zero $a$ gives a
+        factor $(x - a)$, repeated as many times as its multiplicity, with the leading
+        coefficient found from one more point --- given in words or read off a graph.
+  \item I can explain why a polynomial with real coefficients that has a non-real zero
+        $a + bi$ must also have its conjugate $a - bi$, and multiply the pair into one
+        quadratic factor with real coefficients.
+  \item I can rewrite a polynomial from factored form into standard form, and say what each
+        form shows: the zeros in one, the degree and leading term in the other.
 \end{enumerate}
 \end{learningtargetbox}
 
@@ -38,14 +46,27 @@
 \small
 \renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\linewidth}{@{} c l X @{}}
-\rowcolor{sky}
+\rowcolor{lilac}
 \textbf{\#} & \textbf{Component} & \textbf{Description} \\
 \midrule
-1 & Warm-Up      & TODO \\
-2 & Group Activity & TODO \\
-3 & Exit Ticket  & TODO \\
-4 & Homework     & TODO \\
+1 & Warm-Up      & Spiral review of prerequisite skills \\
+2 & Guided Notes & From zeros to factored form, multiplicity and the leading coefficient, reading a graph, conjugate pairs, standard form \\
+\rowcolor{goldbg}
+3 & AP Practice  & \textbf{Extra credit, scored 1 to 5.} AP-style multiple choice and free response \\
+4 & Homework     & \textbf{Graded.} DeltaMath assignment \textit{Lesson 3.6: Roots and Polynomials} \quad Due: \blank{2.2cm} \\
 \end{tabularx}
 \end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+In Lesson 3.3 you started with a polynomial and read its zeros. Today runs the other way:
+start with the zeros and \textbf{build} the polynomial. Every zero hands you a
+\textbf{factor}; a repeated zero hands it to you more than once. The zeros still leave the
+stretch free, so one more \textbf{point} pins down the leading coefficient. And a zero you
+cannot see on the graph --- a non-real one --- never travels alone: with real coefficients,
+its \textbf{conjugate} comes with it.
+\end{remindbox}
 
 \end{document}

@@ -1,113 +1,282 @@
-%! Rational Functions and End Behavior — Unit 3, Lesson 3.1 — Guided Notes
+%! Polynomial Rates of Change and Characteristics — Unit 3, Lesson 3.1 — Guided Notes
+% THE in-class document, in the MAIN IDEAS / NOTES shape (LESSON_SHAPE.md §1): the vocabulary
+% box, the hook, then ONE two-column guidednotes table. Each row is one idea — a label on the
+% left; on the right one or two COMPLETE printed sentences, ONE large pre-drawn display, then a
+% two-across grid of numbered problems with real writing room. Problems run 1..18.
+% Rates, extrema and concavity were taught on general graphs in 2.5–2.6; here they are RECALLED
+% and applied to one polynomial, p(x) = x^3 - 6x^2 + 9x + 2, which is the spine of rows 1–4.
+% The NEW instruction is successive differences (row 1) and extrema for polynomials (row 4).
+%   I DO   : the teacher reads the definitions, marks up the displays, works problems 1 and 5,
+%            then 9 and 11 at the head of their rows.
+%   WE DO  : the class works the rest of each grid, every one cold-called.
+%   YOU DO : the last row — problems 15–18, alone, for 15 minutes while the teacher circulates.
+% TRAP (row 1, problem 4): successive differences on a table whose inputs are NOT equally spaced.
+% THE CRUX (row 4, problems 12–13): "a relative maximum is the highest point of the graph" — the
+% cubic p has a relative max of 6 but p(5) = 22 (odd degree: no absolute max), and the quartic q
+% has two valleys of which only the lower is the absolute minimum. Its You Do transfer is
+% problem 18 (a stock whose relative max $25 is not its six-month high, $41 at the endpoint).
+% No sketching anywhere: every graph is pre-drawn; students read, label, and compute.
+%
+% PAGE LOCKSTEP with notes_key/: the vocabulary write lines -> \ansline, the hook's write
+% lines -> \ansline, and the answer argument of every \pcell and \labelbox filled. Nothing
+% else differs. Inside a cell `\\` ENDS THE ROW — break lines with \par. A row cannot break
+% across pages: the figure and EACH grid row are separate sub-rows (`\\` then `& ...`).
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+% p(x) = x^3 - 6x^2 + 9x + 2: rel max (1, 6), inflection (2, 4), rel min (3, 2), y-int (0, 2).
+\newcommand{\pcurve}{plot[domain=-0.42:4.55, samples=80, smooth]
+  (\x, {\x*\x*\x - 6*\x*\x + 9*\x + 2})}
+\newcommand{\paxes}{%
+  \draw[linegray, very thin, xstep=1, ystep=2] (-1,-4) grid (5,14);
+  \draw[->, thick] (-1,0) -- (5.5,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-4) -- (0,14.8) node[above] {\small $p(x)$};
+  \foreach \x in {-1,1,2,3,4,5} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {4,8,12} \node[left, font=\scriptsize] at (0,\y) {\y};}
 
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.1}{Guided Notes}
-\namedateperiod
 
-\vspace{0.10in}
+\vspace{0.12in}
 
-\begin{objectivebox}
-By the end of this lesson, I will be able to\ldots
-\begin{enumerate}[itemsep=2pt]
-  \item Determine the end behavior of a rational function by comparing the degrees of the
-        numerator and denominator using the \blank{3.5cm}. \hfill\textit{(LO 1.7.A)}
-  \item Write the end behavior of a rational function in \blank{2.8cm} notation and identify
-        \blank{2.8cm} or \blank{2.4cm} asymptotes. \hfill\textit{(LO 1.7.A)}
-\end{enumerate}
-\end{objectivebox}
-
-\vspace{0.08in}
-
+\boxguard
 \begin{vocabbox}
-\termblanklong{Rational function}
-\termblanklong{Quotient of leading terms}
-\termblanklong{Horizontal asymptote}
-\termblanklong{Slant asymptote}
+Fill in each term as we define it together.
+\par\vspace{2pt}
+\noindent\textbf{\textcolor{plum}{Successive differences:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Average rate of change on $[a, b]$:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Difference quotient:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Relative (local) maximum / minimum:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Absolute (global) maximum / minimum:}}\\[1pt]
+\writeline\\[3pt]
+\noindent\textbf{\textcolor{plum}{Point of inflection:}}\\[1pt]
+\writeline
 \end{vocabbox}
 
-\vspace{0.08in}
+\vspace{0.1in}
 
+\boxguard
 \begin{hookbox}
-A therapist charges \$200 per session plus a one-time \$50 intake fee.
-Average cost per session: $r(n) = \dfrac{200n + 50}{n}$
+A roller coaster's first hill is 40 meters tall. Jay says, ``So 40 meters is the highest the
+coaster ever goes.''
 
-\medskip
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Sessions $n$ & 1 & 10 & 100 & 1000 \\
-\hline
-Avg.\ cost $r(n)$ & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
-\hline
-\end{tabular}
-
-\smallskip
-As $n \to \infty$, the average cost approaches \blank{2cm} because \writelines{1}
+Is Jay right? What would you need to see to be sure?
+\writelines{2}
 \end{hookbox}
 
-\vspace{0.08in}
-
-\begin{notesbox}{Quotient of Leading Terms}
-\textbf{Key Idea:} For large $|x|$, a polynomial is dominated by its \blank{2.8cm}.
-So for a rational function, the end behavior is determined by the \textit{quotient of the leading terms}.
-
-\medskip
-\textbf{Worked Example.} Let $r(x) = \dfrac{3x^2 + 1}{x^2 - 4}$.
-
-\medskip
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{@{}p{0.45\linewidth} p{0.45\linewidth}@{}}
-Step 1: Leading term of numerator: & \blank{3cm} \\
-Step 2: Leading term of denominator: & \blank{3cm} \\
-Step 3: Quotient of leading terms: & \blank{3cm} \\
-Step 4: Horizontal asymptote: $y = $ & \blank{2cm} \\
+\small
+\begin{guidednotes}
+% ── ROW 1: successive differences — the degree from an equal-step table (NEW) ─────────────
+\mainidea[What degree is it?]{Successive Differences} &
+In a table whose inputs go up by \textbf{equal steps}, subtract each output from the next to
+get the \textbf{first differences}; subtract those to get the second differences, and so on.
+If the $n$th differences are the first ones that are all the same, the data fit a polynomial
+of \textbf{degree $n$}: constant first differences mean linear, second mean quadratic, third
+mean cubic. \textbf{If the input steps are not equal, the differences say nothing.}
+\\
+& \begin{center}
+$p(x) = x^3 - 6x^2 + 9x + 2$\par\vspace{4pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{r|*{11}{c}}
+$x$            & 0 &   & 1 &    & 2 &    & 3 &   & 4 &    & 5  \\
+$p(x)$         & 2 &   & 6 &    & 4 &    & 2 &   & 6 &    & 22 \\ \hline
+1st differences &   & 4 &   & $-2$ &   & $-2$ &   & 4 &   & 16 &    \\
+2nd differences &   &   & $-6$ &  & 0 &    & 6 &   & 12 &   &    \\
+3rd differences &   &   &   & 6  &   & 6  &   & 6 &   &    &    \\
 \end{tabular}
+\end{center}
+\vspace{2pt}
+The \labelbox{1.4cm}{} differences are constant, so $p$ has degree \labelbox{1.0cm}{}
+\\
+& \notesprompt{Check the input steps first. Then find the differences and the degree.}
+\begin{probgrid}{|Y|Y|}
+\pcell{1}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $f(x)$ & 1 & 3 & 9 & 19 & 33 \\ \hline\end{tabular}\par What degree polynomial fits $f$?}{2.2cm}{} &
+\pcell{2}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $g(x)$ & 7 & 4 & 1 & $-2$ & $-5$ \\ \hline\end{tabular}\par What degree polynomial fits $g$?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{3}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 2 & 3 & 4 \\ \hline $k(x)$ & 1 & 2 & 9 & 28 & 65 \\ \hline\end{tabular}\par What degree polynomial fits $k$?}{2.2cm}{} &
+\pcell{4}{\renewcommand{\arraystretch}{1.1}\begin{tabular}{|c|c|c|c|c|c|}\hline $x$ & 0 & 1 & 3 & 4 & 6 \\ \hline $m(x)$ & 1 & 3 & 7 & 9 & 13 \\ \hline\end{tabular}\par Kim says, ``The first differences are 2, 4, 2, 4 --- not constant, so $m$ is not linear.'' What did Kim miss?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 2: average rate of change, the secant line, the difference quotient (recall 2.6) ──
+\mainidea[How fast, on average]{Rates of Change} &
+The \textbf{average rate of change} of $p$ on $[a, b]$ is $\dfrac{p(b) - p(a)}{b - a}$, the
+slope of the \textbf{secant line} through $(a, p(a))$ and $(b, p(b))$. Each first difference
+in row 1 is an average rate of change over an interval 1 unit wide. The \textbf{difference
+quotient} $\dfrac{f(x + h) - f(x)}{h}$ is the average rate of change on $[x, x + h]$: build
+$f(x + h)$ by replacing \emph{every} $x$ with $(x + h)$.
+\\
+& \begin{minipage}[c]{0.62\linewidth}\centering
+\begin{tikzpicture}[x=0.85cm, y=0.17cm, >=stealth]
+  \paxes
+  \draw[very thick, plum, <->] \pcurve;
+  % secant through (0, 2) and (1, 6), extended a little
+  \draw[very thick, goldacc, dashed] (-0.45,0.2) -- (1.6,8.4);
+  \draw[thick, redacc] (0,2) -- (1,2) -- (1,6);
+  \node[below, font=\scriptsize\bfseries\color{redacc}] at (0.5,2) {run};
+  \node[right, font=\scriptsize\bfseries\color{redacc}] at (1,3.6) {rise};
+  \foreach \p in {(0,2),(1,6),(2,4),(3,2),(4,6)} \fill[plum] \p circle (2.3pt);
+  \node[font=\scriptsize\itshape\color{goldacc}, left] at (1.5,9.6) {secant line};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.36\linewidth}
+Run: \labelbox{1.0cm}{}\par\vspace{4pt}
+Rise: \labelbox{1.0cm}{}\par\vspace{4pt}
+Slope of the secant line:\par \labelbox{1.0cm}{}
+\end{minipage}
+\\
+& \notesprompt{Use $p(x) = x^3 - 6x^2 + 9x + 2$ and its table in row 1.}
+\begin{probgrid}{|Y|Y|}
+\pcell{5}{The average rate of change of $p$ on $[0, 2]$.}{2.0cm}{} &
+\pcell{6}{The average rate of change of $p$ on $[1, 3]$. What does its sign say about $p$ on
+that interval?}{2.0cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{7}{$f(x) = x^2 + 4x$. Find $f(x + h)$, then simplify the difference quotient.}{2.6cm}{} &
+\pcell{8}{Evaluate your answer to problem 7 at $x = 1$, $h = 2$. Check it against the average
+rate of change of $f$ on $[1, 3]$.}{2.6cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 3: reading the graph — y-intercept, direction, concavity, inflection (recall 2.5) ─
+\mainidea[Reading the graph]{Shape of $p$} &
+The \textbf{$y$-intercept} of a polynomial is $(0, p(0))$, and $p(0)$ is its constant term.
+Intervals of increasing and decreasing are open intervals of \textbf{$x$-values}. Where the
+rate of change is increasing the graph is \textbf{concave up} ($\cup$); where it is decreasing,
+\textbf{concave down} ($\cap$). A \textbf{point of inflection} is where the rate of change
+switches between increasing and decreasing --- where the concavity changes.
+\\
+& \begin{minipage}[c]{0.62\linewidth}\centering
+\begin{tikzpicture}[x=0.85cm, y=0.17cm, >=stealth]
+  \paxes
+  \draw[very thick, plum, <->] \pcurve;
+  \foreach \p in {(1,6),(3,2),(4,6)} \fill[plum] \p circle (2.3pt);
+  \draw[redacc, very thick] (0,2) circle (3.5pt);
+  \draw[goldacc, very thick] (2,4) circle (5pt);
+  \node[font=\Large\bfseries\color{goldacc}] at (1,10.2) {$\cap$};
+  \node[font=\Large\bfseries\color{goldacc}] at (3.75,-2.4) {$\cup$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.36\linewidth}
+The red point is the $y$-intercept: \labelbox{1.4cm}{}\par\vspace{6pt}
+The gold point $(2, 4)$ is a\par \labelbox{3.2cm}{}
+\end{minipage}
+\\
+& \notesprompt{Intervals in $x$-values, with parentheses. The ends of the graph keep going.}
+\begin{probgrid}{|Y|Y|}
+\pcell{9}{Find $p(0)$ from the formula. Then give the intervals where $p$ is increasing and
+where it is decreasing.}{2.2cm}{} &
+\pcell{10}{Where is $p$ concave down? Concave up? Then check with the first differences
+4, $-2$, $-2$, 4, 16: where do the rates fall, and where do they rise?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── ROW 4: THE CRUX — relative is not absolute ───────────────────────────────────────────
+\mainidea[Highest nearby, or highest of all?]{Relative vs.\ Absolute} &
+A \textbf{relative maximum} is higher than the points \emph{near} it --- not necessarily the
+highest point of the graph. An \textbf{odd-degree} polynomial has one end rising and one
+falling forever, so it has no absolute maximum or minimum. An \textbf{even-degree} polynomial
+has both ends going the same way, so it has an absolute minimum (the lowest valley) or an
+absolute maximum (the highest peak). On a restricted domain, check the \textbf{endpoints} too.
+\\
+& \begin{minipage}[c]{0.49\linewidth}\centering
+\begin{tikzpicture}[x=0.62cm, y=0.14cm, >=stealth]
+  \paxes
+  \draw[very thick, plum, <->] \pcurve;
+  \foreach \p in {(1,6),(3,2)} \fill[plum] \p circle (2.2pt);
+\end{tikzpicture}
 
-\medskip
-In limit notation:
-$\displaystyle\lim_{x\to\infty} r(x) = $ \blank{2.5cm}
-\quad and \quad
-$\displaystyle\lim_{x\to -\infty} r(x) = $ \blank{2.5cm}
+{\footnotesize $p(x) = x^3 - 6x^2 + 9x + 2$, degree 3}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.49\linewidth}\centering
+\begin{tikzpicture}[x=0.52cm, y=0.2cm, >=stealth]
+  \draw[linegray, very thin, step=1] (-4,-6) grid (5,7);
+  \draw[->, thick] (-4,0) -- (5.5,0) node[below right] {\small $x$};
+  \draw[->, thick] (0,-6) -- (0,7.6) node[above] {\small $q(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3,4} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {-4,-2,2,4,6} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum, <->] (-3.05,6.8) .. controls (-2.55,1.2) and (-2.35,-2) .. (-2,-2)
+     .. controls (-1.2,-2) and (-0.8,3) .. (0,3)
+     .. controls (1.2,3) and (1.9,-5) .. (3,-5)
+     .. controls (3.7,-5) and (4.05,1.5) .. (4.3,6.8);
+  \foreach \p in {(-2,-2),(0,3),(3,-5)} \fill[plum] \p circle (2.2pt);
+\end{tikzpicture}
 
-\medskip
-\textbf{Numerical check:} $r(100) = \dfrac{30{,}001}{9{,}996} \approx$ \blank{2cm} \quad (close to the HA!)
-\end{notesbox}
-
-\vspace{0.08in}
-
-\begin{notesbox}{The Three End-Behavior Cases}
-Compare the degree of the numerator (deg num) to the degree of the denominator (deg denom):
-
-\medskip
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2.4cm} X X @{}}
-Case & Degree Relationship & End Behavior \\
+{\footnotesize $q$, a polynomial of degree 4}
+\end{minipage}
+\\
+& \notesprompt{Give each extremum as a value ($y$) and where it occurs ($x$).}
+\begin{probgrid}{|Y|Y|}
+\pcell{11}{The relative maximum and the relative minimum of $p$.}{2.0cm}{} &
+\pcell{12}{Kai says, ``The relative maximum of $p$ is 6, so 6 is the highest $p$ ever goes.''
+Find $p(5)$. Is Kai right? Does $p$ have an absolute maximum?}{2.2cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{13}{Give both relative minima of $q$. Which one is the absolute minimum? Does $q$ have
+an absolute maximum? Why or why not?}{2.4cm}{} &
+\pcell{14}{Suppose $p$ is used only for $0 \le x \le 5$. Now what is the absolute maximum of
+$p$, and where does it occur? Is it a turning point?}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+% ── LAST ROW: YOU DO — alone, while the teacher circulates (15 min) ─────────────────────
+\mainidea[You do, alone]{A New Stock} &
+The price of one share of a new company's stock is $S(t)$ dollars, $t$ months after it went on
+sale, for $0 \le t \le 6$. $S$ is a polynomial.
+\\
+& \begin{minipage}[c]{0.4\linewidth}\centering
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|}
 \hline
-Case 1 & deg num \textbf{$<$} deg denom & \blank{5cm} \\
-Case 2 & deg num \textbf{$=$} deg denom & \blank{5cm} \\
-Case 3 & deg num \textbf{$>$} deg denom & \blank{5cm} \\
-\end{tabularx}
-
-\medskip
-\textit{Special case of Case 3:} If deg num $=$ deg denom $+ 1$, the graph has a
-\blank{2.5cm} asymptote parallel to a \blank{2cm}.
-
-\medskip
-\textbf{Quick Practice.} Classify each rational function below:
-
-\renewcommand{\arraystretch}{1.8}
-\begin{tabular}{@{}p{3.8cm} p{1.5cm} p{1.5cm} p{2.5cm} p{2.5cm}@{}}
-\textbf{Function} & \textbf{Deg num} & \textbf{Deg den} & \textbf{Case} & \textbf{Asymptote} \\
-\hline
-$\dfrac{x+1}{x^2-9}$         & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{3x^2}{x^2+4}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{x^3-2x}{x-3}$        & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
-$\dfrac{2x+5}{x-1}$          & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{2cm} \\
+$t$ (months) & $S(t)$ (\$) \\ \hline
+0 & 5  \\
+1 & 21 \\
+2 & 25 \\
+3 & 23 \\
+4 & 21 \\
+5 & 25 \\
+6 & 41 \\ \hline
 \end{tabular}
-\end{notesbox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.58\linewidth}\centering
+\begin{tikzpicture}[x=0.85cm, y=0.065cm, >=stealth]
+  \draw[linegray, very thin, xstep=1, ystep=5] (0,0) grid (6,45);
+  \draw[->, thick] (0,0) -- (6.5,0) node[below right] {\small $t$};
+  \draw[->, thick] (0,0) -- (0,48) node[above] {\small $S(t)$};
+  \foreach \x in {1,...,6} \node[below, font=\scriptsize] at (\x,0) {\x};
+  \foreach \y in {10,20,30,40} \node[left, font=\scriptsize] at (0,\y) {\y};
+  \draw[very thick, plum] plot[domain=0:6, samples=80, smooth]
+       (\x, {\x*\x*\x - 9*\x*\x + 24*\x + 5});
+  \fill[plum] (0,5) circle (2.4pt);
+  \fill[plum] (6,41) circle (2.4pt);
+\end{tikzpicture}
+\end{minipage}
+\\
+& \notesprompt{On your own. Show your work. Give intervals in months, prices in dollars.}
+\begin{probgrid}{|Y|Y|}
+\pcell{15}{Use the outputs for $t = 0$ to $4$ to find successive differences. What degree is
+$S$? How do you know?}{2.4cm}{} &
+\pcell{16}{The average rate of change of $S$ on $[0, 2]$ and on $[2, 4]$, with units. Say what
+each one means for the stock.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\
+& \begin{probgrid}*{|Y|Y|}
+\pcell{17}{Where is $S$ increasing? Decreasing? Where is it concave down, concave up, and what
+is the point of inflection?}{2.4cm}{} &
+\pcell{18}{An investor says, ``The stock peaked at \$25 in month 2, so \$25 was the most it was
+worth in these six months.'' Is she right? Give the absolute maximum and minimum of $S$ and
+when each occurs.}{2.4cm}{} \\ \hline
+\end{probgrid}
+\\ \hline
+\end{guidednotes}
+
+% ── THE NOTES END AT THE YOU DO ROW; AP Practice follows; homework is DeltaMath ──────
 
 \end{document}

@@ -1,4 +1,10 @@
-%! Rational Functions and Zeros — Unit 3, Lesson 3.2 — Warm-Up
+%! Polynomial Function Behavior — Unit 3, Lesson 3.2 — Warm-Up
+% Exactly ONE page, blank and keyed (LESSON_SHAPE.md, one_page). Four prerequisite items:
+% 1 is the sign of a power of a negative number — the arithmetic every end-behavior case rests
+% on; 2 multiplies two binomials and names the highest-power term (factored form in row 4);
+% 3 is 2.4's limit notation on a non-polynomial graph; 4 is 3.1's relative vs. absolute
+% extrema on a pre-drawn polynomial graph whose arms both rise (a preview of EK 1.4.A.4).
+% PAGE LOCKSTEP with warmup_key/: \blank -> \ans, nothing else; the work block is identical.
 \documentclass[10pt]{article}
 \usepackage{precalculus-article}
 \usepackage{precalculus-boxes}
@@ -7,43 +13,93 @@
 \begin{document}
 
 \pageheader{Unit 3, Lesson 3.2}{Warm-Up}
-\namedateperiod
 
 \vspace{0.12in}
 
-\begin{enumerate}[itemsep=14pt]
+\begin{enumerate}[itemsep=12pt]
 
-\item For the rational function $\displaystyle r(x) = \frac{4x^2 + 1}{2x^2 - 8}$,
-      find $\displaystyle\lim_{x \to \infty} r(x)$.
-      Show your reasoning by identifying the leading terms.
+\item Evaluate each power. No calculator.
 
-      \vspace{0.06in}
-      Leading term of numerator: \blank{2.5cm} \quad
-      Leading term of denominator: \blank{2.5cm}
+\vspace{4pt}
+(a) $(-10)^2 = $ \blank{1.6cm} \qquad (b) $(-10)^3 = $ \blank{1.6cm} \qquad
+(c) $(-10)^4 = $ \blank{1.6cm}
 
-      \vspace{0.08in}
-      $\displaystyle\lim_{x \to \infty} r(x) = $ \blank{2.5cm}
+\vspace{6pt}
+A negative number raised to an \textbf{even} power is \blank{1.6cm}; raised to an
+\textbf{odd} power it is \blank{1.6cm}.
 
-\item A rational function has a horizontal asymptote at $y = 0$.
+\item Multiply and simplify: \quad $(x + 2)(3x - 1)$
 
-      \begin{enumerate}[label=(\alph*), itemsep=6pt]
-        \item What does this tell you about the \textit{end behavior} of the function?
+\begin{work}
+  (x + 2)(3x - 1) &= 3x^2 - x + 6x - 2 \\
+                  &= 3x^2 + 5x - 2
+\end{work}
 
-              \vspace{0.08in}
-              \writeline
+Product: \blank{3cm} \qquad The term with the highest power: \blank{1.6cm}
 
-        \item Under what degree condition on the numerator and denominator does this occur?
+\item \begin{minipage}[t]{0.55\linewidth}
+The graph of $f$ is shown; its arrows continue forever. Write its end behavior in limit
+notation (Lesson 2.4).
 
-              \vspace{0.08in}
-              \writeline
-      \end{enumerate}
+\vspace{10pt}
+$\displaystyle\lim_{x \to \infty} f(x) = $ \blank{1.6cm}
 
-\item Factor completely: $x^2 - 5x + 6$.
+\vspace{10pt}
+$\displaystyle\lim_{x \to -\infty} f(x) = $ \blank{1.6cm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\vspace{-6pt}
+\centering
+\begin{tikzpicture}[x=0.4cm, y=0.3cm, >=stealth, baseline=(current bounding box.north)]
+  \draw[linegray, very thin, step=1] (-5,-3) grid (5,4);
+  \draw[->, thick] (-5,0) -- (5.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-3) -- (0,4.5) node[above] {\scriptsize $f(x)$};
+  \foreach \x in {-4,-2,2,4} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-2,2} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, <->] (-5,-2) -- (0,3) -- (5,-2);
+\end{tikzpicture}
+\end{minipage}
 
-      \vspace{0.08in}
-      $x^2 - 5x + 6 = $ \blank{6cm}
+\item \begin{minipage}[t]{0.55\linewidth}
+The graph of a polynomial $g$ is shown; both arrows keep rising forever (Lesson 3.1).
 
-      What are the solutions to $x^2 - 5x + 6 = 0$? \quad $x = $ \blank{3.5cm}
+\vspace{4pt}
+(a) Name each relative extremum: maximum or minimum, its value, and where it occurs.
+
+\vspace{4pt}
+Relative \blank{1.6cm} of \blank{1.2cm} at $x = $ \blank{1.2cm}
+
+\vspace{4pt}
+Relative \blank{1.6cm} of \blank{1.2cm} at $x = $ \blank{1.2cm}
+
+\vspace{4pt}
+Relative \blank{1.6cm} of \blank{1.2cm} at $x = $ \blank{1.2cm}
+
+\vspace{8pt}
+(b) Does $g$ have an absolute minimum? An absolute maximum? Give each value, or say
+``none.''
+
+\vspace{4pt}
+Absolute minimum: \blank{2.6cm} \qquad Absolute maximum: \blank{1.6cm}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.38\linewidth}
+\vspace{-6pt}
+\centering
+\begin{tikzpicture}[x=0.5cm, y=0.32cm, >=stealth, baseline=(current bounding box.north)]
+  \draw[linegray, very thin, step=1] (-4,-4) grid (4,6);
+  \draw[->, thick] (-4,0) -- (4.5,0) node[right] {\scriptsize $x$};
+  \draw[->, thick] (0,-4) -- (0,6.5) node[above] {\scriptsize $g(x)$};
+  \foreach \x in {-3,-2,-1,1,2,3} \node[below, font=\tiny] at (\x,0) {\x};
+  \foreach \y in {-3,-1,2,4} \node[left, font=\tiny] at (0,\y) {\y};
+  \draw[very thick, plum, <->] (-3.1,5.8) .. controls (-2.6,-1.5) and (-2.4,-3) .. (-2,-3)
+     .. controls (-1.2,-3) and (-0.8,2) .. (0,2)
+     .. controls (0.8,2) and (1.3,-1) .. (2,-1)
+     .. controls (2.6,-1) and (2.8,3) .. (3.15,5.8);
+  \fill[plum] (-2,-3) circle (2.2pt);
+  \fill[plum] (0,2) circle (2.2pt);
+  \fill[plum] (2,-1) circle (2.2pt);
+\end{tikzpicture}
+\end{minipage}
 
 \end{enumerate}
 

@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(a) (Unit 3, Lesson 3.3). manifest.json points here
+# as rubrics/precalc-u03-l03-ap-ap6a.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6a
+points: 2
+task: "Name the zeros of h shown on the graph. Interpret the zero at t = 5 in the context of the problem."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): Zeros t = 0, t = 2, and t = 5 (any order); AND at t = 5 seconds the dolphin is at the water surface (height 0 feet), coming up out of the water (h goes from negative to positive)."
+    partial: "Partially correct (1): All three zeros correct with no or an incorrect interpretation; OR the interpretation of t = 5 is correct in context but a zero is missing or wrong (for example, 2 omitted because the graph does not cross there)."
+examples:
+  - response: "0, 2, 5. At 5 seconds the dolphin reaches the surface and leaves the water."
+    scores: {part: 2}
+  - response: "0 and 5. At 5 seconds the dolphin is at the surface."
+    scores: {part: 1}
+  - response: "The zeros are -2 and 4."
+    scores: {part: 0}

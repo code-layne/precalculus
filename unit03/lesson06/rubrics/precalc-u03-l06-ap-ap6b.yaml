@@ -1,0 +1,19 @@
+# Rubric for ap_practice item 6(b) (Unit 3, Lesson 3.6). manifest.json points here
+# as rubrics/precalc-u03-l06-ap-ap6b.yaml, relative to this lesson directory.
+# AP Precalculus free-response scoring: each part is scored essentially correct (E),
+# partially correct (P) or incorrect (I); E = 2 points, P = 1, I = 0.
+id: ap6b
+points: 2
+task: "Write H(x) in standard form. Which form, factored or standard, shows the value H(0) without any computing? Interpret H(0) = -8 in context, with units."
+criteria:
+  - id: part
+    points: 2
+    full: "Essentially correct (2): H(x) = (1/2)x^3 - (9/2)x^2 + 12x - 8 (equivalent forms such as 0.5x^3 - 4.5x^2 + 12x - 8 accepted; a correct expansion of the student's own factored form from (a) is accepted); AND names standard form (its constant term is H(0)); AND interprets: at the station (x = 0) the track is 8 meters below ground level, in the tunnel."
+    partial: "Partially correct (1): Two of the three pieces correct; OR all three attempted with one slip, such as the factor 1/2 not distributed (x^3 - 9x^2 + 24x - 16) or the interpretation missing units or the location."
+examples:
+  - response: "0.5x^3 - 4.5x^2 + 12x - 8. Standard form: the constant is -8. At the station the track is 8 m underground."
+    scores: {part: 2}
+  - response: "x^3 - 9x^2 + 24x - 16. Standard. The track starts 8 meters below ground."
+    scores: {part: 1}
+  - response: "Factored form. H is -8."
+    scores: {part: 0}
