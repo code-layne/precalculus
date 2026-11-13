@@ -21,15 +21,25 @@
 % Question number
 \newcommand{\qn}[1]{\par\noindent\textbf{#1.}\ }
 
-% Coordinate grid: \gridaxes{xmin}{xmax}{ymin}{ymax}; even ticks labelled
+% Coordinate grid: \gridaxes{xmin}{xmax}{ymin}{ymax} (integers; the window
+% must contain the origin). A light grid line at EVERY unit and a label at EVERY
+% nonzero integer, so a student can read any lattice point exactly. (TikZ's
+% default grid step is 1cm, not 1 unit: always pass step=1.) Labels sit on a
+% white patch so grid lines never cross the digits; draw curves after the call
+% so they stay on top.
 \newcommand{\gridaxes}[4]{%
-  \draw[linegray, very thin] (#1,#3) grid (#2,#4);
-  \draw[->] (#1,0) -- (#2+0.6,0) node[right]{\scriptsize $x$};
-  \draw[->] (0,#3) -- (0,#4+0.6) node[above]{\scriptsize $y$};
-  \foreach \t in {#1,...,#2}{\ifodd\t\else\ifnum\t=0\else
-    \draw (\t,0.12) -- (\t,-0.12) node[below, inner sep=1pt]{\tiny $\t$};\fi\fi}
-  \foreach \t in {#3,...,#4}{\ifodd\t\else\ifnum\t=0\else
-    \draw (0.12,\t) -- (-0.12,\t) node[left, inner sep=1pt]{\tiny $\t$};\fi\fi}}
+  \draw[linegray!55, thin, step=1] (#1,#3) grid (#2,#4);
+  \draw[thick, ->, >=stealth] (#1-0.4,0) -- (#2+0.8,0) node[right, inner sep=1pt]{\small $x$};
+  \draw[thick, ->, >=stealth] (0,#3-0.4) -- (0,#4+0.8) node[above, inner sep=1pt]{\small $y$};
+  \foreach \t in {#1,...,#2}{\ifnum\t=0\else
+    \draw[thick] (\t,0.15) -- (\t,-0.15)
+      node[below, inner sep=0.6pt, fill=white, font=\scriptsize]{$\t$};\fi}
+  \foreach \t in {#3,...,#4}{\ifnum\t=0\else
+    \draw[thick] (0.15,\t) -- (-0.15,\t)
+      node[left, inner sep=0.6pt, fill=white, font=\scriptsize]{$\t$};\fi}}
+
+% A plotted point: a small filled dot centred exactly on the lattice point
+\newcommand{\gpt}[2][plum]{\fill[#1] #2 circle (2.3pt)}
 
 \begin{document}
 
@@ -58,12 +68,12 @@ $f\big($\gradedblank[id=p1b, type=short, points=1, answer=1, check=numeric]{0.9c
 \hfill
 \begin{minipage}[t]{0.46\textwidth}
 \vspace{0pt}\centering
-\begin{tikzpicture}[x=0.27cm, y=0.27cm]
-  \gridaxes{-9}{9}{-5}{5}
-  \draw[plum, very thick, domain=0:9, samples=60, smooth] plot (\x, {sqrt(\x)});
+\begin{tikzpicture}[x=0.5cm, y=0.5cm]
+  \gridaxes{-4}{9}{-3}{4}
+  \draw[plum, very thick, domain=0:9, samples=120, smooth] plot (\x, {sqrt(\x)});
   \draw[redacc, very thick, dashed, domain=-3:9, samples=200, smooth] plot (\x, {1-sqrt(\x+3)});
-  \fill[redacc] (-3,1) circle (3pt);
-  \fill[plum] (0,0) circle (3pt);
+  \gpt[redacc]{(-3,1)};
+  \gpt{(0,0)};
 \end{tikzpicture}
 \end{minipage}
 
@@ -119,10 +129,12 @@ Lands at on $y = \left|\tfrac{1}{4}x\right| - 3$ &
 \hfill
 \begin{minipage}[t]{0.46\textwidth}
 \vspace{0pt}\centering
-\begin{tikzpicture}[x=0.27cm, y=0.27cm]
-  \gridaxes{-9}{7}{-7}{7}
-  \draw[plum, very thick, <->] (-6.5,6.5) -- (0,0) -- (6.5,6.5);
-  \draw[redacc, very thick, dashed, <->] (-8.5,-6.5) -- (-3,-1) -- (2.5,-6.5);
+\begin{tikzpicture}[x=0.4cm, y=0.4cm]
+  \gridaxes{-8}{6}{-6}{6}
+  \draw[plum, very thick, <->] (-5.5,5.5) -- (0,0) -- (5.5,5.5);
+  \draw[redacc, very thick, dashed, <->] (-7.5,-5.5) -- (-3,-1) -- (1.5,-5.5);
+  \gpt{(0,0)};
+  \gpt[redacc]{(-3,-1)};
 \end{tikzpicture}
 \end{minipage}
 
@@ -186,9 +198,9 @@ $2$  & \gradedblank[id=p5c5, type=short, points=0.2, answer=6, check=numeric]{1.
 \begin{minipage}[t]{0.32\textwidth}
 \qn{6} Is the function even, odd, or neither?\par
 \vspace{3pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+\begin{tikzpicture}[x=0.46cm, y=0.46cm]
   \gridaxes{-4}{4}{-3}{3}
-  \draw[plum, very thick, domain=-3.3:3.3, samples=80, smooth, <->] plot (\x, {-0.1*(\x)^4 + (\x)^2 - 1});
+  \draw[plum, very thick, domain=-3.3:3.3, samples=120, smooth, <->] plot (\x, {-0.1*(\x)^4 + (\x)^2 - 1});
 \end{tikzpicture}\par
 \raggedright\small
 (A) even \quad (B) odd \quad (C) neither\par\vspace{4pt}
@@ -198,9 +210,9 @@ $2$  & \gradedblank[id=p5c5, type=short, points=0.2, answer=6, check=numeric]{1.
 \begin{minipage}[t]{0.32\textwidth}
 \qn{7} Use the vertical and horizontal line tests. The graph shows
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
-  \gridaxes{-4}{4}{-4}{4}
-  \draw[plum, very thick, <->] (-4.2,1.2) -- (-1,-2) -- (2.2,1.2);
+\begin{tikzpicture}[x=0.46cm, y=0.46cm]
+  \gridaxes{-5}{4}{-3}{3}
+  \draw[plum, very thick, <->] (-4.5,1.5) -- (-1,-2) -- (2.5,1.5);
 \end{tikzpicture}\par
 \raggedright\small
 (A) a one-to-one function\par
@@ -212,9 +224,9 @@ $2$  & \gradedblank[id=p5c5, type=short, points=0.2, answer=6, check=numeric]{1.
 \begin{minipage}[t]{0.32\textwidth}
 \qn{8} Use the vertical and horizontal line tests. The graph shows
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+\begin{tikzpicture}[x=0.46cm, y=0.46cm]
   \gridaxes{-4}{4}{-4}{4}
-  \draw[plum, very thick, domain=0:6.2832, samples=100, smooth] plot ({3*cos(\x r)}, {3*sin(\x r)});
+  \draw[plum, very thick] (0,0) circle (3);
 \end{tikzpicture}\par
 \raggedright\small
 (A) a one-to-one function\par
@@ -257,12 +269,12 @@ Decreasing on:\par\vspace{2pt}
 \hfill
 \begin{minipage}[t]{0.46\textwidth}
 \vspace{0pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+\begin{tikzpicture}[x=0.5cm, y=0.5cm]
   \gridaxes{-4}{6}{-4}{4}
-  \draw[plum, very thick, domain=-3.3:5.3, samples=80, smooth, <->]
+  \draw[plum, very thick, domain=-3.3:5.3, samples=150, smooth, <->]
     plot (\x, {-0.375*((\x)^3/3 - (\x)^2 - 3*\x) - 1.375});
-  \fill[plum] (-1,-2) circle (4pt) node[below, font=\tiny]{$(-1,\,-2)$};
-  \fill[plum] (3,2) circle (4pt) node[above, font=\tiny]{$(3,\,2)$};
+  \gpt{(-1,-2)} node[below, inner sep=2pt, fill=white, font=\scriptsize]{$(-1,\,-2)$};
+  \gpt{(3,2)} node[above, inner sep=2pt, fill=white, font=\scriptsize]{$(3,\,2)$};
 \end{tikzpicture}
 \end{minipage}
 
@@ -272,10 +284,10 @@ Decreasing on:\par\vspace{2pt}
 \begin{minipage}[t]{0.48\textwidth}
 \qn{11} State the domain of the function graphed.
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+\begin{tikzpicture}[x=0.48cm, y=0.48cm]
   \gridaxes{-6}{6}{-3}{3}
-  \draw[plum, very thick, domain=-5:6, samples=80, smooth, ->] plot (\x, {sqrt(\x+5) - 2});
-  \fill[plum] (-5,-2) circle (4pt);
+  \draw[plum, very thick, domain=-5:6, samples=150, smooth, ->] plot (\x, {sqrt(\x+5) - 2});
+  \gpt{(-5,-2)};
 \end{tikzpicture}\par\vspace{4pt}
 \raggedright Domain: \gradedblank[id=p11, type=short, points=2, answer={[-5, inf)}, check=text, display={$[-5,\infty)$}]{3cm}{1.1cm}
 \end{minipage}%
@@ -283,10 +295,10 @@ Decreasing on:\par\vspace{2pt}
 \begin{minipage}[t]{0.48\textwidth}
 \qn{12} State the range of the function graphed.
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
-  \gridaxes{-8}{2}{-2}{3}
-  \draw[plum, very thick, domain=-8:1, samples=80, smooth, <-] plot (\x, {2 - sqrt(1-\x)});
-  \fill[plum] (1,2) circle (4pt);
+\begin{tikzpicture}[x=0.48cm, y=0.48cm]
+  \gridaxes{-9}{2}{-2}{3}
+  \draw[plum, very thick, domain=-8:1, samples=150, smooth, <-] plot (\x, {2 - sqrt(1-\x)});
+  \gpt{(1,2)};
 \end{tikzpicture}\par\vspace{4pt}
 \raggedright Range: \gradedblank[id=p12, type=short, points=2, answer={(-inf, 2]}, check=text, display={$(-\infty,\,2]$}]{3cm}{1.1cm}
 \end{minipage}
@@ -308,10 +320,10 @@ Decreasing on:\par\vspace{2pt}
 \begin{minipage}[t]{0.32\textwidth}
 \qn{14} Is the graph concave up or concave down?
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.34cm, y=0.34cm]
-  \gridaxes{-5}{6}{-4}{4}
-  \draw[plum, very thick, domain=-4:5, samples=80, smooth, ->] plot (\x, {1.5*sqrt(\x+4) - 2});
-  \fill[plum] (-4,-2) circle (4pt);
+\begin{tikzpicture}[x=0.42cm, y=0.42cm]
+  \gridaxes{-5}{6}{-3}{3}
+  \draw[plum, very thick, domain=-4:5, samples=150, smooth, ->] plot (\x, {1.5*sqrt(\x+4) - 2});
+  \gpt{(-4,-2)};
 \end{tikzpicture}\par
 \raggedright\small
 (A) concave up \quad (B) concave down\par\vspace{4pt}
@@ -321,10 +333,10 @@ Decreasing on:\par\vspace{2pt}
 \begin{minipage}[t]{0.32\textwidth}
 \qn{15} Is the graph concave up or concave down?
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.34cm, y=0.34cm]
-  \gridaxes{-5}{6}{-4}{4}
-  \draw[plum, very thick, domain=-4:5, samples=80, smooth, ->] plot (\x, {3 - 2*sqrt(\x+4)});
-  \fill[plum] (-4,3) circle (4pt);
+\begin{tikzpicture}[x=0.42cm, y=0.42cm]
+  \gridaxes{-5}{6}{-3}{3}
+  \draw[plum, very thick, domain=-4:5, samples=150, smooth, ->] plot (\x, {3 - 2*sqrt(\x+4)});
+  \gpt{(-4,3)};
 \end{tikzpicture}\par
 \raggedright\small
 (A) concave up \quad (B) concave down\par\vspace{4pt}
@@ -334,9 +346,9 @@ Decreasing on:\par\vspace{2pt}
 \begin{minipage}[t]{0.32\textwidth}
 \qn{16} Find the point(s) of inflection.
 \par\vspace{3pt}\centering
-\begin{tikzpicture}[x=0.34cm, y=0.34cm]
-  \gridaxes{-6}{4}{-5}{3}
-  \draw[plum, very thick, domain=-5.4:3.4, samples=80, smooth, <->] plot (\x, {-0.1*(\x+1)^3 + 1.2*(\x+1) - 1});
+\begin{tikzpicture}[x=0.42cm, y=0.42cm]
+  \gridaxes{-6}{4}{-4}{3}
+  \draw[plum, very thick, domain=-5.2:3.2, samples=150, smooth, <->] plot (\x, {-0.125*(\x+1)^3 + 1.5*(\x+1) - 1});
 \end{tikzpicture}\par
 \raggedright\small
 How many? \gradedblank[id=p16a, type=short, points=1, answer=1, check=numeric]{1.1cm}{1.1cm}\par\vspace{6pt}
@@ -365,10 +377,10 @@ At: \gradedblank[id=p16b, type=short, points=1, answer={(-1, -1)}, check=text, d
 \hfill
 \begin{minipage}[t]{0.4\textwidth}
 \vspace{0pt}\centering
-\begin{tikzpicture}[x=0.36cm, y=0.36cm]
+\begin{tikzpicture}[x=0.46cm, y=0.46cm]
   \gridaxes{-5}{9}{-4}{2}
-  \draw[plum, very thick, domain=-4:9, samples=80, smooth, ->] plot (\x, {sqrt(\x+4) - 3});
-  \fill[plum] (-4,-3) circle (4pt);
+  \draw[plum, very thick, domain=-4:9, samples=150, smooth, ->] plot (\x, {sqrt(\x+4) - 3});
+  \gpt{(-4,-3)};
 \end{tikzpicture}
 \end{minipage}
 
@@ -388,11 +400,11 @@ At: \gradedblank[id=p16b, type=short, points=1, answer={(-1, -1)}, check=text, d
 \hfill
 \begin{minipage}[t]{0.46\textwidth}
 \vspace{0pt}\centering
-\begin{tikzpicture}[x=0.3cm, y=0.3cm]
-  \gridaxes{-8}{8}{-5}{5}
-  \draw[plum, very thick, domain=-6:7.5, samples=120, smooth, ->]
+\begin{tikzpicture}[x=0.44cm, y=0.44cm]
+  \gridaxes{-7}{8}{-4}{3}
+  \draw[plum, very thick, domain=-6:7.5, samples=150, smooth, ->]
     plot (\x, {1.5*sqrt(\x+6) - 3});
-  \fill[plum] (-6,-3) circle (4pt);
+  \gpt{(-6,-3)};
 \end{tikzpicture}
 \end{minipage}
 
