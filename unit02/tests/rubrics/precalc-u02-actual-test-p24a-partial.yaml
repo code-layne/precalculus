@@ -1,0 +1,22 @@
+# Partial credit for the work on item 24 (x-intercepts) when the boxed answer is wrong (Unit 2 Unit Test).
+id: p24a
+points: 1
+task: "Find every x-intercept of g(x) = 3|x - 1| - 6."
+answer: "-1, 3"
+solution: |
+  3|x - 1| - 6 = 0
+  |x - 1| = 2
+  x - 1 = 2  or  x - 1 = -2
+  x = 3  or  x = -1
+criteria:
+  - id: isolate
+    points: 0.5
+    full: "Sets g(x) = 0 and isolates the absolute value: |x - 1| = 2."
+  - id: cases
+    points: 0.5
+    full: "Splits into both cases, x - 1 = 2 and x - 1 = -2 (credit even with a slip solving one)."
+examples:
+  - response: "3|x - 1| - 6 = 0, |x - 1| = 2, x = 3; boxed 3"
+    scores: {isolate: 0.5, cases: 0}
+  - response: "g(-1) = -6, g(2) = -3 (evaluates points instead of solving g(x) = 0)"
+    scores: {isolate: 0, cases: 0}
