@@ -1,0 +1,25 @@
+# Partial credit for the work on item 13 when the boxed domain is wrong (Unit 2 Unit Test).
+# The grader reads this when the box is wrong; the criteria add up to less than the item's 2 points.
+id: p13
+points: 1.5
+task: "Find the domain of f(x) = sqrt(10 - 2x) + 1 algebraically."
+answer: "(-inf, 5]"
+solution: |
+  10 - 2x >= 0
+  -2x >= -10
+  x <= 5
+  Domain: (-inf, 5]
+criteria:
+  - id: setup
+    points: 0.5
+    full: "Sets the expression under the radical >= 0: 10 - 2x >= 0 (> 0 earns nothing)."
+  - id: solve
+    points: 1
+    full: "Solves it to x <= 5, reversing the inequality when dividing by -2. x >= 5 earns nothing here."
+examples:
+  - response: "10 - 2x >= 0, -2x >= -10, x <= 5; boxed (-inf, 5)"
+    scores: {setup: 0.5, solve: 1}
+  - response: "10 - 2x >= 0, x >= 5; boxed [5, inf)"
+    scores: {setup: 0.5, solve: 0}
+  - response: "No work shown; boxed [5, -inf)"
+    scores: {setup: 0, solve: 0}
