@@ -5,6 +5,10 @@
 # three products (plan, the 3-up slides PDF, the full-page slides PPTX) stay in
 # target/compiled/unitXX/ — they are per-lesson teacher artifacts.
 #
+# Releases, from the root (see README "Downloading prebuilt PDFs"):
+#   make package UNIT=unit02   build the unit's teacher kit and zip it into target/release/
+#   make release UNIT=unit02   package + publish as GitHub Release unit02-vN (public)
+#
 # Grading, from the root:
 #   make roster-packets LESSON=unit03/lesson01 ROSTER=~/Mathematics/rosters/roster-map.csv [SECTION=…]
 #   make roster-packets COMP=unit01/tests/actual_test ROSTER=… [SECTION=…]   (a test)
@@ -16,7 +20,7 @@ COMPILED_DIR := $(PROJECT_ROOT)/target/compiled
 # Auto-discover units that have a Makefile, in sorted order.
 UNITS := $(patsubst %/Makefile,%,$(sort $(wildcard unit*/Makefile)))
 
-.PHONY: all student key check clean distclean manifest roster-packets $(UNITS)
+.PHONY: all student key check clean distclean manifest roster-packets package release $(UNITS)
 
 all: $(UNITS)
 
@@ -75,3 +79,7 @@ clean:
 
 distclean: clean
 	rm -rf $(PROJECT_ROOT)/target $(PROJECT_ROOT)/.stamps
+
+package release:
+	@test -n "$(UNIT)" || { echo "!  make $@ UNIT=unitXX"; exit 1; }
+	@shared/release.sh $(UNIT) $(if $(filter release,$@),--publish)
