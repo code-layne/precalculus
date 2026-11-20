@@ -56,3 +56,20 @@ starts on an odd page when the roster PDF prints duplex. Both builds write each 
 component's `manifest.json` first, which `grading ingest` reads. `SECTION=` builds one section.
 The roster PDFs hold names, so they stay under `target/`, which is never committed; the build
 fails if a name reaches a graded page. Keep `roster-map.csv` outside the repository.
+
+## Downloading prebuilt PDFs
+
+Each unit is published on the [Releases](../../releases) page as `unitXX-vN`. A release carries
+`unitXX_student.pdf`, `unitXX_key.pdf`, and a zip of the full teacher kit: both unit packets,
+every lesson's plan, slides (PDF and PPTX), student and key packets, the unit covers and sample
+test, plus every standalone document the unit builds (tests, keys, quizzes, warm-ups, extras).
+
+The repository is public, so releases are public too, answer keys and actual tests included.
+Roster packets (student names) are never packaged.
+
+To cut one (builds locally, needs `gh` signed in, HEAD committed and pushed):
+
+    make package UNIT=unit02    # build + zip into target/release/, no upload
+    make release UNIT=unit02    # same, then publish GitHub Release unit02-vN (N auto-increments)
+
+`VERSION=3` forces the number; `NOBUILD=1` packages what is already in `target/`.
